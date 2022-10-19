@@ -8,6 +8,7 @@ public class CanvasController : MonoBehaviour
 {
     [SerializeField] private GameObject mainSettingsScreen;
     [SerializeField] private GameObject parentLockScreen;
+    [SerializeField] private GameObject profileScreen;
 
 
     public void ParentLockButtonClick()
@@ -18,6 +19,11 @@ public class CanvasController : MonoBehaviour
     public void ParentLockScreenClose()
     {
         parentLockScreen.SetActive(false);
+    }
+
+    public void ProfileButtonClick()
+    {
+        profileScreen.SetActive(true);
     }
 
 }

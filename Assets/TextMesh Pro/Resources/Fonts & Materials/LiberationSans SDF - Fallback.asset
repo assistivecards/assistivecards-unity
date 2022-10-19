@@ -1115,6 +1115,8 @@ MonoBehaviour:
       m_Y: 292
       m_Width: 8
       m_Height: 16
+    m_Scale: 1
+    m_AtlasIndex: 0
   - m_Index: 33
     m_Metrics:
       m_Width: 42
@@ -1435,8 +1437,6 @@ MonoBehaviour:
   - m_ElementType: 1
     m_Unicode: 825
     m_GlyphIndex: 763
-    m_Unicode: 62
-    m_GlyphIndex: 33
     m_Scale: 1
   - m_ElementType: 1
     m_Unicode: 95
@@ -1933,8 +1933,6 @@ MonoBehaviour:
     m_Y: 317
     m_Width: 3
     m_Height: 194
-    m_Width: 83
-    m_Height: 28
   - m_X: 83
     m_Y: 0
     m_Width: 70
@@ -1947,27 +1945,6 @@ MonoBehaviour:
     m_Y: 28
     m_Width: 71
     m_Height: 41
-  m_FreeGlyphRects:
-  - m_X: 83
-    m_Y: 25
-    m_Width: 70
-    m_Height: 486
-  - m_X: 214
-    m_Y: 0
-    m_Width: 297
-    m_Height: 511
-  - m_X: 0
-    m_Y: 69
-    m_Width: 511
-    m_Height: 442
-  - m_X: 71
-    m_Y: 62
-    m_Width: 440
-    m_Height: 449
-  - m_X: 71
-    m_Y: 28
-    m_Width: 82
-    m_Height: 483
   m_fontInfo:
     Name: Liberation Sans
     PointSize: 86
@@ -2600,7 +2577,6 @@ MonoBehaviour:
           m_XAdvance: 0
           m_YAdvance: 0
       m_FeatureLookupFlags: 0
-    m_GlyphPairAdjustmentRecords: []
   fallbackFontAssets: []
   m_FallbackFontAssetTable: []
   m_CreationSettings:

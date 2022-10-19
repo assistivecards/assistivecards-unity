@@ -7,12 +7,22 @@ public class Test : MonoBehaviour
 {
 
     AssistiveCardsSDK.Languages result = new AssistiveCardsSDK.Languages();
+    AssistiveCardsSDK assistiveCardsSDK;
     public TMP_InputField outputArea;
+
+    [SerializeField] private Texture2D testTexture;
+
+    private void Awake()
+    {
+        assistiveCardsSDK = outputArea.GetComponent<AssistiveCardsSDK>();
+    }
+
 
     private async void Start()
     {
 
-        result = await outputArea.GetComponent<AssistiveCardsSDK>().GetLanguages();
+        result = await assistiveCardsSDK.GetLanguages();
         Debug.Log(result.languages[1].native);
+        testTexture = await assistiveCardsSDK.GetPackImage("animals", 512);
     }
 }

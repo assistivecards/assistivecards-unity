@@ -10,7 +10,14 @@ using System.Threading.Tasks;
 public class AssistiveCardsSDK : MonoBehaviour
 {
     public TMP_InputField outputArea;
-    public RawImage image;
+    public RawImage rawImage;
+    public TMP_InputField avatarImageSizeInput;
+    public TMP_InputField avatarIdInput;
+    public TMP_InputField packImageSizeInput;
+    public TMP_InputField packSlugInput;
+    public TMP_InputField cardImagePackSlugInput;
+    public TMP_InputField cardImageCardSlugInput;
+    public TMP_InputField cardImageSizeInput;
     private const string api = "https://api.assistivecards.com/";
     private const string metadata = "https://api.assistivecards.com/apps/metadata.json";
 
@@ -273,21 +280,21 @@ public class AssistiveCardsSDK : MonoBehaviour
     public async void DisplayActivityImage(string activitySlug)
     {
         var texture = await asyncGetActivityImage(activitySlug);
-        image.texture = texture;
+        rawImage.texture = texture;
     }
 
-    public async Task<Texture> GetActivityImage(string activitySlug)
+    public async Task<Texture2D> GetActivityImage(string activitySlug)
     {
         var result = await asyncGetActivityImage(activitySlug);
         return result;
     }
 
-    private async Task<Texture> asyncGetActivityImage(string activitySlug)
+    private async Task<Texture2D> asyncGetActivityImage(string activitySlug)
     {
 
         string uri = api + "activities/assets/" + activitySlug + ".png";
 
-        UnityWebRequest request = UnityWebRequest.Get(uri);
+        UnityWebRequest request = UnityWebRequestTexture.GetTexture(uri);
         request.SendWebRequest();
         while (!request.isDone)
         {
@@ -297,163 +304,199 @@ public class AssistiveCardsSDK : MonoBehaviour
             return null;
         else
         {
-            var texture = ((DownloadHandlerTexture)request.downloadHandler).texture as Texture;
+            var texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
             return texture;
         }
     }
 
-    public void GetAvatarImages256(string avatarId)
+    public void DisplayAvatarImageOnClick()
     {
-        StartCoroutine(GetAvatarImages256Coroutine(avatarId, 256));
+        var id = avatarIdInput.text;
+        int size = Int32.Parse(avatarImageSizeInput.text);
+        if (id != null && (size == 256 || size == 512))
+            DisplayAvatarImage(id, size);
     }
 
-    public void GetAvatarImages512(string avatarId)
+    public async void DisplayAvatarImage(string avatarId, int imgSize)
     {
-        StartCoroutine(GetAvatarImages512Coroutine(avatarId, 512));
+
+        var texture = await asyncGetAvatarImage(avatarId, imgSize);
+        rawImage.texture = texture;
     }
 
-    public IEnumerator GetAvatarImages256Coroutine(string avatarId, int res)
+    public async Task<Texture2D> GetAvatarImage(string avatarId, int imgSize)
     {
-        string uri = api + "cards/avatar/" + avatarId + ".png";
+        var result = await asyncGetAvatarImage(avatarId, imgSize);
+        return result;
+    }
 
-
-
-
-
-        using (UnityWebRequest request = UnityWebRequestTexture.GetTexture(uri))
+    private async Task<Texture2D> asyncGetAvatarImage(string avatarId, int imgSize)
+    {
+        string uri = "";
+        if (imgSize == 256)
         {
-            yield return request.SendWebRequest();
-            if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
-                outputArea.text = request.error;
-            else
-            {
-                image.texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
-            }
+            uri = api + "cards/avatar/" + avatarId + ".png";
+        }
+        else if (imgSize == 512)
+        {
+            uri = api + "cards/avatarHD/" + avatarId + ".png";
+        }
+        else
+        {
+            Debug.Log("Please enter a valid image size.");
+        }
+
+        UnityWebRequest request = UnityWebRequestTexture.GetTexture(uri);
+        request.SendWebRequest();
+        while (!request.isDone)
+        {
+            await Task.Yield();
+        }
+        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+            return null;
+        else
+        {
+            var texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
+            return texture;
         }
     }
 
-    public IEnumerator GetAvatarImages512Coroutine(string avatarId, int res)
+    public void DisplayPackImageOnClick()
     {
-        string uri = api + "cards/avatarHD/" + avatarId + ".png";
+        var slug = packSlugInput.text;
+        int size = Int32.Parse(packImageSizeInput.text);
+        if (slug != null && (size == 256 || size == 512))
+            DisplayPackImage(slug, size);
+    }
 
+    public async void DisplayPackImage(string packSlug, int imgSize)
+    {
 
-        using (UnityWebRequest request = UnityWebRequestTexture.GetTexture(uri))
+        var texture = await asyncGetPackImage(packSlug, imgSize);
+        rawImage.texture = texture;
+    }
+
+    public async Task<Texture2D> GetPackImage(string packSlug, int imgSize)
+    {
+        var result = await asyncGetPackImage(packSlug, imgSize);
+        return result;
+    }
+
+    private async Task<Texture2D> asyncGetPackImage(string packSlug, int imgSize)
+    {
+        string uri = "";
+        if (imgSize == 256)
         {
-            yield return request.SendWebRequest();
-            if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
-                outputArea.text = request.error;
-            else
-            {
-                image.texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
-            }
+            uri = api + "cards/icon/" + packSlug + ".png";
+        }
+        else if (imgSize == 512)
+        {
+            uri = api + "cards/icon/" + packSlug + "@2x.png";
+        }
+        else
+        {
+            Debug.Log("Please enter a valid image size.");
+        }
+
+        UnityWebRequest request = UnityWebRequestTexture.GetTexture(uri);
+        request.SendWebRequest();
+        while (!request.isDone)
+        {
+            await Task.Yield();
+        }
+        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+            return null;
+        else
+        {
+            var texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
+            return texture;
         }
     }
 
-    public void GetPackImages256(string packSlug)
+    public async void DisplayAppIcon(string appSlug)
     {
-        StartCoroutine(GetPackImages256Coroutine(packSlug));
+        var texture = await asyncGetAppIcon(appSlug);
+        rawImage.texture = texture;
     }
 
-    public IEnumerator GetPackImages256Coroutine(string packSlug)
+    public async Task<Texture2D> GetAppIcon(string appSlug)
     {
-        string uri = api + "cards/icon/" + packSlug + ".png";
-
-        using (UnityWebRequest request = UnityWebRequestTexture.GetTexture(uri))
-        {
-            yield return request.SendWebRequest();
-            if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
-                outputArea.text = request.error;
-            else
-            {
-                image.texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
-            }
-        }
+        var result = await asyncGetAppIcon(appSlug);
+        return result;
     }
 
-    public void GetPackImages512(string packSlug)
+    private async Task<Texture2D> asyncGetAppIcon(string appSlug)
     {
-        StartCoroutine(GetPackImages512Coroutine(packSlug));
-    }
 
-    public IEnumerator GetPackImages512Coroutine(string packSlug)
-    {
-        string uri = api + "cards/icon/" + packSlug + "@2x.png";
-
-        using (UnityWebRequest request = UnityWebRequestTexture.GetTexture(uri))
-        {
-            yield return request.SendWebRequest();
-            if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
-                outputArea.text = request.error;
-            else
-            {
-                image.texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
-            }
-        }
-    }
-
-    public void GetAppIcons(string appSlug)
-    {
-        StartCoroutine(GetAppIconsCoroutine(appSlug));
-    }
-
-    public IEnumerator GetAppIconsCoroutine(string appSlug)
-    {
         string uri = api + "apps/icon/" + appSlug + "@3x.png";
 
-        using (UnityWebRequest request = UnityWebRequestTexture.GetTexture(uri))
+        UnityWebRequest request = UnityWebRequestTexture.GetTexture(uri);
+        request.SendWebRequest();
+        while (!request.isDone)
         {
-            yield return request.SendWebRequest();
-            if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
-                outputArea.text = request.error;
-            else
-            {
-                image.texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
-            }
+            await Task.Yield();
+        }
+        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+            return null;
+        else
+        {
+            var texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
+            return texture;
         }
     }
 
-    public void GetCardImages256(string packSlug, string cardSlug)
+    public void DisplayCardImageOnClick()
     {
-        StartCoroutine(GetCardImages256Coroutine(packSlug, cardSlug));
+        var packSlug = cardImagePackSlugInput.text;
+        var cardSlugSlug = cardImageCardSlugInput.text;
+        int size = Int32.Parse(cardImageSizeInput.text);
+        if (packSlug != null && cardSlugSlug != null && (size == 256 || size == 512))
+            DisplayCardImage(packSlug, cardSlugSlug, size);
     }
 
-    public IEnumerator GetCardImages256Coroutine(string packSlug, string cardSlug)
+    public async void DisplayCardImage(string packSlug, string cardSlug, int imgSize)
     {
-        string uri = api + "cards/" + packSlug + "/" + cardSlug + ".png";
 
-        using (UnityWebRequest request = UnityWebRequestTexture.GetTexture(uri))
+        var texture = await asyncGetCardImage(packSlug, cardSlug, imgSize);
+        rawImage.texture = texture;
+    }
+
+    public async Task<Texture2D> GetCardImage(string packSlug, string cardSlug, int imgSize)
+    {
+        var result = await asyncGetCardImage(packSlug, cardSlug, imgSize);
+        return result;
+    }
+
+    private async Task<Texture2D> asyncGetCardImage(string packSlug, string cardSlug, int imgSize)
+    {
+        string uri = "";
+        if (imgSize == 256)
         {
-            yield return request.SendWebRequest();
-            if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
-                outputArea.text = request.error;
-            else
-            {
-                image.texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
-            }
+            uri = api + "cards/" + packSlug + "/" + cardSlug + ".png";
+        }
+        else if (imgSize == 512)
+        {
+            uri = api + "cards/" + packSlug + "/" + cardSlug + "@2x.png";
+        }
+        else
+        {
+            Debug.Log("Please enter a valid image size.");
+        }
+
+        UnityWebRequest request = UnityWebRequestTexture.GetTexture(uri);
+        request.SendWebRequest();
+        while (!request.isDone)
+        {
+            await Task.Yield();
+        }
+        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+            return null;
+        else
+        {
+            var texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
+            return texture;
         }
     }
-
-    public void GetCardImages512(string packSlug, string cardSlug)
-    {
-        StartCoroutine(GetCardImages512Coroutine(packSlug, cardSlug));
-    }
-
-    public IEnumerator GetCardImages512Coroutine(string packSlug, string cardSlug)
-    {
-        string uri = api + "cards/" + packSlug + "/" + cardSlug + "@2x.png";
-
-        using (UnityWebRequest request = UnityWebRequestTexture.GetTexture(uri))
-        {
-            yield return request.SendWebRequest();
-            if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
-                outputArea.text = request.error;
-            else
-            {
-                image.texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
-            }
-        }
-    }
-
     public async void DisplayApps()
     {
         var result = await asyncGetApps();
@@ -468,9 +511,6 @@ public class AssistiveCardsSDK : MonoBehaviour
 
     private async Task<Apps> asyncGetApps()
     {
-
-        //string uri = metadata;
-
         UnityWebRequest request = UnityWebRequest.Get(metadata);
         request.SendWebRequest();
         while (!request.isDone)
@@ -485,5 +525,4 @@ public class AssistiveCardsSDK : MonoBehaviour
             return apps = JsonUtility.FromJson<Apps>(request.downloadHandler.text);
         }
     }
-
 }

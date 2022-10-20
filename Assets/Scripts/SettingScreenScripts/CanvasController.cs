@@ -9,6 +9,7 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private GameObject mainSettingsScreen;
     [SerializeField] private GameObject parentLockScreen;
     [SerializeField] private GameObject profileScreen;
+    [SerializeField] private GameObject languageScreen;
 
 
     public void ParentLockButtonClick()
@@ -24,6 +25,11 @@ public class CanvasController : MonoBehaviour
     public void ProfileButtonClick()
     {
         profileScreen.SetActive(true);
+    }
+
+    public void LanguageButtonClick()
+    {
+        languageScreen.SetActive(true);
     }
 
 }

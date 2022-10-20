@@ -18,6 +18,12 @@ public class AssistiveCardsSDK : MonoBehaviour
     public TMP_InputField cardImagePackSlugInput;
     public TMP_InputField cardImageCardSlugInput;
     public TMP_InputField cardImageSizeInput;
+    public TMP_InputField cardLanguageInput;
+    public TMP_InputField cardPackSlugInput;
+    public TMP_InputField languageCodeInput;
+    public TMP_InputField activitySlugInput;
+    public TMP_InputField cardBySlugInput;
+    public TMP_InputField packBySlugInput;
     private const string api = "https://api.assistivecards.com/";
     private const string metadata = "https://api.assistivecards.com/apps/metadata.json";
 
@@ -36,6 +42,27 @@ public class AssistiveCardsSDK : MonoBehaviour
     public class Packs
     {
         public Pack[] packs;
+    }
+
+    [Serializable]
+    public class Phrase
+    {
+        public string type;
+        public string phrase;
+    }
+
+    [Serializable]
+    public class Card
+    {
+        public string slug;
+        public string title;
+        public Phrase[] phrases;
+    }
+
+    [Serializable]
+    public class Cards
+    {
+        public Card[] cards;
     }
 
     [Serializable]
@@ -180,6 +207,7 @@ public class AssistiveCardsSDK : MonoBehaviour
     }
 
     public Packs packs = new Packs();
+    public Cards cards = new Cards();
     public Activities activities = new Activities();
     public Languages languages = new Languages();
     public Apps apps = new Apps();
@@ -198,7 +226,7 @@ public class AssistiveCardsSDK : MonoBehaviour
     private async Task<Packs> asyncGetPacks(string language)
     {
 
-        string uri = "https://api.assistivecards.com/packs/" + language + "/metadata.json";
+        string uri = api + "packs/" + language + "/metadata.json";
 
         UnityWebRequest request = UnityWebRequest.Get(uri);
         request.SendWebRequest();
@@ -211,6 +239,45 @@ public class AssistiveCardsSDK : MonoBehaviour
         else
         {
             return packs = JsonUtility.FromJson<Packs>("{\"packs\":" + request.downloadHandler.text + "}");
+        }
+    }
+
+    public void DisplayCardsOnClick()
+    {
+        var language = cardLanguageInput.text;
+        var packSlug = cardPackSlugInput.text;
+        if (language != null && packSlug != null)
+            DisplayCards(language, packSlug);
+    }
+
+    public async void DisplayCards(string language, string packSlug)
+    {
+        var result = await asyncGetCards(language, packSlug);
+        outputArea.text = JsonUtility.ToJson(result);
+    }
+
+    public async Task<Cards> GetCards(string language, string packSlug)
+    {
+        var result = await asyncGetCards(language, packSlug);
+        return result;
+    }
+
+    private async Task<Cards> asyncGetCards(string language, string packSlug)
+    {
+
+        string uri = api + "packs/" + language + "/" + packSlug + ".json";
+
+        UnityWebRequest request = UnityWebRequest.Get(uri);
+        request.SendWebRequest();
+        while (!request.isDone)
+        {
+            await Task.Yield();
+        }
+        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+            return null;
+        else
+        {
+            return cards = JsonUtility.FromJson<Cards>("{\"cards\":" + request.downloadHandler.text + "}");
         }
     }
 
@@ -524,5 +591,69 @@ public class AssistiveCardsSDK : MonoBehaviour
             outputArea.text = request.downloadHandler.text;
             return apps = JsonUtility.FromJson<Apps>(request.downloadHandler.text);
         }
+    }
+
+    public Pack GetPackBySlug(Packs packs, string packSlug)
+    {
+        for (int i = 0; i < packs.packs.Length; i++)
+        {
+            if (packs.packs[i].slug == packSlug)
+                return packs.packs[i];
+        }
+        return null;
+    }
+
+    public void DisplayPackBySlug()
+    {
+        var result = GetPackBySlug(packs, packBySlugInput.text);
+        outputArea.text = JsonUtility.ToJson(result);
+    }
+
+    public Card GetCardBySlug(Cards cards, string cardSlug)
+    {
+        for (int i = 0; i < cards.cards.Length; i++)
+        {
+            if (cards.cards[i].slug == cardSlug)
+                return cards.cards[i];
+        }
+        return null;
+    }
+
+    public void DisplayCardBySlug()
+    {
+        var result = GetCardBySlug(cards, cardBySlugInput.text);
+        outputArea.text = JsonUtility.ToJson(result);
+    }
+
+    public Activity GetActivityBySlug(Activities activities, string slug)
+    {
+        for (int i = 0; i < activities.activities.Length; i++)
+        {
+            if (activities.activities[i].slug == slug)
+                return activities.activities[i];
+        }
+        return null;
+    }
+
+    public void DisplayActivityBySlug()
+    {
+        var result = GetActivityBySlug(activities, activitySlugInput.text);
+        outputArea.text = JsonUtility.ToJson(result);
+    }
+
+    public Language GetLanguageByCode(Languages languages, string languageCode)
+    {
+        for (int i = 0; i < languages.languages.Length; i++)
+        {
+            if (languages.languages[i].code == languageCode)
+                return languages.languages[i];
+        }
+        return null;
+    }
+
+    public void DisplayLanguageByCode()
+    {
+        var result = GetLanguageByCode(languages, languageCodeInput.text);
+        outputArea.text = JsonUtility.ToJson(result);
     }
 }

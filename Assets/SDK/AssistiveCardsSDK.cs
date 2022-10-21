@@ -217,6 +217,10 @@ public class AssistiveCardsSDK : MonoBehaviour
         var result = await asyncGetPacks(language);
         outputArea.text = JsonUtility.ToJson(result);
     }
+
+    ///<summary>
+    ///Takes in a language code of type string and returns an object of type Packs which holds an array of Pack objects in the specified language.
+    ///</summary>
     public async Task<Packs> GetPacks(string language)
     {
         var result = await asyncGetPacks(language);
@@ -256,6 +260,10 @@ public class AssistiveCardsSDK : MonoBehaviour
         outputArea.text = JsonUtility.ToJson(result);
     }
 
+    ///<summary>
+    ///Takes in a language code and a pack slug of type string as parameters. Returns an object of type Cards which holds an array of Card objects in the specified pack and language.
+    ///</summary>
+
     public async Task<Cards> GetCards(string language, string packSlug)
     {
         var result = await asyncGetCards(language, packSlug);
@@ -287,6 +295,9 @@ public class AssistiveCardsSDK : MonoBehaviour
         outputArea.text = JsonUtility.ToJson(result);
     }
 
+    ///<summary>
+    ///Takes in a language code of type string and returns an object of type Activities which holds an array of Activity objects in the specified language.
+    ///</summary>
     public async Task<Activities> GetActivities(string language)
     {
         var result = await asyncGetActivities(language);
@@ -319,6 +330,9 @@ public class AssistiveCardsSDK : MonoBehaviour
         outputArea.text = JsonUtility.ToJson(result);
     }
 
+    ///<summary>
+    ///Returns an object of type Languages which holds an array of Language objects.
+    ///</summary>
     public async Task<Languages> GetLanguages()
     {
         var result = await asyncGetLanguages();
@@ -350,6 +364,9 @@ public class AssistiveCardsSDK : MonoBehaviour
         rawImage.texture = texture;
     }
 
+    ///<summary>
+    ///Takes in an activity slug of type string and returns an object of type Texture2D corresponding to the specified activity slug.
+    ///</summary>
     public async Task<Texture2D> GetActivityImage(string activitySlug)
     {
         var result = await asyncGetActivityImage(activitySlug);
@@ -391,6 +408,9 @@ public class AssistiveCardsSDK : MonoBehaviour
         rawImage.texture = texture;
     }
 
+    ///<summary>
+    ///Takes in an avatar ID of type string as the first parameter and an image size of type integer as the second parameter. Returns an object of type Texture2D corresponding to the specified avatar ID and image size.
+    ///</summary>
     public async Task<Texture2D> GetAvatarImage(string avatarId, int imgSize)
     {
         var result = await asyncGetAvatarImage(avatarId, imgSize);
@@ -443,6 +463,9 @@ public class AssistiveCardsSDK : MonoBehaviour
         rawImage.texture = texture;
     }
 
+    ///<summary>
+    ///Takes in a pack slug of type string as the first parameter and an image size of type integer as the second parameter. Returns an object of type Texture2D corresponding to the specified pack slug and image size.
+    ///</summary>
     public async Task<Texture2D> GetPackImage(string packSlug, int imgSize)
     {
         var result = await asyncGetPackImage(packSlug, imgSize);
@@ -486,6 +509,9 @@ public class AssistiveCardsSDK : MonoBehaviour
         rawImage.texture = texture;
     }
 
+    ///<summary>
+    ///Takes in an app slug of type string and returns an object of type Texture2D corresponding to the specified app slug.
+    ///</summary>
     public async Task<Texture2D> GetAppIcon(string appSlug)
     {
         var result = await asyncGetAppIcon(appSlug);
@@ -528,6 +554,9 @@ public class AssistiveCardsSDK : MonoBehaviour
         rawImage.texture = texture;
     }
 
+    ///<summary>
+    ///Takes in a pack slug of type string as the first parameter, a card slug of type string as the second parameter and an image size of type integer as the third parameter. Returns an object of type Texture2D corresponding to the specified pack slug, card slug and image size.
+    ///</summary>
     public async Task<Texture2D> GetCardImage(string packSlug, string cardSlug, int imgSize)
     {
         var result = await asyncGetCardImage(packSlug, cardSlug, imgSize);
@@ -570,6 +599,9 @@ public class AssistiveCardsSDK : MonoBehaviour
         outputArea.text = JsonUtility.ToJson(result);
     }
 
+    ///<summary>
+    ///Returns an object of type Apps which holds an array of App objects.
+    ///</summary>
     public async Task<Apps> GetApps()
     {
         var result = await asyncGetApps();
@@ -593,6 +625,9 @@ public class AssistiveCardsSDK : MonoBehaviour
         }
     }
 
+    ///<summary>
+    ///Takes in an object of type Packs as the first parameter and a pack slug of type string as the second parameter. Filters the given array of packs and returns an object of type Pack corresponding to the specified pack slug.
+    ///</summary>
     public Pack GetPackBySlug(Packs packs, string packSlug)
     {
         for (int i = 0; i < packs.packs.Length; i++)
@@ -609,6 +644,9 @@ public class AssistiveCardsSDK : MonoBehaviour
         outputArea.text = JsonUtility.ToJson(result);
     }
 
+    ///<summary>
+    ///Takes in an object of type Cards as the first parameter and a card slug of type string as the second parameter. Filters the given array of cards and returns an object of type Card corresponding to the specified card slug.
+    ///</summary>
     public Card GetCardBySlug(Cards cards, string cardSlug)
     {
         for (int i = 0; i < cards.cards.Length; i++)
@@ -625,6 +663,9 @@ public class AssistiveCardsSDK : MonoBehaviour
         outputArea.text = JsonUtility.ToJson(result);
     }
 
+    ///<summary>
+    ///Takes in an object of type Activities as the first parameter and a activity slug of type string as the second parameter. Filters the given array of activities and returns an object of type Activity corresponding to the specified activity slug.
+    ///</summary>
     public Activity GetActivityBySlug(Activities activities, string slug)
     {
         for (int i = 0; i < activities.activities.Length; i++)
@@ -641,6 +682,9 @@ public class AssistiveCardsSDK : MonoBehaviour
         outputArea.text = JsonUtility.ToJson(result);
     }
 
+    ///<summary>
+    ///Takes in an object of type Languages as the first parameter and a language code of type string as the second parameter. Filters the given array of languages and returns an object of type Language corresponding to the specified language code.
+    ///</summary>
     public Language GetLanguageByCode(Languages languages, string languageCode)
     {
         for (int i = 0; i < languages.languages.Length; i++)

@@ -17,14 +17,11 @@ public static class SelectLanguage
 }
 public class LanguageController : MonoBehaviour
 {
-    public static List<Language> languagesTestList = new List<Language>();
+    public List<Language> languagesTestList = new List<Language>();
     private GameObject languageTemplateElement;
     private GameObject languageElement;
-
-    private Color purple = new Color(0.3882353f, 0.427451f, 0.7098039f, 1);
-    private Color gray = new Color(0.7735849f, 0.7735849f, 0.7735849f, 0.4901961f);
+    private Language selectedLanguage;
     private bool isSaveButtonActive = false;
-
 
     private void Start() 
     {
@@ -51,19 +48,17 @@ public class LanguageController : MonoBehaviour
     }
 
     public void SelectLanguageElement(Language _languageElement)
-    {
-        
-        if(!_languageElement.IsSelected)
+    {   
+        foreach(Language language in languagesTestList)
         {
-            _languageElement.IsSelected = true;
-            _languageElement.transform.GetChild(2).GetComponent<Image>().color = purple;
-        }
-        else if(_languageElement.IsSelected)
-        {
-            _languageElement.IsSelected = false;
-            _languageElement.transform.GetChild(2).GetComponent<Image>().color = gray;
+            language.IsSelected = false;
+            language.LanguageSelected();
         }
 
-        
+        // !!!
+
+        selectedLanguage = _languageElement;
+        selectedLanguage.IsSelected = true;
+        selectedLanguage.LanguageSelected();
     }
 }

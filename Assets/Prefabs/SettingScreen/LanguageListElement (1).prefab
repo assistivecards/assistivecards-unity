@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 0.49019608}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.49019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -483,3 +483,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd1520b29eb93ad4ca2fcf641e7008db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  appBackgroundMatrial: {fileID: 2100000, guid: 80d5e943dfb60234f9025d0a1a791056, type: 2}
+  inactiveRadioButtoMaterial: {fileID: 2100000, guid: 8bc5b0c6f9dff8e4686220b83506a1e6, type: 2}

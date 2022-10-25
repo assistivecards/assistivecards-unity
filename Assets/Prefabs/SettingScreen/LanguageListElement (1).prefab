@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 183814406401600733}
   - component: {fileID: 1450297828488189903}
   m_Layer: 5
-  m_Name: RoundedCheckBox
+  m_Name: RadioButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 0.49019608}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.49019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 739895867339681493}
   - component: {fileID: 5608454106860530162}
   - component: {fileID: 3887098676563302091}
-  - component: {fileID: 3191918171575979774}
+  - component: {fileID: 7163459763096113766}
   m_Layer: 5
   m_Name: LanguageListElement (1)
   m_TagString: Untagged
@@ -470,20 +470,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5608454106860530162}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3191918171575979774}
-        m_TargetAssemblyTypeName: LanguageSelect, Assembly-CSharp
-        m_MethodName: OnLanguageSelected
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &3191918171575979774
+      m_Calls: []
+--- !u!114 &7163459763096113766
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -492,6 +480,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6934812266916645384}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52c9eb1fb1ad971408af0eae3ae508db, type: 3}
+  m_Script: {fileID: 11500000, guid: bd1520b29eb93ad4ca2fcf641e7008db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  appBackgroundMatrial: {fileID: 2100000, guid: 80d5e943dfb60234f9025d0a1a791056, type: 2}
+  inactiveRadioButtoMaterial: {fileID: 2100000, guid: 8bc5b0c6f9dff8e4686220b83506a1e6, type: 2}

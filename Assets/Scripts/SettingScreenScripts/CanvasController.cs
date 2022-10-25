@@ -12,6 +12,7 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private GameObject profileScreen;
     [SerializeField] private GameObject languageScreen;
     [SerializeField] private GameObject popUp;
+    private GameObject backButton;
 
 
     public void ParentLockButtonClick()

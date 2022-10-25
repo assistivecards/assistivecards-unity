@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 using TMPro;
+using System.Threading.Tasks;
 
 public static class SelectLanguage
 {
@@ -17,14 +18,21 @@ public static class SelectLanguage
 }
 public class LanguageController : MonoBehaviour
 {
+    // public AssistiveCardsSDK.Languages languages = new AssistiveCardsSDK.Languages();
+    // AssistiveCardsSDK assistiveCardsSDK;
+    // public TMP_InputField outputArea;
     public List<Language> languagesTestList = new List<Language>();
     private GameObject languageTemplateElement;
     private GameObject languageElement;
     private Language selectedLanguage;
-    private bool isSaveButtonActive = false;
 
     private void Start() 
     {
+        // assistiveCardsSDK = outputArea.GetComponent<AssistiveCardsSDK>();
+
+        // var languages = assistiveCardsSDK.GetLanguages();
+        
+
         languagesTestList.AddRange(new List<Language>{
             new Language("Turkish", false, "Türkçe"),
             new Language("English", false, "English"),

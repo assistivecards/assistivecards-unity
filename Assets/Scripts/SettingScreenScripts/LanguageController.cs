@@ -18,55 +18,53 @@ public static class SelectLanguage
 }
 public class LanguageController : MonoBehaviour
 {
-    // public AssistiveCardsSDK.Languages languages = new AssistiveCardsSDK.Languages();
-    // AssistiveCardsSDK assistiveCardsSDK;
-    // public TMP_InputField outputArea;
-    public List<Language> languagesTestList = new List<Language>();
+    AssistiveCardsSDK assistiveCardsSDK;
+    public TMP_InputField outputArea;
     private GameObject languageTemplateElement;
     private GameObject languageElement;
-    private Language selectedLanguage;
+    public GameObject selectedLanguage;
+    private AssistiveCardsSDK.Language[] languageArray;
+    public Material appBackgroundMatrial;
+    public Material inactiveRadioButtoMaterial;
+    private List<GameObject> languageGameobjects = new List<GameObject>();
 
-    private void Start() 
+    private void Awake() 
     {
-        // assistiveCardsSDK = outputArea.GetComponent<AssistiveCardsSDK>();
-
-        // var languages = assistiveCardsSDK.GetLanguages();
-        
-
-        languagesTestList.AddRange(new List<Language>{
-            new Language("Turkish", false, "Türkçe"),
-            new Language("English", false, "English"),
-        });
-
-
+        assistiveCardsSDK = outputArea.GetComponent<AssistiveCardsSDK>();
         languageTemplateElement = transform.GetChild(0).gameObject;
+    }
+
+    private async void Start() 
+    {
+        var languages = await assistiveCardsSDK.GetLanguages();
+        languageArray = languages.languages;
         
-        for(int i=0 ; i < languagesTestList.Count; i++)
+        for(int i=0 ; i < languageArray.Length; i++)
         {
             languageElement = Instantiate(languageTemplateElement, transform);
 
-            languageElement.transform.GetChild(0).GetComponent<TMP_Text> ().text = languagesTestList[i].LanguageName;
-            languageElement.transform.GetChild(1).GetComponent<TMP_Text> ().text = languagesTestList[i].LocalName; 
-            languageElement.name = languagesTestList[i].LanguageName;
+            languageElement.transform.GetChild(2).GetComponent<Image>().material = inactiveRadioButtoMaterial;
+            languageElement.transform.GetChild(0).GetComponent<TMP_Text> ().text = languageArray[i].title;
+            languageElement.transform.GetChild(1).GetComponent<TMP_Text> ().text = languageArray[i].native; 
+            languageElement.name = languageArray[i].title;
 
-            languageElement.GetComponent<Button>().AddEventListener  (languageElement.GetComponent<Language>(), SelectLanguageElement);       
+            languageGameobjects.Add(languageElement);
+
+            languageElement.GetComponent<Button>().AddEventListener  (languageElement, SelectLanguageElement);       
         }
 
         Destroy(languageTemplateElement);
     }
 
-    public void SelectLanguageElement(Language _languageElement)
+    public void SelectLanguageElement(GameObject _languageElement)
     {   
-        foreach(Language language in languagesTestList)
+        foreach(GameObject language in languageGameobjects)
         {
-            language.IsSelected = false;
-            language.LanguageSelected();
+            language.transform.GetChild(2).GetComponent<Image>().material = inactiveRadioButtoMaterial;
         }
-
-        // !!!
-
+        
+    
         selectedLanguage = _languageElement;
-        selectedLanguage.IsSelected = true;
-        selectedLanguage.LanguageSelected();
+        selectedLanguage.transform.GetChild(2).GetComponent<Image>().material = appBackgroundMatrial;
     }
 }

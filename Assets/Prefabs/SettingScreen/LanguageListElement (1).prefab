@@ -358,7 +358,6 @@ GameObject:
   - component: {fileID: 739895867339681493}
   - component: {fileID: 5608454106860530162}
   - component: {fileID: 3887098676563302091}
-  - component: {fileID: 7163459763096113766}
   m_Layer: 5
   m_Name: LanguageListElement (1)
   m_TagString: Untagged
@@ -471,17 +470,3 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &7163459763096113766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6934812266916645384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd1520b29eb93ad4ca2fcf641e7008db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  appBackgroundMatrial: {fileID: 2100000, guid: 80d5e943dfb60234f9025d0a1a791056, type: 2}
-  inactiveRadioButtoMaterial: {fileID: 2100000, guid: 8bc5b0c6f9dff8e4686220b83506a1e6, type: 2}

@@ -17,4 +17,9 @@ public class TopAppBarController : MonoBehaviour
     {
         this.transform.parent.gameObject.SetActive(false);
     }
+
+    private void SaveButtonClicked()
+    {
+        //save
+    }
 }

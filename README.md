@@ -254,3 +254,187 @@ Example usage;
 Texture2D[] textures;
 texture = await GetAvatarImagesByCategory("misc",512);
 ```
+
+# Settings API
+
+This is a documentation for the AssistiveCards Settings API, used for storing user preferences.
+
+## SetNickname
+
+Takes in a nickname of type string and stores it in PlayerPrefs.
+
+```Csharp
+public void SetNickname(string nickname)
+```
+
+## GetNickname
+
+Retrieves the nickname data stored in PlayerPrefs.
+
+> Default value is "John Doe".
+
+```Csharp
+public string GetNickname()
+```
+
+## SetLanguage
+
+Takes in a language of type string and stores it in PlayerPrefs.
+
+```Csharp
+public void SetLanguage(string language)
+```
+
+## GetLanguage
+
+Retrieves the language data stored in PlayerPrefs.
+
+> Default value is "English".
+
+```Csharp
+public string GetLanguage()
+```
+
+## SetAvatarImage
+
+Takes in an avatarID of type string and stores it in PlayerPrefs.
+
+```Csharp
+public void SetAvatarImage(string avatarID)
+```
+
+## GetAvatarImage
+
+Returns a sprite corresponding to the avatarID data stored in PlayerPrefs.
+
+> Default value is "default".
+
+```Csharp
+public async Task<Sprite> GetAvatarImage()
+```
+
+## SetReminderPreference
+
+Takes in a period of type string and stores it in PlayerPrefs.
+
+```Csharp
+public void SetReminderPreference(string period)
+```
+
+## GetReminderPreference
+
+Retrieves the reminder period preference data stored in PlayerPrefs.
+
+> Default value is "Weekly".
+
+```Csharp
+public string GetReminderPreference()
+```
+
+## SetUsabilityTipsPreference
+
+Takes in a single parameter of type integer named isUsabilityTipsActive and stores it in PlayerPrefs.
+
+```Csharp
+public void SetUsabilityTipsPreference(int isUsabilityTipsActive)
+```
+
+## GetUsabilityTipsPreference
+
+Retrieves the usability tips preference data stored in PlayerPrefs.
+
+> Default value is 0.
+
+```Csharp
+public int GetUsabilityTipsPreference()
+```
+
+## SetPromotionsNotificationPreference
+
+Takes in a single parameter of type integer named isPromotionsNotificationActive and stores it in PlayerPrefs.
+
+```Csharp
+public void SetPromotionsNotificationPreference(int isPromotionsNotificationActive)
+```
+
+## GetPromotionsNotificationPreference
+
+Retrieves the promotions notification preference data stored in PlayerPrefs.
+
+> Default value is 0.
+
+```Csharp
+public int GetPromotionsNotificationPreference()
+```
+
+## SetTTSPreference
+
+Takes in a single parameter of type string named TTSPreference and stores it in PlayerPrefs.
+
+```Csharp
+public void SetTTSPreference(string TTSPreference)
+```
+
+## GetTTSPreference
+
+Retrieves the TTS voice preference data stored in PlayerPrefs.
+
+> Default value is "Alex".
+
+```Csharp
+public string GetTTSPreference()
+```
+
+## SetHapticsPreference
+
+Takes in a single parameter of type integer named isHapticsActive and stores it in PlayerPrefs.
+
+```Csharp
+public void SetHapticsPreference(int isHapticsActive)
+```
+
+## GetHapticsPreference
+
+Retrieves the haptics preference data stored in PlayerPrefs.
+
+> Default value is 0.
+
+```Csharp
+public int GetHapticsPreference()
+```
+
+## SetActivateOnPressInPreference
+
+Takes in a single parameter of type integer named isPressInActive and stores it in PlayerPrefs.
+
+```Csharp
+public void SetActivateOnPressInPreference(int isPressInActive)
+```
+
+## GetActivateOnPressInPreference
+
+Retrieves the activate on press in preference data stored in PlayerPrefs.
+
+> Default value is 0.
+
+```Csharp
+public int GetActivateOnPressInPreference()
+```
+
+## SetVoiceGreetingPreference
+
+Takes in a single parameter of type integer named isVoiceGreetingActive and stores it in PlayerPrefs.
+
+```Csharp
+public void SetVoiceGreetingPreference(int isVoiceGreetingActive)
+```
+
+## GetVoiceGreetingPreference
+
+Retrieves the voice greeting on start preference data stored in PlayerPrefs.
+
+> Default value is 0.
+
+```Csharp
+public int GetVoiceGreetingPreference()
+```

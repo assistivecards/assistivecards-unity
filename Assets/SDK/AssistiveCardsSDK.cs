@@ -1,29 +1,14 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Networking;
-using TMPro;
 using System;
 using System.Threading.Tasks;
 
 public class AssistiveCardsSDK : MonoBehaviour
 {
-    public TMP_InputField outputArea;
-    public RawImage rawImage;
-    public TMP_InputField avatarImageSizeInput;
-    public TMP_InputField avatarIdInput;
-    public TMP_InputField packImageSizeInput;
-    public TMP_InputField packSlugInput;
-    public TMP_InputField cardImagePackSlugInput;
-    public TMP_InputField cardImageCardSlugInput;
-    public TMP_InputField cardImageSizeInput;
-    public TMP_InputField cardLanguageInput;
-    public TMP_InputField cardPackSlugInput;
-    public TMP_InputField languageCodeInput;
-    public TMP_InputField activitySlugInput;
-    public TMP_InputField cardBySlugInput;
-    public TMP_InputField packBySlugInput;
+    private int boyAvatarArrayLength = 33;
+    private int girlAvatarArrayLength = 27;
+    private int miscAvatarArrayLength = 29;
     private const string api = "https://api.assistivecards.com/";
     private const string metadata = "https://api.assistivecards.com/apps/metadata.json";
 
@@ -212,10 +197,17 @@ public class AssistiveCardsSDK : MonoBehaviour
     public Languages languages = new Languages();
     public Apps apps = new Apps();
 
-    public async void DisplayPacks(string language)
+    private async void Awake()
     {
-        var result = await asyncGetPacks(language);
-        outputArea.text = JsonUtility.ToJson(result);
+        await CacheData();
+    }
+
+    public async Task CacheData()
+    {
+        packs = await GetPacks("en");
+        activities = await GetActivities("en");
+        languages = await GetLanguages();
+        apps = await GetApps();
     }
 
     ///<summary>
@@ -242,22 +234,9 @@ public class AssistiveCardsSDK : MonoBehaviour
             return null;
         else
         {
-            return packs = JsonUtility.FromJson<Packs>("{\"packs\":" + request.downloadHandler.text + "}");
+            var packs = JsonUtility.FromJson<Packs>("{\"packs\":" + request.downloadHandler.text + "}");
+            return packs;
         }
-    }
-
-    public void DisplayCardsOnClick()
-    {
-        var language = cardLanguageInput.text;
-        var packSlug = cardPackSlugInput.text;
-        if (language != null && packSlug != null)
-            DisplayCards(language, packSlug);
-    }
-
-    public async void DisplayCards(string language, string packSlug)
-    {
-        var result = await asyncGetCards(language, packSlug);
-        outputArea.text = JsonUtility.ToJson(result);
     }
 
     ///<summary>
@@ -289,12 +268,6 @@ public class AssistiveCardsSDK : MonoBehaviour
         }
     }
 
-    public async void DisplayActivities(string language)
-    {
-        var result = await asyncGetActivities(language);
-        outputArea.text = JsonUtility.ToJson(result);
-    }
-
     ///<summary>
     ///Takes in a language code of type string and returns an object of type Activities which holds an array of Activity objects in the specified language.
     ///</summary>
@@ -319,15 +292,9 @@ public class AssistiveCardsSDK : MonoBehaviour
             return null;
         else
         {
-            return activities = JsonUtility.FromJson<Activities>("{\"activities\":" + request.downloadHandler.text + "}");
+            var activities = JsonUtility.FromJson<Activities>("{\"activities\":" + request.downloadHandler.text + "}");
+            return activities;
         }
-    }
-
-
-    public async void DisplayLanguages()
-    {
-        var result = await asyncGetLanguages();
-        outputArea.text = JsonUtility.ToJson(result);
     }
 
     ///<summary>
@@ -354,14 +321,9 @@ public class AssistiveCardsSDK : MonoBehaviour
             return null;
         else
         {
-            return languages = JsonUtility.FromJson<Languages>(request.downloadHandler.text);
+            var languages = JsonUtility.FromJson<Languages>(request.downloadHandler.text);
+            return languages;
         }
-    }
-
-    public async void DisplayActivityImage(string activitySlug)
-    {
-        var texture = await asyncGetActivityImage(activitySlug);
-        rawImage.texture = texture;
     }
 
     ///<summary>
@@ -393,31 +355,16 @@ public class AssistiveCardsSDK : MonoBehaviour
         }
     }
 
-    public void DisplayAvatarImageOnClick()
-    {
-        var id = avatarIdInput.text;
-        int size = Int32.Parse(avatarImageSizeInput.text);
-        if (id != null && (size == 256 || size == 512))
-            DisplayAvatarImage(id, size);
-    }
-
-    public async void DisplayAvatarImage(string avatarId, int imgSize)
-    {
-
-        var texture = await asyncGetAvatarImage(avatarId, imgSize);
-        rawImage.texture = texture;
-    }
-
     ///<summary>
-    ///Takes in an avatar ID of type string as the first parameter and an image size of type integer as the second parameter. Returns an object of type Texture2D corresponding to the specified avatar ID and image size.
+    ///Takes in an avatar ID of type string as the first parameter and an optional image size of type integer as the second parameter. Returns an object of type Texture2D corresponding to the specified avatar ID and image size.
     ///</summary>
-    public async Task<Texture2D> GetAvatarImage(string avatarId, int imgSize)
+    public async Task<Texture2D> GetAvatarImage(string avatarId, int imgSize = 256)
     {
         var result = await asyncGetAvatarImage(avatarId, imgSize);
         return result;
     }
 
-    private async Task<Texture2D> asyncGetAvatarImage(string avatarId, int imgSize)
+    private async Task<Texture2D> asyncGetAvatarImage(string avatarId, int imgSize = 256)
     {
         string uri = "";
         if (imgSize == 256)
@@ -448,31 +395,16 @@ public class AssistiveCardsSDK : MonoBehaviour
         }
     }
 
-    public void DisplayPackImageOnClick()
-    {
-        var slug = packSlugInput.text;
-        int size = Int32.Parse(packImageSizeInput.text);
-        if (slug != null && (size == 256 || size == 512))
-            DisplayPackImage(slug, size);
-    }
-
-    public async void DisplayPackImage(string packSlug, int imgSize)
-    {
-
-        var texture = await asyncGetPackImage(packSlug, imgSize);
-        rawImage.texture = texture;
-    }
-
     ///<summary>
-    ///Takes in a pack slug of type string as the first parameter and an image size of type integer as the second parameter. Returns an object of type Texture2D corresponding to the specified pack slug and image size.
+    ///Takes in a pack slug of type string as the first parameter and an optional image size of type integer as the second parameter. Returns an object of type Texture2D corresponding to the specified pack slug and image size.
     ///</summary>
-    public async Task<Texture2D> GetPackImage(string packSlug, int imgSize)
+    public async Task<Texture2D> GetPackImage(string packSlug, int imgSize = 256)
     {
         var result = await asyncGetPackImage(packSlug, imgSize);
         return result;
     }
 
-    private async Task<Texture2D> asyncGetPackImage(string packSlug, int imgSize)
+    private async Task<Texture2D> asyncGetPackImage(string packSlug, int imgSize = 256)
     {
         string uri = "";
         if (imgSize == 256)
@@ -501,12 +433,6 @@ public class AssistiveCardsSDK : MonoBehaviour
             var texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
             return texture;
         }
-    }
-
-    public async void DisplayAppIcon(string appSlug)
-    {
-        var texture = await asyncGetAppIcon(appSlug);
-        rawImage.texture = texture;
     }
 
     ///<summary>
@@ -538,32 +464,16 @@ public class AssistiveCardsSDK : MonoBehaviour
         }
     }
 
-    public void DisplayCardImageOnClick()
-    {
-        var packSlug = cardImagePackSlugInput.text;
-        var cardSlugSlug = cardImageCardSlugInput.text;
-        int size = Int32.Parse(cardImageSizeInput.text);
-        if (packSlug != null && cardSlugSlug != null && (size == 256 || size == 512))
-            DisplayCardImage(packSlug, cardSlugSlug, size);
-    }
-
-    public async void DisplayCardImage(string packSlug, string cardSlug, int imgSize)
-    {
-
-        var texture = await asyncGetCardImage(packSlug, cardSlug, imgSize);
-        rawImage.texture = texture;
-    }
-
     ///<summary>
-    ///Takes in a pack slug of type string as the first parameter, a card slug of type string as the second parameter and an image size of type integer as the third parameter. Returns an object of type Texture2D corresponding to the specified pack slug, card slug and image size.
+    ///Takes in a pack slug of type string as the first parameter, a card slug of type string as the second parameter and an optional image size of type integer as the third parameter. Returns an object of type Texture2D corresponding to the specified pack slug, card slug and image size.
     ///</summary>
-    public async Task<Texture2D> GetCardImage(string packSlug, string cardSlug, int imgSize)
+    public async Task<Texture2D> GetCardImage(string packSlug, string cardSlug, int imgSize = 256)
     {
         var result = await asyncGetCardImage(packSlug, cardSlug, imgSize);
         return result;
     }
 
-    private async Task<Texture2D> asyncGetCardImage(string packSlug, string cardSlug, int imgSize)
+    private async Task<Texture2D> asyncGetCardImage(string packSlug, string cardSlug, int imgSize = 256)
     {
         string uri = "";
         if (imgSize == 256)
@@ -593,11 +503,6 @@ public class AssistiveCardsSDK : MonoBehaviour
             return texture;
         }
     }
-    public async void DisplayApps()
-    {
-        var result = await asyncGetApps();
-        outputArea.text = JsonUtility.ToJson(result);
-    }
 
     ///<summary>
     ///Returns an object of type Apps which holds an array of App objects.
@@ -620,8 +525,8 @@ public class AssistiveCardsSDK : MonoBehaviour
             return null;
         else
         {
-            outputArea.text = request.downloadHandler.text;
-            return apps = JsonUtility.FromJson<Apps>(request.downloadHandler.text);
+            var apps = JsonUtility.FromJson<Apps>(request.downloadHandler.text);
+            return apps;
         }
     }
 
@@ -638,12 +543,6 @@ public class AssistiveCardsSDK : MonoBehaviour
         return null;
     }
 
-    public void DisplayPackBySlug()
-    {
-        var result = GetPackBySlug(packs, packBySlugInput.text);
-        outputArea.text = JsonUtility.ToJson(result);
-    }
-
     ///<summary>
     ///Takes in an object of type Cards as the first parameter and a card slug of type string as the second parameter. Filters the given array of cards and returns an object of type Card corresponding to the specified card slug.
     ///</summary>
@@ -655,12 +554,6 @@ public class AssistiveCardsSDK : MonoBehaviour
                 return cards.cards[i];
         }
         return null;
-    }
-
-    public void DisplayCardBySlug()
-    {
-        var result = GetCardBySlug(cards, cardBySlugInput.text);
-        outputArea.text = JsonUtility.ToJson(result);
     }
 
     ///<summary>
@@ -676,12 +569,6 @@ public class AssistiveCardsSDK : MonoBehaviour
         return null;
     }
 
-    public void DisplayActivityBySlug()
-    {
-        var result = GetActivityBySlug(activities, activitySlugInput.text);
-        outputArea.text = JsonUtility.ToJson(result);
-    }
-
     ///<summary>
     ///Takes in an object of type Languages as the first parameter and a language code of type string as the second parameter. Filters the given array of languages and returns an object of type Language corresponding to the specified language code.
     ///</summary>
@@ -695,9 +582,56 @@ public class AssistiveCardsSDK : MonoBehaviour
         return null;
     }
 
-    public void DisplayLanguageByCode()
+    ///<summary>
+    ///Takes in a language code of type string as the first parameter, a pack slug of type string as the second parameter and an optional image size of type integer as the third parameter. Returns an array of Texture2D objects corresponding to the specified language, pack slug and image size.
+    ///</summary>
+    public async Task<Texture2D[]> GetCardImagesByPack(string languageCode, string packSlug, int imgSize = 256)
     {
-        var result = GetLanguageByCode(languages, languageCodeInput.text);
-        outputArea.text = JsonUtility.ToJson(result);
+        var cards = await GetCards(languageCode, packSlug);
+        Texture2D[] textures = new Texture2D[cards.cards.Length];
+        for (int i = 0; i < cards.cards.Length; i++)
+        {
+            textures[i] = await GetCardImage(packSlug, cards.cards[i].slug);
+        }
+        return textures;
+    }
+
+    ///<summary>
+    ///Takes in a category of type string as the first parameter and an optional image size of type integer as the second parameter. Returns an array of Texture2D objects corresponding to the specified category and image size.
+    ///</summary>
+    public async Task<Texture2D[]> GetAvatarImagesByCategory(string category, int imgSize = 256)
+    {
+        Texture2D[] textures;
+        if (category == "boy")
+        {
+            textures = new Texture2D[boyAvatarArrayLength];
+
+            for (int i = 0; i < boyAvatarArrayLength; i++)
+            {
+                textures[i] = await GetAvatarImage("boy" + (i + 1).ToString("D2"));
+            }
+            return textures;
+        }
+        else if (category == "girl")
+        {
+            textures = new Texture2D[girlAvatarArrayLength];
+
+            for (int i = 0; i < girlAvatarArrayLength; i++)
+            {
+                textures[i] = await GetAvatarImage("girl" + (i + 1).ToString("D2"));
+            }
+            return textures;
+        }
+        else if (category == "misc")
+        {
+            textures = new Texture2D[miscAvatarArrayLength];
+
+            for (int i = 0; i < miscAvatarArrayLength; i++)
+            {
+                textures[i] = await GetAvatarImage("misc" + (i + 1).ToString("D2"));
+            }
+            return textures;
+        }
+        return null;
     }
 }

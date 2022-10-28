@@ -469,8 +469,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 109690161}
-        m_TargetAssemblyTypeName: AssistiveCardsSDK, Assembly-CSharp
+      - m_Target: {fileID: 1593115926}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: DisplayCardBySlug
         m_Mode: 1
         m_Arguments:
@@ -551,21 +551,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d55775acb51d24ab42d6be402e5530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputArea: {fileID: 109690162}
-  rawImage: {fileID: 433960622}
-  avatarImageSizeInput: {fileID: 1162247320}
-  avatarIdInput: {fileID: 2116866926}
-  packImageSizeInput: {fileID: 1433293014}
-  packSlugInput: {fileID: 144211687}
-  cardImagePackSlugInput: {fileID: 175222227}
-  cardImageCardSlugInput: {fileID: 986094239}
-  cardImageSizeInput: {fileID: 317071538}
-  cardLanguageInput: {fileID: 2045466861}
-  cardPackSlugInput: {fileID: 540422846}
-  languageCodeInput: {fileID: 743951068}
-  activitySlugInput: {fileID: 560258621}
-  cardBySlugInput: {fileID: 1998927107}
-  packBySlugInput: {fileID: 1461314254}
   packs:
     packs: []
   cards:
@@ -1202,8 +1187,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 109690161}
-        m_TargetAssemblyTypeName: AssistiveCardsSDK, Assembly-CSharp
+      - m_Target: {fileID: 1593115926}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: DisplayLanguageByCode
         m_Mode: 1
         m_Arguments:
@@ -1512,8 +1497,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 109690161}
-        m_TargetAssemblyTypeName: AssistiveCardsSDK, Assembly-CSharp
+      - m_Target: {fileID: 1593115926}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: DisplayActivities
         m_Mode: 5
         m_Arguments:
@@ -3341,8 +3326,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 109690161}
-        m_TargetAssemblyTypeName: AssistiveCardsSDK, Assembly-CSharp
+      - m_Target: {fileID: 1593115926}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: DisplayPackBySlug
         m_Mode: 1
         m_Arguments:
@@ -3585,6 +3570,8 @@ MonoBehaviour:
     rightToLeft: 0
     readproof: 0
   outputArea: {fileID: 109690162}
+  cardTextures: []
+  avatarTextures: []
   testTexture: {fileID: 0}
 --- !u!1 &540422844
 GameObject:
@@ -4718,8 +4705,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 109690161}
-        m_TargetAssemblyTypeName: AssistiveCardsSDK, Assembly-CSharp
+      - m_Target: {fileID: 1593115926}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: DisplayAppIcon
         m_Mode: 5
         m_Arguments:
@@ -6453,9 +6440,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 109690161}
-        m_TargetAssemblyTypeName: AssistiveCardsSDK, Assembly-CSharp
-        m_MethodName: DisplayCardsOnClick
+      - m_Target: {fileID: 1593115926}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: DisplayCards
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6722,8 +6709,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 109690161}
-        m_TargetAssemblyTypeName: AssistiveCardsSDK, Assembly-CSharp
+      - m_Target: {fileID: 1593115926}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: DisplayActivityBySlug
         m_Mode: 1
         m_Arguments:
@@ -6856,8 +6843,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 109690161}
-        m_TargetAssemblyTypeName: AssistiveCardsSDK, Assembly-CSharp
+      - m_Target: {fileID: 1593115926}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: DisplayApps
         m_Mode: 1
         m_Arguments:
@@ -8882,6 +8869,7 @@ GameObject:
   - component: {fileID: 1593115924}
   - component: {fileID: 1593115923}
   - component: {fileID: 1593115922}
+  - component: {fileID: 1593115926}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -8999,6 +8987,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1593115926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593115921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e20e971c9d7f211459037b4499b0c3fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SDK: {fileID: 109690160}
+  outputArea: {fileID: 109690162}
+  rawImage: {fileID: 433960622}
+  avatarImageSizeInput: {fileID: 1162247320}
+  avatarIdInput: {fileID: 2116866926}
+  packImageSizeInput: {fileID: 1433293014}
+  packSlugInput: {fileID: 144211687}
+  cardImagePackSlugInput: {fileID: 175222227}
+  cardImageCardSlugInput: {fileID: 986094239}
+  cardImageSizeInput: {fileID: 317071538}
+  cardLanguageInput: {fileID: 2045466861}
+  cardPackSlugInput: {fileID: 540422846}
+  languageCodeInput: {fileID: 743951068}
+  activitySlugInput: {fileID: 560258621}
+  cardBySlugInput: {fileID: 1998927107}
+  packBySlugInput: {fileID: 1461314254}
 --- !u!1 &1657868211
 GameObject:
   m_ObjectHideFlags: 0
@@ -9083,9 +9099,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 109690161}
-        m_TargetAssemblyTypeName: AssistiveCardsSDK, Assembly-CSharp
-        m_MethodName: DisplayPackImageOnClick
+      - m_Target: {fileID: 1593115926}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: DisplayPackImage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9217,8 +9233,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 109690161}
-        m_TargetAssemblyTypeName: AssistiveCardsSDK, Assembly-CSharp
+      - m_Target: {fileID: 1593115926}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: DisplayActivityImage
         m_Mode: 5
         m_Arguments:
@@ -9404,9 +9420,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 109690161}
-        m_TargetAssemblyTypeName: AssistiveCardsSDK, Assembly-CSharp
-        m_MethodName: DisplayAvatarImageOnClick
+      - m_Target: {fileID: 1593115926}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: DisplayAvatarImage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10516,8 +10532,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 109690161}
-        m_TargetAssemblyTypeName: AssistiveCardsSDK, Assembly-CSharp
+      - m_Target: {fileID: 1593115926}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: DisplayPacks
         m_Mode: 5
         m_Arguments:
@@ -11414,8 +11430,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 109690161}
-        m_TargetAssemblyTypeName: AssistiveCardsSDK, Assembly-CSharp
+      - m_Target: {fileID: 1593115926}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: DisplayLanguages
         m_Mode: 1
         m_Arguments:

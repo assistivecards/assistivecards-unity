@@ -8,10 +8,11 @@ using UnityEngine.Events;
 public class CanvasController : MonoBehaviour
 {
     [SerializeField] private GameObject mainSettingsScreen;
+    [SerializeField] private GameObject popUp;
     [SerializeField] private GameObject parentLockScreen;
     [SerializeField] private GameObject profileScreen;
     [SerializeField] private GameObject languageScreen;
-    [SerializeField] private GameObject popUp;
+    [SerializeField] private GameObject ttsScreen;
     private GameObject backButton;
 
 
@@ -37,6 +38,12 @@ public class CanvasController : MonoBehaviour
     {
         LeanTween.scale(languageScreen,  Vector3.one, 0.2f);
         languageScreen.SetActive(true);
+    }
+
+    public void TTSButtonClicked()
+    {
+        LeanTween.scale(ttsScreen,  Vector3.one, 0.2f);
+        ttsScreen.SetActive(true);
     }
 
 }

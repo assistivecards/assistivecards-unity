@@ -51,8 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 077449b9b0051ff4580b2b8dab0c0fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backButton: {fileID: 773758866384401560}
-  saveButton: {fileID: 773758865873878607}
 --- !u!1 &773758865117160101
 GameObject:
   m_ObjectHideFlags: 0

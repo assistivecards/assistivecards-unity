@@ -3,20 +3,17 @@ using UnityEngine.UI;
 
 public class AvatarButtonScript : MonoBehaviour
 {
-    AssistiveCardsSDK assistiveCardsSDK;
-    public GameObject SDK;
+    GameAPI.AssistiveCardsSDK assistiveCardsSDK = new GameAPI.AssistiveCardsSDK();
+    GameAPI.SettingsAPI settingsAPI = new GameAPI.SettingsAPI();
     private Image avatarButtonImage;
     private Texture2D avatarTexture;
     private Sprite sprite;
-    SettingsAPI settingsAPI;
     SettingsUIManager settingsUIManager;
     [SerializeField] Canvas canvas;
 
 
     private void Awake()
     {
-        assistiveCardsSDK = SDK.GetComponent<AssistiveCardsSDK>();
-        settingsAPI = SDK.GetComponent<SettingsAPI>();
         settingsUIManager = canvas.GetComponent<SettingsUIManager>();
     }
 

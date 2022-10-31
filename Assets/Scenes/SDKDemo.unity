@@ -531,7 +531,6 @@ GameObject:
   - component: {fileID: 109690164}
   - component: {fileID: 109690163}
   - component: {fileID: 109690162}
-  - component: {fileID: 109690161}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -539,28 +538,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &109690161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 109690160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49d55775acb51d24ab42d6be402e5530, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  packs:
-    packs: []
-  cards:
-    cards: []
-  activities:
-    activities: []
-  languages:
-    languages: []
-  apps:
-    apps: []
 --- !u!114 &109690162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3461,6 +3438,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3569,10 +3547,29 @@ MonoBehaviour:
     native: 
     rightToLeft: 0
     readproof: 0
-  outputArea: {fileID: 109690162}
   cardTextures: []
   avatarTextures: []
   testTexture: {fileID: 0}
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3cd33420fa181740a1fa665fde177b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cachedPacks:
+    packs: []
+  cachedActivities:
+    activities: []
+  cachedLanguages:
+    languages: []
+  cachedApps:
+    apps: []
 --- !u!1 &540422844
 GameObject:
   m_ObjectHideFlags: 0
@@ -8999,7 +8996,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e20e971c9d7f211459037b4499b0c3fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SDK: {fileID: 109690160}
   outputArea: {fileID: 109690162}
   rawImage: {fileID: 433960622}
   avatarImageSizeInput: {fileID: 1162247320}

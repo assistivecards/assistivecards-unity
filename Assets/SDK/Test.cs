@@ -3,24 +3,20 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-
-    private AssistiveCardsSDK.Languages languages = new AssistiveCardsSDK.Languages();
-    private AssistiveCardsSDK.Packs packs = new AssistiveCardsSDK.Packs();
-    private AssistiveCardsSDK.Activities activities = new AssistiveCardsSDK.Activities();
-    private AssistiveCardsSDK.Cards cards = new AssistiveCardsSDK.Cards();
-    [SerializeField] AssistiveCardsSDK.Pack packResult = new AssistiveCardsSDK.Pack();
-    [SerializeField] AssistiveCardsSDK.Card cardResult = new AssistiveCardsSDK.Card();
-    [SerializeField] AssistiveCardsSDK.Activity activityResult = new AssistiveCardsSDK.Activity();
-    [SerializeField] AssistiveCardsSDK.Language languageResult = new AssistiveCardsSDK.Language();
-    AssistiveCardsSDK assistiveCardsSDK;
-    public TMP_InputField outputArea;
+    [SerializeField] GameAPI.AssistiveCardsSDK.Pack packResult = new GameAPI.AssistiveCardsSDK.Pack();
+    [SerializeField] GameAPI.AssistiveCardsSDK.Card cardResult = new GameAPI.AssistiveCardsSDK.Card();
+    [SerializeField] GameAPI.AssistiveCardsSDK.Activity activityResult = new GameAPI.AssistiveCardsSDK.Activity();
+    [SerializeField] GameAPI.AssistiveCardsSDK.Language languageResult = new GameAPI.AssistiveCardsSDK.Language();
+    GameAPI.AssistiveCardsSDK assistiveCardsSDK = new GameAPI.AssistiveCardsSDK();
+    GameAPI gameAPI;
+    // public TMP_InputField outputArea;
     [SerializeField] Texture2D[] cardTextures;
     [SerializeField] Texture2D[] avatarTextures;
     [SerializeField] private Texture2D testTexture;
 
     private void Awake()
     {
-        assistiveCardsSDK = outputArea.GetComponent<AssistiveCardsSDK>();
+        gameAPI = Camera.main.GetComponent<GameAPI>();
     }
 
     // private async void CacheData()
@@ -40,10 +36,9 @@ public class Test : MonoBehaviour
         testTexture = await assistiveCardsSDK.GetPackImage("animals");
         cardTextures = await assistiveCardsSDK.GetCardImagesByPack("en", "school");
         avatarTextures = await assistiveCardsSDK.GetAvatarImagesByCategory("misc");
-        packResult = assistiveCardsSDK.GetPackBySlug(assistiveCardsSDK.packs, "animals");
-        //cardResult = assistiveCardsSDK.GetCardBySlug(cards, "bee");
-        activityResult = assistiveCardsSDK.GetActivityBySlug(assistiveCardsSDK.activities, "practicing-speaking");
-        languageResult = assistiveCardsSDK.GetLanguageByCode(assistiveCardsSDK.languages, "en");
+        packResult = assistiveCardsSDK.GetPackBySlug(gameAPI.cachedPacks, "animals");
+        activityResult = assistiveCardsSDK.GetActivityBySlug(gameAPI.cachedActivities, "practicing-speaking");
+        languageResult = assistiveCardsSDK.GetLanguageByCode(gameAPI.cachedLanguages, "en");
     }
 
 }

@@ -271,7 +271,7 @@ public void SetNickname(string nickname)
 
 Retrieves the nickname data stored in PlayerPrefs.
 
-> Default value is "John Doe".
+> Default value is "".
 
 ```Csharp
 public string GetNickname()
@@ -289,7 +289,7 @@ public void SetLanguage(string language)
 
 Retrieves the language data stored in PlayerPrefs.
 
-> Default value is "English".
+> Default value is system language.
 
 ```Csharp
 public string GetLanguage()
@@ -305,7 +305,7 @@ public void SetAvatarImage(string avatarID)
 
 ## GetAvatarImage
 
-Returns a sprite corresponding to the avatarID data stored in PlayerPrefs.
+Retrieves a sprite corresponding to the avatarID data stored in PlayerPrefs.
 
 > Default value is "default".
 
@@ -343,7 +343,7 @@ public void SetUsabilityTipsPreference(int isUsabilityTipsActive)
 
 Retrieves the usability tips preference data stored in PlayerPrefs.
 
-> Default value is 0.
+> Default value is 1.
 
 ```Csharp
 public int GetUsabilityTipsPreference()

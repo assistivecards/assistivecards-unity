@@ -5,8 +5,8 @@ using System;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] GameObject SDK;
-    AssistiveCardsSDK assistiveCardsSDK;
+    GameAPI.AssistiveCardsSDK assistiveCardsSDK = new GameAPI.AssistiveCardsSDK();
+    GameAPI gameAPI;
     public TMP_InputField outputArea;
     public RawImage rawImage;
     public TMP_InputField avatarImageSizeInput;
@@ -23,9 +23,13 @@ public class UIManager : MonoBehaviour
     public TMP_InputField cardBySlugInput;
     public TMP_InputField packBySlugInput;
 
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
+
     private void Start()
     {
-        assistiveCardsSDK = SDK.GetComponent<AssistiveCardsSDK>();
         cardImageSizeInput.text = "256";
         avatarImageSizeInput.text = "256";
         packImageSizeInput.text = "256";
@@ -102,7 +106,7 @@ public class UIManager : MonoBehaviour
 
     public void DisplayPackBySlug()
     {
-        var result = assistiveCardsSDK.GetPackBySlug(assistiveCardsSDK.packs, packBySlugInput.text);
+        var result = assistiveCardsSDK.GetPackBySlug(gameAPI.cachedPacks, packBySlugInput.text);
         outputArea.text = JsonUtility.ToJson(result);
     }
 
@@ -114,13 +118,13 @@ public class UIManager : MonoBehaviour
 
     public void DisplayActivityBySlug()
     {
-        var result = assistiveCardsSDK.GetActivityBySlug(assistiveCardsSDK.activities, activitySlugInput.text);
+        var result = assistiveCardsSDK.GetActivityBySlug(gameAPI.cachedActivities, activitySlugInput.text);
         outputArea.text = JsonUtility.ToJson(result);
     }
 
     public void DisplayLanguageByCode()
     {
-        var result = assistiveCardsSDK.GetLanguageByCode(assistiveCardsSDK.languages, languageCodeInput.text);
+        var result = assistiveCardsSDK.GetLanguageByCode(gameAPI.cachedLanguages, languageCodeInput.text);
         outputArea.text = JsonUtility.ToJson(result);
     }
 }

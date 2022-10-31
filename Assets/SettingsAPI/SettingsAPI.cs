@@ -25,7 +25,7 @@ public class SettingsAPI : MonoBehaviour
     ///</summary>
     public string GetNickname()
     {
-        return PlayerPrefs.GetString("Nickname", "John Doe");
+        return PlayerPrefs.GetString("Nickname", "");
     }
 
     ///<summary>
@@ -41,7 +41,7 @@ public class SettingsAPI : MonoBehaviour
     ///</summary>
     public string GetLanguage()
     {
-        return PlayerPrefs.GetString("Language", "English");
+        return PlayerPrefs.GetString("Language", Application.systemLanguage.ToString());
     }
 
     ///<summary>
@@ -91,7 +91,7 @@ public class SettingsAPI : MonoBehaviour
     ///</summary>
     public int GetUsabilityTipsPreference()
     {
-        return PlayerPrefs.GetInt("UsabilityTipsPreference", 0);
+        return PlayerPrefs.GetInt("UsabilityTipsPreference", 1);
     }
 
     ///<summary>
@@ -172,6 +172,11 @@ public class SettingsAPI : MonoBehaviour
     public int GetVoiceGreetingPreference()
     {
         return PlayerPrefs.GetInt("VoiceGreetingPreference", 0);
+    }
+
+    public void ClearAllPrefs()
+    {
+        PlayerPrefs.DeleteAll();
     }
 
 }

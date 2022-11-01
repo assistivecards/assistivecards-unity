@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: b4a0097994bf44e42a48c53d2e49185b
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Noto Sans Sinhala
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e1d887575637ecf4faa4eebff10f03f7, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

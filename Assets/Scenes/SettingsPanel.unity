@@ -1944,7 +1944,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0.000030517578, y: -0.000061035156}
-  m_SizeDelta: {x: 0.000069555594, y: -804.17004}
+  m_SizeDelta: {x: 0.000069555594, y: -393.3081}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &193430775
 MonoBehaviour:
@@ -4097,7 +4097,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2476999774554d04b845e14fe8692a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SDK: {fileID: 334446880}
   canvas: {fileID: 68398934}
 --- !u!114 &474648697
 MonoBehaviour:
@@ -6297,7 +6296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3800991813700602138, guid: 63c5703ed7fc74c4a841826d3fc57f51, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 847.6429
+      value: 808.30493
       objectReference: {fileID: 0}
     - target: {fileID: 3800991813700602138, guid: 63c5703ed7fc74c4a841826d3fc57f51, type: 3}
       propertyPath: m_SizeDelta.y
@@ -6333,7 +6332,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3800991813700602138, guid: 63c5703ed7fc74c4a841826d3fc57f51, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 423.82144
+      value: 404.15247
       objectReference: {fileID: 0}
     - target: {fileID: 3800991813700602138, guid: 63c5703ed7fc74c4a841826d3fc57f51, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -11020,8 +11019,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -26.6985, y: -699.56}
-  m_SizeDelta: {x: 847.6428, y: 978.21}
+  m_AnchoredPosition: {x: -46.3675, y: -494.129}
+  m_SizeDelta: {x: 808.3049, y: 567.3481}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1572073349
 MonoBehaviour:
@@ -13336,7 +13335,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2476999774554d04b845e14fe8692a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SDK: {fileID: 334446880}
   canvas: {fileID: 68398934}
 --- !u!114 &1936742508
 MonoBehaviour:
@@ -14404,7 +14402,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2476999774554d04b845e14fe8692a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SDK: {fileID: 334446880}
   canvas: {fileID: 68398934}
 --- !u!114 &2074553194
 MonoBehaviour:

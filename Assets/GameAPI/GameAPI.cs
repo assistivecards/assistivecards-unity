@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System;
 using System.Threading.Tasks;
+using System.IO;
+using Defective.JSON;
 
 public class GameAPI : MonoBehaviour
 {
@@ -812,5 +814,209 @@ public class GameAPI : MonoBehaviour
 
     }
 
+    public class LanguageManager
+    {
+        AssistiveCardsSDK assistiveCardsSDK = new AssistiveCardsSDK();
+        SettingsAPI settingsAPI = new SettingsAPI();
 
+        [Serializable]
+        public class IDs
+        {
+            public string hello_you;
+            public string settings_packs;
+            public string settings_cards;
+            public string this_is_test_voice;
+            public string settings_selection_account;
+            public string settings_account_description;
+            public string settings_account_section1_title;
+            public string settings_account_section1_description;
+            public string settings_change_avatar_title;
+            public string settings_change_avatar_description;
+            public string settings_selection_language;
+            public string settings_language_description;
+            public string settings_language_basedOnYourDevice;
+            public string settings_language_basedOnYourDevice_description;
+            public string settings_language_supportedLanguages;
+            public string settings_language_supportedLanguages_description;
+            public string settings_selection_accent;
+            public string settings_accent_description;
+            public string settings_selection_voice;
+            public string settings_voice_description;
+            public string settings_voice_basedOnYourLocation;
+            public string settings_voice_basedOnYourLocation_description;
+            public string settings_voice_supportedVoice;
+            public string settings_voice_supportedVoice_description;
+            public string settings_selection_notifications;
+            public string settings_notifications_description;
+            public string settings_notifications_reminders;
+            public string settings_notifications_reminders_description;
+            public string settings_notifications_reminders_daily;
+            public string settings_notifications_reminders_daily_description;
+            public string settings_notifications_reminders_weekly;
+            public string settings_notifications_reminders_weekly_description;
+            public string settings_notifications_tipsAndPromo;
+            public string settings_notifications_tipsAndPromo_description;
+            public string settings_notifications_tipsAndPromo_tips;
+            public string settings_notifications_tipsAndPromo_tips_description;
+            public string settings_notifications_tipsAndPromo_promotion;
+            public string settings_notifications_tipsAndPromo_promotion_description;
+            public string settings_selection_subscriptions;
+            public string settings_subscriptions_description;
+            public string settings_subscriptions_cancel_notice;
+            public string settings_subscriptions_downgrade_notice;
+            public string settings_subscriptions_oneTimePayment;
+            public string settings_subscriptions_recurringPayment;
+            public string settings_selection_apps;
+            public string settings_selection_apps_new;
+            public string settings_apps_description;
+            public string settings_selection_signout;
+            public string settings_selection_sendFeedback;
+            public string settings_selection_openSourceLicenses;
+            public string settings_selection_privacyPolicy;
+            public string settings_selection_termsOfService;
+            public string settings_selection_removeMyData;
+            public string settings_selection_aboutapp;
+            public string settings_aboutapp_description;
+            public string settings_selection_company;
+            public string settings_selection_accessibility;
+            public string settings_accessibility_description;
+            public string settings_accessibility_sensory;
+            public string settings_accessibility_sensory_description;
+            public string settings_accessibility_sensory_haptic;
+            public string settings_accessibility_sensory_haptic_description;
+            public string settings_accessibility_sensory_pressIn;
+            public string settings_accessibility_sensory_pressIn_description;
+            public string settings_accessibility_greeding_on_start;
+            public string settings_accessibility_greeding_on_start_description;
+            public string settings_removeMyData_description;
+            public string settings_removeMyData_p1;
+            public string settings_removeMyData_p2;
+            public string settings_removeMyData_p3;
+            public string settings_removeMyData_p4;
+            public string settings_removeMyData_button;
+            public string settings_locked_title;
+            public string settings_locked_description;
+            public string settings_share_title;
+            public string settings_share_message;
+            public string settings_share_url;
+            public string settings_selection_share_the_app;
+            public string settings_selection_rate_the_app;
+            public string settings_profile_active;
+            public string settings_restore_purchases;
+            public string settings_restore_purchases_desc;
+            public string settings_restore_purchases_final;
+            public string settings_redeem_promo;
+            public string settings_redeem_promo_desc;
+            public string setup_create_profile_title;
+            public string setup_create_profile_description;
+            public string setup_your_name;
+            public string setup_avatar_title;
+            public string setup_avatar_description;
+            public string setup_label_boy;
+            public string setup_label_girl;
+            public string setup_label_mixed;
+            public string setup_notification_title;
+            public string setup_notification_description;
+            public string setup_notification_badge_title;
+            public string setup_notification_badge_description;
+            public string setup_congrats_title;
+            public string setup_congrats_description;
+            public string setup_welcome_description;
+            public string search_input_placeholder;
+            public string training_button_skip;
+            public string training_button_listen;
+            public string training_tip;
+            public string training_button_choose;
+            public string training_button_restart;
+            public string training_title_great_work;
+            public string training_desc_done;
+            public string home_title;
+            public string home_premium;
+            public string home_settings;
+            public string premium_title;
+            public string premium_description;
+            public string premium_monthly;
+            public string premium_yearly;
+            public string premium_yearly_sub;
+            public string premium_then_info;
+            public string premium_lifetime;
+            public string premium_lifetime_oneTime;
+            public string premium_save_percent;
+            public string premium_monthly_priceShow;
+            public string premium_yearly_priceShow;
+            public string premium_see_title;
+            public string premium_see_description;
+            public string premium_card_count;
+            public string premium_phrase_count;
+            public string premium_trial_title;
+            public string premium_trial_description;
+            public string premium_details1;
+            public string premium_details2;
+            public string premium_details3;
+            public string premium_details4;
+            public string premium_details5;
+            public string premium_promo_title;
+            public string premium_promo_desc1;
+            public string premium_promo_desc2;
+            public string card_header_subtitle;
+            public string card_button_start_training;
+            public string button_next;
+            public string button_start;
+            public string button_use;
+            public string button_using;
+            public string button_add;
+            public string button_remove;
+            public string button_get_started;
+            public string edit_profile;
+            public string alert_yourDeviceDoesNotSupportTTS;
+            public string alert_ok;
+            public string alert_cancel;
+            public string congrats_title;
+            public string congrats_description;
+            public string yesterday;
+            public string today;
+            public string tomorrow;
+            public string yesterday_add;
+            public string today_add;
+            public string tomorrow_add;
+            public string no_tasks_yet;
+            public string no_tasks_yet_desc;
+            public string add_tasks_title;
+            public string edit_list;
+            public string complete_editing;
+        }
+
+        public async Task<string> Translate(string UITextID)
+        {
+            string code = await GetSystemLanguageCode();
+            var path = Application.dataPath + "/Resources/" + code + ".json";
+            string contents = File.ReadAllText(path);
+            JSONObject obj = new JSONObject(contents);
+            return obj[UITextID].ToString().Replace("\"", "");
+        }
+
+        public async Task<string> Translate(string UITextID, string variable)
+        {
+            string code = await GetSystemLanguageCode();
+            var path = Application.dataPath + "/Resources/" + code + ".json";
+            string contents = File.ReadAllText(path);
+            JSONObject obj = new JSONObject(contents);
+            return (obj[UITextID].ToString().Replace("$1", variable)).Replace("\"", "");
+        }
+
+        public async Task<string> GetSystemLanguageCode()
+        {
+            var langs = await assistiveCardsSDK.GetLanguages();
+            var selectedLang = settingsAPI.GetLanguage();
+
+            foreach (var lang in langs.languages)
+            {
+                if (selectedLang == lang.title)
+                {
+                    return lang.code;
+                }
+            }
+            return null;
+        }
+    }
 }

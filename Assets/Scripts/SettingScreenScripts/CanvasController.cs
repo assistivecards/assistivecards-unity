@@ -2,18 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 
 
 public class CanvasController : MonoBehaviour
 {
+
+    AssistiveCardsSDK assistiveCardsSDK;
+    public GameObject SDK;
+    SettingsAPI settingsAPI;
+    SettingsUIManager settingsUIManager;
+    [SerializeField] Canvas canvas;
+
+
+    [SerializeField] private GameObject profileImage;
     [SerializeField] private GameObject mainSettingsScreen;
     [SerializeField] private GameObject popUp;
     [SerializeField] private GameObject parentLockScreen;
     [SerializeField] private GameObject profileScreen;
     [SerializeField] private GameObject languageScreen;
     [SerializeField] private GameObject ttsScreen;
+    [SerializeField] private GameObject notification;
     private GameObject backButton;
+
+    private void Awake()
+    {
+        assistiveCardsSDK = SDK.GetComponent<AssistiveCardsSDK>();
+        settingsAPI = SDK.GetComponent<SettingsAPI>();
+        settingsUIManager = canvas.GetComponent<SettingsUIManager>();
+    }
+
+    private async void Start() 
+    {
+        profileImage.GetComponent<Image>().sprite = await settingsAPI.GetAvatarImage();
+    }
 
 
     public void ParentLockButtonClick()
@@ -44,6 +67,12 @@ public class CanvasController : MonoBehaviour
     {
         LeanTween.scale(ttsScreen,  Vector3.one, 0.2f);
         ttsScreen.SetActive(true);
+    }
+    
+    public void NotificationButtonClicked()
+    {
+        LeanTween.scale(notification,  Vector3.one, 0.2f);
+        notification.SetActive(true);
     }
 
 }

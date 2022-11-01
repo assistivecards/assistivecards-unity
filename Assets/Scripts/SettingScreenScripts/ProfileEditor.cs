@@ -7,12 +7,38 @@ using TMPro;
 
 public class ProfileEditor : MonoBehaviour
 {
+    SettingsAPI settingsAPI;
+    [SerializeField] GameObject api;
+    public TMP_InputField nicknameInputField;
+    private string nickname;
+    public Button selectAvatarButton;
+
+
     [SerializeField] private TMP_InputField nicknameField;
     [SerializeField] private Button saveButton;
 
-    public void Start()
+
+    private void Awake() 
+    {
+        settingsAPI = api.GetComponent<SettingsAPI>();
+        nickname = settingsAPI.GetNickname();
+    }
+
+    public async void Start()
     {
         nicknameField.onValueChanged.AddListener(delegate {ValueChangeCheck(); });
+
+        selectAvatarButton.image.sprite = await settingsAPI.GetAvatarImage();
+    }
+
+    private void Update() 
+    {
+        nickname = settingsAPI.GetNickname();
+    }
+
+    public void SaveSettings()
+    {
+        settingsAPI.SetNickname(nicknameInputField.text);
     }
     public void ValueChangeCheck()
     {

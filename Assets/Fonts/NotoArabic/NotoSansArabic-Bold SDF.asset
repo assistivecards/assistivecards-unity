@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: NotoSansArabic-Bold SDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 1853562742
   material: {fileID: 2249555700012135608}
-  materialHashCode: 0
+  materialHashCode: 82859798
   m_Version: 1.1.0
   m_SourceFontFileGUID: bc15489b2586e1f408d16c2c0ee7f67e
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: bc15489b2586e1f408d16c2c0ee7f67e, type: 3}

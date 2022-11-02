@@ -13,6 +13,7 @@ public class LanguageController : MonoBehaviour
     public UnityEvent newLanguageSelected;
     private SupportedLanguagesPanel supportedLanguagesPanel;
     private DeviceLanguagePanel deviceLanguagePanel;
+    [SerializeField] private RightToLeftTextChanger rightToLeftTextChanger;
     [SerializeField] private Material inactiveRadioButtoMaterial;
     [SerializeField] private Material appBackgroundMatrial;
     [SerializeField] private Button saveButton;
@@ -34,7 +35,14 @@ public class LanguageController : MonoBehaviour
         saveButton.interactable = true;
         selectedLanguage = _languageElement;
         selectedLanguage.transform.GetChild(2).GetComponent<Image>().material = appBackgroundMatrial;
-
+        if(selectedLanguage.name == "Arabic" || selectedLanguage.name == "Urdu")
+        {
+            rightToLeftTextChanger.RightToLeftLangugeChanged();
+        }
+        else
+        {
+            rightToLeftTextChanger.LeftToRightLanguageChanged();
+        }
         newLanguageSelected.Invoke();
     }
 }

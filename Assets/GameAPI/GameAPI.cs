@@ -9,16 +9,18 @@ using Defective.JSON;
 public class GameAPI : MonoBehaviour
 {
     AssistiveCardsSDK assistiveCardsSDK = new AssistiveCardsSDK();
+    LanguageManager languageManager = new LanguageManager();
+    public string selectedLang;
     public AssistiveCardsSDK.Packs cachedPacks = new AssistiveCardsSDK.Packs();
     public AssistiveCardsSDK.Activities cachedActivities = new AssistiveCardsSDK.Activities();
     public AssistiveCardsSDK.Languages cachedLanguages = new AssistiveCardsSDK.Languages();
     public AssistiveCardsSDK.Apps cachedApps = new AssistiveCardsSDK.Apps();
 
-
     private async void Awake()
     {
-        cachedPacks = await assistiveCardsSDK.GetPacks("en");
-        cachedActivities = await assistiveCardsSDK.GetActivities("en");
+        selectedLang = await languageManager.GetSystemLanguageCode();
+        cachedPacks = await assistiveCardsSDK.GetPacks(selectedLang);
+        cachedActivities = await assistiveCardsSDK.GetActivities(selectedLang);
         cachedLanguages = await assistiveCardsSDK.GetLanguages();
         cachedApps = await assistiveCardsSDK.GetApps();
     }
@@ -540,6 +542,7 @@ public class GameAPI : MonoBehaviour
         ///</summary>
         public Pack GetPackBySlug(Packs packs, string packSlug)
         {
+
             for (int i = 0; i < packs.packs.Length; i++)
             {
                 if (packs.packs[i].slug == packSlug)

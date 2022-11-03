@@ -24,6 +24,7 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private GameObject languageScreen;
     [SerializeField] private GameObject ttsScreen;
     [SerializeField] private GameObject notification;
+    [SerializeField] private GameObject accessibility;
     private GameObject backButton;
 
     private void Awake()
@@ -73,6 +74,11 @@ public class CanvasController : MonoBehaviour
     {
         LeanTween.scale(notification,  Vector3.one, 0.2f);
         notification.SetActive(true);
+    }
+    public void AccessibiltyButtonClicked()
+    {
+        LeanTween.scale(accessibility,  Vector3.one, 0.2f);
+        accessibility.SetActive(true);
     }
 
 }

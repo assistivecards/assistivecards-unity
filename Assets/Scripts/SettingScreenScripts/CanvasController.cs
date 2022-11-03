@@ -26,6 +26,7 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private GameObject notification;
     [SerializeField] private GameObject accessibility;
     [SerializeField] private GameObject subscriptions;
+    [SerializeField] private GameObject allApps;
     private GameObject backButton;
 
     private void Awake()
@@ -81,10 +82,16 @@ public class CanvasController : MonoBehaviour
         LeanTween.scale(accessibility,  Vector3.one, 0.2f);
         accessibility.SetActive(true);
     }
-    public void SubscriptipnsButtonClicked()
+    public void SubscriptionsButtonClicked()
     {
         LeanTween.scale(subscriptions,  Vector3.one, 0.2f);
         subscriptions.SetActive(true);
+    }
+
+    public void AllAppsButtonClicked()
+    {
+        LeanTween.scale(allApps,  Vector3.one, 0.2f);
+        allApps.SetActive(true);
     }
 
 }

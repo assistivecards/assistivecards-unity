@@ -5,22 +5,33 @@ using System;
 using System.Threading.Tasks;
 using System.IO;
 using Defective.JSON;
+using GoogleTextToSpeech.Scripts.Example;
 
 public class GameAPI : MonoBehaviour
 {
     AssistiveCardsSDK assistiveCardsSDK = new AssistiveCardsSDK();
     LanguageManager languageManager = new LanguageManager();
-    public string selectedLang;
+    public static string selectedLangCode;
     public AssistiveCardsSDK.Packs cachedPacks = new AssistiveCardsSDK.Packs();
     public AssistiveCardsSDK.Activities cachedActivities = new AssistiveCardsSDK.Activities();
     public AssistiveCardsSDK.Languages cachedLanguages = new AssistiveCardsSDK.Languages();
     public AssistiveCardsSDK.Apps cachedApps = new AssistiveCardsSDK.Apps();
+    [SerializeField] GameObject ttsReference;
+    static TextToSpeechExample tts;
+    public static Task cacheData;
 
     private async void Awake()
     {
-        selectedLang = await languageManager.GetSystemLanguageCode();
-        cachedPacks = await assistiveCardsSDK.GetPacks(selectedLang);
-        cachedActivities = await assistiveCardsSDK.GetActivities(selectedLang);
+        tts = ttsReference.GetComponent<TextToSpeechExample>();
+        cacheData = CacheData();
+        await cacheData;
+    }
+
+    public async Task CacheData()
+    {
+        selectedLangCode = await languageManager.GetSystemLanguageCode();
+        cachedPacks = await assistiveCardsSDK.GetPacks(selectedLangCode);
+        cachedActivities = await assistiveCardsSDK.GetActivities(selectedLangCode);
         cachedLanguages = await assistiveCardsSDK.GetLanguages();
         cachedApps = await assistiveCardsSDK.GetApps();
     }
@@ -757,9 +768,11 @@ public class GameAPI : MonoBehaviour
         ///<summary>
         ///Retrieves the TTS voice preference data stored in PlayerPrefs. Default value is "Alex".
         ///</summary>
-        public string GetTTSPreference()
+        public async Task<string> GetTTSPreference()
         {
-            return PlayerPrefs.GetString("TTSPreference", "Alex");
+            await cacheData;
+            var availableVoices = GameAPI.tts.GetAvailableVoices(GameAPI.tts.voices, GameAPI.selectedLangCode);
+            return PlayerPrefs.GetString("TTSPreference", availableVoices[0].name);
         }
 
         ///<summary>

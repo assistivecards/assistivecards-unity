@@ -3,10 +3,12 @@ using UnityEngine.UI;
 using TMPro;
 using System.Linq;
 using GoogleTextToSpeech.Scripts.Example;
+using System.Threading.Tasks;
 
 public class SettingsUIManager : MonoBehaviour
 {
     GameAPI.SettingsAPI settingsAPI;
+    GameAPI.LanguageManager languageManager;
     [SerializeField] TextToSpeechExample tts;
     public TMP_InputField nicknameInputField;
     public TMP_Text greetingMessage;
@@ -33,9 +35,10 @@ public class SettingsUIManager : MonoBehaviour
     private void Awake()
     {
         settingsAPI = new GameAPI.SettingsAPI();
+        languageManager = new GameAPI.LanguageManager();
         nickname = settingsAPI.GetNickname();
         language = settingsAPI.GetLanguage();
-        ttsPreference = settingsAPI.GetTTSPreference();
+
         isUsabilityTipsActive = settingsAPI.GetUsabilityTipsPreference() == 1 ? true : false;
         isPromotionsNotificationActive = settingsAPI.GetPromotionsNotificationPreference() == 1 ? true : false;
         isHapticsActive = settingsAPI.GetHapticsPreference() == 1 ? true : false;
@@ -45,6 +48,9 @@ public class SettingsUIManager : MonoBehaviour
     }
     private async void Start()
     {
+
+        await GameAPI.cacheData;
+        ttsPreference = await settingsAPI.GetTTSPreference();
         foreach (var voice in tts.voices)
         {
             if (ttsPreference == voice.name)
@@ -91,14 +97,6 @@ public class SettingsUIManager : MonoBehaviour
     {
         nickname = settingsAPI.GetNickname();
         language = settingsAPI.GetLanguage();
-        ttsPreference = settingsAPI.GetTTSPreference();
-        foreach (var voice in tts.voices)
-        {
-            if (ttsPreference == voice.name)
-            {
-                tts.activeVoice = voice;
-            }
-        }
         isHapticsActive = settingsAPI.GetHapticsPreference() == 1 ? true : false;
         isPressInActive = settingsAPI.GetActivateOnPressInPreference() == 1 ? true : false;
         isVoiceGreetingActive = settingsAPI.GetVoiceGreetingPreference() == 1 ? true : false;
@@ -108,11 +106,29 @@ public class SettingsUIManager : MonoBehaviour
         greetingMessage.text = "Hello " + nickname + ", you have selected the language " + language + ". Your preferred TTS voice is " + ttsPreference + ". Your reminder period preference is " + reminderPreference + ". You " + (isUsabilityTipsActive ? "will" : "won't") + " receive usability tips. You " + (isPromotionsNotificationActive ? "will" : "won't") + " receive promotion notifications. Haptics are " + (isHapticsActive ? "on" : "off") + ". Activate on press in is " + (isPressInActive ? "on" : "off") + ". Voice greeting is " + (isVoiceGreetingActive ? "on." : "off.");
     }
 
-    public void SaveSettings()
+    public async void SaveSettings()
     {
         settingsAPI.SetNickname(nicknameInputField.text);
         settingsAPI.SetLanguage(languages.ActiveToggles().FirstOrDefault().GetComponentInChildren<Text>().text);
-        settingsAPI.SetTTSPreference(TTSVoices.ActiveToggles().FirstOrDefault().GetComponentInChildren<Text>().text);
+        GameAPI.selectedLangCode = await languageManager.GetSystemLanguageCode();
+        var didLanguageChange = await DidLanguageChange(GameAPI.selectedLangCode);
+        var availableVoices = tts.GetAvailableVoices(tts.voices, GameAPI.selectedLangCode);
+        settingsAPI.SetTTSPreference(didLanguageChange ? availableVoices[0].name : TTSVoices.ActiveToggles().FirstOrDefault().GetComponentInChildren<Text>().text);
+        ttsPreference = await settingsAPI.GetTTSPreference();
+        foreach (var voice in tts.voices)
+        {
+            if (ttsPreference == voice.name)
+            {
+                tts.activeVoice = voice;
+            }
+        }
+        foreach (var toggle in TTSVoices.GetComponentsInChildren<Toggle>())
+        {
+            if (toggle.name == ttsPreference)
+            {
+                toggle.isOn = true;
+            }
+        }
         settingsAPI.SetReminderPreference(dailyReminderToggle.isOn ? "Daily" : "Weekly");
         settingsAPI.SetUsabilityTipsPreference(usabilityTipsToggle.isOn ? 1 : 0);
         settingsAPI.SetPromotionsNotificationPreference(promotionsNotificationToggle.isOn ? 1 : 0);
@@ -132,6 +148,7 @@ public class SettingsUIManager : MonoBehaviour
         activateOnPressToggle.isOn = settingsAPI.GetActivateOnPressInPreference() == 1 ? true : false;
         promotionsNotificationToggle.isOn = settingsAPI.GetPromotionsNotificationPreference() == 1 ? true : false;
         voiceGreetingToggle.isOn = settingsAPI.GetVoiceGreetingPreference() == 1 ? true : false;
+
         foreach (var toggle in languages.GetComponentsInChildren<Toggle>())
         {
             if (toggle.name == language)
@@ -157,5 +174,17 @@ public class SettingsUIManager : MonoBehaviour
         {
             weeklyReminderToggle.isOn = true;
         }
+    }
+
+    public async Task<bool> DidLanguageChange(string langCode)
+    {
+
+        var ttsPreference = await settingsAPI.GetTTSPreference();
+
+        if (ttsPreference.StartsWith(langCode))
+        {
+            return false;
+        }
+        return true;
     }
 }

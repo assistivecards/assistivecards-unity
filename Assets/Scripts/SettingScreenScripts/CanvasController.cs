@@ -27,6 +27,7 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private GameObject accessibility;
     [SerializeField] private GameObject subscriptions;
     [SerializeField] private GameObject allApps;
+    [SerializeField] private GameObject sendFeedbacks;
     private GameObject backButton;
 
     private void Awake()
@@ -92,6 +93,11 @@ public class CanvasController : MonoBehaviour
     {
         LeanTween.scale(allApps,  Vector3.one, 0.2f);
         allApps.SetActive(true);
+    }
+    public void SendFeedbacksButtonClicked()
+    {
+        LeanTween.scale(sendFeedbacks,  Vector3.one, 0.2f);
+        sendFeedbacks.SetActive(true);
     }
 
 }

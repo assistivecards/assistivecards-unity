@@ -1,0 +1,11 @@
+framework module TextToSpeechIOS {
+  umbrella header "TextToSpeechIOS.h"
+
+  export *
+  module * { export * }
+}
+
+module TextToSpeechIOS.Swift {
+    header "TextToSpeechIOS-Swift.h"
+    requires objc
+}

@@ -9,8 +9,8 @@ public class LanguageTest : MonoBehaviour
     GameAPI gameAPI;
     GameAPI.AssistiveCardsSDK assistiveCardsSDK = new GameAPI.AssistiveCardsSDK();
     GameAPI.LanguageManager languageManager = new GameAPI.LanguageManager();
-    [SerializeField] TMP_Text[] texts;
-    [SerializeField] TMP_Text[] textsWithVariable;
+    [SerializeField] GameObject[] texts;
+    [SerializeField] GameObject[] textsWithVariable;
     [SerializeField] TMP_InputField languageInputField;
     string result;
     private string nickname;
@@ -26,6 +26,8 @@ public class LanguageTest : MonoBehaviour
     }
     async void Start()
     {
+        texts = GameObject.FindGameObjectsWithTag("Plain Text");
+        textsWithVariable = GameObject.FindGameObjectsWithTag("Text With Variable");
         // packResult = assistiveCardsSDK.GetPackBySlug(gameAPI.cachedPacks, "animals");
         // Debug.Log(packResult.locale);
         variableArray.Add(nickname);
@@ -34,19 +36,20 @@ public class LanguageTest : MonoBehaviour
         for (int i = 0; i < textsWithVariable.Length; i++)
         {
             result = await languageManager.Translate(textsWithVariable[i].name, variableArray[i].ToString());
-            textsWithVariable[i].text = result;
+            textsWithVariable[i].GetComponent<TMP_Text>().text = result;
         }
 
         foreach (var text in texts)
         {
             result = await languageManager.Translate(text.name);
-            text.text = result;
+            text.GetComponent<TMP_Text>().text = result;
         }
     }
 
-    public void ChangeLanguage()
+    async public void ChangeLanguage()
     {
         settingsAPI.SetLanguage(languageInputField.text);
+        Speakable.locale = await languageManager.GetSelectedLocale();
     }
 
     public async void OnLanguageChange()
@@ -54,13 +57,13 @@ public class LanguageTest : MonoBehaviour
         for (int i = 0; i < textsWithVariable.Length; i++)
         {
             result = await languageManager.Translate(textsWithVariable[i].name, variableArray[i].ToString());
-            textsWithVariable[i].text = result;
+            textsWithVariable[i].GetComponent<TMP_Text>().text = result;
         }
 
         foreach (var text in texts)
         {
             result = await languageManager.Translate(text.name);
-            text.text = result;
+            text.GetComponent<TMP_Text>().text = result;
         }
     }
 

@@ -46,16 +46,7 @@ public class SettingsUIManager : MonoBehaviour
     }
     private async void Start()
     {
-
-        await GameAPI.cacheData;
-        // ttsPreference = await settingsAPI.GetTTSPreference();
-        // foreach (var voice in tts.voices)
-        // {
-        //     if (ttsPreference == voice.name)
-        //     {
-        //         tts.activeVoice = voice;
-        //     }
-        // }
+        ttsPreference = settingsAPI.GetTTSPreference();
         nicknameInputField.text = nickname;
         selectAvatarButton.image.sprite = await settingsAPI.GetAvatarImage();
         reminderPreference = settingsAPI.GetReminderPreference();
@@ -95,6 +86,14 @@ public class SettingsUIManager : MonoBehaviour
     {
         nickname = settingsAPI.GetNickname();
         language = settingsAPI.GetLanguage();
+        ttsPreference = settingsAPI.GetTTSPreference();
+        foreach (var toggle in TTSVoices.GetComponentsInChildren<Toggle>())
+        {
+            if (toggle.name == ttsPreference)
+            {
+                toggle.isOn = true;
+            }
+        }
         isHapticsActive = settingsAPI.GetHapticsPreference() == 1 ? true : false;
         isPressInActive = settingsAPI.GetActivateOnPressInPreference() == 1 ? true : false;
         isVoiceGreetingActive = settingsAPI.GetVoiceGreetingPreference() == 1 ? true : false;
@@ -108,18 +107,13 @@ public class SettingsUIManager : MonoBehaviour
     {
         settingsAPI.SetNickname(nicknameInputField.text);
         settingsAPI.SetLanguage(languages.ActiveToggles().FirstOrDefault().GetComponentInChildren<Text>().text);
-        GameAPI.selectedLangCode = await languageManager.GetSystemLanguageCode();
-        // var didLanguageChange = await DidLanguageChange(GameAPI.selectedLangCode);
-        // var availableVoices = tts.GetAvailableVoices(tts.voices, GameAPI.selectedLangCode);
-        // settingsAPI.SetTTSPreference(didLanguageChange ? availableVoices[0].name : TTSVoices.ActiveToggles().FirstOrDefault().GetComponentInChildren<Text>().text);
-        // ttsPreference = await settingsAPI.GetTTSPreference();
-        // foreach (var voice in tts.voices)
-        // {
-        //     if (ttsPreference == voice.name)
-        //     {
-        //         tts.activeVoice = voice;
-        //     }
-        // }
+        settingsAPI.SetTTSPreference(await languageManager.GetSelectedLocale());
+        settingsAPI.SetReminderPreference(dailyReminderToggle.isOn ? "Daily" : "Weekly");
+        settingsAPI.SetUsabilityTipsPreference(usabilityTipsToggle.isOn ? 1 : 0);
+        settingsAPI.SetPromotionsNotificationPreference(promotionsNotificationToggle.isOn ? 1 : 0);
+        settingsAPI.SetHapticsPreference(hapticsToggle.isOn ? 1 : 0);
+        settingsAPI.SetActivateOnPressInPreference(activateOnPressToggle.isOn ? 1 : 0);
+        settingsAPI.SetVoiceGreetingPreference(voiceGreetingToggle.isOn ? 1 : 0);
         foreach (var toggle in TTSVoices.GetComponentsInChildren<Toggle>())
         {
             if (toggle.name == ttsPreference)
@@ -127,12 +121,6 @@ public class SettingsUIManager : MonoBehaviour
                 toggle.isOn = true;
             }
         }
-        settingsAPI.SetReminderPreference(dailyReminderToggle.isOn ? "Daily" : "Weekly");
-        settingsAPI.SetUsabilityTipsPreference(usabilityTipsToggle.isOn ? 1 : 0);
-        settingsAPI.SetPromotionsNotificationPreference(promotionsNotificationToggle.isOn ? 1 : 0);
-        settingsAPI.SetHapticsPreference(hapticsToggle.isOn ? 1 : 0);
-        settingsAPI.SetActivateOnPressInPreference(activateOnPressToggle.isOn ? 1 : 0);
-        settingsAPI.SetVoiceGreetingPreference(voiceGreetingToggle.isOn ? 1 : 0);
     }
 
     public async void SignOut()

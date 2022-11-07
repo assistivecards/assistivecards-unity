@@ -1030,5 +1030,20 @@ public class GameAPI : MonoBehaviour
             }
             return null;
         }
+
+        public async Task<string> GetSelectedLocale()
+        {
+            var langs = await assistiveCardsSDK.GetLanguages();
+            var selectedLang = settingsAPI.GetLanguage();
+
+            foreach (var lang in langs.languages)
+            {
+                if (selectedLang == lang.title)
+                {
+                    return lang.locale[0];
+                }
+            }
+            return null;
+        }
     }
 }

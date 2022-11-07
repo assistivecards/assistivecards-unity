@@ -269,9 +269,11 @@ GameObject:
   - component: {fileID: 358440443}
   - component: {fileID: 358440445}
   - component: {fileID: 358440444}
+  - component: {fileID: 358440447}
+  - component: {fileID: 358440446}
   m_Layer: 5
   m_Name: hello_you
-  m_TagString: Untagged
+  m_TagString: Text With Variable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -393,6 +395,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 358440442}
   m_CullTransparentMesh: 1
+--- !u!114 &358440446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358440442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 358440447}
+          m_TargetAssemblyTypeName: Speakable, Assembly-CSharp
+          m_MethodName: Speak
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &358440447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358440442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4d92d0952583a40bb62e396252a86f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threadSafe: 0
 --- !u!1 &568094317
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,9 +516,11 @@ GameObject:
   - component: {fileID: 643625737}
   - component: {fileID: 643625739}
   - component: {fileID: 643625738}
+  - component: {fileID: 643625741}
+  - component: {fileID: 643625740}
   m_Layer: 5
   m_Name: settings_selection_subscriptions
-  m_TagString: Untagged
+  m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -596,6 +642,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 643625736}
   m_CullTransparentMesh: 1
+--- !u!114 &643625740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643625736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 643625741}
+          m_TargetAssemblyTypeName: Speakable, Assembly-CSharp
+          m_MethodName: Speak
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &643625741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643625736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4d92d0952583a40bb62e396252a86f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threadSafe: 0
 --- !u!1 &778117890
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,7 +781,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3cd33420fa181740a1fa665fde177b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedLang: 
   cachedPacks:
     packs: []
   cachedActivities:
@@ -869,9 +956,11 @@ GameObject:
   - component: {fileID: 1026220322}
   - component: {fileID: 1026220324}
   - component: {fileID: 1026220323}
+  - component: {fileID: 1026220326}
+  - component: {fileID: 1026220325}
   m_Layer: 5
   m_Name: settings_selection_signout
-  m_TagString: Untagged
+  m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -993,6 +1082,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1026220321}
   m_CullTransparentMesh: 1
+--- !u!114 &1026220325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026220321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1026220326}
+          m_TargetAssemblyTypeName: Speakable, Assembly-CSharp
+          m_MethodName: Speak
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1026220326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026220321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4d92d0952583a40bb62e396252a86f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threadSafe: 0
 --- !u!1 &1360462695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1057,9 +1188,11 @@ GameObject:
   - component: {fileID: 1680955110}
   - component: {fileID: 1680955112}
   - component: {fileID: 1680955111}
+  - component: {fileID: 1680955114}
+  - component: {fileID: 1680955113}
   m_Layer: 5
   m_Name: settings_packs
-  m_TagString: Untagged
+  m_TagString: Text With Variable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1181,6 +1314,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1680955109}
   m_CullTransparentMesh: 1
+--- !u!114 &1680955113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680955109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1680955114}
+          m_TargetAssemblyTypeName: Speakable, Assembly-CSharp
+          m_MethodName: Speak
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1680955114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680955109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4d92d0952583a40bb62e396252a86f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threadSafe: 0
 --- !u!1 &1764103933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,12 +1477,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texts:
-  - {fileID: 2140440770}
-  - {fileID: 643625738}
-  - {fileID: 1026220323}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   textsWithVariable:
-  - {fileID: 358440444}
-  - {fileID: 1680955111}
+  - {fileID: 0}
+  - {fileID: 0}
   languageInputField: {fileID: 1981597514}
 --- !u!1 &1871028311
 GameObject:
@@ -1777,9 +1952,11 @@ GameObject:
   - component: {fileID: 2140440769}
   - component: {fileID: 2140440771}
   - component: {fileID: 2140440770}
+  - component: {fileID: 2140440773}
+  - component: {fileID: 2140440772}
   m_Layer: 5
   m_Name: settings_notifications_tipsAndPromo_tips_description
-  m_TagString: Untagged
+  m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1901,3 +2078,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140440768}
   m_CullTransparentMesh: 1
+--- !u!114 &2140440772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140440768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2140440773}
+          m_TargetAssemblyTypeName: Speakable, Assembly-CSharp
+          m_MethodName: Speak
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &2140440773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140440768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4d92d0952583a40bb62e396252a86f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threadSafe: 0

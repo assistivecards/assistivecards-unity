@@ -5,7 +5,6 @@ using System;
 using System.Threading.Tasks;
 using System.IO;
 using Defective.JSON;
-using GoogleTextToSpeech.Scripts.Example;
 
 public class GameAPI : MonoBehaviour
 {
@@ -16,13 +15,10 @@ public class GameAPI : MonoBehaviour
     public AssistiveCardsSDK.Activities cachedActivities = new AssistiveCardsSDK.Activities();
     public AssistiveCardsSDK.Languages cachedLanguages = new AssistiveCardsSDK.Languages();
     public AssistiveCardsSDK.Apps cachedApps = new AssistiveCardsSDK.Apps();
-    [SerializeField] GameObject ttsReference;
-    static TextToSpeechExample tts;
     public static Task cacheData;
 
     private async void Awake()
     {
-        tts = ttsReference.GetComponent<TextToSpeechExample>();
         cacheData = CacheData();
         await cacheData;
     }
@@ -768,11 +764,11 @@ public class GameAPI : MonoBehaviour
         ///<summary>
         ///Retrieves the TTS voice preference data stored in PlayerPrefs. Default value is "Alex".
         ///</summary>
-        public async Task<string> GetTTSPreference()
+        public string GetTTSPreference()
         {
-            await cacheData;
-            var availableVoices = GameAPI.tts.GetAvailableVoices(GameAPI.tts.voices, GameAPI.selectedLangCode);
-            return PlayerPrefs.GetString("TTSPreference", availableVoices[0].name);
+            // await cacheData;
+            // var availableVoices = GameAPI.tts.GetAvailableVoices(GameAPI.tts.voices, GameAPI.selectedLangCode);
+            return PlayerPrefs.GetString("TTSPreference", "Default");
         }
 
         ///<summary>

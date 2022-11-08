@@ -3,46 +3,59 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using TMPro;
 
 
 
 public class CanvasController : MonoBehaviour
 {
-
+    [Header ("API Connection")]
+    public string nickname;
     AssistiveCardsSDK assistiveCardsSDK;
     public GameObject SDK;
     SettingsAPI settingsAPI;
     SettingsUIManager settingsUIManager;
+
+    [Header ("UI Assets")]
+    public TMP_Text nicknameText;
     [SerializeField] Canvas canvas;
-
-
-    [SerializeField] private GameObject profileImage;
-    [SerializeField] private GameObject mainSettingsScreen;
+    public GameObject profileImage;
     [SerializeField] private GameObject popUp;
+    private GameObject backButton;
+
+    [Header ("Screens")]
+    [SerializeField] private GameObject mainSettingsScreen;
     [SerializeField] private GameObject parentLockScreen;
     [SerializeField] private GameObject profileScreen;
     [SerializeField] private GameObject languageScreen;
     [SerializeField] private GameObject ttsScreen;
-    [SerializeField] private GameObject notification;
-    [SerializeField] private GameObject accessibility;
-    [SerializeField] private GameObject subscriptions;
-    [SerializeField] private GameObject allApps;
-    [SerializeField] private GameObject sendFeedbacks;
-    [SerializeField] private GameObject aboutApplication;
-    private GameObject backButton;
+    [SerializeField] private GameObject notificationScreen;
+    [SerializeField] private GameObject accessibilityScreen;
+    [SerializeField] private GameObject subscriptionsScreen;
+    [SerializeField] private GameObject allAppsScreen;
+    [SerializeField] private GameObject sendFeedbacksScreen;
+    [SerializeField] private GameObject aboutApplicationScreen;
+    [SerializeField] private GameObject loginPageScreen;
 
     private void Awake()
     {
         assistiveCardsSDK = SDK.GetComponent<AssistiveCardsSDK>();
         settingsAPI = SDK.GetComponent<SettingsAPI>();
         settingsUIManager = canvas.GetComponent<SettingsUIManager>();
+        nickname = settingsAPI.GetNickname();
+
+
+        if(PlayerPrefs.GetString("Nickname", "") != "")
+        {
+            loginPageScreen.SetActive(false);
+        }
     }
 
     private async void Start() 
     {
+        nicknameText.text = nickname;
         profileImage.GetComponent<Image>().sprite = await settingsAPI.GetAvatarImage();
     }
-
 
     public void ParentLockButtonClick()
     {
@@ -76,34 +89,39 @@ public class CanvasController : MonoBehaviour
     
     public void NotificationButtonClicked()
     {
-        LeanTween.scale(notification,  Vector3.one, 0.2f);
-        notification.SetActive(true);
+        LeanTween.scale(notificationScreen,  Vector3.one, 0.2f);
+        notificationScreen.SetActive(true);
     }
     public void AccessibiltyButtonClicked()
     {
-        LeanTween.scale(accessibility,  Vector3.one, 0.2f);
-        accessibility.SetActive(true);
+        LeanTween.scale(accessibilityScreen,  Vector3.one, 0.2f);
+        accessibilityScreen.SetActive(true);
     }
     public void SubscriptionsButtonClicked()
     {
-        LeanTween.scale(subscriptions,  Vector3.one, 0.2f);
-        subscriptions.SetActive(true);
+        LeanTween.scale(subscriptionsScreen,  Vector3.one, 0.2f);
+        subscriptionsScreen.SetActive(true);
     }
 
     public void AllAppsButtonClicked()
     {
-        LeanTween.scale(allApps,  Vector3.one, 0.2f);
-        allApps.SetActive(true);
+        LeanTween.scale(allAppsScreen,  Vector3.one, 0.2f);
+        allAppsScreen.SetActive(true);
     }
     public void SendFeedbacksButtonClicked()
     {
-        LeanTween.scale(sendFeedbacks,  Vector3.one, 0.2f);
-        sendFeedbacks.SetActive(true);
+        LeanTween.scale(sendFeedbacksScreen,  Vector3.one, 0.2f);
+        sendFeedbacksScreen.SetActive(true);
     }
     public void AboutApplicationButtonClicked()
     {
-        LeanTween.scale(aboutApplication,  Vector3.one, 0.2f);
-        aboutApplication.SetActive(true);
+        LeanTween.scale(aboutApplicationScreen,  Vector3.one, 0.2f);
+        aboutApplicationScreen.SetActive(true);
+    }
+    public async void ProfilePanelUpdate()
+    {
+        nicknameText.text = settingsAPI.GetNickname();
+        profileImage.GetComponent<Image>().sprite = await settingsAPI.GetAvatarImage();
     }
 
 }

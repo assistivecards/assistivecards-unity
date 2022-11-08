@@ -7,16 +7,15 @@ using TMPro;
 
 public class ProfileEditor : MonoBehaviour
 {
-    GameAPI.AssistiveCardsSDK assistiveCardsSDK = new GameAPI.AssistiveCardsSDK();
+    [Header ("API Connection")]
     SettingsAPI settingsAPI;
     [SerializeField] GameObject api;
+    
+    [Header ("Profile UI Assests")]
+    [SerializeField] private Image profileImage;
     public TMP_InputField nicknameInputField;
-    private string nickname;
     public Button selectAvatarButton;
-
-
-    [SerializeField] private TMP_InputField nicknameField;
-    [SerializeField] private Button saveButton;
+    public string nickname;
 
 
     private void Awake() 
@@ -27,24 +26,13 @@ public class ProfileEditor : MonoBehaviour
 
     public async void Start()
     {
-        nicknameField.onValueChanged.AddListener(delegate {ValueChangeCheck(); });
+        nicknameInputField.text = nickname;
         selectAvatarButton.image.sprite = await settingsAPI.GetAvatarImage();  
+        profileImage.GetComponent<Image>().sprite = await settingsAPI.GetAvatarImage();
     }
 
     private void Update() 
     {
         nickname = settingsAPI.GetNickname();
     }
-
-    public void SaveSettings()
-    {
-        settingsAPI.SetNickname(nicknameInputField.text);
-    }
-    public void ValueChangeCheck()
-    {
-        //nickname change 
-        
-        saveButton.GetComponent<Button>().interactable = true;
-    }
-
 }

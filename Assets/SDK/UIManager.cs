@@ -5,7 +5,6 @@ using System;
 
 public class UIManager : MonoBehaviour
 {
-    GameAPI.AssistiveCardsSDK assistiveCardsSDK = new GameAPI.AssistiveCardsSDK();
     GameAPI gameAPI;
     public TMP_InputField outputArea;
     public RawImage rawImage;
@@ -37,7 +36,7 @@ public class UIManager : MonoBehaviour
 
     public async void DisplayPacks(string language)
     {
-        var result = await assistiveCardsSDK.GetPacks(language);
+        var result = await gameAPI.GetPacks(language);
         outputArea.text = JsonUtility.ToJson(result);
     }
 
@@ -45,25 +44,25 @@ public class UIManager : MonoBehaviour
     {
         var language = cardLanguageInput.text;
         var packSlug = cardPackSlugInput.text;
-        var result = await assistiveCardsSDK.GetCards(language, packSlug);
+        var result = await gameAPI.GetCards(language, packSlug);
         outputArea.text = JsonUtility.ToJson(result);
     }
 
     public async void DisplayLanguages()
     {
-        var result = await assistiveCardsSDK.GetLanguages();
+        var result = await gameAPI.GetLanguages();
         outputArea.text = JsonUtility.ToJson(result);
     }
 
     public async void DisplayActivities(string language)
     {
-        var result = await assistiveCardsSDK.GetActivities(language);
+        var result = await gameAPI.GetActivities(language);
         outputArea.text = JsonUtility.ToJson(result);
     }
 
     public async void DisplayActivityImage(string activitySlug)
     {
-        var texture = await assistiveCardsSDK.GetActivityImage(activitySlug);
+        var texture = await gameAPI.GetActivityImage(activitySlug);
         rawImage.texture = texture;
     }
 
@@ -71,7 +70,7 @@ public class UIManager : MonoBehaviour
     {
         var id = avatarIdInput.text;
         int size = Int32.Parse(avatarImageSizeInput.text);
-        var texture = await assistiveCardsSDK.GetAvatarImage(id, size);
+        var texture = await gameAPI.GetAvatarImage(id, size);
         rawImage.texture = texture;
     }
 
@@ -79,7 +78,7 @@ public class UIManager : MonoBehaviour
     {
         var slug = packSlugInput.text;
         int size = Int32.Parse(packImageSizeInput.text);
-        var texture = await assistiveCardsSDK.GetPackImage(slug, size);
+        var texture = await gameAPI.GetPackImage(slug, size);
         rawImage.texture = texture;
     }
 
@@ -88,43 +87,43 @@ public class UIManager : MonoBehaviour
         var packSlug = cardImagePackSlugInput.text;
         var cardSlug = cardImageCardSlugInput.text;
         int size = Int32.Parse(cardImageSizeInput.text);
-        var texture = await assistiveCardsSDK.GetCardImage(packSlug, cardSlug, size);
+        var texture = await gameAPI.GetCardImage(packSlug, cardSlug, size);
         rawImage.texture = texture;
     }
 
     public async void DisplayAppIcon(string appSlug)
     {
-        var texture = await assistiveCardsSDK.GetAppIcon(appSlug);
+        var texture = await gameAPI.GetAppIcon(appSlug);
         rawImage.texture = texture;
     }
 
     public async void DisplayApps()
     {
-        var result = await assistiveCardsSDK.GetApps();
+        var result = await gameAPI.GetApps();
         outputArea.text = JsonUtility.ToJson(result);
     }
 
     public void DisplayPackBySlug()
     {
-        var result = assistiveCardsSDK.GetPackBySlug(gameAPI.cachedPacks, packBySlugInput.text);
+        var result = gameAPI.GetPackBySlug(gameAPI.cachedPacks, packBySlugInput.text);
         outputArea.text = JsonUtility.ToJson(result);
     }
 
     public void DisplayCardBySlug()
     {
-        var result = assistiveCardsSDK.GetCardBySlug(assistiveCardsSDK.cards, cardBySlugInput.text);
+        var result = gameAPI.GetCardBySlug(gameAPI.cards, cardBySlugInput.text);
         outputArea.text = JsonUtility.ToJson(result);
     }
 
     public void DisplayActivityBySlug()
     {
-        var result = assistiveCardsSDK.GetActivityBySlug(gameAPI.cachedActivities, activitySlugInput.text);
+        var result = gameAPI.GetActivityBySlug(gameAPI.cachedActivities, activitySlugInput.text);
         outputArea.text = JsonUtility.ToJson(result);
     }
 
     public void DisplayLanguageByCode()
     {
-        var result = assistiveCardsSDK.GetLanguageByCode(gameAPI.cachedLanguages, languageCodeInput.text);
+        var result = gameAPI.GetLanguageByCode(gameAPI.cachedLanguages, languageCodeInput.text);
         outputArea.text = JsonUtility.ToJson(result);
     }
 }

@@ -12,7 +12,12 @@ public class Speakable : MonoBehaviour
     private Queue<string> errors = new Queue<string>();
     public static string locale;
     private TextToSpeech _textToSpeech;
-    GameAPI.LanguageManager languageManager = new GameAPI.LanguageManager();
+    GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     public void Speak()
     {
@@ -69,7 +74,7 @@ public class Speakable : MonoBehaviour
 
     async void Start()
     {
-        locale = await languageManager.GetSelectedLocale();
+        locale = await gameAPI.GetSelectedLocale();
         _textToSpeech = TextToSpeech.Create(OnFinish, OnError);
     }
 

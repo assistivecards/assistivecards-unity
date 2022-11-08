@@ -3,11 +3,10 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-    [SerializeField] GameAPI.AssistiveCardsSDK.Pack packResult = new GameAPI.AssistiveCardsSDK.Pack();
-    [SerializeField] GameAPI.AssistiveCardsSDK.Card cardResult = new GameAPI.AssistiveCardsSDK.Card();
-    [SerializeField] GameAPI.AssistiveCardsSDK.Activity activityResult = new GameAPI.AssistiveCardsSDK.Activity();
-    [SerializeField] GameAPI.AssistiveCardsSDK.Language languageResult = new GameAPI.AssistiveCardsSDK.Language();
-    GameAPI.AssistiveCardsSDK assistiveCardsSDK = new GameAPI.AssistiveCardsSDK();
+    [SerializeField] GameAPI.Pack packResult = new GameAPI.Pack();
+    [SerializeField] GameAPI.Card cardResult = new GameAPI.Card();
+    [SerializeField] GameAPI.Activity activityResult = new GameAPI.Activity();
+    [SerializeField] GameAPI.Language languageResult = new GameAPI.Language();
     GameAPI gameAPI;
     // public TMP_InputField outputArea;
     [SerializeField] Texture2D[] cardTextures;
@@ -33,12 +32,12 @@ public class Test : MonoBehaviour
 
     private async void Start()
     {
-        testTexture = await assistiveCardsSDK.GetPackImage("animals");
-        cardTextures = await assistiveCardsSDK.GetCardImagesByPack("en", "school");
-        avatarTextures = await assistiveCardsSDK.GetAvatarImagesByCategory("misc");
-        packResult = assistiveCardsSDK.GetPackBySlug(gameAPI.cachedPacks, "animals");
-        activityResult = assistiveCardsSDK.GetActivityBySlug(gameAPI.cachedActivities, "practicing-speaking");
-        languageResult = assistiveCardsSDK.GetLanguageByCode(gameAPI.cachedLanguages, "en");
+        testTexture = await gameAPI.GetPackImage("animals");
+        cardTextures = await gameAPI.GetCardImagesByPack("en", "school");
+        avatarTextures = await gameAPI.GetAvatarImagesByCategory("misc");
+        packResult = gameAPI.GetPackBySlug(gameAPI.cachedPacks, "animals");
+        activityResult = gameAPI.GetActivityBySlug(gameAPI.cachedActivities, "practicing-speaking");
+        languageResult = gameAPI.GetLanguageByCode(gameAPI.cachedLanguages, "en");
     }
 
 }

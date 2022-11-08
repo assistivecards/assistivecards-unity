@@ -5,10 +5,7 @@ using TMPro;
 
 public class LanguageTest : MonoBehaviour
 {
-    GameAPI.SettingsAPI settingsAPI = new GameAPI.SettingsAPI();
     GameAPI gameAPI;
-    GameAPI.AssistiveCardsSDK assistiveCardsSDK = new GameAPI.AssistiveCardsSDK();
-    GameAPI.LanguageManager languageManager = new GameAPI.LanguageManager();
     [SerializeField] GameObject[] texts;
     [SerializeField] GameObject[] textsWithVariable;
     [SerializeField] TMP_InputField languageInputField;
@@ -21,8 +18,8 @@ public class LanguageTest : MonoBehaviour
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
-        nickname = settingsAPI.GetNickname();
-        usabilityTips = settingsAPI.GetUsabilityTipsPreference();
+        nickname = gameAPI.GetNickname();
+        usabilityTips = gameAPI.GetUsabilityTipsPreference();
     }
     async void Start()
     {
@@ -35,34 +32,34 @@ public class LanguageTest : MonoBehaviour
 
         for (int i = 0; i < textsWithVariable.Length; i++)
         {
-            result = await languageManager.Translate(textsWithVariable[i].name, variableArray[i].ToString());
+            result = await gameAPI.Translate(textsWithVariable[i].name, variableArray[i].ToString());
             textsWithVariable[i].GetComponent<TMP_Text>().text = result;
         }
 
         foreach (var text in texts)
         {
-            result = await languageManager.Translate(text.name);
+            result = await gameAPI.Translate(text.name);
             text.GetComponent<TMP_Text>().text = result;
         }
     }
 
     async public void ChangeLanguage()
     {
-        settingsAPI.SetLanguage(languageInputField.text);
-        Speakable.locale = await languageManager.GetSelectedLocale();
+        gameAPI.SetLanguage(languageInputField.text);
+        Speakable.locale = await gameAPI.GetSelectedLocale();
     }
 
     public async void OnLanguageChange()
     {
         for (int i = 0; i < textsWithVariable.Length; i++)
         {
-            result = await languageManager.Translate(textsWithVariable[i].name, variableArray[i].ToString());
+            result = await gameAPI.Translate(textsWithVariable[i].name, variableArray[i].ToString());
             textsWithVariable[i].GetComponent<TMP_Text>().text = result;
         }
 
         foreach (var text in texts)
         {
-            result = await languageManager.Translate(text.name);
+            result = await gameAPI.Translate(text.name);
             text.GetComponent<TMP_Text>().text = result;
         }
     }

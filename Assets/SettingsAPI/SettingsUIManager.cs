@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 public class SettingsUIManager : MonoBehaviour
 {
-    GameAPI.SettingsAPI settingsAPI;
-    GameAPI.LanguageManager languageManager;
+    GameAPI gameAPI;
     public TMP_InputField nicknameInputField;
     public TMP_Text greetingMessage;
     public Button selectAvatarButton;
@@ -32,29 +31,28 @@ public class SettingsUIManager : MonoBehaviour
 
     private void Awake()
     {
-        settingsAPI = new GameAPI.SettingsAPI();
-        languageManager = new GameAPI.LanguageManager();
-        nickname = settingsAPI.GetNickname();
-        language = settingsAPI.GetLanguage();
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+        nickname = gameAPI.GetNickname();
+        language = gameAPI.GetLanguage();
 
-        isUsabilityTipsActive = settingsAPI.GetUsabilityTipsPreference() == 1 ? true : false;
-        isPromotionsNotificationActive = settingsAPI.GetPromotionsNotificationPreference() == 1 ? true : false;
-        isHapticsActive = settingsAPI.GetHapticsPreference() == 1 ? true : false;
-        isPressInActive = settingsAPI.GetActivateOnPressInPreference() == 1 ? true : false;
-        isVoiceGreetingActive = settingsAPI.GetVoiceGreetingPreference() == 1 ? true : false;
+        isUsabilityTipsActive = gameAPI.GetUsabilityTipsPreference() == 1 ? true : false;
+        isPromotionsNotificationActive = gameAPI.GetPromotionsNotificationPreference() == 1 ? true : false;
+        isHapticsActive = gameAPI.GetHapticsPreference() == 1 ? true : false;
+        isPressInActive = gameAPI.GetActivateOnPressInPreference() == 1 ? true : false;
+        isVoiceGreetingActive = gameAPI.GetVoiceGreetingPreference() == 1 ? true : false;
 
     }
     private async void Start()
     {
-        ttsPreference = settingsAPI.GetTTSPreference();
+        ttsPreference = await gameAPI.GetTTSPreference();
         nicknameInputField.text = nickname;
-        selectAvatarButton.image.sprite = await settingsAPI.GetAvatarImage();
-        reminderPreference = settingsAPI.GetReminderPreference();
-        usabilityTipsToggle.isOn = settingsAPI.GetUsabilityTipsPreference() == 1 ? true : false;
-        hapticsToggle.isOn = settingsAPI.GetHapticsPreference() == 1 ? true : false;
-        activateOnPressToggle.isOn = settingsAPI.GetActivateOnPressInPreference() == 1 ? true : false;
-        promotionsNotificationToggle.isOn = settingsAPI.GetPromotionsNotificationPreference() == 1 ? true : false;
-        voiceGreetingToggle.isOn = settingsAPI.GetVoiceGreetingPreference() == 1 ? true : false;
+        selectAvatarButton.image.sprite = await gameAPI.GetAvatarImage();
+        reminderPreference = gameAPI.GetReminderPreference();
+        usabilityTipsToggle.isOn = gameAPI.GetUsabilityTipsPreference() == 1 ? true : false;
+        hapticsToggle.isOn = gameAPI.GetHapticsPreference() == 1 ? true : false;
+        activateOnPressToggle.isOn = gameAPI.GetActivateOnPressInPreference() == 1 ? true : false;
+        promotionsNotificationToggle.isOn = gameAPI.GetPromotionsNotificationPreference() == 1 ? true : false;
+        voiceGreetingToggle.isOn = gameAPI.GetVoiceGreetingPreference() == 1 ? true : false;
         foreach (var toggle in languages.GetComponentsInChildren<Toggle>())
         {
             if (toggle.name == language)
@@ -84,9 +82,8 @@ public class SettingsUIManager : MonoBehaviour
     }
     private void Update()
     {
-        nickname = settingsAPI.GetNickname();
-        language = settingsAPI.GetLanguage();
-        ttsPreference = settingsAPI.GetTTSPreference();
+        nickname = gameAPI.GetNickname();
+        language = gameAPI.GetLanguage();
         foreach (var toggle in TTSVoices.GetComponentsInChildren<Toggle>())
         {
             if (toggle.name == ttsPreference)
@@ -94,26 +91,26 @@ public class SettingsUIManager : MonoBehaviour
                 toggle.isOn = true;
             }
         }
-        isHapticsActive = settingsAPI.GetHapticsPreference() == 1 ? true : false;
-        isPressInActive = settingsAPI.GetActivateOnPressInPreference() == 1 ? true : false;
-        isVoiceGreetingActive = settingsAPI.GetVoiceGreetingPreference() == 1 ? true : false;
-        reminderPreference = settingsAPI.GetReminderPreference();
-        isUsabilityTipsActive = settingsAPI.GetUsabilityTipsPreference() == 1 ? true : false;
-        isPromotionsNotificationActive = settingsAPI.GetPromotionsNotificationPreference() == 1 ? true : false;
+        isHapticsActive = gameAPI.GetHapticsPreference() == 1 ? true : false;
+        isPressInActive = gameAPI.GetActivateOnPressInPreference() == 1 ? true : false;
+        isVoiceGreetingActive = gameAPI.GetVoiceGreetingPreference() == 1 ? true : false;
+        reminderPreference = gameAPI.GetReminderPreference();
+        isUsabilityTipsActive = gameAPI.GetUsabilityTipsPreference() == 1 ? true : false;
+        isPromotionsNotificationActive = gameAPI.GetPromotionsNotificationPreference() == 1 ? true : false;
         greetingMessage.text = "Hello " + nickname + ", you have selected the language " + language + ". Your preferred TTS voice is " + ttsPreference + ". Your reminder period preference is " + reminderPreference + ". You " + (isUsabilityTipsActive ? "will" : "won't") + " receive usability tips. You " + (isPromotionsNotificationActive ? "will" : "won't") + " receive promotion notifications. Haptics are " + (isHapticsActive ? "on" : "off") + ". Activate on press in is " + (isPressInActive ? "on" : "off") + ". Voice greeting is " + (isVoiceGreetingActive ? "on." : "off.");
     }
 
     public async void SaveSettings()
     {
-        settingsAPI.SetNickname(nicknameInputField.text);
-        settingsAPI.SetLanguage(languages.ActiveToggles().FirstOrDefault().GetComponentInChildren<Text>().text);
-        settingsAPI.SetTTSPreference(await languageManager.GetSelectedLocale());
-        settingsAPI.SetReminderPreference(dailyReminderToggle.isOn ? "Daily" : "Weekly");
-        settingsAPI.SetUsabilityTipsPreference(usabilityTipsToggle.isOn ? 1 : 0);
-        settingsAPI.SetPromotionsNotificationPreference(promotionsNotificationToggle.isOn ? 1 : 0);
-        settingsAPI.SetHapticsPreference(hapticsToggle.isOn ? 1 : 0);
-        settingsAPI.SetActivateOnPressInPreference(activateOnPressToggle.isOn ? 1 : 0);
-        settingsAPI.SetVoiceGreetingPreference(voiceGreetingToggle.isOn ? 1 : 0);
+        gameAPI.SetNickname(nicknameInputField.text);
+        gameAPI.SetLanguage(languages.ActiveToggles().FirstOrDefault().GetComponentInChildren<Text>().text);
+        gameAPI.SetTTSPreference(await gameAPI.GetSelectedLocale());
+        gameAPI.SetReminderPreference(dailyReminderToggle.isOn ? "Daily" : "Weekly");
+        gameAPI.SetUsabilityTipsPreference(usabilityTipsToggle.isOn ? 1 : 0);
+        gameAPI.SetPromotionsNotificationPreference(promotionsNotificationToggle.isOn ? 1 : 0);
+        gameAPI.SetHapticsPreference(hapticsToggle.isOn ? 1 : 0);
+        gameAPI.SetActivateOnPressInPreference(activateOnPressToggle.isOn ? 1 : 0);
+        gameAPI.SetVoiceGreetingPreference(voiceGreetingToggle.isOn ? 1 : 0);
         foreach (var toggle in TTSVoices.GetComponentsInChildren<Toggle>())
         {
             if (toggle.name == ttsPreference)
@@ -126,14 +123,14 @@ public class SettingsUIManager : MonoBehaviour
     public async void SignOut()
     {
         nicknameInputField.text = "";
-        settingsAPI.ClearAllPrefs();
-        selectAvatarButton.image.sprite = await settingsAPI.GetAvatarImage();
-        reminderPreference = settingsAPI.GetReminderPreference();
-        usabilityTipsToggle.isOn = settingsAPI.GetUsabilityTipsPreference() == 1 ? true : false;
-        hapticsToggle.isOn = settingsAPI.GetHapticsPreference() == 1 ? true : false;
-        activateOnPressToggle.isOn = settingsAPI.GetActivateOnPressInPreference() == 1 ? true : false;
-        promotionsNotificationToggle.isOn = settingsAPI.GetPromotionsNotificationPreference() == 1 ? true : false;
-        voiceGreetingToggle.isOn = settingsAPI.GetVoiceGreetingPreference() == 1 ? true : false;
+        gameAPI.ClearAllPrefs();
+        selectAvatarButton.image.sprite = await gameAPI.GetAvatarImage();
+        reminderPreference = gameAPI.GetReminderPreference();
+        usabilityTipsToggle.isOn = gameAPI.GetUsabilityTipsPreference() == 1 ? true : false;
+        hapticsToggle.isOn = gameAPI.GetHapticsPreference() == 1 ? true : false;
+        activateOnPressToggle.isOn = gameAPI.GetActivateOnPressInPreference() == 1 ? true : false;
+        promotionsNotificationToggle.isOn = gameAPI.GetPromotionsNotificationPreference() == 1 ? true : false;
+        voiceGreetingToggle.isOn = gameAPI.GetVoiceGreetingPreference() == 1 ? true : false;
 
         foreach (var toggle in languages.GetComponentsInChildren<Toggle>())
         {

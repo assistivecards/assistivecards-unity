@@ -7,12 +7,13 @@ using TMPro;
 
 public class ProfileEditor : MonoBehaviour
 {
+    [SerializeField] private CanvasController canvasController;
+
     [Header ("API Connection")]
     SettingsAPI settingsAPI;
     [SerializeField] GameObject api;
     
     [Header ("Profile UI Assests")]
-    [SerializeField] private Image profileImage;
     public TMP_InputField nicknameInputField;
     public Button selectAvatarButton;
     public string nickname;
@@ -28,11 +29,12 @@ public class ProfileEditor : MonoBehaviour
     {
         nicknameInputField.text = nickname;
         selectAvatarButton.image.sprite = await settingsAPI.GetAvatarImage();  
-        profileImage.GetComponent<Image>().sprite = await settingsAPI.GetAvatarImage();
+        canvasController.profileImage.GetComponent<Image>().sprite = await settingsAPI.GetAvatarImage();
     }
 
     private void Update() 
     {
         nickname = settingsAPI.GetNickname();
+        selectAvatarButton.GetComponent<Image>().sprite = canvasController.profileImage.GetComponent<Image>().sprite;
     }
 }

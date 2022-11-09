@@ -9,8 +9,12 @@ using TMPro;
 
 public class CanvasController : MonoBehaviour
 {
-    [Header ("API Connection")]
+    [Header ("User Information")]
+    public GameObject profileImage;
     public string nickname;
+
+
+    [Header ("API Connection")]
     AssistiveCardsSDK assistiveCardsSDK;
     public GameObject SDK;
     SettingsAPI settingsAPI;
@@ -19,7 +23,6 @@ public class CanvasController : MonoBehaviour
     [Header ("UI Assets")]
     public TMP_Text nicknameText;
     [SerializeField] Canvas canvas;
-    public GameObject profileImage;
     [SerializeField] private GameObject popUp;
     private GameObject backButton;
 
@@ -36,6 +39,7 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private GameObject sendFeedbacksScreen;
     [SerializeField] private GameObject aboutApplicationScreen;
     [SerializeField] private GameObject loginPageScreen;
+    [SerializeField] private GameObject avatarSelectionScreen;
 
     private void Awake()
     {
@@ -48,12 +52,15 @@ public class CanvasController : MonoBehaviour
         if(PlayerPrefs.GetString("Nickname", "") != "")
         {
             loginPageScreen.SetActive(false);
+            avatarSelectionScreen.SetActive(false);
+            
         }
     }
 
     private async void Start() 
     {
         nicknameText.text = nickname;
+        //profileImageGameObject.GetComponent<Image>().sprite = await settingsAPI.GetAvatarImage();
         profileImage.GetComponent<Image>().sprite = await settingsAPI.GetAvatarImage();
     }
 

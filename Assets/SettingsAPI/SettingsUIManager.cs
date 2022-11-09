@@ -84,13 +84,6 @@ public class SettingsUIManager : MonoBehaviour
     {
         nickname = gameAPI.GetNickname();
         language = gameAPI.GetLanguage();
-        foreach (var toggle in TTSVoices.GetComponentsInChildren<Toggle>())
-        {
-            if (toggle.name == ttsPreference)
-            {
-                toggle.isOn = true;
-            }
-        }
         isHapticsActive = gameAPI.GetHapticsPreference() == 1 ? true : false;
         isPressInActive = gameAPI.GetActivateOnPressInPreference() == 1 ? true : false;
         isVoiceGreetingActive = gameAPI.GetVoiceGreetingPreference() == 1 ? true : false;
@@ -111,6 +104,7 @@ public class SettingsUIManager : MonoBehaviour
         gameAPI.SetHapticsPreference(hapticsToggle.isOn ? 1 : 0);
         gameAPI.SetActivateOnPressInPreference(activateOnPressToggle.isOn ? 1 : 0);
         gameAPI.SetVoiceGreetingPreference(voiceGreetingToggle.isOn ? 1 : 0);
+        ttsPreference = await gameAPI.GetTTSPreference();
         foreach (var toggle in TTSVoices.GetComponentsInChildren<Toggle>())
         {
             if (toggle.name == ttsPreference)
@@ -131,6 +125,7 @@ public class SettingsUIManager : MonoBehaviour
         activateOnPressToggle.isOn = gameAPI.GetActivateOnPressInPreference() == 1 ? true : false;
         promotionsNotificationToggle.isOn = gameAPI.GetPromotionsNotificationPreference() == 1 ? true : false;
         voiceGreetingToggle.isOn = gameAPI.GetVoiceGreetingPreference() == 1 ? true : false;
+        ttsPreference = await gameAPI.GetTTSPreference();
 
         foreach (var toggle in languages.GetComponentsInChildren<Toggle>())
         {
@@ -158,16 +153,4 @@ public class SettingsUIManager : MonoBehaviour
             weeklyReminderToggle.isOn = true;
         }
     }
-
-    // public async Task<bool> DidLanguageChange(string langCode)
-    // {
-
-    //     // var ttsPreference = await settingsAPI.GetTTSPreference();
-
-    //     if (ttsPreference.StartsWith(langCode))
-    //     {
-    //         return false;
-    //     }
-    //     return true;
-    // }
 }

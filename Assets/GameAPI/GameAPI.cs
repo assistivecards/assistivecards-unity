@@ -990,8 +990,8 @@ public class GameAPI : MonoBehaviour
     public async Task<string> Translate(string UITextID)
     {
         string code = await GetSystemLanguageCode();
-        var path = Application.dataPath + "/Resources/" + code + ".json";
-        string contents = File.ReadAllText(path);
+        var path = Resources.Load<TextAsset>(code);
+        string contents = path.text;
         JSONObject obj = new JSONObject(contents);
         return obj[UITextID].ToString().Replace("\"", "");
     }
@@ -999,8 +999,8 @@ public class GameAPI : MonoBehaviour
     public async Task<string> Translate(string UITextID, string variable)
     {
         string code = await GetSystemLanguageCode();
-        var path = Application.dataPath + "/Resources/" + code + ".json";
-        string contents = File.ReadAllText(path);
+        var path = Resources.Load<TextAsset>(code);
+        string contents = path.text;
         JSONObject obj = new JSONObject(contents);
         return (obj[UITextID].ToString().Replace("$1", variable)).Replace("\"", "");
     }

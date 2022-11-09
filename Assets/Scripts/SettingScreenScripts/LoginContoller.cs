@@ -17,6 +17,7 @@ public class LoginContoller : MonoBehaviour
     //public Button selectAvatarButton;
     public string nickname;
     [SerializeField] private Button nextButton;
+    [SerializeField] private GameObject avatarSelectionScreen;
 
 
     private void Awake() 
@@ -34,6 +35,9 @@ public class LoginContoller : MonoBehaviour
         settingsAPI.SetNickname(nicknameInputField.text);
         canvasController.ProfilePanelUpdate();
         this.gameObject.SetActive(false);
+
+        avatarSelectionScreen.SetActive(true);
+        LeanTween.scale(avatarSelectionScreen,  Vector3.one, 0.2f);
     }
 
 }

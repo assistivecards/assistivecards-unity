@@ -22,39 +22,75 @@ public class AvatarListCreator : MonoBehaviour
         settingsUIManager = canvas.GetComponent<SettingsUIManager>();
     }
 
-    private async void Start() 
+    private void Start() 
     {
-        for(int i = 1; i< 29; i++)
+        AvatarListCreate("misc", 29);
+    }
+
+    public void GirlButtonClicked()
+    {
+        foreach (Transform child in transform) 
         {
-            if(i <= 9)
+            GameObject.Destroy(child.gameObject);
+        }
+
+        AvatarListCreate("girl", 27);
+    }
+
+    public void BoyButtonClicked()
+    {
+        foreach (Transform child in transform) 
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+        
+        AvatarListCreate("boy", 33);
+    }
+    public void MiscButtonClicked()
+    {
+        foreach (Transform child in transform) 
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+        
+        AvatarListCreate("misc", 29);
+    }
+
+    private async void AvatarListCreate(string _avatarID, int _avatarListLenght)
+    {
+        if(tempAvatarElement != null)
+        {
+            for(int i = 1; i<= _avatarListLenght; i++)
             {
-                avatarElement = Instantiate(tempAvatarElement, transform);
-                avatarTexture = await gameAPI.GetAvatarImage("boy0" + i);
-                avatarElement.name = "boy0" + i;
+                if(i <= 9)
+                {
+                    avatarElement = Instantiate(tempAvatarElement, transform);
+                    avatarTexture = await gameAPI.GetAvatarImage(_avatarID + "0" + i);
+                    avatarElement.name = _avatarID + "0" + i;
 
 
-                sprite = Sprite.Create(avatarTexture, new Rect(0.0f, 0.0f, avatarTexture.width, avatarTexture.height), new Vector2(0.5f, 0.5f), 100.0f);
-                avatarButtonImage = avatarElement.GetComponent<Image>();
-                avatarButtonImage.sprite = sprite;
+                    sprite = Sprite.Create(avatarTexture, new Rect(0.0f, 0.0f, avatarTexture.width, avatarTexture.height), new Vector2(0.5f, 0.5f), 100.0f);
+                    avatarButtonImage = avatarElement.GetComponent<Image>();
+                    avatarButtonImage.sprite = sprite;
 
-                avatarElement.GetComponent<Button>().AddEventListener("boy0" + i, SelectAvatar);    
+                    avatarElement.GetComponent<Button>().AddEventListener(_avatarID + "0" + i, SelectAvatar);    
 
-            }
-            if(i >= 10)
-            {
-                avatarElement = Instantiate(tempAvatarElement, transform);
-                avatarTexture = await gameAPI.GetAvatarImage("boy" + i);
-                avatarElement.name = "boy" + i;
+                }
+                if(i >= 10)
+                {
+                    avatarElement = Instantiate(tempAvatarElement, transform);
+                    avatarTexture = await gameAPI.GetAvatarImage(_avatarID + i);
+                    avatarElement.name = _avatarID + i;
 
 
-                sprite = Sprite.Create(avatarTexture, new Rect(0.0f, 0.0f, avatarTexture.width, avatarTexture.height), new Vector2(0.5f, 0.5f), 100.0f);
-                avatarButtonImage = avatarElement.GetComponent<Image>();
-                avatarButtonImage.sprite = sprite;
+                    sprite = Sprite.Create(avatarTexture, new Rect(0.0f, 0.0f, avatarTexture.width, avatarTexture.height), new Vector2(0.5f, 0.5f), 100.0f);
+                    avatarButtonImage = avatarElement.GetComponent<Image>();
+                    avatarButtonImage.sprite = sprite;
 
-                avatarElement.GetComponent<Button>().AddEventListener("boy" + i, SelectAvatar);    
+                    avatarElement.GetComponent<Button>().AddEventListener(_avatarID + i, SelectAvatar);    
+                }
             }
         }
-        Destroy(tempAvatarElement);
     }
 
     private async void SelectAvatar(string avatarID)

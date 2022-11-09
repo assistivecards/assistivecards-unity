@@ -7,6 +7,7 @@ using TMPro;
 
 public class ProfileEditor : MonoBehaviour
 {
+    [SerializeField] private GameObject avatarSelectionScreen;
     [SerializeField] private CanvasController canvasController;
 
     [Header ("API Connection")]
@@ -36,5 +37,11 @@ public class ProfileEditor : MonoBehaviour
     {
         nickname = settingsAPI.GetNickname();
         selectAvatarButton.GetComponent<Image>().sprite = canvasController.profileImage.GetComponent<Image>().sprite;
+    }
+
+    public void AvatarSelectButtonClicked()
+    {
+        avatarSelectionScreen.SetActive(true);
+        LeanTween.scale(avatarSelectionScreen,  Vector3.one, 0.2f);
     }
 }

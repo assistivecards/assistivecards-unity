@@ -814,6 +814,16 @@ public class GameAPI : MonoBehaviour
         return PlayerPrefs.GetInt("VoiceGreetingPreference", 0);
     }
 
+    public void SetPremium(string isPremium)
+    {
+        PlayerPrefs.SetString("isPremium", isPremium);
+    }
+
+    public string GetPremium()
+    {
+        return PlayerPrefs.GetString("isPremium", "0");
+    }
+
     public void ClearAllPrefs()
     {
         PlayerPrefs.DeleteAll();

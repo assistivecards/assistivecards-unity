@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 3078962379523272342}
   m_Layer: 5
   m_Name: AppSummary
-  m_TagString: Untagged
+  m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -697,7 +697,7 @@ GameObject:
   - component: {fileID: 3078962380904680310}
   m_Layer: 5
   m_Name: AppDescription
-  m_TagString: Untagged
+  m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

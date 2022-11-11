@@ -215,11 +215,7 @@ public class GameAPI : MonoBehaviour
         public string vi;
     }
 
-    public Packs packs = new Packs();
     public Cards cards = new Cards();
-    public Activities activities = new Activities();
-    public Languages languages = new Languages();
-    public Apps apps = new Apps();
 
     ///<summary>
     ///Takes in a language code of type string and returns an object of type Packs which holds an array of Pack objects in the specified language.
@@ -761,8 +757,6 @@ public class GameAPI : MonoBehaviour
     ///</summary>
     async public Task<string> GetTTSPreference()
     {
-        // await cacheData;
-        // var availableVoices = GameAPI.tts.GetAvailableVoices(GameAPI.tts.voices, GameAPI.selectedLangCode);
         return PlayerPrefs.GetString("TTSPreference", await GetSelectedLocale());
     }
 
@@ -814,19 +808,30 @@ public class GameAPI : MonoBehaviour
         return PlayerPrefs.GetInt("VoiceGreetingPreference", 0);
     }
 
+    ///<summary>
+    ///Takes in a single parameter of type string named isPremium and stores it in PlayerPrefs.
+    ///</summary>
     public void SetPremium(string isPremium)
     {
         PlayerPrefs.SetString("isPremium", isPremium);
     }
 
+    ///<summary>
+    ///Retrieves the premium status data stored in PlayerPrefs. Default value is 0.
+    ///</summary>
     public string GetPremium()
     {
         return PlayerPrefs.GetString("isPremium", "0");
     }
 
+    ///<summary>
+    ///Deletes all the data stored in PlayerPrefs on sign out.
+    ///</summary>
     public void ClearAllPrefs()
     {
+        var isPremium = GetPremium();
         PlayerPrefs.DeleteAll();
+        SetPremium(isPremium);
     }
 
 
@@ -997,6 +1002,9 @@ public class GameAPI : MonoBehaviour
         public string complete_editing;
     }
 
+    ///<summary>
+    ///Takes in a single parameter of type string named UITextID and returns the translation corresponding to the selected language which is stored in PlayerPrefs. Use this method for plain texts.
+    ///</summary>
     public async Task<string> Translate(string UITextID)
     {
         string code = await GetSystemLanguageCode();
@@ -1006,6 +1014,9 @@ public class GameAPI : MonoBehaviour
         return obj[UITextID].ToString().Replace("\"", "");
     }
 
+    ///<summary>
+    ///Takes in a first parameter of type string named UITextID and a second parameter of type string named variable.Returns the translation corresponding to the selected language which is stored in PlayerPrefs.Use this method for texts with variables.
+    ///</summary>
     public async Task<string> Translate(string UITextID, string variable)
     {
         string code = await GetSystemLanguageCode();
@@ -1015,6 +1026,9 @@ public class GameAPI : MonoBehaviour
         return (obj[UITextID].ToString().Replace("$1", variable)).Replace("\"", "");
     }
 
+    ///<summary>
+    ///Returns the language code corresponding to the language data stored in PlayerPrefs.
+    ///</summary>
     public async Task<string> GetSystemLanguageCode()
     {
         var langs = await GetLanguages();
@@ -1030,6 +1044,9 @@ public class GameAPI : MonoBehaviour
         return null;
     }
 
+    ///<summary>
+    ///Returns the locale corresponding to the language data stored in PlayerPrefs.
+    ///</summary>
     public async Task<string> GetSelectedLocale()
     {
         var langs = await GetLanguages();

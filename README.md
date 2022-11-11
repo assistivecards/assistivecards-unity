@@ -2,9 +2,9 @@
 
 Template for unity games made by Assistive Cards
 
-# AssistiveCards SDK
+# GameAPI
 
-This is a documentation for the AssistiveCards SDK, this module will be accessible from anywhere in game.
+This is a documentation for GameAPI, which is the combination of Assistive Cards SDK, Settings API and Language Manager scripts. This module will be accessible from anywhere in game. GameAPI consists of methods for retrieving assets data, storing user preferences and translating UI elements at runtime.
 
 ## GetPacks
 
@@ -255,10 +255,6 @@ Texture2D[] textures;
 texture = await GetAvatarImagesByCategory("misc",512);
 ```
 
-# Settings API
-
-This is a documentation for the AssistiveCards Settings API, used for storing user preferences.
-
 ## SetNickname
 
 Takes in a nickname of type string and stores it in PlayerPrefs.
@@ -377,12 +373,12 @@ public void SetTTSPreference(string TTSPreference)
 
 ## GetTTSPreference
 
-Retrieves the TTS voice preference data stored in PlayerPrefs.
+Retrieves the TTS preference data stored in PlayerPrefs.
 
-> Default value is "Alex".
+> Default value is locale of the system language.
 
 ```Csharp
-public string GetTTSPreference()
+async public Task<string> GetTTSPreference()
 ```
 
 ## SetHapticsPreference
@@ -437,4 +433,66 @@ Retrieves the voice greeting on start preference data stored in PlayerPrefs.
 
 ```Csharp
 public int GetVoiceGreetingPreference()
+```
+
+## SetPremium
+
+Takes in a single parameter of type string named isPremium and stores it in PlayerPrefs.
+
+```Csharp
+public void SetPremium(string isPremium)
+```
+
+## GetPremium
+
+Retrieves the premium status data stored in PlayerPrefs.
+
+> Default value is 0.
+
+```Csharp
+public string GetPremium()
+```
+
+## ClearAllPrefs
+
+Deletes all the data stored in PlayerPrefs on sign out.
+
+```Csharp
+public void ClearAllPrefs()
+```
+
+## GetSystemLanguageCode
+
+Returns the language code corresponding to the language data stored in PlayerPrefs.
+
+> <span style="color:crimson">e.g.</span> "en" for English, "tr" for Turkish etc.
+
+```Csharp
+public async Task<string> GetSystemLanguageCode()
+```
+
+## GetSelectedLocale
+
+Returns the locale corresponding to the language data stored in PlayerPrefs.
+
+> <span style="color:crimson">e.g.</span> "en-US" for English, "tr-TR" for Turkish etc.
+
+```Csharp
+public async Task<string> GetSelectedLocale()
+```
+
+## Translate
+
+Takes in a single parameter of type string named UITextID and returns the translation corresponding to the selected language which is stored in PlayerPrefs. Use this method for plain texts.
+
+```Csharp
+public async Task<string> Translate(string UITextID)
+```
+
+## Translate
+
+Takes in a first parameter of type string named UITextID and a second parameter of type string named variable. Returns the translation corresponding to the selected language which is stored in PlayerPrefs. Use this method for texts with variables.
+
+```Csharp
+public async Task<string> Translate(string UITextID, string variable)
 ```

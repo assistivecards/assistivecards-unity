@@ -4,7 +4,6 @@ using UnityEngine;
 public class Test : MonoBehaviour
 {
     [SerializeField] GameAPI.Pack packResult = new GameAPI.Pack();
-    [SerializeField] GameAPI.Card cardResult = new GameAPI.Card();
     [SerializeField] GameAPI.Activity activityResult = new GameAPI.Activity();
     [SerializeField] GameAPI.Language languageResult = new GameAPI.Language();
     GameAPI gameAPI;
@@ -12,6 +11,7 @@ public class Test : MonoBehaviour
     [SerializeField] Texture2D[] cardTextures;
     [SerializeField] Texture2D[] avatarTextures;
     [SerializeField] private Texture2D testTexture;
+    [SerializeField] private GameAPI.Cards cardsTest;
 
     private void Awake()
     {
@@ -33,6 +33,7 @@ public class Test : MonoBehaviour
     private async void Start()
     {
         testTexture = await gameAPI.GetPackImage("animals");
+        cardsTest = await gameAPI.GetCards(await gameAPI.GetSystemLanguageCode(), "sports");
         cardTextures = await gameAPI.GetCardImagesByPack("en", "school");
         avatarTextures = await gameAPI.GetAvatarImagesByCategory("misc");
         packResult = gameAPI.GetPackBySlug(gameAPI.cachedPacks, "animals");

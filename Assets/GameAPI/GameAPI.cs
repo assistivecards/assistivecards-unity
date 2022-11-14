@@ -1011,7 +1011,9 @@ public class GameAPI : MonoBehaviour
         var path = Resources.Load<TextAsset>(code);
         string contents = path.text;
         JSONObject obj = new JSONObject(contents);
+
         return obj[UITextID].ToString().Replace("\"", "");
+
     }
 
     ///<summary>

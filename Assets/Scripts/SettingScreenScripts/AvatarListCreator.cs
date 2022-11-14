@@ -24,7 +24,7 @@ public class AvatarListCreator : MonoBehaviour
 
     private void Start() 
     {
-        AvatarListCreate("misc", 29);
+        AvatarListCreate("boy", 33);
     }
 
     public void GirlButtonClicked()

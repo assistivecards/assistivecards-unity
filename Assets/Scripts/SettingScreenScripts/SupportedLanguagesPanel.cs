@@ -18,11 +18,11 @@ public static class SelectLanguage
 }
 public class SupportedLanguagesPanel : MonoBehaviour
 {
+    [SerializeField] private DeviceLanguagePanel deviceLanguagePanel;
     AssistiveCardsSDK assistiveCardsSDK;
     public TMP_InputField outputArea;
+    public GameObject deviceLanguageObject;
     private LanguageController languageController;
-    [SerializeField] private Material inactiveRadioButtoMaterial;
-    [SerializeField] private Material appBackgroundMatrial;
     private AssistiveCardsSDK.Language[] languageArray;
     private GameObject languageTemplateElement;
     private GameObject languageElement;
@@ -45,14 +45,18 @@ public class SupportedLanguagesPanel : MonoBehaviour
         {
             languageElement = Instantiate(languageTemplateElement, transform);
 
-            languageElement.transform.GetChild(2).GetComponent<Image>().material = inactiveRadioButtoMaterial;
-            languageElement.transform.GetChild(0).GetComponent<TMP_Text> ().text = languageArray[i].title;
-            languageElement.transform.GetChild(1).GetComponent<TMP_Text> ().text = languageArray[i].native; 
+            languageElement.transform.GetChild(1).GetComponent<Text> ().text = languageArray[i].title;
+            languageElement.transform.GetChild(2).GetComponent<Text> ().text = languageArray[i].native; 
             languageElement.name = languageArray[i].title;
-
             languageGameobjects.Add(languageElement);
 
-            languageElement.GetComponent<Button>().AddEventListener  (languageElement, languageController.SelectLanguageElement);       
+            if(languageArray[i].title == Application.systemLanguage.ToString())
+            {
+                languageElement.GetComponent<Toggle>().isOn = true;
+                languageController.selectedLanguage = languageElement;
+                deviceLanguageObject = languageElement;
+                deviceLanguagePanel.CreateSelectLanguageElement(deviceLanguageObject);
+            }
         }
 
         Destroy(languageTemplateElement);

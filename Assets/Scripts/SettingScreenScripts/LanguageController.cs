@@ -10,31 +10,24 @@ using UnityEngine.Events;
 public class LanguageController : MonoBehaviour
 {
     public GameObject selectedLanguage; 
-    public UnityEvent newLanguageSelected;
-    private SupportedLanguagesPanel supportedLanguagesPanel;
     private DeviceLanguagePanel deviceLanguagePanel;
     [SerializeField] private RightToLeftTextChanger rightToLeftTextChanger;
-    [SerializeField] private Material inactiveRadioButtoMaterial;
-    [SerializeField] private Material appBackgroundMatrial;
     [SerializeField] private Button saveButton;
 
-    private void Awake() 
-    {
-        supportedLanguagesPanel = GetComponentInChildren<SupportedLanguagesPanel>();
+
+    private void Start() {
         deviceLanguagePanel = GetComponentInChildren<DeviceLanguagePanel>();
     }
 
+
     public void SelectLanguageElement(GameObject _languageElement)
     {   
-        foreach(GameObject language in supportedLanguagesPanel.languageGameobjects)
-        {
-            language.transform.GetChild(2).GetComponent<Image>().material = inactiveRadioButtoMaterial;
-        }     
-        deviceLanguagePanel.languageElement.transform.GetChild(2).GetComponent<Image>().material = inactiveRadioButtoMaterial;
-
         saveButton.interactable = true;
         selectedLanguage = _languageElement;
-        selectedLanguage.transform.GetChild(2).GetComponent<Image>().material = appBackgroundMatrial;
+
+        deviceLanguagePanel.CreateSelectLanguageElement(selectedLanguage);
+
+
         if(selectedLanguage.name == "Arabic" || selectedLanguage.name == "Urdu")
         {
             rightToLeftTextChanger.RightToLeftLangugeChanged();
@@ -43,6 +36,6 @@ public class LanguageController : MonoBehaviour
         {
             rightToLeftTextChanger.LeftToRightLanguageChanged();
         }
-        newLanguageSelected.Invoke();
+        
     }
 }

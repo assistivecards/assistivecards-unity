@@ -1011,9 +1011,14 @@ public class GameAPI : MonoBehaviour
         var path = Resources.Load<TextAsset>(code);
         string contents = path.text;
         JSONObject obj = new JSONObject(contents);
-
-        return obj[UITextID].ToString().Replace("\"", "");
-
+        if (obj[UITextID] != null)
+        {
+            return obj[UITextID].ToString().Replace("\"", "");
+        }
+        else
+        {
+            return UITextID;
+        }
     }
 
     ///<summary>
@@ -1025,9 +1030,15 @@ public class GameAPI : MonoBehaviour
         var path = Resources.Load<TextAsset>(code);
         string contents = path.text;
         JSONObject obj = new JSONObject(contents);
-        return (obj[UITextID].ToString().Replace("$1", variable)).Replace("\"", "");
+        if (obj[UITextID] != null && variable != null)
+        {
+            return (obj[UITextID].ToString().Replace("$1", variable)).Replace("\"", "");
+        }
+        else
+        {
+            return UITextID;
+        }
     }
-
     ///<summary>
     ///Returns the language code corresponding to the language data stored in PlayerPrefs.
     ///</summary>

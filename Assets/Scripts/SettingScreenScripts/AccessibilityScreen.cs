@@ -6,9 +6,37 @@ using UnityEngine.UI;
 
 public class AccessibilityScreen : MonoBehaviour
 {
-    [SerializeField] private Material inactiveRadioButtoMaterial;
-    [SerializeField] private Material appBackgroundMatrial;
-    private GameObject button;
+    GameAPI gameAPI;
+    public bool isHapticsActive;
+    public bool isPressInActive;
+    public bool isVoiceGreetingActive;
+
+    public Toggle hapticsToggle;
+    public Toggle activateOnPressToggle;
+    public Toggle voiceGreetingToggle;
+
+    private void Awake() 
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+
+        isHapticsActive = gameAPI.GetHapticsPreference() == 1 ? true : false;
+        isPressInActive = gameAPI.GetActivateOnPressInPreference() == 1 ? true : false;
+        isVoiceGreetingActive = gameAPI.GetVoiceGreetingPreference() == 1 ? true : false;
+    }
+
+    private void Start() 
+    {
+        hapticsToggle.isOn = gameAPI.GetHapticsPreference() == 1 ? true : false;
+        activateOnPressToggle.isOn = gameAPI.GetActivateOnPressInPreference() == 1 ? true : false;
+        voiceGreetingToggle.isOn = gameAPI.GetVoiceGreetingPreference() == 1 ? true : false;
+    }
+
+    private void Update() 
+    {
+        isHapticsActive = gameAPI.GetHapticsPreference() == 1 ? true : false;
+        isPressInActive = gameAPI.GetActivateOnPressInPreference() == 1 ? true : false;
+        isVoiceGreetingActive = gameAPI.GetVoiceGreetingPreference() == 1 ? true : false;
+    }
 
 
 }

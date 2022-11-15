@@ -777,8 +777,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texts:
   - {fileID: 0}
+  plainTexts: []
   textsWithVariable: []
   languageInputField: {fileID: 1061804633}
+  canvas: {fileID: 0}
 --- !u!1 &72650489
 GameObject:
   m_ObjectHideFlags: 0
@@ -3481,8 +3483,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdb1d4387c88b154aac6d7e1ebd67bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inactiveRadioButtoMaterial: {fileID: 2100000, guid: 8bc5b0c6f9dff8e4686220b83506a1e6, type: 2}
-  appBackgroundMatrial: {fileID: 2100000, guid: 80d5e943dfb60234f9025d0a1a791056, type: 2}
+  isHapticsActive: 0
+  isPressInActive: 0
+  isVoiceGreetingActive: 0
+  hapticsToggle: {fileID: 1257430749}
+  activateOnPressToggle: {fileID: 970935384}
+  voiceGreetingToggle: {fileID: 1390793312}
 --- !u!224 &231511079 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 773758864845485447, guid: e6f74a65304f7594784561825a582f5d, type: 3}
@@ -5028,6 +5034,22 @@ PrefabInstance:
       propertyPath: settingsAPI
       value: 
       objectReference: {fileID: 334446881}
+    - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: hapticsToggle
+      value: 
+      objectReference: {fileID: 1257430749}
+    - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 68398936}
+    - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: voiceGreetingToggle
+      value: 
+      objectReference: {fileID: 1390793312}
+    - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: activateOnPressToggle
+      value: 
+      objectReference: {fileID: 970935384}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6f74a65304f7594784561825a582f5d, type: 3}
 --- !u!224 &311769904 stripped
@@ -15644,7 +15666,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 223468395}
+        m_TargetAssemblyTypeName: AccessibilityScreen, Assembly-CSharp
+        m_MethodName: PressInEnabled
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1 &975446573
 GameObject:
@@ -19757,7 +19791,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 223468395}
+        m_TargetAssemblyTypeName: AccessibilityScreen, Assembly-CSharp
+        m_MethodName: HapticsEnabled
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1 &1264436230
 GameObject:
@@ -22027,7 +22073,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 223468395}
+        m_TargetAssemblyTypeName: AccessibilityScreen, Assembly-CSharp
+        m_MethodName: VoiceGreedingEnabled
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1001 &1392210271
 PrefabInstance:

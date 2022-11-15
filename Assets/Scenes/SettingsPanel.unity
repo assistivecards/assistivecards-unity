@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 15537000}
   - component: {fileID: 15536999}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: LetUsNofity2
   m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -770,7 +770,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68398931}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfff5435b2024694b992c3fcd989c117, type: 3}
   m_Name: 
@@ -780,7 +780,7 @@ MonoBehaviour:
   plainTexts: []
   textsWithVariable: []
   languageInputField: {fileID: 1061804633}
-  canvas: {fileID: 0}
+  canvas: {fileID: 68398934}
 --- !u!1 &72650489
 GameObject:
   m_ObjectHideFlags: 0
@@ -7120,8 +7120,8 @@ GameObject:
   - component: {fileID: 449994567}
   - component: {fileID: 449994566}
   m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_Name: Next
+  m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7559,7 +7559,7 @@ GameObject:
   - component: {fileID: 467536622}
   - component: {fileID: 467536621}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: girl1
   m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7694,8 +7694,8 @@ GameObject:
   - component: {fileID: 476880836}
   - component: {fileID: 476880835}
   m_Layer: 5
-  m_Name: Label (1)
-  m_TagString: Untagged
+  m_Name: IfDisabledNotGreet
+  m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8195,8 +8195,8 @@ GameObject:
   - component: {fileID: 528227363}
   - component: {fileID: 528227362}
   m_Layer: 5
-  m_Name: Label (1)
-  m_TagString: Untagged
+  m_Name: IfEnabledSmallHaptic
+  m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9469,8 +9469,8 @@ GameObject:
   - component: {fileID: 636510037}
   - component: {fileID: 636510036}
   m_Layer: 5
-  m_Name: Label
-  m_TagString: Untagged
+  m_Name: ActivateOnPressIn
+  m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10520,8 +10520,8 @@ GameObject:
   - component: {fileID: 704656222}
   - component: {fileID: 704656221}
   m_Layer: 5
-  m_Name: Label
-  m_TagString: Untagged
+  m_Name: DailyReminders
+  m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10600,8 +10600,8 @@ GameObject:
   - component: {fileID: 707836903}
   - component: {fileID: 707836902}
   m_Layer: 5
-  m_Name: Label (1)
-  m_TagString: Untagged
+  m_Name: WeWillSendYouDaily
+  m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12277,8 +12277,8 @@ GameObject:
   - component: {fileID: 781278416}
   - component: {fileID: 781278415}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
-  m_TagString: Text With Variable
+  m_Name: OneTimePayment
+  m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13542,7 +13542,7 @@ GameObject:
   - component: {fileID: 827043332}
   - component: {fileID: 827043331}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: mixed1
   m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13677,8 +13677,8 @@ GameObject:
   - component: {fileID: 830904435}
   - component: {fileID: 830904434}
   m_Layer: 5
-  m_Name: Label
-  m_TagString: Untagged
+  m_Name: UsabilityTips
+  m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14508,8 +14508,8 @@ GameObject:
   - component: {fileID: 881309549}
   - component: {fileID: 881309548}
   m_Layer: 5
-  m_Name: Label
-  m_TagString: Untagged
+  m_Name: VoiceGreedingOnStart
+  m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14664,8 +14664,8 @@ GameObject:
   - component: {fileID: 887932348}
   - component: {fileID: 887932347}
   m_Layer: 5
-  m_Name: Label
-  m_TagString: Untagged
+  m_Name: WeeklyReminders
+  m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14935,7 +14935,7 @@ GameObject:
   - component: {fileID: 910285335}
   - component: {fileID: 910285334}
   m_Layer: 5
-  m_Name: Description
+  m_Name: ParentOnlyDesc
   m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16185,7 +16185,7 @@ GameObject:
   - component: {fileID: 1015366094}
   - component: {fileID: 1015366093}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: HowToEffectively1
   m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17042,8 +17042,8 @@ GameObject:
   - component: {fileID: 1088855930}
   - component: {fileID: 1088855929}
   m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_Name: MonthlyPremium
+  m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18583,8 +18583,8 @@ GameObject:
   - component: {fileID: 1178435965}
   - component: {fileID: 1178435964}
   m_Layer: 5
-  m_Name: Label (1)
-  m_TagString: Untagged
+  m_Name: LetUsNotify
+  m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19581,7 +19581,7 @@ GameObject:
   - component: {fileID: 1243629439}
   - component: {fileID: 1243629438}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: UsabilityTips
   m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19817,7 +19817,7 @@ GameObject:
   - component: {fileID: 1264436233}
   - component: {fileID: 1264436232}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: SignOutText
   m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20041,8 +20041,8 @@ GameObject:
   - component: {fileID: 1272934825}
   - component: {fileID: 1272934824}
   m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_Name: SendFeedback
+  m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21328,8 +21328,8 @@ GameObject:
   - component: {fileID: 1351180594}
   - component: {fileID: 1351180593}
   m_Layer: 5
-  m_Name: Label (1)
-  m_TagString: Untagged
+  m_Name: HowEffectlyUse
+  m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22767,7 +22767,7 @@ GameObject:
   - component: {fileID: 1445601371}
   - component: {fileID: 1445601370}
   m_Layer: 5
-  m_Name: ChangeDef
+  m_Name: ProfileChangeDef
   m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25099,7 +25099,7 @@ GameObject:
   - component: {fileID: 1591596909}
   - component: {fileID: 1591596908}
   m_Layer: 5
-  m_Name: Label (1)
+  m_Name: WeWillSendYouWeekly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25661,7 +25661,7 @@ GameObject:
   - component: {fileID: 1617586241}
   - component: {fileID: 1617586240}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Promotions1
   m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26316,8 +26316,8 @@ GameObject:
   - component: {fileID: 1672526060}
   - component: {fileID: 1672526059}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
-  m_TagString: Untagged
+  m_Name: ReccuringPayment
+  m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26802,7 +26802,7 @@ GameObject:
   - component: {fileID: 1703784281}
   - component: {fileID: 1703784280}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: boy1
   m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27812,8 +27812,8 @@ GameObject:
   - component: {fileID: 1748731865}
   - component: {fileID: 1748731864}
   m_Layer: 5
-  m_Name: Label
-  m_TagString: Untagged
+  m_Name: Promotions
+  m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28371,7 +28371,7 @@ GameObject:
   - component: {fileID: 1842610258}
   - component: {fileID: 1842610257}
   m_Layer: 5
-  m_Name: Profile
+  m_Name: ProfileTittle
   m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29172,8 +29172,8 @@ GameObject:
   - component: {fileID: 1907971625}
   - component: {fileID: 1907971624}
   m_Layer: 5
-  m_Name: Label (1)
-  m_TagString: Untagged
+  m_Name: IfEnabledTouchEvents
+  m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29724,7 +29724,7 @@ GameObject:
   - component: {fileID: 1949548368}
   - component: {fileID: 1949548367}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: LifeTimePremium
   m_TagString: Text With Variable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30539,8 +30539,8 @@ GameObject:
   - component: {fileID: 2015288315}
   - component: {fileID: 2015288314}
   m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_Name: YearlyPremium
+  m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30861,7 +30861,7 @@ GameObject:
   - component: {fileID: 2024616742}
   - component: {fileID: 2024616741}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: InOrderToCancelSub
   m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31578,8 +31578,8 @@ GameObject:
   - component: {fileID: 2086738817}
   - component: {fileID: 2086738816}
   m_Layer: 5
-  m_Name: Label
-  m_TagString: Untagged
+  m_Name: HapticsAndVibration
+  m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

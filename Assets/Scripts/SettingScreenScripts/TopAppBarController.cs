@@ -8,9 +8,13 @@ public class TopAppBarController : MonoBehaviour
     GameAPI gameAPI;
     [SerializeField] private CanvasController canvasController;
     [SerializeField] private SettingsAPI settingsAPI;
+    [SerializeField] private LanguageTest languageTest;
+    [SerializeField] private RightToLeftTextChanger rightToLeftTextChanger;
     private GameObject backButton;
     private GameObject saveButton;
     private ProfileEditor profileEditor;
+    private LanguageController languageController;
+
 
     [Header ( "UI Elements")]
     
@@ -47,6 +51,21 @@ public class TopAppBarController : MonoBehaviour
             gameAPI.SetHapticsPreference(hapticsToggle.isOn ? 1 : 0);
             gameAPI.SetActivateOnPressInPreference(activateOnPressToggle.isOn ? 1 : 0);
             gameAPI.SetVoiceGreetingPreference(voiceGreetingToggle.isOn ? 1 : 0);
+        }
+        if(GetComponentInParent<LanguageController>() != null)
+        {
+            languageController = GetComponentInParent<LanguageController>();
+            gameAPI.SetLanguage(languageController.selectedLanguage.name);
+            languageTest.OnLanguageChange();
+
+            if(languageController.selectedLanguage.name == "Arabic" || languageController.selectedLanguage.name == "Urdu")
+            {
+                rightToLeftTextChanger.RightToLeftLangugeChanged();
+            }
+            else
+            {
+                rightToLeftTextChanger.LeftToRightLanguageChanged();
+            }
         }
 
         LeanTween.scale(this.transform.parent.gameObject, Vector3.one*0.9f ,0.15f);

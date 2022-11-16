@@ -19,23 +19,11 @@ public class LanguageController : MonoBehaviour
         deviceLanguagePanel = GetComponentInChildren<DeviceLanguagePanel>();
     }
 
-
     public void SelectLanguageElement(GameObject _languageElement)
     {   
         saveButton.interactable = true;
         selectedLanguage = _languageElement;
 
-        deviceLanguagePanel.CreateSelectLanguageElement(selectedLanguage);
-
-
-        if(selectedLanguage.name == "Arabic" || selectedLanguage.name == "Urdu")
-        {
-            rightToLeftTextChanger.RightToLeftLangugeChanged();
-        }
-        else
-        {
-            rightToLeftTextChanger.LeftToRightLanguageChanged();
-        }
-        
+        deviceLanguagePanel.CreateSelectLanguageElement(_languageElement);
     }
 }

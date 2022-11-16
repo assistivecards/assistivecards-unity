@@ -24,7 +24,7 @@ public class SupportedLanguagesPanel : MonoBehaviour
     public GameObject deviceLanguageObject;
     private LanguageController languageController;
     private AssistiveCardsSDK.Language[] languageArray;
-    private GameObject languageTemplateElement;
+    private GameObject languageTempElement;
     private GameObject languageElement;
     public List<GameObject> languageGameobjects = new List<GameObject>();
 
@@ -32,7 +32,7 @@ public class SupportedLanguagesPanel : MonoBehaviour
     {
         assistiveCardsSDK = outputArea.GetComponent<AssistiveCardsSDK>();
 
-        languageTemplateElement = transform.GetChild(0).gameObject;
+        languageTempElement = transform.GetChild(0).gameObject;
         languageController = GetComponentInParent<LanguageController>();
     }
 
@@ -43,7 +43,7 @@ public class SupportedLanguagesPanel : MonoBehaviour
         
         for(int i=0 ; i < languageArray.Length; i++)
         {
-            languageElement = Instantiate(languageTemplateElement, transform);
+            languageElement = Instantiate(languageTempElement, transform);
 
             languageElement.transform.GetChild(1).GetComponent<Text> ().text = languageArray[i].title;
             languageElement.transform.GetChild(2).GetComponent<Text> ().text = languageArray[i].native; 
@@ -55,10 +55,11 @@ public class SupportedLanguagesPanel : MonoBehaviour
                 languageElement.GetComponent<Toggle>().isOn = true;
                 languageController.selectedLanguage = languageElement;
                 deviceLanguageObject = languageElement;
+
                 deviceLanguagePanel.CreateSelectLanguageElement(deviceLanguageObject);
             }
         }
 
-        Destroy(languageTemplateElement);
+        Destroy(languageTempElement);
     }
 }

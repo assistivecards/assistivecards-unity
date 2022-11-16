@@ -2947,6 +2947,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 68398931}
+    - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
       propertyPath: settingsAPI
       value: 
       objectReference: {fileID: 334446881}
@@ -4759,6 +4763,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 68398931}
+    - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
       propertyPath: settingsAPI
       value: 
       objectReference: {fileID: 334446881}
@@ -5320,6 +5328,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 68398931}
     - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
       propertyPath: settingsAPI
       value: 
@@ -6100,8 +6112,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dailyReminderToggle: {fileID: 1237226963}
   weeklyReminderToggle: {fileID: 1149788836}
-  inactiveRadioButtoMaterial: {fileID: 2100000, guid: 8bc5b0c6f9dff8e4686220b83506a1e6, type: 2}
-  appBackgroundMatrial: {fileID: 2100000, guid: 80d5e943dfb60234f9025d0a1a791056, type: 2}
+  usabilityTipsToggle: {fileID: 399344575}
+  promotionsNotificationToggle: {fileID: 1272737490}
 --- !u!1001 &408167880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6197,6 +6209,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 68398931}
     - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
       propertyPath: settingsAPI
       value: 
@@ -7180,9 +7196,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 68398931}
+    - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
       propertyPath: settingsAPI
       value: 
       objectReference: {fileID: 334446881}
+    - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: languageTest
+      value: 
+      objectReference: {fileID: 68398938}
+    - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 68398936}
+    - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: rightToLeftTextChanger
+      value: 
+      objectReference: {fileID: 68398937}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6f74a65304f7594784561825a582f5d, type: 3}
 --- !u!1 &465209960
@@ -10091,6 +10123,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 68398931}
+    - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
       propertyPath: settingsAPI
       value: 
       objectReference: {fileID: 334446881}
@@ -12813,8 +12849,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1630164996}
-  - {fileID: 1237226962}
-  - {fileID: 1149788835}
+  - {fileID: 1815310254}
   m_Father: {fileID: 404033438}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15001,6 +15036,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 68398931}
+    - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
       propertyPath: settingsAPI
       value: 
       objectReference: {fileID: 334446881}
@@ -15027,7 +15066,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &932114152
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17692,7 +17731,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149788834}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -17701,8 +17740,8 @@ RectTransform:
   - {fileID: 887932346}
   - {fileID: 1591596907}
   - {fileID: 1860309637}
-  m_Father: {fileID: 789349012}
-  m_RootOrder: 2
+  m_Father: {fileID: 1815310254}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -17752,7 +17791,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1960742358}
   toggleTransition: 1
   graphic: {fileID: 173463594}
-  m_Group: {fileID: 0}
+  m_Group: {fileID: 1815310253}
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -18963,7 +19002,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237226961}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -18972,8 +19011,8 @@ RectTransform:
   - {fileID: 704656220}
   - {fileID: 707836901}
   - {fileID: 379299464}
-  m_Father: {fileID: 789349012}
-  m_RootOrder: 1
+  m_Father: {fileID: 1815310254}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19023,7 +19062,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1719594339}
   toggleTransition: 1
   graphic: {fileID: 765123021}
-  m_Group: {fileID: 0}
+  m_Group: {fileID: 1815310253}
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -21790,13 +21829,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 68398931}
+    - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
       propertyPath: settingsAPI
       value: 
       objectReference: {fileID: 334446881}
     - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: languageTest
+      value: 
+      objectReference: {fileID: 68398938}
+    - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
       propertyPath: canvasController
       value: 
       objectReference: {fileID: 68398936}
+    - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: rightToLeftTextChanger
+      value: 
+      objectReference: {fileID: 68398937}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6f74a65304f7594784561825a582f5d, type: 3}
 --- !u!1 &1398741359
@@ -27730,6 +27781,58 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 898.45, y: 1197.6}
   m_Pivot: {x: 0, y: 1}
+--- !u!1 &1815310252
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1815310254}
+  - component: {fileID: 1815310253}
+  m_Layer: 5
+  m_Name: ReminderToggleGroup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1815310253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815310252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AllowSwitchOff: 0
+--- !u!224 &1815310254
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815310252}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1237226962}
+  - {fileID: 1149788835}
+  m_Father: {fileID: 789349012}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1829740726
 GameObject:
   m_ObjectHideFlags: 0
@@ -29040,9 +29143,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 68398931}
+    - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
       propertyPath: settingsAPI
       value: 
       objectReference: {fileID: 334446881}
+    - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: dailyReminderToggle
+      value: 
+      objectReference: {fileID: 1237226963}
+    - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: usabilityTipsToggle
+      value: 
+      objectReference: {fileID: 399344575}
+    - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: weeklyReminderToggle
+      value: 
+      objectReference: {fileID: 1149788836}
+    - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: promotionsNotificationToggle
+      value: 
+      objectReference: {fileID: 1272737490}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6f74a65304f7594784561825a582f5d, type: 3}
 --- !u!224 &1943444034 stripped
@@ -31943,6 +32066,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 68398931}
     - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
       propertyPath: settingsAPI
       value: 

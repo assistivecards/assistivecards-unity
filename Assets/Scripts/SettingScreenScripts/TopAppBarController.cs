@@ -6,21 +6,27 @@ using UnityEngine.UI;
 public class TopAppBarController : MonoBehaviour
 {
     GameAPI gameAPI;
-    [SerializeField] private CanvasController canvasController;
+    [SerializeField] private GameObject canvas;
     [SerializeField] private SettingsAPI settingsAPI;
-    [SerializeField] private LanguageTest languageTest;
-    [SerializeField] private RightToLeftTextChanger rightToLeftTextChanger;
     private GameObject backButton;
     private GameObject saveButton;
     private ProfileEditor profileEditor;
     private LanguageController languageController;
 
 
-    [Header ( "UI Elements")]
+    [Header ( "UI Elements Accessility")]
     
     public Toggle hapticsToggle;
     public Toggle activateOnPressToggle;
     public Toggle voiceGreetingToggle;
+
+    
+    [Header ( "UI Elements Noficication")]
+    
+    public Toggle dailyReminderToggle;
+    public Toggle weeklyReminderToggle;
+    public Toggle usabilityTipsToggle;
+    public Toggle promotionsNotificationToggle;
 
     private void Awake() 
     {
@@ -44,7 +50,7 @@ public class TopAppBarController : MonoBehaviour
         {
             profileEditor = GetComponentInParent<ProfileEditor>();
             settingsAPI.SetNickname(profileEditor.nicknameInputField.text);
-            canvasController.ProfilePanelUpdate();
+            canvas.GetComponent<CanvasController>().ProfilePanelUpdate();
         }
         if(GetComponentInParent<AccessibilityScreen>() != null)
         {
@@ -52,19 +58,25 @@ public class TopAppBarController : MonoBehaviour
             gameAPI.SetActivateOnPressInPreference(activateOnPressToggle.isOn ? 1 : 0);
             gameAPI.SetVoiceGreetingPreference(voiceGreetingToggle.isOn ? 1 : 0);
         }
+        if(GetComponentInParent<NotificationPreferences>() != null)
+        {
+            gameAPI.SetReminderPreference(dailyReminderToggle.isOn ? "Daily" : "Weekly");
+            gameAPI.SetUsabilityTipsPreference(usabilityTipsToggle.isOn ? 1 : 0);
+            gameAPI.SetPromotionsNotificationPreference(promotionsNotificationToggle.isOn ? 1 : 0);
+        }
         if(GetComponentInParent<LanguageController>() != null)
         {
             languageController = GetComponentInParent<LanguageController>();
             gameAPI.SetLanguage(languageController.selectedLanguage.name);
-            languageTest.OnLanguageChange();
+            canvas.GetComponent<LanguageTest>().OnLanguageChange();
 
             if(languageController.selectedLanguage.name == "Arabic" || languageController.selectedLanguage.name == "Urdu")
             {
-                rightToLeftTextChanger.RightToLeftLangugeChanged();
+                canvas.GetComponent<RightToLeftTextChanger>().RightToLeftLangugeChanged();
             }
             else
             {
-                rightToLeftTextChanger.LeftToRightLanguageChanged();
+                canvas.GetComponent<RightToLeftTextChanger>().LeftToRightLanguageChanged();
             }
         }
 

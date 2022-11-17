@@ -20,18 +20,15 @@ public class SupportedLanguagesPanel : MonoBehaviour
 {
     GameAPI gameAPI;
     [SerializeField] private DeviceLanguagePanel deviceLanguagePanel;
-    AssistiveCardsSDK assistiveCardsSDK;
-    public TMP_InputField outputArea;
     public GameObject deviceLanguageObject;
     private LanguageController languageController;
-    private AssistiveCardsSDK.Language[] languageArray;
+    private GameAPI.Language[] languageArray;
     private GameObject languageTempElement;
     private GameObject languageElement;
     public List<GameObject> languageGameobjects = new List<GameObject>();
 
     private void Awake() 
     {
-        assistiveCardsSDK = outputArea.GetComponent<AssistiveCardsSDK>();
         gameAPI = Camera.main.GetComponent<GameAPI>();
         languageTempElement = transform.GetChild(0).gameObject;
         languageController = GetComponentInParent<LanguageController>();
@@ -39,7 +36,9 @@ public class SupportedLanguagesPanel : MonoBehaviour
 
     private async void Start() 
     {
-        var languages = await assistiveCardsSDK.GetLanguages();
+        GameAPI.Languages languages = new GameAPI.Languages();
+        languages = await gameAPI.GetLanguages();
+
         languageArray = languages.languages;
         
         for(int i=0 ; i < languageArray.Length; i++)

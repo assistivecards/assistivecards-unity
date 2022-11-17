@@ -9,7 +9,6 @@ public class AvatarListCreator : MonoBehaviour
     private Image avatarButtonImage;
     private Texture2D avatarTexture;
     private Sprite sprite;
-    SettingsUIManager settingsUIManager;
     [SerializeField] Canvas canvas;
     GameAPI gameAPI;
 
@@ -19,7 +18,6 @@ public class AvatarListCreator : MonoBehaviour
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
-        settingsUIManager = canvas.GetComponent<SettingsUIManager>();
     }
 
     private void Start() 

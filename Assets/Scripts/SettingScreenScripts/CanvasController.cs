@@ -15,10 +15,7 @@ public class CanvasController : MonoBehaviour
 
 
     [Header ("API Connection")]
-    AssistiveCardsSDK assistiveCardsSDK;
-    public GameObject SDK;
-    SettingsAPI settingsAPI;
-    SettingsUIManager settingsUIManager;
+    GameAPI gameAPI;
 
     [Header ("UI Assets")]
     public TMP_Text nicknameText;
@@ -43,10 +40,8 @@ public class CanvasController : MonoBehaviour
 
     private void Awake()
     {
-        assistiveCardsSDK = SDK.GetComponent<AssistiveCardsSDK>();
-        settingsAPI = SDK.GetComponent<SettingsAPI>();
-        settingsUIManager = canvas.GetComponent<SettingsUIManager>();
-        nickname = settingsAPI.GetNickname();
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+        nickname = gameAPI.GetNickname();
 
 
         if(PlayerPrefs.GetString("Nickname", "") != "")
@@ -58,7 +53,7 @@ public class CanvasController : MonoBehaviour
     private async void Start() 
     {
         nicknameText.text = nickname;
-        profileImage.GetComponent<Image>().sprite = await settingsAPI.GetAvatarImage();
+        profileImage.GetComponent<Image>().sprite = await gameAPI.GetAvatarImage();
     }
 
     public void ParentLockButtonClick()
@@ -124,8 +119,8 @@ public class CanvasController : MonoBehaviour
     }
     public async void ProfilePanelUpdate()
     {
-        nicknameText.text = settingsAPI.GetNickname();
-        profileImage.GetComponent<Image>().sprite = await settingsAPI.GetAvatarImage();
+        nicknameText.text = gameAPI.GetNickname();
+        profileImage.GetComponent<Image>().sprite = await gameAPI.GetAvatarImage();
     }
 
 }

@@ -8,7 +8,6 @@ public class AvatarButtonClick : MonoBehaviour
     private Image avatarButtonImage;
     private Texture2D avatarTexture;
     private Sprite sprite;
-    SettingsUIManager settingsUIManager;
     [SerializeField] Canvas canvas;
     GameAPI gameAPI;
 
@@ -16,7 +15,6 @@ public class AvatarButtonClick : MonoBehaviour
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
-        settingsUIManager = canvas.GetComponent<SettingsUIManager>();
     }
 
     async void Start()
@@ -28,7 +26,6 @@ public class AvatarButtonClick : MonoBehaviour
         gameObject.GetComponent<Button>().onClick.AddListener(async () =>
         {
             gameAPI.SetAvatarImage(gameObject.name);
-            settingsUIManager.selectAvatarButton.image.sprite = await gameAPI.GetAvatarImage();
         }
         );
     }

@@ -7,7 +7,6 @@ public class TopAppBarController : MonoBehaviour
 {
     GameAPI gameAPI;
     [SerializeField] private GameObject canvas;
-    [SerializeField] private SettingsAPI settingsAPI;
     private GameObject backButton;
     private GameObject saveButton;
     private ProfileEditor profileEditor;
@@ -50,7 +49,7 @@ public class TopAppBarController : MonoBehaviour
         if (GetComponentInParent<ProfileEditor>() != null)
         {
             profileEditor = GetComponentInParent<ProfileEditor>();
-            settingsAPI.SetNickname(profileEditor.nicknameInputField.text);
+            gameAPI.SetNickname(profileEditor.nicknameInputField.text);
             canvas.GetComponent<CanvasController>().ProfilePanelUpdate();
         }
         if (GetComponentInParent<AccessibilityScreen>() != null)

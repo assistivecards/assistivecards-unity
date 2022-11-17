@@ -13,6 +13,11 @@ public class IAPManager : MonoBehaviour
     [SerializeField] List<GameAPI.Pack> availablePacksArray;
     [SerializeField] Button premiumButton;
 
+
+    [SerializeField] private Text currencySymbol;
+    private IStoreController m_StoreController;
+    private IExtensionProvider m_StoreExtensionProvider;
+
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
@@ -29,6 +34,23 @@ public class IAPManager : MonoBehaviour
         GetAvailablePacks();
 
     }
+    public void OnInitialized(IStoreController controller, IExtensionProvider extensions)
+    {
+        m_StoreController = controller;
+        m_StoreExtensionProvider = extensions;
+ 
+        foreach (var product in controller.products.all)
+        {
+            Debug.Log (product.metadata.localizedPriceString);
+
+            Debug.Log(string.Format("string: {0}", product.metadata.localizedPriceString));
+           
+            Debug.Log(string.Format("decimal: {0}", product.metadata.localizedPrice.ToString()));
+
+            currencySymbol.text = string.Format("decimal: {0}", product.metadata.localizedPrice.ToString());
+        }
+    }
+
 
     public void OnPurchaseComplete(Product product)
     {

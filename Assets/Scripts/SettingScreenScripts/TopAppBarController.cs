@@ -12,30 +12,31 @@ public class TopAppBarController : MonoBehaviour
     private GameObject saveButton;
     private ProfileEditor profileEditor;
     private LanguageController languageController;
+    [SerializeField] TTSPanel ttsPanel;
 
 
-    [Header ( "UI Elements Accessility")]
-    
+    [Header("UI Elements Accessility")]
+
     public Toggle hapticsToggle;
     public Toggle activateOnPressToggle;
     public Toggle voiceGreetingToggle;
 
-    
-    [Header ( "UI Elements Noficication")]
-    
+
+    [Header("UI Elements Noficication")]
+
     public Toggle dailyReminderToggle;
     public Toggle weeklyReminderToggle;
     public Toggle usabilityTipsToggle;
     public Toggle promotionsNotificationToggle;
 
-    private void Awake() 
+    private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
     }
 
     public void BackButtonClicked()
     {
-        LeanTween.scale(this.transform.parent.gameObject, Vector3.one*0.9f ,0.15f);
+        LeanTween.scale(this.transform.parent.gameObject, Vector3.one * 0.9f, 0.15f);
         Invoke("SceneSetActiveFalse", 0.15f);
     }
 
@@ -44,33 +45,34 @@ public class TopAppBarController : MonoBehaviour
         this.transform.parent.gameObject.SetActive(false);
     }
 
-    public void SaveButtonClicked()
+    public async void SaveButtonClicked()
     {
-        if(GetComponentInParent<ProfileEditor>() != null)
+        if (GetComponentInParent<ProfileEditor>() != null)
         {
             profileEditor = GetComponentInParent<ProfileEditor>();
             settingsAPI.SetNickname(profileEditor.nicknameInputField.text);
             canvas.GetComponent<CanvasController>().ProfilePanelUpdate();
         }
-        if(GetComponentInParent<AccessibilityScreen>() != null)
+        if (GetComponentInParent<AccessibilityScreen>() != null)
         {
             gameAPI.SetHapticsPreference(hapticsToggle.isOn ? 1 : 0);
             gameAPI.SetActivateOnPressInPreference(activateOnPressToggle.isOn ? 1 : 0);
             gameAPI.SetVoiceGreetingPreference(voiceGreetingToggle.isOn ? 1 : 0);
         }
-        if(GetComponentInParent<NotificationPreferences>() != null)
+        if (GetComponentInParent<NotificationPreferences>() != null)
         {
             gameAPI.SetReminderPreference(dailyReminderToggle.isOn ? "Daily" : "Weekly");
             gameAPI.SetUsabilityTipsPreference(usabilityTipsToggle.isOn ? 1 : 0);
             gameAPI.SetPromotionsNotificationPreference(promotionsNotificationToggle.isOn ? 1 : 0);
         }
-        if(GetComponentInParent<LanguageController>() != null)
+        if (GetComponentInParent<LanguageController>() != null)
         {
             languageController = GetComponentInParent<LanguageController>();
             gameAPI.SetLanguage(languageController.selectedLanguage.name);
+            gameAPI.SetTTSPreference(await gameAPI.GetSelectedLocale());
             canvas.GetComponent<LanguageTest>().OnLanguageChange();
 
-            if(languageController.selectedLanguage.name == "Arabic" || languageController.selectedLanguage.name == "Urdu")
+            if (languageController.selectedLanguage.name == "Arabic" || languageController.selectedLanguage.name == "Urdu")
             {
                 canvas.GetComponent<RightToLeftTextChanger>().RightToLeftLangugeChanged();
             }
@@ -79,8 +81,14 @@ public class TopAppBarController : MonoBehaviour
                 canvas.GetComponent<RightToLeftTextChanger>().LeftToRightLanguageChanged();
             }
         }
+        if (transform.parent.GetComponentInChildren<TTSPanel>() != null)
+        {
+            Debug.Log("deneme");
 
-        LeanTween.scale(this.transform.parent.gameObject, Vector3.one*0.9f ,0.15f);
+            gameAPI.SetTTSPreference(ttsPanel.selectedTtsElement.name);
+        }
+
+        LeanTween.scale(this.transform.parent.gameObject, Vector3.one * 0.9f, 0.15f);
         Invoke("SceneSetActiveFalse", 0.15f);
     }
 }

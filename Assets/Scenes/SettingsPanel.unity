@@ -6983,6 +6983,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 68398931}
     - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: ttsPanel
+      value: 
+      objectReference: {fileID: 734703604}
+    - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
       propertyPath: settingsAPI
       value: 
       objectReference: {fileID: 334446881}
@@ -10919,6 +10923,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tempTtsElement: {fileID: 1001656636}
   saveButton: {fileID: 1400049704}
+  ttsElements: []
+  selectedTtsElement: {fileID: 0}
+  ttsElementGameObject: []
 --- !u!114 &734703605
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,44 +8,80 @@ public class TTSPanel : MonoBehaviour
 {
     [SerializeField] private GameObject tempTtsElement;
     [SerializeField] private Button saveButton;
-    private List<string> ttsElements= new List<string>();
+    public List<string> ttsElements = new List<string>();
     private GameObject ttsElement;
-    private GameObject selectedTtsElement;
-    private List<GameObject> ttsElementGameObject = new List<GameObject>();
+    public GameObject selectedTtsElement;
+    public List<GameObject> ttsElementGameObject = new List<GameObject>();
+    private GameAPI gameAPI;
 
-
-    private void Start() 
+    private void Awake()
     {
-        ttsElements.Add("Alex");
-        ttsElements.Add("Karen");
-        ttsElements.Add("Daniel");
-                                            //adding tts to the list
-        ttsElements.Add("Alex");
-        ttsElements.Add("Karen");
-        ttsElements.Add("Daniel");
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
-        ttsElements.Add("Alex");
-        ttsElements.Add("Karen");
-        ttsElements.Add("Daniel");
 
-        for(int i = 0; i< ttsElements.Count; i++)
+    private async void OnEnable()
+    {
+        // ttsElements.Add("Alex");
+        // ttsElements.Add("Karen");
+        // ttsElements.Add("Daniel");
+        //                                     //adding tts to the list
+        // ttsElements.Add("Alex");
+        // ttsElements.Add("Karen");
+        // ttsElements.Add("Daniel");
+
+        // ttsElements.Add("Alex");
+        // ttsElements.Add("Karen");
+        // ttsElements.Add("Daniel");
+
+        var currentLang = gameAPI.GetLanguage();
+        var currentTTS = await gameAPI.GetTTSPreference();
+
+        tempTtsElement.SetActive(true);
+
+        ttsElements.Clear();
+        if (ttsElementGameObject.Count != 0)
+        {
+            foreach (var item in ttsElementGameObject)
+            {
+                Destroy(item);
+            }
+            ttsElementGameObject.Clear();
+        }
+
+        ttsElements = await gameAPI.GetSystemLanguageLocales();
+
+
+        for (int i = 0; i < ttsElements.Count; i++)
         {
             ttsElement = Instantiate(tempTtsElement, transform);
 
-            ttsElement.transform.GetChild(1).GetComponent<Text>().text = ttsElements[i];
+            ttsElement.transform.GetChild(1).GetComponent<Text>().text = currentLang;
+            ttsElement.transform.GetChild(2).GetComponent<Text>().text = ttsElements[i];
+            ttsElement.transform.GetChild(3).GetComponent<Text>().text = null;
 
-            ttsElement.name = ttsElements[i];         
+            ttsElement.name = ttsElements[i];
             ttsElementGameObject.Add(ttsElement);
+
+            if (ttsElements[i] == currentTTS)
+            {
+                ttsElement.GetComponent<Toggle>().isOn = true;
+                selectedTtsElement = ttsElement;
+            }
         }
 
-        Destroy(tempTtsElement);
+
+
+        tempTtsElement.SetActive(false);
     }
+
 
     public void TTSSelected(GameObject _TTSElement)
     {
         saveButton.interactable = true;
-        //changing tts process
-        
+        selectedTtsElement = _TTSElement;
+
         Debug.Log(_TTSElement.ToString());
     }
+
 }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ public class Test : MonoBehaviour
     [SerializeField] Texture2D[] avatarTextures;
     [SerializeField] private Texture2D testTexture;
     [SerializeField] private GameAPI.Cards cardsTest;
+    [SerializeField] private List<string> locales;
 
     private void Awake()
     {
@@ -32,6 +34,7 @@ public class Test : MonoBehaviour
 
     private async void Start()
     {
+        locales = await gameAPI.GetSystemLanguageLocales();
         testTexture = await gameAPI.GetPackImage("animals");
         cardsTest = await gameAPI.GetCards(await gameAPI.GetSystemLanguageCode(), "sports");
         cardTextures = await gameAPI.GetCardImagesByPack("en", "school");

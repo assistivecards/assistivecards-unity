@@ -1075,4 +1075,25 @@ public class GameAPI : MonoBehaviour
         return null;
     }
 
+    public async Task<List<string>> GetSystemLanguageLocales()
+    {
+        var langs = await GetLanguages();
+        var selectedLang = GetLanguage();
+        List<string> locales = new List<string>();
+
+        foreach (var lang in langs.languages)
+        {
+            if (selectedLang == lang.title)
+            {
+                foreach (var locale in lang.locale)
+                {
+                    locales.Add(locale);
+                }
+                return locales;
+            }
+        }
+        return null;
+
+    }
+
 }

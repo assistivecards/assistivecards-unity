@@ -18,6 +18,7 @@ public static class SelectLanguage
 }
 public class SupportedLanguagesPanel : MonoBehaviour
 {
+    GameAPI gameAPI;
     [SerializeField] private DeviceLanguagePanel deviceLanguagePanel;
     AssistiveCardsSDK assistiveCardsSDK;
     public TMP_InputField outputArea;
@@ -31,7 +32,7 @@ public class SupportedLanguagesPanel : MonoBehaviour
     private void Awake() 
     {
         assistiveCardsSDK = outputArea.GetComponent<AssistiveCardsSDK>();
-
+        gameAPI = Camera.main.GetComponent<GameAPI>();
         languageTempElement = transform.GetChild(0).gameObject;
         languageController = GetComponentInParent<LanguageController>();
     }
@@ -52,14 +53,16 @@ public class SupportedLanguagesPanel : MonoBehaviour
 
             if(languageArray[i].title == Application.systemLanguage.ToString())
             {
-                languageElement.GetComponent<Toggle>().isOn = true;
-                languageController.selectedLanguage = languageElement;
                 deviceLanguageObject = languageElement;
 
                 deviceLanguagePanel.CreateSelectLanguageElement(deviceLanguageObject);
             }
+            if(languageArray[i].title == gameAPI.GetLanguage())
+            {
+                languageElement.GetComponent<Toggle>().isOn = true;
+                deviceLanguagePanel.CreateSelectLanguageElement(languageElement);
+            }
         }
-
         Destroy(languageTempElement);
     }
 }

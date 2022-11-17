@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/PushNotificationDemo.unity
-    guid: cb3b8e6dd3b06aa4f833e5ef6f616223
+    path: Assets/Scenes/SettingsPanel.unity
+    guid: b0ed93d42f5a8d34ea0581811d64e243
   m_configObjects: {}

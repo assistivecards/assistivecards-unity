@@ -1005,10 +1005,10 @@ public class GameAPI : MonoBehaviour
     ///<summary>
     ///Takes in a single parameter of type string named UITextID and returns the translation corresponding to the selected language which is stored in PlayerPrefs. Use this method for plain texts.
     ///</summary>
-    public async Task<string> Translate(string UITextID)
+    public string Translate(string UITextID, string langCode)
     {
-        string code = await GetSystemLanguageCode();
-        var path = Resources.Load<TextAsset>(code);
+        // string code = await GetSystemLanguageCode();
+        var path = Resources.Load<TextAsset>(langCode);
         string contents = path.text;
         JSONObject obj = new JSONObject(contents);
         if (obj[UITextID] != null)
@@ -1024,10 +1024,10 @@ public class GameAPI : MonoBehaviour
     ///<summary>
     ///Takes in a first parameter of type string named UITextID and a second parameter of type string named variable.Returns the translation corresponding to the selected language which is stored in PlayerPrefs.Use this method for texts with variables.
     ///</summary>
-    public async Task<string> Translate(string UITextID, string variable)
+    public string Translate(string UITextID, string variable, string langCode)
     {
-        string code = await GetSystemLanguageCode();
-        var path = Resources.Load<TextAsset>(code);
+        // string code = await GetSystemLanguageCode();
+        var path = Resources.Load<TextAsset>(langCode);
         string contents = path.text;
         JSONObject obj = new JSONObject(contents);
         if (obj[UITextID] != null && variable != null)

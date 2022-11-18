@@ -26,6 +26,7 @@ public class LanguageTest : MonoBehaviour
     async void Start()
     {
         // texts = GameObject.FindGameObjectsWithTag("Plain Text");
+        var langCode = await gameAPI.GetSystemLanguageCode();
         texts = canvas.GetComponentsInChildren<TMP_Text>(true);
         foreach (var text in texts)
         {
@@ -46,13 +47,13 @@ public class LanguageTest : MonoBehaviour
 
         for (int i = 0; i < textsWithVariable.Count; i++)
         {
-            result = await gameAPI.Translate(textsWithVariable[i].name, variableArray[i].ToString());
+            result = gameAPI.Translate(textsWithVariable[i].name, variableArray[i].ToString(), langCode);
             textsWithVariable[i].GetComponent<TMP_Text>().text = result;
         }
 
         foreach (var text in plainTexts)
         {
-            result = await gameAPI.Translate(text.name);
+            result = gameAPI.Translate(text.name, langCode);
             text.GetComponent<TMP_Text>().text = result;
         }
     }
@@ -65,15 +66,16 @@ public class LanguageTest : MonoBehaviour
 
     public async void OnLanguageChange()
     {
+        var langCode = await gameAPI.GetSystemLanguageCode();
         for (int i = 0; i < textsWithVariable.Count; i++)
         {
-            result = await gameAPI.Translate(textsWithVariable[i].name, variableArray[i].ToString());
+            result = gameAPI.Translate(textsWithVariable[i].name, variableArray[i].ToString(), langCode);
             textsWithVariable[i].GetComponent<TMP_Text>().text = result;
         }
 
         foreach (var text in plainTexts)
         {
-            result = await gameAPI.Translate(text.name);
+            result = gameAPI.Translate(text.name, langCode);
             text.GetComponent<TMP_Text>().text = result;
         }
     }

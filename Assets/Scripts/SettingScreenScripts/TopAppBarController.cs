@@ -82,8 +82,6 @@ public class TopAppBarController : MonoBehaviour
         }
         if (transform.parent.GetComponentInChildren<TTSPanel>() != null)
         {
-            Debug.Log("deneme");
-
             gameAPI.SetTTSPreference(ttsPanel.selectedTtsElement.name);
         }
 

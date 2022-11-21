@@ -404,8 +404,8 @@ GameObject:
   - component: {fileID: 358440443}
   - component: {fileID: 358440445}
   - component: {fileID: 358440444}
-  - component: {fileID: 358440447}
   - component: {fileID: 358440446}
+  - component: {fileID: 358440447}
   m_Layer: 5
   m_Name: hello_you
   m_TagString: Text With Variable
@@ -651,8 +651,8 @@ GameObject:
   - component: {fileID: 643625737}
   - component: {fileID: 643625739}
   - component: {fileID: 643625738}
-  - component: {fileID: 643625741}
   - component: {fileID: 643625740}
+  - component: {fileID: 643625741}
   m_Layer: 5
   m_Name: settings_selection_subscriptions
   m_TagString: Plain Text
@@ -831,6 +831,7 @@ GameObject:
   - component: {fileID: 778117892}
   - component: {fileID: 778117891}
   - component: {fileID: 778117894}
+  - component: {fileID: 778117895}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -926,6 +927,28 @@ MonoBehaviour:
     apps: []
   cards:
     cards: []
+--- !u!114 &778117895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778117890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d55775acb51d24ab42d6be402e5530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  packs:
+    packs: []
+  cards:
+    cards: []
+  activities:
+    activities: []
+  languages:
+    languages: []
+  apps:
+    apps: []
 --- !u!1 &872249200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,8 +1116,8 @@ GameObject:
   - component: {fileID: 898691126}
   - component: {fileID: 898691130}
   - component: {fileID: 898691129}
-  - component: {fileID: 898691128}
   - component: {fileID: 898691127}
+  - component: {fileID: 898691131}
   m_Layer: 5
   m_Name: Null ID Deneme
   m_TagString: Plain Text
@@ -1139,7 +1162,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 898691128}
+        - m_Target: {fileID: 898691131}
           m_TargetAssemblyTypeName: Speakable, Assembly-CSharp
           m_MethodName: Speak
           m_Mode: 1
@@ -1151,19 +1174,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &898691128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898691125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a4d92d0952583a40bb62e396252a86f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  threadSafe: 0
 --- !u!114 &898691129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1261,6 +1271,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898691125}
   m_CullTransparentMesh: 1
+--- !u!114 &898691131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898691125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4d92d0952583a40bb62e396252a86f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threadSafe: 0
 --- !u!1 &1026220321
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,8 +1295,8 @@ GameObject:
   - component: {fileID: 1026220322}
   - component: {fileID: 1026220324}
   - component: {fileID: 1026220323}
-  - component: {fileID: 1026220326}
   - component: {fileID: 1026220325}
+  - component: {fileID: 1026220326}
   m_Layer: 5
   m_Name: settings_selection_signout
   m_TagString: Plain Text
@@ -1504,8 +1527,8 @@ GameObject:
   - component: {fileID: 1680955110}
   - component: {fileID: 1680955112}
   - component: {fileID: 1680955111}
-  - component: {fileID: 1680955114}
   - component: {fileID: 1680955113}
+  - component: {fileID: 1680955114}
   m_Layer: 5
   m_Name: settings_packs
   m_TagString: Text With Variable
@@ -1948,8 +1971,8 @@ GameObject:
   - component: {fileID: 1812290046}
   - component: {fileID: 1812290050}
   - component: {fileID: 1812290049}
-  - component: {fileID: 1812290048}
   - component: {fileID: 1812290047}
+  - component: {fileID: 1812290051}
   m_Layer: 5
   m_Name: settings_subscriptions_oneTimePayment
   m_TagString: Plain Text
@@ -1994,7 +2017,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1812290048}
+        - m_Target: {fileID: 1812290051}
           m_TargetAssemblyTypeName: Speakable, Assembly-CSharp
           m_MethodName: Speak
           m_Mode: 1
@@ -2006,19 +2029,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &1812290048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1812290045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a4d92d0952583a40bb62e396252a86f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  threadSafe: 0
 --- !u!114 &1812290049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2116,6 +2126,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1812290045}
   m_CullTransparentMesh: 1
+--- !u!114 &1812290051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812290045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4d92d0952583a40bb62e396252a86f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threadSafe: 0
 --- !u!1 &1871028311
 GameObject:
   m_ObjectHideFlags: 0
@@ -3103,8 +3126,8 @@ GameObject:
   - component: {fileID: 2140440769}
   - component: {fileID: 2140440771}
   - component: {fileID: 2140440770}
-  - component: {fileID: 2140440773}
   - component: {fileID: 2140440772}
+  - component: {fileID: 2140440773}
   m_Layer: 5
   m_Name: settings_notifications_tipsAndPromo_tips_description
   m_TagString: Plain Text

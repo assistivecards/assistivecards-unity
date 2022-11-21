@@ -9,14 +9,16 @@ using Defective.JSON;
 public class GameAPI : MonoBehaviour
 {
     public static string selectedLangCode;
-    public Packs cachedPacks = new Packs();
-    public Activities cachedActivities = new Activities();
-    public Languages cachedLanguages = new Languages();
-    public Apps cachedApps = new Apps();
+    public AssistiveCardsSDK.AssistiveCardsSDK.Packs cachedPacks = new AssistiveCardsSDK.AssistiveCardsSDK.Packs();
+    public AssistiveCardsSDK.AssistiveCardsSDK.Activities cachedActivities = new AssistiveCardsSDK.AssistiveCardsSDK.Activities();
+    public AssistiveCardsSDK.AssistiveCardsSDK.Languages cachedLanguages = new AssistiveCardsSDK.AssistiveCardsSDK.Languages();
+    public AssistiveCardsSDK.AssistiveCardsSDK.Apps cachedApps = new AssistiveCardsSDK.AssistiveCardsSDK.Apps();
     public static Task cacheData;
+    AssistiveCardsSDK.AssistiveCardsSDK assistiveCardsSDK;
 
     private async void Awake()
     {
+        assistiveCardsSDK = Camera.main.GetComponent<AssistiveCardsSDK.AssistiveCardsSDK>();
         cacheData = CacheData();
         await cacheData;
     }
@@ -215,122 +217,46 @@ public class GameAPI : MonoBehaviour
         public string vi;
     }
 
-    public Cards cards = new Cards();
+    public AssistiveCardsSDK.AssistiveCardsSDK.Cards cards = new AssistiveCardsSDK.AssistiveCardsSDK.Cards();
 
     ///<summary>
     ///Takes in a language code of type string and returns an object of type Packs which holds an array of Pack objects in the specified language.
     ///</summary>
-    public async Task<Packs> GetPacks(string language)
+    public async Task<AssistiveCardsSDK.AssistiveCardsSDK.Packs> GetPacks(string language)
     {
-        var result = await asyncGetPacks(language);
+        var result = await assistiveCardsSDK.GetPacks(language);
         return result;
     }
 
-    private async Task<Packs> asyncGetPacks(string language)
-    {
-
-        string uri = api + "packs/" + language + "/metadata.json";
-
-        UnityWebRequest request = UnityWebRequest.Get(uri);
-        request.SendWebRequest();
-        while (!request.isDone)
-        {
-            await Task.Yield();
-        }
-        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
-            return null;
-        else
-        {
-            var packs = JsonUtility.FromJson<Packs>("{\"packs\":" + request.downloadHandler.text + "}");
-            return packs;
-        }
-    }
 
     ///<summary>
     ///Takes in a language code and a pack slug of type string as parameters. Returns an object of type Cards which holds an array of Card objects in the specified pack and language.
     ///</summary>
 
-    public async Task<Cards> GetCards(string language, string packSlug)
+    public async Task<AssistiveCardsSDK.AssistiveCardsSDK.Cards> GetCards(string language, string packSlug)
     {
-        var result = await asyncGetCards(language, packSlug);
+        var result = await assistiveCardsSDK.GetCards(language, packSlug);
         return result;
     }
 
-    private async Task<Cards> asyncGetCards(string language, string packSlug)
-    {
-
-        string uri = api + "packs/" + language + "/" + packSlug + ".json";
-
-        UnityWebRequest request = UnityWebRequest.Get(uri);
-        request.SendWebRequest();
-        while (!request.isDone)
-        {
-            await Task.Yield();
-        }
-        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
-            return null;
-        else
-        {
-            return cards = JsonUtility.FromJson<Cards>("{\"cards\":" + request.downloadHandler.text + "}");
-        }
-    }
 
     ///<summary>
     ///Takes in a language code of type string and returns an object of type Activities which holds an array of Activity objects in the specified language.
     ///</summary>
-    public async Task<Activities> GetActivities(string language)
+    public async Task<AssistiveCardsSDK.AssistiveCardsSDK.Activities> GetActivities(string language)
     {
-        var result = await asyncGetActivities(language);
+        var result = await assistiveCardsSDK.GetActivities(language);
         return result;
     }
 
-    private async Task<Activities> asyncGetActivities(string language)
-    {
-
-        string uri = api + "activities/" + language + "/metadata.json";
-
-        UnityWebRequest request = UnityWebRequest.Get(uri);
-        request.SendWebRequest();
-        while (!request.isDone)
-        {
-            await Task.Yield();
-        }
-        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
-            return null;
-        else
-        {
-            var activities = JsonUtility.FromJson<Activities>("{\"activities\":" + request.downloadHandler.text + "}");
-            return activities;
-        }
-    }
 
     ///<summary>
     ///Returns an object of type Languages which holds an array of Language objects.
     ///</summary>
-    public async Task<Languages> GetLanguages()
+    public async Task<AssistiveCardsSDK.AssistiveCardsSDK.Languages> GetLanguages()
     {
-        var result = await asyncGetLanguages();
+        var result = await assistiveCardsSDK.GetLanguages();
         return result;
-    }
-
-    private async Task<Languages> asyncGetLanguages()
-    {
-
-        string uri = api + "languages.json";
-
-        UnityWebRequest request = UnityWebRequest.Get(uri);
-        request.SendWebRequest();
-        while (!request.isDone)
-        {
-            await Task.Yield();
-        }
-        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
-            return null;
-        else
-        {
-            var languages = JsonUtility.FromJson<Languages>(request.downloadHandler.text);
-            return languages;
-        }
     }
 
     ///<summary>
@@ -338,28 +264,8 @@ public class GameAPI : MonoBehaviour
     ///</summary>
     public async Task<Texture2D> GetActivityImage(string activitySlug)
     {
-        var result = await asyncGetActivityImage(activitySlug);
+        var result = await assistiveCardsSDK.GetActivityImage(activitySlug);
         return result;
-    }
-
-    private async Task<Texture2D> asyncGetActivityImage(string activitySlug)
-    {
-
-        string uri = api + "activities/assets/" + activitySlug + ".png";
-
-        UnityWebRequest request = UnityWebRequestTexture.GetTexture(uri);
-        request.SendWebRequest();
-        while (!request.isDone)
-        {
-            await Task.Yield();
-        }
-        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
-            return null;
-        else
-        {
-            var texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
-            return texture;
-        }
     }
 
     ///<summary>
@@ -367,39 +273,8 @@ public class GameAPI : MonoBehaviour
     ///</summary>
     public async Task<Texture2D> GetAvatarImage(string avatarId, int imgSize = 256)
     {
-        var result = await asyncGetAvatarImage(avatarId, imgSize);
+        var result = await assistiveCardsSDK.GetAvatarImage(avatarId, imgSize);
         return result;
-    }
-
-    private async Task<Texture2D> asyncGetAvatarImage(string avatarId, int imgSize = 256)
-    {
-        string uri = "";
-        if (imgSize == 256)
-        {
-            uri = api + "cards/avatar/" + avatarId + ".png";
-        }
-        else if (imgSize == 512)
-        {
-            uri = api + "cards/avatarHD/" + avatarId + ".png";
-        }
-        else
-        {
-            Debug.Log("Please enter a valid image size.");
-        }
-
-        UnityWebRequest request = UnityWebRequestTexture.GetTexture(uri);
-        request.SendWebRequest();
-        while (!request.isDone)
-        {
-            await Task.Yield();
-        }
-        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
-            return null;
-        else
-        {
-            var texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
-            return texture;
-        }
     }
 
     ///<summary>
@@ -407,39 +282,8 @@ public class GameAPI : MonoBehaviour
     ///</summary>
     public async Task<Texture2D> GetPackImage(string packSlug, int imgSize = 256)
     {
-        var result = await asyncGetPackImage(packSlug, imgSize);
+        var result = await assistiveCardsSDK.GetPackImage(packSlug, imgSize);
         return result;
-    }
-
-    private async Task<Texture2D> asyncGetPackImage(string packSlug, int imgSize = 256)
-    {
-        string uri = "";
-        if (imgSize == 256)
-        {
-            uri = api + "cards/icon/" + packSlug + ".png";
-        }
-        else if (imgSize == 512)
-        {
-            uri = api + "cards/icon/" + packSlug + "@2x.png";
-        }
-        else
-        {
-            Debug.Log("Please enter a valid image size.");
-        }
-
-        UnityWebRequest request = UnityWebRequestTexture.GetTexture(uri);
-        request.SendWebRequest();
-        while (!request.isDone)
-        {
-            await Task.Yield();
-        }
-        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
-            return null;
-        else
-        {
-            var texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
-            return texture;
-        }
     }
 
     ///<summary>
@@ -447,28 +291,8 @@ public class GameAPI : MonoBehaviour
     ///</summary>
     public async Task<Texture2D> GetAppIcon(string appSlug)
     {
-        var result = await asyncGetAppIcon(appSlug);
+        var result = await assistiveCardsSDK.GetAppIcon(appSlug);
         return result;
-    }
-
-    private async Task<Texture2D> asyncGetAppIcon(string appSlug)
-    {
-
-        string uri = api + "apps/icon/" + appSlug + "@3x.png";
-
-        UnityWebRequest request = UnityWebRequestTexture.GetTexture(uri);
-        request.SendWebRequest();
-        while (!request.isDone)
-        {
-            await Task.Yield();
-        }
-        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
-            return null;
-        else
-        {
-            var texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
-            return texture;
-        }
     }
 
     ///<summary>
@@ -476,71 +300,23 @@ public class GameAPI : MonoBehaviour
     ///</summary>
     public async Task<Texture2D> GetCardImage(string packSlug, string cardSlug, int imgSize = 256)
     {
-        var result = await asyncGetCardImage(packSlug, cardSlug, imgSize);
+        var result = await assistiveCardsSDK.GetCardImage(packSlug, cardSlug, imgSize);
         return result;
-    }
-
-    private async Task<Texture2D> asyncGetCardImage(string packSlug, string cardSlug, int imgSize = 256)
-    {
-        string uri = "";
-        if (imgSize == 256)
-        {
-            uri = api + "cards/" + packSlug + "/" + cardSlug + ".png";
-        }
-        else if (imgSize == 512)
-        {
-            uri = api + "cards/" + packSlug + "/" + cardSlug + "@2x.png";
-        }
-        else
-        {
-            Debug.Log("Please enter a valid image size.");
-        }
-
-        UnityWebRequest request = UnityWebRequestTexture.GetTexture(uri);
-        request.SendWebRequest();
-        while (!request.isDone)
-        {
-            await Task.Yield();
-        }
-        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
-            return null;
-        else
-        {
-            var texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
-            return texture;
-        }
     }
 
     ///<summary>
     ///Returns an object of type Apps which holds an array of App objects.
     ///</summary>
-    public async Task<Apps> GetApps()
+    public async Task<AssistiveCardsSDK.AssistiveCardsSDK.Apps> GetApps()
     {
-        var result = await asyncGetApps();
+        var result = await assistiveCardsSDK.GetApps();
         return result;
-    }
-
-    private async Task<Apps> asyncGetApps()
-    {
-        UnityWebRequest request = UnityWebRequest.Get(metadata);
-        request.SendWebRequest();
-        while (!request.isDone)
-        {
-            await Task.Yield();
-        }
-        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
-            return null;
-        else
-        {
-            var apps = JsonUtility.FromJson<Apps>(request.downloadHandler.text);
-            return apps;
-        }
     }
 
     ///<summary>
     ///Takes in an object of type Packs as the first parameter and a pack slug of type string as the second parameter. Filters the given array of packs and returns an object of type Pack corresponding to the specified pack slug.
     ///</summary>
-    public Pack GetPackBySlug(Packs packs, string packSlug)
+    public AssistiveCardsSDK.AssistiveCardsSDK.Pack GetPackBySlug(AssistiveCardsSDK.AssistiveCardsSDK.Packs packs, string packSlug)
     {
 
         for (int i = 0; i < packs.packs.Length; i++)
@@ -554,7 +330,7 @@ public class GameAPI : MonoBehaviour
     ///<summary>
     ///Takes in an object of type Cards as the first parameter and a card slug of type string as the second parameter. Filters the given array of cards and returns an object of type Card corresponding to the specified card slug.
     ///</summary>
-    public Card GetCardBySlug(Cards cards, string cardSlug)
+    public AssistiveCardsSDK.AssistiveCardsSDK.Card GetCardBySlug(AssistiveCardsSDK.AssistiveCardsSDK.Cards cards, string cardSlug)
     {
         for (int i = 0; i < cards.cards.Length; i++)
         {
@@ -567,7 +343,7 @@ public class GameAPI : MonoBehaviour
     ///<summary>
     ///Takes in an object of type Activities as the first parameter and a activity slug of type string as the second parameter. Filters the given array of activities and returns an object of type Activity corresponding to the specified activity slug.
     ///</summary>
-    public Activity GetActivityBySlug(Activities activities, string slug)
+    public AssistiveCardsSDK.AssistiveCardsSDK.Activity GetActivityBySlug(AssistiveCardsSDK.AssistiveCardsSDK.Activities activities, string slug)
     {
         for (int i = 0; i < activities.activities.Length; i++)
         {
@@ -580,7 +356,7 @@ public class GameAPI : MonoBehaviour
     ///<summary>
     ///Takes in an object of type Languages as the first parameter and a language code of type string as the second parameter. Filters the given array of languages and returns an object of type Language corresponding to the specified language code.
     ///</summary>
-    public Language GetLanguageByCode(Languages languages, string languageCode)
+    public AssistiveCardsSDK.AssistiveCardsSDK.Language GetLanguageByCode(AssistiveCardsSDK.AssistiveCardsSDK.Languages languages, string languageCode)
     {
         for (int i = 0; i < languages.languages.Length; i++)
         {

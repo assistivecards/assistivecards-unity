@@ -2678,6 +2678,7 @@ GameObject:
   - component: {fileID: 789354087}
   - component: {fileID: 789354086}
   - component: {fileID: 789354089}
+  - component: {fileID: 789354090}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2771,6 +2772,20 @@ MonoBehaviour:
     languages: []
   cachedApps:
     apps: []
+  cards:
+    cards: []
+--- !u!114 &789354090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789354085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d55775acb51d24ab42d6be402e5530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   packs:
     packs: []
   cards:

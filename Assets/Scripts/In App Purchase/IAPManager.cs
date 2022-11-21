@@ -10,7 +10,7 @@ public class IAPManager : MonoBehaviour
     [SerializeField] private GameObject restoreButton;
     GameAPI gameAPI;
     [SerializeField] TMP_InputField availablePacksText;
-    [SerializeField] List<GameAPI.Pack> availablePacksArray;
+    [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Pack> availablePacksArray;
     [SerializeField] Button premiumButton;
 
 
@@ -38,13 +38,13 @@ public class IAPManager : MonoBehaviour
     {
         m_StoreController = controller;
         m_StoreExtensionProvider = extensions;
- 
+
         foreach (var product in controller.products.all)
         {
-            Debug.Log (product.metadata.localizedPriceString);
+            Debug.Log(product.metadata.localizedPriceString);
 
             Debug.Log(string.Format("string: {0}", product.metadata.localizedPriceString));
-           
+
             Debug.Log(string.Format("decimal: {0}", product.metadata.localizedPrice.ToString()));
 
             currencySymbol.text = string.Format("decimal: {0}", product.metadata.localizedPrice.ToString());

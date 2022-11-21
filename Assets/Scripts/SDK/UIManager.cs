@@ -6,6 +6,7 @@ using System;
 public class UIManager : MonoBehaviour
 {
     GameAPI gameAPI;
+    AssistiveCardsSDK.AssistiveCardsSDK assistiveCardsSDK;
     public TMP_InputField outputArea;
     public RawImage rawImage;
     public TMP_InputField avatarImageSizeInput;
@@ -24,6 +25,7 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
+        assistiveCardsSDK = Camera.main.GetComponent<AssistiveCardsSDK.AssistiveCardsSDK>();
         gameAPI = Camera.main.GetComponent<GameAPI>();
     }
 
@@ -111,7 +113,7 @@ public class UIManager : MonoBehaviour
 
     public void DisplayCardBySlug()
     {
-        var result = gameAPI.GetCardBySlug(gameAPI.cards, cardBySlugInput.text);
+        var result = gameAPI.GetCardBySlug(assistiveCardsSDK.cards, cardBySlugInput.text);
         outputArea.text = JsonUtility.ToJson(result);
     }
 

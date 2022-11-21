@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 108049009}
   - component: {fileID: 108049008}
   - component: {fileID: 108049011}
+  - component: {fileID: 108049012}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -228,6 +229,20 @@ MonoBehaviour:
     languages: []
   cachedApps:
     apps: []
+  cards:
+    cards: []
+--- !u!114 &108049012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108049007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d55775acb51d24ab42d6be402e5530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   packs:
     packs: []
   cards:
@@ -361,6 +376,7 @@ MonoBehaviour:
   availablePacksText: {fileID: 1896592732}
   availablePacksArray: []
   premiumButton: {fileID: 429321692}
+  currencySymbol: {fileID: 0}
 --- !u!1 &233081499
 GameObject:
   m_ObjectHideFlags: 0

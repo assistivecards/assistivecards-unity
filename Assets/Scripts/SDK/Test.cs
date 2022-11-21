@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-    [SerializeField] GameAPI.Pack packResult = new GameAPI.Pack();
-    [SerializeField] GameAPI.Activity activityResult = new GameAPI.Activity();
-    [SerializeField] GameAPI.Language languageResult = new GameAPI.Language();
+    [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Pack packResult = new AssistiveCardsSDK.AssistiveCardsSDK.Pack();
+    [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Activity activityResult = new AssistiveCardsSDK.AssistiveCardsSDK.Activity();
+    [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Language languageResult = new AssistiveCardsSDK.AssistiveCardsSDK.Language();
     GameAPI gameAPI;
     // public TMP_InputField outputArea;
     [SerializeField] Texture2D[] cardTextures;
     [SerializeField] Texture2D[] avatarTextures;
     [SerializeField] private Texture2D testTexture;
-    [SerializeField] private GameAPI.Cards cardsTest;
+    [SerializeField] private AssistiveCardsSDK.AssistiveCardsSDK.Cards cardsTest;
     [SerializeField] private List<string> locales;
 
     private void Awake()

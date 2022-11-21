@@ -1017,7 +1017,7 @@ public class GameAPI : MonoBehaviour
         }
         else
         {
-            return UITextID;
+            return UITextID + "*";
         }
     }
 
@@ -1036,7 +1036,7 @@ public class GameAPI : MonoBehaviour
         }
         else
         {
-            return UITextID;
+            return UITextID + "*";
         }
     }
     ///<summary>

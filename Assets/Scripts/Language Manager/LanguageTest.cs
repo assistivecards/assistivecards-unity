@@ -10,6 +10,7 @@ public class LanguageTest : MonoBehaviour
     [SerializeField] List<TMP_Text> plainTexts;
     [SerializeField] List<TMP_Text> textsWithVariable;
     [SerializeField] TMP_InputField languageInputField;
+    [SerializeField] TMP_InputField localeInputField;
     [SerializeField] Canvas canvas;
     string result;
     private string nickname;
@@ -62,6 +63,12 @@ public class LanguageTest : MonoBehaviour
     {
         gameAPI.SetLanguage(languageInputField.text);
         Speakable.locale = await gameAPI.GetSelectedLocale();
+    }
+
+    async public void ChangeTTS()
+    {
+        gameAPI.SetTTSPreference(localeInputField.text);
+        Speakable.locale = await gameAPI.GetTTSPreference();
     }
 
     public async void OnLanguageChange()

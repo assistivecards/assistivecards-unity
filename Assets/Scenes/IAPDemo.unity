@@ -266,6 +266,7 @@ GameObject:
   - component: {fileID: 231962522}
   - component: {fileID: 231962521}
   - component: {fileID: 231962525}
+  - component: {fileID: 231962526}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -372,11 +373,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ea7800e1e39bd4e9d8e2dd540fa1f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restoreButton: {fileID: 1103936461}
+  IAPUIManager: {fileID: 231962526}
+  currencySymbol: {fileID: 0}
+--- !u!114 &231962526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231962520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7551e31af85073640848a944c94a6ce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   availablePacksText: {fileID: 1896592732}
-  availablePacksArray: []
+  restoreButton: {fileID: 1103936461}
   premiumButton: {fileID: 429321692}
   currencySymbol: {fileID: 0}
+  availablePacksArray: []
 --- !u!1 &233081499
 GameObject:
   m_ObjectHideFlags: 0

@@ -8247,7 +8247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &562886676
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9724,6 +9724,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 773758865873878607, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
       propertyPath: canvas
       value: 
@@ -9732,6 +9736,10 @@ PrefabInstance:
       propertyPath: settingsAPI
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: sampleWebView
+      value: 
+      objectReference: {fileID: 1473350850}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6f74a65304f7594784561825a582f5d, type: 3}
 --- !u!224 &676650998 stripped
@@ -12291,6 +12299,7 @@ RectTransform:
   - {fileID: 676650998}
   - {fileID: 1865155094}
   - {fileID: 562886676}
+  - {fileID: 1473350851}
   m_Father: {fileID: 68398935}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12311,7 +12320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd381ac377d4c9d4f965bb4ed2e19216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropDownMenu: {fileID: 1551886754}
+  sampleWebView: {fileID: 1473350850}
 --- !u!1 &789349011
 GameObject:
   m_ObjectHideFlags: 0
@@ -22213,6 +22222,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1472047583}
   m_CullTransparentMesh: 1
+--- !u!1 &1473350849
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1473350851}
+  - component: {fileID: 1473350850}
+  m_Layer: 5
+  m_Name: Webview
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1473350850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473350849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0da471077e7441b9de3a7e1e10ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Url: https://dreamoriented.org/leeloo-feedback/
+  status: {fileID: 0}
+  webViewObject: {fileID: 0}
+--- !u!224 &1473350851
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473350849}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 788092256}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1475358002
 GameObject:
   m_ObjectHideFlags: 0
@@ -27785,7 +27846,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1865155094
 RectTransform:
   m_ObjectHideFlags: 0

@@ -4,16 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 public class SendFeedbackPage : MonoBehaviour
 {
-    [SerializeField] private GameObject dropDownMenu;
-    public void MenuButtonClick()
+    [SerializeField] private SampleWebView sampleWebView;
+
+    private void OnEnable()
     {
-        if(dropDownMenu.activeInHierarchy)
-        {
-            dropDownMenu.SetActive(false);
-        }
-        else
-        {
-            dropDownMenu.SetActive(true);
-        }
+        sampleWebView.webViewObject.SetVisibility(true);
     }
 }

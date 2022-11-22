@@ -12,6 +12,7 @@ public class TopAppBarController : MonoBehaviour
     private ProfileEditor profileEditor;
     private LanguageController languageController;
     [SerializeField] TTSPanel ttsPanel;
+    [SerializeField] private SampleWebView sampleWebView;
 
 
     [Header("UI Elements Accessility")]
@@ -35,8 +36,17 @@ public class TopAppBarController : MonoBehaviour
 
     public void BackButtonClicked()
     {
-        LeanTween.scale(this.transform.parent.gameObject, Vector3.one * 0.9f, 0.15f);
-        Invoke("SceneSetActiveFalse", 0.15f);
+        if(GetComponentInParent<SendFeedbackPage>() != null)
+        {
+            sampleWebView.webViewObject.SetVisibility(false);
+            LeanTween.scale(this.transform.parent.gameObject, Vector3.one * 0.9f, 0.15f);
+            Invoke("SceneSetActiveFalse", 0.15f);
+        }
+        else
+        {
+            LeanTween.scale(this.transform.parent.gameObject, Vector3.one * 0.9f, 0.15f);
+            Invoke("SceneSetActiveFalse", 0.15f);
+        }
     }
 
     private void SceneSetActiveFalse()

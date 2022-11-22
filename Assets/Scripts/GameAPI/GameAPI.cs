@@ -32,9 +32,9 @@ public class GameAPI : MonoBehaviour
         cachedApps = await GetApps();
     }
 
-    private int boyAvatarArrayLength = 33;
-    private int girlAvatarArrayLength = 27;
-    private int miscAvatarArrayLength = 29;
+    // private int boyAvatarArrayLength = 33;
+    // private int girlAvatarArrayLength = 27;
+    // private int miscAvatarArrayLength = 29;
     private const string api = "https://api.assistivecards.com/";
     private const string metadata = "https://api.assistivecards.com/apps/metadata.json";
 
@@ -319,12 +319,14 @@ public class GameAPI : MonoBehaviour
     public AssistiveCardsSDK.AssistiveCardsSDK.Pack GetPackBySlug(AssistiveCardsSDK.AssistiveCardsSDK.Packs packs, string packSlug)
     {
 
-        for (int i = 0; i < packs.packs.Length; i++)
-        {
-            if (packs.packs[i].slug == packSlug)
-                return packs.packs[i];
-        }
-        return null;
+        // for (int i = 0; i < packs.packs.Length; i++)
+        // {
+        //     if (packs.packs[i].slug == packSlug)
+        //         return packs.packs[i];
+        // }
+        // return null;
+        var result = assistiveCardsSDK.GetPackBySlug(packs, packSlug);
+        return result;
     }
 
     ///<summary>
@@ -332,12 +334,14 @@ public class GameAPI : MonoBehaviour
     ///</summary>
     public AssistiveCardsSDK.AssistiveCardsSDK.Card GetCardBySlug(AssistiveCardsSDK.AssistiveCardsSDK.Cards cards, string cardSlug)
     {
-        for (int i = 0; i < cards.cards.Length; i++)
-        {
-            if (cards.cards[i].slug == cardSlug)
-                return cards.cards[i];
-        }
-        return null;
+        // for (int i = 0; i < cards.cards.Length; i++)
+        // {
+        //     if (cards.cards[i].slug == cardSlug)
+        //         return cards.cards[i];
+        // }
+        // return null;
+        var result = assistiveCardsSDK.GetCardBySlug(cards, cardSlug);
+        return result;
     }
 
     ///<summary>
@@ -345,12 +349,14 @@ public class GameAPI : MonoBehaviour
     ///</summary>
     public AssistiveCardsSDK.AssistiveCardsSDK.Activity GetActivityBySlug(AssistiveCardsSDK.AssistiveCardsSDK.Activities activities, string slug)
     {
-        for (int i = 0; i < activities.activities.Length; i++)
-        {
-            if (activities.activities[i].slug == slug)
-                return activities.activities[i];
-        }
-        return null;
+        // for (int i = 0; i < activities.activities.Length; i++)
+        // {
+        //     if (activities.activities[i].slug == slug)
+        //         return activities.activities[i];
+        // }
+        // return null;
+        var result = assistiveCardsSDK.GetActivityBySlug(activities, slug);
+        return result;
     }
 
     ///<summary>
@@ -358,12 +364,14 @@ public class GameAPI : MonoBehaviour
     ///</summary>
     public AssistiveCardsSDK.AssistiveCardsSDK.Language GetLanguageByCode(AssistiveCardsSDK.AssistiveCardsSDK.Languages languages, string languageCode)
     {
-        for (int i = 0; i < languages.languages.Length; i++)
-        {
-            if (languages.languages[i].code == languageCode)
-                return languages.languages[i];
-        }
-        return null;
+        // for (int i = 0; i < languages.languages.Length; i++)
+        // {
+        //     if (languages.languages[i].code == languageCode)
+        //         return languages.languages[i];
+        // }
+        // return null;
+        var result = assistiveCardsSDK.GetLanguageByCode(languages, languageCode);
+        return result;
     }
 
     ///<summary>
@@ -371,13 +379,15 @@ public class GameAPI : MonoBehaviour
     ///</summary>
     public async Task<Texture2D[]> GetCardImagesByPack(string languageCode, string packSlug, int imgSize = 256)
     {
-        var cards = await GetCards(languageCode, packSlug);
-        Texture2D[] textures = new Texture2D[cards.cards.Length];
-        for (int i = 0; i < cards.cards.Length; i++)
-        {
-            textures[i] = await GetCardImage(packSlug, cards.cards[i].slug);
-        }
-        return textures;
+        // var cards = await GetCards(languageCode, packSlug);
+        // Texture2D[] textures = new Texture2D[cards.cards.Length];
+        // for (int i = 0; i < cards.cards.Length; i++)
+        // {
+        //     textures[i] = await GetCardImage(packSlug, cards.cards[i].slug);
+        // }
+        // return textures;
+        var result = await assistiveCardsSDK.GetCardImagesByPack(languageCode, packSlug, imgSize);
+        return result;
     }
 
     ///<summary>
@@ -385,38 +395,40 @@ public class GameAPI : MonoBehaviour
     ///</summary>
     public async Task<Texture2D[]> GetAvatarImagesByCategory(string category, int imgSize = 256)
     {
-        Texture2D[] textures;
-        if (category == "boy")
-        {
-            textures = new Texture2D[boyAvatarArrayLength];
+        // Texture2D[] textures;
+        // if (category == "boy")
+        // {
+        //     textures = new Texture2D[boyAvatarArrayLength];
 
-            for (int i = 0; i < boyAvatarArrayLength; i++)
-            {
-                textures[i] = await GetAvatarImage("boy" + (i + 1).ToString("D2"));
-            }
-            return textures;
-        }
-        else if (category == "girl")
-        {
-            textures = new Texture2D[girlAvatarArrayLength];
+        //     for (int i = 0; i < boyAvatarArrayLength; i++)
+        //     {
+        //         textures[i] = await GetAvatarImage("boy" + (i + 1).ToString("D2"));
+        //     }
+        //     return textures;
+        // }
+        // else if (category == "girl")
+        // {
+        //     textures = new Texture2D[girlAvatarArrayLength];
 
-            for (int i = 0; i < girlAvatarArrayLength; i++)
-            {
-                textures[i] = await GetAvatarImage("girl" + (i + 1).ToString("D2"));
-            }
-            return textures;
-        }
-        else if (category == "misc")
-        {
-            textures = new Texture2D[miscAvatarArrayLength];
+        //     for (int i = 0; i < girlAvatarArrayLength; i++)
+        //     {
+        //         textures[i] = await GetAvatarImage("girl" + (i + 1).ToString("D2"));
+        //     }
+        //     return textures;
+        // }
+        // else if (category == "misc")
+        // {
+        //     textures = new Texture2D[miscAvatarArrayLength];
 
-            for (int i = 0; i < miscAvatarArrayLength; i++)
-            {
-                textures[i] = await GetAvatarImage("misc" + (i + 1).ToString("D2"));
-            }
-            return textures;
-        }
-        return null;
+        //     for (int i = 0; i < miscAvatarArrayLength; i++)
+        //     {
+        //         textures[i] = await GetAvatarImage("misc" + (i + 1).ToString("D2"));
+        //     }
+        //     return textures;
+        // }
+        // return null;
+        var result = await assistiveCardsSDK.GetAvatarImagesByCategory(category, imgSize);
+        return result;
     }
 
 

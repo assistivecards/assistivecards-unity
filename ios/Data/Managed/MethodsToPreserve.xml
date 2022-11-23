@@ -1,0 +1,60 @@
+<linker>
+	<assembly fullname="Assembly-CSharp" ignoreIfMissing="1">
+		<type fullname="AvatarListCreator">
+			<method name="BoyButtonClicked"/>
+			<method name="GirlButtonClicked"/>
+			<method name="MiscButtonClicked"/>
+		</type>
+		<type fullname="CanvasController">
+			<method name="AboutApplicationButtonClicked"/>
+			<method name="AccessibiltyButtonClicked"/>
+			<method name="AllAppsButtonClicked"/>
+			<method name="LanguageButtonClick"/>
+			<method name="NotificationButtonClicked"/>
+			<method name="ParentLockButtonClick"/>
+			<method name="ParentLockScreenClose"/>
+			<method name="ProfileButtonClick"/>
+			<method name="SendFeedbacksButtonClicked"/>
+			<method name="SubscriptionsButtonClicked"/>
+			<method name="TTSButtonClicked"/>
+		</type>
+		<type fullname="IAPManager">
+			<method name="OnPurchaseComplete"/>
+			<method name="OnPurchaseFailed"/>
+		</type>
+		<type fullname="LanguageController">
+			<method name="SelectLanguageElement"/>
+		</type>
+		<type fullname="LoginContoller">
+			<method name="NextButtonClicked"/>
+		</type>
+		<type fullname="ProfileEditor">
+			<method name="AvatarSelectButtonClicked"/>
+		</type>
+		<type fullname="TopAppBarController">
+			<method name="BackButtonClicked"/>
+			<method name="BackButtonClicked"/>
+			<method name="BackButtonClicked"/>
+			<method name="BackButtonClicked"/>
+			<method name="BackButtonClicked"/>
+			<method name="BackButtonClicked"/>
+			<method name="BackButtonClicked"/>
+			<method name="BackButtonClicked"/>
+			<method name="BackButtonClicked"/>
+			<method name="BackButtonClicked"/>
+			<method name="SaveButtonClicked"/>
+			<method name="SaveButtonClicked"/>
+			<method name="SaveButtonClicked"/>
+			<method name="SaveButtonClicked"/>
+			<method name="SaveButtonClicked"/>
+			<method name="SaveButtonClicked"/>
+			<method name="SaveButtonClicked"/>
+			<method name="SaveButtonClicked"/>
+			<method name="SaveButtonClicked"/>
+			<method name="SaveButtonClicked"/>
+		</type>
+		<type fullname="TTSPanel">
+			<method name="TTSSelected"/>
+		</type>
+	</assembly>
+</linker>

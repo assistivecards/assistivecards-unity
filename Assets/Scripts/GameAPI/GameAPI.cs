@@ -561,7 +561,7 @@ public class GameAPI : MonoBehaviour
     ///</summary>
     public int GetHapticsPreference()
     {
-        return PlayerPrefs.GetInt("HapticPreference", 0);
+        return PlayerPrefs.GetInt("HapticPreference", 1);
     }
 
     ///<summary>
@@ -593,7 +593,7 @@ public class GameAPI : MonoBehaviour
     ///</summary>
     public int GetVoiceGreetingPreference()
     {
-        return PlayerPrefs.GetInt("VoiceGreetingPreference", 0);
+        return PlayerPrefs.GetInt("VoiceGreetingPreference", 1);
     }
 
     ///<summary>

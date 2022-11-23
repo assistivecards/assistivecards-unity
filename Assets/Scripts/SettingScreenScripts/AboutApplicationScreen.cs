@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class AboutApplicationScreen : MonoBehaviour
 {
+    [Header ("SHARE APP VALUES")]
+    [SerializeField] private string appName;
+    [SerializeField] private string appDescription;
+    [SerializeField] private string appURL;
 
     [Header ("STORE LINKS")]
 
@@ -12,8 +17,6 @@ public class AboutApplicationScreen : MonoBehaviour
 
     [Header ("Screens")]
     [SerializeField] private GameObject aboutCompanyScreen;
-    [SerializeField] private GameObject shareThisAppScreen;
-    [SerializeField] private GameObject rateThisAppScreen;
     [SerializeField] private GameObject openSourceLicencesScreen;
     [SerializeField] private GameObject privacyPolicyScreen;
     [SerializeField] private GameObject termsOfServiceScreen;
@@ -27,7 +30,7 @@ public class AboutApplicationScreen : MonoBehaviour
     }
     public void OnShareThisAppClick()
     {
-
+        StartCoroutine(Share());
     }
     public void OnRateThisAppClick()
     {
@@ -60,10 +63,14 @@ public class AboutApplicationScreen : MonoBehaviour
         sampleWebView.webViewObject.SetVisibility(false);
 
         aboutCompanyScreen.SetActive(false);
-        shareThisAppScreen.SetActive(false);
-        rateThisAppScreen.SetActive(false);
         openSourceLicencesScreen.SetActive(false);
         privacyPolicyScreen.SetActive(false);
         termsOfServiceScreen.SetActive(false);
+    }
+
+    private IEnumerator Share()
+    {
+        yield return null;
+        new NativeShare().SetSubject( appName ).SetText( appDescription ).SetUrl( appURL ).Share();
     }
 }

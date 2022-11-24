@@ -50,7 +50,6 @@ public class IAPManager : MonoBehaviour, IStoreListener
         {
             Debug.Log(item.definition.id);
         }
-        price.text = IAPManager.m_StoreController.products.WithID(Application.productName + "_iap").metadata.localizedPriceString;
 
     }
 
@@ -146,6 +145,7 @@ public class IAPManager : MonoBehaviour, IStoreListener
 
         m_StoreController = controller;
         m_StoreExtensionProvider = extensions;
+        price.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
     }
 
     public void OnInitializeFailed(InitializationFailureReason error)

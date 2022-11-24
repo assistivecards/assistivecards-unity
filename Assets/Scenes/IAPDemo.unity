@@ -378,7 +378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: {fileID: 781456283}
   IAPUIManager: {fileID: 231962526}
-  environment: development
+  environment: production
 --- !u!114 &231962526
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -151,6 +151,7 @@ Library: lib_burst_generated64
 --root-assembly=/Users/buraktokak/Developer/unity-template/Temp/StagingArea/Data/Managed/Unity.TextMeshPro.dll
 --root-assembly=/Users/buraktokak/Developer/unity-template/Temp/StagingArea/Data/Managed/Unity.Timeline.dll
 --root-assembly=/Users/buraktokak/Developer/unity-template/Temp/StagingArea/Data/Managed/Unity.Services.Core.dll
+--root-assembly=/Users/buraktokak/Developer/unity-template/Temp/StagingArea/Data/Managed/NativeShare.Runtime.dll
 --root-assembly=/Users/buraktokak/Developer/unity-template/Temp/StagingArea/Data/Managed/UnityEngine.Purchasing.Security.dll
 --root-assembly=/Users/buraktokak/Developer/unity-template/Temp/StagingArea/Data/Managed/UnityEngine.Purchasing.dll
 --root-assembly=/Users/buraktokak/Developer/unity-template/Temp/StagingArea/Data/Managed/Unity.Services.Core.Environments.dll

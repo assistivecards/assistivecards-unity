@@ -1,5 +1,17 @@
 <linker>
 	<assembly fullname="Assembly-CSharp" ignoreIfMissing="1">
+		<type fullname="AboutApplicationScreen">
+			<method name="BackButtonClicked"/>
+			<method name="BackButtonClicked"/>
+			<method name="BackButtonClicked"/>
+			<method name="BackButtonClicked"/>
+			<method name="OnAboutCompanyClick"/>
+			<method name="OnOpenSourceLicencesClick"/>
+			<method name="OnPrivacyPolicyClick"/>
+			<method name="OnRateThisAppClick"/>
+			<method name="OnShareThisAppClick"/>
+			<method name="OnTermsOfServicesClick"/>
+		</type>
 		<type fullname="AvatarListCreator">
 			<method name="BoyButtonClicked"/>
 			<method name="GirlButtonClicked"/>
@@ -19,8 +31,10 @@
 			<method name="TTSButtonClicked"/>
 		</type>
 		<type fullname="IAPManager">
-			<method name="OnPurchaseComplete"/>
+			<method name="BuyNonConsumable"/>
 			<method name="OnPurchaseFailed"/>
+			<method name="OnPurchaseFailed"/>
+			<method name="RestorePurchases"/>
 		</type>
 		<type fullname="LanguageController">
 			<method name="SelectLanguageElement"/>

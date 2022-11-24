@@ -22,6 +22,7 @@ IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_AssemblyU2DCSharpU2Dfirstpass_CodeGe
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_AssistiveCardsSDK_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Mono_Security_CodeGenModule;
+IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_NativeShare_Runtime_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Newtonsoft_Json_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Purchasing_Common_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_System_CodeGenModule;
@@ -74,6 +75,7 @@ IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Unity_Services_Analytics_CodeGenModu
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Unity_Services_Core_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Unity_Services_Core_Configuration_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Unity_Services_Core_Device_CodeGenModule;
+IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Unity_Services_Core_Environments_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Unity_Services_Core_Environments_Internal_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Unity_Services_Core_Internal_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Unity_Services_Core_Registration_CodeGenModule;
@@ -84,12 +86,13 @@ IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Unity_TextMeshPro_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g___Generated_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_mscorlib_CodeGenModule;
 IL2CPP_EXTERN_C const Il2CppCodeGenModule* g_CodeGenModules[];
-const Il2CppCodeGenModule* g_CodeGenModules[65] = 
+const Il2CppCodeGenModule* g_CodeGenModules[67] = 
 {
 	(&g_AssemblyU2DCSharpU2Dfirstpass_CodeGenModule),
 	(&g_AssemblyU2DCSharp_CodeGenModule),
 	(&g_AssistiveCardsSDK_CodeGenModule),
 	(&g_Mono_Security_CodeGenModule),
+	(&g_NativeShare_Runtime_CodeGenModule),
 	(&g_Newtonsoft_Json_CodeGenModule),
 	(&g_Purchasing_Common_CodeGenModule),
 	(&g_System_CodeGenModule),
@@ -142,6 +145,7 @@ const Il2CppCodeGenModule* g_CodeGenModules[65] =
 	(&g_Unity_Services_Core_CodeGenModule),
 	(&g_Unity_Services_Core_Configuration_CodeGenModule),
 	(&g_Unity_Services_Core_Device_CodeGenModule),
+	(&g_Unity_Services_Core_Environments_CodeGenModule),
 	(&g_Unity_Services_Core_Environments_Internal_CodeGenModule),
 	(&g_Unity_Services_Core_Internal_CodeGenModule),
 	(&g_Unity_Services_Core_Registration_CodeGenModule),
@@ -157,18 +161,18 @@ const Il2CppCodeRegistration g_CodeRegistration =
 {
 	25,
 	g_ReversePInvokeWrapperPointers,
-	36019,
+	36021,
 	g_Il2CppGenericMethodPointers,
 	g_Il2CppGenericAdjustorThunks,
-	7844,
+	7848,
 	g_Il2CppInvokerPointers,
 	1336,
 	g_UnresolvedVirtualMethodPointers,
-	504,
+	505,
 	g_Il2CppInteropData,
 	0,
 	NULL,
-	65,
+	67,
 	g_CodeGenModules,
 };
 IL2CPP_EXTERN_C_CONST Il2CppMetadataRegistration g_MetadataRegistration;

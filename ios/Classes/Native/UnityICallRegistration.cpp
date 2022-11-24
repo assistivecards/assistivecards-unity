@@ -526,6 +526,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Application_get_streamingAssetsPath();
 		Register_UnityEngine_Application_get_streamingAssetsPath();
 
+		//System.String UnityEngine.Application::get_temporaryCachePath()
+		void Register_UnityEngine_Application_get_temporaryCachePath();
+		Register_UnityEngine_Application_get_temporaryCachePath();
+
 		//System.String UnityEngine.Application::get_unityVersion()
 		void Register_UnityEngine_Application_get_unityVersion();
 		Register_UnityEngine_Application_get_unityVersion();
@@ -533,6 +537,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.String UnityEngine.Application::get_version()
 		void Register_UnityEngine_Application_get_version();
 		Register_UnityEngine_Application_get_version();
+
+		//System.Void UnityEngine.Application::OpenURL(System.String)
+		void Register_UnityEngine_Application_OpenURL();
+		Register_UnityEngine_Application_OpenURL();
 
 		//UnityEngine.ApplicationInstallMode UnityEngine.Application::get_installMode()
 		void Register_UnityEngine_Application_get_installMode();
@@ -1450,6 +1458,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Graphics_Internal_GetMaxDrawMeshInstanceCount();
 		Register_UnityEngine_Graphics_Internal_GetMaxDrawMeshInstanceCount();
 
+		//System.Void UnityEngine.Graphics::Blit2(UnityEngine.Texture,UnityEngine.RenderTexture)
+		void Register_UnityEngine_Graphics_Blit2();
+		Register_UnityEngine_Graphics_Blit2();
+
 		//System.Void UnityEngine.Graphics::Internal_DrawTexture(UnityEngine.Internal_DrawTextureArguments&)
 		void Register_UnityEngine_Graphics_Internal_DrawTexture();
 		Register_UnityEngine_Graphics_Internal_DrawTexture();
@@ -1869,6 +1881,14 @@ void RegisterAllStrippedInternalCalls()
 		//System.Boolean UnityEngine.ImageConversion::LoadImage(UnityEngine.Texture2D,System.Byte[],System.Boolean)
 		void Register_UnityEngine_ImageConversion_LoadImage();
 		Register_UnityEngine_ImageConversion_LoadImage();
+
+		//System.Byte[] UnityEngine.ImageConversion::EncodeToJPG(UnityEngine.Texture2D,System.Int32)
+		void Register_UnityEngine_ImageConversion_EncodeToJPG();
+		Register_UnityEngine_ImageConversion_EncodeToJPG();
+
+		//System.Byte[] UnityEngine.ImageConversion::EncodeToPNG(UnityEngine.Texture2D)
+		void Register_UnityEngine_ImageConversion_EncodeToPNG();
+		Register_UnityEngine_ImageConversion_EncodeToPNG();
 
 	//End Registrations for type : UnityEngine.ImageConversion
 
@@ -3537,6 +3557,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.Texture2D::GetPixelBilinearImpl_Injected(System.Int32,System.Int32,System.Single,System.Single,UnityEngine.Color&)
 		void Register_UnityEngine_Texture2D_GetPixelBilinearImpl_Injected();
 		Register_UnityEngine_Texture2D_GetPixelBilinearImpl_Injected();
+
+		//System.Void UnityEngine.Texture2D::ReadPixelsImpl_Injected(UnityEngine.Rect&,System.Int32,System.Int32,System.Boolean)
+		void Register_UnityEngine_Texture2D_ReadPixelsImpl_Injected();
+		Register_UnityEngine_Texture2D_ReadPixelsImpl_Injected();
 
 		//System.Void UnityEngine.Texture2D::SetAllPixels32(UnityEngine.Color32[],System.Int32)
 		void Register_UnityEngine_Texture2D_SetAllPixels32();

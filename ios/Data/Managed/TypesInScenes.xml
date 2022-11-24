@@ -1,5 +1,6 @@
 <linker>
 	<assembly fullname="Assembly-CSharp">
+		<type fullname="AboutApplicationScreen" preserve="nothing"/>
 		<type fullname="AccessibilityScreen" preserve="nothing"/>
 		<type fullname="AllAppsPage" preserve="nothing"/>
 		<type fullname="AvatarListCreator" preserve="nothing"/>

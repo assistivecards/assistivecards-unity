@@ -23053,9 +23053,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t GameAPI_GetHapticsPreference_mF067771
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		// return PlayerPrefs.GetInt("HapticPreference", 0);
+		// return PlayerPrefs.GetInt("HapticPreference", 1);
 		int32_t L_0;
-		L_0 = PlayerPrefs_GetInt_m8AD1FA8BA54CC6CE2B2AEEE36B6D75587BB1692D(_stringLiteralCF96C3F9C47A6E4207BE0291829F3EB568258BFF, 0, NULL);
+		L_0 = PlayerPrefs_GetInt_m8AD1FA8BA54CC6CE2B2AEEE36B6D75587BB1692D(_stringLiteralCF96C3F9C47A6E4207BE0291829F3EB568258BFF, 1, NULL);
 		return L_0;
 	}
 }
@@ -23119,9 +23119,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t GameAPI_GetVoiceGreetingPreference_m5
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		// return PlayerPrefs.GetInt("VoiceGreetingPreference", 0);
+		// return PlayerPrefs.GetInt("VoiceGreetingPreference", 1);
 		int32_t L_0;
-		L_0 = PlayerPrefs_GetInt_m8AD1FA8BA54CC6CE2B2AEEE36B6D75587BB1692D(_stringLiteral5AE82A0D37C9631FAB39DF97C65B7DFFF574A640, 0, NULL);
+		L_0 = PlayerPrefs_GetInt_m8AD1FA8BA54CC6CE2B2AEEE36B6D75587BB1692D(_stringLiteral5AE82A0D37C9631FAB39DF97C65B7DFFF574A640, 1, NULL);
 		return L_0;
 	}
 }

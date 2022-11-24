@@ -11,13 +11,13 @@ This is a documentation for GameAPI, which is the combination of Assistive Cards
 Takes in a language code of type string and returns an object of type Packs which holds an array of Pack objects in the specified language.
 
 ```Csharp
-async Task<Packs> GetPacks(string language)
+async Task<AssistiveCardsSDK.AssistiveCardsSDK.Packs> GetPacks(string language)
 ```
 
 Example usage;
 
 ```Csharp
-Packs packs = new Packs();
+AssistiveCardsSDK.AssistiveCardsSDK.Packs packs = new AssistiveCardsSDK.AssistiveCardsSDK.Packs();
 packs = await GetPacks("en");
 ```
 
@@ -26,13 +26,13 @@ packs = await GetPacks("en");
 Takes in a language code and a pack slug of type string as parameters. Returns an object of type Cards which holds an array of Card objects in the specified pack and language.
 
 ```Csharp
-async Task<Cards> GetCards(string language, string packSlug)
+async Task<AssistiveCardsSDK.AssistiveCardsSDK.Cards> GetCards(string language, string packSlug)
 ```
 
 Example usage;
 
 ```Csharp
-Cards cards = new Cards();
+AssistiveCardsSDK.AssistiveCardsSDK.Cards cards = new AssistiveCardsSDK.AssistiveCardsSDK.Cards();
 cards = await GetCards("en", "animals");
 ```
 
@@ -41,13 +41,13 @@ cards = await GetCards("en", "animals");
 Takes in a language code of type string and returns an object of type Activities which holds an array of Activity objects in the specified language.
 
 ```Csharp
-async Task<Activities> GetActivities(string language)
+async Task<AssistiveCardsSDK.AssistiveCardsSDK.Activities> GetActivities(string language)
 ```
 
 Example usage;
 
 ```Csharp
-Activities activities = new Activities();
+AssistiveCardsSDK.AssistiveCardsSDK.Activities activities = new AssistiveCardsSDK.AssistiveCardsSDK.Activities();
 activities = await GetActivities("en");
 ```
 
@@ -56,13 +56,13 @@ activities = await GetActivities("en");
 Returns an object of type Languages which holds an array of Language objects.
 
 ```Csharp
-async Task<Languages> GetLanguages()
+async Task<AssistiveCardsSDK.AssistiveCardsSDK.Languages> GetLanguages()
 ```
 
 Example usage;
 
 ```Csharp
-Languges languages = new Languages();
+AssistiveCardsSDK.AssistiveCardsSDK.Languges languages = new AssistiveCardsSDK.AssistiveCardsSDK.Languages();
 languages = await GetLanguages();
 ```
 
@@ -71,13 +71,13 @@ languages = await GetLanguages();
 Takes in an object of type Packs as the first parameter and a pack slug of type string as the second parameter. Filters the given array of packs and returns an object of type Pack corresponding to the specified pack slug.
 
 ```Csharp
-Pack GetPackBySlug(Packs packs, string packSlug)
+AssistiveCardsSDK.AssistiveCardsSDK.Pack GetPackBySlug(AssistiveCardsSDK.AssistiveCardsSDK.Packs packs, string packSlug)
 ```
 
 Example usage;
 
 ```Csharp
-Pack pack = new Pack();
+AssistiveCardsSDK.AssistiveCardsSDK.Pack pack = new AssistiveCardsSDK.AssistiveCardsSDK.Pack();
 pack = GetPackBySlug(packs, "animals");
 ```
 
@@ -86,13 +86,13 @@ pack = GetPackBySlug(packs, "animals");
 Takes in an object of type Cards as the first parameter and a card slug of type string as the second parameter. Filters the given array of cards and returns an object of type Card corresponding to the specified card slug.
 
 ```Csharp
-Card GetCardBySlug(Cards cards, string cardSlug)
+AssistiveCardsSDK.AssistiveCardsSDK.Card GetCardBySlug(AssistiveCardsSDK.AssistiveCardsSDK.Cards cards, string cardSlug)
 ```
 
 Example usage;
 
 ```Csharp
-Card card = new Card();
+AssistiveCardsSDK.AssistiveCardsSDK.Card card = new AssistiveCardsSDK.AssistiveCardsSDK.Card();
 card = GetCardBySlug(cards, "bee");
 ```
 
@@ -101,13 +101,13 @@ card = GetCardBySlug(cards, "bee");
 Takes in an object of type Activities as the first parameter and an activity slug of type string as the second parameter. Filters the given array of activities and returns an object of type Activity corresponding to the specified activity slug.
 
 ```Csharp
-Activity GetActivityBySlug(Activities activities, string slug)
+AssistiveCardsSDK.AssistiveCardsSDK.Activity GetActivityBySlug(AssistiveCardsSDK.AssistiveCardsSDK.Activities activities, string slug)
 ```
 
 Example usage;
 
 ```Csharp
-Activity activity = new Activity();
+AssistiveCardsSDK.AssistiveCardsSDK.Activity activity = new AssistiveCardsSDK.AssistiveCardsSDK.Activity();
 activity = GetActivityBySlug(activities, "practicing-speaking");
 ```
 
@@ -116,13 +116,13 @@ activity = GetActivityBySlug(activities, "practicing-speaking");
 Takes in an object of type Languages as the first parameter and a language code of type string as the second parameter. Filters the given array of languages and returns an object of type Language corresponding to the specified language code.
 
 ```Csharp
-Language GetLanguageByCode(Languages languages, string languageCode)
+AssistiveCardsSDK.AssistiveCardsSDK.Language GetLanguageByCode(AssistiveCardsSDK.AssistiveCardsSDK.Languages languages, string languageCode)
 ```
 
 Example usage;
 
 ```Csharp
-Language language = new Language();
+AssistiveCardsSDK.AssistiveCardsSDK.Language language = new AssistiveCardsSDK.AssistiveCardsSDK.Language();
 language = GetLanguageByCode(languages, "en");
 ```
 
@@ -196,13 +196,13 @@ texture = await GetAvatarImage("girl23",512);
 Returns an object of type Apps which holds an array of App objects.
 
 ```Csharp
-async Task<Apps> GetApps()
+async Task<AssistiveCardsSDK.AssistiveCardsSDK.Apps> GetApps()
 ```
 
 Example usage;
 
 ```Csharp
-Apps apps = new Apps();
+AssistiveCardsSDK.AssistiveCardsSDK.Apps apps = new AssistiveCardsSDK.AssistiveCardsSDK.Apps();
 apps = await GetApps();
 ```
 
@@ -393,7 +393,7 @@ public void SetHapticsPreference(int isHapticsActive)
 
 Retrieves the haptics preference data stored in PlayerPrefs.
 
-> Default value is 0.
+> Default value is 1.
 
 ```Csharp
 public int GetHapticsPreference()
@@ -429,7 +429,7 @@ public void SetVoiceGreetingPreference(int isVoiceGreetingActive)
 
 Retrieves the voice greeting on start preference data stored in PlayerPrefs.
 
-> Default value is 0.
+> Default value is 1.
 
 ```Csharp
 public int GetVoiceGreetingPreference()

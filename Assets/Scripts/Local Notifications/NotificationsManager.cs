@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 #if UNITY_IOS
     using Unity.Notifications.iOS;
 #elif UNITY_ANDROID
@@ -10,15 +11,28 @@ public class NotificationsManager : MonoBehaviour
 {
     private GameAPI gameAPI;
     private string reminderPeriod;
+    private string notificationTitle = "setup_notification_badge_title";
+    private string notificationBody = "setup_notification_badge_description";
+    [SerializeField] private List<string> notificationContent = new List<string>();
+    [SerializeField] private List<string> translatedNotificationContent = new List<string>();
 
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
     }
 
-    private void Start()
+    private async void Start()
     {
+        var langCode = await gameAPI.GetSystemLanguageCode();
+        notificationContent.Add(notificationTitle);
+        notificationContent.Add(notificationBody);
         // AndroidNotificationCenter.CancelAllDisplayedNotifications();
+        foreach (var text in notificationContent)
+        {
+            var result = gameAPI.Translate(text, langCode);
+            translatedNotificationContent.Add(result);
+        }
+
     }
 
     void SendNotification()
@@ -37,8 +51,8 @@ public class NotificationsManager : MonoBehaviour
 
         AndroidNotification notification = new AndroidNotification();
 
-        notification.Title = "Hey! We missed you!";
-        notification.Text = "Come back and practice!";
+        notification.Title = translatedNotificationContent[0];
+        notification.Text = translatedNotificationContent[1];
         notification.FireTime = System.DateTime.Now.AddSeconds(15);
         notification.RepeatInterval = new TimeSpan(0, 0, 3, 0);
         // notification.FireTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 9, 0, 0).AddDays(1);
@@ -65,9 +79,9 @@ public class NotificationsManager : MonoBehaviour
         var notificationIOS = new iOSNotification()
         {
             Identifier = "_notification_01",
-            Title = "Hey! We missed you!",
+            Title = translatedNotificationContent[0],
             Body = "",
-            Subtitle = "Come back and practice!",
+            Subtitle = translatedNotificationContent[1],
             ShowInForeground = true,
             ForegroundPresentationOption = (PresentationOption.Alert | PresentationOption.Sound),
             CategoryIdentifier = "category_a",
@@ -89,4 +103,17 @@ public class NotificationsManager : MonoBehaviour
     {
         reminderPeriod = gameAPI.GetReminderPreference();
     }
+
+    public async void OnLanguageChange()
+    {
+        var langCode = await gameAPI.GetSystemLanguageCode();
+        translatedNotificationContent.Clear();
+        foreach (var text in notificationContent)
+        {
+            var result = gameAPI.Translate(text, langCode);
+            translatedNotificationContent.Add(result);
+        }
+    }
+
+
 }

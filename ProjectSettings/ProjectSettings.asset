@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: assistivecards
-  productName: unity
+  productName: unity_template
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -862,11 +862,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 4a0a0482-f2be-4cff-90da-b6898ee38182
+  cloudProjectId: 0f69ef16-47a6-4559-97e3-b9c72efeef5b
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: unity_template (1)
-  organizationId: buraktokak
+  projectName: unity-template
+  organizationId: assistive-cards
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

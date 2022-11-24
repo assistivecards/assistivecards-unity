@@ -36,7 +36,7 @@ public class TopAppBarController : MonoBehaviour
 
     public void BackButtonClicked()
     {
-        if(GetComponentInParent<SendFeedbackPage>() != null)
+        if (GetComponentInParent<SendFeedbackPage>() != null)
         {
             sampleWebView.webViewObject.SetVisibility(false);
             LeanTween.scale(this.transform.parent.gameObject, Vector3.one * 0.9f, 0.15f);
@@ -80,6 +80,7 @@ public class TopAppBarController : MonoBehaviour
             gameAPI.SetLanguage(languageController.selectedLanguage.name);
             gameAPI.SetTTSPreference(await gameAPI.GetSelectedLocale());
             canvas.GetComponent<LanguageTest>().OnLanguageChange();
+            Camera.main.GetComponent<NotificationsManager>().OnLanguageChange();
 
             if (languageController.selectedLanguage.name == "Arabic" || languageController.selectedLanguage.name == "Urdu")
             {

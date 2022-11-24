@@ -235,6 +235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a710b8feeaf4a49bb4322844af3dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  notificationContent: []
+  translatedNotificationContent: []
 --- !u!1 &2077768293
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,6 +249,7 @@ GameObject:
   - component: {fileID: 2077768295}
   - component: {fileID: 2077768294}
   - component: {fileID: 2077768297}
+  - component: {fileID: 2077768298}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -342,3 +345,25 @@ MonoBehaviour:
     apps: []
   cards:
     cards: []
+--- !u!114 &2077768298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077768293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d55775acb51d24ab42d6be402e5530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  packs:
+    packs: []
+  cards:
+    cards: []
+  activities:
+    activities: []
+  languages:
+    languages: []
+  apps:
+    apps: []

@@ -46,7 +46,7 @@ public class LanguageTest : MonoBehaviour
         variableArray.Add(nickname);
         variableArray.Add(usabilityTips);
 
-        for (int i = 0; i < textsWithVariable.Count; i++)
+        for (int i = 0; i < textsWithVariable.Count-1; i++)
         {
             result = gameAPI.Translate(textsWithVariable[i].name, variableArray[i].ToString(), langCode);
             textsWithVariable[i].GetComponent<TMP_Text>().text = result;

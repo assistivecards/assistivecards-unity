@@ -14,6 +14,7 @@
 		<type fullname="LanguageTest" preserve="nothing"/>
 		<type fullname="LoginContoller" preserve="nothing"/>
 		<type fullname="NotificationPreferences" preserve="nothing"/>
+		<type fullname="NotificationsManager" preserve="nothing"/>
 		<type fullname="ParentScreenUnlocker" preserve="nothing"/>
 		<type fullname="ProfileEditor" preserve="nothing"/>
 		<type fullname="RightToLeftTextChanger" preserve="nothing"/>

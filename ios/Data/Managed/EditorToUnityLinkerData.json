@@ -78,6 +78,7 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/IAPDemo.unity",
+                "Assets/Scenes/PushNotificationDemo.unity",
                 "Assets/Scenes/SettingsPanel.unity"
             ]
         },
@@ -95,6 +96,7 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/IAPDemo.unity",
+                "Assets/Scenes/PushNotificationDemo.unity",
                 "Assets/Scenes/SettingsPanel.unity"
             ]
         },
@@ -140,6 +142,7 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/IAPDemo.unity",
+                "Assets/Scenes/PushNotificationDemo.unity",
                 "Assets/Scenes/SettingsPanel.unity"
             ]
         },
@@ -157,6 +160,7 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/IAPDemo.unity",
+                "Assets/Scenes/PushNotificationDemo.unity",
                 "Assets/Scenes/SettingsPanel.unity"
             ]
         },
@@ -174,6 +178,7 @@
             "moduleName": "AI",
             "usedInScenes": [
                 "Assets/Scenes/IAPDemo.unity",
+                "Assets/Scenes/PushNotificationDemo.unity",
                 "Assets/Scenes/SettingsPanel.unity"
             ]
         },
@@ -181,6 +186,13 @@
             "managedAssemblyName": "Assembly-CSharp.dll",
             "nativeClass": "",
             "fullManagedTypeName": "NotificationPreferences",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "NotificationsManager",
             "moduleName": "",
             "usedInScenes": []
         },
@@ -338,6 +350,7 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/IAPDemo.unity",
+                "Assets/Scenes/PushNotificationDemo.unity",
                 "Assets/Scenes/SettingsPanel.unity"
             ]
         },
@@ -397,6 +410,7 @@
             "moduleName": "Audio",
             "usedInScenes": [
                 "Assets/Scenes/IAPDemo.unity",
+                "Assets/Scenes/PushNotificationDemo.unity",
                 "Assets/Scenes/SettingsPanel.unity"
             ]
         },
@@ -407,6 +421,7 @@
             "moduleName": "Audio",
             "usedInScenes": [
                 "Assets/Scenes/IAPDemo.unity",
+                "Assets/Scenes/PushNotificationDemo.unity",
                 "Assets/Scenes/SettingsPanel.unity"
             ]
         },
@@ -417,6 +432,7 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/IAPDemo.unity",
+                "Assets/Scenes/PushNotificationDemo.unity",
                 "Assets/Scenes/SettingsPanel.unity"
             ]
         },
@@ -436,6 +452,7 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/IAPDemo.unity",
+                "Assets/Scenes/PushNotificationDemo.unity",
                 "Assets/Scenes/SettingsPanel.unity"
             ]
         },
@@ -475,6 +492,7 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/IAPDemo.unity",
+                "Assets/Scenes/PushNotificationDemo.unity",
                 "Assets/Scenes/SettingsPanel.unity"
             ]
         },
@@ -509,6 +527,7 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/IAPDemo.unity",
+                "Assets/Scenes/PushNotificationDemo.unity",
                 "Assets/Scenes/SettingsPanel.unity"
             ]
         },
@@ -519,6 +538,7 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/IAPDemo.unity",
+                "Assets/Scenes/PushNotificationDemo.unity",
                 "Assets/Scenes/SettingsPanel.unity"
             ]
         },
@@ -539,6 +559,7 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/IAPDemo.unity",
+                "Assets/Scenes/PushNotificationDemo.unity",
                 "Assets/Scenes/SettingsPanel.unity"
             ]
         },
@@ -549,6 +570,7 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/IAPDemo.unity",
+                "Assets/Scenes/PushNotificationDemo.unity",
                 "Assets/Scenes/SettingsPanel.unity"
             ]
         },
@@ -597,6 +619,7 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/IAPDemo.unity",
+                "Assets/Scenes/PushNotificationDemo.unity",
                 "Assets/Scenes/SettingsPanel.unity"
             ]
         },
@@ -636,6 +659,7 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/IAPDemo.unity",
+                "Assets/Scenes/PushNotificationDemo.unity",
                 "Assets/Scenes/SettingsPanel.unity"
             ]
         },
@@ -646,6 +670,7 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/IAPDemo.unity",
+                "Assets/Scenes/PushNotificationDemo.unity",
                 "Assets/Scenes/SettingsPanel.unity"
             ]
         },
@@ -656,6 +681,7 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/IAPDemo.unity",
+                "Assets/Scenes/PushNotificationDemo.unity",
                 "Assets/Scenes/SettingsPanel.unity"
             ]
         },
@@ -666,6 +692,7 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/IAPDemo.unity",
+                "Assets/Scenes/PushNotificationDemo.unity",
                 "Assets/Scenes/SettingsPanel.unity"
             ]
         },

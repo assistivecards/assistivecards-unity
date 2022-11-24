@@ -149,7 +149,7 @@ public class SampleWebView : MonoBehaviour
 
         //webViewObject.SetScrollbarsVisibility(true);
 
-        webViewObject.SetMargins(Screen.width / 24, 250, Screen.width / 24, 5);
+        webViewObject.SetMargins(Screen.width / 24, Screen.height / 5, Screen.width / 24, 0);
         webViewObject.SetTextZoom(100);  // android only. cf. https://stackoverflow.com/questions/21647641/android-webview-set-font-size-system-default/47017410#47017410
         webViewObject.SetVisibility(true);
 

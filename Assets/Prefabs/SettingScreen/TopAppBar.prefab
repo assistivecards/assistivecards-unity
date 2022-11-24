@@ -51,8 +51,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 077449b9b0051ff4580b2b8dab0c0fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasController: {fileID: 0}
-  settingsAPI: {fileID: 0}
+  canvas: {fileID: 0}
+  ttsPanel: {fileID: 0}
+  sampleWebView: {fileID: 0}
+  hapticsToggle: {fileID: 0}
+  activateOnPressToggle: {fileID: 0}
+  voiceGreetingToggle: {fileID: 0}
+  dailyReminderToggle: {fileID: 0}
+  weeklyReminderToggle: {fileID: 0}
+  usabilityTipsToggle: {fileID: 0}
+  promotionsNotificationToggle: {fileID: 0}
 --- !u!1 &773758865117160101
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +165,7 @@ RectTransform:
   m_GameObject: {fileID: 773758865873878607}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 773758865117160102}
@@ -367,7 +375,7 @@ RectTransform:
   m_GameObject: {fileID: 773758866384401560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 773758866082797057}

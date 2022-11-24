@@ -304,8 +304,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 31329527}
+  - component: {fileID: 31329528}
   m_Layer: 5
-  m_Name: NotificationReminder
+  m_Name: PracticeReminder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -333,6 +334,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -52.19991}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &31329528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31329526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b06427cc170754b47b96488795db1041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &40645211
 GameObject:
   m_ObjectHideFlags: 0
@@ -15622,7 +15635,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 908783299}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 31329528}
+        m_TargetAssemblyTypeName: PermissionNotificationScreen, Assembly-CSharp
+        m_MethodName: OnOkButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &908783299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16221,6 +16246,8 @@ MonoBehaviour:
   nicknameInputField: {fileID: 583383263}
   nextButton: {fileID: 1462338011}
   avatarSelectionScreen: {fileID: 1537025937}
+  practiceReminderScreen: {fileID: 31329526}
+  congratulationsScreen: {fileID: 1524061631}
 --- !u!1001 &943467565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25206,7 +25233,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1501774361}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1524061631}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1501774361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27201,7 +27240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1625535173}
   m_Layer: 5
-  m_Name: TittleBar
+  m_Name: Tittles&Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29367,7 +29406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1734979655}
   m_Layer: 5
-  m_Name: TittleBar
+  m_Name: Tittles&Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

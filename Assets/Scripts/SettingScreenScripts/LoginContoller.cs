@@ -14,6 +14,9 @@ public class LoginContoller : MonoBehaviour
     public TMP_InputField nicknameInputField;
     [SerializeField] private Button nextButton;
     [SerializeField] private GameObject avatarSelectionScreen;
+    [SerializeField] private GameObject practiceReminderScreen;
+    [SerializeField] private GameObject congratulationsScreen;
+
 
 
     private void Awake() 
@@ -33,6 +36,9 @@ public class LoginContoller : MonoBehaviour
         this.gameObject.SetActive(false);
 
         avatarSelectionScreen.SetActive(true);
+        practiceReminderScreen.SetActive(true);
+        congratulationsScreen.SetActive(true);
+        
         LeanTween.scale(avatarSelectionScreen,  Vector3.one, 0.2f);
     }
 

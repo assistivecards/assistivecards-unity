@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using Unity.Notifications.Android;
 using Unity.Notifications.iOS;
 #endif
-using UnityEngine;
+using UnityEngine; 
 
 
 public class PermissionNotificationScreen : MonoBehaviour
@@ -17,7 +17,9 @@ public class PermissionNotificationScreen : MonoBehaviour
 #if UNITY_IOS
 
         StartCoroutine(RequestAuthorization());
+        this.gameObject.SetActive(false);
 #endif
+        this.gameObject.SetActive(false);
     }
 
 

@@ -777,6 +777,22 @@ PrefabInstance:
       propertyPath: avatarSelectionScreen
       value: 
       objectReference: {fileID: 1537025937}
+    - target: {fileID: 2693788706815206554, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c5ec6235ec28aec4f89ce3b6e4a79d77, type: 3}
+    - target: {fileID: 2693788706815206555, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693788706815206555, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341798008819476113, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fc7d92ca6adfdc1499dea9e7c1ba7bc7, type: 3}
     - target: {fileID: 5973289967096938891, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
       propertyPath: canvas
       value: 

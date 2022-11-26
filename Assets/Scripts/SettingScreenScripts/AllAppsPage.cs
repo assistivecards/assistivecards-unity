@@ -65,7 +65,7 @@ public class AllAppsPage : MonoBehaviour
             appElement.transform.GetChild(1).GetComponent<TMP_Text>().text = jsonAppss["apps"][i]["tagline"][currentLanguageCode].ToString().Replace("\"", "");
             appElement.transform.GetChild(2).GetComponent<TMP_Text>().text = jsonAppss["apps"][i]["description"][currentLanguageCode].ToString().Replace("\"", "");
 
-            appElement.transform.GetChild(3).GetComponent<Image>().sprite = Sprite.Create(gameAPI.cachedAppIcons[i], new Rect(0.0f, 0.0f, gameAPI.cachedAppIcons[i].width, gameAPI.cachedAppIcons[i].height), new Vector2(0.5f, 0.5f), 100.0f);
+            appElement.transform.GetChild(3).GetChild(0).GetComponent<Image>().sprite = Sprite.Create(gameAPI.cachedAppIcons[i], new Rect(0.0f, 0.0f, gameAPI.cachedAppIcons[i].width, gameAPI.cachedAppIcons[i].height), new Vector2(0.5f, 0.5f), 100.0f);
 
             appElement.name = apps.apps[i].slug;
 

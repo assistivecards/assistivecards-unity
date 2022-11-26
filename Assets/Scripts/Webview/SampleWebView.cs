@@ -30,7 +30,6 @@ public class SampleWebView : MonoBehaviour
     public string Url;
     public Text status;
     public WebViewObject webViewObject;
-    
 
     IEnumerator Start()
     {

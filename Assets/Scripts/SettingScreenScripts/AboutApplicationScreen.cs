@@ -22,17 +22,17 @@ public class AboutApplicationScreen : MonoBehaviour
     [SerializeField] private GameObject termsOfServiceScreen;
     private SampleWebView sampleWebView;
     
-    public void OnAboutCompanyClick()
+    public void AboutApplicationClick()
     {
         aboutCompanyScreen.SetActive(true);
         sampleWebView = aboutCompanyScreen.GetComponentInChildren<SampleWebView>();
         sampleWebView.webViewObject.SetVisibility(true);
     }
-    public void OnShareThisAppClick()
+    public void ShareThisAppClick()
     {
         StartCoroutine(Share());
     }
-    public void OnRateThisAppClick()
+    public void RateThisAppClick()
     {
         #if UNITY_ANDROID
         Application.OpenURL("market://" + googlePlayLink);
@@ -40,19 +40,19 @@ public class AboutApplicationScreen : MonoBehaviour
         Application.OpenURL("itms-apps://" + appleStoreLink);
         #endif
     }
-    public void OnOpenSourceLicencesClick()
+    public void OpenSourceLicencesClick()
     {
         openSourceLicencesScreen.SetActive(true);
         sampleWebView = openSourceLicencesScreen.GetComponentInChildren<SampleWebView>();
         sampleWebView.webViewObject.SetVisibility(true);
     }
-    public void OnPrivacyPolicyClick()
+    public void PrivacyPolicyClick()
     {
         privacyPolicyScreen.SetActive(true);
         sampleWebView = privacyPolicyScreen.GetComponentInChildren<SampleWebView>();
         sampleWebView.webViewObject.SetVisibility(true);
     }
-    public void OnTermsOfServicesClick()
+    public void TermsOfServicesClick()
     {
         termsOfServiceScreen.SetActive(true);
         sampleWebView = termsOfServiceScreen.GetComponentInChildren<SampleWebView>();

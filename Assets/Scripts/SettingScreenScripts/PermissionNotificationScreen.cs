@@ -5,7 +5,6 @@ using System.Collections.Generic;
     using Unity.Notifications.iOS;
 #elif UNITY_ANDROID
 using Unity.Notifications.Android;
-using Unity.Notifications.iOS;
 #endif
 using UnityEngine;
 

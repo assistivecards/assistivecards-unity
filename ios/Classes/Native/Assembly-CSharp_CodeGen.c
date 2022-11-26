@@ -2030,942 +2030,972 @@ extern void NotificationsManager_SendNotification_m1CB16D1B01A6966DDE61B100F0119
 extern void NotificationsManager_OnApplicationFocus_mB32219E056ABD97E30F6206E3EE6CA1596371F6D (void);
 // 0x000003F0 System.Void NotificationsManager::Update()
 extern void NotificationsManager_Update_m17A57909F857F7EA106E4D92BF8ACCACE19D42E4 (void);
-// 0x000003F1 System.Void NotificationsManager::.ctor()
+// 0x000003F1 System.Void NotificationsManager::OnLanguageChange()
+extern void NotificationsManager_OnLanguageChange_mB1D17A49392F0F8793BBE3EFA5980700580BDC6D (void);
+// 0x000003F2 System.Void NotificationsManager::.ctor()
 extern void NotificationsManager__ctor_m1408D6F2F3E8C3D269591FA75D2843EB478AEF86 (void);
-// 0x000003F2 System.Void Test::Awake()
+// 0x000003F3 System.Void NotificationsManager/<Start>d__7::MoveNext()
+extern void U3CStartU3Ed__7_MoveNext_m4F66E53AA0AE0EC782F86D66A46E188C29AB5E54 (void);
+// 0x000003F4 System.Void NotificationsManager/<Start>d__7::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CStartU3Ed__7_SetStateMachine_m40F374C8C057765D2575A7A345C16489539DE49D (void);
+// 0x000003F5 System.Void NotificationsManager/<OnLanguageChange>d__11::MoveNext()
+extern void U3COnLanguageChangeU3Ed__11_MoveNext_m61796505921325E3C5B535BB0614203BA9EC4F9A (void);
+// 0x000003F6 System.Void NotificationsManager/<OnLanguageChange>d__11::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3COnLanguageChangeU3Ed__11_SetStateMachine_m4DF38859C8783FD52EC220CDD0955C46E4AC9501 (void);
+// 0x000003F7 System.Void Test::Awake()
 extern void Test_Awake_m13A7B7938BA67D1CD19AE89EA693B5E3D32580AD (void);
-// 0x000003F3 System.Void Test::Start()
+// 0x000003F8 System.Void Test::Start()
 extern void Test_Start_mA902842AF55C0A063D71F22B280F28BF0FB01497 (void);
-// 0x000003F4 System.Void Test::.ctor()
+// 0x000003F9 System.Void Test::.ctor()
 extern void Test__ctor_mB84DF4A3888723C395E76E3879FDFB8AA1EFEDCB (void);
-// 0x000003F5 System.Void Test/<Start>d__10::MoveNext()
+// 0x000003FA System.Void Test/<Start>d__10::MoveNext()
 extern void U3CStartU3Ed__10_MoveNext_m8C78F9CA57E16BEA0C83E0554E02FF13FAF3246D (void);
-// 0x000003F6 System.Void Test/<Start>d__10::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x000003FB System.Void Test/<Start>d__10::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CStartU3Ed__10_SetStateMachine_m167132F8F9DA2E7E3FF873188B65236E359E6685 (void);
-// 0x000003F7 System.Void UIManager::Awake()
+// 0x000003FC System.Void UIManager::Awake()
 extern void UIManager_Awake_m7EC364BDD53CE056E998BAB28F79998608BB16DF (void);
-// 0x000003F8 System.Void UIManager::Start()
+// 0x000003FD System.Void UIManager::Start()
 extern void UIManager_Start_m113F392674AB08A26877728CD36F06332E869080 (void);
-// 0x000003F9 System.Void UIManager::DisplayPacks(System.String)
+// 0x000003FE System.Void UIManager::DisplayPacks(System.String)
 extern void UIManager_DisplayPacks_m60C9C09B2A225B57490D0A65C0453E5E30BC7378 (void);
-// 0x000003FA System.Void UIManager::DisplayCards()
+// 0x000003FF System.Void UIManager::DisplayCards()
 extern void UIManager_DisplayCards_m298AB93D733F51D364B36E27E50BFD8F284C77C1 (void);
-// 0x000003FB System.Void UIManager::DisplayLanguages()
+// 0x00000400 System.Void UIManager::DisplayLanguages()
 extern void UIManager_DisplayLanguages_mC0C3B703717D1D94FCEF22B2F2DBAE7210B01D96 (void);
-// 0x000003FC System.Void UIManager::DisplayActivities(System.String)
+// 0x00000401 System.Void UIManager::DisplayActivities(System.String)
 extern void UIManager_DisplayActivities_m3F8543E5B4A18D253A7A356DD6CCE0222AC75E59 (void);
-// 0x000003FD System.Void UIManager::DisplayActivityImage(System.String)
+// 0x00000402 System.Void UIManager::DisplayActivityImage(System.String)
 extern void UIManager_DisplayActivityImage_mC380298D3908716A8BC5F16EFFFA1FBD5681E806 (void);
-// 0x000003FE System.Void UIManager::DisplayAvatarImage()
+// 0x00000403 System.Void UIManager::DisplayAvatarImage()
 extern void UIManager_DisplayAvatarImage_m69B6702E1D55B85C0C740F8FE4CD8A06BB7E4F1C (void);
-// 0x000003FF System.Void UIManager::DisplayPackImage()
+// 0x00000404 System.Void UIManager::DisplayPackImage()
 extern void UIManager_DisplayPackImage_mC4F69B09495E4948DA1BB2D3EF7A1E7E1B5B5E2E (void);
-// 0x00000400 System.Void UIManager::DisplayCardImage()
+// 0x00000405 System.Void UIManager::DisplayCardImage()
 extern void UIManager_DisplayCardImage_m3048E7F5BD0AB8AA7EE415C851C5FA205C734E7A (void);
-// 0x00000401 System.Void UIManager::DisplayAppIcon(System.String)
+// 0x00000406 System.Void UIManager::DisplayAppIcon(System.String)
 extern void UIManager_DisplayAppIcon_mA767C381942B405C19034F10B2C95FF3DD24E006 (void);
-// 0x00000402 System.Void UIManager::DisplayApps()
+// 0x00000407 System.Void UIManager::DisplayApps()
 extern void UIManager_DisplayApps_m89C2F1DD32E3A456E53C6753F11C71782CC11FA9 (void);
-// 0x00000403 System.Void UIManager::DisplayPackBySlug()
+// 0x00000408 System.Void UIManager::DisplayPackBySlug()
 extern void UIManager_DisplayPackBySlug_m3D36B83B50D7FDBDA5BEB015731EFF92D42E0127 (void);
-// 0x00000404 System.Void UIManager::DisplayCardBySlug()
+// 0x00000409 System.Void UIManager::DisplayCardBySlug()
 extern void UIManager_DisplayCardBySlug_mB868C7E7E77207654D9139B19B69DDE7A5E630B5 (void);
-// 0x00000405 System.Void UIManager::DisplayActivityBySlug()
+// 0x0000040A System.Void UIManager::DisplayActivityBySlug()
 extern void UIManager_DisplayActivityBySlug_mA355910AF73A411F2F3BE5E185E73B2D08A320FD (void);
-// 0x00000406 System.Void UIManager::DisplayLanguageByCode()
+// 0x0000040B System.Void UIManager::DisplayLanguageByCode()
 extern void UIManager_DisplayLanguageByCode_m7CAB1792C4F6526706627EE10AC1850075B9F7A0 (void);
-// 0x00000407 System.Void UIManager::.ctor()
+// 0x0000040C System.Void UIManager::.ctor()
 extern void UIManager__ctor_mC9DC2B8984E76F424E73C1860AD4BD3DEBF6573F (void);
-// 0x00000408 System.Void UIManager/<DisplayPacks>d__19::MoveNext()
+// 0x0000040D System.Void UIManager/<DisplayPacks>d__19::MoveNext()
 extern void U3CDisplayPacksU3Ed__19_MoveNext_m342D5B3B9A70211E6FD61306418F1DEAF03F3227 (void);
-// 0x00000409 System.Void UIManager/<DisplayPacks>d__19::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x0000040E System.Void UIManager/<DisplayPacks>d__19::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CDisplayPacksU3Ed__19_SetStateMachine_mF7B499FF9EDD4DAB71B4BE0C8C48EE8CCB4881FA (void);
-// 0x0000040A System.Void UIManager/<DisplayCards>d__20::MoveNext()
+// 0x0000040F System.Void UIManager/<DisplayCards>d__20::MoveNext()
 extern void U3CDisplayCardsU3Ed__20_MoveNext_m9905EFA9B5BFB735AA0D6F3126B711648897B354 (void);
-// 0x0000040B System.Void UIManager/<DisplayCards>d__20::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000410 System.Void UIManager/<DisplayCards>d__20::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CDisplayCardsU3Ed__20_SetStateMachine_mA394E019141A87807BC3D1C1C5041893FF4D0B8A (void);
-// 0x0000040C System.Void UIManager/<DisplayLanguages>d__21::MoveNext()
+// 0x00000411 System.Void UIManager/<DisplayLanguages>d__21::MoveNext()
 extern void U3CDisplayLanguagesU3Ed__21_MoveNext_m8ABF0FA1444A2EF2B6AB535BE1AF169C6E526346 (void);
-// 0x0000040D System.Void UIManager/<DisplayLanguages>d__21::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000412 System.Void UIManager/<DisplayLanguages>d__21::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CDisplayLanguagesU3Ed__21_SetStateMachine_m0777B57FBB282CA0AD0DC7B94CE0261ECF8CBAB7 (void);
-// 0x0000040E System.Void UIManager/<DisplayActivities>d__22::MoveNext()
+// 0x00000413 System.Void UIManager/<DisplayActivities>d__22::MoveNext()
 extern void U3CDisplayActivitiesU3Ed__22_MoveNext_m354BEE7FAC5FA045181CA408EAEAA79133968336 (void);
-// 0x0000040F System.Void UIManager/<DisplayActivities>d__22::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000414 System.Void UIManager/<DisplayActivities>d__22::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CDisplayActivitiesU3Ed__22_SetStateMachine_m2489022C1050EBF9AD72F91301DCFEA50467D6F5 (void);
-// 0x00000410 System.Void UIManager/<DisplayActivityImage>d__23::MoveNext()
+// 0x00000415 System.Void UIManager/<DisplayActivityImage>d__23::MoveNext()
 extern void U3CDisplayActivityImageU3Ed__23_MoveNext_mE735F371EB86A80FC7619E74D28F9247DC1DC1D4 (void);
-// 0x00000411 System.Void UIManager/<DisplayActivityImage>d__23::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000416 System.Void UIManager/<DisplayActivityImage>d__23::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CDisplayActivityImageU3Ed__23_SetStateMachine_m47FE140A94BA0D513735ACFA1ED6471CFEFE972B (void);
-// 0x00000412 System.Void UIManager/<DisplayAvatarImage>d__24::MoveNext()
+// 0x00000417 System.Void UIManager/<DisplayAvatarImage>d__24::MoveNext()
 extern void U3CDisplayAvatarImageU3Ed__24_MoveNext_m9F6BC17C3AA1303C880E082E74DCE1210BE10C7E (void);
-// 0x00000413 System.Void UIManager/<DisplayAvatarImage>d__24::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000418 System.Void UIManager/<DisplayAvatarImage>d__24::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CDisplayAvatarImageU3Ed__24_SetStateMachine_m49FBDB50C69329FA45E2E966D1E903B6DCC0FDEE (void);
-// 0x00000414 System.Void UIManager/<DisplayPackImage>d__25::MoveNext()
+// 0x00000419 System.Void UIManager/<DisplayPackImage>d__25::MoveNext()
 extern void U3CDisplayPackImageU3Ed__25_MoveNext_mE61039CE9516A0543C7E888F862BFE0B8346F3AE (void);
-// 0x00000415 System.Void UIManager/<DisplayPackImage>d__25::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x0000041A System.Void UIManager/<DisplayPackImage>d__25::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CDisplayPackImageU3Ed__25_SetStateMachine_m2DB73B8A0396C945C391F18C6C836008871E1BD8 (void);
-// 0x00000416 System.Void UIManager/<DisplayCardImage>d__26::MoveNext()
+// 0x0000041B System.Void UIManager/<DisplayCardImage>d__26::MoveNext()
 extern void U3CDisplayCardImageU3Ed__26_MoveNext_m9CCF7A55FEBBA2BFDB224253CEB5A1FE73912C8E (void);
-// 0x00000417 System.Void UIManager/<DisplayCardImage>d__26::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x0000041C System.Void UIManager/<DisplayCardImage>d__26::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CDisplayCardImageU3Ed__26_SetStateMachine_m1343E70728A3F67DF488A24A9D37EC30C0CEEC1F (void);
-// 0x00000418 System.Void UIManager/<DisplayAppIcon>d__27::MoveNext()
+// 0x0000041D System.Void UIManager/<DisplayAppIcon>d__27::MoveNext()
 extern void U3CDisplayAppIconU3Ed__27_MoveNext_m9AD08908DD99D73FC1283492917505FDC3CF6DCF (void);
-// 0x00000419 System.Void UIManager/<DisplayAppIcon>d__27::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x0000041E System.Void UIManager/<DisplayAppIcon>d__27::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CDisplayAppIconU3Ed__27_SetStateMachine_m02EED08832CC2442DFEAA729D30DC924C593A064 (void);
-// 0x0000041A System.Void UIManager/<DisplayApps>d__28::MoveNext()
+// 0x0000041F System.Void UIManager/<DisplayApps>d__28::MoveNext()
 extern void U3CDisplayAppsU3Ed__28_MoveNext_m55A09B50877917D32A093D6CCA64B8793099A190 (void);
-// 0x0000041B System.Void UIManager/<DisplayApps>d__28::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000420 System.Void UIManager/<DisplayApps>d__28::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CDisplayAppsU3Ed__28_SetStateMachine_mE8BD8FED396B39EF1E588BE0BF59C09E30CA752A (void);
-// 0x0000041C System.Void AvatarButtonScript::Awake()
+// 0x00000421 System.Void AvatarButtonScript::Awake()
 extern void AvatarButtonScript_Awake_m749F3C5589010851E4C4F563CDD3995186E6F920 (void);
-// 0x0000041D System.Void AvatarButtonScript::Start()
+// 0x00000422 System.Void AvatarButtonScript::Start()
 extern void AvatarButtonScript_Start_mD43DD1265194718AB53A2F78E65E3F0CEC5A39E3 (void);
-// 0x0000041E System.Void AvatarButtonScript::.ctor()
+// 0x00000423 System.Void AvatarButtonScript::.ctor()
 extern void AvatarButtonScript__ctor_mFB31CCBA14BFC2443A991F97004BB351F9C60B8F (void);
-// 0x0000041F System.Void AvatarButtonScript::<Start>b__7_0()
+// 0x00000424 System.Void AvatarButtonScript::<Start>b__7_0()
 extern void AvatarButtonScript_U3CStartU3Eb__7_0_m30A204232BDE0EEAAE47195C7753AA9ADA95171F (void);
-// 0x00000420 System.Void AvatarButtonScript/<Start>d__7::MoveNext()
+// 0x00000425 System.Void AvatarButtonScript/<Start>d__7::MoveNext()
 extern void U3CStartU3Ed__7_MoveNext_m7677323B4EEACCE930BD9EFD802858705115A6F9 (void);
-// 0x00000421 System.Void AvatarButtonScript/<Start>d__7::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000426 System.Void AvatarButtonScript/<Start>d__7::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CStartU3Ed__7_SetStateMachine_mA97B8BD94D1F2DFB7C1699633A0838363DA52748 (void);
-// 0x00000422 System.Void AvatarButtonScript/<<Start>b__7_0>d::MoveNext()
+// 0x00000427 System.Void AvatarButtonScript/<<Start>b__7_0>d::MoveNext()
 extern void U3CU3CStartU3Eb__7_0U3Ed_MoveNext_m1F5C7EDD819A8C5D051520E843922F33B3651F6F (void);
-// 0x00000423 System.Void AvatarButtonScript/<<Start>b__7_0>d::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000428 System.Void AvatarButtonScript/<<Start>b__7_0>d::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CU3CStartU3Eb__7_0U3Ed_SetStateMachine_m1176315AB33EC39D2A2D580877D4B63F138A7C54 (void);
-// 0x00000424 System.Void SettingsUIManager::Awake()
+// 0x00000429 System.Void SettingsUIManager::Awake()
 extern void SettingsUIManager_Awake_m7ED827D1961E1D9C9AA1D32AE3EF8B7F02B10C79 (void);
-// 0x00000425 System.Void SettingsUIManager::Start()
+// 0x0000042A System.Void SettingsUIManager::Start()
 extern void SettingsUIManager_Start_m4078577B973D2A7AEA67A3A7CA640D626AF97C04 (void);
-// 0x00000426 System.Void SettingsUIManager::Update()
+// 0x0000042B System.Void SettingsUIManager::Update()
 extern void SettingsUIManager_Update_mD0C186BB93CD0DE5E638342CD9F7FE96D5F7BD98 (void);
-// 0x00000427 System.Void SettingsUIManager::SaveSettings()
+// 0x0000042C System.Void SettingsUIManager::SaveSettings()
 extern void SettingsUIManager_SaveSettings_mF54E60D409C8A3705E070F13C2700ED56A41C531 (void);
-// 0x00000428 System.Void SettingsUIManager::SignOut()
+// 0x0000042D System.Void SettingsUIManager::SignOut()
 extern void SettingsUIManager_SignOut_m4A8D7DDE23FE3FD3F24CCC359811677155A884FB (void);
-// 0x00000429 System.Void SettingsUIManager::.ctor()
+// 0x0000042E System.Void SettingsUIManager::.ctor()
 extern void SettingsUIManager__ctor_mE05957952EB1174B4939BE6A89934F114357105A (void);
-// 0x0000042A System.Void SettingsUIManager/<Start>d__23::MoveNext()
+// 0x0000042F System.Void SettingsUIManager/<Start>d__23::MoveNext()
 extern void U3CStartU3Ed__23_MoveNext_m997D2701A5CF8B3392248267EF07D2C536F7464D (void);
-// 0x0000042B System.Void SettingsUIManager/<Start>d__23::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000430 System.Void SettingsUIManager/<Start>d__23::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CStartU3Ed__23_SetStateMachine_mEF764A8E107A5D1DB836C9EEFABC6C611ECDC8EF (void);
-// 0x0000042C System.Void SettingsUIManager/<SaveSettings>d__25::MoveNext()
+// 0x00000431 System.Void SettingsUIManager/<SaveSettings>d__25::MoveNext()
 extern void U3CSaveSettingsU3Ed__25_MoveNext_m381C99D6101228E7EA6609F16780257A4192BC4F (void);
-// 0x0000042D System.Void SettingsUIManager/<SaveSettings>d__25::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000432 System.Void SettingsUIManager/<SaveSettings>d__25::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CSaveSettingsU3Ed__25_SetStateMachine_m00FF00CF27A379A49A661488169A76F694213C2A (void);
-// 0x0000042E System.Void SettingsUIManager/<SignOut>d__26::MoveNext()
+// 0x00000433 System.Void SettingsUIManager/<SignOut>d__26::MoveNext()
 extern void U3CSignOutU3Ed__26_MoveNext_mA4867CD3723E0AC9DAFE497F6D3B32E29F6703C9 (void);
-// 0x0000042F System.Void SettingsUIManager/<SignOut>d__26::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000434 System.Void SettingsUIManager/<SignOut>d__26::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CSignOutU3Ed__26_SetStateMachine_mFB039D2423044CB846DD8ACBF35B6044CCBBF704 (void);
-// 0x00000430 System.Void AboutApplicationScreen::OnAboutCompanyClick()
+// 0x00000435 System.Void AboutApplicationScreen::OnAboutCompanyClick()
 extern void AboutApplicationScreen_OnAboutCompanyClick_mEB85964D7DD2AACEFE5D23C7F20666913218397E (void);
-// 0x00000431 System.Void AboutApplicationScreen::OnShareThisAppClick()
+// 0x00000436 System.Void AboutApplicationScreen::OnShareThisAppClick()
 extern void AboutApplicationScreen_OnShareThisAppClick_mFD812EAAF33562D49925AD0B96AF971E361463F3 (void);
-// 0x00000432 System.Void AboutApplicationScreen::OnRateThisAppClick()
+// 0x00000437 System.Void AboutApplicationScreen::OnRateThisAppClick()
 extern void AboutApplicationScreen_OnRateThisAppClick_mC575885D2837A2D91D7B34FD91AA6EC4E321E780 (void);
-// 0x00000433 System.Void AboutApplicationScreen::OnOpenSourceLicencesClick()
+// 0x00000438 System.Void AboutApplicationScreen::OnOpenSourceLicencesClick()
 extern void AboutApplicationScreen_OnOpenSourceLicencesClick_m0F01CD754B0F01F3B256E0A49C3B663E9F408C40 (void);
-// 0x00000434 System.Void AboutApplicationScreen::OnPrivacyPolicyClick()
+// 0x00000439 System.Void AboutApplicationScreen::OnPrivacyPolicyClick()
 extern void AboutApplicationScreen_OnPrivacyPolicyClick_mA0E9E9CFCBBDB3550A1BC62084A6E611C77CF7A5 (void);
-// 0x00000435 System.Void AboutApplicationScreen::OnTermsOfServicesClick()
+// 0x0000043A System.Void AboutApplicationScreen::OnTermsOfServicesClick()
 extern void AboutApplicationScreen_OnTermsOfServicesClick_mD8187479EEF4D5D07E05A2C968603CFE0D7C2372 (void);
-// 0x00000436 System.Void AboutApplicationScreen::BackButtonClicked()
+// 0x0000043B System.Void AboutApplicationScreen::BackButtonClicked()
 extern void AboutApplicationScreen_BackButtonClicked_m60CF33367E8468F72F329BF81078F92D7C6D158B (void);
-// 0x00000437 System.Collections.IEnumerator AboutApplicationScreen::Share()
+// 0x0000043C System.Collections.IEnumerator AboutApplicationScreen::Share()
 extern void AboutApplicationScreen_Share_m92209DAEE40D606EE44E98D534A512021DD7D08B (void);
-// 0x00000438 System.Void AboutApplicationScreen::.ctor()
+// 0x0000043D System.Void AboutApplicationScreen::.ctor()
 extern void AboutApplicationScreen__ctor_mFA63EBD1068FEC02C5FCC9A23FCA534EE4860A64 (void);
-// 0x00000439 System.Void AboutApplicationScreen/<Share>d__17::.ctor(System.Int32)
+// 0x0000043E System.Void AboutApplicationScreen/<Share>d__17::.ctor(System.Int32)
 extern void U3CShareU3Ed__17__ctor_m69E8738521FD5BC9F9CC45EC152AF2C944EDAFF0 (void);
-// 0x0000043A System.Void AboutApplicationScreen/<Share>d__17::System.IDisposable.Dispose()
+// 0x0000043F System.Void AboutApplicationScreen/<Share>d__17::System.IDisposable.Dispose()
 extern void U3CShareU3Ed__17_System_IDisposable_Dispose_m01182242DC632F2EC427925AF5D7962829AFC063 (void);
-// 0x0000043B System.Boolean AboutApplicationScreen/<Share>d__17::MoveNext()
+// 0x00000440 System.Boolean AboutApplicationScreen/<Share>d__17::MoveNext()
 extern void U3CShareU3Ed__17_MoveNext_m9544037A0CCD2BCD4254AF87A6E86A6E3C1B2277 (void);
-// 0x0000043C System.Object AboutApplicationScreen/<Share>d__17::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x00000441 System.Object AboutApplicationScreen/<Share>d__17::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CShareU3Ed__17_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m7D12821CD2E6EFB5E25ECB6E743895717DBFFFD8 (void);
-// 0x0000043D System.Void AboutApplicationScreen/<Share>d__17::System.Collections.IEnumerator.Reset()
+// 0x00000442 System.Void AboutApplicationScreen/<Share>d__17::System.Collections.IEnumerator.Reset()
 extern void U3CShareU3Ed__17_System_Collections_IEnumerator_Reset_m4C029EDE249EDA2E60900816B46F187091D2E28D (void);
-// 0x0000043E System.Object AboutApplicationScreen/<Share>d__17::System.Collections.IEnumerator.get_Current()
+// 0x00000443 System.Object AboutApplicationScreen/<Share>d__17::System.Collections.IEnumerator.get_Current()
 extern void U3CShareU3Ed__17_System_Collections_IEnumerator_get_Current_m74C9D54196A5F19BA50B8050D5982E7C62AAADA2 (void);
-// 0x0000043F System.Void AccessibilityScreen::Awake()
+// 0x00000444 System.Void AccessibilityScreen::Awake()
 extern void AccessibilityScreen_Awake_m3B3F11758A6227AD817D5908590B062497BF9F13 (void);
-// 0x00000440 System.Void AccessibilityScreen::Start()
+// 0x00000445 System.Void AccessibilityScreen::Start()
 extern void AccessibilityScreen_Start_m71E7ADEB246A45793AFFDA106B3C2137BF16586B (void);
-// 0x00000441 System.Void AccessibilityScreen::Update()
+// 0x00000446 System.Void AccessibilityScreen::Update()
 extern void AccessibilityScreen_Update_m18EF44AD159AABC9600138C6E59D9829A8F0BAA3 (void);
-// 0x00000442 System.Void AccessibilityScreen::.ctor()
+// 0x00000447 System.Void AccessibilityScreen::.ctor()
 extern void AccessibilityScreen__ctor_m9DC759EB706E603EA52B646196A1948F73CEA16C (void);
-// 0x00000443 System.Void App::.ctor(System.String,System.String,System.String)
+// 0x00000448 System.Void App::.ctor(System.String,System.String,System.String)
 extern void App__ctor_m0D18ED53AC39738AD70FC2A81BFF9D71ED8F986F (void);
-// 0x00000444 System.Void AllAppsPage::Start()
+// 0x00000449 System.Void AllAppsPage::Start()
 extern void AllAppsPage_Start_m1E09021966682D16A3AB2C09B6E8A46E0C5C9F05 (void);
-// 0x00000445 System.Void AllAppsPage::.ctor()
+// 0x0000044A System.Void AllAppsPage::.ctor()
 extern void AllAppsPage__ctor_m9018794D72A209D0F7D61EC967971D4C2B1EFB47 (void);
-// 0x00000446 System.Void AvatarButtonClick::Awake()
+// 0x0000044B System.Void AvatarButtonClick::Awake()
 extern void AvatarButtonClick_Awake_m3FE5FB9E6F14B0DB1F267688F10320CC3962D612 (void);
-// 0x00000447 System.Void AvatarButtonClick::Start()
+// 0x0000044C System.Void AvatarButtonClick::Start()
 extern void AvatarButtonClick_Start_mD83F8302E0036D6534163BDA1A3B7A9B3065B103 (void);
-// 0x00000448 System.Void AvatarButtonClick::.ctor()
+// 0x0000044D System.Void AvatarButtonClick::.ctor()
 extern void AvatarButtonClick__ctor_mB2C135090CEB34FC12223F7A555835F0F8853994 (void);
-// 0x00000449 System.Void AvatarButtonClick::<Start>b__6_0()
+// 0x0000044E System.Void AvatarButtonClick::<Start>b__6_0()
 extern void AvatarButtonClick_U3CStartU3Eb__6_0_m8E69A78930B50A510D711EF061B1F29227D0823E (void);
-// 0x0000044A System.Void AvatarButtonClick/<Start>d__6::MoveNext()
+// 0x0000044F System.Void AvatarButtonClick/<Start>d__6::MoveNext()
 extern void U3CStartU3Ed__6_MoveNext_m4E7D940A22DC0A609FE41688338CDABEB7FC62C0 (void);
-// 0x0000044B System.Void AvatarButtonClick/<Start>d__6::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000450 System.Void AvatarButtonClick/<Start>d__6::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CStartU3Ed__6_SetStateMachine_m0E74B5E77CB9557285C273A64348878DF1F4B22E (void);
-// 0x0000044C System.Void AvatarButtonClick/<<Start>b__6_0>d::MoveNext()
+// 0x00000451 System.Void AvatarButtonClick/<<Start>b__6_0>d::MoveNext()
 extern void U3CU3CStartU3Eb__6_0U3Ed_MoveNext_mC36B26B58EE53CF44CCD259515F96648EE262484 (void);
-// 0x0000044D System.Void AvatarButtonClick/<<Start>b__6_0>d::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000452 System.Void AvatarButtonClick/<<Start>b__6_0>d::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CU3CStartU3Eb__6_0U3Ed_SetStateMachine_mF5553CCCBF644B11858F0F30A59B6C25E1E0D608 (void);
-// 0x0000044E System.Void AvatarListCreator::Awake()
+// 0x00000453 System.Void AvatarListCreator::Awake()
 extern void AvatarListCreator_Awake_mF7441D25E592DCD1F7BEAD6670B0A199624C48DB (void);
-// 0x0000044F System.Void AvatarListCreator::Start()
+// 0x00000454 System.Void AvatarListCreator::Start()
 extern void AvatarListCreator_Start_m4EE6D190424D0476DB29EFE7D835093B5DD5BC37 (void);
-// 0x00000450 System.Void AvatarListCreator::GirlButtonClicked()
+// 0x00000455 System.Void AvatarListCreator::GirlButtonClicked()
 extern void AvatarListCreator_GirlButtonClicked_mEB0DE7085FC4F250839AC9E0873218CDB0A14166 (void);
-// 0x00000451 System.Void AvatarListCreator::BoyButtonClicked()
+// 0x00000456 System.Void AvatarListCreator::BoyButtonClicked()
 extern void AvatarListCreator_BoyButtonClicked_mD32C2889C2A20FD7C510D418700D6A62E1305E69 (void);
-// 0x00000452 System.Void AvatarListCreator::MiscButtonClicked()
+// 0x00000457 System.Void AvatarListCreator::MiscButtonClicked()
 extern void AvatarListCreator_MiscButtonClicked_m52B58017079CB9F18BE0BFC5971FF53467BAA002 (void);
-// 0x00000453 System.Void AvatarListCreator::AvatarListCreate(System.String,System.Int32)
+// 0x00000458 System.Void AvatarListCreator::AvatarListCreate(System.String,System.Int32)
 extern void AvatarListCreator_AvatarListCreate_m8563B27CE125657E3FF589637B526124AFC35014 (void);
-// 0x00000454 System.Void AvatarListCreator::SelectAvatar(System.String)
+// 0x00000459 System.Void AvatarListCreator::SelectAvatar(System.String)
 extern void AvatarListCreator_SelectAvatar_mE46B63AC4FE68BC3E24C87C51C53254664C82985 (void);
-// 0x00000455 System.Void AvatarListCreator::.ctor()
+// 0x0000045A System.Void AvatarListCreator::.ctor()
 extern void AvatarListCreator__ctor_m584DA31522A86E327E0FF6D6E1DCC08F66D69677 (void);
-// 0x00000456 System.Void AvatarListCreator/<AvatarListCreate>d__13::MoveNext()
+// 0x0000045B System.Void AvatarListCreator/<AvatarListCreate>d__13::MoveNext()
 extern void U3CAvatarListCreateU3Ed__13_MoveNext_m07813F501564571C073F97316E270A8839FC3187 (void);
-// 0x00000457 System.Void AvatarListCreator/<AvatarListCreate>d__13::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x0000045C System.Void AvatarListCreator/<AvatarListCreate>d__13::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CAvatarListCreateU3Ed__13_SetStateMachine_m757388713B6A4927FCDD29C9AB27C6E0E6DB26AD (void);
-// 0x00000458 System.Void AvatarListCreator/<SelectAvatar>d__14::MoveNext()
+// 0x0000045D System.Void AvatarListCreator/<SelectAvatar>d__14::MoveNext()
 extern void U3CSelectAvatarU3Ed__14_MoveNext_mCC20E3666D59917D036026317752BD08EEA358C8 (void);
-// 0x00000459 System.Void AvatarListCreator/<SelectAvatar>d__14::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x0000045E System.Void AvatarListCreator/<SelectAvatar>d__14::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CSelectAvatarU3Ed__14_SetStateMachine_mAD5814AD47305666618432A386199774C7B7B81F (void);
-// 0x0000045A System.Void CanvasController::Awake()
+// 0x0000045F System.Void CanvasController::Awake()
 extern void CanvasController_Awake_m0CCF408586B13D36F826A544C4C0CC72CE0575E3 (void);
-// 0x0000045B System.Void CanvasController::Start()
+// 0x00000460 System.Void CanvasController::Start()
 extern void CanvasController_Start_m31B4AA0C805AC1F3FF86AC27DFC4763E58204A98 (void);
-// 0x0000045C System.Void CanvasController::ParentLockButtonClick()
+// 0x00000461 System.Void CanvasController::ParentLockButtonClick()
 extern void CanvasController_ParentLockButtonClick_m61F313DD1B23FAA5B0C5544742058A1FD5E660FF (void);
-// 0x0000045D System.Void CanvasController::ParentLockScreenClose()
+// 0x00000462 System.Void CanvasController::ParentLockScreenClose()
 extern void CanvasController_ParentLockScreenClose_m358BEF77C150F79071B0213A2CE27F052F32355F (void);
-// 0x0000045E System.Void CanvasController::ProfileButtonClick()
+// 0x00000463 System.Void CanvasController::ProfileButtonClick()
 extern void CanvasController_ProfileButtonClick_m1DF6179010C1AEEFA11B1A3E6D485D56102A7DCE (void);
-// 0x0000045F System.Void CanvasController::LanguageButtonClick()
+// 0x00000464 System.Void CanvasController::LanguageButtonClick()
 extern void CanvasController_LanguageButtonClick_m775A5028D590B064F12F8844671CCA97806A7A62 (void);
-// 0x00000460 System.Void CanvasController::TTSButtonClicked()
+// 0x00000465 System.Void CanvasController::TTSButtonClicked()
 extern void CanvasController_TTSButtonClicked_m69CE7431F4C428618E3C803F0248A84C33AF8C73 (void);
-// 0x00000461 System.Void CanvasController::NotificationButtonClicked()
+// 0x00000466 System.Void CanvasController::NotificationButtonClicked()
 extern void CanvasController_NotificationButtonClicked_m48B0140664F04C794D6D004CF28C8EE1A04D2251 (void);
-// 0x00000462 System.Void CanvasController::AccessibiltyButtonClicked()
+// 0x00000467 System.Void CanvasController::AccessibiltyButtonClicked()
 extern void CanvasController_AccessibiltyButtonClicked_mA6804744CDC3C6085E3EB05E499C662EE6233965 (void);
-// 0x00000463 System.Void CanvasController::SubscriptionsButtonClicked()
+// 0x00000468 System.Void CanvasController::SubscriptionsButtonClicked()
 extern void CanvasController_SubscriptionsButtonClicked_m34128DC29C69B3723FF302748B1A94F989552652 (void);
-// 0x00000464 System.Void CanvasController::AllAppsButtonClicked()
+// 0x00000469 System.Void CanvasController::AllAppsButtonClicked()
 extern void CanvasController_AllAppsButtonClicked_mD7DC80DEBA53EF5FDA81C691A2B2ACEB1665B787 (void);
-// 0x00000465 System.Void CanvasController::SendFeedbacksButtonClicked()
+// 0x0000046A System.Void CanvasController::SendFeedbacksButtonClicked()
 extern void CanvasController_SendFeedbacksButtonClicked_m5565C3059CBBFADA002F164064794B6F056C5B1F (void);
-// 0x00000466 System.Void CanvasController::AboutApplicationButtonClicked()
+// 0x0000046B System.Void CanvasController::AboutApplicationButtonClicked()
 extern void CanvasController_AboutApplicationButtonClicked_m9ABD2A9286738736CA14BB6610DD96DCB300C730 (void);
-// 0x00000467 System.Void CanvasController::ProfilePanelUpdate()
+// 0x0000046C System.Void CanvasController::ProfilePanelUpdate()
 extern void CanvasController_ProfilePanelUpdate_m662907AFD04138FA200F88A9AC7D9029AF9DD331 (void);
-// 0x00000468 System.Void CanvasController::.ctor()
+// 0x0000046D System.Void CanvasController::.ctor()
 extern void CanvasController__ctor_m14605688F6EC57740DDB372493201081479EC44A (void);
-// 0x00000469 System.Void CanvasController/<Start>d__21::MoveNext()
+// 0x0000046E System.Void CanvasController/<Start>d__21::MoveNext()
 extern void U3CStartU3Ed__21_MoveNext_m24929719113933C0908FDA3E9414437FD3B708F5 (void);
-// 0x0000046A System.Void CanvasController/<Start>d__21::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x0000046F System.Void CanvasController/<Start>d__21::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CStartU3Ed__21_SetStateMachine_m7949EA1EDC39BA495A3EA5EA270BF4C13DF7DF9C (void);
-// 0x0000046B System.Void CanvasController/<ProfilePanelUpdate>d__33::MoveNext()
+// 0x00000470 System.Void CanvasController/<ProfilePanelUpdate>d__33::MoveNext()
 extern void U3CProfilePanelUpdateU3Ed__33_MoveNext_mF54CA82EC24B6A93111EAC7F0FF12F5DA94526C1 (void);
-// 0x0000046C System.Void CanvasController/<ProfilePanelUpdate>d__33::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000471 System.Void CanvasController/<ProfilePanelUpdate>d__33::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CProfilePanelUpdateU3Ed__33_SetStateMachine_mAAC9079BB29AD213649B3D5342B47C0791DB44C0 (void);
-// 0x0000046D System.Void DeviceLanguagePanel::Awake()
+// 0x00000472 System.Void DeviceLanguagePanel::Awake()
 extern void DeviceLanguagePanel_Awake_m1C5797FFB35156AF815300F10D20E5688A69F8B6 (void);
-// 0x0000046E System.Void DeviceLanguagePanel::CreateSelectLanguageElement(UnityEngine.GameObject)
+// 0x00000473 System.Void DeviceLanguagePanel::CreateSelectLanguageElement(UnityEngine.GameObject)
 extern void DeviceLanguagePanel_CreateSelectLanguageElement_m83E9F03E8FBEFDB41B709E1D0EFDCB0A215980DC (void);
-// 0x0000046F System.Void DeviceLanguagePanel::.ctor()
+// 0x00000474 System.Void DeviceLanguagePanel::.ctor()
 extern void DeviceLanguagePanel__ctor_m214A588353A19E086C8E5B518800AAA2FF3E1843 (void);
-// 0x00000470 System.Void LanguageController::Start()
+// 0x00000475 System.Void LanguageController::Start()
 extern void LanguageController_Start_m140F58C78994DDFD1CBE6539D29DBE54522A8097 (void);
-// 0x00000471 System.Void LanguageController::SelectLanguageElement(UnityEngine.GameObject)
+// 0x00000476 System.Void LanguageController::SelectLanguageElement(UnityEngine.GameObject)
 extern void LanguageController_SelectLanguageElement_m4130BDC0A8315D120743B65346FEB2E6BDA7F72C (void);
-// 0x00000472 System.Void LanguageController::.ctor()
+// 0x00000477 System.Void LanguageController::.ctor()
 extern void LanguageController__ctor_mE6B882A275074FF7AD506FE5118519FDE8856B52 (void);
-// 0x00000473 System.Void LoginContoller::Awake()
+// 0x00000478 System.Void LoginContoller::Awake()
 extern void LoginContoller_Awake_mC3823DA2573BB816365DA64072953F47008D634F (void);
-// 0x00000474 System.Void LoginContoller::ValueChangeCheck()
+// 0x00000479 System.Void LoginContoller::ValueChangeCheck()
 extern void LoginContoller_ValueChangeCheck_m102418AE2B67DBBA8414CDD1CDDDD8A8E9C0AE6B (void);
-// 0x00000475 System.Void LoginContoller::NextButtonClicked()
+// 0x0000047A System.Void LoginContoller::NextButtonClicked()
 extern void LoginContoller_NextButtonClicked_mB5D01957EC734B2C12A83BBB17369BFF8D5E83DF (void);
-// 0x00000476 System.Void LoginContoller::.ctor()
+// 0x0000047B System.Void LoginContoller::.ctor()
 extern void LoginContoller__ctor_m80BE2013A4B45BBEAEC55052EC74D92DE240023F (void);
-// 0x00000477 System.Void LoginContoller::<Awake>b__5_0(System.String)
-extern void LoginContoller_U3CAwakeU3Eb__5_0_m3FA65BEE8A1E3AD38FD8141B4AD29B3571FA18F9 (void);
-// 0x00000478 System.Void NotificationPreferences::Awake()
+// 0x0000047C System.Void LoginContoller::<Awake>b__7_0(System.String)
+extern void LoginContoller_U3CAwakeU3Eb__7_0_mA338EF412C07501EB7332C7A5154885E1281B9A6 (void);
+// 0x0000047D System.Void NotificationPreferences::Awake()
 extern void NotificationPreferences_Awake_m3386EE85B77E064004F9676B0E6D7DE77F90967A (void);
-// 0x00000479 System.Void NotificationPreferences::Start()
+// 0x0000047E System.Void NotificationPreferences::Start()
 extern void NotificationPreferences_Start_m792C96C8FDD35C35F8A72E4E763A923C296A3FC1 (void);
-// 0x0000047A System.Void NotificationPreferences::Update()
+// 0x0000047F System.Void NotificationPreferences::Update()
 extern void NotificationPreferences_Update_m76C47740B669F8A5408D2FB24456ED1E9B2E3C8F (void);
-// 0x0000047B System.Void NotificationPreferences::.ctor()
+// 0x00000480 System.Void NotificationPreferences::.ctor()
 extern void NotificationPreferences__ctor_mAEFBA1B618394A31A7B60E07DD638A5B083C6BE6 (void);
-// 0x0000047C System.Void ParentScreenUnlocker::Start()
+// 0x00000481 System.Void ParentScreenUnlocker::Start()
 extern void ParentScreenUnlocker_Start_mBC9B4C800529FFA9625B146AAA1FFABEC3C1A4B1 (void);
-// 0x0000047D System.Void ParentScreenUnlocker::OnTriggerEnter2D(UnityEngine.Collider2D)
+// 0x00000482 System.Void ParentScreenUnlocker::OnTriggerEnter2D(UnityEngine.Collider2D)
 extern void ParentScreenUnlocker_OnTriggerEnter2D_m94BB6F1CC7331F8998419AE4BA8EA4E4D0CCC0F7 (void);
-// 0x0000047E System.Void ParentScreenUnlocker::OnTriggerExit2D(UnityEngine.Collider2D)
+// 0x00000483 System.Void ParentScreenUnlocker::OnTriggerExit2D(UnityEngine.Collider2D)
 extern void ParentScreenUnlocker_OnTriggerExit2D_mBC00C7CAE08E56EDCC24C9C93B7BAC662748A330 (void);
-// 0x0000047F System.Void ParentScreenUnlocker::OnPointerUp(UnityEngine.EventSystems.PointerEventData)
+// 0x00000484 System.Void ParentScreenUnlocker::OnPointerUp(UnityEngine.EventSystems.PointerEventData)
 extern void ParentScreenUnlocker_OnPointerUp_m58986AFD131388F75373009796920AB94EA18A3B (void);
-// 0x00000480 System.Void ParentScreenUnlocker::.ctor()
+// 0x00000485 System.Void ParentScreenUnlocker::.ctor()
 extern void ParentScreenUnlocker__ctor_mDF63AA4D3064F72A34A1BC678F064009A4DDC9CD (void);
-// 0x00000481 System.Void ProfileEditor::Awake()
+// 0x00000486 System.Void PermissionNotificationScreen::OnOkButtonClick()
+extern void PermissionNotificationScreen_OnOkButtonClick_mB9089CE51F11420D8D6EE5D58242575DE9E236CD (void);
+// 0x00000487 System.Collections.IEnumerator PermissionNotificationScreen::RequestAuthorization()
+extern void PermissionNotificationScreen_RequestAuthorization_m8D0025E6C50613017D763125F6C94F9D7D226702 (void);
+// 0x00000488 System.Void PermissionNotificationScreen::.ctor()
+extern void PermissionNotificationScreen__ctor_m655E6410D4A1DB6125020EFB0BB4447EEA7D3A06 (void);
+// 0x00000489 System.Void PermissionNotificationScreen/<RequestAuthorization>d__1::.ctor(System.Int32)
+extern void U3CRequestAuthorizationU3Ed__1__ctor_mC99CA483C335B8A0E0AE38480BDAA3F2CBF51CC2 (void);
+// 0x0000048A System.Void PermissionNotificationScreen/<RequestAuthorization>d__1::System.IDisposable.Dispose()
+extern void U3CRequestAuthorizationU3Ed__1_System_IDisposable_Dispose_m022447354B15D1151CCD9ED9334235A66E4E1525 (void);
+// 0x0000048B System.Boolean PermissionNotificationScreen/<RequestAuthorization>d__1::MoveNext()
+extern void U3CRequestAuthorizationU3Ed__1_MoveNext_m87879A4D7139AB3ACA45E37B3498701851B68C95 (void);
+// 0x0000048C System.Void PermissionNotificationScreen/<RequestAuthorization>d__1::<>m__Finally1()
+extern void U3CRequestAuthorizationU3Ed__1_U3CU3Em__Finally1_mBA796B70284A298C5A3782FD201ECF88596ABA60 (void);
+// 0x0000048D System.Object PermissionNotificationScreen/<RequestAuthorization>d__1::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CRequestAuthorizationU3Ed__1_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m23770DD6036848BB43E9CA3846AF00FD64538861 (void);
+// 0x0000048E System.Void PermissionNotificationScreen/<RequestAuthorization>d__1::System.Collections.IEnumerator.Reset()
+extern void U3CRequestAuthorizationU3Ed__1_System_Collections_IEnumerator_Reset_m05FE9528721B551BA51BA0307C4992E489F5AD26 (void);
+// 0x0000048F System.Object PermissionNotificationScreen/<RequestAuthorization>d__1::System.Collections.IEnumerator.get_Current()
+extern void U3CRequestAuthorizationU3Ed__1_System_Collections_IEnumerator_get_Current_mFD9D48E0451CF68F583782FCCC35DACBB01E69D2 (void);
+// 0x00000490 System.Void ProfileEditor::Awake()
 extern void ProfileEditor_Awake_m76260DCD998D5776F26996456EDE814308E370F0 (void);
-// 0x00000482 System.Void ProfileEditor::Start()
+// 0x00000491 System.Void ProfileEditor::Start()
 extern void ProfileEditor_Start_m8D089826AE0483C1371699E8B41F1C7F1FF8E47C (void);
-// 0x00000483 System.Void ProfileEditor::Update()
+// 0x00000492 System.Void ProfileEditor::Update()
 extern void ProfileEditor_Update_mDE07E344B8A871983E8B79823C0102B30A8A7AF3 (void);
-// 0x00000484 System.Void ProfileEditor::AvatarSelectButtonClicked()
+// 0x00000493 System.Void ProfileEditor::AvatarSelectButtonClicked()
 extern void ProfileEditor_AvatarSelectButtonClicked_mFF82F4CC2E58B986DD128A57A3E27D7CD19E1BEB (void);
-// 0x00000485 System.Void ProfileEditor::.ctor()
+// 0x00000494 System.Void ProfileEditor::.ctor()
 extern void ProfileEditor__ctor_mCF504E652ED4DEDAC99A6E30FDCE7A2B0B7AE7D2 (void);
-// 0x00000486 System.Void ProfileEditor/<Start>d__7::MoveNext()
+// 0x00000495 System.Void ProfileEditor/<Start>d__7::MoveNext()
 extern void U3CStartU3Ed__7_MoveNext_m997968E9DF56DB45666E52494DDB01A9D32540DE (void);
-// 0x00000487 System.Void ProfileEditor/<Start>d__7::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000496 System.Void ProfileEditor/<Start>d__7::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CStartU3Ed__7_SetStateMachine_m5FD543AC041DD36F31D5CE648B03C83218867384 (void);
-// 0x00000488 System.Void RightToLeftTextChanger::RightToLeftLangugeChanged()
+// 0x00000497 System.Void RightToLeftTextChanger::RightToLeftLangugeChanged()
 extern void RightToLeftTextChanger_RightToLeftLangugeChanged_m22462A0A3A026CCF57717781A8E7521B0F7A7E0D (void);
-// 0x00000489 System.Void RightToLeftTextChanger::LeftToRightLanguageChanged()
+// 0x00000498 System.Void RightToLeftTextChanger::LeftToRightLanguageChanged()
 extern void RightToLeftTextChanger_LeftToRightLanguageChanged_mF22E0131BA6103C203FACBF109819FB7616FD000 (void);
-// 0x0000048A System.Void RightToLeftTextChanger::.ctor()
+// 0x00000499 System.Void RightToLeftTextChanger::.ctor()
 extern void RightToLeftTextChanger__ctor_m46CFAEDA621989A6390A61788CFA896EA3F13810 (void);
-// 0x0000048B System.Void SendFeedbackPage::OnEnable()
+// 0x0000049A System.Void SendFeedbackPage::OnEnable()
 extern void SendFeedbackPage_OnEnable_mFCE7D322B9AC6F3A86952E221EEEC527CF8F9A36 (void);
-// 0x0000048C System.Void SendFeedbackPage::.ctor()
+// 0x0000049B System.Void SendFeedbackPage::.ctor()
 extern void SendFeedbackPage__ctor_m7B3BCB99D9C50CBC2D694C5D53C65F8BF7B07CC3 (void);
-// 0x0000048D System.Void SelectLanguage::AddEventListener(UnityEngine.UI.Button,T,System.Action`1<T>)
-// 0x0000048E System.Void SelectLanguage/<>c__DisplayClass0_0`1::.ctor()
-// 0x0000048F System.Void SelectLanguage/<>c__DisplayClass0_0`1::<AddEventListener>b__0()
-// 0x00000490 System.Void SupportedLanguagesPanel::Awake()
+// 0x0000049C System.Void SelectLanguage::AddEventListener(UnityEngine.UI.Button,T,System.Action`1<T>)
+// 0x0000049D System.Void SelectLanguage/<>c__DisplayClass0_0`1::.ctor()
+// 0x0000049E System.Void SelectLanguage/<>c__DisplayClass0_0`1::<AddEventListener>b__0()
+// 0x0000049F System.Void SupportedLanguagesPanel::Awake()
 extern void SupportedLanguagesPanel_Awake_m2EFA82996AECC7DF206A3BED04F5049B909B1889 (void);
-// 0x00000491 System.Void SupportedLanguagesPanel::Start()
+// 0x000004A0 System.Void SupportedLanguagesPanel::Start()
 extern void SupportedLanguagesPanel_Start_mFD2C44692DAE46C84CC621A55CC8BCF6CF2CADEE (void);
-// 0x00000492 System.Void SupportedLanguagesPanel::.ctor()
+// 0x000004A1 System.Void SupportedLanguagesPanel::.ctor()
 extern void SupportedLanguagesPanel__ctor_mB6BDE998159D30D7BDBC138FFF3C2573D14433B1 (void);
-// 0x00000493 System.Void SupportedLanguagesPanel/<Start>d__9::MoveNext()
+// 0x000004A2 System.Void SupportedLanguagesPanel/<Start>d__9::MoveNext()
 extern void U3CStartU3Ed__9_MoveNext_m056259285A25794042FF4FE35902457D23E96445 (void);
-// 0x00000494 System.Void SupportedLanguagesPanel/<Start>d__9::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x000004A3 System.Void SupportedLanguagesPanel/<Start>d__9::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CStartU3Ed__9_SetStateMachine_m6A5719384D90EBC2F7FA81CE88E1E8173C62FE7B (void);
-// 0x00000495 System.Void TopAppBarController::Awake()
+// 0x000004A4 System.Void TopAppBarController::Awake()
 extern void TopAppBarController_Awake_m2902BE8073F44E926FE5EF9B3ADD407ADBF02B4B (void);
-// 0x00000496 System.Void TopAppBarController::BackButtonClicked()
+// 0x000004A5 System.Void TopAppBarController::BackButtonClicked()
 extern void TopAppBarController_BackButtonClicked_m7BAAA6440E404E130E14942EA0017C736D12A2E8 (void);
-// 0x00000497 System.Void TopAppBarController::SceneSetActiveFalse()
+// 0x000004A6 System.Void TopAppBarController::SceneSetActiveFalse()
 extern void TopAppBarController_SceneSetActiveFalse_mB009002F8DB231B629810846F12776D3B3A4DB4F (void);
-// 0x00000498 System.Void TopAppBarController::SaveButtonClicked()
+// 0x000004A7 System.Void TopAppBarController::SaveButtonClicked()
 extern void TopAppBarController_SaveButtonClicked_m5D454C1AA5F5CD71DF6ACB7E25A24310790758F1 (void);
-// 0x00000499 System.Void TopAppBarController::.ctor()
+// 0x000004A8 System.Void TopAppBarController::.ctor()
 extern void TopAppBarController__ctor_m797BFCAAC94C25753D27B2080B3397C36AEA0F39 (void);
-// 0x0000049A System.Void TopAppBarController/<SaveButtonClicked>d__18::MoveNext()
+// 0x000004A9 System.Void TopAppBarController/<SaveButtonClicked>d__18::MoveNext()
 extern void U3CSaveButtonClickedU3Ed__18_MoveNext_m9A2BDE4CDE01B92BB81A6C112C11D6D2731BA2DC (void);
-// 0x0000049B System.Void TopAppBarController/<SaveButtonClicked>d__18::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x000004AA System.Void TopAppBarController/<SaveButtonClicked>d__18::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CSaveButtonClickedU3Ed__18_SetStateMachine_m148F3E9700F8A2355E91C4ADA95D87D541BD9D60 (void);
-// 0x0000049C System.Void TTSPanel::Awake()
+// 0x000004AB System.Void TTSPanel::Awake()
 extern void TTSPanel_Awake_m1700FF7E68C8DA9BD56F4510AEBAB13019AD341F (void);
-// 0x0000049D System.Void TTSPanel::OnEnable()
+// 0x000004AC System.Void TTSPanel::OnEnable()
 extern void TTSPanel_OnEnable_m6365A5939E54C1223CDB9BAA337F4559F67B472B (void);
-// 0x0000049E System.Void TTSPanel::TTSSelected(UnityEngine.GameObject)
+// 0x000004AD System.Void TTSPanel::TTSSelected(UnityEngine.GameObject)
 extern void TTSPanel_TTSSelected_m49999C0230A72C76602D955A35E6DB3381FE4271 (void);
-// 0x0000049F System.Void TTSPanel::.ctor()
+// 0x000004AE System.Void TTSPanel::.ctor()
 extern void TTSPanel__ctor_m76C35BC5498B7D2EEB8DBE3692CF0442A2CB16B2 (void);
-// 0x000004A0 System.Void TTSPanel/<OnEnable>d__8::MoveNext()
+// 0x000004AF System.Void TTSPanel/<OnEnable>d__8::MoveNext()
 extern void U3COnEnableU3Ed__8_MoveNext_m6AA7E3F8D8973F721371C06191FEEDBD2FC5B711 (void);
-// 0x000004A1 System.Void TTSPanel/<OnEnable>d__8::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x000004B0 System.Void TTSPanel/<OnEnable>d__8::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3COnEnableU3Ed__8_SetStateMachine_m320FF91CFBC96334E8D4667C1B834F3275A1737F (void);
-// 0x000004A2 System.Void Speakable::Awake()
+// 0x000004B1 System.Void Speakable::Awake()
 extern void Speakable_Awake_mE2D289EACB0570B5262324E57D7C067FBFDEB1CA (void);
-// 0x000004A3 System.Void Speakable::Speak()
+// 0x000004B2 System.Void Speakable::Speak()
 extern void Speakable_Speak_m08A226F0729A2601ECB8925F949C5C7DE600179C (void);
-// 0x000004A4 System.Void Speakable::Stop()
+// 0x000004B3 System.Void Speakable::Stop()
 extern void Speakable_Stop_mC57735562E95D3F3B8CA36815803C87089DC854E (void);
-// 0x000004A5 System.Void Speakable::OnFinish()
+// 0x000004B4 System.Void Speakable::OnFinish()
 extern void Speakable_OnFinish_m7202C84D49FEBF9A19F5D0ACF8B5CC8E5A60EB5C (void);
-// 0x000004A6 System.Void Speakable::OnError(System.String)
+// 0x000004B5 System.Void Speakable::OnError(System.String)
 extern void Speakable_OnError_m54EEA9DA342B616DB65F1D2D9E42F18D2640E16B (void);
-// 0x000004A7 System.Void Speakable::ShowError(System.String)
+// 0x000004B6 System.Void Speakable::ShowError(System.String)
 extern void Speakable_ShowError_mA264A5EB3790A7D30D2426CEA99D024C982429B2 (void);
-// 0x000004A8 System.Void Speakable::TTSFinished()
+// 0x000004B7 System.Void Speakable::TTSFinished()
 extern void Speakable_TTSFinished_mCA7C8F3A4662A483D958606BC94818628C579E15 (void);
-// 0x000004A9 System.Void Speakable::TTSStarted()
+// 0x000004B8 System.Void Speakable::TTSStarted()
 extern void Speakable_TTSStarted_m8750B8062F35539A98C2BE6FB084CD52860E08C0 (void);
-// 0x000004AA System.Void Speakable::Start()
+// 0x000004B9 System.Void Speakable::Start()
 extern void Speakable_Start_m4F34D53726164ECC0B409B54131A50C0E5C6FD3D (void);
-// 0x000004AB System.Void Speakable::Update()
+// 0x000004BA System.Void Speakable::Update()
 extern void Speakable_Update_m53F2F29C3B0F2F69849505408076387A1D2E9F82 (void);
-// 0x000004AC System.Void Speakable::.ctor()
+// 0x000004BB System.Void Speakable::.ctor()
 extern void Speakable__ctor_m1A9F4F9FDF338AF9C9C2887330E6B5BD8A8CACED (void);
-// 0x000004AD System.Void Speakable/<Start>d__15::MoveNext()
+// 0x000004BC System.Void Speakable/<Start>d__15::MoveNext()
 extern void U3CStartU3Ed__15_MoveNext_m7972D36BD9D8E5369045ECC5DD68F469C33F75A3 (void);
-// 0x000004AE System.Void Speakable/<Start>d__15::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x000004BD System.Void Speakable/<Start>d__15::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CStartU3Ed__15_SetStateMachine_mFC41C53F7619FC10A21BA42667FEA5858E3F55AB (void);
-// 0x000004AF System.Void SampleCustomHeader::Start()
+// 0x000004BE System.Void SampleCustomHeader::Start()
 extern void SampleCustomHeader_Start_mC6F0E5DE5F1E84CE5E80400678F0A0E7E7B04DDA (void);
-// 0x000004B0 System.Void SampleCustomHeader::Update()
+// 0x000004BF System.Void SampleCustomHeader::Update()
 extern void SampleCustomHeader_Update_mC8AEAE90831BC4426B0F939BF6CFF1B49AAE4A80 (void);
-// 0x000004B1 System.Void SampleCustomHeader::OnGUI()
+// 0x000004C0 System.Void SampleCustomHeader::OnGUI()
 extern void SampleCustomHeader_OnGUI_m2DD476D04D317B6C974ED5540A15153AC8C9D4A4 (void);
-// 0x000004B2 System.Void SampleCustomHeader::.ctor()
+// 0x000004C1 System.Void SampleCustomHeader::.ctor()
 extern void SampleCustomHeader__ctor_m798BDF5D8247757A7C4804ADC588255B96D44BB3 (void);
-// 0x000004B3 System.Collections.IEnumerator SampleWebView::Start()
+// 0x000004C2 System.Collections.IEnumerator SampleWebView::Start()
 extern void SampleWebView_Start_mFF838F86A717163A6266005339601B237964EC00 (void);
-// 0x000004B4 System.Void SampleWebView::OnGUI()
+// 0x000004C3 System.Void SampleWebView::OnGUI()
 extern void SampleWebView_OnGUI_m27D324F95ECF5A4952BB9B1292BC7474EDD2F126 (void);
-// 0x000004B5 System.Void SampleWebView::.ctor()
+// 0x000004C4 System.Void SampleWebView::.ctor()
 extern void SampleWebView__ctor_mA1A876DE33B67AC2652D7D6EF97596B4789FB3E0 (void);
-// 0x000004B6 System.Void SampleWebView::<Start>b__3_0(System.String)
+// 0x000004C5 System.Void SampleWebView::<Start>b__3_0(System.String)
 extern void SampleWebView_U3CStartU3Eb__3_0_m96828633479BF881DF51880942A4F4AD5AE71EA2 (void);
-// 0x000004B7 System.Void SampleWebView::<Start>b__3_1(System.String)
+// 0x000004C6 System.Void SampleWebView::<Start>b__3_1(System.String)
 extern void SampleWebView_U3CStartU3Eb__3_1_m513D34E72CF2084DCA1081667FCB23B57C65BF26 (void);
-// 0x000004B8 System.Void SampleWebView::<Start>b__3_2(System.String)
+// 0x000004C7 System.Void SampleWebView::<Start>b__3_2(System.String)
 extern void SampleWebView_U3CStartU3Eb__3_2_m28D1D817ED47B523413D31CA6AB15A08F0ABBD37 (void);
-// 0x000004B9 System.Void SampleWebView::<Start>b__3_3(System.String)
+// 0x000004C8 System.Void SampleWebView::<Start>b__3_3(System.String)
 extern void SampleWebView_U3CStartU3Eb__3_3_m8EB06C819496D52B5208EAFF8DCDDF63B6CBF094 (void);
-// 0x000004BA System.Void SampleWebView/<>c::.cctor()
+// 0x000004C9 System.Void SampleWebView/<>c::.cctor()
 extern void U3CU3Ec__cctor_mBA34CA72A72A17C43E319EFE05DBB2666725861F (void);
-// 0x000004BB System.Void SampleWebView/<>c::.ctor()
+// 0x000004CA System.Void SampleWebView/<>c::.ctor()
 extern void U3CU3Ec__ctor_m19620618A100D0F898A3AE8728E17A28B4EAE24D (void);
-// 0x000004BC System.Void SampleWebView/<>c::<Start>b__3_4(System.String)
+// 0x000004CB System.Void SampleWebView/<>c::<Start>b__3_4(System.String)
 extern void U3CU3Ec_U3CStartU3Eb__3_4_mE8DA34CC54B1913B7AE17C820E476724DA15162D (void);
-// 0x000004BD System.Void SampleWebView/<>c::<Start>b__3_5(System.String)
+// 0x000004CC System.Void SampleWebView/<>c::<Start>b__3_5(System.String)
 extern void U3CU3Ec_U3CStartU3Eb__3_5_m8C1DD2ECA01CD0548DF044300F6A939B0721A13C (void);
-// 0x000004BE System.Void SampleWebView/<Start>d__3::.ctor(System.Int32)
+// 0x000004CD System.Void SampleWebView/<Start>d__3::.ctor(System.Int32)
 extern void U3CStartU3Ed__3__ctor_mE0F77220ED1291DED7B16028D51C48E06B3D6FB3 (void);
-// 0x000004BF System.Void SampleWebView/<Start>d__3::System.IDisposable.Dispose()
+// 0x000004CE System.Void SampleWebView/<Start>d__3::System.IDisposable.Dispose()
 extern void U3CStartU3Ed__3_System_IDisposable_Dispose_m5D57C1569FE8FAA75300EFF1554B23BAEDC2A272 (void);
-// 0x000004C0 System.Boolean SampleWebView/<Start>d__3::MoveNext()
+// 0x000004CF System.Boolean SampleWebView/<Start>d__3::MoveNext()
 extern void U3CStartU3Ed__3_MoveNext_mBF50D16E77C57AF69DFF3C95B02B5D6883ECFE19 (void);
-// 0x000004C1 System.Object SampleWebView/<Start>d__3::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000004D0 System.Object SampleWebView/<Start>d__3::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CStartU3Ed__3_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m30BD41E97051D252ED8ADF01243693C1BD09F5A9 (void);
-// 0x000004C2 System.Void SampleWebView/<Start>d__3::System.Collections.IEnumerator.Reset()
+// 0x000004D1 System.Void SampleWebView/<Start>d__3::System.Collections.IEnumerator.Reset()
 extern void U3CStartU3Ed__3_System_Collections_IEnumerator_Reset_m8D4632D398B03399F7CD3DC42BF433E63B1A8F15 (void);
-// 0x000004C3 System.Object SampleWebView/<Start>d__3::System.Collections.IEnumerator.get_Current()
+// 0x000004D2 System.Object SampleWebView/<Start>d__3::System.Collections.IEnumerator.get_Current()
 extern void U3CStartU3Ed__3_System_Collections_IEnumerator_get_Current_mDD6CBA53A615443DAD422ED535CAF6E5C49405E6 (void);
-// 0x000004C4 System.Void NativeTextToSpeech.AndroidTTSCallback::onFinish()
-// 0x000004C5 System.Void NativeTextToSpeech.AndroidTTSCallback::onError(System.String)
-// 0x000004C6 NativeTextToSpeech.TextToSpeech NativeTextToSpeech.TextToSpeech::get_Instance()
+// 0x000004D3 System.Void NativeTextToSpeech.AndroidTTSCallback::onFinish()
+// 0x000004D4 System.Void NativeTextToSpeech.AndroidTTSCallback::onError(System.String)
+// 0x000004D5 NativeTextToSpeech.TextToSpeech NativeTextToSpeech.TextToSpeech::get_Instance()
 extern void TextToSpeech_get_Instance_mFC235F56EE7BD8A4B5A4268D7BD6BBBE0CEB7932 (void);
-// 0x000004C7 System.Void NativeTextToSpeech.TextToSpeech::stop_tts()
+// 0x000004D6 System.Void NativeTextToSpeech.TextToSpeech::stop_tts()
 extern void TextToSpeech_stop_tts_mB5B494A981BC471C94A107138039FAA3880A8408 (void);
-// 0x000004C8 System.Void NativeTextToSpeech.TextToSpeech::start_tts(System.Action,System.Action`1<System.String>)
+// 0x000004D7 System.Void NativeTextToSpeech.TextToSpeech::start_tts(System.Action,System.Action`1<System.String>)
 extern void TextToSpeech_start_tts_m45B2975CCB5F9454A32FA9707660C67B8DB284EC (void);
-// 0x000004C9 System.Void NativeTextToSpeech.TextToSpeech::speak_tts(System.String,System.String,System.Single)
+// 0x000004D8 System.Void NativeTextToSpeech.TextToSpeech::speak_tts(System.String,System.String,System.Single)
 extern void TextToSpeech_speak_tts_m5B73897F3D3E9EDC063BAF9BEE5F5705C8734049 (void);
-// 0x000004CA System.Void NativeTextToSpeech.TextToSpeech::on_finish()
+// 0x000004D9 System.Void NativeTextToSpeech.TextToSpeech::on_finish()
 extern void TextToSpeech_on_finish_mC2FDC673CEB5E9A057D1E7606C4F8FDAE21E24EE (void);
-// 0x000004CB System.Void NativeTextToSpeech.TextToSpeech::on_error(System.String)
+// 0x000004DA System.Void NativeTextToSpeech.TextToSpeech::on_error(System.String)
 extern void TextToSpeech_on_error_m3BD238034CBDF7C3E92E3E056071AF93133E3E5A (void);
-// 0x000004CC System.Void NativeTextToSpeech.TextToSpeech::Start()
+// 0x000004DB System.Void NativeTextToSpeech.TextToSpeech::Start()
 extern void TextToSpeech_Start_m97850D4215CD5516376BB1C5672488FED6EA9275 (void);
-// 0x000004CD System.Void NativeTextToSpeech.TextToSpeech::Stop()
+// 0x000004DC System.Void NativeTextToSpeech.TextToSpeech::Stop()
 extern void TextToSpeech_Stop_m71739F99A78F9DF63C7D032C238A211F88D9627C (void);
-// 0x000004CE System.Void NativeTextToSpeech.TextToSpeech::StopAndroid()
+// 0x000004DD System.Void NativeTextToSpeech.TextToSpeech::StopAndroid()
 extern void TextToSpeech_StopAndroid_m81F36DFF7AA04C178B4B78B1C231E8B3225AE836 (void);
-// 0x000004CF System.Void NativeTextToSpeech.TextToSpeech::Speak(System.String,System.String,System.Single)
+// 0x000004DE System.Void NativeTextToSpeech.TextToSpeech::Speak(System.String,System.String,System.Single)
 extern void TextToSpeech_Speak_m7C36D5AA37A08769C0289D3DA6AC0590B698F1CE (void);
-// 0x000004D0 NativeTextToSpeech.TextToSpeech NativeTextToSpeech.TextToSpeech::Create(System.Action,System.Action`1<System.String>)
+// 0x000004DF NativeTextToSpeech.TextToSpeech NativeTextToSpeech.TextToSpeech::Create(System.Action,System.Action`1<System.String>)
 extern void TextToSpeech_Create_m278A888CC43A88CFDC6991AAAD84ABE7D347A884 (void);
-// 0x000004D1 System.Void NativeTextToSpeech.TextToSpeech::.ctor(System.Action,System.Action`1<System.String>)
+// 0x000004E0 System.Void NativeTextToSpeech.TextToSpeech::.ctor(System.Action,System.Action`1<System.String>)
 extern void TextToSpeech__ctor_m5562602C68A0ED7D2968EBCEC24B81C219BBBBD6 (void);
-// 0x000004D2 System.Void NativeTextToSpeech.TextToSpeech::onFinish()
+// 0x000004E1 System.Void NativeTextToSpeech.TextToSpeech::onFinish()
 extern void TextToSpeech_onFinish_m23153CC2FDD11A6458CF4B17F8E34CF7C9A22E9D (void);
-// 0x000004D3 System.Void NativeTextToSpeech.TextToSpeech::onError(System.String)
+// 0x000004E2 System.Void NativeTextToSpeech.TextToSpeech::onError(System.String)
 extern void TextToSpeech_onError_m95CFE8C0DA50FCC7A411639A4AC1D965D81F654E (void);
-// 0x000004D4 System.Void DentedPixel.LeanDummy::.ctor()
+// 0x000004E3 System.Void DentedPixel.LeanDummy::.ctor()
 extern void LeanDummy__ctor_mAD97A9FAAAF771BEC38CA22F2CBA2DBA31E609CC (void);
-// 0x000004D5 System.Boolean Defective.JSON.JSONObject::get_isContainer()
+// 0x000004E4 System.Boolean Defective.JSON.JSONObject::get_isContainer()
 extern void JSONObject_get_isContainer_m00F12A4F458FD3741B5B84FF00361E8B60E015CA (void);
-// 0x000004D6 System.Int32 Defective.JSON.JSONObject::get_count()
+// 0x000004E5 System.Int32 Defective.JSON.JSONObject::get_count()
 extern void JSONObject_get_count_m3013D1542E66CD45405528D5A5A7DCBE4F85421F (void);
-// 0x000004D7 System.Single Defective.JSON.JSONObject::get_floatValue()
+// 0x000004E6 System.Single Defective.JSON.JSONObject::get_floatValue()
 extern void JSONObject_get_floatValue_mDFCE4713139029F151DD8EB5B19057561FAD050F (void);
-// 0x000004D8 System.Void Defective.JSON.JSONObject::set_floatValue(System.Single)
+// 0x000004E7 System.Void Defective.JSON.JSONObject::set_floatValue(System.Single)
 extern void JSONObject_set_floatValue_m48A5348CB0A2E3E532536A3E5EFEA5A449C91B5E (void);
-// 0x000004D9 System.Int32 Defective.JSON.JSONObject::get_intValue()
+// 0x000004E8 System.Int32 Defective.JSON.JSONObject::get_intValue()
 extern void JSONObject_get_intValue_m4AFE881DFE5E3B5370C2EA5CC8D990DEFE26D111 (void);
-// 0x000004DA System.Void Defective.JSON.JSONObject::set_intValue(System.Int32)
+// 0x000004E9 System.Void Defective.JSON.JSONObject::set_intValue(System.Int32)
 extern void JSONObject_set_intValue_m0EC8338903B3D798028AE171394B85871348630C (void);
-// 0x000004DB Defective.JSON.JSONObject Defective.JSON.JSONObject::get_nullObject()
+// 0x000004EA Defective.JSON.JSONObject Defective.JSON.JSONObject::get_nullObject()
 extern void JSONObject_get_nullObject_m1F5C12DDD7E80EAE0F2DB6F9D0DC722F0BC76D51 (void);
-// 0x000004DC Defective.JSON.JSONObject Defective.JSON.JSONObject::get_emptyObject()
+// 0x000004EB Defective.JSON.JSONObject Defective.JSON.JSONObject::get_emptyObject()
 extern void JSONObject_get_emptyObject_mF0C60FDFF6CA9971041B3040CBDD0C2BB8BFE0BC (void);
-// 0x000004DD Defective.JSON.JSONObject Defective.JSON.JSONObject::get_emptyArray()
+// 0x000004EC Defective.JSON.JSONObject Defective.JSON.JSONObject::get_emptyArray()
 extern void JSONObject_get_emptyArray_mE38ACEBA8AF391D1FD3550DC3AF8F898CAF1176E (void);
-// 0x000004DE System.Void Defective.JSON.JSONObject::.ctor(Defective.JSON.JSONObject/Type)
+// 0x000004ED System.Void Defective.JSON.JSONObject::.ctor(Defective.JSON.JSONObject/Type)
 extern void JSONObject__ctor_m1E06AF85B7CA12B69EE73458E24BBDD315BC14D2 (void);
-// 0x000004DF System.Void Defective.JSON.JSONObject::.ctor(System.Boolean)
+// 0x000004EE System.Void Defective.JSON.JSONObject::.ctor(System.Boolean)
 extern void JSONObject__ctor_mC13FB0B0668B95C463B19E3E30E44855D9D6B9E5 (void);
-// 0x000004E0 System.Void Defective.JSON.JSONObject::.ctor(System.Single)
+// 0x000004EF System.Void Defective.JSON.JSONObject::.ctor(System.Single)
 extern void JSONObject__ctor_m05638648CBFFA356BA23D7DD2246A0A577D03F70 (void);
-// 0x000004E1 System.Void Defective.JSON.JSONObject::.ctor(System.Double)
+// 0x000004F0 System.Void Defective.JSON.JSONObject::.ctor(System.Double)
 extern void JSONObject__ctor_m8AF365C70421AB0066B328C445D1A198156763CB (void);
-// 0x000004E2 System.Void Defective.JSON.JSONObject::.ctor(System.Int32)
+// 0x000004F1 System.Void Defective.JSON.JSONObject::.ctor(System.Int32)
 extern void JSONObject__ctor_m3D81F8246A799DF8C3717AF6E5EA5670CAFA4051 (void);
-// 0x000004E3 System.Void Defective.JSON.JSONObject::.ctor(System.Int64)
+// 0x000004F2 System.Void Defective.JSON.JSONObject::.ctor(System.Int64)
 extern void JSONObject__ctor_m63AD2F6A264951F3AA9E0B1DE112E0725D4E5E6B (void);
-// 0x000004E4 System.Void Defective.JSON.JSONObject::.ctor(System.Collections.Generic.Dictionary`2<System.String,System.String>)
+// 0x000004F3 System.Void Defective.JSON.JSONObject::.ctor(System.Collections.Generic.Dictionary`2<System.String,System.String>)
 extern void JSONObject__ctor_m8E0B8317A269C3AEF30CC3A636BE7ECAB6C1FB7E (void);
-// 0x000004E5 System.Void Defective.JSON.JSONObject::.ctor(System.Collections.Generic.Dictionary`2<System.String,Defective.JSON.JSONObject>)
+// 0x000004F4 System.Void Defective.JSON.JSONObject::.ctor(System.Collections.Generic.Dictionary`2<System.String,Defective.JSON.JSONObject>)
 extern void JSONObject__ctor_m162E3808E6BA08BDEB8D971A1BE535E23139C9C2 (void);
-// 0x000004E6 System.Void Defective.JSON.JSONObject::.ctor(Defective.JSON.JSONObject/AddJSONContents)
+// 0x000004F5 System.Void Defective.JSON.JSONObject::.ctor(Defective.JSON.JSONObject/AddJSONContents)
 extern void JSONObject__ctor_m8E9C1D4CCC7D38171FD3B81FFF2A9BD86931CF2B (void);
-// 0x000004E7 System.Void Defective.JSON.JSONObject::.ctor(Defective.JSON.JSONObject[])
+// 0x000004F6 System.Void Defective.JSON.JSONObject::.ctor(Defective.JSON.JSONObject[])
 extern void JSONObject__ctor_m00749B0291308AB205499957E6F22582F71E4B48 (void);
-// 0x000004E8 System.Void Defective.JSON.JSONObject::.ctor(System.Collections.Generic.List`1<Defective.JSON.JSONObject>)
+// 0x000004F7 System.Void Defective.JSON.JSONObject::.ctor(System.Collections.Generic.List`1<Defective.JSON.JSONObject>)
 extern void JSONObject__ctor_mC9083F65FBAFC538559E23A68A472D3124583E9F (void);
-// 0x000004E9 Defective.JSON.JSONObject Defective.JSON.JSONObject::StringObject(System.String)
+// 0x000004F8 Defective.JSON.JSONObject Defective.JSON.JSONObject::StringObject(System.String)
 extern void JSONObject_StringObject_m8E4F2B63F4BDC99AA014AFE5EDFBC91CB16F23BB (void);
-// 0x000004EA System.Void Defective.JSON.JSONObject::Absorb(Defective.JSON.JSONObject)
+// 0x000004F9 System.Void Defective.JSON.JSONObject::Absorb(Defective.JSON.JSONObject)
 extern void JSONObject_Absorb_m837B43D88B2836C574B78E5CAB712A1CF2605F82 (void);
-// 0x000004EB Defective.JSON.JSONObject Defective.JSON.JSONObject::Create()
+// 0x000004FA Defective.JSON.JSONObject Defective.JSON.JSONObject::Create()
 extern void JSONObject_Create_m43209E76E53E1DBE231EB3D763841EADD511D4A3 (void);
-// 0x000004EC Defective.JSON.JSONObject Defective.JSON.JSONObject::Create(Defective.JSON.JSONObject/Type)
+// 0x000004FB Defective.JSON.JSONObject Defective.JSON.JSONObject::Create(Defective.JSON.JSONObject/Type)
 extern void JSONObject_Create_mA98A7D0FA92912A9AF75DE79D74B5CB043F5C2C7 (void);
-// 0x000004ED Defective.JSON.JSONObject Defective.JSON.JSONObject::Create(System.Boolean)
+// 0x000004FC Defective.JSON.JSONObject Defective.JSON.JSONObject::Create(System.Boolean)
 extern void JSONObject_Create_m1788D5E207F8DD08203F223F445269AFF49FBFBC (void);
-// 0x000004EE Defective.JSON.JSONObject Defective.JSON.JSONObject::Create(System.Single)
+// 0x000004FD Defective.JSON.JSONObject Defective.JSON.JSONObject::Create(System.Single)
 extern void JSONObject_Create_m10CC383E53FB604C8A7159363CDE97F042F3AEA5 (void);
-// 0x000004EF Defective.JSON.JSONObject Defective.JSON.JSONObject::Create(System.Double)
+// 0x000004FE Defective.JSON.JSONObject Defective.JSON.JSONObject::Create(System.Double)
 extern void JSONObject_Create_mBEA3C860EF1AC144A435CB00EF4CC44E433DA90A (void);
-// 0x000004F0 Defective.JSON.JSONObject Defective.JSON.JSONObject::Create(System.Int32)
+// 0x000004FF Defective.JSON.JSONObject Defective.JSON.JSONObject::Create(System.Int32)
 extern void JSONObject_Create_mC0CB937160189E43A9CD2DB66D43C48AB840E604 (void);
-// 0x000004F1 Defective.JSON.JSONObject Defective.JSON.JSONObject::Create(System.Int64)
+// 0x00000500 Defective.JSON.JSONObject Defective.JSON.JSONObject::Create(System.Int64)
 extern void JSONObject_Create_m82B00AF99D5B4373BBFB1792A7F3558F46210D4F (void);
-// 0x000004F2 Defective.JSON.JSONObject Defective.JSON.JSONObject::CreateStringObject(System.String)
+// 0x00000501 Defective.JSON.JSONObject Defective.JSON.JSONObject::CreateStringObject(System.String)
 extern void JSONObject_CreateStringObject_mED17B312545B8702F7B9639B85631F53DD33A8D0 (void);
-// 0x000004F3 Defective.JSON.JSONObject Defective.JSON.JSONObject::CreateBakedObject(System.String)
+// 0x00000502 Defective.JSON.JSONObject Defective.JSON.JSONObject::CreateBakedObject(System.String)
 extern void JSONObject_CreateBakedObject_m2039F450D1C8D6B09DD2929411721737706B0730 (void);
-// 0x000004F4 Defective.JSON.JSONObject Defective.JSON.JSONObject::Create(System.String,System.Int32,System.Int32,System.Int32,System.Boolean)
+// 0x00000503 Defective.JSON.JSONObject Defective.JSON.JSONObject::Create(System.String,System.Int32,System.Int32,System.Int32,System.Boolean)
 extern void JSONObject_Create_m737F0E10CB3D7495B72387BFD86E20E12B20D40D (void);
-// 0x000004F5 Defective.JSON.JSONObject Defective.JSON.JSONObject::Create(Defective.JSON.JSONObject/AddJSONContents)
+// 0x00000504 Defective.JSON.JSONObject Defective.JSON.JSONObject::Create(Defective.JSON.JSONObject/AddJSONContents)
 extern void JSONObject_Create_m3F61423188DA6AEB0E49022B393E544AB7C50AB8 (void);
-// 0x000004F6 Defective.JSON.JSONObject Defective.JSON.JSONObject::Create(Defective.JSON.JSONObject[])
+// 0x00000505 Defective.JSON.JSONObject Defective.JSON.JSONObject::Create(Defective.JSON.JSONObject[])
 extern void JSONObject_Create_m5F5A4DCEA4E903BED1E4A4C1262206529EC9C05C (void);
-// 0x000004F7 Defective.JSON.JSONObject Defective.JSON.JSONObject::Create(System.Collections.Generic.List`1<Defective.JSON.JSONObject>)
+// 0x00000506 Defective.JSON.JSONObject Defective.JSON.JSONObject::Create(System.Collections.Generic.List`1<Defective.JSON.JSONObject>)
 extern void JSONObject_Create_m21A570C26F8C99ED07176FE3C60941204D0E730B (void);
-// 0x000004F8 Defective.JSON.JSONObject Defective.JSON.JSONObject::Create(System.Collections.Generic.Dictionary`2<System.String,System.String>)
+// 0x00000507 Defective.JSON.JSONObject Defective.JSON.JSONObject::Create(System.Collections.Generic.Dictionary`2<System.String,System.String>)
 extern void JSONObject_Create_m1B16DF88557BB7705180F3EA3E747CFE2E2CE283 (void);
-// 0x000004F9 Defective.JSON.JSONObject Defective.JSON.JSONObject::Create(System.Collections.Generic.Dictionary`2<System.String,Defective.JSON.JSONObject>)
+// 0x00000508 Defective.JSON.JSONObject Defective.JSON.JSONObject::Create(System.Collections.Generic.Dictionary`2<System.String,Defective.JSON.JSONObject>)
 extern void JSONObject_Create_mF85BCBE39A69EEA2B0FBFA987A19A36CF51F7E09 (void);
-// 0x000004FA System.Collections.Generic.IEnumerable`1<Defective.JSON.JSONObject/ParseResult> Defective.JSON.JSONObject::CreateAsync(System.String,System.Int32,System.Int32,System.Int32,System.Boolean)
+// 0x00000509 System.Collections.Generic.IEnumerable`1<Defective.JSON.JSONObject/ParseResult> Defective.JSON.JSONObject::CreateAsync(System.String,System.Int32,System.Int32,System.Int32,System.Boolean)
 extern void JSONObject_CreateAsync_m7EAAF14B073DBE3934674772D81D3B6B158730DF (void);
-// 0x000004FB System.Void Defective.JSON.JSONObject::.ctor()
+// 0x0000050A System.Void Defective.JSON.JSONObject::.ctor()
 extern void JSONObject__ctor_mF2B460AF8159D2789DCD76E03D7A97F547CF81FF (void);
-// 0x000004FC System.Void Defective.JSON.JSONObject::.ctor(System.String,System.Int32,System.Int32,System.Int32,System.Boolean)
+// 0x0000050B System.Void Defective.JSON.JSONObject::.ctor(System.String,System.Int32,System.Int32,System.Int32,System.Boolean)
 extern void JSONObject__ctor_mFE2486DED26CD17E22720E73F1E624E532EAFF8A (void);
-// 0x000004FD System.Boolean Defective.JSON.JSONObject::BeginParse(System.String,System.Int32,System.Int32&,Defective.JSON.JSONObject,System.Int32,System.Boolean)
+// 0x0000050C System.Boolean Defective.JSON.JSONObject::BeginParse(System.String,System.Int32,System.Int32&,Defective.JSON.JSONObject,System.Int32,System.Boolean)
 extern void JSONObject_BeginParse_m5DC3434F026462D2385421261304923E197E6C27 (void);
-// 0x000004FE System.Void Defective.JSON.JSONObject::Parse(System.String,System.Int32&,System.Int32,Defective.JSON.JSONObject,System.Int32,System.Boolean,System.Int32,System.Boolean)
+// 0x0000050D System.Void Defective.JSON.JSONObject::Parse(System.String,System.Int32&,System.Int32,Defective.JSON.JSONObject,System.Int32,System.Boolean,System.Int32,System.Boolean)
 extern void JSONObject_Parse_m8CC10FCB272F6AC7AB77A56A8CC45CA6B6B3EE76 (void);
-// 0x000004FF System.Collections.Generic.IEnumerable`1<Defective.JSON.JSONObject/ParseResult> Defective.JSON.JSONObject::ParseAsync(System.String,System.Int32,System.Int32,Defective.JSON.JSONObject,System.Int32,System.Boolean,System.Int32,System.Boolean)
+// 0x0000050E System.Collections.Generic.IEnumerable`1<Defective.JSON.JSONObject/ParseResult> Defective.JSON.JSONObject::ParseAsync(System.String,System.Int32,System.Int32,Defective.JSON.JSONObject,System.Int32,System.Boolean,System.Int32,System.Boolean)
 extern void JSONObject_ParseAsync_mD9CF1A456EE9552A71DEA4B1A71F2EEBAD1B6033 (void);
-// 0x00000500 System.Void Defective.JSON.JSONObject::SafeAddChild(Defective.JSON.JSONObject,Defective.JSON.JSONObject)
+// 0x0000050F System.Void Defective.JSON.JSONObject::SafeAddChild(Defective.JSON.JSONObject,Defective.JSON.JSONObject)
 extern void JSONObject_SafeAddChild_mF8B89C42E3021F550FF4D7030F361B3A9578A588 (void);
-// 0x00000501 System.Void Defective.JSON.JSONObject::ParseValue(System.String,System.Int32,System.Int32)
+// 0x00000510 System.Void Defective.JSON.JSONObject::ParseValue(System.String,System.Int32,System.Int32)
 extern void JSONObject_ParseValue_mCCFFA4657D41ADB772EB6906B5AE76297AF0FEC3 (void);
-// 0x00000502 System.Boolean Defective.JSON.JSONObject::ParseObjectEnd(System.String,System.Int32,System.Boolean,Defective.JSON.JSONObject,System.Int32,System.Int32,System.Int32,System.Boolean,System.Int32,System.Int32&)
+// 0x00000511 System.Boolean Defective.JSON.JSONObject::ParseObjectEnd(System.String,System.Int32,System.Boolean,Defective.JSON.JSONObject,System.Int32,System.Int32,System.Int32,System.Boolean,System.Int32,System.Int32&)
 extern void JSONObject_ParseObjectEnd_m409EF6F2E8E663FF9D81D154E14B7FB54114CB2D (void);
-// 0x00000503 System.Boolean Defective.JSON.JSONObject::ParseArrayEnd(System.String,System.Int32,System.Boolean,Defective.JSON.JSONObject,System.Int32,System.Int32,System.Int32,System.Boolean,System.Int32,System.Int32&)
+// 0x00000512 System.Boolean Defective.JSON.JSONObject::ParseArrayEnd(System.String,System.Int32,System.Boolean,Defective.JSON.JSONObject,System.Int32,System.Int32,System.Int32,System.Boolean,System.Int32,System.Int32&)
 extern void JSONObject_ParseArrayEnd_mCD9D6A7C7F47DAA478304ED96B06ED332521C54C (void);
-// 0x00000504 System.Void Defective.JSON.JSONObject::ParseQuote(System.Boolean&,System.Int32,System.Int32&,System.Int32&)
+// 0x00000513 System.Void Defective.JSON.JSONObject::ParseQuote(System.Boolean&,System.Int32,System.Int32&,System.Int32&)
 extern void JSONObject_ParseQuote_mFBA405A5993329CD10F3255B7EA5FA0B512D9B9D (void);
-// 0x00000505 System.Boolean Defective.JSON.JSONObject::ParseColon(System.String,System.Boolean,Defective.JSON.JSONObject,System.Int32&,System.Int32,System.Int32,System.Int32,System.Int32)
+// 0x00000514 System.Boolean Defective.JSON.JSONObject::ParseColon(System.String,System.Boolean,Defective.JSON.JSONObject,System.Int32&,System.Int32,System.Int32,System.Int32,System.Int32)
 extern void JSONObject_ParseColon_m917F7EC0729BB7E9A86C447034DA9C00310778E7 (void);
-// 0x00000506 System.Boolean Defective.JSON.JSONObject::ParseComma(System.String,System.Boolean,Defective.JSON.JSONObject,System.Int32&,System.Int32,System.Int32,System.Int32)
+// 0x00000515 System.Boolean Defective.JSON.JSONObject::ParseComma(System.String,System.Boolean,Defective.JSON.JSONObject,System.Int32&,System.Int32,System.Int32,System.Int32)
 extern void JSONObject_ParseComma_mE24033BD9D67738BC3DDC81E2F9B821C25E2E5E4 (void);
-// 0x00000507 System.Void Defective.JSON.JSONObject::ParseFinalObjectIfNeeded(System.String,Defective.JSON.JSONObject,System.Int32,System.Int32)
+// 0x00000516 System.Void Defective.JSON.JSONObject::ParseFinalObjectIfNeeded(System.String,Defective.JSON.JSONObject,System.Int32,System.Int32)
 extern void JSONObject_ParseFinalObjectIfNeeded_mC5BBD01E9B35A0B100D806B8A50C52F95FE6B636 (void);
-// 0x00000508 System.Boolean Defective.JSON.JSONObject::IsClosingCharacter(System.Char)
+// 0x00000517 System.Boolean Defective.JSON.JSONObject::IsClosingCharacter(System.Char)
 extern void JSONObject_IsClosingCharacter_m9E9726C119837264FB5CE6DAADA3ACD873C198C2 (void);
-// 0x00000509 System.Boolean Defective.JSON.JSONObject::get_isNumber()
+// 0x00000518 System.Boolean Defective.JSON.JSONObject::get_isNumber()
 extern void JSONObject_get_isNumber_mFF0AC85EC9EB1E86796259A806B82966C363A724 (void);
-// 0x0000050A System.Boolean Defective.JSON.JSONObject::get_isNull()
+// 0x00000519 System.Boolean Defective.JSON.JSONObject::get_isNull()
 extern void JSONObject_get_isNull_m894F33D8E61AEB68A64F4B4C84098F398405476D (void);
-// 0x0000050B System.Boolean Defective.JSON.JSONObject::get_isString()
+// 0x0000051A System.Boolean Defective.JSON.JSONObject::get_isString()
 extern void JSONObject_get_isString_mA9371CB74F693CDC99B4C0AE0868D6A7DC247071 (void);
-// 0x0000050C System.Boolean Defective.JSON.JSONObject::get_isBool()
+// 0x0000051B System.Boolean Defective.JSON.JSONObject::get_isBool()
 extern void JSONObject_get_isBool_m30034144E2E47D726F5421D15FABE70AE66D6E9F (void);
-// 0x0000050D System.Boolean Defective.JSON.JSONObject::get_isArray()
+// 0x0000051C System.Boolean Defective.JSON.JSONObject::get_isArray()
 extern void JSONObject_get_isArray_m11EEEE30050A2447EBC624D4CA7C5E01AA9AD19E (void);
-// 0x0000050E System.Boolean Defective.JSON.JSONObject::get_isObject()
+// 0x0000051D System.Boolean Defective.JSON.JSONObject::get_isObject()
 extern void JSONObject_get_isObject_m7CF762A35A59B5A8C5744F5E7A30894D43CAC416 (void);
-// 0x0000050F System.Boolean Defective.JSON.JSONObject::get_isBaked()
+// 0x0000051E System.Boolean Defective.JSON.JSONObject::get_isBaked()
 extern void JSONObject_get_isBaked_mBCE0590D0B13C553F5DE1617583AC049A5CDFFE5 (void);
-// 0x00000510 System.Void Defective.JSON.JSONObject::Add(System.Boolean)
+// 0x0000051F System.Void Defective.JSON.JSONObject::Add(System.Boolean)
 extern void JSONObject_Add_m85D2F576C36C58BC5AF1E20ED3A540A21504AA2D (void);
-// 0x00000511 System.Void Defective.JSON.JSONObject::Add(System.Single)
+// 0x00000520 System.Void Defective.JSON.JSONObject::Add(System.Single)
 extern void JSONObject_Add_mDD51F4C79CB5A9437956B2C05CF1738252C8E686 (void);
-// 0x00000512 System.Void Defective.JSON.JSONObject::Add(System.Double)
+// 0x00000521 System.Void Defective.JSON.JSONObject::Add(System.Double)
 extern void JSONObject_Add_m467064601D2A92C3141D8B24E4504FCF19EE581D (void);
-// 0x00000513 System.Void Defective.JSON.JSONObject::Add(System.Int64)
+// 0x00000522 System.Void Defective.JSON.JSONObject::Add(System.Int64)
 extern void JSONObject_Add_mA24714C6367E02928DB103088EBD3AD7AB307683 (void);
-// 0x00000514 System.Void Defective.JSON.JSONObject::Add(System.Int32)
+// 0x00000523 System.Void Defective.JSON.JSONObject::Add(System.Int32)
 extern void JSONObject_Add_m28A60D6FC28E96AC29EE7B58854E8E1F7A2BFC59 (void);
-// 0x00000515 System.Void Defective.JSON.JSONObject::Add(System.String)
+// 0x00000524 System.Void Defective.JSON.JSONObject::Add(System.String)
 extern void JSONObject_Add_mA47CF44D3CEA6D8D9ECC46B857B6C5445DB9FCF4 (void);
-// 0x00000516 System.Void Defective.JSON.JSONObject::Add(Defective.JSON.JSONObject/AddJSONContents)
+// 0x00000525 System.Void Defective.JSON.JSONObject::Add(Defective.JSON.JSONObject/AddJSONContents)
 extern void JSONObject_Add_m4D9273EF6D0DB681CFFD996EB5F41C21005549FB (void);
-// 0x00000517 System.Void Defective.JSON.JSONObject::Add(Defective.JSON.JSONObject)
+// 0x00000526 System.Void Defective.JSON.JSONObject::Add(Defective.JSON.JSONObject)
 extern void JSONObject_Add_mB7BCAAF2971334A0C6DEC1584518192CC9F30017 (void);
-// 0x00000518 System.Void Defective.JSON.JSONObject::AddField(System.String,System.Boolean)
+// 0x00000527 System.Void Defective.JSON.JSONObject::AddField(System.String,System.Boolean)
 extern void JSONObject_AddField_m663FF7334875F106290C1913F2554CBCA409B4B0 (void);
-// 0x00000519 System.Void Defective.JSON.JSONObject::AddField(System.String,System.Single)
+// 0x00000528 System.Void Defective.JSON.JSONObject::AddField(System.String,System.Single)
 extern void JSONObject_AddField_mD685A8B1577B9AAF6616BB1FA42035A1EBA9C798 (void);
-// 0x0000051A System.Void Defective.JSON.JSONObject::AddField(System.String,System.Double)
+// 0x00000529 System.Void Defective.JSON.JSONObject::AddField(System.String,System.Double)
 extern void JSONObject_AddField_mFDBDF8D70EE0EF8E13658A636309BD8311BFF57A (void);
-// 0x0000051B System.Void Defective.JSON.JSONObject::AddField(System.String,System.Int32)
+// 0x0000052A System.Void Defective.JSON.JSONObject::AddField(System.String,System.Int32)
 extern void JSONObject_AddField_m8F37920A655BB17DA9EB6F66D55BE581D776CF43 (void);
-// 0x0000051C System.Void Defective.JSON.JSONObject::AddField(System.String,System.Int64)
+// 0x0000052B System.Void Defective.JSON.JSONObject::AddField(System.String,System.Int64)
 extern void JSONObject_AddField_mB4545EA8C45B5892ED274ED52066429B0D8BC404 (void);
-// 0x0000051D System.Void Defective.JSON.JSONObject::AddField(System.String,Defective.JSON.JSONObject/AddJSONContents)
+// 0x0000052C System.Void Defective.JSON.JSONObject::AddField(System.String,Defective.JSON.JSONObject/AddJSONContents)
 extern void JSONObject_AddField_mA933359CA56A671F04DE3437ACCA039D0E130A03 (void);
-// 0x0000051E System.Void Defective.JSON.JSONObject::AddField(System.String,System.String)
+// 0x0000052D System.Void Defective.JSON.JSONObject::AddField(System.String,System.String)
 extern void JSONObject_AddField_mDD7F8946033243C03BE36B1E37D6AB6A7BF96232 (void);
-// 0x0000051F System.Void Defective.JSON.JSONObject::AddField(System.String,Defective.JSON.JSONObject)
+// 0x0000052E System.Void Defective.JSON.JSONObject::AddField(System.String,Defective.JSON.JSONObject)
 extern void JSONObject_AddField_m8D2942129267F094B16E9191B810441448DEBC43 (void);
-// 0x00000520 System.Void Defective.JSON.JSONObject::SetField(System.String,System.String)
+// 0x0000052F System.Void Defective.JSON.JSONObject::SetField(System.String,System.String)
 extern void JSONObject_SetField_m8E4A9EAD05927B56B555A21E9CF36BA01B160B2B (void);
-// 0x00000521 System.Void Defective.JSON.JSONObject::SetField(System.String,System.Boolean)
+// 0x00000530 System.Void Defective.JSON.JSONObject::SetField(System.String,System.Boolean)
 extern void JSONObject_SetField_m06A127498F9EFE31ECEE83C0CD97518E390C5926 (void);
-// 0x00000522 System.Void Defective.JSON.JSONObject::SetField(System.String,System.Single)
+// 0x00000531 System.Void Defective.JSON.JSONObject::SetField(System.String,System.Single)
 extern void JSONObject_SetField_m0ADC8ACFDDD8DD199B4AC901B04CE138A437FEB9 (void);
-// 0x00000523 System.Void Defective.JSON.JSONObject::SetField(System.String,System.Double)
+// 0x00000532 System.Void Defective.JSON.JSONObject::SetField(System.String,System.Double)
 extern void JSONObject_SetField_mE6407A1F21B139839D5E6ED51B43CEA6C5C977C8 (void);
-// 0x00000524 System.Void Defective.JSON.JSONObject::SetField(System.String,System.Int64)
+// 0x00000533 System.Void Defective.JSON.JSONObject::SetField(System.String,System.Int64)
 extern void JSONObject_SetField_m9BDCE3B3098950FD04DE639231E8841C9555E1FA (void);
-// 0x00000525 System.Void Defective.JSON.JSONObject::SetField(System.String,System.Int32)
+// 0x00000534 System.Void Defective.JSON.JSONObject::SetField(System.String,System.Int32)
 extern void JSONObject_SetField_m1B6EEDF9B2483A636DD54D544BB70FFBA8F95598 (void);
-// 0x00000526 System.Void Defective.JSON.JSONObject::SetField(System.String,Defective.JSON.JSONObject)
+// 0x00000535 System.Void Defective.JSON.JSONObject::SetField(System.String,Defective.JSON.JSONObject)
 extern void JSONObject_SetField_m1C2A2E5C80BAC28BC5D93F0E7170D8A1F8240380 (void);
-// 0x00000527 System.Void Defective.JSON.JSONObject::RemoveField(System.String)
+// 0x00000536 System.Void Defective.JSON.JSONObject::RemoveField(System.String)
 extern void JSONObject_RemoveField_mD875827E30235594F8CB5E6A832BC5D4DED937B2 (void);
-// 0x00000528 System.Boolean Defective.JSON.JSONObject::GetField(System.Boolean&,System.String,System.Boolean)
+// 0x00000537 System.Boolean Defective.JSON.JSONObject::GetField(System.Boolean&,System.String,System.Boolean)
 extern void JSONObject_GetField_m7FFC41258D5F6A85BD546A39D77E80B0610A556E (void);
-// 0x00000529 System.Boolean Defective.JSON.JSONObject::GetField(System.Boolean&,System.String,Defective.JSON.JSONObject/FieldNotFound)
+// 0x00000538 System.Boolean Defective.JSON.JSONObject::GetField(System.Boolean&,System.String,Defective.JSON.JSONObject/FieldNotFound)
 extern void JSONObject_GetField_mA63B2E46817FA7F572E9E62DDF293ADFC08E6322 (void);
-// 0x0000052A System.Boolean Defective.JSON.JSONObject::GetField(System.Double&,System.String,System.Double)
+// 0x00000539 System.Boolean Defective.JSON.JSONObject::GetField(System.Double&,System.String,System.Double)
 extern void JSONObject_GetField_mD601CA94949A32F9E1ADE844D1001E8DDF224DAD (void);
-// 0x0000052B System.Boolean Defective.JSON.JSONObject::GetField(System.Double&,System.String,Defective.JSON.JSONObject/FieldNotFound)
+// 0x0000053A System.Boolean Defective.JSON.JSONObject::GetField(System.Double&,System.String,Defective.JSON.JSONObject/FieldNotFound)
 extern void JSONObject_GetField_m9281D2DE083628D2E018D471172CD4B9CF9C68AE (void);
-// 0x0000052C System.Boolean Defective.JSON.JSONObject::GetField(System.Single&,System.String,System.Single)
+// 0x0000053B System.Boolean Defective.JSON.JSONObject::GetField(System.Single&,System.String,System.Single)
 extern void JSONObject_GetField_m208BCD2A15011CDAE449AB9D2D6D98BED10D2AFE (void);
-// 0x0000052D System.Boolean Defective.JSON.JSONObject::GetField(System.Single&,System.String,Defective.JSON.JSONObject/FieldNotFound)
+// 0x0000053C System.Boolean Defective.JSON.JSONObject::GetField(System.Single&,System.String,Defective.JSON.JSONObject/FieldNotFound)
 extern void JSONObject_GetField_m00029EC6FB4910C23428056BFD0F154958FC06E5 (void);
-// 0x0000052E System.Boolean Defective.JSON.JSONObject::GetField(System.Int32&,System.String,System.Int32)
+// 0x0000053D System.Boolean Defective.JSON.JSONObject::GetField(System.Int32&,System.String,System.Int32)
 extern void JSONObject_GetField_mF55954B4818478A33B5F256487739FFCBFC338A4 (void);
-// 0x0000052F System.Boolean Defective.JSON.JSONObject::GetField(System.Int32&,System.String,Defective.JSON.JSONObject/FieldNotFound)
+// 0x0000053E System.Boolean Defective.JSON.JSONObject::GetField(System.Int32&,System.String,Defective.JSON.JSONObject/FieldNotFound)
 extern void JSONObject_GetField_mD4980E520F0A19F8EFD55C5530DDD712A55A43C7 (void);
-// 0x00000530 System.Boolean Defective.JSON.JSONObject::GetField(System.Int64&,System.String,System.Int64)
+// 0x0000053F System.Boolean Defective.JSON.JSONObject::GetField(System.Int64&,System.String,System.Int64)
 extern void JSONObject_GetField_m3848FC1C104147224F8F390323581A75A438C858 (void);
-// 0x00000531 System.Boolean Defective.JSON.JSONObject::GetField(System.Int64&,System.String,Defective.JSON.JSONObject/FieldNotFound)
+// 0x00000540 System.Boolean Defective.JSON.JSONObject::GetField(System.Int64&,System.String,Defective.JSON.JSONObject/FieldNotFound)
 extern void JSONObject_GetField_m35567EB26CCB4B0439461CE0A93D8A8A4B8B5BB6 (void);
-// 0x00000532 System.Boolean Defective.JSON.JSONObject::GetField(System.UInt32&,System.String,System.UInt32)
+// 0x00000541 System.Boolean Defective.JSON.JSONObject::GetField(System.UInt32&,System.String,System.UInt32)
 extern void JSONObject_GetField_m6E346C14ADD2E5F0C7FBD4D666308249DD283332 (void);
-// 0x00000533 System.Boolean Defective.JSON.JSONObject::GetField(System.UInt32&,System.String,Defective.JSON.JSONObject/FieldNotFound)
+// 0x00000542 System.Boolean Defective.JSON.JSONObject::GetField(System.UInt32&,System.String,Defective.JSON.JSONObject/FieldNotFound)
 extern void JSONObject_GetField_m03CFC3112236BAF1610B9A314D68608F6098609C (void);
-// 0x00000534 System.Boolean Defective.JSON.JSONObject::GetField(System.String&,System.String,System.String)
+// 0x00000543 System.Boolean Defective.JSON.JSONObject::GetField(System.String&,System.String,System.String)
 extern void JSONObject_GetField_m37A018FC32B9FFDDA2AC504FA594AA49B9FB3DF9 (void);
-// 0x00000535 System.Boolean Defective.JSON.JSONObject::GetField(System.String&,System.String,Defective.JSON.JSONObject/FieldNotFound)
+// 0x00000544 System.Boolean Defective.JSON.JSONObject::GetField(System.String&,System.String,Defective.JSON.JSONObject/FieldNotFound)
 extern void JSONObject_GetField_mEAC1E437846CBA82961D327579F7446760220E2E (void);
-// 0x00000536 System.Void Defective.JSON.JSONObject::GetField(System.String,Defective.JSON.JSONObject/GetFieldResponse,Defective.JSON.JSONObject/FieldNotFound)
+// 0x00000545 System.Void Defective.JSON.JSONObject::GetField(System.String,Defective.JSON.JSONObject/GetFieldResponse,Defective.JSON.JSONObject/FieldNotFound)
 extern void JSONObject_GetField_mAD879E3AFD5D0BEDAFA3559524BE1D1A3FD301D7 (void);
-// 0x00000537 Defective.JSON.JSONObject Defective.JSON.JSONObject::GetField(System.String)
+// 0x00000546 Defective.JSON.JSONObject Defective.JSON.JSONObject::GetField(System.String)
 extern void JSONObject_GetField_m2B0D3470E8784CF807ECAE34BBE45CB39EACCC53 (void);
-// 0x00000538 System.Boolean Defective.JSON.JSONObject::HasFields(System.String[])
+// 0x00000547 System.Boolean Defective.JSON.JSONObject::HasFields(System.String[])
 extern void JSONObject_HasFields_m267D923FB2F095030F2CDA481D81C64D03B52B04 (void);
-// 0x00000539 System.Boolean Defective.JSON.JSONObject::HasField(System.String)
+// 0x00000548 System.Boolean Defective.JSON.JSONObject::HasField(System.String)
 extern void JSONObject_HasField_m8A0AE1720F921358B8C1BF09E8A1C0483B54CA5C (void);
-// 0x0000053A System.Void Defective.JSON.JSONObject::Clear()
+// 0x00000549 System.Void Defective.JSON.JSONObject::Clear()
 extern void JSONObject_Clear_m9641EBDAE25F65832ABD7265805DEC54A2C7EB8A (void);
-// 0x0000053B Defective.JSON.JSONObject Defective.JSON.JSONObject::Copy()
+// 0x0000054A Defective.JSON.JSONObject Defective.JSON.JSONObject::Copy()
 extern void JSONObject_Copy_m5D66A1322C0D494FAC1DC284FB8F7F0ADB505954 (void);
-// 0x0000053C System.Void Defective.JSON.JSONObject::Merge(Defective.JSON.JSONObject)
+// 0x0000054B System.Void Defective.JSON.JSONObject::Merge(Defective.JSON.JSONObject)
 extern void JSONObject_Merge_m28705CD23A7A745A37848610CD9D07FC447FFFE9 (void);
-// 0x0000053D System.Void Defective.JSON.JSONObject::MergeRecur(Defective.JSON.JSONObject,Defective.JSON.JSONObject)
+// 0x0000054C System.Void Defective.JSON.JSONObject::MergeRecur(Defective.JSON.JSONObject,Defective.JSON.JSONObject)
 extern void JSONObject_MergeRecur_mEA5296EBD08453953D10B5007EE486E896318932 (void);
-// 0x0000053E System.Void Defective.JSON.JSONObject::Bake()
+// 0x0000054D System.Void Defective.JSON.JSONObject::Bake()
 extern void JSONObject_Bake_mE2149D8598D72B48066EFEF74DD39325B1537F5B (void);
-// 0x0000053F System.Collections.IEnumerable Defective.JSON.JSONObject::BakeAsync()
+// 0x0000054E System.Collections.IEnumerable Defective.JSON.JSONObject::BakeAsync()
 extern void JSONObject_BakeAsync_mFC52A60AFC14F06EF3E1AEEA6DF192D380DB0CC6 (void);
-// 0x00000540 System.String Defective.JSON.JSONObject::Print(System.Boolean)
+// 0x0000054F System.String Defective.JSON.JSONObject::Print(System.Boolean)
 extern void JSONObject_Print_m3AC68522204B19733E330B8DA1F8919099E6C284 (void);
-// 0x00000541 System.Void Defective.JSON.JSONObject::Print(System.Text.StringBuilder,System.Boolean)
+// 0x00000550 System.Void Defective.JSON.JSONObject::Print(System.Text.StringBuilder,System.Boolean)
 extern void JSONObject_Print_mE75F1673BBF3CFCFF9F934E87068BFCD143AD1E8 (void);
-// 0x00000542 System.String Defective.JSON.JSONObject::EscapeString(System.String)
+// 0x00000551 System.String Defective.JSON.JSONObject::EscapeString(System.String)
 extern void JSONObject_EscapeString_m9D82BC2F43D518B2C71EF91E9EB70EBDA338357C (void);
-// 0x00000543 System.String Defective.JSON.JSONObject::UnEscapeString(System.String)
+// 0x00000552 System.String Defective.JSON.JSONObject::UnEscapeString(System.String)
 extern void JSONObject_UnEscapeString_m2CBA283857DD92DF360CCE6997374980C3EED39A (void);
-// 0x00000544 System.Collections.Generic.IEnumerable`1<System.String> Defective.JSON.JSONObject::PrintAsync(System.Boolean)
+// 0x00000553 System.Collections.Generic.IEnumerable`1<System.String> Defective.JSON.JSONObject::PrintAsync(System.Boolean)
 extern void JSONObject_PrintAsync_mCB5FBE2DB1337C7EB08D8B3AA54DF6E607B9E3D1 (void);
-// 0x00000545 System.Collections.Generic.IEnumerable`1<System.Boolean> Defective.JSON.JSONObject::PrintAsync(System.Text.StringBuilder,System.Boolean)
+// 0x00000554 System.Collections.Generic.IEnumerable`1<System.Boolean> Defective.JSON.JSONObject::PrintAsync(System.Text.StringBuilder,System.Boolean)
 extern void JSONObject_PrintAsync_m387EBF09BA88B98F25B260B5E7AE687B9B173375 (void);
-// 0x00000546 System.Collections.Generic.IEnumerable`1<System.Boolean> Defective.JSON.JSONObject::StringifyAsync(System.Int32,System.Text.StringBuilder,System.Boolean)
+// 0x00000555 System.Collections.Generic.IEnumerable`1<System.Boolean> Defective.JSON.JSONObject::StringifyAsync(System.Int32,System.Text.StringBuilder,System.Boolean)
 extern void JSONObject_StringifyAsync_mCAF9D38E572CA9C6F1875F99EAB5277BC2DBBAB0 (void);
-// 0x00000547 System.Void Defective.JSON.JSONObject::Stringify(System.Int32,System.Text.StringBuilder,System.Boolean)
+// 0x00000556 System.Void Defective.JSON.JSONObject::Stringify(System.Int32,System.Text.StringBuilder,System.Boolean)
 extern void JSONObject_Stringify_m1B4AB8F7C1726AA4FA744CDA2C0261771D7737CE (void);
-// 0x00000548 System.Void Defective.JSON.JSONObject::StringifyString(System.Text.StringBuilder)
+// 0x00000557 System.Void Defective.JSON.JSONObject::StringifyString(System.Text.StringBuilder)
 extern void JSONObject_StringifyString_m6C60B157ADB60C0A400CE42AD83B78BF95531578 (void);
-// 0x00000549 System.Void Defective.JSON.JSONObject::BeginStringifyObjectContainer(System.Text.StringBuilder,System.Boolean)
+// 0x00000558 System.Void Defective.JSON.JSONObject::BeginStringifyObjectContainer(System.Text.StringBuilder,System.Boolean)
 extern void JSONObject_BeginStringifyObjectContainer_m5DDF0C38F6519E8291886BA780B4116C70A33B4C (void);
-// 0x0000054A System.Void Defective.JSON.JSONObject::StringifyEmptyObject(System.Text.StringBuilder)
+// 0x00000559 System.Void Defective.JSON.JSONObject::StringifyEmptyObject(System.Text.StringBuilder)
 extern void JSONObject_StringifyEmptyObject_mF0208881D165951D3B98AC8D67B4E9CCF450C9D4 (void);
-// 0x0000054B System.Void Defective.JSON.JSONObject::BeginStringifyObjectField(System.Text.StringBuilder,System.Boolean,System.Int32,System.String)
+// 0x0000055A System.Void Defective.JSON.JSONObject::BeginStringifyObjectField(System.Text.StringBuilder,System.Boolean,System.Int32,System.String)
 extern void JSONObject_BeginStringifyObjectField_m7FD31C38CCAB181AF2499C2971B6A0FEE8D0298B (void);
-// 0x0000054C System.Void Defective.JSON.JSONObject::EndStringifyObjectField(System.Text.StringBuilder,System.Boolean)
+// 0x0000055B System.Void Defective.JSON.JSONObject::EndStringifyObjectField(System.Text.StringBuilder,System.Boolean)
 extern void JSONObject_EndStringifyObjectField_mE69FE33F5E034275318A7C3D9AE2C5A802945090 (void);
-// 0x0000054D System.Void Defective.JSON.JSONObject::EndStringifyObjectContainer(System.Text.StringBuilder,System.Boolean,System.Int32)
+// 0x0000055C System.Void Defective.JSON.JSONObject::EndStringifyObjectContainer(System.Text.StringBuilder,System.Boolean,System.Int32)
 extern void JSONObject_EndStringifyObjectContainer_mD874A086B26BFD0B1543B4747D14CF073639F05B (void);
-// 0x0000054E System.Void Defective.JSON.JSONObject::StringifyEmptyArray(System.Text.StringBuilder)
+// 0x0000055D System.Void Defective.JSON.JSONObject::StringifyEmptyArray(System.Text.StringBuilder)
 extern void JSONObject_StringifyEmptyArray_mC78592CCEB915F47CCB8F3F3EF3F0CEECE0CD624 (void);
-// 0x0000054F System.Void Defective.JSON.JSONObject::BeginStringifyArrayContainer(System.Text.StringBuilder,System.Boolean)
+// 0x0000055E System.Void Defective.JSON.JSONObject::BeginStringifyArrayContainer(System.Text.StringBuilder,System.Boolean)
 extern void JSONObject_BeginStringifyArrayContainer_m59F4D18EDB10B3243DD1AD8CF673F92EA912AE57 (void);
-// 0x00000550 System.Void Defective.JSON.JSONObject::BeginStringifyArrayElement(System.Text.StringBuilder,System.Boolean,System.Int32)
+// 0x0000055F System.Void Defective.JSON.JSONObject::BeginStringifyArrayElement(System.Text.StringBuilder,System.Boolean,System.Int32)
 extern void JSONObject_BeginStringifyArrayElement_m401B397C85AA21E3E8707178CD43782B533141B3 (void);
-// 0x00000551 System.Void Defective.JSON.JSONObject::EndStringifyArrayElement(System.Text.StringBuilder,System.Boolean)
+// 0x00000560 System.Void Defective.JSON.JSONObject::EndStringifyArrayElement(System.Text.StringBuilder,System.Boolean)
 extern void JSONObject_EndStringifyArrayElement_mD9266EAC7BC72C2ED1586C924DC8EA395E34E7F9 (void);
-// 0x00000552 System.Void Defective.JSON.JSONObject::EndStringifyArrayContainer(System.Text.StringBuilder,System.Boolean,System.Int32)
+// 0x00000561 System.Void Defective.JSON.JSONObject::EndStringifyArrayContainer(System.Text.StringBuilder,System.Boolean,System.Int32)
 extern void JSONObject_EndStringifyArrayContainer_m4A176DF24C519585CF36618B389483DB439C88EB (void);
-// 0x00000553 System.Void Defective.JSON.JSONObject::StringifyNumber(System.Text.StringBuilder)
+// 0x00000562 System.Void Defective.JSON.JSONObject::StringifyNumber(System.Text.StringBuilder)
 extern void JSONObject_StringifyNumber_m59CDF5A6C31D5A0B994FB91C54C70A4B52CAC63E (void);
-// 0x00000554 System.Void Defective.JSON.JSONObject::StringifyBool(System.Text.StringBuilder)
+// 0x00000563 System.Void Defective.JSON.JSONObject::StringifyBool(System.Text.StringBuilder)
 extern void JSONObject_StringifyBool_m898A6B762DB8BFF8031306FCDE98DD54113853C4 (void);
-// 0x00000555 System.Void Defective.JSON.JSONObject::StringifyNull(System.Text.StringBuilder)
+// 0x00000564 System.Void Defective.JSON.JSONObject::StringifyNull(System.Text.StringBuilder)
 extern void JSONObject_StringifyNull_m07BEE11BF14EE6CE788602C34450790A33411004 (void);
-// 0x00000556 UnityEngine.WWWForm Defective.JSON.JSONObject::op_Implicit(Defective.JSON.JSONObject)
+// 0x00000565 UnityEngine.WWWForm Defective.JSON.JSONObject::op_Implicit(Defective.JSON.JSONObject)
 extern void JSONObject_op_Implicit_m70407BEE1B3A12A44474A220A28D0F6DEE25011A (void);
-// 0x00000557 Defective.JSON.JSONObject Defective.JSON.JSONObject::get_Item(System.Int32)
+// 0x00000566 Defective.JSON.JSONObject Defective.JSON.JSONObject::get_Item(System.Int32)
 extern void JSONObject_get_Item_mFDB9D6D8206F6899009E5D35EF69E5085735AB1C (void);
-// 0x00000558 System.Void Defective.JSON.JSONObject::set_Item(System.Int32,Defective.JSON.JSONObject)
+// 0x00000567 System.Void Defective.JSON.JSONObject::set_Item(System.Int32,Defective.JSON.JSONObject)
 extern void JSONObject_set_Item_m0169F3DEE234B878ACA9BA965508F8CC4227030E (void);
-// 0x00000559 Defective.JSON.JSONObject Defective.JSON.JSONObject::get_Item(System.String)
+// 0x00000568 Defective.JSON.JSONObject Defective.JSON.JSONObject::get_Item(System.String)
 extern void JSONObject_get_Item_m32CD450E44D55B639F7C13F48A4CC98AF4E4B6EA (void);
-// 0x0000055A System.Void Defective.JSON.JSONObject::set_Item(System.String,Defective.JSON.JSONObject)
+// 0x00000569 System.Void Defective.JSON.JSONObject::set_Item(System.String,Defective.JSON.JSONObject)
 extern void JSONObject_set_Item_mDE2BBA3C946D65EF2B48EAB717C07ADA0CA8ABF0 (void);
-// 0x0000055B System.String Defective.JSON.JSONObject::ToString()
+// 0x0000056A System.String Defective.JSON.JSONObject::ToString()
 extern void JSONObject_ToString_mC75F8ED6593F16613D74FE21534C7857F4D4D19D (void);
-// 0x0000055C System.String Defective.JSON.JSONObject::ToString(System.Boolean)
+// 0x0000056B System.String Defective.JSON.JSONObject::ToString(System.Boolean)
 extern void JSONObject_ToString_m2FF21676509731C47F0B3B6DF2AC190638118E29 (void);
-// 0x0000055D System.Collections.Generic.Dictionary`2<System.String,System.String> Defective.JSON.JSONObject::ToDictionary()
+// 0x0000056C System.Collections.Generic.Dictionary`2<System.String,System.String> Defective.JSON.JSONObject::ToDictionary()
 extern void JSONObject_ToDictionary_m23082758CE575B84DB57C5BAE6FD9B9882597CDA (void);
-// 0x0000055E System.Boolean Defective.JSON.JSONObject::op_Implicit(Defective.JSON.JSONObject)
+// 0x0000056D System.Boolean Defective.JSON.JSONObject::op_Implicit(Defective.JSON.JSONObject)
 extern void JSONObject_op_Implicit_m7C8BF6A61526F13507A1EBCA0CBB6474AADE6327 (void);
-// 0x0000055F System.Collections.IEnumerator Defective.JSON.JSONObject::System.Collections.IEnumerable.GetEnumerator()
+// 0x0000056E System.Collections.IEnumerator Defective.JSON.JSONObject::System.Collections.IEnumerable.GetEnumerator()
 extern void JSONObject_System_Collections_IEnumerable_GetEnumerator_mD11F6ABC323D05CAD33E0968487A894D48F942B7 (void);
-// 0x00000560 Defective.JSON.JSONObjectEnumerator Defective.JSON.JSONObject::GetEnumerator()
+// 0x0000056F Defective.JSON.JSONObjectEnumerator Defective.JSON.JSONObject::GetEnumerator()
 extern void JSONObject_GetEnumerator_mB47C5B15F96CECE98FD0D8B8A64AB98CC78178BF (void);
-// 0x00000561 System.Void Defective.JSON.JSONObject::.cctor()
+// 0x00000570 System.Void Defective.JSON.JSONObject::.cctor()
 extern void JSONObject__cctor_m027D19D544CEABDFB5E9F84F76CAE9F1D395559D (void);
-// 0x00000562 System.Void Defective.JSON.JSONObject/ParseResult::.ctor(Defective.JSON.JSONObject,System.Int32,System.Boolean)
+// 0x00000571 System.Void Defective.JSON.JSONObject/ParseResult::.ctor(Defective.JSON.JSONObject,System.Int32,System.Boolean)
 extern void ParseResult__ctor_mDA43943FF52FA215B90721EAB7B90A71DCF387BC (void);
-// 0x00000563 System.Void Defective.JSON.JSONObject/FieldNotFound::.ctor(System.Object,System.IntPtr)
+// 0x00000572 System.Void Defective.JSON.JSONObject/FieldNotFound::.ctor(System.Object,System.IntPtr)
 extern void FieldNotFound__ctor_m0DB648B9075D80164808D3251A5A8C6AB6BB0915 (void);
-// 0x00000564 System.Void Defective.JSON.JSONObject/FieldNotFound::Invoke(System.String)
+// 0x00000573 System.Void Defective.JSON.JSONObject/FieldNotFound::Invoke(System.String)
 extern void FieldNotFound_Invoke_mCD3E9777E646B2C748B6036ADFBAF4A4038295AF (void);
-// 0x00000565 System.IAsyncResult Defective.JSON.JSONObject/FieldNotFound::BeginInvoke(System.String,System.AsyncCallback,System.Object)
+// 0x00000574 System.IAsyncResult Defective.JSON.JSONObject/FieldNotFound::BeginInvoke(System.String,System.AsyncCallback,System.Object)
 extern void FieldNotFound_BeginInvoke_m9F14D87AF92BB7ADD95C6497F6EA5D8E33DAA4C2 (void);
-// 0x00000566 System.Void Defective.JSON.JSONObject/FieldNotFound::EndInvoke(System.IAsyncResult)
+// 0x00000575 System.Void Defective.JSON.JSONObject/FieldNotFound::EndInvoke(System.IAsyncResult)
 extern void FieldNotFound_EndInvoke_mA2ACE1422E27333A07322810F28159B362CC7FAB (void);
-// 0x00000567 System.Void Defective.JSON.JSONObject/GetFieldResponse::.ctor(System.Object,System.IntPtr)
+// 0x00000576 System.Void Defective.JSON.JSONObject/GetFieldResponse::.ctor(System.Object,System.IntPtr)
 extern void GetFieldResponse__ctor_mCC6370E1BB85AFB50F1F3B413B3B66BCEBB3C772 (void);
-// 0x00000568 System.Void Defective.JSON.JSONObject/GetFieldResponse::Invoke(Defective.JSON.JSONObject)
+// 0x00000577 System.Void Defective.JSON.JSONObject/GetFieldResponse::Invoke(Defective.JSON.JSONObject)
 extern void GetFieldResponse_Invoke_mEED8FA330FD205B92BC0A1D29486BCF2E0980CB0 (void);
-// 0x00000569 System.IAsyncResult Defective.JSON.JSONObject/GetFieldResponse::BeginInvoke(Defective.JSON.JSONObject,System.AsyncCallback,System.Object)
+// 0x00000578 System.IAsyncResult Defective.JSON.JSONObject/GetFieldResponse::BeginInvoke(Defective.JSON.JSONObject,System.AsyncCallback,System.Object)
 extern void GetFieldResponse_BeginInvoke_m4EDEBA4ACC92D545DA98DAB88274C05568AB003C (void);
-// 0x0000056A System.Void Defective.JSON.JSONObject/GetFieldResponse::EndInvoke(System.IAsyncResult)
+// 0x00000579 System.Void Defective.JSON.JSONObject/GetFieldResponse::EndInvoke(System.IAsyncResult)
 extern void GetFieldResponse_EndInvoke_m639D6EBB429A72AAC8ECEDA527C91F8A580F3FDA (void);
-// 0x0000056B System.Void Defective.JSON.JSONObject/AddJSONContents::.ctor(System.Object,System.IntPtr)
+// 0x0000057A System.Void Defective.JSON.JSONObject/AddJSONContents::.ctor(System.Object,System.IntPtr)
 extern void AddJSONContents__ctor_m8FCF937D710F4633E7704FB0D1E1AA91918E97F7 (void);
-// 0x0000056C System.Void Defective.JSON.JSONObject/AddJSONContents::Invoke(Defective.JSON.JSONObject)
+// 0x0000057B System.Void Defective.JSON.JSONObject/AddJSONContents::Invoke(Defective.JSON.JSONObject)
 extern void AddJSONContents_Invoke_m349E26B39BC39945C4CBD70D0061BD7D3D0B56E4 (void);
-// 0x0000056D System.IAsyncResult Defective.JSON.JSONObject/AddJSONContents::BeginInvoke(Defective.JSON.JSONObject,System.AsyncCallback,System.Object)
+// 0x0000057C System.IAsyncResult Defective.JSON.JSONObject/AddJSONContents::BeginInvoke(Defective.JSON.JSONObject,System.AsyncCallback,System.Object)
 extern void AddJSONContents_BeginInvoke_m76470BE39539476BD99A0F1ECC1C0F54A66CC460 (void);
-// 0x0000056E System.Void Defective.JSON.JSONObject/AddJSONContents::EndInvoke(System.IAsyncResult)
+// 0x0000057D System.Void Defective.JSON.JSONObject/AddJSONContents::EndInvoke(System.IAsyncResult)
 extern void AddJSONContents_EndInvoke_m7338DE0773AB640889F45A65EE9D0AEAACA7D40F (void);
-// 0x0000056F System.Void Defective.JSON.JSONObject/<CreateAsync>d__68::.ctor(System.Int32)
+// 0x0000057E System.Void Defective.JSON.JSONObject/<CreateAsync>d__68::.ctor(System.Int32)
 extern void U3CCreateAsyncU3Ed__68__ctor_m73342FE672B04F95C4ADBEEADA07765F7D3E777D (void);
-// 0x00000570 System.Void Defective.JSON.JSONObject/<CreateAsync>d__68::System.IDisposable.Dispose()
+// 0x0000057F System.Void Defective.JSON.JSONObject/<CreateAsync>d__68::System.IDisposable.Dispose()
 extern void U3CCreateAsyncU3Ed__68_System_IDisposable_Dispose_mA2379377CCDE0F24D624C6549C13E7ACC0E907EE (void);
-// 0x00000571 System.Boolean Defective.JSON.JSONObject/<CreateAsync>d__68::MoveNext()
+// 0x00000580 System.Boolean Defective.JSON.JSONObject/<CreateAsync>d__68::MoveNext()
 extern void U3CCreateAsyncU3Ed__68_MoveNext_m881C3C19323983C2C329A7A06876CE47A8AFB3D4 (void);
-// 0x00000572 System.Void Defective.JSON.JSONObject/<CreateAsync>d__68::<>m__Finally1()
+// 0x00000581 System.Void Defective.JSON.JSONObject/<CreateAsync>d__68::<>m__Finally1()
 extern void U3CCreateAsyncU3Ed__68_U3CU3Em__Finally1_mB2D0F83679926380C8F79EC5E0ABAE8C375EDBCE (void);
-// 0x00000573 Defective.JSON.JSONObject/ParseResult Defective.JSON.JSONObject/<CreateAsync>d__68::System.Collections.Generic.IEnumerator<Defective.JSON.JSONObject.ParseResult>.get_Current()
+// 0x00000582 Defective.JSON.JSONObject/ParseResult Defective.JSON.JSONObject/<CreateAsync>d__68::System.Collections.Generic.IEnumerator<Defective.JSON.JSONObject.ParseResult>.get_Current()
 extern void U3CCreateAsyncU3Ed__68_System_Collections_Generic_IEnumeratorU3CDefective_JSON_JSONObject_ParseResultU3E_get_Current_mFE2659F69AEA231B58E8E5570C8397EA4FF742A2 (void);
-// 0x00000574 System.Void Defective.JSON.JSONObject/<CreateAsync>d__68::System.Collections.IEnumerator.Reset()
+// 0x00000583 System.Void Defective.JSON.JSONObject/<CreateAsync>d__68::System.Collections.IEnumerator.Reset()
 extern void U3CCreateAsyncU3Ed__68_System_Collections_IEnumerator_Reset_mF65475F22F9B98E12245A17B9A4BFEABEE7F062D (void);
-// 0x00000575 System.Object Defective.JSON.JSONObject/<CreateAsync>d__68::System.Collections.IEnumerator.get_Current()
+// 0x00000584 System.Object Defective.JSON.JSONObject/<CreateAsync>d__68::System.Collections.IEnumerator.get_Current()
 extern void U3CCreateAsyncU3Ed__68_System_Collections_IEnumerator_get_Current_m538289A6AC1FE8876C69D71D045D4F6BCBDC120D (void);
-// 0x00000576 System.Collections.Generic.IEnumerator`1<Defective.JSON.JSONObject/ParseResult> Defective.JSON.JSONObject/<CreateAsync>d__68::System.Collections.Generic.IEnumerable<Defective.JSON.JSONObject.ParseResult>.GetEnumerator()
+// 0x00000585 System.Collections.Generic.IEnumerator`1<Defective.JSON.JSONObject/ParseResult> Defective.JSON.JSONObject/<CreateAsync>d__68::System.Collections.Generic.IEnumerable<Defective.JSON.JSONObject.ParseResult>.GetEnumerator()
 extern void U3CCreateAsyncU3Ed__68_System_Collections_Generic_IEnumerableU3CDefective_JSON_JSONObject_ParseResultU3E_GetEnumerator_m32461717630B296EAA1792B7E489A40D05AB8E81 (void);
-// 0x00000577 System.Collections.IEnumerator Defective.JSON.JSONObject/<CreateAsync>d__68::System.Collections.IEnumerable.GetEnumerator()
+// 0x00000586 System.Collections.IEnumerator Defective.JSON.JSONObject/<CreateAsync>d__68::System.Collections.IEnumerable.GetEnumerator()
 extern void U3CCreateAsyncU3Ed__68_System_Collections_IEnumerable_GetEnumerator_m363195E768293B0C80BCB617E0066C6944B1BE63 (void);
-// 0x00000578 System.Void Defective.JSON.JSONObject/<ParseAsync>d__73::.ctor(System.Int32)
+// 0x00000587 System.Void Defective.JSON.JSONObject/<ParseAsync>d__73::.ctor(System.Int32)
 extern void U3CParseAsyncU3Ed__73__ctor_m35663A7C21BE4D9FF319F64E93568B2796611B71 (void);
-// 0x00000579 System.Void Defective.JSON.JSONObject/<ParseAsync>d__73::System.IDisposable.Dispose()
+// 0x00000588 System.Void Defective.JSON.JSONObject/<ParseAsync>d__73::System.IDisposable.Dispose()
 extern void U3CParseAsyncU3Ed__73_System_IDisposable_Dispose_m13F01CD01D57E0294803AB399780E6AF1BB4A30E (void);
-// 0x0000057A System.Boolean Defective.JSON.JSONObject/<ParseAsync>d__73::MoveNext()
+// 0x00000589 System.Boolean Defective.JSON.JSONObject/<ParseAsync>d__73::MoveNext()
 extern void U3CParseAsyncU3Ed__73_MoveNext_m306492C173EC19374DE05CF29BA4C287753062F8 (void);
-// 0x0000057B System.Void Defective.JSON.JSONObject/<ParseAsync>d__73::<>m__Finally1()
+// 0x0000058A System.Void Defective.JSON.JSONObject/<ParseAsync>d__73::<>m__Finally1()
 extern void U3CParseAsyncU3Ed__73_U3CU3Em__Finally1_m482A862B7902AD7391AD1219D44134784397A73D (void);
-// 0x0000057C System.Void Defective.JSON.JSONObject/<ParseAsync>d__73::<>m__Finally2()
+// 0x0000058B System.Void Defective.JSON.JSONObject/<ParseAsync>d__73::<>m__Finally2()
 extern void U3CParseAsyncU3Ed__73_U3CU3Em__Finally2_m78CA52C647FB7924454346A0231A4F60034C79B4 (void);
-// 0x0000057D Defective.JSON.JSONObject/ParseResult Defective.JSON.JSONObject/<ParseAsync>d__73::System.Collections.Generic.IEnumerator<Defective.JSON.JSONObject.ParseResult>.get_Current()
+// 0x0000058C Defective.JSON.JSONObject/ParseResult Defective.JSON.JSONObject/<ParseAsync>d__73::System.Collections.Generic.IEnumerator<Defective.JSON.JSONObject.ParseResult>.get_Current()
 extern void U3CParseAsyncU3Ed__73_System_Collections_Generic_IEnumeratorU3CDefective_JSON_JSONObject_ParseResultU3E_get_Current_mE7EC5CEF28AC638C8FE81DEB25C00B6B8262BD0E (void);
-// 0x0000057E System.Void Defective.JSON.JSONObject/<ParseAsync>d__73::System.Collections.IEnumerator.Reset()
+// 0x0000058D System.Void Defective.JSON.JSONObject/<ParseAsync>d__73::System.Collections.IEnumerator.Reset()
 extern void U3CParseAsyncU3Ed__73_System_Collections_IEnumerator_Reset_m25FF387607097D11C1BB35D6E03E6BC729482045 (void);
-// 0x0000057F System.Object Defective.JSON.JSONObject/<ParseAsync>d__73::System.Collections.IEnumerator.get_Current()
+// 0x0000058E System.Object Defective.JSON.JSONObject/<ParseAsync>d__73::System.Collections.IEnumerator.get_Current()
 extern void U3CParseAsyncU3Ed__73_System_Collections_IEnumerator_get_Current_mD944A909598BD0DC6971E039781E2B59FFEF1807 (void);
-// 0x00000580 System.Collections.Generic.IEnumerator`1<Defective.JSON.JSONObject/ParseResult> Defective.JSON.JSONObject/<ParseAsync>d__73::System.Collections.Generic.IEnumerable<Defective.JSON.JSONObject.ParseResult>.GetEnumerator()
+// 0x0000058F System.Collections.Generic.IEnumerator`1<Defective.JSON.JSONObject/ParseResult> Defective.JSON.JSONObject/<ParseAsync>d__73::System.Collections.Generic.IEnumerable<Defective.JSON.JSONObject.ParseResult>.GetEnumerator()
 extern void U3CParseAsyncU3Ed__73_System_Collections_Generic_IEnumerableU3CDefective_JSON_JSONObject_ParseResultU3E_GetEnumerator_m71C579CD32AF48A119F8FF42C018A5E6C2A7B0D1 (void);
-// 0x00000581 System.Collections.IEnumerator Defective.JSON.JSONObject/<ParseAsync>d__73::System.Collections.IEnumerable.GetEnumerator()
+// 0x00000590 System.Collections.IEnumerator Defective.JSON.JSONObject/<ParseAsync>d__73::System.Collections.IEnumerable.GetEnumerator()
 extern void U3CParseAsyncU3Ed__73_System_Collections_IEnumerable_GetEnumerator_m73AF3FC6BFE47A422DB212C1E940E9AA53710DF3 (void);
-// 0x00000582 System.Void Defective.JSON.JSONObject/<BakeAsync>d__144::.ctor(System.Int32)
+// 0x00000591 System.Void Defective.JSON.JSONObject/<BakeAsync>d__144::.ctor(System.Int32)
 extern void U3CBakeAsyncU3Ed__144__ctor_mA94C1D2AF01D7E6206FD5F32E30AA5B0800FB117 (void);
-// 0x00000583 System.Void Defective.JSON.JSONObject/<BakeAsync>d__144::System.IDisposable.Dispose()
+// 0x00000592 System.Void Defective.JSON.JSONObject/<BakeAsync>d__144::System.IDisposable.Dispose()
 extern void U3CBakeAsyncU3Ed__144_System_IDisposable_Dispose_m27C1E1BC536944AEE25FB38438DAEDD7F7C30BD1 (void);
-// 0x00000584 System.Boolean Defective.JSON.JSONObject/<BakeAsync>d__144::MoveNext()
+// 0x00000593 System.Boolean Defective.JSON.JSONObject/<BakeAsync>d__144::MoveNext()
 extern void U3CBakeAsyncU3Ed__144_MoveNext_mEBEE8BF65D2EA04A644D9B71572733B753D30CA0 (void);
-// 0x00000585 System.Void Defective.JSON.JSONObject/<BakeAsync>d__144::<>m__Finally1()
+// 0x00000594 System.Void Defective.JSON.JSONObject/<BakeAsync>d__144::<>m__Finally1()
 extern void U3CBakeAsyncU3Ed__144_U3CU3Em__Finally1_m4F2BAC626B1180350DF43866B96C4945DCF5E3D9 (void);
-// 0x00000586 System.Object Defective.JSON.JSONObject/<BakeAsync>d__144::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x00000595 System.Object Defective.JSON.JSONObject/<BakeAsync>d__144::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CBakeAsyncU3Ed__144_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m5005DAB87B9CCC330996377B6FFE0B8BE6DC2819 (void);
-// 0x00000587 System.Void Defective.JSON.JSONObject/<BakeAsync>d__144::System.Collections.IEnumerator.Reset()
+// 0x00000596 System.Void Defective.JSON.JSONObject/<BakeAsync>d__144::System.Collections.IEnumerator.Reset()
 extern void U3CBakeAsyncU3Ed__144_System_Collections_IEnumerator_Reset_m3F22403FB8A802E882102602F3AB77C4D0D8E8CB (void);
-// 0x00000588 System.Object Defective.JSON.JSONObject/<BakeAsync>d__144::System.Collections.IEnumerator.get_Current()
+// 0x00000597 System.Object Defective.JSON.JSONObject/<BakeAsync>d__144::System.Collections.IEnumerator.get_Current()
 extern void U3CBakeAsyncU3Ed__144_System_Collections_IEnumerator_get_Current_mC31C336E2851A09BA45137917457DBCBBD6503D6 (void);
-// 0x00000589 System.Collections.Generic.IEnumerator`1<System.Object> Defective.JSON.JSONObject/<BakeAsync>d__144::System.Collections.Generic.IEnumerable<System.Object>.GetEnumerator()
+// 0x00000598 System.Collections.Generic.IEnumerator`1<System.Object> Defective.JSON.JSONObject/<BakeAsync>d__144::System.Collections.Generic.IEnumerable<System.Object>.GetEnumerator()
 extern void U3CBakeAsyncU3Ed__144_System_Collections_Generic_IEnumerableU3CSystem_ObjectU3E_GetEnumerator_mF079A5D40A11A5CEBB3BE437BEFBC602A9D061E6 (void);
-// 0x0000058A System.Collections.IEnumerator Defective.JSON.JSONObject/<BakeAsync>d__144::System.Collections.IEnumerable.GetEnumerator()
+// 0x00000599 System.Collections.IEnumerator Defective.JSON.JSONObject/<BakeAsync>d__144::System.Collections.IEnumerable.GetEnumerator()
 extern void U3CBakeAsyncU3Ed__144_System_Collections_IEnumerable_GetEnumerator_mC437DA02E7033BBE8349C04F8ACF0CEB53F7E35B (void);
-// 0x0000058B System.Void Defective.JSON.JSONObject/<PrintAsync>d__149::.ctor(System.Int32)
+// 0x0000059A System.Void Defective.JSON.JSONObject/<PrintAsync>d__149::.ctor(System.Int32)
 extern void U3CPrintAsyncU3Ed__149__ctor_mD4F869D25C809BE3C9ABC357D69F98F47CC4761E (void);
-// 0x0000058C System.Void Defective.JSON.JSONObject/<PrintAsync>d__149::System.IDisposable.Dispose()
+// 0x0000059B System.Void Defective.JSON.JSONObject/<PrintAsync>d__149::System.IDisposable.Dispose()
 extern void U3CPrintAsyncU3Ed__149_System_IDisposable_Dispose_m3D90AF8BE6471B6A8E2BF87E3A83BBFC3AF99847 (void);
-// 0x0000058D System.Boolean Defective.JSON.JSONObject/<PrintAsync>d__149::MoveNext()
+// 0x0000059C System.Boolean Defective.JSON.JSONObject/<PrintAsync>d__149::MoveNext()
 extern void U3CPrintAsyncU3Ed__149_MoveNext_mCD951DB607E7E332F23A7F02484D5A59A5B71380 (void);
-// 0x0000058E System.Void Defective.JSON.JSONObject/<PrintAsync>d__149::<>m__Finally1()
+// 0x0000059D System.Void Defective.JSON.JSONObject/<PrintAsync>d__149::<>m__Finally1()
 extern void U3CPrintAsyncU3Ed__149_U3CU3Em__Finally1_m727B138D93BDD059674CB9E2941B1E8E58357078 (void);
-// 0x0000058F System.String Defective.JSON.JSONObject/<PrintAsync>d__149::System.Collections.Generic.IEnumerator<System.String>.get_Current()
+// 0x0000059E System.String Defective.JSON.JSONObject/<PrintAsync>d__149::System.Collections.Generic.IEnumerator<System.String>.get_Current()
 extern void U3CPrintAsyncU3Ed__149_System_Collections_Generic_IEnumeratorU3CSystem_StringU3E_get_Current_m5C5B74E0E6DF50CE7DF22AF207B0EBEAEEB34AD6 (void);
-// 0x00000590 System.Void Defective.JSON.JSONObject/<PrintAsync>d__149::System.Collections.IEnumerator.Reset()
+// 0x0000059F System.Void Defective.JSON.JSONObject/<PrintAsync>d__149::System.Collections.IEnumerator.Reset()
 extern void U3CPrintAsyncU3Ed__149_System_Collections_IEnumerator_Reset_m87639A20F250DD4F7B7CCC85EF2DD69F3F34177A (void);
-// 0x00000591 System.Object Defective.JSON.JSONObject/<PrintAsync>d__149::System.Collections.IEnumerator.get_Current()
+// 0x000005A0 System.Object Defective.JSON.JSONObject/<PrintAsync>d__149::System.Collections.IEnumerator.get_Current()
 extern void U3CPrintAsyncU3Ed__149_System_Collections_IEnumerator_get_Current_m53961BA596F3CBACD0CE3D431A6EC4F80B531848 (void);
-// 0x00000592 System.Collections.Generic.IEnumerator`1<System.String> Defective.JSON.JSONObject/<PrintAsync>d__149::System.Collections.Generic.IEnumerable<System.String>.GetEnumerator()
+// 0x000005A1 System.Collections.Generic.IEnumerator`1<System.String> Defective.JSON.JSONObject/<PrintAsync>d__149::System.Collections.Generic.IEnumerable<System.String>.GetEnumerator()
 extern void U3CPrintAsyncU3Ed__149_System_Collections_Generic_IEnumerableU3CSystem_StringU3E_GetEnumerator_m3536950E12E80DB4D36309DC2E42FB41CACA9F99 (void);
-// 0x00000593 System.Collections.IEnumerator Defective.JSON.JSONObject/<PrintAsync>d__149::System.Collections.IEnumerable.GetEnumerator()
+// 0x000005A2 System.Collections.IEnumerator Defective.JSON.JSONObject/<PrintAsync>d__149::System.Collections.IEnumerable.GetEnumerator()
 extern void U3CPrintAsyncU3Ed__149_System_Collections_IEnumerable_GetEnumerator_m6ABD2FA0915E767E7E473A2BB851F18CEE9F1715 (void);
-// 0x00000594 System.Void Defective.JSON.JSONObject/<PrintAsync>d__150::.ctor(System.Int32)
+// 0x000005A3 System.Void Defective.JSON.JSONObject/<PrintAsync>d__150::.ctor(System.Int32)
 extern void U3CPrintAsyncU3Ed__150__ctor_m76AE442889877ABA71658717BEDAC09F13535C2F (void);
-// 0x00000595 System.Void Defective.JSON.JSONObject/<PrintAsync>d__150::System.IDisposable.Dispose()
+// 0x000005A4 System.Void Defective.JSON.JSONObject/<PrintAsync>d__150::System.IDisposable.Dispose()
 extern void U3CPrintAsyncU3Ed__150_System_IDisposable_Dispose_m548874C17D7796A551B77FB89B5E694BC40CF3A8 (void);
-// 0x00000596 System.Boolean Defective.JSON.JSONObject/<PrintAsync>d__150::MoveNext()
+// 0x000005A5 System.Boolean Defective.JSON.JSONObject/<PrintAsync>d__150::MoveNext()
 extern void U3CPrintAsyncU3Ed__150_MoveNext_m251EBEB88C7AFF1704692697D519431472789855 (void);
-// 0x00000597 System.Void Defective.JSON.JSONObject/<PrintAsync>d__150::<>m__Finally1()
+// 0x000005A6 System.Void Defective.JSON.JSONObject/<PrintAsync>d__150::<>m__Finally1()
 extern void U3CPrintAsyncU3Ed__150_U3CU3Em__Finally1_m10EEA6A1EB84CF55DF1C743A340AE69AE810F4B0 (void);
-// 0x00000598 System.Boolean Defective.JSON.JSONObject/<PrintAsync>d__150::System.Collections.Generic.IEnumerator<System.Boolean>.get_Current()
+// 0x000005A7 System.Boolean Defective.JSON.JSONObject/<PrintAsync>d__150::System.Collections.Generic.IEnumerator<System.Boolean>.get_Current()
 extern void U3CPrintAsyncU3Ed__150_System_Collections_Generic_IEnumeratorU3CSystem_BooleanU3E_get_Current_mF1C6BCB28673297F1AA1A681548F3DF10AAA6989 (void);
-// 0x00000599 System.Void Defective.JSON.JSONObject/<PrintAsync>d__150::System.Collections.IEnumerator.Reset()
+// 0x000005A8 System.Void Defective.JSON.JSONObject/<PrintAsync>d__150::System.Collections.IEnumerator.Reset()
 extern void U3CPrintAsyncU3Ed__150_System_Collections_IEnumerator_Reset_mE4D085DF8B4212A0D33E59FD2D847DB44C06B96F (void);
-// 0x0000059A System.Object Defective.JSON.JSONObject/<PrintAsync>d__150::System.Collections.IEnumerator.get_Current()
+// 0x000005A9 System.Object Defective.JSON.JSONObject/<PrintAsync>d__150::System.Collections.IEnumerator.get_Current()
 extern void U3CPrintAsyncU3Ed__150_System_Collections_IEnumerator_get_Current_m908047DAA62DB9145F4DACF8F9FB95DB58922BAE (void);
-// 0x0000059B System.Collections.Generic.IEnumerator`1<System.Boolean> Defective.JSON.JSONObject/<PrintAsync>d__150::System.Collections.Generic.IEnumerable<System.Boolean>.GetEnumerator()
+// 0x000005AA System.Collections.Generic.IEnumerator`1<System.Boolean> Defective.JSON.JSONObject/<PrintAsync>d__150::System.Collections.Generic.IEnumerable<System.Boolean>.GetEnumerator()
 extern void U3CPrintAsyncU3Ed__150_System_Collections_Generic_IEnumerableU3CSystem_BooleanU3E_GetEnumerator_m997250CFD5A6FA17271B571F3E1EC34793CDA7FC (void);
-// 0x0000059C System.Collections.IEnumerator Defective.JSON.JSONObject/<PrintAsync>d__150::System.Collections.IEnumerable.GetEnumerator()
+// 0x000005AB System.Collections.IEnumerator Defective.JSON.JSONObject/<PrintAsync>d__150::System.Collections.IEnumerable.GetEnumerator()
 extern void U3CPrintAsyncU3Ed__150_System_Collections_IEnumerable_GetEnumerator_m4893D8CA6FD5931114FC3C81157ABA7D5709BF80 (void);
-// 0x0000059D System.Void Defective.JSON.JSONObject/<StringifyAsync>d__151::.ctor(System.Int32)
+// 0x000005AC System.Void Defective.JSON.JSONObject/<StringifyAsync>d__151::.ctor(System.Int32)
 extern void U3CStringifyAsyncU3Ed__151__ctor_m431EC10F7D319E0D9066CB2CF5652777EEE06710 (void);
-// 0x0000059E System.Void Defective.JSON.JSONObject/<StringifyAsync>d__151::System.IDisposable.Dispose()
+// 0x000005AD System.Void Defective.JSON.JSONObject/<StringifyAsync>d__151::System.IDisposable.Dispose()
 extern void U3CStringifyAsyncU3Ed__151_System_IDisposable_Dispose_m3DC6E25A6099F5A4A3CAA8DCD3DAF34BF992E8C9 (void);
-// 0x0000059F System.Boolean Defective.JSON.JSONObject/<StringifyAsync>d__151::MoveNext()
+// 0x000005AE System.Boolean Defective.JSON.JSONObject/<StringifyAsync>d__151::MoveNext()
 extern void U3CStringifyAsyncU3Ed__151_MoveNext_m175359E6B36A4C33024C9E7194418CE7140B2E77 (void);
-// 0x000005A0 System.Void Defective.JSON.JSONObject/<StringifyAsync>d__151::<>m__Finally1()
+// 0x000005AF System.Void Defective.JSON.JSONObject/<StringifyAsync>d__151::<>m__Finally1()
 extern void U3CStringifyAsyncU3Ed__151_U3CU3Em__Finally1_mFB20068ACECE12AA238F2B15582D91F028AA5D9A (void);
-// 0x000005A1 System.Void Defective.JSON.JSONObject/<StringifyAsync>d__151::<>m__Finally2()
+// 0x000005B0 System.Void Defective.JSON.JSONObject/<StringifyAsync>d__151::<>m__Finally2()
 extern void U3CStringifyAsyncU3Ed__151_U3CU3Em__Finally2_m5795F8F66E7F31EF7065C39EE2F3CE5CF13EE6BB (void);
-// 0x000005A2 System.Boolean Defective.JSON.JSONObject/<StringifyAsync>d__151::System.Collections.Generic.IEnumerator<System.Boolean>.get_Current()
+// 0x000005B1 System.Boolean Defective.JSON.JSONObject/<StringifyAsync>d__151::System.Collections.Generic.IEnumerator<System.Boolean>.get_Current()
 extern void U3CStringifyAsyncU3Ed__151_System_Collections_Generic_IEnumeratorU3CSystem_BooleanU3E_get_Current_m6E8641FD259E1929CC83CC80EC82BE957097B583 (void);
-// 0x000005A3 System.Void Defective.JSON.JSONObject/<StringifyAsync>d__151::System.Collections.IEnumerator.Reset()
+// 0x000005B2 System.Void Defective.JSON.JSONObject/<StringifyAsync>d__151::System.Collections.IEnumerator.Reset()
 extern void U3CStringifyAsyncU3Ed__151_System_Collections_IEnumerator_Reset_mEB9387ED69228D7ED831E32806465936F4D15457 (void);
-// 0x000005A4 System.Object Defective.JSON.JSONObject/<StringifyAsync>d__151::System.Collections.IEnumerator.get_Current()
+// 0x000005B3 System.Object Defective.JSON.JSONObject/<StringifyAsync>d__151::System.Collections.IEnumerator.get_Current()
 extern void U3CStringifyAsyncU3Ed__151_System_Collections_IEnumerator_get_Current_mA7646311D069728C29D468D1BB52E7E3A669F2DE (void);
-// 0x000005A5 System.Collections.Generic.IEnumerator`1<System.Boolean> Defective.JSON.JSONObject/<StringifyAsync>d__151::System.Collections.Generic.IEnumerable<System.Boolean>.GetEnumerator()
+// 0x000005B4 System.Collections.Generic.IEnumerator`1<System.Boolean> Defective.JSON.JSONObject/<StringifyAsync>d__151::System.Collections.Generic.IEnumerable<System.Boolean>.GetEnumerator()
 extern void U3CStringifyAsyncU3Ed__151_System_Collections_Generic_IEnumerableU3CSystem_BooleanU3E_GetEnumerator_mDEB59307F203A6EB9198E973CB1AA9D34C860177 (void);
-// 0x000005A6 System.Collections.IEnumerator Defective.JSON.JSONObject/<StringifyAsync>d__151::System.Collections.IEnumerable.GetEnumerator()
+// 0x000005B5 System.Collections.IEnumerator Defective.JSON.JSONObject/<StringifyAsync>d__151::System.Collections.IEnumerable.GetEnumerator()
 extern void U3CStringifyAsyncU3Ed__151_System_Collections_IEnumerable_GetEnumerator_m1CC71AF236FF0CEA752F2964E2F3FDE1E1838E48 (void);
-// 0x000005A7 System.Void Defective.JSON.JSONObjectEnumerator::.ctor(Defective.JSON.JSONObject)
+// 0x000005B6 System.Void Defective.JSON.JSONObjectEnumerator::.ctor(Defective.JSON.JSONObject)
 extern void JSONObjectEnumerator__ctor_m24FA52671B6CD2C9492B8273FD881FA9B0499383 (void);
-// 0x000005A8 System.Boolean Defective.JSON.JSONObjectEnumerator::MoveNext()
+// 0x000005B7 System.Boolean Defective.JSON.JSONObjectEnumerator::MoveNext()
 extern void JSONObjectEnumerator_MoveNext_m2425B8A23491F18F8C0D41C9271BA35057422A64 (void);
-// 0x000005A9 System.Void Defective.JSON.JSONObjectEnumerator::Reset()
+// 0x000005B8 System.Void Defective.JSON.JSONObjectEnumerator::Reset()
 extern void JSONObjectEnumerator_Reset_mB699A9DE360AB13B85F0DB535DAEB0DECBE70EC3 (void);
-// 0x000005AA System.Object Defective.JSON.JSONObjectEnumerator::System.Collections.IEnumerator.get_Current()
+// 0x000005B9 System.Object Defective.JSON.JSONObjectEnumerator::System.Collections.IEnumerator.get_Current()
 extern void JSONObjectEnumerator_System_Collections_IEnumerator_get_Current_m40EE8D11793F1C74EFD9EC85C9BB17FC2455AC75 (void);
-// 0x000005AB Defective.JSON.JSONObject Defective.JSON.JSONObjectEnumerator::get_Current()
+// 0x000005BA Defective.JSON.JSONObject Defective.JSON.JSONObjectEnumerator::get_Current()
 extern void JSONObjectEnumerator_get_Current_m10B9A8901D2BB6CB9D84B23AEF44B25271762D8F (void);
-// 0x000005AC UnityEngine.Vector2 Defective.JSON.JSONTemplates::ToVector2(Defective.JSON.JSONObject)
+// 0x000005BB UnityEngine.Vector2 Defective.JSON.JSONTemplates::ToVector2(Defective.JSON.JSONObject)
 extern void JSONTemplates_ToVector2_m907C8504B02B8810C656D630E9D898EC3E6FE77E (void);
-// 0x000005AD Defective.JSON.JSONObject Defective.JSON.JSONTemplates::FromVector2(UnityEngine.Vector2)
+// 0x000005BC Defective.JSON.JSONObject Defective.JSON.JSONTemplates::FromVector2(UnityEngine.Vector2)
 extern void JSONTemplates_FromVector2_mA89194DA08FC7DC205E476F7E3E6EC839ED48A97 (void);
-// 0x000005AE Defective.JSON.JSONObject Defective.JSON.JSONTemplates::ToJson(UnityEngine.Vector2)
+// 0x000005BD Defective.JSON.JSONObject Defective.JSON.JSONTemplates::ToJson(UnityEngine.Vector2)
 extern void JSONTemplates_ToJson_m013A4E9549854F111C5D938B8A9842C29490C91E (void);
-// 0x000005AF Defective.JSON.JSONObject Defective.JSON.JSONTemplates::FromVector3(UnityEngine.Vector3)
+// 0x000005BE Defective.JSON.JSONObject Defective.JSON.JSONTemplates::FromVector3(UnityEngine.Vector3)
 extern void JSONTemplates_FromVector3_m49654ECF0EAA54908EC8E8B8369EEFAC64785EDD (void);
-// 0x000005B0 UnityEngine.Vector3 Defective.JSON.JSONTemplates::ToVector3(Defective.JSON.JSONObject)
+// 0x000005BF UnityEngine.Vector3 Defective.JSON.JSONTemplates::ToVector3(Defective.JSON.JSONObject)
 extern void JSONTemplates_ToVector3_m6AC67D89FDF38C990FDB42238D6756F75E273B2E (void);
-// 0x000005B1 Defective.JSON.JSONObject Defective.JSON.JSONTemplates::ToJson(UnityEngine.Vector3)
+// 0x000005C0 Defective.JSON.JSONObject Defective.JSON.JSONTemplates::ToJson(UnityEngine.Vector3)
 extern void JSONTemplates_ToJson_mBF5E9520D70018F88C81B8EEA34A319BAD0E650A (void);
-// 0x000005B2 Defective.JSON.JSONObject Defective.JSON.JSONTemplates::FromVector4(UnityEngine.Vector4)
+// 0x000005C1 Defective.JSON.JSONObject Defective.JSON.JSONTemplates::FromVector4(UnityEngine.Vector4)
 extern void JSONTemplates_FromVector4_m039AF2BCB47A3B6DC6D7E9AA45ED957E39F76807 (void);
-// 0x000005B3 UnityEngine.Vector4 Defective.JSON.JSONTemplates::ToVector4(Defective.JSON.JSONObject)
+// 0x000005C2 UnityEngine.Vector4 Defective.JSON.JSONTemplates::ToVector4(Defective.JSON.JSONObject)
 extern void JSONTemplates_ToVector4_m57C3A004D31C90C95CB27BEB976542E2603DD440 (void);
-// 0x000005B4 Defective.JSON.JSONObject Defective.JSON.JSONTemplates::ToJson(UnityEngine.Vector4)
+// 0x000005C3 Defective.JSON.JSONObject Defective.JSON.JSONTemplates::ToJson(UnityEngine.Vector4)
 extern void JSONTemplates_ToJson_mDE33DFC7F975FB1CB9656826A8A6062CEFA81441 (void);
-// 0x000005B5 Defective.JSON.JSONObject Defective.JSON.JSONTemplates::FromMatrix4x4(UnityEngine.Matrix4x4)
+// 0x000005C4 Defective.JSON.JSONObject Defective.JSON.JSONTemplates::FromMatrix4x4(UnityEngine.Matrix4x4)
 extern void JSONTemplates_FromMatrix4x4_m2ABDFC006C1FD6882EFC599ACC6869CD532C478C (void);
-// 0x000005B6 UnityEngine.Matrix4x4 Defective.JSON.JSONTemplates::ToMatrix4x4(Defective.JSON.JSONObject)
+// 0x000005C5 UnityEngine.Matrix4x4 Defective.JSON.JSONTemplates::ToMatrix4x4(Defective.JSON.JSONObject)
 extern void JSONTemplates_ToMatrix4x4_mAAD26EB8496C6E738F0140F8F979896C501B7E34 (void);
-// 0x000005B7 Defective.JSON.JSONObject Defective.JSON.JSONTemplates::ToJson(UnityEngine.Matrix4x4)
+// 0x000005C6 Defective.JSON.JSONObject Defective.JSON.JSONTemplates::ToJson(UnityEngine.Matrix4x4)
 extern void JSONTemplates_ToJson_mF5EAD8C048D0383EDD7EB132BDBDC7705796ACAC (void);
-// 0x000005B8 Defective.JSON.JSONObject Defective.JSON.JSONTemplates::FromQuaternion(UnityEngine.Quaternion)
+// 0x000005C7 Defective.JSON.JSONObject Defective.JSON.JSONTemplates::FromQuaternion(UnityEngine.Quaternion)
 extern void JSONTemplates_FromQuaternion_m7772B7596A359F0504635A1281ED4D48A74AFB88 (void);
-// 0x000005B9 UnityEngine.Quaternion Defective.JSON.JSONTemplates::ToQuaternion(Defective.JSON.JSONObject)
+// 0x000005C8 UnityEngine.Quaternion Defective.JSON.JSONTemplates::ToQuaternion(Defective.JSON.JSONObject)
 extern void JSONTemplates_ToQuaternion_m6FD13036E75498A34F26A575E019BC56B616F5C2 (void);
-// 0x000005BA Defective.JSON.JSONObject Defective.JSON.JSONTemplates::ToJson(UnityEngine.Quaternion)
+// 0x000005C9 Defective.JSON.JSONObject Defective.JSON.JSONTemplates::ToJson(UnityEngine.Quaternion)
 extern void JSONTemplates_ToJson_mC68CE8D59160EAF7556A52D454665CB86138F647 (void);
-// 0x000005BB Defective.JSON.JSONObject Defective.JSON.JSONTemplates::FromColor(UnityEngine.Color)
+// 0x000005CA Defective.JSON.JSONObject Defective.JSON.JSONTemplates::FromColor(UnityEngine.Color)
 extern void JSONTemplates_FromColor_mC98BFA31A9ABAA2B2F9473071DFE2E6537E9AEC9 (void);
-// 0x000005BC UnityEngine.Color Defective.JSON.JSONTemplates::ToColor(Defective.JSON.JSONObject)
+// 0x000005CB UnityEngine.Color Defective.JSON.JSONTemplates::ToColor(Defective.JSON.JSONObject)
 extern void JSONTemplates_ToColor_mA36CA264042529063B6E85FBB329C044E5199590 (void);
-// 0x000005BD Defective.JSON.JSONObject Defective.JSON.JSONTemplates::ToJson(UnityEngine.Color)
+// 0x000005CC Defective.JSON.JSONObject Defective.JSON.JSONTemplates::ToJson(UnityEngine.Color)
 extern void JSONTemplates_ToJson_mF2B8431572659AFCE873EA4EED15754421BBEF61 (void);
-// 0x000005BE Defective.JSON.JSONObject Defective.JSON.JSONTemplates::FromLayerMask(UnityEngine.LayerMask)
+// 0x000005CD Defective.JSON.JSONObject Defective.JSON.JSONTemplates::FromLayerMask(UnityEngine.LayerMask)
 extern void JSONTemplates_FromLayerMask_mEA15F20E090D0B596A08E3C00222CFF7EEE3EFA0 (void);
-// 0x000005BF UnityEngine.LayerMask Defective.JSON.JSONTemplates::ToLayerMask(Defective.JSON.JSONObject)
+// 0x000005CE UnityEngine.LayerMask Defective.JSON.JSONTemplates::ToLayerMask(Defective.JSON.JSONObject)
 extern void JSONTemplates_ToLayerMask_mCA053792639D2BBF8391DB7515768E8BADE2B9FD (void);
-// 0x000005C0 Defective.JSON.JSONObject Defective.JSON.JSONTemplates::ToJson(UnityEngine.LayerMask)
+// 0x000005CF Defective.JSON.JSONObject Defective.JSON.JSONTemplates::ToJson(UnityEngine.LayerMask)
 extern void JSONTemplates_ToJson_m95F03E0699FB120574EB1F5FA77CE2D4D000D515 (void);
-// 0x000005C1 Defective.JSON.JSONObject Defective.JSON.JSONTemplates::FromRect(UnityEngine.Rect)
+// 0x000005D0 Defective.JSON.JSONObject Defective.JSON.JSONTemplates::FromRect(UnityEngine.Rect)
 extern void JSONTemplates_FromRect_m689B0315243A82641210F853BB06A40FDEFF5D67 (void);
-// 0x000005C2 UnityEngine.Rect Defective.JSON.JSONTemplates::ToRect(Defective.JSON.JSONObject)
+// 0x000005D1 UnityEngine.Rect Defective.JSON.JSONTemplates::ToRect(Defective.JSON.JSONObject)
 extern void JSONTemplates_ToRect_m6291CA93380396ACE64CE21EA006B7011540120B (void);
-// 0x000005C3 Defective.JSON.JSONObject Defective.JSON.JSONTemplates::ToJson(UnityEngine.Rect)
+// 0x000005D2 Defective.JSON.JSONObject Defective.JSON.JSONTemplates::ToJson(UnityEngine.Rect)
 extern void JSONTemplates_ToJson_mBACE7EAEDB6A93E39257894E102639A853ACFF0D (void);
-// 0x000005C4 Defective.JSON.JSONObject Defective.JSON.JSONTemplates::FromRectOffset(UnityEngine.RectOffset)
+// 0x000005D3 Defective.JSON.JSONObject Defective.JSON.JSONTemplates::FromRectOffset(UnityEngine.RectOffset)
 extern void JSONTemplates_FromRectOffset_m69440B729EBC1F1F7257C77EEB88591D4EA91D5E (void);
-// 0x000005C5 UnityEngine.RectOffset Defective.JSON.JSONTemplates::ToRectOffset(Defective.JSON.JSONObject)
+// 0x000005D4 UnityEngine.RectOffset Defective.JSON.JSONTemplates::ToRectOffset(Defective.JSON.JSONObject)
 extern void JSONTemplates_ToRectOffset_m22869103AAC6522411F6A9CA81CC1177961BDF17 (void);
-// 0x000005C6 Defective.JSON.JSONObject Defective.JSON.JSONTemplates::ToJson(UnityEngine.RectOffset)
+// 0x000005D5 Defective.JSON.JSONObject Defective.JSON.JSONTemplates::ToJson(UnityEngine.RectOffset)
 extern void JSONTemplates_ToJson_mE70A2549DDF5BD2A2E56B5949C4FE6BB0D67E6E3 (void);
-static Il2CppMethodPointer s_methodPointers[1478] = 
+static Il2CppMethodPointer s_methodPointers[1493] = 
 {
 	LeanAudioStream__ctor_m89A93BBB6C83C4597B0AE6004BBCE393CA574412,
 	LeanAudioStream_OnAudioRead_m635E6EC51B4B3A5E44559194A0FE44767F95DF0B,
@@ -3975,7 +4005,12 @@ static Il2CppMethodPointer s_methodPointers[1478] =
 	NotificationsManager_SendNotification_m1CB16D1B01A6966DDE61B100F0119F51F1DF6C36,
 	NotificationsManager_OnApplicationFocus_mB32219E056ABD97E30F6206E3EE6CA1596371F6D,
 	NotificationsManager_Update_m17A57909F857F7EA106E4D92BF8ACCACE19D42E4,
+	NotificationsManager_OnLanguageChange_mB1D17A49392F0F8793BBE3EFA5980700580BDC6D,
 	NotificationsManager__ctor_m1408D6F2F3E8C3D269591FA75D2843EB478AEF86,
+	U3CStartU3Ed__7_MoveNext_m4F66E53AA0AE0EC782F86D66A46E188C29AB5E54,
+	U3CStartU3Ed__7_SetStateMachine_m40F374C8C057765D2575A7A345C16489539DE49D,
+	U3COnLanguageChangeU3Ed__11_MoveNext_m61796505921325E3C5B535BB0614203BA9EC4F9A,
+	U3COnLanguageChangeU3Ed__11_SetStateMachine_m4DF38859C8783FD52EC220CDD0955C46E4AC9501,
 	Test_Awake_m13A7B7938BA67D1CD19AE89EA693B5E3D32580AD,
 	Test_Start_mA902842AF55C0A063D71F22B280F28BF0FB01497,
 	Test__ctor_mB84DF4A3888723C395E76E3879FDFB8AA1EFEDCB,
@@ -4109,7 +4144,7 @@ static Il2CppMethodPointer s_methodPointers[1478] =
 	LoginContoller_ValueChangeCheck_m102418AE2B67DBBA8414CDD1CDDDD8A8E9C0AE6B,
 	LoginContoller_NextButtonClicked_mB5D01957EC734B2C12A83BBB17369BFF8D5E83DF,
 	LoginContoller__ctor_m80BE2013A4B45BBEAEC55052EC74D92DE240023F,
-	LoginContoller_U3CAwakeU3Eb__5_0_m3FA65BEE8A1E3AD38FD8141B4AD29B3571FA18F9,
+	LoginContoller_U3CAwakeU3Eb__7_0_mA338EF412C07501EB7332C7A5154885E1281B9A6,
 	NotificationPreferences_Awake_m3386EE85B77E064004F9676B0E6D7DE77F90967A,
 	NotificationPreferences_Start_m792C96C8FDD35C35F8A72E4E763A923C296A3FC1,
 	NotificationPreferences_Update_m76C47740B669F8A5408D2FB24456ED1E9B2E3C8F,
@@ -4119,6 +4154,16 @@ static Il2CppMethodPointer s_methodPointers[1478] =
 	ParentScreenUnlocker_OnTriggerExit2D_mBC00C7CAE08E56EDCC24C9C93B7BAC662748A330,
 	ParentScreenUnlocker_OnPointerUp_m58986AFD131388F75373009796920AB94EA18A3B,
 	ParentScreenUnlocker__ctor_mDF63AA4D3064F72A34A1BC678F064009A4DDC9CD,
+	PermissionNotificationScreen_OnOkButtonClick_mB9089CE51F11420D8D6EE5D58242575DE9E236CD,
+	PermissionNotificationScreen_RequestAuthorization_m8D0025E6C50613017D763125F6C94F9D7D226702,
+	PermissionNotificationScreen__ctor_m655E6410D4A1DB6125020EFB0BB4447EEA7D3A06,
+	U3CRequestAuthorizationU3Ed__1__ctor_mC99CA483C335B8A0E0AE38480BDAA3F2CBF51CC2,
+	U3CRequestAuthorizationU3Ed__1_System_IDisposable_Dispose_m022447354B15D1151CCD9ED9334235A66E4E1525,
+	U3CRequestAuthorizationU3Ed__1_MoveNext_m87879A4D7139AB3ACA45E37B3498701851B68C95,
+	U3CRequestAuthorizationU3Ed__1_U3CU3Em__Finally1_mBA796B70284A298C5A3782FD201ECF88596ABA60,
+	U3CRequestAuthorizationU3Ed__1_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m23770DD6036848BB43E9CA3846AF00FD64538861,
+	U3CRequestAuthorizationU3Ed__1_System_Collections_IEnumerator_Reset_m05FE9528721B551BA51BA0307C4992E489F5AD26,
+	U3CRequestAuthorizationU3Ed__1_System_Collections_IEnumerator_get_Current_mFD9D48E0451CF68F583782FCCC35DACBB01E69D2,
 	ProfileEditor_Awake_m76260DCD998D5776F26996456EDE814308E370F0,
 	ProfileEditor_Start_m8D089826AE0483C1371699E8B41F1C7F1FF8E47C,
 	ProfileEditor_Update_mDE07E344B8A871983E8B79823C0102B30A8A7AF3,
@@ -4496,6 +4541,10 @@ extern void U3CChangeTTSU3Ed__15_MoveNext_m0BAFFA4F3F6B2A8791BE484ACFCFBA49F3210
 extern void U3CChangeTTSU3Ed__15_SetStateMachine_m0AA017558C11488FFE79217BE66345A97A2297F7_AdjustorThunk (void);
 extern void U3COnLanguageChangeU3Ed__16_MoveNext_mF150C325AFD42A2BC2BEBC33AF087EF8D2CB58D0_AdjustorThunk (void);
 extern void U3COnLanguageChangeU3Ed__16_SetStateMachine_mA35D17EF2684D8C1C4BCFA092502E27C49286C0F_AdjustorThunk (void);
+extern void U3CStartU3Ed__7_MoveNext_m4F66E53AA0AE0EC782F86D66A46E188C29AB5E54_AdjustorThunk (void);
+extern void U3CStartU3Ed__7_SetStateMachine_m40F374C8C057765D2575A7A345C16489539DE49D_AdjustorThunk (void);
+extern void U3COnLanguageChangeU3Ed__11_MoveNext_m61796505921325E3C5B535BB0614203BA9EC4F9A_AdjustorThunk (void);
+extern void U3COnLanguageChangeU3Ed__11_SetStateMachine_m4DF38859C8783FD52EC220CDD0955C46E4AC9501_AdjustorThunk (void);
 extern void U3CStartU3Ed__10_MoveNext_m8C78F9CA57E16BEA0C83E0554E02FF13FAF3246D_AdjustorThunk (void);
 extern void U3CStartU3Ed__10_SetStateMachine_m167132F8F9DA2E7E3FF873188B65236E359E6685_AdjustorThunk (void);
 extern void U3CDisplayPacksU3Ed__19_MoveNext_m342D5B3B9A70211E6FD61306418F1DEAF03F3227_AdjustorThunk (void);
@@ -4551,7 +4600,7 @@ extern void U3COnEnableU3Ed__8_SetStateMachine_m320FF91CFBC96334E8D4667C1B834F32
 extern void U3CStartU3Ed__15_MoveNext_m7972D36BD9D8E5369045ECC5DD68F469C33F75A3_AdjustorThunk (void);
 extern void U3CStartU3Ed__15_SetStateMachine_mFC41C53F7619FC10A21BA42667FEA5858E3F55AB_AdjustorThunk (void);
 extern void ParseResult__ctor_mDA43943FF52FA215B90721EAB7B90A71DCF387BC_AdjustorThunk (void);
-static Il2CppTokenAdjustorThunkPair s_adjustorThunks[105] = 
+static Il2CppTokenAdjustorThunkPair s_adjustorThunks[109] = 
 {
 	{ 0x0600039F, U3CAwakeU3Ed__7_MoveNext_mC26DB3A102BF16D413B7AF0FEC0005631882F6AD_AdjustorThunk },
 	{ 0x060003A0, U3CAwakeU3Ed__7_SetStateMachine_mE495C67E2BEAC375699EB63D6032D2F26B55494B_AdjustorThunk },
@@ -4603,63 +4652,67 @@ static Il2CppTokenAdjustorThunkPair s_adjustorThunks[105] =
 	{ 0x060003E9, U3CChangeTTSU3Ed__15_SetStateMachine_m0AA017558C11488FFE79217BE66345A97A2297F7_AdjustorThunk },
 	{ 0x060003EA, U3COnLanguageChangeU3Ed__16_MoveNext_mF150C325AFD42A2BC2BEBC33AF087EF8D2CB58D0_AdjustorThunk },
 	{ 0x060003EB, U3COnLanguageChangeU3Ed__16_SetStateMachine_mA35D17EF2684D8C1C4BCFA092502E27C49286C0F_AdjustorThunk },
-	{ 0x060003F5, U3CStartU3Ed__10_MoveNext_m8C78F9CA57E16BEA0C83E0554E02FF13FAF3246D_AdjustorThunk },
-	{ 0x060003F6, U3CStartU3Ed__10_SetStateMachine_m167132F8F9DA2E7E3FF873188B65236E359E6685_AdjustorThunk },
-	{ 0x06000408, U3CDisplayPacksU3Ed__19_MoveNext_m342D5B3B9A70211E6FD61306418F1DEAF03F3227_AdjustorThunk },
-	{ 0x06000409, U3CDisplayPacksU3Ed__19_SetStateMachine_mF7B499FF9EDD4DAB71B4BE0C8C48EE8CCB4881FA_AdjustorThunk },
-	{ 0x0600040A, U3CDisplayCardsU3Ed__20_MoveNext_m9905EFA9B5BFB735AA0D6F3126B711648897B354_AdjustorThunk },
-	{ 0x0600040B, U3CDisplayCardsU3Ed__20_SetStateMachine_mA394E019141A87807BC3D1C1C5041893FF4D0B8A_AdjustorThunk },
-	{ 0x0600040C, U3CDisplayLanguagesU3Ed__21_MoveNext_m8ABF0FA1444A2EF2B6AB535BE1AF169C6E526346_AdjustorThunk },
-	{ 0x0600040D, U3CDisplayLanguagesU3Ed__21_SetStateMachine_m0777B57FBB282CA0AD0DC7B94CE0261ECF8CBAB7_AdjustorThunk },
-	{ 0x0600040E, U3CDisplayActivitiesU3Ed__22_MoveNext_m354BEE7FAC5FA045181CA408EAEAA79133968336_AdjustorThunk },
-	{ 0x0600040F, U3CDisplayActivitiesU3Ed__22_SetStateMachine_m2489022C1050EBF9AD72F91301DCFEA50467D6F5_AdjustorThunk },
-	{ 0x06000410, U3CDisplayActivityImageU3Ed__23_MoveNext_mE735F371EB86A80FC7619E74D28F9247DC1DC1D4_AdjustorThunk },
-	{ 0x06000411, U3CDisplayActivityImageU3Ed__23_SetStateMachine_m47FE140A94BA0D513735ACFA1ED6471CFEFE972B_AdjustorThunk },
-	{ 0x06000412, U3CDisplayAvatarImageU3Ed__24_MoveNext_m9F6BC17C3AA1303C880E082E74DCE1210BE10C7E_AdjustorThunk },
-	{ 0x06000413, U3CDisplayAvatarImageU3Ed__24_SetStateMachine_m49FBDB50C69329FA45E2E966D1E903B6DCC0FDEE_AdjustorThunk },
-	{ 0x06000414, U3CDisplayPackImageU3Ed__25_MoveNext_mE61039CE9516A0543C7E888F862BFE0B8346F3AE_AdjustorThunk },
-	{ 0x06000415, U3CDisplayPackImageU3Ed__25_SetStateMachine_m2DB73B8A0396C945C391F18C6C836008871E1BD8_AdjustorThunk },
-	{ 0x06000416, U3CDisplayCardImageU3Ed__26_MoveNext_m9CCF7A55FEBBA2BFDB224253CEB5A1FE73912C8E_AdjustorThunk },
-	{ 0x06000417, U3CDisplayCardImageU3Ed__26_SetStateMachine_m1343E70728A3F67DF488A24A9D37EC30C0CEEC1F_AdjustorThunk },
-	{ 0x06000418, U3CDisplayAppIconU3Ed__27_MoveNext_m9AD08908DD99D73FC1283492917505FDC3CF6DCF_AdjustorThunk },
-	{ 0x06000419, U3CDisplayAppIconU3Ed__27_SetStateMachine_m02EED08832CC2442DFEAA729D30DC924C593A064_AdjustorThunk },
-	{ 0x0600041A, U3CDisplayAppsU3Ed__28_MoveNext_m55A09B50877917D32A093D6CCA64B8793099A190_AdjustorThunk },
-	{ 0x0600041B, U3CDisplayAppsU3Ed__28_SetStateMachine_mE8BD8FED396B39EF1E588BE0BF59C09E30CA752A_AdjustorThunk },
-	{ 0x06000420, U3CStartU3Ed__7_MoveNext_m7677323B4EEACCE930BD9EFD802858705115A6F9_AdjustorThunk },
-	{ 0x06000421, U3CStartU3Ed__7_SetStateMachine_mA97B8BD94D1F2DFB7C1699633A0838363DA52748_AdjustorThunk },
-	{ 0x06000422, U3CU3CStartU3Eb__7_0U3Ed_MoveNext_m1F5C7EDD819A8C5D051520E843922F33B3651F6F_AdjustorThunk },
-	{ 0x06000423, U3CU3CStartU3Eb__7_0U3Ed_SetStateMachine_m1176315AB33EC39D2A2D580877D4B63F138A7C54_AdjustorThunk },
-	{ 0x0600042A, U3CStartU3Ed__23_MoveNext_m997D2701A5CF8B3392248267EF07D2C536F7464D_AdjustorThunk },
-	{ 0x0600042B, U3CStartU3Ed__23_SetStateMachine_mEF764A8E107A5D1DB836C9EEFABC6C611ECDC8EF_AdjustorThunk },
-	{ 0x0600042C, U3CSaveSettingsU3Ed__25_MoveNext_m381C99D6101228E7EA6609F16780257A4192BC4F_AdjustorThunk },
-	{ 0x0600042D, U3CSaveSettingsU3Ed__25_SetStateMachine_m00FF00CF27A379A49A661488169A76F694213C2A_AdjustorThunk },
-	{ 0x0600042E, U3CSignOutU3Ed__26_MoveNext_mA4867CD3723E0AC9DAFE497F6D3B32E29F6703C9_AdjustorThunk },
-	{ 0x0600042F, U3CSignOutU3Ed__26_SetStateMachine_mFB039D2423044CB846DD8ACBF35B6044CCBBF704_AdjustorThunk },
-	{ 0x0600044A, U3CStartU3Ed__6_MoveNext_m4E7D940A22DC0A609FE41688338CDABEB7FC62C0_AdjustorThunk },
-	{ 0x0600044B, U3CStartU3Ed__6_SetStateMachine_m0E74B5E77CB9557285C273A64348878DF1F4B22E_AdjustorThunk },
-	{ 0x0600044C, U3CU3CStartU3Eb__6_0U3Ed_MoveNext_mC36B26B58EE53CF44CCD259515F96648EE262484_AdjustorThunk },
-	{ 0x0600044D, U3CU3CStartU3Eb__6_0U3Ed_SetStateMachine_mF5553CCCBF644B11858F0F30A59B6C25E1E0D608_AdjustorThunk },
-	{ 0x06000456, U3CAvatarListCreateU3Ed__13_MoveNext_m07813F501564571C073F97316E270A8839FC3187_AdjustorThunk },
-	{ 0x06000457, U3CAvatarListCreateU3Ed__13_SetStateMachine_m757388713B6A4927FCDD29C9AB27C6E0E6DB26AD_AdjustorThunk },
-	{ 0x06000458, U3CSelectAvatarU3Ed__14_MoveNext_mCC20E3666D59917D036026317752BD08EEA358C8_AdjustorThunk },
-	{ 0x06000459, U3CSelectAvatarU3Ed__14_SetStateMachine_mAD5814AD47305666618432A386199774C7B7B81F_AdjustorThunk },
-	{ 0x06000469, U3CStartU3Ed__21_MoveNext_m24929719113933C0908FDA3E9414437FD3B708F5_AdjustorThunk },
-	{ 0x0600046A, U3CStartU3Ed__21_SetStateMachine_m7949EA1EDC39BA495A3EA5EA270BF4C13DF7DF9C_AdjustorThunk },
-	{ 0x0600046B, U3CProfilePanelUpdateU3Ed__33_MoveNext_mF54CA82EC24B6A93111EAC7F0FF12F5DA94526C1_AdjustorThunk },
-	{ 0x0600046C, U3CProfilePanelUpdateU3Ed__33_SetStateMachine_mAAC9079BB29AD213649B3D5342B47C0791DB44C0_AdjustorThunk },
-	{ 0x06000486, U3CStartU3Ed__7_MoveNext_m997968E9DF56DB45666E52494DDB01A9D32540DE_AdjustorThunk },
-	{ 0x06000487, U3CStartU3Ed__7_SetStateMachine_m5FD543AC041DD36F31D5CE648B03C83218867384_AdjustorThunk },
-	{ 0x06000493, U3CStartU3Ed__9_MoveNext_m056259285A25794042FF4FE35902457D23E96445_AdjustorThunk },
-	{ 0x06000494, U3CStartU3Ed__9_SetStateMachine_m6A5719384D90EBC2F7FA81CE88E1E8173C62FE7B_AdjustorThunk },
-	{ 0x0600049A, U3CSaveButtonClickedU3Ed__18_MoveNext_m9A2BDE4CDE01B92BB81A6C112C11D6D2731BA2DC_AdjustorThunk },
-	{ 0x0600049B, U3CSaveButtonClickedU3Ed__18_SetStateMachine_m148F3E9700F8A2355E91C4ADA95D87D541BD9D60_AdjustorThunk },
-	{ 0x060004A0, U3COnEnableU3Ed__8_MoveNext_m6AA7E3F8D8973F721371C06191FEEDBD2FC5B711_AdjustorThunk },
-	{ 0x060004A1, U3COnEnableU3Ed__8_SetStateMachine_m320FF91CFBC96334E8D4667C1B834F3275A1737F_AdjustorThunk },
-	{ 0x060004AD, U3CStartU3Ed__15_MoveNext_m7972D36BD9D8E5369045ECC5DD68F469C33F75A3_AdjustorThunk },
-	{ 0x060004AE, U3CStartU3Ed__15_SetStateMachine_mFC41C53F7619FC10A21BA42667FEA5858E3F55AB_AdjustorThunk },
-	{ 0x06000562, ParseResult__ctor_mDA43943FF52FA215B90721EAB7B90A71DCF387BC_AdjustorThunk },
+	{ 0x060003F3, U3CStartU3Ed__7_MoveNext_m4F66E53AA0AE0EC782F86D66A46E188C29AB5E54_AdjustorThunk },
+	{ 0x060003F4, U3CStartU3Ed__7_SetStateMachine_m40F374C8C057765D2575A7A345C16489539DE49D_AdjustorThunk },
+	{ 0x060003F5, U3COnLanguageChangeU3Ed__11_MoveNext_m61796505921325E3C5B535BB0614203BA9EC4F9A_AdjustorThunk },
+	{ 0x060003F6, U3COnLanguageChangeU3Ed__11_SetStateMachine_m4DF38859C8783FD52EC220CDD0955C46E4AC9501_AdjustorThunk },
+	{ 0x060003FA, U3CStartU3Ed__10_MoveNext_m8C78F9CA57E16BEA0C83E0554E02FF13FAF3246D_AdjustorThunk },
+	{ 0x060003FB, U3CStartU3Ed__10_SetStateMachine_m167132F8F9DA2E7E3FF873188B65236E359E6685_AdjustorThunk },
+	{ 0x0600040D, U3CDisplayPacksU3Ed__19_MoveNext_m342D5B3B9A70211E6FD61306418F1DEAF03F3227_AdjustorThunk },
+	{ 0x0600040E, U3CDisplayPacksU3Ed__19_SetStateMachine_mF7B499FF9EDD4DAB71B4BE0C8C48EE8CCB4881FA_AdjustorThunk },
+	{ 0x0600040F, U3CDisplayCardsU3Ed__20_MoveNext_m9905EFA9B5BFB735AA0D6F3126B711648897B354_AdjustorThunk },
+	{ 0x06000410, U3CDisplayCardsU3Ed__20_SetStateMachine_mA394E019141A87807BC3D1C1C5041893FF4D0B8A_AdjustorThunk },
+	{ 0x06000411, U3CDisplayLanguagesU3Ed__21_MoveNext_m8ABF0FA1444A2EF2B6AB535BE1AF169C6E526346_AdjustorThunk },
+	{ 0x06000412, U3CDisplayLanguagesU3Ed__21_SetStateMachine_m0777B57FBB282CA0AD0DC7B94CE0261ECF8CBAB7_AdjustorThunk },
+	{ 0x06000413, U3CDisplayActivitiesU3Ed__22_MoveNext_m354BEE7FAC5FA045181CA408EAEAA79133968336_AdjustorThunk },
+	{ 0x06000414, U3CDisplayActivitiesU3Ed__22_SetStateMachine_m2489022C1050EBF9AD72F91301DCFEA50467D6F5_AdjustorThunk },
+	{ 0x06000415, U3CDisplayActivityImageU3Ed__23_MoveNext_mE735F371EB86A80FC7619E74D28F9247DC1DC1D4_AdjustorThunk },
+	{ 0x06000416, U3CDisplayActivityImageU3Ed__23_SetStateMachine_m47FE140A94BA0D513735ACFA1ED6471CFEFE972B_AdjustorThunk },
+	{ 0x06000417, U3CDisplayAvatarImageU3Ed__24_MoveNext_m9F6BC17C3AA1303C880E082E74DCE1210BE10C7E_AdjustorThunk },
+	{ 0x06000418, U3CDisplayAvatarImageU3Ed__24_SetStateMachine_m49FBDB50C69329FA45E2E966D1E903B6DCC0FDEE_AdjustorThunk },
+	{ 0x06000419, U3CDisplayPackImageU3Ed__25_MoveNext_mE61039CE9516A0543C7E888F862BFE0B8346F3AE_AdjustorThunk },
+	{ 0x0600041A, U3CDisplayPackImageU3Ed__25_SetStateMachine_m2DB73B8A0396C945C391F18C6C836008871E1BD8_AdjustorThunk },
+	{ 0x0600041B, U3CDisplayCardImageU3Ed__26_MoveNext_m9CCF7A55FEBBA2BFDB224253CEB5A1FE73912C8E_AdjustorThunk },
+	{ 0x0600041C, U3CDisplayCardImageU3Ed__26_SetStateMachine_m1343E70728A3F67DF488A24A9D37EC30C0CEEC1F_AdjustorThunk },
+	{ 0x0600041D, U3CDisplayAppIconU3Ed__27_MoveNext_m9AD08908DD99D73FC1283492917505FDC3CF6DCF_AdjustorThunk },
+	{ 0x0600041E, U3CDisplayAppIconU3Ed__27_SetStateMachine_m02EED08832CC2442DFEAA729D30DC924C593A064_AdjustorThunk },
+	{ 0x0600041F, U3CDisplayAppsU3Ed__28_MoveNext_m55A09B50877917D32A093D6CCA64B8793099A190_AdjustorThunk },
+	{ 0x06000420, U3CDisplayAppsU3Ed__28_SetStateMachine_mE8BD8FED396B39EF1E588BE0BF59C09E30CA752A_AdjustorThunk },
+	{ 0x06000425, U3CStartU3Ed__7_MoveNext_m7677323B4EEACCE930BD9EFD802858705115A6F9_AdjustorThunk },
+	{ 0x06000426, U3CStartU3Ed__7_SetStateMachine_mA97B8BD94D1F2DFB7C1699633A0838363DA52748_AdjustorThunk },
+	{ 0x06000427, U3CU3CStartU3Eb__7_0U3Ed_MoveNext_m1F5C7EDD819A8C5D051520E843922F33B3651F6F_AdjustorThunk },
+	{ 0x06000428, U3CU3CStartU3Eb__7_0U3Ed_SetStateMachine_m1176315AB33EC39D2A2D580877D4B63F138A7C54_AdjustorThunk },
+	{ 0x0600042F, U3CStartU3Ed__23_MoveNext_m997D2701A5CF8B3392248267EF07D2C536F7464D_AdjustorThunk },
+	{ 0x06000430, U3CStartU3Ed__23_SetStateMachine_mEF764A8E107A5D1DB836C9EEFABC6C611ECDC8EF_AdjustorThunk },
+	{ 0x06000431, U3CSaveSettingsU3Ed__25_MoveNext_m381C99D6101228E7EA6609F16780257A4192BC4F_AdjustorThunk },
+	{ 0x06000432, U3CSaveSettingsU3Ed__25_SetStateMachine_m00FF00CF27A379A49A661488169A76F694213C2A_AdjustorThunk },
+	{ 0x06000433, U3CSignOutU3Ed__26_MoveNext_mA4867CD3723E0AC9DAFE497F6D3B32E29F6703C9_AdjustorThunk },
+	{ 0x06000434, U3CSignOutU3Ed__26_SetStateMachine_mFB039D2423044CB846DD8ACBF35B6044CCBBF704_AdjustorThunk },
+	{ 0x0600044F, U3CStartU3Ed__6_MoveNext_m4E7D940A22DC0A609FE41688338CDABEB7FC62C0_AdjustorThunk },
+	{ 0x06000450, U3CStartU3Ed__6_SetStateMachine_m0E74B5E77CB9557285C273A64348878DF1F4B22E_AdjustorThunk },
+	{ 0x06000451, U3CU3CStartU3Eb__6_0U3Ed_MoveNext_mC36B26B58EE53CF44CCD259515F96648EE262484_AdjustorThunk },
+	{ 0x06000452, U3CU3CStartU3Eb__6_0U3Ed_SetStateMachine_mF5553CCCBF644B11858F0F30A59B6C25E1E0D608_AdjustorThunk },
+	{ 0x0600045B, U3CAvatarListCreateU3Ed__13_MoveNext_m07813F501564571C073F97316E270A8839FC3187_AdjustorThunk },
+	{ 0x0600045C, U3CAvatarListCreateU3Ed__13_SetStateMachine_m757388713B6A4927FCDD29C9AB27C6E0E6DB26AD_AdjustorThunk },
+	{ 0x0600045D, U3CSelectAvatarU3Ed__14_MoveNext_mCC20E3666D59917D036026317752BD08EEA358C8_AdjustorThunk },
+	{ 0x0600045E, U3CSelectAvatarU3Ed__14_SetStateMachine_mAD5814AD47305666618432A386199774C7B7B81F_AdjustorThunk },
+	{ 0x0600046E, U3CStartU3Ed__21_MoveNext_m24929719113933C0908FDA3E9414437FD3B708F5_AdjustorThunk },
+	{ 0x0600046F, U3CStartU3Ed__21_SetStateMachine_m7949EA1EDC39BA495A3EA5EA270BF4C13DF7DF9C_AdjustorThunk },
+	{ 0x06000470, U3CProfilePanelUpdateU3Ed__33_MoveNext_mF54CA82EC24B6A93111EAC7F0FF12F5DA94526C1_AdjustorThunk },
+	{ 0x06000471, U3CProfilePanelUpdateU3Ed__33_SetStateMachine_mAAC9079BB29AD213649B3D5342B47C0791DB44C0_AdjustorThunk },
+	{ 0x06000495, U3CStartU3Ed__7_MoveNext_m997968E9DF56DB45666E52494DDB01A9D32540DE_AdjustorThunk },
+	{ 0x06000496, U3CStartU3Ed__7_SetStateMachine_m5FD543AC041DD36F31D5CE648B03C83218867384_AdjustorThunk },
+	{ 0x060004A2, U3CStartU3Ed__9_MoveNext_m056259285A25794042FF4FE35902457D23E96445_AdjustorThunk },
+	{ 0x060004A3, U3CStartU3Ed__9_SetStateMachine_m6A5719384D90EBC2F7FA81CE88E1E8173C62FE7B_AdjustorThunk },
+	{ 0x060004A9, U3CSaveButtonClickedU3Ed__18_MoveNext_m9A2BDE4CDE01B92BB81A6C112C11D6D2731BA2DC_AdjustorThunk },
+	{ 0x060004AA, U3CSaveButtonClickedU3Ed__18_SetStateMachine_m148F3E9700F8A2355E91C4ADA95D87D541BD9D60_AdjustorThunk },
+	{ 0x060004AF, U3COnEnableU3Ed__8_MoveNext_m6AA7E3F8D8973F721371C06191FEEDBD2FC5B711_AdjustorThunk },
+	{ 0x060004B0, U3COnEnableU3Ed__8_SetStateMachine_m320FF91CFBC96334E8D4667C1B834F3275A1737F_AdjustorThunk },
+	{ 0x060004BC, U3CStartU3Ed__15_MoveNext_m7972D36BD9D8E5369045ECC5DD68F469C33F75A3_AdjustorThunk },
+	{ 0x060004BD, U3CStartU3Ed__15_SetStateMachine_mFC41C53F7619FC10A21BA42667FEA5858E3F55AB_AdjustorThunk },
+	{ 0x06000571, ParseResult__ctor_mDA43943FF52FA215B90721EAB7B90A71DCF387BC_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[1478] = 
+static const int32_t s_InvokerIndices[1493] = 
 {
 	4195,
 	4195,
@@ -5672,6 +5725,11 @@ static const int32_t s_InvokerIndices[1478] =
 	5172,
 	5172,
 	5172,
+	4195,
+	5172,
+	4195,
+	5172,
+	5172,
 	5172,
 	5172,
 	4195,
@@ -5813,6 +5871,16 @@ static const int32_t s_InvokerIndices[1478] =
 	4195,
 	4195,
 	5172,
+	5172,
+	5052,
+	5172,
+	4173,
+	5172,
+	4975,
+	5172,
+	5052,
+	5172,
+	5052,
 	5172,
 	5172,
 	5172,
@@ -6142,13 +6210,13 @@ static const int32_t s_InvokerIndices[1478] =
 };
 static const Il2CppTokenIndexMethodTuple s_reversePInvokeIndices[2] = 
 {
-	{ 0x060004CA, 14,  (void**)&TextToSpeech_on_finish_mC2FDC673CEB5E9A057D1E7606C4F8FDAE21E24EE_RuntimeMethod_var, 0 },
-	{ 0x060004CB, 13,  (void**)&TextToSpeech_on_error_m3BD238034CBDF7C3E92E3E056071AF93133E3E5A_RuntimeMethod_var, 0 },
+	{ 0x060004D9, 14,  (void**)&TextToSpeech_on_finish_mC2FDC673CEB5E9A057D1E7606C4F8FDAE21E24EE_RuntimeMethod_var, 0 },
+	{ 0x060004DA, 13,  (void**)&TextToSpeech_on_error_m3BD238034CBDF7C3E92E3E056071AF93133E3E5A_RuntimeMethod_var, 0 },
 };
 static const Il2CppTokenRangePair s_rgctxIndices[2] = 
 {
-	{ 0x0200007D, { 3, 2 } },
-	{ 0x0600048D, { 0, 3 } },
+	{ 0x02000081, { 3, 2 } },
+	{ 0x0600049C, { 0, 3 } },
 };
 extern const uint32_t g_rgctx_U3CU3Ec__DisplayClass0_0_1_t9AE1E6445E2BAF7F6FC561121DB510116F79D514;
 extern const uint32_t g_rgctx_U3CU3Ec__DisplayClass0_0_1__ctor_m28F25C2AA55563EA115A313CE99C2E8CB4DCD54C;
@@ -6167,9 +6235,9 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	1478,
+	1493,
 	s_methodPointers,
-	105,
+	109,
 	s_adjustorThunks,
 	s_InvokerIndices,
 	2,

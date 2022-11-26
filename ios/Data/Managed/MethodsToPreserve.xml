@@ -32,8 +32,6 @@
 		</type>
 		<type fullname="IAPManager">
 			<method name="BuyNonConsumable"/>
-			<method name="OnPurchaseFailed"/>
-			<method name="OnPurchaseFailed"/>
 			<method name="RestorePurchases"/>
 		</type>
 		<type fullname="LanguageController">
@@ -41,6 +39,9 @@
 		</type>
 		<type fullname="LoginContoller">
 			<method name="NextButtonClicked"/>
+		</type>
+		<type fullname="PermissionNotificationScreen">
+			<method name="OnOkButtonClick"/>
 		</type>
 		<type fullname="ProfileEditor">
 			<method name="AvatarSelectButtonClicked"/>
@@ -69,6 +70,11 @@
 		</type>
 		<type fullname="TTSPanel">
 			<method name="TTSSelected"/>
+		</type>
+	</assembly>
+	<assembly fullname="UnityEngine.CoreModule" ignoreIfMissing="1">
+		<type fullname="UnityEngine.GameObject">
+			<method name="SetActive"/>
 		</type>
 	</assembly>
 </linker>

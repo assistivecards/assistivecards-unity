@@ -16,6 +16,7 @@
 		<type fullname="NotificationPreferences" preserve="nothing"/>
 		<type fullname="NotificationsManager" preserve="nothing"/>
 		<type fullname="ParentScreenUnlocker" preserve="nothing"/>
+		<type fullname="PermissionNotificationScreen" preserve="nothing"/>
 		<type fullname="ProfileEditor" preserve="nothing"/>
 		<type fullname="RightToLeftTextChanger" preserve="nothing"/>
 		<type fullname="SampleWebView" preserve="nothing"/>
@@ -73,10 +74,6 @@
 		<type fullname="UnityEngine.Texture" preserve="nothing"/>
 		<type fullname="UnityEngine.Texture2D" preserve="nothing"/>
 		<type fullname="UnityEngine.Transform" preserve="nothing"/>
-	</assembly>
-	<assembly fullname="UnityEngine.Purchasing.Codeless">
-		<type fullname="UnityEngine.Purchasing.IAPButton" preserve="nothing"/>
-		<type fullname="UnityEngine.Purchasing.IAPListener" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="UnityEngine.UI">
 		<type fullname="UnityEngine.EventSystems.EventSystem" preserve="nothing"/>

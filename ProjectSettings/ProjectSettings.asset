@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: assistivecards
-  productName: unity_template
+  productName: unity
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -134,7 +134,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.0.6
+  bundleVersion: 1.0.7
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -159,7 +159,7 @@ PlayerSettings:
     Standalone: com.DefaultCompany.2DProject
   buildNumber:
     Standalone: 0
-    iPhone: 1.0.6
+    iPhone: 1.0.7
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
   AndroidBundleVersionCode: 5
@@ -862,11 +862,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 0f69ef16-47a6-4559-97e3-b9c72efeef5b
+  cloudProjectId: 4a0a0482-f2be-4cff-90da-b6898ee38182
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: unity-template
-  organizationId: assistive-cards
+  projectName: unity_template (1)
+  organizationId: buraktokak
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

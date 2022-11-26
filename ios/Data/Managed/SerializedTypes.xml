@@ -34,12 +34,6 @@
 		<type fullname="UnityEngine.Events.UnityEvent" preserve="nothing" serialized="true"/>
 		<type fullname="UnityEngine.RectOffset" preserve="nothing" serialized="true"/>
 	</assembly>
-	<assembly fullname="UnityEngine.Purchasing.Codeless">
-		<type fullname="UnityEngine.Purchasing.IAPButton/OnPurchaseCompletedEvent" preserve="nothing" serialized="true"/>
-		<type fullname="UnityEngine.Purchasing.IAPButton/OnPurchaseFailedEvent" preserve="nothing" serialized="true"/>
-		<type fullname="UnityEngine.Purchasing.IAPListener/OnPurchaseCompletedEvent" preserve="nothing" serialized="true"/>
-		<type fullname="UnityEngine.Purchasing.IAPListener/OnPurchaseFailedEvent" preserve="nothing" serialized="true"/>
-	</assembly>
 	<assembly fullname="UnityEngine.TextCoreFontEngineModule">
 		<type fullname="UnityEngine.TextCore.FaceInfo" preserve="nothing" serialized="true"/>
 		<type fullname="UnityEngine.TextCore.Glyph" preserve="nothing" serialized="true"/>

@@ -5,15 +5,19 @@ using System.Collections.Generic;
     using Unity.Notifications.iOS;
 #elif UNITY_ANDROID
 using Unity.Notifications.Android;
-using Unity.Notifications.iOS;
 #endif
-using UnityEngine; 
+using UnityEngine;
 
 
 public class PermissionNotificationScreen : MonoBehaviour
 {
+    [SerializeField] private SettingScreenButton settingScreenButton;
+
     public void OnOkButtonClick()
     {
+        
+        settingScreenButton.SetAvatarImageOnGamePanel();
+
 #if UNITY_IOS
 
         StartCoroutine(RequestAuthorization());
@@ -22,7 +26,7 @@ public class PermissionNotificationScreen : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-
+#if UNITY_IOS
     IEnumerator RequestAuthorization()
     {
         using (var req = new AuthorizationRequest(AuthorizationOption.Alert | AuthorizationOption.Badge, true))
@@ -40,4 +44,6 @@ public class PermissionNotificationScreen : MonoBehaviour
             Debug.Log(result);
         }
     }
+#endif
+
 }

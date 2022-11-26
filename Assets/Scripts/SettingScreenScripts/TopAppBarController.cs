@@ -14,6 +14,7 @@ public class TopAppBarController : MonoBehaviour
     [SerializeField] TTSPanel ttsPanel;
     [SerializeField] private SampleWebView sampleWebView;
 
+    [SerializeField] private SettingScreenButton settingScreenButton;
 
     [Header("UI Elements Accessility")]
 
@@ -61,6 +62,7 @@ public class TopAppBarController : MonoBehaviour
             profileEditor = GetComponentInParent<ProfileEditor>();
             gameAPI.SetNickname(profileEditor.nicknameInputField.text);
             canvas.GetComponent<CanvasController>().ProfilePanelUpdate();
+            settingScreenButton.SetAvatarImageOnGamePanel();
         }
         if (GetComponentInParent<AccessibilityScreen>() != null)
         {

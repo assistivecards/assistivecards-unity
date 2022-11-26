@@ -12,8 +12,13 @@ using UnityEngine;
 
 public class PermissionNotificationScreen : MonoBehaviour
 {
+    [SerializeField] private SettingScreenButton settingScreenButton;
+
     public void OnOkButtonClick()
     {
+        
+        settingScreenButton.SetAvatarImageOnGamePanel();
+
 #if UNITY_IOS
 
         StartCoroutine(RequestAuthorization());

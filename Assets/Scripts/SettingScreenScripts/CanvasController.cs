@@ -22,6 +22,7 @@ public class CanvasController : MonoBehaviour
     [SerializeField] Canvas canvas;
     [SerializeField] private GameObject popUp;
     private GameObject backButton;
+    [SerializeField] private GameObject settingScreen;
 
     [Header ("Screens")]
     [SerializeField] private GameObject mainSettingsScreen;
@@ -86,33 +87,33 @@ public class CanvasController : MonoBehaviour
         ttsScreen.SetActive(true);
     }
     
-    public void NotificationButtonClicked()
+    public void NotificationButtonClick()
     {
         LeanTween.scale(notificationScreen,  Vector3.one, 0.2f);
         notificationScreen.SetActive(true);
     }
-    public void AccessibiltyButtonClicked()
+    public void AccessibiltyButtonClick()
     {
         LeanTween.scale(accessibilityScreen,  Vector3.one, 0.2f);
         accessibilityScreen.SetActive(true);
     }
-    public void SubscriptionsButtonClicked()
+    public void SubscriptionsButtonClick()
     {
         LeanTween.scale(subscriptionsScreen,  Vector3.one, 0.2f);
         subscriptionsScreen.SetActive(true);
     }
 
-    public void AllAppsButtonClicked()
+    public void AllAppsButtonClick()
     {
         LeanTween.scale(allAppsScreen,  Vector3.one, 0.2f);
         allAppsScreen.SetActive(true);
     }
-    public void SendFeedbacksButtonClicked()
+    public void SendFeedbacksButtonClick()
     {
         LeanTween.scale(sendFeedbacksScreen,  Vector3.one, 0.2f);
         sendFeedbacksScreen.SetActive(true);
     }
-    public void AboutApplicationButtonClicked()
+    public void AboutApplicationButtonClick()
     {
         LeanTween.scale(aboutApplicationScreen,  Vector3.one, 0.2f);
         aboutApplicationScreen.SetActive(true);
@@ -121,6 +122,11 @@ public class CanvasController : MonoBehaviour
     {
         nicknameText.text = gameAPI.GetNickname();
         profileImage.GetComponent<Image>().sprite = await gameAPI.GetAvatarImage();
+    }
+
+    public void CloseSettingClick()
+    {
+        settingScreen.SetActive(false);
     }
 
 }

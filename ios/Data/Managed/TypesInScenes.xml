@@ -21,6 +21,7 @@
 		<type fullname="RightToLeftTextChanger" preserve="nothing"/>
 		<type fullname="SampleWebView" preserve="nothing"/>
 		<type fullname="SendFeedbackPage" preserve="nothing"/>
+		<type fullname="SettingScreenButton" preserve="nothing"/>
 		<type fullname="SupportedLanguagesPanel" preserve="nothing"/>
 		<type fullname="TopAppBarController" preserve="nothing"/>
 		<type fullname="TTSPanel" preserve="nothing"/>

@@ -1,16 +1,19 @@
 <linker>
 	<assembly fullname="Assembly-CSharp" ignoreIfMissing="1">
 		<type fullname="AboutApplicationScreen">
+			<method name="AboutApplicationClick"/>
 			<method name="BackButtonClicked"/>
 			<method name="BackButtonClicked"/>
 			<method name="BackButtonClicked"/>
 			<method name="BackButtonClicked"/>
-			<method name="OnAboutCompanyClick"/>
-			<method name="OnOpenSourceLicencesClick"/>
-			<method name="OnPrivacyPolicyClick"/>
-			<method name="OnRateThisAppClick"/>
-			<method name="OnShareThisAppClick"/>
-			<method name="OnTermsOfServicesClick"/>
+			<method name="OpenSourceLicencesClick"/>
+			<method name="PrivacyPolicyClick"/>
+			<method name="RateThisAppClick"/>
+			<method name="ShareThisAppClick"/>
+			<method name="TermsOfServicesClick"/>
+		</type>
+		<type fullname="AllAppsPage">
+			<method name="AppSelected"/>
 		</type>
 		<type fullname="AvatarListCreator">
 			<method name="BoyButtonClicked"/>
@@ -18,16 +21,17 @@
 			<method name="MiscButtonClicked"/>
 		</type>
 		<type fullname="CanvasController">
-			<method name="AboutApplicationButtonClicked"/>
-			<method name="AccessibiltyButtonClicked"/>
-			<method name="AllAppsButtonClicked"/>
+			<method name="AboutApplicationButtonClick"/>
+			<method name="AccessibiltyButtonClick"/>
+			<method name="AllAppsButtonClick"/>
+			<method name="CloseSettingClick"/>
 			<method name="LanguageButtonClick"/>
-			<method name="NotificationButtonClicked"/>
+			<method name="NotificationButtonClick"/>
 			<method name="ParentLockButtonClick"/>
 			<method name="ParentLockScreenClose"/>
 			<method name="ProfileButtonClick"/>
-			<method name="SendFeedbacksButtonClicked"/>
-			<method name="SubscriptionsButtonClicked"/>
+			<method name="SendFeedbacksButtonClick"/>
+			<method name="SubscriptionsButtonClick"/>
 			<method name="TTSButtonClicked"/>
 		</type>
 		<type fullname="IAPManager">
@@ -45,6 +49,9 @@
 		</type>
 		<type fullname="ProfileEditor">
 			<method name="AvatarSelectButtonClicked"/>
+		</type>
+		<type fullname="SettingScreenButton">
+			<method name="SettingButtonClick"/>
 		</type>
 		<type fullname="TopAppBarController">
 			<method name="BackButtonClicked"/>
@@ -74,6 +81,8 @@
 	</assembly>
 	<assembly fullname="UnityEngine.CoreModule" ignoreIfMissing="1">
 		<type fullname="UnityEngine.GameObject">
+			<method name="SetActive"/>
+			<method name="SetActive"/>
 			<method name="SetActive"/>
 		</type>
 	</assembly>

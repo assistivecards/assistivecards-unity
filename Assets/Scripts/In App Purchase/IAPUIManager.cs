@@ -16,10 +16,14 @@ public class IAPUIManager : MonoBehaviour
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
-        if (Application.platform != RuntimePlatform.IPhonePlayer)
-        {
-            restoreButton.SetActive(false);
-        }
+
+        // if (Application.platform != RuntimePlatform.IPhonePlayer)
+        // {
+        //     restoreButton.SetActive(false);
+        // }
+#if UNITY_IOS
+        restoreButton.SetActive(true);
+#endif
     }
     private async void Start()
     {

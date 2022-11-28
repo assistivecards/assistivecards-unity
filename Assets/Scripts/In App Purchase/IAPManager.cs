@@ -19,9 +19,9 @@ public class IAPManager : MonoBehaviour, IStoreListener
 
     public static IStoreController m_StoreController;          // The Unity Purchasing system.
     private static IExtensionProvider m_StoreExtensionProvider; // The store-specific Purchasing subsystems.
-    // [SerializeField] GameObject purchaseRestoredPanel;
+    [SerializeField] GameObject purchaseRestoredPanel;
 
-    // private bool restored = false;
+    private bool restored = false;
 
     private void Awake()
     {
@@ -134,11 +134,11 @@ public class IAPManager : MonoBehaviour, IStoreListener
             apple.RestoreTransactions((result) =>
             {
                 Debug.Log("RestorePurchases continuing: " + result + ". If no further messages, no purchases available to restore.");
-                // if (restored == false)
-                // {
-                //     purchaseRestoredPanel.SetActive(true);
-                //     restored = true;
-                // }
+                if (restored == false)
+                {
+                    purchaseRestoredPanel.SetActive(true);
+                    restored = true;
+                }
 
             });
         }

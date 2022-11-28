@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 #if UNITY_IOS
-    using Unity.Notifications.iOS;
+using Unity.Notifications.iOS;
 #elif UNITY_ANDROID
 using Unity.Notifications.Android;
 #endif
@@ -71,7 +71,7 @@ public class NotificationsManager : MonoBehaviour
 #if UNITY_IOS
         var timeTrigger = new iOSNotificationTimeIntervalTrigger()
         {
-            TimeInterval = reminderPeriod == "Weekly" ? new TimeSpan(7, 0, 0, 0) : new TimeSpan(1, 0, 0, 0);
+            TimeInterval = reminderPeriod == "Weekly" ? new TimeSpan(7, 0, 0, 0) : new TimeSpan(1, 0, 0, 0),
             // TimeInterval = new TimeSpan(0,0,3,0),
             Repeats = true
         };

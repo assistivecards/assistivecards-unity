@@ -29,7 +29,9 @@ public class AllAppsPage : MonoBehaviour
     private GameObject selectedAppElement;
     public List<GameObject> appElementGameObject = new List<GameObject>();
     private GameAPI gameAPI;
-    private string url = "https://assistivecards.com/";
+
+    private string appStoreURL = "itms-apps://apps.apple.com/tr/app/";
+    private string playStoreURL = "market://details?id=org.dreamoriented.";
 
     private void Awake()
     {
@@ -89,6 +91,17 @@ public class AllAppsPage : MonoBehaviour
             appSlug = _AppElement.transform.GetChild(0).GetComponent<TMP_Text>().text.ToLower();
         }
 
-        Application.OpenURL(url + appSlug);
+        foreach (var app in apps.apps)
+        {
+            if (app.slug == appSlug)
+            {
+#if UNITY_IOS
+                Application.OpenURL(appStoreURL + app.storeId.appStore);
+#endif
+#if UNITY_ANDROID
+                Application.OpenURL(playStoreURL + appSlug);
+#endif
+            }
+        }
     }
 }

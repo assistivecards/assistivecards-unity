@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class LoginContoller : MonoBehaviour
 {
+
     [Header ("API Connection")]
     GameAPI gameAPI;
     [SerializeField] private CanvasController canvasController;
@@ -29,6 +30,7 @@ public class LoginContoller : MonoBehaviour
     }
     public void ValueChangeCheck()
     {
+        gameAPI.SetNickname(nicknameInputField.text);
         nextButton.interactable = true;
     }
 

@@ -321,6 +321,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2693788705514232563, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
   m_PrefabInstance: {fileID: 2693788706588823381}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &471357341 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5546718070486032767, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
+  m_PrefabInstance: {fileID: 5546718071078979358}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &501489312 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2693788706682933749, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
@@ -607,6 +612,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1771343972 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5546718070428483995, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
+  m_PrefabInstance: {fileID: 5546718071078979358}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1845797080 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2693788704810151821, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
@@ -891,6 +901,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -364.08917
       objectReference: {fileID: 0}
+    - target: {fileID: 5546718070684903927, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
+      propertyPath: tittleBar
+      value: 
+      objectReference: {fileID: 471357341}
+    - target: {fileID: 5546718070684903927, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
+      propertyPath: nicknameInput
+      value: 
+      objectReference: {fileID: 1771343972}
     - target: {fileID: 5546718070684903927, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
       propertyPath: canvasController
       value: 

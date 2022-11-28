@@ -11,6 +11,8 @@ public class LoginContoller : MonoBehaviour
     [SerializeField] private CanvasController canvasController;
     
     [Header ("LoginPage UI Assests")]
+    [SerializeField] private GameObject nicknameInput;
+    [SerializeField] private GameObject tittleBar;
     public TMP_InputField nicknameInputField;
     [SerializeField] private Button nextButton;
     [SerializeField] private GameObject avatarSelectionScreen;
@@ -28,6 +30,20 @@ public class LoginContoller : MonoBehaviour
     public void ValueChangeCheck()
     {
         nextButton.interactable = true;
+    }
+
+    private void Update()
+    {
+        if(TouchScreenKeyboard.visible)
+        {
+            LeanTween.moveLocal(nicknameInput, new Vector3(0, 104, 0), 0.5f);
+            LeanTween.moveLocal(tittleBar, new Vector3(-265, 609, 0), 0.5f);
+        }
+        else
+        {
+            LeanTween.moveLocal(nicknameInput, new Vector3(0, -165, 0), 0.5f);
+            LeanTween.moveLocal(tittleBar, new Vector3(-265, 339, 0), 0.5f);
+        }
     }
     public void NextButtonClicked()
     {

@@ -53,10 +53,10 @@ public class NotificationsManager : MonoBehaviour
 
         notification.Title = translatedNotificationContent[0];
         notification.Text = translatedNotificationContent[1];
-        notification.FireTime = System.DateTime.Now.AddSeconds(15);
-        notification.RepeatInterval = new TimeSpan(0, 0, 3, 0);
-        // notification.FireTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 9, 0, 0).AddDays(1);
-        // notification.RepeatInterval = reminderPeriod == "Weekly" ? new TimeSpan(7, 0, 0, 0) : new TimeSpan(1, 0, 0, 0);
+        // notification.FireTime = System.DateTime.Now.AddSeconds(15);
+        // notification.RepeatInterval = new TimeSpan(0, 0, 3, 0);
+        notification.FireTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 9, 0, 0).AddDays(1);
+        notification.RepeatInterval = reminderPeriod == "Weekly" ? new TimeSpan(7, 0, 0, 0) : new TimeSpan(1, 0, 0, 0);
         notification.ShouldAutoCancel = true;
 
         var id = AndroidNotificationCenter.SendNotification(notification, "channel_id");
@@ -71,8 +71,8 @@ public class NotificationsManager : MonoBehaviour
 #if UNITY_IOS
         var timeTrigger = new iOSNotificationTimeIntervalTrigger()
         {
-            // TimeInterval = reminderPeriod == "Weekly" ? new TimeSpan(7, 0, 0, 0) : new TimeSpan(1, 0, 0, 0);
-            TimeInterval = new TimeSpan(0,0,3,0),
+            TimeInterval = reminderPeriod == "Weekly" ? new TimeSpan(7, 0, 0, 0) : new TimeSpan(1, 0, 0, 0);
+            // TimeInterval = new TimeSpan(0,0,3,0),
             Repeats = true
         };
 

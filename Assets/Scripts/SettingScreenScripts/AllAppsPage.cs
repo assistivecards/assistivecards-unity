@@ -63,7 +63,7 @@ public class AllAppsPage : MonoBehaviour
         {
             appElement = Instantiate(tempAppElement, transform);
 
-            appElement.transform.GetChild(0).GetComponent<TMP_Text>().text = jsonAppss["apps"][i]["name"].ToString().ToUpper().Replace("\"", "");
+            appElement.transform.GetChild(0).GetComponent<TMP_Text>().text = jsonAppss["apps"][i]["name"].ToString().Replace("\"", "");
             appElement.transform.GetChild(1).GetComponent<TMP_Text>().text = jsonAppss["apps"][i]["tagline"][currentLanguageCode].ToString().Replace("\"", "");
             appElement.transform.GetChild(2).GetComponent<TMP_Text>().text = jsonAppss["apps"][i]["description"][currentLanguageCode].ToString().Replace("\"", "");
 

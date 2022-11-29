@@ -44,7 +44,7 @@ public class LanguageTest : MonoBehaviour
         // packResult = assistiveCardsSDK.GetPackBySlug(gameAPI.cachedPacks, "animals");
         // Debug.Log(packResult.locale);
         variableArray.Add(nickname);
-        variableArray.Add(usabilityTips);
+        variableArray.Add(nickname);
 
         for (int i = 0; i < textsWithVariable.Count; i++)
         {
@@ -85,6 +85,23 @@ public class LanguageTest : MonoBehaviour
             result = gameAPI.Translate(text.name, langCode);
             text.GetComponent<TMP_Text>().text = result;
         }
+    }
+
+    public async void OnNicknameChange()
+    {
+        var langCode = await gameAPI.GetSystemLanguageCode();
+        nickname = gameAPI.GetNickname();
+
+        variableArray.Clear();
+        variableArray.Add(nickname);
+        variableArray.Add(nickname);
+
+        for (int i = 0; i < textsWithVariable.Count; i++)
+        {
+            result = gameAPI.Translate(textsWithVariable[i].name, variableArray[i].ToString(), langCode);
+            textsWithVariable[i].GetComponent<TMP_Text>().text = result;
+        }
+
     }
 
 }

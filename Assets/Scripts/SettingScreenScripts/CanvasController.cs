@@ -38,6 +38,7 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private GameObject aboutApplicationScreen;
     [SerializeField] private GameObject loginPageScreen;
     [SerializeField] private GameObject avatarSelectionScreen;
+    [SerializeField] private GameObject soundScreen;
 
     private void Awake()
     {
@@ -101,6 +102,11 @@ public class CanvasController : MonoBehaviour
     {
         LeanTween.scale(subscriptionsScreen,  Vector3.one, 0.2f);
         subscriptionsScreen.SetActive(true);
+    }
+    public void SoundButtonClick()
+    {
+        LeanTween.scale(soundScreen,  Vector3.one, 0.2f);
+        soundScreen.SetActive(true);
     }
 
     public void AllAppsButtonClick()

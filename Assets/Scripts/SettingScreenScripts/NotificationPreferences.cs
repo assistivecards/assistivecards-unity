@@ -11,9 +11,9 @@ public class NotificationPreferences : MonoBehaviour
     public Toggle weeklyReminderToggle;
     public Toggle usabilityTipsToggle;
     public Toggle promotionsNotificationToggle;
-    private string reminderPreference;
-    private bool isUsabilityTipsActive;
-    private bool isPromotionsNotificationActive;
+    public string reminderPreference;
+    public bool isUsabilityTipsActive;
+    public bool isPromotionsNotificationActive;
 
     private void Awake()
     {

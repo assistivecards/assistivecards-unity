@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 
@@ -18,6 +19,7 @@ public class CanvasController : MonoBehaviour
     GameAPI gameAPI;
 
     [Header ("UI Assets")]
+    [SerializeField] private TMP_InputField nicknameInputField;
     public TMP_Text nicknameText;
     [SerializeField] Canvas canvas;
     [SerializeField] private GameObject popUp;
@@ -39,6 +41,11 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private GameObject loginPageScreen;
     [SerializeField] private GameObject avatarSelectionScreen;
     [SerializeField] private GameObject soundScreen;
+
+    private NotificationPreferences notificationPreferences;
+    private AccessibilityScreen accessibilityScreenScript;
+    private TTSPanel tTSPanel;
+    private LanguageController languageController;
 
     private void Awake()
     {
@@ -133,6 +140,38 @@ public class CanvasController : MonoBehaviour
     public void CloseSettingClick()
     {
         settingScreen.SetActive(false);
+    }
+    public void SignOut()
+    {
+        //nicknameInputField.text = "";
+        gameAPI.ClearAllPrefs();
+
+        notificationPreferences = notificationScreen.GetComponent<NotificationPreferences>();
+        notificationPreferences.reminderPreference = gameAPI.GetReminderPreference();
+        notificationPreferences.usabilityTipsToggle.isOn = gameAPI.GetUsabilityTipsPreference() == 1 ? true : false;
+        notificationPreferences.promotionsNotificationToggle.isOn = gameAPI.GetPromotionsNotificationPreference() == 1 ? true : false;
+        
+        accessibilityScreenScript = accessibilityScreen.GetComponent<AccessibilityScreen>();
+        accessibilityScreenScript.hapticsToggle.isOn = gameAPI.GetHapticsPreference() == 1 ? true : false;
+        accessibilityScreenScript.activateOnPressToggle.isOn = gameAPI.GetActivateOnPressInPreference() == 1 ? true : false;
+        accessibilityScreenScript.voiceGreetingToggle.isOn = gameAPI.GetVoiceGreetingPreference() == 1 ? true : false;
+
+        tTSPanel = ttsScreen.GetComponentInChildren<TTSPanel>();
+        //tTSPanel.selectedTtsElement = await gameAPI.GetTTSPreference();
+
+        languageController = languageScreen.GetComponent<LanguageController>();
+        languageController.selectedLanguage = null;
+
+        if (notificationPreferences.reminderPreference == "Daily")
+        {
+            notificationPreferences.dailyReminderToggle.isOn = true;
+        }
+        else
+        {
+            notificationPreferences.weeklyReminderToggle.isOn = true;
+        }     
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }

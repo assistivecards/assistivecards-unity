@@ -241,6 +241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   profileImage: {fileID: 1908085031}
   nickname: 
+  nicknameInputField: {fileID: 1444183173}
   nicknameText: {fileID: 1301366900}
   canvas: {fileID: 68398934}
   popUp: {fileID: 121409593}
@@ -843,6 +844,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2693788705358634753, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
   m_PrefabInstance: {fileID: 2693788706588823381}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1444183173 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2693788705358634755, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
+  m_PrefabInstance: {fileID: 2693788706588823381}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444183172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1518197517 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2693788705245689871, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
@@ -1458,6 +1470,34 @@ PrefabInstance:
     - target: {fileID: 2693788706723758283, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693788706781229067, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693788706781229067, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693788706781229067, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 68398936}
+    - target: {fileID: 2693788706781229067, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693788706781229067, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SignOut
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693788706781229067, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CanvasController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693788706781229067, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2693788706815206554, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
       propertyPath: m_Sprite

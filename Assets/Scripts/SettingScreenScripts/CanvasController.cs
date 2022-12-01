@@ -25,6 +25,8 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private GameObject popUp;
     private GameObject backButton;
     [SerializeField] private GameObject settingScreen;
+    [SerializeField] private Image settingScreenFadePanel;
+    [SerializeField] private Image loginScreenFadePanel;
 
     [Header ("Screens")]
     [SerializeField] private GameObject mainSettingsScreen;
@@ -46,10 +48,13 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private GameObject loginPrefab;
     [SerializeField] private GameObject gamePrefab;
     [SerializeField] private GameObject settingPrefab;
+
+    [Header ("Misc")]
     private NotificationPreferences notificationPreferences;
     private AccessibilityScreen accessibilityScreenScript;
     private TTSPanel tTSPanel;
     private LanguageController languageController;
+    public bool isSettingPanelFadeIn;
 
     private void Awake()
     {
@@ -185,4 +190,18 @@ public class CanvasController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    private void Update()
+    {
+        if(isSettingPanelFadeIn)
+        {
+            settingScreenFadePanel.CrossFadeAlpha(0, 0.25f, false);
+            isSettingPanelFadeIn = false;
+            Invoke("SetFadeObject", 0.25f);
+        }
+    }
+
+    private void SetFadeObject()
+    {
+        settingScreenFadePanel.gameObject.SetActive(false);
+    }
 }

@@ -65,9 +65,7 @@ public class LoginContoller : MonoBehaviour
     }
     public void StartButton()
     {
-        congratulationsScreen.SetActive(false);
-        loginPrefab.SetActive(false);
         gamePrefab.SetActive(true);
+        loginPrefab.SetActive(false);
     }
-
 }

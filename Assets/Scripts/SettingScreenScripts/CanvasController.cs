@@ -42,6 +42,10 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private GameObject avatarSelectionScreen;
     [SerializeField] private GameObject soundScreen;
 
+    [Header ("Screen Prefab")]
+    [SerializeField] private GameObject loginPrefab;
+    [SerializeField] private GameObject gamePrefab;
+    [SerializeField] private GameObject settingPrefab;
     private NotificationPreferences notificationPreferences;
     private AccessibilityScreen accessibilityScreenScript;
     private TTSPanel tTSPanel;
@@ -55,7 +59,13 @@ public class CanvasController : MonoBehaviour
 
         if(PlayerPrefs.GetString("Nickname", "") != "")
         {
+            loginPrefab.SetActive(false);
             loginPageScreen.SetActive(false);
+            gamePrefab.SetActive(true);
+        }
+        else
+        {
+            gamePrefab.SetActive(false);
         }
     }
 
@@ -139,7 +149,8 @@ public class CanvasController : MonoBehaviour
 
     public void CloseSettingClick()
     {
-        settingScreen.SetActive(false);
+        settingPrefab.SetActive(false);
+        gamePrefab.SetActive(true);
     }
     public void SignOut()
     {

@@ -16,9 +16,13 @@ public class LoginContoller : MonoBehaviour
     [SerializeField] private GameObject tittleBar;
     public TMP_InputField nicknameInputField;
     [SerializeField] private Button nextButton;
+
+    [Header ("Screen Prefabs")]
     [SerializeField] private GameObject avatarSelectionScreen;
     [SerializeField] private GameObject practiceReminderScreen;
     [SerializeField] private GameObject congratulationsScreen;
+    [SerializeField] private GameObject loginPrefab;
+    [SerializeField] private GameObject gamePrefab;
 
 
 
@@ -58,6 +62,12 @@ public class LoginContoller : MonoBehaviour
         congratulationsScreen.SetActive(true);
         
         LeanTween.scale(avatarSelectionScreen,  Vector3.one, 0.2f);
+    }
+    public void StartButton()
+    {
+        congratulationsScreen.SetActive(false);
+        loginPrefab.SetActive(false);
+        gamePrefab.SetActive(true);
     }
 
 }

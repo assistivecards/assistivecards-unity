@@ -12,6 +12,8 @@ public class SettingScreenButton : MonoBehaviour
     [SerializeField] private Button settingButton;
     [SerializeField] private GameObject settingScreen;
     [SerializeField] private GameObject nickNameText;
+    [SerializeField] private GameObject settingPrefab;
+    [SerializeField] private GameObject gamePrefab;
 
     private void Awake()
     {
@@ -35,5 +37,7 @@ public class SettingScreenButton : MonoBehaviour
     public void SettingButtonClick()
     {
         settingScreen.SetActive(true);
+        settingPrefab.SetActive(true);
+        gamePrefab.SetActive(false);
     }
 }

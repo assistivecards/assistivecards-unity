@@ -890,4 +890,16 @@ public class GameAPI : MonoBehaviour
 
     }
 
+    public void ForceOrientation(string orientationMode)
+    {
+        if (orientationMode == "portrait")
+        {
+            Screen.orientation = ScreenOrientation.Portrait;
+        }
+        else if (orientationMode == "landscape")
+        {
+            Screen.orientation = ScreenOrientation.LandscapeLeft;
+        }
+    }
+
 }

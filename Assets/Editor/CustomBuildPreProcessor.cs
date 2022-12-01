@@ -8,13 +8,13 @@ using UnityEditor.Build.Reporting;
 using UnityEngine;
 
 [InitializeOnLoad]
-class CustomBuildProcessor : IPreprocessBuildWithReport
+class CustomBuildPreProcessor : IPreprocessBuildWithReport
 {
     public static string productName;
     public static string productVersion;
     public int callbackOrder { get { return 0; } }
 
-    static CustomBuildProcessor()
+    static CustomBuildPreProcessor()
     {
         productName = PlayerSettings.productName;
         productVersion = PlayerSettings.bundleVersion;

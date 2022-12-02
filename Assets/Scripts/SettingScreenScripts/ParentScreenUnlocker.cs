@@ -6,15 +6,9 @@ using UnityEngine.Events;
 
 public class ParentScreenUnlocker : MonoBehaviour, IPointerUpHandler
 {
-    public UnityEvent parentLockScreenUnlocked;
+    [SerializeField] private GameObject dummyLock;
+    [SerializeField] private GameObject parentalGate;
     private bool isOnLock = false;
-    private Vector2 firstPosition;
-
-    private void Start() 
-    {
-        firstPosition = this.transform.position;
-    }
-
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
@@ -36,15 +30,14 @@ public class ParentScreenUnlocker : MonoBehaviour, IPointerUpHandler
     {
         if(isOnLock)
         {
-            parentLockScreenUnlocked.Invoke();
+            this.transform.position = dummyLock.transform.position;
 
-            this.transform.position = firstPosition;
+            parentalGate.SetActive(false);
         }
         else
         {
-            this.transform.position = firstPosition;
+            this.transform.position = dummyLock.transform.position;
         }
 
     }
-
 }

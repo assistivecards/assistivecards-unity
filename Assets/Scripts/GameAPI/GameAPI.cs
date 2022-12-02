@@ -16,6 +16,9 @@ public class GameAPI : MonoBehaviour
     public List<Texture2D> cachedAppIcons = new List<Texture2D>();
     public static Task cacheData;
     AssistiveCardsSDK.AssistiveCardsSDK assistiveCardsSDK;
+    public Sound[] sfxClips;
+    public AudioSource musicSource, sfxSource;
+    public AudioClip musicClip;
 
     private async void Awake()
     {
@@ -618,6 +621,26 @@ public class GameAPI : MonoBehaviour
         return PlayerPrefs.GetString("isPremium", "0");
     }
 
+    public void SetSFXPreference(int isSFXOn)
+    {
+        PlayerPrefs.SetInt("isSFXOn", isSFXOn);
+    }
+
+    public int GetSFXPreference()
+    {
+        return PlayerPrefs.GetInt("isSFXOn", 1);
+    }
+
+    public void SetMusicPreference(int isMusicOn)
+    {
+        PlayerPrefs.SetInt("isMusicOn", isMusicOn);
+    }
+
+    public int GetMusicPreference()
+    {
+        return PlayerPrefs.GetInt("isMusicOn", 1);
+    }
+
     ///<summary>
     ///Deletes all the data stored in PlayerPrefs on sign out.
     ///</summary>
@@ -899,6 +922,34 @@ public class GameAPI : MonoBehaviour
         else if (orientationMode == "landscape")
         {
             Screen.orientation = ScreenOrientation.LandscapeLeft;
+        }
+    }
+
+    public void PlayMusic()
+    {
+        musicSource.clip = musicClip;
+        if (GetMusicPreference() == 1)
+        {
+            musicSource.Play();
+        }
+        else
+        {
+            Debug.Log("Müzik kapali."); ;
+        }
+    }
+
+    public void PlaySFX(string name)
+    {
+        Sound sfx = Array.Find(sfxClips, clip => clip.soundName == name);
+
+        if (sfx == null)
+        {
+            Debug.Log("Sound not found");
+        }
+
+        else
+        {
+            sfxSource.PlayOneShot(sfx.clip);
         }
     }
 

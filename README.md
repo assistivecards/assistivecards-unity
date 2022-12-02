@@ -453,6 +453,42 @@ Retrieves the premium status data stored in PlayerPrefs.
 public string GetPremium()
 ```
 
+## SetSFXPreference
+
+Takes in a single parameter of type integer named isSFXOn and stores it in PlayerPrefs.
+
+```Csharp
+public void SetSFXPreference(int isSFXOn)
+```
+
+## GetSFXPreference
+
+Retrieves the SFX preference data stored in PlayerPrefs.
+
+> Default value is 1.
+
+```Csharp
+public int GetSFXPreference()
+```
+
+## SetMusicPreference
+
+Takes in a single parameter of type integer named isMusicOn and stores it in PlayerPrefs.
+
+```Csharp
+public void SetMusicPreference(int isMusicOn)
+```
+
+## GetMusicPreference
+
+Retrieves the music preference data stored in PlayerPrefs.
+
+> Default value is 1.
+
+```Csharp
+public int GetMusicPreference()
+```
+
 ## ClearAllPrefs
 
 Deletes all the data stored in PlayerPrefs on sign out.
@@ -481,18 +517,56 @@ Returns the locale corresponding to the language data stored in PlayerPrefs.
 public async Task<string> GetSelectedLocale()
 ```
 
+## GetSystemLanguageLocales
+
+Returns the list of all available locales corresponding to the language data stored in PlayerPrefs.
+
+> <span style="color:crimson">e.g.</span> "en-US", "en-GB", "en-AU", "en-CA", "en-CB", "en-IN", "en-NZ" for English, "fr-FR", "fr-CA" for French etc.
+
+```Csharp
+public async Task<List<string>> GetSystemLanguageLocales()
+```
+
 ## Translate
 
-Takes in a single parameter of type string named UITextID and returns the translation corresponding to the selected language which is stored in PlayerPrefs. Use this method for plain texts.
+Takes in a single parameter of type string named UITextID and returns the translation corresponding to the selected language which is stored in PlayerPrefs.
+
+> Use this method for plain texts.
 
 ```Csharp
 public async Task<string> Translate(string UITextID)
 ```
 
-## Translate
+Takes in a first parameter of type string named UITextID and a second parameter of type string named variable. Returns the translation corresponding to the selected language which is stored in PlayerPrefs.
 
-Takes in a first parameter of type string named UITextID and a second parameter of type string named variable. Returns the translation corresponding to the selected language which is stored in PlayerPrefs. Use this method for texts with variables.
+> Use this method for texts with variables.
 
 ```Csharp
 public async Task<string> Translate(string UITextID, string variable)
+```
+
+## ForceOrientation
+
+Takes in a single parameter of type string named orientationMode and forces the screen orientation accordingly.
+
+> <span style="color:crimson">e.g.</span> "portrait", to force portrait orientation, "landscape" to force landscape orientaiton.
+
+```Csharp
+public void ForceOrientation(string orientationMode)
+```
+
+## PlayMusic
+
+Plays an audio clip according to the music preference data stored in PlayerPrefs.
+
+```Csharp
+public void PlayMusic()
+```
+
+## PlaySFX
+
+Takes in a single parameter of type string named clipName and plays the corresponding audio clip, according to the SFX preference data stored in PlayerPrefs.
+
+```Csharp
+public void PlaySFX(string clipName)
 ```

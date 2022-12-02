@@ -621,21 +621,33 @@ public class GameAPI : MonoBehaviour
         return PlayerPrefs.GetString("isPremium", "0");
     }
 
+    ///<summary>
+    ///Takes in a single parameter of type integer named isSFXOn and stores it in PlayerPrefs.
+    ///</summary>
     public void SetSFXPreference(int isSFXOn)
     {
         PlayerPrefs.SetInt("isSFXOn", isSFXOn);
     }
 
+    ///<summary>
+    ///Retrieves the SFX preference data stored in PlayerPrefs. Default value is 1.
+    ///</summary>
     public int GetSFXPreference()
     {
         return PlayerPrefs.GetInt("isSFXOn", 1);
     }
 
+    ///<summary>
+    ///Takes in a single parameter of type integer named isMusicOn and stores it in PlayerPrefs.
+    ///</summary>
     public void SetMusicPreference(int isMusicOn)
     {
         PlayerPrefs.SetInt("isMusicOn", isMusicOn);
     }
 
+    ///<summary>
+    ///Retrieves the music preference data stored in PlayerPrefs. Default value is 1.
+    ///</summary>
     public int GetMusicPreference()
     {
         return PlayerPrefs.GetInt("isMusicOn", 1);
@@ -892,6 +904,9 @@ public class GameAPI : MonoBehaviour
         return null;
     }
 
+    ///<summary>
+    ///Returns the list of all available locales corresponding to the language data stored in PlayerPrefs.
+    ///</summary>
     public async Task<List<string>> GetSystemLanguageLocales()
     {
         var langs = await GetLanguages();
@@ -913,6 +928,9 @@ public class GameAPI : MonoBehaviour
 
     }
 
+    ///<summary>
+    ///Takes in a single parameter of type string named orientationMode and forces the screen orientation accordingly.
+    ///</summary>
     public void ForceOrientation(string orientationMode)
     {
         if (orientationMode == "portrait")
@@ -925,6 +943,9 @@ public class GameAPI : MonoBehaviour
         }
     }
 
+    ///<summary>
+    ///Plays an audio clip according to the music preference data stored in PlayerPrefs.
+    ///</summary>
     public void PlayMusic()
     {
         musicSource.clip = musicClip;
@@ -938,9 +959,12 @@ public class GameAPI : MonoBehaviour
         }
     }
 
-    public void PlaySFX(string name)
+    ///<summary>
+    ///Takes in a single parameter of type string named clipName and plays the corresponding audio clip, according to the SFX preference data stored in PlayerPrefs.
+    ///</summary>
+    public void PlaySFX(string clipName)
     {
-        Sound sfx = Array.Find(sfxClips, clip => clip.soundName == name);
+        Sound sfx = Array.Find(sfxClips, clip => clip.soundName == clipName);
 
         if (sfx == null)
         {

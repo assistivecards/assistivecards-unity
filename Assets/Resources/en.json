@@ -50,6 +50,11 @@
 	"settings_subscriptions_oneTimePayment": "One-time payment",
 	"settings_subscriptions_recurringPayment": "Recurring payment",
 
+	"settings_selection_sound": "Sound",
+	"settings_selection_description": "Select the music and sound settings to be used in the app.",
+	"settings_sound_effect": "Sound effect",
+	"settings_music": "Music",
+
 	"settings_selection_apps": "All Apps",
 	"settings_selection_apps_new": "NEW",
 	"settings_apps_description": "Discover other apps made by Assistive Cards",

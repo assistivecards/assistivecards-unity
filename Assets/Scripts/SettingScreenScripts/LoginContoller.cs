@@ -16,11 +16,14 @@ public class LoginContoller : MonoBehaviour
     [SerializeField] private GameObject tittleBar;
     public TMP_InputField nicknameInputField;
     [SerializeField] private Button nextButton;
+    [SerializeField] private Image backgroundFadePanel;
 
-    [Header ("Screen Prefabs")]
+    [Header ("Screens")]
     [SerializeField] private GameObject avatarSelectionScreen;
     [SerializeField] private GameObject practiceReminderScreen;
     [SerializeField] private GameObject congratulationsScreen;
+
+    [Header ("Screen Prefabs")]
     [SerializeField] private GameObject loginPrefab;
     [SerializeField] private GameObject gamePrefab;
 
@@ -64,6 +67,12 @@ public class LoginContoller : MonoBehaviour
         LeanTween.scale(avatarSelectionScreen,  Vector3.one, 0.2f);
     }
     public void StartButton()
+    {
+        //Fade Out
+        backgroundFadePanel.CrossFadeAlpha(0, 0.25f, false);
+        Invoke("SetGamePanelActive", 0.15f);
+    }
+    private void SetGamePanelActive()
     {
         gamePrefab.SetActive(true);
         loginPrefab.SetActive(false);

@@ -265,7 +265,6 @@ MonoBehaviour:
   loginPrefab: {fileID: 5546718071078979360}
   gamePrefab: {fileID: 7400471998767366787}
   settingPrefab: {fileID: 589691305}
-  isSettingPanelFadeIn: 0
 --- !u!114 &68398938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2050,6 +2049,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2693788705572110386, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
   m_PrefabInstance: {fileID: 2693788706588823381}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1193459842 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 651703215013701001, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
+  m_PrefabInstance: {fileID: 5546718071078979358}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1207574407 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2967230206559831173, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
@@ -3551,6 +3561,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3636772623113505076, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
+      propertyPath: m_Name
+      value: settings_selection_description
+      objectReference: {fileID: 0}
     - target: {fileID: 4184173999145598257, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3579,6 +3593,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -21
       objectReference: {fileID: 0}
+    - target: {fileID: 4572892671391429844, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
+      propertyPath: m_Name
+      value: BottomText
+      objectReference: {fileID: 0}
     - target: {fileID: 5395224794380807660, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3586,6 +3604,10 @@ PrefabInstance:
     - target: {fileID: 5395224794380807660, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SaveButtonClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 5455520902415201589, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
+      propertyPath: m_Name
+      value: BottomText
       objectReference: {fileID: 0}
     - target: {fileID: 5973289967096938891, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
       propertyPath: canvas
@@ -3739,6 +3761,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9128133939482852114, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
+      propertyPath: m_Name
+      value: MainTittle
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 81136618772835684, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bc55f9c6a7a298e4b8a6649b447f8be4, type: 3}
@@ -3833,6 +3859,10 @@ PrefabInstance:
       propertyPath: canvasController
       value: 
       objectReference: {fileID: 68398936}
+    - target: {fileID: 5546718070684903927, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
+      propertyPath: backgroundFadePanel
+      value: 
+      objectReference: {fileID: 1193459842}
     - target: {fileID: 5546718070684903929, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
       propertyPath: m_IsActive
       value: 1

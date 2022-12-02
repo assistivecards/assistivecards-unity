@@ -38,6 +38,6 @@ public class SettingScreenButton : MonoBehaviour
         settingPrefab.SetActive(true);
         gamePrefab.SetActive(false);
 
-        canvasController.isSettingPanelFadeIn = true;
+        canvasController.StartFade();
     }
 }

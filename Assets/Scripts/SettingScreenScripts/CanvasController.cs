@@ -54,7 +54,6 @@ public class CanvasController : MonoBehaviour
     private AccessibilityScreen accessibilityScreenScript;
     private TTSPanel tTSPanel;
     private LanguageController languageController;
-    public bool isSettingPanelFadeIn;
 
     private void Awake()
     {
@@ -154,8 +153,27 @@ public class CanvasController : MonoBehaviour
 
     public void CloseSettingClick()
     {
+        //Fade Out
+        settingScreenFadePanel.gameObject.SetActive(true);
+        settingScreenFadePanel.CrossFadeAlpha(1, 0.25f, false);
+        Invoke("OpenGamePanel", 0.1f);
+    }
+    private void OpenGamePanel()
+    {
         settingPrefab.SetActive(false);
         gamePrefab.SetActive(true);
+
+    }
+    public void StartFade()
+    {
+        //Fade In
+        settingScreenFadePanel.CrossFadeAlpha(0, 0.25f, false);
+        Invoke("SetFadePanelFalse", 0.25f);
+    }
+
+    private void SetFadePanelFalse()
+    {
+        settingScreenFadePanel.gameObject.SetActive(false);
     }
     public void SignOut()
     {
@@ -190,18 +208,4 @@ public class CanvasController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    private void Update()
-    {
-        if(isSettingPanelFadeIn)
-        {
-            settingScreenFadePanel.CrossFadeAlpha(0, 0.25f, false);
-            isSettingPanelFadeIn = false;
-            Invoke("SetFadeObject", 0.25f);
-        }
-    }
-
-    private void SetFadeObject()
-    {
-        settingScreenFadePanel.gameObject.SetActive(false);
-    }
 }

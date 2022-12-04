@@ -523,6 +523,10 @@ MonoBehaviour:
   cachedApps:
     apps: []
   cachedAppIcons: []
+  sfxClips: []
+  musicSource: {fileID: 0}
+  sfxSource: {fileID: 0}
+  musicClip: {fileID: 0}
   cards:
     cards: []
 --- !u!114 &519420034
@@ -1181,6 +1185,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -56.6111
       objectReference: {fileID: 0}
+    - target: {fileID: 1848492858624014195, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_fontSize
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1848492858624014195, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 2401212122449075483, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: canvas
       value: 
@@ -1225,6 +1237,34 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 68398931}
+    - target: {fileID: 3367796427087208985, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9de1b49a8987d044797db9f94d743009, type: 3}
+    - target: {fileID: 3453658773330688683, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9de1b49a8987d044797db9f94d743009, type: 3}
+    - target: {fileID: 4008764785039044947, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9de1b49a8987d044797db9f94d743009, type: 3}
+    - target: {fileID: 5291693120752409138, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5383788188156236624, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_fontSize
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5383788188156236624, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5946449489260977166, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9de1b49a8987d044797db9f94d743009, type: 3}
     - target: {fileID: 6257171868753266720, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -1339,7 +1379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6658854894624896056, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6658854894663524494, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1385,6 +1425,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 68398936}
+    - target: {fileID: 6658854895179340871, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6658854895452977605, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

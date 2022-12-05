@@ -27,7 +27,7 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
     {
         if (productName != PlayerSettings.productName)
         {
-            Texture2D icon = Resources.Load<Texture2D>(PlayerSettings.productName + "_icon");
+            Texture2D icon = (Texture2D)AssetDatabase.LoadAssetAtPath("Assets/Sprites/AppIcons/" + PlayerSettings.productName + ".png", typeof(Texture2D));
             PlayerSettings.SetIcons(NamedBuildTarget.Unknown, new Texture2D[] { icon }, IconKind.Any);
         }
         else
@@ -39,6 +39,7 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
         {
             var bundleVersionCode = PlayerSettings.bundleVersion.Replace(".", string.Empty);
             PlayerSettings.Android.bundleVersionCode = Int32.Parse(bundleVersionCode);
+            PlayerSettings.iOS.buildNumber = PlayerSettings.bundleVersion;
         }
         else
         {

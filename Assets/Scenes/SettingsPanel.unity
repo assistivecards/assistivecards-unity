@@ -203,6 +203,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -733,7 +734,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -895,6 +895,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 1778535256}
     m_Modifications:
     - target: {fileID: 3585487874960134275, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
@@ -1146,6 +1147,10 @@ PrefabInstance:
       value: LoginContoller, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5546718071285443768, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 441091592}
   m_SourcePrefab: {fileID: 100100000, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
 --- !u!114 &5546718071078979359 stripped
 MonoBehaviour:
@@ -1181,6 +1186,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 1778535256}
     m_Modifications:
     - target: {fileID: 1111476324198306606, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
@@ -1443,6 +1449,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6658854895347769555, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6658854895452977605, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1451,10 +1461,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 68398936}
+    - target: {fileID: 6658854895696119574, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658854895696119574, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6658854895893888693, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 68398936}
+    - target: {fileID: 6658854895967213098, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1263.5293
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658854895967213098, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -266.28555
+      objectReference: {fileID: 0}
     - target: {fileID: 6658854895981297079, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1477,12 +1503,14 @@ PrefabInstance:
       objectReference: {fileID: 68398936}
     m_RemovedComponents:
     - {fileID: 6658854894415199877, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
 --- !u!1001 &7400471998767366786
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 1778535256}
     m_Modifications:
     - target: {fileID: 3155672409003079422, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
@@ -1654,6 +1682,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
 --- !u!1 &7400471998767366787 stripped
 GameObject:

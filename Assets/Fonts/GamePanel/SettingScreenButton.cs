@@ -18,6 +18,12 @@ public class SettingScreenButton : MonoBehaviour
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
     }
+    
+    private async void OnEnable()
+    {
+        settingButton.image.sprite = await gameAPI.GetAvatarImage();  
+
+    }
 
     private void Start()
     {
@@ -30,7 +36,11 @@ public class SettingScreenButton : MonoBehaviour
     public async void SetAvatarImageOnGamePanel()
     {
         nickNameText.SetActive(true);
-        settingButton.image.sprite = await gameAPI.GetAvatarImage();  
+
+        if(settingButton.IsActive())
+        {
+            settingButton.image.sprite = await gameAPI.GetAvatarImage();  
+        }
     }
 
     public void SettingButtonClick()

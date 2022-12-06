@@ -940,6 +940,10 @@ public class GameAPI : MonoBehaviour
         else if (orientationMode == "landscape")
         {
             Screen.orientation = ScreenOrientation.LandscapeLeft;
+            Screen.autorotateToLandscapeLeft = true;
+            Screen.autorotateToLandscapeRight = true;
+            Screen.autorotateToPortrait = false;
+            Screen.orientation = ScreenOrientation.AutoRotation;
         }
     }
 

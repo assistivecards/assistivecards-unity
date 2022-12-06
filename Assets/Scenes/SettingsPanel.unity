@@ -203,6 +203,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -738,7 +739,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -900,6 +900,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 1778535256}
     m_Modifications:
     - target: {fileID: 2870053751839552501, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
@@ -913,6 +914,18 @@ PrefabInstance:
     - target: {fileID: 5063478799865006714, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 756
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063478799865006715, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063478800901783980, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063478800901783986, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5546718070433888006, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1142,6 +1155,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5546718072497905807, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
+      propertyPath: m_TagString
+      value: avatarSelection
+      objectReference: {fileID: 0}
     - target: {fileID: 5546718072530027782, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
@@ -1159,6 +1176,10 @@ PrefabInstance:
       value: LoginContoller, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5546718071285443768, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 441091592}
   m_SourcePrefab: {fileID: 100100000, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
 --- !u!114 &5546718071078979359 stripped
 MonoBehaviour:
@@ -1194,6 +1215,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 1778535256}
     m_Modifications:
     - target: {fileID: 1111476324198306606, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
@@ -1292,10 +1314,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 9de1b49a8987d044797db9f94d743009, type: 3}
+    - target: {fileID: 6257171868670648808, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257171868670648822, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6257171868753266720, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 68398938}
+    - target: {fileID: 6257171868753266750, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6658854894169647711, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1472,6 +1506,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 68398936}
+    - target: {fileID: 6658854895620700622, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_TagString
+      value: avatarSelectionSettings
+      objectReference: {fileID: 0}
     - target: {fileID: 6658854895683799636, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1518,12 +1556,14 @@ PrefabInstance:
       objectReference: {fileID: 68398936}
     m_RemovedComponents:
     - {fileID: 6658854894415199877, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
 --- !u!1001 &7400471998767366786
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 1778535256}
     m_Modifications:
     - target: {fileID: 3155672409003079422, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
@@ -1695,6 +1735,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
 --- !u!1 &7400471998767366787 stripped
 GameObject:

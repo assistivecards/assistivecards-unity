@@ -7,21 +7,20 @@ public class TopAppBarController : MonoBehaviour
 {
     GameAPI gameAPI;
     [SerializeField] private GameObject canvas;
+
+    [Header ("Top App Bar UI")]
     private GameObject backButton;
     private GameObject saveButton;
+
+    [Header ("Classes")]
     private ProfileEditor profileEditor;
     private LanguageController languageController;
     [SerializeField] TTSPanel ttsPanel;
-    [SerializeField] private SampleWebView sampleWebView;
-
-    [SerializeField] private SettingScreenButton settingScreenButton;
 
     [Header("UI Elements Accessility")]
-
     public Toggle hapticsToggle;
     public Toggle activateOnPressToggle;
     public Toggle voiceGreetingToggle;
-
 
     [Header("UI Elements Noficication")]
 
@@ -29,6 +28,11 @@ public class TopAppBarController : MonoBehaviour
     public Toggle weeklyReminderToggle;
     public Toggle usabilityTipsToggle;
     public Toggle promotionsNotificationToggle;
+
+    [Header ("Misc")]
+    [SerializeField] private SampleWebView sampleWebView;
+    [SerializeField] private SettingScreenButton settingScreenButton;
+
 
     private void Awake()
     {
@@ -97,7 +101,6 @@ public class TopAppBarController : MonoBehaviour
         {
             gameAPI.SetTTSPreference(ttsPanel.selectedTtsElement.name);
         }
-
         LeanTween.scale(this.transform.parent.gameObject, Vector3.one * 0.9f, 0.15f);
         Invoke("SceneSetActiveFalse", 0.15f);
     }

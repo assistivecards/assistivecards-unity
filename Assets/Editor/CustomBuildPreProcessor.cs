@@ -25,7 +25,7 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
 
     public void OnPreprocessBuild(BuildReport report)
     {
-        if (productName != PlayerSettings.productName)
+        if (true)
         {
             Texture2D icon = (Texture2D)AssetDatabase.LoadAssetAtPath("Assets/Sprites/AppIcons/" + PlayerSettings.productName + ".png", typeof(Texture2D));
             PlayerSettings.SetIcons(NamedBuildTarget.Unknown, new Texture2D[] { icon }, IconKind.Any);
@@ -35,11 +35,12 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
             Debug.Log("isim ayni");
         }
 
-        if (productVersion != PlayerSettings.bundleVersion)
+        if (true)
         {
             var bundleVersionCode = PlayerSettings.bundleVersion.Replace(".", string.Empty);
             PlayerSettings.Android.bundleVersionCode = Int32.Parse(bundleVersionCode);
             PlayerSettings.iOS.buildNumber = PlayerSettings.bundleVersion;
+            Debug.Log("preprocessing");
         }
         else
         {
@@ -58,7 +59,7 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
     {
         if (Application.unityVersion.StartsWith("2022"))
         {
-            if (productName != PlayerSettings.productName)
+            if (true)
             {
                 List<EditorBuildSettingsScene> editorBuildSettingsScenesList = new List<EditorBuildSettingsScene>();
                 var sceneToAdd = new EditorBuildSettingsScene("Assets/Scenes/" + ToTitleCase(PlayerSettings.productName) + ".unity", true);

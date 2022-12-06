@@ -760,6 +760,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1202986470 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5775580200317848830, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+  m_PrefabInstance: {fileID: 6658854895000012590}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 077449b9b0051ff4580b2b8dab0c0fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1301366898 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6658854896265695068, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
@@ -1515,14 +1526,14 @@ PrefabInstance:
     - target: {fileID: 3734878189542303127, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 68398940}
+      objectReference: {fileID: 1202986470}
     - target: {fileID: 3734878189542303127, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SaveSettings
+      value: SaveButtonClicked
       objectReference: {fileID: 0}
     - target: {fileID: 3734878189542303127, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SoundManagerUI, Assembly-CSharp
+      value: TopAppBarController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4008764785039044947, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_Sprite
@@ -1540,6 +1551,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 5775580200317848830, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 68398931}
     - target: {fileID: 5946449489260977166, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_Sprite
       value: 

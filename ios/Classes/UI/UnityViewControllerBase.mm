@@ -43,10 +43,6 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear: animated];
-#if UNITY_SUPPORT_ROTATION
-    // at this point the orientation should be reset (we start anew)
-    _currentOrientation = UIViewControllerOrientation(self);
-#endif
     [_notificationDelegate onViewDidAppear: animated];
 }
 

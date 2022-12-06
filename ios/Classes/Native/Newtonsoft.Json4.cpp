@@ -269,92 +269,6 @@ struct GenericInterfaceFuncInvoker0
 		return ((Func)invokeData.methodPtr)(obj, invokeData.method);
 	}
 };
-template <typename T1, typename T2>
-struct InvokerActionInvoker2;
-template <typename T1, typename T2>
-struct InvokerActionInvoker2<T1*, T2>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2 p2)
-	{
-		void* params[2] = { p1, &p2 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2, typename T3>
-struct InvokerActionInvoker3;
-template <typename T1, typename T2, typename T3>
-struct InvokerActionInvoker3<T1*, T2*, T3>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3 p3)
-	{
-		void* params[3] = { p1, p2, &p3 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2, typename T3>
-struct InvokerActionInvoker3<T1*, T2, T3*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2 p2, T3* p3)
-	{
-		void* params[3] = { p1, &p2, p3 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2, typename T3>
-struct InvokerActionInvoker3<T1*, T2*, T3*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3* p3)
-	{
-		void* params[3] = { p1, p2, p3 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2, typename T3, typename T4>
-struct InvokerActionInvoker4;
-template <typename T1, typename T2, typename T3, typename T4>
-struct InvokerActionInvoker4<T1*, T2*, T3, T4*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3 p3, T4* p4)
-	{
-		void* params[4] = { p1, p2, &p3, p4 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2, typename T3, typename T4>
-struct InvokerActionInvoker4<T1*, T2*, T3*, T4*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3* p3, T4* p4)
-	{
-		void* params[4] = { p1, p2, p3, p4 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename R, typename T1>
-struct InvokerFuncInvoker1;
-template <typename R, typename T1>
-struct InvokerFuncInvoker1<R, T1*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1)
-	{
-		R ret;
-		void* params[1] = { p1 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2>
-struct InvokerFuncInvoker2;
-template <typename R, typename T1, typename T2>
-struct InvokerFuncInvoker2<R, T1*, T2*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2)
-	{
-		R ret;
-		void* params[2] = { p1, p2 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
 
 // System.Action`2<System.Object,System.Object>
 struct Action_2_t156C43F079E7E68155FCDCD12DC77DD11AEF7E3C;
@@ -5943,6 +5857,10 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t KeyValuePair_2_get_Value_
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Enumerator_MoveNext_m83FEC2049C228A9D5B886270ACB1A5B99F7FAB89_gshared (Enumerator_tB389395A2FD246B4D96A33CFE98D146137FA3ED6* __this, const RuntimeMethod* method) ;
 // System.Boolean System.Predicate`1<System.Object>::Invoke(T)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Predicate_1_Invoke_m6AC449189DCEE89A4FA2A2B724DE296A1DFB6A9B_gshared_inline (Predicate_1_t8342C85FF4E41CD1F7024AC0CDC3E5312A32CB12* __this, RuntimeObject* ___obj0, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<System.Object>::AddWithResize(T)
+IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method) ;
+// System.Collections.Generic.EqualityComparer`1<T> System.Collections.Generic.EqualityComparer`1<System.Object>::CreateComparer()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR EqualityComparer_1_t92563A67F1C1ECDC3FE387C46498E2E56B59F3C2* EqualityComparer_1_CreateComparer_mD2FA619307513193746FBEB5AE522FB54E21B634_gshared (const RuntimeMethod* method) ;
 
 // System.Void Newtonsoft.Json.Utilities.ReflectionUtils/<>c::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__ctor_m6DDB32E97BC4E58BD446ACD831214F7E773FC500 (U3CU3Ec_tCFD1EB021F178BC4CD6867A82782E0ADC90CF5B2* __this, const RuntimeMethod* method) ;
@@ -7953,6 +7871,16 @@ inline bool Predicate_1_Invoke_m6AC449189DCEE89A4FA2A2B724DE296A1DFB6A9B_inline 
 inline void Dictionary_2_set_Item_m01AF1C121F0C4EBF7D7A5187A38006B4243EC9C9 (Dictionary_2_t8497B36FD5388D58401BC16677AD068721974842* __this, JsonProperty_t8AC6AE6C6E97559E27739FDD2B6A3DA659FF04F3* ___key0, int32_t ___value1, const RuntimeMethod* method)
 {
 	((  void (*) (Dictionary_2_t8497B36FD5388D58401BC16677AD068721974842*, JsonProperty_t8AC6AE6C6E97559E27739FDD2B6A3DA659FF04F3*, int32_t, const RuntimeMethod*))Dictionary_2_set_Item_mC0F84089707699016E685213CFF60997BC7CB12B_gshared)(__this, ___key0, ___value1, method);
+}
+// System.Void System.Collections.Generic.List`1<System.Object>::AddWithResize(T)
+inline void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4 (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method)
+{
+	((  void (*) (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D*, RuntimeObject*, const RuntimeMethod*))List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4_gshared)(__this, ___item0, method);
+}
+// System.Collections.Generic.EqualityComparer`1<T> System.Collections.Generic.EqualityComparer`1<System.Object>::CreateComparer()
+inline EqualityComparer_1_t92563A67F1C1ECDC3FE387C46498E2E56B59F3C2* EqualityComparer_1_CreateComparer_mD2FA619307513193746FBEB5AE522FB54E21B634 (const RuntimeMethod* method)
+{
+	return ((  EqualityComparer_1_t92563A67F1C1ECDC3FE387C46498E2E56B59F3C2* (*) (const RuntimeMethod*))EqualityComparer_1_CreateComparer_mD2FA619307513193746FBEB5AE522FB54E21B634_gshared)(method);
 }
 #ifdef __clang__
 #pragma clang diagnostic push
@@ -19150,7 +19078,7 @@ IL_0035:
 		Assembly_t* L_19 = V_6;
 		NullCheck(L_19);
 		AssemblyName_t555F1570F523D87D970C6E7F27B1B44C83EADDD2* L_20;
-		L_20 = VirtualFuncInvoker0< AssemblyName_t555F1570F523D87D970C6E7F27B1B44C83EADDD2* >::Invoke(19 /* System.Reflection.AssemblyName System.Reflection.Assembly::GetName() */, L_19);
+		L_20 = VirtualFuncInvoker0< AssemblyName_t555F1570F523D87D970C6E7F27B1B44C83EADDD2* >::Invoke(20 /* System.Reflection.AssemblyName System.Reflection.Assembly::GetName() */, L_19);
 		NullCheck(L_20);
 		String_t* L_21;
 		L_21 = AssemblyName_get_Name_m7899B9B3F289EEBAF62AEAB51D1CA91DA92C4E6A_inline(L_20, NULL);
@@ -19216,7 +19144,7 @@ IL_0091:
 		String_t* L_35 = V_1;
 		NullCheck(L_34);
 		Type_t* L_36;
-		L_36 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(17 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_34, L_35);
+		L_36 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(18 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_34, L_35);
 		V_3 = L_36;
 		Type_t* L_37 = V_3;
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
@@ -19369,7 +19297,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Type_t* DefaultSerializationBinder_GetGeneric
 		String_t* L_7 = V_2;
 		NullCheck(L_6);
 		Type_t* L_8;
-		L_8 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(17 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_6, L_7);
+		L_8 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(18 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_6, L_7);
 		V_3 = L_8;
 		Type_t* L_9 = V_3;
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
@@ -21408,14 +21336,6 @@ void SerializationCallback_Invoke_m8409A73F0B02AD97D8044C018E80784BF4F39995_Open
 	typedef void (*FunctionPointerType) (RuntimeObject*, StreamingContext_t56760522A751890146EE45F82F866B55B7E33677, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___o0, ___context1, method);
 }
-void SerializationCallback_Invoke_m8409A73F0B02AD97D8044C018E80784BF4F39995_OpenStaticInvoker(SerializationCallback_tB35DD9E4F1BA9E38C8F8158442E282EF8D996E13* __this, RuntimeObject* ___o0, StreamingContext_t56760522A751890146EE45F82F866B55B7E33677 ___context1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< RuntimeObject*, StreamingContext_t56760522A751890146EE45F82F866B55B7E33677 >::Invoke(__this->___method_ptr_0, method, NULL, ___o0, ___context1);
-}
-void SerializationCallback_Invoke_m8409A73F0B02AD97D8044C018E80784BF4F39995_ClosedStaticInvoker(SerializationCallback_tB35DD9E4F1BA9E38C8F8158442E282EF8D996E13* __this, RuntimeObject* ___o0, StreamingContext_t56760522A751890146EE45F82F866B55B7E33677 ___context1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker3< RuntimeObject*, RuntimeObject*, StreamingContext_t56760522A751890146EE45F82F866B55B7E33677 >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___o0, ___context1);
-}
 void SerializationCallback_Invoke_m8409A73F0B02AD97D8044C018E80784BF4F39995_OpenVirtual(SerializationCallback_tB35DD9E4F1BA9E38C8F8158442E282EF8D996E13* __this, RuntimeObject* ___o0, StreamingContext_t56760522A751890146EE45F82F866B55B7E33677 ___context1, const RuntimeMethod* method)
 {
 	NullCheck(___o0);
@@ -21439,7 +21359,7 @@ void SerializationCallback_Invoke_m8409A73F0B02AD97D8044C018E80784BF4F39995_Open
 // System.Void Newtonsoft.Json.Serialization.SerializationCallback::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SerializationCallback__ctor_mD20943B9A19E3372B683FE88570DF24A91842B32 (SerializationCallback_tB35DD9E4F1BA9E38C8F8158442E282EF8D996E13* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -21448,19 +21368,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SerializationCallback__ctor_mD20943B9A19
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 2;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&SerializationCallback_Invoke_m8409A73F0B02AD97D8044C018E80784BF4F39995_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&SerializationCallback_Invoke_m8409A73F0B02AD97D8044C018E80784BF4F39995_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&SerializationCallback_Invoke_m8409A73F0B02AD97D8044C018E80784BF4F39995_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&SerializationCallback_Invoke_m8409A73F0B02AD97D8044C018E80784BF4F39995_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -21550,14 +21464,6 @@ void SerializationErrorCallback_Invoke_m5A232ABC19DEA18BB86BB3FAF6601D495C4AAAFC
 	typedef void (*FunctionPointerType) (RuntimeObject*, StreamingContext_t56760522A751890146EE45F82F866B55B7E33677, ErrorContext_tEF76A5282C88B9261A5A35EEDA8FB53DA6E6F71B*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___o0, ___context1, ___errorContext2, method);
 }
-void SerializationErrorCallback_Invoke_m5A232ABC19DEA18BB86BB3FAF6601D495C4AAAFC_OpenStaticInvoker(SerializationErrorCallback_tA1E984B56F3AA395E20C8DBB2A43D2B20F5B8962* __this, RuntimeObject* ___o0, StreamingContext_t56760522A751890146EE45F82F866B55B7E33677 ___context1, ErrorContext_tEF76A5282C88B9261A5A35EEDA8FB53DA6E6F71B* ___errorContext2, const RuntimeMethod* method)
-{
-	InvokerActionInvoker3< RuntimeObject*, StreamingContext_t56760522A751890146EE45F82F866B55B7E33677, ErrorContext_tEF76A5282C88B9261A5A35EEDA8FB53DA6E6F71B* >::Invoke(__this->___method_ptr_0, method, NULL, ___o0, ___context1, ___errorContext2);
-}
-void SerializationErrorCallback_Invoke_m5A232ABC19DEA18BB86BB3FAF6601D495C4AAAFC_ClosedStaticInvoker(SerializationErrorCallback_tA1E984B56F3AA395E20C8DBB2A43D2B20F5B8962* __this, RuntimeObject* ___o0, StreamingContext_t56760522A751890146EE45F82F866B55B7E33677 ___context1, ErrorContext_tEF76A5282C88B9261A5A35EEDA8FB53DA6E6F71B* ___errorContext2, const RuntimeMethod* method)
-{
-	InvokerActionInvoker4< RuntimeObject*, RuntimeObject*, StreamingContext_t56760522A751890146EE45F82F866B55B7E33677, ErrorContext_tEF76A5282C88B9261A5A35EEDA8FB53DA6E6F71B* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___o0, ___context1, ___errorContext2);
-}
 void SerializationErrorCallback_Invoke_m5A232ABC19DEA18BB86BB3FAF6601D495C4AAAFC_OpenVirtual(SerializationErrorCallback_tA1E984B56F3AA395E20C8DBB2A43D2B20F5B8962* __this, RuntimeObject* ___o0, StreamingContext_t56760522A751890146EE45F82F866B55B7E33677 ___context1, ErrorContext_tEF76A5282C88B9261A5A35EEDA8FB53DA6E6F71B* ___errorContext2, const RuntimeMethod* method)
 {
 	NullCheck(___o0);
@@ -21581,7 +21487,7 @@ void SerializationErrorCallback_Invoke_m5A232ABC19DEA18BB86BB3FAF6601D495C4AAAFC
 // System.Void Newtonsoft.Json.Serialization.SerializationErrorCallback::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SerializationErrorCallback__ctor_mC0C873DD8EDE00B5545827889D56AB6CCFF5E0B1 (SerializationErrorCallback_tA1E984B56F3AA395E20C8DBB2A43D2B20F5B8962* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -21590,19 +21496,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SerializationErrorCallback__ctor_mC0C873
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 3;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&SerializationErrorCallback_Invoke_m5A232ABC19DEA18BB86BB3FAF6601D495C4AAAFC_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&SerializationErrorCallback_Invoke_m5A232ABC19DEA18BB86BB3FAF6601D495C4AAAFC_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&SerializationErrorCallback_Invoke_m5A232ABC19DEA18BB86BB3FAF6601D495C4AAAFC_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&SerializationErrorCallback_Invoke_m5A232ABC19DEA18BB86BB3FAF6601D495C4AAAFC_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -21693,14 +21593,6 @@ void ExtensionDataSetter_Invoke_m59E16DF7974C758788DA302C186DB519792F2403_OpenSt
 	typedef void (*FunctionPointerType) (RuntimeObject*, String_t*, RuntimeObject*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___o0, ___key1, ___value2, method);
 }
-void ExtensionDataSetter_Invoke_m59E16DF7974C758788DA302C186DB519792F2403_OpenStaticInvoker(ExtensionDataSetter_t3A4A83629176BBF3CAD5799C81F02FB2DB7A89E3* __this, RuntimeObject* ___o0, String_t* ___key1, RuntimeObject* ___value2, const RuntimeMethod* method)
-{
-	InvokerActionInvoker3< RuntimeObject*, String_t*, RuntimeObject* >::Invoke(__this->___method_ptr_0, method, NULL, ___o0, ___key1, ___value2);
-}
-void ExtensionDataSetter_Invoke_m59E16DF7974C758788DA302C186DB519792F2403_ClosedStaticInvoker(ExtensionDataSetter_t3A4A83629176BBF3CAD5799C81F02FB2DB7A89E3* __this, RuntimeObject* ___o0, String_t* ___key1, RuntimeObject* ___value2, const RuntimeMethod* method)
-{
-	InvokerActionInvoker4< RuntimeObject*, RuntimeObject*, String_t*, RuntimeObject* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___o0, ___key1, ___value2);
-}
 void ExtensionDataSetter_Invoke_m59E16DF7974C758788DA302C186DB519792F2403_OpenVirtual(ExtensionDataSetter_t3A4A83629176BBF3CAD5799C81F02FB2DB7A89E3* __this, RuntimeObject* ___o0, String_t* ___key1, RuntimeObject* ___value2, const RuntimeMethod* method)
 {
 	NullCheck(___o0);
@@ -21724,7 +21616,7 @@ void ExtensionDataSetter_Invoke_m59E16DF7974C758788DA302C186DB519792F2403_OpenGe
 // System.Void Newtonsoft.Json.Serialization.ExtensionDataSetter::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExtensionDataSetter__ctor_m65A566850CC5193E76AED8FD0AB45511D5128AF3 (ExtensionDataSetter_t3A4A83629176BBF3CAD5799C81F02FB2DB7A89E3* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -21733,19 +21625,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExtensionDataSetter__ctor_m65A566850CC51
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 3;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&ExtensionDataSetter_Invoke_m59E16DF7974C758788DA302C186DB519792F2403_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&ExtensionDataSetter_Invoke_m59E16DF7974C758788DA302C186DB519792F2403_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&ExtensionDataSetter_Invoke_m59E16DF7974C758788DA302C186DB519792F2403_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&ExtensionDataSetter_Invoke_m59E16DF7974C758788DA302C186DB519792F2403_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -21832,14 +21718,6 @@ RuntimeObject* ExtensionDataGetter_Invoke_m896D50D58EBA6C316B674EDA4AA3068284CF1
 	typedef RuntimeObject* (*FunctionPointerType) (RuntimeObject*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___o0, method);
 }
-RuntimeObject* ExtensionDataGetter_Invoke_m896D50D58EBA6C316B674EDA4AA3068284CF1576_OpenStaticInvoker(ExtensionDataGetter_t4A0796B01BE24A30E936873517B54EA710CC6767* __this, RuntimeObject* ___o0, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(__this->___method_ptr_0, method, NULL, ___o0);
-}
-RuntimeObject* ExtensionDataGetter_Invoke_m896D50D58EBA6C316B674EDA4AA3068284CF1576_ClosedStaticInvoker(ExtensionDataGetter_t4A0796B01BE24A30E936873517B54EA710CC6767* __this, RuntimeObject* ___o0, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker2< RuntimeObject*, RuntimeObject*, RuntimeObject* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___o0);
-}
 RuntimeObject* ExtensionDataGetter_Invoke_m896D50D58EBA6C316B674EDA4AA3068284CF1576_OpenVirtual(ExtensionDataGetter_t4A0796B01BE24A30E936873517B54EA710CC6767* __this, RuntimeObject* ___o0, const RuntimeMethod* method)
 {
 	NullCheck(___o0);
@@ -21863,7 +21741,7 @@ RuntimeObject* ExtensionDataGetter_Invoke_m896D50D58EBA6C316B674EDA4AA3068284CF1
 // System.Void Newtonsoft.Json.Serialization.ExtensionDataGetter::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExtensionDataGetter__ctor_mD30966A61D48BB798304C72948502F050E4199FB (ExtensionDataGetter_t4A0796B01BE24A30E936873517B54EA710CC6767* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -21872,19 +21750,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExtensionDataGetter__ctor_mD30966A61D48B
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 1;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&ExtensionDataGetter_Invoke_m896D50D58EBA6C316B674EDA4AA3068284CF1576_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&ExtensionDataGetter_Invoke_m896D50D58EBA6C316B674EDA4AA3068284CF1576_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&ExtensionDataGetter_Invoke_m896D50D58EBA6C316B674EDA4AA3068284CF1576_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&ExtensionDataGetter_Invoke_m896D50D58EBA6C316B674EDA4AA3068284CF1576_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -40564,7 +40436,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mEBCF994CC3814631
 IL_0034:
 	{
 		RuntimeObject* L_9 = ___item0;
-		((  void (*) (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D*, RuntimeObject*, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 11)))(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 11));
+		List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 14));
 		return;
 	}
 }
@@ -40630,9 +40502,10 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* ObjectConstructor_
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* Array_Empty_TisRuntimeObject_mFB8A63D602BB6974D31E20300D9EB89C6FE7C278_gshared_inline (const RuntimeMethod* method) 
 {
+	il2cpp_rgctx_method_init(method);
 	{
-		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(method->rgctx_data, 0));
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_0 = ((EmptyArray_1_tDF0DD7256B115243AA6BD5558417387A734240EE_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(method->rgctx_data, 0)))->___Value_0;
+		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(method->rgctx_data, 2));
+		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_0 = ((EmptyArray_1_tDF0DD7256B115243AA6BD5558417387A734240EE_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(method->rgctx_data, 2)))->___Value_0;
 		return L_0;
 	}
 }
@@ -40685,7 +40558,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_t92563A67F1C1E
 {
 	EqualityComparer_1_t92563A67F1C1ECDC3FE387C46498E2E56B59F3C2* V_0 = NULL;
 	{
-		EqualityComparer_1_t92563A67F1C1ECDC3FE387C46498E2E56B59F3C2* L_0 = ((EqualityComparer_1_t92563A67F1C1ECDC3FE387C46498E2E56B59F3C2_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 0)))->___defaultComparer_0;
+		EqualityComparer_1_t92563A67F1C1ECDC3FE387C46498E2E56B59F3C2* L_0 = ((EqualityComparer_1_t92563A67F1C1ECDC3FE387C46498E2E56B59F3C2_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 2)))->___defaultComparer_0;
 		il2cpp_codegen_memory_barrier();
 		V_0 = L_0;
 		EqualityComparer_1_t92563A67F1C1ECDC3FE387C46498E2E56B59F3C2* L_1 = V_0;
@@ -40696,12 +40569,12 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_t92563A67F1C1E
 	}
 	{
 		EqualityComparer_1_t92563A67F1C1ECDC3FE387C46498E2E56B59F3C2* L_2;
-		L_2 = ((  EqualityComparer_1_t92563A67F1C1ECDC3FE387C46498E2E56B59F3C2* (*) (const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 1)))(il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 1));
+		L_2 = EqualityComparer_1_CreateComparer_mD2FA619307513193746FBEB5AE522FB54E21B634(il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 3));
 		V_0 = L_2;
 		EqualityComparer_1_t92563A67F1C1ECDC3FE387C46498E2E56B59F3C2* L_3 = V_0;
 		il2cpp_codegen_memory_barrier();
-		((EqualityComparer_1_t92563A67F1C1ECDC3FE387C46498E2E56B59F3C2_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 0)))->___defaultComparer_0 = L_3;
-		Il2CppCodeGenWriteBarrier((void**)(&((EqualityComparer_1_t92563A67F1C1ECDC3FE387C46498E2E56B59F3C2_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 0)))->___defaultComparer_0), (void*)L_3);
+		((EqualityComparer_1_t92563A67F1C1ECDC3FE387C46498E2E56B59F3C2_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 2)))->___defaultComparer_0 = L_3;
+		Il2CppCodeGenWriteBarrier((void**)(&((EqualityComparer_1_t92563A67F1C1ECDC3FE387C46498E2E56B59F3C2_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 2)))->___defaultComparer_0), (void*)L_3);
 	}
 
 IL_0019:
@@ -40719,9 +40592,10 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Stack_1_get_Count_mD08AE7
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* CollectionUtils_ArrayEmpty_TisRuntimeObject_mFADBE78161A5F44890EDD26516229691D06FC4D4_gshared_inline (const RuntimeMethod* method) 
 {
+	il2cpp_rgctx_method_init(method);
 	{
-		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(method->rgctx_data, 0));
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_0 = ((EmptyArrayContainer_1_tA8B33185667C5F8828299F30AE93A6BF24C94412_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(method->rgctx_data, 0)))->___Empty_0;
+		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(method->rgctx_data, 2));
+		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_0 = ((EmptyArrayContainer_1_tA8B33185667C5F8828299F30AE93A6BF24C94412_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(method->rgctx_data, 2)))->___Empty_0;
 		return L_0;
 	}
 }

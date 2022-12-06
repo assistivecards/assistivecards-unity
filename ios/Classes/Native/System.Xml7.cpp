@@ -198,62 +198,6 @@ struct GenericInterfaceActionInvoker1
 		((Action)invokeData.methodPtr)(obj, p1, invokeData.method);
 	}
 };
-template <typename T1>
-struct InvokerActionInvoker1;
-template <typename T1>
-struct InvokerActionInvoker1<T1*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1)
-	{
-		void* params[1] = { p1 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2>
-struct InvokerActionInvoker2;
-template <typename T1, typename T2>
-struct InvokerActionInvoker2<T1*, T2*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2)
-	{
-		void* params[2] = { p1, p2 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2, typename T3>
-struct InvokerActionInvoker3;
-template <typename T1, typename T2, typename T3>
-struct InvokerActionInvoker3<T1*, T2*, T3*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3* p3)
-	{
-		void* params[3] = { p1, p2, p3 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename R>
-struct InvokerFuncInvoker0
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj)
-	{
-		R ret;
-		method->invoker_method(methodPtr, method, obj, NULL, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1>
-struct InvokerFuncInvoker1;
-template <typename R, typename T1>
-struct InvokerFuncInvoker1<R, T1*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1)
-	{
-		R ret;
-		void* params[1] = { p1 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
 
 // System.Comparison`1<System.Object>
 struct Comparison_1_t62E531E7B8260E2C6C2718C3BDB8CF8655139645;
@@ -3834,6 +3778,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1_Sort_mEB3B61CB86B1419919338B0668D
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1__ctor_m7F078BB342729BDF11327FD89D7872265328F690_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<System.Object>::Add(T)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mEBCF994CC3814631017F46A387B1A192ED6C85C7_gshared_inline (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<System.Object>::AddWithResize(T)
+IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method) ;
 
 // System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D (StringBuilder_t* __this, String_t* ___value0, const RuntimeMethod* method) ;
@@ -4971,6 +4917,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlCustomFormatter_FromXmlName_m553
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationWriter_WriteValue_mFBAAF58EE4ECE002669126E42D9613880FA871A3 (XmlSerializationWriter_t96B46BC33680D6D6AB2580CA44C228109865151B* __this, String_t* ___value0, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlSerializationWriter::WriteAttribute(System.String,System.String,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationWriter_WriteAttribute_mAA8601A17489000A033533611237057B779C91B1 (XmlSerializationWriter_t96B46BC33680D6D6AB2580CA44C228109865151B* __this, String_t* ___localName0, String_t* ___ns1, String_t* ___value2, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<System.Object>::AddWithResize(T)
+inline void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4 (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method)
+{
+	((  void (*) (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D*, RuntimeObject*, const RuntimeMethod*))List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4_gshared)(__this, ___item0, method);
+}
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -16952,14 +16903,6 @@ void XmlSerializationCollectionFixupCallback_Invoke_mFB736B20C467F37986192F47B50
 	typedef void (*FunctionPointerType) (RuntimeObject*, RuntimeObject*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___collection0, ___collectionItems1, method);
 }
-void XmlSerializationCollectionFixupCallback_Invoke_mFB736B20C467F37986192F47B50619B4E126B36E_OpenStaticInvoker(XmlSerializationCollectionFixupCallback_t7A477E768FFD9DF76301088150243A493D5A4842* __this, RuntimeObject* ___collection0, RuntimeObject* ___collectionItems1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< RuntimeObject*, RuntimeObject* >::Invoke(__this->___method_ptr_0, method, NULL, ___collection0, ___collectionItems1);
-}
-void XmlSerializationCollectionFixupCallback_Invoke_mFB736B20C467F37986192F47B50619B4E126B36E_ClosedStaticInvoker(XmlSerializationCollectionFixupCallback_t7A477E768FFD9DF76301088150243A493D5A4842* __this, RuntimeObject* ___collection0, RuntimeObject* ___collectionItems1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker3< RuntimeObject*, RuntimeObject*, RuntimeObject* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___collection0, ___collectionItems1);
-}
 void XmlSerializationCollectionFixupCallback_Invoke_mFB736B20C467F37986192F47B50619B4E126B36E_OpenVirtual(XmlSerializationCollectionFixupCallback_t7A477E768FFD9DF76301088150243A493D5A4842* __this, RuntimeObject* ___collection0, RuntimeObject* ___collectionItems1, const RuntimeMethod* method)
 {
 	NullCheck(___collection0);
@@ -16983,7 +16926,7 @@ void XmlSerializationCollectionFixupCallback_Invoke_mFB736B20C467F37986192F47B50
 // System.Void System.Xml.Serialization.XmlSerializationCollectionFixupCallback::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationCollectionFixupCallback__ctor_mB50149D9773BF51E099E574127D057F454EC6DF8 (XmlSerializationCollectionFixupCallback_t7A477E768FFD9DF76301088150243A493D5A4842* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -16992,19 +16935,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationCollectionFixupCallback_
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 2;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&XmlSerializationCollectionFixupCallback_Invoke_mFB736B20C467F37986192F47B50619B4E126B36E_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&XmlSerializationCollectionFixupCallback_Invoke_mFB736B20C467F37986192F47B50619B4E126B36E_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&XmlSerializationCollectionFixupCallback_Invoke_mFB736B20C467F37986192F47B50619B4E126B36E_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&XmlSerializationCollectionFixupCallback_Invoke_mFB736B20C467F37986192F47B50619B4E126B36E_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -17075,14 +17012,6 @@ void XmlSerializationFixupCallback_Invoke_m20E59EA8A1BB770EB6C5391C419FA821C425E
 	typedef void (*FunctionPointerType) (RuntimeObject*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___fixup0, method);
 }
-void XmlSerializationFixupCallback_Invoke_m20E59EA8A1BB770EB6C5391C419FA821C425EDF7_OpenStaticInvoker(XmlSerializationFixupCallback_t882A7D135707B29ECA0198EFF9BB512C8F54A3AE* __this, RuntimeObject* ___fixup0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker1< RuntimeObject* >::Invoke(__this->___method_ptr_0, method, NULL, ___fixup0);
-}
-void XmlSerializationFixupCallback_Invoke_m20E59EA8A1BB770EB6C5391C419FA821C425EDF7_ClosedStaticInvoker(XmlSerializationFixupCallback_t882A7D135707B29ECA0198EFF9BB512C8F54A3AE* __this, RuntimeObject* ___fixup0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< RuntimeObject*, RuntimeObject* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___fixup0);
-}
 void XmlSerializationFixupCallback_Invoke_m20E59EA8A1BB770EB6C5391C419FA821C425EDF7_OpenVirtual(XmlSerializationFixupCallback_t882A7D135707B29ECA0198EFF9BB512C8F54A3AE* __this, RuntimeObject* ___fixup0, const RuntimeMethod* method)
 {
 	NullCheck(___fixup0);
@@ -17106,7 +17035,7 @@ void XmlSerializationFixupCallback_Invoke_m20E59EA8A1BB770EB6C5391C419FA821C425E
 // System.Void System.Xml.Serialization.XmlSerializationFixupCallback::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationFixupCallback__ctor_mB41C79CFAA7CD40502E2C121836DF8A12FB521DD (XmlSerializationFixupCallback_t882A7D135707B29ECA0198EFF9BB512C8F54A3AE* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -17115,19 +17044,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationFixupCallback__ctor_mB41
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 1;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&XmlSerializationFixupCallback_Invoke_m20E59EA8A1BB770EB6C5391C419FA821C425EDF7_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&XmlSerializationFixupCallback_Invoke_m20E59EA8A1BB770EB6C5391C419FA821C425EDF7_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&XmlSerializationFixupCallback_Invoke_m20E59EA8A1BB770EB6C5391C419FA821C425EDF7_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&XmlSerializationFixupCallback_Invoke_m20E59EA8A1BB770EB6C5391C419FA821C425EDF7_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -17215,18 +17138,10 @@ RuntimeObject* XmlSerializationReadCallback_Invoke_m7F7833B3AEAF6D1F62729A4797EB
 	typedef RuntimeObject* (*FunctionPointerType) (const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(method);
 }
-RuntimeObject* XmlSerializationReadCallback_Invoke_m7F7833B3AEAF6D1F62729A4797EBB10145DDA67D_OpenStaticInvoker(XmlSerializationReadCallback_tAEB657961D305723E5F13AF0D7ADE852E81D413B* __this, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker0< RuntimeObject* >::Invoke(__this->___method_ptr_0, method, NULL);
-}
-RuntimeObject* XmlSerializationReadCallback_Invoke_m7F7833B3AEAF6D1F62729A4797EBB10145DDA67D_ClosedStaticInvoker(XmlSerializationReadCallback_tAEB657961D305723E5F13AF0D7ADE852E81D413B* __this, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2);
-}
 // System.Void System.Xml.Serialization.XmlSerializationReadCallback::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReadCallback__ctor_m3E8920B08440F5007D60B89120F500D80C24B4F7 (XmlSerializationReadCallback_tAEB657961D305723E5F13AF0D7ADE852E81D413B* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -17235,19 +17150,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReadCallback__ctor_m3E89
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 0;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&XmlSerializationReadCallback_Invoke_m7F7833B3AEAF6D1F62729A4797EBB10145DDA67D_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&XmlSerializationReadCallback_Invoke_m7F7833B3AEAF6D1F62729A4797EBB10145DDA67D_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&XmlSerializationReadCallback_Invoke_m7F7833B3AEAF6D1F62729A4797EBB10145DDA67D_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&XmlSerializationReadCallback_Invoke_m7F7833B3AEAF6D1F62729A4797EBB10145DDA67D_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -26799,14 +26708,6 @@ void XmlSerializationWriteCallback_Invoke_mC5FC4D5306E2C36BAE096E3B9BE05F4FC7488
 	typedef void (*FunctionPointerType) (RuntimeObject*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___o0, method);
 }
-void XmlSerializationWriteCallback_Invoke_mC5FC4D5306E2C36BAE096E3B9BE05F4FC7488E9F_OpenStaticInvoker(XmlSerializationWriteCallback_t906E648579A93B5C0FAF441C570070927A3D7FAA* __this, RuntimeObject* ___o0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker1< RuntimeObject* >::Invoke(__this->___method_ptr_0, method, NULL, ___o0);
-}
-void XmlSerializationWriteCallback_Invoke_mC5FC4D5306E2C36BAE096E3B9BE05F4FC7488E9F_ClosedStaticInvoker(XmlSerializationWriteCallback_t906E648579A93B5C0FAF441C570070927A3D7FAA* __this, RuntimeObject* ___o0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< RuntimeObject*, RuntimeObject* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___o0);
-}
 void XmlSerializationWriteCallback_Invoke_mC5FC4D5306E2C36BAE096E3B9BE05F4FC7488E9F_OpenVirtual(XmlSerializationWriteCallback_t906E648579A93B5C0FAF441C570070927A3D7FAA* __this, RuntimeObject* ___o0, const RuntimeMethod* method)
 {
 	NullCheck(___o0);
@@ -26830,7 +26731,7 @@ void XmlSerializationWriteCallback_Invoke_mC5FC4D5306E2C36BAE096E3B9BE05F4FC7488
 // System.Void System.Xml.Serialization.XmlSerializationWriteCallback::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationWriteCallback__ctor_mC9EAA27EDBF9664212848EC6F45C065395C51AF9 (XmlSerializationWriteCallback_t906E648579A93B5C0FAF441C570070927A3D7FAA* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -26839,19 +26740,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationWriteCallback__ctor_mC9E
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 1;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&XmlSerializationWriteCallback_Invoke_mC5FC4D5306E2C36BAE096E3B9BE05F4FC7488E9F_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&XmlSerializationWriteCallback_Invoke_mC5FC4D5306E2C36BAE096E3B9BE05F4FC7488E9F_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&XmlSerializationWriteCallback_Invoke_mC5FC4D5306E2C36BAE096E3B9BE05F4FC7488E9F_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&XmlSerializationWriteCallback_Invoke_mC5FC4D5306E2C36BAE096E3B9BE05F4FC7488E9F_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -30967,7 +30862,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mEBCF994CC3814631
 IL_0034:
 	{
 		RuntimeObject* L_9 = ___item0;
-		((  void (*) (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D*, RuntimeObject*, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 11)))(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 11));
+		List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 14));
 		return;
 	}
 }

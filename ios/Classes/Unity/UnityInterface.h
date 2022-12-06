@@ -138,18 +138,6 @@ int     UnityPreserveFramebufferAlpha(void);
 void    UnitySetTargetFPS(int targetFPS);
 void    UnitySetAbsoluteURL(const char* url);
 
-// push notifications
-#if !PLATFORM_TVOS
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-void    UnitySendLocalNotification(UILocalNotification* notification);
-#pragma clang pop
-#endif
-
-void    UnitySendRemoteNotification(NSDictionary* notification);
-void    UnitySendDeviceToken(NSData* deviceToken);
-void    UnitySendRemoteNotificationError(NSError* error);
-
 // native events
 
 void    UnityInvalidateDisplayDataCache(void* screen);

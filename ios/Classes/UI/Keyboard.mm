@@ -425,13 +425,9 @@ extern "C" void UnityKeyboard_LayoutChanged(NSString* layout);
     }
     else
     {
-#if UNITY_HAS_IOSSDK_12_0
-        if (@available(iOS 12.0, *))
-        {
-            if (param.oneTimeCode)
-                textField.textContentType = UITextContentTypeOneTimeCode;
-        }
-#endif
+        if (param.oneTimeCode)
+            textField.textContentType = UITextContentTypeOneTimeCode;
+
         [self setTextInputTraits: textField withParam: param];
         textField.placeholder = [NSString stringWithUTF8String: param.placeholder];
     }
@@ -728,16 +724,12 @@ static bool StringContainsEmoji(NSString *string);
 {
     NSUInteger newLength = currentText.length + (text_.length - range.length);
 
-#if !FILTER_EMOJIS_IOS_KEYBOARD
-    // If the user inserts any emoji that exceeds the character limit it should quickly reject it, else it'll crash
-    if (newLength > _characterLimit && _characterLimit != 0 && StringContainsEmoji(text_))
-    {
-        return NO;
-    }
-#endif
-
     if (newLength > _characterLimit && _characterLimit != 0 && newLength >= currentText.length)
     {
+        // If the user inserts any emoji that exceeds the character limit it should quickly reject it, else it'll crash. We need to check regardless of FILTER_EMOJIS_IOS_KEYBOARD status as sometimes this method gets called before we've filtered out an emoji.
+        if (StringContainsEmoji(text_))
+            return NO;
+
         NSString* newReplacementText = @"";
         if ((currentText.length - range.length) < _characterLimit)
             newReplacementText = [text_ substringWithRange: NSMakeRange(0, _characterLimit - (currentText.length - range.length))];

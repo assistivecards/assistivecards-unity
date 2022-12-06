@@ -5,7 +5,6 @@
 DEFINE_NOTIFICATION(kUnityDidRegisterForRemoteNotificationsWithDeviceToken);
 DEFINE_NOTIFICATION(kUnityDidFailToRegisterForRemoteNotificationsWithError);
 DEFINE_NOTIFICATION(kUnityDidReceiveRemoteNotification);
-DEFINE_NOTIFICATION(kUnityDidReceiveLocalNotification);
 DEFINE_NOTIFICATION(kUnityOnOpenURL);
 DEFINE_NOTIFICATION(kUnityWillFinishLaunchingWithOptions);
 DEFINE_NOTIFICATION(kUnityHandleEventsForBackgroundURLSession);
@@ -24,10 +23,6 @@ void UnityRegisterAppDelegateListener(id<AppDelegateListener> obj)
 
     UnityRegisterLifeCycleListener(obj);
 
-    REGISTER_SELECTOR(@selector(didRegisterForRemoteNotificationsWithDeviceToken:), kUnityDidRegisterForRemoteNotificationsWithDeviceToken);
-    REGISTER_SELECTOR(@selector(didFailToRegisterForRemoteNotificationsWithError:), kUnityDidFailToRegisterForRemoteNotificationsWithError);
-    REGISTER_SELECTOR(@selector(didReceiveRemoteNotification:), kUnityDidReceiveRemoteNotification);
-    REGISTER_SELECTOR(@selector(didReceiveLocalNotification:), kUnityDidReceiveLocalNotification);
     REGISTER_SELECTOR(@selector(onOpenURL:), kUnityOnOpenURL);
 
     REGISTER_SELECTOR(@selector(applicationDidReceiveMemoryWarning:), UIApplicationDidReceiveMemoryWarningNotification);
@@ -47,10 +42,6 @@ void UnityUnregisterAppDelegateListener(id<AppDelegateListener> obj)
 {
     UnityUnregisterLifeCycleListener(obj);
 
-    [[NSNotificationCenter defaultCenter] removeObserver: obj name: kUnityDidRegisterForRemoteNotificationsWithDeviceToken object: nil];
-    [[NSNotificationCenter defaultCenter] removeObserver: obj name: kUnityDidFailToRegisterForRemoteNotificationsWithError object: nil];
-    [[NSNotificationCenter defaultCenter] removeObserver: obj name: kUnityDidReceiveRemoteNotification object: nil];
-    [[NSNotificationCenter defaultCenter] removeObserver: obj name: kUnityDidReceiveLocalNotification object: nil];
     [[NSNotificationCenter defaultCenter] removeObserver: obj name: kUnityOnOpenURL object: nil];
 
     [[NSNotificationCenter defaultCenter] removeObserver: obj name: UIApplicationDidReceiveMemoryWarningNotification object: nil];

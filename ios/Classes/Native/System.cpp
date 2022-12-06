@@ -154,434 +154,6 @@ struct InterfaceFuncInvoker4
 		return ((Func)invokeData.methodPtr)(obj, p1, p2, p3, p4, invokeData.method);
 	}
 };
-template <typename T1>
-struct InvokerActionInvoker1;
-template <typename T1>
-struct InvokerActionInvoker1<T1*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1)
-	{
-		void* params[1] = { p1 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2>
-struct InvokerActionInvoker2;
-template <typename T1, typename T2>
-struct InvokerActionInvoker2<T1*, T2>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2 p2)
-	{
-		void* params[2] = { p1, &p2 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2>
-struct InvokerActionInvoker2<T1*, T2*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2)
-	{
-		void* params[2] = { p1, p2 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2, typename T3>
-struct InvokerActionInvoker3;
-template <typename T1, typename T2, typename T3>
-struct InvokerActionInvoker3<T1*, T2*, T3>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3 p3)
-	{
-		void* params[3] = { p1, p2, &p3 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2, typename T3>
-struct InvokerActionInvoker3<T1*, T2, T3*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2 p2, T3* p3)
-	{
-		void* params[3] = { p1, &p2, p3 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2, typename T3>
-struct InvokerActionInvoker3<T1*, T2*, T3*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3* p3)
-	{
-		void* params[3] = { p1, p2, p3 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2, typename T3, typename T4>
-struct InvokerActionInvoker4;
-template <typename T1, typename T2, typename T3, typename T4>
-struct InvokerActionInvoker4<T1*, T2*, T3*, T4>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3* p3, T4 p4)
-	{
-		void* params[4] = { p1, p2, p3, &p4 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2, typename T3, typename T4>
-struct InvokerActionInvoker4<T1*, T2*, T3, T4*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3 p3, T4* p4)
-	{
-		void* params[4] = { p1, p2, &p3, p4 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2, typename T3, typename T4>
-struct InvokerActionInvoker4<T1*, T2*, T3*, T4*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3* p3, T4* p4)
-	{
-		void* params[4] = { p1, p2, p3, p4 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
-struct InvokerActionInvoker5;
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
-struct InvokerActionInvoker5<T1*, T2*, T3*, T4*, T5>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3* p3, T4* p4, T5 p5)
-	{
-		void* params[5] = { p1, p2, p3, p4, &p5 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
-struct InvokerActionInvoker5<T1*, T2*, T3*, T4, T5*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3* p3, T4 p4, T5* p5)
-	{
-		void* params[5] = { p1, p2, p3, &p4, p5 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
-struct InvokerActionInvoker5<T1*, T2*, T3*, T4*, T5*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3* p3, T4* p4, T5* p5)
-	{
-		void* params[5] = { p1, p2, p3, p4, p5 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8, typename T9>
-struct InvokerActionInvoker9;
-template <typename T1, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8, typename T9>
-struct InvokerActionInvoker9<T1*, T2*, T3*, T4, T5*, T6, T7*, T8*, T9*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3* p3, T4 p4, T5* p5, T6 p6, T7* p7, T8* p8, T9* p9)
-	{
-		void* params[9] = { p1, p2, p3, &p4, p5, &p6, p7, p8, p9 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8, typename T9, typename T10>
-struct InvokerActionInvoker10;
-template <typename T1, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8, typename T9, typename T10>
-struct InvokerActionInvoker10<T1*, T2*, T3*, T4*, T5, T6*, T7, T8*, T9*, T10*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3* p3, T4* p4, T5 p5, T6* p6, T7 p7, T8* p8, T9* p9, T10* p10)
-	{
-		void* params[10] = { p1, p2, p3, p4, &p5, p6, &p7, p8, p9, p10 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename R>
-struct InvokerFuncInvoker0
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj)
-	{
-		R ret;
-		method->invoker_method(methodPtr, method, obj, NULL, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1>
-struct InvokerFuncInvoker1;
-template <typename R, typename T1>
-struct InvokerFuncInvoker1<R, T1*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1)
-	{
-		R ret;
-		void* params[1] = { p1 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2>
-struct InvokerFuncInvoker2;
-template <typename R, typename T1, typename T2>
-struct InvokerFuncInvoker2<R, T1*, T2*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2)
-	{
-		R ret;
-		void* params[2] = { p1, p2 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3>
-struct InvokerFuncInvoker3
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1 p1, T2 p2, T3 p3)
-	{
-		R ret;
-		void* params[3] = { &p1, &p2, &p3 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3>
-struct InvokerFuncInvoker3<R, T1, T2, T3*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1 p1, T2 p2, T3* p3)
-	{
-		R ret;
-		void* params[3] = { &p1, &p2, p3 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3>
-struct InvokerFuncInvoker3<R, T1*, T2, T3*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2 p2, T3* p3)
-	{
-		R ret;
-		void* params[3] = { p1, &p2, p3 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3>
-struct InvokerFuncInvoker3<R, T1*, T2*, T3*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3* p3)
-	{
-		R ret;
-		void* params[3] = { p1, p2, p3 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3, typename T4>
-struct InvokerFuncInvoker4;
-template <typename R, typename T1, typename T2, typename T3, typename T4>
-struct InvokerFuncInvoker4<R, T1, T2, T3, T4*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1 p1, T2 p2, T3 p3, T4* p4)
-	{
-		R ret;
-		void* params[4] = { &p1, &p2, &p3, p4 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3, typename T4>
-struct InvokerFuncInvoker4<R, T1*, T2, T3, T4>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2 p2, T3 p3, T4 p4)
-	{
-		R ret;
-		void* params[4] = { p1, &p2, &p3, &p4 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3, typename T4>
-struct InvokerFuncInvoker4<R, T1*, T2, T3, T4*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2 p2, T3 p3, T4* p4)
-	{
-		R ret;
-		void* params[4] = { p1, &p2, &p3, p4 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3, typename T4>
-struct InvokerFuncInvoker4<R, T1, T2*, T3, T4*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1 p1, T2* p2, T3 p3, T4* p4)
-	{
-		R ret;
-		void* params[4] = { &p1, p2, &p3, p4 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3, typename T4>
-struct InvokerFuncInvoker4<R, T1*, T2*, T3, T4*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3 p3, T4* p4)
-	{
-		R ret;
-		void* params[4] = { p1, p2, &p3, p4 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3, typename T4, typename T5>
-struct InvokerFuncInvoker5;
-template <typename R, typename T1, typename T2, typename T3, typename T4, typename T5>
-struct InvokerFuncInvoker5<R, T1, T2, T3, T4, T5*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1 p1, T2 p2, T3 p3, T4 p4, T5* p5)
-	{
-		R ret;
-		void* params[5] = { &p1, &p2, &p3, &p4, p5 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3, typename T4, typename T5>
-struct InvokerFuncInvoker5<R, T1, T2, T3*, T4, T5*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1 p1, T2 p2, T3* p3, T4 p4, T5* p5)
-	{
-		R ret;
-		void* params[5] = { &p1, &p2, p3, &p4, p5 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3, typename T4, typename T5>
-struct InvokerFuncInvoker5<R, T1*, T2, T3, T4, T5*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2 p2, T3 p3, T4 p4, T5* p5)
-	{
-		R ret;
-		void* params[5] = { p1, &p2, &p3, &p4, p5 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3, typename T4, typename T5>
-struct InvokerFuncInvoker5<R, T1*, T2*, T3, T4, T5*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3 p3, T4 p4, T5* p5)
-	{
-		R ret;
-		void* params[5] = { p1, p2, &p3, &p4, p5 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3, typename T4, typename T5>
-struct InvokerFuncInvoker5<R, T1*, T2, T3*, T4, T5*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2 p2, T3* p3, T4 p4, T5* p5)
-	{
-		R ret;
-		void* params[5] = { p1, &p2, p3, &p4, p5 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3, typename T4, typename T5>
-struct InvokerFuncInvoker5<R, T1*, T2*, T3*, T4, T5*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3* p3, T4 p4, T5* p5)
-	{
-		R ret;
-		void* params[5] = { p1, p2, p3, &p4, p5 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3, typename T4, typename T5, typename T6>
-struct InvokerFuncInvoker6;
-template <typename R, typename T1, typename T2, typename T3, typename T4, typename T5, typename T6>
-struct InvokerFuncInvoker6<R, T1*, T2, T3, T4, T5, T6*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2 p2, T3 p3, T4 p4, T5 p5, T6* p6)
-	{
-		R ret;
-		void* params[6] = { p1, &p2, &p3, &p4, &p5, p6 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3, typename T4, typename T5, typename T6>
-struct InvokerFuncInvoker6<R, T1*, T2, T3, T4*, T5, T6*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2 p2, T3 p3, T4* p4, T5 p5, T6* p6)
-	{
-		R ret;
-		void* params[6] = { p1, &p2, &p3, p4, &p5, p6 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3, typename T4, typename T5, typename T6>
-struct InvokerFuncInvoker6<R, T1*, T2*, T3, T4*, T5, T6*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3 p3, T4* p4, T5 p5, T6* p6)
-	{
-		R ret;
-		void* params[6] = { p1, p2, &p3, p4, &p5, p6 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3, typename T4, typename T5, typename T6>
-struct InvokerFuncInvoker6<R, T1, T2*, T3, T4*, T5*, T6*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1 p1, T2* p2, T3 p3, T4* p4, T5* p5, T6* p6)
-	{
-		R ret;
-		void* params[6] = { &p1, p2, &p3, p4, p5, p6 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7>
-struct InvokerFuncInvoker7;
-template <typename R, typename T1, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7>
-struct InvokerFuncInvoker7<R, T1, T2, T3*, T4, T5*, T6*, T7*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1 p1, T2 p2, T3* p3, T4 p4, T5* p5, T6* p6, T7* p7)
-	{
-		R ret;
-		void* params[7] = { &p1, &p2, p3, &p4, p5, p6, p7 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7>
-struct InvokerFuncInvoker7<R, T1*, T2, T3*, T4, T5*, T6*, T7*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2 p2, T3* p3, T4 p4, T5* p5, T6* p6, T7* p7)
-	{
-		R ret;
-		void* params[7] = { p1, &p2, p3, &p4, p5, p6, p7 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8>
-struct InvokerFuncInvoker8;
-template <typename R, typename T1, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8>
-struct InvokerFuncInvoker8<R, T1*, T2, T3, T4*, T5, T6*, T7*, T8*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2 p2, T3 p3, T4* p4, T5 p5, T6* p6, T7* p7, T8* p8)
-	{
-		R ret;
-		void* params[8] = { p1, &p2, &p3, p4, &p5, p6, p7, p8 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
 
 // System.Action`1<System.Object>
 struct Action_1_t6F9EB113EB3F16226AEF811A2744F4111C116C87;
@@ -5860,6 +5432,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBtlsContext_Dispose_TisRuntimeObject
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Nullable_1_get_HasValue_m092C73DCE052BFB5C60A39EF9F4E3401AA95221C_gshared_inline (Nullable_1_tEADC262F7F8B8BC4CC0A003DBDD3CA7C1B63F9AC* __this, const RuntimeMethod* method) ;
 // T System.Nullable`1<System.DateTime>::get_Value()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D Nullable_1_get_Value_m5A868F663848BC21C18F056731D3AC404CE59991_gshared (Nullable_1_tEADC262F7F8B8BC4CC0A003DBDD3CA7C1B63F9AC* __this, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<System.Security.Cryptography.X509Certificates.X509ChainStatus>::AddWithResize(T)
+IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void List_1_AddWithResize_m57CCC347F7A2D40306F42BE2E7822E13C0516E91_gshared (List_1_t14F08D1F5A2E0F276F976F81CC13B7CB7EDABE33* __this, X509ChainStatus_t5A57DDA24AA1FCA9F2B8D70B767CDDF388E4A80D ___item0, const RuntimeMethod* method) ;
 
 // System.Void System.Nullable`1<System.Guid>::.ctor(T)
 inline void Nullable_1__ctor_mD2155EEC4DF44AF1AD75AEB77DA72D350854D0F2 (Nullable_1_t0ECB838EB0C9A81655750B26970F21CF9A83A5F7* __this, Guid_t ___value0, const RuntimeMethod* method)
@@ -7542,6 +7116,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBtlsX509Chain__ctor_m68C61C0629C37B9
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoBtlsX509_t7272C18E709CB67ED1C8837A0F9D895D26EA7DA5* MonoBtlsProvider_GetBtlsCertificate_m4FAB9F4177D4FC5D394B5FB0CD2E8D5205545FAC (X509Certificate_t966CC553AF25AE7991F5B4C2AACBCF6C66C8F9C4* ___certificate0, const RuntimeMethod* method) ;
 // System.Void Mono.Btls.MonoBtlsX509Chain::AddCertificate(Mono.Btls.MonoBtlsX509)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBtlsX509Chain_AddCertificate_mF7444AA20B0EA6C6E697DEC2316ACC9BD69CB518 (MonoBtlsX509Chain_t1F1F3C6F32BF17E700F18D641CFEB091FD9ADDB0* __this, MonoBtlsX509_t7272C18E709CB67ED1C8837A0F9D895D26EA7DA5* ___x5090, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<System.Security.Cryptography.X509Certificates.X509ChainStatus>::AddWithResize(T)
+inline void List_1_AddWithResize_m57CCC347F7A2D40306F42BE2E7822E13C0516E91 (List_1_t14F08D1F5A2E0F276F976F81CC13B7CB7EDABE33* __this, X509ChainStatus_t5A57DDA24AA1FCA9F2B8D70B767CDDF388E4A80D ___item0, const RuntimeMethod* method)
+{
+	((  void (*) (List_1_t14F08D1F5A2E0F276F976F81CC13B7CB7EDABE33*, X509ChainStatus_t5A57DDA24AA1FCA9F2B8D70B767CDDF388E4A80D, const RuntimeMethod*))List_1_AddWithResize_m57CCC347F7A2D40306F42BE2E7822E13C0516E91_gshared)(__this, ___item0, method);
+}
 #if FORCE_PINVOKE_INTERNAL || FORCE_PINVOKE_libmono_btls_shared_INTERNAL
 IL2CPP_EXTERN_C void DEFAULT_CALL mono_btls_bio_free(intptr_t);
 #endif
@@ -9461,14 +9040,6 @@ uint32_t unitytls_x509verify_callback_Invoke_mB53E808E78AE5BD02CECCA0BE198295ECA
 	typedef uint32_t (*FunctionPointerType) (void*, unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333, uint32_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___userData0, ___cert1, ___result2, ___errorState3, method);
 }
-uint32_t unitytls_x509verify_callback_Invoke_mB53E808E78AE5BD02CECCA0BE198295ECAB83B9A_OpenStaticInvoker(unitytls_x509verify_callback_t1B72B7CF228F76F09A6A75C54C15F2084C01CA09* __this, void* ___userData0, unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333 ___cert1, uint32_t ___result2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker4< uint32_t, void*, unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333, uint32_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___userData0, ___cert1, ___result2, ___errorState3);
-}
-uint32_t unitytls_x509verify_callback_Invoke_mB53E808E78AE5BD02CECCA0BE198295ECAB83B9A_ClosedStaticInvoker(unitytls_x509verify_callback_t1B72B7CF228F76F09A6A75C54C15F2084C01CA09* __this, void* ___userData0, unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333 ___cert1, uint32_t ___result2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker5< uint32_t, RuntimeObject*, void*, unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333, uint32_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___userData0, ___cert1, ___result2, ___errorState3);
-}
 IL2CPP_EXTERN_C  uint32_t DelegatePInvokeWrapper_unitytls_x509verify_callback_t1B72B7CF228F76F09A6A75C54C15F2084C01CA09 (unitytls_x509verify_callback_t1B72B7CF228F76F09A6A75C54C15F2084C01CA09* __this, void* ___userData0, unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333 ___cert1, uint32_t ___result2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
 {
 	typedef uint32_t (CDECL *PInvokeFunc)(void*, unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333, uint32_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -9481,7 +9052,7 @@ IL2CPP_EXTERN_C  uint32_t DelegatePInvokeWrapper_unitytls_x509verify_callback_t1
 // System.Void Mono.Unity.UnityTls/unitytls_x509verify_callback::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_x509verify_callback__ctor_mEDC6857514FD696562638B3F1DFE959920D1EB26 (unitytls_x509verify_callback_t1B72B7CF228F76F09A6A75C54C15F2084C01CA09* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -9490,19 +9061,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_x509verify_callback__ctor_mEDC6
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 4;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509verify_callback_Invoke_mB53E808E78AE5BD02CECCA0BE198295ECAB83B9A_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509verify_callback_Invoke_mB53E808E78AE5BD02CECCA0BE198295ECAB83B9A_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_x509verify_callback_Invoke_mB53E808E78AE5BD02CECCA0BE198295ECAB83B9A_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509verify_callback_Invoke_mB53E808E78AE5BD02CECCA0BE198295ECAB83B9A_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -9584,14 +9149,6 @@ intptr_t unitytls_tlsctx_write_callback_Invoke_mF1F1D27A9BE14950A905685370EDAE5E
 	typedef intptr_t (*FunctionPointerType) (void*, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___userData0, ___data1, ___bufferLen2, ___errorState3, method);
 }
-intptr_t unitytls_tlsctx_write_callback_Invoke_mF1F1D27A9BE14950A905685370EDAE5EAB051712_OpenStaticInvoker(unitytls_tlsctx_write_callback_t5D4B64AD846D04E819A49689F7EAA47365636611* __this, void* ___userData0, uint8_t* ___data1, intptr_t ___bufferLen2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker4< intptr_t, void*, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___userData0, ___data1, ___bufferLen2, ___errorState3);
-}
-intptr_t unitytls_tlsctx_write_callback_Invoke_mF1F1D27A9BE14950A905685370EDAE5EAB051712_ClosedStaticInvoker(unitytls_tlsctx_write_callback_t5D4B64AD846D04E819A49689F7EAA47365636611* __this, void* ___userData0, uint8_t* ___data1, intptr_t ___bufferLen2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker5< intptr_t, RuntimeObject*, void*, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___userData0, ___data1, ___bufferLen2, ___errorState3);
-}
 IL2CPP_EXTERN_C  intptr_t DelegatePInvokeWrapper_unitytls_tlsctx_write_callback_t5D4B64AD846D04E819A49689F7EAA47365636611 (unitytls_tlsctx_write_callback_t5D4B64AD846D04E819A49689F7EAA47365636611* __this, void* ___userData0, uint8_t* ___data1, intptr_t ___bufferLen2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
 {
 	typedef intptr_t (CDECL *PInvokeFunc)(void*, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -9604,7 +9161,7 @@ IL2CPP_EXTERN_C  intptr_t DelegatePInvokeWrapper_unitytls_tlsctx_write_callback_
 // System.Void Mono.Unity.UnityTls/unitytls_tlsctx_write_callback::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_write_callback__ctor_m1A216E476EA91B415C0FD89765E6560410A7F7F5 (unitytls_tlsctx_write_callback_t5D4B64AD846D04E819A49689F7EAA47365636611* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -9613,19 +9170,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_write_callback__ctor_m1A
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 4;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_write_callback_Invoke_mF1F1D27A9BE14950A905685370EDAE5EAB051712_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_write_callback_Invoke_mF1F1D27A9BE14950A905685370EDAE5EAB051712_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_write_callback_Invoke_mF1F1D27A9BE14950A905685370EDAE5EAB051712_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_write_callback_Invoke_mF1F1D27A9BE14950A905685370EDAE5EAB051712_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -9683,14 +9234,6 @@ intptr_t unitytls_tlsctx_read_callback_Invoke_m0B21AFD4EACBDBEC6EEFBEB61E142051F
 	typedef intptr_t (*FunctionPointerType) (void*, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___userData0, ___buffer1, ___bufferLen2, ___errorState3, method);
 }
-intptr_t unitytls_tlsctx_read_callback_Invoke_m0B21AFD4EACBDBEC6EEFBEB61E142051F338194B_OpenStaticInvoker(unitytls_tlsctx_read_callback_tDBE877327789CABE940C2A724EC9A5D142318851* __this, void* ___userData0, uint8_t* ___buffer1, intptr_t ___bufferLen2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker4< intptr_t, void*, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___userData0, ___buffer1, ___bufferLen2, ___errorState3);
-}
-intptr_t unitytls_tlsctx_read_callback_Invoke_m0B21AFD4EACBDBEC6EEFBEB61E142051F338194B_ClosedStaticInvoker(unitytls_tlsctx_read_callback_tDBE877327789CABE940C2A724EC9A5D142318851* __this, void* ___userData0, uint8_t* ___buffer1, intptr_t ___bufferLen2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker5< intptr_t, RuntimeObject*, void*, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___userData0, ___buffer1, ___bufferLen2, ___errorState3);
-}
 IL2CPP_EXTERN_C  intptr_t DelegatePInvokeWrapper_unitytls_tlsctx_read_callback_tDBE877327789CABE940C2A724EC9A5D142318851 (unitytls_tlsctx_read_callback_tDBE877327789CABE940C2A724EC9A5D142318851* __this, void* ___userData0, uint8_t* ___buffer1, intptr_t ___bufferLen2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
 {
 	typedef intptr_t (CDECL *PInvokeFunc)(void*, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -9703,7 +9246,7 @@ IL2CPP_EXTERN_C  intptr_t DelegatePInvokeWrapper_unitytls_tlsctx_read_callback_t
 // System.Void Mono.Unity.UnityTls/unitytls_tlsctx_read_callback::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_read_callback__ctor_mEAC57775C6AB86A2E9E6DDC440E27C845BFAA4C0 (unitytls_tlsctx_read_callback_tDBE877327789CABE940C2A724EC9A5D142318851* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -9712,19 +9255,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_read_callback__ctor_mEAC
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 4;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_read_callback_Invoke_m0B21AFD4EACBDBEC6EEFBEB61E142051F338194B_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_read_callback_Invoke_m0B21AFD4EACBDBEC6EEFBEB61E142051F338194B_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_read_callback_Invoke_m0B21AFD4EACBDBEC6EEFBEB61E142051F338194B_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_read_callback_Invoke_m0B21AFD4EACBDBEC6EEFBEB61E142051F338194B_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -9779,14 +9316,6 @@ void unitytls_tlsctx_trace_callback_Invoke_m9511E6D873C0FFE4EBDA45E52CA47228A483
 	typedef void (*FunctionPointerType) (void*, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, uint8_t*, intptr_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___userData0, ___ctx1, ___traceMessage2, ___traceMessageLen3, method);
 }
-void unitytls_tlsctx_trace_callback_Invoke_m9511E6D873C0FFE4EBDA45E52CA47228A483A01F_OpenStaticInvoker(unitytls_tlsctx_trace_callback_tAC1169E423F6EBDA60CDD5D33E1795A8811E0BE6* __this, void* ___userData0, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx1, uint8_t* ___traceMessage2, intptr_t ___traceMessageLen3, const RuntimeMethod* method)
-{
-	InvokerActionInvoker4< void*, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, uint8_t*, intptr_t >::Invoke(__this->___method_ptr_0, method, NULL, ___userData0, ___ctx1, ___traceMessage2, ___traceMessageLen3);
-}
-void unitytls_tlsctx_trace_callback_Invoke_m9511E6D873C0FFE4EBDA45E52CA47228A483A01F_ClosedStaticInvoker(unitytls_tlsctx_trace_callback_tAC1169E423F6EBDA60CDD5D33E1795A8811E0BE6* __this, void* ___userData0, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx1, uint8_t* ___traceMessage2, intptr_t ___traceMessageLen3, const RuntimeMethod* method)
-{
-	InvokerActionInvoker5< RuntimeObject*, void*, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, uint8_t*, intptr_t >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___userData0, ___ctx1, ___traceMessage2, ___traceMessageLen3);
-}
 IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_tlsctx_trace_callback_tAC1169E423F6EBDA60CDD5D33E1795A8811E0BE6 (unitytls_tlsctx_trace_callback_tAC1169E423F6EBDA60CDD5D33E1795A8811E0BE6* __this, void* ___userData0, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx1, uint8_t* ___traceMessage2, intptr_t ___traceMessageLen3, const RuntimeMethod* method)
 {
 	typedef void (CDECL *PInvokeFunc)(void*, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, uint8_t*, intptr_t);
@@ -9798,7 +9327,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_tlsctx_trace_callback_tAC1
 // System.Void Mono.Unity.UnityTls/unitytls_tlsctx_trace_callback::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_trace_callback__ctor_mB9CC97640B55911851D544F3F85CAFB5B85B647A (unitytls_tlsctx_trace_callback_tAC1169E423F6EBDA60CDD5D33E1795A8811E0BE6* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -9807,19 +9336,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_trace_callback__ctor_mB9
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 4;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_trace_callback_Invoke_m9511E6D873C0FFE4EBDA45E52CA47228A483A01F_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_trace_callback_Invoke_m9511E6D873C0FFE4EBDA45E52CA47228A483A01F_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_trace_callback_Invoke_m9511E6D873C0FFE4EBDA45E52CA47228A483A01F_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_trace_callback_Invoke_m9511E6D873C0FFE4EBDA45E52CA47228A483A01F_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -9874,14 +9397,6 @@ void unitytls_tlsctx_certificate_callback_Invoke_m37CB366C6D6E0A27CE4E1E4943DF2D
 	typedef void (*FunctionPointerType) (void*, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, uint8_t*, intptr_t, unitytls_x509name_t8A1108C917795D8FE946B50769ACE51489C7BF5D*, intptr_t, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17*, unitytls_key_ref_t6BD91D013DF11047C53738FEEB12CE290FDC71A2*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___userData0, ___ctx1, ___cn2, ___cnLen3, ___caList4, ___caListLen5, ___chain6, ___key7, ___errorState8, method);
 }
-void unitytls_tlsctx_certificate_callback_Invoke_m37CB366C6D6E0A27CE4E1E4943DF2DE1F32E2BF1_OpenStaticInvoker(unitytls_tlsctx_certificate_callback_tB2FEBFA5D27CFA86544C06451270B36D77F2932C* __this, void* ___userData0, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx1, uint8_t* ___cn2, intptr_t ___cnLen3, unitytls_x509name_t8A1108C917795D8FE946B50769ACE51489C7BF5D* ___caList4, intptr_t ___caListLen5, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17* ___chain6, unitytls_key_ref_t6BD91D013DF11047C53738FEEB12CE290FDC71A2* ___key7, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState8, const RuntimeMethod* method)
-{
-	InvokerActionInvoker9< void*, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, uint8_t*, intptr_t, unitytls_x509name_t8A1108C917795D8FE946B50769ACE51489C7BF5D*, intptr_t, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17*, unitytls_key_ref_t6BD91D013DF11047C53738FEEB12CE290FDC71A2*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___userData0, ___ctx1, ___cn2, ___cnLen3, ___caList4, ___caListLen5, ___chain6, ___key7, ___errorState8);
-}
-void unitytls_tlsctx_certificate_callback_Invoke_m37CB366C6D6E0A27CE4E1E4943DF2DE1F32E2BF1_ClosedStaticInvoker(unitytls_tlsctx_certificate_callback_tB2FEBFA5D27CFA86544C06451270B36D77F2932C* __this, void* ___userData0, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx1, uint8_t* ___cn2, intptr_t ___cnLen3, unitytls_x509name_t8A1108C917795D8FE946B50769ACE51489C7BF5D* ___caList4, intptr_t ___caListLen5, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17* ___chain6, unitytls_key_ref_t6BD91D013DF11047C53738FEEB12CE290FDC71A2* ___key7, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState8, const RuntimeMethod* method)
-{
-	InvokerActionInvoker10< RuntimeObject*, void*, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, uint8_t*, intptr_t, unitytls_x509name_t8A1108C917795D8FE946B50769ACE51489C7BF5D*, intptr_t, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17*, unitytls_key_ref_t6BD91D013DF11047C53738FEEB12CE290FDC71A2*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___userData0, ___ctx1, ___cn2, ___cnLen3, ___caList4, ___caListLen5, ___chain6, ___key7, ___errorState8);
-}
 IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_tlsctx_certificate_callback_tB2FEBFA5D27CFA86544C06451270B36D77F2932C (unitytls_tlsctx_certificate_callback_tB2FEBFA5D27CFA86544C06451270B36D77F2932C* __this, void* ___userData0, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx1, uint8_t* ___cn2, intptr_t ___cnLen3, unitytls_x509name_t8A1108C917795D8FE946B50769ACE51489C7BF5D* ___caList4, intptr_t ___caListLen5, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17* ___chain6, unitytls_key_ref_t6BD91D013DF11047C53738FEEB12CE290FDC71A2* ___key7, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState8, const RuntimeMethod* method)
 {
 	typedef void (CDECL *PInvokeFunc)(void*, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, uint8_t*, intptr_t, unitytls_x509name_t8A1108C917795D8FE946B50769ACE51489C7BF5D*, intptr_t, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17*, unitytls_key_ref_t6BD91D013DF11047C53738FEEB12CE290FDC71A2*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -9893,7 +9408,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_tlsctx_certificate_callbac
 // System.Void Mono.Unity.UnityTls/unitytls_tlsctx_certificate_callback::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_certificate_callback__ctor_m9A3F05E07D9A69B8FF419421DF8167DF9CE7E77A (unitytls_tlsctx_certificate_callback_tB2FEBFA5D27CFA86544C06451270B36D77F2932C* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -9902,19 +9417,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_certificate_callback__ct
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 9;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_certificate_callback_Invoke_m37CB366C6D6E0A27CE4E1E4943DF2DE1F32E2BF1_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_certificate_callback_Invoke_m37CB366C6D6E0A27CE4E1E4943DF2DE1F32E2BF1_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_certificate_callback_Invoke_m37CB366C6D6E0A27CE4E1E4943DF2DE1F32E2BF1_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_certificate_callback_Invoke_m37CB366C6D6E0A27CE4E1E4943DF2DE1F32E2BF1_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -9971,14 +9480,6 @@ uint32_t unitytls_tlsctx_x509verify_callback_Invoke_m1F7A6DA53EF61AC64F2DD9A33AF
 	typedef uint32_t (*FunctionPointerType) (void*, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___userData0, ___chain1, ___errorState2, method);
 }
-uint32_t unitytls_tlsctx_x509verify_callback_Invoke_m1F7A6DA53EF61AC64F2DD9A33AF40541F97C6874_OpenStaticInvoker(unitytls_tlsctx_x509verify_callback_t3334D904C28324D444B6C26BEEF29B5E07D9D58D* __this, void* ___userData0, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17 ___chain1, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState2, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker3< uint32_t, void*, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___userData0, ___chain1, ___errorState2);
-}
-uint32_t unitytls_tlsctx_x509verify_callback_Invoke_m1F7A6DA53EF61AC64F2DD9A33AF40541F97C6874_ClosedStaticInvoker(unitytls_tlsctx_x509verify_callback_t3334D904C28324D444B6C26BEEF29B5E07D9D58D* __this, void* ___userData0, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17 ___chain1, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState2, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker4< uint32_t, RuntimeObject*, void*, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___userData0, ___chain1, ___errorState2);
-}
 IL2CPP_EXTERN_C  uint32_t DelegatePInvokeWrapper_unitytls_tlsctx_x509verify_callback_t3334D904C28324D444B6C26BEEF29B5E07D9D58D (unitytls_tlsctx_x509verify_callback_t3334D904C28324D444B6C26BEEF29B5E07D9D58D* __this, void* ___userData0, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17 ___chain1, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState2, const RuntimeMethod* method)
 {
 	typedef uint32_t (CDECL *PInvokeFunc)(void*, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -9991,7 +9492,7 @@ IL2CPP_EXTERN_C  uint32_t DelegatePInvokeWrapper_unitytls_tlsctx_x509verify_call
 // System.Void Mono.Unity.UnityTls/unitytls_tlsctx_x509verify_callback::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_x509verify_callback__ctor_m8583619DBB13F6EDF2A385C37DFAE8796EB89C0F (unitytls_tlsctx_x509verify_callback_t3334D904C28324D444B6C26BEEF29B5E07D9D58D* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -10000,19 +9501,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_x509verify_callback__cto
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 3;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_x509verify_callback_Invoke_m1F7A6DA53EF61AC64F2DD9A33AF40541F97C6874_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_x509verify_callback_Invoke_m1F7A6DA53EF61AC64F2DD9A33AF40541F97C6874_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_x509verify_callback_Invoke_m1F7A6DA53EF61AC64F2DD9A33AF40541F97C6874_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_x509verify_callback_Invoke_m1F7A6DA53EF61AC64F2DD9A33AF40541F97C6874_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -10441,14 +9936,6 @@ unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902 unitytls_errorstat
 	typedef unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902 (*FunctionPointerType) (const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(method);
 }
-unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902 unitytls_errorstate_create_t_Invoke_m8B9A9835EA7C6A11E1627CA8904F3F853FB61BC0_OpenStaticInvoker(unitytls_errorstate_create_t_tE8BB5D6BCA7D232F4981831586B71C39802CF75B* __this, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker0< unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902 >::Invoke(__this->___method_ptr_0, method, NULL);
-}
-unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902 unitytls_errorstate_create_t_Invoke_m8B9A9835EA7C6A11E1627CA8904F3F853FB61BC0_ClosedStaticInvoker(unitytls_errorstate_create_t_tE8BB5D6BCA7D232F4981831586B71C39802CF75B* __this, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker1< unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902, RuntimeObject* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2);
-}
 IL2CPP_EXTERN_C  unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902 DelegatePInvokeWrapper_unitytls_errorstate_create_t_tE8BB5D6BCA7D232F4981831586B71C39802CF75B (unitytls_errorstate_create_t_tE8BB5D6BCA7D232F4981831586B71C39802CF75B* __this, const RuntimeMethod* method)
 {
 	typedef unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902 (CDECL *PInvokeFunc)();
@@ -10461,7 +9948,7 @@ IL2CPP_EXTERN_C  unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902 D
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_errorstate_create_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_errorstate_create_t__ctor_m291CCEF12E6C9729662E0BBECB5D4FA6BDBA2F02 (unitytls_errorstate_create_t_tE8BB5D6BCA7D232F4981831586B71C39802CF75B* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -10470,19 +9957,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_errorstate_create_t__ctor_m291C
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 0;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_errorstate_create_t_Invoke_m8B9A9835EA7C6A11E1627CA8904F3F853FB61BC0_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_errorstate_create_t_Invoke_m8B9A9835EA7C6A11E1627CA8904F3F853FB61BC0_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_errorstate_create_t_Invoke_m8B9A9835EA7C6A11E1627CA8904F3F853FB61BC0_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_errorstate_create_t_Invoke_m8B9A9835EA7C6A11E1627CA8904F3F853FB61BC0_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -10529,14 +10010,6 @@ void unitytls_errorstate_raise_error_t_Invoke_m9B2B3433846A318340EDF0ED0E33C4503
 	typedef void (*FunctionPointerType) (unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, uint32_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___errorState0, ___errorCode1, method);
 }
-void unitytls_errorstate_raise_error_t_Invoke_m9B2B3433846A318340EDF0ED0E33C45030CCEA02_OpenStaticInvoker(unitytls_errorstate_raise_error_t_t8C20FC78CA5BBEE0248CC09D1C1AF25BCB3835CF* __this, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState0, uint32_t ___errorCode1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, uint32_t >::Invoke(__this->___method_ptr_0, method, NULL, ___errorState0, ___errorCode1);
-}
-void unitytls_errorstate_raise_error_t_Invoke_m9B2B3433846A318340EDF0ED0E33C45030CCEA02_ClosedStaticInvoker(unitytls_errorstate_raise_error_t_t8C20FC78CA5BBEE0248CC09D1C1AF25BCB3835CF* __this, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState0, uint32_t ___errorCode1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker3< RuntimeObject*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, uint32_t >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___errorState0, ___errorCode1);
-}
 IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_errorstate_raise_error_t_t8C20FC78CA5BBEE0248CC09D1C1AF25BCB3835CF (unitytls_errorstate_raise_error_t_t8C20FC78CA5BBEE0248CC09D1C1AF25BCB3835CF* __this, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState0, uint32_t ___errorCode1, const RuntimeMethod* method)
 {
 	typedef void (CDECL *PInvokeFunc)(unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, uint32_t);
@@ -10548,7 +10021,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_errorstate_raise_error_t_t
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_errorstate_raise_error_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_errorstate_raise_error_t__ctor_mF30A64F84A8FC246DD062993A45C038B30FC6009 (unitytls_errorstate_raise_error_t_t8C20FC78CA5BBEE0248CC09D1C1AF25BCB3835CF* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -10557,19 +10030,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_errorstate_raise_error_t__ctor_
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 2;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_errorstate_raise_error_t_Invoke_m9B2B3433846A318340EDF0ED0E33C45030CCEA02_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_errorstate_raise_error_t_Invoke_m9B2B3433846A318340EDF0ED0E33C45030CCEA02_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_errorstate_raise_error_t_Invoke_m9B2B3433846A318340EDF0ED0E33C45030CCEA02_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_errorstate_raise_error_t_Invoke_m9B2B3433846A318340EDF0ED0E33C45030CCEA02_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -10627,14 +10094,6 @@ unitytls_key_ref_t6BD91D013DF11047C53738FEEB12CE290FDC71A2 unitytls_key_get_ref_
 	typedef unitytls_key_ref_t6BD91D013DF11047C53738FEEB12CE290FDC71A2 (*FunctionPointerType) (unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___key0, ___errorState1, method);
 }
-unitytls_key_ref_t6BD91D013DF11047C53738FEEB12CE290FDC71A2 unitytls_key_get_ref_t_Invoke_mF5D3582922E868C42BCF32EB14471F8C800BB66E_OpenStaticInvoker(unitytls_key_get_ref_t_t8335968B19449FE0ED92E67AE9B6D95915684209* __this, unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8* ___key0, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState1, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker2< unitytls_key_ref_t6BD91D013DF11047C53738FEEB12CE290FDC71A2, unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___key0, ___errorState1);
-}
-unitytls_key_ref_t6BD91D013DF11047C53738FEEB12CE290FDC71A2 unitytls_key_get_ref_t_Invoke_mF5D3582922E868C42BCF32EB14471F8C800BB66E_ClosedStaticInvoker(unitytls_key_get_ref_t_t8335968B19449FE0ED92E67AE9B6D95915684209* __this, unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8* ___key0, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState1, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker3< unitytls_key_ref_t6BD91D013DF11047C53738FEEB12CE290FDC71A2, RuntimeObject*, unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___key0, ___errorState1);
-}
 IL2CPP_EXTERN_C  unitytls_key_ref_t6BD91D013DF11047C53738FEEB12CE290FDC71A2 DelegatePInvokeWrapper_unitytls_key_get_ref_t_t8335968B19449FE0ED92E67AE9B6D95915684209 (unitytls_key_get_ref_t_t8335968B19449FE0ED92E67AE9B6D95915684209* __this, unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8* ___key0, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState1, const RuntimeMethod* method)
 {
 	typedef unitytls_key_ref_t6BD91D013DF11047C53738FEEB12CE290FDC71A2 (CDECL *PInvokeFunc)(unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -10647,7 +10106,7 @@ IL2CPP_EXTERN_C  unitytls_key_ref_t6BD91D013DF11047C53738FEEB12CE290FDC71A2 Dele
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_key_get_ref_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_key_get_ref_t__ctor_mEDA7937D1EC76342E6CE92AF394E7E1A37F664B1 (unitytls_key_get_ref_t_t8335968B19449FE0ED92E67AE9B6D95915684209* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -10656,19 +10115,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_key_get_ref_t__ctor_mEDA7937D1E
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 2;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_key_get_ref_t_Invoke_mF5D3582922E868C42BCF32EB14471F8C800BB66E_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_key_get_ref_t_Invoke_mF5D3582922E868C42BCF32EB14471F8C800BB66E_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_key_get_ref_t_Invoke_mF5D3582922E868C42BCF32EB14471F8C800BB66E_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_key_get_ref_t_Invoke_mF5D3582922E868C42BCF32EB14471F8C800BB66E_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -10725,14 +10178,6 @@ unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8* unitytls_key_parse_der_t
 	typedef unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8* (*FunctionPointerType) (uint8_t*, intptr_t, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___buffer0, ___bufferLen1, ___password2, ___passwordLen3, ___errorState4, method);
 }
-unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8* unitytls_key_parse_der_t_Invoke_m244086296EBDE0C0B0F072B33AAD5BA39A030DB6_OpenStaticInvoker(unitytls_key_parse_der_t_tC218AEF9253FA105762F39041F696A06C52D3F10* __this, uint8_t* ___buffer0, intptr_t ___bufferLen1, uint8_t* ___password2, intptr_t ___passwordLen3, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState4, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker5< unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8*, uint8_t*, intptr_t, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___buffer0, ___bufferLen1, ___password2, ___passwordLen3, ___errorState4);
-}
-unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8* unitytls_key_parse_der_t_Invoke_m244086296EBDE0C0B0F072B33AAD5BA39A030DB6_ClosedStaticInvoker(unitytls_key_parse_der_t_tC218AEF9253FA105762F39041F696A06C52D3F10* __this, uint8_t* ___buffer0, intptr_t ___bufferLen1, uint8_t* ___password2, intptr_t ___passwordLen3, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState4, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker6< unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8*, RuntimeObject*, uint8_t*, intptr_t, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___buffer0, ___bufferLen1, ___password2, ___passwordLen3, ___errorState4);
-}
 IL2CPP_EXTERN_C  unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8* DelegatePInvokeWrapper_unitytls_key_parse_der_t_tC218AEF9253FA105762F39041F696A06C52D3F10 (unitytls_key_parse_der_t_tC218AEF9253FA105762F39041F696A06C52D3F10* __this, uint8_t* ___buffer0, intptr_t ___bufferLen1, uint8_t* ___password2, intptr_t ___passwordLen3, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState4, const RuntimeMethod* method)
 {
 	typedef unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8* (CDECL *PInvokeFunc)(uint8_t*, intptr_t, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -10745,7 +10190,7 @@ IL2CPP_EXTERN_C  unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8* Delegat
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_key_parse_der_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_key_parse_der_t__ctor_m25AD8C01A87CF5F737E649F1FB9CA340A9A832A8 (unitytls_key_parse_der_t_tC218AEF9253FA105762F39041F696A06C52D3F10* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -10754,19 +10199,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_key_parse_der_t__ctor_m25AD8C01
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 5;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_key_parse_der_t_Invoke_m244086296EBDE0C0B0F072B33AAD5BA39A030DB6_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_key_parse_der_t_Invoke_m244086296EBDE0C0B0F072B33AAD5BA39A030DB6_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_key_parse_der_t_Invoke_m244086296EBDE0C0B0F072B33AAD5BA39A030DB6_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_key_parse_der_t_Invoke_m244086296EBDE0C0B0F072B33AAD5BA39A030DB6_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -10823,14 +10262,6 @@ unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8* unitytls_key_parse_pem_t
 	typedef unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8* (*FunctionPointerType) (uint8_t*, intptr_t, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___buffer0, ___bufferLen1, ___password2, ___passwordLen3, ___errorState4, method);
 }
-unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8* unitytls_key_parse_pem_t_Invoke_mE842DC1436977A2982224694DB5BCC2FF8A9B331_OpenStaticInvoker(unitytls_key_parse_pem_t_tE945670C6CB28BBF4670D2E8E904B7D8A2AB277B* __this, uint8_t* ___buffer0, intptr_t ___bufferLen1, uint8_t* ___password2, intptr_t ___passwordLen3, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState4, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker5< unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8*, uint8_t*, intptr_t, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___buffer0, ___bufferLen1, ___password2, ___passwordLen3, ___errorState4);
-}
-unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8* unitytls_key_parse_pem_t_Invoke_mE842DC1436977A2982224694DB5BCC2FF8A9B331_ClosedStaticInvoker(unitytls_key_parse_pem_t_tE945670C6CB28BBF4670D2E8E904B7D8A2AB277B* __this, uint8_t* ___buffer0, intptr_t ___bufferLen1, uint8_t* ___password2, intptr_t ___passwordLen3, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState4, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker6< unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8*, RuntimeObject*, uint8_t*, intptr_t, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___buffer0, ___bufferLen1, ___password2, ___passwordLen3, ___errorState4);
-}
 IL2CPP_EXTERN_C  unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8* DelegatePInvokeWrapper_unitytls_key_parse_pem_t_tE945670C6CB28BBF4670D2E8E904B7D8A2AB277B (unitytls_key_parse_pem_t_tE945670C6CB28BBF4670D2E8E904B7D8A2AB277B* __this, uint8_t* ___buffer0, intptr_t ___bufferLen1, uint8_t* ___password2, intptr_t ___passwordLen3, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState4, const RuntimeMethod* method)
 {
 	typedef unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8* (CDECL *PInvokeFunc)(uint8_t*, intptr_t, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -10843,7 +10274,7 @@ IL2CPP_EXTERN_C  unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8* Delegat
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_key_parse_pem_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_key_parse_pem_t__ctor_m8F4D69BD7B0988BF7682B3E5EA5934141BFEE440 (unitytls_key_parse_pem_t_tE945670C6CB28BBF4670D2E8E904B7D8A2AB277B* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -10852,19 +10283,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_key_parse_pem_t__ctor_m8F4D69BD
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 5;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_key_parse_pem_t_Invoke_mE842DC1436977A2982224694DB5BCC2FF8A9B331_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_key_parse_pem_t_Invoke_mE842DC1436977A2982224694DB5BCC2FF8A9B331_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_key_parse_pem_t_Invoke_mE842DC1436977A2982224694DB5BCC2FF8A9B331_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_key_parse_pem_t_Invoke_mE842DC1436977A2982224694DB5BCC2FF8A9B331_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -10919,14 +10344,6 @@ void unitytls_key_free_t_Invoke_m860A3C396228B7ADF9406AE78D439BDCD12FB98E_OpenSt
 	typedef void (*FunctionPointerType) (unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___key0, method);
 }
-void unitytls_key_free_t_Invoke_m860A3C396228B7ADF9406AE78D439BDCD12FB98E_OpenStaticInvoker(unitytls_key_free_t_tDB8665140BAF30447F3650D323078C193566FF72* __this, unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8* ___key0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker1< unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8* >::Invoke(__this->___method_ptr_0, method, NULL, ___key0);
-}
-void unitytls_key_free_t_Invoke_m860A3C396228B7ADF9406AE78D439BDCD12FB98E_ClosedStaticInvoker(unitytls_key_free_t_tDB8665140BAF30447F3650D323078C193566FF72* __this, unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8* ___key0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< RuntimeObject*, unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___key0);
-}
 IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_key_free_t_tDB8665140BAF30447F3650D323078C193566FF72 (unitytls_key_free_t_tDB8665140BAF30447F3650D323078C193566FF72* __this, unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8* ___key0, const RuntimeMethod* method)
 {
 	typedef void (CDECL *PInvokeFunc)(unitytls_key_t4E1CA76E75CB31C6E958E558F9FBE7BA02EB0DC8*);
@@ -10938,7 +10355,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_key_free_t_tDB8665140BAF30
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_key_free_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_key_free_t__ctor_m935A5571CE60C369950D58C79432FB1C50231C37 (unitytls_key_free_t_tDB8665140BAF30447F3650D323078C193566FF72* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -10947,19 +10364,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_key_free_t__ctor_m935A5571CE60C
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 1;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_key_free_t_Invoke_m860A3C396228B7ADF9406AE78D439BDCD12FB98E_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_key_free_t_Invoke_m860A3C396228B7ADF9406AE78D439BDCD12FB98E_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_key_free_t_Invoke_m860A3C396228B7ADF9406AE78D439BDCD12FB98E_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_key_free_t_Invoke_m860A3C396228B7ADF9406AE78D439BDCD12FB98E_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -11016,14 +10427,6 @@ intptr_t unitytls_x509_export_der_t_Invoke_m13DB2E205EF9ED37B75F5B763C5080E70778
 	typedef intptr_t (*FunctionPointerType) (unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___cert0, ___buffer1, ___bufferLen2, ___errorState3, method);
 }
-intptr_t unitytls_x509_export_der_t_Invoke_m13DB2E205EF9ED37B75F5B763C5080E7077841AD_OpenStaticInvoker(unitytls_x509_export_der_t_tB784597940DE501BB5FEFA3EA528634559A16749* __this, unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333 ___cert0, uint8_t* ___buffer1, intptr_t ___bufferLen2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker4< intptr_t, unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___cert0, ___buffer1, ___bufferLen2, ___errorState3);
-}
-intptr_t unitytls_x509_export_der_t_Invoke_m13DB2E205EF9ED37B75F5B763C5080E7077841AD_ClosedStaticInvoker(unitytls_x509_export_der_t_tB784597940DE501BB5FEFA3EA528634559A16749* __this, unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333 ___cert0, uint8_t* ___buffer1, intptr_t ___bufferLen2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker5< intptr_t, RuntimeObject*, unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___cert0, ___buffer1, ___bufferLen2, ___errorState3);
-}
 IL2CPP_EXTERN_C  intptr_t DelegatePInvokeWrapper_unitytls_x509_export_der_t_tB784597940DE501BB5FEFA3EA528634559A16749 (unitytls_x509_export_der_t_tB784597940DE501BB5FEFA3EA528634559A16749* __this, unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333 ___cert0, uint8_t* ___buffer1, intptr_t ___bufferLen2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
 {
 	typedef intptr_t (CDECL *PInvokeFunc)(unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -11036,7 +10439,7 @@ IL2CPP_EXTERN_C  intptr_t DelegatePInvokeWrapper_unitytls_x509_export_der_t_tB78
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_x509_export_der_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_x509_export_der_t__ctor_m9BF2B0B567856AE42AB0ED274CD26ACE5FC0186B (unitytls_x509_export_der_t_tB784597940DE501BB5FEFA3EA528634559A16749* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -11045,19 +10448,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_x509_export_der_t__ctor_m9BF2B0
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 4;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509_export_der_t_Invoke_m13DB2E205EF9ED37B75F5B763C5080E7077841AD_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509_export_der_t_Invoke_m13DB2E205EF9ED37B75F5B763C5080E7077841AD_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_x509_export_der_t_Invoke_m13DB2E205EF9ED37B75F5B763C5080E7077841AD_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509_export_der_t_Invoke_m13DB2E205EF9ED37B75F5B763C5080E7077841AD_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -11107,14 +10504,6 @@ unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17 unitytls_x509lis
 	typedef unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17 (*FunctionPointerType) (unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___list0, ___errorState1, method);
 }
-unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17 unitytls_x509list_get_ref_t_Invoke_mE7C675B7847FFEF96C25AE757D34CE920AA16EC2_OpenStaticInvoker(unitytls_x509list_get_ref_t_t264CEEF7B8D1F10FD95E1BC78BB48BCA11E305EA* __this, unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6* ___list0, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState1, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker2< unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17, unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___list0, ___errorState1);
-}
-unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17 unitytls_x509list_get_ref_t_Invoke_mE7C675B7847FFEF96C25AE757D34CE920AA16EC2_ClosedStaticInvoker(unitytls_x509list_get_ref_t_t264CEEF7B8D1F10FD95E1BC78BB48BCA11E305EA* __this, unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6* ___list0, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState1, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker3< unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17, RuntimeObject*, unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___list0, ___errorState1);
-}
 IL2CPP_EXTERN_C  unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17 DelegatePInvokeWrapper_unitytls_x509list_get_ref_t_t264CEEF7B8D1F10FD95E1BC78BB48BCA11E305EA (unitytls_x509list_get_ref_t_t264CEEF7B8D1F10FD95E1BC78BB48BCA11E305EA* __this, unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6* ___list0, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState1, const RuntimeMethod* method)
 {
 	typedef unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17 (CDECL *PInvokeFunc)(unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -11127,7 +10516,7 @@ IL2CPP_EXTERN_C  unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_x509list_get_ref_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_x509list_get_ref_t__ctor_m6977636DC288FB0809D7C0CE8D9D31D25795F77C (unitytls_x509list_get_ref_t_t264CEEF7B8D1F10FD95E1BC78BB48BCA11E305EA* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -11136,19 +10525,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_x509list_get_ref_t__ctor_m69776
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 2;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509list_get_ref_t_Invoke_mE7C675B7847FFEF96C25AE757D34CE920AA16EC2_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509list_get_ref_t_Invoke_mE7C675B7847FFEF96C25AE757D34CE920AA16EC2_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_x509list_get_ref_t_Invoke_mE7C675B7847FFEF96C25AE757D34CE920AA16EC2_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509list_get_ref_t_Invoke_mE7C675B7847FFEF96C25AE757D34CE920AA16EC2_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -11205,14 +10588,6 @@ unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333 unitytls_x509list_ge
 	typedef unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333 (*FunctionPointerType) (unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___list0, ___index1, ___errorState2, method);
 }
-unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333 unitytls_x509list_get_x509_t_Invoke_m9080273A34FE768B80024B96001D5B7451A46EC0_OpenStaticInvoker(unitytls_x509list_get_x509_t_t428DCD367D50DCDD5ECE6DCFEB8967C5F7C3DFE8* __this, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17 ___list0, intptr_t ___index1, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState2, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker3< unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___list0, ___index1, ___errorState2);
-}
-unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333 unitytls_x509list_get_x509_t_Invoke_m9080273A34FE768B80024B96001D5B7451A46EC0_ClosedStaticInvoker(unitytls_x509list_get_x509_t_t428DCD367D50DCDD5ECE6DCFEB8967C5F7C3DFE8* __this, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17 ___list0, intptr_t ___index1, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState2, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker4< unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333, RuntimeObject*, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___list0, ___index1, ___errorState2);
-}
 IL2CPP_EXTERN_C  unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333 DelegatePInvokeWrapper_unitytls_x509list_get_x509_t_t428DCD367D50DCDD5ECE6DCFEB8967C5F7C3DFE8 (unitytls_x509list_get_x509_t_t428DCD367D50DCDD5ECE6DCFEB8967C5F7C3DFE8* __this, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17 ___list0, intptr_t ___index1, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState2, const RuntimeMethod* method)
 {
 	typedef unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333 (CDECL *PInvokeFunc)(unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -11225,7 +10600,7 @@ IL2CPP_EXTERN_C  unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333 Del
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_x509list_get_x509_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_x509list_get_x509_t__ctor_mFF7BC99AB91FE7F9CCB586988B246F597ADF53DD (unitytls_x509list_get_x509_t_t428DCD367D50DCDD5ECE6DCFEB8967C5F7C3DFE8* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -11234,19 +10609,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_x509list_get_x509_t__ctor_mFF7B
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 3;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509list_get_x509_t_Invoke_m9080273A34FE768B80024B96001D5B7451A46EC0_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509list_get_x509_t_Invoke_m9080273A34FE768B80024B96001D5B7451A46EC0_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_x509list_get_x509_t_Invoke_m9080273A34FE768B80024B96001D5B7451A46EC0_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509list_get_x509_t_Invoke_m9080273A34FE768B80024B96001D5B7451A46EC0_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -11295,14 +10664,6 @@ unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6* unitytls_x509list_c
 	typedef unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6* (*FunctionPointerType) (unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___errorState0, method);
 }
-unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6* unitytls_x509list_create_t_Invoke_m05D8719D913109E4997FF913015E66455BC3C7D3_OpenStaticInvoker(unitytls_x509list_create_t_t8873365FFB1556CE6B643700DB0C30E391B758D6* __this, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState0, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker1< unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___errorState0);
-}
-unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6* unitytls_x509list_create_t_Invoke_m05D8719D913109E4997FF913015E66455BC3C7D3_ClosedStaticInvoker(unitytls_x509list_create_t_t8873365FFB1556CE6B643700DB0C30E391B758D6* __this, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState0, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker2< unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6*, RuntimeObject*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___errorState0);
-}
 IL2CPP_EXTERN_C  unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6* DelegatePInvokeWrapper_unitytls_x509list_create_t_t8873365FFB1556CE6B643700DB0C30E391B758D6 (unitytls_x509list_create_t_t8873365FFB1556CE6B643700DB0C30E391B758D6* __this, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState0, const RuntimeMethod* method)
 {
 	typedef unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6* (CDECL *PInvokeFunc)(unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -11315,7 +10676,7 @@ IL2CPP_EXTERN_C  unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6* De
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_x509list_create_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_x509list_create_t__ctor_m41F2B1E6C767CD3A39F4E0FAD41B678AF61A14A6 (unitytls_x509list_create_t_t8873365FFB1556CE6B643700DB0C30E391B758D6* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -11324,19 +10685,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_x509list_create_t__ctor_m41F2B1
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 1;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509list_create_t_Invoke_m05D8719D913109E4997FF913015E66455BC3C7D3_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509list_create_t_Invoke_m05D8719D913109E4997FF913015E66455BC3C7D3_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_x509list_create_t_Invoke_m05D8719D913109E4997FF913015E66455BC3C7D3_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509list_create_t_Invoke_m05D8719D913109E4997FF913015E66455BC3C7D3_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -11391,14 +10746,6 @@ void unitytls_x509list_append_t_Invoke_mEF1811CFAD02743F745D8A8E09E2E84D68154976
 	typedef void (*FunctionPointerType) (unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6*, unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___list0, ___cert1, ___errorState2, method);
 }
-void unitytls_x509list_append_t_Invoke_mEF1811CFAD02743F745D8A8E09E2E84D68154976_OpenStaticInvoker(unitytls_x509list_append_t_tC84B9CA7C15F5D1DE98386670A80D5F98559D98E* __this, unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6* ___list0, unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333 ___cert1, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState2, const RuntimeMethod* method)
-{
-	InvokerActionInvoker3< unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6*, unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___list0, ___cert1, ___errorState2);
-}
-void unitytls_x509list_append_t_Invoke_mEF1811CFAD02743F745D8A8E09E2E84D68154976_ClosedStaticInvoker(unitytls_x509list_append_t_tC84B9CA7C15F5D1DE98386670A80D5F98559D98E* __this, unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6* ___list0, unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333 ___cert1, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState2, const RuntimeMethod* method)
-{
-	InvokerActionInvoker4< RuntimeObject*, unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6*, unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___list0, ___cert1, ___errorState2);
-}
 IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_x509list_append_t_tC84B9CA7C15F5D1DE98386670A80D5F98559D98E (unitytls_x509list_append_t_tC84B9CA7C15F5D1DE98386670A80D5F98559D98E* __this, unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6* ___list0, unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333 ___cert1, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState2, const RuntimeMethod* method)
 {
 	typedef void (CDECL *PInvokeFunc)(unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6*, unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -11410,7 +10757,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_x509list_append_t_tC84B9CA
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_x509list_append_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_x509list_append_t__ctor_m22FAC52BA432FBCF2048DA6236633970E4E18CB0 (unitytls_x509list_append_t_tC84B9CA7C15F5D1DE98386670A80D5F98559D98E* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -11419,19 +10766,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_x509list_append_t__ctor_m22FAC5
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 3;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509list_append_t_Invoke_mEF1811CFAD02743F745D8A8E09E2E84D68154976_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509list_append_t_Invoke_mEF1811CFAD02743F745D8A8E09E2E84D68154976_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_x509list_append_t_Invoke_mEF1811CFAD02743F745D8A8E09E2E84D68154976_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509list_append_t_Invoke_mEF1811CFAD02743F745D8A8E09E2E84D68154976_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -11486,14 +10827,6 @@ void unitytls_x509list_append_der_t_Invoke_m3D900F0F07C8747B9F046512DAC7579D0C7C
 	typedef void (*FunctionPointerType) (unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6*, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___list0, ___buffer1, ___bufferLen2, ___errorState3, method);
 }
-void unitytls_x509list_append_der_t_Invoke_m3D900F0F07C8747B9F046512DAC7579D0C7CD193_OpenStaticInvoker(unitytls_x509list_append_der_t_tC45176B25C9B11C509119A1943EFDE133D819951* __this, unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6* ___list0, uint8_t* ___buffer1, intptr_t ___bufferLen2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
-{
-	InvokerActionInvoker4< unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6*, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___list0, ___buffer1, ___bufferLen2, ___errorState3);
-}
-void unitytls_x509list_append_der_t_Invoke_m3D900F0F07C8747B9F046512DAC7579D0C7CD193_ClosedStaticInvoker(unitytls_x509list_append_der_t_tC45176B25C9B11C509119A1943EFDE133D819951* __this, unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6* ___list0, uint8_t* ___buffer1, intptr_t ___bufferLen2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
-{
-	InvokerActionInvoker5< RuntimeObject*, unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6*, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___list0, ___buffer1, ___bufferLen2, ___errorState3);
-}
 IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_x509list_append_der_t_tC45176B25C9B11C509119A1943EFDE133D819951 (unitytls_x509list_append_der_t_tC45176B25C9B11C509119A1943EFDE133D819951* __this, unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6* ___list0, uint8_t* ___buffer1, intptr_t ___bufferLen2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
 {
 	typedef void (CDECL *PInvokeFunc)(unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6*, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -11505,7 +10838,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_x509list_append_der_t_tC45
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_x509list_append_der_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_x509list_append_der_t__ctor_mB33965F4253393C8B17E44DACA1ECDBCC17EB673 (unitytls_x509list_append_der_t_tC45176B25C9B11C509119A1943EFDE133D819951* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -11514,19 +10847,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_x509list_append_der_t__ctor_mB3
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 4;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509list_append_der_t_Invoke_m3D900F0F07C8747B9F046512DAC7579D0C7CD193_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509list_append_der_t_Invoke_m3D900F0F07C8747B9F046512DAC7579D0C7CD193_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_x509list_append_der_t_Invoke_m3D900F0F07C8747B9F046512DAC7579D0C7CD193_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509list_append_der_t_Invoke_m3D900F0F07C8747B9F046512DAC7579D0C7CD193_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -11581,14 +10908,6 @@ void unitytls_x509list_free_t_Invoke_m0974FBCD7B6920A4EC57BDCB080E1A7307EEEA02_O
 	typedef void (*FunctionPointerType) (unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___list0, method);
 }
-void unitytls_x509list_free_t_Invoke_m0974FBCD7B6920A4EC57BDCB080E1A7307EEEA02_OpenStaticInvoker(unitytls_x509list_free_t_t9BD50B09A7919B7891DC529787E93C708FC653A2* __this, unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6* ___list0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker1< unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6* >::Invoke(__this->___method_ptr_0, method, NULL, ___list0);
-}
-void unitytls_x509list_free_t_Invoke_m0974FBCD7B6920A4EC57BDCB080E1A7307EEEA02_ClosedStaticInvoker(unitytls_x509list_free_t_t9BD50B09A7919B7891DC529787E93C708FC653A2* __this, unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6* ___list0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< RuntimeObject*, unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___list0);
-}
 IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_x509list_free_t_t9BD50B09A7919B7891DC529787E93C708FC653A2 (unitytls_x509list_free_t_t9BD50B09A7919B7891DC529787E93C708FC653A2* __this, unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6* ___list0, const RuntimeMethod* method)
 {
 	typedef void (CDECL *PInvokeFunc)(unitytls_x509list_t9F49349BFFD2483DA42E52D9E2028974727181F6*);
@@ -11600,7 +10919,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_x509list_free_t_t9BD50B09A
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_x509list_free_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_x509list_free_t__ctor_mA156855741A0AA67C20B87507BE55F188ECBFFD4 (unitytls_x509list_free_t_t9BD50B09A7919B7891DC529787E93C708FC653A2* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -11609,19 +10928,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_x509list_free_t__ctor_mA1568557
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 1;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509list_free_t_Invoke_m0974FBCD7B6920A4EC57BDCB080E1A7307EEEA02_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509list_free_t_Invoke_m0974FBCD7B6920A4EC57BDCB080E1A7307EEEA02_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_x509list_free_t_Invoke_m0974FBCD7B6920A4EC57BDCB080E1A7307EEEA02_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509list_free_t_Invoke_m0974FBCD7B6920A4EC57BDCB080E1A7307EEEA02_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -11677,14 +10990,6 @@ uint32_t unitytls_x509verify_default_ca_t_Invoke_m1D112FD2010361D2DB08F08A598000
 	typedef uint32_t (*FunctionPointerType) (unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17, uint8_t*, intptr_t, unitytls_x509verify_callback_t1B72B7CF228F76F09A6A75C54C15F2084C01CA09*, void*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___chain0, ___cn1, ___cnLen2, ___cb3, ___userData4, ___errorState5, method);
 }
-uint32_t unitytls_x509verify_default_ca_t_Invoke_m1D112FD2010361D2DB08F08A598000ADCD0875C3_OpenStaticInvoker(unitytls_x509verify_default_ca_t_tED88B7ABC8408A22DB51B1F57D5FC65BDD2EC809* __this, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17 ___chain0, uint8_t* ___cn1, intptr_t ___cnLen2, unitytls_x509verify_callback_t1B72B7CF228F76F09A6A75C54C15F2084C01CA09* ___cb3, void* ___userData4, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState5, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker6< uint32_t, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17, uint8_t*, intptr_t, unitytls_x509verify_callback_t1B72B7CF228F76F09A6A75C54C15F2084C01CA09*, void*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___chain0, ___cn1, ___cnLen2, ___cb3, ___userData4, ___errorState5);
-}
-uint32_t unitytls_x509verify_default_ca_t_Invoke_m1D112FD2010361D2DB08F08A598000ADCD0875C3_ClosedStaticInvoker(unitytls_x509verify_default_ca_t_tED88B7ABC8408A22DB51B1F57D5FC65BDD2EC809* __this, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17 ___chain0, uint8_t* ___cn1, intptr_t ___cnLen2, unitytls_x509verify_callback_t1B72B7CF228F76F09A6A75C54C15F2084C01CA09* ___cb3, void* ___userData4, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState5, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker7< uint32_t, RuntimeObject*, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17, uint8_t*, intptr_t, unitytls_x509verify_callback_t1B72B7CF228F76F09A6A75C54C15F2084C01CA09*, void*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___chain0, ___cn1, ___cnLen2, ___cb3, ___userData4, ___errorState5);
-}
 IL2CPP_EXTERN_C  uint32_t DelegatePInvokeWrapper_unitytls_x509verify_default_ca_t_tED88B7ABC8408A22DB51B1F57D5FC65BDD2EC809 (unitytls_x509verify_default_ca_t_tED88B7ABC8408A22DB51B1F57D5FC65BDD2EC809* __this, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17 ___chain0, uint8_t* ___cn1, intptr_t ___cnLen2, unitytls_x509verify_callback_t1B72B7CF228F76F09A6A75C54C15F2084C01CA09* ___cb3, void* ___userData4, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState5, const RuntimeMethod* method)
 {
 	typedef uint32_t (CDECL *PInvokeFunc)(unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17, uint8_t*, intptr_t, Il2CppMethodPointer, void*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -11701,7 +11006,7 @@ IL2CPP_EXTERN_C  uint32_t DelegatePInvokeWrapper_unitytls_x509verify_default_ca_
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_x509verify_default_ca_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_x509verify_default_ca_t__ctor_m936B931A7A5A10B4A514630F84CF136A799AFA23 (unitytls_x509verify_default_ca_t_tED88B7ABC8408A22DB51B1F57D5FC65BDD2EC809* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -11710,19 +11015,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_x509verify_default_ca_t__ctor_m
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 6;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509verify_default_ca_t_Invoke_m1D112FD2010361D2DB08F08A598000ADCD0875C3_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509verify_default_ca_t_Invoke_m1D112FD2010361D2DB08F08A598000ADCD0875C3_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_x509verify_default_ca_t_Invoke_m1D112FD2010361D2DB08F08A598000ADCD0875C3_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509verify_default_ca_t_Invoke_m1D112FD2010361D2DB08F08A598000ADCD0875C3_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -11770,14 +11069,6 @@ uint32_t unitytls_x509verify_explicit_ca_t_Invoke_m4028A9AE8FD6B69DB36BAE68CC3A3
 	typedef uint32_t (*FunctionPointerType) (unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17, uint8_t*, intptr_t, unitytls_x509verify_callback_t1B72B7CF228F76F09A6A75C54C15F2084C01CA09*, void*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___chain0, ___trustCA1, ___cn2, ___cnLen3, ___cb4, ___userData5, ___errorState6, method);
 }
-uint32_t unitytls_x509verify_explicit_ca_t_Invoke_m4028A9AE8FD6B69DB36BAE68CC3A3362A825738B_OpenStaticInvoker(unitytls_x509verify_explicit_ca_t_t1B3D98BF01F059A3C2ADE87EFDDA03C557A3D08D* __this, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17 ___chain0, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17 ___trustCA1, uint8_t* ___cn2, intptr_t ___cnLen3, unitytls_x509verify_callback_t1B72B7CF228F76F09A6A75C54C15F2084C01CA09* ___cb4, void* ___userData5, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState6, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker7< uint32_t, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17, uint8_t*, intptr_t, unitytls_x509verify_callback_t1B72B7CF228F76F09A6A75C54C15F2084C01CA09*, void*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___chain0, ___trustCA1, ___cn2, ___cnLen3, ___cb4, ___userData5, ___errorState6);
-}
-uint32_t unitytls_x509verify_explicit_ca_t_Invoke_m4028A9AE8FD6B69DB36BAE68CC3A3362A825738B_ClosedStaticInvoker(unitytls_x509verify_explicit_ca_t_t1B3D98BF01F059A3C2ADE87EFDDA03C557A3D08D* __this, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17 ___chain0, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17 ___trustCA1, uint8_t* ___cn2, intptr_t ___cnLen3, unitytls_x509verify_callback_t1B72B7CF228F76F09A6A75C54C15F2084C01CA09* ___cb4, void* ___userData5, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState6, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker8< uint32_t, RuntimeObject*, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17, uint8_t*, intptr_t, unitytls_x509verify_callback_t1B72B7CF228F76F09A6A75C54C15F2084C01CA09*, void*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___chain0, ___trustCA1, ___cn2, ___cnLen3, ___cb4, ___userData5, ___errorState6);
-}
 IL2CPP_EXTERN_C  uint32_t DelegatePInvokeWrapper_unitytls_x509verify_explicit_ca_t_t1B3D98BF01F059A3C2ADE87EFDDA03C557A3D08D (unitytls_x509verify_explicit_ca_t_t1B3D98BF01F059A3C2ADE87EFDDA03C557A3D08D* __this, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17 ___chain0, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17 ___trustCA1, uint8_t* ___cn2, intptr_t ___cnLen3, unitytls_x509verify_callback_t1B72B7CF228F76F09A6A75C54C15F2084C01CA09* ___cb4, void* ___userData5, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState6, const RuntimeMethod* method)
 {
 	typedef uint32_t (CDECL *PInvokeFunc)(unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17, uint8_t*, intptr_t, Il2CppMethodPointer, void*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -11794,7 +11085,7 @@ IL2CPP_EXTERN_C  uint32_t DelegatePInvokeWrapper_unitytls_x509verify_explicit_ca
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_x509verify_explicit_ca_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_x509verify_explicit_ca_t__ctor_m1812F92F4C92CE54233697CE380177EBA629A1F1 (unitytls_x509verify_explicit_ca_t_t1B3D98BF01F059A3C2ADE87EFDDA03C557A3D08D* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -11803,19 +11094,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_x509verify_explicit_ca_t__ctor_
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 7;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509verify_explicit_ca_t_Invoke_m4028A9AE8FD6B69DB36BAE68CC3A3362A825738B_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509verify_explicit_ca_t_Invoke_m4028A9AE8FD6B69DB36BAE68CC3A3362A825738B_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_x509verify_explicit_ca_t_Invoke_m4028A9AE8FD6B69DB36BAE68CC3A3362A825738B_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_x509verify_explicit_ca_t_Invoke_m4028A9AE8FD6B69DB36BAE68CC3A3362A825738B_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -11863,14 +11148,6 @@ unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* unitytls_tlsctx_creat
 	typedef unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* (*FunctionPointerType) (unitytls_tlsctx_protocolrange_tC9BEAD436B8171684A1DE9991676D9FEFF879C56, unitytls_tlsctx_callbacks_t348AE3D333ACBB2F17D4D7B8412256357B39B568, uint64_t, uint64_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___supportedProtocols0, ___callbacks1, ___certChain2, ___leafCertificateKey3, ___errorState4, method);
 }
-unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* unitytls_tlsctx_create_server_t_Invoke_mCEB3E8CADCB316F4DF606A68182A4E5C9EC4D3B9_OpenStaticInvoker(unitytls_tlsctx_create_server_t_t1068941B319B893D3FFBE53FE061676FF1CC3803* __this, unitytls_tlsctx_protocolrange_tC9BEAD436B8171684A1DE9991676D9FEFF879C56 ___supportedProtocols0, unitytls_tlsctx_callbacks_t348AE3D333ACBB2F17D4D7B8412256357B39B568 ___callbacks1, uint64_t ___certChain2, uint64_t ___leafCertificateKey3, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState4, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker5< unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_tlsctx_protocolrange_tC9BEAD436B8171684A1DE9991676D9FEFF879C56, unitytls_tlsctx_callbacks_t348AE3D333ACBB2F17D4D7B8412256357B39B568, uint64_t, uint64_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___supportedProtocols0, ___callbacks1, ___certChain2, ___leafCertificateKey3, ___errorState4);
-}
-unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* unitytls_tlsctx_create_server_t_Invoke_mCEB3E8CADCB316F4DF606A68182A4E5C9EC4D3B9_ClosedStaticInvoker(unitytls_tlsctx_create_server_t_t1068941B319B893D3FFBE53FE061676FF1CC3803* __this, unitytls_tlsctx_protocolrange_tC9BEAD436B8171684A1DE9991676D9FEFF879C56 ___supportedProtocols0, unitytls_tlsctx_callbacks_t348AE3D333ACBB2F17D4D7B8412256357B39B568 ___callbacks1, uint64_t ___certChain2, uint64_t ___leafCertificateKey3, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState4, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker6< unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, RuntimeObject*, unitytls_tlsctx_protocolrange_tC9BEAD436B8171684A1DE9991676D9FEFF879C56, unitytls_tlsctx_callbacks_t348AE3D333ACBB2F17D4D7B8412256357B39B568, uint64_t, uint64_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___supportedProtocols0, ___callbacks1, ___certChain2, ___leafCertificateKey3, ___errorState4);
-}
 IL2CPP_EXTERN_C  unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* DelegatePInvokeWrapper_unitytls_tlsctx_create_server_t_t1068941B319B893D3FFBE53FE061676FF1CC3803 (unitytls_tlsctx_create_server_t_t1068941B319B893D3FFBE53FE061676FF1CC3803* __this, unitytls_tlsctx_protocolrange_tC9BEAD436B8171684A1DE9991676D9FEFF879C56 ___supportedProtocols0, unitytls_tlsctx_callbacks_t348AE3D333ACBB2F17D4D7B8412256357B39B568 ___callbacks1, uint64_t ___certChain2, uint64_t ___leafCertificateKey3, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState4, const RuntimeMethod* method)
 {
 
@@ -11892,7 +11169,7 @@ IL2CPP_EXTERN_C  unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* Dele
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_tlsctx_create_server_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_create_server_t__ctor_m035F9FCC9C4B71D3BA4F1610FBCFB7E87E28EDD7 (unitytls_tlsctx_create_server_t_t1068941B319B893D3FFBE53FE061676FF1CC3803* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -11901,19 +11178,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_create_server_t__ctor_m0
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 5;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_create_server_t_Invoke_mCEB3E8CADCB316F4DF606A68182A4E5C9EC4D3B9_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_create_server_t_Invoke_mCEB3E8CADCB316F4DF606A68182A4E5C9EC4D3B9_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_create_server_t_Invoke_mCEB3E8CADCB316F4DF606A68182A4E5C9EC4D3B9_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_create_server_t_Invoke_mCEB3E8CADCB316F4DF606A68182A4E5C9EC4D3B9_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -11961,14 +11232,6 @@ unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* unitytls_tlsctx_creat
 	typedef unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* (*FunctionPointerType) (unitytls_tlsctx_protocolrange_tC9BEAD436B8171684A1DE9991676D9FEFF879C56, unitytls_tlsctx_callbacks_t348AE3D333ACBB2F17D4D7B8412256357B39B568, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___supportedProtocols0, ___callbacks1, ___cn2, ___cnLen3, ___errorState4, method);
 }
-unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* unitytls_tlsctx_create_client_t_Invoke_m728BCBF32A45326A1AD8B1E17933372F7D9E01EE_OpenStaticInvoker(unitytls_tlsctx_create_client_t_t49D8F69D4152410A346CB3560B121DCC44AAC4EC* __this, unitytls_tlsctx_protocolrange_tC9BEAD436B8171684A1DE9991676D9FEFF879C56 ___supportedProtocols0, unitytls_tlsctx_callbacks_t348AE3D333ACBB2F17D4D7B8412256357B39B568 ___callbacks1, uint8_t* ___cn2, intptr_t ___cnLen3, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState4, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker5< unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_tlsctx_protocolrange_tC9BEAD436B8171684A1DE9991676D9FEFF879C56, unitytls_tlsctx_callbacks_t348AE3D333ACBB2F17D4D7B8412256357B39B568, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___supportedProtocols0, ___callbacks1, ___cn2, ___cnLen3, ___errorState4);
-}
-unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* unitytls_tlsctx_create_client_t_Invoke_m728BCBF32A45326A1AD8B1E17933372F7D9E01EE_ClosedStaticInvoker(unitytls_tlsctx_create_client_t_t49D8F69D4152410A346CB3560B121DCC44AAC4EC* __this, unitytls_tlsctx_protocolrange_tC9BEAD436B8171684A1DE9991676D9FEFF879C56 ___supportedProtocols0, unitytls_tlsctx_callbacks_t348AE3D333ACBB2F17D4D7B8412256357B39B568 ___callbacks1, uint8_t* ___cn2, intptr_t ___cnLen3, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState4, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker6< unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, RuntimeObject*, unitytls_tlsctx_protocolrange_tC9BEAD436B8171684A1DE9991676D9FEFF879C56, unitytls_tlsctx_callbacks_t348AE3D333ACBB2F17D4D7B8412256357B39B568, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___supportedProtocols0, ___callbacks1, ___cn2, ___cnLen3, ___errorState4);
-}
 IL2CPP_EXTERN_C  unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* DelegatePInvokeWrapper_unitytls_tlsctx_create_client_t_t49D8F69D4152410A346CB3560B121DCC44AAC4EC (unitytls_tlsctx_create_client_t_t49D8F69D4152410A346CB3560B121DCC44AAC4EC* __this, unitytls_tlsctx_protocolrange_tC9BEAD436B8171684A1DE9991676D9FEFF879C56 ___supportedProtocols0, unitytls_tlsctx_callbacks_t348AE3D333ACBB2F17D4D7B8412256357B39B568 ___callbacks1, uint8_t* ___cn2, intptr_t ___cnLen3, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState4, const RuntimeMethod* method)
 {
 
@@ -11990,7 +11253,7 @@ IL2CPP_EXTERN_C  unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* Dele
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_tlsctx_create_client_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_create_client_t__ctor_m898460A0D30C6EEF737F445DFBA96076E4D22130 (unitytls_tlsctx_create_client_t_t49D8F69D4152410A346CB3560B121DCC44AAC4EC* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -11999,19 +11262,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_create_client_t__ctor_m8
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 5;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_create_client_t_Invoke_m728BCBF32A45326A1AD8B1E17933372F7D9E01EE_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_create_client_t_Invoke_m728BCBF32A45326A1AD8B1E17933372F7D9E01EE_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_create_client_t_Invoke_m728BCBF32A45326A1AD8B1E17933372F7D9E01EE_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_create_client_t_Invoke_m728BCBF32A45326A1AD8B1E17933372F7D9E01EE_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -12058,14 +11315,6 @@ void unitytls_tlsctx_server_require_client_authentication_t_Invoke_m0B6DAC7CA952
 	typedef void (*FunctionPointerType) (unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___ctx0, ___clientAuthCAList1, ___errorState2, method);
 }
-void unitytls_tlsctx_server_require_client_authentication_t_Invoke_m0B6DAC7CA95263D1245C9B0A466AF00D073059EB_OpenStaticInvoker(unitytls_tlsctx_server_require_client_authentication_t_t2AC04245D1F40738C5FB87B0DEE80761E243F0BE* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17 ___clientAuthCAList1, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState2, const RuntimeMethod* method)
-{
-	InvokerActionInvoker3< unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___ctx0, ___clientAuthCAList1, ___errorState2);
-}
-void unitytls_tlsctx_server_require_client_authentication_t_Invoke_m0B6DAC7CA95263D1245C9B0A466AF00D073059EB_ClosedStaticInvoker(unitytls_tlsctx_server_require_client_authentication_t_t2AC04245D1F40738C5FB87B0DEE80761E243F0BE* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17 ___clientAuthCAList1, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState2, const RuntimeMethod* method)
-{
-	InvokerActionInvoker4< RuntimeObject*, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___ctx0, ___clientAuthCAList1, ___errorState2);
-}
 IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_tlsctx_server_require_client_authentication_t_t2AC04245D1F40738C5FB87B0DEE80761E243F0BE (unitytls_tlsctx_server_require_client_authentication_t_t2AC04245D1F40738C5FB87B0DEE80761E243F0BE* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17 ___clientAuthCAList1, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState2, const RuntimeMethod* method)
 {
 	typedef void (CDECL *PInvokeFunc)(unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -12077,7 +11326,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_tlsctx_server_require_clie
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_tlsctx_server_require_client_authentication_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_server_require_client_authentication_t__ctor_m3E84F3D43AA2928DA825256C6179E2D0CF926C60 (unitytls_tlsctx_server_require_client_authentication_t_t2AC04245D1F40738C5FB87B0DEE80761E243F0BE* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -12086,19 +11335,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_server_require_client_au
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 3;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_server_require_client_authentication_t_Invoke_m0B6DAC7CA95263D1245C9B0A466AF00D073059EB_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_server_require_client_authentication_t_Invoke_m0B6DAC7CA95263D1245C9B0A466AF00D073059EB_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_server_require_client_authentication_t_Invoke_m0B6DAC7CA95263D1245C9B0A466AF00D073059EB_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_server_require_client_authentication_t_Invoke_m0B6DAC7CA95263D1245C9B0A466AF00D073059EB_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -12153,14 +11396,6 @@ void unitytls_tlsctx_set_certificate_callback_t_Invoke_mFC277320977BC310A0EB484E
 	typedef void (*FunctionPointerType) (unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_tlsctx_certificate_callback_tB2FEBFA5D27CFA86544C06451270B36D77F2932C*, void*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___ctx0, ___cb1, ___userData2, ___errorState3, method);
 }
-void unitytls_tlsctx_set_certificate_callback_t_Invoke_mFC277320977BC310A0EB484EE505E25B6E2C7CA3_OpenStaticInvoker(unitytls_tlsctx_set_certificate_callback_t_t2B54F7228DFC11BF14DCF2201BDD90CF0EF92D41* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, unitytls_tlsctx_certificate_callback_tB2FEBFA5D27CFA86544C06451270B36D77F2932C* ___cb1, void* ___userData2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
-{
-	InvokerActionInvoker4< unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_tlsctx_certificate_callback_tB2FEBFA5D27CFA86544C06451270B36D77F2932C*, void*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___ctx0, ___cb1, ___userData2, ___errorState3);
-}
-void unitytls_tlsctx_set_certificate_callback_t_Invoke_mFC277320977BC310A0EB484EE505E25B6E2C7CA3_ClosedStaticInvoker(unitytls_tlsctx_set_certificate_callback_t_t2B54F7228DFC11BF14DCF2201BDD90CF0EF92D41* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, unitytls_tlsctx_certificate_callback_tB2FEBFA5D27CFA86544C06451270B36D77F2932C* ___cb1, void* ___userData2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
-{
-	InvokerActionInvoker5< RuntimeObject*, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_tlsctx_certificate_callback_tB2FEBFA5D27CFA86544C06451270B36D77F2932C*, void*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___ctx0, ___cb1, ___userData2, ___errorState3);
-}
 IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_tlsctx_set_certificate_callback_t_t2B54F7228DFC11BF14DCF2201BDD90CF0EF92D41 (unitytls_tlsctx_set_certificate_callback_t_t2B54F7228DFC11BF14DCF2201BDD90CF0EF92D41* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, unitytls_tlsctx_certificate_callback_tB2FEBFA5D27CFA86544C06451270B36D77F2932C* ___cb1, void* ___userData2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
 {
 	typedef void (CDECL *PInvokeFunc)(unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, Il2CppMethodPointer, void*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -12176,7 +11411,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_tlsctx_set_certificate_cal
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_tlsctx_set_certificate_callback_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_set_certificate_callback_t__ctor_m31E0497908A2C272B9AB80B4659D1517F9647E20 (unitytls_tlsctx_set_certificate_callback_t_t2B54F7228DFC11BF14DCF2201BDD90CF0EF92D41* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -12185,19 +11420,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_set_certificate_callback
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 4;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_set_certificate_callback_t_Invoke_mFC277320977BC310A0EB484EE505E25B6E2C7CA3_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_set_certificate_callback_t_Invoke_mFC277320977BC310A0EB484EE505E25B6E2C7CA3_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_set_certificate_callback_t_Invoke_mFC277320977BC310A0EB484EE505E25B6E2C7CA3_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_set_certificate_callback_t_Invoke_mFC277320977BC310A0EB484EE505E25B6E2C7CA3_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -12252,14 +11481,6 @@ void unitytls_tlsctx_set_trace_callback_t_Invoke_mC98468DD35AA05DE628FEAE7669B4F
 	typedef void (*FunctionPointerType) (unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_tlsctx_trace_callback_tAC1169E423F6EBDA60CDD5D33E1795A8811E0BE6*, void*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___ctx0, ___cb1, ___userData2, ___errorState3, method);
 }
-void unitytls_tlsctx_set_trace_callback_t_Invoke_mC98468DD35AA05DE628FEAE7669B4F71205CCBD7_OpenStaticInvoker(unitytls_tlsctx_set_trace_callback_t_t3C615EACADC2CB1CDA8362B3F775071976E7CF7C* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, unitytls_tlsctx_trace_callback_tAC1169E423F6EBDA60CDD5D33E1795A8811E0BE6* ___cb1, void* ___userData2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
-{
-	InvokerActionInvoker4< unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_tlsctx_trace_callback_tAC1169E423F6EBDA60CDD5D33E1795A8811E0BE6*, void*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___ctx0, ___cb1, ___userData2, ___errorState3);
-}
-void unitytls_tlsctx_set_trace_callback_t_Invoke_mC98468DD35AA05DE628FEAE7669B4F71205CCBD7_ClosedStaticInvoker(unitytls_tlsctx_set_trace_callback_t_t3C615EACADC2CB1CDA8362B3F775071976E7CF7C* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, unitytls_tlsctx_trace_callback_tAC1169E423F6EBDA60CDD5D33E1795A8811E0BE6* ___cb1, void* ___userData2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
-{
-	InvokerActionInvoker5< RuntimeObject*, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_tlsctx_trace_callback_tAC1169E423F6EBDA60CDD5D33E1795A8811E0BE6*, void*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___ctx0, ___cb1, ___userData2, ___errorState3);
-}
 IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_tlsctx_set_trace_callback_t_t3C615EACADC2CB1CDA8362B3F775071976E7CF7C (unitytls_tlsctx_set_trace_callback_t_t3C615EACADC2CB1CDA8362B3F775071976E7CF7C* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, unitytls_tlsctx_trace_callback_tAC1169E423F6EBDA60CDD5D33E1795A8811E0BE6* ___cb1, void* ___userData2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
 {
 	typedef void (CDECL *PInvokeFunc)(unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, Il2CppMethodPointer, void*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -12275,7 +11496,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_tlsctx_set_trace_callback_
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_tlsctx_set_trace_callback_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_set_trace_callback_t__ctor_m262F20124214D62819468C226E925221D2527D96 (unitytls_tlsctx_set_trace_callback_t_t3C615EACADC2CB1CDA8362B3F775071976E7CF7C* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -12284,19 +11505,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_set_trace_callback_t__ct
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 4;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_set_trace_callback_t_Invoke_mC98468DD35AA05DE628FEAE7669B4F71205CCBD7_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_set_trace_callback_t_Invoke_mC98468DD35AA05DE628FEAE7669B4F71205CCBD7_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_set_trace_callback_t_Invoke_mC98468DD35AA05DE628FEAE7669B4F71205CCBD7_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_set_trace_callback_t_Invoke_mC98468DD35AA05DE628FEAE7669B4F71205CCBD7_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -12351,14 +11566,6 @@ void unitytls_tlsctx_set_x509verify_callback_t_Invoke_mA9AE094A7DB71B4B7B051BB3D
 	typedef void (*FunctionPointerType) (unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_tlsctx_x509verify_callback_t3334D904C28324D444B6C26BEEF29B5E07D9D58D*, void*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___ctx0, ___cb1, ___userData2, ___errorState3, method);
 }
-void unitytls_tlsctx_set_x509verify_callback_t_Invoke_mA9AE094A7DB71B4B7B051BB3D67CB98A7F48D3CE_OpenStaticInvoker(unitytls_tlsctx_set_x509verify_callback_t_t032FE980BEDD0D201CAF1EE653ABE303CDBCA7C9* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, unitytls_tlsctx_x509verify_callback_t3334D904C28324D444B6C26BEEF29B5E07D9D58D* ___cb1, void* ___userData2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
-{
-	InvokerActionInvoker4< unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_tlsctx_x509verify_callback_t3334D904C28324D444B6C26BEEF29B5E07D9D58D*, void*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___ctx0, ___cb1, ___userData2, ___errorState3);
-}
-void unitytls_tlsctx_set_x509verify_callback_t_Invoke_mA9AE094A7DB71B4B7B051BB3D67CB98A7F48D3CE_ClosedStaticInvoker(unitytls_tlsctx_set_x509verify_callback_t_t032FE980BEDD0D201CAF1EE653ABE303CDBCA7C9* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, unitytls_tlsctx_x509verify_callback_t3334D904C28324D444B6C26BEEF29B5E07D9D58D* ___cb1, void* ___userData2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
-{
-	InvokerActionInvoker5< RuntimeObject*, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_tlsctx_x509verify_callback_t3334D904C28324D444B6C26BEEF29B5E07D9D58D*, void*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___ctx0, ___cb1, ___userData2, ___errorState3);
-}
 IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_tlsctx_set_x509verify_callback_t_t032FE980BEDD0D201CAF1EE653ABE303CDBCA7C9 (unitytls_tlsctx_set_x509verify_callback_t_t032FE980BEDD0D201CAF1EE653ABE303CDBCA7C9* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, unitytls_tlsctx_x509verify_callback_t3334D904C28324D444B6C26BEEF29B5E07D9D58D* ___cb1, void* ___userData2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
 {
 	typedef void (CDECL *PInvokeFunc)(unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, Il2CppMethodPointer, void*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -12374,7 +11581,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_tlsctx_set_x509verify_call
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_tlsctx_set_x509verify_callback_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_set_x509verify_callback_t__ctor_mE6C3A39FA8A1903C74826A5BFF748DFEB1A4D06D (unitytls_tlsctx_set_x509verify_callback_t_t032FE980BEDD0D201CAF1EE653ABE303CDBCA7C9* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -12383,19 +11590,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_set_x509verify_callback_
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 4;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_set_x509verify_callback_t_Invoke_mA9AE094A7DB71B4B7B051BB3D67CB98A7F48D3CE_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_set_x509verify_callback_t_Invoke_mA9AE094A7DB71B4B7B051BB3D67CB98A7F48D3CE_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_set_x509verify_callback_t_Invoke_mA9AE094A7DB71B4B7B051BB3D67CB98A7F48D3CE_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_set_x509verify_callback_t_Invoke_mA9AE094A7DB71B4B7B051BB3D67CB98A7F48D3CE_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -12450,14 +11651,6 @@ void unitytls_tlsctx_set_supported_ciphersuites_t_Invoke_m8E153461EFCEAAAF59D1E9
 	typedef void (*FunctionPointerType) (unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, uint32_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___ctx0, ___supportedCiphersuites1, ___supportedCiphersuitesLen2, ___errorState3, method);
 }
-void unitytls_tlsctx_set_supported_ciphersuites_t_Invoke_m8E153461EFCEAAAF59D1E918F7C06B14358B43E2_OpenStaticInvoker(unitytls_tlsctx_set_supported_ciphersuites_t_t007E8706D364DE695F1DBF28358058A1E73DF544* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, uint32_t* ___supportedCiphersuites1, intptr_t ___supportedCiphersuitesLen2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
-{
-	InvokerActionInvoker4< unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, uint32_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___ctx0, ___supportedCiphersuites1, ___supportedCiphersuitesLen2, ___errorState3);
-}
-void unitytls_tlsctx_set_supported_ciphersuites_t_Invoke_m8E153461EFCEAAAF59D1E918F7C06B14358B43E2_ClosedStaticInvoker(unitytls_tlsctx_set_supported_ciphersuites_t_t007E8706D364DE695F1DBF28358058A1E73DF544* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, uint32_t* ___supportedCiphersuites1, intptr_t ___supportedCiphersuitesLen2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
-{
-	InvokerActionInvoker5< RuntimeObject*, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, uint32_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___ctx0, ___supportedCiphersuites1, ___supportedCiphersuitesLen2, ___errorState3);
-}
 IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_tlsctx_set_supported_ciphersuites_t_t007E8706D364DE695F1DBF28358058A1E73DF544 (unitytls_tlsctx_set_supported_ciphersuites_t_t007E8706D364DE695F1DBF28358058A1E73DF544* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, uint32_t* ___supportedCiphersuites1, intptr_t ___supportedCiphersuitesLen2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
 {
 	typedef void (CDECL *PInvokeFunc)(unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, uint32_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -12469,7 +11662,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_tlsctx_set_supported_ciphe
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_tlsctx_set_supported_ciphersuites_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_set_supported_ciphersuites_t__ctor_m856B5362E3479A5C75709F62B5A316C0A0F913FF (unitytls_tlsctx_set_supported_ciphersuites_t_t007E8706D364DE695F1DBF28358058A1E73DF544* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -12478,19 +11671,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_set_supported_ciphersuit
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 4;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_set_supported_ciphersuites_t_Invoke_m8E153461EFCEAAAF59D1E918F7C06B14358B43E2_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_set_supported_ciphersuites_t_Invoke_m8E153461EFCEAAAF59D1E918F7C06B14358B43E2_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_set_supported_ciphersuites_t_Invoke_m8E153461EFCEAAAF59D1E918F7C06B14358B43E2_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_set_supported_ciphersuites_t_Invoke_m8E153461EFCEAAAF59D1E918F7C06B14358B43E2_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -12547,14 +11734,6 @@ uint32_t unitytls_tlsctx_get_ciphersuite_t_Invoke_m2DF155D62800CFFD66AC63538F69D
 	typedef uint32_t (*FunctionPointerType) (unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___ctx0, ___errorState1, method);
 }
-uint32_t unitytls_tlsctx_get_ciphersuite_t_Invoke_m2DF155D62800CFFD66AC63538F69DB2275EC3FFD_OpenStaticInvoker(unitytls_tlsctx_get_ciphersuite_t_t7317543D399259616648B1AA19447C4B63F70EF2* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState1, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker2< uint32_t, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___ctx0, ___errorState1);
-}
-uint32_t unitytls_tlsctx_get_ciphersuite_t_Invoke_m2DF155D62800CFFD66AC63538F69DB2275EC3FFD_ClosedStaticInvoker(unitytls_tlsctx_get_ciphersuite_t_t7317543D399259616648B1AA19447C4B63F70EF2* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState1, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker3< uint32_t, RuntimeObject*, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___ctx0, ___errorState1);
-}
 IL2CPP_EXTERN_C  uint32_t DelegatePInvokeWrapper_unitytls_tlsctx_get_ciphersuite_t_t7317543D399259616648B1AA19447C4B63F70EF2 (unitytls_tlsctx_get_ciphersuite_t_t7317543D399259616648B1AA19447C4B63F70EF2* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState1, const RuntimeMethod* method)
 {
 	typedef uint32_t (CDECL *PInvokeFunc)(unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -12567,7 +11746,7 @@ IL2CPP_EXTERN_C  uint32_t DelegatePInvokeWrapper_unitytls_tlsctx_get_ciphersuite
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_tlsctx_get_ciphersuite_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_get_ciphersuite_t__ctor_mFD8DF58601BB4A8F00C3A56F881F2E92D7536CA9 (unitytls_tlsctx_get_ciphersuite_t_t7317543D399259616648B1AA19447C4B63F70EF2* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -12576,19 +11755,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_get_ciphersuite_t__ctor_
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 2;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_get_ciphersuite_t_Invoke_m2DF155D62800CFFD66AC63538F69DB2275EC3FFD_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_get_ciphersuite_t_Invoke_m2DF155D62800CFFD66AC63538F69DB2275EC3FFD_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_get_ciphersuite_t_Invoke_m2DF155D62800CFFD66AC63538F69DB2275EC3FFD_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_get_ciphersuite_t_Invoke_m2DF155D62800CFFD66AC63538F69DB2275EC3FFD_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -12645,14 +11818,6 @@ uint32_t unitytls_tlsctx_get_protocol_t_Invoke_m3D931DDD241F0B3EDA8F6F1EFA159C06
 	typedef uint32_t (*FunctionPointerType) (unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___ctx0, ___errorState1, method);
 }
-uint32_t unitytls_tlsctx_get_protocol_t_Invoke_m3D931DDD241F0B3EDA8F6F1EFA159C0669E7E3F0_OpenStaticInvoker(unitytls_tlsctx_get_protocol_t_t04E3B73C1D77379F7C7388ED4934189365326F3C* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState1, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker2< uint32_t, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___ctx0, ___errorState1);
-}
-uint32_t unitytls_tlsctx_get_protocol_t_Invoke_m3D931DDD241F0B3EDA8F6F1EFA159C0669E7E3F0_ClosedStaticInvoker(unitytls_tlsctx_get_protocol_t_t04E3B73C1D77379F7C7388ED4934189365326F3C* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState1, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker3< uint32_t, RuntimeObject*, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___ctx0, ___errorState1);
-}
 IL2CPP_EXTERN_C  uint32_t DelegatePInvokeWrapper_unitytls_tlsctx_get_protocol_t_t04E3B73C1D77379F7C7388ED4934189365326F3C (unitytls_tlsctx_get_protocol_t_t04E3B73C1D77379F7C7388ED4934189365326F3C* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState1, const RuntimeMethod* method)
 {
 	typedef uint32_t (CDECL *PInvokeFunc)(unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -12665,7 +11830,7 @@ IL2CPP_EXTERN_C  uint32_t DelegatePInvokeWrapper_unitytls_tlsctx_get_protocol_t_
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_tlsctx_get_protocol_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_get_protocol_t__ctor_mAA5710F913B95E0964AD90EDF59FD71E984DD00E (unitytls_tlsctx_get_protocol_t_t04E3B73C1D77379F7C7388ED4934189365326F3C* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -12674,19 +11839,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_get_protocol_t__ctor_mAA
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 2;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_get_protocol_t_Invoke_m3D931DDD241F0B3EDA8F6F1EFA159C0669E7E3F0_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_get_protocol_t_Invoke_m3D931DDD241F0B3EDA8F6F1EFA159C0669E7E3F0_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_get_protocol_t_Invoke_m3D931DDD241F0B3EDA8F6F1EFA159C0669E7E3F0_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_get_protocol_t_Invoke_m3D931DDD241F0B3EDA8F6F1EFA159C0669E7E3F0_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -12743,14 +11902,6 @@ uint32_t unitytls_tlsctx_process_handshake_t_Invoke_mD8F2422C5C6C9FF0ADDAB17AECB
 	typedef uint32_t (*FunctionPointerType) (unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___ctx0, ___errorState1, method);
 }
-uint32_t unitytls_tlsctx_process_handshake_t_Invoke_mD8F2422C5C6C9FF0ADDAB17AECB998C2E225CF7A_OpenStaticInvoker(unitytls_tlsctx_process_handshake_t_t8D94F5FAD00CD61BF950829866C0C6E29D202606* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState1, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker2< uint32_t, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___ctx0, ___errorState1);
-}
-uint32_t unitytls_tlsctx_process_handshake_t_Invoke_mD8F2422C5C6C9FF0ADDAB17AECB998C2E225CF7A_ClosedStaticInvoker(unitytls_tlsctx_process_handshake_t_t8D94F5FAD00CD61BF950829866C0C6E29D202606* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState1, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker3< uint32_t, RuntimeObject*, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___ctx0, ___errorState1);
-}
 IL2CPP_EXTERN_C  uint32_t DelegatePInvokeWrapper_unitytls_tlsctx_process_handshake_t_t8D94F5FAD00CD61BF950829866C0C6E29D202606 (unitytls_tlsctx_process_handshake_t_t8D94F5FAD00CD61BF950829866C0C6E29D202606* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState1, const RuntimeMethod* method)
 {
 	typedef uint32_t (CDECL *PInvokeFunc)(unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -12763,7 +11914,7 @@ IL2CPP_EXTERN_C  uint32_t DelegatePInvokeWrapper_unitytls_tlsctx_process_handsha
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_tlsctx_process_handshake_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_process_handshake_t__ctor_m163A6D53CE45B5161FD5586DBBD8BB90B9EDDA45 (unitytls_tlsctx_process_handshake_t_t8D94F5FAD00CD61BF950829866C0C6E29D202606* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -12772,19 +11923,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_process_handshake_t__cto
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 2;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_process_handshake_t_Invoke_mD8F2422C5C6C9FF0ADDAB17AECB998C2E225CF7A_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_process_handshake_t_Invoke_mD8F2422C5C6C9FF0ADDAB17AECB998C2E225CF7A_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_process_handshake_t_Invoke_mD8F2422C5C6C9FF0ADDAB17AECB998C2E225CF7A_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_process_handshake_t_Invoke_mD8F2422C5C6C9FF0ADDAB17AECB998C2E225CF7A_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -12842,14 +11987,6 @@ intptr_t unitytls_tlsctx_read_t_Invoke_m0FB34952D7592128A211AA0DA5536A325494FA04
 	typedef intptr_t (*FunctionPointerType) (unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___ctx0, ___buffer1, ___bufferLen2, ___errorState3, method);
 }
-intptr_t unitytls_tlsctx_read_t_Invoke_m0FB34952D7592128A211AA0DA5536A325494FA04_OpenStaticInvoker(unitytls_tlsctx_read_t_t3E3C711F7A47E704ABDF0DF0B7515E7306EB7C95* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, uint8_t* ___buffer1, intptr_t ___bufferLen2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker4< intptr_t, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___ctx0, ___buffer1, ___bufferLen2, ___errorState3);
-}
-intptr_t unitytls_tlsctx_read_t_Invoke_m0FB34952D7592128A211AA0DA5536A325494FA04_ClosedStaticInvoker(unitytls_tlsctx_read_t_t3E3C711F7A47E704ABDF0DF0B7515E7306EB7C95* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, uint8_t* ___buffer1, intptr_t ___bufferLen2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker5< intptr_t, RuntimeObject*, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___ctx0, ___buffer1, ___bufferLen2, ___errorState3);
-}
 IL2CPP_EXTERN_C  intptr_t DelegatePInvokeWrapper_unitytls_tlsctx_read_t_t3E3C711F7A47E704ABDF0DF0B7515E7306EB7C95 (unitytls_tlsctx_read_t_t3E3C711F7A47E704ABDF0DF0B7515E7306EB7C95* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, uint8_t* ___buffer1, intptr_t ___bufferLen2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
 {
 	typedef intptr_t (CDECL *PInvokeFunc)(unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -12862,7 +11999,7 @@ IL2CPP_EXTERN_C  intptr_t DelegatePInvokeWrapper_unitytls_tlsctx_read_t_t3E3C711
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_tlsctx_read_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_read_t__ctor_m55B52EA0C5ED94A8030D80A9B7967F34850AC799 (unitytls_tlsctx_read_t_t3E3C711F7A47E704ABDF0DF0B7515E7306EB7C95* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -12871,19 +12008,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_read_t__ctor_m55B52EA0C5
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 4;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_read_t_Invoke_m0FB34952D7592128A211AA0DA5536A325494FA04_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_read_t_Invoke_m0FB34952D7592128A211AA0DA5536A325494FA04_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_read_t_Invoke_m0FB34952D7592128A211AA0DA5536A325494FA04_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_read_t_Invoke_m0FB34952D7592128A211AA0DA5536A325494FA04_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -12941,14 +12072,6 @@ intptr_t unitytls_tlsctx_write_t_Invoke_mC6A06FBF8E4C5652830248B521C83865B3F2DBB
 	typedef intptr_t (*FunctionPointerType) (unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___ctx0, ___data1, ___bufferLen2, ___errorState3, method);
 }
-intptr_t unitytls_tlsctx_write_t_Invoke_mC6A06FBF8E4C5652830248B521C83865B3F2DBBC_OpenStaticInvoker(unitytls_tlsctx_write_t_t976A41600B61F9C8DF022296B67316FFA53EB386* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, uint8_t* ___data1, intptr_t ___bufferLen2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker4< intptr_t, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___ctx0, ___data1, ___bufferLen2, ___errorState3);
-}
-intptr_t unitytls_tlsctx_write_t_Invoke_mC6A06FBF8E4C5652830248B521C83865B3F2DBBC_ClosedStaticInvoker(unitytls_tlsctx_write_t_t976A41600B61F9C8DF022296B67316FFA53EB386* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, uint8_t* ___data1, intptr_t ___bufferLen2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker5< intptr_t, RuntimeObject*, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___ctx0, ___data1, ___bufferLen2, ___errorState3);
-}
 IL2CPP_EXTERN_C  intptr_t DelegatePInvokeWrapper_unitytls_tlsctx_write_t_t976A41600B61F9C8DF022296B67316FFA53EB386 (unitytls_tlsctx_write_t_t976A41600B61F9C8DF022296B67316FFA53EB386* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, uint8_t* ___data1, intptr_t ___bufferLen2, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState3, const RuntimeMethod* method)
 {
 	typedef intptr_t (CDECL *PInvokeFunc)(unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -12961,7 +12084,7 @@ IL2CPP_EXTERN_C  intptr_t DelegatePInvokeWrapper_unitytls_tlsctx_write_t_t976A41
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_tlsctx_write_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_write_t__ctor_mD229A38085F7CAE944D6CF0D505C6F167C709E96 (unitytls_tlsctx_write_t_t976A41600B61F9C8DF022296B67316FFA53EB386* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -12970,19 +12093,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_write_t__ctor_mD229A3808
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 4;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_write_t_Invoke_mC6A06FBF8E4C5652830248B521C83865B3F2DBBC_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_write_t_Invoke_mC6A06FBF8E4C5652830248B521C83865B3F2DBBC_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_write_t_Invoke_mC6A06FBF8E4C5652830248B521C83865B3F2DBBC_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_write_t_Invoke_mC6A06FBF8E4C5652830248B521C83865B3F2DBBC_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -13037,14 +12154,6 @@ void unitytls_tlsctx_notify_close_t_Invoke_m6E5688DDA03F313A1C470E4C30263C5B4A17
 	typedef void (*FunctionPointerType) (unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___ctx0, ___errorState1, method);
 }
-void unitytls_tlsctx_notify_close_t_Invoke_m6E5688DDA03F313A1C470E4C30263C5B4A174138_OpenStaticInvoker(unitytls_tlsctx_notify_close_t_t717D19846262E3DF5D1A69C5E136912E7A54B253* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___ctx0, ___errorState1);
-}
-void unitytls_tlsctx_notify_close_t_Invoke_m6E5688DDA03F313A1C470E4C30263C5B4A174138_ClosedStaticInvoker(unitytls_tlsctx_notify_close_t_t717D19846262E3DF5D1A69C5E136912E7A54B253* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker3< RuntimeObject*, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___ctx0, ___errorState1);
-}
 IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_tlsctx_notify_close_t_t717D19846262E3DF5D1A69C5E136912E7A54B253 (unitytls_tlsctx_notify_close_t_t717D19846262E3DF5D1A69C5E136912E7A54B253* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState1, const RuntimeMethod* method)
 {
 	typedef void (CDECL *PInvokeFunc)(unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -13056,7 +12165,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_tlsctx_notify_close_t_t717
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_tlsctx_notify_close_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_notify_close_t__ctor_m700B77B204CFF6F4113F3E3F4CF6673CF7ACC0FB (unitytls_tlsctx_notify_close_t_t717D19846262E3DF5D1A69C5E136912E7A54B253* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -13065,19 +12174,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_notify_close_t__ctor_m70
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 2;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_notify_close_t_Invoke_m6E5688DDA03F313A1C470E4C30263C5B4A174138_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_notify_close_t_Invoke_m6E5688DDA03F313A1C470E4C30263C5B4A174138_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_notify_close_t_Invoke_m6E5688DDA03F313A1C470E4C30263C5B4A174138_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_notify_close_t_Invoke_m6E5688DDA03F313A1C470E4C30263C5B4A174138_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -13132,14 +12235,6 @@ void unitytls_tlsctx_free_t_Invoke_mC5D5191740D2507A83D95B4B3E6CE4C4A9FBAFD2_Ope
 	typedef void (*FunctionPointerType) (unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___ctx0, method);
 }
-void unitytls_tlsctx_free_t_Invoke_mC5D5191740D2507A83D95B4B3E6CE4C4A9FBAFD2_OpenStaticInvoker(unitytls_tlsctx_free_t_tFBF7BB64D2E1C183718FB5809ABF0051395FD8F0* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker1< unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* >::Invoke(__this->___method_ptr_0, method, NULL, ___ctx0);
-}
-void unitytls_tlsctx_free_t_Invoke_mC5D5191740D2507A83D95B4B3E6CE4C4A9FBAFD2_ClosedStaticInvoker(unitytls_tlsctx_free_t_tFBF7BB64D2E1C183718FB5809ABF0051395FD8F0* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< RuntimeObject*, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___ctx0);
-}
 IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_tlsctx_free_t_tFBF7BB64D2E1C183718FB5809ABF0051395FD8F0 (unitytls_tlsctx_free_t_tFBF7BB64D2E1C183718FB5809ABF0051395FD8F0* __this, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___ctx0, const RuntimeMethod* method)
 {
 	typedef void (CDECL *PInvokeFunc)(unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE*);
@@ -13151,7 +12246,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_tlsctx_free_t_tFBF7BB64D2E
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_tlsctx_free_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_free_t__ctor_m46E06E2335A31589194453E910356B6456160E7E (unitytls_tlsctx_free_t_tFBF7BB64D2E1C183718FB5809ABF0051395FD8F0* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -13160,19 +12255,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_tlsctx_free_t__ctor_m46E06E2335
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 1;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_free_t_Invoke_mC5D5191740D2507A83D95B4B3E6CE4C4A9FBAFD2_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_free_t_Invoke_mC5D5191740D2507A83D95B4B3E6CE4C4A9FBAFD2_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_free_t_Invoke_mC5D5191740D2507A83D95B4B3E6CE4C4A9FBAFD2_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_tlsctx_free_t_Invoke_mC5D5191740D2507A83D95B4B3E6CE4C4A9FBAFD2_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -13227,14 +12316,6 @@ void unitytls_random_generate_bytes_t_Invoke_mF0A5B5E7279FF32FBFF48DBB98EB07C88C
 	typedef void (*FunctionPointerType) (uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___buffer0, ___bufferLen1, ___errorState2, method);
 }
-void unitytls_random_generate_bytes_t_Invoke_mF0A5B5E7279FF32FBFF48DBB98EB07C88C63EF92_OpenStaticInvoker(unitytls_random_generate_bytes_t_t6E7011EF958B0948582F8D1D213B454A5A962569* __this, uint8_t* ___buffer0, intptr_t ___bufferLen1, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState2, const RuntimeMethod* method)
-{
-	InvokerActionInvoker3< uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, ___buffer0, ___bufferLen1, ___errorState2);
-}
-void unitytls_random_generate_bytes_t_Invoke_mF0A5B5E7279FF32FBFF48DBB98EB07C88C63EF92_ClosedStaticInvoker(unitytls_random_generate_bytes_t_t6E7011EF958B0948582F8D1D213B454A5A962569* __this, uint8_t* ___buffer0, intptr_t ___bufferLen1, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState2, const RuntimeMethod* method)
-{
-	InvokerActionInvoker4< RuntimeObject*, uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___buffer0, ___bufferLen1, ___errorState2);
-}
 IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_random_generate_bytes_t_t6E7011EF958B0948582F8D1D213B454A5A962569 (unitytls_random_generate_bytes_t_t6E7011EF958B0948582F8D1D213B454A5A962569* __this, uint8_t* ___buffer0, intptr_t ___bufferLen1, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___errorState2, const RuntimeMethod* method)
 {
 	typedef void (CDECL *PInvokeFunc)(uint8_t*, intptr_t, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902*);
@@ -13246,7 +12327,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_unitytls_random_generate_bytes_t_t6
 // System.Void Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_random_generate_bytes_t::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_random_generate_bytes_t__ctor_mFAC4CCD07765DE0827186AEC35DCCFC2E66BE066 (unitytls_random_generate_bytes_t_t6E7011EF958B0948582F8D1D213B454A5A962569* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -13255,19 +12336,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void unitytls_random_generate_bytes_t__ctor_m
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 3;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_random_generate_bytes_t_Invoke_mF0A5B5E7279FF32FBFF48DBB98EB07C88C63EF92_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_random_generate_bytes_t_Invoke_mF0A5B5E7279FF32FBFF48DBB98EB07C88C63EF92_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&unitytls_random_generate_bytes_t_Invoke_mF0A5B5E7279FF32FBFF48DBB98EB07C88C63EF92_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&unitytls_random_generate_bytes_t_Invoke_mF0A5B5E7279FF32FBFF48DBB98EB07C88C63EF92_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -28654,14 +27729,6 @@ int32_t BioReadFunc_Invoke_m744CB0CD8BE679279438EF430FB0E2FD6DDDB116_OpenStatic(
 	typedef int32_t (*FunctionPointerType) (intptr_t, intptr_t, int32_t, int32_t*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___bio0, ___data1, ___dataLength2, ___wantMore3, method);
 }
-int32_t BioReadFunc_Invoke_m744CB0CD8BE679279438EF430FB0E2FD6DDDB116_OpenStaticInvoker(BioReadFunc_t13D991FB24C42BE3A5866565A417A46DAFCE2182* __this, intptr_t ___bio0, intptr_t ___data1, int32_t ___dataLength2, int32_t* ___wantMore3, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker4< int32_t, intptr_t, intptr_t, int32_t, int32_t* >::Invoke(__this->___method_ptr_0, method, NULL, ___bio0, ___data1, ___dataLength2, ___wantMore3);
-}
-int32_t BioReadFunc_Invoke_m744CB0CD8BE679279438EF430FB0E2FD6DDDB116_ClosedStaticInvoker(BioReadFunc_t13D991FB24C42BE3A5866565A417A46DAFCE2182* __this, intptr_t ___bio0, intptr_t ___data1, int32_t ___dataLength2, int32_t* ___wantMore3, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker5< int32_t, RuntimeObject*, intptr_t, intptr_t, int32_t, int32_t* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___bio0, ___data1, ___dataLength2, ___wantMore3);
-}
 IL2CPP_EXTERN_C  int32_t DelegatePInvokeWrapper_BioReadFunc_t13D991FB24C42BE3A5866565A417A46DAFCE2182 (BioReadFunc_t13D991FB24C42BE3A5866565A417A46DAFCE2182* __this, intptr_t ___bio0, intptr_t ___data1, int32_t ___dataLength2, int32_t* ___wantMore3, const RuntimeMethod* method)
 {
 	typedef int32_t (CDECL *PInvokeFunc)(intptr_t, intptr_t, int32_t, int32_t*);
@@ -28674,7 +27741,7 @@ IL2CPP_EXTERN_C  int32_t DelegatePInvokeWrapper_BioReadFunc_t13D991FB24C42BE3A58
 // System.Void Mono.Btls.MonoBtlsBioMono/BioReadFunc::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BioReadFunc__ctor_mF67045947F464E6421342B8F8C33D087121071EE (BioReadFunc_t13D991FB24C42BE3A5866565A417A46DAFCE2182* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -28683,19 +27750,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BioReadFunc__ctor_mF67045947F464E6421342
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 4;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&BioReadFunc_Invoke_m744CB0CD8BE679279438EF430FB0E2FD6DDDB116_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&BioReadFunc_Invoke_m744CB0CD8BE679279438EF430FB0E2FD6DDDB116_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&BioReadFunc_Invoke_m744CB0CD8BE679279438EF430FB0E2FD6DDDB116_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&BioReadFunc_Invoke_m744CB0CD8BE679279438EF430FB0E2FD6DDDB116_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -28743,14 +27804,6 @@ int32_t BioWriteFunc_Invoke_mBA1D9291830C4AC61989002AE28AA19329279027_OpenStatic
 	typedef int32_t (*FunctionPointerType) (intptr_t, intptr_t, int32_t, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___bio0, ___data1, ___dataLength2, method);
 }
-int32_t BioWriteFunc_Invoke_mBA1D9291830C4AC61989002AE28AA19329279027_OpenStaticInvoker(BioWriteFunc_t7F203B8BD307C07BC5C115240617DC2098776716* __this, intptr_t ___bio0, intptr_t ___data1, int32_t ___dataLength2, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker3< int32_t, intptr_t, intptr_t, int32_t >::Invoke(__this->___method_ptr_0, method, NULL, ___bio0, ___data1, ___dataLength2);
-}
-int32_t BioWriteFunc_Invoke_mBA1D9291830C4AC61989002AE28AA19329279027_ClosedStaticInvoker(BioWriteFunc_t7F203B8BD307C07BC5C115240617DC2098776716* __this, intptr_t ___bio0, intptr_t ___data1, int32_t ___dataLength2, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker4< int32_t, RuntimeObject*, intptr_t, intptr_t, int32_t >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___bio0, ___data1, ___dataLength2);
-}
 IL2CPP_EXTERN_C  int32_t DelegatePInvokeWrapper_BioWriteFunc_t7F203B8BD307C07BC5C115240617DC2098776716 (BioWriteFunc_t7F203B8BD307C07BC5C115240617DC2098776716* __this, intptr_t ___bio0, intptr_t ___data1, int32_t ___dataLength2, const RuntimeMethod* method)
 {
 	typedef int32_t (CDECL *PInvokeFunc)(intptr_t, intptr_t, int32_t);
@@ -28763,7 +27816,7 @@ IL2CPP_EXTERN_C  int32_t DelegatePInvokeWrapper_BioWriteFunc_t7F203B8BD307C07BC5
 // System.Void Mono.Btls.MonoBtlsBioMono/BioWriteFunc::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BioWriteFunc__ctor_m3A5F86F45AF72BC45CEEDCB0CB4F8D6CAE430677 (BioWriteFunc_t7F203B8BD307C07BC5C115240617DC2098776716* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -28772,19 +27825,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BioWriteFunc__ctor_m3A5F86F45AF72BC45CEE
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 3;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&BioWriteFunc_Invoke_mBA1D9291830C4AC61989002AE28AA19329279027_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&BioWriteFunc_Invoke_mBA1D9291830C4AC61989002AE28AA19329279027_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&BioWriteFunc_Invoke_mBA1D9291830C4AC61989002AE28AA19329279027_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&BioWriteFunc_Invoke_mBA1D9291830C4AC61989002AE28AA19329279027_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -28832,14 +27879,6 @@ int64_t BioControlFunc_Invoke_m9A7F407B786D5DBE70CE79098FE7A2C3C50F77B5_OpenStat
 	typedef int64_t (*FunctionPointerType) (intptr_t, int32_t, int64_t, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___bio0, ___command1, ___arg2, method);
 }
-int64_t BioControlFunc_Invoke_m9A7F407B786D5DBE70CE79098FE7A2C3C50F77B5_OpenStaticInvoker(BioControlFunc_tA25CF03804268D67A2A2298BA7CF0304908E1164* __this, intptr_t ___bio0, int32_t ___command1, int64_t ___arg2, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker3< int64_t, intptr_t, int32_t, int64_t >::Invoke(__this->___method_ptr_0, method, NULL, ___bio0, ___command1, ___arg2);
-}
-int64_t BioControlFunc_Invoke_m9A7F407B786D5DBE70CE79098FE7A2C3C50F77B5_ClosedStaticInvoker(BioControlFunc_tA25CF03804268D67A2A2298BA7CF0304908E1164* __this, intptr_t ___bio0, int32_t ___command1, int64_t ___arg2, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker4< int64_t, RuntimeObject*, intptr_t, int32_t, int64_t >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___bio0, ___command1, ___arg2);
-}
 IL2CPP_EXTERN_C  int64_t DelegatePInvokeWrapper_BioControlFunc_tA25CF03804268D67A2A2298BA7CF0304908E1164 (BioControlFunc_tA25CF03804268D67A2A2298BA7CF0304908E1164* __this, intptr_t ___bio0, int32_t ___command1, int64_t ___arg2, const RuntimeMethod* method)
 {
 	typedef int64_t (CDECL *PInvokeFunc)(intptr_t, int32_t, int64_t);
@@ -28852,7 +27891,7 @@ IL2CPP_EXTERN_C  int64_t DelegatePInvokeWrapper_BioControlFunc_tA25CF03804268D67
 // System.Void Mono.Btls.MonoBtlsBioMono/BioControlFunc::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BioControlFunc__ctor_mECCABB988AD4AB5F618BA15CBFA2E8038FAF47B8 (BioControlFunc_tA25CF03804268D67A2A2298BA7CF0304908E1164* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -28861,19 +27900,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BioControlFunc__ctor_mECCABB988AD4AB5F61
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 3;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&BioControlFunc_Invoke_m9A7F407B786D5DBE70CE79098FE7A2C3C50F77B5_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&BioControlFunc_Invoke_m9A7F407B786D5DBE70CE79098FE7A2C3C50F77B5_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&BioControlFunc_Invoke_m9A7F407B786D5DBE70CE79098FE7A2C3C50F77B5_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&BioControlFunc_Invoke_m9A7F407B786D5DBE70CE79098FE7A2C3C50F77B5_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -35288,7 +34321,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_m1794A41080E7D990
 IL_0034:
 	{
 		X509ChainStatus_t5A57DDA24AA1FCA9F2B8D70B767CDDF388E4A80D L_9 = ___item0;
-		((  void (*) (List_1_t14F08D1F5A2E0F276F976F81CC13B7CB7EDABE33*, X509ChainStatus_t5A57DDA24AA1FCA9F2B8D70B767CDDF388E4A80D, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 11)))(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 11));
+		List_1_AddWithResize_m57CCC347F7A2D40306F42BE2E7822E13C0516E91(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 14));
 		return;
 	}
 }
@@ -35343,9 +34376,10 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ConfiguredTaskAwaiter_t28A5A60199
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* Array_Empty_TisRuntimeObject_mFB8A63D602BB6974D31E20300D9EB89C6FE7C278_gshared_inline (const RuntimeMethod* method) 
 {
+	il2cpp_rgctx_method_init(method);
 	{
-		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(method->rgctx_data, 0));
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_0 = ((EmptyArray_1_tDF0DD7256B115243AA6BD5558417387A734240EE_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(method->rgctx_data, 0)))->___Value_0;
+		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(method->rgctx_data, 2));
+		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_0 = ((EmptyArray_1_tDF0DD7256B115243AA6BD5558417387A734240EE_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(method->rgctx_data, 2)))->___Value_0;
 		return L_0;
 	}
 }

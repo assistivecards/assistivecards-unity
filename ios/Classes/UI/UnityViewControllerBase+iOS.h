@@ -5,8 +5,6 @@
 
 - (BOOL)prefersStatusBarHidden;
 - (UIStatusBarStyle)preferredStatusBarStyle;
-
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator;
 @end
 
 // for better handling of user-imposed screen orientation we will have specific ViewController implementations

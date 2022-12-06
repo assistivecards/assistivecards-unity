@@ -145,130 +145,6 @@ struct GenericInterfaceFuncInvoker0
 		return ((Func)invokeData.methodPtr)(obj, invokeData.method);
 	}
 };
-template <typename R>
-struct InvokerFuncInvoker0
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj)
-	{
-		R ret;
-		method->invoker_method(methodPtr, method, obj, NULL, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1>
-struct InvokerFuncInvoker1
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1 p1)
-	{
-		R ret;
-		void* params[1] = { &p1 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1>
-struct InvokerFuncInvoker1<R, T1*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1)
-	{
-		R ret;
-		void* params[1] = { p1 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2>
-struct InvokerFuncInvoker2;
-template <typename R, typename T1, typename T2>
-struct InvokerFuncInvoker2<R, T1*, T2>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2 p2)
-	{
-		R ret;
-		void* params[2] = { p1, &p2 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2>
-struct InvokerFuncInvoker2<R, T1*, T2*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2)
-	{
-		R ret;
-		void* params[2] = { p1, p2 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3>
-struct InvokerFuncInvoker3
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1 p1, T2 p2, T3 p3)
-	{
-		R ret;
-		void* params[3] = { &p1, &p2, &p3 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3>
-struct InvokerFuncInvoker3<R, T1, T2, T3*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1 p1, T2 p2, T3* p3)
-	{
-		R ret;
-		void* params[3] = { &p1, &p2, p3 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3, typename T4>
-struct InvokerFuncInvoker4
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1 p1, T2 p2, T3 p3, T4 p4)
-	{
-		R ret;
-		void* params[4] = { &p1, &p2, &p3, &p4 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3, typename T4>
-struct InvokerFuncInvoker4<R, T1*, T2, T3, T4>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2 p2, T3 p3, T4 p4)
-	{
-		R ret;
-		void* params[4] = { p1, &p2, &p3, &p4 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3, typename T4>
-struct InvokerFuncInvoker4<R, T1*, T2, T3, T4*>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2 p2, T3 p3, T4* p4)
-	{
-		R ret;
-		void* params[4] = { p1, &p2, &p3, p4 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3, typename T4, typename T5>
-struct InvokerFuncInvoker5;
-template <typename R, typename T1, typename T2, typename T3, typename T4, typename T5>
-struct InvokerFuncInvoker5<R, T1*, T2, T3, T4, T5>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2 p2, T3 p3, T4 p4, T5 p5)
-	{
-		R ret;
-		void* params[5] = { p1, &p2, &p3, &p4, &p5 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
 
 // System.Collections.Concurrent.ConcurrentDictionary`2<System.Object,System.Object>
 struct ConcurrentDictionary_2_tF598E45B2A3ECB23FD311D829FB0AB32B1201ACF;
@@ -4780,6 +4656,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2_set_Item_m1A840355E8EDAECEA
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Dictionary_2_get_Count_m4DDA9442C238A443489115E22B026AD366851549_gshared (Dictionary_2_t14FE4A752A83D53771C584E4C8D14E01F2AFD7BA* __this, const RuntimeMethod* method) ;
 // System.Void System.ReadOnlySpan`1<System.Char>::.ctor(T&,System.Int32)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void ReadOnlySpan_1__ctor_m0152E50B40750679B83FF9F30CA539FFBB98EEE8_gshared_inline (ReadOnlySpan_1_t59614EA6E51A945A32B02AB17FBCBDF9A5C419C1* __this, Il2CppChar* ___ptr0, int32_t ___length1, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<System.Object>::AddWithResize(T)
+IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<System.Security.Cryptography.X509Certificates.X509ChainStatus>::AddWithResize(T)
+IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void List_1_AddWithResize_m57CCC347F7A2D40306F42BE2E7822E13C0516E91_gshared (List_1_t14F08D1F5A2E0F276F976F81CC13B7CB7EDABE33* __this, X509ChainStatus_t5A57DDA24AA1FCA9F2B8D70B767CDDF388E4A80D ___item0, const RuntimeMethod* method) ;
 // System.Void System.Span`1<System.Char>::.ctor(T&,System.Int32)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Span_1__ctor_mC9BE2938B716B46BB6B9070B94DBE5CE814BC0E2_gshared_inline (Span_1_tEDDF15FCF9EC6DEBA0F696BAACDDBAB9D92C252D* __this, Il2CppChar* ___ptr0, int32_t ___length1, const RuntimeMethod* method) ;
 
@@ -6070,6 +5950,16 @@ inline void ReadOnlySpan_1__ctor_m0152E50B40750679B83FF9F30CA539FFBB98EEE8_inlin
 {
 	((  void (*) (ReadOnlySpan_1_t59614EA6E51A945A32B02AB17FBCBDF9A5C419C1*, Il2CppChar*, int32_t, const RuntimeMethod*))ReadOnlySpan_1__ctor_m0152E50B40750679B83FF9F30CA539FFBB98EEE8_gshared_inline)(__this, ___ptr0, ___length1, method);
 }
+// System.Void System.Collections.Generic.List`1<System.Object>::AddWithResize(T)
+inline void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4 (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method)
+{
+	((  void (*) (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D*, RuntimeObject*, const RuntimeMethod*))List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4_gshared)(__this, ___item0, method);
+}
+// System.Void System.Collections.Generic.List`1<System.Security.Cryptography.X509Certificates.X509ChainStatus>::AddWithResize(T)
+inline void List_1_AddWithResize_m57CCC347F7A2D40306F42BE2E7822E13C0516E91 (List_1_t14F08D1F5A2E0F276F976F81CC13B7CB7EDABE33* __this, X509ChainStatus_t5A57DDA24AA1FCA9F2B8D70B767CDDF388E4A80D ___item0, const RuntimeMethod* method)
+{
+	((  void (*) (List_1_t14F08D1F5A2E0F276F976F81CC13B7CB7EDABE33*, X509ChainStatus_t5A57DDA24AA1FCA9F2B8D70B767CDDF388E4A80D, const RuntimeMethod*))List_1_AddWithResize_m57CCC347F7A2D40306F42BE2E7822E13C0516E91_gshared)(__this, ___item0, method);
+}
 // System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Type_t* Type_GetTypeFromHandle_m6062B81682F79A4D6DF2640692EE6D9987858C57 (RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B ___handle0, const RuntimeMethod* method) ;
 // System.Void System.ThrowHelper::ThrowInvalidTypeWithPointersNotSupported(System.Type)
@@ -6359,14 +6249,6 @@ int32_t MonoBtlsVerifyCallback_Invoke_m825965B6B4C69CA0287ED84C20688B62BC5009DB_
 	typedef int32_t (*FunctionPointerType) (MonoBtlsX509StoreCtx_t6533FB3630A2586602F747EAFDFE628C8B962096*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___ctx0, method);
 }
-int32_t MonoBtlsVerifyCallback_Invoke_m825965B6B4C69CA0287ED84C20688B62BC5009DB_OpenStaticInvoker(MonoBtlsVerifyCallback_t7D2D62C335A1D0D6E45699AB6DE5465CD0C38EFF* __this, MonoBtlsX509StoreCtx_t6533FB3630A2586602F747EAFDFE628C8B962096* ___ctx0, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker1< int32_t, MonoBtlsX509StoreCtx_t6533FB3630A2586602F747EAFDFE628C8B962096* >::Invoke(__this->___method_ptr_0, method, NULL, ___ctx0);
-}
-int32_t MonoBtlsVerifyCallback_Invoke_m825965B6B4C69CA0287ED84C20688B62BC5009DB_ClosedStaticInvoker(MonoBtlsVerifyCallback_t7D2D62C335A1D0D6E45699AB6DE5465CD0C38EFF* __this, MonoBtlsX509StoreCtx_t6533FB3630A2586602F747EAFDFE628C8B962096* ___ctx0, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker2< int32_t, RuntimeObject*, MonoBtlsX509StoreCtx_t6533FB3630A2586602F747EAFDFE628C8B962096* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___ctx0);
-}
 int32_t MonoBtlsVerifyCallback_Invoke_m825965B6B4C69CA0287ED84C20688B62BC5009DB_OpenVirtual(MonoBtlsVerifyCallback_t7D2D62C335A1D0D6E45699AB6DE5465CD0C38EFF* __this, MonoBtlsX509StoreCtx_t6533FB3630A2586602F747EAFDFE628C8B962096* ___ctx0, const RuntimeMethod* method)
 {
 	NullCheck(___ctx0);
@@ -6390,7 +6272,7 @@ int32_t MonoBtlsVerifyCallback_Invoke_m825965B6B4C69CA0287ED84C20688B62BC5009DB_
 // System.Void Mono.Btls.MonoBtlsVerifyCallback::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBtlsVerifyCallback__ctor_m8F1128CB88D8E552034C35F1115F9642DB2A00CB (MonoBtlsVerifyCallback_t7D2D62C335A1D0D6E45699AB6DE5465CD0C38EFF* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -6399,19 +6281,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBtlsVerifyCallback__ctor_m8F1128CB88
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 1;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&MonoBtlsVerifyCallback_Invoke_m825965B6B4C69CA0287ED84C20688B62BC5009DB_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&MonoBtlsVerifyCallback_Invoke_m825965B6B4C69CA0287ED84C20688B62BC5009DB_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&MonoBtlsVerifyCallback_Invoke_m825965B6B4C69CA0287ED84C20688B62BC5009DB_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&MonoBtlsVerifyCallback_Invoke_m825965B6B4C69CA0287ED84C20688B62BC5009DB_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -6484,14 +6360,6 @@ int32_t MonoBtlsSelectCallback_Invoke_m758D66BCE6FFA5CF23148236694A0ADE7835F833_
 	typedef int32_t (*FunctionPointerType) (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___acceptableIssuers0, method);
 }
-int32_t MonoBtlsSelectCallback_Invoke_m758D66BCE6FFA5CF23148236694A0ADE7835F833_OpenStaticInvoker(MonoBtlsSelectCallback_t94D7F9E6194E0CC0F6D20A02709C3991261BEFAE* __this, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___acceptableIssuers0, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker1< int32_t, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* >::Invoke(__this->___method_ptr_0, method, NULL, ___acceptableIssuers0);
-}
-int32_t MonoBtlsSelectCallback_Invoke_m758D66BCE6FFA5CF23148236694A0ADE7835F833_ClosedStaticInvoker(MonoBtlsSelectCallback_t94D7F9E6194E0CC0F6D20A02709C3991261BEFAE* __this, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___acceptableIssuers0, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker2< int32_t, RuntimeObject*, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___acceptableIssuers0);
-}
 IL2CPP_EXTERN_C  int32_t DelegatePInvokeWrapper_MonoBtlsSelectCallback_t94D7F9E6194E0CC0F6D20A02709C3991261BEFAE (MonoBtlsSelectCallback_t94D7F9E6194E0CC0F6D20A02709C3991261BEFAE* __this, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___acceptableIssuers0, const RuntimeMethod* method)
 {
 	typedef int32_t (CDECL *PInvokeFunc)(char**);
@@ -6534,7 +6402,7 @@ IL2CPP_EXTERN_C  int32_t DelegatePInvokeWrapper_MonoBtlsSelectCallback_t94D7F9E6
 // System.Void Mono.Btls.MonoBtlsSelectCallback::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBtlsSelectCallback__ctor_m7B7D62D2596DC675786AA7FA342F7188BB6D9834 (MonoBtlsSelectCallback_t94D7F9E6194E0CC0F6D20A02709C3991261BEFAE* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -6543,19 +6411,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBtlsSelectCallback__ctor_m7B7D62D259
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 1;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&MonoBtlsSelectCallback_Invoke_m758D66BCE6FFA5CF23148236694A0ADE7835F833_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&MonoBtlsSelectCallback_Invoke_m758D66BCE6FFA5CF23148236694A0ADE7835F833_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&MonoBtlsSelectCallback_Invoke_m758D66BCE6FFA5CF23148236694A0ADE7835F833_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&MonoBtlsSelectCallback_Invoke_m758D66BCE6FFA5CF23148236694A0ADE7835F833_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -6611,14 +6473,6 @@ int32_t MonoBtlsServerNameCallback_Invoke_m4AA0CCFC7FEEACD68818537DC6D829872A2B6
 	typedef int32_t (*FunctionPointerType) (const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(method);
 }
-int32_t MonoBtlsServerNameCallback_Invoke_m4AA0CCFC7FEEACD68818537DC6D829872A2B619C_OpenStaticInvoker(MonoBtlsServerNameCallback_t157678673B6A4D619EE32B5F453ECACF3BE430EA* __this, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker0< int32_t >::Invoke(__this->___method_ptr_0, method, NULL);
-}
-int32_t MonoBtlsServerNameCallback_Invoke_m4AA0CCFC7FEEACD68818537DC6D829872A2B619C_ClosedStaticInvoker(MonoBtlsServerNameCallback_t157678673B6A4D619EE32B5F453ECACF3BE430EA* __this, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker1< int32_t, RuntimeObject* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2);
-}
 IL2CPP_EXTERN_C  int32_t DelegatePInvokeWrapper_MonoBtlsServerNameCallback_t157678673B6A4D619EE32B5F453ECACF3BE430EA (MonoBtlsServerNameCallback_t157678673B6A4D619EE32B5F453ECACF3BE430EA* __this, const RuntimeMethod* method)
 {
 	typedef int32_t (CDECL *PInvokeFunc)();
@@ -6631,7 +6485,7 @@ IL2CPP_EXTERN_C  int32_t DelegatePInvokeWrapper_MonoBtlsServerNameCallback_t1576
 // System.Void Mono.Btls.MonoBtlsServerNameCallback::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBtlsServerNameCallback__ctor_m245B337F77B4B68D1DD967C5AC999F6950AFA039 (MonoBtlsServerNameCallback_t157678673B6A4D619EE32B5F453ECACF3BE430EA* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -6640,19 +6494,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBtlsServerNameCallback__ctor_m245B33
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 0;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&MonoBtlsServerNameCallback_Invoke_m4AA0CCFC7FEEACD68818537DC6D829872A2B619C_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&MonoBtlsServerNameCallback_Invoke_m4AA0CCFC7FEEACD68818537DC6D829872A2B619C_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&MonoBtlsServerNameCallback_Invoke_m4AA0CCFC7FEEACD68818537DC6D829872A2B619C_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&MonoBtlsServerNameCallback_Invoke_m4AA0CCFC7FEEACD68818537DC6D829872A2B619C_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -8267,14 +8115,6 @@ int32_t PrintErrorsCallbackFunc_Invoke_m1C7DE7EF19681297B4451713E2706DB4414B57E6
 	typedef int32_t (*FunctionPointerType) (intptr_t, intptr_t, intptr_t, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___str0, ___len1, ___ctx2, method);
 }
-int32_t PrintErrorsCallbackFunc_Invoke_m1C7DE7EF19681297B4451713E2706DB4414B57E6_OpenStaticInvoker(PrintErrorsCallbackFunc_t269F5AA2AEDE407790495E35615D581F8E57DAF1* __this, intptr_t ___str0, intptr_t ___len1, intptr_t ___ctx2, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker3< int32_t, intptr_t, intptr_t, intptr_t >::Invoke(__this->___method_ptr_0, method, NULL, ___str0, ___len1, ___ctx2);
-}
-int32_t PrintErrorsCallbackFunc_Invoke_m1C7DE7EF19681297B4451713E2706DB4414B57E6_ClosedStaticInvoker(PrintErrorsCallbackFunc_t269F5AA2AEDE407790495E35615D581F8E57DAF1* __this, intptr_t ___str0, intptr_t ___len1, intptr_t ___ctx2, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker4< int32_t, RuntimeObject*, intptr_t, intptr_t, intptr_t >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___str0, ___len1, ___ctx2);
-}
 IL2CPP_EXTERN_C  int32_t DelegatePInvokeWrapper_PrintErrorsCallbackFunc_t269F5AA2AEDE407790495E35615D581F8E57DAF1 (PrintErrorsCallbackFunc_t269F5AA2AEDE407790495E35615D581F8E57DAF1* __this, intptr_t ___str0, intptr_t ___len1, intptr_t ___ctx2, const RuntimeMethod* method)
 {
 	typedef int32_t (CDECL *PInvokeFunc)(intptr_t, intptr_t, intptr_t);
@@ -8287,7 +8127,7 @@ IL2CPP_EXTERN_C  int32_t DelegatePInvokeWrapper_PrintErrorsCallbackFunc_t269F5AA
 // System.Void Mono.Btls.MonoBtlsSsl/PrintErrorsCallbackFunc::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PrintErrorsCallbackFunc__ctor_mD64624B7F3BC980A50DA2D168E8B354DBF173D20 (PrintErrorsCallbackFunc_t269F5AA2AEDE407790495E35615D581F8E57DAF1* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -8296,19 +8136,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PrintErrorsCallbackFunc__ctor_mD64624B7F
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 3;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&PrintErrorsCallbackFunc_Invoke_m1C7DE7EF19681297B4451713E2706DB4414B57E6_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&PrintErrorsCallbackFunc_Invoke_m1C7DE7EF19681297B4451713E2706DB4414B57E6_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&PrintErrorsCallbackFunc_Invoke_m1C7DE7EF19681297B4451713E2706DB4414B57E6_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&PrintErrorsCallbackFunc_Invoke_m1C7DE7EF19681297B4451713E2706DB4414B57E6_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -9807,14 +9641,6 @@ int32_t NativeVerifyFunc_Invoke_m83D46A16DA70BD1D0BDEFE8B94F360B42C27ABED_OpenSt
 	typedef int32_t (*FunctionPointerType) (intptr_t, int32_t, intptr_t, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___instance0, ___preverify_ok1, ___ctx2, method);
 }
-int32_t NativeVerifyFunc_Invoke_m83D46A16DA70BD1D0BDEFE8B94F360B42C27ABED_OpenStaticInvoker(NativeVerifyFunc_t90E561336E71A9644B88DCC9CDD6A63CE98667E7* __this, intptr_t ___instance0, int32_t ___preverify_ok1, intptr_t ___ctx2, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker3< int32_t, intptr_t, int32_t, intptr_t >::Invoke(__this->___method_ptr_0, method, NULL, ___instance0, ___preverify_ok1, ___ctx2);
-}
-int32_t NativeVerifyFunc_Invoke_m83D46A16DA70BD1D0BDEFE8B94F360B42C27ABED_ClosedStaticInvoker(NativeVerifyFunc_t90E561336E71A9644B88DCC9CDD6A63CE98667E7* __this, intptr_t ___instance0, int32_t ___preverify_ok1, intptr_t ___ctx2, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker4< int32_t, RuntimeObject*, intptr_t, int32_t, intptr_t >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___instance0, ___preverify_ok1, ___ctx2);
-}
 IL2CPP_EXTERN_C  int32_t DelegatePInvokeWrapper_NativeVerifyFunc_t90E561336E71A9644B88DCC9CDD6A63CE98667E7 (NativeVerifyFunc_t90E561336E71A9644B88DCC9CDD6A63CE98667E7* __this, intptr_t ___instance0, int32_t ___preverify_ok1, intptr_t ___ctx2, const RuntimeMethod* method)
 {
 	typedef int32_t (CDECL *PInvokeFunc)(intptr_t, int32_t, intptr_t);
@@ -9827,7 +9653,7 @@ IL2CPP_EXTERN_C  int32_t DelegatePInvokeWrapper_NativeVerifyFunc_t90E561336E71A9
 // System.Void Mono.Btls.MonoBtlsSslCtx/NativeVerifyFunc::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NativeVerifyFunc__ctor_m57E97D28673DE3AA35DB5F421B50E4DEFA8CE5BE (NativeVerifyFunc_t90E561336E71A9644B88DCC9CDD6A63CE98667E7* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -9836,19 +9662,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NativeVerifyFunc__ctor_m57E97D28673DE3AA
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 3;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&NativeVerifyFunc_Invoke_m83D46A16DA70BD1D0BDEFE8B94F360B42C27ABED_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&NativeVerifyFunc_Invoke_m83D46A16DA70BD1D0BDEFE8B94F360B42C27ABED_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&NativeVerifyFunc_Invoke_m83D46A16DA70BD1D0BDEFE8B94F360B42C27ABED_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&NativeVerifyFunc_Invoke_m83D46A16DA70BD1D0BDEFE8B94F360B42C27ABED_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -9896,14 +9716,6 @@ int32_t NativeSelectFunc_Invoke_m92191EA94B7513F04CEB52D1D2EEEB1DA3E78063_OpenSt
 	typedef int32_t (*FunctionPointerType) (intptr_t, int32_t, intptr_t, intptr_t, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___instance0, ___count1, ___sizes2, ___data3, method);
 }
-int32_t NativeSelectFunc_Invoke_m92191EA94B7513F04CEB52D1D2EEEB1DA3E78063_OpenStaticInvoker(NativeSelectFunc_tB8204D9DD01EEA6E46BA2FDD005653A259AD8FCA* __this, intptr_t ___instance0, int32_t ___count1, intptr_t ___sizes2, intptr_t ___data3, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker4< int32_t, intptr_t, int32_t, intptr_t, intptr_t >::Invoke(__this->___method_ptr_0, method, NULL, ___instance0, ___count1, ___sizes2, ___data3);
-}
-int32_t NativeSelectFunc_Invoke_m92191EA94B7513F04CEB52D1D2EEEB1DA3E78063_ClosedStaticInvoker(NativeSelectFunc_tB8204D9DD01EEA6E46BA2FDD005653A259AD8FCA* __this, intptr_t ___instance0, int32_t ___count1, intptr_t ___sizes2, intptr_t ___data3, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker5< int32_t, RuntimeObject*, intptr_t, int32_t, intptr_t, intptr_t >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___instance0, ___count1, ___sizes2, ___data3);
-}
 IL2CPP_EXTERN_C  int32_t DelegatePInvokeWrapper_NativeSelectFunc_tB8204D9DD01EEA6E46BA2FDD005653A259AD8FCA (NativeSelectFunc_tB8204D9DD01EEA6E46BA2FDD005653A259AD8FCA* __this, intptr_t ___instance0, int32_t ___count1, intptr_t ___sizes2, intptr_t ___data3, const RuntimeMethod* method)
 {
 	typedef int32_t (CDECL *PInvokeFunc)(intptr_t, int32_t, intptr_t, intptr_t);
@@ -9916,7 +9728,7 @@ IL2CPP_EXTERN_C  int32_t DelegatePInvokeWrapper_NativeSelectFunc_tB8204D9DD01EEA
 // System.Void Mono.Btls.MonoBtlsSslCtx/NativeSelectFunc::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NativeSelectFunc__ctor_mCC793EE6C123121F715F3CFD8C23A9A331169608 (NativeSelectFunc_tB8204D9DD01EEA6E46BA2FDD005653A259AD8FCA* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -9925,19 +9737,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NativeSelectFunc__ctor_mCC793EE6C123121F
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 4;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&NativeSelectFunc_Invoke_m92191EA94B7513F04CEB52D1D2EEEB1DA3E78063_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&NativeSelectFunc_Invoke_m92191EA94B7513F04CEB52D1D2EEEB1DA3E78063_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&NativeSelectFunc_Invoke_m92191EA94B7513F04CEB52D1D2EEEB1DA3E78063_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&NativeSelectFunc_Invoke_m92191EA94B7513F04CEB52D1D2EEEB1DA3E78063_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -9985,14 +9791,6 @@ int32_t NativeServerNameFunc_Invoke_mC6F38842460FFECBD5545EBD2B0115151283F0B4_Op
 	typedef int32_t (*FunctionPointerType) (intptr_t, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___instance0, method);
 }
-int32_t NativeServerNameFunc_Invoke_mC6F38842460FFECBD5545EBD2B0115151283F0B4_OpenStaticInvoker(NativeServerNameFunc_tD685BC5D92B7FF9953F0BEB205BCF1BF9A2211FA* __this, intptr_t ___instance0, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker1< int32_t, intptr_t >::Invoke(__this->___method_ptr_0, method, NULL, ___instance0);
-}
-int32_t NativeServerNameFunc_Invoke_mC6F38842460FFECBD5545EBD2B0115151283F0B4_ClosedStaticInvoker(NativeServerNameFunc_tD685BC5D92B7FF9953F0BEB205BCF1BF9A2211FA* __this, intptr_t ___instance0, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker2< int32_t, RuntimeObject*, intptr_t >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___instance0);
-}
 IL2CPP_EXTERN_C  int32_t DelegatePInvokeWrapper_NativeServerNameFunc_tD685BC5D92B7FF9953F0BEB205BCF1BF9A2211FA (NativeServerNameFunc_tD685BC5D92B7FF9953F0BEB205BCF1BF9A2211FA* __this, intptr_t ___instance0, const RuntimeMethod* method)
 {
 	typedef int32_t (CDECL *PInvokeFunc)(intptr_t);
@@ -10005,7 +9803,7 @@ IL2CPP_EXTERN_C  int32_t DelegatePInvokeWrapper_NativeServerNameFunc_tD685BC5D92
 // System.Void Mono.Btls.MonoBtlsSslCtx/NativeServerNameFunc::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NativeServerNameFunc__ctor_mB04711B6D7A98DB9A773CC0041F6099EB3CBF171 (NativeServerNameFunc_tD685BC5D92B7FF9953F0BEB205BCF1BF9A2211FA* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -10014,19 +9812,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NativeServerNameFunc__ctor_mB04711B6D7A9
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 1;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&NativeServerNameFunc_Invoke_mC6F38842460FFECBD5545EBD2B0115151283F0B4_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&NativeServerNameFunc_Invoke_mC6F38842460FFECBD5545EBD2B0115151283F0B4_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&NativeServerNameFunc_Invoke_mC6F38842460FFECBD5545EBD2B0115151283F0B4_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&NativeServerNameFunc_Invoke_mC6F38842460FFECBD5545EBD2B0115151283F0B4_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -12682,14 +12474,6 @@ int32_t BySubjectFunc_Invoke_m27F18158D124F9C4EEAE02223A4B2372B3301B96_OpenStati
 	typedef int32_t (*FunctionPointerType) (intptr_t, intptr_t, intptr_t*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___method_ptr_0)(___instance0, ___name1, ___x509_ptr2, method);
 }
-int32_t BySubjectFunc_Invoke_m27F18158D124F9C4EEAE02223A4B2372B3301B96_OpenStaticInvoker(BySubjectFunc_t68E2B6BCEAD254F4C66501F0987E52D5ED8CF8DE* __this, intptr_t ___instance0, intptr_t ___name1, intptr_t* ___x509_ptr2, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker3< int32_t, intptr_t, intptr_t, intptr_t* >::Invoke(__this->___method_ptr_0, method, NULL, ___instance0, ___name1, ___x509_ptr2);
-}
-int32_t BySubjectFunc_Invoke_m27F18158D124F9C4EEAE02223A4B2372B3301B96_ClosedStaticInvoker(BySubjectFunc_t68E2B6BCEAD254F4C66501F0987E52D5ED8CF8DE* __this, intptr_t ___instance0, intptr_t ___name1, intptr_t* ___x509_ptr2, const RuntimeMethod* method)
-{
-	return InvokerFuncInvoker4< int32_t, RuntimeObject*, intptr_t, intptr_t, intptr_t* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___instance0, ___name1, ___x509_ptr2);
-}
 IL2CPP_EXTERN_C  int32_t DelegatePInvokeWrapper_BySubjectFunc_t68E2B6BCEAD254F4C66501F0987E52D5ED8CF8DE (BySubjectFunc_t68E2B6BCEAD254F4C66501F0987E52D5ED8CF8DE* __this, intptr_t ___instance0, intptr_t ___name1, intptr_t* ___x509_ptr2, const RuntimeMethod* method)
 {
 	typedef int32_t (CDECL *PInvokeFunc)(intptr_t, intptr_t, intptr_t*);
@@ -12702,7 +12486,7 @@ IL2CPP_EXTERN_C  int32_t DelegatePInvokeWrapper_BySubjectFunc_t68E2B6BCEAD254F4C
 // System.Void Mono.Btls.MonoBtlsX509LookupMono/BySubjectFunc::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BySubjectFunc__ctor_m716B9DBA0E032168201B3F2604C5AD2625F10561 (BySubjectFunc_t68E2B6BCEAD254F4C66501F0987E52D5ED8CF8DE* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -12711,19 +12495,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BySubjectFunc__ctor_m716B9DBA0E032168201
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 3;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&BySubjectFunc_Invoke_m27F18158D124F9C4EEAE02223A4B2372B3301B96_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&BySubjectFunc_Invoke_m27F18158D124F9C4EEAE02223A4B2372B3301B96_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&BySubjectFunc_Invoke_m27F18158D124F9C4EEAE02223A4B2372B3301B96_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&BySubjectFunc_Invoke_m27F18158D124F9C4EEAE02223A4B2372B3301B96_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -32060,7 +31838,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mEBCF994CC3814631
 IL_0034:
 	{
 		RuntimeObject* L_9 = ___item0;
-		((  void (*) (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D*, RuntimeObject*, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 11)))(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 11));
+		List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 14));
 		return;
 	}
 }
@@ -32118,7 +31896,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_m1794A41080E7D990
 IL_0034:
 	{
 		X509ChainStatus_t5A57DDA24AA1FCA9F2B8D70B767CDDF388E4A80D L_9 = ___item0;
-		((  void (*) (List_1_t14F08D1F5A2E0F276F976F81CC13B7CB7EDABE33*, X509ChainStatus_t5A57DDA24AA1FCA9F2B8D70B767CDDF388E4A80D, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 11)))(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 11));
+		List_1_AddWithResize_m57CCC347F7A2D40306F42BE2E7822E13C0516E91(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 14));
 		return;
 	}
 }
@@ -32138,9 +31916,10 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* KeyValuePair_2_get
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* Array_Empty_TisByte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_m6080CA526758F4FA182A066B2780D1761CD36ED5_gshared_inline (const RuntimeMethod* method) 
 {
+	il2cpp_rgctx_method_init(method);
 	{
-		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(method->rgctx_data, 0));
-		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_0 = ((EmptyArray_1_t7187E746F328254739F076CFBCAABB28D4B4554C_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(method->rgctx_data, 0)))->___Value_0;
+		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(method->rgctx_data, 2));
+		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_0 = ((EmptyArray_1_t7187E746F328254739F076CFBCAABB28D4B4554C_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(method->rgctx_data, 2)))->___Value_0;
 		return L_0;
 	}
 }
@@ -32173,7 +31952,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Span_1__ctor_m835590E344B05A
 		}
 	}
 	{
-		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_0 = { reinterpret_cast<intptr_t> (il2cpp_rgctx_type(InitializedTypeInfo(method->klass)->rgctx_data, 4)) };
+		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_0 = { reinterpret_cast<intptr_t> (il2cpp_rgctx_type(InitializedTypeInfo(method->klass)->rgctx_data, 10)) };
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		Type_t* L_1;
 		L_1 = Type_GetTypeFromHandle_m6062B81682F79A4D6DF2640692EE6D9987858C57(L_0, NULL);
@@ -32235,7 +32014,7 @@ IL_000e:
 		int32_t L_7 = ___start0;
 		Span_1_tEDDF15FCF9EC6DEBA0F696BAACDDBAB9D92C252D L_8;
 		memset((&L_8), 0, sizeof(L_8));
-		Span_1__ctor_mC9BE2938B716B46BB6B9070B94DBE5CE814BC0E2_inline((&L_8), L_5, ((int32_t)il2cpp_codegen_subtract(L_6, L_7)), /*hidden argument*/il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 10));
+		Span_1__ctor_mC9BE2938B716B46BB6B9070B94DBE5CE814BC0E2_inline((&L_8), L_5, ((int32_t)il2cpp_codegen_subtract(L_6, L_7)), /*hidden argument*/il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 20));
 		return L_8;
 	}
 }
@@ -32278,7 +32057,7 @@ IL_0019:
 		int32_t L_9 = ___length1;
 		Span_1_tEDDF15FCF9EC6DEBA0F696BAACDDBAB9D92C252D L_10;
 		memset((&L_10), 0, sizeof(L_10));
-		Span_1__ctor_mC9BE2938B716B46BB6B9070B94DBE5CE814BC0E2_inline((&L_10), L_8, L_9, /*hidden argument*/il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 10));
+		Span_1__ctor_mC9BE2938B716B46BB6B9070B94DBE5CE814BC0E2_inline((&L_10), L_8, L_9, /*hidden argument*/il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 20));
 		return L_10;
 	}
 }
@@ -32335,7 +32114,7 @@ IL_0019:
 		int32_t L_9 = ___length1;
 		ReadOnlySpan_1_t59614EA6E51A945A32B02AB17FBCBDF9A5C419C1 L_10;
 		memset((&L_10), 0, sizeof(L_10));
-		ReadOnlySpan_1__ctor_m0152E50B40750679B83FF9F30CA539FFBB98EEE8_inline((&L_10), L_8, L_9, /*hidden argument*/il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 6));
+		ReadOnlySpan_1__ctor_m0152E50B40750679B83FF9F30CA539FFBB98EEE8_inline((&L_10), L_8, L_9, /*hidden argument*/il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 14));
 		return L_10;
 	}
 }
@@ -32354,7 +32133,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Span_1__ctor_mB886029FDB28A1
 		}
 	}
 	{
-		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_0 = { reinterpret_cast<intptr_t> (il2cpp_rgctx_type(InitializedTypeInfo(method->klass)->rgctx_data, 4)) };
+		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_0 = { reinterpret_cast<intptr_t> (il2cpp_rgctx_type(InitializedTypeInfo(method->klass)->rgctx_data, 10)) };
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		Type_t* L_1;
 		L_1 = Type_GetTypeFromHandle_m6062B81682F79A4D6DF2640692EE6D9987858C57(L_0, NULL);

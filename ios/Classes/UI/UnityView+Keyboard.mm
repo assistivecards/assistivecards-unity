@@ -70,8 +70,8 @@ static double GetTimeInSeconds()
     }
 
     // pageUp, pageDown
-    addKey(@"UIKeyInputPageUp", kNilOptions);
-    addKey(@"UIKeyInputPageDown", kNilOptions);
+    addKey(UIKeyInputPageUp, kNilOptions);
+    addKey(UIKeyInputPageDown, kNilOptions);
 
     // up, down, left, right, esc
     addKey(UIKeyInputUpArrow, kNilOptions);

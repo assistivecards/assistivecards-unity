@@ -128,9 +128,6 @@ extern "C" void CreateSystemRenderingSurfaceMTL(UnityDisplaySurfaceMTL* surface)
         #if PLATFORM_IOS || PLATFORM_TVOS
             [surface->drawableProxyRT[i] setPurgeableState: MTLPurgeableStateEmpty];
         #endif
-
-            // Mark each drawableProxy surface as needing a clear load action when next rendered to as its contents are undefined.
-            surface->drawableProxyNeedsClear[i] = true;
         }
     }
 }
@@ -377,7 +374,7 @@ extern "C" void EndFrameRenderingMTL(UnityDisplaySurfaceMTL* surface)
             surface->presentCB = nil;
         }
 
-        surface->systemColorRB  = surface->drawableProxyRT[0];
+        surface->systemColorRB  = nil;
         surface->drawable       = nil;
     }
 
@@ -391,11 +388,6 @@ extern "C" void EndFrameRenderingMTL(UnityDisplaySurfaceMTL* surface)
         surface->drawableProxyRT[1] = texture0;
         surface->proxySwaps++;
         surface->proxyReady = 1;
-
-        // Swap the needs clear state of the swapped proxy buffers, to ensure that each surface
-        // will get cleared at least once when the proxy buffer surfaces are recreated.
-        std::swap(surface->drawableProxyNeedsClear[0],
-            surface->drawableProxyNeedsClear[1]);
     }
 #endif
 }

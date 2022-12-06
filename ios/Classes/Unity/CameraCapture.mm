@@ -9,9 +9,7 @@
 
 #include <cmath>
 
-#if UNITY_HAS_COLORANDDEPTH_CAMERA
 static NSMutableArray<CameraCaptureController*> *activeColorAndDepthCameraControllers = nil;
-#endif
 
 @implementation CameraCaptureController
 {
@@ -19,12 +17,10 @@ static NSMutableArray<CameraCaptureController*> *activeColorAndDepthCameraContro
     AVCaptureSession*           _captureSession;
     AVCaptureDeviceInput*       _captureInput;
     AVCaptureVideoDataOutput*   _captureOutput;
-#if UNITY_HAS_COLORANDDEPTH_CAMERA
     AVCaptureDepthDataOutput*   _captureDepthOutput;
     AVCaptureDataOutputSynchronizer*    _captureSynchronizer;
 
     @public bool                _isDepth;
-#endif
 
     uint8_t*                    _pixelBufferCopy;
     CMVideoSampling             _cmVideoSampling;
@@ -133,11 +129,9 @@ static NSMutableArray<CameraCaptureController*> *activeColorAndDepthCameraContro
         case kCVPixelFormatType_32BGRA:
             bpp = 4;
             break;
-#if UNITY_HAS_IOSSDK_11_0
         case kCVPixelFormatType_DepthFloat16:
             bpp = 2;
             break;
-#endif
         default:
             assert(false);
             break;
@@ -193,7 +187,6 @@ static NSMutableArray<CameraCaptureController*> *activeColorAndDepthCameraContro
     return 0;
 }
 
-#if UNITY_HAS_COLORANDDEPTH_CAMERA
 + (NSMutableArray<CameraCaptureController*>*)getActiveColorAndDepthCameraControllers
 {
     if (activeColorAndDepthCameraControllers == nil)
@@ -254,8 +247,6 @@ static NSMutableArray<CameraCaptureController*> *activeColorAndDepthCameraContro
 
 - (bool)initColorAndDepthCameraCapture:(AVCaptureDevice*)device preset:(NSString*)preset fps:(float)fps isDepth:(bool)isDepth
 {
-    if (!UnityiOS110orNewer())
-        return false;
     if (![self initCapture: device])
         return false;
 
@@ -280,8 +271,6 @@ static NSMutableArray<CameraCaptureController*> *activeColorAndDepthCameraContro
 
 - (void)initColorAndDepthCameraCaptureSession
 {
-    if (!UnityiOS110orNewer())
-        return;
     self.captureSession = [[AVCaptureSession alloc] init];
     [self.captureSession setSessionPreset: self->_preset];
     [self.captureSession addInput: self.captureInput];
@@ -291,8 +280,6 @@ static NSMutableArray<CameraCaptureController*> *activeColorAndDepthCameraContro
 
 - (void)clearColorAndDepthCameraCaptureSession
 {
-    if (!UnityiOS110orNewer())
-        return;
     [self.captureSession removeInput: self.captureInput];
     [self.captureSession removeOutput: self.captureOutput];
     [self.captureSession removeOutput: self.captureDepthOutput];
@@ -325,11 +312,8 @@ static NSMutableArray<CameraCaptureController*> *activeColorAndDepthCameraContro
     }
 }
 
-#endif
-
 - (void)start
 {
-#if UNITY_HAS_COLORANDDEPTH_CAMERA
     if (self.captureDepthOutput != nil)
     {
         [CameraCaptureController addColorAndDepthCameraController: self];
@@ -338,19 +322,16 @@ static NSMutableArray<CameraCaptureController*> *activeColorAndDepthCameraContro
     {
         [CameraCaptureController clearColorAndDepthCameraControllers];
     }
-#endif
     [self.captureSession startRunning];
 }
 
 - (void)pause
 {
     [self.captureSession stopRunning];
-#if UNITY_HAS_COLORANDDEPTH_CAMERA
     if (self.captureDepthOutput != nil)
     {
         [CameraCaptureController removeColorAndDepthCameraController: self];
     }
-#endif
 }
 
 - (void)stop
@@ -361,7 +342,7 @@ static NSMutableArray<CameraCaptureController*> *activeColorAndDepthCameraContro
 
     self.captureInput = nil;
     self.captureOutput = nil;
-#if UNITY_HAS_COLORANDDEPTH_CAMERA
+
     if (self.captureDepthOutput != nil)
     {
         self.captureSynchronizer = nil;
@@ -369,7 +350,7 @@ static NSMutableArray<CameraCaptureController*> *activeColorAndDepthCameraContro
         self.captureDepthOutput = nil;
         [CameraCaptureController removeColorAndDepthCameraController: self];
     }
-#endif
+
     self.captureDevice = nil;
     self.captureSession = nil;
 
@@ -410,17 +391,13 @@ static NSMutableArray<CameraCaptureController*> *activeColorAndDepthCameraContro
 @synthesize captureSession  = _captureSession;
 @synthesize captureOutput   = _captureOutput;
 @synthesize captureInput    = _captureInput;
-#if UNITY_HAS_COLORANDDEPTH_CAMERA
 @synthesize captureDepthOutput = _captureDepthOutput;
 @synthesize captureSynchronizer = _captureSynchronizer;
-#endif
 
 @end
 
-#if UNITY_HAS_COLORANDDEPTH_CAMERA
 // Preset for getting depth data with max resolution available
 static NSString* const depthCaptureSessionPreset = AVCaptureSessionPresetPhoto;
-#endif
 static NSMutableArray<CameraCaptureDevice*> *videoCaptureDevices = nil;
 
 @implementation CameraCaptureDevice
@@ -435,16 +412,11 @@ static NSMutableArray<CameraCaptureDevice*> *videoCaptureDevices = nil;
 
 - (bool)isColorAndDepthCaptureDevice
 {
-#if UNITY_HAS_COLORANDDEPTH_CAMERA
-    if (UnityiOS110orNewer())
+    for (AVCaptureDeviceFormat *format in [self->_device formats])
     {
-        for (AVCaptureDeviceFormat *format in [self->_device formats])
-        {
-            if ([format supportedDepthDataFormats].count > 0)
-                return true;
-        }
+        if ([format supportedDepthDataFormats].count > 0)
+            return true;
     }
-#endif
     return false;
 }
 
@@ -486,7 +458,6 @@ static NSMutableArray<CameraCaptureDevice*> *videoCaptureDevices = nil;
 
         [captureSession addInput: captureInput];
 
-#if UNITY_HAS_COLORANDDEPTH_CAMERA
         if (self->_kind == kWebCamColorAndDepth)
         {
             AVCaptureDepthDataOutput* captureDepthOutput = [[AVCaptureDepthDataOutput alloc] init];
@@ -500,7 +471,6 @@ static NSMutableArray<CameraCaptureDevice*> *videoCaptureDevices = nil;
             }
         }
         else
-#endif
         {
             for (int i = 0; i < count; ++i)
             {
@@ -518,12 +488,11 @@ static NSMutableArray<CameraCaptureDevice*> *videoCaptureDevices = nil;
 
 - (NSString*)pickPresetFromWidth:(int)w height:(int)h
 {
-#if UNITY_HAS_COLORANDDEPTH_CAMERA
     if (self->_kind == kWebCamColorAndDepth)
     {
         return depthCaptureSessionPreset;
     }
-#endif
+
     int requestedWidth = w > 0 ? w : 640;
     int requestedHeight = h > 0 ? h : 480;
     if (requestedHeight > requestedWidth) // hardware camera frame is landscape oriented
@@ -560,13 +529,12 @@ static NSMutableArray<CameraCaptureDevice*> *videoCaptureDevices = nil;
 {
     bool initResult = false;
     NSString *preset = [self pickPresetFromWidth: w height: h];
-#if UNITY_HAS_COLORANDDEPTH_CAMERA
-    if (UnityiOS110orNewer() && [self isColorAndDepthCaptureDevice])
+
+    if ([self isColorAndDepthCaptureDevice])
     {
         initResult = [controller initColorAndDepthCameraCapture: self->_device preset: preset fps: fps isDepth: isDepth];
     }
     else
-#endif
     {
         assert(!isDepth);
         initResult = [controller initCapture: self->_device preset: preset fps: fps];
@@ -600,18 +568,9 @@ extern "C" void UnityEnumVideoCaptureDevices(void* udata, void(*callback)(void* 
 
         NSMutableArray<AVCaptureDeviceType>* captureDevices = [NSMutableArray arrayWithObjects: AVCaptureDeviceTypeBuiltInWideAngleCamera, AVCaptureDeviceTypeBuiltInTelephotoCamera, nil];
 
-#if UNITY_HAS_COLORANDDEPTH_CAMERA
-        if (UnityiOS102orNewer())
-        {
-            [captureDevices addObject: AVCaptureDeviceTypeBuiltInDualCamera];
-        }
-#endif
-#if UNITY_HAS_IOSSDK_11_1
-        if (UnityiOS111orNewer())
-        {
-            [captureDevices addObject: AVCaptureDeviceTypeBuiltInTrueDepthCamera];
-        }
-#endif
+        [captureDevices addObject: AVCaptureDeviceTypeBuiltInDualCamera];
+        [captureDevices addObject: AVCaptureDeviceTypeBuiltInTrueDepthCamera];
+
 #if UNITY_HAS_IOSSDK_13_0
         if (UnityiOS130orNewer())
         {

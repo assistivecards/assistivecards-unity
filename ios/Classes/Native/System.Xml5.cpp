@@ -199,28 +199,6 @@ struct GenericInterfaceActionInvoker1
 		((Action)invokeData.methodPtr)(obj, p1, invokeData.method);
 	}
 };
-template <typename T1, typename T2>
-struct InvokerActionInvoker2;
-template <typename T1, typename T2>
-struct InvokerActionInvoker2<T1*, T2*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2)
-	{
-		void* params[2] = { p1, p2 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2, typename T3>
-struct InvokerActionInvoker3;
-template <typename T1, typename T2, typename T3>
-struct InvokerActionInvoker3<T1*, T2*, T3*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3* p3)
-	{
-		void* params[3] = { p1, p2, p3 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
 
 // System.Collections.Generic.Dictionary`2<System.Int32,System.Globalization.CultureInfo>
 struct Dictionary_2_t9FA6D82CAFC18769F7515BB51D1C56DAE09381C3;
@@ -9590,14 +9568,6 @@ void XmlNodeChangedEventHandler_Invoke_m64C7CF87945A0BAEFCED39FC27B1D9F2E31C1480
 	typedef void (*FunctionPointerType) (RuntimeObject*, XmlNodeChangedEventArgs_t965F2E02F8433933D197A0D1AF1EFEEDB524DF3A*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___sender0, ___e1, method);
 }
-void XmlNodeChangedEventHandler_Invoke_m64C7CF87945A0BAEFCED39FC27B1D9F2E31C1480_OpenStaticInvoker(XmlNodeChangedEventHandler_t907F6E9CB8DE238635028EC468AD41CAB0BA269B* __this, RuntimeObject* ___sender0, XmlNodeChangedEventArgs_t965F2E02F8433933D197A0D1AF1EFEEDB524DF3A* ___e1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< RuntimeObject*, XmlNodeChangedEventArgs_t965F2E02F8433933D197A0D1AF1EFEEDB524DF3A* >::Invoke(__this->___method_ptr_0, method, NULL, ___sender0, ___e1);
-}
-void XmlNodeChangedEventHandler_Invoke_m64C7CF87945A0BAEFCED39FC27B1D9F2E31C1480_ClosedStaticInvoker(XmlNodeChangedEventHandler_t907F6E9CB8DE238635028EC468AD41CAB0BA269B* __this, RuntimeObject* ___sender0, XmlNodeChangedEventArgs_t965F2E02F8433933D197A0D1AF1EFEEDB524DF3A* ___e1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker3< RuntimeObject*, RuntimeObject*, XmlNodeChangedEventArgs_t965F2E02F8433933D197A0D1AF1EFEEDB524DF3A* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___sender0, ___e1);
-}
 void XmlNodeChangedEventHandler_Invoke_m64C7CF87945A0BAEFCED39FC27B1D9F2E31C1480_OpenVirtual(XmlNodeChangedEventHandler_t907F6E9CB8DE238635028EC468AD41CAB0BA269B* __this, RuntimeObject* ___sender0, XmlNodeChangedEventArgs_t965F2E02F8433933D197A0D1AF1EFEEDB524DF3A* ___e1, const RuntimeMethod* method)
 {
 	NullCheck(___sender0);
@@ -9621,7 +9591,7 @@ void XmlNodeChangedEventHandler_Invoke_m64C7CF87945A0BAEFCED39FC27B1D9F2E31C1480
 // System.Void System.Xml.XmlNodeChangedEventHandler::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlNodeChangedEventHandler__ctor_mD51AE5833F8A9B1EA9DB8DC54FEF3AD64763AED9 (XmlNodeChangedEventHandler_t907F6E9CB8DE238635028EC468AD41CAB0BA269B* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -9630,19 +9600,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlNodeChangedEventHandler__ctor_mD51AE5
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 2;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&XmlNodeChangedEventHandler_Invoke_m64C7CF87945A0BAEFCED39FC27B1D9F2E31C1480_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&XmlNodeChangedEventHandler_Invoke_m64C7CF87945A0BAEFCED39FC27B1D9F2E31C1480_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&XmlNodeChangedEventHandler_Invoke_m64C7CF87945A0BAEFCED39FC27B1D9F2E31C1480_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&XmlNodeChangedEventHandler_Invoke_m64C7CF87945A0BAEFCED39FC27B1D9F2E31C1480_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{

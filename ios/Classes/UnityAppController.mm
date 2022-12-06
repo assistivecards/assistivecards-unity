@@ -139,7 +139,6 @@ NSInteger _forceInterfaceOrientationMask = 0;
         [audioSession setCategory: AVAudioSessionCategoryAmbient error: nil];
         [audioSession setActive: YES error: nil];
     }
-
     [audioSession addObserver: self forKeyPath: @"outputVolume" options: 0 context: nil];
     UnityUpdateMuteState([audioSession outputVolume] < 0.01f ? 1 : 0);
 
@@ -218,39 +217,18 @@ extern "C" void UnityCleanupTrampoline()
 
 #endif
 
-#if !PLATFORM_TVOS
-
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-implementations"
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-- (void)application:(UIApplication*)application didReceiveLocalNotification:(UILocalNotification*)notification
-{
-    AppController_SendNotificationWithArg(kUnityDidReceiveLocalNotification, notification);
-    UnitySendLocalNotification(notification);
-}
-
-#pragma clang diagnostic pop
-
-#endif
-
 #if UNITY_USES_REMOTE_NOTIFICATIONS
-- (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary*)userInfo
-{
-    AppController_SendNotificationWithArg(kUnityDidReceiveRemoteNotification, userInfo);
-    UnitySendRemoteNotification(userInfo);
-}
 
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
     AppController_SendNotificationWithArg(kUnityDidRegisterForRemoteNotificationsWithDeviceToken, deviceToken);
-    UnitySendDeviceToken(deviceToken);
 }
 
 #if !PLATFORM_TVOS
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))handler
 {
     AppController_SendNotificationWithArg(kUnityDidReceiveRemoteNotification, userInfo);
-    UnitySendRemoteNotification(userInfo);
+
     if (handler)
     {
         handler(UIBackgroundFetchResultNoData);
@@ -262,7 +240,7 @@ extern "C" void UnityCleanupTrampoline()
 - (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
 {
     AppController_SendNotificationWithArg(kUnityDidFailToRegisterForRemoteNotificationsWithError, error);
-    UnitySendRemoteNotificationError(error);
+
     // alas people do not check remote notification error through api (which is clunky, i agree) so log here to have at least some visibility
     ::printf("\nFailed to register for remote notifications:\n%s\n\n", [[error localizedDescription] UTF8String]);
 }
@@ -287,12 +265,7 @@ extern "C" void UnityCleanupTrampoline()
     return YES;
 }
 
-- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity
-#if defined(__IPHONE_12_0) || defined(__TVOS_12_0)
-    restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring> > * _Nullable restorableObjects))restorationHandler
-#else
-    restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler
-#endif
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring> > * _Nullable restorableObjects))restorationHandler
 {
     NSURL* url = userActivity.webpageURL;
     if (url)
@@ -339,18 +312,8 @@ extern "C" void UnityCleanupTrampoline()
 
     // send notfications
 #if !PLATFORM_TVOS
-
-    #pragma clang diagnostic push
-    #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-
-    if (UILocalNotification* notification = [launchOptions objectForKey: UIApplicationLaunchOptionsLocalNotificationKey])
-        UnitySendLocalNotification(notification);
-
     if ([UIDevice currentDevice].generatesDeviceOrientationNotifications == NO)
         [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-
-    #pragma clang diagnostic pop
-
 #endif
 
     UnityInitApplicationNoGraphics(UnityDataBundleDir());
@@ -511,7 +474,6 @@ extern "C" void UnityCleanupTrampoline()
                 UnityWillPause();
                 [self repaint];
                 UnityWaitForFrame();
-
                 [self addSnapshotViewController];
 #endif
                 UnityPause(1);

@@ -165,28 +165,6 @@ struct GenericInterfaceActionInvoker1
 		((Action)invokeData.methodPtr)(obj, p1, invokeData.method);
 	}
 };
-template <typename T1, typename T2>
-struct InvokerActionInvoker2;
-template <typename T1, typename T2>
-struct InvokerActionInvoker2<T1*, T2*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2)
-	{
-		void* params[2] = { p1, p2 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2, typename T3>
-struct InvokerActionInvoker3;
-template <typename T1, typename T2, typename T3>
-struct InvokerActionInvoker3<T1*, T2*, T3*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3* p3)
-	{
-		void* params[3] = { p1, p2, p3 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
 
 // System.Comparison`1<System.Data.DataRow>
 struct Comparison_1_t08F05E5982EA288B3368FA03B4763D49EFED87F0;
@@ -4975,6 +4953,8 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR KeyValuePair_2_tFC32D250721629385
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* KeyValuePair_2_get_Value_mC6BD8075F9C9DDEF7B4D731E5C38EC19103988E7_gshared_inline (KeyValuePair_2_tFC32D2507216293851350D29B64D79F950B55230* __this, const RuntimeMethod* method) ;
 // System.Boolean System.Collections.Generic.Dictionary`2/Enumerator<System.Object,System.Object>::MoveNext()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Enumerator_MoveNext_mCD4950A75FFADD54AF354D48C6C0DB0B5A22A5F4_gshared (Enumerator_tEA93FE2B778D098F590CA168BEFC4CD85D73A6B9* __this, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<System.Object>::AddWithResize(T)
+IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method) ;
 
 // System.Int32 System.Data.DataRelationCollection::get_ObjectID()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t DataRelationCollection_get_ObjectID_mB495B8002FFABF419F061289E0B2B8DB8CB12F3E_inline (DataRelationCollection_tA8655ADC9860DD89FDC0317E38C95CB740BC2956* __this, const RuntimeMethod* method) ;
@@ -6406,6 +6386,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataViewListener_RegisterListChangedEven
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataRelationPropertyDescriptor__ctor_mD270E4BD1165D1CB36963D8F5D32704362C27553 (DataRelationPropertyDescriptor_tD2A16A5E7FA286C7D9C3C16E0D4C60A7FD2AC5D9* __this, DataRelation_tCB36A11AB39874353B080F3CD6432C4F9828C656* ___dataRelation0, const RuntimeMethod* method) ;
 // System.Void System.ComponentModel.ListChangedEventArgs::.ctor(System.ComponentModel.ListChangedType,System.ComponentModel.PropertyDescriptor)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ListChangedEventArgs__ctor_m31B5AA3820BCDE3044F649BF7F08680500AC8D48 (ListChangedEventArgs_tAAB4841B3E3BD67D39FBE075E920B653B5F35442* __this, int32_t ___listChangedType0, PropertyDescriptor_t03F8CBE01C4EDA631BF9BE7D9EB32C8F30F13381* ___propDesc1, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<System.Object>::AddWithResize(T)
+inline void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4 (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method)
+{
+	((  void (*) (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D*, RuntimeObject*, const RuntimeMethod*))List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4_gshared)(__this, ___item0, method);
+}
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -13170,14 +13155,6 @@ void DataRowChangeEventHandler_Invoke_m1A186DD2F2116C54F3CD31936C3A019AAC3702CB_
 	typedef void (*FunctionPointerType) (RuntimeObject*, DataRowChangeEventArgs_t46DE926622BF954E7BE60FB4D0D6FBE0A5BC533C*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___sender0, ___e1, method);
 }
-void DataRowChangeEventHandler_Invoke_m1A186DD2F2116C54F3CD31936C3A019AAC3702CB_OpenStaticInvoker(DataRowChangeEventHandler_t2F295C9D2283CBF4D109CBDFCD141EF2A58B24BF* __this, RuntimeObject* ___sender0, DataRowChangeEventArgs_t46DE926622BF954E7BE60FB4D0D6FBE0A5BC533C* ___e1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< RuntimeObject*, DataRowChangeEventArgs_t46DE926622BF954E7BE60FB4D0D6FBE0A5BC533C* >::Invoke(__this->___method_ptr_0, method, NULL, ___sender0, ___e1);
-}
-void DataRowChangeEventHandler_Invoke_m1A186DD2F2116C54F3CD31936C3A019AAC3702CB_ClosedStaticInvoker(DataRowChangeEventHandler_t2F295C9D2283CBF4D109CBDFCD141EF2A58B24BF* __this, RuntimeObject* ___sender0, DataRowChangeEventArgs_t46DE926622BF954E7BE60FB4D0D6FBE0A5BC533C* ___e1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker3< RuntimeObject*, RuntimeObject*, DataRowChangeEventArgs_t46DE926622BF954E7BE60FB4D0D6FBE0A5BC533C* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___sender0, ___e1);
-}
 void DataRowChangeEventHandler_Invoke_m1A186DD2F2116C54F3CD31936C3A019AAC3702CB_OpenVirtual(DataRowChangeEventHandler_t2F295C9D2283CBF4D109CBDFCD141EF2A58B24BF* __this, RuntimeObject* ___sender0, DataRowChangeEventArgs_t46DE926622BF954E7BE60FB4D0D6FBE0A5BC533C* ___e1, const RuntimeMethod* method)
 {
 	NullCheck(___sender0);
@@ -13201,7 +13178,7 @@ void DataRowChangeEventHandler_Invoke_m1A186DD2F2116C54F3CD31936C3A019AAC3702CB_
 // System.Void System.Data.DataRowChangeEventHandler::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataRowChangeEventHandler__ctor_m2EB0DF9A56AD9A23D7AF90157FFE0F17444D9888 (DataRowChangeEventHandler_t2F295C9D2283CBF4D109CBDFCD141EF2A58B24BF* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -13210,19 +13187,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataRowChangeEventHandler__ctor_m2EB0DF9
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 2;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&DataRowChangeEventHandler_Invoke_m1A186DD2F2116C54F3CD31936C3A019AAC3702CB_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&DataRowChangeEventHandler_Invoke_m1A186DD2F2116C54F3CD31936C3A019AAC3702CB_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&DataRowChangeEventHandler_Invoke_m1A186DD2F2116C54F3CD31936C3A019AAC3702CB_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&DataRowChangeEventHandler_Invoke_m1A186DD2F2116C54F3CD31936C3A019AAC3702CB_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -13875,14 +13846,6 @@ void DataRowCreatedEventHandler_Invoke_m09CA722AB56F79FE03C8A29ECEB3A4D8476294F4
 	typedef void (*FunctionPointerType) (RuntimeObject*, DataRow_t4C2743279B40E332809F4E6EE3443B75E4C38388*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___sender0, ___r1, method);
 }
-void DataRowCreatedEventHandler_Invoke_m09CA722AB56F79FE03C8A29ECEB3A4D8476294F4_OpenStaticInvoker(DataRowCreatedEventHandler_t9A8B728761AB985BA0979A4447A269DF5D429029* __this, RuntimeObject* ___sender0, DataRow_t4C2743279B40E332809F4E6EE3443B75E4C38388* ___r1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< RuntimeObject*, DataRow_t4C2743279B40E332809F4E6EE3443B75E4C38388* >::Invoke(__this->___method_ptr_0, method, NULL, ___sender0, ___r1);
-}
-void DataRowCreatedEventHandler_Invoke_m09CA722AB56F79FE03C8A29ECEB3A4D8476294F4_ClosedStaticInvoker(DataRowCreatedEventHandler_t9A8B728761AB985BA0979A4447A269DF5D429029* __this, RuntimeObject* ___sender0, DataRow_t4C2743279B40E332809F4E6EE3443B75E4C38388* ___r1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker3< RuntimeObject*, RuntimeObject*, DataRow_t4C2743279B40E332809F4E6EE3443B75E4C38388* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___sender0, ___r1);
-}
 void DataRowCreatedEventHandler_Invoke_m09CA722AB56F79FE03C8A29ECEB3A4D8476294F4_OpenVirtual(DataRowCreatedEventHandler_t9A8B728761AB985BA0979A4447A269DF5D429029* __this, RuntimeObject* ___sender0, DataRow_t4C2743279B40E332809F4E6EE3443B75E4C38388* ___r1, const RuntimeMethod* method)
 {
 	NullCheck(___sender0);
@@ -13906,7 +13869,7 @@ void DataRowCreatedEventHandler_Invoke_m09CA722AB56F79FE03C8A29ECEB3A4D8476294F4
 // System.Void System.Data.DataRowCreatedEventHandler::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataRowCreatedEventHandler__ctor_mCD9DB9129BEAC66FC5F4896ECA33C28783EBA6C0 (DataRowCreatedEventHandler_t9A8B728761AB985BA0979A4447A269DF5D429029* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -13915,19 +13878,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataRowCreatedEventHandler__ctor_mCD9DB9
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 2;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&DataRowCreatedEventHandler_Invoke_m09CA722AB56F79FE03C8A29ECEB3A4D8476294F4_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&DataRowCreatedEventHandler_Invoke_m09CA722AB56F79FE03C8A29ECEB3A4D8476294F4_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&DataRowCreatedEventHandler_Invoke_m09CA722AB56F79FE03C8A29ECEB3A4D8476294F4_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&DataRowCreatedEventHandler_Invoke_m09CA722AB56F79FE03C8A29ECEB3A4D8476294F4_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -13998,14 +13955,6 @@ void DataSetClearEventhandler_Invoke_mA06C90B372D8875F7F1EFB9273F3B0D3781B2BB4_O
 	typedef void (*FunctionPointerType) (RuntimeObject*, DataTable_t9240A0D6726299C55832BF4EE085C864A1CCBB07*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___sender0, ___table1, method);
 }
-void DataSetClearEventhandler_Invoke_mA06C90B372D8875F7F1EFB9273F3B0D3781B2BB4_OpenStaticInvoker(DataSetClearEventhandler_t66917FBEC6137CBE9E5D72CB53E1FF6EBE8333E1* __this, RuntimeObject* ___sender0, DataTable_t9240A0D6726299C55832BF4EE085C864A1CCBB07* ___table1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< RuntimeObject*, DataTable_t9240A0D6726299C55832BF4EE085C864A1CCBB07* >::Invoke(__this->___method_ptr_0, method, NULL, ___sender0, ___table1);
-}
-void DataSetClearEventhandler_Invoke_mA06C90B372D8875F7F1EFB9273F3B0D3781B2BB4_ClosedStaticInvoker(DataSetClearEventhandler_t66917FBEC6137CBE9E5D72CB53E1FF6EBE8333E1* __this, RuntimeObject* ___sender0, DataTable_t9240A0D6726299C55832BF4EE085C864A1CCBB07* ___table1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker3< RuntimeObject*, RuntimeObject*, DataTable_t9240A0D6726299C55832BF4EE085C864A1CCBB07* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___sender0, ___table1);
-}
 void DataSetClearEventhandler_Invoke_mA06C90B372D8875F7F1EFB9273F3B0D3781B2BB4_OpenVirtual(DataSetClearEventhandler_t66917FBEC6137CBE9E5D72CB53E1FF6EBE8333E1* __this, RuntimeObject* ___sender0, DataTable_t9240A0D6726299C55832BF4EE085C864A1CCBB07* ___table1, const RuntimeMethod* method)
 {
 	NullCheck(___sender0);
@@ -14029,7 +13978,7 @@ void DataSetClearEventhandler_Invoke_mA06C90B372D8875F7F1EFB9273F3B0D3781B2BB4_O
 // System.Void System.Data.DataSetClearEventhandler::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataSetClearEventhandler__ctor_mAE9F207617686043622710672C33BA9BE30FC417 (DataSetClearEventhandler_t66917FBEC6137CBE9E5D72CB53E1FF6EBE8333E1* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -14038,19 +13987,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataSetClearEventhandler__ctor_mAE9F2076
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 2;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&DataSetClearEventhandler_Invoke_mA06C90B372D8875F7F1EFB9273F3B0D3781B2BB4_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&DataSetClearEventhandler_Invoke_mA06C90B372D8875F7F1EFB9273F3B0D3781B2BB4_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&DataSetClearEventhandler_Invoke_mA06C90B372D8875F7F1EFB9273F3B0D3781B2BB4_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&DataSetClearEventhandler_Invoke_mA06C90B372D8875F7F1EFB9273F3B0D3781B2BB4_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -25367,14 +25310,6 @@ void DataTableClearEventHandler_Invoke_m8904C45C9372AFF4ABFBAA497D067F5E89514C77
 	typedef void (*FunctionPointerType) (RuntimeObject*, DataTableClearEventArgs_tA4EABDD0DB37EE6362BF319FA94FF694D2FF52A8*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___sender0, ___e1, method);
 }
-void DataTableClearEventHandler_Invoke_m8904C45C9372AFF4ABFBAA497D067F5E89514C77_OpenStaticInvoker(DataTableClearEventHandler_tE15A0F0DEDDCCACFBD4F9F19F462C1FE90746B1B* __this, RuntimeObject* ___sender0, DataTableClearEventArgs_tA4EABDD0DB37EE6362BF319FA94FF694D2FF52A8* ___e1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< RuntimeObject*, DataTableClearEventArgs_tA4EABDD0DB37EE6362BF319FA94FF694D2FF52A8* >::Invoke(__this->___method_ptr_0, method, NULL, ___sender0, ___e1);
-}
-void DataTableClearEventHandler_Invoke_m8904C45C9372AFF4ABFBAA497D067F5E89514C77_ClosedStaticInvoker(DataTableClearEventHandler_tE15A0F0DEDDCCACFBD4F9F19F462C1FE90746B1B* __this, RuntimeObject* ___sender0, DataTableClearEventArgs_tA4EABDD0DB37EE6362BF319FA94FF694D2FF52A8* ___e1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker3< RuntimeObject*, RuntimeObject*, DataTableClearEventArgs_tA4EABDD0DB37EE6362BF319FA94FF694D2FF52A8* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___sender0, ___e1);
-}
 void DataTableClearEventHandler_Invoke_m8904C45C9372AFF4ABFBAA497D067F5E89514C77_OpenVirtual(DataTableClearEventHandler_tE15A0F0DEDDCCACFBD4F9F19F462C1FE90746B1B* __this, RuntimeObject* ___sender0, DataTableClearEventArgs_tA4EABDD0DB37EE6362BF319FA94FF694D2FF52A8* ___e1, const RuntimeMethod* method)
 {
 	NullCheck(___sender0);
@@ -25398,7 +25333,7 @@ void DataTableClearEventHandler_Invoke_m8904C45C9372AFF4ABFBAA497D067F5E89514C77
 // System.Void System.Data.DataTableClearEventHandler::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataTableClearEventHandler__ctor_m8D504E65182D28F3CAB510A19A1DBC6B25739744 (DataTableClearEventHandler_tE15A0F0DEDDCCACFBD4F9F19F462C1FE90746B1B* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -25407,19 +25342,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataTableClearEventHandler__ctor_m8D504E
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 2;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&DataTableClearEventHandler_Invoke_m8904C45C9372AFF4ABFBAA497D067F5E89514C77_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&DataTableClearEventHandler_Invoke_m8904C45C9372AFF4ABFBAA497D067F5E89514C77_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&DataTableClearEventHandler_Invoke_m8904C45C9372AFF4ABFBAA497D067F5E89514C77_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&DataTableClearEventHandler_Invoke_m8904C45C9372AFF4ABFBAA497D067F5E89514C77_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -28099,14 +28028,6 @@ void DataTableNewRowEventHandler_Invoke_m85278272701E3ECAAB3CFF19ACBA415507407A9
 	typedef void (*FunctionPointerType) (RuntimeObject*, DataTableNewRowEventArgs_t8D29EF7BEF61C5A41A00F28BE1508DAED3A987F3*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___sender0, ___e1, method);
 }
-void DataTableNewRowEventHandler_Invoke_m85278272701E3ECAAB3CFF19ACBA415507407A9C_OpenStaticInvoker(DataTableNewRowEventHandler_t874CE0332A55E1F8A8CF67458AF71CE73975D827* __this, RuntimeObject* ___sender0, DataTableNewRowEventArgs_t8D29EF7BEF61C5A41A00F28BE1508DAED3A987F3* ___e1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< RuntimeObject*, DataTableNewRowEventArgs_t8D29EF7BEF61C5A41A00F28BE1508DAED3A987F3* >::Invoke(__this->___method_ptr_0, method, NULL, ___sender0, ___e1);
-}
-void DataTableNewRowEventHandler_Invoke_m85278272701E3ECAAB3CFF19ACBA415507407A9C_ClosedStaticInvoker(DataTableNewRowEventHandler_t874CE0332A55E1F8A8CF67458AF71CE73975D827* __this, RuntimeObject* ___sender0, DataTableNewRowEventArgs_t8D29EF7BEF61C5A41A00F28BE1508DAED3A987F3* ___e1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker3< RuntimeObject*, RuntimeObject*, DataTableNewRowEventArgs_t8D29EF7BEF61C5A41A00F28BE1508DAED3A987F3* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___sender0, ___e1);
-}
 void DataTableNewRowEventHandler_Invoke_m85278272701E3ECAAB3CFF19ACBA415507407A9C_OpenVirtual(DataTableNewRowEventHandler_t874CE0332A55E1F8A8CF67458AF71CE73975D827* __this, RuntimeObject* ___sender0, DataTableNewRowEventArgs_t8D29EF7BEF61C5A41A00F28BE1508DAED3A987F3* ___e1, const RuntimeMethod* method)
 {
 	NullCheck(___sender0);
@@ -28130,7 +28051,7 @@ void DataTableNewRowEventHandler_Invoke_m85278272701E3ECAAB3CFF19ACBA415507407A9
 // System.Void System.Data.DataTableNewRowEventHandler::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataTableNewRowEventHandler__ctor_mF26003288C50EBFFACA0859C0AECE2D8C5A4F500 (DataTableNewRowEventHandler_t874CE0332A55E1F8A8CF67458AF71CE73975D827* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -28139,19 +28060,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataTableNewRowEventHandler__ctor_mF2600
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 2;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&DataTableNewRowEventHandler_Invoke_m85278272701E3ECAAB3CFF19ACBA415507407A9C_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&DataTableNewRowEventHandler_Invoke_m85278272701E3ECAAB3CFF19ACBA415507407A9C_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&DataTableNewRowEventHandler_Invoke_m85278272701E3ECAAB3CFF19ACBA415507407A9C_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&DataTableNewRowEventHandler_Invoke_m85278272701E3ECAAB3CFF19ACBA415507407A9C_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -32906,9 +32821,10 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR DataTable_t9240A0D6726299C55832BF
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* Array_Empty_TisRuntimeObject_mFB8A63D602BB6974D31E20300D9EB89C6FE7C278_gshared_inline (const RuntimeMethod* method) 
 {
+	il2cpp_rgctx_method_init(method);
 	{
-		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(method->rgctx_data, 0));
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_0 = ((EmptyArray_1_tDF0DD7256B115243AA6BD5558417387A734240EE_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(method->rgctx_data, 0)))->___Value_0;
+		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(method->rgctx_data, 2));
+		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_0 = ((EmptyArray_1_tDF0DD7256B115243AA6BD5558417387A734240EE_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(method->rgctx_data, 2)))->___Value_0;
 		return L_0;
 	}
 }
@@ -32945,7 +32861,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mEBCF994CC3814631
 IL_0034:
 	{
 		RuntimeObject* L_9 = ___item0;
-		((  void (*) (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D*, RuntimeObject*, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 11)))(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 11));
+		List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 14));
 		return;
 	}
 }

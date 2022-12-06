@@ -17,20 +17,20 @@
 #error Please use Xcode 9.0 or newer
 #endif
 
-#if !defined(__IPHONE_11_0) || __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_11_0
-#error Please use iOS SDK 11.0 or newer
+#if !defined(__IPHONE_12_0) || __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_12_0
+#error Please use iOS SDK 12.0 or newer
 #endif
 
-#if defined(TARGET_OS_TV) && TARGET_OS_TV && !defined(__TVOS_11_0)
-#error Please use tvOS SDK 11.0 or newer
+#if defined(TARGET_OS_TV) && TARGET_OS_TV && !defined(__TVOS_12_0)
+#error Please use tvOS SDK 12.0 or newer
 #endif
 
-#if TARGET_OS_IOS && (!defined(__IPHONE_11_0) || __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_11_0)
-#error Please target iOS 11.0 or newer
+#if TARGET_OS_IOS && (!defined(__IPHONE_12_0) || __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_12_0)
+#error Please target iOS 12.0 or newer
 #endif
 
-#if TARGET_OS_TV && (!defined(__TVOS_11_0) || __TV_OS_VERSION_MIN_REQUIRED < __TVOS_11_0)
-#error Please target tvOS 11.0 or newer
+#if TARGET_OS_TV && (!defined(__TVOS_12_0) || __TV_OS_VERSION_MIN_REQUIRED < __TVOS_12_0)
+#error Please target tvOS 12.0 or newer
 #endif
 
 //------------------------------------------------------------------------------

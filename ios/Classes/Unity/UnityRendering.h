@@ -129,7 +129,6 @@ OBJC_OBJECT_PTR MTLCommandBufferRef presentCB;
 OBJC_OBJECT_PTR CAMetalDrawableRef  drawable;
 
 OBJC_OBJECT_PTR MTLTextureRef       drawableProxyRT[kUnityNumOffscreenSurfaces];
-int                                 drawableProxyNeedsClear[kUnityNumOffscreenSurfaces];    // [bool] Tracks whether the drawableProxy requires a clear after initial creation
 
 // This is used on a Mac with drawableProxyRT when off-screen rendering is used
 int                                 proxySwaps;         // Counts times proxy RTs have swapped since surface recreated

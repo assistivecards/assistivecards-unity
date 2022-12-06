@@ -75,82 +75,6 @@ struct GenericInterfaceActionInvoker0
 		((Action)invokeData.methodPtr)(obj, invokeData.method);
 	}
 };
-template <typename T1>
-struct InvokerActionInvoker1
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1 p1)
-	{
-		void* params[1] = { &p1 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1>
-struct InvokerActionInvoker1<T1*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1)
-	{
-		void* params[1] = { p1 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2>
-struct InvokerActionInvoker2
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1 p1, T2 p2)
-	{
-		void* params[2] = { &p1, &p2 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2>
-struct InvokerActionInvoker2<T1*, T2>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2 p2)
-	{
-		void* params[2] = { p1, &p2 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2>
-struct InvokerActionInvoker2<T1*, T2*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2)
-	{
-		void* params[2] = { p1, p2 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2, typename T3>
-struct InvokerActionInvoker3;
-template <typename T1, typename T2, typename T3>
-struct InvokerActionInvoker3<T1*, T2, T3>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2 p2, T3 p3)
-	{
-		void* params[3] = { p1, &p2, &p3 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2, typename T3>
-struct InvokerActionInvoker3<T1, T2*, T3*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1 p1, T2* p2, T3* p3)
-	{
-		void* params[3] = { &p1, p2, p3 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2, typename T3, typename T4>
-struct InvokerActionInvoker4;
-template <typename T1, typename T2, typename T3, typename T4>
-struct InvokerActionInvoker4<T1*, T2, T3*, T4*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2 p2, T3* p3, T4* p4)
-	{
-		void* params[4] = { p1, &p2, p3, p4 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
 
 // System.Collections.Generic.Dictionary`2<System.Object,System.IntPtr>
 struct Dictionary_2_t5D4200B1CAF7A8402001B3F57BDCA6F0E0BED387;
@@ -1997,6 +1921,10 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR KeyValuePair_2_tFC4FF02B97026C0CC
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR intptr_t KeyValuePair_2_get_Value_mD9B8955E1A15CC8D0F45A0938E0AD24926071553_gshared_inline (KeyValuePair_2_tFC4FF02B97026C0CCC439FD7ED3DEFA306C098CE* __this, const RuntimeMethod* method) ;
 // System.Boolean System.Collections.Generic.Dictionary`2/Enumerator<System.Object,System.IntPtr>::MoveNext()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Enumerator_MoveNext_m7BB28F194F5C57BC3C671D140718EAB7C8A7D43C_gshared (Enumerator_tA7EC39CE1B8A2482A44DEE4E5F736BB3945E048C* __this, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<System.Object>::AddWithResize(T)
+IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<Unity.Notifications.iOS.iOSNotificationAttachment>::AddWithResize(T)
+IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void List_1_AddWithResize_m7EE54C381A95D31D447DDC6350E39CE5C247A3A3_gshared (List_1_tC74F654247ABF5958BE119A0484FED155A4FA129* __this, iOSNotificationAttachment_t9EB7149B6AD8B739CD96042CCE0C5F4D2DC29933 ___item0, const RuntimeMethod* method) ;
 
 // System.Void System.Threading.Monitor::Exit(System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Monitor_Exit_m05B2CF037E2214B3208198C282490A2A475653FA (RuntimeObject* ___obj0, const RuntimeMethod* method) ;
@@ -2618,6 +2546,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t DateTime_get_Second_mC860BA28DED65249
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t DateTime_get_Kind_m83D45222D9386873333A178B9AB31AC2B2F2C993 (DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D* __this, const RuntimeMethod* method) ;
 // System.Void System.DateTime::.ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTimeKind)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DateTime__ctor_mD89390EF215242275A4E8F78C2C3E8BC3EF6F3C3 (DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D* __this, int32_t ___year0, int32_t ___month1, int32_t ___day2, int32_t ___hour3, int32_t ___minute4, int32_t ___second5, int32_t ___kind6, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<System.Object>::AddWithResize(T)
+inline void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4 (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method)
+{
+	((  void (*) (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D*, RuntimeObject*, const RuntimeMethod*))List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4_gshared)(__this, ___item0, method);
+}
+// System.Void System.Collections.Generic.List`1<Unity.Notifications.iOS.iOSNotificationAttachment>::AddWithResize(T)
+inline void List_1_AddWithResize_m7EE54C381A95D31D447DDC6350E39CE5C247A3A3 (List_1_tC74F654247ABF5958BE119A0484FED155A4FA129* __this, iOSNotificationAttachment_t9EB7149B6AD8B739CD96042CCE0C5F4D2DC29933 ___item0, const RuntimeMethod* method)
+{
+	((  void (*) (List_1_tC74F654247ABF5958BE119A0484FED155A4FA129*, iOSNotificationAttachment_t9EB7149B6AD8B739CD96042CCE0C5F4D2DC29933, const RuntimeMethod*))List_1_AddWithResize_m7EE54C381A95D31D447DDC6350E39CE5C247A3A3_gshared)(__this, ___item0, method);
+}
 IL2CPP_EXTERN_C void DEFAULT_CALL _RequestAuthorization(intptr_t, int32_t, int32_t);
 IL2CPP_EXTERN_C void DEFAULT_CALL _ScheduleLocalNotification(iOSNotificationData_t57D24EBD788D6C71F203ACE14688358AFA08BDED_marshaled_pinvoke);
 IL2CPP_EXTERN_C void DEFAULT_CALL _SetNotificationReceivedDelegate(Il2CppMethodPointer);
@@ -6781,14 +6719,6 @@ void NotificationReceivedCallback_Invoke_m3B1BDE2C1BB4A179891B70D1E0B3D22CCD1F1B
 	typedef void (*FunctionPointerType) (iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___notification0, method);
 }
-void NotificationReceivedCallback_Invoke_m3B1BDE2C1BB4A179891B70D1E0B3D22CCD1F1B36_OpenStaticInvoker(NotificationReceivedCallback_t4F2B50B8353419C0464767673653A46F08E4F0A1* __this, iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* ___notification0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker1< iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* >::Invoke(__this->___method_ptr_0, method, NULL, ___notification0);
-}
-void NotificationReceivedCallback_Invoke_m3B1BDE2C1BB4A179891B70D1E0B3D22CCD1F1B36_ClosedStaticInvoker(NotificationReceivedCallback_t4F2B50B8353419C0464767673653A46F08E4F0A1* __this, iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* ___notification0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< RuntimeObject*, iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___notification0);
-}
 void NotificationReceivedCallback_Invoke_m3B1BDE2C1BB4A179891B70D1E0B3D22CCD1F1B36_OpenVirtual(NotificationReceivedCallback_t4F2B50B8353419C0464767673653A46F08E4F0A1* __this, iOSNotification_t9191FC8C8CEEDE5C6B16D90A1CA0B85293C3B327* ___notification0, const RuntimeMethod* method)
 {
 	NullCheck(___notification0);
@@ -6812,7 +6742,7 @@ void NotificationReceivedCallback_Invoke_m3B1BDE2C1BB4A179891B70D1E0B3D22CCD1F1B
 // System.Void Unity.Notifications.iOS.iOSNotificationCenter/NotificationReceivedCallback::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationReceivedCallback__ctor_mF2B904C1330647023D5E7ECE08EDA8266BE8F55E (NotificationReceivedCallback_t4F2B50B8353419C0464767673653A46F08E4F0A1* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -6821,19 +6751,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationReceivedCallback__ctor_mF2B9
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 1;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&NotificationReceivedCallback_Invoke_m3B1BDE2C1BB4A179891B70D1E0B3D22CCD1F1B36_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&NotificationReceivedCallback_Invoke_m3B1BDE2C1BB4A179891B70D1E0B3D22CCD1F1B36_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&NotificationReceivedCallback_Invoke_m3B1BDE2C1BB4A179891B70D1E0B3D22CCD1F1B36_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&NotificationReceivedCallback_Invoke_m3B1BDE2C1BB4A179891B70D1E0B3D22CCD1F1B36_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -6915,14 +6839,6 @@ void AuthorizationRequestCompletedCallback_Invoke_mBAE506F83076A08A5E17F4DAE69B7
 	typedef void (*FunctionPointerType) (iOSAuthorizationRequestData_t216987B5D9A6729184F783B5F68AE9124B9321AC, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___data0, method);
 }
-void AuthorizationRequestCompletedCallback_Invoke_mBAE506F83076A08A5E17F4DAE69B7F7818547FB0_OpenStaticInvoker(AuthorizationRequestCompletedCallback_tDB72B9CE75D4D14CC5B9D18BF170ED0925BBBAF0* __this, iOSAuthorizationRequestData_t216987B5D9A6729184F783B5F68AE9124B9321AC ___data0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker1< iOSAuthorizationRequestData_t216987B5D9A6729184F783B5F68AE9124B9321AC >::Invoke(__this->___method_ptr_0, method, NULL, ___data0);
-}
-void AuthorizationRequestCompletedCallback_Invoke_mBAE506F83076A08A5E17F4DAE69B7F7818547FB0_ClosedStaticInvoker(AuthorizationRequestCompletedCallback_tDB72B9CE75D4D14CC5B9D18BF170ED0925BBBAF0* __this, iOSAuthorizationRequestData_t216987B5D9A6729184F783B5F68AE9124B9321AC ___data0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< RuntimeObject*, iOSAuthorizationRequestData_t216987B5D9A6729184F783B5F68AE9124B9321AC >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___data0);
-}
 IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_AuthorizationRequestCompletedCallback_tDB72B9CE75D4D14CC5B9D18BF170ED0925BBBAF0 (AuthorizationRequestCompletedCallback_tDB72B9CE75D4D14CC5B9D18BF170ED0925BBBAF0* __this, iOSAuthorizationRequestData_t216987B5D9A6729184F783B5F68AE9124B9321AC ___data0, const RuntimeMethod* method)
 {
 
@@ -6943,7 +6859,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_AuthorizationRequestCompletedCallba
 // System.Void Unity.Notifications.iOS.iOSNotificationCenter/AuthorizationRequestCompletedCallback::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequestCompletedCallback__ctor_mB21FEDE67BB8EDD8633799508079A0E001006C73 (AuthorizationRequestCompletedCallback_tDB72B9CE75D4D14CC5B9D18BF170ED0925BBBAF0* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -6952,19 +6868,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequestCompletedCallback__c
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 1;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&AuthorizationRequestCompletedCallback_Invoke_mBAE506F83076A08A5E17F4DAE69B7F7818547FB0_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&AuthorizationRequestCompletedCallback_Invoke_mBAE506F83076A08A5E17F4DAE69B7F7818547FB0_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&AuthorizationRequestCompletedCallback_Invoke_mBAE506F83076A08A5E17F4DAE69B7F7818547FB0_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&AuthorizationRequestCompletedCallback_Invoke_mBAE506F83076A08A5E17F4DAE69B7F7818547FB0_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -9410,14 +9320,6 @@ void AuthorizationRequestCallback_Invoke_m0BC99D8AACE6EEB72168EFFD58C14DF549BC8C
 	typedef void (*FunctionPointerType) (intptr_t, iOSAuthorizationRequestData_t216987B5D9A6729184F783B5F68AE9124B9321AC, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___request0, ___data1, method);
 }
-void AuthorizationRequestCallback_Invoke_m0BC99D8AACE6EEB72168EFFD58C14DF549BC8CA6_OpenStaticInvoker(AuthorizationRequestCallback_tA51CE2A78EDCE2D7440BBB2611695CC7DAD959CD* __this, intptr_t ___request0, iOSAuthorizationRequestData_t216987B5D9A6729184F783B5F68AE9124B9321AC ___data1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< intptr_t, iOSAuthorizationRequestData_t216987B5D9A6729184F783B5F68AE9124B9321AC >::Invoke(__this->___method_ptr_0, method, NULL, ___request0, ___data1);
-}
-void AuthorizationRequestCallback_Invoke_m0BC99D8AACE6EEB72168EFFD58C14DF549BC8CA6_ClosedStaticInvoker(AuthorizationRequestCallback_tA51CE2A78EDCE2D7440BBB2611695CC7DAD959CD* __this, intptr_t ___request0, iOSAuthorizationRequestData_t216987B5D9A6729184F783B5F68AE9124B9321AC ___data1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker3< RuntimeObject*, intptr_t, iOSAuthorizationRequestData_t216987B5D9A6729184F783B5F68AE9124B9321AC >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___request0, ___data1);
-}
 IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_AuthorizationRequestCallback_tA51CE2A78EDCE2D7440BBB2611695CC7DAD959CD (AuthorizationRequestCallback_tA51CE2A78EDCE2D7440BBB2611695CC7DAD959CD* __this, intptr_t ___request0, iOSAuthorizationRequestData_t216987B5D9A6729184F783B5F68AE9124B9321AC ___data1, const RuntimeMethod* method)
 {
 
@@ -9438,7 +9340,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_AuthorizationRequestCallback_tA51CE
 // System.Void Unity.Notifications.iOS.iOSNotificationsWrapper/AuthorizationRequestCallback::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequestCallback__ctor_mE709FAE919D090ACC25038070BD2145F520DA0FE (AuthorizationRequestCallback_tA51CE2A78EDCE2D7440BBB2611695CC7DAD959CD* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -9447,19 +9349,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequestCallback__ctor_mE709
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 2;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&AuthorizationRequestCallback_Invoke_m0BC99D8AACE6EEB72168EFFD58C14DF549BC8CA6_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&AuthorizationRequestCallback_Invoke_m0BC99D8AACE6EEB72168EFFD58C14DF549BC8CA6_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&AuthorizationRequestCallback_Invoke_m0BC99D8AACE6EEB72168EFFD58C14DF549BC8CA6_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&AuthorizationRequestCallback_Invoke_m0BC99D8AACE6EEB72168EFFD58C14DF549BC8CA6_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -9525,14 +9421,6 @@ void NotificationReceivedCallback_Invoke_mD7BEEA306BE8224ACA9E4B9C6670E35FA4F24C
 	typedef void (*FunctionPointerType) (iOSNotificationData_t57D24EBD788D6C71F203ACE14688358AFA08BDED, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___notificationData0, method);
 }
-void NotificationReceivedCallback_Invoke_mD7BEEA306BE8224ACA9E4B9C6670E35FA4F24CEF_OpenStaticInvoker(NotificationReceivedCallback_t7455AC9C9452A69E691AD6D87AFBF9CFA055AFC2* __this, iOSNotificationData_t57D24EBD788D6C71F203ACE14688358AFA08BDED ___notificationData0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker1< iOSNotificationData_t57D24EBD788D6C71F203ACE14688358AFA08BDED >::Invoke(__this->___method_ptr_0, method, NULL, ___notificationData0);
-}
-void NotificationReceivedCallback_Invoke_mD7BEEA306BE8224ACA9E4B9C6670E35FA4F24CEF_ClosedStaticInvoker(NotificationReceivedCallback_t7455AC9C9452A69E691AD6D87AFBF9CFA055AFC2* __this, iOSNotificationData_t57D24EBD788D6C71F203ACE14688358AFA08BDED ___notificationData0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< RuntimeObject*, iOSNotificationData_t57D24EBD788D6C71F203ACE14688358AFA08BDED >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___notificationData0);
-}
 IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_NotificationReceivedCallback_t7455AC9C9452A69E691AD6D87AFBF9CFA055AFC2 (NotificationReceivedCallback_t7455AC9C9452A69E691AD6D87AFBF9CFA055AFC2* __this, iOSNotificationData_t57D24EBD788D6C71F203ACE14688358AFA08BDED ___notificationData0, const RuntimeMethod* method)
 {
 
@@ -9553,7 +9441,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_NotificationReceivedCallback_t7455A
 // System.Void Unity.Notifications.iOS.iOSNotificationsWrapper/NotificationReceivedCallback::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationReceivedCallback__ctor_m3448352ED953E95C4E5BAAE13D4C576B7161B772 (NotificationReceivedCallback_t7455AC9C9452A69E691AD6D87AFBF9CFA055AFC2* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -9562,19 +9450,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationReceivedCallback__ctor_m3448
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 1;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&NotificationReceivedCallback_Invoke_mD7BEEA306BE8224ACA9E4B9C6670E35FA4F24CEF_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&NotificationReceivedCallback_Invoke_mD7BEEA306BE8224ACA9E4B9C6670E35FA4F24CEF_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&NotificationReceivedCallback_Invoke_mD7BEEA306BE8224ACA9E4B9C6670E35FA4F24CEF_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&NotificationReceivedCallback_Invoke_mD7BEEA306BE8224ACA9E4B9C6670E35FA4F24CEF_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -9638,14 +9520,6 @@ void ReceiveNSDictionaryKeyValueCallback_Invoke_m97AC6546983BD91A90D6DE0D6FD4AE9
 	typedef void (*FunctionPointerType) (intptr_t, String_t*, String_t*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___dict0, ___key1, ___value2, method);
 }
-void ReceiveNSDictionaryKeyValueCallback_Invoke_m97AC6546983BD91A90D6DE0D6FD4AE9407FA4F5C_OpenStaticInvoker(ReceiveNSDictionaryKeyValueCallback_tA8DB9C3C323EB0E5C364BDBD4D5EA233BA1863E4* __this, intptr_t ___dict0, String_t* ___key1, String_t* ___value2, const RuntimeMethod* method)
-{
-	InvokerActionInvoker3< intptr_t, String_t*, String_t* >::Invoke(__this->___method_ptr_0, method, NULL, ___dict0, ___key1, ___value2);
-}
-void ReceiveNSDictionaryKeyValueCallback_Invoke_m97AC6546983BD91A90D6DE0D6FD4AE9407FA4F5C_ClosedStaticInvoker(ReceiveNSDictionaryKeyValueCallback_tA8DB9C3C323EB0E5C364BDBD4D5EA233BA1863E4* __this, intptr_t ___dict0, String_t* ___key1, String_t* ___value2, const RuntimeMethod* method)
-{
-	InvokerActionInvoker4< RuntimeObject*, intptr_t, String_t*, String_t* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___dict0, ___key1, ___value2);
-}
 IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_ReceiveNSDictionaryKeyValueCallback_tA8DB9C3C323EB0E5C364BDBD4D5EA233BA1863E4 (ReceiveNSDictionaryKeyValueCallback_tA8DB9C3C323EB0E5C364BDBD4D5EA233BA1863E4* __this, intptr_t ___dict0, String_t* ___key1, String_t* ___value2, const RuntimeMethod* method)
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc)(intptr_t, char*, char*);
@@ -9673,7 +9547,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_ReceiveNSDictionaryKeyValueCallback
 // System.Void Unity.Notifications.iOS.iOSNotificationsWrapper/ReceiveNSDictionaryKeyValueCallback::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReceiveNSDictionaryKeyValueCallback__ctor_m7E31544BB059836C992783780D71576AA277A22D (ReceiveNSDictionaryKeyValueCallback_tA8DB9C3C323EB0E5C364BDBD4D5EA233BA1863E4* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -9682,19 +9556,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReceiveNSDictionaryKeyValueCallback__cto
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 3;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&ReceiveNSDictionaryKeyValueCallback_Invoke_m97AC6546983BD91A90D6DE0D6FD4AE9407FA4F5C_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&ReceiveNSDictionaryKeyValueCallback_Invoke_m97AC6546983BD91A90D6DE0D6FD4AE9407FA4F5C_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&ReceiveNSDictionaryKeyValueCallback_Invoke_m97AC6546983BD91A90D6DE0D6FD4AE9407FA4F5C_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&ReceiveNSDictionaryKeyValueCallback_Invoke_m97AC6546983BD91A90D6DE0D6FD4AE9407FA4F5C_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -9760,14 +9628,6 @@ void ReceiveUNNotificationAttachmentCallback_Invoke_mBABC4148DE22971FCC40FD0EA31
 	typedef void (*FunctionPointerType) (intptr_t, String_t*, String_t*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___array0, ___id1, ___url2, method);
 }
-void ReceiveUNNotificationAttachmentCallback_Invoke_mBABC4148DE22971FCC40FD0EA31047212BA329E2_OpenStaticInvoker(ReceiveUNNotificationAttachmentCallback_t83B0A933BF29517D6BB5FA8A81B837112C902D3E* __this, intptr_t ___array0, String_t* ___id1, String_t* ___url2, const RuntimeMethod* method)
-{
-	InvokerActionInvoker3< intptr_t, String_t*, String_t* >::Invoke(__this->___method_ptr_0, method, NULL, ___array0, ___id1, ___url2);
-}
-void ReceiveUNNotificationAttachmentCallback_Invoke_mBABC4148DE22971FCC40FD0EA31047212BA329E2_ClosedStaticInvoker(ReceiveUNNotificationAttachmentCallback_t83B0A933BF29517D6BB5FA8A81B837112C902D3E* __this, intptr_t ___array0, String_t* ___id1, String_t* ___url2, const RuntimeMethod* method)
-{
-	InvokerActionInvoker4< RuntimeObject*, intptr_t, String_t*, String_t* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___array0, ___id1, ___url2);
-}
 IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_ReceiveUNNotificationAttachmentCallback_t83B0A933BF29517D6BB5FA8A81B837112C902D3E (ReceiveUNNotificationAttachmentCallback_t83B0A933BF29517D6BB5FA8A81B837112C902D3E* __this, intptr_t ___array0, String_t* ___id1, String_t* ___url2, const RuntimeMethod* method)
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc)(intptr_t, char*, char*);
@@ -9795,7 +9655,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_ReceiveUNNotificationAttachmentCall
 // System.Void Unity.Notifications.iOS.iOSNotificationsWrapper/ReceiveUNNotificationAttachmentCallback::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReceiveUNNotificationAttachmentCallback__ctor_m205C4D08A16088C9897995C35D865C64EDC016FC (ReceiveUNNotificationAttachmentCallback_t83B0A933BF29517D6BB5FA8A81B837112C902D3E* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -9804,19 +9664,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReceiveUNNotificationAttachmentCallback_
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 3;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&ReceiveUNNotificationAttachmentCallback_Invoke_mBABC4148DE22971FCC40FD0EA31047212BA329E2_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&ReceiveUNNotificationAttachmentCallback_Invoke_mBABC4148DE22971FCC40FD0EA31047212BA329E2_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&ReceiveUNNotificationAttachmentCallback_Invoke_mBABC4148DE22971FCC40FD0EA31047212BA329E2_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&ReceiveUNNotificationAttachmentCallback_Invoke_mBABC4148DE22971FCC40FD0EA31047212BA329E2_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -11900,7 +11754,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mEBCF994CC3814631
 IL_0034:
 	{
 		RuntimeObject* L_9 = ___item0;
-		((  void (*) (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D*, RuntimeObject*, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 11)))(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 11));
+		List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 14));
 		return;
 	}
 }
@@ -11944,7 +11798,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_m5AA65AE0FA98A54B
 IL_0034:
 	{
 		iOSNotificationAttachment_t9EB7149B6AD8B739CD96042CCE0C5F4D2DC29933 L_9 = ___item0;
-		((  void (*) (List_1_tC74F654247ABF5958BE119A0484FED155A4FA129*, iOSNotificationAttachment_t9EB7149B6AD8B739CD96042CCE0C5F4D2DC29933, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 11)))(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 11));
+		List_1_AddWithResize_m7EE54C381A95D31D447DDC6350E39CE5C247A3A3(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 14));
 		return;
 	}
 }

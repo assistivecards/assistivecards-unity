@@ -246,6 +246,10 @@ DeviceTableEntry DeviceTable[] =
     { iPhone, 14, 2, 2, deviceiPhone13Pro },
     { iPhone, 14, 3, 3, deviceiPhone13ProMax },
     { iPhone, 14, 6, 6, deviceiPhoneSE3Gen },
+    { iPhone, 14, 7, 7, deviceiPhone14 },
+    { iPhone, 14, 8, 8, deviceiPhone14Plus },
+    { iPhone, 15, 2, 2, deviceiPhone14Pro },
+    { iPhone, 15, 3, 3, deviceiPhone14ProMax },
 
     { iPod, 4, 1, 1, deviceiPodTouch4Gen },
     { iPod, 5, 1, 1, deviceiPodTouch5Gen },
@@ -437,11 +441,15 @@ extern "C" float UnityDeviceDPI()
             case deviceiPhone11ProMax:
             case deviceiPhone12ProMax:
             case deviceiPhone13ProMax:
+            case deviceiPhone14Plus:
                 _DeviceDPI = 458.0f; break;
             case deviceiPhone12:
             case deviceiPhone12Pro:
             case deviceiPhone13:
             case deviceiPhone13Pro:
+            case deviceiPhone14:
+            case deviceiPhone14Pro:
+            case deviceiPhone14ProMax:
                 _DeviceDPI = 460.0f; break;
             case deviceiPhone12Mini:
             case deviceiPhone13Mini:

@@ -196,28 +196,6 @@ struct GenericInterfaceActionInvoker0
 		((Action)invokeData.methodPtr)(obj, invokeData.method);
 	}
 };
-template <typename T1>
-struct InvokerActionInvoker1;
-template <typename T1>
-struct InvokerActionInvoker1<T1*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1)
-	{
-		void* params[1] = { p1 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2>
-struct InvokerActionInvoker2;
-template <typename T1, typename T2>
-struct InvokerActionInvoker2<T1*, T2*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2)
-	{
-		void* params[2] = { p1, p2 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
 
 // System.Runtime.CompilerServices.ConditionalWeakTable`2<System.Object,System.Runtime.Serialization.SerializationInfo>
 struct ConditionalWeakTable_2_t381B9D0186C0FCC3F83C0696C28C5001468A7858;
@@ -11063,14 +11041,6 @@ void CachingEventHandler_Invoke_mE544A7147BAE33B6F1A434723ACF2C561F3CB02F_OpenSt
 	typedef void (*FunctionPointerType) (XsdCachingReader_t367D521918E08F0DCF8275E20CE35BAEDE54DC43*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___cachingReader0, method);
 }
-void CachingEventHandler_Invoke_mE544A7147BAE33B6F1A434723ACF2C561F3CB02F_OpenStaticInvoker(CachingEventHandler_t3531836C36E56CCAAB45B3B7DA1B4F94742FE74E* __this, XsdCachingReader_t367D521918E08F0DCF8275E20CE35BAEDE54DC43* ___cachingReader0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker1< XsdCachingReader_t367D521918E08F0DCF8275E20CE35BAEDE54DC43* >::Invoke(__this->___method_ptr_0, method, NULL, ___cachingReader0);
-}
-void CachingEventHandler_Invoke_mE544A7147BAE33B6F1A434723ACF2C561F3CB02F_ClosedStaticInvoker(CachingEventHandler_t3531836C36E56CCAAB45B3B7DA1B4F94742FE74E* __this, XsdCachingReader_t367D521918E08F0DCF8275E20CE35BAEDE54DC43* ___cachingReader0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< RuntimeObject*, XsdCachingReader_t367D521918E08F0DCF8275E20CE35BAEDE54DC43* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___cachingReader0);
-}
 void CachingEventHandler_Invoke_mE544A7147BAE33B6F1A434723ACF2C561F3CB02F_OpenVirtual(CachingEventHandler_t3531836C36E56CCAAB45B3B7DA1B4F94742FE74E* __this, XsdCachingReader_t367D521918E08F0DCF8275E20CE35BAEDE54DC43* ___cachingReader0, const RuntimeMethod* method)
 {
 	NullCheck(___cachingReader0);
@@ -11094,7 +11064,7 @@ void CachingEventHandler_Invoke_mE544A7147BAE33B6F1A434723ACF2C561F3CB02F_OpenGe
 // System.Void System.Xml.CachingEventHandler::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CachingEventHandler__ctor_mE381B83D69016CB82FEEBF79B9D911695986C7E5 (CachingEventHandler_t3531836C36E56CCAAB45B3B7DA1B4F94742FE74E* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -11103,19 +11073,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CachingEventHandler__ctor_mE381B83D69016
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 1;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&CachingEventHandler_Invoke_mE544A7147BAE33B6F1A434723ACF2C561F3CB02F_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&CachingEventHandler_Invoke_mE544A7147BAE33B6F1A434723ACF2C561F3CB02F_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&CachingEventHandler_Invoke_mE544A7147BAE33B6F1A434723ACF2C561F3CB02F_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&CachingEventHandler_Invoke_mE544A7147BAE33B6F1A434723ACF2C561F3CB02F_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{

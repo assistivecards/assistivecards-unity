@@ -4689,7 +4689,6 @@ struct XmlTypeMapMemberList_t5542A0234B55CC3AD3EDD7B830E7C4603FAAD63E  : public 
 };
 
 // System.Xml.Schema.XmlAtomicValue/Union
-#pragma pack(push, tp, 1)
 struct Union_tB0D56D753DC8A0B45FCAF1229929BAA3E2B9293B 
 {
 	union
@@ -4758,7 +4757,6 @@ struct Union_tB0D56D753DC8A0B45FCAF1229929BAA3E2B9293B
 		uint8_t Union_tB0D56D753DC8A0B45FCAF1229929BAA3E2B9293B__padding[8];
 	};
 };
-#pragma pack(pop, tp)
 // Native definition for P/Invoke marshalling of System.Xml.Schema.XmlAtomicValue/Union
 struct Union_tB0D56D753DC8A0B45FCAF1229929BAA3E2B9293B_marshaled_pinvoke
 {
@@ -5909,6 +5907,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Stack_1_Push_m1F1DE2602AD1D8309204F57399
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Stack_1_get_Count_mAEA12C0679B6626D272B776DF990861FBB7A8874_gshared_inline (Stack_1_t26AC719A2FAC6B6D9396AC26A3A1BD4EDDDBD3DD* __this, const RuntimeMethod* method) ;
 // T System.Collections.Generic.Stack`1<System.Xml.Schema.SequenceNode/SequenceConstructPosContext>::Pop()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SequenceConstructPosContext_tDEC4FB1B8F19EFD1AC27C150D561C2D4F6090BA7 Stack_1_Pop_mE49743F5FC3ED9D600D2FD3FFC87D38993622CD2_gshared (Stack_1_t26AC719A2FAC6B6D9396AC26A3A1BD4EDDDBD3DD* __this, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<System.Object>::AddWithResize(T)
+IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method) ;
 
 // System.Void System.Object::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2 (RuntimeObject* __this, const RuntimeMethod* method) ;
@@ -7010,6 +7010,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t SymbolsDictionary_get_Item_mC779E5731
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* SymbolsDictionary_NameOf_m8D7C0AA8C1F8A2830325381A6214CAEA19A125EC (SymbolsDictionary_t6294BD40672E01F1C87B524AE88C84A267C78CF3* __this, int32_t ___symbol0, const RuntimeMethod* method) ;
 // System.Void System.Xml.Schema.ContentValidator::AddParticleToExpected(System.Xml.Schema.XmlSchemaParticle,System.Xml.Schema.XmlSchemaSet,System.Collections.ArrayList)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ContentValidator_AddParticleToExpected_m955CCF1F229579CC2F1D7294705694C4408388F4 (XmlSchemaParticle_t9A7544A3F66C6E4B8900456CF705A6F9D95655EE* ___p0, XmlSchemaSet_t048A12CE7D00EF330EF32A388B69A240899F88D1* ___schemaSet1, ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* ___particles2, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<System.Object>::AddWithResize(T)
+inline void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4 (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method)
+{
+	((  void (*) (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D*, RuntimeObject*, const RuntimeMethod*))List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4_gshared)(__this, ___item0, method);
+}
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -33035,7 +33040,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mEBCF994CC3814631
 IL_0034:
 	{
 		RuntimeObject* L_9 = ___item0;
-		((  void (*) (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D*, RuntimeObject*, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 11)))(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 11));
+		List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 14));
 		return;
 	}
 }

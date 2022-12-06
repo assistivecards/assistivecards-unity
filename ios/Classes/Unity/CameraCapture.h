@@ -2,23 +2,11 @@
 
 #import <AVFoundation/AVFoundation.h>
 
-#if UNITY_HAS_IOSSDK_11_0
-    #define UNITY_HAS_COLORANDDEPTH_CAMERA 1
-#else
-    #define UNITY_HAS_COLORANDDEPTH_CAMERA 0
-#endif
-
-
-@interface CameraCaptureController : NSObject<AVCaptureVideoDataOutputSampleBufferDelegate
-#if UNITY_HAS_COLORANDDEPTH_CAMERA
-                                              , AVCaptureDataOutputSynchronizerDelegate
-#endif
->
+@interface CameraCaptureController : NSObject<AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureDataOutputSynchronizerDelegate>
 
 - (bool)initCapture:(AVCaptureDevice*)device;
 - (bool)initCapture:(AVCaptureDevice*)device preset:(NSString*)preset fps:(float)fps;
 - (void)setCaptureFPS:(float)fps;
-#if UNITY_HAS_COLORANDDEPTH_CAMERA
 - (bool)initColorAndDepthCameraCapture:(AVCaptureDevice*)device preset:(NSString*)preset fps:(float)fps isDepth:(bool)isDepth;
 - (void)initColorAndDepthCameraCaptureSession;
 - (void)clearColorAndDepthCameraCaptureSession;
@@ -30,8 +18,6 @@
 + (void)removeColorAndDepthCameraController:(CameraCaptureController*)controller;
 + (void)clearColorAndDepthCameraControllers;
 + (CameraCaptureController*)findColorAndDepthCameraController:(AVCaptureDevice*)device isDepth:(bool)isDepth;
-#endif
-
 - (void)capturePixelBufferToMemBuffer:(uint8_t*)dst;
 - (int)isCVTextureFlipped;
 + (BOOL)focusPointSupported:(AVCaptureDevice*)captureDevice withFocusMode:(AVCaptureFocusMode)focusMode;
@@ -46,10 +32,8 @@
 @property (nonatomic, retain) AVCaptureSession*         captureSession;
 @property (nonatomic, retain) AVCaptureDeviceInput*     captureInput;
 @property (nonatomic, retain) AVCaptureVideoDataOutput* captureOutput;
-#if UNITY_HAS_COLORANDDEPTH_CAMERA
 @property (nonatomic, retain) AVCaptureDepthDataOutput* captureDepthOutput;
 @property (nonatomic, retain) AVCaptureDataOutputSynchronizer*    captureSynchronizer;
-#endif
 
 - (float)pickAvailableFrameRate:(float)fps;
 

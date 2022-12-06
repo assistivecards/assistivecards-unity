@@ -4447,6 +4447,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Enumerator_Dispose_mB20C2695CECD9B61FB2C
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Item_t6F1CC18F5D2D724F93D8D137D9186F250E932914 Enumerator_get_Current_m0466060C29A3F679E2B56BD59C92F6E10E3F3FB0_gshared_inline (Enumerator_tA02A70D14B6F5C8130FB5099082397E70164DFD2* __this, const RuntimeMethod* method) ;
 // System.Boolean System.Collections.Generic.List`1/Enumerator<Unity.Services.Analytics.Item>::MoveNext()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Enumerator_MoveNext_mF2FF7F3D1F6FF1AB511CE14EB51816E13E5161D3_gshared (Enumerator_tA02A70D14B6F5C8130FB5099082397E70164DFD2* __this, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<System.Object>::AddWithResize(T)
+IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<Unity.Services.Analytics.Internal.Buffer/Token>::AddWithResize(T)
+IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void List_1_AddWithResize_m3576786C80AFA429755586CED5E6F03911007CAD_gshared (List_1_t378617EAF7470E0C692EDDE5B791E2F9489955B2* __this, Token_t56680C8EE3E0DFEC87998AD3565311971EBA2235 ___item0, const RuntimeMethod* method) ;
 
 // Unity.Services.Core.Internal.CoreRegistry Unity.Services.Core.Internal.CoreRegistry::get_Instance()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR CoreRegistry_t7B61538793CE940CE3A391364C163F1078C9F2BA* CoreRegistry_get_Instance_m73A64BD3CB78EF5AC698D1635B5872CEB9F9AFE2_inline (const RuntimeMethod* method) ;
@@ -5082,6 +5086,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object_Destroy_mE97D0A766419A81296E8D4E5
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RequestFailedException__ctor_m5F2BC9B778764EF58CA947E789CAEEAD27341C7A (RequestFailedException_tBF4D4AF8AD31BEE32091AEBC120B629B052E2D00* __this, int32_t ___errorCode0, String_t* ___message1, Exception_t* ___innerException2, const RuntimeMethod* method) ;
 // System.Void Unity.Services.Analytics.ConsentCheckException::set_Reason(Unity.Services.Analytics.ConsentCheckExceptionReason)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void ConsentCheckException_set_Reason_mB9551C34C6B6C76DAAD9DF12EFF1B0E385CEE968_inline (ConsentCheckException_t96E7054ECB013548EA92EEFFFACAB143D5A86B7D* __this, int32_t ___value0, const RuntimeMethod* method) ;
+// System.Void UnityEngine.Analytics.UGSAnalyticsInternalTools::SetPrivacyStatus(System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UGSAnalyticsInternalTools_SetPrivacyStatus_mF4F04D971EBA3A54A9AD22DC4E8D95711334516A (bool ___status0, const RuntimeMethod* method) ;
 // System.String Unity.Services.Analytics.Internal.Locale::unity_services_current_language_code()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Locale_unity_services_current_language_code_mD2D021F537C8BA5DF7003057B8BE0A83F311875A (const RuntimeMethod* method) ;
 // System.String Unity.Services.Analytics.Internal.Locale::CurrentLanguageCode()
@@ -5814,8 +5820,18 @@ inline bool Enumerator_MoveNext_mF2FF7F3D1F6FF1AB511CE14EB51816E13E5161D3 (Enume
 {
 	return ((  bool (*) (Enumerator_tA02A70D14B6F5C8130FB5099082397E70164DFD2*, const RuntimeMethod*))Enumerator_MoveNext_mF2FF7F3D1F6FF1AB511CE14EB51816E13E5161D3_gshared)(__this, method);
 }
+// System.Void System.Collections.Generic.List`1<System.Object>::AddWithResize(T)
+inline void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4 (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method)
+{
+	((  void (*) (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D*, RuntimeObject*, const RuntimeMethod*))List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4_gshared)(__this, ___item0, method);
+}
 // System.Void System.Array::Clear(System.Array,System.Int32,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_Clear_m50BAA3751899858B097D3FF2ED31F284703FE5CB (RuntimeArray* ___array0, int32_t ___index1, int32_t ___length2, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<Unity.Services.Analytics.Internal.Buffer/Token>::AddWithResize(T)
+inline void List_1_AddWithResize_m3576786C80AFA429755586CED5E6F03911007CAD (List_1_t378617EAF7470E0C692EDDE5B791E2F9489955B2* __this, Token_t56680C8EE3E0DFEC87998AD3565311971EBA2235 ___item0, const RuntimeMethod* method)
+{
+	((  void (*) (List_1_t378617EAF7470E0C692EDDE5B791E2F9489955B2*, Token_t56680C8EE3E0DFEC87998AD3565311971EBA2235, const RuntimeMethod*))List_1_AddWithResize_m3576786C80AFA429755586CED5E6F03911007CAD_gshared)(__this, ___item0, method);
+}
 IL2CPP_EXTERN_C char* DEFAULT_CALL unity_services_current_language_code();
 IL2CPP_EXTERN_C float DEFAULT_CALL unity_services_analytics_get_device_volume();
 #ifdef __clang__
@@ -12165,6 +12181,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConsentCheckException__ctor_m0F6DC7108E1
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CoreStatsHelper_SetCoreStatsConsent_mF5D6EDE2380AF3DA289C217CD505940D76D9877E (CoreStatsHelper_tBF3F119096A7ABBDDC9F22ACBF13FA25FCD166E6* __this, bool ___userProvidedConsent0, const RuntimeMethod* method) 
 {
 	{
+		// UnityEngine.Analytics.UGSAnalyticsInternalTools.SetPrivacyStatus(userProvidedConsent);
+		bool L_0 = ___userProvidedConsent0;
+		UGSAnalyticsInternalTools_SetPrivacyStatus_mF4F04D971EBA3A54A9AD22DC4E8D95711334516A(L_0, NULL);
 		// }
 		return;
 	}
@@ -23445,7 +23464,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mEBCF994CC3814631
 IL_0034:
 	{
 		RuntimeObject* L_9 = ___item0;
-		((  void (*) (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D*, RuntimeObject*, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 11)))(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 11));
+		List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 14));
 		return;
 	}
 }
@@ -23555,7 +23574,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mBAC62E3B9DBB7C3B
 IL_0034:
 	{
 		Token_t56680C8EE3E0DFEC87998AD3565311971EBA2235 L_9 = ___item0;
-		((  void (*) (List_1_t378617EAF7470E0C692EDDE5B791E2F9489955B2*, Token_t56680C8EE3E0DFEC87998AD3565311971EBA2235, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 11)))(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 11));
+		List_1_AddWithResize_m3576786C80AFA429755586CED5E6F03911007CAD(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 14));
 		return;
 	}
 }

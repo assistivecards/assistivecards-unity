@@ -26,11 +26,15 @@ extern bool _unityAppReady;
 //      pretty much like startup situation UIViewController would have correct orientation, and app will be out-of-sync
 - (void)updateAppOrientation:(UIInterfaceOrientation)orientation
 {
+    // update our (AppContoller) view of orientation
     _curOrientation = orientation;
-    [_unityView boundsUpdated];
 
+    // do unity view "orientation magic"
     [_unityView willRotateToOrientation: orientation fromOrientation: (UIInterfaceOrientation)UIInterfaceOrientationUnknown];
     [_unityView didRotate];
+
+    // after we have updated unity view, this will poke unity itself about the changes in orient/extents
+    [_unityView boundsUpdated];
 }
 
 #endif

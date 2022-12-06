@@ -2362,7 +2362,6 @@ struct XmlNodeConverter_t2BBBEC7EB7BD0E68DE693AE4A21B507B62EAFDBF_StaticFields
 };
 
 // <PrivateImplementationDetails>/__StaticArrayInitTypeSize=10
-#pragma pack(push, tp, 1)
 struct __StaticArrayInitTypeSizeU3D10_t2D94270D7B052DF2B0E1709CF65BBFB0CC814D8F 
 {
 	union
@@ -2376,10 +2375,8 @@ struct __StaticArrayInitTypeSizeU3D10_t2D94270D7B052DF2B0E1709CF65BBFB0CC814D8F
 		uint8_t __StaticArrayInitTypeSizeU3D10_t2D94270D7B052DF2B0E1709CF65BBFB0CC814D8F__padding[10];
 	};
 };
-#pragma pack(pop, tp)
 
 // <PrivateImplementationDetails>/__StaticArrayInitTypeSize=16
-#pragma pack(push, tp, 1)
 struct __StaticArrayInitTypeSizeU3D16_tFD46B3DD967382E5D96BE5CA4345732DEEED51D2 
 {
 	union
@@ -2393,10 +2390,8 @@ struct __StaticArrayInitTypeSizeU3D16_tFD46B3DD967382E5D96BE5CA4345732DEEED51D2
 		uint8_t __StaticArrayInitTypeSizeU3D16_tFD46B3DD967382E5D96BE5CA4345732DEEED51D2__padding[16];
 	};
 };
-#pragma pack(pop, tp)
 
 // <PrivateImplementationDetails>/__StaticArrayInitTypeSize=20
-#pragma pack(push, tp, 1)
 struct __StaticArrayInitTypeSizeU3D20_tC16C381DF0B3CA4BD93AC8CDA35C4B380DD187A1 
 {
 	union
@@ -2410,10 +2405,8 @@ struct __StaticArrayInitTypeSizeU3D20_tC16C381DF0B3CA4BD93AC8CDA35C4B380DD187A1
 		uint8_t __StaticArrayInitTypeSizeU3D20_tC16C381DF0B3CA4BD93AC8CDA35C4B380DD187A1__padding[20];
 	};
 };
-#pragma pack(pop, tp)
 
 // <PrivateImplementationDetails>/__StaticArrayInitTypeSize=24
-#pragma pack(push, tp, 1)
 struct __StaticArrayInitTypeSizeU3D24_tF0225D9C6172DF007FE90AF8D9E4655390CD88EC 
 {
 	union
@@ -2427,10 +2420,8 @@ struct __StaticArrayInitTypeSizeU3D24_tF0225D9C6172DF007FE90AF8D9E4655390CD88EC
 		uint8_t __StaticArrayInitTypeSizeU3D24_tF0225D9C6172DF007FE90AF8D9E4655390CD88EC__padding[24];
 	};
 };
-#pragma pack(pop, tp)
 
 // <PrivateImplementationDetails>/__StaticArrayInitTypeSize=28
-#pragma pack(push, tp, 1)
 struct __StaticArrayInitTypeSizeU3D28_t0100FD18FF65715BC25E2BF08EC7C3052FDE2A77 
 {
 	union
@@ -2444,10 +2435,8 @@ struct __StaticArrayInitTypeSizeU3D28_t0100FD18FF65715BC25E2BF08EC7C3052FDE2A77
 		uint8_t __StaticArrayInitTypeSizeU3D28_t0100FD18FF65715BC25E2BF08EC7C3052FDE2A77__padding[28];
 	};
 };
-#pragma pack(pop, tp)
 
 // <PrivateImplementationDetails>/__StaticArrayInitTypeSize=36
-#pragma pack(push, tp, 1)
 struct __StaticArrayInitTypeSizeU3D36_tEF121C551F98671BC9B6AB747FA4B5B71AC996A6 
 {
 	union
@@ -2461,10 +2450,8 @@ struct __StaticArrayInitTypeSizeU3D36_tEF121C551F98671BC9B6AB747FA4B5B71AC996A6
 		uint8_t __StaticArrayInitTypeSizeU3D36_tEF121C551F98671BC9B6AB747FA4B5B71AC996A6__padding[36];
 	};
 };
-#pragma pack(pop, tp)
 
 // <PrivateImplementationDetails>/__StaticArrayInitTypeSize=40
-#pragma pack(push, tp, 1)
 struct __StaticArrayInitTypeSizeU3D40_t1672A8AB2BC5BBFC71D184ED523D14D02EA62968 
 {
 	union
@@ -2478,10 +2465,8 @@ struct __StaticArrayInitTypeSizeU3D40_t1672A8AB2BC5BBFC71D184ED523D14D02EA62968
 		uint8_t __StaticArrayInitTypeSizeU3D40_t1672A8AB2BC5BBFC71D184ED523D14D02EA62968__padding[40];
 	};
 };
-#pragma pack(pop, tp)
 
 // <PrivateImplementationDetails>/__StaticArrayInitTypeSize=44
-#pragma pack(push, tp, 1)
 struct __StaticArrayInitTypeSizeU3D44_tA60F548D647725107E2BA182D24D0561B24FED62 
 {
 	union
@@ -2495,10 +2480,8 @@ struct __StaticArrayInitTypeSizeU3D44_tA60F548D647725107E2BA182D24D0561B24FED62
 		uint8_t __StaticArrayInitTypeSizeU3D44_tA60F548D647725107E2BA182D24D0561B24FED62__padding[44];
 	};
 };
-#pragma pack(pop, tp)
 
 // <PrivateImplementationDetails>/__StaticArrayInitTypeSize=52
-#pragma pack(push, tp, 1)
 struct __StaticArrayInitTypeSizeU3D52_tAB96EF88882201B83E07D300C007D1D396914920 
 {
 	union
@@ -2512,10 +2495,8 @@ struct __StaticArrayInitTypeSizeU3D52_tAB96EF88882201B83E07D300C007D1D396914920
 		uint8_t __StaticArrayInitTypeSizeU3D52_tAB96EF88882201B83E07D300C007D1D396914920__padding[52];
 	};
 };
-#pragma pack(pop, tp)
 
 // <PrivateImplementationDetails>/__StaticArrayInitTypeSize=6
-#pragma pack(push, tp, 1)
 struct __StaticArrayInitTypeSizeU3D6_tDB565845177A27186A10B7E9A656A02A889729EE 
 {
 	union
@@ -2529,7 +2510,6 @@ struct __StaticArrayInitTypeSizeU3D6_tDB565845177A27186A10B7E9A656A02A889729EE
 		uint8_t __StaticArrayInitTypeSizeU3D6_tDB565845177A27186A10B7E9A656A02A889729EE__padding[6];
 	};
 };
-#pragma pack(pop, tp)
 
 // System.Xml.XmlNamedNodeMap/SmallXmlNodeList
 struct SmallXmlNodeList_tAF536F4BFCA26BF1B0E912818E921A3181D49EF0 
@@ -3397,6 +3377,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Nullable_1_ToString_m5FDC0CBE068DB2
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Nullable_1_get_HasValue_mCF2FD8B3055FA87FC9C504F2122B3B0FAEDE3EC9_gshared_inline (Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28* __this, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<System.Object>::RemoveAt(System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1_RemoveAt_m54F62297ADEE4D4FDA697F49ED807BF901201B54_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, int32_t ___index0, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<System.Object>::AddWithResize(T)
+IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method) ;
 
 // System.Void Newtonsoft.Json.Converters.XmlNodeWrapper::.ctor(System.Xml.XmlNode)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlNodeWrapper__ctor_m73806A21D3A81678F6099B62E80F7B6549D56D17 (XmlNodeWrapper_tE399A7CC58A6C5CE54C6EFE0D075A7B88C71B991* __this, XmlNode_t3180B9B3D5C36CD58F5327D9F13458E3B3F030AF* ___node0, const RuntimeMethod* method) ;
@@ -4272,6 +4254,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Uri_op_Equality_mD7D7AAB7023C0873B37D8B8
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void JsonWriter_WriteValue_mBEB204C502C7E1547FC955BDBF558C0D616CD65A (JsonWriter_t1750495CE81BD2D7BF7335A8468E2F960CA3ABC3* __this, Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E* ___value0, const RuntimeMethod* method) ;
 // System.Void Newtonsoft.Json.Bson.BsonRegex::.ctor(System.String,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BsonRegex__ctor_mA823184E2E1262D62F38DC5D1ACC130B5B0EEE99 (BsonRegex_t34DECD5385DB6EE81029A06DFE3ECB3747D3C6E1* __this, String_t* ___pattern0, String_t* ___options1, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<System.Object>::AddWithResize(T)
+inline void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4 (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method)
+{
+	((  void (*) (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D*, RuntimeObject*, const RuntimeMethod*))List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4_gshared)(__this, ___item0, method);
+}
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -19530,7 +19517,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mEBCF994CC3814631
 IL_0034:
 	{
 		RuntimeObject* L_9 = ___item0;
-		((  void (*) (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D*, RuntimeObject*, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 11)))(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 11));
+		List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 14));
 		return;
 	}
 }

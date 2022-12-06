@@ -9,7 +9,6 @@
 @class UIView;
 @class UIViewController;
 @class UIEvent;
-@class UILocalNotification;
 @class NSString;
 @class NSDictionary;
 @class NSArray;
@@ -26,7 +25,6 @@ typedef struct objc_object UIWindow;
 typedef struct objc_object UIView;
 typedef struct objc_object UIViewController;
 typedef struct objc_object UIEvent;
-typedef struct objc_object UILocalNotification;
 typedef struct objc_object NSString;
 typedef struct objc_object NSDictionary;
 typedef struct objc_object NSArray;

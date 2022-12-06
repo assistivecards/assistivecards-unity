@@ -75,6 +75,42 @@
     return UnityGetHideHomeButton();
 }
 
+@end
+
+@implementation UnityDefaultViewController
+
+// these will be updated in one place where we "sync" UI side orientation handling to unity side
+NSUInteger _supportedOrientations;
+// this will be updated either in viewDidAppear: (when we "start" in a given orient) or in viewWillTransitionToSize: (when we change orient)
+ScreenOrientation _currentOrientation;
+
+- (id)init
+{
+    if ((self = [super init]))
+    {
+        NSAssert(UnityShouldAutorotate(), @"UnityDefaultViewController should be used only if unity is set to autorotate");
+        _supportedOrientations = EnabledAutorotationInterfaceOrientations();
+    }
+    return self;
+}
+
+- (void)updateSupportedOrientations
+{
+    _supportedOrientations = EnabledAutorotationInterfaceOrientations();
+}
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return _supportedOrientations;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    _currentOrientation = UIViewControllerOrientation(self);
+    [GetAppController() updateAppOrientation: ConvertToIosScreenOrientation(_currentOrientation)];
+    [super viewDidAppear: animated];
+}
+
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 {
     // CODE ARCHEOLOGY: we were using UIViewControllerOrientation, but on showing view with "Requires full screen"
@@ -104,33 +140,6 @@
         }];
     }
     [super viewWillTransitionToSize: size withTransitionCoordinator: coordinator];
-}
-
-@end
-
-@implementation UnityDefaultViewController
-
-// these will be updated in one place where we "sync" UI side orientation handling to unity side
-NSUInteger _supportedOrientations;
-
-- (id)init
-{
-    if ((self = [super init]))
-    {
-        NSAssert(UnityShouldAutorotate(), @"UnityDefaultViewController should be used only if unity is set to autorotate");
-        _supportedOrientations = EnabledAutorotationInterfaceOrientations();
-    }
-    return self;
-}
-
-- (void)updateSupportedOrientations
-{
-    _supportedOrientations = EnabledAutorotationInterfaceOrientations();
-}
-
-- (NSUInteger)supportedInterfaceOrientations
-{
-    return _supportedOrientations;
 }
 
 @end

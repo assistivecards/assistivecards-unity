@@ -220,39 +220,6 @@ struct GenericInterfaceActionInvoker1
 		((Action)invokeData.methodPtr)(obj, p1, invokeData.method);
 	}
 };
-template <typename T1>
-struct InvokerActionInvoker1;
-template <typename T1>
-struct InvokerActionInvoker1<T1*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1)
-	{
-		void* params[1] = { p1 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2>
-struct InvokerActionInvoker2;
-template <typename T1, typename T2>
-struct InvokerActionInvoker2<T1*, T2*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2)
-	{
-		void* params[2] = { p1, p2 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2, typename T3>
-struct InvokerActionInvoker3;
-template <typename T1, typename T2, typename T3>
-struct InvokerActionInvoker3<T1*, T2*, T3*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3* p3)
-	{
-		void* params[3] = { p1, p2, p3 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
 
 // System.Runtime.CompilerServices.ConditionalWeakTable`2<System.Object,System.Runtime.Serialization.SerializationInfo>
 struct ConditionalWeakTable_2_t381B9D0186C0FCC3F83C0696C28C5001468A7858;
@@ -3763,6 +3730,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Dictionary_2_get_Count_m4DDA9442C238A
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ValueCollection_t038245E04B5D2A80048D9F8021A23E69A0C9DBAA* Dictionary_2_get_Values_mA0C01DEA55329E55380E96BBD04D4D228B437EC5_gshared (Dictionary_2_t14FE4A752A83D53771C584E4C8D14E01F2AFD7BA* __this, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.Dictionary`2/ValueCollection<System.Object,System.Object>::CopyTo(TValue[],System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueCollection_CopyTo_m877ED0CB6A05E77E01BE0B87ADB53084E26B9FF7_gshared (ValueCollection_t038245E04B5D2A80048D9F8021A23E69A0C9DBAA* __this, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* ___array0, int32_t ___index1, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<System.Object>::AddWithResize(T)
+IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method) ;
 
 // System.Void System.EventArgs::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EventArgs__ctor_mC6F9412D03203ADEF854117542C8EBF61624C8C3 (EventArgs_t37273F03EAC87217701DD431B190FBD84AD7C377* __this, const RuntimeMethod* method) ;
@@ -4530,6 +4499,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PropertyDescriptorCollection_tC4C2FA51126BD03
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PropertyDescriptorCollection_tC4C2FA51126BD032E2E9A0472995F7FCAC6E70DE* DefaultTypeDescriptor_System_ComponentModel_ICustomTypeDescriptor_GetProperties_m720302537E30B6B189AB499E6892E7BAB28524B2 (DefaultTypeDescriptor_tE4BFD69B5DCCF4D947034C2740F803F797E1879F* __this, AttributeU5BU5D_t0F73488E6F1249C889608E8DCC0BCC28A874E8F1* ___attributes0, const RuntimeMethod* method) ;
 // System.Object System.ComponentModel.TypeDescriptor/TypeDescriptionNode/DefaultTypeDescriptor::System.ComponentModel.ICustomTypeDescriptor.GetPropertyOwner(System.ComponentModel.PropertyDescriptor)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* DefaultTypeDescriptor_System_ComponentModel_ICustomTypeDescriptor_GetPropertyOwner_m156C624A0C3F6648971EEAB857DD296BEFE553CF (DefaultTypeDescriptor_tE4BFD69B5DCCF4D947034C2740F803F797E1879F* __this, PropertyDescriptor_t03F8CBE01C4EDA631BF9BE7D9EB32C8F30F13381* ___pd0, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<System.Object>::AddWithResize(T)
+inline void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4 (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method)
+{
+	((  void (*) (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D*, RuntimeObject*, const RuntimeMethod*))List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4_gshared)(__this, ___item0, method);
+}
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -4583,14 +4557,6 @@ void RefreshEventHandler_Invoke_m64C4651451C458F51B3DB45E9BF2D20E0B1DBCF7_OpenSt
 	typedef void (*FunctionPointerType) (RefreshEventArgs_tAFA218424DFFF0C86D33A77DC7471DDD7A4E6D86*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___e0, method);
 }
-void RefreshEventHandler_Invoke_m64C4651451C458F51B3DB45E9BF2D20E0B1DBCF7_OpenStaticInvoker(RefreshEventHandler_tF88F5F1E6C1E3AD9DF774E73DAAFBDC7EF0848CC* __this, RefreshEventArgs_tAFA218424DFFF0C86D33A77DC7471DDD7A4E6D86* ___e0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker1< RefreshEventArgs_tAFA218424DFFF0C86D33A77DC7471DDD7A4E6D86* >::Invoke(__this->___method_ptr_0, method, NULL, ___e0);
-}
-void RefreshEventHandler_Invoke_m64C4651451C458F51B3DB45E9BF2D20E0B1DBCF7_ClosedStaticInvoker(RefreshEventHandler_tF88F5F1E6C1E3AD9DF774E73DAAFBDC7EF0848CC* __this, RefreshEventArgs_tAFA218424DFFF0C86D33A77DC7471DDD7A4E6D86* ___e0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< RuntimeObject*, RefreshEventArgs_tAFA218424DFFF0C86D33A77DC7471DDD7A4E6D86* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___e0);
-}
 void RefreshEventHandler_Invoke_m64C4651451C458F51B3DB45E9BF2D20E0B1DBCF7_OpenVirtual(RefreshEventHandler_tF88F5F1E6C1E3AD9DF774E73DAAFBDC7EF0848CC* __this, RefreshEventArgs_tAFA218424DFFF0C86D33A77DC7471DDD7A4E6D86* ___e0, const RuntimeMethod* method)
 {
 	NullCheck(___e0);
@@ -4614,7 +4580,7 @@ void RefreshEventHandler_Invoke_m64C4651451C458F51B3DB45E9BF2D20E0B1DBCF7_OpenGe
 // System.Void System.ComponentModel.RefreshEventHandler::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RefreshEventHandler__ctor_m2A318A5FC4A7829BCC18BE0F9A652DCD1C8C192F (RefreshEventHandler_tF88F5F1E6C1E3AD9DF774E73DAAFBDC7EF0848CC* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -4623,19 +4589,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RefreshEventHandler__ctor_m2A318A5FC4A78
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 1;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&RefreshEventHandler_Invoke_m64C4651451C458F51B3DB45E9BF2D20E0B1DBCF7_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&RefreshEventHandler_Invoke_m64C4651451C458F51B3DB45E9BF2D20E0B1DBCF7_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&RefreshEventHandler_Invoke_m64C4651451C458F51B3DB45E9BF2D20E0B1DBCF7_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&RefreshEventHandler_Invoke_m64C4651451C458F51B3DB45E9BF2D20E0B1DBCF7_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -6418,14 +6378,6 @@ void PropertyChangedEventHandler_Invoke_m040B3056C279FDDC4EC678519D5D41577190529
 	typedef void (*FunctionPointerType) (RuntimeObject*, PropertyChangedEventArgs_tFA01343D8F2BD799951B40A3EBF4A6B38EE63321*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___sender0, ___e1, method);
 }
-void PropertyChangedEventHandler_Invoke_m040B3056C279FDDC4EC678519D5D415771905298_OpenStaticInvoker(PropertyChangedEventHandler_tF1250C146BE6FB43477D29C5D18A10B6329419DA* __this, RuntimeObject* ___sender0, PropertyChangedEventArgs_tFA01343D8F2BD799951B40A3EBF4A6B38EE63321* ___e1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< RuntimeObject*, PropertyChangedEventArgs_tFA01343D8F2BD799951B40A3EBF4A6B38EE63321* >::Invoke(__this->___method_ptr_0, method, NULL, ___sender0, ___e1);
-}
-void PropertyChangedEventHandler_Invoke_m040B3056C279FDDC4EC678519D5D415771905298_ClosedStaticInvoker(PropertyChangedEventHandler_tF1250C146BE6FB43477D29C5D18A10B6329419DA* __this, RuntimeObject* ___sender0, PropertyChangedEventArgs_tFA01343D8F2BD799951B40A3EBF4A6B38EE63321* ___e1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker3< RuntimeObject*, RuntimeObject*, PropertyChangedEventArgs_tFA01343D8F2BD799951B40A3EBF4A6B38EE63321* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___sender0, ___e1);
-}
 void PropertyChangedEventHandler_Invoke_m040B3056C279FDDC4EC678519D5D415771905298_OpenVirtual(PropertyChangedEventHandler_tF1250C146BE6FB43477D29C5D18A10B6329419DA* __this, RuntimeObject* ___sender0, PropertyChangedEventArgs_tFA01343D8F2BD799951B40A3EBF4A6B38EE63321* ___e1, const RuntimeMethod* method)
 {
 	NullCheck(___sender0);
@@ -6449,7 +6401,7 @@ void PropertyChangedEventHandler_Invoke_m040B3056C279FDDC4EC678519D5D41577190529
 // System.Void System.ComponentModel.PropertyChangedEventHandler::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PropertyChangedEventHandler__ctor_m4015A035EDCA8077D1EA9A8EAB5FE1CCD06A5B82 (PropertyChangedEventHandler_tF1250C146BE6FB43477D29C5D18A10B6329419DA* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -6458,19 +6410,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PropertyChangedEventHandler__ctor_m4015A
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 2;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&PropertyChangedEventHandler_Invoke_m040B3056C279FDDC4EC678519D5D415771905298_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&PropertyChangedEventHandler_Invoke_m040B3056C279FDDC4EC678519D5D415771905298_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&PropertyChangedEventHandler_Invoke_m040B3056C279FDDC4EC678519D5D415771905298_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&PropertyChangedEventHandler_Invoke_m040B3056C279FDDC4EC678519D5D415771905298_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -6567,14 +6513,6 @@ void PropertyChangingEventHandler_Invoke_m0AD3FF849300633B97ADE239D8C99D9890C663
 	typedef void (*FunctionPointerType) (RuntimeObject*, PropertyChangingEventArgs_tD07F209045F11017F7B549C178E4AD44690B0E02*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___sender0, ___e1, method);
 }
-void PropertyChangingEventHandler_Invoke_m0AD3FF849300633B97ADE239D8C99D9890C663EE_OpenStaticInvoker(PropertyChangingEventHandler_tF293724DEA588C35A7E94C4F4413AEE6438FE9CD* __this, RuntimeObject* ___sender0, PropertyChangingEventArgs_tD07F209045F11017F7B549C178E4AD44690B0E02* ___e1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< RuntimeObject*, PropertyChangingEventArgs_tD07F209045F11017F7B549C178E4AD44690B0E02* >::Invoke(__this->___method_ptr_0, method, NULL, ___sender0, ___e1);
-}
-void PropertyChangingEventHandler_Invoke_m0AD3FF849300633B97ADE239D8C99D9890C663EE_ClosedStaticInvoker(PropertyChangingEventHandler_tF293724DEA588C35A7E94C4F4413AEE6438FE9CD* __this, RuntimeObject* ___sender0, PropertyChangingEventArgs_tD07F209045F11017F7B549C178E4AD44690B0E02* ___e1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker3< RuntimeObject*, RuntimeObject*, PropertyChangingEventArgs_tD07F209045F11017F7B549C178E4AD44690B0E02* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___sender0, ___e1);
-}
 void PropertyChangingEventHandler_Invoke_m0AD3FF849300633B97ADE239D8C99D9890C663EE_OpenVirtual(PropertyChangingEventHandler_tF293724DEA588C35A7E94C4F4413AEE6438FE9CD* __this, RuntimeObject* ___sender0, PropertyChangingEventArgs_tD07F209045F11017F7B549C178E4AD44690B0E02* ___e1, const RuntimeMethod* method)
 {
 	NullCheck(___sender0);
@@ -6598,7 +6536,7 @@ void PropertyChangingEventHandler_Invoke_m0AD3FF849300633B97ADE239D8C99D9890C663
 // System.Void System.ComponentModel.PropertyChangingEventHandler::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PropertyChangingEventHandler__ctor_m351C924D7BF162D903BF4E999E6862393760404E (PropertyChangingEventHandler_tF293724DEA588C35A7E94C4F4413AEE6438FE9CD* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -6607,19 +6545,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PropertyChangingEventHandler__ctor_m351C
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 2;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&PropertyChangingEventHandler_Invoke_m0AD3FF849300633B97ADE239D8C99D9890C663EE_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&PropertyChangingEventHandler_Invoke_m0AD3FF849300633B97ADE239D8C99D9890C663EE_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&PropertyChangingEventHandler_Invoke_m0AD3FF849300633B97ADE239D8C99D9890C663EE_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&PropertyChangingEventHandler_Invoke_m0AD3FF849300633B97ADE239D8C99D9890C663EE_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -20298,7 +20230,7 @@ IL_000d:
 		String_t* L_8 = ___typeName0;
 		NullCheck(L_7);
 		Type_t* L_9;
-		L_9 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(17 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_7, L_8);
+		L_9 = VirtualFuncInvoker1< Type_t*, String_t* >::Invoke(18 /* System.Type System.Reflection.Assembly::GetType(System.String) */, L_7, L_8);
 		V_1 = L_9;
 	}
 
@@ -31002,9 +30934,10 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EventDescriptorCollection_t5B373F
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* Array_Empty_TisRuntimeObject_mFB8A63D602BB6974D31E20300D9EB89C6FE7C278_gshared_inline (const RuntimeMethod* method) 
 {
+	il2cpp_rgctx_method_init(method);
 	{
-		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(method->rgctx_data, 0));
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_0 = ((EmptyArray_1_tDF0DD7256B115243AA6BD5558417387A734240EE_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(method->rgctx_data, 0)))->___Value_0;
+		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(method->rgctx_data, 2));
+		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_0 = ((EmptyArray_1_tDF0DD7256B115243AA6BD5558417387A734240EE_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(method->rgctx_data, 2)))->___Value_0;
 		return L_0;
 	}
 }
@@ -31041,7 +30974,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mEBCF994CC3814631
 IL_0034:
 	{
 		RuntimeObject* L_9 = ___item0;
-		((  void (*) (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D*, RuntimeObject*, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 11)))(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 11));
+		List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 14));
 		return;
 	}
 }

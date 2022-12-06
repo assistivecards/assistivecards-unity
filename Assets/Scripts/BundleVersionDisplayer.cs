@@ -12,7 +12,7 @@ public class BundleVersionDisplayer : MonoBehaviour
     private void OnValidate()
     {
 #if UNITY_EDITOR
-        bundleText.text = "Bundle Version:" + Application.version + "\nAndroid Bundle Version Code:" + PlayerSettings.Android.bundleVersionCode;
+        bundleText.text = "Bundle Version: " + Application.version + "\nAndroid Bundle Version Code: " + PlayerSettings.Android.bundleVersionCode + "\niOS Build Number: " + PlayerSettings.iOS.buildNumber;
 #endif
     }
 }

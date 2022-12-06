@@ -49,11 +49,14 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private GameObject gamePrefab;
     [SerializeField] private GameObject settingPrefab;
 
-    [Header ("Misc")]
+    [Header ("Classes")]
     private NotificationPreferences notificationPreferences;
     private AccessibilityScreen accessibilityScreenScript;
+    private SoundManagerUI soundManagerUI;
     private TTSPanel tTSPanel;
     private LanguageController languageController;
+
+    [Header ("Misc")]
     private GameObject deviceLanguage;
 
     private void Awake()
@@ -190,6 +193,14 @@ public class CanvasController : MonoBehaviour
         accessibilityScreenScript.activateOnPressToggle.isOn = gameAPI.GetActivateOnPressInPreference() == 1 ? true : false;
         accessibilityScreenScript.voiceGreetingToggle.isOn = gameAPI.GetVoiceGreetingPreference() == 1 ? true : false;
 
+        soundManagerUI = this.GetComponent<SoundManagerUI>();
+
+        soundManagerUI.musicToggle.isOn = gameAPI.GetMusicPreference() == 1 ? true : false;
+        soundManagerUI.sfxToggle.isOn = gameAPI.GetSFXPreference() == 1 ? true : false;
+        soundManagerUI.musicSource.mute = soundManagerUI.musicToggle.isOn ? false : true;
+        soundManagerUI.sfxSource.mute = soundManagerUI.sfxToggle.isOn ? false : true;
+
+
         tTSPanel = ttsScreen.GetComponentInChildren<TTSPanel>();
         //tTSPanel.selectedTtsElement = await gameAPI.GetTTSPreference();
 
@@ -205,7 +216,10 @@ public class CanvasController : MonoBehaviour
         this.GetComponent<LanguageTest>().OnLanguageChange();
         this.GetComponent<LanguageTest>().ChangeLanguage();
         deviceLanguage = languageScreen.GetComponentInChildren<DeviceLanguagePanel>().deviceLanguageObject;
-        deviceLanguage.GetComponent<Toggle>().isOn = true;
+        if(deviceLanguage != null)
+        {
+            deviceLanguage.GetComponent<Toggle>().isOn = true;
+        }
 
 
         if (notificationPreferences.reminderPreference == "Daily")

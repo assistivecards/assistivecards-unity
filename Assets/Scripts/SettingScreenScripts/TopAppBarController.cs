@@ -16,6 +16,7 @@ public class TopAppBarController : MonoBehaviour
     private ProfileEditor profileEditor;
     private LanguageController languageController;
     [SerializeField] TTSPanel ttsPanel;
+    private SoundManagerUI soundManagerUI;
 
     [Header("UI Elements Accessility")]
     public Toggle hapticsToggle;
@@ -101,6 +102,23 @@ public class TopAppBarController : MonoBehaviour
         {
             gameAPI.SetTTSPreference(ttsPanel.selectedTtsElement.name);
         }
+        if(transform.parent.name == "Sound")
+        {
+            soundManagerUI = canvas.GetComponent<SoundManagerUI>();
+            gameAPI.SetMusicPreference(soundManagerUI.musicToggle.isOn ? 1 : 0);
+            gameAPI.SetSFXPreference(soundManagerUI.sfxToggle.isOn ? 1 : 0);
+            soundManagerUI.musicSource.mute = soundManagerUI.musicToggle.isOn ? false : true;
+            soundManagerUI.sfxSource.mute = soundManagerUI.sfxToggle.isOn ? false : true;
+            if (soundManagerUI.musicToggle.isOn == false)
+            {
+                soundManagerUI.musicSource.Stop();
+            }
+            else if (soundManagerUI.musicToggle.isOn == true)
+            {
+                soundManagerUI.musicSource.Play();
+            }
+        }
+        
         LeanTween.scale(this.transform.parent.gameObject, Vector3.one * 0.9f, 0.15f);
         Invoke("SceneSetActiveFalse", 0.15f);
     }

@@ -54,6 +54,7 @@ public class CanvasController : MonoBehaviour
     private AccessibilityScreen accessibilityScreenScript;
     private TTSPanel tTSPanel;
     private LanguageController languageController;
+    private GameObject deviceLanguage;
 
     private void Awake()
     {
@@ -177,7 +178,6 @@ public class CanvasController : MonoBehaviour
     }
     public void SignOut()
     {
-        //nicknameInputField.text = "";
         gameAPI.ClearAllPrefs();
 
         notificationPreferences = notificationScreen.GetComponent<NotificationPreferences>();
@@ -193,8 +193,20 @@ public class CanvasController : MonoBehaviour
         tTSPanel = ttsScreen.GetComponentInChildren<TTSPanel>();
         //tTSPanel.selectedTtsElement = await gameAPI.GetTTSPreference();
 
+
+        loginPrefab.SetActive(true);
+        loginPrefab.transform.GetChild(3).gameObject.SetActive(true);
+        settingPrefab.SetActive(false);
+        profileScreen.SetActive(false);
+        loginPageScreen.GetComponent<LoginContoller>().nicknameInputField.text = "";
+
         languageController = languageScreen.GetComponent<LanguageController>();
-        languageController.selectedLanguage = null;
+        PlayerPrefs.SetString("Language", Application.systemLanguage.ToString());
+        this.GetComponent<LanguageTest>().OnLanguageChange();
+        this.GetComponent<LanguageTest>().ChangeLanguage();
+        deviceLanguage = languageScreen.GetComponentInChildren<DeviceLanguagePanel>().deviceLanguageObject;
+        deviceLanguage.GetComponent<Toggle>().isOn = true;
+
 
         if (notificationPreferences.reminderPreference == "Daily")
         {
@@ -205,7 +217,7 @@ public class CanvasController : MonoBehaviour
             notificationPreferences.weeklyReminderToggle.isOn = true;
         }     
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }

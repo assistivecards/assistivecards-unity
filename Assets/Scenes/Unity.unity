@@ -248,7 +248,7 @@ MonoBehaviour:
   popUp: {fileID: 121409593}
   settingScreen: {fileID: 589691305}
   settingScreenFadePanel: {fileID: 799290136}
-  loginScreenFadePanel: {fileID: 441091593}
+  loginScreenFadePanel: {fileID: 0}
   mainSettingsScreen: {fileID: 949304421}
   parentLockScreen: {fileID: 1845797080}
   profileScreen: {fileID: 501489312}
@@ -330,82 +330,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6658854894865074355, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
   m_PrefabInstance: {fileID: 6658854895000012590}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &441091591
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 441091592}
-  - component: {fileID: 441091594}
-  - component: {fileID: 441091593}
-  m_Layer: 5
-  m_Name: LoginScreenFadePanel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &441091592
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 441091591}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 332557222}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -50.172485, y: -213.08528}
-  m_SizeDelta: {x: 4106.0093, y: 3892.1206}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &441091593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 441091591}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &441091594
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 441091591}
-  m_CullTransparentMesh: 1
 --- !u!1 &471357341 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5546718070486032767, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
@@ -1176,10 +1100,7 @@ PrefabInstance:
       value: LoginContoller, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5546718071285443768, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 441091592}
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
 --- !u!114 &5546718071078979359 stripped
 MonoBehaviour:

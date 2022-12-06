@@ -18,8 +18,8 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
     {
         productName = PlayerSettings.productName;
         productVersion = PlayerSettings.bundleVersion;
-        Debug.Log("Current product name is: " + PlayerSettings.productName);
-        Debug.Log("Current product version is: " + PlayerSettings.bundleVersion);
+        Debug.Log("Current product name is: " + productName);
+        Debug.Log("Current product version is: " + productVersion);
         BuildPlayerWindow.RegisterBuildPlayerHandler(OnClickBuildPlayer);
     }
 
@@ -29,6 +29,7 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
         {
             Texture2D icon = (Texture2D)AssetDatabase.LoadAssetAtPath("Assets/Sprites/AppIcons/" + PlayerSettings.productName + ".png", typeof(Texture2D));
             PlayerSettings.SetIcons(NamedBuildTarget.Unknown, new Texture2D[] { icon }, IconKind.Any);
+            PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.Android, "com.assistivecards." + PlayerSettings.productName);
         }
         else
         {

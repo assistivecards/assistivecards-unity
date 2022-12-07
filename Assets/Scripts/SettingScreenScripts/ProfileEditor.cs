@@ -41,8 +41,8 @@ public class ProfileEditor : MonoBehaviour
 
     public void AvatarSelectButtonClicked()
     {
-        // canvasController.currentScreen = avatarSelectionSettingsScreen;
-        // topAppBarController.ChangeTopAppBarType(2);
+        canvasController.currentScreen = avatarSelectionSettingsScreen;
+        topAppBarController.ChangeTopAppBarType(2);
         avatarSelectionSettingsScreen.SetActive(true);
         LeanTween.scale(avatarSelectionSettingsScreen,  Vector3.one, 0.2f);
     }

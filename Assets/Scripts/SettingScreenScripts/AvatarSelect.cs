@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AvatarSelect : MonoBehaviour
 {
+    [SerializeField] private TopAppBarController topAppBarController;
     private GameObject avatarSelection;
     private GameObject avatarSelectionSettings;
 

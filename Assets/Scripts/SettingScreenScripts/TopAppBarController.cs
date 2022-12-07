@@ -12,6 +12,7 @@ public class TopAppBarController : MonoBehaviour
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject saveButton;
     [SerializeField] private GameObject parentLockButton;
+    [SerializeField] private GameObject closeButton;
 
     [Header ("Classes")]
     private ProfileEditor profileEditor;
@@ -35,7 +36,9 @@ public class TopAppBarController : MonoBehaviour
     [SerializeField] private SampleWebView sendFeedbackSampleWebView;
     [SerializeField] private SettingScreenButton profileEditorSettingScreenButton;
     private CanvasController canvasController;
+    [SerializeField] private GameObject profileScreen;
     private bool onMain = false;
+    public bool onAvatarSelection = false;
 
 
     private void Awake()
@@ -49,21 +52,42 @@ public class TopAppBarController : MonoBehaviour
         switch(i)
         {
             case 0:
+                //main screen top app bar
                 onMain = true;
-                saveButton.SetActive(false);
+                backButton.SetActive(true);
                 parentLockButton.SetActive(true);
+
+                saveButton.SetActive(false);
+                closeButton.SetActive(false);
                 break;
 
             case 1:
+                //saveable screens top app bar
                 onMain = false;
                 saveButton.SetActive(true);
+                backButton.SetActive(true);
+
                 parentLockButton.SetActive(false);
+                closeButton.SetActive(false);
                 break;
             
             case 2:
+                //only back button top app bar
                 onMain = false;
+                backButton.SetActive(true);
+
                 saveButton.SetActive(false);
                 parentLockButton.SetActive(false);
+                closeButton.SetActive(false);
+                break;
+            case 3:
+                //about application interior pages top app bar
+                onMain = false;
+                closeButton.SetActive(true);
+
+                saveButton.SetActive(false);
+                parentLockButton.SetActive(false);
+                backButton.SetActive(false);
                 break;
 
         } 
@@ -74,6 +98,13 @@ public class TopAppBarController : MonoBehaviour
         if(canvasController.currentScreen.name == "ParentLock")
         {
             canvasController.CloseSettingClick();
+        }
+        if(canvasController.currentScreen.name == "AvatarSelectionSettings")
+        {
+            canvasController.currentScreen = profileScreen;
+            LeanTween.scale(canvasController.currentScreen, Vector3.one * 0.9f, 0.15f);
+            Invoke("SceneSetActiveFalse", 0.15f);
+            ChangeTopAppBarType(1);
         }
         else
         {

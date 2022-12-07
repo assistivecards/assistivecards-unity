@@ -26,7 +26,6 @@ public class CanvasController : MonoBehaviour
     private GameObject backButton;
     [SerializeField] private GameObject settingScreen;
     [SerializeField] private Image settingScreenFadePanel;
-    [SerializeField] private Image loginScreenFadePanel;
 
     [Header ("Screens")]
     [SerializeField] private GameObject mainSettingsScreen;

@@ -10,15 +10,15 @@ using UnityEngine.SceneManagement;
 
 public class CanvasController : MonoBehaviour
 {
-    [Header ("User Information")]
+    [Header("User Information")]
     public GameObject profileImage;
     public string nickname;
 
 
-    [Header ("API Connection")]
+    [Header("API Connection")]
     GameAPI gameAPI;
 
-    [Header ("UI Assets")]
+    [Header("UI Assets")]
     [SerializeField] private TMP_InputField nicknameInputField;
     public TMP_Text nicknameText;
     [SerializeField] Canvas canvas;
@@ -26,8 +26,9 @@ public class CanvasController : MonoBehaviour
     private GameObject backButton;
     [SerializeField] private GameObject settingScreen;
     [SerializeField] private Image settingScreenFadePanel;
+    [SerializeField] private GameObject fadePanel;
 
-    [Header ("Screens")]
+    [Header("Screens")]
     [SerializeField] private GameObject mainSettingsScreen;
     [SerializeField] private GameObject parentLockScreen;
     [SerializeField] private GameObject profileScreen;
@@ -43,20 +44,20 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private GameObject avatarSelectionScreen;
     [SerializeField] private GameObject soundScreen;
 
-    [Header ("Screen Prefab")]
+    [Header("Screen Prefab")]
     [SerializeField] private GameObject loginPrefab;
     [SerializeField] private GameObject gamePrefab;
     [SerializeField] private GameObject settingPrefab;
     [SerializeField] private GameObject topAppBar;
 
-    [Header ("Classes")]
+    [Header("Classes")]
     private NotificationPreferences notificationPreferences;
     private AccessibilityScreen accessibilityScreenScript;
     private SoundManagerUI soundManagerUI;
     private TTSPanel tTSPanel;
     private LanguageController languageController;
 
-    [Header ("Misc")]
+    [Header("Misc")]
     private GameObject deviceLanguage;
     public GameObject currentScreen;
     private TopAppBarController topAppBarController;
@@ -67,7 +68,7 @@ public class CanvasController : MonoBehaviour
         nickname = gameAPI.GetNickname();
         topAppBarController = topAppBar.GetComponent<TopAppBarController>();
 
-        if(PlayerPrefs.GetString("Nickname", "") != "")
+        if (PlayerPrefs.GetString("Nickname", "") != "")
         {
             loginPrefab.SetActive(false);
             loginPageScreen.SetActive(false);
@@ -85,7 +86,7 @@ public class CanvasController : MonoBehaviour
         currentScreen = parentLockScreen;
     }
 
-    private async void Start() 
+    private async void Start()
     {
         nicknameText.text = nickname;
         profileImage.GetComponent<Image>().sprite = await gameAPI.GetAvatarImage();
@@ -100,7 +101,7 @@ public class CanvasController : MonoBehaviour
     {
         topAppBarController.ChangeTopAppBarType(2);
         currentScreen = parentLockScreen;
-        LeanTween.scale(popUp,  Vector3.one, 0.15f);
+        LeanTween.scale(popUp, Vector3.one, 0.15f);
         parentLockScreen.SetActive(true);
     }
 
@@ -116,7 +117,7 @@ public class CanvasController : MonoBehaviour
     {
         topAppBarController.ChangeTopAppBarType(1);
         currentScreen = profileScreen;
-        LeanTween.scale(profileScreen,  Vector3.one, 0.2f);
+        LeanTween.scale(profileScreen, Vector3.one, 0.2f);
         profileScreen.SetActive(true);
     }
 
@@ -124,7 +125,7 @@ public class CanvasController : MonoBehaviour
     {
         topAppBarController.ChangeTopAppBarType(1);
         currentScreen = languageScreen;
-        LeanTween.scale(languageScreen,  Vector3.one, 0.2f);
+        LeanTween.scale(languageScreen, Vector3.one, 0.2f);
         languageScreen.SetActive(true);
     }
 
@@ -132,36 +133,36 @@ public class CanvasController : MonoBehaviour
     {
         topAppBarController.ChangeTopAppBarType(1);
         currentScreen = ttsScreen;
-        LeanTween.scale(ttsScreen,  Vector3.one, 0.2f);
+        LeanTween.scale(ttsScreen, Vector3.one, 0.2f);
         ttsScreen.SetActive(true);
     }
-    
+
     public void NotificationButtonClick()
     {
         topAppBarController.ChangeTopAppBarType(1);
         currentScreen = notificationScreen;
-        LeanTween.scale(notificationScreen,  Vector3.one, 0.2f);
+        LeanTween.scale(notificationScreen, Vector3.one, 0.2f);
         notificationScreen.SetActive(true);
     }
     public void AccessibiltyButtonClick()
     {
         topAppBarController.ChangeTopAppBarType(1);
         currentScreen = accessibilityScreen;
-        LeanTween.scale(accessibilityScreen,  Vector3.one, 0.2f);
+        LeanTween.scale(accessibilityScreen, Vector3.one, 0.2f);
         accessibilityScreen.SetActive(true);
     }
     public void SubscriptionsButtonClick()
     {
         topAppBarController.ChangeTopAppBarType(2);
         currentScreen = subscriptionsScreen;
-        LeanTween.scale(subscriptionsScreen,  Vector3.one, 0.2f);
+        LeanTween.scale(subscriptionsScreen, Vector3.one, 0.2f);
         subscriptionsScreen.SetActive(true);
     }
     public void SoundButtonClick()
     {
         topAppBarController.ChangeTopAppBarType(1);
         currentScreen = soundScreen;
-        LeanTween.scale(soundScreen,  Vector3.one, 0.2f);
+        LeanTween.scale(soundScreen, Vector3.one, 0.2f);
         soundScreen.SetActive(true);
     }
 
@@ -169,21 +170,21 @@ public class CanvasController : MonoBehaviour
     {
         topAppBarController.ChangeTopAppBarType(2);
         currentScreen = allAppsScreen;
-        LeanTween.scale(allAppsScreen,  Vector3.one, 0.2f);
+        LeanTween.scale(allAppsScreen, Vector3.one, 0.2f);
         allAppsScreen.SetActive(true);
     }
     public void SendFeedbacksButtonClick()
     {
         topAppBarController.ChangeTopAppBarType(2);
         currentScreen = sendFeedbacksScreen;
-        LeanTween.scale(sendFeedbacksScreen,  Vector3.one, 0.2f);
+        LeanTween.scale(sendFeedbacksScreen, Vector3.one, 0.2f);
         sendFeedbacksScreen.SetActive(true);
     }
     public void AboutApplicationButtonClick()
     {
         topAppBarController.ChangeTopAppBarType(2);
         currentScreen = aboutApplicationScreen;
-        LeanTween.scale(aboutApplicationScreen,  Vector3.one, 0.2f);
+        LeanTween.scale(aboutApplicationScreen, Vector3.one, 0.2f);
         aboutApplicationScreen.SetActive(true);
     }
     public async void ProfilePanelUpdate()
@@ -225,7 +226,7 @@ public class CanvasController : MonoBehaviour
         notificationPreferences.reminderPreference = gameAPI.GetReminderPreference();
         notificationPreferences.usabilityTipsToggle.isOn = gameAPI.GetUsabilityTipsPreference() == 1 ? true : false;
         notificationPreferences.promotionsNotificationToggle.isOn = gameAPI.GetPromotionsNotificationPreference() == 1 ? true : false;
-        
+
         accessibilityScreenScript = accessibilityScreen.GetComponent<AccessibilityScreen>();
         accessibilityScreenScript.hapticsToggle.isOn = gameAPI.GetHapticsPreference() == 1 ? true : false;
         accessibilityScreenScript.activateOnPressToggle.isOn = gameAPI.GetActivateOnPressInPreference() == 1 ? true : false;
@@ -255,7 +256,7 @@ public class CanvasController : MonoBehaviour
         this.GetComponent<LanguageTest>().OnLanguageChange();
         this.GetComponent<LanguageTest>().ChangeLanguage();
         deviceLanguage = languageScreen.GetComponentInChildren<DeviceLanguagePanel>().deviceLanguageObject;
-        if(deviceLanguage != null)
+        if (deviceLanguage != null)
         {
             deviceLanguage.GetComponent<Toggle>().isOn = true;
         }
@@ -268,9 +269,15 @@ public class CanvasController : MonoBehaviour
         else
         {
             notificationPreferences.weeklyReminderToggle.isOn = true;
-        }     
+        }
 
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void StartFadeAnim()
+    {
+        fadePanel.SetActive(true);
+
     }
 
 }

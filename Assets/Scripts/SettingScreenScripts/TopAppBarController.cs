@@ -8,13 +8,13 @@ public class TopAppBarController : MonoBehaviour
     GameAPI gameAPI;
     [SerializeField] private GameObject canvas;
 
-    [Header ("Top App Bar UI")]
+    [Header("Top App Bar UI")]
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject saveButton;
     [SerializeField] private GameObject parentLockButton;
     [SerializeField] private GameObject closeButton;
 
-    [Header ("Classes")]
+    [Header("Classes")]
     private ProfileEditor profileEditor;
     private LanguageController languageController;
     [SerializeField] TTSPanel ttsPanel;
@@ -32,7 +32,7 @@ public class TopAppBarController : MonoBehaviour
     public Toggle usabilityTipsToggle;
     public Toggle promotionsNotificationToggle;
 
-    [Header ("Misc")]
+    [Header("Misc")]
     [SerializeField] private SampleWebView sendFeedbackSampleWebView;
     [SerializeField] private SettingScreenButton profileEditorSettingScreenButton;
     private CanvasController canvasController;
@@ -49,7 +49,7 @@ public class TopAppBarController : MonoBehaviour
 
     public void ChangeTopAppBarType(int i)
     {
-        switch(i)
+        switch (i)
         {
             case 0:
                 //main screen top app bar
@@ -70,7 +70,7 @@ public class TopAppBarController : MonoBehaviour
                 parentLockButton.SetActive(false);
                 closeButton.SetActive(false);
                 break;
-            
+
             case 2:
                 //only back button top app bar
                 onMain = false;
@@ -90,16 +90,17 @@ public class TopAppBarController : MonoBehaviour
                 backButton.SetActive(false);
                 break;
 
-        } 
+        }
     }
 
     public void BackButtonClicked()
     {
-        if(canvasController.currentScreen.name == "ParentLock")
+        if (canvasController.currentScreen.name == "ParentLock")
         {
             canvasController.CloseSettingClick();
+            canvasController.StartFadeAnim();
         }
-        if(canvasController.currentScreen.name == "AvatarSelectionSettings")
+        if (canvasController.currentScreen.name == "AvatarSelectionSettings")
         {
             canvasController.currentScreen = profileScreen;
             LeanTween.scale(canvasController.currentScreen, Vector3.one * 0.9f, 0.15f);
@@ -108,9 +109,10 @@ public class TopAppBarController : MonoBehaviour
         }
         else
         {
-            if(onMain)
+            if (onMain)
             {
                 canvasController.CloseSettingClick();
+                canvasController.StartFadeAnim();
             }
             else
             {
@@ -177,7 +179,7 @@ public class TopAppBarController : MonoBehaviour
         {
             gameAPI.SetTTSPreference(ttsPanel.selectedTtsElement.name);
         }
-        if(canvasController.currentScreen.name == "Sound")
+        if (canvasController.currentScreen.name == "Sound")
         {
             soundManagerUI = canvas.GetComponent<SoundManagerUI>();
             gameAPI.SetMusicPreference(soundManagerUI.musicToggle.isOn ? 1 : 0);
@@ -193,7 +195,7 @@ public class TopAppBarController : MonoBehaviour
                 soundManagerUI.musicSource.Play();
             }
         }
-        
+
         LeanTween.scale(canvasController.currentScreen, Vector3.one * 0.9f, 0.15f);
         Invoke("SceneSetActiveFalse", 0.15f);
         ChangeTopAppBarType(0);

@@ -9,8 +9,9 @@ public class TopAppBarController : MonoBehaviour
     [SerializeField] private GameObject canvas;
 
     [Header ("Top App Bar UI")]
-    private GameObject backButton;
-    private GameObject saveButton;
+    [SerializeField] private GameObject backButton;
+    [SerializeField] private GameObject saveButton;
+    [SerializeField] private GameObject parentLockButton;
 
     [Header ("Classes")]
     private ProfileEditor profileEditor;
@@ -31,59 +32,102 @@ public class TopAppBarController : MonoBehaviour
     public Toggle promotionsNotificationToggle;
 
     [Header ("Misc")]
-    [SerializeField] private SampleWebView sampleWebView;
-    [SerializeField] private SettingScreenButton settingScreenButton;
+    [SerializeField] private SampleWebView sendFeedbackSampleWebView;
+    [SerializeField] private SettingScreenButton profileEditorSettingScreenButton;
+    private CanvasController canvasController;
+    private bool onMain = false;
 
 
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+        canvasController = canvas.GetComponent<CanvasController>();
+    }
+
+    public void ChangeTopAppBarType(int i)
+    {
+        switch(i)
+        {
+            case 0:
+                onMain = true;
+                saveButton.SetActive(false);
+                parentLockButton.SetActive(true);
+                break;
+
+            case 1:
+                onMain = false;
+                saveButton.SetActive(true);
+                parentLockButton.SetActive(false);
+                break;
+            
+            case 2:
+                onMain = false;
+                saveButton.SetActive(false);
+                parentLockButton.SetActive(false);
+                break;
+
+        } 
     }
 
     public void BackButtonClicked()
     {
-        if (GetComponentInParent<SendFeedbackPage>() != null)
+        if(canvasController.currentScreen.name == "ParentLock")
         {
-            sampleWebView.webViewObject.SetVisibility(false);
-            LeanTween.scale(this.transform.parent.gameObject, Vector3.one * 0.9f, 0.15f);
-            Invoke("SceneSetActiveFalse", 0.15f);
+            canvasController.CloseSettingClick();
         }
         else
         {
-            LeanTween.scale(this.transform.parent.gameObject, Vector3.one * 0.9f, 0.15f);
-            Invoke("SceneSetActiveFalse", 0.15f);
+            if(onMain)
+            {
+                canvasController.CloseSettingClick();
+            }
+            else
+            {
+                if (canvasController.currentScreen.name == "SendFeedback")
+                {
+                    sendFeedbackSampleWebView.webViewObject.SetVisibility(false);
+                    LeanTween.scale(canvasController.currentScreen, Vector3.one * 0.9f, 0.15f);
+                    Invoke("SceneSetActiveFalse", 0.15f);
+                }
+                else
+                {
+                    LeanTween.scale(canvasController.currentScreen, Vector3.one * 0.9f, 0.15f);
+                    Invoke("SceneSetActiveFalse", 0.15f);
+                }
+                ChangeTopAppBarType(0);
+            }
         }
     }
 
     private void SceneSetActiveFalse()
     {
-        this.transform.parent.gameObject.SetActive(false);
+        canvasController.currentScreen.SetActive(false);
     }
 
     public async void SaveButtonClicked()
     {
-        if (GetComponentInParent<ProfileEditor>() != null)
+        if (canvasController.currentScreen.name == "Profile")
         {
-            profileEditor = GetComponentInParent<ProfileEditor>();
+            profileEditor = canvasController.currentScreen.GetComponentInParent<ProfileEditor>();
             gameAPI.SetNickname(profileEditor.nicknameInputField.text);
             canvas.GetComponent<CanvasController>().ProfilePanelUpdate();
-            settingScreenButton.SetAvatarImageOnGamePanel();
+            profileEditorSettingScreenButton.SetAvatarImageOnGamePanel();
         }
-        if (GetComponentInParent<AccessibilityScreen>() != null)
+        if (canvasController.currentScreen.name == "Accessibility")
         {
             gameAPI.SetHapticsPreference(hapticsToggle.isOn ? 1 : 0);
             gameAPI.SetActivateOnPressInPreference(activateOnPressToggle.isOn ? 1 : 0);
             gameAPI.SetVoiceGreetingPreference(voiceGreetingToggle.isOn ? 1 : 0);
         }
-        if (GetComponentInParent<NotificationPreferences>() != null)
+        if (canvasController.currentScreen.name == "Notifications")
         {
             gameAPI.SetReminderPreference(dailyReminderToggle.isOn ? "Daily" : "Weekly");
             gameAPI.SetUsabilityTipsPreference(usabilityTipsToggle.isOn ? 1 : 0);
             gameAPI.SetPromotionsNotificationPreference(promotionsNotificationToggle.isOn ? 1 : 0);
         }
-        if (GetComponentInParent<LanguageController>() != null)
+        if (canvasController.currentScreen.name == "Languages")
         {
-            languageController = GetComponentInParent<LanguageController>();
+            languageController = canvasController.currentScreen.GetComponentInParent<LanguageController>();
             gameAPI.SetLanguage(languageController.selectedLanguage.name);
             gameAPI.SetTTSPreference(await gameAPI.GetSelectedLocale());
             canvas.GetComponent<LanguageTest>().OnLanguageChange();
@@ -98,11 +142,11 @@ public class TopAppBarController : MonoBehaviour
                 canvas.GetComponent<RightToLeftTextChanger>().LeftToRightLanguageChanged();
             }
         }
-        if (transform.parent.GetComponentInChildren<TTSPanel>() != null)
+        if (canvasController.currentScreen.name == "TTS")
         {
             gameAPI.SetTTSPreference(ttsPanel.selectedTtsElement.name);
         }
-        if(transform.parent.name == "Sound")
+        if(canvasController.currentScreen.name == "Sound")
         {
             soundManagerUI = canvas.GetComponent<SoundManagerUI>();
             gameAPI.SetMusicPreference(soundManagerUI.musicToggle.isOn ? 1 : 0);
@@ -119,7 +163,8 @@ public class TopAppBarController : MonoBehaviour
             }
         }
         
-        LeanTween.scale(this.transform.parent.gameObject, Vector3.one * 0.9f, 0.15f);
+        LeanTween.scale(canvasController.currentScreen, Vector3.one * 0.9f, 0.15f);
         Invoke("SceneSetActiveFalse", 0.15f);
+        ChangeTopAppBarType(0);
     }
 }

@@ -48,6 +48,7 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private GameObject loginPrefab;
     [SerializeField] private GameObject gamePrefab;
     [SerializeField] private GameObject settingPrefab;
+    [SerializeField] private GameObject topAppBar;
 
     [Header ("Classes")]
     private NotificationPreferences notificationPreferences;
@@ -58,12 +59,14 @@ public class CanvasController : MonoBehaviour
 
     [Header ("Misc")]
     private GameObject deviceLanguage;
+    public GameObject currentScreen;
+    private TopAppBarController topAppBarController;
 
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
         nickname = gameAPI.GetNickname();
-
+        topAppBarController = topAppBar.GetComponent<TopAppBarController>();
 
         if(PlayerPrefs.GetString("Nickname", "") != "")
         {
@@ -77,75 +80,110 @@ public class CanvasController : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        topAppBarController.ChangeTopAppBarType(2);
+        currentScreen = parentLockScreen;
+    }
+
     private async void Start() 
     {
         nicknameText.text = nickname;
         profileImage.GetComponent<Image>().sprite = await gameAPI.GetAvatarImage();
     }
 
+    private void Update()
+    {
+        Debug.Log(currentScreen);
+    }
+
     public void ParentLockButtonClick()
     {
+        topAppBarController.ChangeTopAppBarType(2);
+        currentScreen = parentLockScreen;
         LeanTween.scale(popUp,  Vector3.one, 0.15f);
         parentLockScreen.SetActive(true);
     }
 
     public void ParentLockScreenClose()
     {
+        topAppBarController.ChangeTopAppBarType(0);
+        currentScreen = mainSettingsScreen;
         LeanTween.scale(popUp, Vector3.one * 0.15f, 0.2f);
         parentLockScreen.SetActive(false);
     }
 
     public void ProfileButtonClick()
     {
+        topAppBarController.ChangeTopAppBarType(1);
+        currentScreen = profileScreen;
         LeanTween.scale(profileScreen,  Vector3.one, 0.2f);
         profileScreen.SetActive(true);
     }
 
     public void LanguageButtonClick()
     {
+        topAppBarController.ChangeTopAppBarType(1);
+        currentScreen = languageScreen;
         LeanTween.scale(languageScreen,  Vector3.one, 0.2f);
         languageScreen.SetActive(true);
     }
 
     public void TTSButtonClicked()
     {
+        topAppBarController.ChangeTopAppBarType(1);
+        currentScreen = ttsScreen;
         LeanTween.scale(ttsScreen,  Vector3.one, 0.2f);
         ttsScreen.SetActive(true);
     }
     
     public void NotificationButtonClick()
     {
+        topAppBarController.ChangeTopAppBarType(1);
+        currentScreen = notificationScreen;
         LeanTween.scale(notificationScreen,  Vector3.one, 0.2f);
         notificationScreen.SetActive(true);
     }
     public void AccessibiltyButtonClick()
     {
+        topAppBarController.ChangeTopAppBarType(1);
+        currentScreen = accessibilityScreen;
         LeanTween.scale(accessibilityScreen,  Vector3.one, 0.2f);
         accessibilityScreen.SetActive(true);
     }
     public void SubscriptionsButtonClick()
     {
+        topAppBarController.ChangeTopAppBarType(2);
+        currentScreen = subscriptionsScreen;
         LeanTween.scale(subscriptionsScreen,  Vector3.one, 0.2f);
         subscriptionsScreen.SetActive(true);
     }
     public void SoundButtonClick()
     {
+        topAppBarController.ChangeTopAppBarType(1);
+        currentScreen = soundScreen;
         LeanTween.scale(soundScreen,  Vector3.one, 0.2f);
         soundScreen.SetActive(true);
     }
 
     public void AllAppsButtonClick()
     {
+        topAppBarController.ChangeTopAppBarType(2);
+        currentScreen = allAppsScreen;
         LeanTween.scale(allAppsScreen,  Vector3.one, 0.2f);
         allAppsScreen.SetActive(true);
     }
     public void SendFeedbacksButtonClick()
     {
+        topAppBarController.ChangeTopAppBarType(2);
+        currentScreen = sendFeedbacksScreen;
         LeanTween.scale(sendFeedbacksScreen,  Vector3.one, 0.2f);
         sendFeedbacksScreen.SetActive(true);
     }
     public void AboutApplicationButtonClick()
     {
+        topAppBarController.ChangeTopAppBarType(2);
+        currentScreen = aboutApplicationScreen;
         LeanTween.scale(aboutApplicationScreen,  Vector3.one, 0.2f);
         aboutApplicationScreen.SetActive(true);
     }
@@ -165,6 +203,7 @@ public class CanvasController : MonoBehaviour
     private void OpenGamePanel()
     {
         settingPrefab.SetActive(false);
+        topAppBar.SetActive(false);
         gamePrefab.SetActive(true);
 
     }
@@ -208,6 +247,7 @@ public class CanvasController : MonoBehaviour
         loginPrefab.SetActive(true);
         loginPrefab.transform.GetChild(3).gameObject.SetActive(true);
         settingPrefab.SetActive(false);
+        topAppBar.SetActive(false);
         profileScreen.SetActive(false);
         loginPageScreen.GetComponent<LoginContoller>().nicknameInputField.text = "";
 

@@ -13,6 +13,8 @@ public class SettingScreenButton : MonoBehaviour
     [SerializeField] private GameObject nickNameText;
     [SerializeField] private GameObject settingPrefab;
     [SerializeField] private GameObject gamePrefab;
+    [SerializeField] private GameObject topAppBar;
+    [SerializeField] private GameObject mainSettingScreen;
 
     private void Awake()
     {
@@ -46,6 +48,8 @@ public class SettingScreenButton : MonoBehaviour
     public void SettingButtonClick()
     {
         settingPrefab.SetActive(true);
+        mainSettingScreen.SetActive(true);
+        topAppBar.SetActive(true);
         gamePrefab.SetActive(false);
 
         canvasController.StartFade();

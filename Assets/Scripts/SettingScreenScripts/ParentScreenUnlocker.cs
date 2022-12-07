@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public class ParentScreenUnlocker : MonoBehaviour, IPointerUpHandler
 {
+    [SerializeField] private TopAppBarController topAppBarController;
     [SerializeField] private GameObject dummyLock;
     [SerializeField] private GameObject parentalGate;
     private bool isOnLock = false;
@@ -33,6 +34,7 @@ public class ParentScreenUnlocker : MonoBehaviour, IPointerUpHandler
             this.transform.position = dummyLock.transform.position;
 
             parentalGate.SetActive(false);
+            topAppBarController.ChangeTopAppBarType(0);
         }
         else
         {

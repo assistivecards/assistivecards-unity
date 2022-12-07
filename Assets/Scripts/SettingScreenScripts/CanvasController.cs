@@ -38,6 +38,7 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private GameObject accessibilityScreen;
     [SerializeField] private GameObject subscriptionsScreen;
     [SerializeField] private GameObject allAppsScreen;
+    [SerializeField] private GameObject promoScreen;
     [SerializeField] private GameObject sendFeedbacksScreen;
     [SerializeField] private GameObject aboutApplicationScreen;
     [SerializeField] private GameObject loginPageScreen;
@@ -172,6 +173,14 @@ public class CanvasController : MonoBehaviour
         currentScreen = allAppsScreen;
         LeanTween.scale(allAppsScreen, Vector3.one, 0.2f);
         allAppsScreen.SetActive(true);
+    }
+
+    public void PremiumPromoButtonClick()
+    {
+        topAppBarController.ChangeTopAppBarType(2);
+        currentScreen = promoScreen;
+        LeanTween.scale(promoScreen, Vector3.one, 0.2f);
+        promoScreen.SetActive(true);
     }
     public void SendFeedbacksButtonClick()
     {

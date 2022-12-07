@@ -270,6 +270,7 @@ MonoBehaviour:
   accessibilityScreen: {fileID: 223468393}
   subscriptionsScreen: {fileID: 869488071}
   allAppsScreen: {fileID: 2068572157}
+  promoScreen: {fileID: 1063598101}
   sendFeedbacksScreen: {fileID: 788092255}
   aboutApplicationScreen: {fileID: 1136283495}
   loginPageScreen: {fileID: 932114151}
@@ -523,6 +524,7 @@ MonoBehaviour:
   cachedApps:
     apps: []
   cachedAppIcons: []
+  cachedPackImages: []
   sfxClips: []
   musicSource: {fileID: 0}
   sfxSource: {fileID: 0}
@@ -759,6 +761,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b99f19e965cf2845b764babbc3ae67c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &854674502 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1030446610139579523, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+  m_PrefabInstance: {fileID: 6658854895000012590}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &869097289 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6658854896160516604, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
@@ -794,6 +801,11 @@ GameObject:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5546718070495690691, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
   m_PrefabInstance: {fileID: 5546718071078979358}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1063598101 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3693580859600040042, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+  m_PrefabInstance: {fileID: 6658854895000012590}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &1120600895 stripped
 RectTransform:
@@ -1600,6 +1612,43 @@ PrefabInstance:
     - {fileID: 4340539383612703545, guid: ad40286f2301a474ca204ed64d654824, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: ad40286f2301a474ca204ed64d654824, type: 3}
+--- !u!1 &2057885599 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1541914347349878328, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+  m_PrefabInstance: {fileID: 6658854895000012590}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2057885603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057885599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb9ac65c4a4ed947bb5414022ce0319, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempPackElement: {fileID: 854674502}
+  packs:
+    packs: []
+  packElementGameObject: []
+  cardCountsArray: []
+  phraseCountsArray: []
+--- !u!114 &2057885604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057885599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1 &2068572157 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6658854895347769555, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
@@ -1969,6 +2018,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1778535256}
     m_Modifications:
+    - target: {fileID: 987510086475468031, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 68398936}
+    - target: {fileID: 987510086475468031, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PremiumPromoButtonClick
+      objectReference: {fileID: 0}
     - target: {fileID: 1111476324198306606, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -2033,6 +2090,10 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 68398931}
+    - target: {fileID: 2644808109834789192, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_text
+      value: Card Count
+      objectReference: {fileID: 0}
     - target: {fileID: 3165502921076935152, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: canvas
       value: 
@@ -2061,6 +2122,66 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 9de1b49a8987d044797db9f94d743009, type: 3}
+    - target: {fileID: 4080871291171685818, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4080871291171685818, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4080871291171685818, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4080871291171685818, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4080871291171685818, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4080871291171685818, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4080871291171685818, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4080871291171685818, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4080871291171685818, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4080871291171685818, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4195568518635841224, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -150
+      objectReference: {fileID: 0}
+    - target: {fileID: 4195568518635841224, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4986621068390595917, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5031402354619920545, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_text
+      value: Unlock Premium!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071819962199032531, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_text
+      value: Pack Name
+      objectReference: {fileID: 0}
     - target: {fileID: 5291693120752409138, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2073,6 +2194,22 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 5601660897939913594, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601660897939913594, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601660897939913594, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 346.96533
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601660897939913594, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5775580200317848830, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: canvas
       value: 
@@ -2081,6 +2218,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 9de1b49a8987d044797db9f94d743009, type: 3}
+    - target: {fileID: 6220910641012903648, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_text
+      value: Phrase Count
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253345435164413949, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_Name
+      value: settings_promo_description
+      objectReference: {fileID: 0}
     - target: {fileID: 6257171868670648808, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_Interactable
       value: 1
@@ -2337,12 +2482,30 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 68398936}
+    - target: {fileID: 6838972535447874378, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_Spacing
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095587826513690956, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_Horizontal
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547214752721761812, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_Name
+      value: settings_selection_promo
+      objectReference: {fileID: 0}
     - target: {fileID: 8905234962237315465, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 68398936}
+    - target: {fileID: 9019531693712634227, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_text
+      value: Functionality of our games will always be free. Premium offers +50 additional
+        Assistive Card packs.
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6658854894415199877, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+    - {fileID: 8491738003494396077, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
 --- !u!1001 &7400471998767366786

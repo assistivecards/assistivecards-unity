@@ -14,6 +14,7 @@ public class GameAPI : MonoBehaviour
     public AssistiveCardsSDK.AssistiveCardsSDK.Languages cachedLanguages = new AssistiveCardsSDK.AssistiveCardsSDK.Languages();
     public AssistiveCardsSDK.AssistiveCardsSDK.Apps cachedApps = new AssistiveCardsSDK.AssistiveCardsSDK.Apps();
     public List<Texture2D> cachedAppIcons = new List<Texture2D>();
+    public List<Texture2D> cachedPackImages = new List<Texture2D>();
     public static Task cacheData;
     AssistiveCardsSDK.AssistiveCardsSDK assistiveCardsSDK;
     public Sound[] sfxClips;
@@ -37,6 +38,11 @@ public class GameAPI : MonoBehaviour
         for (int i = 0; i < cachedApps.apps.Count; i++)
         {
             cachedAppIcons.Add(await GetAppIcon(cachedApps.apps[i].slug));
+
+        }
+        for (int i = 0; i < cachedPacks.packs.Length; i++)
+        {
+            cachedPackImages.Add(await GetPackImage(cachedPacks.packs[i].slug));
 
         }
     }

@@ -28,6 +28,11 @@ public class GameAPI : MonoBehaviour
         await cacheData;
     }
 
+    private void Start()
+    {
+        Vibration.Init();
+    }
+
     public async Task CacheData()
     {
         selectedLangCode = await GetSystemLanguageCode();
@@ -985,6 +990,21 @@ public class GameAPI : MonoBehaviour
         {
             sfxSource.PlayOneShot(sfx.clip);
         }
+    }
+
+    public void VibrateWeak()
+    {
+        Vibration.VibratePop();
+    }
+
+    public void VibrateStrong()
+    {
+        Vibration.VibratePeek();
+    }
+
+    public void VibrateWeakTriple()
+    {
+        Vibration.VibrateNope();
     }
 
 }

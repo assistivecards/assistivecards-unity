@@ -7,7 +7,6 @@ using TMPro;
 
 public class ProfileEditor : MonoBehaviour
 {
-    [SerializeField] private TopAppBarController topAppBarController;
     [SerializeField] private GameObject avatarSelectionSettingsScreen;
     [SerializeField] private CanvasController canvasController;
 
@@ -42,7 +41,6 @@ public class ProfileEditor : MonoBehaviour
     public void AvatarSelectButtonClicked()
     {
         canvasController.currentScreen = avatarSelectionSettingsScreen;
-        topAppBarController.ChangeTopAppBarType(2);
         avatarSelectionSettingsScreen.SetActive(true);
         LeanTween.scale(avatarSelectionSettingsScreen,  Vector3.one, 0.2f);
     }

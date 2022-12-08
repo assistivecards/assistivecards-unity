@@ -93,14 +93,8 @@ public class CanvasController : MonoBehaviour
         profileImage.GetComponent<Image>().sprite = await gameAPI.GetAvatarImage();
     }
 
-    private void Update()
-    {
-        Debug.Log(currentScreen);
-    }
-
     public void ParentLockButtonClick()
     {
-        topAppBarController.ChangeTopAppBarType(2);
         currentScreen = parentLockScreen;
         LeanTween.scale(popUp, Vector3.one, 0.15f);
         parentLockScreen.SetActive(true);
@@ -108,7 +102,6 @@ public class CanvasController : MonoBehaviour
 
     public void ParentLockScreenClose()
     {
-        topAppBarController.ChangeTopAppBarType(0);
         currentScreen = mainSettingsScreen;
         LeanTween.scale(popUp, Vector3.one * 0.15f, 0.2f);
         parentLockScreen.SetActive(false);
@@ -204,10 +197,13 @@ public class CanvasController : MonoBehaviour
 
     public void CloseSettingClick()
     {
+        topAppBarController.onMain = false;
+        topAppBarController.ChangeTopAppBarType(2);
         //Fade Out
         settingScreenFadePanel.gameObject.SetActive(true);
         settingScreenFadePanel.CrossFadeAlpha(1, 0.25f, false);
         Invoke("OpenGamePanel", 0.1f);
+        StartFadeAnim();
     }
     private void OpenGamePanel()
     {

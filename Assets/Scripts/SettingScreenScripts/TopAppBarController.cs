@@ -37,7 +37,7 @@ public class TopAppBarController : MonoBehaviour
     [SerializeField] private SettingScreenButton profileEditorSettingScreenButton;
     private CanvasController canvasController;
     [SerializeField] private GameObject profileScreen;
-    private bool onMain = false;
+    public bool onMain = false;
     public bool onAvatarSelection = false;
 
 
@@ -45,6 +45,10 @@ public class TopAppBarController : MonoBehaviour
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
         canvasController = canvas.GetComponent<CanvasController>();
+    }
+    private void OnEnable() 
+    {
+        ChangeTopAppBarType(2);
     }
 
     public void ChangeTopAppBarType(int i)
@@ -99,20 +103,19 @@ public class TopAppBarController : MonoBehaviour
         {
             canvasController.CloseSettingClick();
             canvasController.StartFadeAnim();
+            ChangeTopAppBarType(2);
         }
         if (canvasController.currentScreen.name == "AvatarSelectionSettings")
         {
-            canvasController.currentScreen = profileScreen;
             LeanTween.scale(canvasController.currentScreen, Vector3.one * 0.9f, 0.15f);
             Invoke("SceneSetActiveFalse", 0.15f);
-            ChangeTopAppBarType(1);
+            Invoke("CloseAvatarSelectionScreen", 0.16f);
         }
         else
         {
             if (onMain)
             {
                 canvasController.CloseSettingClick();
-                canvasController.StartFadeAnim();
             }
             else
             {
@@ -126,10 +129,15 @@ public class TopAppBarController : MonoBehaviour
                 {
                     LeanTween.scale(canvasController.currentScreen, Vector3.one * 0.9f, 0.15f);
                     Invoke("SceneSetActiveFalse", 0.15f);
+                    ChangeTopAppBarType(0);
                 }
-                ChangeTopAppBarType(0);
             }
         }
+    }
+
+    private void CloseAvatarSelectionScreen()
+    {
+        canvasController.currentScreen = profileScreen;
     }
 
     private void SceneSetActiveFalse()
@@ -139,65 +147,75 @@ public class TopAppBarController : MonoBehaviour
 
     public async void SaveButtonClicked()
     {
-        if (canvasController.currentScreen.name == "Profile")
+        if(canvasController.currentScreen.name == "AvatarSelectionSettings")
         {
-            profileEditor = canvasController.currentScreen.GetComponentInParent<ProfileEditor>();
-            gameAPI.SetNickname(profileEditor.nicknameInputField.text);
-            canvas.GetComponent<CanvasController>().ProfilePanelUpdate();
-            profileEditorSettingScreenButton.SetAvatarImageOnGamePanel();
+            LeanTween.scale(canvasController.currentScreen, Vector3.one * 0.9f, 0.15f);
+            Invoke("SceneSetActiveFalse", 0.15f);
+            Invoke("CloseAvatarSelectionScreen", 0.16f);
         }
-        if (canvasController.currentScreen.name == "Accessibility")
+        else
         {
-            gameAPI.SetHapticsPreference(hapticsToggle.isOn ? 1 : 0);
-            gameAPI.SetActivateOnPressInPreference(activateOnPressToggle.isOn ? 1 : 0);
-            gameAPI.SetVoiceGreetingPreference(voiceGreetingToggle.isOn ? 1 : 0);
-        }
-        if (canvasController.currentScreen.name == "Notifications")
-        {
-            gameAPI.SetReminderPreference(dailyReminderToggle.isOn ? "Daily" : "Weekly");
-            gameAPI.SetUsabilityTipsPreference(usabilityTipsToggle.isOn ? 1 : 0);
-            gameAPI.SetPromotionsNotificationPreference(promotionsNotificationToggle.isOn ? 1 : 0);
-        }
-        if (canvasController.currentScreen.name == "Languages")
-        {
-            languageController = canvasController.currentScreen.GetComponentInParent<LanguageController>();
-            gameAPI.SetLanguage(languageController.selectedLanguage.name);
-            gameAPI.SetTTSPreference(await gameAPI.GetSelectedLocale());
-            canvas.GetComponent<LanguageTest>().OnLanguageChange();
-            Camera.main.GetComponent<NotificationsManager>().OnLanguageChange();
 
-            if (languageController.selectedLanguage.name == "Arabic" || languageController.selectedLanguage.name == "Urdu")
+            if (canvasController.currentScreen.name == "Profile")
             {
-                canvas.GetComponent<RightToLeftTextChanger>().RightToLeftLangugeChanged();
+                profileEditor = canvasController.currentScreen.GetComponentInParent<ProfileEditor>();
+                gameAPI.SetNickname(profileEditor.nicknameInputField.text);
+                canvas.GetComponent<CanvasController>().ProfilePanelUpdate();
+                profileEditorSettingScreenButton.SetAvatarImageOnGamePanel();
             }
-            else
+            if (canvasController.currentScreen.name == "Accessibility")
             {
-                canvas.GetComponent<RightToLeftTextChanger>().LeftToRightLanguageChanged();
+                gameAPI.SetHapticsPreference(hapticsToggle.isOn ? 1 : 0);
+                gameAPI.SetActivateOnPressInPreference(activateOnPressToggle.isOn ? 1 : 0);
+                gameAPI.SetVoiceGreetingPreference(voiceGreetingToggle.isOn ? 1 : 0);
             }
-        }
-        if (canvasController.currentScreen.name == "TTS")
-        {
-            gameAPI.SetTTSPreference(ttsPanel.selectedTtsElement.name);
-        }
-        if (canvasController.currentScreen.name == "Sound")
-        {
-            soundManagerUI = canvas.GetComponent<SoundManagerUI>();
-            gameAPI.SetMusicPreference(soundManagerUI.musicToggle.isOn ? 1 : 0);
-            gameAPI.SetSFXPreference(soundManagerUI.sfxToggle.isOn ? 1 : 0);
-            soundManagerUI.musicSource.mute = soundManagerUI.musicToggle.isOn ? false : true;
-            soundManagerUI.sfxSource.mute = soundManagerUI.sfxToggle.isOn ? false : true;
-            if (soundManagerUI.musicToggle.isOn == false)
+            if (canvasController.currentScreen.name == "Notifications")
             {
-                soundManagerUI.musicSource.Stop();
+                gameAPI.SetReminderPreference(dailyReminderToggle.isOn ? "Daily" : "Weekly");
+                gameAPI.SetUsabilityTipsPreference(usabilityTipsToggle.isOn ? 1 : 0);
+                gameAPI.SetPromotionsNotificationPreference(promotionsNotificationToggle.isOn ? 1 : 0);
             }
-            else if (soundManagerUI.musicToggle.isOn == true)
+            if (canvasController.currentScreen.name == "Languages")
             {
-                soundManagerUI.musicSource.Play();
-            }
-        }
+                languageController = canvasController.currentScreen.GetComponentInParent<LanguageController>();
+                gameAPI.SetLanguage(languageController.selectedLanguage.name);
+                gameAPI.SetTTSPreference(await gameAPI.GetSelectedLocale());
+                canvas.GetComponent<LanguageTest>().OnLanguageChange();
+                Camera.main.GetComponent<NotificationsManager>().OnLanguageChange();
 
-        LeanTween.scale(canvasController.currentScreen, Vector3.one * 0.9f, 0.15f);
-        Invoke("SceneSetActiveFalse", 0.15f);
-        ChangeTopAppBarType(0);
+                if (languageController.selectedLanguage.name == "Arabic" || languageController.selectedLanguage.name == "Urdu")
+                {
+                    canvas.GetComponent<RightToLeftTextChanger>().RightToLeftLangugeChanged();
+                }
+                else
+                {
+                    canvas.GetComponent<RightToLeftTextChanger>().LeftToRightLanguageChanged();
+                }
+            }
+            if (canvasController.currentScreen.name == "TTS")
+            {
+                gameAPI.SetTTSPreference(ttsPanel.selectedTtsElement.name);
+            }
+            if (canvasController.currentScreen.name == "Sound")
+            {
+                soundManagerUI = canvas.GetComponent<SoundManagerUI>();
+                gameAPI.SetMusicPreference(soundManagerUI.musicToggle.isOn ? 1 : 0);
+                gameAPI.SetSFXPreference(soundManagerUI.sfxToggle.isOn ? 1 : 0);
+                soundManagerUI.musicSource.mute = soundManagerUI.musicToggle.isOn ? false : true;
+                soundManagerUI.sfxSource.mute = soundManagerUI.sfxToggle.isOn ? false : true;
+                if (soundManagerUI.musicToggle.isOn == false)
+                {
+                    soundManagerUI.musicSource.Stop();
+                }
+                else if (soundManagerUI.musicToggle.isOn == true)
+                {
+                    soundManagerUI.musicSource.Play();
+                }
+            }
+
+            LeanTween.scale(canvasController.currentScreen, Vector3.one * 0.9f, 0.15f);
+            Invoke("SceneSetActiveFalse", 0.15f);
+            ChangeTopAppBarType(0);
+        }
     }
 }

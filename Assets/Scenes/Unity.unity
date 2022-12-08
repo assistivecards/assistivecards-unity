@@ -1338,6 +1338,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 773758865873878607, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1675808709995067389, guid: e6f74a65304f7594784561825a582f5d, type: 3}
       propertyPath: m_Material
       value: 
@@ -1348,7 +1352,7 @@ PrefabInstance:
       objectReference: {fileID: 68398936}
     - target: {fileID: 5253787178084977738, guid: e6f74a65304f7594784561825a582f5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ParentLockButtonClick
+      value: CloseSettingClick
       objectReference: {fileID: 0}
     - target: {fileID: 5253787178084977738, guid: e6f74a65304f7594784561825a582f5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScreenOrientationMode : MonoBehaviour
 {
-    [SerializeField] bool isPortrait;
+    [SerializeField] public bool isPortrait;
     private string orientationMode;
     GameAPI gameAPI;
     private void Awake()

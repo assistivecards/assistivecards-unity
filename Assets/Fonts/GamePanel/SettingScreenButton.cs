@@ -8,7 +8,9 @@ using TMPro;
 public class SettingScreenButton : MonoBehaviour
 {
     GameAPI gameAPI;
+    private ScreenOrientationMode screenOrientationMode;
     [SerializeField] private CanvasController canvasController;
+    [SerializeField] private GameObject settingButtonObject;
     [SerializeField] private Button settingButton;
     [SerializeField] private GameObject nickNameText;
     [SerializeField] private GameObject settingPrefab;
@@ -19,13 +21,9 @@ public class SettingScreenButton : MonoBehaviour
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+        screenOrientationMode = this.GetComponentInParent<ScreenOrientationMode>();
     }
     
-    private async void OnEnable()
-    {
-        settingButton.image.sprite = await gameAPI.GetAvatarImage();  
-
-    }
 
     private void Start()
     {

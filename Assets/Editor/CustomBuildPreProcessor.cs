@@ -25,28 +25,15 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
 
     public void OnPreprocessBuild(BuildReport report)
     {
-        if (true)
-        {
-            Texture2D icon = (Texture2D)AssetDatabase.LoadAssetAtPath("Assets/Sprites/AppIcons/" + PlayerSettings.productName + ".png", typeof(Texture2D));
-            PlayerSettings.SetIcons(NamedBuildTarget.Unknown, new Texture2D[] { icon }, IconKind.Any);
-            PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.Android, "com.assistivecards." + PlayerSettings.productName);
-        }
-        else
-        {
-            Debug.Log("isim ayni");
-        }
+        Texture2D icon = (Texture2D)AssetDatabase.LoadAssetAtPath("Assets/Sprites/AppIcons/" + PlayerSettings.productName + ".png", typeof(Texture2D));
+        PlayerSettings.SetIcons(NamedBuildTarget.Unknown, new Texture2D[] { icon }, IconKind.Any);
+        PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.Android, "com.assistivecards." + PlayerSettings.productName);
 
-        if (true)
-        {
-            var bundleVersionCode = PlayerSettings.bundleVersion.Replace(".", string.Empty);
-            PlayerSettings.Android.bundleVersionCode = Int32.Parse(bundleVersionCode);
-            PlayerSettings.iOS.buildNumber = PlayerSettings.bundleVersion;
-            Debug.Log("preprocessing");
-        }
-        else
-        {
-            Debug.Log("bundle version ayni");
-        }
+        var bundleVersionCode = PlayerSettings.bundleVersion.Replace(".", string.Empty);
+        PlayerSettings.Android.bundleVersionCode = Int32.Parse(bundleVersionCode);
+        PlayerSettings.iOS.buildNumber = PlayerSettings.bundleVersion;
+        Debug.Log("preprocessing");
+
     }
 
     static string ToTitleCase(string stringToConvert)
@@ -60,22 +47,18 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
     {
         if (Application.unityVersion.StartsWith("2022"))
         {
-            if (true)
-            {
-                List<EditorBuildSettingsScene> editorBuildSettingsScenesList = new List<EditorBuildSettingsScene>();
-                var sceneToAdd = new EditorBuildSettingsScene("Assets/Scenes/" + ToTitleCase(PlayerSettings.productName) + ".unity", true);
-                editorBuildSettingsScenesList.Add(sceneToAdd);
-                EditorBuildSettings.scenes = editorBuildSettingsScenesList.ToArray();
-                AssetDatabase.SaveAssets();
 
-                Array.Clear(options.scenes, 0, options.scenes.Length);
-                options.scenes = EditorBuildSettings.scenes.Select(ebss => ebss.path).ToArray();
-                BuildPlayerWindow.DefaultBuildMethods.BuildPlayer(options);
-            }
-            else
-            {
-                BuildPlayerWindow.DefaultBuildMethods.BuildPlayer(options);
-            }
+            List<EditorBuildSettingsScene> editorBuildSettingsScenesList = new List<EditorBuildSettingsScene>();
+            var sceneToAdd = new EditorBuildSettingsScene("Assets/Scenes/" + ToTitleCase(PlayerSettings.productName) + ".unity", true);
+            editorBuildSettingsScenesList.Add(sceneToAdd);
+            EditorBuildSettings.scenes = editorBuildSettingsScenesList.ToArray();
+            AssetDatabase.SaveAssets();
+
+            Array.Clear(options.scenes, 0, options.scenes.Length);
+            options.scenes = EditorBuildSettings.scenes.Select(ebss => ebss.path).ToArray();
+            BuildPlayerWindow.DefaultBuildMethods.BuildPlayer(options);
+
+
         }
         else
         {

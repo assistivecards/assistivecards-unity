@@ -286,6 +286,7 @@ IL2CPP_EXTERN_C RuntimeClass* IEnvironments_t9DCAF0398EB856DBE771A9C2D7B120661D6
 IL2CPP_EXTERN_C RuntimeClass* IProjectConfiguration_tB5A7516DEB869AD005431EC83C6E02221D2B60D2_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* Math_tEB65DE7CA8B083C412C969C92981C030865486CE_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* MetricsFactory_tFED08C34B8CB569B801796787E82F2818606FA05_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* MetricsHandler_tEB5A2227BB53393F34EF42AE8F015A673466FE74_il2cpp_TypeInfo_var;
@@ -329,6 +330,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteralC15B993D6B8D2B9BD7784FABEF615F72066DB53C
 IL2CPP_EXTERN_C String_t* _stringLiteralCE18B047107AA23D1AA9B2ED32D316148E02655F;
 IL2CPP_EXTERN_C String_t* _stringLiteralCE871287248FF7EDAEE587BCFE45EB79F4C06B0D;
 IL2CPP_EXTERN_C String_t* _stringLiteralCEBC9755CF071B2DB2F4E4365093DF8A5009F227;
+IL2CPP_EXTERN_C String_t* _stringLiteralD0F18B89B1F8655687A510EA40A91CA6D56786B9;
 IL2CPP_EXTERN_C String_t* _stringLiteralD370FE1ACCF063EBBC76335CFD838026A2B964C0;
 IL2CPP_EXTERN_C String_t* _stringLiteralD559C6D97E819D8E4EF7ACDC34C4E8D3DD314964;
 IL2CPP_EXTERN_C String_t* _stringLiteralD99605E29810F93D7DAE4EFBB764C41AF4E80D32;
@@ -1763,6 +1765,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1__ctor_m10D43F52BCD06D9D822ED38C2F
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* TelemetryUtils_CreateCachePersister_TisDiagnosticsPayload_tFACE4451747DC3F51B8260AFCF8183DD54D9FFFD_m3F204710C094AC433BDF212C69BCC95E731D05DD_gshared (String_t* ___fileName0, int32_t ___platform1, const RuntimeMethod* method) ;
 // System.Void Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.Services.Core.Telemetry.Internal.DiagnosticsPayload,Unity.Services.Core.Telemetry.Internal.Diagnostic>::Initialize(Unity.Services.Core.Configuration.Internal.ICloudProjectId,Unity.Services.Core.Environments.Internal.IEnvironments)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TelemetryHandler_2_Initialize_mF83887007D69683927853CF6A2D58C66255ED457_gshared (TelemetryHandler_2_tACBE6FB667B76B9218CB9ACFAA5030F7416CDC0C* __this, RuntimeObject* ___cloudProjectId0, RuntimeObject* ___environments1, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Diagnostic>::AddWithResize(T)
+IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void List_1_AddWithResize_m488C0FE43760EA1EC385AB2603088F1560EC2BEF_gshared (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87* __this, Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A ___item0, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Metric>::AddWithResize(T)
+IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void List_1_AddWithResize_m8458E8543A17AD67BCFB8B3A7C9D069A6BFAD0B3_gshared (List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA* __this, Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3 ___item0, const RuntimeMethod* method) ;
 
 // System.String Unity.Services.Core.Telemetry.Internal.FileCachePersister::GetPersistentDataPathFor(UnityEngine.RuntimePlatform)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* FileCachePersister_GetPersistentDataPathFor_mAA3C085B70D73236A56C8DF6C16FE348F910EE0B (int32_t ___platform0, const RuntimeMethod* method) ;
@@ -1784,6 +1790,14 @@ inline Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83* DictionaryExtensi
 {
 	return ((  Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83* (*) (Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83*, RuntimeObject*, const RuntimeMethod*))DictionaryExtensions_MergeAllowOverride_TisRuntimeObject_TisRuntimeObject_TisRuntimeObject_m80984F95B46A6F67D8893FE6052EC0FD2C189B5A_gshared)(___self0, ___dictionary1, method);
 }
+// System.Int32 System.String::get_Length()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline (String_t* __this, const RuntimeMethod* method) ;
+// System.String System.String::Substring(System.Int32,System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Substring_mB1D94F47935D22E130FF2C01DBB6A4135FBB76CE (String_t* __this, int32_t ___startIndex0, int32_t ___length1, const RuntimeMethod* method) ;
+// System.String System.Environment::get_NewLine()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Environment_get_NewLine_m8BF68A4EFDAFFB66500984CE779629811BA98FFF (const RuntimeMethod* method) ;
+// System.String System.String::Concat(System.String,System.String,System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B (String_t* ___str00, String_t* ___str11, String_t* ___str22, const RuntimeMethod* method) ;
 // Unity.Services.Core.Telemetry.Internal.DiagnosticsHandler Unity.Services.Core.Telemetry.Internal.Diagnostics::get_Handler()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR DiagnosticsHandler_t9AE9840AF25655F717E0584299B3608FCE227C22* Diagnostics_get_Handler_mFA92ACC612B06CC0DC12F58A2F6CD09430F0F7B9_inline (Diagnostics_t24C9DED6F621BBF7D712D62FD3776D29B3CE5012* __this, const RuntimeMethod* method) ;
 // System.Void Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.Services.Core.Telemetry.Internal.DiagnosticsPayload,Unity.Services.Core.Telemetry.Internal.Diagnostic>::Register(TEvent)
@@ -1931,8 +1945,6 @@ inline TelemetryConfig_t7D6911708D0C402786B501769520404D9EF41601* TelemetryHandl
 }
 // System.Int32 System.String::LastIndexOf(System.String,System.StringComparison)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t String_LastIndexOf_m436B3CDFB93031C7D7710274C092EE52CEAF419F (String_t* __this, String_t* ___value0, int32_t ___comparisonType1, const RuntimeMethod* method) ;
-// System.String System.String::Substring(System.Int32,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Substring_mB1D94F47935D22E130FF2C01DBB6A4135FBB76CE (String_t* __this, int32_t ___startIndex0, int32_t ___length1, const RuntimeMethod* method) ;
 // System.Void Unity.Services.Core.Telemetry.Internal.DisabledMetrics::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DisabledMetrics__ctor_mED3AD0A9283DB0685B28202DE0ED41849D0FC3CD (DisabledMetrics_tDD1FEF93B7BF27F4AF3ED32521415AEE0769C338* __this, const RuntimeMethod* method) ;
 // System.Collections.Generic.IDictionary`2<System.String,System.String> Unity.Services.Core.Telemetry.Internal.Metrics::get_PackageTags()
@@ -2000,8 +2012,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ExponentialBackOffRetryPolicy_IsTransien
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ExponentialBackOffRetryPolicy_U3CIsTransientErrorU3Eg__IsServerErrorCodeU7C9_0_mA06AE32C5A2AAF0575751BFD9C55342CBDEE5315 (int64_t ___responseCode0, const RuntimeMethod* method) ;
 // System.Single Unity.Services.Core.Telemetry.Internal.ExponentialBackOffRetryPolicy::get_BaseDelaySeconds()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float ExponentialBackOffRetryPolicy_get_BaseDelaySeconds_m62C2D27786AB3A7635D09E79C3F92CA472782087_inline (ExponentialBackOffRetryPolicy_t96CDC709DB5E2ED182D549B2DBABC6E157954DCF* __this, const RuntimeMethod* method) ;
-// System.String System.String::Concat(System.String,System.String,System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B (String_t* ___str00, String_t* ___str11, String_t* ___str22, const RuntimeMethod* method) ;
 // System.String Unity.Services.Core.Telemetry.Internal.TelemetrySender::get_TargetUrl()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* TelemetrySender_get_TargetUrl_mA9EEA023222BEE40368C40D2293C5A2E917C878F_inline (TelemetrySender_t67AA5E279317D039D339BB675990F0BB795ADA3F* __this, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Networking.UnityWebRequest::.ctor(System.String,System.String)
@@ -2120,8 +2130,20 @@ inline void TelemetryHandler_2_Initialize_mF83887007D69683927853CF6A2D58C66255ED
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DiagnosticsFactory__ctor_mD328A7AFD1858E30D437C423780E98460C78B84C (DiagnosticsFactory_tD2C64CDF0CC356965DB1993359515DC82D715CF2* __this, DiagnosticsHandler_t9AE9840AF25655F717E0584299B3608FCE227C22* ___handler0, RuntimeObject* ___projectConfig1, const RuntimeMethod* method) ;
 // System.Void Unity.Services.Core.Telemetry.Internal.TelemetryConfig::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TelemetryConfig__ctor_m36010D53C70E15DC09BA4B8E36AF1666DE4F97A6 (TelemetryConfig_t7D6911708D0C402786B501769520404D9EF41601* __this, const RuntimeMethod* method) ;
+// System.Int32 System.Math::Min(System.Int32,System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Math_Min_m53C488772A34D53917BCA2A491E79A0A5356ED52 (int32_t ___val10, int32_t ___val21, const RuntimeMethod* method) ;
 // System.Void System.Array::Clear(System.Array,System.Int32,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_Clear_m50BAA3751899858B097D3FF2ED31F284703FE5CB (RuntimeArray* ___array0, int32_t ___index1, int32_t ___length2, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Diagnostic>::AddWithResize(T)
+inline void List_1_AddWithResize_m488C0FE43760EA1EC385AB2603088F1560EC2BEF (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87* __this, Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A ___item0, const RuntimeMethod* method)
+{
+	((  void (*) (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87*, Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A, const RuntimeMethod*))List_1_AddWithResize_m488C0FE43760EA1EC385AB2603088F1560EC2BEF_gshared)(__this, ___item0, method);
+}
+// System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Metric>::AddWithResize(T)
+inline void List_1_AddWithResize_m8458E8543A17AD67BCFB8B3A7C9D069A6BFAD0B3 (List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA* __this, Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3 ___item0, const RuntimeMethod* method)
+{
+	((  void (*) (List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA*, Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3, const RuntimeMethod*))List_1_AddWithResize_m8458E8543A17AD67BCFB8B3A7C9D069A6BFAD0B3_gshared)(__this, ___item0, method);
+}
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -2243,6 +2265,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Diagnostics_SendDiagnostic_mF569E18F0662
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDictionary_2_t51DBA2F8AFDC8E5CC588729B12034B8C4D30B0AF_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&TelemetryHandler_2_Register_m9568D76F69F2507297946630C027D1B35AA86D91_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralCE18B047107AA23D1AA9B2ED32D316148E02655F);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralD0F18B89B1F8655687A510EA40A91CA6D56786B9);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralD559C6D97E819D8E4EF7ACDC34C4E8D3DD314964);
 		s_Il2CppMethodInitialized = true;
 	}
@@ -2308,18 +2331,50 @@ IL_002b:
 		String_t* L_10 = ___name0;
 		NullCheck(L_9);
 		InterfaceActionInvoker2< String_t*, String_t* >::Invoke(5 /* System.Void System.Collections.Generic.IDictionary`2<System.String,System.String>::Add(TKey,TValue) */, IDictionary_2_t51DBA2F8AFDC8E5CC588729B12034B8C4D30B0AF_il2cpp_TypeInfo_var, L_9, _stringLiteralCE18B047107AA23D1AA9B2ED32D316148E02655F, L_10);
-		// diagnostic.Content.Add(TagKeys.DiagnosticMessage, message);
-		Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A L_11 = V_0;
-		RuntimeObject* L_12 = L_11.___Content_0;
-		String_t* L_13 = ___message1;
+		// if (message != null && message.Length > MaxDiagnosticMessageLength)
+		String_t* L_11 = ___message1;
+		if (!L_11)
+		{
+			goto IL_0070;
+		}
+	}
+	{
+		String_t* L_12 = ___message1;
 		NullCheck(L_12);
-		InterfaceActionInvoker2< String_t*, String_t* >::Invoke(5 /* System.Void System.Collections.Generic.IDictionary`2<System.String,System.String>::Add(TKey,TValue) */, IDictionary_2_t51DBA2F8AFDC8E5CC588729B12034B8C4D30B0AF_il2cpp_TypeInfo_var, L_12, _stringLiteralD559C6D97E819D8E4EF7ACDC34C4E8D3DD314964, L_13);
-		// Handler.Register(diagnostic);
-		DiagnosticsHandler_t9AE9840AF25655F717E0584299B3608FCE227C22* L_14;
-		L_14 = Diagnostics_get_Handler_mFA92ACC612B06CC0DC12F58A2F6CD09430F0F7B9_inline(__this, NULL);
-		Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A L_15 = V_0;
+		int32_t L_13;
+		L_13 = String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline(L_12, NULL);
+		if ((((int32_t)L_13) <= ((int32_t)((int32_t)10000))))
+		{
+			goto IL_0070;
+		}
+	}
+	{
+		// message = $"{message.Substring(0, MaxDiagnosticMessageLength)}{Environment.NewLine}{DiagnosticMessageTruncateSuffix}";
+		String_t* L_14 = ___message1;
 		NullCheck(L_14);
-		TelemetryHandler_2_Register_m9568D76F69F2507297946630C027D1B35AA86D91(L_14, L_15, TelemetryHandler_2_Register_m9568D76F69F2507297946630C027D1B35AA86D91_RuntimeMethod_var);
+		String_t* L_15;
+		L_15 = String_Substring_mB1D94F47935D22E130FF2C01DBB6A4135FBB76CE(L_14, 0, ((int32_t)10000), NULL);
+		String_t* L_16;
+		L_16 = Environment_get_NewLine_m8BF68A4EFDAFFB66500984CE779629811BA98FFF(NULL);
+		String_t* L_17;
+		L_17 = String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B(L_15, L_16, _stringLiteralD0F18B89B1F8655687A510EA40A91CA6D56786B9, NULL);
+		___message1 = L_17;
+	}
+
+IL_0070:
+	{
+		// diagnostic.Content.Add(TagKeys.DiagnosticMessage, message);
+		Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A L_18 = V_0;
+		RuntimeObject* L_19 = L_18.___Content_0;
+		String_t* L_20 = ___message1;
+		NullCheck(L_19);
+		InterfaceActionInvoker2< String_t*, String_t* >::Invoke(5 /* System.Void System.Collections.Generic.IDictionary`2<System.String,System.String>::Add(TKey,TValue) */, IDictionary_2_t51DBA2F8AFDC8E5CC588729B12034B8C4D30B0AF_il2cpp_TypeInfo_var, L_19, _stringLiteralD559C6D97E819D8E4EF7ACDC34C4E8D3DD314964, L_20);
+		// Handler.Register(diagnostic);
+		DiagnosticsHandler_t9AE9840AF25655F717E0584299B3608FCE227C22* L_21;
+		L_21 = Diagnostics_get_Handler_mFA92ACC612B06CC0DC12F58A2F6CD09430F0F7B9_inline(__this, NULL);
+		Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A L_22 = V_0;
+		NullCheck(L_21);
+		TelemetryHandler_2_Register_m9568D76F69F2507297946630C027D1B35AA86D91(L_21, L_22, TelemetryHandler_2_Register_m9568D76F69F2507297946630C027D1B35AA86D91_RuntimeMethod_var);
 		// }
 		return;
 	}
@@ -4916,7 +4971,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* FactoryUtils_CreatePackageTags
 	}
 	String_t* V_0 = NULL;
 	{
-		// var packageVersion = projectConfig.GetString(string.Format(PackageVersionKeyFormat, packageName), String.Empty);
+		// var packageVersion = projectConfig.GetString(
+		//     string.Format(PackageVersionKeyFormat, packageName), string.Empty);
 		RuntimeObject* L_0 = ___projectConfig0;
 		String_t* L_1 = ___packageName1;
 		String_t* L_2;
@@ -5284,6 +5340,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TelemetryConfig_t7D6911708D0C402786B501769520
 	if (!s_Il2CppMethodInitialized)
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IProjectConfiguration_tB5A7516DEB869AD005431EC83C6E02221D2B60D2_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Math_tEB65DE7CA8B083C412C969C92981C030865486CE_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&TelemetryConfig_t7D6911708D0C402786B501769520404D9EF41601_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral01C466FBD86FBB7A01FEE5B4420364EB13779331);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral3F484DF1DE5CC5067AC2EE918EB63F569DC0CC1E);
@@ -5303,7 +5360,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TelemetryConfig_t7D6911708D0C402786B501769520
 		//     PayloadExpirationSeconds = projectConfiguration.GetInt(TelemetryConfigKeys.PayloadExpirationSeconds, defaultPayloadExpirationSeconds),
 		//     PayloadSendingMaxIntervalSeconds = projectConfiguration.GetInt(TelemetryConfigKeys.PayloadSendingMaxIntervalSeconds, defaultPayloadSendingMaxIntervalSeconds),
 		//     SafetyPersistenceIntervalSeconds = projectConfiguration.GetInt(TelemetryConfigKeys.SafetyPersistenceIntervalSeconds, defaultSafetyPersistenceIntervalSeconds),
-		//     MaxMetricCountPerPayload = projectConfiguration.GetInt(TelemetryConfigKeys.MaxMetricCountPerPayload, defaultMaxMetricCountPerPayload),
+		//     MaxMetricCountPerPayload = Math.Min(TelemetryConfig.MaxMetricCountPerPayloadLimit, projectConfiguration.GetInt(TelemetryConfigKeys.MaxMetricCountPerPayload, TelemetryConfig.MaxMetricCountPerPayloadLimit)),
 		// };
 		TelemetryConfig_t7D6911708D0C402786B501769520404D9EF41601* L_0 = (TelemetryConfig_t7D6911708D0C402786B501769520404D9EF41601*)il2cpp_codegen_object_new(TelemetryConfig_t7D6911708D0C402786B501769520404D9EF41601_il2cpp_TypeInfo_var);
 		NullCheck(L_0);
@@ -5349,9 +5406,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TelemetryConfig_t7D6911708D0C402786B501769520
 		RuntimeObject* L_17 = ___projectConfiguration0;
 		NullCheck(L_17);
 		int32_t L_18;
-		L_18 = InterfaceFuncInvoker2< int32_t, String_t*, int32_t >::Invoke(1 /* System.Int32 Unity.Services.Core.Configuration.Internal.IProjectConfiguration::GetInt(System.String,System.Int32) */, IProjectConfiguration_tB5A7516DEB869AD005431EC83C6E02221D2B60D2_il2cpp_TypeInfo_var, L_17, _stringLiteralEC0C33C027C86616F69526EFB6E3328D3A142734, ((int32_t)2000));
+		L_18 = InterfaceFuncInvoker2< int32_t, String_t*, int32_t >::Invoke(1 /* System.Int32 Unity.Services.Core.Configuration.Internal.IProjectConfiguration::GetInt(System.String,System.Int32) */, IProjectConfiguration_tB5A7516DEB869AD005431EC83C6E02221D2B60D2_il2cpp_TypeInfo_var, L_17, _stringLiteralEC0C33C027C86616F69526EFB6E3328D3A142734, ((int32_t)295));
+		il2cpp_codegen_runtime_class_init_inline(Math_tEB65DE7CA8B083C412C969C92981C030865486CE_il2cpp_TypeInfo_var);
+		int32_t L_19;
+		L_19 = Math_Min_m53C488772A34D53917BCA2A491E79A0A5356ED52(((int32_t)295), L_18, NULL);
 		NullCheck(L_16);
-		L_16->___MaxMetricCountPerPayload_5 = L_18;
+		L_16->___MaxMetricCountPerPayload_5 = L_19;
 		// return config;
 		return L_16;
 	}
@@ -5364,6 +5424,13 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Diagnostics_get_Pa
 	{
 		// internal IDictionary<string, string> PackageTags { get; }
 		RuntimeObject* L_0 = __this->___U3CPackageTagsU3Ek__BackingField_1;
+		return L_0;
+	}
+}
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline (String_t* __this, const RuntimeMethod* method) 
+{
+	{
+		int32_t L_0 = __this->____stringLength_4;
 		return L_0;
 	}
 }
@@ -5601,7 +5668,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_m8004FEA760656128
 IL_0034:
 	{
 		Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A L_9 = ___item0;
-		((  void (*) (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87*, Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 11)))(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 11));
+		List_1_AddWithResize_m488C0FE43760EA1EC385AB2603088F1560EC2BEF(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 14));
 		return;
 	}
 }
@@ -5638,7 +5705,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mBDDFD218EA8F7519
 IL_0034:
 	{
 		Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3 L_9 = ___item0;
-		((  void (*) (List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA*, Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 11)))(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 11));
+		List_1_AddWithResize_m8458E8543A17AD67BCFB8B3A7C9D069A6BFAD0B3(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 14));
 		return;
 	}
 }

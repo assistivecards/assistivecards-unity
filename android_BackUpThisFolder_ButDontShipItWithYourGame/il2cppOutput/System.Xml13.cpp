@@ -176,50 +176,6 @@ struct GenericInterfaceActionInvoker1
 		((Action)invokeData.methodPtr)(obj, p1, invokeData.method);
 	}
 };
-template <typename T1>
-struct InvokerActionInvoker1;
-template <typename T1>
-struct InvokerActionInvoker1<T1*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1)
-	{
-		void* params[1] = { p1 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2>
-struct InvokerActionInvoker2;
-template <typename T1, typename T2>
-struct InvokerActionInvoker2<T1*, T2*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2)
-	{
-		void* params[2] = { p1, p2 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2, typename T3>
-struct InvokerActionInvoker3;
-template <typename T1, typename T2, typename T3>
-struct InvokerActionInvoker3<T1*, T2*, T3*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3* p3)
-	{
-		void* params[3] = { p1, p2, p3 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
-template <typename T1, typename T2, typename T3, typename T4>
-struct InvokerActionInvoker4;
-template <typename T1, typename T2, typename T3, typename T4>
-struct InvokerActionInvoker4<T1*, T2*, T3*, T4*>
-{
-	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3* p3, T4* p4)
-	{
-		void* params[4] = { p1, p2, p3, p4 };
-		method->invoker_method(methodPtr, method, obj, params, NULL);
-	}
-};
 
 // System.Runtime.CompilerServices.ConditionalWeakTable`2<System.Object,System.Runtime.Serialization.SerializationInfo>
 struct ConditionalWeakTable_2_t381B9D0186C0FCC3F83C0696C28C5001468A7858;
@@ -4154,7 +4110,6 @@ struct XmlSchemaXPath_t1C3193CCD8056E55DEC3C6E74DE25859AD88D76A  : public XmlSch
 };
 
 // System.Xml.Schema.XmlAtomicValue/Union
-#pragma pack(push, tp, 1)
 struct Union_tB0D56D753DC8A0B45FCAF1229929BAA3E2B9293B 
 {
 	union
@@ -4223,7 +4178,6 @@ struct Union_tB0D56D753DC8A0B45FCAF1229929BAA3E2B9293B
 		uint8_t Union_tB0D56D753DC8A0B45FCAF1229929BAA3E2B9293B__padding[8];
 	};
 };
-#pragma pack(pop, tp)
 // Native definition for P/Invoke marshalling of System.Xml.Schema.XmlAtomicValue/Union
 struct Union_tB0D56D753DC8A0B45FCAF1229929BAA3E2B9293B_marshaled_pinvoke
 {
@@ -6285,14 +6239,6 @@ void ValidationEventHandler_Invoke_m585F7368113F5FDF31F3C7C9C5B7F520CE46481B_Ope
 	typedef void (*FunctionPointerType) (RuntimeObject*, ValidationEventArgs_t9857F51592E50B7D14912FFA79909878DC603830*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___sender0, ___e1, method);
 }
-void ValidationEventHandler_Invoke_m585F7368113F5FDF31F3C7C9C5B7F520CE46481B_OpenStaticInvoker(ValidationEventHandler_t400B20AD482B62613818392D3E5588426332560A* __this, RuntimeObject* ___sender0, ValidationEventArgs_t9857F51592E50B7D14912FFA79909878DC603830* ___e1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< RuntimeObject*, ValidationEventArgs_t9857F51592E50B7D14912FFA79909878DC603830* >::Invoke(__this->___method_ptr_0, method, NULL, ___sender0, ___e1);
-}
-void ValidationEventHandler_Invoke_m585F7368113F5FDF31F3C7C9C5B7F520CE46481B_ClosedStaticInvoker(ValidationEventHandler_t400B20AD482B62613818392D3E5588426332560A* __this, RuntimeObject* ___sender0, ValidationEventArgs_t9857F51592E50B7D14912FFA79909878DC603830* ___e1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker3< RuntimeObject*, RuntimeObject*, ValidationEventArgs_t9857F51592E50B7D14912FFA79909878DC603830* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___sender0, ___e1);
-}
 void ValidationEventHandler_Invoke_m585F7368113F5FDF31F3C7C9C5B7F520CE46481B_OpenVirtual(ValidationEventHandler_t400B20AD482B62613818392D3E5588426332560A* __this, RuntimeObject* ___sender0, ValidationEventArgs_t9857F51592E50B7D14912FFA79909878DC603830* ___e1, const RuntimeMethod* method)
 {
 	NullCheck(___sender0);
@@ -6316,7 +6262,7 @@ void ValidationEventHandler_Invoke_m585F7368113F5FDF31F3C7C9C5B7F520CE46481B_Ope
 // System.Void System.Xml.Schema.ValidationEventHandler::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValidationEventHandler__ctor_m4DA097FFF425C3B807BA394597EF98FE2DB1B190 (ValidationEventHandler_t400B20AD482B62613818392D3E5588426332560A* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -6325,19 +6271,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValidationEventHandler__ctor_m4DA097FFF4
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 2;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&ValidationEventHandler_Invoke_m585F7368113F5FDF31F3C7C9C5B7F520CE46481B_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&ValidationEventHandler_Invoke_m585F7368113F5FDF31F3C7C9C5B7F520CE46481B_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&ValidationEventHandler_Invoke_m585F7368113F5FDF31F3C7C9C5B7F520CE46481B_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&ValidationEventHandler_Invoke_m585F7368113F5FDF31F3C7C9C5B7F520CE46481B_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -13114,18 +13054,10 @@ void XdrBuildFunction_Invoke_m061F9598C04BD09D9AAAFF69C652062BAF7EA46F_OpenStati
 	typedef void (*FunctionPointerType) (XdrBuilder_tFAD5028958B5F432AD022248915D66CC6F61C921*, RuntimeObject*, String_t*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___builder0, ___obj1, ___prefix2, method);
 }
-void XdrBuildFunction_Invoke_m061F9598C04BD09D9AAAFF69C652062BAF7EA46F_OpenStaticInvoker(XdrBuildFunction_tCC5AC4EA35B688E058CB1B605F972CC8F7E1563D* __this, XdrBuilder_tFAD5028958B5F432AD022248915D66CC6F61C921* ___builder0, RuntimeObject* ___obj1, String_t* ___prefix2, const RuntimeMethod* method)
-{
-	InvokerActionInvoker3< XdrBuilder_tFAD5028958B5F432AD022248915D66CC6F61C921*, RuntimeObject*, String_t* >::Invoke(__this->___method_ptr_0, method, NULL, ___builder0, ___obj1, ___prefix2);
-}
-void XdrBuildFunction_Invoke_m061F9598C04BD09D9AAAFF69C652062BAF7EA46F_ClosedStaticInvoker(XdrBuildFunction_tCC5AC4EA35B688E058CB1B605F972CC8F7E1563D* __this, XdrBuilder_tFAD5028958B5F432AD022248915D66CC6F61C921* ___builder0, RuntimeObject* ___obj1, String_t* ___prefix2, const RuntimeMethod* method)
-{
-	InvokerActionInvoker4< RuntimeObject*, XdrBuilder_tFAD5028958B5F432AD022248915D66CC6F61C921*, RuntimeObject*, String_t* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___builder0, ___obj1, ___prefix2);
-}
 // System.Void System.Xml.Schema.XdrBuilder/XdrBuildFunction::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XdrBuildFunction__ctor_mD3BB57CC5010A4A535F2D1499DA1443EA7D5E8F5 (XdrBuildFunction_tCC5AC4EA35B688E058CB1B605F972CC8F7E1563D* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -13134,19 +13066,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XdrBuildFunction__ctor_mD3BB57CC5010A4A5
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 3;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&XdrBuildFunction_Invoke_m061F9598C04BD09D9AAAFF69C652062BAF7EA46F_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&XdrBuildFunction_Invoke_m061F9598C04BD09D9AAAFF69C652062BAF7EA46F_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&XdrBuildFunction_Invoke_m061F9598C04BD09D9AAAFF69C652062BAF7EA46F_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&XdrBuildFunction_Invoke_m061F9598C04BD09D9AAAFF69C652062BAF7EA46F_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -13201,18 +13127,10 @@ void XdrInitFunction_Invoke_m6679C8F00B1541C22513632FE7AC76DF51F864BD_OpenStatic
 	typedef void (*FunctionPointerType) (XdrBuilder_tFAD5028958B5F432AD022248915D66CC6F61C921*, RuntimeObject*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___builder0, ___obj1, method);
 }
-void XdrInitFunction_Invoke_m6679C8F00B1541C22513632FE7AC76DF51F864BD_OpenStaticInvoker(XdrInitFunction_t45BA0B8AE7685F231F0EE229FD90FCE5316B6E03* __this, XdrBuilder_tFAD5028958B5F432AD022248915D66CC6F61C921* ___builder0, RuntimeObject* ___obj1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< XdrBuilder_tFAD5028958B5F432AD022248915D66CC6F61C921*, RuntimeObject* >::Invoke(__this->___method_ptr_0, method, NULL, ___builder0, ___obj1);
-}
-void XdrInitFunction_Invoke_m6679C8F00B1541C22513632FE7AC76DF51F864BD_ClosedStaticInvoker(XdrInitFunction_t45BA0B8AE7685F231F0EE229FD90FCE5316B6E03* __this, XdrBuilder_tFAD5028958B5F432AD022248915D66CC6F61C921* ___builder0, RuntimeObject* ___obj1, const RuntimeMethod* method)
-{
-	InvokerActionInvoker3< RuntimeObject*, XdrBuilder_tFAD5028958B5F432AD022248915D66CC6F61C921*, RuntimeObject* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___builder0, ___obj1);
-}
 // System.Void System.Xml.Schema.XdrBuilder/XdrInitFunction::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XdrInitFunction__ctor_mDA858B024C18FA7584FDDDA01137DB7DF9970FF0 (XdrInitFunction_t45BA0B8AE7685F231F0EE229FD90FCE5316B6E03* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -13221,19 +13139,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XdrInitFunction__ctor_mDA858B024C18FA758
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 2;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&XdrInitFunction_Invoke_m6679C8F00B1541C22513632FE7AC76DF51F864BD_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&XdrInitFunction_Invoke_m6679C8F00B1541C22513632FE7AC76DF51F864BD_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&XdrInitFunction_Invoke_m6679C8F00B1541C22513632FE7AC76DF51F864BD_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&XdrInitFunction_Invoke_m6679C8F00B1541C22513632FE7AC76DF51F864BD_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -13288,18 +13200,10 @@ void XdrBeginChildFunction_Invoke_m693102E6576ACDB8341806CD142ECC9DCE9990F7_Open
 	typedef void (*FunctionPointerType) (XdrBuilder_tFAD5028958B5F432AD022248915D66CC6F61C921*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___builder0, method);
 }
-void XdrBeginChildFunction_Invoke_m693102E6576ACDB8341806CD142ECC9DCE9990F7_OpenStaticInvoker(XdrBeginChildFunction_tC19AA7C03CC04FDBD3D882EB5C36786347B0E11C* __this, XdrBuilder_tFAD5028958B5F432AD022248915D66CC6F61C921* ___builder0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker1< XdrBuilder_tFAD5028958B5F432AD022248915D66CC6F61C921* >::Invoke(__this->___method_ptr_0, method, NULL, ___builder0);
-}
-void XdrBeginChildFunction_Invoke_m693102E6576ACDB8341806CD142ECC9DCE9990F7_ClosedStaticInvoker(XdrBeginChildFunction_tC19AA7C03CC04FDBD3D882EB5C36786347B0E11C* __this, XdrBuilder_tFAD5028958B5F432AD022248915D66CC6F61C921* ___builder0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< RuntimeObject*, XdrBuilder_tFAD5028958B5F432AD022248915D66CC6F61C921* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___builder0);
-}
 // System.Void System.Xml.Schema.XdrBuilder/XdrBeginChildFunction::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XdrBeginChildFunction__ctor_m756E742C02D12947B5FD51EBA411ADDA8F7B264A (XdrBeginChildFunction_tC19AA7C03CC04FDBD3D882EB5C36786347B0E11C* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -13308,19 +13212,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XdrBeginChildFunction__ctor_m756E742C02D
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 1;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&XdrBeginChildFunction_Invoke_m693102E6576ACDB8341806CD142ECC9DCE9990F7_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&XdrBeginChildFunction_Invoke_m693102E6576ACDB8341806CD142ECC9DCE9990F7_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&XdrBeginChildFunction_Invoke_m693102E6576ACDB8341806CD142ECC9DCE9990F7_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&XdrBeginChildFunction_Invoke_m693102E6576ACDB8341806CD142ECC9DCE9990F7_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{
@@ -13375,18 +13273,10 @@ void XdrEndChildFunction_Invoke_mABE0F9DEA959DA111C4EF380D62F2B94D2B0E2B1_OpenSt
 	typedef void (*FunctionPointerType) (XdrBuilder_tFAD5028958B5F432AD022248915D66CC6F61C921*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___method_ptr_0)(___builder0, method);
 }
-void XdrEndChildFunction_Invoke_mABE0F9DEA959DA111C4EF380D62F2B94D2B0E2B1_OpenStaticInvoker(XdrEndChildFunction_t4FBD5AFD77A96E313863E0B8EC4F88F1A68B829E* __this, XdrBuilder_tFAD5028958B5F432AD022248915D66CC6F61C921* ___builder0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker1< XdrBuilder_tFAD5028958B5F432AD022248915D66CC6F61C921* >::Invoke(__this->___method_ptr_0, method, NULL, ___builder0);
-}
-void XdrEndChildFunction_Invoke_mABE0F9DEA959DA111C4EF380D62F2B94D2B0E2B1_ClosedStaticInvoker(XdrEndChildFunction_t4FBD5AFD77A96E313863E0B8EC4F88F1A68B829E* __this, XdrBuilder_tFAD5028958B5F432AD022248915D66CC6F61C921* ___builder0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< RuntimeObject*, XdrBuilder_tFAD5028958B5F432AD022248915D66CC6F61C921* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___builder0);
-}
 // System.Void System.Xml.Schema.XdrBuilder/XdrEndChildFunction::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XdrEndChildFunction__ctor_m43EAC897C89F172A7BD138BABCB51DE56315830B (XdrEndChildFunction_t4FBD5AFD77A96E313863E0B8EC4F88F1A68B829E* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
 {
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1);
 	__this->___method_3 = ___method1;
 	__this->___m_target_2 = ___object0;
 	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
@@ -13395,19 +13285,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XdrEndChildFunction__ctor_m43EAC897C89F1
 	if (MethodIsStatic((RuntimeMethod*)___method1))
 	{
 		bool isOpen = parameterCount == 1;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&XdrEndChildFunction_Invoke_mABE0F9DEA959DA111C4EF380D62F2B94D2B0E2B1_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&XdrEndChildFunction_Invoke_mABE0F9DEA959DA111C4EF380D62F2B94D2B0E2B1_ClosedStaticInvoker;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&XdrEndChildFunction_Invoke_mABE0F9DEA959DA111C4EF380D62F2B94D2B0E2B1_OpenStatic;
 		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&XdrEndChildFunction_Invoke_mABE0F9DEA959DA111C4EF380D62F2B94D2B0E2B1_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
 	}
 	else
 	{

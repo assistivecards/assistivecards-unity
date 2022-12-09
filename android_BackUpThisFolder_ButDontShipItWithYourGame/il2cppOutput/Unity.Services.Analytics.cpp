@@ -4511,6 +4511,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Enumerator_Dispose_mB20C2695CECD9B61FB2C
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Item_t6F1CC18F5D2D724F93D8D137D9186F250E932914 Enumerator_get_Current_m0466060C29A3F679E2B56BD59C92F6E10E3F3FB0_gshared_inline (Enumerator_tA02A70D14B6F5C8130FB5099082397E70164DFD2* __this, const RuntimeMethod* method) ;
 // System.Boolean System.Collections.Generic.List`1/Enumerator<Unity.Services.Analytics.Item>::MoveNext()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Enumerator_MoveNext_mF2FF7F3D1F6FF1AB511CE14EB51816E13E5161D3_gshared (Enumerator_tA02A70D14B6F5C8130FB5099082397E70164DFD2* __this, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<System.Object>::AddWithResize(T)
+IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<Unity.Services.Analytics.Internal.Buffer/Token>::AddWithResize(T)
+IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void List_1_AddWithResize_m3576786C80AFA429755586CED5E6F03911007CAD_gshared (List_1_t378617EAF7470E0C692EDDE5B791E2F9489955B2* __this, Token_t56680C8EE3E0DFEC87998AD3565311971EBA2235 ___item0, const RuntimeMethod* method) ;
 
 // Unity.Services.Core.Internal.CoreRegistry Unity.Services.Core.Internal.CoreRegistry::get_Instance()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR CoreRegistry_t7B61538793CE940CE3A391364C163F1078C9F2BA* CoreRegistry_get_Instance_m73A64BD3CB78EF5AC698D1635B5872CEB9F9AFE2_inline (const RuntimeMethod* method) ;
@@ -5906,8 +5910,18 @@ inline bool Enumerator_MoveNext_mF2FF7F3D1F6FF1AB511CE14EB51816E13E5161D3 (Enume
 {
 	return ((  bool (*) (Enumerator_tA02A70D14B6F5C8130FB5099082397E70164DFD2*, const RuntimeMethod*))Enumerator_MoveNext_mF2FF7F3D1F6FF1AB511CE14EB51816E13E5161D3_gshared)(__this, method);
 }
+// System.Void System.Collections.Generic.List`1<System.Object>::AddWithResize(T)
+inline void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4 (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method)
+{
+	((  void (*) (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D*, RuntimeObject*, const RuntimeMethod*))List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4_gshared)(__this, ___item0, method);
+}
 // System.Void System.Array::Clear(System.Array,System.Int32,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_Clear_m50BAA3751899858B097D3FF2ED31F284703FE5CB (RuntimeArray* ___array0, int32_t ___index1, int32_t ___length2, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<Unity.Services.Analytics.Internal.Buffer/Token>::AddWithResize(T)
+inline void List_1_AddWithResize_m3576786C80AFA429755586CED5E6F03911007CAD (List_1_t378617EAF7470E0C692EDDE5B791E2F9489955B2* __this, Token_t56680C8EE3E0DFEC87998AD3565311971EBA2235 ___item0, const RuntimeMethod* method)
+{
+	((  void (*) (List_1_t378617EAF7470E0C692EDDE5B791E2F9489955B2*, Token_t56680C8EE3E0DFEC87998AD3565311971EBA2235, const RuntimeMethod*))List_1_AddWithResize_m3576786C80AFA429755586CED5E6F03911007CAD_gshared)(__this, ___item0, method);
+}
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -23596,7 +23610,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mEBCF994CC3814631
 IL_0034:
 	{
 		RuntimeObject* L_9 = ___item0;
-		((  void (*) (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D*, RuntimeObject*, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 11)))(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 11));
+		List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 14));
 		return;
 	}
 }
@@ -23616,9 +23630,10 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Nullable_1_get_HasValue_m0D0
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* Array_Empty_TisRuntimeObject_mFB8A63D602BB6974D31E20300D9EB89C6FE7C278_gshared_inline (const RuntimeMethod* method) 
 {
+	il2cpp_rgctx_method_init(method);
 	{
-		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(method->rgctx_data, 0));
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_0 = ((EmptyArray_1_tDF0DD7256B115243AA6BD5558417387A734240EE_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(method->rgctx_data, 0)))->___Value_0;
+		il2cpp_codegen_runtime_class_init_inline(il2cpp_rgctx_data(method->rgctx_data, 2));
+		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_0 = ((EmptyArray_1_tDF0DD7256B115243AA6BD5558417387A734240EE_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(method->rgctx_data, 2)))->___Value_0;
 		return L_0;
 	}
 }
@@ -23714,7 +23729,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mBAC62E3B9DBB7C3B
 IL_0034:
 	{
 		Token_t56680C8EE3E0DFEC87998AD3565311971EBA2235 L_9 = ___item0;
-		((  void (*) (List_1_t378617EAF7470E0C692EDDE5B791E2F9489955B2*, Token_t56680C8EE3E0DFEC87998AD3565311971EBA2235, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 11)))(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 11));
+		List_1_AddWithResize_m3576786C80AFA429755586CED5E6F03911007CAD(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 14));
 		return;
 	}
 }

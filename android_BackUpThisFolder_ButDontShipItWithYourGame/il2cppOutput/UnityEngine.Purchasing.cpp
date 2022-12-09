@@ -583,6 +583,7 @@ IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec_t1F4E004D45CBAD0E5FA68A93535154D12FC86AD7_
 IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec_t6F0E7A762FB7BB40163AE114C9E0EC7FA298A3C0_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* UnifiedReceipt_t33E8626BE2172AB51B601DE45B67FED9832A2A23_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* UnityServicesInitializationChecker_tE651568BCAF5B02A3630004F51F7BDFA22569AF4_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* UnityServices_t4749F0FB88F542DAC1E287ACFFAB146EF9759317_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C String_t* _stringLiteral01178BFE3AE4B5082489FFCE9A716AC6B6F5F635;
 IL2CPP_EXTERN_C String_t* _stringLiteral012A18907B249DF0954BFA806717C2FD7DDB76F9;
 IL2CPP_EXTERN_C String_t* _stringLiteral0381C03C830203F54AC3B9E7069DCF719F7B65AB;
@@ -3133,6 +3134,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TelemetryQueue_1__ctor_m2FC7970A5AE71528
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TelemetryQueue_1_SendQueuedEvents_mE1EB072B1EEE2CC3879CA1EABF9069A35387995E_gshared (TelemetryQueue_1_t71F581BCF409EA50749227266A8F05453E89431F* __this, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Purchasing.Telemetry.TelemetryQueue`1<UnityEngine.Purchasing.Telemetry.TelemetryMetricParams>::QueueEvent(TTelemetryEventParams)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TelemetryQueue_1_QueueEvent_m2C7EE237581D436647C4ACCD8D45815A873B8C3A_gshared (TelemetryQueue_1_t71F581BCF409EA50749227266A8F05453E89431F* __this, TelemetryMetricParams_t47C9F991FB1C3D886DB873A1655999AECCD6F891 ___telemetryEvent0, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<Unity.Services.Analytics.Item>::AddWithResize(T)
+IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void List_1_AddWithResize_m2C5C1B504AC6FE7BDA404CD2E772F1AC8C5E03BE_gshared (List_1_t709972CDAAE85C0649DBB2E72D8E9C5A5A1A4F52* __this, Item_t6F1CC18F5D2D724F93D8D137D9186F250E932914 ___item0, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<System.Object>::AddWithResize(T)
+IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method) ;
 
 // System.Void System.Attribute::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Attribute__ctor_m79ED1BF1EE36D1E417BA89A0D9F91F8AAD8D19E2 (Attribute_tFDA8EFEFB0711976D22474794576DAF28F7440AA* __this, const RuntimeMethod* method) ;
@@ -3921,6 +3926,16 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void PurchaseFailureDescription_s
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void PurchaseFailureDescription_set_reason_m43846E285121C07773998BE842DD6924FC05B743_inline (PurchaseFailureDescription_t3E3F2EE6035C1BAE5EDB48CF61337896AFEAC3E4* __this, int32_t ___value0, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Purchasing.Extension.PurchaseFailureDescription::set_message(System.String)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void PurchaseFailureDescription_set_message_m8579CDFF7E771495BB9BF276228E3F431C9881F1_inline (PurchaseFailureDescription_t3E3F2EE6035C1BAE5EDB48CF61337896AFEAC3E4* __this, String_t* ___value0, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<Unity.Services.Analytics.Item>::AddWithResize(T)
+inline void List_1_AddWithResize_m2C5C1B504AC6FE7BDA404CD2E772F1AC8C5E03BE (List_1_t709972CDAAE85C0649DBB2E72D8E9C5A5A1A4F52* __this, Item_t6F1CC18F5D2D724F93D8D137D9186F250E932914 ___item0, const RuntimeMethod* method)
+{
+	((  void (*) (List_1_t709972CDAAE85C0649DBB2E72D8E9C5A5A1A4F52*, Item_t6F1CC18F5D2D724F93D8D137D9186F250E932914, const RuntimeMethod*))List_1_AddWithResize_m2C5C1B504AC6FE7BDA404CD2E772F1AC8C5E03BE_gshared)(__this, ___item0, method);
+}
+// System.Void System.Collections.Generic.List`1<System.Object>::AddWithResize(T)
+inline void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4 (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method)
+{
+	((  void (*) (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D*, RuntimeObject*, const RuntimeMethod*))List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4_gshared)(__this, ___item0, method);
+}
 // System.Void System.Array::Clear(System.Array,System.Int32,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_Clear_m50BAA3751899858B097D3FF2ED31F284703FE5CB (RuntimeArray* ___array0, int32_t ___index1, int32_t ___length2, const RuntimeMethod* method) ;
 #ifdef __clang__
@@ -5828,8 +5843,15 @@ IL_000e:
 // System.Boolean UnityEngine.Purchasing.UnityServicesInitializationChecker::IsUninitialized()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool UnityServicesInitializationChecker_IsUninitialized_mB237D675B93E61EEBB2C4ADD2ED8022CA36556C3 (UnityServicesInitializationChecker_tE651568BCAF5B02A3630004F51F7BDFA22569AF4* __this, const RuntimeMethod* method) 
 {
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&UnityServices_t4749F0FB88F542DAC1E287ACFFAB146EF9759317_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
 	{
 		// return UnityServices.State == ServicesInitializationState.Uninitialized;
+		il2cpp_codegen_runtime_class_init_inline(UnityServices_t4749F0FB88F542DAC1E287ACFFAB146EF9759317_il2cpp_TypeInfo_var);
 		int32_t L_0;
 		L_0 = UnityServices_get_State_mF530C62B86FBF1BF3B379006DACF9C110FD7BC9D(NULL);
 		return (bool)((((int32_t)L_0) == ((int32_t)0))? 1 : 0);
@@ -12804,7 +12826,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mB39CE61D63BB9276
 IL_0034:
 	{
 		Item_t6F1CC18F5D2D724F93D8D137D9186F250E932914 L_9 = ___item0;
-		((  void (*) (List_1_t709972CDAAE85C0649DBB2E72D8E9C5A5A1A4F52*, Item_t6F1CC18F5D2D724F93D8D137D9186F250E932914, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 11)))(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 11));
+		List_1_AddWithResize_m2C5C1B504AC6FE7BDA404CD2E772F1AC8C5E03BE(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 14));
 		return;
 	}
 }
@@ -12841,7 +12863,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mEBCF994CC3814631
 IL_0034:
 	{
 		RuntimeObject* L_9 = ___item0;
-		((  void (*) (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D*, RuntimeObject*, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 11)))(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 11));
+		List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 14));
 		return;
 	}
 }

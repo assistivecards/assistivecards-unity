@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 
 public class CanvasController : MonoBehaviour
 {
+
     [Header("User Information")]
     public GameObject profileImage;
     public string nickname;
@@ -79,6 +80,7 @@ public class CanvasController : MonoBehaviour
         {
             gamePrefab.SetActive(false);
         }
+
     }
 
     private void OnEnable()
@@ -246,7 +248,6 @@ public class CanvasController : MonoBehaviour
 
 
         tTSPanel = ttsScreen.GetComponentInChildren<TTSPanel>();
-        //tTSPanel.selectedTtsElement = await gameAPI.GetTTSPreference();
 
 
         loginPrefab.SetActive(true);
@@ -275,8 +276,6 @@ public class CanvasController : MonoBehaviour
         {
             notificationPreferences.weeklyReminderToggle.isOn = true;
         }
-
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void StartFadeAnim()

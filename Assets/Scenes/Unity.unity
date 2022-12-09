@@ -775,6 +775,11 @@ MonoBehaviour:
   pingPongDelay: 0.5
   disableWhenFinish: 1
   disableDelay: 0
+--- !u!1 &397639436 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6130346358539663387, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
+  m_PrefabInstance: {fileID: 7400471998767366786}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &404033437 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6658854894865074355, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
@@ -3251,6 +3256,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6658854895260784137, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
   m_PrefabInstance: {fileID: 6658854895000012590}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1911789145 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4171398871949929166, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
+  m_PrefabInstance: {fileID: 7400471998767366786}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1930498386 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6658854894297736477, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
@@ -4520,6 +4530,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4171398871949929166, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7400471997715186108, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
       propertyPath: m_Name
       value: GameScreen
@@ -4722,7 +4736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7400471999034879997, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7400471999454719037, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
       propertyPath: m_IsActive
@@ -4754,7 +4768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7400471999454719042, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7400471999454719043, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
       propertyPath: m_isRightToLeft
@@ -4794,3 +4808,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   greetingText: {fileID: 873500723}
+--- !u!114 &7400471998767366790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7400471998767366787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf7a76df040b91148a607bd958a61322, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gamePanel: {fileID: 397639436}
+  gameTest: {fileID: 1911789145}

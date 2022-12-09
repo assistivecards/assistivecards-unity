@@ -87,6 +87,11 @@ public class LanguageTest : MonoBehaviour
         }
     }
 
+    public async void OnTTSChange()
+    {
+        Speakable.locale = await gameAPI.GetTTSPreference();
+    }
+
     public async void OnNicknameChange()
     {
         var langCode = await gameAPI.GetSystemLanguageCode();

@@ -195,6 +195,7 @@ public class TopAppBarController : MonoBehaviour
             if (canvasController.currentScreen.name == "TTS")
             {
                 gameAPI.SetTTSPreference(ttsPanel.selectedTtsElement.name);
+                canvas.GetComponent<LanguageTest>().OnTTSChange();
             }
             if (canvasController.currentScreen.name == "Sound")
             {

@@ -212,7 +212,7 @@ public class CanvasController : MonoBehaviour
     }
     IEnumerator OpenGamePanel()
     {
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.3f);
         settingPrefab.SetActive(false);
         topAppBar.SetActive(false);
         gamePrefab.SetActive(true);

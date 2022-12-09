@@ -10,6 +10,7 @@ public class IAPUIManager : MonoBehaviour
     [SerializeField] private GameObject restoreButton;
     [SerializeField] Button subscriptionsScreenPremiumButton;
     [SerializeField] Button promoScreenPremiumButton;
+    [SerializeField] Button promoScreenPuchasePremiumButton;
 
 
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Pack> availablePacksArray;
@@ -65,11 +66,13 @@ public class IAPUIManager : MonoBehaviour
         {
             subscriptionsScreenPremiumButton.interactable = false;
             promoScreenPremiumButton.interactable = false;
+            promoScreenPuchasePremiumButton.interactable = false;
         }
         else
         {
             subscriptionsScreenPremiumButton.interactable = true;
             promoScreenPremiumButton.interactable = true;
+            promoScreenPuchasePremiumButton.interactable = true;
         }
     }
 

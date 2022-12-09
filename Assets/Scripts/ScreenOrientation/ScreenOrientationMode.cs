@@ -24,4 +24,3 @@ public class ScreenOrientationMode : MonoBehaviour
         gameAPI.ForceOrientation(orientationMode);
     }
 }
-

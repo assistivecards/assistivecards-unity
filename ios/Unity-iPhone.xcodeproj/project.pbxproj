@@ -128,7 +128,7 @@
 		5602DC8D573AD3CB55528133 /* Unity.TextMeshPro_CodeGen.c in Sources */ = {isa = PBXBuildFile; fileRef = AC60F7594FB0A50546496EF9 /* Unity.TextMeshPro_CodeGen.c */; };
 		5623C57617FDCB0800090B9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		5623C57717FDCB0800090B9E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830B5C100E5ED4C100C7819F /* UIKit.framework */; };
-		5623C57D17FDCB0900090B9E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5623C57B17FDCB0900090B9E /* InfoPlist.strings */; };
+		5623C57D17FDCB0900090B9E = {isa = PBXBuildFile; fileRef = 5623C57B17FDCB0900090B9E /* InfoPlist.strings */; };
 		5623C57F17FDCB0900090B9E /* Unity_iPhone_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5623C57E17FDCB0900090B9E /* Unity_iPhone_Tests.m */; };
 		56C56C9817D6015200616839 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56C56C9717D6015100616839 /* Images.xcassets */; };
 		574A8D1BFDF4103B13A6538A /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21ECD27EDF8EB21168769097 /* GameController.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -226,8 +226,10 @@
 		965C13763D1C1F7687499678 /* Purchasing.Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F6F4F4219343A3461429AC4 /* Purchasing.Common.cpp */; };
 		96973B3981DD32A4D13BB1FC /* UnityNotificationData.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA36A70E32D12A3247A7ACD /* UnityNotificationData.m */; };
 		96F0D41FA54A37017B2AFDB5 /* Purchasing.Common_CodeGen.c in Sources */ = {isa = PBXBuildFile; fileRef = D257CA4560F64CD8D41BE910 /* Purchasing.Common_CodeGen.c */; };
+		9716747730FC6E272A7E0B85 /* Vibration.mm in Sources */ = {isa = PBXBuildFile; fileRef = 830BF024B260BDC53EF7B157 /* Vibration.mm */; };
 		98ED2B1F4B03E2736B9B5219 /* UnityEngine.TextRenderingModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1033CA188B57027C8232CC29 /* UnityEngine.TextRenderingModule.cpp */; };
 		98F1E9477D7007E0320BB1CC /* UnityEngine.AnimationModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D6CD512E22F8EDEDF75B775 /* UnityEngine.AnimationModule.cpp */; };
+		9A5608D6D76648EC26EABEBD /* Vibration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B34C3F69C2568640ADE1A72 /* Vibration.h */; };
 		9BAC3C7994F1851C6A1E8D36 /* Generics53.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 075FE5FE2DC2B28E488A427A /* Generics53.cpp */; };
 		9BDB3F7DB20645D0B5250180 /* System.Xml7.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE77440149BC4DEC3BE816CE /* System.Xml7.cpp */; };
 		9D0A618B21BFE7F30094DC33 /* libiconv.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0A618A21BFE7F30094DC33 /* libiconv.2.tbd */; };
@@ -596,6 +598,7 @@
 		3A13DD6813EB5D9AACFAE5C3 /* Generics14.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Generics14.cpp; path = Classes/Native/Generics14.cpp; sourceTree = SOURCE_ROOT; };
 		3A8243CD701281BA946F59D5 /* Generics39.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Generics39.cpp; path = Classes/Native/Generics39.cpp; sourceTree = SOURCE_ROOT; };
 		3ADE2F972FA51AB9A30E9616 /* System.Xml3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = System.Xml3.cpp; path = Classes/Native/System.Xml3.cpp; sourceTree = SOURCE_ROOT; };
+		3B34C3F69C2568640ADE1A72 /* Vibration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Vibration.h; path = Libraries/Plugins/iOS/Vibration.h; sourceTree = SOURCE_ROOT; };
 		3B5211DE4BADE84A27EFC97A /* UnityPurchasing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = UnityPurchasing.m; path = Libraries/com.unity.purchasing/Plugins/UnityPurchasing/iOS/UnityPurchasing.m; sourceTree = SOURCE_ROOT; };
 		3C629B8DF4592A7BF847EC99 /* UnityEngine.UI3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = UnityEngine.UI3.cpp; path = Classes/Native/UnityEngine.UI3.cpp; sourceTree = SOURCE_ROOT; };
 		3D30854488C46D627497E40C /* System.Xml.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = System.Xml.cpp; path = Classes/Native/System.Xml.cpp; sourceTree = SOURCE_ROOT; };
@@ -720,6 +723,7 @@
 		827AF15F69FD424F6DD2A0BE /* Assembly-CSharp-firstpass.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Assembly-CSharp-firstpass.cpp"; path = "Classes/Native/Assembly-CSharp-firstpass.cpp"; sourceTree = SOURCE_ROOT; };
 		82CBFE2E085B258ECC9F69DF /* Generics5.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Generics5.cpp; path = Classes/Native/Generics5.cpp; sourceTree = SOURCE_ROOT; };
 		830B5C100E5ED4C100C7819F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		830BF024B260BDC53EF7B157 /* Vibration.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = Vibration.mm; path = Libraries/Plugins/iOS/Vibration.mm; sourceTree = SOURCE_ROOT; };
 		830E7BE5AFCC17F1D4067E4A /* UnityEngine.Purchasing.WinRTStub_CodeGen.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = UnityEngine.Purchasing.WinRTStub_CodeGen.c; path = Classes/Native/UnityEngine.Purchasing.WinRTStub_CodeGen.c; sourceTree = SOURCE_ROOT; };
 		831A09BFD520758991451BD7 /* mscorlib5.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = mscorlib5.cpp; path = Classes/Native/mscorlib5.cpp; sourceTree = SOURCE_ROOT; };
 		835285F80AF848EE64676319 /* mscorlib18.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = mscorlib18.cpp; path = Classes/Native/mscorlib18.cpp; sourceTree = SOURCE_ROOT; };
@@ -1202,6 +1206,8 @@
 		53D667C6AFCF5C846FB3B413 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				3B34C3F69C2568640ADE1A72 /* Vibration.h */,
+				830BF024B260BDC53EF7B157 /* Vibration.mm */,
 				8D36702B417855425D4472DA /* WebView.mm */,
 				4E122BB7AEC596D94212A7C4 /* WebViewWithUIWebView.mm */,
 			);
@@ -1857,6 +1863,7 @@
 				475B26F38A3A652C6174529D /* IUnityInterface.h in Headers */,
 				826E40C67FAA509B29A0EFA3 /* IUnityGraphics.h in Headers */,
 				9E277B346B541C2D072C5489 /* IUnityGraphicsMetal.h in Headers */,
+				9A5608D6D76648EC26EABEBD /* Vibration.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1990,7 +1997,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5623C57D17FDCB0900090B9E /* InfoPlist.strings in Resources */,
+				5623C57D17FDCB0900090B9E,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2417,6 +2424,7 @@
 				BA9A39B837F0E1AAF3868B42 /* UnityClassRegistration.cpp in Sources */,
 				71CC1E9CE3720E7FDA2A0145 /* UnityICallRegistration.cpp in Sources */,
 				264D45FEABF34D3AC3E98551 /* lib_burst_generated.cpp in Sources */,
+				9716747730FC6E272A7E0B85 /* Vibration.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2476,7 +2484,7 @@
 					"$(inherited)",
 					"$(OTHER_CFLAGS)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.assistivecards.memory;
+				PRODUCT_BUNDLE_IDENTIFIER = com.assistivecards.unity;
 				PRODUCT_NAME = "$(PRODUCT_NAME_APP)";
 				PROVISIONING_PROFILE = "$(PROVISIONING_PROFILE_APP)";
 				PROVISIONING_PROFILE_APP = "";
@@ -2516,7 +2524,7 @@
 					"$(inherited)",
 					"$(OTHER_CFLAGS)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.assistivecards.memory;
+				PRODUCT_BUNDLE_IDENTIFIER = com.assistivecards.unity;
 				PRODUCT_NAME = "$(PRODUCT_NAME_APP)";
 				PROVISIONING_PROFILE = "$(PROVISIONING_PROFILE_APP)";
 				PROVISIONING_PROFILE_APP = "";
@@ -2664,7 +2672,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PRODUCT_NAME_APP = memory;
+				PRODUCT_NAME_APP = unity;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 			};
@@ -2698,7 +2706,7 @@
 					"$(inherited)",
 					"$(OTHER_CFLAGS)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.assistivecards.memory;
+				PRODUCT_BUNDLE_IDENTIFIER = com.assistivecards.unity;
 				PRODUCT_NAME = "$(PRODUCT_NAME_APP)";
 				PROVISIONING_PROFILE = "$(PROVISIONING_PROFILE_APP)";
 				PROVISIONING_PROFILE_APP = "";
@@ -2792,7 +2800,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PRODUCT_NAME_APP = memory;
+				PRODUCT_NAME_APP = unity;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 			};
@@ -2825,7 +2833,7 @@
 					"$(inherited)",
 					"$(OTHER_CFLAGS)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.assistivecards.memory;
+				PRODUCT_BUNDLE_IDENTIFIER = com.assistivecards.unity;
 				PRODUCT_NAME = "$(PRODUCT_NAME_APP)";
 				PROVISIONING_PROFILE = "$(PROVISIONING_PROFILE_APP)";
 				PROVISIONING_PROFILE_APP = "";
@@ -3247,7 +3255,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME_APP = memory;
+				PRODUCT_NAME_APP = unity;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 			};
@@ -3286,7 +3294,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PRODUCT_NAME_APP = memory;
+				PRODUCT_NAME_APP = unity;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 			};

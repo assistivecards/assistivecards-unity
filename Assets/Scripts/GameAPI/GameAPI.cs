@@ -17,6 +17,7 @@ public class GameAPI : MonoBehaviour
     public List<Texture2D> cachedPackImages = new List<Texture2D>();
     public static Task cacheData;
     AssistiveCardsSDK.AssistiveCardsSDK assistiveCardsSDK;
+    [SerializeField] Speakable speakable;
     public Sound[] sfxClips;
     public AudioSource musicSource, sfxSource;
     public AudioClip musicClip;
@@ -1018,6 +1019,11 @@ public class GameAPI : MonoBehaviour
         {
             Vibration.VibrateNope();
         }
+    }
+
+    public void Speak(string text)
+    {
+        speakable.Speak(text);
     }
 
 }

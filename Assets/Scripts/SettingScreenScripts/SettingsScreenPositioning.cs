@@ -10,8 +10,6 @@ public class SettingsScreenPositioning : MonoBehaviour
 
      private void Start() 
     {
-
-        Debug.Log("!!!!!!!!!!!!!!!!!!!1");
         resolutions = Screen.resolutions;
 
         // Print the resolutions

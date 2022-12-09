@@ -4278,7 +4278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 773758864845485447, guid: e6f74a65304f7594784561825a582f5d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -25
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 773758864845485447, guid: e6f74a65304f7594784561825a582f5d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5939,6 +5939,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6658854895327774119, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6658854895347769555, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -6423,6 +6427,10 @@ PrefabInstance:
       propertyPath: gamePrefab
       value: 
       objectReference: {fileID: 7400471998767366787}
+    - target: {fileID: 7400471999034879744, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
+      propertyPath: profileImage
+      value: 
+      objectReference: {fileID: 1908085031}
     - target: {fileID: 7400471999034879744, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
       propertyPath: settingPrefab
       value: 

@@ -15,13 +15,14 @@ public class ScreenOrientationMode : MonoBehaviour
     private void OnEnable()
     {
         orientationMode = isPortrait ? "portrait" : "landscape";
-        StartCoroutine(RotateScreen());
+        gameAPI.ForceOrientation(orientationMode);
+        // StartCoroutine(RotateScreen());
     }
 
-    IEnumerator RotateScreen()
-    {
-        yield return new WaitForSeconds(0.25f);
-        gameAPI.ForceOrientation(orientationMode);
-    }
+    // IEnumerator RotateScreen()
+    // {
+    //     yield return new WaitForSeconds(0.25f);
+    //     gameAPI.ForceOrientation(orientationMode);
+    // }
 }
 

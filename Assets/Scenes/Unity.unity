@@ -3860,30 +3860,30 @@ PrefabInstance:
     - target: {fileID: 5546718072530027782, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5546718071078979359}
+      objectReference: {fileID: 68398936}
     - target: {fileID: 5546718072530027782, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 68398936}
+      objectReference: {fileID: 5546718071078979359}
     - target: {fileID: 5546718072530027782, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5546718072530027782, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 5546718072530027782, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: StartFadeAnim
       objectReference: {fileID: 0}
     - target: {fileID: 5546718072530027782, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: StartButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5546718072530027782, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LoginContoller, Assembly-CSharp
+      value: CanvasController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5546718072530027782, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: CanvasController, Assembly-CSharp
+      value: LoginContoller, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5546718072530027782, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -4635,20 +4635,32 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7400471997984233728, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 68398936}
+    - target: {fileID: 7400471997984233728, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 812903810}
     - target: {fileID: 7400471997984233728, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7400471997984233728, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: StartFadeAnim
       objectReference: {fileID: 0}
     - target: {fileID: 7400471997984233728, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SettingButtonClickFunc
+      objectReference: {fileID: 0}
+    - target: {fileID: 7400471997984233728, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: CanvasController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7400471997984233728, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SettingScreenButton, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7400471997984233728, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName

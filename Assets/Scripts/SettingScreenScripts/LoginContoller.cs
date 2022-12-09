@@ -7,32 +7,32 @@ using UnityEngine.UI;
 public class LoginContoller : MonoBehaviour
 {
 
-    [Header ("API Connection")]
+    [Header("API Connection")]
     GameAPI gameAPI;
     [SerializeField] private CanvasController canvasController;
-    
-    [Header ("LoginPage UI Assests")]
+
+    [Header("LoginPage UI Assests")]
     [SerializeField] private GameObject loginUI;
     public TMP_InputField nicknameInputField;
     [SerializeField] private Button nextButton;
     [SerializeField] private Image backgroundFadePanel;
 
-    [Header ("Screens")]
+    [Header("Screens")]
     [SerializeField] private GameObject avatarSelectionScreen;
     [SerializeField] private GameObject practiceReminderScreen;
     [SerializeField] private GameObject congratulationsScreen;
 
-    [Header ("Screen Prefabs")]
+    [Header("Screen Prefabs")]
     [SerializeField] private GameObject loginPrefab;
     [SerializeField] private GameObject gamePrefab;
 
 
 
-    private void Awake() 
+    private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
 
-        nicknameInputField.onValueChanged.AddListener(delegate {ValueChangeCheck(); });
+        nicknameInputField.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
 
     }
     public void ValueChangeCheck()
@@ -43,7 +43,7 @@ public class LoginContoller : MonoBehaviour
 
     private void Update()
     {
-        if(TouchScreenKeyboard.visible)
+        if (TouchScreenKeyboard.visible)
         {
             LeanTween.moveLocal(loginUI, new Vector3(0, 300, 0), 0.5f);
         }
@@ -61,14 +61,14 @@ public class LoginContoller : MonoBehaviour
         avatarSelectionScreen.SetActive(true);
         practiceReminderScreen.SetActive(true);
         congratulationsScreen.SetActive(true);
-        
-        LeanTween.scale(avatarSelectionScreen,  Vector3.one, 0.2f);
+
+        LeanTween.scale(avatarSelectionScreen, Vector3.one, 0.2f);
     }
     public void StartButton()
     {
         //Fade Out
-        backgroundFadePanel.CrossFadeAlpha(0, 0.25f, false);
-        Invoke("SetGamePanelActive", 0.15f);
+        // backgroundFadePanel.CrossFadeAlpha(0, 0.25f, false);
+        Invoke("SetGamePanelActive", 0.25f);
     }
     private void SetGamePanelActive()
     {

@@ -8,7 +8,8 @@ public class IAPUIManager : MonoBehaviour
     GameAPI gameAPI;
     [SerializeField] TMP_InputField availablePacksText;
     [SerializeField] private GameObject restoreButton;
-    [SerializeField] Button premiumButton;
+    [SerializeField] Button subscriptionsScreenPremiumButton;
+    [SerializeField] Button promoScreenPremiumButton;
 
 
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Pack> availablePacksArray;
@@ -62,11 +63,13 @@ public class IAPUIManager : MonoBehaviour
     {
         if (gameAPI.GetPremium() == "A5515T1V3C4RD5")
         {
-            premiumButton.interactable = false;
+            subscriptionsScreenPremiumButton.interactable = false;
+            promoScreenPremiumButton.interactable = false;
         }
         else
         {
-            premiumButton.interactable = true;
+            subscriptionsScreenPremiumButton.interactable = true;
+            promoScreenPremiumButton.interactable = true;
         }
     }
 

@@ -10,15 +10,15 @@ using UnityEngine.SceneManagement;
 
 public class CanvasController : MonoBehaviour
 {
-    [Header ("User Information")]
+    [Header("User Information")]
     public GameObject profileImage;
     public string nickname;
 
 
-    [Header ("API Connection")]
+    [Header("API Connection")]
     GameAPI gameAPI;
 
-    [Header ("UI Assets")]
+    [Header("UI Assets")]
     [SerializeField] private TMP_InputField nicknameInputField;
     public TMP_Text nicknameText;
     [SerializeField] Canvas canvas;
@@ -26,9 +26,9 @@ public class CanvasController : MonoBehaviour
     private GameObject backButton;
     [SerializeField] private GameObject settingScreen;
     [SerializeField] private Image settingScreenFadePanel;
-    [SerializeField] private Image loginScreenFadePanel;
+    [SerializeField] private GameObject fadePanel;
 
-    [Header ("Screens")]
+    [Header("Screens")]
     [SerializeField] private GameObject mainSettingsScreen;
     [SerializeField] private GameObject parentLockScreen;
     [SerializeField] private GameObject profileScreen;
@@ -38,30 +38,38 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private GameObject accessibilityScreen;
     [SerializeField] private GameObject subscriptionsScreen;
     [SerializeField] private GameObject allAppsScreen;
+    [SerializeField] private GameObject promoScreen;
     [SerializeField] private GameObject sendFeedbacksScreen;
     [SerializeField] private GameObject aboutApplicationScreen;
     [SerializeField] private GameObject loginPageScreen;
     [SerializeField] private GameObject avatarSelectionScreen;
     [SerializeField] private GameObject soundScreen;
 
-    [Header ("Screen Prefab")]
+    [Header("Screen Prefab")]
     [SerializeField] private GameObject loginPrefab;
     [SerializeField] private GameObject gamePrefab;
     [SerializeField] private GameObject settingPrefab;
+    [SerializeField] private GameObject topAppBar;
 
-    [Header ("Misc")]
+    [Header("Classes")]
     private NotificationPreferences notificationPreferences;
     private AccessibilityScreen accessibilityScreenScript;
+    private SoundManagerUI soundManagerUI;
     private TTSPanel tTSPanel;
     private LanguageController languageController;
+
+    [Header("Misc")]
+    private GameObject deviceLanguage;
+    public GameObject currentScreen;
+    private TopAppBarController topAppBarController;
 
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
         nickname = gameAPI.GetNickname();
+        topAppBarController = topAppBar.GetComponent<TopAppBarController>();
 
-
-        if(PlayerPrefs.GetString("Nickname", "") != "")
+        if (PlayerPrefs.GetString("Nickname", "") != "")
         {
             loginPrefab.SetActive(false);
             loginPageScreen.SetActive(false);
@@ -73,7 +81,13 @@ public class CanvasController : MonoBehaviour
         }
     }
 
-    private async void Start() 
+    private void OnEnable()
+    {
+        topAppBarController.ChangeTopAppBarType(2);
+        currentScreen = parentLockScreen;
+    }
+
+    private async void Start()
     {
         nicknameText.text = nickname;
         profileImage.GetComponent<Image>().sprite = await gameAPI.GetAvatarImage();
@@ -81,68 +95,98 @@ public class CanvasController : MonoBehaviour
 
     public void ParentLockButtonClick()
     {
-        LeanTween.scale(popUp,  Vector3.one, 0.15f);
+        currentScreen = parentLockScreen;
+        LeanTween.scale(popUp, Vector3.one, 0.15f);
         parentLockScreen.SetActive(true);
     }
 
     public void ParentLockScreenClose()
     {
+        currentScreen = mainSettingsScreen;
         LeanTween.scale(popUp, Vector3.one * 0.15f, 0.2f);
         parentLockScreen.SetActive(false);
     }
 
     public void ProfileButtonClick()
     {
-        LeanTween.scale(profileScreen,  Vector3.one, 0.2f);
+        topAppBarController.ChangeTopAppBarType(1);
+        currentScreen = profileScreen;
+        LeanTween.scale(profileScreen, Vector3.one, 0.2f);
         profileScreen.SetActive(true);
     }
 
     public void LanguageButtonClick()
     {
-        LeanTween.scale(languageScreen,  Vector3.one, 0.2f);
+        topAppBarController.ChangeTopAppBarType(1);
+        currentScreen = languageScreen;
+        LeanTween.scale(languageScreen, Vector3.one, 0.2f);
         languageScreen.SetActive(true);
     }
 
     public void TTSButtonClicked()
     {
-        LeanTween.scale(ttsScreen,  Vector3.one, 0.2f);
+        topAppBarController.ChangeTopAppBarType(1);
+        currentScreen = ttsScreen;
+        LeanTween.scale(ttsScreen, Vector3.one, 0.2f);
         ttsScreen.SetActive(true);
     }
-    
+
     public void NotificationButtonClick()
     {
-        LeanTween.scale(notificationScreen,  Vector3.one, 0.2f);
+        topAppBarController.ChangeTopAppBarType(1);
+        currentScreen = notificationScreen;
+        LeanTween.scale(notificationScreen, Vector3.one, 0.2f);
         notificationScreen.SetActive(true);
     }
     public void AccessibiltyButtonClick()
     {
-        LeanTween.scale(accessibilityScreen,  Vector3.one, 0.2f);
+        topAppBarController.ChangeTopAppBarType(1);
+        currentScreen = accessibilityScreen;
+        LeanTween.scale(accessibilityScreen, Vector3.one, 0.2f);
         accessibilityScreen.SetActive(true);
     }
     public void SubscriptionsButtonClick()
     {
-        LeanTween.scale(subscriptionsScreen,  Vector3.one, 0.2f);
+        topAppBarController.ChangeTopAppBarType(2);
+        currentScreen = subscriptionsScreen;
+        LeanTween.scale(subscriptionsScreen, Vector3.one, 0.2f);
         subscriptionsScreen.SetActive(true);
     }
     public void SoundButtonClick()
     {
-        LeanTween.scale(soundScreen,  Vector3.one, 0.2f);
+        topAppBarController.ChangeTopAppBarType(1);
+        currentScreen = soundScreen;
+        LeanTween.scale(soundScreen, Vector3.one, 0.2f);
         soundScreen.SetActive(true);
     }
 
     public void AllAppsButtonClick()
     {
-        LeanTween.scale(allAppsScreen,  Vector3.one, 0.2f);
+        topAppBarController.ChangeTopAppBarType(2);
+        currentScreen = allAppsScreen;
+        LeanTween.scale(allAppsScreen, Vector3.one, 0.2f);
         allAppsScreen.SetActive(true);
+    }
+
+    public void PremiumPromoButtonClick()
+    {
+        topAppBarController.ChangeTopAppBarType(2);
+        currentScreen = promoScreen;
+        LeanTween.scale(promoScreen, Vector3.one, 0.2f);
+        promoScreen.SetActive(true);
     }
     public void SendFeedbacksButtonClick()
     {
-        LeanTween.scale(sendFeedbacksScreen,  Vector3.one, 0.2f);
+        topAppBarController.ChangeTopAppBarType(2);
+        currentScreen = sendFeedbacksScreen;
+        LeanTween.scale(sendFeedbacksScreen, Vector3.one, 0.2f);
         sendFeedbacksScreen.SetActive(true);
     }
     public void AboutApplicationButtonClick()
     {
-        LeanTween.scale(aboutApplicationScreen,  Vector3.one, 0.2f);
+        topAppBarController.ChangeTopAppBarType(2);
+        currentScreen = aboutApplicationScreen;
+        LeanTween.scale(aboutApplicationScreen, Vector3.one, 0.2f);
         aboutApplicationScreen.SetActive(true);
     }
     public async void ProfilePanelUpdate()
@@ -153,14 +197,18 @@ public class CanvasController : MonoBehaviour
 
     public void CloseSettingClick()
     {
+        topAppBarController.onMain = false;
+        topAppBarController.ChangeTopAppBarType(2);
         //Fade Out
         settingScreenFadePanel.gameObject.SetActive(true);
         settingScreenFadePanel.CrossFadeAlpha(1, 0.25f, false);
         Invoke("OpenGamePanel", 0.1f);
+        StartFadeAnim();
     }
     private void OpenGamePanel()
     {
         settingPrefab.SetActive(false);
+        topAppBar.SetActive(false);
         gamePrefab.SetActive(true);
 
     }
@@ -177,24 +225,47 @@ public class CanvasController : MonoBehaviour
     }
     public void SignOut()
     {
-        //nicknameInputField.text = "";
         gameAPI.ClearAllPrefs();
 
         notificationPreferences = notificationScreen.GetComponent<NotificationPreferences>();
         notificationPreferences.reminderPreference = gameAPI.GetReminderPreference();
         notificationPreferences.usabilityTipsToggle.isOn = gameAPI.GetUsabilityTipsPreference() == 1 ? true : false;
         notificationPreferences.promotionsNotificationToggle.isOn = gameAPI.GetPromotionsNotificationPreference() == 1 ? true : false;
-        
+
         accessibilityScreenScript = accessibilityScreen.GetComponent<AccessibilityScreen>();
         accessibilityScreenScript.hapticsToggle.isOn = gameAPI.GetHapticsPreference() == 1 ? true : false;
         accessibilityScreenScript.activateOnPressToggle.isOn = gameAPI.GetActivateOnPressInPreference() == 1 ? true : false;
         accessibilityScreenScript.voiceGreetingToggle.isOn = gameAPI.GetVoiceGreetingPreference() == 1 ? true : false;
 
+        soundManagerUI = this.GetComponent<SoundManagerUI>();
+
+        soundManagerUI.musicToggle.isOn = gameAPI.GetMusicPreference() == 1 ? true : false;
+        soundManagerUI.sfxToggle.isOn = gameAPI.GetSFXPreference() == 1 ? true : false;
+        soundManagerUI.musicSource.mute = soundManagerUI.musicToggle.isOn ? false : true;
+        soundManagerUI.sfxSource.mute = soundManagerUI.sfxToggle.isOn ? false : true;
+
+
         tTSPanel = ttsScreen.GetComponentInChildren<TTSPanel>();
         //tTSPanel.selectedTtsElement = await gameAPI.GetTTSPreference();
 
+
+        loginPrefab.SetActive(true);
+        loginPrefab.transform.GetChild(3).gameObject.SetActive(true);
+        settingPrefab.SetActive(false);
+        topAppBar.SetActive(false);
+        profileScreen.SetActive(false);
+        loginPageScreen.GetComponent<LoginContoller>().nicknameInputField.text = "";
+
         languageController = languageScreen.GetComponent<LanguageController>();
-        languageController.selectedLanguage = null;
+        PlayerPrefs.SetString("Language", Application.systemLanguage.ToString());
+        this.GetComponent<LanguageTest>().OnLanguageChange();
+        this.GetComponent<LanguageTest>().ChangeLanguage();
+        deviceLanguage = languageScreen.GetComponentInChildren<DeviceLanguagePanel>().deviceLanguageObject;
+        if (deviceLanguage != null)
+        {
+            deviceLanguage.GetComponent<Toggle>().isOn = true;
+        }
+
 
         if (notificationPreferences.reminderPreference == "Daily")
         {
@@ -203,9 +274,15 @@ public class CanvasController : MonoBehaviour
         else
         {
             notificationPreferences.weeklyReminderToggle.isOn = true;
-        }     
+        }
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void StartFadeAnim()
+    {
+        fadePanel.SetActive(true);
+
     }
 
 }

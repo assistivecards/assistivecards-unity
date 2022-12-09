@@ -22,18 +22,6 @@ public class TTSPanel : MonoBehaviour
 
     private async void OnEnable()
     {
-        // ttsElements.Add("Alex");
-        // ttsElements.Add("Karen");
-        // ttsElements.Add("Daniel");
-        //                                     //adding tts to the list
-        // ttsElements.Add("Alex");
-        // ttsElements.Add("Karen");
-        // ttsElements.Add("Daniel");
-
-        // ttsElements.Add("Alex");
-        // ttsElements.Add("Karen");
-        // ttsElements.Add("Daniel");
-
         var currentLang = gameAPI.GetLanguage();
         var currentTTS = await gameAPI.GetTTSPreference();
 
@@ -78,7 +66,6 @@ public class TTSPanel : MonoBehaviour
 
     public void TTSSelected(GameObject _TTSElement)
     {
-        saveButton.interactable = true;
         selectedTtsElement = _TTSElement;
 
         Debug.Log(_TTSElement.ToString());

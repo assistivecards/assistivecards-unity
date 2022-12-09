@@ -14,6 +14,7 @@ public class GameAPI : MonoBehaviour
     public AssistiveCardsSDK.AssistiveCardsSDK.Languages cachedLanguages = new AssistiveCardsSDK.AssistiveCardsSDK.Languages();
     public AssistiveCardsSDK.AssistiveCardsSDK.Apps cachedApps = new AssistiveCardsSDK.AssistiveCardsSDK.Apps();
     public List<Texture2D> cachedAppIcons = new List<Texture2D>();
+    public List<Texture2D> cachedPackImages = new List<Texture2D>();
     public static Task cacheData;
     AssistiveCardsSDK.AssistiveCardsSDK assistiveCardsSDK;
     public Sound[] sfxClips;
@@ -27,6 +28,11 @@ public class GameAPI : MonoBehaviour
         await cacheData;
     }
 
+    private void Start()
+    {
+        Vibration.Init();
+    }
+
     public async Task CacheData()
     {
         selectedLangCode = await GetSystemLanguageCode();
@@ -37,6 +43,11 @@ public class GameAPI : MonoBehaviour
         for (int i = 0; i < cachedApps.apps.Count; i++)
         {
             cachedAppIcons.Add(await GetAppIcon(cachedApps.apps[i].slug));
+
+        }
+        for (int i = 0; i < cachedPacks.packs.Length; i++)
+        {
+            cachedPackImages.Add(await GetPackImage(cachedPacks.packs[i].slug));
 
         }
     }
@@ -940,6 +951,10 @@ public class GameAPI : MonoBehaviour
         else if (orientationMode == "landscape")
         {
             Screen.orientation = ScreenOrientation.LandscapeLeft;
+            Screen.autorotateToLandscapeLeft = true;
+            Screen.autorotateToLandscapeRight = true;
+            Screen.autorotateToPortrait = false;
+            Screen.orientation = ScreenOrientation.AutoRotation;
         }
     }
 
@@ -975,6 +990,21 @@ public class GameAPI : MonoBehaviour
         {
             sfxSource.PlayOneShot(sfx.clip);
         }
+    }
+
+    public void VibrateWeak()
+    {
+        Vibration.VibratePop();
+    }
+
+    public void VibrateStrong()
+    {
+        Vibration.VibratePeek();
+    }
+
+    public void VibrateWeakTriple()
+    {
+        Vibration.VibrateNope();
     }
 
 }

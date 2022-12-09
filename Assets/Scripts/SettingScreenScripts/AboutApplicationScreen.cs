@@ -5,6 +5,8 @@ using System.IO;
 
 public class AboutApplicationScreen : MonoBehaviour
 {
+    [SerializeField] private TopAppBarController topAppBarController;
+
     [Header ("SHARE APP VALUES")]
     [SerializeField] private string appName;
     [SerializeField] private string appDescription;
@@ -24,6 +26,7 @@ public class AboutApplicationScreen : MonoBehaviour
     
     public void AboutApplicationClick()
     {
+        topAppBarController.ChangeTopAppBarType(3);
         aboutCompanyScreen.SetActive(true);
         sampleWebView = aboutCompanyScreen.GetComponentInChildren<SampleWebView>();
         sampleWebView.webViewObject.SetVisibility(true);
@@ -42,18 +45,21 @@ public class AboutApplicationScreen : MonoBehaviour
     }
     public void OpenSourceLicencesClick()
     {
+        topAppBarController.ChangeTopAppBarType(3);
         openSourceLicencesScreen.SetActive(true);
         sampleWebView = openSourceLicencesScreen.GetComponentInChildren<SampleWebView>();
         sampleWebView.webViewObject.SetVisibility(true);
     }
     public void PrivacyPolicyClick()
     {
+        topAppBarController.ChangeTopAppBarType(3);
         privacyPolicyScreen.SetActive(true);
         sampleWebView = privacyPolicyScreen.GetComponentInChildren<SampleWebView>();
         sampleWebView.webViewObject.SetVisibility(true);
     }
     public void TermsOfServicesClick()
     {
+        topAppBarController.ChangeTopAppBarType(3);
         termsOfServiceScreen.SetActive(true);
         sampleWebView = termsOfServiceScreen.GetComponentInChildren<SampleWebView>();
         sampleWebView.webViewObject.SetVisibility(true);
@@ -61,6 +67,7 @@ public class AboutApplicationScreen : MonoBehaviour
     public void BackButtonClicked()
     {
         sampleWebView.webViewObject.SetVisibility(false);
+        topAppBarController.ChangeTopAppBarType(2);
 
         aboutCompanyScreen.SetActive(false);
         openSourceLicencesScreen.SetActive(false);

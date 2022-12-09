@@ -46,7 +46,7 @@ public class SupportedLanguagesPanel : MonoBehaviour
             languageElement = Instantiate(languageTempElement, transform);
 
             languageElement.transform.GetChild(1).GetComponent<Text>().text = languageArray[i].title;
-            languageElement.transform.GetChild(2).GetComponent<Text>().text = languageArray[i].native;
+            languageElement.transform.GetChild(2).GetComponent<TMP_Text>().text = languageArray[i].native;
             languageElement.name = languageArray[i].title;
             languageGameobjects.Add(languageElement);
 

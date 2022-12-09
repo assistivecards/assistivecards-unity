@@ -6,8 +6,8 @@ public class SoundManagerUI : MonoBehaviour
     GameAPI gameAPI;
     public Toggle musicToggle;
     public Toggle sfxToggle;
-    [SerializeField] AudioSource musicSource;
-    [SerializeField] AudioSource sfxSource;
+    [SerializeField] public AudioSource musicSource;
+    [SerializeField] public AudioSource sfxSource;
 
     private void Awake()
     {

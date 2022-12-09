@@ -33,6 +33,7 @@ public class LoginContoller : MonoBehaviour
         gameAPI = Camera.main.GetComponent<GameAPI>();
 
         nicknameInputField.onValueChanged.AddListener(delegate {ValueChangeCheck(); });
+
     }
     public void ValueChangeCheck()
     {
@@ -71,6 +72,11 @@ public class LoginContoller : MonoBehaviour
     }
     private void SetGamePanelActive()
     {
+        avatarSelectionScreen.SetActive(false);
+        practiceReminderScreen.SetActive(false);
+        congratulationsScreen.SetActive(false);
+
+        this.gameObject.SetActive(true);
         gamePrefab.SetActive(true);
         loginPrefab.SetActive(false);
     }

@@ -8,8 +8,9 @@ public class DeviceLanguagePanel : MonoBehaviour
 {
     [SerializeField] private SupportedLanguagesPanel supportedLanguagesPanel;
     private string deviceLanguage;
-    public TMP_InputField outputArea;
     private GameObject tempSelectedLanguage;
+
+    public GameObject deviceLanguageObject;
 
     private void Awake() 
     {
@@ -21,6 +22,7 @@ public class DeviceLanguagePanel : MonoBehaviour
         if(_selectedLanguage.name == deviceLanguage)
         {
             _selectedLanguage.transform.parent = this.transform;
+            deviceLanguageObject = _selectedLanguage;
         }
         else
         {

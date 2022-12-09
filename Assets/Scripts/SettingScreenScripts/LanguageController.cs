@@ -12,9 +12,6 @@ public class LanguageController : MonoBehaviour
     GameAPI gameAPI;
     public GameObject selectedLanguage; 
     private DeviceLanguagePanel deviceLanguagePanel;
-    [SerializeField] private RightToLeftTextChanger rightToLeftTextChanger;
-    [SerializeField] private Button saveButton;
-
 
     private void Start() 
     {

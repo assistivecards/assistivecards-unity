@@ -993,6 +993,9 @@ public class GameAPI : MonoBehaviour
         }
     }
 
+    ///<summary>
+    ///Makes the device vibrate for 50ms.
+    ///</summary>
     public void VibrateWeak()
     {
         var canVibrate = GetHapticsPreference();
@@ -1003,6 +1006,9 @@ public class GameAPI : MonoBehaviour
 
     }
 
+    ///<summary>
+    ///Makes the device vibrate for 100ms.
+    ///</summary>
     public void VibrateStrong()
     {
         var canVibrate = GetHapticsPreference();
@@ -1012,6 +1018,9 @@ public class GameAPI : MonoBehaviour
         }
     }
 
+    ///<summary>
+    ///Makes the device vibrate three times, 50ms each.
+    ///</summary>
     public void VibrateWeakTriple()
     {
         var canVibrate = GetHapticsPreference();
@@ -1021,6 +1030,9 @@ public class GameAPI : MonoBehaviour
         }
     }
 
+    ///<summary>
+    ///Takes in a single parameter of type string named text and passes it to TTS GameObject's Speak() function.
+    ///</summary>
     public void Speak(string text)
     {
         speakable.Speak(text);

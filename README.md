@@ -570,3 +570,35 @@ Takes in a single parameter of type string named clipName and plays the correspo
 ```Csharp
 public void PlaySFX(string clipName)
 ```
+
+## VibrateWeak
+
+Makes the device vibrate for 50ms.
+
+```Csharp
+public void VibrateWeak()
+```
+
+## VibrateStrong
+
+Makes the device vibrate for 100ms.
+
+```Csharp
+public void VibrateStrong()
+```
+
+## VibrateWeakTriple
+
+Makes the device vibrate three times, 50ms each.
+
+```Csharp
+public void VibrateWeakTriple()
+```
+
+## Speak
+
+Takes in a single parameter of type string named text and passes it to TTS GameObject's Speak() function.
+
+```Csharp
+public void Speak(string text)
+```

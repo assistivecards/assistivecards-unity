@@ -46,7 +46,7 @@ public class TopAppBarController : MonoBehaviour
         gameAPI = Camera.main.GetComponent<GameAPI>();
         canvasController = canvas.GetComponent<CanvasController>();
     }
-    private void OnEnable() 
+    private void OnEnable()
     {
         ChangeTopAppBarType(2);
     }
@@ -102,7 +102,7 @@ public class TopAppBarController : MonoBehaviour
         if (canvasController.currentScreen.name == "ParentLock")
         {
             canvasController.CloseSettingClick();
-            canvasController.StartFadeAnim();
+            // canvasController.StartFadeAnim();
             ChangeTopAppBarType(2);
         }
         if (canvasController.currentScreen.name == "AvatarSelectionSettings")
@@ -147,7 +147,7 @@ public class TopAppBarController : MonoBehaviour
 
     public async void SaveButtonClicked()
     {
-        if(canvasController.currentScreen.name == "AvatarSelectionSettings")
+        if (canvasController.currentScreen.name == "AvatarSelectionSettings")
         {
             LeanTween.scale(canvasController.currentScreen, Vector3.one * 0.9f, 0.15f);
             Invoke("SceneSetActiveFalse", 0.15f);
@@ -195,6 +195,7 @@ public class TopAppBarController : MonoBehaviour
             if (canvasController.currentScreen.name == "TTS")
             {
                 gameAPI.SetTTSPreference(ttsPanel.selectedTtsElement.name);
+                canvas.GetComponent<LanguageTest>().OnTTSChange();
             }
             if (canvasController.currentScreen.name == "Sound")
             {

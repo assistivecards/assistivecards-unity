@@ -74,7 +74,7 @@ public class Speakable : MonoBehaviour
 
     async void Start()
     {
-        locale = await gameAPI.GetSelectedLocale();
+        locale = await gameAPI.GetTTSPreference();
         _textToSpeech = TextToSpeech.Create(OnFinish, OnError);
     }
 

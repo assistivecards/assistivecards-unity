@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 
 public class CanvasController : MonoBehaviour
 {
+
     [Header("User Information")]
     public GameObject profileImage;
     public string nickname;
@@ -79,6 +80,7 @@ public class CanvasController : MonoBehaviour
         {
             gamePrefab.SetActive(false);
         }
+
     }
 
     private void OnEnable()
@@ -197,16 +199,20 @@ public class CanvasController : MonoBehaviour
 
     public void CloseSettingClick()
     {
+
         topAppBarController.onMain = false;
         topAppBarController.ChangeTopAppBarType(2);
         //Fade Out
-        settingScreenFadePanel.gameObject.SetActive(true);
-        settingScreenFadePanel.CrossFadeAlpha(1, 0.25f, false);
-        Invoke("OpenGamePanel", 0.1f);
+        // settingScreenFadePanel.gameObject.SetActive(true);
+        // settingScreenFadePanel.CrossFadeAlpha(1, 0.25f, false);
+        // Invoke("OpenGamePanel", 0.1f);
         StartFadeAnim();
+        StartCoroutine(OpenGamePanel());
+
     }
-    private void OpenGamePanel()
+    IEnumerator OpenGamePanel()
     {
+        yield return new WaitForSeconds(0.3f);
         settingPrefab.SetActive(false);
         topAppBar.SetActive(false);
         gamePrefab.SetActive(true);
@@ -215,8 +221,8 @@ public class CanvasController : MonoBehaviour
     public void StartFade()
     {
         //Fade In
-        settingScreenFadePanel.CrossFadeAlpha(0, 0.25f, false);
-        Invoke("SetFadePanelFalse", 0.25f);
+        // settingScreenFadePanel.CrossFadeAlpha(0, 0.25f, false);
+        // Invoke("SetFadePanelFalse", 0.25f);
     }
 
     private void SetFadePanelFalse()
@@ -246,7 +252,6 @@ public class CanvasController : MonoBehaviour
 
 
         tTSPanel = ttsScreen.GetComponentInChildren<TTSPanel>();
-        //tTSPanel.selectedTtsElement = await gameAPI.GetTTSPreference();
 
 
         loginPrefab.SetActive(true);
@@ -275,8 +280,6 @@ public class CanvasController : MonoBehaviour
         {
             notificationPreferences.weeklyReminderToggle.isOn = true;
         }
-
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void StartFadeAnim()

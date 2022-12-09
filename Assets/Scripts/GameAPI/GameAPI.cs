@@ -994,17 +994,30 @@ public class GameAPI : MonoBehaviour
 
     public void VibrateWeak()
     {
-        Vibration.VibratePop();
+        var canVibrate = GetHapticsPreference();
+        if (canVibrate == 1)
+        {
+            Vibration.VibratePop();
+        }
+
     }
 
     public void VibrateStrong()
     {
-        Vibration.VibratePeek();
+        var canVibrate = GetHapticsPreference();
+        if (canVibrate == 1)
+        {
+            Vibration.VibratePeek();
+        }
     }
 
     public void VibrateWeakTriple()
     {
-        Vibration.VibrateNope();
+        var canVibrate = GetHapticsPreference();
+        if (canVibrate == 1)
+        {
+            Vibration.VibrateNope();
+        }
     }
 
 }

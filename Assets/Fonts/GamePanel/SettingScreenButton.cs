@@ -23,11 +23,11 @@ public class SettingScreenButton : MonoBehaviour
         gameAPI = Camera.main.GetComponent<GameAPI>();
         screenOrientationMode = this.GetComponentInParent<ScreenOrientationMode>();
     }
-    
+
 
     private void Start()
     {
-        if(PlayerPrefs.GetString("Nickname", "") != "")
+        if (PlayerPrefs.GetString("Nickname", "") != "")
         {
             SetAvatarImageOnGamePanel();
         }
@@ -37,19 +37,26 @@ public class SettingScreenButton : MonoBehaviour
     {
         nickNameText.SetActive(true);
 
-        if(settingButton.IsActive())
+        if (settingButton.IsActive())
         {
-            settingButton.image.sprite = await gameAPI.GetAvatarImage();  
+            settingButton.image.sprite = await gameAPI.GetAvatarImage();
         }
     }
 
-    public void SettingButtonClick()
+    public void SettingButtonClickFunc()
     {
+        StartCoroutine(SettingButtonClick());
+    }
+
+    IEnumerator SettingButtonClick()
+    {
+        yield return new WaitForSeconds(0.25f);
+
         settingPrefab.SetActive(true);
         mainSettingScreen.SetActive(true);
         topAppBar.SetActive(true);
         gamePrefab.SetActive(false);
 
-        canvasController.StartFade();
+        // canvasController.StartFade();
     }
 }

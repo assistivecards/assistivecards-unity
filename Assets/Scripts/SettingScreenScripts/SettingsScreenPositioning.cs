@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GamePanelController : MonoBehaviour
+public class SettingsScreenPositioning : MonoBehaviour
 {
-    [SerializeField] private GameObject gamePanel;
-    [SerializeField] private GameObject gameTest;
+    [SerializeField] private GameObject premiumPromoButton;
     private Resolution[] resolutions;
     private float resolution;
-    private void Start() 
+
+     private void Start() 
     {
+
+        Debug.Log("!!!!!!!!!!!!!!!!!!!1");
         resolutions = Screen.resolutions;
 
         // Print the resolutions
@@ -23,15 +25,16 @@ public class GamePanelController : MonoBehaviour
             {
                 resolution = Mathf.Abs(res.height / res.width);
             }
-            Debug.Log(res.width + "x" + res.height + " : " + res.refreshRate);
         }
-
-        Debug.Log("RES:                              " + resolution);
 
         if(resolution < 1.25f)
         {
-            gamePanel.GetComponent<RectTransform>().LeanScale(Vector3.one * 0.80f, 0.01f);
-            gameTest.GetComponent<RectTransform>().LeanScale(Vector3.one * 0.80f, 0.01f);
+
+            premiumPromoButton.GetComponent<RectTransform>().LeanSetPosY(120);
+        }
+        else if(resolution > 1.25)
+        {
+            premiumPromoButton.GetComponent<RectTransform>().LeanSetPosY(-100);
         }
     }
 

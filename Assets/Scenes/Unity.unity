@@ -4566,7 +4566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
+  m_Color: {r: 0.9622642, g: 0.9622642, b: 0.9622642, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5311,6 +5311,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1463162330818164054, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1848492858624014195, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_fontSize
       value: 35
@@ -5705,7 +5709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6253345435164413949, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_Name
-      value: settings_promo_description
+      value: premium_description
       objectReference: {fileID: 0}
     - target: {fileID: 6257171868670648808, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_Interactable
@@ -6081,7 +6085,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6767908288995114817, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 657.1027
+      value: 712.1559
       objectReference: {fileID: 0}
     - target: {fileID: 6838972535447874378, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_Enabled
@@ -6169,7 +6173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8547214752721761812, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_Name
-      value: settings_selection_promo
+      value: premium_title
       objectReference: {fileID: 0}
     - target: {fileID: 8905234962237315465, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

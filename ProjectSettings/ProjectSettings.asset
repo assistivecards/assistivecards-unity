@@ -253,7 +253,7 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: D:/assistivecards.keystore
+  AndroidKeystoreName: /Users/buraktokak/Developer/assistivecards.keystore
   AndroidKeyaliasName: assistivecards
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0

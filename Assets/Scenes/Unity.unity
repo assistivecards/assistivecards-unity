@@ -5325,7 +5325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2173715135009522841, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -500
+      value: -353.488
       objectReference: {fileID: 0}
     - target: {fileID: 2173715135009522841, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -5333,7 +5333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2173715135009522841, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -249.99998
+      value: -323.25598
       objectReference: {fileID: 0}
     - target: {fileID: 2401212122449075483, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: canvas
@@ -5907,6 +5907,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 68398936}
+    - target: {fileID: 6658854895070313659, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658854895092712411, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -653.7712
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658854895092712411, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.00036621094
+      objectReference: {fileID: 0}
     - target: {fileID: 6658854895152471809, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5
@@ -5933,7 +5945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6658854895152471809, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 1129.9976
       objectReference: {fileID: 0}
     - target: {fileID: 6658854895179340871, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_IsActive
@@ -5995,6 +6007,34 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 68398936}
+    - target: {fileID: 6658854895999461546, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658854895999461546, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658854895999461546, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658854895999461546, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658854895999461546, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 806.0591
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658854895999461546, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 552.517
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658854895999461546, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -501.85156
+      objectReference: {fileID: 0}
     - target: {fileID: 6658854896032450631, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: topAppBarController
       value: 
@@ -6003,6 +6043,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 68398936}
+    - target: {fileID: 6658854896181013423, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6658854896277279215, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -6070,6 +6114,26 @@ PrefabInstance:
     - target: {fileID: 6881947783101157876, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7565001427032788810, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7565001427032788810, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7565001427032788810, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7565001427032788810, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 447.8106
+      objectReference: {fileID: 0}
+    - target: {fileID: 7565001427032788810, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -79.84998
       objectReference: {fileID: 0}
     - target: {fileID: 7573745971274972249, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6155,13 +6219,13 @@ PrefabInstance:
       insertIndex: 1
       addedObject: {fileID: 1802590263}
     - targetCorrespondingSourceObject: {fileID: 6767908288995114817, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
-      insertIndex: 1
+      insertIndex: -1
       addedObject: {fileID: 1210257492}
     - targetCorrespondingSourceObject: {fileID: 6767908288995114817, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
-      insertIndex: 2
+      insertIndex: -1
       addedObject: {fileID: 1494027547}
     - targetCorrespondingSourceObject: {fileID: 6767908288995114817, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
-      insertIndex: 3
+      insertIndex: -1
       addedObject: {fileID: 137814957}
     - targetCorrespondingSourceObject: {fileID: 304058624899853232, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       insertIndex: -1

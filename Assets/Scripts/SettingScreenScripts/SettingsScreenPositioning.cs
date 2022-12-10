@@ -12,7 +12,6 @@ public class SettingsScreenPositioning : MonoBehaviour
     {
         resolutions = Screen.resolutions;
 
-        // Print the resolutions
         foreach (var res in resolutions)
         {
             if(res.width > res.height)
@@ -35,5 +34,4 @@ public class SettingsScreenPositioning : MonoBehaviour
             premiumPromoButton.GetComponent<RectTransform>().LeanSetPosY(-100);
         }
     }
-
 }

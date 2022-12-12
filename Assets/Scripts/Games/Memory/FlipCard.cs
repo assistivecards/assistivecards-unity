@@ -3,30 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class FlipCard : MonoBehaviour
+public class FlipCard : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] private float x,y,z;
     private Transform cardBack;
-    private bool isCardBackActive = false;
+    public bool isCardBackActive = false;
     private int timer;
+    public bool touched = false;
 
     private void Awake() 
     {
         cardBack = this.transform.GetChild(1);
     }
 
-    private void Update() 
+    public void OnPointerDown(PointerEventData pointerEventData)
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            StartFlip();
-        }
+        StartFlip();
     }
 
     private void StartFlip()
     {
         StartCoroutine(CalculateFlip());
     }
+
+
     private void Flip()
     {
         if(isCardBackActive == true)

@@ -1116,6 +1116,45 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8948817963421186263, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
   m_PrefabInstance: {fileID: 7400471998767366786}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &397639442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397639436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31817d7e6262469478583d696fbfa6e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shown: {fileID: 1241321842}
+  silhouettes:
+  - {fileID: 501897876}
+  - {fileID: 1193125358}
+  - {fileID: 1285355711}
+  cachedCards:
+    cards: []
+  randomCards:
+  - slug: 
+    title: 
+    phrases: []
+  - slug: 
+    title: 
+    phrases: []
+  - slug: 
+    title: 
+    phrases: []
+  randomImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  randomSprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  cardName: {fileID: 1230302833}
+  selectedLangCode: 
 --- !u!1 &404033437 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6658854894865074355, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
@@ -2434,7 +2473,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CARD NAME
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7fff04f5987a23d4cae30a373aa09dd3, type: 2}
   m_sharedMaterial: {fileID: -3432494171301961357, guid: 7fff04f5987a23d4cae30a373aa09dd3, type: 2}

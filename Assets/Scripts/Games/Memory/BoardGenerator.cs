@@ -11,7 +11,7 @@ public class BoardGenerator : MonoBehaviour
     public int cardNumber;
     [SerializeField] private GameObject tempCardObject;
     private List<GameObject> firstHalfCards = new List<GameObject>();
-    private List<GameObject> cards = new List<GameObject>();
+    public List<GameObject> cards = new List<GameObject>();
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cardTextures;
     private Texture2D cardTexture;
     public string selectedLangCode;
@@ -55,9 +55,7 @@ public class BoardGenerator : MonoBehaviour
             }
 
             cardTexture = await gameAPI.GetCardImage("animals", cardNames[randomValue], 512);
-
             cards.Add(Instantiate(tempCardObject, Vector3.zero, Quaternion.identity));
-            cards[j].transform.localScale = new Vector3(2.5f,2.5f,1);
             cards[j].transform.parent = this.transform;
 
             cards[j].transform.name = "Card" + j;
@@ -70,13 +68,13 @@ public class BoardGenerator : MonoBehaviour
         {
             cards.Add(Instantiate(firstHalfCards[y], Vector3.zero, Quaternion.identity));
             cards[(cardNumber/2) + y].transform.name = "Card" + ((cardNumber/2) + y);
-            cards[(cardNumber/2) + y].transform.localScale = new Vector3(2.5f,2.5f,1);
             cards[(cardNumber/2) + y].transform.parent = this.transform;
         }
 
         foreach(GameObject card in cards)
         {
             card.transform.LeanRotateZ(180, 0f);
+            card.transform.localScale = new Vector3(3f,3f,1);
         }
     }
 }

@@ -23,10 +23,7 @@ public class GamePanelController : MonoBehaviour
             {
                 resolution = Mathf.Abs(res.height / res.width);
             }
-            Debug.Log(res.width + "x" + res.height + " : " + res.refreshRate);
         }
-
-        Debug.Log("RES:                              " + resolution);
 
         if(resolution < 1.25f)
         {

@@ -1135,24 +1135,9 @@ MonoBehaviour:
   - {fileID: 1285355711}
   cachedCards:
     cards: []
-  randomCards:
-  - slug: 
-    title: 
-    phrases: []
-  - slug: 
-    title: 
-    phrases: []
-  - slug: 
-    title: 
-    phrases: []
-  randomImages:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  randomSprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  randomCards: []
+  randomImages: []
+  randomSprites: []
   cardName: {fileID: 1230302833}
   selectedLangCode: 
 --- !u!1 &404033437 stripped
@@ -1769,7 +1754,6 @@ GameObject:
   m_Component:
   - component: {fileID: 580658564}
   - component: {fileID: 580658566}
-  - component: {fileID: 580658565}
   m_Layer: 5
   m_Name: ShownImageSlot
   m_TagString: Untagged
@@ -1797,32 +1781,6 @@ RectTransform:
   m_AnchoredPosition: {x: 450, y: 0}
   m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!61 &580658565
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 580658563}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!222 &580658566
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2807,6 +2765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shownImageSlot: {fileID: 580658564}
+  board: {fileID: 397639442}
 --- !u!50 &1241321848
 Rigidbody2D:
   serializedVersion: 4

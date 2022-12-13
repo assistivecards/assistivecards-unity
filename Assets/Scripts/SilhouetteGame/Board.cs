@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class GenerateBoard : MonoBehaviour
+public class Board : MonoBehaviour
 {
     GameAPI gameAPI;
     [SerializeField] Image shown;
@@ -16,6 +16,7 @@ public class GenerateBoard : MonoBehaviour
     [SerializeField] List<Sprite> randomSprites = new List<Sprite>();
     [SerializeField] TMP_Text cardName;
     public string selectedLangCode;
+    private string packSlug = "animals";
 
 
     private void Awake()
@@ -31,30 +32,29 @@ public class GenerateBoard : MonoBehaviour
 
     public async void Start()
     {
-        await GenerateRandomBoardAsync("animals");
+        await GenerateRandomBoardAsync();
     }
 
-    public async Task GenerateRandomBoardAsync(string packSlug)
+    public async Task GenerateRandomBoardAsync()
     {
         await CacheCards(packSlug);
-        for (int i = 0; i < randomCards.Count; i++)
+        for (int i = 0; i < silhouettes.Length; i++)
         {
             var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
             if (!randomCards.Contains(cardToAdd))
             {
-                randomCards[i] = cardToAdd;
+                randomCards.Add(cardToAdd);
             }
             else
             {
                 cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
-                randomCards[i] = cardToAdd;
+                randomCards.Add(cardToAdd);
             }
 
-            randomImages[i] = await gameAPI.GetCardImage(packSlug, randomCards[i].slug);
-            randomSprites[i] = Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f);
+            randomImages.Add(await gameAPI.GetCardImage(packSlug, randomCards[i].slug));
+            randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
         }
         cardName.text = randomCards[0].title.ToUpper();
-        // gameAPI.Speak(randomCards[0].title);
         shown.sprite = randomSprites[0];
         silhouettes[Random.Range(0, silhouettes.Length)].sprite = randomSprites[0];
 
@@ -68,6 +68,19 @@ public class GenerateBoard : MonoBehaviour
                 silhouette.sprite = sprite;
             }
 
+        }
+    }
+
+    public void ClearBoard()
+    {
+        cardName.text = "";
+        shown.sprite = null;
+        randomCards.Clear();
+        randomImages.Clear();
+        randomSprites.Clear();
+        foreach (var silhouette in silhouettes)
+        {
+            silhouette.sprite = null;
         }
     }
 }

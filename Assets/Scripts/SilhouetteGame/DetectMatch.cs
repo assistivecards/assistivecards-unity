@@ -9,6 +9,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
 {
     [SerializeField] Transform shownImageSlot;
     private bool isMatched = false;
+    [SerializeField] Board board;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -26,15 +27,17 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
         }
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    public async void OnPointerUp(PointerEventData eventData)
     {
         if (isMatched)
         {
             //correct match
             transform.position = shownImageSlot.position;
             Debug.Log("Matched!");
-
+            board.ClearBoard();
+            await board.GenerateRandomBoardAsync();
         }
+
         else
         {
             //wrong match

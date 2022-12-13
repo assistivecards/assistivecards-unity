@@ -72,8 +72,14 @@ public class BoardGenerator : MonoBehaviour
             cards[(cardNumber/2) + y].transform.parent = this.transform;
         }
 
+        EditBoard();
+    }
+
+    private void EditBoard()
+    {
         foreach(GameObject card in cards)
         {
+            card.transform.SetSiblingIndex(Random.Range(0, cardNumber));
             card.transform.LeanRotateZ(180, 0f);
             card.transform.localScale = new Vector3(3f,3f,1);
         }

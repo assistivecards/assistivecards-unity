@@ -59,12 +59,13 @@ public class BoardGenerator : MonoBehaviour
             cards[j].transform.parent = this.transform;
 
             cards[j].transform.name = "Card" + j;
+            cards[j].transform.GetChild(1).name = cardNames[randomValue];
             cards[j].transform.GetChild(1).GetComponent<RawImage>().texture = cardTexture;
 
             firstHalfCards.Add(cards[j]);
         }
 
-        for(int y = 0; y< cardNumber / 2; y++)
+        for(int y = 0; y < cardNumber / 2; y++)
         {
             cards.Add(Instantiate(firstHalfCards[y], Vector3.zero, Quaternion.identity));
             cards[(cardNumber/2) + y].transform.name = "Card" + ((cardNumber/2) + y);

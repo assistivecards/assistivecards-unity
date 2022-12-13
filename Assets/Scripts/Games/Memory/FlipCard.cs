@@ -45,14 +45,17 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler
             cardBack.gameObject.SetActive(true);
             isCardBackActive = true;
             checkMatches.flippedCards.Add(this.gameObject);
+            checkMatches.firstCardName = cardBack.name;
         }
-        else
+        else 
         {
             checkMatches.CheckAllBoardFlip();
             cardBack.gameObject.SetActive(true);
             isCardBackActive = true;
             checkMatches.flippedCards.Add(this.gameObject);
+            checkMatches.firstCardName = cardBack.name;
         }
+
     }
 
     private void BackFlip()

@@ -73,6 +73,7 @@ public class LanguageTest : MonoBehaviour
 
     public async void OnLanguageChange()
     {
+        Speakable.locale = await gameAPI.GetSelectedLocale();
         var langCode = await gameAPI.GetSystemLanguageCode();
         for (int i = 0; i < textsWithVariable.Count; i++)
         {

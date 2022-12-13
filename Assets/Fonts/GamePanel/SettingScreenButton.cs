@@ -51,7 +51,6 @@ public class SettingScreenButton : MonoBehaviour
     IEnumerator SettingButtonClick()
     {
         yield return new WaitForSeconds(0.25f);
-
         settingPrefab.SetActive(true);
         mainSettingScreen.SetActive(true);
         topAppBar.SetActive(true);

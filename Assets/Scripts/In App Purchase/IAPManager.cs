@@ -13,6 +13,9 @@ public class IAPManager : MonoBehaviour, IStoreListener
     GameAPI gameAPI;
     [SerializeField] TMP_Text subscriptionsScreenPrice;
     [SerializeField] TMP_Text promoScreenPrice;
+    [SerializeField] TMP_Text promoScreenPuchasePrice;
+
+
 
     [SerializeField] IAPUIManager IAPUIManager;
 
@@ -157,6 +160,7 @@ public class IAPManager : MonoBehaviour, IStoreListener
         m_StoreExtensionProvider = extensions;
         subscriptionsScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
         promoScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
+        promoScreenPuchasePrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
     }
 
     public void OnInitializeFailed(InitializationFailureReason error)

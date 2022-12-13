@@ -26,6 +26,12 @@ public class Speakable : MonoBehaviour
         TTSStarted();
     }
 
+    public void Speak(string text)
+    {
+        _textToSpeech.Speak(text, locale, float.Parse("1", CultureInfo.InvariantCulture));
+        TTSStarted();
+    }
+
     public void Stop()
     {
         _textToSpeech.Stop();

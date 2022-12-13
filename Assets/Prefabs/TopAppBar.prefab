@@ -144,6 +144,9 @@ MonoBehaviour:
   promotionsNotificationToggle: {fileID: 0}
   sendFeedbackSampleWebView: {fileID: 0}
   profileEditorSettingScreenButton: {fileID: 0}
+  profileScreen: {fileID: 0}
+  onMain: 0
+  onAvatarSelection: 0
 --- !u!1 &773758865873878607
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,7 +386,7 @@ RectTransform:
   m_GameObject: {fileID: 773758866384401560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 773758866082797057}
@@ -392,7 +395,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 85, y: -93.54431}
+  m_AnchoredPosition: {x: 90, y: -93.54431}
   m_SizeDelta: {x: 160, y: 114.8743}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &773758866384401564
@@ -593,7 +596,7 @@ RectTransform:
   m_GameObject: {fileID: 5199920897035703828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 773758864845485447}
@@ -601,7 +604,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -88.19498, y: -96.7}
+  m_AnchoredPosition: {x: -100, y: -96.7}
   m_SizeDelta: {x: 105, y: 105}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6263856648558206352
@@ -734,7 +737,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 84.46442, y: -94.6}
+  m_AnchoredPosition: {x: 90, y: -94.6}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6035208156665848181

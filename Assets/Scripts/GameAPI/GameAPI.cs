@@ -17,6 +17,7 @@ public class GameAPI : MonoBehaviour
     public List<Texture2D> cachedPackImages = new List<Texture2D>();
     public static Task cacheData;
     AssistiveCardsSDK.AssistiveCardsSDK assistiveCardsSDK;
+    [SerializeField] Speakable speakable;
     public Sound[] sfxClips;
     public AudioSource musicSource, sfxSource;
     public AudioClip musicClip;
@@ -992,6 +993,9 @@ public class GameAPI : MonoBehaviour
         }
     }
 
+    ///<summary>
+    ///Makes the device vibrate for 50ms.
+    ///</summary>
     public void VibrateWeak()
     {
         var canVibrate = GetHapticsPreference();
@@ -1002,6 +1006,9 @@ public class GameAPI : MonoBehaviour
 
     }
 
+    ///<summary>
+    ///Makes the device vibrate for 100ms.
+    ///</summary>
     public void VibrateStrong()
     {
         var canVibrate = GetHapticsPreference();
@@ -1011,6 +1018,9 @@ public class GameAPI : MonoBehaviour
         }
     }
 
+    ///<summary>
+    ///Makes the device vibrate three times, 50ms each.
+    ///</summary>
     public void VibrateWeakTriple()
     {
         var canVibrate = GetHapticsPreference();
@@ -1018,6 +1028,14 @@ public class GameAPI : MonoBehaviour
         {
             Vibration.VibrateNope();
         }
+    }
+
+    ///<summary>
+    ///Takes in a single parameter of type string named text and passes it to TTS GameObject's Speak() function.
+    ///</summary>
+    public void Speak(string text)
+    {
+        speakable.Speak(text);
     }
 
 }

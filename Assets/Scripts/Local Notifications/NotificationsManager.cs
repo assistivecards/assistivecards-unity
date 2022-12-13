@@ -58,6 +58,7 @@ public class NotificationsManager : MonoBehaviour
         notification.FireTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 9, 0, 0).AddDays(1);
         notification.RepeatInterval = reminderPeriod == "Weekly" ? new TimeSpan(7, 0, 0, 0) : new TimeSpan(1, 0, 0, 0);
         notification.ShouldAutoCancel = true;
+        notification.Style = NotificationStyle.BigTextStyle;
 
         var id = AndroidNotificationCenter.SendNotification(notification, "channel_id");
 

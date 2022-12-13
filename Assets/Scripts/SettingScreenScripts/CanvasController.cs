@@ -92,7 +92,7 @@ public class CanvasController : MonoBehaviour
     private async void Start()
     {
         nicknameText.text = nickname;
-        profileImage.GetComponent<Image>().sprite = await gameAPI.GetAvatarImage();
+        profileImage.GetComponent<Image>().sprite = await gameAPI.GetAvatarImage();  
     }
 
     public void ParentLockButtonClick()

@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+// Use it on a canvas with canvasScaler, 1212x726
 public class ArtSafeContainer : MonoBehaviour
 {
-
-    public RectTransform Background; // move this code on the object that needs to be ratioed instead
 
     // Start is called before the first frame update
     void Start()

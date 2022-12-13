@@ -16,6 +16,7 @@ public class Board : MonoBehaviour
     [SerializeField] List<Sprite> randomSprites = new List<Sprite>();
     [SerializeField] TMP_Text cardName;
     public string selectedLangCode;
+    [SerializeField] Transform shownImageSlot;
     private string packSlug = "animals";
 
 
@@ -37,6 +38,7 @@ public class Board : MonoBehaviour
 
     public async Task GenerateRandomBoardAsync()
     {
+        shown.transform.position = shownImageSlot.position;
         await CacheCards(packSlug);
         for (int i = 0; i < silhouettes.Length; i++)
         {
@@ -81,6 +83,7 @@ public class Board : MonoBehaviour
         foreach (var silhouette in silhouettes)
         {
             silhouette.sprite = null;
+            silhouette.color = Color.black;
         }
     }
 }

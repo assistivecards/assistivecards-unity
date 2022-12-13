@@ -1140,6 +1140,7 @@ MonoBehaviour:
   randomSprites: []
   cardName: {fileID: 1230302833}
   selectedLangCode: 
+  shownImageSlot: {fileID: 580658564}
 --- !u!1 &404033437 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6658854894865074355, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
@@ -4932,7 +4933,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5546718071285443771, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5546718072302110403, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
       propertyPath: m_CullTransparentMesh
@@ -6136,7 +6137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7400471997715186108, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7400471997715186109, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
       propertyPath: m_Pivot.x
@@ -6384,6 +6385,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7400471999454719043, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
       propertyPath: m_isRightToLeft
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948817963421186263, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948817963421186263, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948817963421186263, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948817963421186263, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

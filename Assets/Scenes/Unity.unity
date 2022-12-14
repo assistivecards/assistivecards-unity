@@ -1076,13 +1076,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -1897,18 +1897,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPortrait: 1
---- !u!114 &589691308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 589691305}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a853a033001188a48836657a977fb971, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &601693156
 GameObject:
   m_ObjectHideFlags: 0
@@ -2122,8 +2110,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 37
+  m_fontSizeBase: 37
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4261,8 +4249,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 38
+  m_fontSizeBase: 38
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6354,7 +6342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4796288356997454249, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -470.0025
+      value: -118.7505
       objectReference: {fileID: 0}
     - target: {fileID: 4796288356997454249, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -6362,7 +6350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4796288356997454249, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -235.00125
+      value: -410.62723
       objectReference: {fileID: 0}
     - target: {fileID: 4923423004708033743, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_Enabled

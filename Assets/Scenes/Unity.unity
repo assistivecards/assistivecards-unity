@@ -330,7 +330,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 1778535255}
   gamePanel: {fileID: 1154749945}
-  helloNameText: {fileID: 873500723}
   nameText: {fileID: 1301366898}
   deviceLanguageList: {fileID: 1935989265}
   supportedLanguageList: {fileID: 1880061786}
@@ -2834,6 +2833,7 @@ GameObject:
   - component: {fileID: 1021200296}
   - component: {fileID: 1021200295}
   - component: {fileID: 1021200299}
+  - component: {fileID: 1021200300}
   m_Layer: 5
   m_Name: GameCanvas
   m_TagString: Untagged
@@ -2936,6 +2936,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e9bb60247371742b7ccc10be038eb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1021200300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021200294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfff5435b2024694b992c3fcd989c117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texts: []
+  plainTexts: []
+  textsWithVariable: []
+  languageInputField: {fileID: 0}
+  localeInputField: {fileID: 0}
+  canvas: {fileID: 1021200297}
 --- !u!1 &1063598101 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3693580859600040042, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}

@@ -24,6 +24,11 @@ public class LanguageTest : MonoBehaviour
         nickname = gameAPI.GetNickname();
         usabilityTips = gameAPI.GetUsabilityTipsPreference();
     }
+
+    private void OnEnable() 
+    {
+        OnLanguageChange();
+    }
     async void Start()
     {
         // texts = GameObject.FindGameObjectsWithTag("Plain Text");

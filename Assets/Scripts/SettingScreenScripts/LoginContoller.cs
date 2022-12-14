@@ -24,7 +24,6 @@ public class LoginContoller : MonoBehaviour
 
     [Header("Screen Prefabs")]
     [SerializeField] private GameObject loginPrefab;
-    [SerializeField] private GameObject gamePrefab;
 
 
 
@@ -77,7 +76,7 @@ public class LoginContoller : MonoBehaviour
         congratulationsScreen.SetActive(false);
 
         this.gameObject.SetActive(true);
-        gamePrefab.SetActive(true);
+        canvasController.gamePrefab.SetActive(true);
         loginPrefab.SetActive(false);
     }
 }

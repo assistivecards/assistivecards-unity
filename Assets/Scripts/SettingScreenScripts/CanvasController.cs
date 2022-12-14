@@ -10,6 +10,8 @@ using UnityEngine.SceneManagement;
 
 public class CanvasController : MonoBehaviour
 {
+    [Header("GAME CANVAS")]
+    public GameObject gamePrefab;
 
     [Header("User Information")]
     public GameObject profileImage;
@@ -48,7 +50,6 @@ public class CanvasController : MonoBehaviour
 
     [Header("Screen Prefab")]
     [SerializeField] private GameObject loginPrefab;
-    [SerializeField] private GameObject gamePrefab;
     [SerializeField] private GameObject settingPrefab;
     [SerializeField] private GameObject topAppBar;
 

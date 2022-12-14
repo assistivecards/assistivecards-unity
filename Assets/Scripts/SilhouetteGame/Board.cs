@@ -31,9 +31,10 @@ public class Board : MonoBehaviour
     {
         selectedLangCode = await gameAPI.GetSystemLanguageCode();
         cachedCards = await gameAPI.GetCards(selectedLangCode, packName);
-        foreach (var card in cachedCards.cards)
+        for (int i = 0; i < cachedCards.cards.Length; i++)
         {
-            cachedCardImages.Add(await gameAPI.GetCardImage(packSlug, card.slug));
+            var cardImage = await gameAPI.GetCardImage(packSlug, cachedCards.cards[i].slug);
+            cachedCardImages.Add(cardImage);
         }
     }
 

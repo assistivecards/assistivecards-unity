@@ -1534,11 +1534,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 501889205}
   m_CullTransparentMesh: 1
---- !u!1 &502682516 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4083875282987274846, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
-  m_PrefabInstance: {fileID: 6658854895000012590}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1909,12 +1904,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589691305}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a853a033001188a48836657a977fb971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  premiumPromoButton: {fileID: 502682516}
+  premiumPromoButton: {fileID: 0}
 --- !u!1 &601693156
 GameObject:
   m_ObjectHideFlags: 0
@@ -6222,6 +6217,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 9de1b49a8987d044797db9f94d743009, type: 3}
+    - target: {fileID: 3678605026699033024, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 68398936}
+    - target: {fileID: 3678605026699033024, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PremiumPromoButtonClick
+      objectReference: {fileID: 0}
     - target: {fileID: 3693580859600040042, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_IsActive
       value: 0

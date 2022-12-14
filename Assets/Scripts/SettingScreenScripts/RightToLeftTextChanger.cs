@@ -6,6 +6,7 @@ public class RightToLeftTextChanger : MonoBehaviour
 {
     [Header ("Rotate")]
     [SerializeField] private GameObject panel;
+    [SerializeField] private GameObject gamePanel;
 
     [Header ("Not Rotate")]
     [SerializeField] private GameObject helloNameText;
@@ -28,6 +29,7 @@ public class RightToLeftTextChanger : MonoBehaviour
     public void RightToLeftLangugeChanged()
     {
         panel.GetComponent<RectTransform>().localScale = new Vector3(-1,1,1);
+        gamePanel.GetComponent<RectTransform>().localScale = new Vector3(-1,1,1);
 
         helloNameText.GetComponent<RectTransform>().localScale = new Vector3(-1,1,1);
         nameText.GetComponent<RectTransform>().localScale = new Vector3(-1,1,1);
@@ -47,6 +49,7 @@ public class RightToLeftTextChanger : MonoBehaviour
     public void LeftToRightLanguageChanged()
     {
         panel.GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
+        gamePanel.GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
 
         helloNameText.GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
         nameText.GetComponent<RectTransform>().localScale = new Vector3(1,1,1);

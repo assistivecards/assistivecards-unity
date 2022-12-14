@@ -2989,6 +2989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shownImageSlot: {fileID: 580658564}
   board: {fileID: 397639442}
+  gamePanel: {fileID: 397639436}
 --- !u!50 &1241321848
 Rigidbody2D:
   serializedVersion: 4

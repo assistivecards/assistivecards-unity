@@ -12,6 +12,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
     [SerializeField] Board board;
     private GameAPI gameAPI;
     private Transform matchedImageTransform;
+    [SerializeField] GameObject gamePanel;
 
     private void Awake()
     {
@@ -54,9 +55,16 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
         else
         {
             //wrong match
-            gameAPI.VibrateWeak();
-            transform.position = shownImageSlot.position;
+            if (eventData.position.x < gamePanel.GetComponent<Image>().rectTransform.rect.width / 2)
+            {
+                transform.position = eventData.position;
+            }
+            else
+            {
+                gameAPI.VibrateWeak();
+                LeanTween.move(gameObject, shownImageSlot.position, 0.5f);
+                // transform.position = shownImageSlot.position;
+            }
         }
     }
-
 }

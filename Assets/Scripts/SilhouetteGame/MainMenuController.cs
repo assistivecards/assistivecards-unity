@@ -11,6 +11,7 @@ public class MainMenuController : MonoBehaviour
     public async void PlayButtonClicked()
     {
         board.packSlug = inputField.text;
+        await board.CacheCards(board.packSlug);
         await board.GenerateRandomBoardAsync();
     }
 }

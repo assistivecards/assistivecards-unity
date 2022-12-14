@@ -48,6 +48,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
             // await board.GenerateRandomBoardAsync();
             board.Invoke("ClearBoard", .75f);
             board.Invoke("GenerateRandomBoardAsync", .75f);
+            isMatched = false;
         }
 
         else

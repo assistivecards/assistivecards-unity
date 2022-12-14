@@ -11,6 +11,7 @@ public class Board : MonoBehaviour
     [SerializeField] Image shown;
     [SerializeField] Image[] silhouettes;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
+    [SerializeField] List<Texture2D> cachedCardImages;
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     [SerializeField] List<Texture2D> randomImages = new List<Texture2D>();
     [SerializeField] List<Sprite> randomSprites = new List<Sprite>();
@@ -30,6 +31,10 @@ public class Board : MonoBehaviour
     {
         selectedLangCode = await gameAPI.GetSystemLanguageCode();
         cachedCards = await gameAPI.GetCards(selectedLangCode, packName);
+        foreach (var card in cachedCards.cards)
+        {
+            cachedCardImages.Add(await gameAPI.GetCardImage(packSlug, card.slug));
+        }
     }
 
     public async void Start()
@@ -40,21 +45,27 @@ public class Board : MonoBehaviour
     public async Task GenerateRandomBoardAsync()
     {
         shown.transform.position = shownImageSlot.position;
-        await CacheCards(packSlug);
+        // await CacheCards(packSlug);
         for (int i = 0; i < silhouettes.Length; i++)
         {
-            var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+            var index = Random.Range(0, cachedCards.cards.Length);
+            var cardToAdd = cachedCards.cards[index];
             if (!randomCards.Contains(cardToAdd))
             {
+
                 randomCards.Add(cardToAdd);
+                randomImages.Add(cachedCardImages[index]);
+
             }
             else
             {
-                cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+                var indexSecondRoll = Random.Range(0, cachedCards.cards.Length);
+                cardToAdd = cachedCards.cards[indexSecondRoll];
                 randomCards.Add(cardToAdd);
+                randomImages.Add(cachedCardImages[indexSecondRoll]);
             }
 
-            randomImages.Add(await gameAPI.GetCardImage(packSlug, randomCards[i].slug));
+            // randomImages.Add(await gameAPI.GetCardImage(packSlug, randomCards[i].slug));
             randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
         }
         cardName.text = randomCards[0].title.ToUpper();

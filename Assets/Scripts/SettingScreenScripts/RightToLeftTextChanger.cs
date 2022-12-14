@@ -9,7 +9,6 @@ public class RightToLeftTextChanger : MonoBehaviour
     [SerializeField] private GameObject gamePanel;
 
     [Header ("Not Rotate")]
-    [SerializeField] private GameObject helloNameText;
     [SerializeField] private GameObject nameText;
     [SerializeField] private GameObject deviceLanguageList;
     [SerializeField] private GameObject supportedLanguageList;
@@ -31,7 +30,6 @@ public class RightToLeftTextChanger : MonoBehaviour
         panel.GetComponent<RectTransform>().localScale = new Vector3(-1,1,1);
         gamePanel.GetComponent<RectTransform>().localScale = new Vector3(-1,1,1);
 
-        helloNameText.GetComponent<RectTransform>().localScale = new Vector3(-1,1,1);
         nameText.GetComponent<RectTransform>().localScale = new Vector3(-1,1,1);
         deviceLanguageList.GetComponent<RectTransform>().localScale = new Vector3(-1,1,1);
         supportedLanguageList.GetComponent<RectTransform>().localScale = new Vector3(-1,1,1);
@@ -51,7 +49,6 @@ public class RightToLeftTextChanger : MonoBehaviour
         panel.GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
         gamePanel.GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
 
-        helloNameText.GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
         nameText.GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
         deviceLanguageList.GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
         supportedLanguageList.GetComponent<RectTransform>().localScale = new Vector3(1,1,1);

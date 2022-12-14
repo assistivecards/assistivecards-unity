@@ -1189,6 +1189,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 519420033}
+    - target: {fileID: 9073135207066932925, guid: 567f4d58afcfbe5469531d2460516bfe, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2430.1611
+      objectReference: {fileID: 0}
+    - target: {fileID: 9073135207066932925, guid: 567f4d58afcfbe5469531d2460516bfe, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1320.169
+      objectReference: {fileID: 0}
+    - target: {fileID: 9073135207066932925, guid: 567f4d58afcfbe5469531d2460516bfe, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.7301
+      objectReference: {fileID: 0}
+    - target: {fileID: 9073135207066932925, guid: 567f4d58afcfbe5469531d2460516bfe, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.0506
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 567f4d58afcfbe5469531d2460516bfe, type: 3}

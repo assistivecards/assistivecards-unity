@@ -808,13 +808,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -1530,11 +1530,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 300, y: 300}
   m_EdgeRadius: 0
---- !u!1 &502682516 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4083875282987274846, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
-  m_PrefabInstance: {fileID: 6658854895000012590}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1961,7 +1956,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a853a033001188a48836657a977fb971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  premiumPromoButton: {fileID: 502682516}
 --- !u!1 &601693156
 GameObject:
   m_ObjectHideFlags: 0
@@ -2175,8 +2169,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 37
+  m_fontSizeBase: 37
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4455,13 +4449,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 38
+  m_fontSizeBase: 38
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -6130,6 +6124,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 9de1b49a8987d044797db9f94d743009, type: 3}
+    - target: {fileID: 3678605026699033024, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 68398936}
+    - target: {fileID: 3678605026699033024, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PremiumPromoButtonClick
+      objectReference: {fileID: 0}
     - target: {fileID: 3693580859600040042, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -6260,7 +6262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4796288356997454249, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -470.0025
+      value: -121.2675
       objectReference: {fileID: 0}
     - target: {fileID: 4796288356997454249, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -6268,7 +6270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4796288356997454249, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -235.00125
+      value: -409.3687
       objectReference: {fileID: 0}
     - target: {fileID: 4923423004708033743, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_Enabled
@@ -7256,7 +7258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7400471999034879997, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -265
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7400471999034879997, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -7288,7 +7290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7400471999454719042, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 415
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7400471999454719042, guid: ba17a9dde01503e40ae129a3be1dac5f, type: 3}
       propertyPath: m_AnchoredPosition.y

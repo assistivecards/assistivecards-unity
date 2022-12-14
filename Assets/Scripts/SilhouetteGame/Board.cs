@@ -17,7 +17,8 @@ public class Board : MonoBehaviour
     [SerializeField] TMP_Text cardName;
     public string selectedLangCode;
     [SerializeField] Transform shownImageSlot;
-    private string packSlug = "animals";
+    // private string packSlug = "animals";
+    public string packSlug;
 
 
     private void Awake()
@@ -33,7 +34,7 @@ public class Board : MonoBehaviour
 
     public async void Start()
     {
-        await GenerateRandomBoardAsync();
+        // await GenerateRandomBoardAsync();
     }
 
     public async Task GenerateRandomBoardAsync()

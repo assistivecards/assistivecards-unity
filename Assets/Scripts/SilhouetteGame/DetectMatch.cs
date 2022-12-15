@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using TMPro;
 
 public class DetectMatch : MonoBehaviour, IPointerUpHandler
 {
@@ -13,6 +14,8 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
     private GameAPI gameAPI;
     private Transform matchedImageTransform;
     [SerializeField] GameObject gamePanel;
+    [SerializeField] GameObject[] silhouettes;
+    [SerializeField] GameObject cardName;
 
     private void Awake()
     {
@@ -45,10 +48,11 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
             gameAPI.VibrateStrong();
             gameAPI.PlaySFX("Success");
             LeanTween.color(matchedImageTransform.gameObject.GetComponent<Image>().rectTransform, Color.white, .5f);
+            Invoke("ScaleImagesDown", .5f);
             // board.ClearBoard();
             // await board.GenerateRandomBoardAsync();
-            board.Invoke("ClearBoard", .75f);
-            board.Invoke("GenerateRandomBoardAsync", .75f);
+            board.Invoke("ClearBoard", 1f);
+            board.Invoke("GenerateRandomBoardAsync", 1f);
             isMatched = false;
         }
 
@@ -65,6 +69,16 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
                 LeanTween.move(gameObject, shownImageSlot.position, 0.5f);
                 // transform.position = shownImageSlot.position;
             }
+        }
+    }
+
+    public void ScaleImagesDown()
+    {
+        LeanTween.scale(cardName, Vector3.zero, 0.25f);
+        LeanTween.scale(gameObject, Vector3.zero, 0.25f);
+        for (int i = 0; i < silhouettes.Length; i++)
+        {
+            LeanTween.scale(silhouettes[i], Vector3.zero, 0.25f);
         }
     }
 }

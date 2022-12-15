@@ -82,8 +82,9 @@ public class Board : MonoBehaviour
                 randomSprites.RemoveAt(randomIndex);
                 silhouette.sprite = sprite;
             }
-
         }
+
+        ScaleImagesUp();
     }
 
     public void ClearBoard()
@@ -97,6 +98,16 @@ public class Board : MonoBehaviour
         {
             silhouette.sprite = null;
             silhouette.color = Color.black;
+        }
+    }
+
+    public void ScaleImagesUp()
+    {
+        LeanTween.scale(cardName.gameObject, Vector3.one, 0.25f);
+        LeanTween.scale(shown.gameObject, Vector3.one, 0.25f);
+        foreach (var silhouette in silhouettes)
+        {
+            LeanTween.scale(silhouette.gameObject, Vector3.one, 0.25f);
         }
     }
 }

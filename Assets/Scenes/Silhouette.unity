@@ -1579,6 +1579,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasPrefabs
       objectReference: {fileID: 0}
+    - target: {fileID: 3312234165509667781, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
+      propertyPath: sfxSource
+      value: 
+      objectReference: {fileID: 601693157}
+    - target: {fileID: 3312234165509667781, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
+      propertyPath: musicSource
+      value: 
+      objectReference: {fileID: 1487501776}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3312234166695040934, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
@@ -1765,6 +1773,11 @@ MonoBehaviour:
   shownImageSlot: {fileID: 1432871237}
   board: {fileID: 1021918976}
   gamePanel: {fileID: 1021918975}
+  silhouettes:
+  - {fileID: 651341034}
+  - {fileID: 1692858538}
+  - {fileID: 640598742}
+  cardName: {fileID: 93303116}
 --- !u!114 &1459567363
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,16 +7,20 @@ using TMPro;
 
 public class SettingScreenButton : MonoBehaviour
 {
+    [Header("MAIN CANVAS VARIABLES")]
+    [SerializeField] private CanvasController canvasController;
+    [SerializeField] private GameObject settingPrefab;
+    [SerializeField] private GameObject topAppBar;
+    [SerializeField] private GameObject mainSettingScreen;
+
+    [Header ("Screen Setting Variables")]
+
+    [SerializeField] private GameObject gamePrefab;
     GameAPI gameAPI;
     private ScreenOrientationMode screenOrientationMode;
-    [SerializeField] private CanvasController canvasController;
     [SerializeField] private GameObject settingButtonObject;
     [SerializeField] private Button settingButton;
     [SerializeField] private GameObject nickNameText;
-    [SerializeField] private GameObject settingPrefab;
-    [SerializeField] private GameObject gamePrefab;
-    [SerializeField] private GameObject topAppBar;
-    [SerializeField] private GameObject mainSettingScreen;
 
     private void Awake()
     {

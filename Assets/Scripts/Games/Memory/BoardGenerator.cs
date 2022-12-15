@@ -7,15 +7,21 @@ using TMPro;
 
 public class BoardGenerator : MonoBehaviour
 {
-    GameAPI gameAPI;
+    [Header ("Virtual Changes")]
+    [SerializeField] private float cardSizes;
     public int cardNumber;
+
+    [Header ("Objects")]
+    GameAPI gameAPI;
     [SerializeField] private GameObject tempCardObject;
     private List<GameObject> firstHalfCards = new List<GameObject>();
     public List<GameObject> cards = new List<GameObject>();
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cardTextures;
+    AssistiveCardsSDK.AssistiveCardsSDK.Cards cardDefinitions;
     private Texture2D cardTexture;
     public string selectedLangCode;
     private List<string> cardNames = new List<string>();
+    private List<string> cardDefinitionsLocale = new List<string>();
     private int randomValue;
     List<int> randomValueList = new List<int>();
     private void Awake()
@@ -26,7 +32,8 @@ public class BoardGenerator : MonoBehaviour
     public async Task CacheCards(string packName)
     {
         selectedLangCode = await gameAPI.GetSystemLanguageCode();
-        cardTextures = await gameAPI.GetCards(selectedLangCode, packName);
+        cardTextures = await gameAPI.GetCards("en", packName);
+        cardDefinitions = await gameAPI.GetCards(selectedLangCode, packName);
     }
 
     public async void Start()
@@ -40,6 +47,7 @@ public class BoardGenerator : MonoBehaviour
         for(int i = 0; i< cardTextures.cards.Length; i++)
         {
             cardNames.Add(cardTextures.cards[i].title.ToLower());
+            cardDefinitionsLocale.Add(cardDefinitions.cards[i].title);
         }
 
         for(int j = 0; j< cardNumber / 2; j++)
@@ -59,6 +67,7 @@ public class BoardGenerator : MonoBehaviour
             cards[j].transform.parent = this.transform;
 
             cards[j].transform.name = "Card" + j;
+            cards[j].transform.GetChild(2).GetComponent<TMP_Text>().text= cardDefinitionsLocale[randomValue];
             cards[j].transform.GetChild(1).name = cardNames[randomValue];
             cards[j].transform.GetChild(1).GetComponent<RawImage>().texture = cardTexture;
 
@@ -81,7 +90,7 @@ public class BoardGenerator : MonoBehaviour
         {
             card.transform.SetSiblingIndex(Random.Range(0, cardNumber));
             card.transform.LeanRotateZ(180, 0f);
-            card.transform.localScale = new Vector3(3f,3f,1);
+            card.transform.localScale = new Vector3(cardSizes, cardSizes,1);
         }
     }
 }

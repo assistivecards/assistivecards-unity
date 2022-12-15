@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class FlipCard : MonoBehaviour, IPointerDownHandler
 {
@@ -11,10 +12,12 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler
     public bool isCardBackActive = false;
     private int timer;
     public bool touched = false;
+    private Transform cardName;
 
     private void Awake() 
     {
         cardBack = this.transform.GetChild(1);
+        cardName = this.transform.GetChild(2);
     }
 
     private void Start() {
@@ -43,6 +46,7 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler
         if(checkMatches.flippedCards.Count < 2)
         {
             cardBack.gameObject.SetActive(true);
+            cardName.gameObject.SetActive(true);
             isCardBackActive = true;
             checkMatches.flippedCards.Add(this.gameObject);
             checkMatches.firstCardName = cardBack.name;
@@ -51,6 +55,7 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler
         {
             checkMatches.CheckAllBoardFlip();
             cardBack.gameObject.SetActive(true);
+            cardName.gameObject.SetActive(true);
             isCardBackActive = true;
             checkMatches.flippedCards.Add(this.gameObject);
             checkMatches.firstCardName = cardBack.name;
@@ -62,6 +67,7 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler
     {
         if(isCardBackActive == true)
         {
+            cardName.gameObject.SetActive(false);
             cardBack.gameObject.SetActive(false);
             isCardBackActive = false;
         }

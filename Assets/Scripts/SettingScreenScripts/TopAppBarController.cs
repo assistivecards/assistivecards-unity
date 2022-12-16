@@ -7,6 +7,7 @@ public class TopAppBarController : MonoBehaviour
 {
     GameAPI gameAPI;
     [SerializeField] private GameObject canvas;
+    [SerializeField] private GameObject gameCanvas;
 
     [Header("Top App Bar UI")]
     [SerializeField] private GameObject backButton;
@@ -181,6 +182,7 @@ public class TopAppBarController : MonoBehaviour
                 gameAPI.SetLanguage(languageController.selectedLanguage.name);
                 gameAPI.SetTTSPreference(await gameAPI.GetSelectedLocale());
                 canvas.GetComponent<LanguageTest>().OnLanguageChange();
+                gameCanvas.GetComponent<LanguageTest>().OnLanguageChange();
                 Camera.main.GetComponent<NotificationsManager>().OnLanguageChange();
 
                 if (languageController.selectedLanguage.name == "Arabic" || languageController.selectedLanguage.name == "Urdu")

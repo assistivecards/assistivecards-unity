@@ -25,13 +25,9 @@ public class LanguageTest : MonoBehaviour
         usabilityTips = gameAPI.GetUsabilityTipsPreference();
     }
 
-    private void OnEnable() 
-    {
-        OnLanguageChange();
-    }
     async void Start()
     {
-        // texts = GameObject.FindGameObjectsWithTag("Plain Text");
+
         var langCode = await gameAPI.GetSystemLanguageCode();
         texts = canvas.GetComponentsInChildren<TMP_Text>(true);
         foreach (var text in texts)
@@ -45,9 +41,7 @@ public class LanguageTest : MonoBehaviour
                 textsWithVariable.Add(text);
             }
         }
-        // textsWithVariable = GameObject.FindGameObjectsWithTag("Text With Variable");
-        // packResult = assistiveCardsSDK.GetPackBySlug(gameAPI.cachedPacks, "animals");
-        // Debug.Log(packResult.locale);
+
         variableArray.Add(nickname);
         variableArray.Add(nickname);
 

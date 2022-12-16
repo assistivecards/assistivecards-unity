@@ -18,7 +18,6 @@ public class Board : MonoBehaviour
     [SerializeField] TMP_Text cardName;
     public string selectedLangCode;
     [SerializeField] Transform shownImageSlot;
-    // private string packSlug = "animals";
     public string packSlug;
 
 
@@ -46,7 +45,7 @@ public class Board : MonoBehaviour
     public async Task GenerateRandomBoardAsync()
     {
         shown.transform.position = shownImageSlot.position;
-        // await CacheCards(packSlug);
+        await CacheCards(packSlug);
         for (int i = 0; i < silhouettes.Length; i++)
         {
             var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
@@ -75,14 +74,14 @@ public class Board : MonoBehaviour
         shown.sprite = randomSprites[0];
         silhouettes[Random.Range(0, silhouettes.Length)].sprite = randomSprites[0];
 
-        foreach (var silhouette in silhouettes)
+        for (int i = 0; i < silhouettes.Length; i++)
         {
-            if (silhouette.sprite == null)
+            if (silhouettes[i].sprite == null)
             {
                 var randomIndex = Random.Range(1, randomSprites.Count);
                 var sprite = randomSprites[randomIndex];
                 randomSprites.RemoveAt(randomIndex);
-                silhouette.sprite = sprite;
+                silhouettes[i].sprite = sprite;
             }
         }
 
@@ -96,20 +95,22 @@ public class Board : MonoBehaviour
         randomCards.Clear();
         randomImages.Clear();
         randomSprites.Clear();
-        foreach (var silhouette in silhouettes)
+        for (int i = 0; i < silhouettes.Length; i++)
         {
-            silhouette.sprite = null;
-            silhouette.color = Color.black;
+            silhouettes[i].sprite = null;
+            silhouettes[i].color = Color.black;
         }
+
     }
 
     public void ScaleImagesUp()
     {
         LeanTween.scale(cardName.gameObject, Vector3.one, 0.25f);
         LeanTween.scale(shown.gameObject, Vector3.one, 0.25f);
-        foreach (var silhouette in silhouettes)
+        for (int i = 0; i < silhouettes.Length; i++)
         {
-            LeanTween.scale(silhouette.gameObject, Vector3.one, 0.25f);
+            LeanTween.scale(silhouettes[i].gameObject, Vector3.one, 0.25f);
         }
+
     }
 }

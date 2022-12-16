@@ -1347,6 +1347,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &901442019 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3312234164850283327, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
+  m_PrefabInstance: {fileID: 1021918972}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &912360132
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,6 +1592,10 @@ PrefabInstance:
       propertyPath: musicSource
       value: 
       objectReference: {fileID: 1487501776}
+    - target: {fileID: 5822235023202489470, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
+      propertyPath: gameCanvas
+      value: 
+      objectReference: {fileID: 901442019}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3312234166695040934, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}

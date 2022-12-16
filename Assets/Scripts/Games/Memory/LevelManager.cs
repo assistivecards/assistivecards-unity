@@ -18,6 +18,7 @@ public class LevelManager : MonoBehaviour
         if(GameObject.FindGameObjectsWithTag("notMatchedCard").Length == 0)
         {
             gameAPI.PlaySFX("Finished");
+            boardGenerator.FadeInTransitionScreen();
             boardGenerator.ClearBoard();
             await boardGenerator.GenerateRandomBoardAsync("animals");
         }

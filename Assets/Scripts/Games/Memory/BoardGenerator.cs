@@ -13,6 +13,7 @@ public class BoardGenerator : MonoBehaviour
 
     [Header ("Objects")]
     GameAPI gameAPI;
+    [SerializeField] private GameObject transitionScreen;
     [SerializeField] private GameObject tempCardObject;
     private List<GameObject> firstHalfCards = new List<GameObject>();
     public List<GameObject> cards = new List<GameObject>();
@@ -94,7 +95,27 @@ public class BoardGenerator : MonoBehaviour
             card.transform.LeanRotateZ(180, 0f);
             card.transform.localScale = new Vector3(cardSizes, cardSizes,1);
         }
+
+        FadeOutTransitionScreen();
     }
+
+    private void FadeOutTransitionScreen()
+    {
+        transitionScreen.GetComponent<Image>().CrossFadeAlpha(0, 1f, true);
+        Invoke("CloseTransitionScreen", 1f);
+    }
+
+    private void CloseTransitionScreen()
+    {
+        transitionScreen.SetActive(false);
+    }
+
+    public void FadeInTransitionScreen()
+    {
+        transitionScreen.SetActive(true);
+        transitionScreen.GetComponent<Image>().CrossFadeAlpha(1, 0.5f, false);
+    }
+
 
     public void ClearBoard()
     {

@@ -13,6 +13,7 @@ public class BoardGenerator : MonoBehaviour
 
     [Header ("Objects")]
     GameAPI gameAPI;
+    private GameObject clone;
     [SerializeField] private GameObject transitionScreen;
     [SerializeField] private GameObject tempCardObject;
     private List<GameObject> firstHalfCards = new List<GameObject>();
@@ -97,6 +98,7 @@ public class BoardGenerator : MonoBehaviour
         }
 
         FadeOutTransitionScreen();
+        CheckClones();
     }
 
     private void FadeOutTransitionScreen()
@@ -128,5 +130,11 @@ public class BoardGenerator : MonoBehaviour
         randomValueList.Clear();
         checkMatches.flippedCards.Clear();
         
+    }
+
+    private void CheckClones()
+    {
+        clone = GameObject.Find("Clone(Clone)");
+        Destroy(clone);
     }
 }

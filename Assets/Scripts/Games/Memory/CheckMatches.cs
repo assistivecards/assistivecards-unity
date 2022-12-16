@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class CheckMatches : MonoBehaviour
 {
+    GameAPI gameAPI;
     private LevelManager levelManager;
     private BoardGenerator boardGenerator;
     public List<GameObject> flippedCards = new List<GameObject>();
     public string firstCardName;
     private void Awake() 
     {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
         boardGenerator = this.GetComponent<BoardGenerator>();
         levelManager = this.GetComponent<LevelManager>();
     }
@@ -30,7 +32,7 @@ public class CheckMatches : MonoBehaviour
         foreach(GameObject card in flippedCards)
         {
             StartCoroutine(ScaleCardBigger(card));
-            card.tag = "matched";
+            card.tag = "MatchedCard";
         }
         levelManager.levelFinisher();
     }
@@ -38,6 +40,8 @@ public class CheckMatches : MonoBehaviour
     IEnumerator ScaleCardBigger(GameObject _card)
     {
         LeanTween.scale(_card, Vector3.one * 3.5f, 0.3f);
+        gameAPI.VibrateStrong();
+        gameAPI.PlaySFX("Success");
         yield return  new WaitForSeconds(0.7f);
         ScaleCardSmaller(_card);
     }

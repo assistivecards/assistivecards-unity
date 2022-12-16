@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 2278384994888645637}
   m_Layer: 5
   m_Name: CardBack
-  m_TagString: Untagged
+  m_TagString: MatchedCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

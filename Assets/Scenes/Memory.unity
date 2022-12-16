@@ -364,10 +364,16 @@ MonoBehaviour:
   cachedAppIcons: []
   cachedPackImages: []
   speakable: {fileID: 0}
-  sfxClips: []
-  musicSource: {fileID: 0}
-  sfxSource: {fileID: 0}
-  musicClip: {fileID: 0}
+  sfxClips:
+  - soundName: Success
+    clip: {fileID: 8300000, guid: d81901bf2fb96724aa1d7d1de4ab930b, type: 3}
+  - soundName: Finished
+    clip: {fileID: 8300000, guid: dd699e0cf09cf3348be25ba4c5877c05, type: 3}
+  - soundName: Card
+    clip: {fileID: 8300000, guid: 98753dce81f965b4bbf6df68883a9f79, type: 3}
+  musicSource: {fileID: 1487501776}
+  sfxSource: {fileID: 601693157}
+  musicClip: {fileID: 8300000, guid: a34fe2c72ed38e24a923f7a560237e68, type: 3}
   cards:
     cards: []
 --- !u!114 &519420034

@@ -7,6 +7,9 @@ TagManager:
   - ParentScreenLock
   - Plain Text
   - Text With Variable
+  - notMatchedCard
+  - avatarSelection
+  - avatarSelectionSettings
   layers:
   - Default
   - TransparentFX
@@ -14,7 +17,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - MathedCards
   - 
   - 
   - 

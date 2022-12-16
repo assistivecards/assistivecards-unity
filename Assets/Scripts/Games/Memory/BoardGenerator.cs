@@ -98,9 +98,9 @@ public class BoardGenerator : MonoBehaviour
 
     public void ClearBoard()
     {
-        foreach(GameObject matched in GameObject.FindGameObjectsWithTag("matched"))
+        foreach(GameObject card in GameObject.FindGameObjectsWithTag("MatchedCard"))
         {
-            Destroy(matched);
+            Destroy(card);
         }
         cards.Clear();
         firstHalfCards.Clear();

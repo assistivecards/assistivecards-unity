@@ -9,11 +9,15 @@ public class CheckMatches : MonoBehaviour
     private BoardGenerator boardGenerator;
     public List<GameObject> flippedCards = new List<GameObject>();
     public string firstCardName;
+    //public int score;
     private void Awake() 
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
         boardGenerator = this.GetComponent<BoardGenerator>();
         levelManager = this.GetComponent<LevelManager>();
+
+        PlayerPrefs.HasKey("MemoryGameScore");
+        //score = PlayerPrefs.GetInt("MemoryGameScore");
     }
 
     public void CheckMatche() 
@@ -33,6 +37,8 @@ public class CheckMatches : MonoBehaviour
         {
             StartCoroutine(ScaleCardBigger(card));
             card.tag = "MatchedCard";
+            //score += 1;
+            //PlayerPrefs.SetInt("MemoryGameScore", score);
         }
         levelManager.levelFinisher();
     }

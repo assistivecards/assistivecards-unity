@@ -5,12 +5,12 @@ using TMPro;
 
 public class MainMenuController : MonoBehaviour
 {
-    [SerializeField] TMP_InputField inputField;
     [SerializeField] Board board;
+    [SerializeField] PackSelectionPanel packSelectionPanel;
 
-    public async void PlayButtonClicked()
+    public async void OnPackSelect()
     {
-        board.packSlug = inputField.text;
+        board.packSlug = packSelectionPanel.selectedPackElement.name;
         await board.CacheCards(board.packSlug);
         await board.GenerateRandomBoardAsync();
     }

@@ -14,11 +14,14 @@ public class CheckMatches : MonoBehaviour
         levelManager = this.GetComponent<LevelManager>();
     }
 
-    private void Update() 
+    public void CheckMatche() 
     {
-        if(flippedCards[0].transform.GetChild(1).name == flippedCards[1].transform.GetChild(1).name)
+        if(flippedCards.Count == 2)
         {
-            Match();
+            if(flippedCards[0].transform.GetChild(1).name == flippedCards[1].transform.GetChild(1).name)
+            {
+                Match();
+            }
         }
     }
 
@@ -27,7 +30,7 @@ public class CheckMatches : MonoBehaviour
         foreach(GameObject card in flippedCards)
         {
             LeanTween.scale(card, Vector3.one * 0.001f, 0.25f);
-            card.tag = "Untagged";
+            card.tag = "matched";
         }
         levelManager.levelFinisher();
     }

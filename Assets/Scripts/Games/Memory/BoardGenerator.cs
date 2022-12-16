@@ -24,7 +24,7 @@ public class BoardGenerator : MonoBehaviour
     private List<string> cardDefinitionsLocale = new List<string>();
     private int randomValue;
     List<int> randomValueList = new List<int>();
-    private void Awake()
+    private void OnEnable()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
     }

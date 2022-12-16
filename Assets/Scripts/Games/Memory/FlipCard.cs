@@ -50,6 +50,7 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler
             isCardBackActive = true;
             checkMatches.flippedCards.Add(this.gameObject);
             checkMatches.firstCardName = cardBack.name;
+            checkMatches.CheckMatche();
         }
         else 
         {
@@ -59,6 +60,7 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler
             isCardBackActive = true;
             checkMatches.flippedCards.Add(this.gameObject);
             checkMatches.firstCardName = cardBack.name;
+            checkMatches.CheckMatche();
         }
 
     }

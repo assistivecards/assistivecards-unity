@@ -837,6 +837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5630d1b2c2b4d49468c2faa39d980d2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardSizes: 3
   cardNumber: 19
   tempCardObject: {fileID: 6370097455287089691, guid: f0a92bd16c8abab42a526e44d642b22c, type: 3}
   cards: []

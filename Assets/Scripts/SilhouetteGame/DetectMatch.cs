@@ -59,7 +59,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
         else
         {
             //wrong match
-            if (eventData.position.x < gamePanel.GetComponent<Image>().rectTransform.rect.width / 2)
+            if (eventData.position.x < gamePanel.GetComponent<Image>().rectTransform.rect.width / 2 && eventData.position.x > gamePanel.GetComponent<BoxCollider2D>().bounds.min.x + 145)
             {
                 transform.position = eventData.position;
             }

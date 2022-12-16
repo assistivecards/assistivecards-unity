@@ -29,10 +29,21 @@ public class CheckMatches : MonoBehaviour
     {
         foreach(GameObject card in flippedCards)
         {
-            LeanTween.scale(card, Vector3.one * 0.001f, 0.25f);
+            StartCoroutine(ScaleCardBigger(card));
             card.tag = "matched";
         }
         levelManager.levelFinisher();
+    }
+
+    IEnumerator ScaleCardBigger(GameObject _card)
+    {
+        LeanTween.scale(_card, Vector3.one * 3.5f, 0.3f);
+        yield return  new WaitForSeconds(0.7f);
+        ScaleCardSmaller(_card);
+    }
+    private void ScaleCardSmaller(GameObject _card)
+    {
+        LeanTween.scale(_card, Vector3.one * 0.001f, 0.25f);
     }
 
     public void CheckAllBoardFlip()

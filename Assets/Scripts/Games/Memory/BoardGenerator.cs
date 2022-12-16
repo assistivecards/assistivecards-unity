@@ -66,7 +66,6 @@ public class BoardGenerator : MonoBehaviour
 
             cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValue], 512);
             cards.Add(Instantiate(tempCardObject, Vector3.zero, Quaternion.identity));
-            Debug.Log(cards[j]);
             cards[j].transform.parent = this.transform;
 
             cards[j].transform.name = "Card" + j;

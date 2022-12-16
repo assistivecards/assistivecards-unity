@@ -15,11 +15,8 @@ public class LevelManager : MonoBehaviour
     {
         if(GameObject.FindGameObjectsWithTag("notMatchedCard").Length == 0)
         {
-            foreach(GameObject matched in GameObject.FindGameObjectsWithTag("matched"))
-            {
-                Destroy(matched);
-            }
-            //await boardGenerator.GenerateRandomBoardAsync("animals");
+            boardGenerator.ClearBoard();
+            await boardGenerator.GenerateRandomBoardAsync("animals");
         }
     }
 }

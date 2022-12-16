@@ -23,10 +23,12 @@ public class BoardGenerator : MonoBehaviour
     private List<string> cardNames = new List<string>();
     private List<string> cardDefinitionsLocale = new List<string>();
     private int randomValue;
+    private CheckMatches checkMatches;
     List<int> randomValueList = new List<int>();
     private void OnEnable()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+        checkMatches = GetComponent<CheckMatches>();
     }
 
     public async Task CacheCards(string packName)
@@ -62,8 +64,9 @@ public class BoardGenerator : MonoBehaviour
                 randomValueList.Add(randomValue);
             }
 
-            cardTexture = await gameAPI.GetCardImage("animals", cardNames[randomValue], 512);
+            cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValue], 512);
             cards.Add(Instantiate(tempCardObject, Vector3.zero, Quaternion.identity));
+            Debug.Log(cards[j]);
             cards[j].transform.parent = this.transform;
 
             cards[j].transform.name = "Card" + j;
@@ -92,5 +95,18 @@ public class BoardGenerator : MonoBehaviour
             card.transform.LeanRotateZ(180, 0f);
             card.transform.localScale = new Vector3(cardSizes, cardSizes,1);
         }
+    }
+
+    public void ClearBoard()
+    {
+        foreach(GameObject matched in GameObject.FindGameObjectsWithTag("matched"))
+        {
+            Destroy(matched);
+        }
+        cards.Clear();
+        firstHalfCards.Clear();
+        randomValueList.Clear();
+        checkMatches.flippedCards.Clear();
+        
     }
 }

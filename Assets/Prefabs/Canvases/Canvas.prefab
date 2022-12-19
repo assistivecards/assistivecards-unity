@@ -1937,7 +1937,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00010585785, y: 496.6368}
+  m_AnchoredPosition: {x: -0.00010585785, y: 476}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1242831490754674593
@@ -1968,7 +1968,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 340977700628c4c16b73f9a0b7e4ebad, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e56957d2a8c3ea041bee608dc5302a6c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2916,6 +2916,14 @@ PrefabInstance:
       propertyPath: m_text
       value: Card Count
       objectReference: {fileID: 0}
+    - target: {fileID: 2644808109834789192, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644808109834789192, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3105186335905232672, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_fontSize
       value: 25
@@ -3030,7 +3038,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4195568518635841224, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -220.7782
+      value: -209.5795
       objectReference: {fileID: 0}
     - target: {fileID: 4195568518635841224, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3038,7 +3046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4195568518635841224, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -97
+      value: -102.59935
       objectReference: {fileID: 0}
     - target: {fileID: 4473551598087816657, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3132,6 +3140,14 @@ PrefabInstance:
       propertyPath: m_text
       value: Pack Name
       objectReference: {fileID: 0}
+    - target: {fileID: 5071819962199032531, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_fontSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071819962199032531, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 5291693120752409138, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3222,19 +3238,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6100542187023099784, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0.9245283
       objectReference: {fileID: 0}
     - target: {fileID: 6100542187023099784, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0.9245283
       objectReference: {fileID: 0}
     - target: {fileID: 6100542187023099784, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.9245283
       objectReference: {fileID: 0}
     - target: {fileID: 6220910641012903648, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_text
       value: Phrase Count
+      objectReference: {fileID: 0}
+    - target: {fileID: 6220910641012903648, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6220910641012903648, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6253345435164413949, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_Name

@@ -37,11 +37,6 @@ public class Board : MonoBehaviour
         // }
     }
 
-    public async void Start()
-    {
-        // await GenerateRandomBoardAsync();
-    }
-
     public async Task GenerateRandomBoardAsync()
     {
         shown.transform.position = shownImageSlot.position;

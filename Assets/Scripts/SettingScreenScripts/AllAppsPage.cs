@@ -32,6 +32,7 @@ public class AllAppsPage : MonoBehaviour
 
     private string appStoreURL = "itms-apps://apps.apple.com/tr/app/";
     private string playStoreURL = "market://details?id=org.dreamoriented.";
+    public static bool didLanguageChange = true;
 
     private void Awake()
     {
@@ -40,40 +41,43 @@ public class AllAppsPage : MonoBehaviour
 
     private async void OnEnable()
     {
-
-        var currentLanguageCode = await gameAPI.GetSystemLanguageCode();
-
-        tempAppElement.SetActive(true);
-
-        if (appElementGameObject.Count != 0)
+        if (didLanguageChange)
         {
-            foreach (var item in appElementGameObject)
+            var currentLanguageCode = await gameAPI.GetSystemLanguageCode();
+
+            tempAppElement.SetActive(true);
+
+            if (appElementGameObject.Count != 0)
             {
-                Destroy(item);
+                foreach (var item in appElementGameObject)
+                {
+                    Destroy(item);
+                }
+                appElementGameObject.Clear();
             }
-            appElementGameObject.Clear();
+
+            apps = await gameAPI.GetApps();
+            var jsonApps = JsonUtility.ToJson(apps);
+            JSONObject jsonAppss = new JSONObject(jsonApps);
+
+
+            for (int i = 0; i < apps.apps.Count; i++)
+            {
+                appElement = Instantiate(tempAppElement, transform);
+
+                appElement.transform.GetChild(0).GetComponent<TMP_Text>().text = jsonAppss["apps"][i]["name"].ToString().Replace("\"", "");
+                appElement.transform.GetChild(1).GetComponent<TMP_Text>().text = jsonAppss["apps"][i]["tagline"][currentLanguageCode].ToString().Replace("\"", "");
+                appElement.transform.GetChild(2).GetComponent<TMP_Text>().text = jsonAppss["apps"][i]["description"][currentLanguageCode].ToString().Replace("\"", "");
+
+                appElement.transform.GetChild(3).GetChild(0).GetComponent<Image>().sprite = Sprite.Create(gameAPI.cachedAppIcons[i], new Rect(0.0f, 0.0f, gameAPI.cachedAppIcons[i].width, gameAPI.cachedAppIcons[i].height), new Vector2(0.5f, 0.5f), 100.0f);
+
+                appElement.name = apps.apps[i].slug;
+
+                appElementGameObject.Add(appElement);
+            }
+            tempAppElement.SetActive(false);
+            didLanguageChange = false;
         }
-
-        apps = await gameAPI.GetApps();
-        var jsonApps = JsonUtility.ToJson(apps);
-        JSONObject jsonAppss = new JSONObject(jsonApps);
-
-
-        for (int i = 0; i < apps.apps.Count; i++)
-        {
-            appElement = Instantiate(tempAppElement, transform);
-
-            appElement.transform.GetChild(0).GetComponent<TMP_Text>().text = jsonAppss["apps"][i]["name"].ToString().Replace("\"", "");
-            appElement.transform.GetChild(1).GetComponent<TMP_Text>().text = jsonAppss["apps"][i]["tagline"][currentLanguageCode].ToString().Replace("\"", "");
-            appElement.transform.GetChild(2).GetComponent<TMP_Text>().text = jsonAppss["apps"][i]["description"][currentLanguageCode].ToString().Replace("\"", "");
-
-            appElement.transform.GetChild(3).GetChild(0).GetComponent<Image>().sprite = Sprite.Create(gameAPI.cachedAppIcons[i], new Rect(0.0f, 0.0f, gameAPI.cachedAppIcons[i].width, gameAPI.cachedAppIcons[i].height), new Vector2(0.5f, 0.5f), 100.0f);
-
-            appElement.name = apps.apps[i].slug;
-
-            appElementGameObject.Add(appElement);
-        }
-        tempAppElement.SetActive(false);
 
     }
 

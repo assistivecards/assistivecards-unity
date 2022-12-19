@@ -185,6 +185,7 @@ public class TopAppBarController : MonoBehaviour
                 gameCanvas.GetComponent<LanguageTest>().OnLanguageChange();
                 Camera.main.GetComponent<NotificationsManager>().OnLanguageChange();
                 PackSelectionPanel.didLanguageChange = true;
+                AllAppsPage.didLanguageChange = true;
 
                 if (languageController.selectedLanguage.name == "Arabic" || languageController.selectedLanguage.name == "Urdu")
                 {

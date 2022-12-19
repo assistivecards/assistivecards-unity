@@ -41,6 +41,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        var bounds = gamePanel.GetComponent<BoxCollider2D>().bounds;
         if (isMatched)
         {
             //correct match
@@ -59,7 +60,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
         else
         {
             //wrong match
-            if (eventData.position.x < gamePanel.GetComponent<Image>().rectTransform.rect.width / 2 && eventData.position.x > gamePanel.GetComponent<BoxCollider2D>().bounds.min.x + 145)
+            if (eventData.position.x < bounds.center.x && eventData.position.x > bounds.min.x + 75 && eventData.position.y < bounds.max.y - 100 && eventData.position.y > bounds.min.y + 100)
             {
                 transform.position = eventData.position;
             }

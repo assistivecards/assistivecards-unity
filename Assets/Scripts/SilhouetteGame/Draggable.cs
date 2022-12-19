@@ -14,7 +14,7 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler
         var bounds = gamePanel.GetComponent<BoxCollider2D>().bounds;
         // Debug.Log("rt: " + bounds.min.x + " " + bounds.max.x + " " + bounds.min.y + " " + bounds.max.y);
         // Debug.Log(transform.position.x + " " + transform.position.y);
-        transform.position = new Vector2(Mathf.Clamp(eventData.position.x, bounds.min.x + 145, bounds.max.x - 145), Mathf.Clamp(eventData.position.y, bounds.min.y, bounds.max.y));
+        transform.position = new Vector2(Mathf.Clamp(eventData.position.x, bounds.min.x + 145, bounds.max.x - 145), Mathf.Clamp(eventData.position.y, bounds.min.y + 100, bounds.max.y - 100));
 
     }
 

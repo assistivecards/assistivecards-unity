@@ -326,7 +326,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2128.659, y: 0}
+  m_AnchoredPosition: {x: -2619.563, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &786598635444996352
@@ -384,8 +384,6 @@ MonoBehaviour:
     packs: []
   selectedPackElement: {fileID: 0}
   packElementGameObject: []
-  cardCountsArray: []
-  phraseCountsArray: []
   currentLanguageCode: 
 --- !u!1 &786598635608401747
 GameObject:

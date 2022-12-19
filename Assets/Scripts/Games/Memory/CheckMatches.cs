@@ -45,7 +45,7 @@ public class CheckMatches : MonoBehaviour
 
     IEnumerator ScaleCardBigger(GameObject _card)
     {
-        LeanTween.scale(_card, Vector3.one * 3.5f, 0.3f);
+        LeanTween.scale(_card, Vector3.one * 1.25f, 0.3f);
         gameAPI.VibrateStrong();
         gameAPI.PlaySFX("Success");
         yield return  new WaitForSeconds(0.7f);

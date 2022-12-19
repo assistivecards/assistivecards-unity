@@ -358,6 +358,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 786598635357384133, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 786598635357384133, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 786598635357384133, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 786598635357384133, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 786598635357384133, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -330
+      objectReference: {fileID: 0}
     - target: {fileID: 786598635403759704, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
       propertyPath: m_Name
       value: PackSelectionPanel
@@ -445,6 +465,18 @@ PrefabInstance:
     - target: {fileID: 786598635403759705, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 786598635444996358, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -1633.3335
+      objectReference: {fileID: 0}
+    - target: {fileID: 786598635444996358, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 159.61536
+      objectReference: {fileID: 0}
+    - target: {fileID: 786598635444996358, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.00036621094
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

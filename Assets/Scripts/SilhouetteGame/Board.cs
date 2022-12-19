@@ -70,7 +70,7 @@ public class Board : MonoBehaviour
             randomImages.Add(await gameAPI.GetCardImage(packSlug, randomCards[i].slug));
             randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
         }
-        cardName.text = randomCards[0].title.ToUpper();
+        cardName.text = randomCards[0].title;
         shown.sprite = randomSprites[0];
         silhouettes[Random.Range(0, silhouettes.Length)].sprite = randomSprites[0];
 

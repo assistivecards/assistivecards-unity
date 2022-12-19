@@ -13,6 +13,7 @@ public class TTSPanel : MonoBehaviour
     public GameObject selectedTtsElement;
     public List<GameObject> ttsElementGameObject = new List<GameObject>();
     private GameAPI gameAPI;
+    public static bool didLanguageChange = true;
 
     private void Awake()
     {
@@ -22,45 +23,48 @@ public class TTSPanel : MonoBehaviour
 
     private async void OnEnable()
     {
-        var currentLang = gameAPI.GetLanguage();
-        var currentTTS = await gameAPI.GetTTSPreference();
-
-        tempTtsElement.SetActive(true);
-
-        ttsElements.Clear();
-        if (ttsElementGameObject.Count != 0)
+        if (didLanguageChange)
         {
-            foreach (var item in ttsElementGameObject)
+            var currentLang = gameAPI.GetLanguage();
+            var currentTTS = await gameAPI.GetTTSPreference();
+
+            tempTtsElement.SetActive(true);
+
+            ttsElements.Clear();
+            if (ttsElementGameObject.Count != 0)
             {
-                Destroy(item);
+                foreach (var item in ttsElementGameObject)
+                {
+                    Destroy(item);
+                }
+                ttsElementGameObject.Clear();
             }
-            ttsElementGameObject.Clear();
+
+            ttsElements = await gameAPI.GetSystemLanguageLocales();
+
+
+            for (int i = 0; i < ttsElements.Count; i++)
+            {
+                ttsElement = Instantiate(tempTtsElement, transform);
+
+                ttsElement.transform.GetChild(1).GetComponent<Text>().text = currentLang;
+                ttsElement.transform.GetChild(2).GetComponent<Text>().text = ttsElements[i];
+                ttsElement.transform.GetChild(3).GetComponent<Text>().text = null;
+
+                ttsElement.name = ttsElements[i];
+                ttsElementGameObject.Add(ttsElement);
+
+                if (ttsElements[i] == currentTTS)
+                {
+                    ttsElement.GetComponent<Toggle>().isOn = true;
+                    selectedTtsElement = ttsElement;
+                }
+            }
+
+            tempTtsElement.SetActive(false);
+            didLanguageChange = false;
         }
 
-        ttsElements = await gameAPI.GetSystemLanguageLocales();
-
-
-        for (int i = 0; i < ttsElements.Count; i++)
-        {
-            ttsElement = Instantiate(tempTtsElement, transform);
-
-            ttsElement.transform.GetChild(1).GetComponent<Text>().text = currentLang;
-            ttsElement.transform.GetChild(2).GetComponent<Text>().text = ttsElements[i];
-            ttsElement.transform.GetChild(3).GetComponent<Text>().text = null;
-
-            ttsElement.name = ttsElements[i];
-            ttsElementGameObject.Add(ttsElement);
-
-            if (ttsElements[i] == currentTTS)
-            {
-                ttsElement.GetComponent<Toggle>().isOn = true;
-                selectedTtsElement = ttsElement;
-            }
-        }
-
-
-
-        tempTtsElement.SetActive(false);
     }
 
 

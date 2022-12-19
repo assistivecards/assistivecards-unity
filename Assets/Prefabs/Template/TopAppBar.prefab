@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
+  gameCanvas: {fileID: 0}
   backButton: {fileID: 773758866384401560}
   saveButton: {fileID: 773758865873878607}
   parentLockButton: {fileID: 5199920897035703828}
@@ -395,7 +396,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 90, y: -93.54431}
+  m_AnchoredPosition: {x: 140, y: -93.54431}
   m_SizeDelta: {x: 160, y: 114.8743}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &773758866384401564

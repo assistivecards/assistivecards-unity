@@ -115,7 +115,7 @@ public class Board : MonoBehaviour
 
     public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)
     {
-        if (!randomCards.Contains(cardToAdd))
+        if (!randomCards.Contains(cardToAdd) && cardToAdd.slug != shownImageSlug)
         {
 
             randomCards.Add(cardToAdd);

@@ -1241,6 +1241,7 @@ MonoBehaviour:
   cardName: {fileID: 93303118}
   selectedLangCode: 
   shownImageSlot: {fileID: 1432871237}
+  shownImageSlug: 
   packSlug: 
 --- !u!61 &1021918982
 BoxCollider2D:

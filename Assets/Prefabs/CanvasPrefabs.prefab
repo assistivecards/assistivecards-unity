@@ -465,6 +465,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -64.999954
       objectReference: {fileID: 0}
+    - target: {fileID: 1242831489410636797, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1242831489410636798, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -67
@@ -520,6 +524,18 @@ PrefabInstance:
     - target: {fileID: 1242831489500363420, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242831489518863947, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 112.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242831489518863948, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_fontSize
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242831489518863948, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489555773149, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -669,6 +685,18 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 1242831489945827443, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242831489945827444, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_fontSize
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242831489945827444, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 34
+      objectReference: {fileID: 0}
     - target: {fileID: 1242831489957125634, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_SizeDelta.x
       value: 886.8221
@@ -700,6 +728,18 @@ PrefabInstance:
     - target: {fileID: 1242831489957125636, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242831490019286728, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 112.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242831490019286729, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_fontSize
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242831490019286729, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490046598400, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_SizeDelta.x
@@ -736,6 +776,30 @@ PrefabInstance:
     - target: {fileID: 1242831490080430835, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -239.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242831490091092702, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 112.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242831490091092703, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_fontSize
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242831490091092703, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242831490162953848, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 112.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242831490162953849, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_fontSize
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242831490162953849, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490166279108, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1081,6 +1145,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.012609
       objectReference: {fileID: 0}
+    - target: {fileID: 1242831490666179480, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_fontSize
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242831490666179480, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242831490666179687, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 112.00001
+      objectReference: {fileID: 0}
     - target: {fileID: 1242831490713305356, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 56.9
@@ -1348,6 +1424,14 @@ PrefabInstance:
     - target: {fileID: 4860023809103921714, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -240.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6036846856643999378, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -127.57759
+      objectReference: {fileID: 0}
+    - target: {fileID: 6036846856643999378, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 161.9
       objectReference: {fileID: 0}
     - target: {fileID: 6419520794669211157, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_IsActive

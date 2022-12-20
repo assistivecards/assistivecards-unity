@@ -18,6 +18,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
     [SerializeField] GameObject cardName;
     public static int correctMatches;
     [SerializeField] GameObject checkPointPanel;
+    [SerializeField] GameObject packSelectionPanel;
 
     private void Awake()
     {
@@ -54,13 +55,13 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
             LeanTween.color(matchedImageTransform.gameObject.GetComponent<Image>().rectTransform, Color.white, .5f);
             Invoke("ScaleImagesDown", .5f);
             board.Invoke("ClearBoard", 1f);
-            board.Invoke("GenerateRandomBoardAsync", 1f);
             isMatched = false;
             if (correctMatches == 10)
             {
-                checkPointPanel.SetActive(true);
-                LeanTween.scale(checkPointPanel, Vector3.one, 0.5f);
+                OpenCheckPointPanel();
             }
+            else
+                board.Invoke("GenerateRandomBoardAsync", 1f);
         }
 
         else
@@ -86,6 +87,59 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
         {
             LeanTween.scale(silhouettes[i], Vector3.zero, 0.25f);
         }
+    }
+
+    public void OpenCheckPointPanel()
+    {
+        checkPointPanel.SetActive(true);
+        checkPointPanel.transform.GetChild(0).GetChild(1).GetComponent<Button>().interactable = false;
+        LeanTween.scale(checkPointPanel, Vector3.one, 0.25f);
+        Invoke("EnableContinuePlayingButton", .75f);
+    }
+
+    public void CloseCheckpointPanel()
+    {
+        StartCoroutine(CloseCheckPointPanelCoroutine());
+    }
+
+    IEnumerator CloseCheckPointPanelCoroutine()
+    {
+        LeanTween.scale(checkPointPanel, Vector3.zero, 0.25f);
+        yield return new WaitForSeconds(0.25f);
+        checkPointPanel.SetActive(false);
+    }
+
+    public void ResetCounter()
+    {
+        correctMatches = 0;
+    }
+
+    public void ChooseNewPackButtonClick()
+    {
+        StartCoroutine(ChooseNewPackButtonCoroutine());
+
+    }
+
+    IEnumerator ChooseNewPackButtonCoroutine()
+    {
+        ScaleImagesDown();
+        CloseCheckpointPanel();
+        yield return new WaitForSeconds(0.25f);
+        board.ClearBoard();
+        packSelectionPanel.transform.localScale = new Vector3(0, 0, 0);
+        packSelectionPanel.SetActive(true);
+        LeanTween.scale(packSelectionPanel, new Vector3(0.4f, 0.4f, 0.4f), 0.25f);
+    }
+
+    public async void CloseCheckpointPanelAndGenerateNewBoard()
+    {
+        StartCoroutine(CloseCheckPointPanelCoroutine());
+        await board.GenerateRandomBoardAsync();
+    }
+
+    public void EnableContinuePlayingButton()
+    {
+        checkPointPanel.transform.GetChild(0).GetChild(1).GetComponent<Button>().interactable = true;
     }
 }
 

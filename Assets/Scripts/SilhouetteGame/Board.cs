@@ -18,6 +18,7 @@ public class Board : MonoBehaviour
     [SerializeField] TMP_Text cardName;
     public string selectedLangCode;
     [SerializeField] Transform shownImageSlot;
+    [SerializeField] string shownImageSlug;
     public string packSlug;
 
 
@@ -46,7 +47,7 @@ public class Board : MonoBehaviour
             var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
             // var index = Random.Range(0, cachedCards.cards.Length);
             // var cardToAdd = cachedCards.cards[index];
-            if (!randomCards.Contains(cardToAdd))
+            if (!randomCards.Contains(cardToAdd) && cardToAdd.slug != shownImageSlug)
             {
 
                 randomCards.Add(cardToAdd);
@@ -56,15 +57,18 @@ public class Board : MonoBehaviour
             else
             {
                 cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+                CheckIfCardExists(cardToAdd);
                 // var indexSecondRoll = Random.Range(0, cachedCards.cards.Length);
                 // cardToAdd = cachedCards.cards[indexSecondRoll];
-                randomCards.Add(cardToAdd);
+                // randomCards.Add(cardToAdd);
                 // randomImages.Add(cachedCardImages[indexSecondRoll]);
             }
 
             randomImages.Add(await gameAPI.GetCardImage(packSlug, randomCards[i].slug));
             randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
         }
+
+        shownImageSlug = randomCards[0].slug;
         cardName.text = randomCards[0].title;
         shown.sprite = randomSprites[0];
         silhouettes[Random.Range(0, silhouettes.Length)].sprite = randomSprites[0];
@@ -107,5 +111,24 @@ public class Board : MonoBehaviour
             LeanTween.scale(silhouettes[i].gameObject, Vector3.one, 0.25f);
         }
 
+    }
+
+    public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)
+    {
+        if (!randomCards.Contains(cardToAdd))
+        {
+
+            randomCards.Add(cardToAdd);
+            // randomImages.Add(cachedCardImages[index]);
+
+        }
+        else
+        {
+            cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+            // var indexSecondRoll = Random.Range(0, cachedCards.cards.Length);
+            // cardToAdd = cachedCards.cards[indexSecondRoll];
+            randomCards.Add(cardToAdd);
+            // randomImages.Add(cachedCardImages[indexSecondRoll]);
+        }
     }
 }

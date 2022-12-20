@@ -16,6 +16,8 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
     [SerializeField] GameObject gamePanel;
     [SerializeField] GameObject[] silhouettes;
     [SerializeField] GameObject cardName;
+    public static int correctMatches;
+    [SerializeField] GameObject checkPointPanel;
 
     private void Awake()
     {
@@ -45,16 +47,20 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
         if (isMatched)
         {
             //correct match
+            correctMatches++;
             transform.position = matchedImageTransform.position;
             gameAPI.VibrateStrong();
             gameAPI.PlaySFX("Success");
             LeanTween.color(matchedImageTransform.gameObject.GetComponent<Image>().rectTransform, Color.white, .5f);
             Invoke("ScaleImagesDown", .5f);
-            // board.ClearBoard();
-            // await board.GenerateRandomBoardAsync();
             board.Invoke("ClearBoard", 1f);
             board.Invoke("GenerateRandomBoardAsync", 1f);
             isMatched = false;
+            if (correctMatches == 10)
+            {
+                checkPointPanel.SetActive(true);
+                LeanTween.scale(checkPointPanel, Vector3.one, 0.5f);
+            }
         }
 
         else
@@ -68,7 +74,6 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
             {
                 gameAPI.VibrateWeak();
                 LeanTween.move(gameObject, shownImageSlot.position, 0.5f);
-                // transform.position = shownImageSlot.position;
             }
         }
     }
@@ -83,3 +88,4 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
         }
     }
 }
+

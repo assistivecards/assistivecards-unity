@@ -93,7 +93,7 @@ public class CanvasController : MonoBehaviour
     private async void Start()
     {
         nicknameText.text = nickname;
-        profileImage.GetComponent<Image>().sprite = await gameAPI.GetAvatarImage();  
+        profileImage.GetComponent<Image>().sprite = await gameAPI.GetAvatarImage();
     }
 
     public void ParentLockButtonClick()
@@ -265,7 +265,12 @@ public class CanvasController : MonoBehaviour
         languageController = languageScreen.GetComponent<LanguageController>();
         PlayerPrefs.SetString("Language", Application.systemLanguage.ToString());
         this.GetComponent<LanguageTest>().OnLanguageChange();
-        this.GetComponent<LanguageTest>().ChangeLanguage();
+        gamePrefab.GetComponent<LanguageTest>().OnLanguageChange();
+        // this.GetComponent<LanguageTest>().ChangeLanguage();
+        TTSPanel.didLanguageChange = true;
+        AllAppsPage.didLanguageChange = true;
+        PackSelectionPanel.didLanguageChange = true;
+        PromoScreen.didLanguageChange = true;
         deviceLanguage = languageScreen.GetComponentInChildren<DeviceLanguagePanel>().deviceLanguageObject;
         if (deviceLanguage != null)
         {

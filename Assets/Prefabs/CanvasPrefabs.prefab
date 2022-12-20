@@ -1385,6 +1385,10 @@ PrefabInstance:
       propertyPath: m_Colors.m_NormalColor.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4246954000518132742, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4748105555658736119, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_SizeDelta.x
       value: 889.1946

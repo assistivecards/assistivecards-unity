@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 public class Board : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class Board : MonoBehaviour
     [SerializeField] string shownImageSlug;
     public string packSlug;
     [SerializeField] GameObject backButton;
+    public static bool didLanguageChange = true;
 
 
     private void Awake()
@@ -32,6 +34,13 @@ public class Board : MonoBehaviour
     {
         selectedLangCode = await gameAPI.GetSystemLanguageCode();
         cachedCards = await gameAPI.GetCards(selectedLangCode, packName);
+        if (packName == "people")
+        {
+            var cardsList = cachedCards.cards.ToList();
+            cardsList.RemoveAt(13);
+            cardsList.RemoveAt(12);
+            cachedCards.cards = cardsList.ToArray();
+        }
         // for (int i = 0; i < cachedCards.cards.Length; i++)
         // {
         //     var cardImage = await gameAPI.GetCardImage(packSlug, cachedCards.cards[i].slug);
@@ -42,7 +51,12 @@ public class Board : MonoBehaviour
     public async Task GenerateRandomBoardAsync()
     {
         shown.transform.position = shownImageSlot.position;
-        await CacheCards(packSlug);
+        if (didLanguageChange)
+        {
+            await CacheCards(packSlug);
+            didLanguageChange = false;
+        }
+
         for (int i = 0; i < silhouettes.Length; i++)
         {
             var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];

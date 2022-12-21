@@ -188,6 +188,7 @@ public class TopAppBarController : MonoBehaviour
                 AllAppsPage.didLanguageChange = true;
                 TTSPanel.didLanguageChange = true;
                 PromoScreen.didLanguageChange = true;
+                Board.didLanguageChange = true;
 
                 if (languageController.selectedLanguage.name == "Arabic" || languageController.selectedLanguage.name == "Urdu")
                 {

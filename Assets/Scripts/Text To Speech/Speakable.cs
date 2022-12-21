@@ -22,13 +22,13 @@ public class Speakable : MonoBehaviour
     public void Speak()
     {
         Debug.Log(locale);
-        _textToSpeech.Speak(gameObject.GetComponent<TMP_Text>().text, locale, float.Parse("1", CultureInfo.InvariantCulture));
+        _textToSpeech.Speak(gameObject.GetComponent<TMP_Text>().text, locale, 1);
         TTSStarted();
     }
 
     public void Speak(string text)
     {
-        _textToSpeech.Speak(text, locale, float.Parse("1", CultureInfo.InvariantCulture));
+        _textToSpeech.Speak(text, locale, 1);
         TTSStarted();
     }
 

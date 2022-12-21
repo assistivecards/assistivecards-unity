@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     GameAPI gameAPI;
+    [SerializeField] private PackageSelectManager packageSelectManager;
     private BoardGenerator boardGenerator;
     private bool levelFinished = false;
 
@@ -20,7 +21,7 @@ public class LevelManager : MonoBehaviour
             gameAPI.PlaySFX("Finished");
             boardGenerator.FadeInTransitionScreen();
             boardGenerator.ClearBoard();
-            await boardGenerator.GenerateRandomBoardAsync("animals");
+            packageSelectManager.OnPackSelect();
         }
     }
 }

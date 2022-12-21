@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     GameAPI gameAPI;
+    [SerializeField] private GameObject levelChangeScreen;
     [SerializeField] private PackageSelectManager packageSelectManager;
     private BoardGenerator boardGenerator;
     private bool levelFinished = false;
@@ -21,7 +22,7 @@ public class LevelManager : MonoBehaviour
             gameAPI.PlaySFX("Finished");
             boardGenerator.FadeInTransitionScreen();
             boardGenerator.ClearBoard();
-            packageSelectManager.OnPackSelect();
+            levelChangeScreen.SetActive(true);
         }
     }
 }

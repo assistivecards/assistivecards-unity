@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PackageSelectManager : MonoBehaviour
 {
+    [SerializeField] private GameObject levelChangeScreen;
     [SerializeField] private TransitionScreenManager transitionScreenManager;
     [SerializeField] private BoardGenerator boardGenerator;
     [SerializeField] private PackSelectionPanel packSelectionPanel;
@@ -11,6 +12,7 @@ public class PackageSelectManager : MonoBehaviour
 
     public async void OnPackSelect()
     {
+        levelChangeScreen.SetActive(false);
         transitionScreenManager.IncrementProgress(1);
         selectedPack = packSelectionPanel.selectedPackElement.name;
         await boardGenerator.CacheCards(selectedPack);

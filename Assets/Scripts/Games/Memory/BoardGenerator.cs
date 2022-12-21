@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 public class BoardGenerator : MonoBehaviour
 {
@@ -94,7 +95,7 @@ public class BoardGenerator : MonoBehaviour
         }
 
         FadeOutTransitionScreen();
-        CheckClones();
+        //CheckClones();
     }
 
     private void FadeOutTransitionScreen()
@@ -105,6 +106,7 @@ public class BoardGenerator : MonoBehaviour
 
     private void CloseTransitionScreen()
     {
+        transitionScreen.GetComponent<TransitionScreenManager>().loadingBar.value = 0;
         transitionScreen.SetActive(false);
     }
 
@@ -126,11 +128,5 @@ public class BoardGenerator : MonoBehaviour
         randomValueList.Clear();
         checkMatches.flippedCards.Clear();
         
-    }
-
-    private void CheckClones()
-    {
-        clone = GameObject.Find("Clone(Clone)");
-        Destroy(clone);
     }
 }

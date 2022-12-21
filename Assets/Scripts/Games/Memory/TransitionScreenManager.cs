@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TransitionScreenManager : MonoBehaviour
 {
-    [SerializeField] private Slider loadingBar;
+    [SerializeField] public Slider loadingBar;
     private float fillspeed = 0.2f;
     private float targetProgress = 0;
 

@@ -46,7 +46,7 @@ public class BoardGenerator : MonoBehaviour
         Debug.Log(packSlug);
         for(int i = 0; i< cardTextures.cards.Length; i++)
         {
-            cardNames.Add(cardTextures.cards[i].title.ToLower());
+            cardNames.Add(cardTextures.cards[i].title.ToLower().Replace(" ", "-"));
             cardDefinitionsLocale.Add(cardDefinitions.cards[i].title);
         }
 

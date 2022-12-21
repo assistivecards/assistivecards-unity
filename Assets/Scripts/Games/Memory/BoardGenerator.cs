@@ -40,14 +40,10 @@ public class BoardGenerator : MonoBehaviour
         cardDefinitions = await gameAPI.GetCards(selectedLangCode, packName);
     }
 
-    public async void Start()
-    {
-        await GenerateRandomBoardAsync("animals");
-    }
-
     public async Task GenerateRandomBoardAsync(string packSlug)
     {
         await CacheCards(packSlug);
+        Debug.Log(packSlug);
         for(int i = 0; i< cardTextures.cards.Length; i++)
         {
             cardNames.Add(cardTextures.cards[i].title.ToLower());

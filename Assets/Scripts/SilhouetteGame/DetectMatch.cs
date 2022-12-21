@@ -19,6 +19,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
     public static int correctMatches;
     [SerializeField] GameObject checkPointPanel;
     [SerializeField] GameObject packSelectionPanel;
+    [SerializeField] GameObject backButton;
 
     private void Awake()
     {
@@ -123,6 +124,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
     IEnumerator ChooseNewPackButtonCoroutine()
     {
         ScaleImagesDown();
+        LeanTween.scale(backButton, Vector3.zero, 0.25f);
         CloseCheckpointPanel();
         yield return new WaitForSeconds(0.25f);
         board.ClearBoard();
@@ -140,6 +142,27 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
     public void EnableContinuePlayingButton()
     {
         checkPointPanel.transform.GetChild(0).GetChild(1).GetComponent<Button>().interactable = true;
+    }
+
+    public void OnBackButtonClick()
+    {
+        StartCoroutine(BackButtonClickCoroutine());
+    }
+
+    IEnumerator BackButtonClickCoroutine()
+    {
+        if (transform.localScale == Vector3.one && gameObject.GetComponent<Image>().sprite != null)
+        {
+            ResetCounter();
+            ScaleImagesDown();
+            LeanTween.scale(backButton, Vector3.zero, 0.25f);
+            yield return new WaitForSeconds(0.25f);
+            board.ClearBoard();
+            packSelectionPanel.transform.localScale = new Vector3(0, 0, 0);
+            packSelectionPanel.SetActive(true);
+            LeanTween.scale(packSelectionPanel, new Vector3(0.4f, 0.4f, 0.4f), 0.25f);
+        }
+
     }
 }
 

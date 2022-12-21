@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
 
-public class FlipCard : MonoBehaviour, IPointerDownHandler
+public class FlipCard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] private float x,y,z;
     [SerializeField] private CheckMatches checkMatches;
@@ -26,6 +26,10 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler
     }
 
     public void OnPointerDown(PointerEventData pointerEventData)
+    {
+        
+    }
+    public void OnPointerUp(PointerEventData pointerEventData)
     {
         StartFlip();
     }

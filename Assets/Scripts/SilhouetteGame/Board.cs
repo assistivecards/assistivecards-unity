@@ -30,6 +30,11 @@ public class Board : MonoBehaviour
         gameAPI = Camera.main.GetComponent<GameAPI>();
     }
 
+    private void Start()
+    {
+        gameAPI.PlayMusic();
+    }
+
     public async Task CacheCards(string packName)
     {
         selectedLangCode = await gameAPI.GetSystemLanguageCode();

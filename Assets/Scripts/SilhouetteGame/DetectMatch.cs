@@ -70,6 +70,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
             //wrong match
             if (eventData.position.x < bounds.center.x && eventData.position.x > bounds.min.x + 75 && eventData.position.y < bounds.max.y - 100 && eventData.position.y > bounds.min.y + 100)
             {
+                gameAPI.VibrateWeak();
                 transform.position = eventData.position;
             }
             else

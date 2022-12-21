@@ -8,6 +8,12 @@ using UnityEngine.EventSystems;
 public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler
 {
     [SerializeField] GameObject gamePanel;
+    GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     public void OnDrag(PointerEventData eventData)
     {
@@ -20,6 +26,7 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        gameAPI.VibrateWeak();
         transform.position = eventData.position;
     }
 }

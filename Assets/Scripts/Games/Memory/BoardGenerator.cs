@@ -95,7 +95,7 @@ public class BoardGenerator : MonoBehaviour
         }
 
         FadeOutTransitionScreen();
-        //CheckClones();
+        CheckClones();
     }
 
     private void FadeOutTransitionScreen()
@@ -127,6 +127,13 @@ public class BoardGenerator : MonoBehaviour
         firstHalfCards.Clear();
         randomValueList.Clear();
         checkMatches.flippedCards.Clear();
-        
+    }
+    public void CheckClones()
+    {
+        var objects = Resources.FindObjectsOfTypeAll<GameObject>().Where(obj => obj.name == "Card(Clone)");
+        foreach(GameObject clone in objects)
+        {
+            Destroy(clone);
+        }
     }
 }

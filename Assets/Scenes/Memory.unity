@@ -2390,7 +2390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardSizes: 1.15
-  cardNumber: 6
+  cardNumber: 19
   transitionScreen: {fileID: 52324708}
   tempCardObject: {fileID: 6370097455287089691, guid: f0a92bd16c8abab42a526e44d642b22c, type: 3}
   cards: []

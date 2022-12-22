@@ -14,6 +14,8 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public bool touched = false;
     private Transform cardName;
 
+    private bool isInteractible = true;
+
     private void Awake() 
     {
         cardBack = this.transform.GetChild(1);
@@ -31,11 +33,15 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     }
     public void OnPointerUp(PointerEventData pointerEventData)
     {
-        StartFlip();
+        if(isInteractible)
+        {
+            StartFlip();
+        }
     }
 
     private void StartFlip()
     {
+        isInteractible = false;
         StartCoroutine(CalculateFlip());
     }
 
@@ -66,7 +72,6 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             checkMatches.firstCardName = cardBack.name;
             checkMatches.CheckMatche();
         }
-
     }
 
     private void BackFlip()
@@ -76,6 +81,7 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             cardName.gameObject.SetActive(false);
             cardBack.gameObject.SetActive(false);
             isCardBackActive = false;
+            isInteractible = true;
         }
     }
 

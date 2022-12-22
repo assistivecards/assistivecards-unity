@@ -128,6 +128,22 @@ public class BoardGenerator : MonoBehaviour
         randomValueList.Clear();
         checkMatches.flippedCards.Clear();
     }
+
+    public void ResetBoard()
+    {
+        foreach(GameObject card in GameObject.FindGameObjectsWithTag("MatchedCard"))
+        {
+            Destroy(card);
+        }
+        foreach(GameObject card in GameObject.FindGameObjectsWithTag("notMatchedCard"))
+        {
+            Destroy(card);
+        }
+        cards.Clear();
+        firstHalfCards.Clear();
+        randomValueList.Clear();
+        checkMatches.flippedCards.Clear();
+    }
     public void CheckClones()
     {
         var objects = Resources.FindObjectsOfTypeAll<GameObject>().Where(obj => obj.name == "Card(Clone)");

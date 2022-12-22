@@ -15,7 +15,7 @@ public class PackageSelectManager : MonoBehaviour
         boardGenerator.ResetBoard();
 
         selectedPack = packSelectionPanel.selectedPackElement.name;
-        await boardGenerator.GenerateRandomBoardAsync(selectedPack);
+        await boardGenerator.CacheCards(selectedPack);
 
         levelChangeScreen.SetActive(false);
         transitionScreenManager.IncrementProgress(1);

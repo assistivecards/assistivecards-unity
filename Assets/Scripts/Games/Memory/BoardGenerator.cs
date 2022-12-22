@@ -34,17 +34,17 @@ public class BoardGenerator : MonoBehaviour
         checkMatches = GetComponent<CheckMatches>();
     }
 
-    public async Task CacheCards(string packSlug)
+    public async Task CacheCards(string _packSlug)
     {
         selectedLangCode = await gameAPI.GetSystemLanguageCode();
-        cardDefinitions = await gameAPI.GetCards(selectedLangCode, packSlug);
-        cardTextures = await gameAPI.GetCards("en", packSlug);
+        cardDefinitions = await gameAPI.GetCards(selectedLangCode, _packSlug);
+        cardTextures = await gameAPI.GetCards("en", _packSlug);
+
+        await GenerateRandomBoardAsync(_packSlug);
     }
 
     public async Task GenerateRandomBoardAsync(string packSlug)
     {
-        await CacheCards(packSlug);
-        Debug.Log("PACK SLUG: " + packSlug);
         
         for(int i = 0; i< cardTextures.cards.Length; i++)
         {
@@ -140,6 +140,10 @@ public class BoardGenerator : MonoBehaviour
         {
             Destroy(card);
         }
+        cardDefinitions = null;
+        cardNames.Clear();
+        cardDefinitionsLocale.Clear();
+        cardTextures = null;
         cards.Clear();
         firstHalfCards.Clear();
         randomValueList.Clear();

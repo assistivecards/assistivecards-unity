@@ -34,17 +34,18 @@ public class BoardGenerator : MonoBehaviour
         checkMatches = GetComponent<CheckMatches>();
     }
 
-    public async Task CacheCards(string packName)
+    public async Task CacheCards(string packSlug)
     {
         selectedLangCode = await gameAPI.GetSystemLanguageCode();
-        cardTextures = await gameAPI.GetCards("en", packName);
-        cardDefinitions = await gameAPI.GetCards(selectedLangCode, packName);
+        cardDefinitions = await gameAPI.GetCards(selectedLangCode, packSlug);
+        cardTextures = await gameAPI.GetCards("en", packSlug);
     }
 
     public async Task GenerateRandomBoardAsync(string packSlug)
     {
         await CacheCards(packSlug);
-        Debug.Log(packSlug);
+        Debug.Log("PACK SLUG: " + packSlug);
+        
         for(int i = 0; i< cardTextures.cards.Length; i++)
         {
             cardNames.Add(cardTextures.cards[i].title.ToLower().Replace(" ", "-"));

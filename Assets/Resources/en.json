@@ -200,5 +200,9 @@
 
 	"add_tasks_title": "Add some tasks",
 	"edit_list": "Edit your list",
-	"complete_editing": "Complete editing"
+	"complete_editing": "Complete editing",
+
+	"checkpoint_panel_choose_new_pack_text":"Choose New Pack",
+	"checkpoint_panel_continue_playing_text":"Continue Playing"
+
 }

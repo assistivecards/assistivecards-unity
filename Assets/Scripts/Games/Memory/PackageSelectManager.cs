@@ -12,10 +12,12 @@ public class PackageSelectManager : MonoBehaviour
 
     public async void OnPackSelect()
     {
+        boardGenerator.ResetBoard();
+
+        selectedPack = packSelectionPanel.selectedPackElement.name;
+        await boardGenerator.GenerateRandomBoardAsync(selectedPack);
+
         levelChangeScreen.SetActive(false);
         transitionScreenManager.IncrementProgress(1);
-        selectedPack = packSelectionPanel.selectedPackElement.name;
-        await boardGenerator.CacheCards(selectedPack);
-        await boardGenerator.GenerateRandomBoardAsync(selectedPack);
     }
 }

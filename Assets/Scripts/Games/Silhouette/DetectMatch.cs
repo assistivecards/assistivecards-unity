@@ -131,7 +131,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
         board.ClearBoard();
         packSelectionPanel.transform.localScale = new Vector3(0, 0, 0);
         packSelectionPanel.SetActive(true);
-        LeanTween.scale(packSelectionPanel, new Vector3(0.4f, 0.4f, 0.4f), 0.25f);
+        LeanTween.scale(packSelectionPanel, Vector3.one, 0.25f);
     }
 
     public async void CloseCheckpointPanelAndGenerateNewBoard()
@@ -161,7 +161,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
             board.ClearBoard();
             packSelectionPanel.transform.localScale = new Vector3(0, 0, 0);
             packSelectionPanel.SetActive(true);
-            LeanTween.scale(packSelectionPanel, new Vector3(0.4f, 0.4f, 0.4f), 0.25f);
+            LeanTween.scale(packSelectionPanel, Vector3.one, 0.25f);
         }
 
     }

@@ -2275,6 +2275,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1539169725}
     m_Modifications:
+    - target: {fileID: 1090749732, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
+      propertyPath: selectedPackElement
+      value: 
+      objectReference: {fileID: 591930974}
     - target: {fileID: 786598635357384128, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 4
@@ -2479,7 +2483,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 185456308, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
 --- !u!1 &1080899386

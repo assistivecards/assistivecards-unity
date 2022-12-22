@@ -258,6 +258,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93303116}
   m_CullTransparentMesh: 1
+--- !u!1 &174046744 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3312234164777777639, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
+  m_PrefabInstance: {fileID: 1021918972}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &234455342 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 786598635403759704, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
@@ -280,6 +285,14 @@ PrefabInstance:
       propertyPath: board
       value: 
       objectReference: {fileID: 1021918976}
+    - target: {fileID: 185456308, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
+      propertyPath: settingButton
+      value: 
+      objectReference: {fileID: 174046744}
+    - target: {fileID: 185456308, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
+      propertyPath: canvasController
+      value: 
+      objectReference: {fileID: 427110734}
     - target: {fileID: 786598635403759704, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
       propertyPath: m_Name
       value: PackSelectionPanel
@@ -371,6 +384,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
+--- !u!114 &427110734 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3312234165509667777, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
+  m_PrefabInstance: {fileID: 1021918972}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd4dd6ad4e8816942a6286bae45f8116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

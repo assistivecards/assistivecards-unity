@@ -18,6 +18,7 @@ public class PackSelectionPanel : MonoBehaviour
     private Color bgColor;
     [SerializeField] string currentLanguageCode;
     public static bool didLanguageChange = false;
+    [SerializeField] GameObject loadingPanel;
 
     private void Awake()
     {
@@ -41,9 +42,8 @@ public class PackSelectionPanel : MonoBehaviour
     public async void ListPacks()
     {
         await GameAPI.cacheData;
+        loadingPanel.SetActive(false);
         currentLanguageCode = await gameAPI.GetSystemLanguageCode();
-
-        tempPackElement.SetActive(true);
 
         if (packElementGameObject.Count != 0)
         {
@@ -58,6 +58,7 @@ public class PackSelectionPanel : MonoBehaviour
         var jsonPacks = JsonUtility.ToJson(packs);
         JSONObject jsonPackss = new JSONObject(jsonPacks);
 
+        tempPackElement.SetActive(true);
 
         for (int i = 0; i < packs.packs.Length; i++)
         {

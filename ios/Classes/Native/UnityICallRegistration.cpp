@@ -654,6 +654,10 @@ void RegisterAllStrippedInternalCalls()
 
 	//Start Registrations for type : UnityEngine.AudioSource
 
+		//System.Void UnityEngine.AudioSource::Pause()
+		void Register_UnityEngine_AudioSource_Pause();
+		Register_UnityEngine_AudioSource_Pause();
+
 		//System.Void UnityEngine.AudioSource::PlayHelper(UnityEngine.AudioSource,System.UInt64)
 		void Register_UnityEngine_AudioSource_PlayHelper();
 		Register_UnityEngine_AudioSource_PlayHelper();
@@ -1011,6 +1015,14 @@ void RegisterAllStrippedInternalCalls()
 		Register_UnityEngine_CanvasRenderer_GetMaterial();
 
 	//End Registrations for type : UnityEngine.CanvasRenderer
+
+	//Start Registrations for type : UnityEngine.Collider2D
+
+		//System.Void UnityEngine.Collider2D::get_bounds_Injected(UnityEngine.Bounds&)
+		void Register_UnityEngine_Collider2D_get_bounds_Injected();
+		Register_UnityEngine_Collider2D_get_bounds_Injected();
+
+	//End Registrations for type : UnityEngine.Collider2D
 
 	//Start Registrations for type : UnityEngine.ColorUtility
 
@@ -3086,6 +3098,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_ResourcesAPIInternal_Load();
 		Register_UnityEngine_ResourcesAPIInternal_Load();
 
+		//UnityEngine.Object[] UnityEngine.ResourcesAPIInternal::FindObjectsOfTypeAll(System.Type)
+		void Register_UnityEngine_ResourcesAPIInternal_FindObjectsOfTypeAll();
+		Register_UnityEngine_ResourcesAPIInternal_FindObjectsOfTypeAll();
+
 		//UnityEngine.Shader UnityEngine.ResourcesAPIInternal::FindShaderByName(System.String)
 		void Register_UnityEngine_ResourcesAPIInternal_FindShaderByName();
 		Register_UnityEngine_ResourcesAPIInternal_FindShaderByName();
@@ -3125,10 +3141,6 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.Screen::SetOrientationEnabled(UnityEngine.EnabledOrientation,System.Boolean)
 		void Register_UnityEngine_Screen_SetOrientationEnabled();
 		Register_UnityEngine_Screen_SetOrientationEnabled();
-
-		//UnityEngine.Resolution[] UnityEngine.Screen::get_resolutions()
-		void Register_UnityEngine_Screen_get_resolutions();
-		Register_UnityEngine_Screen_get_resolutions();
 
 		//UnityEngine.ScreenOrientation UnityEngine.Screen::GetScreenOrientation()
 		void Register_UnityEngine_Screen_GetScreenOrientation();

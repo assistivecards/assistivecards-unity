@@ -215,10 +215,10 @@ public class TopAppBarController : MonoBehaviour
                 {
                     soundManagerUI.musicSource.Stop();
                 }
-                else if (soundManagerUI.musicToggle.isOn == true)
-                {
-                    soundManagerUI.musicSource.Play();
-                }
+                // else if (soundManagerUI.musicToggle.isOn == true)
+                // {
+                //     soundManagerUI.musicSource.Play();
+                // }
             }
 
             LeanTween.scale(canvasController.currentScreen, Vector3.one * 0.9f, 0.15f);

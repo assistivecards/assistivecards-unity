@@ -11,6 +11,7 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] GameObject settingButton;
     [SerializeField] CanvasController canvasController;
     GameAPI gameAPI;
+    [SerializeField] GameObject helloText;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class MainMenuController : MonoBehaviour
         {
             board.packSlug = packSelectionPanelScript.selectedPackElement.name;
             packSelectionPanel.SetActive(false);
+            helloText.SetActive(false);
             await board.CacheCards(board.packSlug);
             await board.GenerateRandomBoardAsync();
         }
@@ -44,6 +46,7 @@ public class MainMenuController : MonoBehaviour
                     {
                         board.packSlug = packSelectionPanelScript.selectedPackElement.name;
                         packSelectionPanel.SetActive(false);
+                        helloText.SetActive(false);
                         await board.CacheCards(board.packSlug);
                         await board.GenerateRandomBoardAsync();
                     }

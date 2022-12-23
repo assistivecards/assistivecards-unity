@@ -1394,6 +1394,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_GameObject_set_layer();
 		Register_UnityEngine_GameObject_set_layer();
 
+		//System.Void UnityEngine.GameObject::set_tag(System.String)
+		void Register_UnityEngine_GameObject_set_tag();
+		Register_UnityEngine_GameObject_set_tag();
+
 		//UnityEngine.Component UnityEngine.GameObject::GetComponent(System.Type)
 		void Register_UnityEngine_GameObject_GetComponent();
 		Register_UnityEngine_GameObject_GetComponent();
@@ -1421,6 +1425,10 @@ void RegisterAllStrippedInternalCalls()
 		//UnityEngine.GameObject UnityEngine.GameObject::FindGameObjectWithTag(System.String)
 		void Register_UnityEngine_GameObject_FindGameObjectWithTag();
 		Register_UnityEngine_GameObject_FindGameObjectWithTag();
+
+		//UnityEngine.GameObject[] UnityEngine.GameObject::FindGameObjectsWithTag(System.String)
+		void Register_UnityEngine_GameObject_FindGameObjectsWithTag();
+		Register_UnityEngine_GameObject_FindGameObjectsWithTag();
 
 		//UnityEngine.Transform UnityEngine.GameObject::get_transform()
 		void Register_UnityEngine_GameObject_get_transform();
@@ -2606,6 +2614,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Object_Internal_CloneSingleWithParent();
 		Register_UnityEngine_Object_Internal_CloneSingleWithParent();
 
+		//UnityEngine.Object UnityEngine.Object::Internal_InstantiateSingle_Injected(UnityEngine.Object,UnityEngine.Vector3&,UnityEngine.Quaternion&)
+		void Register_UnityEngine_Object_Internal_InstantiateSingle_Injected();
+		Register_UnityEngine_Object_Internal_InstantiateSingle_Injected();
+
 		//UnityEngine.Object[] UnityEngine.Object::FindObjectsOfType(System.Type,System.Boolean)
 		void Register_UnityEngine_Object_FindObjectsOfType();
 		Register_UnityEngine_Object_FindObjectsOfType();
@@ -3113,6 +3125,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.Screen::SetOrientationEnabled(UnityEngine.EnabledOrientation,System.Boolean)
 		void Register_UnityEngine_Screen_SetOrientationEnabled();
 		Register_UnityEngine_Screen_SetOrientationEnabled();
+
+		//UnityEngine.Resolution[] UnityEngine.Screen::get_resolutions()
+		void Register_UnityEngine_Screen_get_resolutions();
+		Register_UnityEngine_Screen_get_resolutions();
 
 		//UnityEngine.ScreenOrientation UnityEngine.Screen::GetScreenOrientation()
 		void Register_UnityEngine_Screen_GetScreenOrientation();
@@ -3761,6 +3777,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.Transform::SetParent(UnityEngine.Transform,System.Boolean)
 		void Register_UnityEngine_Transform_SetParent();
 		Register_UnityEngine_Transform_SetParent();
+
+		//System.Void UnityEngine.Transform::SetSiblingIndex(System.Int32)
+		void Register_UnityEngine_Transform_SetSiblingIndex();
+		Register_UnityEngine_Transform_SetSiblingIndex();
 
 		//System.Void UnityEngine.Transform::TransformDirection_Injected(UnityEngine.Vector3&,UnityEngine.Vector3&)
 		void Register_UnityEngine_Transform_TransformDirection_Injected();

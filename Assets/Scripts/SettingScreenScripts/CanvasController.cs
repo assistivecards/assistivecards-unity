@@ -29,7 +29,7 @@ public class CanvasController : MonoBehaviour
     private GameObject backButton;
     [SerializeField] private GameObject settingScreen;
     [SerializeField] private Image settingScreenFadePanel;
-    [SerializeField] private GameObject fadePanel;
+    [SerializeField] GameObject fadeOutPanel;
 
     [Header("Screens")]
     [SerializeField] private GameObject mainSettingsScreen;
@@ -207,16 +207,21 @@ public class CanvasController : MonoBehaviour
         // settingScreenFadePanel.gameObject.SetActive(true);
         // settingScreenFadePanel.CrossFadeAlpha(1, 0.25f, false);
         // Invoke("OpenGamePanel", 0.1f);
-        StartFadeAnim();
+        // StartFadeAnim();
         StartCoroutine(OpenGamePanel());
 
     }
     IEnumerator OpenGamePanel()
     {
+        // yield return new WaitForSeconds(0.3f);
+        // settingPrefab.SetActive(false);
+        // topAppBar.SetActive(false);
+        // gamePrefab.SetActive(true);
         yield return new WaitForSeconds(0.3f);
+        fadeOutPanel.SetActive(true);
+        gamePrefab.SetActive(true);
         settingPrefab.SetActive(false);
         topAppBar.SetActive(false);
-        gamePrefab.SetActive(true);
 
     }
     public void StartFade()
@@ -258,6 +263,7 @@ public class CanvasController : MonoBehaviour
         loginPrefab.SetActive(true);
         loginPrefab.transform.GetChild(3).gameObject.SetActive(true);
         settingPrefab.SetActive(false);
+        Camera.main.transform.GetChild(0).GetComponent<AudioSource>().Pause();
         topAppBar.SetActive(false);
         profileScreen.SetActive(false);
         loginPageScreen.GetComponent<LoginContoller>().nicknameInputField.text = "";
@@ -287,11 +293,4 @@ public class CanvasController : MonoBehaviour
             notificationPreferences.weeklyReminderToggle.isOn = true;
         }
     }
-
-    public void StartFadeAnim()
-    {
-        fadePanel.SetActive(true);
-
-    }
-
 }

@@ -12,6 +12,7 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] CanvasController canvasController;
     GameAPI gameAPI;
     [SerializeField] GameObject helloText;
+    [SerializeField] GameObject fadeInPanel;
 
     private void Awake()
     {
@@ -37,7 +38,8 @@ public class MainMenuController : MonoBehaviour
                     if (gameAPI.cachedPacks.packs[i].premium == 1)
                     {
                         Debug.Log("Seçilen paket premium");
-                        canvasController.GetComponent<CanvasController>().StartFadeAnim();
+                        // canvasController.GetComponent<CanvasController>().StartFadeAnim();
+                        fadeInPanel.SetActive(true);
                         settingButton.GetComponent<SettingScreenButton>().SettingButtonClickFunc();
                         canvasController.GetComponent<CanvasController>().PremiumPromoButtonClick();
 

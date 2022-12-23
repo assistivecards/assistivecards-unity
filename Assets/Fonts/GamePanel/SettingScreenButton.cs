@@ -13,7 +13,7 @@ public class SettingScreenButton : MonoBehaviour
     [SerializeField] private GameObject topAppBar;
     [SerializeField] private GameObject mainSettingScreen;
 
-    [Header ("Screen Setting Variables")]
+    [Header("Screen Setting Variables")]
 
     [SerializeField] private GameObject gamePrefab;
     GameAPI gameAPI;
@@ -21,6 +21,7 @@ public class SettingScreenButton : MonoBehaviour
     [SerializeField] private GameObject settingButtonObject;
     [SerializeField] private Button settingButton;
     [SerializeField] private GameObject nickNameText;
+    [SerializeField] GameObject fadeOutPanel;
 
     private void Awake()
     {
@@ -54,11 +55,18 @@ public class SettingScreenButton : MonoBehaviour
 
     IEnumerator SettingButtonClick()
     {
-        yield return new WaitForSeconds(0.25f);
+        // yield return new WaitForSeconds(0.25f);
+        // settingPrefab.SetActive(true);
+        // mainSettingScreen.SetActive(true);
+        // topAppBar.SetActive(true);
+        // gamePrefab.SetActive(false);
+        yield return new WaitForSeconds(0.3f);
+        fadeOutPanel.SetActive(true);
+        gamePrefab.SetActive(false);
         settingPrefab.SetActive(true);
+
         mainSettingScreen.SetActive(true);
         topAppBar.SetActive(true);
-        gamePrefab.SetActive(false);
 
         // canvasController.StartFade();
     }

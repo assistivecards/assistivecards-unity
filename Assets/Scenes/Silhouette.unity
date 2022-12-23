@@ -290,6 +290,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1021918974}
     - target: {fileID: 185456308, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
+      propertyPath: fadeInPanel
+      value: 
+      objectReference: {fileID: 909536316}
+    - target: {fileID: 185456308, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
       propertyPath: settingButton
       value: 
       objectReference: {fileID: 174046744}
@@ -1214,6 +1218,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3312234164850283327, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
   m_PrefabInstance: {fileID: 1021918972}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &909536316 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2134980509363079481, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
+  m_PrefabInstance: {fileID: 1021918972}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1021918972
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1264,6 +1273,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 203148770605728315, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134980509363079480, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
+      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2777963643403832033, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
@@ -1394,6 +1407,14 @@ PrefabInstance:
       propertyPath: gameCanvas
       value: 
       objectReference: {fileID: 901442019}
+    - target: {fileID: 6009785734229802034, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970045164171865682, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2303360945885105280, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
     m_AddedGameObjects:

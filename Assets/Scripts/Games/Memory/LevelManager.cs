@@ -19,10 +19,12 @@ public class LevelManager : MonoBehaviour
     {
         if(GameObject.FindGameObjectsWithTag("notMatchedCard").Length == 0)
         {
+            LeanTween.scale(this.gameObject, Vector3.one * 0.0001f, 0.01f);
             gameAPI.PlaySFX("Finished");
-            boardGenerator.FadeInTransitionScreen();
             boardGenerator.ClearBoard();
             levelChangeScreen.SetActive(true);
+
+            LeanTween.scale(this.gameObject, Vector3.one * 0.0001f, 0.1f);
         }
     }
 }

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PackageSelectManager : MonoBehaviour
 {
+    [SerializeField] private GameObject transitionScreen;
     [SerializeField] private GameObject levelChangeScreen;
+    [SerializeField] private GameObject difficultySelectionScreen;
     [SerializeField] private TransitionScreenManager transitionScreenManager;
     [SerializeField] private BoardGenerator boardGenerator;
     [SerializeField] private PackSelectionPanel packSelectionPanel;
@@ -23,7 +25,14 @@ public class PackageSelectManager : MonoBehaviour
         {
             GenerateStylizedBoard();
             levelChangeScreenController.isOnSelect = false;
+            transitionScreen.SetActive(true);
         }
+        else if(!levelChangeScreenController.isOnContinue)
+        {
+            difficultySelectionScreen.SetActive(true);
+        }
+
+        levelChangeScreenController.isOnContinue = false;
     }
 
     public async void GenerateStylizedBoard()

@@ -108,6 +108,7 @@ public class BoardGenerator : MonoBehaviour
     private void CloseTransitionScreen()
     {
         transitionScreen.GetComponent<TransitionScreenManager>().loadingBar.value = 0;
+        LeanTween.scale(this.gameObject, Vector3.one, 0.15f);
         transitionScreen.SetActive(false);
     }
 

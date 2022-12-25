@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private PackageSelectManager packageSelectManager;
     private BoardGenerator boardGenerator;
     private bool levelFinished = false;
+    [SerializeField] private GamePanelUIController gamePanelUIController;
 
     private void Awake() 
     {
@@ -25,6 +26,9 @@ public class LevelManager : MonoBehaviour
             levelChangeScreen.SetActive(true);
 
             LeanTween.scale(this.gameObject, Vector3.one * 0.0001f, 0.1f);
+            boardGenerator.isInGame = false;
+            gamePanelUIController.GamePanelUIControl();
+
         }
     }
 }

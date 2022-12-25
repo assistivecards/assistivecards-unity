@@ -28,6 +28,9 @@ public class BoardGenerator : MonoBehaviour
     private int randomValue;
     private CheckMatches checkMatches;
     List<int> randomValueList = new List<int>();
+    public bool isInGame = false;
+    [SerializeField] private GamePanelUIController gamePanelUIController;
+
     private void OnEnable()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
@@ -97,6 +100,8 @@ public class BoardGenerator : MonoBehaviour
 
         FadeOutTransitionScreen();
         CheckClones();
+        isInGame = true;
+        gamePanelUIController.GamePanelUIControl();
     }
 
     private void FadeOutTransitionScreen()

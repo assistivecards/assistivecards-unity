@@ -7,16 +7,16 @@ public class LevelChangeScreenController : MonoBehaviour
     [SerializeField] private PackageSelectManager packageSelectManager;
     [SerializeField] private GameObject transitionPanel;
     [SerializeField] private GameObject packSelectionPanel;
+    public bool isOnSelect = false;
 
     public void ContinueClick()
     {
         packageSelectManager.OnPackSelect();
         transitionPanel.SetActive(true);
-        transitionPanel.GetComponent<TransitionScreenManager>().loadingBar.value = 0;
     }
     public void SelectNewClick()
     {
-        transitionPanel.GetComponent<TransitionScreenManager>().loadingBar.value = 0;
+        isOnSelect = true;
         transitionPanel.SetActive(false);
         packSelectionPanel.SetActive(true);
     }

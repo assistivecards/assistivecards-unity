@@ -9,6 +9,11 @@ public class TransitionScreenManager : MonoBehaviour
     private float fillspeed = 0.2f;
     private float targetProgress = 0;
 
+    private void OnEnable() 
+    {
+        loadingBar.value = 0;
+    }
+
     private void Update()
     {
         if(loadingBar.value < targetProgress)

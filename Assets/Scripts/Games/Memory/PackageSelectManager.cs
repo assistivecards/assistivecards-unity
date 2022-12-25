@@ -8,6 +8,7 @@ public class PackageSelectManager : MonoBehaviour
     [SerializeField] private TransitionScreenManager transitionScreenManager;
     [SerializeField] private BoardGenerator boardGenerator;
     [SerializeField] private PackSelectionPanel packSelectionPanel;
+    [SerializeField] private LevelChangeScreenController levelChangeScreenController;
     private string selectedPack;
 
     public async void OnPackSelect()
@@ -15,9 +16,28 @@ public class PackageSelectManager : MonoBehaviour
         boardGenerator.ResetBoard();
 
         selectedPack = packSelectionPanel.selectedPackElement.name;
-        await boardGenerator.CacheCards(selectedPack);
 
         levelChangeScreen.SetActive(false);
+
+        if(levelChangeScreenController.isOnSelect)
+        {
+            GenerateStylizedBoard();
+            levelChangeScreenController.isOnSelect = false;
+        }
+    }
+
+    public async void GenerateStylizedBoard()
+    {
+        boardGenerator.ResetBoard();
+        await boardGenerator.CacheCards(selectedPack);
+        transitionScreenManager.IncrementProgress(1);
+    }
+
+    public async void GenerateStylizedBoard(int cardCount)
+    {
+        boardGenerator.ResetBoard();
+        boardGenerator.cardNumber = cardCount;
+        await boardGenerator.CacheCards(selectedPack);
         transitionScreenManager.IncrementProgress(1);
     }
 }

@@ -151,12 +151,12 @@ RectTransform:
   m_GameObject: {fileID: 52324708}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.568125, y: 0.568125, z: 0.568125}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1993184418}
   - {fileID: 1807788097}
-  m_Father: {fileID: 1539169725}
+  m_Father: {fileID: 666197687}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1319,21 +1319,21 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5423646211583186463, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 3312234166695040934, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 52324709}
-    - targetCorrespondingSourceObject: {fileID: 3312234166695040934, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1082417584}
-    - targetCorrespondingSourceObject: {fileID: 3312234166695040934, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2124035451}
     - targetCorrespondingSourceObject: {fileID: 3995889104735022796, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1755342018}
     - targetCorrespondingSourceObject: {fileID: 3995889104735022796, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1182242528}
+    - targetCorrespondingSourceObject: {fileID: 3995889104735022796, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 52324709}
+    - targetCorrespondingSourceObject: {fileID: 3995889104735022796, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1082417584}
+    - targetCorrespondingSourceObject: {fileID: 3995889104735022796, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2124035451}
     - targetCorrespondingSourceObject: {fileID: 3995889104735022796, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1147345481}
@@ -2059,14 +2059,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2124035455}
-        m_TargetAssemblyTypeName: DifficultyGenerator, Assembly-CSharp
-        m_MethodName: HardModeClick
-        m_Mode: 1
+      - m_Target: {fileID: 1755342023}
+        m_TargetAssemblyTypeName: PackageSelectManager, Assembly-CSharp
+        m_MethodName: GenerateStylizedBoard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 18
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2279,6 +2279,10 @@ PrefabInstance:
       propertyPath: selectedPackElement
       value: 
       objectReference: {fileID: 591930974}
+    - target: {fileID: 1507154835, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 786598635357384128, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 4
@@ -2296,6 +2300,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 786598635357384128, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 786598635357384128, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1755342023}
@@ -2308,6 +2316,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 52324708}
     - target: {fileID: 786598635357384128, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 1755342023}
+    - target: {fileID: 786598635357384128, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -2317,6 +2329,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 786598635357384128, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 786598635357384128, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 786598635357384128, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
@@ -2332,6 +2348,10 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 786598635357384128, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: GenerateStylizedBoard
+      objectReference: {fileID: 0}
+    - target: {fileID: 786598635357384128, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: PackageSelectManager, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -2344,7 +2364,15 @@ PrefabInstance:
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 786598635357384128, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      value: PackageSelectManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 786598635357384128, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 786598635357384128, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 786598635357384128, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
@@ -2358,6 +2386,14 @@ PrefabInstance:
     - target: {fileID: 786598635357384128, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 786598635357384128, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 786598635357384132, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 786598635357384133, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2668,6 +2704,7 @@ MonoBehaviour:
   packageSelectManager: {fileID: 1755342023}
   transitionPanel: {fileID: 52324708}
   packSelectionPanel: {fileID: 591930974}
+  isOnSelect: 0
 --- !u!114 &1082417582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2715,13 +2752,13 @@ RectTransform:
   m_GameObject: {fileID: 1082417580}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.568125, y: 0.568125, z: 0.568125}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 919965512}
   - {fileID: 946171772}
   - {fileID: 1700497811}
-  m_Father: {fileID: 1539169725}
+  m_Father: {fileID: 666197687}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3185,14 +3222,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2124035455}
-        m_TargetAssemblyTypeName: DifficultyGenerator, Assembly-CSharp
-        m_MethodName: EasyModeClick
-        m_Mode: 1
+      - m_Target: {fileID: 1755342023}
+        m_TargetAssemblyTypeName: PackageSelectManager, Assembly-CSharp
+        m_MethodName: GenerateStylizedBoard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3375,11 +3412,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!224 &1539169725 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3312234166695040934, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
-  m_PrefabInstance: {fileID: 563855968}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1700497810
 GameObject:
   m_ObjectHideFlags: 0
@@ -3480,6 +3512,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1755342023}
+        m_TargetAssemblyTypeName: PackageSelectManager, Assembly-CSharp
+        m_MethodName: GenerateStylizedBoard
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3611,14 +3655,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2124035455}
-        m_TargetAssemblyTypeName: DifficultyGenerator, Assembly-CSharp
-        m_MethodName: NormalModeClick
-        m_Mode: 1
+      - m_Target: {fileID: 1755342023}
+        m_TargetAssemblyTypeName: PackageSelectManager, Assembly-CSharp
+        m_MethodName: GenerateStylizedBoard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 12
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3803,6 +3847,7 @@ MonoBehaviour:
   transitionScreenManager: {fileID: 52324712}
   boardGenerator: {fileID: 1755342021}
   packSelectionPanel: {fileID: 2119560747}
+  levelChangeScreenController: {fileID: 1082417581}
 --- !u!114 &1755342024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4293,20 +4338,20 @@ RectTransform:
   m_GameObject: {fileID: 2124035450}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.568125, y: 0.568125, z: 0.568125}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1335280064}
   - {fileID: 1719331048}
   - {fileID: 924569349}
   - {fileID: 663273441}
-  m_Father: {fileID: 1539169725}
+  m_Father: {fileID: 666197687}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.8238, y: -42.401}
-  m_SizeDelta: {x: 1939.4, y: 891.49}
+  m_AnchoredPosition: {x: 0.0073929, y: -46.027}
+  m_SizeDelta: {x: 1377.3, y: 624.16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2124035453
 MonoBehaviour:

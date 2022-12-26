@@ -38,6 +38,7 @@ public class PackageSelectManager : MonoBehaviour
     public async void GenerateStylizedBoard()
     {
         boardGenerator.ResetBoard();
+        boardGenerator.CheckClones();
         await boardGenerator.CacheCards(selectedPack);
         transitionScreenManager.IncrementProgress(1);
     }
@@ -45,8 +46,8 @@ public class PackageSelectManager : MonoBehaviour
     public async void GenerateStylizedBoard(int cardCount)
     {
         boardGenerator.ResetBoard();
+        boardGenerator.CheckClones();
         boardGenerator.cardNumber = cardCount;
-        await boardGenerator.CacheCards(selectedPack);
         transitionScreenManager.IncrementProgress(1);
     }
 }

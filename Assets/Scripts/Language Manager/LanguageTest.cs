@@ -16,7 +16,8 @@ public class LanguageTest : MonoBehaviour
     private string nickname;
     private string completedPack;
     private int usabilityTips;
-    private ArrayList variableArray = new ArrayList();
+    private ArrayList mainCanvasVariableArray = new ArrayList();
+    private ArrayList gameCanvasVariableArray = new ArrayList();
 
     private void Awake()
     {
@@ -42,13 +43,26 @@ public class LanguageTest : MonoBehaviour
             }
         }
 
-        variableArray.Add(nickname);
-        variableArray.Add(nickname);
+        mainCanvasVariableArray.Add(gameAPI.ToSentenceCase(Application.productName));
+        mainCanvasVariableArray.Add(gameAPI.ToSentenceCase(Application.productName));
+        mainCanvasVariableArray.Add(nickname);
+        gameCanvasVariableArray.Add(nickname);
 
-        for (int i = 0; i < textsWithVariable.Count; i++)
+        if (gameObject.name == "Canvas")
         {
-            result = gameAPI.Translate(textsWithVariable[i].name, variableArray[i].ToString(), langCode);
-            textsWithVariable[i].GetComponent<TMP_Text>().text = result;
+            for (int i = 0; i < textsWithVariable.Count; i++)
+            {
+                result = gameAPI.Translate(textsWithVariable[i].name, mainCanvasVariableArray[i].ToString(), langCode);
+                textsWithVariable[i].GetComponent<TMP_Text>().text = result;
+            }
+        }
+        else if (gameObject.name == "GameCanvas")
+        {
+            for (int i = 0; i < textsWithVariable.Count; i++)
+            {
+                result = gameAPI.Translate(textsWithVariable[i].name, gameCanvasVariableArray[i].ToString(), langCode);
+                textsWithVariable[i].GetComponent<TMP_Text>().text = result;
+            }
         }
 
         foreach (var text in plainTexts)
@@ -74,10 +88,22 @@ public class LanguageTest : MonoBehaviour
     {
         Speakable.locale = await gameAPI.GetSelectedLocale();
         var langCode = await gameAPI.GetSystemLanguageCode();
-        for (int i = 0; i < textsWithVariable.Count; i++)
+
+        if (gameObject.name == "Canvas")
         {
-            result = gameAPI.Translate(textsWithVariable[i].name, variableArray[i].ToString(), langCode);
-            textsWithVariable[i].GetComponent<TMP_Text>().text = result;
+            for (int i = 0; i < textsWithVariable.Count; i++)
+            {
+                result = gameAPI.Translate(textsWithVariable[i].name, mainCanvasVariableArray[i].ToString(), langCode);
+                textsWithVariable[i].GetComponent<TMP_Text>().text = result;
+            }
+        }
+        else if (gameObject.name == "GameCanvas")
+        {
+            for (int i = 0; i < textsWithVariable.Count; i++)
+            {
+                result = gameAPI.Translate(textsWithVariable[i].name, gameCanvasVariableArray[i].ToString(), langCode);
+                textsWithVariable[i].GetComponent<TMP_Text>().text = result;
+            }
         }
 
         foreach (var text in plainTexts)
@@ -97,14 +123,28 @@ public class LanguageTest : MonoBehaviour
         var langCode = await gameAPI.GetSystemLanguageCode();
         nickname = gameAPI.GetNickname();
 
-        variableArray.Clear();
-        variableArray.Add(nickname);
-        variableArray.Add(nickname);
+        mainCanvasVariableArray.Clear();
+        gameCanvasVariableArray.Clear();
+        mainCanvasVariableArray.Add(gameAPI.ToSentenceCase(Application.productName));
+        mainCanvasVariableArray.Add(gameAPI.ToSentenceCase(Application.productName));
+        mainCanvasVariableArray.Add(nickname);
+        gameCanvasVariableArray.Add(nickname);
 
-        for (int i = 0; i < textsWithVariable.Count; i++)
+        if (gameObject.name == "Canvas")
         {
-            result = gameAPI.Translate(textsWithVariable[i].name, variableArray[i].ToString(), langCode);
-            textsWithVariable[i].GetComponent<TMP_Text>().text = result;
+            for (int i = 0; i < textsWithVariable.Count; i++)
+            {
+                result = gameAPI.Translate(textsWithVariable[i].name, mainCanvasVariableArray[i].ToString(), langCode);
+                textsWithVariable[i].GetComponent<TMP_Text>().text = result;
+            }
+        }
+        else if (gameObject.name == "GameCanvas")
+        {
+            for (int i = 0; i < textsWithVariable.Count; i++)
+            {
+                result = gameAPI.Translate(textsWithVariable[i].name, gameCanvasVariableArray[i].ToString(), langCode);
+                textsWithVariable[i].GetComponent<TMP_Text>().text = result;
+            }
         }
 
     }

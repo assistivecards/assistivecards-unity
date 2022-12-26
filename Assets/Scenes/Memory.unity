@@ -4182,10 +4182,10 @@ RectTransform:
   m_Father: {fileID: 666197687}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.4742, y: -6}
-  m_SizeDelta: {x: 0, y: 350}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -200, y: -200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1755342019
 MonoBehaviour:
@@ -4228,7 +4228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5630d1b2c2b4d49468c2faa39d980d2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardSizes: 1.15
+  cardSizes: 1.5
   cardNumber: 18
   transitionScreen: {fileID: 52324708}
   tempCardObject: {fileID: 6370097455287089691, guid: f0a92bd16c8abab42a526e44d642b22c, type: 3}
@@ -4259,9 +4259,9 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 100, y: 100}
-  m_Spacing: {x: 25, y: 25}
+  m_Spacing: {x: 100, y: 100}
   m_Constraint: 2
-  m_ConstraintCount: 3
+  m_ConstraintCount: 2
 --- !u!114 &1755342023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4288,7 +4288,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1755342017}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 

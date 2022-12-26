@@ -16,6 +16,22 @@ public class LevelManager : MonoBehaviour
         boardGenerator = this.GetComponent<BoardGenerator>();    
         gameAPI = Camera.main.GetComponent<GameAPI>();
     }
+
+    private void CustomBoard()
+    {
+        if(boardGenerator.cardNumber < 7)
+        {
+        
+        }
+        else if(boardGenerator.cardNumber < 11)
+        {
+
+        }
+        else if(boardGenerator.cardNumber < 21)
+        {
+
+        }
+    }
     public async void levelFinisher()
     {
         if(GameObject.FindGameObjectsWithTag("notMatchedCard").Length == 0)

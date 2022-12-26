@@ -89,7 +89,7 @@ public class Board : MonoBehaviour
         }
 
         shownImageSlug = randomCards[0].slug;
-        cardName.text = ToSentenceCase(randomCards[0].title);
+        cardName.text = gameAPI.ToSentenceCase(randomCards[0].title);
         shown.sprite = randomSprites[0];
         silhouettes[Random.Range(0, silhouettes.Length)].sprite = randomSprites[0];
 
@@ -154,10 +154,4 @@ public class Board : MonoBehaviour
         }
     }
 
-    private string ToSentenceCase(string text)
-    {
-        string firstChar = text[0].ToString();
-        return (text.Length > 0 ? firstChar.ToUpper() + text.Substring(1) : text);
-
-    }
 }

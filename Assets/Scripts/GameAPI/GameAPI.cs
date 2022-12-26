@@ -1038,4 +1038,10 @@ public class GameAPI : MonoBehaviour
         speakable.Speak(text);
     }
 
+    public string ToSentenceCase(string text)
+    {
+        string firstChar = text[0].ToString();
+        return (text.Length > 0 ? firstChar.ToUpper() + text.Substring(1) : text);
+    }
+
 }

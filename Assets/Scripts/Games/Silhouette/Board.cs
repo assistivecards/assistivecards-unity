@@ -95,6 +95,7 @@ public class Board : MonoBehaviour
 
         for (int i = 0; i < silhouettes.Length; i++)
         {
+            silhouettes[i].gameObject.SetActive(true);
             if (silhouettes[i].sprite == null)
             {
                 var randomIndex = Random.Range(1, randomSprites.Count);

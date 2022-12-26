@@ -53,11 +53,11 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
             correctMatches++;
             // transform.position = matchedImageTransform.position;
             LeanTween.move(gameObject, matchedImageTransform.position, 0.25f);
-            Invoke("RevealSilhouette", 0.25f);
+            Invoke("PlayCorrectMatchAnimation", 0.25f);
             gameAPI.VibrateStrong();
             gameAPI.PlaySFX("Success");
             // LeanTween.color(matchedImageTransform.gameObject.GetComponent<Image>().rectTransform, Color.white, .5f);
-            Invoke("ScaleImagesDown", .75f);
+            Invoke("ScaleImagesDown", .5f);
             board.Invoke("ClearBoard", 1f);
             isMatched = false;
             if (correctMatches == 10)
@@ -170,9 +170,11 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
 
     }
 
-    public void RevealSilhouette()
+    public void PlayCorrectMatchAnimation()
     {
-        LeanTween.color(matchedImageTransform.gameObject.GetComponent<Image>().rectTransform, Color.white, .5f);
+        matchedImageTransform.gameObject.SetActive(false);
+        LeanTween.scale(gameObject, Vector3.one * 1.25f, .25f);
+        // LeanTween.color(matchedImageTransform.gameObject.GetComponent<Image>().rectTransform, Color.white, .5f);
     }
 }
 

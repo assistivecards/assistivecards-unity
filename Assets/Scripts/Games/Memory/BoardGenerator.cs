@@ -9,7 +9,7 @@ using System.Linq;
 public class BoardGenerator : MonoBehaviour
 {
     [Header ("Virtual Changes")]
-    [SerializeField] private float cardSizes;
+    public float cardSizes;
     public int cardNumber;
 
     [Header ("Objects")]

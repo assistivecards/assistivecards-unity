@@ -8,6 +8,7 @@ public class TopAppBarController : MonoBehaviour
     GameAPI gameAPI;
     [SerializeField] private GameObject canvas;
     [SerializeField] private GameObject gameCanvas;
+    [SerializeField] private GameObject fadeInPanel;
 
     [Header("Top App Bar UI")]
     [SerializeField] private GameObject backButton;
@@ -100,9 +101,11 @@ public class TopAppBarController : MonoBehaviour
 
     public void BackButtonClicked()
     {
-        if(canvasController.currentScreen.name == "ParentLock")
+        if (canvasController.currentScreen.name == "ParentLock")
         {
-            canvasController.CloseSettingClick();
+            // canvasController.CloseSettingClick();
+            fadeInPanel.SetActive(true);
+            canvasController.Invoke("CloseSettingClick", 0.3f);
         }
         else if (canvasController.currentScreen.name == "AvatarSelectionSettings")
         {
@@ -110,11 +113,13 @@ public class TopAppBarController : MonoBehaviour
             Invoke("SceneSetActiveFalse", 0.15f);
             Invoke("CloseAvatarSelectionScreen", 0.16f);
         }
-        else if(onMain)
+        else if (onMain)
         {
-            canvasController.CloseSettingClick();
+            // canvasController.CloseSettingClick();
+            fadeInPanel.SetActive(true);
+            canvasController.Invoke("CloseSettingClick", 0.3f);
         }
-        else if(canvasController.currentScreen.name == "SendFeedback")
+        else if (canvasController.currentScreen.name == "SendFeedback")
         {
             sendFeedbackSampleWebView.webViewObject.SetVisibility(false);
             LeanTween.scale(canvasController.currentScreen, Vector3.one * 0.9f, 0.15f);

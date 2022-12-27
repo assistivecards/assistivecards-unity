@@ -2744,6 +2744,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8991096509936345437, guid: 567f4d58afcfbe5469531d2460516bfe, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9073135207066932925, guid: 567f4d58afcfbe5469531d2460516bfe, type: 3}
       propertyPath: m_SizeDelta.x
       value: 1101.8105

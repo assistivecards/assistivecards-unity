@@ -207,7 +207,7 @@ public class CanvasController : MonoBehaviour
         // settingScreenFadePanel.CrossFadeAlpha(1, 0.25f, false);
         // Invoke("OpenGamePanel", 0.1f);
         // StartFadeAnim();
-        Invoke("OpenGamePanel", 2f);
+        Invoke("OpenGamePanel", 0.3f);
 
     }
     private void OpenGamePanel()

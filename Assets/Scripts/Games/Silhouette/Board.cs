@@ -107,7 +107,7 @@ public class Board : MonoBehaviour
 
         ScaleImagesUp();
         backButton.SetActive(true);
-        LeanTween.scale(backButton, Vector3.one, 0.25f);
+        // LeanTween.scale(backButton, Vector3.one, 0.25f);
     }
 
     public void ClearBoard()

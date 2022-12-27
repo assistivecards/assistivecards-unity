@@ -163,7 +163,8 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
         {
             ResetCounter();
             ScaleImagesDown();
-            LeanTween.scale(backButton, Vector3.zero, 0.25f);
+            // LeanTween.scale(backButton, Vector3.zero, 0.25f);
+            backButton.SetActive(false);
             yield return new WaitForSeconds(0.25f);
             board.ClearBoard();
             packSelectionPanel.transform.localScale = new Vector3(0, 0, 0);

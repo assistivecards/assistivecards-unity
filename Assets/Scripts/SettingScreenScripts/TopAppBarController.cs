@@ -100,39 +100,31 @@ public class TopAppBarController : MonoBehaviour
 
     public void BackButtonClicked()
     {
-        if (canvasController.currentScreen.name == "ParentLock")
+        if(canvasController.currentScreen.name == "ParentLock")
         {
             canvasController.CloseSettingClick();
-            // canvasController.StartFadeAnim();
-            ChangeTopAppBarType(2);
         }
-        if (canvasController.currentScreen.name == "AvatarSelectionSettings")
+        else if (canvasController.currentScreen.name == "AvatarSelectionSettings")
         {
             LeanTween.scale(canvasController.currentScreen, Vector3.one * 0.9f, 0.15f);
             Invoke("SceneSetActiveFalse", 0.15f);
             Invoke("CloseAvatarSelectionScreen", 0.16f);
         }
+        else if(onMain)
+        {
+            canvasController.CloseSettingClick();
+        }
+        else if(canvasController.currentScreen.name == "SendFeedback")
+        {
+            sendFeedbackSampleWebView.webViewObject.SetVisibility(false);
+            LeanTween.scale(canvasController.currentScreen, Vector3.one * 0.9f, 0.15f);
+            Invoke("SceneSetActiveFalse", 0.15f);
+        }
         else
         {
-            if (onMain)
-            {
-                canvasController.CloseSettingClick();
-            }
-            else
-            {
-                if (canvasController.currentScreen.name == "SendFeedback")
-                {
-                    sendFeedbackSampleWebView.webViewObject.SetVisibility(false);
-                    LeanTween.scale(canvasController.currentScreen, Vector3.one * 0.9f, 0.15f);
-                    Invoke("SceneSetActiveFalse", 0.15f);
-                }
-                else
-                {
-                    LeanTween.scale(canvasController.currentScreen, Vector3.one * 0.9f, 0.15f);
-                    Invoke("SceneSetActiveFalse", 0.15f);
-                    ChangeTopAppBarType(0);
-                }
-            }
+            LeanTween.scale(canvasController.currentScreen, Vector3.one * 0.9f, 0.15f);
+            Invoke("SceneSetActiveFalse", 0.15f);
+            ChangeTopAppBarType(0);
         }
     }
 

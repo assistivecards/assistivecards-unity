@@ -25,7 +25,7 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private TMP_InputField nicknameInputField;
     public TMP_Text nicknameText;
     [SerializeField] Canvas canvas;
-    [SerializeField] private GameObject popUp;
+    [SerializeField] public GameObject popUp;
     private GameObject backButton;
     [SerializeField] private GameObject settingScreen;
     [SerializeField] private Image settingScreenFadePanel;
@@ -200,24 +200,22 @@ public class CanvasController : MonoBehaviour
 
     public void CloseSettingClick()
     {
-
+        currentScreen = parentLockScreen;
         topAppBarController.onMain = false;
-        topAppBarController.ChangeTopAppBarType(2);
         //Fade Out
         // settingScreenFadePanel.gameObject.SetActive(true);
         // settingScreenFadePanel.CrossFadeAlpha(1, 0.25f, false);
         // Invoke("OpenGamePanel", 0.1f);
         // StartFadeAnim();
-        StartCoroutine(OpenGamePanel());
+        Invoke("OpenGamePanel", 2f);
 
     }
-    IEnumerator OpenGamePanel()
+    private void OpenGamePanel()
     {
         // yield return new WaitForSeconds(0.3f);
         // settingPrefab.SetActive(false);
         // topAppBar.SetActive(false);
         // gamePrefab.SetActive(true);
-        yield return new WaitForSeconds(0.3f);
         fadeOutPanel.SetActive(true);
         gamePrefab.SetActive(true);
         settingPrefab.SetActive(false);

@@ -203,6 +203,11 @@
 	"complete_editing": "Complete editing",
 
 	"checkpoint_panel_choose_new_pack_text":"Choose New Pack",
-	"checkpoint_panel_continue_playing_text":"Continue Playing"
+	"checkpoint_panel_continue_playing_text":"Continue Playing",
 
+	"difficulty_selection_title":"Choose Difficulty Level",
+	"difficulty_selection_easy":"Easy",
+	"difficulty_selection_normal":"Normal",
+	"difficulty_selection_hard":"Hard",
+	"play":"Play"
 }

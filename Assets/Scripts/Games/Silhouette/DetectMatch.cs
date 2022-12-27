@@ -21,6 +21,8 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
     [SerializeField] GameObject packSelectionPanel;
     [SerializeField] GameObject backButton;
     [SerializeField] GameObject helloText;
+    public static float onPointerUpTime;
+    public static bool isPointerUp = false;
 
     private void Awake()
     {
@@ -75,6 +77,8 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
             {
                 gameAPI.VibrateWeak();
                 transform.position = eventData.position;
+                isPointerUp = true;
+                onPointerUpTime = Time.time;
             }
             else
             {
@@ -176,5 +180,22 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
         LeanTween.scale(gameObject, Vector3.one * 1.25f, .25f);
         // LeanTween.color(matchedImageTransform.gameObject.GetComponent<Image>().rectTransform, Color.white, .5f);
     }
-}
 
+    private void Update()
+    {
+        CalculateTimeElapsedSinceOnPointerUp();
+    }
+
+    public void CalculateTimeElapsedSinceOnPointerUp()
+    {
+        if (isPointerUp)
+        {
+            // Debug.Log(Time.time - onPointerUpTime);
+            if ((Time.time - onPointerUpTime) >= 3)
+            {
+                LeanTween.move(gameObject, shownImageSlot.position, 0.5f);
+                isPointerUp = false;
+            }
+        }
+    }
+}

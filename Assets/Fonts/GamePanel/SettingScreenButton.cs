@@ -50,24 +50,30 @@ public class SettingScreenButton : MonoBehaviour
 
     public void SettingButtonClickFunc()
     {
-        StartCoroutine(SettingButtonClick());
+        Invoke("SettingButtonClick", 0.3f);
     }
 
-    IEnumerator SettingButtonClick()
+    // IEnumerator SettingButtonClick()
+    // {
+    //     // settingPrefab.SetActive(true);
+    //     // mainSettingScreen.SetActive(true);
+    //     // topAppBar.SetActive(true);
+    //     // gamePrefab.SetActive(false);
+    //     yield return new WaitForSeconds(0.3f);
+    //     fadeOutPanel.SetActive(true);
+    //     gamePrefab.SetActive(false);
+    //     settingPrefab.SetActive(true);
+    //     mainSettingScreen.SetActive(true);
+    //     topAppBar.SetActive(true);
+    //     // canvasController.StartFade();
+    // }
+
+    public void SettingButtonClick()
     {
-        // yield return new WaitForSeconds(0.25f);
-        // settingPrefab.SetActive(true);
-        // mainSettingScreen.SetActive(true);
-        // topAppBar.SetActive(true);
-        // gamePrefab.SetActive(false);
-        yield return new WaitForSeconds(0.3f);
         fadeOutPanel.SetActive(true);
         gamePrefab.SetActive(false);
         settingPrefab.SetActive(true);
-
         mainSettingScreen.SetActive(true);
         topAppBar.SetActive(true);
-
-        // canvasController.StartFade();
     }
 }

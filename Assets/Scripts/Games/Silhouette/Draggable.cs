@@ -26,6 +26,7 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        DetectMatch.isPointerUp = false;
         gameAPI.VibrateWeak();
         transform.position = eventData.position;
     }

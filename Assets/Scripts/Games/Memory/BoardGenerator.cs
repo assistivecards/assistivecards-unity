@@ -51,14 +51,16 @@ public class BoardGenerator : MonoBehaviour
     {
         randomValueTemp = Random.Range(0, cardTextures.cards.Length);
 
-        if(randomValueList.Contains(randomValueTemp))
-        {
-            randomValueTemp = Random.Range(0, cardTextures.cards.Length);
-        }
-        else
+        if(randomValueList.IndexOf(randomValueTemp) < 0)
         {
             randomValue = randomValueTemp;
             randomValueList.Add(randomValue);
+            Debug.Log(randomValue);
+        }
+        else
+        {
+            Debug.Log("Repeated!");
+            CheckRandom();
         }
     }
 
@@ -108,6 +110,17 @@ public class BoardGenerator : MonoBehaviour
         CheckClones();
         isInGame = true;
         gamePanelUIController.GamePanelUIControl();
+
+
+        foreach(int randomValue in randomValueList)
+        {
+            Debug.Log("element: " + randomValue);
+        }
+    }
+
+    private void CheckBoardRepeatedCards()
+    {
+        
     }
 
     private void FadeOutTransitionScreen()

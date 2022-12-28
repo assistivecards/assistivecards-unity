@@ -26,6 +26,7 @@ public class BoardGenerator : MonoBehaviour
     private List<string> cardNames = new List<string>();
     private List<string> cardDefinitionsLocale = new List<string>();
     private int randomValue;
+    private int randomValueTemp;
     private CheckMatches checkMatches;
     List<int> randomValueList = new List<int>();
     public bool isInGame = false;
@@ -46,9 +47,23 @@ public class BoardGenerator : MonoBehaviour
         await GenerateRandomBoardAsync(_packSlug);
     }
 
+    private void CheckRandom()
+    {
+        randomValueTemp = Random.Range(0, cardTextures.cards.Length);
+
+        if(randomValueList.Contains(randomValueTemp))
+        {
+            randomValueTemp = Random.Range(0, cardTextures.cards.Length);
+        }
+        else
+        {
+            randomValue = randomValueTemp;
+            randomValueList.Add(randomValue);
+        }
+    }
+
     public async Task GenerateRandomBoardAsync(string packSlug)
     {
-        
         for(int i = 0; i< cardTextures.cards.Length; i++)
         {
             cardNames.Add(cardTextures.cards[i].title.ToLower().Replace(" ", "-"));
@@ -57,16 +72,7 @@ public class BoardGenerator : MonoBehaviour
 
         for(int j = 0; j< cardNumber / 2; j++)
         {
-            randomValue = Random.Range(0, cardTextures.cards.Length);
-            if(randomValueList.Contains(randomValue))
-            {
-                randomValue = Random.Range(0, cardTextures.cards.Length);
-            }
-            else
-            {
-                randomValueList.Add(randomValue);
-            }
-
+            CheckRandom();
             cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValue], 512);
             cards.Add(Instantiate(tempCardObject, Vector3.zero, Quaternion.identity));
             cards[j].transform.parent = this.transform;

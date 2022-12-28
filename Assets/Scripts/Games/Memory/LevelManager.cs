@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour
     private bool levelFinished = false;
     [SerializeField] private GamePanelUIController gamePanelUIController;
     private GridLayoutGroup boardGrid;
+    private List<GameObject> notMatchedCards = new List<GameObject>(); 
 
     private void Awake() 
     {
@@ -54,19 +55,23 @@ public class LevelManager : MonoBehaviour
             boardGrid.constraintCount = 3;
         }
     }
-    public async void levelFinisher()
+    public void levelFinisher()
     {
         if(GameObject.FindGameObjectsWithTag("notMatchedCard").Length == 0)
         {
-            LeanTween.scale(this.gameObject, Vector3.one * 0.0001f, 0.01f);
-            gameAPI.PlaySFX("Finished");
-            boardGenerator.ClearBoard();
-            levelChangeScreen.SetActive(true);
-
-            LeanTween.scale(this.gameObject, Vector3.one * 0.0001f, 0.1f);
-            boardGenerator.isInGame = false;
-            gamePanelUIController.GamePanelUIControl();
-
+            Invoke("EndLevel", 1.15f);
         }
+    }
+
+    private void EndLevel()
+    {
+        LeanTween.scale(this.gameObject, Vector3.one * 0.0001f, 0.01f);
+        gameAPI.PlaySFX("Finished");
+        boardGenerator.ClearBoard();
+        levelChangeScreen.SetActive(true);
+
+        LeanTween.scale(this.gameObject, Vector3.one * 0.0001f, 0.1f);
+        boardGenerator.isInGame = false;
+        gamePanelUIController.GamePanelUIControl();
     }
 }

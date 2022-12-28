@@ -16,6 +16,7 @@ public class CanvasController : MonoBehaviour
     [Header("User Information")]
     public GameObject profileImage;
     public string nickname;
+    [SerializeField] GameObject fadeInPanel;
 
 
     [Header("API Connection")]
@@ -291,5 +292,12 @@ public class CanvasController : MonoBehaviour
         {
             notificationPreferences.weeklyReminderToggle.isOn = true;
         }
+    }
+
+    public void FadeInOnParentLockButtonClick()
+    {
+        fadeInPanel.SetActive(true);
+        Invoke("CloseSettingClick", 0.3f);
+        Invoke("ParentLockButtonClick", 0.3f);
     }
 }

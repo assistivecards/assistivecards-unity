@@ -46,11 +46,11 @@ public class LevelManager : MonoBehaviour
         }
         else if(boardGenerator.cardNumber < 21)
         {
-            boardGenerator.cardSizes = 1.5f;
+            boardGenerator.cardSizes = 1.75f;
 
-            boardGrid.spacing = new Vector3(75,75,1);
-            boardGrid.padding.left = -40;
-            boardGrid.padding.top = -50;
+            boardGrid.spacing = new Vector3(85,90,1);
+            boardGrid.padding.left = -60;
+            boardGrid.padding.top = -45;
 
             boardGrid.constraintCount = 3;
         }

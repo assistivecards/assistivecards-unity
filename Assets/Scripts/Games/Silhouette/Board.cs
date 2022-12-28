@@ -85,6 +85,7 @@ public class Board : MonoBehaviour
             }
 
             randomImages.Add(await gameAPI.GetCardImage(packSlug, randomCards[i].slug));
+            randomImages[i].wrapMode = TextureWrapMode.Clamp;
             randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
         }
 

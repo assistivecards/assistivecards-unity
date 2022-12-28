@@ -68,8 +68,10 @@ public class PackSelectionPanel : MonoBehaviour
 
 
             packElement.transform.GetChild(0).GetComponent<TMP_Text>().text = jsonPackss["packs"][i]["locale"].ToString().Replace("\"", "");
+            var packTexture = gameAPI.cachedPackImages[i];
+            packTexture.wrapMode = TextureWrapMode.Clamp;
 
-            packElement.transform.GetChild(1).GetComponent<Image>().sprite = Sprite.Create(gameAPI.cachedPackImages[i], new Rect(0.0f, 0.0f, gameAPI.cachedPackImages[i].width, gameAPI.cachedPackImages[i].height), new Vector2(0.5f, 0.5f), 100.0f);
+            packElement.transform.GetChild(1).GetComponent<Image>().sprite = Sprite.Create(packTexture, new Rect(0.0f, 0.0f, gameAPI.cachedPackImages[i].width, gameAPI.cachedPackImages[i].height), new Vector2(0.5f, 0.5f), 100.0f);
 
             packElement.name = packs.packs[i].slug;
 

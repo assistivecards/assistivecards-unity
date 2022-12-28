@@ -101,13 +101,14 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
     public void OpenCheckPointPanel()
     {
         checkPointPanel.SetActive(true);
-        checkPointPanel.transform.GetChild(0).GetChild(1).GetComponent<Button>().interactable = false;
-        LeanTween.scale(checkPointPanel, Vector3.one, 0.25f);
+        checkPointPanel.transform.GetChild(1).GetComponent<Button>().interactable = false;
+        LeanTween.scale(checkPointPanel, Vector3.one * 0.6f, 0.25f);
         Invoke("EnableContinuePlayingButton", .75f);
     }
 
     public void CloseCheckpointPanel()
     {
+        // checkPointPanel.SetActive(false);
         StartCoroutine(CloseCheckPointPanelCoroutine());
     }
 
@@ -132,7 +133,8 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
     IEnumerator ChooseNewPackButtonCoroutine()
     {
         ScaleImagesDown();
-        LeanTween.scale(backButton, Vector3.zero, 0.25f);
+        // LeanTween.scale(backButton, Vector3.zero, 0.25f);
+        backButton.SetActive(false);
         CloseCheckpointPanel();
         yield return new WaitForSeconds(0.25f);
         board.ClearBoard();
@@ -141,15 +143,17 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
         LeanTween.scale(packSelectionPanel, Vector3.one, 0.25f);
     }
 
-    public async void CloseCheckpointPanelAndGenerateNewBoard()
+    public void CloseCheckpointPanelAndGenerateNewBoard()
     {
         StartCoroutine(CloseCheckPointPanelCoroutine());
-        await board.GenerateRandomBoardAsync();
+        // checkPointPanel.SetActive(false);
+        board.Invoke("GenerateRandomBoardAsync", 0.25f);
+        // await board.GenerateRandomBoardAsync();
     }
 
     public void EnableContinuePlayingButton()
     {
-        checkPointPanel.transform.GetChild(0).GetChild(1).GetComponent<Button>().interactable = true;
+        checkPointPanel.transform.GetChild(1).GetComponent<Button>().interactable = true;
     }
 
     public void OnBackButtonClick()

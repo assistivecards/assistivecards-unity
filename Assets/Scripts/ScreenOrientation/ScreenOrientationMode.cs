@@ -5,7 +5,7 @@ using UnityEngine;
 public class ScreenOrientationMode : MonoBehaviour
 {
     [SerializeField] public bool isPortrait;
-    private string orientationMode;
+    public static string orientationMode;
     GameAPI gameAPI;
     private void Awake()
     {
@@ -16,12 +16,7 @@ public class ScreenOrientationMode : MonoBehaviour
     {
         orientationMode = isPortrait ? "portrait" : "landscape";
         gameAPI.ForceOrientation(orientationMode);
-        // StartCoroutine(RotateScreen());
+        if (gameObject.name == "GameScreen")
+            transform.parent.parent.GetComponent<ArtSafeContainer>().ArtSafeScale();
     }
-
-    // IEnumerator RotateScreen()
-    // {
-    //     yield return new WaitForSeconds(0.25f);
-    //     gameAPI.ForceOrientation(orientationMode);
-    // }
 }

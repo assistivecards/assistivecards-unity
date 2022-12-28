@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GamePanelUIController : MonoBehaviour
 {
+    [SerializeField] private LevelChangeScreenController levelChangeScreenController;
     [SerializeField] private BoardGenerator boardGenerator;
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject helloText;
@@ -13,6 +14,11 @@ public class GamePanelUIController : MonoBehaviour
         if(boardGenerator.isInGame)
         {
             backButton.SetActive(true);
+            helloText.SetActive(false);
+        }
+        else if(levelChangeScreenController.isOnLevelChange)
+        {
+            backButton.SetActive(false);
             helloText.SetActive(false);
         }
         else

@@ -1962,6 +1962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e4636b54773e4ea1803169d5c14fbfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelChangeScreenController: {fileID: 1082417581}
   boardGenerator: {fileID: 1755342021}
   backButton: {fileID: 1182242527}
   helloText: {fileID: 1760797331}
@@ -2842,6 +2843,7 @@ MonoBehaviour:
   packSelectionPanel: {fileID: 1341134061}
   isOnSelect: 0
   isOnContinue: 0
+  isOnLevelChange: 0
 --- !u!114 &1082417582
 MonoBehaviour:
   m_ObjectHideFlags: 0

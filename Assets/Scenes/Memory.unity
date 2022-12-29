@@ -2370,7 +2370,7 @@ RectTransform:
   m_GameObject: {fileID: 924569348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 496167273}
@@ -2453,18 +2453,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2124035450}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 52324708}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -2480,6 +2468,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1755342019}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: CustomBoard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2124035455}
+        m_TargetAssemblyTypeName: DifficultSelectionPanelTween, Assembly-CSharp
+        m_MethodName: ButtonTween
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2555,7 +2555,7 @@ RectTransform:
   m_GameObject: {fileID: 946171771}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0079619, y: 1.0079619, z: 1.0079619}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1.0079619}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1095163619}
@@ -2624,7 +2624,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1082417580}
+      - m_Target: {fileID: 1341134061}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -2634,7 +2634,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &946171774
 MonoBehaviour:
@@ -2854,6 +2854,8 @@ MonoBehaviour:
   packageSelectManager: {fileID: 1755342023}
   transitionPanel: {fileID: 52324708}
   packSelectionPanel: {fileID: 1341134061}
+  contunieButton: {fileID: 1700497810}
+  selectNewButton: {fileID: 946171771}
   isOnSelect: 0
   isOnContinue: 0
   isOnLevelChange: 0
@@ -3390,7 +3392,7 @@ RectTransform:
   m_GameObject: {fileID: 1335280063}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1873958376}
@@ -3472,18 +3474,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2124035450}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 52324708}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -3499,6 +3489,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1755342019}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: CustomBoard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2124035455}
+        m_TargetAssemblyTypeName: DifficultSelectionPanelTween, Assembly-CSharp
+        m_MethodName: ButtonTween
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4003,7 +4005,7 @@ RectTransform:
   m_GameObject: {fileID: 1700497810}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0079619, y: 1.0079619, z: 1.0079619}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1.0079619}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2005719450}
@@ -4064,18 +4066,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: LevelChangeScreenController, Assembly-CSharp
         m_MethodName: ContinueClick
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1082417580}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4162,7 +4152,7 @@ RectTransform:
   m_GameObject: {fileID: 1719331047}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1823049140}
@@ -4244,18 +4234,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2124035450}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 52324708}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -4271,6 +4249,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1755342019}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: CustomBoard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2124035455}
+        m_TargetAssemblyTypeName: DifficultSelectionPanelTween, Assembly-CSharp
+        m_MethodName: ButtonTween
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4997,6 +4987,7 @@ GameObject:
   - component: {fileID: 2124035451}
   - component: {fileID: 2124035454}
   - component: {fileID: 2124035453}
+  - component: {fileID: 2124035455}
   m_Layer: 5
   m_Name: DifficultySelectionScreen
   m_TagString: Untagged
@@ -5066,3 +5057,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2124035450}
   m_CullTransparentMesh: 1
+--- !u!114 &2124035455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124035450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2f837e5680a4451b0c0c92dae1eaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  easyButton: {fileID: 1335280063}
+  normalButton: {fileID: 1719331047}
+  hardButton: {fileID: 924569348}

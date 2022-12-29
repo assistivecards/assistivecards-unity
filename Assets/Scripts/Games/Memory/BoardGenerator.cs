@@ -177,7 +177,17 @@ public class BoardGenerator : MonoBehaviour
     public void CheckClones()
     {
         var objects0 = Resources.FindObjectsOfTypeAll<GameObject>().Where(obj => obj.name == "Card(Clone)");
+        var objects1 = Resources.FindObjectsOfTypeAll<GameObject>().Where(obj => obj.name == "Card1(Clone)");
+        var objects2 = Resources.FindObjectsOfTypeAll<GameObject>().Where(obj => obj.name == "Card2(Clone)");
         foreach(GameObject clone in objects0)
+        {
+            Destroy(clone);
+        }
+        foreach(GameObject clone in objects1)
+        {
+            Destroy(clone);
+        }
+        foreach(GameObject clone in objects2)
         {
             Destroy(clone);
         }

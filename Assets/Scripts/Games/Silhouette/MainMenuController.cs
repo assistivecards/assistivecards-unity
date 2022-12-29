@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Threading.Tasks;
+using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
@@ -54,6 +55,7 @@ public class MainMenuController : MonoBehaviour
     private async void GenerateCorrespondingRandomBoard()
     {
         board.packSlug = packSelectionPanelScript.selectedPackElement.name;
+        packSelectionPanel.transform.GetChild(0).GetComponent<ScrollRect>().enabled = false;
         LeanTween.scale(packSelectionPanel, Vector3.zero, 0.25f);
         Invoke("ClosePackSelectionPanel", 0.25f);
         helloText.SetActive(false);

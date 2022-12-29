@@ -172,8 +172,11 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
             yield return new WaitForSeconds(0.25f);
             board.ClearBoard();
             packSelectionPanel.transform.localScale = new Vector3(0, 0, 0);
+            var rt = packSelectionPanel.transform.GetChild(0).GetChild(0).GetComponent<RectTransform>();
+            rt.offsetMax = new Vector2(rt.offsetMax.x, 0);
             packSelectionPanel.SetActive(true);
             LeanTween.scale(packSelectionPanel, Vector3.one, 0.25f);
+            Invoke("EnableScrollRect", 0.25f);
             helloText.SetActive(true);
         }
 
@@ -202,5 +205,10 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
                 isPointerUp = false;
             }
         }
+    }
+
+    public void EnableScrollRect()
+    {
+        packSelectionPanel.transform.GetChild(0).GetComponent<ScrollRect>().enabled = true;
     }
 }

@@ -65,24 +65,7 @@ public class Board : MonoBehaviour
         for (int i = 0; i < silhouettes.Length; i++)
         {
             var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
-            // var index = Random.Range(0, cachedCards.cards.Length);
-            // var cardToAdd = cachedCards.cards[index];
-            if (!randomCards.Contains(cardToAdd) && cardToAdd.slug != shownImageSlug)
-            {
-
-                randomCards.Add(cardToAdd);
-                // randomImages.Add(cachedCardImages[index]);
-
-            }
-            else
-            {
-                cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
-                CheckIfCardExists(cardToAdd);
-                // var indexSecondRoll = Random.Range(0, cachedCards.cards.Length);
-                // cardToAdd = cachedCards.cards[indexSecondRoll];
-                // randomCards.Add(cardToAdd);
-                // randomImages.Add(cachedCardImages[indexSecondRoll]);
-            }
+            CheckIfCardExists(cardToAdd);
 
             randomImages.Add(await gameAPI.GetCardImage(packSlug, randomCards[i].slug));
             randomImages[i].wrapMode = TextureWrapMode.Clamp;
@@ -141,18 +124,12 @@ public class Board : MonoBehaviour
     {
         if (!randomCards.Contains(cardToAdd) && cardToAdd.slug != shownImageSlug)
         {
-
             randomCards.Add(cardToAdd);
-            // randomImages.Add(cachedCardImages[index]);
-
         }
         else
         {
             cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
-            // var indexSecondRoll = Random.Range(0, cachedCards.cards.Length);
-            // cardToAdd = cachedCards.cards[indexSecondRoll];
-            randomCards.Add(cardToAdd);
-            // randomImages.Add(cachedCardImages[indexSecondRoll]);
+            CheckIfCardExists(cardToAdd);
         }
     }
 

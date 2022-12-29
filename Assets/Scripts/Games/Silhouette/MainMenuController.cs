@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Threading.Tasks;
 
 public class MainMenuController : MonoBehaviour
 {
@@ -23,11 +24,7 @@ public class MainMenuController : MonoBehaviour
     {
         if (gameAPI.GetPremium() == "A5515T1V3C4RD5")
         {
-            board.packSlug = packSelectionPanelScript.selectedPackElement.name;
-            packSelectionPanel.SetActive(false);
-            helloText.SetActive(false);
-            await board.CacheCards(board.packSlug);
-            await board.GenerateRandomBoardAsync();
+            GenerateCorrespondingRandomBoard();
         }
         else
         {
@@ -46,11 +43,7 @@ public class MainMenuController : MonoBehaviour
                     }
                     else
                     {
-                        board.packSlug = packSelectionPanelScript.selectedPackElement.name;
-                        packSelectionPanel.SetActive(false);
-                        helloText.SetActive(false);
-                        await board.CacheCards(board.packSlug);
-                        await board.GenerateRandomBoardAsync();
+                        GenerateCorrespondingRandomBoard();
                     }
 
                 }
@@ -58,5 +51,20 @@ public class MainMenuController : MonoBehaviour
         }
     }
 
+    private async void GenerateCorrespondingRandomBoard()
+    {
+        board.packSlug = packSelectionPanelScript.selectedPackElement.name;
+        LeanTween.scale(packSelectionPanel, Vector3.zero, 0.25f);
+        Invoke("ClosePackSelectionPanel", 0.25f);
+        helloText.SetActive(false);
+        await board.CacheCards(board.packSlug);
+        // board.Invoke("GenerateRandomBoardAsync", 0.3f);
+        await board.GenerateRandomBoardAsync();
+    }
+
+    private void ClosePackSelectionPanel()
+    {
+        packSelectionPanel.SetActive(false);
+    }
 }
 

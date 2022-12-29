@@ -11,18 +11,15 @@ public class ArtSafeContainer : MonoBehaviour
     float deviceRatio;
     void Start()
     {
-        ArtSafeScale();
-    }
-
-    public void ArtSafeScale()
-    {
         float baseWidth = 1600f; // Max asset residue
         float baseHeight = 900f; // Max asset residue
 
-        if (ScreenOrientationMode.orientationMode == "landscape")
-            deviceRatio = (float)Screen.height / (float)Screen.width;
-        else if (ScreenOrientationMode.orientationMode == "portrait")
+        Debug.Log("Game is starting in : " + Screen.orientation);
+
+        if (Screen.orientation == ScreenOrientation.LandscapeLeft || Screen.orientation == ScreenOrientation.LandscapeRight)
             deviceRatio = (float)Screen.width / (float)Screen.height;
+        else
+            deviceRatio = (float)Screen.height / (float)Screen.width;
 
         float baseTippingPointWidth = 1212f; // ratioed ipad width
         float baseTippingPointHeight = 726f; // ratioed iphone height

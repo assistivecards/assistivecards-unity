@@ -9,6 +9,7 @@ public class LevelChangeScreenController : MonoBehaviour
     [SerializeField] private GameObject packSelectionPanel;
     [SerializeField] private GameObject contunieButton;
     [SerializeField] private GameObject selectNewButton;
+
     public bool isOnSelect = false;
     public bool isOnContinue = false;
     public bool isOnLevelChange = false;

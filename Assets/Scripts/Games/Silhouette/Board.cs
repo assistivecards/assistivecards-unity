@@ -23,6 +23,7 @@ public class Board : MonoBehaviour
     public string packSlug;
     [SerializeField] GameObject backButton;
     public static bool didLanguageChange = true;
+    public static bool isBackAfterSignOut = false;
 
 
     private void Awake()
@@ -33,6 +34,15 @@ public class Board : MonoBehaviour
     private void Start()
     {
         gameAPI.PlayMusic();
+    }
+
+    private void OnEnable()
+    {
+        if (isBackAfterSignOut)
+        {
+            gameAPI.PlayMusic();
+            isBackAfterSignOut = false;
+        }
     }
 
     public async Task CacheCards(string packName)

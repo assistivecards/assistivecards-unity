@@ -56,6 +56,7 @@ public class Board : MonoBehaviour
     public async Task GenerateRandomBoardAsync()
     {
         shown.transform.position = shownImageSlot.position;
+        shown.GetComponent<Draggable>().enabled = true;
         if (didLanguageChange)
         {
             await CacheCards(packSlug);
@@ -69,6 +70,7 @@ public class Board : MonoBehaviour
 
             randomImages.Add(await gameAPI.GetCardImage(packSlug, randomCards[i].slug));
             randomImages[i].wrapMode = TextureWrapMode.Clamp;
+            randomImages[i].filterMode = FilterMode.Bilinear;
             randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
         }
 

@@ -53,6 +53,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
         {
             //correct match
             correctMatches++;
+            gameObject.GetComponent<Draggable>().enabled = false;
             // transform.position = matchedImageTransform.position;
             LeanTween.move(gameObject, matchedImageTransform.position, 0.25f);
             Invoke("PlayCorrectMatchAnimation", 0.25f);

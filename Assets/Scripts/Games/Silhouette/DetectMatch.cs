@@ -102,6 +102,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
     public void OpenCheckPointPanel()
     {
         checkPointPanel.SetActive(true);
+        backButton.SetActive(false);
         checkPointPanel.transform.GetChild(1).GetComponent<Button>().interactable = false;
         LeanTween.scale(checkPointPanel, Vector3.one * 0.6f, 0.25f);
         Invoke("EnableContinuePlayingButton", .75f);
@@ -211,5 +212,10 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
     public void EnableScrollRect()
     {
         packSelectionPanel.transform.GetChild(0).GetComponent<ScrollRect>().enabled = true;
+    }
+
+    public void EnableBackButton()
+    {
+        backButton.SetActive(true);
     }
 }

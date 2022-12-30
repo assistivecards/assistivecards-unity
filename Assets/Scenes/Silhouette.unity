@@ -211,9 +211,9 @@ MonoBehaviour:
   m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 28
+  m_fontSizeMax: 36
   m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -343,11 +343,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 786598635403759705, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 786598635403759705, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -12.5
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 786598635403759705, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -379,11 +379,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 786598635403759705, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 786598635403759705, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -6.25
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 786598635403759705, guid: 7f293c2bd5fb26945abe1ea87b47689f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1544,6 +1544,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3312234165196700248, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
+      propertyPath: m_fontSize
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312234165196700248, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312234165196700248, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312234165196700248, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3312234165371174716, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1996,6 +2012,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1459567362}
         m_TargetAssemblyTypeName: DetectMatch, Assembly-CSharp
         m_MethodName: ResetCounter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1459567362}
+        m_TargetAssemblyTypeName: DetectMatch, Assembly-CSharp
+        m_MethodName: EnableBackButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

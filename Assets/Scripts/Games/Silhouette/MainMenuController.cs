@@ -40,6 +40,7 @@ public class MainMenuController : MonoBehaviour
                         fadeInPanel.SetActive(true);
                         settingButton.GetComponent<SettingScreenButton>().SettingButtonClickFunc();
                         canvasController.GetComponent<CanvasController>().PremiumPromoButtonClick();
+                        Invoke("ResetScrollPosition", 0.3f);
 
                     }
                     else
@@ -67,6 +68,12 @@ public class MainMenuController : MonoBehaviour
     private void ClosePackSelectionPanel()
     {
         packSelectionPanel.SetActive(false);
+    }
+
+    public void ResetScrollPosition()
+    {
+        var rt = packSelectionPanel.transform.GetChild(0).GetChild(0).GetComponent<RectTransform>();
+        rt.offsetMax = new Vector2(rt.offsetMax.x, 0);
     }
 }
 

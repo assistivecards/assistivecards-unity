@@ -4,10 +4,21 @@ using UnityEngine;
 
 public class GamePanelUIController : MonoBehaviour
 {
+    GameAPI gameAPI;
     [SerializeField] private LevelChangeScreenController levelChangeScreenController;
     [SerializeField] private BoardGenerator boardGenerator;
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject helloText;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
+
+    private void OnEnable() 
+    {
+        gameAPI.PlayMusic();
+    }
 
     public void GamePanelUIControl()
     {

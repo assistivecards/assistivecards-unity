@@ -22,7 +22,9 @@ public class Speakable : MonoBehaviour
     public void Speak()
     {
         Debug.Log(locale);
-        _textToSpeech.Speak(gameObject.GetComponent<TMP_Text>().text, locale, 1);
+        var canGreet = gameAPI.GetVoiceGreetingPreference();
+        if (canGreet == 1)
+            _textToSpeech.Speak(gameObject.GetComponent<TMP_Text>().text, locale, 1);
         TTSStarted();
     }
 

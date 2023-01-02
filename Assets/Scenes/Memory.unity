@@ -977,14 +977,14 @@ MonoBehaviour:
   speakable: {fileID: 0}
   sfxClips:
   - soundName: Success
-    clip: {fileID: 8300000, guid: d81901bf2fb96724aa1d7d1de4ab930b, type: 3}
+    clip: {fileID: 8300000, guid: 7bd6b897eb5ca4b7d88a205c4a51640c, type: 3}
   - soundName: Finished
-    clip: {fileID: 8300000, guid: dd699e0cf09cf3348be25ba4c5877c05, type: 3}
+    clip: {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
   - soundName: Card
     clip: {fileID: 8300000, guid: 98753dce81f965b4bbf6df68883a9f79, type: 3}
   musicSource: {fileID: 1487501776}
   sfxSource: {fileID: 601693157}
-  musicClip: {fileID: 8300000, guid: a34fe2c72ed38e24a923f7a560237e68, type: 3}
+  musicClip: {fileID: 8300000, guid: 980d9e7fa483808439c454075f22a3aa, type: 3}
   cards:
     cards: []
 --- !u!114 &519420034
@@ -2804,7 +2804,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -18, y: 77}
+  m_AnchoredPosition: {x: -18, y: 60}
   m_SizeDelta: {x: 63, y: 63}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1182242529

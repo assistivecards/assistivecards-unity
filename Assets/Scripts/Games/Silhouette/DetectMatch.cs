@@ -56,19 +56,21 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
             gameObject.GetComponent<Draggable>().enabled = false;
             // transform.position = matchedImageTransform.position;
             LeanTween.move(gameObject, matchedImageTransform.position, 0.25f);
+            board.Invoke("ReadCard", 0.25f);
             Invoke("PlayCorrectMatchAnimation", 0.25f);
             gameAPI.VibrateStrong();
             gameAPI.PlaySFX("Success");
             // LeanTween.color(matchedImageTransform.gameObject.GetComponent<Image>().rectTransform, Color.white, .5f);
-            Invoke("ScaleImagesDown", .5f);
-            board.Invoke("ClearBoard", 1f);
+            Invoke("ScaleImagesDown", 1f);
+            board.Invoke("ClearBoard", 1.5f);
             isMatched = false;
             if (correctMatches == 10)
             {
-                OpenCheckPointPanel();
+                // OpenCheckPointPanel();
+                Invoke("OpenCheckPointPanel", 1f);
             }
             else
-                board.Invoke("GenerateRandomBoardAsync", 1f);
+                board.Invoke("GenerateRandomBoardAsync", 1.5f);
         }
 
         else

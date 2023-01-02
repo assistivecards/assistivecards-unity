@@ -144,5 +144,10 @@ public class Board : MonoBehaviour
             CheckIfCardExists(cardToAdd);
         }
     }
+    public void ReadCard()
+    {
+        gameAPI.Speak(randomCards[0].title);
+    }
+
 
 }

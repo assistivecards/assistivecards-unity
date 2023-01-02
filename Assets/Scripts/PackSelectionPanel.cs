@@ -82,7 +82,7 @@ public class PackSelectionPanel : MonoBehaviour
 
             packElementGameObject.Add(packElement);
 
-            if (Application.productName == "silhouette" && packElement.name == "colors")
+            if (Application.productName == "silhouette" && (packElement.name == "colors" || packElement.name == "feelings"))
             {
                 packElement.SetActive(false);
             }

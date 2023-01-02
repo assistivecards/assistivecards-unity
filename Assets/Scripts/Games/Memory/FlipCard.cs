@@ -8,6 +8,7 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] private float x,y,z;
     [SerializeField] private CheckMatches checkMatches;
+    private Transform cardLogo;
     private Transform cardBack;
     public bool isCardBackActive = false;
     private int timer;
@@ -19,6 +20,7 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private void Awake() 
     {
         cardBack = this.transform.GetChild(1);
+        cardLogo = this.transform.GetChild(0).transform.GetChild(0);
         cardName = this.transform.GetChild(2);
     }
 
@@ -56,6 +58,7 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         if(checkMatches.flippedCards.Count < 2)
         {
             cardBack.gameObject.SetActive(true);
+            cardLogo.gameObject.SetActive(false);
             cardName.gameObject.SetActive(true);
             isCardBackActive = true;
             checkMatches.flippedCards.Add(this.gameObject);
@@ -66,6 +69,7 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         {
             checkMatches.CheckAllBoardFlip();
             cardBack.gameObject.SetActive(true);
+            cardLogo.gameObject.SetActive(false);
             cardName.gameObject.SetActive(true);
             isCardBackActive = true;
             checkMatches.flippedCards.Add(this.gameObject);
@@ -79,6 +83,7 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         if(isCardBackActive == true)
         {
             cardName.gameObject.SetActive(false);
+            cardLogo.gameObject.SetActive(true);
             cardBack.gameObject.SetActive(false);
             isCardBackActive = false;
             isInteractible = true;

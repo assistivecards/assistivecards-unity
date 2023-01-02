@@ -993,13 +993,14 @@ MonoBehaviour:
   gamePrefab: {fileID: 0}
   profileImage: {fileID: 1242831490599073471}
   nickname: 
+  fadeInPanel: {fileID: 0}
   nicknameInputField: {fileID: 1242831490310174670}
   nicknameText: {fileID: 1242831490266034156}
   canvas: {fileID: 1242831489334970574}
   popUp: {fileID: 1242831489349203873}
   settingScreen: {fileID: 1242831489818517041}
   settingScreenFadePanel: {fileID: 1242831489759745152}
-  fadePanel: {fileID: 3243679378983144236}
+  fadeOutPanel: {fileID: 0}
   mainSettingsScreen: {fileID: 1242831489410636797}
   parentLockScreen: {fileID: 1242831490843936576}
   profileScreen: {fileID: 1242831488916699448}
@@ -3504,6 +3505,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6658854895092712407, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+      propertyPath: m_Padding.m_Bottom
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 6658854895092712411, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_SizeDelta.y
       value: -653.7712
@@ -3662,11 +3667,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6658854895999461546, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 552.517
+      value: 940.1194
       objectReference: {fileID: 0}
     - target: {fileID: 6658854895999461546, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -501.85156
+      value: -695.6528
       objectReference: {fileID: 0}
     - target: {fileID: 6658854896032450631, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
       propertyPath: topAppBarController

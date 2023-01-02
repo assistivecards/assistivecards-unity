@@ -14,6 +14,7 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] CanvasController canvasController;
     GameAPI gameAPI;
     [SerializeField] GameObject helloText;
+    [SerializeField] GameObject speakerIcon;
     [SerializeField] GameObject fadeInPanel;
 
     private void Awake()
@@ -60,6 +61,7 @@ public class MainMenuController : MonoBehaviour
         LeanTween.scale(packSelectionPanel, Vector3.zero, 0.25f);
         Invoke("ClosePackSelectionPanel", 0.25f);
         helloText.SetActive(false);
+        speakerIcon.SetActive(false);
         await board.CacheCards(board.packSlug);
         // board.Invoke("GenerateRandomBoardAsync", 0.3f);
         await board.GenerateRandomBoardAsync();

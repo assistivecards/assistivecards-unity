@@ -21,6 +21,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
     [SerializeField] GameObject packSelectionPanel;
     [SerializeField] GameObject backButton;
     [SerializeField] GameObject helloText;
+    [SerializeField] GameObject speakerIcon;
     public static float onPointerUpTime;
     public static bool isPointerUp = false;
 
@@ -145,6 +146,8 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
         packSelectionPanel.transform.localScale = new Vector3(0, 0, 0);
         packSelectionPanel.SetActive(true);
         LeanTween.scale(packSelectionPanel, Vector3.one, 0.25f);
+        helloText.SetActive(true);
+        speakerIcon.SetActive(true);
     }
 
     public void CloseCheckpointPanelAndGenerateNewBoard()
@@ -182,6 +185,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
             LeanTween.scale(packSelectionPanel, Vector3.one, 0.25f);
             Invoke("EnableScrollRect", 0.25f);
             helloText.SetActive(true);
+            speakerIcon.SetActive(true);
         }
 
     }

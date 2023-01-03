@@ -9,6 +9,7 @@ public class GamePanelUIController : MonoBehaviour
     [SerializeField] private BoardGenerator boardGenerator;
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject helloText;
+    [SerializeField] private GameObject packSelectionScreen;
 
     private void Awake()
     {
@@ -31,6 +32,11 @@ public class GamePanelUIController : MonoBehaviour
         {
             backButton.SetActive(false);
             helloText.SetActive(false);
+        }
+        else if(packSelectionScreen.activeInHierarchy)
+        {
+            backButton.SetActive(false);
+            helloText.SetActive(true);
         }
         else
         {

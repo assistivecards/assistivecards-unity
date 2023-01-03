@@ -1766,6 +1766,7 @@ MonoBehaviour:
   boardGenerator: {fileID: 1755342021}
   backButton: {fileID: 1182242527}
   helloText: {fileID: 1760797331}
+  packSelectionScreen: {fileID: 1341134061}
 --- !u!1 &782895016
 GameObject:
   m_ObjectHideFlags: 0
@@ -2353,6 +2354,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1082417581}
         m_TargetAssemblyTypeName: LevelChangeScreenController, Assembly-CSharp
         m_MethodName: SelectNewClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 666197688}
+        m_TargetAssemblyTypeName: GamePanelUIController, Assembly-CSharp
+        m_MethodName: GamePanelUIControl
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

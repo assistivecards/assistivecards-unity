@@ -473,10 +473,10 @@ MonoBehaviour:
   - soundName: Finished
     clip: {fileID: 8300000, guid: dd699e0cf09cf3348be25ba4c5877c05, type: 3}
   - soundName: Success
-    clip: {fileID: 8300000, guid: d81901bf2fb96724aa1d7d1de4ab930b, type: 3}
+    clip: {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
   musicSource: {fileID: 1487501776}
   sfxSource: {fileID: 601693157}
-  musicClip: {fileID: 8300000, guid: a34fe2c72ed38e24a923f7a560237e68, type: 3}
+  musicClip: {fileID: 8300000, guid: 039cbb6c20b64344c842b7ca5ffd2ef8, type: 3}
   cards:
     cards: []
 --- !u!114 &519420034
@@ -696,7 +696,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1491,10 +1491,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3692490791332340629, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4167188124407339237, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
       propertyPath: board
       value: 
       objectReference: {fileID: 1021918976}
+    - target: {fileID: 4167188125176436162, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4333433417748293837, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -2351,9 +2359,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.6
+  m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

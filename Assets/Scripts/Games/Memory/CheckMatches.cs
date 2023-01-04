@@ -16,7 +16,7 @@ public class CheckMatches : MonoBehaviour
         boardGenerator = this.GetComponent<BoardGenerator>();
         levelManager = this.GetComponent<LevelManager>();
 
-        PlayerPrefs.HasKey("MemoryGameScore");
+        //PlayerPrefs.HasKey("MemoryGameScore");
         //score = PlayerPrefs.GetInt("MemoryGameScore");
     }
 
@@ -27,6 +27,8 @@ public class CheckMatches : MonoBehaviour
             if(flippedCards[0].transform.GetChild(1).name == flippedCards[1].transform.GetChild(1).name)
             {
                 Match();
+
+                //gameAPI.Speak(flippedCards[0].transform.GetChild(1).name);
             }
         }
     }

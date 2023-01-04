@@ -44,12 +44,12 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private void StartFlip()
     {
         isInteractible = false;
-        StartCoroutine(CalculateFlip());
+        CalculateFlipTween();
     }
 
     public void StartBackFlip()
     {
-        StartCoroutine(CalculateBackFlip());
+        CalculateBackFlipTween();
     }
 
 
@@ -90,35 +90,16 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
     }
 
-    private IEnumerator CalculateFlip()
+    private void CalculateFlipTween()
     {
-        for(int i = 0; i <180; i++)
-        {
-            yield return new WaitForSeconds(0.001f);
-            transform.Rotate(new Vector3(x,y,z));
-            timer++;
-
-            if(timer == 90 || timer == -90)
-            {
-                Flip();
-            }
-        }
-        timer = 0;
+        LeanTween.rotateY(this.gameObject, -180, 0.5f);
+        Invoke("Flip", 0.35f);
     }
 
-    IEnumerator CalculateBackFlip()
+    private void CalculateBackFlipTween()
     {
-        for(int i = 0; i <180; i++)
-        {
-            yield return new WaitForSeconds(0.001f);
-            transform.Rotate(new Vector3(x,y,z));
-            timer++;
-
-            if(timer == 90 || timer == -90)
-            {
-                BackFlip();
-            }
-        }
-        timer = 0;
+        LeanTween.rotateY(this.gameObject, 0, 0.5f);
+        LeanTween.rotateZ(this.gameObject, 180, 0.01f);
+        Invoke("BackFlip", 0.35f);
     }
 }

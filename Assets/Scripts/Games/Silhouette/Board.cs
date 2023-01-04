@@ -117,7 +117,7 @@ public class Board : MonoBehaviour
         for (int i = 0; i < silhouettes.Length; i++)
         {
             silhouettes[i].sprite = null;
-            silhouettes[i].color = Color.black;
+            silhouettes[i].color = new Color32(0, 0, 0, 200);
         }
 
     }

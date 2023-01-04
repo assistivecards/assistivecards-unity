@@ -28,7 +28,7 @@ public class CheckMatches : MonoBehaviour
             {
                 Match();
 
-                //gameAPI.Speak(flippedCards[0].transform.GetChild(1).name);
+                gameAPI.Speak(flippedCards[0].transform.GetChild(1).name);
             }
         }
     }

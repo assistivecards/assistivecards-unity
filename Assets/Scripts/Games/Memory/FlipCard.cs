@@ -6,6 +6,7 @@ using TMPro;
 
 public class FlipCard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
+    GameAPI gameAPI;
     [SerializeField] private float x,y,z;
     [SerializeField] private CheckMatches checkMatches;
     private Transform cardLogo;
@@ -19,6 +20,7 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void Awake() 
     {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
         cardBack = this.transform.GetChild(1);
         cardLogo = this.transform.GetChild(0).transform.GetChild(0);
         cardName = this.transform.GetChild(2);
@@ -93,6 +95,7 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private void CalculateFlipTween()
     {
         LeanTween.rotateY(this.gameObject, -180, 0.5f);
+        gameAPI.PlaySFX("CardFlip");
         Invoke("Flip", 0.35f);
     }
 
@@ -100,6 +103,7 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         LeanTween.rotateY(this.gameObject, 0, 0.5f);
         LeanTween.rotateZ(this.gameObject, 180, 0.01f);
+        gameAPI.PlaySFX("CardBackFlip");
         Invoke("BackFlip", 0.35f);
     }
 }

@@ -717,6 +717,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
   - soundName: Card
     clip: {fileID: 8300000, guid: 98753dce81f965b4bbf6df68883a9f79, type: 3}
+  - soundName: CardFlip
+    clip: {fileID: 8300000, guid: 5fbdf8f9ebef6415ea4156e0c314686f, type: 3}
+  - soundName: CardBackFlip
+    clip: {fileID: 8300000, guid: 9f4ebd328c8a54d58aed1a981e3ee858, type: 3}
   musicSource: {fileID: 1487501776}
   sfxSource: {fileID: 601693157}
   musicClip: {fileID: 8300000, guid: 980d9e7fa483808439c454075f22a3aa, type: 3}

@@ -160,6 +160,7 @@ public class TopAppBarController : MonoBehaviour
                 gameAPI.SetNickname(profileEditor.nicknameInputField.text);
                 canvas.GetComponent<CanvasController>().ProfilePanelUpdate();
                 profileEditorSettingScreenButton.SetAvatarImageOnGamePanel();
+                gameCanvas.GetComponent<LanguageTest>().OnNicknameChange();
             }
             if (canvasController.currentScreen.name == "Accessibility")
             {

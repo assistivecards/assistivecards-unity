@@ -1484,6 +1484,10 @@ PrefabInstance:
       value: -244
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489627212145, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: gameCanvas
+      value: 
+      objectReference: {fileID: 3312234164850283327}
+    - target: {fileID: 1242831489627212145, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: gamePrefab
       value: 
       objectReference: {fileID: 3312234164850283327}

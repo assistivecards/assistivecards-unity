@@ -10,6 +10,7 @@ public class LoginContoller : MonoBehaviour
     [Header("API Connection")]
     GameAPI gameAPI;
     [SerializeField] private CanvasController canvasController;
+    [SerializeField] GameObject gameCanvas;
 
     [Header("LoginPage UI Assests")]
     [SerializeField] private GameObject loginUI;
@@ -55,6 +56,8 @@ public class LoginContoller : MonoBehaviour
     public void NextButtonClicked()
     {
         gameAPI.SetNickname(nicknameInputField.text);
+        gameCanvas.GetComponent<LanguageTest>().OnNicknameChange();
+
         canvasController.ProfilePanelUpdate();
         this.gameObject.SetActive(false);
 

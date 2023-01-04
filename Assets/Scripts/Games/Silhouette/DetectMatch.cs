@@ -148,6 +148,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
         LeanTween.scale(packSelectionPanel, Vector3.one, 0.25f);
         helloText.SetActive(true);
         speakerIcon.SetActive(true);
+        Invoke("EnableScrollRect", 0.26f);
     }
 
     public void CloseCheckpointPanelAndGenerateNewBoard()
@@ -183,7 +184,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
             rt.offsetMax = new Vector2(rt.offsetMax.x, 0);
             packSelectionPanel.SetActive(true);
             LeanTween.scale(packSelectionPanel, Vector3.one, 0.25f);
-            Invoke("EnableScrollRect", 0.25f);
+            Invoke("EnableScrollRect", 0.26f);
             helloText.SetActive(true);
             speakerIcon.SetActive(true);
         }

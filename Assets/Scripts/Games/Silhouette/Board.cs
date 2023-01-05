@@ -117,18 +117,18 @@ public class Board : MonoBehaviour
         for (int i = 0; i < silhouettes.Length; i++)
         {
             silhouettes[i].sprite = null;
-            silhouettes[i].color = Color.black;
+            silhouettes[i].color = new Color32(0, 0, 0, 200);
         }
 
     }
 
     public void ScaleImagesUp()
     {
-        LeanTween.scale(cardName.gameObject, Vector3.one, 0.25f);
-        LeanTween.scale(shown.gameObject, Vector3.one, 0.25f);
+        LeanTween.scale(cardName.gameObject, Vector3.one, 0.15f);
+        LeanTween.scale(shown.gameObject, Vector3.one, 0.15f);
         for (int i = 0; i < silhouettes.Length; i++)
         {
-            LeanTween.scale(silhouettes[i].gameObject, Vector3.one, 0.25f);
+            LeanTween.scale(silhouettes[i].gameObject, Vector3.one, 0.15f);
         }
 
     }

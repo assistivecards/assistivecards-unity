@@ -19,6 +19,7 @@ public class PackSelectionPanel : MonoBehaviour
     [SerializeField] string currentLanguageCode;
     public static bool didLanguageChange = false;
     [SerializeField] GameObject loadingPanel;
+    [SerializeField] GameObject packSelectionPanel;
 
     private void Awake()
     {
@@ -89,6 +90,8 @@ public class PackSelectionPanel : MonoBehaviour
 
         }
         tempPackElement.SetActive(false);
+
+        Invoke("ScalePackSelectionPanelUp", 0.5f);
     }
 
     public void PackSelected(GameObject _PackElement)
@@ -96,6 +99,20 @@ public class PackSelectionPanel : MonoBehaviour
         selectedPackElement = _PackElement;
 
         Debug.Log(_PackElement.ToString());
+    }
+
+    public void ScalePackSelectionPanelUp()
+    {
+        packSelectionPanel.transform.GetChild(0).GetComponent<ScrollRect>().enabled = false;
+        var rt = packSelectionPanel.transform.GetChild(0).GetChild(0).GetComponent<RectTransform>();
+        rt.offsetMax = new Vector2(rt.offsetMax.x, 0);
+        LeanTween.scale(packSelectionPanel, Vector3.one, 0.15f);
+        Invoke("EnableScrollRect", 0.15f);
+    }
+
+    public void EnableScrollRect()
+    {
+        packSelectionPanel.transform.GetChild(0).GetComponent<ScrollRect>().enabled = true;
     }
 
 }

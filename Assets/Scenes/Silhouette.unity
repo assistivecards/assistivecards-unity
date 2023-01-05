@@ -1499,10 +1499,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3692490791332340629, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4167188124407339237, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
       propertyPath: board
       value: 

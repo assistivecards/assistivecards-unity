@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 8493332994391254736}
   - component: {fileID: 2118041456342912147}
   - component: {fileID: 1297223597028702}
+  - component: {fileID: 1333758729316772762}
   m_Layer: 5
   m_Name: DiamondParent
   m_TagString: Untagged
@@ -153,6 +154,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1333758729316772762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2245532059702659476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97bc2ebab6563400c95b036136d26ea6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Inverse: 0
+  m_MaskInteraction: 85
+  m_UseStencil: 1
+  m_RaycastFilter: 0
 --- !u!1 &2777963643403832033
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,7 +331,8 @@ GameObject:
   - component: {fileID: 3692490791046195465}
   - component: {fileID: 3692490791046195470}
   - component: {fileID: 3692490791046195471}
-  - component: {fileID: 3692490791046195468}
+  - component: {fileID: 5840236496613500664}
+  - component: {fileID: 2391253489230893291}
   m_Layer: 5
   m_Name: PackSelectionScroll
   m_TagString: Untagged
@@ -394,14 +412,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.019607844}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f4b7d07d066931440aa2570577e4f454, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -411,7 +429,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3692490791046195468
+--- !u!114 &5840236496613500664
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -420,10 +438,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 3692490791046195458}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 385b7d1277b6c4007a84c065696e0f8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
+  m_ShowMaskGraphic: 0
+  m_DownSamplingRate: 1
+  m_Softness: 0.015
+  m_Alpha: 1
+  m_IgnoreParent: 0
+  m_PartOfParent: 0
+  m_IgnoreSelfGraphic: 0
+  m_IgnoreSelfStencil: 0
+--- !u!114 &2391253489230893291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3692490791046195458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dfef7e0999f0be4ea0d6d1aa3999462, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3692490791295250121
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,6 +472,7 @@ GameObject:
   - component: {fileID: 3692490791295250120}
   - component: {fileID: 3692490791295250122}
   - component: {fileID: 3692490791295250123}
+  - component: {fileID: 136190136274421389}
   m_Layer: 5
   m_Name: PackName
   m_TagString: Untagged
@@ -559,6 +597,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &136190136274421389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3692490791295250121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97bc2ebab6563400c95b036136d26ea6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Inverse: 0
+  m_MaskInteraction: 85
+  m_UseStencil: 1
+  m_RaycastFilter: 0
 --- !u!1 &3692490791318219744
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,6 +624,7 @@ GameObject:
   - component: {fileID: 3692490791318219747}
   - component: {fileID: 3692490791318219757}
   - component: {fileID: 3692490791318219746}
+  - component: {fileID: 1409016456291772499}
   m_Layer: 5
   m_Name: PackImage
   m_TagString: Untagged
@@ -635,6 +690,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1409016456291772499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3692490791318219744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97bc2ebab6563400c95b036136d26ea6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Inverse: 0
+  m_MaskInteraction: 85
+  m_UseStencil: 1
+  m_RaycastFilter: 0
 --- !u!1 &3692490791332340629
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,6 +719,7 @@ GameObject:
   - component: {fileID: 3692490791332340631}
   - component: {fileID: 3692490791332340625}
   - component: {fileID: 929716367801843293}
+  - component: {fileID: 3779305877931254950}
   m_Layer: 5
   m_Name: PackSelectionPrefab
   m_TagString: Untagged
@@ -804,6 +876,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3779305877931254950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3692490791332340629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97bc2ebab6563400c95b036136d26ea6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Inverse: 0
+  m_MaskInteraction: 85
+  m_UseStencil: 1
+  m_RaycastFilter: 0
 --- !u!1 &3692490791378689545
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,6 +982,9 @@ GameObject:
   - component: {fileID: 3692490791404095315}
   - component: {fileID: 4167188125313452917}
   - component: {fileID: 4167188124407339237}
+  - component: {fileID: 1111439711894955903}
+  - component: {fileID: 4918079943885612478}
+  - component: {fileID: 3018821701644724035}
   m_Layer: 5
   m_Name: PackSelectionLayout
   m_TagString: Untagged
@@ -1000,6 +1091,60 @@ MonoBehaviour:
   helloText: {fileID: 3312234165196700198}
   speakerIcon: {fileID: 6746530550862297825}
   fadeInPanel: {fileID: 2134980509363079481}
+--- !u!222 &1111439711894955903
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3692490791404095316}
+  m_CullTransparentMesh: 1
+--- !u!114 &4918079943885612478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3692490791404095316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3018821701644724035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3692490791404095316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97bc2ebab6563400c95b036136d26ea6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Inverse: 0
+  m_MaskInteraction: 85
+  m_UseStencil: 1
+  m_RaycastFilter: 0
 --- !u!1 &3692490792505779608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,6 +1156,7 @@ GameObject:
   - component: {fileID: 3692490792505779611}
   - component: {fileID: 3692490792505779589}
   - component: {fileID: 3692490792505779610}
+  - component: {fileID: 1580714890621454436}
   m_Layer: 5
   m_Name: Diamond
   m_TagString: Untagged
@@ -1076,6 +1222,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1580714890621454436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3692490792505779608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97bc2ebab6563400c95b036136d26ea6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Inverse: 0
+  m_MaskInteraction: 85
+  m_UseStencil: 1
+  m_RaycastFilter: 0
 --- !u!1 &4167188125176436162
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,13 @@
       },
       "hash": "8f60f1990ed460c5e0fd2d9f60e4ff5893af99ad"
     },
+    "com.coffee.softmask-for-ugui": {
+      "version": "https://github.com/mob-sakai/SoftMaskForUGUI.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "b870d64b5704a764fd03aaccb11f2dbe652b1756"
+    },
     "com.unity.2d.animation": {
       "version": "8.0.5",
       "depth": 1,

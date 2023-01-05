@@ -44,5 +44,4 @@ public class GamePanelUIController : MonoBehaviour
             helloText.SetActive(true);
         }
     }
-
 }

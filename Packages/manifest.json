@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.assistivecards.sdk": "https://github.com/assistivecards/assistivecards-sdk.git",
+    "com.coffee.softmask-for-ugui": "https://github.com/mob-sakai/SoftMaskForUGUI.git",
     "com.unity.collab-proxy": "1.17.6",
     "com.unity.feature.2d": "1.0.0",
     "com.unity.ide.rider": "3.0.16",

@@ -7,6 +7,7 @@ public class GameBackButton : MonoBehaviour
     [SerializeField] private GameObject cardGrid;
     [SerializeField] private BoardGenerator boardGenerator;
     [SerializeField] private GameObject packSelectionPanel;
+    [SerializeField] private GameObject levelChangeScreen;
     [SerializeField] private GameObject levelDifficultySelectionPanel;
     [SerializeField] private GamePanelUIController gamePanelUIController;
 
@@ -16,6 +17,8 @@ public class GameBackButton : MonoBehaviour
         packSelectionPanel.SetActive(true);
         levelDifficultySelectionPanel.SetActive(false);
         levelDifficultySelectionPanel.GetComponent<DifficultSelectionPanelTween>().isOnDifficultyScene = false;
+        levelChangeScreen.SetActive(false);
+        levelChangeScreen.GetComponent<LevelChangeScreenController>().isOnLevelChange = false;
         boardGenerator.ResetBoard();
         boardGenerator.isInGame = false;
         gamePanelUIController.GamePanelUIControl();

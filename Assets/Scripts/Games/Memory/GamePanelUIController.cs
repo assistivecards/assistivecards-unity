@@ -12,6 +12,7 @@ public class GamePanelUIController : MonoBehaviour
     [SerializeField] private GameObject helloText;
     [SerializeField] private GameObject speakerIcon;
     [SerializeField] private GameObject packSelectionScreen;
+    [SerializeField] private GameObject transitionScreen;
 
     private void Awake()
     {
@@ -21,6 +22,11 @@ public class GamePanelUIController : MonoBehaviour
     private void OnEnable() 
     {
         gameAPI.PlayMusic();
+    }
+
+    private void Update() 
+    {
+        GamePanelUIControl();
     }
 
     public void GamePanelUIControl()
@@ -48,6 +54,12 @@ public class GamePanelUIController : MonoBehaviour
             backButton.SetActive(false);
             helloText.SetActive(true);
             speakerIcon.SetActive(true);
+        }
+        else if(transitionScreen.activeInHierarchy)
+        {
+            backButton.SetActive(false);
+            helloText.SetActive(false);
+            speakerIcon.SetActive(false);
         }
         else
         {

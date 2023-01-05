@@ -204,17 +204,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3699884338922838543, guid: 5bb4841276ee74ee38e00403db5fef74, type: 3}
   m_PrefabInstance: {fileID: 3699884338873676651}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &52324712 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3699884338922838531, guid: 5bb4841276ee74ee38e00403db5fef74, type: 3}
-  m_PrefabInstance: {fileID: 3699884338873676651}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 52324708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b60e62a0d46a4294b36d1df42dc4f9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &52324715 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3699884338922838542, guid: 5bb4841276ee74ee38e00403db5fef74, type: 3}
@@ -1072,7 +1061,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3692490791332340625, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3692490791332340625, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
@@ -1635,6 +1624,7 @@ MonoBehaviour:
   helloText: {fileID: 1760797331}
   speakerIcon: {fileID: 1932234346}
   packSelectionScreen: {fileID: 405556392}
+  transitionScreen: {fileID: 52324708}
 --- !u!1 &782895016
 GameObject:
   m_ObjectHideFlags: 0
@@ -2353,6 +2343,7 @@ MonoBehaviour:
   packSelectionPanel: {fileID: 405556392}
   levelChangeScreen: {fileID: 1082417580}
   levelDifficultySelectionPanel: {fileID: 2124035450}
+  transitionScreen: {fileID: 52324708}
   gamePanelUIController: {fileID: 666197688}
 --- !u!114 &1182242530
 MonoBehaviour:
@@ -2401,18 +2392,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1182242529}
         m_TargetAssemblyTypeName: GameBackButton, Assembly-CSharp
         m_MethodName: GameBackButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 666197688}
-        m_TargetAssemblyTypeName: GamePanelUIController, Assembly-CSharp
-        m_MethodName: GamePanelUIControl
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3298,7 +3277,6 @@ MonoBehaviour:
   transitionScreen: {fileID: 52324708}
   levelChangeScreen: {fileID: 1082417580}
   difficultySelectionScreen: {fileID: 2124035450}
-  transitionScreenManager: {fileID: 52324712}
   boardGenerator: {fileID: 1755342021}
   packSelectionPanel: {fileID: 1095554856}
   levelChangeScreenController: {fileID: 1082417581}
@@ -3916,6 +3894,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: TransitionScreen
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3699884338922838531, guid: 5bb4841276ee74ee38e00403db5fef74, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bb4841276ee74ee38e00403db5fef74, type: 3}

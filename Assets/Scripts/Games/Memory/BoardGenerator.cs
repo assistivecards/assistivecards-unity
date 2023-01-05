@@ -128,17 +128,6 @@ public class BoardGenerator : MonoBehaviour
         CheckClones();
         isInGame = true;
         gamePanelUIController.GamePanelUIControl();
-
-
-        foreach(int randomValue in randomValueList)
-        {
-            Debug.Log("element: " + randomValue);
-        }
-    }
-
-    private void CheckBoardRepeatedCards()
-    {
-        
     }
 
     private void FadeOutTransitionScreen()
@@ -149,7 +138,6 @@ public class BoardGenerator : MonoBehaviour
 
     private void CloseTransitionScreen()
     {
-        transitionScreen.GetComponent<TransitionScreenManager>().loadingBar.value = 0;
         LeanTween.scale(this.gameObject, Vector3.one, 0.15f);
         transitionScreen.SetActive(false);
     }

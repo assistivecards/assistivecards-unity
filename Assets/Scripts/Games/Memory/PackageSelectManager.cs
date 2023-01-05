@@ -7,7 +7,6 @@ public class PackageSelectManager : MonoBehaviour
     [SerializeField] private GameObject transitionScreen;
     [SerializeField] private GameObject levelChangeScreen;
     [SerializeField] private GameObject difficultySelectionScreen;
-    [SerializeField] private TransitionScreenManager transitionScreenManager;
     [SerializeField] private BoardGenerator boardGenerator;
     [SerializeField] private PackSelectionPanel packSelectionPanel;
     [SerializeField] private LevelChangeScreenController levelChangeScreenController;
@@ -40,7 +39,6 @@ public class PackageSelectManager : MonoBehaviour
         boardGenerator.ResetBoard();
         boardGenerator.CheckClones();
         await boardGenerator.CacheCards(selectedPack);
-        transitionScreenManager.IncrementProgress(1);
     }
 
     public async void GenerateStylizedBoard(int cardCount)
@@ -48,6 +46,5 @@ public class PackageSelectManager : MonoBehaviour
         boardGenerator.ResetBoard();
         boardGenerator.CheckClones();
         boardGenerator.cardNumber = cardCount;
-        transitionScreenManager.IncrementProgress(1);
     }
 }

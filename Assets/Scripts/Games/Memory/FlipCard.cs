@@ -94,14 +94,14 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void CalculateFlipTween()
     {
-        LeanTween.rotateY(this.gameObject, -180, 0.5f);
+        LeanTween.rotateY(this.gameObject, -180, 0.6f);
         gameAPI.PlaySFX("CardFlip");
         Invoke("Flip", 0.35f);
     }
 
     private void CalculateBackFlipTween()
     {
-        LeanTween.rotateY(this.gameObject, 0, 0.5f);
+        LeanTween.rotateY(this.gameObject, 0, 0.6f);
         LeanTween.rotateZ(this.gameObject, 180, 0.01f);
         gameAPI.PlaySFX("CardBackFlip");
         Invoke("BackFlip", 0.35f);

@@ -1072,7 +1072,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3692490791332340625, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3692490791332340625, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
@@ -1080,6 +1080,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3692490791332340625, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692490791332340625, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3692490791332340625, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
@@ -1091,11 +1095,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 405556394}
     - target: {fileID: 3692490791332340625, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 666197688}
+    - target: {fileID: 3692490791332340625, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3692490791332340625, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692490791332340625, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3692490791332340625, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
@@ -1107,6 +1119,10 @@ PrefabInstance:
       value: ClosePackPanelTween
       objectReference: {fileID: 0}
     - target: {fileID: 3692490791332340625, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: GamePanelUIControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692490791332340625, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: PackageSelectManager, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -1115,11 +1131,19 @@ PrefabInstance:
       value: PackSelectionScreenUIController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3692490791332340625, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      value: GamePanelUIController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692490791332340625, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3692490791332340625, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692490791332340625, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3692490791404095319, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
@@ -1605,9 +1629,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelChangeScreenController: {fileID: 1082417581}
+  difficultSelectionPanelTween: {fileID: 2124035455}
   boardGenerator: {fileID: 1755342021}
   backButton: {fileID: 1182242527}
   helloText: {fileID: 1760797331}
+  speakerIcon: {fileID: 1932234346}
   packSelectionScreen: {fileID: 405556392}
 --- !u!1 &782895016
 GameObject:
@@ -2374,6 +2400,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1182242529}
         m_TargetAssemblyTypeName: GameBackButton, Assembly-CSharp
         m_MethodName: GameBackButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 666197688}
+        m_TargetAssemblyTypeName: GamePanelUIController, Assembly-CSharp
+        m_MethodName: GamePanelUIControl
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3552,6 +3590,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1873958375}
   m_CullTransparentMesh: 1
+--- !u!1 &1932234346 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6746530550862297825, guid: 3bf61b24bd7932a4ab4d7dbaeaae8d93, type: 3}
+  m_PrefabInstance: {fileID: 563855968}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2124035450
 GameObject:
   m_ObjectHideFlags: 0
@@ -3648,6 +3691,7 @@ MonoBehaviour:
   easyButton: {fileID: 1335280063}
   normalButton: {fileID: 1719331047}
   hardButton: {fileID: 924569348}
+  isOnDifficultyScene: 0
 --- !u!1001 &804781095414775615
 PrefabInstance:
   m_ObjectHideFlags: 0

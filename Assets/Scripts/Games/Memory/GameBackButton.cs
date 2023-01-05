@@ -14,6 +14,8 @@ public class GameBackButton : MonoBehaviour
     {
         LeanTween.scale(cardGrid, Vector3.one * 0.0001f, 0.01f);
         packSelectionPanel.SetActive(true);
+        levelDifficultySelectionPanel.SetActive(false);
+        levelDifficultySelectionPanel.GetComponent<DifficultSelectionPanelTween>().isOnDifficultyScene = false;
         boardGenerator.ResetBoard();
         boardGenerator.isInGame = false;
         gamePanelUIController.GamePanelUIControl();

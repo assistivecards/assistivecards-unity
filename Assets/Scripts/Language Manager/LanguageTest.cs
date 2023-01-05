@@ -48,7 +48,7 @@ public class LanguageTest : MonoBehaviour
         mainCanvasVariableArray.Add(nickname);
         gameCanvasVariableArray.Add(nickname);
 
-        if (gameObject.name == "Canvas")
+        if (gameObject.name == "Settings")
         {
             for (int i = 0; i < textsWithVariable.Count; i++)
             {

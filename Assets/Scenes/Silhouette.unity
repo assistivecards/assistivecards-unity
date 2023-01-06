@@ -482,7 +482,7 @@ MonoBehaviour:
   - soundName: Card
     clip: {fileID: 8300000, guid: 98753dce81f965b4bbf6df68883a9f79, type: 3}
   - soundName: Finished
-    clip: {fileID: 8300000, guid: dd699e0cf09cf3348be25ba4c5877c05, type: 3}
+    clip: {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
   - soundName: Success
     clip: {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
   musicSource: {fileID: 1487501776}

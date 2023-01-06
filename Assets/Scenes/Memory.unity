@@ -2262,6 +2262,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1506256902 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2614298550212186649, guid: 631eedefcd7727c44960f49fc60b3afb, type: 3}
+  m_PrefabInstance: {fileID: 698253393274164406}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1547025069
 GameObject:
   m_ObjectHideFlags: 0
@@ -3162,6 +3173,30 @@ PrefabInstance:
       propertyPath: fadeOutPanel
       value: 
       objectReference: {fileID: 3015831911493978795}
+    - target: {fileID: 2614298551169739942, guid: 631eedefcd7727c44960f49fc60b3afb, type: 3}
+      propertyPath: profileScreenNicknameInputField
+      value: 
+      objectReference: {fileID: 1506256902}
+    - target: {fileID: 2614298551321444229, guid: 631eedefcd7727c44960f49fc60b3afb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614298551321444229, guid: 631eedefcd7727c44960f49fc60b3afb, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614298551321444229, guid: 631eedefcd7727c44960f49fc60b3afb, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614298551321444229, guid: 631eedefcd7727c44960f49fc60b3afb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614298551321444229, guid: 631eedefcd7727c44960f49fc60b3afb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2614298551334375095, guid: 631eedefcd7727c44960f49fc60b3afb, type: 3}
       propertyPath: settingScreenButton
       value: 
@@ -3290,6 +3325,22 @@ PrefabInstance:
       propertyPath: profileEditorSettingScreenButton
       value: 
       objectReference: {fileID: 3312234165338258299}
+    - target: {fileID: 8593459912489866831, guid: 631eedefcd7727c44960f49fc60b3afb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8593459912489866831, guid: 631eedefcd7727c44960f49fc60b3afb, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8593459912489866831, guid: 631eedefcd7727c44960f49fc60b3afb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8593459912489866831, guid: 631eedefcd7727c44960f49fc60b3afb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 631eedefcd7727c44960f49fc60b3afb, type: 3}

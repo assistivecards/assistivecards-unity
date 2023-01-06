@@ -35,6 +35,7 @@ public class TopAppBarController : MonoBehaviour
     public Toggle promotionsNotificationToggle;
 
     [Header("Misc")]
+    [SerializeField] private GameObject warningNickname;
     [SerializeField] private SampleWebView sendFeedbackSampleWebView;
     [SerializeField] private SettingScreenButton profileEditorSettingScreenButton;
     private CanvasController canvasController;
@@ -157,10 +158,18 @@ public class TopAppBarController : MonoBehaviour
             if (canvasController.currentScreen.name == "Profile")
             {
                 profileEditor = canvasController.currentScreen.GetComponentInParent<ProfileEditor>();
-                gameAPI.SetNickname(profileEditor.nicknameInputField.text);
-                canvas.GetComponent<CanvasController>().ProfilePanelUpdate();
-                profileEditorSettingScreenButton.SetAvatarImageOnGamePanel();
-                gameCanvas.GetComponent<LanguageTest>().OnNicknameChange();
+
+                if(profileEditor.nicknameInputField.text.Length < 14)
+                {
+                    gameAPI.SetNickname(profileEditor.nicknameInputField.text);
+                    canvas.GetComponent<CanvasController>().ProfilePanelUpdate();
+                    profileEditorSettingScreenButton.SetAvatarImageOnGamePanel();
+                    gameCanvas.GetComponent<LanguageTest>().OnNicknameChange();
+                }
+                else
+                {
+                    warningNickname.SetActive(true);
+                }
             }
             if (canvasController.currentScreen.name == "Accessibility")
             {

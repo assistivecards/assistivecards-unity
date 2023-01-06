@@ -38,6 +38,10 @@ public class LoginContoller : MonoBehaviour
         nicknameInputField.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
 
     }
+    private void OnEnable() 
+    {
+        warningNickname.SetActive(false);
+    }
     public void ValueChangeCheck()
     {
         gameAPI.SetNickname(nicknameInputField.text);

@@ -209,5 +209,7 @@
 	"difficulty_selection_easy":"Easy",
 	"difficulty_selection_normal":"Normal",
 	"difficulty_selection_hard":"Hard",
-	"play":"Play"
+	"play":"Play",
+	"warning-nickname":"Nickname is too long!"
+	
 }

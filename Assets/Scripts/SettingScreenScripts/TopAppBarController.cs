@@ -165,6 +165,7 @@ public class TopAppBarController : MonoBehaviour
                     canvas.GetComponent<CanvasController>().ProfilePanelUpdate();
                     profileEditorSettingScreenButton.SetAvatarImageOnGamePanel();
                     gameCanvas.GetComponent<LanguageTest>().OnNicknameChange();
+                    warningNickname.SetActive(false);
                 }
                 else
                 {

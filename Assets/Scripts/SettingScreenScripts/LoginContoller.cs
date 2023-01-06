@@ -26,6 +26,7 @@ public class LoginContoller : MonoBehaviour
     [Header("Screen Prefabs")]
     [SerializeField] private GameObject loginPrefab;
     [SerializeField] GameObject fadeOutPanel;
+    [SerializeField] private TMP_InputField profileScreenNicknameInputField;
 
 
 
@@ -57,6 +58,7 @@ public class LoginContoller : MonoBehaviour
     {
         gameAPI.SetNickname(nicknameInputField.text);
         gameCanvas.GetComponent<LanguageTest>().OnNicknameChange();
+        profileScreenNicknameInputField.text = gameAPI.GetNickname();
 
         canvasController.ProfilePanelUpdate();
         this.gameObject.SetActive(false);

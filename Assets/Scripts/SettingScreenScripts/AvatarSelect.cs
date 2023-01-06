@@ -14,14 +14,14 @@ public class AvatarSelect : MonoBehaviour
         avatarSelection = GameObject.FindGameObjectWithTag("avatarSelection");
 
     }
-    private void Start() 
+    private void Start()
     {
-        canvas = GameObject.Find("Canvas");
+        canvas = GameObject.Find("Settings");
         canvasController = canvas.GetComponent<CanvasController>();
     }
     public void SelectAvatar()
     {
-        if(avatarSelection != null)
+        if (avatarSelection != null)
         {
             LeanTween.scale(avatarSelection, Vector3.one * 0.9f, 0.15f);
         }
@@ -31,7 +31,7 @@ public class AvatarSelect : MonoBehaviour
 
     private void SceneSetActiveFalse()
     {
-        if(avatarSelection != null)
+        if (avatarSelection != null)
         {
             avatarSelection.SetActive(false);
 

@@ -89,7 +89,7 @@ public class LanguageTest : MonoBehaviour
         Speakable.locale = await gameAPI.GetSelectedLocale();
         var langCode = await gameAPI.GetSystemLanguageCode();
 
-        if (gameObject.name == "Canvas")
+        if (gameObject.name == "Settings")
         {
             for (int i = 0; i < textsWithVariable.Count; i++)
             {
@@ -130,7 +130,7 @@ public class LanguageTest : MonoBehaviour
         mainCanvasVariableArray.Add(nickname);
         gameCanvasVariableArray.Add(nickname);
 
-        if (gameObject.name == "Canvas")
+        if (gameObject.name == "Settings")
         {
             for (int i = 0; i < textsWithVariable.Count; i++)
             {

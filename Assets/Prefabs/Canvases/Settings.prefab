@@ -4384,6 +4384,10 @@ PrefabInstance:
       propertyPath: backgroundFadePanel
       value: 
       objectReference: {fileID: 6110780556647105807}
+    - target: {fileID: 5546718070684903927, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
+      propertyPath: profileScreenNicknameInputField
+      value: 
+      objectReference: {fileID: 1242831490310174670}
     - target: {fileID: 5546718070684903929, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
       propertyPath: m_IsActive
       value: 1

@@ -1661,6 +1661,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gamePanel: {fileID: 2186485482097709308}
+--- !u!114 &1479402557 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1242831490310174670, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+  m_PrefabInstance: {fileID: 4379759206372183549}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1487501774
 GameObject:
   m_ObjectHideFlags: 0
@@ -4574,6 +4585,10 @@ PrefabInstance:
       propertyPath: fadeOutPanel
       value: 
       objectReference: {fileID: 976102660}
+    - target: {fileID: 1242831489627212145, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: profileScreenNicknameInputField
+      value: 
+      objectReference: {fileID: 1479402557}
     - target: {fileID: 1242831489636471656, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 111.00002

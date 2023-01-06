@@ -535,7 +535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7183307421812904613, guid: 22223fca9c8c0f640bab443d30aa8f99, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7183307422647017346, guid: 22223fca9c8c0f640bab443d30aa8f99, type: 3}
       propertyPath: helloText
@@ -559,7 +559,7 @@ PrefabInstance:
       objectReference: {fileID: 2018903310}
     - target: {fileID: 7591577210906486002, guid: 22223fca9c8c0f640bab443d30aa8f99, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -752,17 +752,6 @@ MonoBehaviour:
   languageInputField: {fileID: 0}
   localeInputField: {fileID: 0}
   canvas: {fileID: 1021200297}
---- !u!114 &1049243040 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1242831490310174670, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
-  m_PrefabInstance: {fileID: 1242831489266657176}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1120600894
 GameObject:
   m_ObjectHideFlags: 0
@@ -2010,10 +1999,6 @@ PrefabInstance:
       propertyPath: fadeOutPanel
       value: 
       objectReference: {fileID: 1513138205}
-    - target: {fileID: 1242831489627212145, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
-      propertyPath: profileScreenNicknameInputField
-      value: 
-      objectReference: {fileID: 1049243040}
     - target: {fileID: 1242831489636471656, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 111.00002

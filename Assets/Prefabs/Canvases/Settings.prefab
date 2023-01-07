@@ -889,7 +889,7 @@ GameObject:
   - component: {fileID: 1242831489334970563}
   - component: {fileID: 1242831489334970564}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -909,7 +909,7 @@ RectTransform:
   m_Children:
   - {fileID: 1242831490776755392}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4384,6 +4384,10 @@ PrefabInstance:
       propertyPath: backgroundFadePanel
       value: 
       objectReference: {fileID: 6110780556647105807}
+    - target: {fileID: 5546718070684903927, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
+      propertyPath: profileScreenNicknameInputField
+      value: 
+      objectReference: {fileID: 1242831490310174670}
     - target: {fileID: 5546718070684903929, guid: e3bb052563e5b62498b6a25d8a71b60b, type: 3}
       propertyPath: m_IsActive
       value: 1

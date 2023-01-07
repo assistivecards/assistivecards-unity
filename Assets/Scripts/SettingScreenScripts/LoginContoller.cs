@@ -17,6 +17,7 @@ public class LoginContoller : MonoBehaviour
     public TMP_InputField nicknameInputField;
     [SerializeField] private Button nextButton;
     [SerializeField] private Image backgroundFadePanel;
+    [SerializeField] private GameObject warningNickname;
 
     [Header("Screens")]
     [SerializeField] private GameObject avatarSelectionScreen;
@@ -26,6 +27,7 @@ public class LoginContoller : MonoBehaviour
     [Header("Screen Prefabs")]
     [SerializeField] private GameObject loginPrefab;
     [SerializeField] GameObject fadeOutPanel;
+    [SerializeField] private TMP_InputField profileScreenNicknameInputField;
 
 
 
@@ -35,6 +37,10 @@ public class LoginContoller : MonoBehaviour
 
         nicknameInputField.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
 
+    }
+    private void OnEnable() 
+    {
+        warningNickname.SetActive(false);
     }
     public void ValueChangeCheck()
     {
@@ -55,17 +61,26 @@ public class LoginContoller : MonoBehaviour
     }
     public void NextButtonClicked()
     {
-        gameAPI.SetNickname(nicknameInputField.text);
-        gameCanvas.GetComponent<LanguageTest>().OnNicknameChange();
+        if(nicknameInputField.text.Length < 14)
+        {
+            gameAPI.SetNickname(nicknameInputField.text);
+            gameCanvas.GetComponent<LanguageTest>().OnNicknameChange();
+            profileScreenNicknameInputField.text = gameAPI.GetNickname();
 
-        canvasController.ProfilePanelUpdate();
-        this.gameObject.SetActive(false);
+            canvasController.ProfilePanelUpdate();
+            this.gameObject.SetActive(false);
 
-        avatarSelectionScreen.SetActive(true);
-        practiceReminderScreen.SetActive(true);
-        congratulationsScreen.SetActive(true);
+            avatarSelectionScreen.SetActive(true);
+            practiceReminderScreen.SetActive(true);
+            congratulationsScreen.SetActive(true);
 
-        LeanTween.scale(avatarSelectionScreen, Vector3.one, 0.2f);
+            LeanTween.scale(avatarSelectionScreen, Vector3.one, 0.2f);
+        }
+        else
+        {
+            warningNickname.SetActive(true);
+        }
+
     }
     public void StartButton()
     {

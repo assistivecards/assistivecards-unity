@@ -10,7 +10,6 @@ public class GamePanelUIController : MonoBehaviour
     [SerializeField] private BoardGenerator boardGenerator;
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject helloText;
-    [SerializeField] private GameObject speakerIcon;
     [SerializeField] private GameObject packSelectionScreen;
     [SerializeField] private GameObject transitionScreen;
 
@@ -35,37 +34,31 @@ public class GamePanelUIController : MonoBehaviour
         {
             backButton.SetActive(true);
             helloText.SetActive(false);
-            speakerIcon.SetActive(false);
         }
         else if(levelChangeScreenController.isOnLevelChange)
         {
             backButton.SetActive(false);
             helloText.SetActive(false);
-            speakerIcon.SetActive(false);
         }
         else if(difficultSelectionPanelTween.isOnDifficultyScene)
         {
             backButton.SetActive(true);
             helloText.SetActive(false);
-            speakerIcon.SetActive(false);
         }
         else if(packSelectionScreen.activeInHierarchy)
         {
             backButton.SetActive(false);
             helloText.SetActive(true);
-            speakerIcon.SetActive(true);
         }
         else if(transitionScreen.activeInHierarchy)
         {
             backButton.SetActive(false);
             helloText.SetActive(false);
-            speakerIcon.SetActive(false);
         }
         else
         {
             backButton.SetActive(false);
             helloText.SetActive(false);
-            speakerIcon.SetActive(false);
         }
     }
 }

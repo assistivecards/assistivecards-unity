@@ -42,10 +42,10 @@ public class SettingScreenButton : MonoBehaviour
     {
         nickNameText.SetActive(true);
 
-        if (settingButton.IsActive())
-        {
-            settingButton.image.sprite = await gameAPI.GetAvatarImage();
-        }
+        // if (settingButton.IsActive())
+        // {
+        settingButton.image.sprite = await gameAPI.GetAvatarImage();
+        // }
     }
 
     public void SettingButtonClickFunc()

@@ -267,6 +267,7 @@ public class CanvasController : MonoBehaviour
         topAppBar.SetActive(false);
         profileScreen.SetActive(false);
         loginPageScreen.GetComponent<LoginContoller>().nicknameInputField.text = "";
+        nicknameInputField.text = "";
 
         languageController = languageScreen.GetComponent<LanguageController>();
         PlayerPrefs.SetString("Language", Application.systemLanguage.ToString());

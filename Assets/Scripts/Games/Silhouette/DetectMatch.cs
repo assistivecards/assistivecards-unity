@@ -55,13 +55,11 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
             //correct match
             correctMatches++;
             gameObject.GetComponent<Draggable>().enabled = false;
-            // transform.position = matchedImageTransform.position;
             LeanTween.move(gameObject, matchedImageTransform.position, 0.25f);
             board.Invoke("ReadCard", 0.25f);
             Invoke("PlayCorrectMatchAnimation", 0.25f);
-            gameAPI.VibrateStrong();
+            // gameAPI.VibrateStrong();
             gameAPI.PlaySFX("Success");
-            // LeanTween.color(matchedImageTransform.gameObject.GetComponent<Image>().rectTransform, Color.white, .5f);
             Invoke("ScaleImagesDown", 1f);
             board.Invoke("ClearBoard", 1.5f);
             isMatched = false;
@@ -86,7 +84,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
             }
             else
             {
-                gameAPI.VibrateWeak();
+                // gameAPI.VibrateWeak();
                 LeanTween.move(gameObject, shownImageSlot.position, 0.5f);
             }
         }
@@ -108,6 +106,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
         backButton.SetActive(false);
         checkPointPanel.transform.GetChild(1).GetComponent<Button>().interactable = false;
         LeanTween.scale(checkPointPanel, Vector3.one * 0.6f, 0.25f);
+        gameAPI.PlaySFX("Finished");
         Invoke("EnableContinuePlayingButton", .75f);
     }
 
@@ -120,7 +119,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
     IEnumerator CloseCheckPointPanelCoroutine()
     {
         LeanTween.scale(checkPointPanel, Vector3.zero, 0.25f);
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.5f);
         checkPointPanel.SetActive(false);
     }
 

@@ -989,7 +989,16 @@ public class GameAPI : MonoBehaviour
 
         else
         {
-            sfxSource.PlayOneShot(sfx.clip);
+            if (clipName == "Success")
+            {
+                VibrateWeak();
+                sfxSource.PlayOneShot(sfx.clip);
+            }
+            else if (clipName == "Finished")
+            {
+                VibrateStrong();
+                sfxSource.PlayOneShot(sfx.clip);
+            }
         }
     }
 

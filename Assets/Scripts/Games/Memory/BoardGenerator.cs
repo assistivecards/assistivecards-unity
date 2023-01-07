@@ -138,8 +138,22 @@ public class BoardGenerator : MonoBehaviour
 
     private void CloseTransitionScreen()
     {
+        RepositioningBoard();
+
         LeanTween.scale(this.gameObject, Vector3.one, 0.15f);
         transitionScreen.SetActive(false);
+    }
+
+    private void RepositioningBoard()
+    {
+        this.gameObject.GetComponent<RectTransform>().offsetMin = new Vector2 (100, 100);
+        this.gameObject.GetComponent<RectTransform>().offsetMax = new Vector2 (0, -118);
+    }
+
+    private void ResetPosition()
+    {
+        this.gameObject.GetComponent<RectTransform>().offsetMin = new Vector2 (1000, 1000);
+        this.gameObject.GetComponent<RectTransform>().offsetMax = new Vector2 (1000, -1000);
     }
 
     public void FadeInTransitionScreen()
@@ -159,6 +173,7 @@ public class BoardGenerator : MonoBehaviour
         firstHalfCards.Clear();
         randomValueList.Clear();
         checkMatches.flippedCards.Clear();
+        ResetPosition();
     }
 
     public void ResetBoard()
@@ -179,6 +194,7 @@ public class BoardGenerator : MonoBehaviour
         firstHalfCards.Clear();
         randomValueList.Clear();
         checkMatches.flippedCards.Clear();
+        ResetPosition();
     }
     public void CheckClones()
     {

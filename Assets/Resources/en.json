@@ -77,7 +77,7 @@
 	"settings_accessibility_sensory_haptic_description": "If enabled the app will give small haptic feedbacks when using it",
 	"settings_accessibility_sensory_pressIn": "Activate on Press In",
 	"settings_accessibility_sensory_pressIn_description": "If enabled all the touch events gets fired when a pressable is Pressed in, instead of waiting for Press out",
-	"settings_accessibility_greeding_on_start": "Voice Greeding on Start",
+	"settings_accessibility_greeding_on_start": "Voice Greeting on Start",
 	"settings_accessibility_greeding_on_start_description": "If disabled, app will not greed user with voice",
 
 	"settings_removeMyData_description": "Learn how we collect data and ask us to remove the collected data",
@@ -91,7 +91,7 @@
 
 	"settings_share_title": "Wingo",
 	"settings_share_message": "Wingo helps non-verbal kids to communicate with their parents, teachers and friends.",
-	"settings_share_url": "https://assistivecards.com/wingo/",
+	"settings_share_url": "https://assistivecards.com/games/",
 	"settings_selection_share_the_app": "Share this App",
 	"settings_selection_rate_the_app": "Rate this App",
 	"settings_profile_active": "ACTIVE",
@@ -141,7 +141,7 @@
 
 
 	"premium_title": "Unlock $1 Premium!",
-	"premium_description": "Functionality of Wingo will always be free. Wingo Premium offers +50 additional Assistive Card packs.",
+	"premium_description": "Our game is a free to play game, but you can unlock +50 additional premium Assistive Card packs to play with.",
 	"premium_monthly": "Monthly",
 	"premium_yearly": "Yearly",
 	"premium_yearly_sub": "3 days FREE Trial",

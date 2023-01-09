@@ -15,12 +15,19 @@ public class GameBackButton : MonoBehaviour
     public void GameBackButtonClick()
     {
         LeanTween.scale(cardGrid, Vector3.one * 0.0001f, 0.01f);
+        LeanTween.scale(levelDifficultySelectionPanel, Vector3.one * 0.1f, 0.15f);
+        LeanTween.scale(levelChangeScreen, Vector3.one * 0.1f, 0.15f);
+
+
         packSelectionPanel.SetActive(true);
         levelDifficultySelectionPanel.SetActive(false);
+
         levelDifficultySelectionPanel.GetComponent<DifficultSelectionPanelTween>().isOnDifficultyScene = false;
         levelChangeScreen.SetActive(false);
+
         levelChangeScreen.GetComponent<LevelChangeScreenController>().isOnLevelChange = false;
         transitionScreen.SetActive(false);
+
         boardGenerator.ResetBoard();
         boardGenerator.isInGame = false;
         gamePanelUIController.GamePanelUIControl();

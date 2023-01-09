@@ -17,8 +17,7 @@ public class LevelChangeScreenController : MonoBehaviour
     private void OnEnable() 
     {
         isOnLevelChange = true;
-        // LeanTween.scale(contunieButton, Vector3.one, 0.05f);
-        // LeanTween.scale(selectNewButton, Vector3.one, 0.05f);
+        LeanTween.scale(this.gameObject, Vector3.one * 0.6f, 0.15f);
     }
 
     public void ContinueClick()
@@ -27,10 +26,9 @@ public class LevelChangeScreenController : MonoBehaviour
         packageSelectManager.OnPackSelect();
         isOnLevelChange = false;
 
-        // LeanTween.scale(contunieButton, Vector3.one * 0.1f, 0.05f);
-        // LeanTween.scale(selectNewButton, Vector3.one * 0.1f, 0.05f);
+        LeanTween.scale(this.gameObject, Vector3.one * 0.1f, 0.15f);
 
-        Invoke("ClosePanel", 0.05f);
+        Invoke("ClosePanel", 0.15f);
         transitionPanel.SetActive(true);
     }
 
@@ -39,10 +37,9 @@ public class LevelChangeScreenController : MonoBehaviour
         isOnSelect = true;
         isOnLevelChange = false;
 
-        // LeanTween.scale(contunieButton, Vector3.one * 0.1f, 0.05f);
-        // LeanTween.scale(selectNewButton, Vector3.one * 0.1f, 0.05f);
+        LeanTween.scale(this.gameObject, Vector3.one * 0.1f, 0.15f);
 
-        Invoke("ClosePanel", 0.05f);
+        Invoke("ClosePanel", 0.15f);
         packSelectionPanel.SetActive(true);
     }
 

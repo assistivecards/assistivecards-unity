@@ -10,41 +10,50 @@ public class PackageSelectManager : MonoBehaviour
     [SerializeField] private BoardGenerator boardGenerator;
     [SerializeField] private PackSelectionPanel packSelectionPanel;
     [SerializeField] private LevelChangeScreenController levelChangeScreenController;
+    [SerializeField] private PackSelectionScreenUIController packSelectionScreenUIController;
     private string selectedPack;
 
     public async void OnPackSelect()
     {
-        boardGenerator.ResetBoard();
-
-        selectedPack = packSelectionPanel.selectedPackElement.name;
-
-        levelChangeScreen.SetActive(false);
-
-        if(levelChangeScreenController.isOnSelect)
+        if(packSelectionScreenUIController.canGenerate)
         {
-            GenerateStylizedBoard();
-            levelChangeScreenController.isOnSelect = false;
-            transitionScreen.SetActive(true);
-        }
-        else if(!levelChangeScreenController.isOnContinue)
-        {
-            difficultySelectionScreen.SetActive(true);
-        }
+            selectedPack = packSelectionPanel.selectedPackElement.name;
 
-        levelChangeScreenController.isOnContinue = false;
+            levelChangeScreen.SetActive(false);
+
+            if(levelChangeScreenController.isOnSelect)
+            {
+                GenerateStylizedBoard();
+                levelChangeScreenController.isOnSelect = false;
+                transitionScreen.SetActive(true);
+            }
+            else if(!levelChangeScreenController.isOnContinue && packSelectionScreenUIController.canGenerate)
+            {
+                difficultySelectionScreen.SetActive(true);
+            }
+
+            levelChangeScreenController.isOnContinue = false;
+            boardGenerator.ResetBoard();
+        }
     }
 
     public async void GenerateStylizedBoard()
     {
-        boardGenerator.ResetBoard();
-        boardGenerator.CheckClones();
-        await boardGenerator.CacheCards(selectedPack);
+        if(packSelectionScreenUIController.canGenerate)
+        {
+            boardGenerator.ResetBoard();
+            boardGenerator.CheckClones();
+            await boardGenerator.CacheCards(selectedPack);
+        }  
     }
 
     public async void GenerateStylizedBoard(int cardCount)
     {
-        boardGenerator.ResetBoard();
-        boardGenerator.CheckClones();
-        boardGenerator.cardNumber = cardCount;
+        if(packSelectionScreenUIController.canGenerate)
+        {
+            boardGenerator.ResetBoard();
+            boardGenerator.CheckClones();
+            boardGenerator.cardNumber = cardCount;
+        }
     }
 }

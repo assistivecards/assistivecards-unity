@@ -34,8 +34,11 @@ public class PackSelectionScreenUIController : MonoBehaviour
 
     public void ClosePackPanelTween()
     {
-        LeanTween.scale(this.gameObject, Vector3.zero, 0.25f);
-        Invoke("ClosePackPanel", 0.5f);
+        if(canGenerate)
+        {
+            LeanTween.scale(this.gameObject, Vector3.zero, 0.25f);
+            Invoke("ClosePackPanel", 0.5f);
+        }
     }
 
     private void ClosePackPanel()

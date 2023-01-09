@@ -402,6 +402,7 @@ MonoBehaviour:
   fadeInPanel: {fileID: 2356142726698920143}
   settingButton: {fileID: 3312234165338258311}
   canvasController: {fileID: 3312234164996438433}
+  packSelectionPanel: {fileID: 3692490790851632233}
 --- !u!1 &458856706
 GameObject:
   m_ObjectHideFlags: 0
@@ -1759,6 +1760,7 @@ MonoBehaviour:
   levelDifficultySelectionPanel: {fileID: 2124035450}
   transitionScreen: {fileID: 52324708}
   gamePanelUIController: {fileID: 666197688}
+  packSelectionScreenUIController: {fileID: 405556394}
 --- !u!114 &1182242530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2139,11 +2141,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &1362853689 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2650921870151468697, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
-  m_PrefabInstance: {fileID: 3061675005519891025}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1396611579 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3184117022417446875, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
@@ -2704,6 +2701,7 @@ MonoBehaviour:
   boardGenerator: {fileID: 1755342021}
   packSelectionPanel: {fileID: 4167188124752087317}
   levelChangeScreenController: {fileID: 1082417581}
+  packSelectionScreenUIController: {fileID: 405556394}
 --- !u!114 &1755342024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6598,7 +6596,6 @@ GameObject:
   - component: {fileID: 3692490790892799281}
   - component: {fileID: 3692490790892799283}
   - component: {fileID: 4167188124752087317}
-  - component: {fileID: 4167188123846793861}
   - component: {fileID: 1111439712441672991}
   - component: {fileID: 4918079943375431646}
   - component: {fileID: 3018821702191539491}
@@ -7178,27 +7175,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1.8249, y: -18.8736}
   m_SizeDelta: {x: 1100, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4167188123846793861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3692490790892799284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27ced6adae295f84b8c3444ebb33051d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  board: {fileID: 0}
-  packSelectionPanelScript: {fileID: 4167188124752087317}
-  packSelectionPanel: {fileID: 3692490790851632233}
-  settingButton: {fileID: 3312234165338258311}
-  canvasController: {fileID: 3312234164996438433}
-  helloText: {fileID: 1869743290}
-  speakerIcon: {fileID: 1362853689}
-  fadeInPanel: {fileID: 2356142726698920143}
-  packSelectionScreenUIController: {fileID: 0}
 --- !u!114 &4167188124752087317
 MonoBehaviour:
   m_ObjectHideFlags: 0

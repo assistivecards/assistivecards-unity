@@ -25,7 +25,6 @@ public class Board : MonoBehaviour
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
 
-
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
@@ -63,6 +62,7 @@ public class Board : MonoBehaviour
         //     cachedCardImages.Add(cardImage);
         // }
     }
+
 
     public async Task GenerateRandomBoardAsync()
     {

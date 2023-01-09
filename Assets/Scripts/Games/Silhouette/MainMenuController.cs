@@ -16,55 +16,60 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] GameObject helloText;
     [SerializeField] GameObject speakerIcon;
     [SerializeField] GameObject fadeInPanel;
+    [SerializeField] PackSelectionScreenUIController packSelectionScreenUIController;
 
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
     }
 
-    public async void OnPackSelect()
+    // public async void OnPackSelect()
+    // {
+    //     if (gameAPI.GetPremium() == "A5515T1V3C4RD5")
+    //     {
+    //         GenerateCorrespondingRandomBoard();
+    //     }
+    //     else
+    //     {
+    //         for (int i = 0; i < gameAPI.cachedPacks.packs.Length; i++)
+    //         {
+    //             if (gameAPI.cachedPacks.packs[i].slug == packSelectionPanelScript.selectedPackElement.name)
+    //             {
+    //                 if (gameAPI.cachedPacks.packs[i].premium == 1)
+    //                 {
+    //                     Debug.Log("Seçilen paket premium");
+    //                     // canvasController.GetComponent<CanvasController>().StartFadeAnim();
+    //                     fadeInPanel.SetActive(true);
+    //                     settingButton.GetComponent<SettingScreenButton>().SettingButtonClickFunc();
+    //                     canvasController.GetComponent<CanvasController>().PremiumPromoButtonClick();
+    //                     Invoke("ResetScrollPosition", 0.3f);
+
+    //                 }
+    //                 else
+    //                 {
+    //                     GenerateCorrespondingRandomBoard();
+    //                 }
+
+    //             }
+    //         }
+    //     }
+    // }
+
+    public async void GenerateCorrespondingRandomBoard()
     {
-        if (gameAPI.GetPremium() == "A5515T1V3C4RD5")
+        if (packSelectionScreenUIController.canGenerate)
         {
-            GenerateCorrespondingRandomBoard();
+            board.packSlug = packSelectionPanelScript.selectedPackElement.name;
+            packSelectionPanel.transform.GetChild(0).GetComponent<ScrollRect>().enabled = false;
+            LeanTween.scale(packSelectionPanel, Vector3.zero, 0.25f);
+            Invoke("ClosePackSelectionPanel", 0.5f);
+            helloText.SetActive(false);
+            speakerIcon.SetActive(false);
+            await board.CacheCards(board.packSlug);
+            // board.Invoke("GenerateRandomBoardAsync", 0.3f);
+            await board.GenerateRandomBoardAsync();
         }
-        else
-        {
-            for (int i = 0; i < gameAPI.cachedPacks.packs.Length; i++)
-            {
-                if (gameAPI.cachedPacks.packs[i].slug == packSelectionPanelScript.selectedPackElement.name)
-                {
-                    if (gameAPI.cachedPacks.packs[i].premium == 1)
-                    {
-                        Debug.Log("Seçilen paket premium");
-                        // canvasController.GetComponent<CanvasController>().StartFadeAnim();
-                        fadeInPanel.SetActive(true);
-                        settingButton.GetComponent<SettingScreenButton>().SettingButtonClickFunc();
-                        canvasController.GetComponent<CanvasController>().PremiumPromoButtonClick();
-                        Invoke("ResetScrollPosition", 0.3f);
 
-                    }
-                    else
-                    {
-                        GenerateCorrespondingRandomBoard();
-                    }
-
-                }
-            }
-        }
-    }
-
-    private async void GenerateCorrespondingRandomBoard()
-    {
-        board.packSlug = packSelectionPanelScript.selectedPackElement.name;
-        packSelectionPanel.transform.GetChild(0).GetComponent<ScrollRect>().enabled = false;
-        LeanTween.scale(packSelectionPanel, Vector3.zero, 0.25f);
-        Invoke("ClosePackSelectionPanel", 0.5f);
-        helloText.SetActive(false);
-        speakerIcon.SetActive(false);
-        await board.CacheCards(board.packSlug);
-        // board.Invoke("GenerateRandomBoardAsync", 0.3f);
-        await board.GenerateRandomBoardAsync();
     }
 
     private void ClosePackSelectionPanel()

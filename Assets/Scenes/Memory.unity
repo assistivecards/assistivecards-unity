@@ -397,6 +397,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f44cf049de1b446bf8e19644a138f40f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canGenerate: 0
+  packSelectionPanelScript: {fileID: 4167188124752087317}
+  fadeInPanel: {fileID: 2356142726698920143}
+  settingButton: {fileID: 3312234165338258311}
+  canvasController: {fileID: 3312234164996438433}
 --- !u!1 &458856706
 GameObject:
   m_ObjectHideFlags: 0
@@ -6271,8 +6276,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4167188123846793861}
-        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+      - m_Target: {fileID: 405556394}
+        m_TargetAssemblyTypeName: PackSelectionScreenUIController, Assembly-CSharp
         m_MethodName: OnPackSelect
         m_Mode: 1
         m_Arguments:
@@ -7193,6 +7198,7 @@ MonoBehaviour:
   helloText: {fileID: 1869743290}
   speakerIcon: {fileID: 1362853689}
   fadeInPanel: {fileID: 2356142726698920143}
+  packSelectionScreenUIController: {fileID: 0}
 --- !u!114 &4167188124752087317
 MonoBehaviour:
   m_ObjectHideFlags: 0

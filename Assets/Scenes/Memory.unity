@@ -703,7 +703,7 @@ MonoBehaviour:
   speakable: {fileID: 3312234165148624413}
   sfxClips:
   - soundName: Success
-    clip: {fileID: 8300000, guid: 7bd6b897eb5ca4b7d88a205c4a51640c, type: 3}
+    clip: {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
   - soundName: Finished
     clip: {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
   - soundName: Card

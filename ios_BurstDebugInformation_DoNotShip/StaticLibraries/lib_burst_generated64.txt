@@ -149,6 +149,7 @@ Library: lib_burst_generated64
 --root-assembly=/Users/buraktokak/Developer/unity-template/Temp/StagingArea/Data/Managed/UnityEngine.Purchasing.WinRTCore.dll
 --root-assembly=/Users/buraktokak/Developer/unity-template/Temp/StagingArea/Data/Managed/Assembly-CSharp.dll
 --root-assembly=/Users/buraktokak/Developer/unity-template/Temp/StagingArea/Data/Managed/UnityEngine.Purchasing.AppleCore.dll
+--root-assembly=/Users/buraktokak/Developer/unity-template/Temp/StagingArea/Data/Managed/Coffee.SoftMaskForUGUI.dll
 --root-assembly=/Users/buraktokak/Developer/unity-template/Temp/StagingArea/Data/Managed/Unity.Services.Core.Environments.Internal.dll
 --root-assembly=/Users/buraktokak/Developer/unity-template/Temp/StagingArea/Data/Managed/Unity.Burst.dll
 --root-assembly=/Users/buraktokak/Developer/unity-template/Temp/StagingArea/Data/Managed/Unity.2D.Animation.Runtime.dll

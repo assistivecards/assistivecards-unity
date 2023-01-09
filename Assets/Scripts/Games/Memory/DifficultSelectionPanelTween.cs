@@ -12,18 +12,14 @@ public class DifficultSelectionPanelTween : MonoBehaviour
     private void OnEnable() 
     {
         isOnDifficultyScene = true;
-        // LeanTween.scale(easyButton, Vector3.one, 0.1f);
-        // LeanTween.scale(normalButton, Vector3.one, 0.1f);
-        // LeanTween.scale(hardButton, Vector3.one, 0.1f);
+        LeanTween.scale(this.gameObject, Vector3.one * 0.6f, 0.15f);
     }
 
     public void ButtonTween()
     {
-        // LeanTween.scale(easyButton, Vector3.one * 0.1f, 0.1f);
-        // LeanTween.scale(normalButton, Vector3.one * 0.1f, 0.1f);
-        // LeanTween.scale(hardButton, Vector3.one * 0.1f, 0.1f);
+        LeanTween.scale(this.gameObject, Vector3.one * 0.1f, 0.15f);
         isOnDifficultyScene = false;
-        Invoke("ClosePanel", 0.1f);
+        Invoke("ClosePanel", 0.15f);
     }
 
     private void ClosePanel()

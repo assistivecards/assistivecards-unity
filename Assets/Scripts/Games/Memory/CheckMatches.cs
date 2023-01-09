@@ -28,9 +28,14 @@ public class CheckMatches : MonoBehaviour
             {
                 Match();
 
-                gameAPI.Speak(flippedCards[0].transform.GetChild(1).name);
+                Invoke("ReadCard", 0.25f);
             }
         }
+    }
+
+    private void ReadCard()
+    {
+        gameAPI.Speak(flippedCards[0].transform.GetChild(1).name);
     }
 
     public void Match()

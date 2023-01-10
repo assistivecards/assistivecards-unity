@@ -3433,6 +3433,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2614298550844095462, guid: 631eedefcd7727c44960f49fc60b3afb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2614298550884905559, guid: 631eedefcd7727c44960f49fc60b3afb, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -3589,6 +3593,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Settings
       objectReference: {fileID: 0}
+    - target: {fileID: 2614298551636126186, guid: 631eedefcd7727c44960f49fc60b3afb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2859588515750237333, guid: 631eedefcd7727c44960f49fc60b3afb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3597,6 +3605,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 3312234166218571423}
+    - target: {fileID: 5736639285594915698, guid: 631eedefcd7727c44960f49fc60b3afb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3312234164996438433}
+    - target: {fileID: 5736639285594915698, guid: 631eedefcd7727c44960f49fc60b3afb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SignOut
+      objectReference: {fileID: 0}
     - target: {fileID: 6448039921190437544, guid: 631eedefcd7727c44960f49fc60b3afb, type: 3}
       propertyPath: gameCanvas
       value: 

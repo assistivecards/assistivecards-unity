@@ -60,6 +60,7 @@
 	"settings_apps_description": "Discover other apps made by Assistive Cards",
 
 	"settings_selection_signout": "Sign Out",
+	"settings_selection_delete_account" : "Delete Account",
 	"settings_selection_sendFeedback": "Send Feedback",
 	"settings_selection_openSourceLicenses": "Open Source Licenses",
 	"settings_selection_privacyPolicy": "Privacy Policy",

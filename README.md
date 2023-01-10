@@ -2,6 +2,8 @@
 
 Template for unity games made by Assistive Cards
 
+> "Casual Game Music" and "Casual Game Sounds" packs are not licensed under the GNU General Public License v3.0
+
 # GameAPI
 
 This is a documentation for GameAPI, which is the combination of Assistive Cards SDK, Settings API and Language Manager scripts. This module will be accessible from anywhere in game. GameAPI consists of methods for retrieving assets data, storing user preferences and translating UI elements at runtime.

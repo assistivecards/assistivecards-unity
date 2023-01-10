@@ -81,23 +81,7 @@ public class BoardGenerator : MonoBehaviour
 
             cards[j].transform.name = "Card" + j;
             cards[j].transform.GetChild(2).GetComponent<TMP_Text>().text= cardDefinitionsLocale[randomValue];
-
-            if(cardDefinitionsLocale[randomValue].Length > 10)
-            {
-                cards[j].transform.GetChild(2).GetComponent<TMP_Text>().fontSize = 13;
-            }
-            else if(cardDefinitionsLocale[randomValue].Length > 10 && cardDefinitionsLocale[randomValue].Contains(" "))
-            {
-                cards[j].transform.GetChild(2).GetComponent<TMP_Text>().fontSize = 12;
-            }
-            else if(cardDefinitionsLocale[randomValue].Length > 15)
-            {
-                cards[j].transform.GetChild(2).GetComponent<TMP_Text>().fontSize = 12;
-            }
-            else
-            {
-                cards[j].transform.GetChild(2).GetComponent<TMP_Text>().fontSize = 15;
-            }
+            //cards[j].transform.GetChild(2).GetComponent<TMP_Text>().fontSize = 12;
 
             cards[j].transform.GetChild(1).name = cardNames[randomValue];
             cards[j].transform.GetChild(1).GetComponent<RawImage>().texture = cardTexture;

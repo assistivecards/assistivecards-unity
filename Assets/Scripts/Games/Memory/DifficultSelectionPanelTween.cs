@@ -17,14 +17,18 @@ public class DifficultSelectionPanelTween : MonoBehaviour
 
     public void ButtonTween()
     {
-        LeanTween.scale(this.gameObject, Vector3.one * 0.1f, 0.15f);
+        LeanTween.scale(this.gameObject, Vector3.zero, 0.15f);
         isOnDifficultyScene = false;
-        Invoke("ClosePanel", 0.15f);
+        Invoke("ClosePanel", 0.2f);
     }
 
     private void ClosePanel()
     {
         this.gameObject.SetActive(false);
+
+        LeanTween.scale(easyButton, Vector3.one, 0.01f);
+        LeanTween.scale(normalButton, Vector3.one, 0.01f);
+        LeanTween.scale(hardButton, Vector3.one, 0.01f);
     }
 
 

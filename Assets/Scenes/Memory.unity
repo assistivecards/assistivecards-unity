@@ -3745,9 +3745,37 @@ PrefabInstance:
       value: 0.93725497
       objectReference: {fileID: 0}
     - target: {fileID: 804781094745460802, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 804781094745460802, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 804781094745460802, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 666197688}
+    - target: {fileID: 804781094745460802, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1514861060}
+    - target: {fileID: 804781094745460802, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 804781094745460802, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ResetScrollPosition
+      objectReference: {fileID: 0}
+    - target: {fileID: 804781094745460802, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: PackSelectionScreenUIController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 804781094745460802, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 804781094745460803, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -270

@@ -4346,12 +4346,12 @@ RectTransform:
   - {fileID: 8249622499893757477}
   - {fileID: 7776930505472555265}
   - {fileID: 651341035}
-  - {fileID: 1616952390}
-  - {fileID: 640598743}
-  - {fileID: 1432871237}
   - {fileID: 1692858539}
-  - {fileID: 1459567360}
+  - {fileID: 640598743}
   - {fileID: 1710848311}
+  - {fileID: 1432871237}
+  - {fileID: 1459567360}
+  - {fileID: 1616952390}
   - {fileID: 2063423296}
   m_Father: {fileID: 3312234165946820954}
   m_RootOrder: -1

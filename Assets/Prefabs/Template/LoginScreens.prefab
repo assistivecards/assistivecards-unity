@@ -250,7 +250,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 102.00098, y: -0.0006713867}
-  m_SizeDelta: {x: -173.45612, y: -1035.3451}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &5546718070433888003
 CanvasRenderer:
@@ -1077,15 +1077,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasController: {fileID: 0}
+  gameCanvas: {fileID: 0}
   loginUI: {fileID: 0}
   nicknameInputField: {fileID: 5546718070495690689}
   nextButton: {fileID: 5546718072302110405}
   backgroundFadePanel: {fileID: 0}
+  warningNickname: {fileID: 0}
   avatarSelectionScreen: {fileID: 5546718072497905807}
   practiceReminderScreen: {fileID: 5546718071050800104}
   congratulationsScreen: {fileID: 5546718072509846177}
   loginPrefab: {fileID: 0}
-  gamePrefab: {fileID: 0}
+  fadeOutPanel: {fileID: 0}
+  profileScreenNicknameInputField: {fileID: 0}
 --- !u!1 &5546718070708234718
 GameObject:
   m_ObjectHideFlags: 0
@@ -3828,7 +3831,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5546718072497905804
 RectTransform:
   m_ObjectHideFlags: 0

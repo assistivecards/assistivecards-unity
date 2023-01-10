@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using System.Linq;
 
 public class AvatarListCreator : MonoBehaviour
 {
@@ -64,6 +66,8 @@ public class AvatarListCreator : MonoBehaviour
                 {
                     avatarElement = Instantiate(tempAvatarElement, transform);
                     avatarTexture = await gameAPI.GetAvatarImage(_avatarID + "0" + i);
+                    avatarTexture.wrapMode = TextureWrapMode.Clamp;
+                    avatarTexture.filterMode = FilterMode.Bilinear;
                     avatarElement.name = _avatarID + "0" + i;
 
 
@@ -78,6 +82,8 @@ public class AvatarListCreator : MonoBehaviour
                 {
                     avatarElement = Instantiate(tempAvatarElement, transform);
                     avatarTexture = await gameAPI.GetAvatarImage(_avatarID + i);
+                    avatarTexture.wrapMode = TextureWrapMode.Clamp;
+                    avatarTexture.filterMode = FilterMode.Bilinear;
                     avatarElement.name = _avatarID + i;
 
 

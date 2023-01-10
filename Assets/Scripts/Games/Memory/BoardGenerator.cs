@@ -84,6 +84,8 @@ public class BoardGenerator : MonoBehaviour
             //cards[j].transform.GetChild(2).GetComponent<TMP_Text>().fontSize = 12;
 
             cards[j].transform.GetChild(1).name = cardNames[randomValue];
+            cardTexture.wrapMode = TextureWrapMode.Clamp;
+            cardTexture.filterMode = FilterMode.Bilinear;
             cards[j].transform.GetChild(1).GetComponent<RawImage>().texture = cardTexture;
 
             firstHalfCards.Add(cards[j]);

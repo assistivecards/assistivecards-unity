@@ -4342,9 +4342,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7776930505472555265}
   - {fileID: 3312234165651687194}
   - {fileID: 8249622499893757477}
-  - {fileID: 7776930505472555265}
   - {fileID: 651341035}
   - {fileID: 1692858539}
   - {fileID: 640598743}
@@ -6630,10 +6630,6 @@ PrefabInstance:
     - target: {fileID: 5301644170934348992, guid: 975c28d7b7e66b44ca441b59134a85d4, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5301644170934348998, guid: 975c28d7b7e66b44ca441b59134a85d4, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5301644170934348999, guid: 975c28d7b7e66b44ca441b59134a85d4, type: 3}
       propertyPath: m_Pivot.x

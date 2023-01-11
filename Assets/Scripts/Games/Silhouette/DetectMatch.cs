@@ -224,4 +224,15 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
     {
         backButton.SetActive(true);
     }
+
+    public void DelayResetShownImagePosition()
+    {
+        Invoke("ResetShownImagePosition", 0.3f);
+    }
+
+    private void ResetShownImagePosition()
+    {
+        transform.position = shownImageSlot.position;
+        isPointerUp = false;
+    }
 }

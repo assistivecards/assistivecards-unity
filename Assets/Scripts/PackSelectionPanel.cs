@@ -78,7 +78,7 @@ public class PackSelectionPanel : MonoBehaviour
 
             if (packs.packs[i].premium == 1)
             {
-                packElement.transform.GetChild(2).gameObject.SetActive(true);
+                packElement.transform.GetChild(3).gameObject.SetActive(true);
             }
 
             packElementGameObject.Add(packElement);

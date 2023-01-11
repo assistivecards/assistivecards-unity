@@ -1157,6 +1157,7 @@ MonoBehaviour:
   shownImageSlug: 
   packSlug: 
   backButton: {fileID: 1616952389}
+  detectMatchScript: {fileID: 1459567362}
 --- !u!61 &1021918982
 BoxCollider2D:
   m_ObjectHideFlags: 0

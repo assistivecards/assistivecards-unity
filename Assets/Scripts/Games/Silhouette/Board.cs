@@ -24,6 +24,7 @@ public class Board : MonoBehaviour
     [SerializeField] GameObject backButton;
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
+    [SerializeField] DetectMatch detectMatchScript;
 
     private void Awake()
     {
@@ -40,6 +41,7 @@ public class Board : MonoBehaviour
         if (isBackAfterSignOut)
         {
             gameAPI.PlayMusic();
+            detectMatchScript.OnBackButtonClick();
             isBackAfterSignOut = false;
         }
     }

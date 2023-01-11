@@ -973,7 +973,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texts: []
+  legacyTexts: []
   plainTexts: []
+  plainLegacyTexts: []
   textsWithVariable: []
   languageInputField: {fileID: 0}
   localeInputField: {fileID: 0}
@@ -1528,6 +1530,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1910463663942908501}
     m_Modifications:
+    - target: {fileID: 2779736770101953151, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
+      propertyPath: m_Name
+      value: home_premium
+      objectReference: {fileID: 0}
+    - target: {fileID: 2779736770101953151, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
+      propertyPath: m_TagString
+      value: Plain Text
+      objectReference: {fileID: 0}
     - target: {fileID: 3312037730716697936, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: fadeInPanel
       value: 

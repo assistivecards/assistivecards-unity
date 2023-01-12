@@ -47,7 +47,7 @@ public class CheckMatches : MonoBehaviour
             //score += 1;
             //PlayerPrefs.SetInt("MemoryGameScore", score);
         }
-        levelManager.levelFinisher();
+        levelManager.LevelFinisher();
     }
 
     IEnumerator ScaleCardBigger(GameObject _card)

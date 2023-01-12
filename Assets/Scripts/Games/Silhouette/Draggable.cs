@@ -28,6 +28,7 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler
     {
         DetectMatch.isPointerUp = false;
         gameAPI.VibrateWeak();
+        gameAPI.PlaySFX("Pickup");
         transform.position = eventData.position;
     }
 }

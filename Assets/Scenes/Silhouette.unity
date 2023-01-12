@@ -490,6 +490,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
   - soundName: Success
     clip: {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
+  - soundName: Pickup
+    clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
   musicSource: {fileID: 1487501776}
   sfxSource: {fileID: 601693157}
   musicClip: {fileID: 8300000, guid: 039cbb6c20b64344c842b7ca5ffd2ef8, type: 3}

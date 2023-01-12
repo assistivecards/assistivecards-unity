@@ -999,6 +999,8 @@ public class GameAPI : MonoBehaviour
                 VibrateStrong();
                 sfxSource.PlayOneShot(sfx.clip);
             }
+            else
+                sfxSource.PlayOneShot(sfx.clip);
         }
     }
 

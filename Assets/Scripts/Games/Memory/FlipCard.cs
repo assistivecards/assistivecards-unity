@@ -51,6 +51,7 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public void StartBackFlip()
     {
+        gameAPI.PlaySFX("CardBackFlip");
         CalculateBackFlipTween();
     }
 
@@ -59,6 +60,7 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         if(checkMatches.flippedCards.Count < 2)
         {
+            gameAPI.PlaySFX("CardFlip");
             cardBack.gameObject.SetActive(true);
             cardLogo.gameObject.SetActive(false);
             cardName.gameObject.SetActive(true);
@@ -69,6 +71,7 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
         else 
         {
+            gameAPI.PlaySFX("CardFlip");
             checkMatches.CheckAllBoardFlip();
             cardBack.gameObject.SetActive(true);
             cardLogo.gameObject.SetActive(false);
@@ -95,7 +98,6 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private void CalculateFlipTween()
     {
         LeanTween.rotateY(this.gameObject, -180, 0.6f);
-        gameAPI.PlaySFX("CardFlip");
         Invoke("Flip", 0.35f);
     }
 
@@ -103,7 +105,6 @@ public class FlipCard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         LeanTween.rotateY(this.gameObject, 0, 0.6f);
         LeanTween.rotateZ(this.gameObject, 180, 0.01f);
-        gameAPI.PlaySFX("CardBackFlip");
         Invoke("BackFlip", 0.35f);
     }
 }

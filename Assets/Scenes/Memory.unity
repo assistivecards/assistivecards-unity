@@ -4902,7 +4902,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texts: []
+  legacyTexts: []
   plainTexts: []
+  plainLegacyTexts: []
   textsWithVariable: []
   languageInputField: {fileID: 0}
   localeInputField: {fileID: 0}

@@ -69,7 +69,12 @@ public class PromoScreen : MonoBehaviour
                     phraseCountsArray.Add((Int32.Parse(cardCount) * 3).ToString());
 
                     if (packElement.transform != null)
-                        packElement.transform.GetChild(2).GetComponent<Image>().sprite = Sprite.Create(gameAPI.cachedPackImages[i], new Rect(0.0f, 0.0f, gameAPI.cachedPackImages[i].width, gameAPI.cachedPackImages[i].height), new Vector2(0.5f, 0.5f), 100.0f);
+                    {
+                        var packTexture = gameAPI.cachedPackImages[i];
+                        packTexture.wrapMode = TextureWrapMode.Clamp;
+                        packTexture.filterMode = FilterMode.Bilinear;
+                        packElement.transform.GetChild(2).GetComponent<Image>().sprite = Sprite.Create(packTexture, new Rect(0.0f, 0.0f, gameAPI.cachedPackImages[i].width, gameAPI.cachedPackImages[i].height), new Vector2(0.5f, 0.5f), 100.0f);
+                    }
 
                     packElement.name = packs.packs[i].slug;
 

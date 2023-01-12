@@ -71,6 +71,7 @@ public class PackSelectionPanel : MonoBehaviour
             packElement.transform.GetChild(0).GetComponent<Text>().text = jsonPackss["packs"][i]["locale"].ToString().Replace("\"", "");
             var packTexture = gameAPI.cachedPackImages[i];
             packTexture.wrapMode = TextureWrapMode.Clamp;
+            packTexture.filterMode = FilterMode.Bilinear;
 
             packElement.transform.GetChild(1).GetComponent<Image>().sprite = Sprite.Create(packTexture, new Rect(0.0f, 0.0f, gameAPI.cachedPackImages[i].width, gameAPI.cachedPackImages[i].height), new Vector2(0.5f, 0.5f), 100.0f);
 

@@ -31885,7 +31885,7 @@ GameObject:
   - component: {fileID: 6658854895761549926}
   - component: {fileID: 6658854895761549929}
   m_Layer: 5
-  m_Name: settings_selection_share_the_app
+  m_Name: settings_selection_share_games
   m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

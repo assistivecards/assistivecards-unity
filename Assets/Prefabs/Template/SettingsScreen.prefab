@@ -31939,7 +31939,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Share this App
+  m_text: Share Games
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7fff04f5987a23d4cae30a373aa09dd3, type: 2}
   m_sharedMaterial: {fileID: -3432494171301961357, guid: 7fff04f5987a23d4cae30a373aa09dd3, type: 2}
@@ -35737,8 +35737,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   topAppBarController: {fileID: 0}
-  appName: Example Game
-  appDescription: Game Desc.
+  appName: Assistive Cards Games
+  appDescription: See the games made with assistivecards!
   appURL: https://assistivecards.com/games/
   googlePlayLink: details?id=org.dreamoriented.leeloo&hl=tr&gl=US&pli=1
   appleStoreLink: apps.apple.com/tr/app/leeloo-aac-autism-speech-app/id1508952198

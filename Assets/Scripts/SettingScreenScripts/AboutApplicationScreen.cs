@@ -37,11 +37,12 @@ public class AboutApplicationScreen : MonoBehaviour
     }
     public void RateThisAppClick()
     {
-        #if UNITY_ANDROID
+#if UNITY_ANDROID
         Application.OpenURL("market://" + googlePlayLink);
-        #elif UNITY_IPHONE
+#endif
+#if UNITY_IOS
         Application.OpenURL("itms-apps://" + appleStoreLink);
-        #endif
+#endif
     }
     public void OpenSourceLicencesClick()
     {

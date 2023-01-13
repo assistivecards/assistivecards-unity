@@ -35741,7 +35741,7 @@ MonoBehaviour:
   appDescription: Game Desc.
   appURL: https://assistivecards.com/games/
   googlePlayLink: details?id=org.dreamoriented.leeloo&hl=tr&gl=US&pli=1
-  appleStoreLink: https://apps.apple.com/tr/app/leeloo-aac-autism-speech-app/id1508952198
+  appleStoreLink: apps.apple.com/tr/app/leeloo-aac-autism-speech-app/id1508952198
   aboutCompanyScreen: {fileID: 6658854894679360792}
   openSourceLicencesScreen: {fileID: 6658854894362087496}
   privacyPolicyScreen: {fileID: 6658854895261832959}

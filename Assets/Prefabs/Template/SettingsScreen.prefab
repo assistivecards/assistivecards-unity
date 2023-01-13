@@ -28130,7 +28130,7 @@ GameObject:
   - component: {fileID: 6658854895529530927}
   - component: {fileID: 6658854895529530926}
   m_Layer: 5
-  m_Name: settings_subscriptions_description
+  m_Name: premium_description
   m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

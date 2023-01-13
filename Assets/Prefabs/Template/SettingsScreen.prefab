@@ -5835,7 +5835,7 @@ GameObject:
   - component: {fileID: 1701240420225779772}
   - component: {fileID: 1437979106510833969}
   m_Layer: 5
-  m_Name: premium_purchase_title
+  m_Name: premium_title
   m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5858,8 +5858,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.12996674, y: 5.8}
-  m_SizeDelta: {x: -13.73109, y: -21.25031}
+  m_AnchoredPosition: {x: 0.12996674, y: 5}
+  m_SizeDelta: {x: -13.73109, y: -24.40255}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1701240420225779772
 CanvasRenderer:
@@ -5889,7 +5889,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Purchase Premium!
+  m_text: Unlock Premium !
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7fff04f5987a23d4cae30a373aa09dd3, type: 2}
   m_sharedMaterial: {fileID: -3432494171301961357, guid: 7fff04f5987a23d4cae30a373aa09dd3, type: 2}

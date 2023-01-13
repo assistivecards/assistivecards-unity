@@ -27,12 +27,13 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
     {
         Texture2D icon = (Texture2D)AssetDatabase.LoadAssetAtPath("Assets/Sprites/AppIcons/" + PlayerSettings.productName + ".png", typeof(Texture2D));
         PlayerSettings.SetIcons(NamedBuildTarget.Unknown, new Texture2D[] { icon }, IconKind.Any);
-        PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.Android, "com.assistivecards." + PlayerSettings.productName);
+        PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.Android, "com.assistivecards." + PlayerSettings.productName.ToLower());
 
         var bundleVersionCode = PlayerSettings.bundleVersion.Replace(".", string.Empty);
         PlayerSettings.Android.bundleVersionCode = Int32.Parse(bundleVersionCode);
         PlayerSettings.iOS.buildNumber = PlayerSettings.bundleVersion;
         PlayerSettings.iOS.applicationDisplayName = ToTitleCase(PlayerSettings.productName);
+        PlayerSettings.applicationIdentifier = "com.assistivecards."+ PlayerSettings.productName.ToLower();
         Debug.Log("preprocessing");
 
     }

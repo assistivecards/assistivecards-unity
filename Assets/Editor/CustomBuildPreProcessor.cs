@@ -32,6 +32,7 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
         var bundleVersionCode = PlayerSettings.bundleVersion.Replace(".", string.Empty);
         PlayerSettings.Android.bundleVersionCode = Int32.Parse(bundleVersionCode);
         PlayerSettings.iOS.buildNumber = PlayerSettings.bundleVersion;
+        PlayerSettings.iOS.applicationDisplayName = ToTitleCase(PlayerSettings.productName);
         Debug.Log("preprocessing");
 
     }

@@ -3402,6 +3402,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 203148771152412763}
     m_Modifications:
+    - target: {fileID: 104448213652792265, guid: 631eedefcd7727c44960f49fc60b3afb, type: 3}
+      propertyPath: m_TagString
+      value: Plain Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 1059213534638453621, guid: 631eedefcd7727c44960f49fc60b3afb, type: 3}
+      propertyPath: m_TagString
+      value: Plain Text
+      objectReference: {fileID: 0}
     - target: {fileID: 2614298549633276535, guid: 631eedefcd7727c44960f49fc60b3afb, type: 3}
       propertyPath: m_Sprite
       value: 

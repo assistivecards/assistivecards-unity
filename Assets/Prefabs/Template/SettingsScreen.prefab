@@ -41735,7 +41735,7 @@ GameObject:
   - component: {fileID: 8121509558977824434}
   - component: {fileID: 7746371693270258343}
   m_Layer: 5
-  m_Name: premium_promo_title
+  m_Name: premium_title
   m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

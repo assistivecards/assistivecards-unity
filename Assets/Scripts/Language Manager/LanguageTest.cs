@@ -55,8 +55,8 @@ public class LanguageTest : MonoBehaviour
             }
         }
 
-        mainCanvasVariableArray.Add(gameAPI.ToSentenceCase(Application.productName));
-        mainCanvasVariableArray.Add(gameAPI.ToSentenceCase(Application.productName));
+        // mainCanvasVariableArray.Add(gameAPI.ToSentenceCase(Application.productName));
+        // mainCanvasVariableArray.Add(gameAPI.ToSentenceCase(Application.productName));
         mainCanvasVariableArray.Add(nickname);
         gameCanvasVariableArray.Add(nickname);
 
@@ -150,8 +150,8 @@ public class LanguageTest : MonoBehaviour
 
         mainCanvasVariableArray.Clear();
         gameCanvasVariableArray.Clear();
-        mainCanvasVariableArray.Add(gameAPI.ToSentenceCase(Application.productName));
-        mainCanvasVariableArray.Add(gameAPI.ToSentenceCase(Application.productName));
+        // mainCanvasVariableArray.Add(gameAPI.ToSentenceCase(Application.productName));
+        // mainCanvasVariableArray.Add(gameAPI.ToSentenceCase(Application.productName));
         mainCanvasVariableArray.Add(nickname);
         gameCanvasVariableArray.Add(nickname);
 

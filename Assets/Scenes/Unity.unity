@@ -3391,10 +3391,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 74.7
       objectReference: {fileID: 0}
-    - target: {fileID: 3750272607713150494, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
-      propertyPath: m_TagString
-      value: Text With Variable
-      objectReference: {fileID: 0}
     - target: {fileID: 3946188586444601663, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Colors.m_NormalColor.b
       value: 1
@@ -3414,10 +3410,6 @@ PrefabInstance:
     - target: {fileID: 4246954000518132742, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_enableWordWrapping
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4308716761798481570, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
-      propertyPath: m_TagString
-      value: Text With Variable
       objectReference: {fileID: 0}
     - target: {fileID: 4748105555658736119, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_SizeDelta.x

@@ -29,7 +29,7 @@ public class IAPManager : MonoBehaviour, IStoreListener
 
     private void Awake()
     {
-        premium = Application.productName + "_iap";
+        premium = Application.productName.Replace(" ", "_").ToLower() + "_iap";
         gameAPI = Camera.main.GetComponent<GameAPI>();
     }
 

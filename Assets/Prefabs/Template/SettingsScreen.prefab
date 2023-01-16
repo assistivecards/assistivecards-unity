@@ -10050,7 +10050,7 @@ GameObject:
   - component: {fileID: 6658854894148277865}
   - component: {fileID: 6658854894148277864}
   m_Layer: 5
-  m_Name: settings_selection_subscriptions
+  m_Name: settings_selection_iap
   m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10104,7 +10104,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Subscriptions
+  m_text: In-App Purchases
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7fff04f5987a23d4cae30a373aa09dd3, type: 2}
   m_sharedMaterial: {fileID: -3432494171301961357, guid: 7fff04f5987a23d4cae30a373aa09dd3, type: 2}
@@ -18807,7 +18807,7 @@ GameObject:
   - component: {fileID: 6658854894784586165}
   - component: {fileID: 6658854894784586164}
   m_Layer: 5
-  m_Name: settings_selection_subscriptions
+  m_Name: settings_selection_iap
   m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18861,7 +18861,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Subscriptions
+  m_text: In-App Purchases
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2520dfbb33c47794a98e43cbcd2d0982, type: 2}
   m_sharedMaterial: {fileID: 5204736982808123274, guid: 2520dfbb33c47794a98e43cbcd2d0982, type: 2}
@@ -25066,7 +25066,7 @@ GameObject:
   - component: {fileID: 6658854895336781950}
   - component: {fileID: 6658854895336781921}
   m_Layer: 5
-  m_Name: premium_lifetime
+  m_Name: premium_unlock_all_packs
   m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25120,7 +25120,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lifetime Premium
+  m_text: Unlock All Packs
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2520dfbb33c47794a98e43cbcd2d0982, type: 2}
   m_sharedMaterial: {fileID: 5204736982808123274, guid: 2520dfbb33c47794a98e43cbcd2d0982, type: 2}
@@ -26343,7 +26343,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6658854895412966410
 RectTransform:
   m_ObjectHideFlags: 0

@@ -4988,6 +4988,14 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1242831489823440164, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_Name
+      value: premium_unlock_all_packs
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242831489823440166, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_text
+      value: Unlock All Packs
+      objectReference: {fileID: 0}
     - target: {fileID: 1242831489876205896, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_SizeDelta.x
       value: -208.8103
@@ -6686,7 +6694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5301644170934348992, guid: 975c28d7b7e66b44ca441b59134a85d4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5301644170934348999, guid: 975c28d7b7e66b44ca441b59134a85d4, type: 3}
       propertyPath: m_Pivot.x

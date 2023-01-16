@@ -2535,6 +2535,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1242831489823440164, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_Name
+      value: premium_unlock_all_packs
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242831489823440166, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_text
+      value: Unlock All Packs
+      objectReference: {fileID: 0}
     - target: {fileID: 1242831489876205896, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_SizeDelta.x
       value: -208.8103

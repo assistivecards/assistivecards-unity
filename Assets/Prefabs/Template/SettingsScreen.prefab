@@ -6567,7 +6567,7 @@ GameObject:
   - component: {fileID: 5849155145063120007}
   - component: {fileID: 3875394531463368363}
   m_Layer: 5
-  m_Name: premium_promo_desc1
+  m_Name: premium_promo_unlock_play_more
   m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6621,7 +6621,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Subscribe to get more
+  m_text: Unlock to Play More Pack
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7fff04f5987a23d4cae30a373aa09dd3, type: 2}
   m_sharedMaterial: {fileID: -3432494171301961357, guid: 7fff04f5987a23d4cae30a373aa09dd3, type: 2}

@@ -13,7 +13,7 @@ public class PackageSelectManager : MonoBehaviour
     [SerializeField] private PackSelectionScreenUIController packSelectionScreenUIController;
     private string selectedPack;
 
-    public async void OnPackSelect()
+    public void OnPackSelect()
     {
         if(packSelectionScreenUIController.canGenerate)
         {
@@ -23,9 +23,10 @@ public class PackageSelectManager : MonoBehaviour
 
             if(levelChangeScreenController.isOnSelect)
             {
-                GenerateStylizedBoard();
+                //GenerateStylizedBoard();
                 levelChangeScreenController.isOnSelect = false;
-                transitionScreen.SetActive(true);
+                difficultySelectionScreen.SetActive(true);
+                //transitionScreen.SetActive(true);
             }
             else if(!levelChangeScreenController.isOnContinue && packSelectionScreenUIController.canGenerate)
             {
@@ -47,7 +48,7 @@ public class PackageSelectManager : MonoBehaviour
         }  
     }
 
-    public async void GenerateStylizedBoard(int cardCount)
+    public void GenerateStylizedBoard(int cardCount)
     {
         if(packSelectionScreenUIController.canGenerate)
         {

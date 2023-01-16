@@ -44,6 +44,7 @@
 	"settings_notifications_tipsAndPromo_promotion_description": "Let us notify you when we have a discount for the subscription",
 
 	"settings_selection_subscriptions": "Subscriptions",
+	"settings_selection_iap":"In-App Purchases",
 	"settings_subscriptions_description": "Manage your subscriptions and Wingo Premium purchases and switch between plans.",
 	"settings_subscriptions_cancel_notice": "In order to cancel a subscription, please go to your device or market settings and subscriptions.",
 	"settings_subscriptions_downgrade_notice": "You can't downgrade your lifetime premium subscription.",
@@ -149,6 +150,7 @@
 	"premium_yearly_sub": "3 days FREE Trial",
 	"premium_then_info": "Then $1/year",
 	"premium_lifetime": "Lifetime",
+	"premium_unlock_all_packs": "Unlock All Packs",
 	"premium_lifetime_oneTime": "One-time Payment",
 	"premium_save_percent": "SAVE $1%",
 	"premium_monthly_priceShow": "$1/mo",

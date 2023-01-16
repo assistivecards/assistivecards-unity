@@ -215,6 +215,6 @@
 	"difficulty_selection_normal":"Normal",
 	"difficulty_selection_hard":"Hard",
 	"play":"Play",
-	"warning-nickname":"Nickname is too long!"
-	
+	"warning-nickname":"Nickname is too long!",
+	"circle_the_card":"Circle the $1"	
 }

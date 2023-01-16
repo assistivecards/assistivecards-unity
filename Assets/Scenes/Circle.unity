@@ -990,7 +990,7 @@ GameObject:
   - component: {fileID: 797235071}
   - component: {fileID: 797235070}
   m_Layer: 5
-  m_Name: CircleText
+  m_Name: circle_the_card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5010,7 +5010,6 @@ MonoBehaviour:
   circleText: {fileID: 797235070}
   packSlug: 
   backButton: {fileID: 1039916914}
-  detectMatchScript: {fileID: 0}
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

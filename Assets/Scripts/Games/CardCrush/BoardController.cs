@@ -1,33 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BoardController : MonoBehaviour
 {
-    public int boardWidth;
-    public int boardHeight;
-    [SerializeField] private GameObject tempCardTilePrefab;
-    private GameObject cardTileElement;
-    private BackgroundTile[,] allCardTiles;
+    GameAPI gameAPI;
+    [SerializeField] private GameObject tempcardElement;
+    private GameObject cardElement;
+    public List<GameObject> cards = new List<GameObject>();
 
-    void Start()
+    public int cardCount;
+
+    private void Awake()
     {
-        allCardTiles = new BackgroundTile[boardWidth, boardHeight];
-        SetUp();
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+        GenerateBoard();
     }
 
-    private void SetUp()
+    private void GenerateBoard()
     {
-        for(int i = 0; i < boardWidth; i++)
+        for(int i = 0; i < cardCount; i ++)
         {
-            for(int j =0; j < boardHeight; j++)
-            {
-                Vector2 tempPosition = new Vector2(i * 150, j * 140);
-                cardTileElement = Instantiate(tempCardTilePrefab, tempPosition, Quaternion.identity);
-                cardTileElement.transform.parent = this.transform;
-                cardTileElement.transform.localPosition = tempPosition;
-                cardTileElement.name = i + " , " + j + " tile";
-            } 
+            cards.Add(Instantiate(tempcardElement, Vector3.zero, Quaternion.identity));
+            cards[i].transform.parent = this.transform;
         }
     }
+
+
+
 }

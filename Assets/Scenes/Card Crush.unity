@@ -1324,6 +1324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1381051501}
   - component: {fileID: 1381051502}
+  - component: {fileID: 1381051503}
   m_Layer: 5
   m_Name: Board
   m_TagString: Untagged
@@ -1348,7 +1349,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -300, y: -200}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1101.811, y: 553.5324}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1381051502
@@ -1363,9 +1364,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0da2480a671d4d04ac28e01ed951808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boardWidth: 5
-  boardHeight: 4
-  tempCardTilePrefab: {fileID: 8446959061409266475, guid: 3a5c72fb636c24a3691fd50abbcce4c8, type: 3}
+  tempcardElement: {fileID: 8446959061409266475, guid: 3a5c72fb636c24a3691fd50abbcce4c8, type: 3}
+  cards: []
+  cardCount: 18
+--- !u!114 &1381051503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381051500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 28
+    m_Right: 0
+    m_Top: 290
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 80, y: 80}
+  m_Constraint: 1
+  m_ConstraintCount: 6
 --- !u!114 &1407491092 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1242831490967550533, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}

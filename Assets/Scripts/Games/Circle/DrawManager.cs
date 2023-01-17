@@ -13,6 +13,8 @@ public class DrawManager : MonoBehaviour
     private Line currentLine;
     public const float RESOLUTION = 0.1f;
     [SerializeField] List<Vector2> lineRendererPoints = new List<Vector2>();
+    [SerializeField] GameObject currentLineChildPrefab;
+    private GameObject currentLineChild;
 
     void Start()
     {
@@ -35,6 +37,11 @@ public class DrawManager : MonoBehaviour
                 lineRendererPoints.Clear();
             for (int i = 0; i < currentLine.GetComponent<LineRenderer>().positionCount; i++)
                 lineRendererPoints.Add(currentLine.GetComponent<LineRenderer>().GetPosition(i));
+
+            currentLineChild = Instantiate(currentLineChildPrefab, currentLine.transform.position, Quaternion.identity);
+            currentLineChild.transform.SetParent(currentLine.transform);
+            currentLineChild.GetComponent<PolygonCollider2D>().points = lineRendererPoints.ToArray();
+            currentLineChild.transform.position = currentLineChild.transform.InverseTransformPoint(currentLineChild.transform.position);
 
         }
     }

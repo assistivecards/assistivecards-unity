@@ -1364,9 +1364,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0da2480a671d4d04ac28e01ed951808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedLangCode: 
   tempcardElement: {fileID: 8446959061409266475, guid: 3a5c72fb636c24a3691fd50abbcce4c8, type: 3}
   cards: []
+  cachedCards:
+    cards: []
+  cardsList: []
   cardCount: 18
+  cardTypeCount: 0
 --- !u!114 &1381051503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1380,9 +1385,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 28
+    m_Left: 25
     m_Right: 0
-    m_Top: 290
+    m_Top: 320
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0

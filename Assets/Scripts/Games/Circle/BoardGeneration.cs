@@ -23,6 +23,7 @@ public class BoardGeneration : MonoBehaviour
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
     // [SerializeField] DetectMatch detectMatchScript;
+    [SerializeField] DrawManager drawManager;
 
     private void Awake()
     {
@@ -104,6 +105,7 @@ public class BoardGeneration : MonoBehaviour
 
         ScaleImagesUp();
         backButton.SetActive(true);
+        drawManager.gameObject.SetActive(true);
     }
 
     public void ClearBoard()

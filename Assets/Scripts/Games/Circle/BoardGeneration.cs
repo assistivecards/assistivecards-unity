@@ -23,6 +23,7 @@ public class BoardGeneration : MonoBehaviour
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
     // [SerializeField] DetectMatch detectMatchScript;
+    [SerializeField] DrawManager drawManager;
 
     private void Awake()
     {
@@ -88,7 +89,7 @@ public class BoardGeneration : MonoBehaviour
         // circleText.text="Circle the " + randomCards[0].title;
         var correctCardImageIndex = Random.Range(0, cardImagesInScene.Length);
         cardImagesInScene[correctCardImageIndex].sprite = randomSprites[0];
-        cardImagesInScene[correctCardImageIndex].tag = "CorrectCard";
+        // cardImagesInScene[correctCardImageIndex].tag = "CorrectCard";
 
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {
@@ -104,6 +105,7 @@ public class BoardGeneration : MonoBehaviour
 
         ScaleImagesUp();
         backButton.SetActive(true);
+        drawManager.gameObject.SetActive(true);
     }
 
     public void ClearBoard()

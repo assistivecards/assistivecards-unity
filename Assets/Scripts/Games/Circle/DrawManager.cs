@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DrawManager : MonoBehaviour
 {
     private Camera mainCamera;
+    [SerializeField] TMP_Text circleText;
+    [SerializeField] TopAppBarController topAppBarController;
+    [SerializeField] CanvasController canvasController;
     [SerializeField] private Line linePrefab;
     private Line currentLine;
     public const float RESOLUTION = 0.1f;
@@ -33,5 +37,32 @@ public class DrawManager : MonoBehaviour
                 lineRendererPoints.Add(currentLine.GetComponent<LineRenderer>().GetPosition(i));
 
         }
+    }
+
+    public void DisableDrawManager()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void EnableDrawManagerOnSettingsBackButtonClicked()
+    {
+        if (canvasController.currentScreen.name == "ParentLock")
+        {
+            if (circleText.transform.localScale == Vector3.one)
+                gameObject.SetActive(true);
+        }
+        else if (topAppBarController.onMain)
+        {
+            if (circleText.transform.localScale == Vector3.one)
+                gameObject.SetActive(true);
+        }
+        else
+            gameObject.SetActive(false);
+    }
+
+    public void EnableDrawManager()
+    {
+        if (circleText.transform.localScale == Vector3.one)
+            gameObject.SetActive(true);
     }
 }

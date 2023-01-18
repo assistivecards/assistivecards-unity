@@ -14,7 +14,7 @@ public class BoardController : MonoBehaviour
 
     [SerializeField] private GameObject tempcardElement;
     [SerializeField] private PackSelectionPanel packSelectionPanel;
-    [SerializeField] private List<GameObject> cards = new List<GameObject>();
+    [SerializeField] public List<GameObject> cards = new List<GameObject>();
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     private List<string> cardNames = new List<string>();
@@ -78,6 +78,9 @@ public class BoardController : MonoBehaviour
 
             cards[i].name = "(" + i/this.gameObject.GetComponent<UnityEngine.UI.GridLayoutGroup>().constraintCount + 
             "," + i % this.gameObject.GetComponent<UnityEngine.UI.GridLayoutGroup>().constraintCount + ")";
+
+            cards[i].GetComponent<CardTileInformation>().xValue = i/this.gameObject.GetComponent<UnityEngine.UI.GridLayoutGroup>().constraintCount;
+            cards[i].GetComponent<CardTileInformation>().yValue = i % this.gameObject.GetComponent<UnityEngine.UI.GridLayoutGroup>().constraintCount;
             
             var cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[randomValues[Random.Range(0,cardTypeCount)]], 512);
             cards[i].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;

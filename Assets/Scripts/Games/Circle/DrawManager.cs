@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class DrawManager : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class DrawManager : MonoBehaviour
     [SerializeField] List<Vector2> lineRendererPoints = new List<Vector2>();
     [SerializeField] GameObject currentLineChildPrefab;
     private GameObject currentLineChild;
+    private Collider2D[] overlappedCollidersList = new Collider2D[20];
+    private ContactFilter2D contactFilter;
 
     void Start()
     {
@@ -43,6 +46,21 @@ public class DrawManager : MonoBehaviour
             currentLineChild.GetComponent<PolygonCollider2D>().points = lineRendererPoints.ToArray();
             currentLineChild.transform.position = currentLineChild.transform.InverseTransformPoint(currentLineChild.transform.position);
 
+            if (currentLine.GetComponent<LineRenderer>().positionCount <= 5)
+                currentLineChild.GetComponent<DetectCollision>().FadeOutAndDestroyLine();
+
+            Invoke("CheckIfLineCollidesWithAnything", 0.05f);
+
+
+
+        }
+    }
+
+    private void CheckIfLineCollidesWithAnything()
+    {
+        if (currentLineChild.GetComponent<DetectCollision>().collisionCount == 0)
+        {
+            currentLineChild.GetComponent<DetectCollision>().FadeOutAndDestroyLine();
         }
     }
 

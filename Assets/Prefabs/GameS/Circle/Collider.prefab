@@ -98,3 +98,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54b513e32d0053b4981fb5fd570c24b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderList: []

@@ -1370,8 +1370,10 @@ MonoBehaviour:
   cachedCards:
     cards: []
   cardsList: []
+  cardTextures:
+    cards: []
   cardCount: 18
-  cardTypeCount: 0
+  cardTypeCount: 3
 --- !u!114 &1381051503
 MonoBehaviour:
   m_ObjectHideFlags: 0

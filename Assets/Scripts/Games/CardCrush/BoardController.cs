@@ -16,6 +16,8 @@ public class BoardController : MonoBehaviour
     [SerializeField] private List<GameObject> cards = new List<GameObject>();
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
+    private List<string> cardNames = new List<string>();
+    [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cardTextures;
     private List<Sprite> cardSprites = new List<Sprite>();
 
     public int cardCount;
@@ -30,7 +32,7 @@ public class BoardController : MonoBehaviour
     }
 
     private void Start() {
-        GenerateBoard();
+        GenerateBoard("animals");
     }
 
     public async Task CacheCards(string _packSlug)
@@ -40,6 +42,12 @@ public class BoardController : MonoBehaviour
         cachedCards = await gameAPI.GetCards("en", _packSlug);
 
         cardsList = cachedCards.cards.ToList();
+
+        for(int i = 0; i < cachedCards.cards.Length; i++)
+        {
+            cardNames.Add(cachedCards.cards[i].title.ToLower().Replace(" ", "-"));
+        }
+
     }
 
     private void CreateRandomValue()
@@ -60,9 +68,9 @@ public class BoardController : MonoBehaviour
         }
     }
 
-    private async Task GenerateBoardAsync()
+    private async Task GenerateBoardAsync(string _packSlug)
     {
-        await CacheCards("animals");
+        await CacheCards(_packSlug);
         CreateRandomValue();
 
         for(int i = 0; i < cardCount; i ++)
@@ -71,13 +79,13 @@ public class BoardController : MonoBehaviour
             cards[i].transform.parent = this.transform;
             cards[i].transform.localScale = Vector3.one * 1.5f;
             //Debug.Log(cardsList[randomValues[Random.Range(0,3)]].title);
-            // var cardTexture = await gameAPI.GetCardImage("animals", cardsList[randomValues[Random.Range(0,3)]].title, 512);
-            // cards[i].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+            var cardTexture = await gameAPI.GetCardImage("animals", cardNames[randomValues[Random.Range(0,cardTypeCount)]], 512);
+            cards[i].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
         }
     }
 
-    private async void GenerateBoard()
+    private async void GenerateBoard(string _packSlug)
     {
-        GenerateBoardAsync();
+        GenerateBoardAsync(_packSlug);
     }
 }

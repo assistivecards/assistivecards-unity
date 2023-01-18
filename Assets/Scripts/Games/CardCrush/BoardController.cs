@@ -75,7 +75,10 @@ public class BoardController : MonoBehaviour
             cards.Add(Instantiate(tempcardElement, Vector3.zero, Quaternion.identity));
             cards[i].transform.parent = this.transform;
             cards[i].transform.localScale = Vector3.one * 1.5f;
-            //Debug.Log(cardsList[randomValues[Random.Range(0,3)]].title);
+
+            cards[i].name = "(" + i/this.gameObject.GetComponent<UnityEngine.UI.GridLayoutGroup>().constraintCount + 
+            "," + i % this.gameObject.GetComponent<UnityEngine.UI.GridLayoutGroup>().constraintCount + ")";
+            
             var cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[randomValues[Random.Range(0,cardTypeCount)]], 512);
             cards[i].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
         }

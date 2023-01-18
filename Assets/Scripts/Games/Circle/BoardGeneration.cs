@@ -89,7 +89,7 @@ public class BoardGeneration : MonoBehaviour
         // circleText.text="Circle the " + randomCards[0].title;
         var correctCardImageIndex = Random.Range(0, cardImagesInScene.Length);
         cardImagesInScene[correctCardImageIndex].sprite = randomSprites[0];
-        // cardImagesInScene[correctCardImageIndex].tag = "CorrectCard";
+        cardImagesInScene[correctCardImageIndex].tag = "CorrectCard";
 
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {

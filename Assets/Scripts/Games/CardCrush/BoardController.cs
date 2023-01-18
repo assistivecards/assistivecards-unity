@@ -13,6 +13,7 @@ public class BoardController : MonoBehaviour
     public string selectedLangCode;
 
     [SerializeField] private GameObject tempcardElement;
+    [SerializeField] private PackSelectionPanel packSelectionPanel;
     [SerializeField] private List<GameObject> cards = new List<GameObject>();
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
@@ -29,10 +30,6 @@ public class BoardController : MonoBehaviour
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
-    }
-
-    private void Start() {
-        GenerateBoard("animals");
     }
 
     public async Task CacheCards(string _packSlug)
@@ -79,7 +76,7 @@ public class BoardController : MonoBehaviour
             cards[i].transform.parent = this.transform;
             cards[i].transform.localScale = Vector3.one * 1.5f;
             //Debug.Log(cardsList[randomValues[Random.Range(0,3)]].title);
-            var cardTexture = await gameAPI.GetCardImage("animals", cardNames[randomValues[Random.Range(0,cardTypeCount)]], 512);
+            var cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[randomValues[Random.Range(0,cardTypeCount)]], 512);
             cards[i].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
         }
     }
@@ -87,5 +84,10 @@ public class BoardController : MonoBehaviour
     private async void GenerateBoard(string _packSlug)
     {
         GenerateBoardAsync(_packSlug);
+    }
+
+    public void GenerateBoardWithSelectedPack()
+    {
+        GenerateBoard(packSelectionPanel.selectedPackElement.name);
     }
 }

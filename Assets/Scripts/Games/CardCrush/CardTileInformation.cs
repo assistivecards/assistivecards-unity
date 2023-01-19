@@ -22,15 +22,19 @@ public class CardTileInformation : MonoBehaviour, IPointerDownHandler, IPointerU
     {
         boardController = GameObject.Find("Board").GetComponent<BoardController>();
         swipeController = GameObject.Find("Board").GetComponent<SwipeController>();
+        DetectNeightbours();
     }
 
     public void OnPointerDown(PointerEventData pointerEventData)
     {
+        ResetNeighbours();
         DetectNeightbours();
         swipeController.SelectElement(this.gameObject);
     }
     public void OnPointerUp(PointerEventData pointerEventData)
     {
+        ResetNeighbours();
+        DetectNeightbours();
         swipeController.SwipeElements();
     }
 

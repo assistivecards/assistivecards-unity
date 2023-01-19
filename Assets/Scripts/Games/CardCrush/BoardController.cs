@@ -72,6 +72,7 @@ public class BoardController : MonoBehaviour
 
         for(int i = 0; i < cardCount; i ++)
         {
+            int cardImageRandom = randomValues[Random.Range(0,cardTypeCount)];
             cards.Add(Instantiate(tempcardElement, Vector3.zero, Quaternion.identity));
             cards[i].transform.parent = this.transform;
             cards[i].transform.localScale = Vector3.one * 1.5f;
@@ -82,14 +83,15 @@ public class BoardController : MonoBehaviour
             cards[i].GetComponent<CardTileInformation>().xValue = i/this.gameObject.GetComponent<UnityEngine.UI.GridLayoutGroup>().constraintCount;
             cards[i].GetComponent<CardTileInformation>().yValue = i % this.gameObject.GetComponent<UnityEngine.UI.GridLayoutGroup>().constraintCount;
             
-            var cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[randomValues[Random.Range(0,cardTypeCount)]], 512);
+            var cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[cardImageRandom], 512);
+            cards[i].transform.GetChild(0).name = cardNames[cardImageRandom];
             cards[i].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
         }
     }
 
     private async void GenerateBoard(string _packSlug)
     {
-        GenerateBoardAsync(_packSlug);
+        await GenerateBoardAsync(_packSlug);
     }
 
     public void GenerateBoardWithSelectedPack()

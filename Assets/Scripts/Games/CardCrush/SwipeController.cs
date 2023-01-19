@@ -26,7 +26,7 @@ public class SwipeController : MonoBehaviour
 
    public void SwipeElements()
    {
-        if(selectedElements.Count > 0)
+        if(selectedElements.Count > 1)
         {
             if(selectedElements[1].GetComponent<CardTileInformation>().neighbours.Contains(selectedElements[0]))
             {

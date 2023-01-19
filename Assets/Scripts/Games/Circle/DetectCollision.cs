@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class DetectCollision : MonoBehaviour
 {
+    private DrawManager drawManager;
     public int collisionCount;
     private GameObject matchedCard;
     private Color32 success = new Color32(32, 202, 32, 255);
     // Start is called before the first frame update
     void Start()
     {
-
+        drawManager = GameObject.Find("DrawManager").GetComponent<DrawManager>();
     }
 
     // Update is called once per frame
@@ -23,13 +24,14 @@ public class DetectCollision : MonoBehaviour
     {
         collisionCount++;
         matchedCard = other.gameObject;
-        if (other.gameObject.tag != "CorrectCard")
-        {
-            FadeOutAndDestroyLine();
-        }
-        else if (other.gameObject.tag == "CorrectCard" && collisionCount == 1)
+
+        if (other.gameObject.tag == "CorrectCard" && collisionCount == 1 && drawManager.isValid)
         {
             Invoke("CheckIfMatchIsCorrect", 0.05f);
+        }
+        else
+        {
+            FadeOutAndDestroyLine();
         }
 
     }

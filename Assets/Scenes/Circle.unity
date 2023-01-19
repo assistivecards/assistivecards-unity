@@ -158,6 +158,8 @@ MonoBehaviour:
   linePrefab: {fileID: 6614175471755780376, guid: d5907faa0c8000f48bb1d76dff177ed4, type: 3}
   lineRendererPoints: []
   currentLineChildPrefab: {fileID: 1857893106947275558, guid: df7bea22fef5d2049a63cbbb4c91109c, type: 3}
+  distanceThreshold: 1.5
+  isValid: 0
 --- !u!4 &38099729
 Transform:
   m_ObjectHideFlags: 0
@@ -494,7 +496,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 50
+  m_Radius: 20
 --- !u!1 &191490649 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1242831490340205118, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -1072,7 +1074,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 50
+  m_Radius: 20
 --- !u!1001 &671447373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2117,7 +2119,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 50
+  m_Radius: 20
 --- !u!1 &1551830231
 GameObject:
   m_ObjectHideFlags: 0

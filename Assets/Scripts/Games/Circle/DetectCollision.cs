@@ -5,6 +5,8 @@ using UnityEngine;
 public class DetectCollision : MonoBehaviour
 {
     public int collisionCount;
+    private GameObject matchedCard;
+    private Color32 success = new Color32(32, 202, 32, 255);
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,7 @@ public class DetectCollision : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         collisionCount++;
+        matchedCard = other.gameObject;
         if (other.gameObject.tag != "CorrectCard")
         {
             FadeOutAndDestroyLine();
@@ -42,6 +45,7 @@ public class DetectCollision : MonoBehaviour
         if (transform.parent.GetComponent<LineRenderer>().material.color.a == 1)
         {
             Debug.Log("Correct Match !!!");
+            LeanTween.color(transform.parent.GetComponent<LineRenderer>().gameObject, success, .25f);
         }
     }
 }

@@ -94,4 +94,10 @@ public class DrawManager : MonoBehaviour
         if (circleText.transform.localScale == Vector3.one)
             gameObject.SetActive(true);
     }
+
+    public void ClearLineClone()
+    {
+        if (currentLine != null)
+            Destroy(currentLine.gameObject);
+    }
 }

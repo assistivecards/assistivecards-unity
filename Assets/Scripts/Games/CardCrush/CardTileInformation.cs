@@ -12,33 +12,39 @@ public class CardTileInformation : MonoBehaviour, IPointerDownHandler, IPointerU
     private SwipeController swipeController;
 
     public List<GameObject> neighbours = new List<GameObject>();
+    public string type;
  
     public GameObject rightNeighbour;
     public GameObject leftNeighbour;
     public GameObject topNeighbour;
     public GameObject bottomNeighbour;
 
+    public string rightNeighbourType;
+    public string leftNeighbourType;
+    public string topNeighbourType;
+    public string bottomNeighbourType;
+
     private void Awake() 
     {
         boardController = GameObject.Find("Board").GetComponent<BoardController>();
         swipeController = GameObject.Find("Board").GetComponent<SwipeController>();
-        DetectNeightbours();
     }
 
     public void OnPointerDown(PointerEventData pointerEventData)
     {
-        ResetNeighbours();
-        DetectNeightbours();
         swipeController.SelectElement(this.gameObject);
-    }
-    public void OnPointerUp(PointerEventData pointerEventData)
-    {
         ResetNeighbours();
         DetectNeightbours();
-        swipeController.SwipeElements();
     }
 
-    private void DetectNeightbours()
+    public void OnPointerUp(PointerEventData pointerEventData)
+    {
+        swipeController.SwipeElements();
+        ResetNeighbours();
+        DetectNeightbours();
+    }
+
+    public void DetectNeightbours()
     {
         foreach (var card in boardController.cards)
         {
@@ -47,24 +53,28 @@ public class CardTileInformation : MonoBehaviour, IPointerDownHandler, IPointerU
                 bottomNeighbour = card;
                 if(!neighbours.Contains(bottomNeighbour))
                 neighbours.Add(bottomNeighbour);
+                bottomNeighbourType = bottomNeighbour.transform.GetChild(0).name;
             }
             else if(card.GetComponent<CardTileInformation>().xValue == xValue - 1 && card.GetComponent<CardTileInformation>().yValue == yValue)
             {
                 topNeighbour = card;
                 if(!neighbours.Contains(topNeighbour))
                 neighbours.Add(topNeighbour);
+                topNeighbourType = topNeighbour.transform.GetChild(0).name;
             }
             else if(card.GetComponent<CardTileInformation>().xValue == xValue && card.GetComponent<CardTileInformation>().yValue == yValue + 1)
             {
                 rightNeighbour = card;
                 if(!neighbours.Contains(rightNeighbour))
                 neighbours.Add(rightNeighbour);
+                rightNeighbourType = rightNeighbour.transform.GetChild(0).name;
             }
             else if(card.GetComponent<CardTileInformation>().xValue == xValue && card.GetComponent<CardTileInformation>().yValue == yValue - 1)
             {
                 leftNeighbour = card;
                 if(!neighbours.Contains(leftNeighbour))
                 neighbours.Add(leftNeighbour);
+                leftNeighbourType = leftNeighbour.transform.GetChild(0).name;
             }
         }
     }

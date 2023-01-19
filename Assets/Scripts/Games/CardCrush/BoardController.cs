@@ -12,6 +12,7 @@ public class BoardController : MonoBehaviour
     private GameObject cardElement;
     public string selectedLangCode;
 
+    [SerializeField] private CardTileInformation cardTileInformation;
     [SerializeField] private GameObject tempcardElement;
     [SerializeField] private PackSelectionPanel packSelectionPanel;
     [SerializeField] public List<GameObject> cards = new List<GameObject>();
@@ -82,10 +83,16 @@ public class BoardController : MonoBehaviour
 
             cards[i].GetComponent<CardTileInformation>().xValue = i/this.gameObject.GetComponent<UnityEngine.UI.GridLayoutGroup>().constraintCount;
             cards[i].GetComponent<CardTileInformation>().yValue = i % this.gameObject.GetComponent<UnityEngine.UI.GridLayoutGroup>().constraintCount;
-            
+
             var cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[cardImageRandom], 512);
             cards[i].transform.GetChild(0).name = cardNames[cardImageRandom];
             cards[i].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+            cards[i].GetComponent<CardTileInformation>().type = cardNames[cardImageRandom];
+        }
+
+        foreach(var card in cards)
+        {
+            card.GetComponent<CardTileInformation>().DetectNeightbours();
         }
     }
 

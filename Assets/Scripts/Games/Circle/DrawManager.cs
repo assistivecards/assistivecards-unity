@@ -19,6 +19,9 @@ public class DrawManager : MonoBehaviour
     private Collider2D[] overlappedCollidersList = new Collider2D[20];
     private ContactFilter2D contactFilter;
     private Touch touch;
+    public float distanceThreshold;
+    public bool isValid;
+
 
     void Start()
     {
@@ -52,6 +55,16 @@ public class DrawManager : MonoBehaviour
 
                 if (currentLine.GetComponent<LineRenderer>().positionCount <= 5)
                     currentLineChild.GetComponent<DetectCollision>().FadeOutAndDestroyLine();
+
+                if (currentLine.GetComponent<LineRenderer>().positionCount >= 2)
+                {
+                    if (Vector2.Distance(currentLine.GetComponent<LineRenderer>().GetPosition(0), currentLine.GetComponent<LineRenderer>().GetPosition(currentLine.GetComponent<LineRenderer>().positionCount - 1)) < distanceThreshold)
+                        isValid = true;
+                    else
+                        isValid = false;
+                }
+
+                Debug.Log("isValid: " + isValid);
 
                 Invoke("CheckIfLineCollidesWithAnything", 0.05f);
 

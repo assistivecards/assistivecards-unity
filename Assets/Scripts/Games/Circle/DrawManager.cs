@@ -18,6 +18,7 @@ public class DrawManager : MonoBehaviour
     private GameObject currentLineChild;
     private Collider2D[] overlappedCollidersList = new Collider2D[20];
     private ContactFilter2D contactFilter;
+    private Touch touch;
 
     void Start()
     {
@@ -27,33 +28,36 @@ public class DrawManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetMouseButtonDown(0))
-            currentLine = Instantiate(linePrefab, mousePos, Quaternion.identity);
-
-        if (Input.GetMouseButton(0))
-            currentLine.SetPosition(mousePos);
-
-        if (Input.GetMouseButtonUp(0))
+        if (Input.touchCount > 0)
         {
-            if (lineRendererPoints.Count > 0)
-                lineRendererPoints.Clear();
-            for (int i = 0; i < currentLine.GetComponent<LineRenderer>().positionCount; i++)
-                lineRendererPoints.Add(currentLine.GetComponent<LineRenderer>().GetPosition(i));
+            touch = Input.GetTouch(0);
+            Vector2 mousePos = mainCamera.ScreenToWorldPoint(touch.position);
+            if (touch.phase == TouchPhase.Began)
+                currentLine = Instantiate(linePrefab, mousePos, Quaternion.identity);
 
-            currentLineChild = Instantiate(currentLineChildPrefab, currentLine.transform.position, Quaternion.identity);
-            currentLineChild.transform.SetParent(currentLine.transform);
-            currentLineChild.GetComponent<PolygonCollider2D>().points = lineRendererPoints.ToArray();
-            currentLineChild.transform.position = currentLineChild.transform.InverseTransformPoint(currentLineChild.transform.position);
+            if (touch.phase == TouchPhase.Moved)
+                currentLine.SetPosition(mousePos);
 
-            if (currentLine.GetComponent<LineRenderer>().positionCount <= 5)
-                currentLineChild.GetComponent<DetectCollision>().FadeOutAndDestroyLine();
+            if (touch.phase == TouchPhase.Ended)
+            {
+                if (lineRendererPoints.Count > 0)
+                    lineRendererPoints.Clear();
+                for (int i = 0; i < currentLine.GetComponent<LineRenderer>().positionCount; i++)
+                    lineRendererPoints.Add(currentLine.GetComponent<LineRenderer>().GetPosition(i));
 
-            Invoke("CheckIfLineCollidesWithAnything", 0.05f);
+                currentLineChild = Instantiate(currentLineChildPrefab, currentLine.transform.position, Quaternion.identity);
+                currentLineChild.transform.SetParent(currentLine.transform);
+                currentLineChild.GetComponent<PolygonCollider2D>().points = lineRendererPoints.ToArray();
+                currentLineChild.transform.position = currentLineChild.transform.InverseTransformPoint(currentLineChild.transform.position);
 
+                if (currentLine.GetComponent<LineRenderer>().positionCount <= 5)
+                    currentLineChild.GetComponent<DetectCollision>().FadeOutAndDestroyLine();
 
+                Invoke("CheckIfLineCollidesWithAnything", 0.05f);
 
+            }
         }
+
     }
 
     private void CheckIfLineCollidesWithAnything()

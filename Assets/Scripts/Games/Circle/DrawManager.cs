@@ -16,8 +16,6 @@ public class DrawManager : MonoBehaviour
     [SerializeField] List<Vector2> lineRendererPoints = new List<Vector2>();
     [SerializeField] GameObject currentLineChildPrefab;
     private GameObject currentLineChild;
-    private Collider2D[] overlappedCollidersList = new Collider2D[20];
-    private ContactFilter2D contactFilter;
     private Touch touch;
     public float distanceThreshold;
     public bool isValid;

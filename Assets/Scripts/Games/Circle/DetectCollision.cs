@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class DetectCollision : MonoBehaviour
 {
+    private BoardGeneration board;
     private DrawManager drawManager;
     public int collisionCount;
     private GameObject matchedCard;
-    private Color32 success = new Color32(32, 202, 32, 255);
+    private Color32 success = new Color32(206, 221, 162, 255);
     // Start is called before the first frame update
     void Start()
     {
         drawManager = GameObject.Find("DrawManager").GetComponent<DrawManager>();
+        board = GameObject.Find("GamePanel").GetComponent<BoardGeneration>();
     }
 
     // Update is called once per frame
@@ -31,6 +33,7 @@ public class DetectCollision : MonoBehaviour
         }
         else
         {
+            //Wrong Match
             FadeOutAndDestroyLine();
         }
 
@@ -46,8 +49,13 @@ public class DetectCollision : MonoBehaviour
     {
         if (transform.parent.GetComponent<LineRenderer>().material.color.a == 1)
         {
-            Debug.Log("Correct Match !!!");
+            //Correct Match!
+            drawManager.gameObject.SetActive(false);
             LeanTween.color(transform.parent.GetComponent<LineRenderer>().gameObject, success, .25f);
+            board.Invoke("ScaleImagesDown", 0.25f);
+            Invoke("FadeOutAndDestroyLine", 0.25f);
+            board.Invoke("ClearBoard", 0.5f);
+            board.Invoke("GenerateRandomBoardAsync", 0.5f);
         }
     }
 }

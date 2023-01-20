@@ -19,10 +19,10 @@ public class BoardController : MonoBehaviour
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     private List<string> cardNames = new List<string>();
+    [SerializeField] private GridGenerator gridGenerator;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cardTextures;
     private List<Sprite> cardSprites = new List<Sprite>();
 
-    public int cardCount;
     public int cardTypeCount;
 
     private int tempRandomValue;
@@ -71,20 +71,18 @@ public class BoardController : MonoBehaviour
         await CacheCards(_packSlug);
         CreateRandomValue();
 
-        for(int i = 0; i < cardCount; i ++)
+        for(int i = 0; i < gridGenerator.gridWidth * gridGenerator.gridHeight; i ++)
         {
             int cardImageRandom = randomValues[Random.Range(0,cardTypeCount)];
-            cards.Add(Instantiate(tempcardElement, Vector3.zero, Quaternion.identity));
+            cards.Add(Instantiate(tempcardElement, gridGenerator.gridTiles[i].transform.position, Quaternion.identity));
             cards[i].transform.parent = this.transform;
-            cards[i].transform.localScale = Vector3.one * 1.5f;
+            cards[i].transform.localScale = Vector3.one * 0.5f;
 
-            cards[i].name = "(" + i/this.gameObject.GetComponent<UnityEngine.UI.GridLayoutGroup>().constraintCount + 
-            "," + i % this.gameObject.GetComponent<UnityEngine.UI.GridLayoutGroup>().constraintCount + ")";
-
-            cards[i].GetComponent<CardTileInformation>().xValue = i/this.gameObject.GetComponent<UnityEngine.UI.GridLayoutGroup>().constraintCount;
-            cards[i].GetComponent<CardTileInformation>().yValue = i % this.gameObject.GetComponent<UnityEngine.UI.GridLayoutGroup>().constraintCount;
+            cards[i].GetComponent<CardTileInformation>().xValue = gridGenerator.gridTiles[i].GetComponent<Tile>().x;
+            cards[i].GetComponent<CardTileInformation>().yValue = gridGenerator.gridTiles[i].GetComponent<Tile>().y;
 
             var cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[cardImageRandom], 512);
+            cards[i].transform.name = cardNames[cardImageRandom];
             cards[i].transform.GetChild(0).name = cardNames[cardImageRandom];
             cards[i].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             cards[i].GetComponent<CardTileInformation>().type = cardNames[cardImageRandom];

@@ -22,7 +22,6 @@ public class BoardGeneration : MonoBehaviour
     [SerializeField] GameObject backButton;
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
-    // [SerializeField] DetectMatch detectMatchScript;
     [SerializeField] DrawManager drawManager;
 
     private void Awake()
@@ -121,13 +120,13 @@ public class BoardGeneration : MonoBehaviour
 
     public void ClearBoard()
     {
+        circleText.text = "";
         randomCards.Clear();
         randomImages.Clear();
         randomSprites.Clear();
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {
             cardImagesInScene[i].sprite = null;
-            cardImagesInScene[i].color = new Color32(0, 0, 0, 200);
         }
 
     }
@@ -139,7 +138,15 @@ public class BoardGeneration : MonoBehaviour
         {
             LeanTween.scale(cardImagesInScene[i].gameObject, Vector3.one, 0.15f);
         }
+    }
 
+    public void ScaleImagesDown()
+    {
+        LeanTween.scale(circleText.gameObject, Vector3.zero, 0.15f);
+        for (int i = 0; i < cardImagesInScene.Length; i++)
+        {
+            LeanTween.scale(cardImagesInScene[i].gameObject, Vector3.zero, 0.15f);
+        }
     }
 
     public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)
@@ -158,5 +165,7 @@ public class BoardGeneration : MonoBehaviour
     {
         gameAPI.Speak(randomCards[0].title);
     }
+
+
 
 }

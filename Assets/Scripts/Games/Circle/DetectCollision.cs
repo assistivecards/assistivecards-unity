@@ -8,7 +8,7 @@ public class DetectCollision : MonoBehaviour
     private DrawManager drawManager;
     public int collisionCount;
     private GameObject matchedCard;
-    private Color32 success = new Color32(32, 202, 32, 255);
+    private Color32 success = new Color32(206, 221, 162, 255);
     // Start is called before the first frame update
     void Start()
     {

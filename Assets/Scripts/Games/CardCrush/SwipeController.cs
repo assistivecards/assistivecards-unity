@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SwipeController : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class SwipeController : MonoBehaviour
    {
         if(selectedElements.Count < 2 && !selectedElements.Contains(_cardElement))
         {
+            _cardElement.GetComponent<Image>().color = new Color32(255,202,194,255);
             selectedElements.Add(_cardElement);
         }
    }
@@ -51,6 +53,10 @@ public class SwipeController : MonoBehaviour
 
                 selectedElements[0].GetComponent<CardTileInformation>().DetectNeightbours();
                 selectedElements[1].GetComponent<CardTileInformation>().DetectNeightbours();
+
+
+                selectedElements[0].GetComponent<Image>().color = new Color32(255,255,255,255);
+                selectedElements[1].GetComponent<Image>().color = new Color32(255,255,255,255);
 
                 selectedElements.Clear();
 

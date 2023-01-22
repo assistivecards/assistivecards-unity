@@ -36,7 +36,8 @@ public class CardTileInformation : MonoBehaviour, IPointerDownHandler, IPointerU
 
     private void OnEnable() 
     {
-        DetectNeightbours();
+        //This function disable for  wrong neightbours bug
+        //DetectNeightbours();
     }
 
     public void OnPointerDown(PointerEventData pointerEventData)
@@ -57,46 +58,70 @@ public class CardTileInformation : MonoBehaviour, IPointerDownHandler, IPointerU
     {
         foreach (var card in boardController.cards)
         {
-            if(xValue != gridGenerator.gridWidth -1 &&
-                card.GetComponent<CardTileInformation>().xValue == xValue + 1 &&
-                 card.GetComponent<CardTileInformation>().yValue == yValue)
+            if(xValue != gridGenerator.gridWidth -1)
             {
-                rightNeighbour = card;
+                if(card.GetComponent<CardTileInformation>().xValue == xValue + 1 &&
+                card.GetComponent<CardTileInformation>().yValue == yValue)
+                {
+                    rightNeighbour = card;
                     neighbours.Add(rightNeighbour);
                     rightNeighbourType = rightNeighbour.transform.GetChild(0).name;
+                }
+            }
+            else
+            {
+                rightNeighbour = null;
             }
         }
         foreach (var card in boardController.cards)
         {
-            if(xValue != 0 &&
-                card.GetComponent<CardTileInformation>().xValue == xValue - 1 &&
-                 card.GetComponent<CardTileInformation>().yValue == yValue)
+            if(xValue != 0)
             {
-                leftNeighbour = card;
-                    neighbours.Add(topNeighbour);
+                if(card.GetComponent<CardTileInformation>().xValue == xValue - 1 &&
+                card.GetComponent<CardTileInformation>().yValue == yValue)
+                {
+                    leftNeighbour = card;
+                    neighbours.Add(leftNeighbour);
                     leftNeighbourType = leftNeighbour.transform.GetChild(0).name;
+                }
+            }
+            else
+            {
+                leftNeighbour = null;
             }
         }
         foreach (var card in boardController.cards)
         {
-            if(yValue != gridGenerator.gridHeight -1 &&
-                card.GetComponent<CardTileInformation>().xValue == xValue &&
-                 card.GetComponent<CardTileInformation>().yValue == yValue + 1)
+            if(yValue != gridGenerator.gridHeight -1)
             {
-                topNeighbour = card;
+                if(card.GetComponent<CardTileInformation>().xValue == xValue &&
+                card.GetComponent<CardTileInformation>().yValue == yValue + 1)
+                {
+                    topNeighbour = card;
                     neighbours.Add(topNeighbour);
                     topNeighbourType = topNeighbour.transform.GetChild(0).name;
+                }
+            }
+            else 
+            {
+                topNeighbour = null;
             }
         }
         foreach (var card in boardController.cards)
         {
-            if( yValue != 0 &&
-                card.GetComponent<CardTileInformation>().xValue == xValue &&
-                 card.GetComponent<CardTileInformation>().yValue == yValue - 1)
+            if( yValue != 0)
             {
-                bottomNeighbour = card;
+                if(card.GetComponent<CardTileInformation>().xValue == xValue &&
+                card.GetComponent<CardTileInformation>().yValue == yValue - 1)
+                {
+                    bottomNeighbour = card;
                     neighbours.Add(bottomNeighbour);
                     bottomNeighbourType = bottomNeighbour.transform.GetChild(0).name;
+                }
+            }
+            else
+            {
+                bottomNeighbour = null;
             }
         }
     }
@@ -104,6 +129,6 @@ public class CardTileInformation : MonoBehaviour, IPointerDownHandler, IPointerU
 
     public void ResetNeighbours()
     {
-        //neighbours.Clear();
+        neighbours.Clear();
     }
 }

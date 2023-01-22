@@ -49,6 +49,9 @@ public class SwipeController : MonoBehaviour
                 selectedElements[1].GetComponent<CardTileInformation>().ResetNeighbours();
 
 
+                selectedElements[0].GetComponent<CardTileInformation>().DetectNeightbours();
+                selectedElements[1].GetComponent<CardTileInformation>().DetectNeightbours();
+
                 selectedElements.Clear();
 
             }

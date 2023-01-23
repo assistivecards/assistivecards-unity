@@ -10,16 +10,15 @@ public class CircleUIController : MonoBehaviour
     [SerializeField] GameObject packSelectionPanel;
     [SerializeField] GameObject helloText;
     [SerializeField] GameObject speakerIcon;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] GameObject checkPointPanel;
+    public int correctMatches;
+
+
+    private GameAPI gameAPI;
+
+    private void Awake()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        gameAPI = Camera.main.GetComponent<GameAPI>();
     }
 
     public void OnBackButtonClick()
@@ -31,9 +30,8 @@ public class CircleUIController : MonoBehaviour
     {
         if (GameObject.Find("Card1").transform.localScale == Vector3.one && GameObject.Find("Card1").GetComponent<Image>().sprite != null)
         {
-            // ResetCounter();
+            ResetCounter();
             board.ScaleImagesDown();
-            // LeanTween.scale(backButton, Vector3.zero, 0.25f);
             backButton.SetActive(false);
             yield return new WaitForSeconds(0.25f);
             board.ClearBoard();
@@ -52,5 +50,73 @@ public class CircleUIController : MonoBehaviour
     public void EnableScrollRect()
     {
         packSelectionPanel.transform.GetChild(0).GetComponent<ScrollRect>().enabled = true;
+    }
+
+    public void OpenCheckPointPanel()
+    {
+        checkPointPanel.SetActive(true);
+        backButton.SetActive(false);
+        checkPointPanel.transform.GetChild(1).GetComponent<Button>().interactable = false;
+        LeanTween.scale(checkPointPanel, Vector3.one * 0.6f, 0.25f);
+        gameAPI.PlaySFX("Finished");
+        Invoke("EnableContinuePlayingButton", .75f);
+    }
+
+    public void CloseCheckpointPanel()
+    {
+        // checkPointPanel.SetActive(false);
+        StartCoroutine(CloseCheckPointPanelCoroutine());
+    }
+
+    IEnumerator CloseCheckPointPanelCoroutine()
+    {
+        LeanTween.scale(checkPointPanel, Vector3.zero, 0.25f);
+        yield return new WaitForSeconds(0.5f);
+        checkPointPanel.SetActive(false);
+    }
+
+    public void ChooseNewPackButtonClick()
+    {
+        StartCoroutine(ChooseNewPackButtonCoroutine());
+
+    }
+
+    IEnumerator ChooseNewPackButtonCoroutine()
+    {
+        board.ScaleImagesDown();
+        // LeanTween.scale(backButton, Vector3.zero, 0.25f);
+        backButton.SetActive(false);
+        CloseCheckpointPanel();
+        yield return new WaitForSeconds(0.25f);
+        board.ClearBoard();
+        packSelectionPanel.transform.localScale = new Vector3(0, 0, 0);
+        packSelectionPanel.SetActive(true);
+        LeanTween.scale(packSelectionPanel, Vector3.one, 0.25f);
+        helloText.SetActive(true);
+        speakerIcon.SetActive(true);
+        Invoke("EnableScrollRect", 0.26f);
+    }
+
+    public void CloseCheckpointPanelAndGenerateNewBoard()
+    {
+        StartCoroutine(CloseCheckPointPanelCoroutine());
+        // checkPointPanel.SetActive(false);
+        board.Invoke("GenerateRandomBoardAsync", 0.25f);
+        // await board.GenerateRandomBoardAsync();
+    }
+
+    public void EnableContinuePlayingButton()
+    {
+        checkPointPanel.transform.GetChild(1).GetComponent<Button>().interactable = true;
+    }
+
+    public void EnableBackButton()
+    {
+        backButton.SetActive(true);
+    }
+
+    public void ResetCounter()
+    {
+        correctMatches = 0;
     }
 }

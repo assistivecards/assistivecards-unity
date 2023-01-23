@@ -10,12 +10,14 @@ public class DetectCollision : MonoBehaviour
     private GameObject matchedCard;
     private Color32 success = new Color32(206, 221, 162, 255);
     private GameAPI gameAPI;
+    private CircleUIController UIController;
 
     // Start is called before the first frame update
     void Start()
     {
         drawManager = GameObject.Find("DrawManager").GetComponent<DrawManager>();
         board = GameObject.Find("GamePanel").GetComponent<BoardGeneration>();
+        UIController = GameObject.Find("GamePanel").GetComponent<CircleUIController>();
     }
 
     private void Awake()
@@ -51,6 +53,8 @@ public class DetectCollision : MonoBehaviour
         if (transform.parent.GetComponent<LineRenderer>().material.color.a == 1)
         {
             //Correct Match!
+            UIController.correctMatches++;
+            Debug.Log(UIController.correctMatches);
             drawManager.gameObject.SetActive(false);
             gameAPI.PlaySFX("Success");
             LeanTween.color(transform.parent.GetComponent<LineRenderer>().gameObject, success, .25f);
@@ -59,7 +63,14 @@ public class DetectCollision : MonoBehaviour
             Invoke("PlayCorrectMatchAnimation", 0.25f);
             board.Invoke("ScaleImagesDown", 1f);
             board.Invoke("ClearBoard", 1.25f);
-            board.Invoke("GenerateRandomBoardAsync", 1.25f);
+            if (UIController.correctMatches == 10)
+            {
+                // OpenCheckPointPanel();
+                UIController.Invoke("OpenCheckPointPanel", 1f);
+            }
+            else
+                board.Invoke("GenerateRandomBoardAsync", 1.25f);
+
         }
     }
 

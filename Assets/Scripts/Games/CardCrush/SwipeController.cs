@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class SwipeController : MonoBehaviour
 {
+    [SerializeField] private BoardController boardController;
     public List<GameObject> selectedElements = new List<GameObject>();
 
     private Vector3 firstElementPosition;
@@ -47,18 +48,15 @@ public class SwipeController : MonoBehaviour
                 selectedElements[1].GetComponent<CardTileInformation>().yValue = firstElementYValue;
 
 
-                selectedElements[0].GetComponent<CardTileInformation>().ResetNeighbours();
-                selectedElements[1].GetComponent<CardTileInformation>().ResetNeighbours();
-
-
-                selectedElements[0].GetComponent<CardTileInformation>().DetectNeightbours();
-                selectedElements[1].GetComponent<CardTileInformation>().DetectNeightbours();
-
-
                 selectedElements[0].GetComponent<Image>().color = new Color32(255,255,255,255);
                 selectedElements[1].GetComponent<Image>().color = new Color32(255,255,255,255);
 
+                selectedElements[0].GetComponent<CardTileInformation>().CheckMatch();
+                selectedElements[1].GetComponent<CardTileInformation>().CheckMatch();
+
                 selectedElements.Clear();
+
+                DetectNeightboursOnBoard();
 
             }
             else if(!selectedElements[1].GetComponent<CardTileInformation>().neighbours.Contains(selectedElements[0]))
@@ -67,4 +65,13 @@ public class SwipeController : MonoBehaviour
             }
         }
    } 
+
+   private void DetectNeightboursOnBoard()
+   {
+        foreach(var card in boardController.cards)
+        {
+            card.GetComponent<CardTileInformation>().ResetNeighbours();
+            card.GetComponent<CardTileInformation>().DetectNeightbours();
+        }
+   }
 }

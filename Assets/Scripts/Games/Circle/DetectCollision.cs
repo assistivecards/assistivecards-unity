@@ -8,7 +8,7 @@ public class DetectCollision : MonoBehaviour
     private DrawManager drawManager;
     public int collisionCount;
     private GameObject matchedCard;
-    private Color32 success = new Color32(206, 221, 162, 255);
+    private Color32 success = new Color32(154, 241, 161, 255);
     private GameAPI gameAPI;
     private CircleUIController UIController;
 
@@ -58,18 +58,18 @@ public class DetectCollision : MonoBehaviour
             drawManager.gameObject.SetActive(false);
             gameAPI.PlaySFX("Success");
             LeanTween.color(transform.parent.GetComponent<LineRenderer>().gameObject, success, .25f);
-            Invoke("FadeOutAndDestroyLine", 0.25f);
-            board.Invoke("ReadCard", 0.25f);
-            Invoke("PlayCorrectMatchAnimation", 0.25f);
-            board.Invoke("ScaleImagesDown", 1f);
-            board.Invoke("ClearBoard", 1.25f);
+            Invoke("FadeOutAndDestroyLine", 0.45f);
+            board.Invoke("ReadCard", 0.5f);
+            Invoke("PlayCorrectMatchAnimation", 0.5f);
+            board.Invoke("ScaleImagesDown", 1.25f);
+            board.Invoke("ClearBoard", 1.5f);
             if (UIController.correctMatches == 10)
             {
                 // OpenCheckPointPanel();
-                UIController.Invoke("OpenCheckPointPanel", 1f);
+                UIController.Invoke("OpenCheckPointPanel", 1.25f);
             }
             else
-                board.Invoke("GenerateRandomBoardAsync", 1.25f);
+                board.Invoke("GenerateRandomBoardAsync", 1.5f);
 
         }
     }

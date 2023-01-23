@@ -148,7 +148,7 @@ public class CardTileInformation : MonoBehaviour, IPointerDownHandler, IPointerU
 
     public void CheckMatch()
     {
-        if(leftNeighbour != null && rightNeighbourType != null)
+        if(leftNeighbour != null && rightNeighbour != null)
         {
             if(leftNeighbourType == type && rightNeighbourType == type)
             {

@@ -81,17 +81,68 @@ public class BoardController : MonoBehaviour
             cards[i].GetComponent<CardTileInformation>().xValue = gridGenerator.gridTiles[i].GetComponent<Tile>().x;
             cards[i].GetComponent<CardTileInformation>().yValue = gridGenerator.gridTiles[i].GetComponent<Tile>().y;
 
+
             var cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[cardImageRandom], 512);
             cards[i].transform.name = cardNames[cardImageRandom];
             cards[i].transform.GetChild(0).name = cardNames[cardImageRandom];
             cards[i].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             cards[i].GetComponent<CardTileInformation>().type = cardNames[cardImageRandom];
+            
+            int maxIterations = 0;
+            while(FindVerticalMatchesAtBeginning(i) && maxIterations < 50)
+            {
+                cardImageRandom = randomValues[Random.Range(0,cardTypeCount)];
+                cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[cardImageRandom], 512);
+                cards[i].transform.name = cardNames[cardImageRandom];
+                cards[i].transform.GetChild(0).name = cardNames[cardImageRandom];
+                cards[i].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+                cards[i].GetComponent<CardTileInformation>().type = cardNames[cardImageRandom];
+                maxIterations ++;
+            }
+            maxIterations = 0;
+            while(FindHorizontalMatchesAtBeginning(i) && maxIterations < 50)
+            {
+                cardImageRandom = randomValues[Random.Range(0,cardTypeCount)];
+                cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[cardImageRandom], 512);
+                cards[i].transform.name = cardNames[cardImageRandom];
+                cards[i].transform.GetChild(0).name = cardNames[cardImageRandom];
+                cards[i].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+                cards[i].GetComponent<CardTileInformation>().type = cardNames[cardImageRandom];
+                maxIterations ++;
+            }
+            maxIterations = 0;
         }
 
         foreach(var card in cards)
         {
             card.GetComponent<CardTileInformation>().DetectNeightbours();
         }
+    }
+
+    private bool FindVerticalMatchesAtBeginning(int cardNum)
+    {
+        if(cardNum >= 1)
+        {
+            if(cards[cardNum].GetComponent<CardTileInformation>().type == cards[cardNum-1].GetComponent<CardTileInformation>().type)
+            {
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+
+    private bool FindHorizontalMatchesAtBeginning(int cardNum)
+    {
+        if(cardNum > gridGenerator.gridHeight)
+        {
+            if(cards[cardNum].GetComponent<CardTileInformation>().type == cards[cardNum - gridGenerator.gridHeight].GetComponent<CardTileInformation>().type)
+            {
+                return true;
+            }
+            return false;
+        }
+        return false;
     }
 
     private async void GenerateBoard(string _packSlug)

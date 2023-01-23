@@ -9,6 +9,8 @@ public class DetectCollision : MonoBehaviour
     public int collisionCount;
     private GameObject matchedCard;
     private Color32 success = new Color32(206, 221, 162, 255);
+    private GameAPI gameAPI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +18,9 @@ public class DetectCollision : MonoBehaviour
         board = GameObject.Find("GamePanel").GetComponent<BoardGeneration>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-
+        gameAPI = Camera.main.GetComponent<GameAPI>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -51,11 +52,19 @@ public class DetectCollision : MonoBehaviour
         {
             //Correct Match!
             drawManager.gameObject.SetActive(false);
+            gameAPI.PlaySFX("Success");
             LeanTween.color(transform.parent.GetComponent<LineRenderer>().gameObject, success, .25f);
-            board.Invoke("ScaleImagesDown", 0.25f);
             Invoke("FadeOutAndDestroyLine", 0.25f);
-            board.Invoke("ClearBoard", 0.5f);
-            board.Invoke("GenerateRandomBoardAsync", 0.5f);
+            board.Invoke("ReadCard", 0.25f);
+            Invoke("PlayCorrectMatchAnimation", 0.25f);
+            board.Invoke("ScaleImagesDown", 1f);
+            board.Invoke("ClearBoard", 1.25f);
+            board.Invoke("GenerateRandomBoardAsync", 1.25f);
         }
+    }
+
+    public void PlayCorrectMatchAnimation()
+    {
+        LeanTween.scale(matchedCard, Vector3.one * 1.25f, .25f);
     }
 }

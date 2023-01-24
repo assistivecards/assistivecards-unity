@@ -27,6 +27,7 @@ public class BoardController : MonoBehaviour
 
     private int tempRandomValue;
     private List<int> randomValues = new List<int>();
+    private string packSlug;
 
     private void Awake()
     {
@@ -70,6 +71,7 @@ public class BoardController : MonoBehaviour
     {
         await CacheCards(_packSlug);
         CreateRandomValue();
+        packSlug = _packSlug;
 
         for(int i = 0; i < gridGenerator.gridWidth * gridGenerator.gridHeight; i ++)
         {
@@ -80,6 +82,7 @@ public class BoardController : MonoBehaviour
 
             cards[i].GetComponent<CardTileInformation>().xValue = gridGenerator.gridTiles[i].GetComponent<Tile>().x;
             cards[i].GetComponent<CardTileInformation>().yValue = gridGenerator.gridTiles[i].GetComponent<Tile>().y;
+            cards[i].GetComponent<CardTileInformation>().listNum = i;
 
 
             var cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[cardImageRandom], 512);
@@ -153,5 +156,16 @@ public class BoardController : MonoBehaviour
     public void GenerateBoardWithSelectedPack()
     {
         GenerateBoard(packSelectionPanel.selectedPackElement.name);
+    }
+
+    public async void BoardRefiller(GameObject _emptyCard)
+    {
+        int cardImageRandom = randomValues[Random.Range(0,cardTypeCount)];
+        var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[cardImageRandom], 512);
+        _emptyCard.transform.name = cardNames[cardImageRandom];        
+        _emptyCard.transform.GetChild(0).name = cardNames[cardImageRandom];
+        _emptyCard.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+        _emptyCard.GetComponent<CardTileInformation>().type = cardNames[cardImageRandom];
+        _emptyCard.GetComponent<CardTileInformation>().isMatched = false;
     }
 }

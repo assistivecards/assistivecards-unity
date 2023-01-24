@@ -7,6 +7,7 @@ public class CardTileInformation : MonoBehaviour, IPointerDownHandler, IPointerU
 {
     public int xValue;
     public int yValue;
+    public int listNum;
 
     private BoardController boardController;
     private SwipeController swipeController;
@@ -138,12 +139,15 @@ public class CardTileInformation : MonoBehaviour, IPointerDownHandler, IPointerU
         }
     }
 
-    private void Update() {
+    private void FixedUpdate() 
+    {
         CheckMatch();
-        if(isMatched)
-        {
-            this.GetComponent<Image>().color = new Color32(155,155,155,255);
-        }
+    }
+
+    private void DestroyMatch()
+    {
+        swipeController.ClearSelectedElements();
+        Destroy(this.gameObject);
     }
 
     public void CheckMatch()
@@ -166,6 +170,11 @@ public class CardTileInformation : MonoBehaviour, IPointerDownHandler, IPointerU
                 bottomNeighbour.GetComponent<CardTileInformation>().isMatched = true;
                 isMatched = true;
             }
+        }
+        if(isMatched)
+        {
+            LeanTween.scale(this.gameObject, new Vector3(0.001f, 0.001f, 0.001f), 0.1f);
+            //transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
         }
         // foreach(var horizontalNeighbour in horizontalNeighbours)
         // {

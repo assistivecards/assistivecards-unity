@@ -70,27 +70,35 @@ public class SwipeController : MonoBehaviour
 
    public void CheckSwipePossibility()
    {
-        if(!selectedElements[0].GetComponent<CardTileInformation>().isMatched 
-        && !selectedElements[1].GetComponent<CardTileInformation>().isMatched)
+        if(selectedElements.Count > 1)
         {
-            
-            LeanTween.move(selectedElements[0], firstElementPosition, 0.25f);
-            selectedElements[0].GetComponent<CardTileInformation>().xValue = firstElementXValue;
-            selectedElements[0].GetComponent<CardTileInformation>().yValue = firstElementYValue;
+            if(!selectedElements[0].GetComponent<CardTileInformation>().isMatched 
+            && !selectedElements[1].GetComponent<CardTileInformation>().isMatched)
+            {
+                
+                LeanTween.move(selectedElements[0], firstElementPosition, 0.25f);
+                selectedElements[0].GetComponent<CardTileInformation>().xValue = firstElementXValue;
+                selectedElements[0].GetComponent<CardTileInformation>().yValue = firstElementYValue;
 
-            LeanTween.move(selectedElements[1], secondElementPosition, 0.25f);
-            selectedElements[1].GetComponent<CardTileInformation>().xValue = secondElementXValue;
-            selectedElements[1].GetComponent<CardTileInformation>().yValue = secondElementYValue;
+                LeanTween.move(selectedElements[1], secondElementPosition, 0.25f);
+                selectedElements[1].GetComponent<CardTileInformation>().xValue = secondElementXValue;
+                selectedElements[1].GetComponent<CardTileInformation>().yValue = secondElementYValue;
 
-            selectedElements[0].GetComponent<Image>().color = new Color32(255,255,255,255);
-            selectedElements[1].GetComponent<Image>().color = new Color32(255,255,255,255);
+                selectedElements[0].GetComponent<Image>().color = new Color32(255,255,255,255);
+                selectedElements[1].GetComponent<Image>().color = new Color32(255,255,255,255);
 
-            selectedElements.Clear();
+                selectedElements.Clear();
+            }
+            else
+            {
+                selectedElements.Clear();
+            }
         }
-        else
-        {
-            selectedElements.Clear();
-        }
+   }
+   
+   public void ClearSelectedElements()
+   {
+    selectedElements.Clear();
    }
 
    private void DetectNeightboursOnBoard()

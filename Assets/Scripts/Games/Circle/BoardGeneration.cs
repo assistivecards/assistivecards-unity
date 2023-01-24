@@ -115,7 +115,7 @@ public class BoardGeneration : MonoBehaviour
 
         ScaleImagesUp();
         backButton.SetActive(true);
-        drawManager.gameObject.SetActive(true);
+        Invoke("EnableDrawManager", 0.16f);
     }
 
     public void ClearBoard()
@@ -164,6 +164,11 @@ public class BoardGeneration : MonoBehaviour
     public void ReadCard()
     {
         gameAPI.Speak(randomCards[0].title);
+    }
+
+    public void EnableDrawManager()
+    {
+        drawManager.gameObject.SetActive(true);
     }
 
 

@@ -115,7 +115,8 @@ public class BoardGeneration : MonoBehaviour
 
         ScaleImagesUp();
         backButton.SetActive(true);
-        Invoke("EnableDrawManager", 0.16f);
+        Invoke("EnableBackButton", 0.15f);
+        Invoke("EnableDrawManager", 0.15f);
     }
 
     public void ClearBoard()
@@ -169,6 +170,11 @@ public class BoardGeneration : MonoBehaviour
     public void EnableDrawManager()
     {
         drawManager.gameObject.SetActive(true);
+    }
+
+    public void EnableBackButton()
+    {
+        backButton.GetComponent<Button>().interactable = true;
     }
 
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DetectCollision : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class DetectCollision : MonoBehaviour
     private Color32 success = new Color32(154, 241, 161, 255);
     private GameAPI gameAPI;
     private CircleUIController UIController;
+    private GameObject backButton;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +20,7 @@ public class DetectCollision : MonoBehaviour
         drawManager = GameObject.Find("DrawManager").GetComponent<DrawManager>();
         board = GameObject.Find("GamePanel").GetComponent<BoardGeneration>();
         UIController = GameObject.Find("GamePanel").GetComponent<CircleUIController>();
+        backButton = GameObject.Find("Back");
     }
 
     private void Awake()
@@ -54,6 +57,7 @@ public class DetectCollision : MonoBehaviour
         {
             //Correct Match!
             UIController.correctMatches++;
+            backButton.GetComponent<Button>().interactable = false;
             Debug.Log(UIController.correctMatches);
             drawManager.gameObject.SetActive(false);
             gameAPI.PlaySFX("Success");

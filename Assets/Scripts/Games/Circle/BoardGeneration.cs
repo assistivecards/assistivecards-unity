@@ -85,7 +85,6 @@ public class BoardGeneration : MonoBehaviour
 
         correctCardSlug = randomCards[0].slug;
         circleText.text = gameAPI.Translate(circleText.gameObject.name, gameAPI.ToSentenceCase(randomCards[0].title).Replace("-", " "), selectedLangCode);
-        // circleText.text="Circle the " + randomCards[0].title;
         var correctCardImageIndex = Random.Range(0, cardImagesInScene.Length);
         cardImagesInScene[correctCardImageIndex].sprite = randomSprites[0];
 
@@ -115,7 +114,8 @@ public class BoardGeneration : MonoBehaviour
 
         ScaleImagesUp();
         backButton.SetActive(true);
-        drawManager.gameObject.SetActive(true);
+        Invoke("EnableBackButton", 0.15f);
+        Invoke("EnableDrawManager", 0.15f);
     }
 
     public void ClearBoard()
@@ -164,6 +164,16 @@ public class BoardGeneration : MonoBehaviour
     public void ReadCard()
     {
         gameAPI.Speak(randomCards[0].title);
+    }
+
+    public void EnableDrawManager()
+    {
+        drawManager.gameObject.SetActive(true);
+    }
+
+    public void EnableBackButton()
+    {
+        backButton.GetComponent<Button>().interactable = true;
     }
 
 

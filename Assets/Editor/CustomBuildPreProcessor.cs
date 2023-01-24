@@ -5,13 +5,18 @@ using System.Linq;
 using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
+using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [InitializeOnLoad]
 class CustomBuildPreProcessor : IPreprocessBuildWithReport
 {
     public static string productName;
     public static string productVersion;
+    List<GameObject> rootObjects = new List<GameObject>();
+    Transform[] childObjects;
+
     public int callbackOrder { get { return 0; } }
 
     static CustomBuildPreProcessor()
@@ -34,6 +39,45 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
         PlayerSettings.iOS.buildNumber = PlayerSettings.bundleVersion;
         PlayerSettings.iOS.applicationDisplayName = ToTitleCase(PlayerSettings.productName);
         PlayerSettings.applicationIdentifier = "com.assistivecards." + PlayerSettings.productName.Replace(" ", "_").ToLower();
+
+        Scene scene = SceneManager.GetActiveScene();
+        scene.GetRootGameObjects(rootObjects);
+
+        if (ToTitleCase(PlayerSettings.productName) == "Memory")
+        {
+            foreach (GameObject obj in rootObjects)
+            {
+                if (obj.name == "Canvas")
+                {
+                    childObjects = obj.GetComponentsInChildren<Transform>(true);
+                }
+            }
+        }
+        else
+        {
+            foreach (GameObject obj in rootObjects)
+            {
+                if (obj.name == "GameCanvas")
+                {
+                    childObjects = obj.GetComponentsInChildren<Transform>(true);
+                }
+            }
+        }
+
+        foreach (Transform item in childObjects)
+        {
+            if (item.gameObject.name == "LoadingPanel")
+            {
+                item.gameObject.SetActive(true);
+            }
+            else if (item.gameObject.name == "PackSelectionPrefab")
+            {
+                item.gameObject.SetActive(false);
+            }
+        }
+
+        EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene(), "Assets/Scenes/" + ToTitleCase(PlayerSettings.productName) + ".unity");
+
         Debug.Log("preprocessing");
 
     }

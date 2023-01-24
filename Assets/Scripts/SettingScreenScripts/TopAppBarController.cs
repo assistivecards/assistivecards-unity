@@ -159,7 +159,7 @@ public class TopAppBarController : MonoBehaviour
             {
                 profileEditor = canvasController.currentScreen.GetComponentInParent<ProfileEditor>();
 
-                if(profileEditor.nicknameInputField.text.Length < 14)
+                if (profileEditor.nicknameInputField.text.Length < 14)
                 {
                     gameAPI.SetNickname(profileEditor.nicknameInputField.text);
                     canvas.GetComponent<CanvasController>().ProfilePanelUpdate();
@@ -197,6 +197,7 @@ public class TopAppBarController : MonoBehaviour
                 TTSPanel.didLanguageChange = true;
                 PromoScreen.didLanguageChange = true;
                 Board.didLanguageChange = true;
+                BoardGeneration.didLanguageChange = true;
 
                 if (languageController.selectedLanguage.name == "Arabic" || languageController.selectedLanguage.name == "Urdu")
                 {

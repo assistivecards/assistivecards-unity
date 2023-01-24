@@ -85,7 +85,6 @@ public class BoardGeneration : MonoBehaviour
 
         correctCardSlug = randomCards[0].slug;
         circleText.text = gameAPI.Translate(circleText.gameObject.name, gameAPI.ToSentenceCase(randomCards[0].title).Replace("-", " "), selectedLangCode);
-        // circleText.text="Circle the " + randomCards[0].title;
         var correctCardImageIndex = Random.Range(0, cardImagesInScene.Length);
         cardImagesInScene[correctCardImageIndex].sprite = randomSprites[0];
 

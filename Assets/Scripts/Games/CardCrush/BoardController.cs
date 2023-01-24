@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Linq;
 
+
 public class BoardController : MonoBehaviour
 {
     GameAPI gameAPI;
@@ -28,6 +29,11 @@ public class BoardController : MonoBehaviour
     private int tempRandomValue;
     private List<int> randomValues = new List<int>();
     private string packSlug;
+
+    public int x;
+    public int y;
+    public int listNum;
+
 
     private void Awake()
     {
@@ -148,6 +154,21 @@ public class BoardController : MonoBehaviour
         return false;
     }
 
+    private void Update() {
+        RefillBoard();
+    }
+
+    public async void RefillBoard()
+    {
+        foreach(var card in cards)
+        {
+            if(card.GetComponent<CardTileInformation>().isMatched == true)
+            {
+                // empty tiles also detect here ?
+            }
+        }
+    }
+
     private async void GenerateBoard(string _packSlug)
     {
         await GenerateBoardAsync(_packSlug);
@@ -156,16 +177,5 @@ public class BoardController : MonoBehaviour
     public void GenerateBoardWithSelectedPack()
     {
         GenerateBoard(packSelectionPanel.selectedPackElement.name);
-    }
-
-    public async void BoardRefiller(GameObject _emptyCard)
-    {
-        int cardImageRandom = randomValues[Random.Range(0,cardTypeCount)];
-        var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[cardImageRandom], 512);
-        _emptyCard.transform.name = cardNames[cardImageRandom];        
-        _emptyCard.transform.GetChild(0).name = cardNames[cardImageRandom];
-        _emptyCard.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-        _emptyCard.GetComponent<CardTileInformation>().type = cardNames[cardImageRandom];
-        _emptyCard.GetComponent<CardTileInformation>().isMatched = false;
     }
 }

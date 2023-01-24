@@ -12,6 +12,7 @@ public class CardTileInformation : MonoBehaviour, IPointerDownHandler, IPointerU
     private BoardController boardController;
     private SwipeController swipeController;
     private GridGenerator gridGenerator;
+    private EmptyTileHolder emptyTileHolder;
 
     public List<GameObject> neighbours = new List<GameObject>();
 
@@ -41,6 +42,7 @@ public class CardTileInformation : MonoBehaviour, IPointerDownHandler, IPointerU
         boardController = GameObject.Find("Board").GetComponent<BoardController>();
         swipeController = GameObject.Find("Board").GetComponent<SwipeController>();
         gridGenerator = GameObject.Find("Board").GetComponent<GridGenerator>();
+        emptyTileHolder = GameObject.Find("Board").GetComponent<EmptyTileHolder>();
     }
 
     private void OnEnable() 
@@ -174,32 +176,8 @@ public class CardTileInformation : MonoBehaviour, IPointerDownHandler, IPointerU
         if(isMatched)
         {
             LeanTween.scale(this.gameObject, new Vector3(0.001f, 0.001f, 0.001f), 0.1f);
-            //transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+            // add empty tile here ONCE
         }
-        // foreach(var horizontalNeighbour in horizontalNeighbours)
-        // {
-        //     if(horizontalNeighbour.GetComponent<CardTileInformation>().type == type)
-        //     {
-        //         horizontalMatchedDrop += 1;
-        //         foreach(var neighboursNeighbour in horizontalNeighbour.GetComponent<CardTileInformation>().horizontalNeighbours)
-        //         {
-        //             if(neighboursNeighbour != this.gameObject)
-        //             {
-        //                 if(neighboursNeighbour.GetComponent<CardTileInformation>().type == type)
-        //                 {
-        //                     horizontalMatchedDrop += 1;
-
-        //                     if(horizontalMatchedDrop >= 2)
-        //                     {
-        //                         neighboursNeighbour.GetComponent<Image>().color = new Color32(155,155,155,255);
-        //                         horizontalNeighbour.GetComponent<Image>().color = new Color32(155,155,155,255);
-        //                         this.GetComponent<Image>().color = new Color32(155,155,155,255);
-        //                     }
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
     }
 
 

@@ -156,6 +156,7 @@ MonoBehaviour:
   topAppBarController: {fileID: 429505578}
   canvasController: {fileID: 2018903310}
   linePrefab: {fileID: 6614175471755780376, guid: d5907faa0c8000f48bb1d76dff177ed4, type: 3}
+  currentLine: {fileID: 0}
   lineRendererPoints: []
   currentLineChildPrefab: {fileID: 1857893106947275558, guid: df7bea22fef5d2049a63cbbb4c91109c, type: 3}
   distanceThreshold: 1.5

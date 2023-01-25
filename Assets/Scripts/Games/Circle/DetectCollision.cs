@@ -32,8 +32,9 @@ public class DetectCollision : MonoBehaviour
     {
         collisionCount++;
         matchedCard = other.gameObject;
+        var polygonCollider = drawManager.currentLine.GetComponentInChildren<PolygonCollider2D>();
 
-        if (other.gameObject.tag == "CorrectCard" && collisionCount == 1 && drawManager.isValid)
+        if ((other.gameObject.tag == "CorrectCard") && (collisionCount == 1) && drawManager.isValid && (polygonCollider.bounds.extents.x >= .5f && polygonCollider.bounds.extents.y >= .5f))
         {
             Invoke("CheckIfMatchIsCorrect", 0.05f);
         }

@@ -11,7 +11,7 @@ public class DrawManager : MonoBehaviour
     [SerializeField] TopAppBarController topAppBarController;
     [SerializeField] CanvasController canvasController;
     [SerializeField] private Line linePrefab;
-    private Line currentLine;
+    public Line currentLine;
     public const float RESOLUTION = 0.1f;
     [SerializeField] List<Vector2> lineRendererPoints = new List<Vector2>();
     [SerializeField] GameObject currentLineChildPrefab;

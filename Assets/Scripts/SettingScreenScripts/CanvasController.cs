@@ -279,6 +279,7 @@ public class CanvasController : MonoBehaviour
         PackSelectionPanel.didLanguageChange = true;
         PromoScreen.didLanguageChange = true;
         Board.isBackAfterSignOut = true;
+        BoardGeneration.isBackAfterSignOut = true;
         deviceLanguage = languageScreen.GetComponentInChildren<DeviceLanguagePanel>().deviceLanguageObject;
         if (deviceLanguage != null)
         {

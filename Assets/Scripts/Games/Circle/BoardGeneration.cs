@@ -23,6 +23,7 @@ public class BoardGeneration : MonoBehaviour
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
     [SerializeField] DrawManager drawManager;
+    private CircleUIController UIController;
 
     private void Awake()
     {
@@ -32,6 +33,7 @@ public class BoardGeneration : MonoBehaviour
     private void Start()
     {
         gameAPI.PlayMusic();
+        UIController = gameObject.GetComponent<CircleUIController>();
     }
 
     private void OnEnable()
@@ -39,7 +41,7 @@ public class BoardGeneration : MonoBehaviour
         if (isBackAfterSignOut)
         {
             gameAPI.PlayMusic();
-            // detectMatchScript.OnBackButtonClick();
+            UIController.OnBackButtonClick();
             isBackAfterSignOut = false;
         }
     }

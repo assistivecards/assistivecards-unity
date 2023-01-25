@@ -9,7 +9,7 @@ public class DetectCollision : MonoBehaviour
     private DrawManager drawManager;
     public int collisionCount;
     private GameObject matchedCard;
-    private Color32 success = new Color32(154, 241, 161, 255);
+    private Color32 success = new Color32(27, 151, 56, 255);
     private GameAPI gameAPI;
     private CircleUIController UIController;
     private GameObject backButton;
@@ -34,7 +34,7 @@ public class DetectCollision : MonoBehaviour
         matchedCard = other.gameObject;
         var polygonCollider = drawManager.currentLine.GetComponentInChildren<PolygonCollider2D>();
 
-        if ((other.gameObject.tag == "CorrectCard") && (collisionCount == 1) && drawManager.isValid && (polygonCollider.bounds.extents.x >= .5f && polygonCollider.bounds.extents.y >= .5f))
+        if ((other.gameObject.tag == "CorrectCard") && (collisionCount == 1) && drawManager.isValid && (polygonCollider.bounds.extents.x >= 1 && polygonCollider.bounds.extents.y >= 1))
         {
             Invoke("CheckIfMatchIsCorrect", 0.05f);
         }

@@ -34,8 +34,7 @@ public class CircleUIController : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
         board.ClearBoard();
         packSelectionPanel.transform.localScale = new Vector3(0, 0, 0);
-        var rt = packSelectionPanel.transform.GetChild(0).GetChild(0).GetComponent<RectTransform>();
-        rt.offsetMax = new Vector2(rt.offsetMax.x, 0);
+        ResetScrollRect();
         packSelectionPanel.SetActive(true);
         LeanTween.scale(packSelectionPanel, Vector3.one, 0.25f);
         Invoke("EnableScrollRect", 0.26f);
@@ -87,6 +86,7 @@ public class CircleUIController : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
         board.ClearBoard();
         packSelectionPanel.transform.localScale = new Vector3(0, 0, 0);
+        ResetScrollRect();
         packSelectionPanel.SetActive(true);
         LeanTween.scale(packSelectionPanel, Vector3.one, 0.25f);
         helloText.SetActive(true);
@@ -115,5 +115,11 @@ public class CircleUIController : MonoBehaviour
     public void ResetCounter()
     {
         correctMatches = 0;
+    }
+
+    public void ResetScrollRect()
+    {
+        var rt = packSelectionPanel.transform.GetChild(0).GetChild(0).GetComponent<RectTransform>();
+        rt.offsetMax = new Vector2(rt.offsetMax.x, 0);
     }
 }

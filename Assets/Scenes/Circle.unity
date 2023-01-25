@@ -156,6 +156,7 @@ MonoBehaviour:
   topAppBarController: {fileID: 429505578}
   canvasController: {fileID: 2018903310}
   linePrefab: {fileID: 6614175471755780376, guid: d5907faa0c8000f48bb1d76dff177ed4, type: 3}
+  currentLine: {fileID: 0}
   lineRendererPoints: []
   currentLineChildPrefab: {fileID: 1857893106947275558, guid: df7bea22fef5d2049a63cbbb4c91109c, type: 3}
   distanceThreshold: 1.5
@@ -4848,6 +4849,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2053396222163338408, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2053396222163338408, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
       propertyPath: m_Volume
       value: 1
       objectReference: {fileID: 0}
@@ -4899,6 +4904,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
+      propertyPath: musicClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 58d6668d7eeb592489f6b4c5a6b9ca2d, type: 3}
     - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
       propertyPath: speakable
       value: 

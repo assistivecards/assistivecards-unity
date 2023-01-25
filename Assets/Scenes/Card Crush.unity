@@ -1416,6 +1416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedLangCode: 
   cardTileInformation: {fileID: 0}
+  emptyTileHolder: {fileID: 1381051506}
   tempcardElement: {fileID: 8446959061409266475, guid: 3a5c72fb636c24a3691fd50abbcce4c8, type: 3}
   packSelectionPanel: {fileID: 1356460678}
   cards: []

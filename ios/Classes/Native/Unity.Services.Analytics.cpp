@@ -10256,7 +10256,7 @@ IL_0071_2:
 						FileStream_t07C7222EE10B75F352B89B76E60820160FF10AD8* L_24 = V_0;
 						NullCheck(L_24);
 						int64_t L_25;
-						L_25 = VirtualFuncInvoker0< int64_t >::Invoke(11 /* System.Int64 System.IO.Stream::get_Length() */, L_24);
+						L_25 = VirtualFuncInvoker0< int64_t >::Invoke(9 /* System.Int64 System.IO.Stream::get_Length() */, L_24);
 						__this->___m_DiskCacheSize_9 = L_25;
 						// Debug.Log($"Flushed up to token index {m_DiskCacheLastFlushedToken}, cache file is {m_DiskCacheSize}B");
 						int32_t L_26 = __this->___m_DiskCacheLastFlushedToken_8;
@@ -10506,7 +10506,7 @@ IL_009c_2:
 							FileStream_t07C7222EE10B75F352B89B76E60820160FF10AD8* L_14 = V_1;
 							NullCheck(L_14);
 							int64_t L_15;
-							L_15 = VirtualFuncInvoker0< int64_t >::Invoke(11 /* System.Int64 System.IO.Stream::get_Length() */, L_14);
+							L_15 = VirtualFuncInvoker0< int64_t >::Invoke(9 /* System.Int64 System.IO.Stream::get_Length() */, L_14);
 							V_3 = L_15;
 							goto IL_0062_3;
 						}
@@ -10528,7 +10528,7 @@ IL_0062_3:
 							FileStream_t07C7222EE10B75F352B89B76E60820160FF10AD8* L_19 = V_1;
 							NullCheck(L_19);
 							int64_t L_20;
-							L_20 = VirtualFuncInvoker0< int64_t >::Invoke(12 /* System.Int64 System.IO.Stream::get_Position() */, L_19);
+							L_20 = VirtualFuncInvoker0< int64_t >::Invoke(10 /* System.Int64 System.IO.Stream::get_Position() */, L_19);
 							int64_t L_21 = V_3;
 							if ((!(((uint64_t)L_20) == ((uint64_t)L_21))))
 							{
@@ -17092,7 +17092,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Clear_mD615D1BCB2C9DD
 		int32_t L_0 = (int32_t)__this->____version_3;
 		__this->____version_3 = ((int32_t)il2cpp_codegen_add(L_0, 1));
 		bool L_1;
-		L_1 = il2cpp_codegen_is_reference_or_contains_references(il2cpp_rgctx_method(method->klass->rgctx_data, 25));
+		L_1 = il2cpp_codegen_is_reference_or_contains_references(il2cpp_rgctx_method(method->klass->rgctx_data, 24));
 		if (!L_1)
 		{
 			goto IL_0035;

@@ -1666,7 +1666,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object__ctor_mE837C6B9FA8C6D5D109F4B2EC8
 // System.Runtime.InteropServices.GCHandle System.Runtime.InteropServices.GCHandle::Alloc(System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GCHandle_tC44F6F72EE68BD4CFABA24309DA7A179D41127DC GCHandle_Alloc_m845AB5ED62859B099C023F34C05BEAEDB4AFE27D (RuntimeObject* ___value0, const RuntimeMethod* method) ;
 // System.IntPtr System.Runtime.InteropServices.GCHandle::ToIntPtr(System.Runtime.InteropServices.GCHandle)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t GCHandle_ToIntPtr_m45294AA913461A070BD555F81103A8BF2E5ED976 (GCHandle_tC44F6F72EE68BD4CFABA24309DA7A179D41127DC ___value0, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR intptr_t GCHandle_ToIntPtr_m45294AA913461A070BD555F81103A8BF2E5ED976_inline (GCHandle_tC44F6F72EE68BD4CFABA24309DA7A179D41127DC ___value0, const RuntimeMethod* method) ;
 // System.Void Unity.Notifications.iOS.iOSNotificationsWrapper::RequestAuthorization(System.IntPtr,System.Int32,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSNotificationsWrapper_RequestAuthorization_mC1062AF0F279E5610F4559CFA756401291648BFA (intptr_t ___request0, int32_t ___options1, bool ___registerRemote2, const RuntimeMethod* method) ;
 // System.Void Unity.Notifications.iOS.AuthorizationRequest::set_IsFinished(System.Boolean)
@@ -2522,7 +2522,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthorizationRequest__ctor_mA2D61FE2CE62
 		L_0 = GCHandle_Alloc_m845AB5ED62859B099C023F34C05BEAEDB4AFE27D(__this, NULL);
 		// iOSNotificationsWrapper.RequestAuthorization(GCHandle.ToIntPtr(handle), (int)authorizationOption, registerForRemoteNotifications);
 		intptr_t L_1;
-		L_1 = GCHandle_ToIntPtr_m45294AA913461A070BD555F81103A8BF2E5ED976(L_0, NULL);
+		L_1 = GCHandle_ToIntPtr_m45294AA913461A070BD555F81103A8BF2E5ED976_inline(L_0, NULL);
 		int32_t L_2 = ___authorizationOption0;
 		bool L_3 = ___registerForRemoteNotifications1;
 		iOSNotificationsWrapper_RequestAuthorization_mC1062AF0F279E5610F4559CFA756401291648BFA(L_1, L_2, L_3, NULL);
@@ -5925,7 +5925,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Dictionary_2_t46B2DB028096FA2B828359E52F37F31
 		// _ReadNSDictionary(GCHandle.ToIntPtr(handle), dict, ReceiveNSDictionaryKeyValue);
 		GCHandle_tC44F6F72EE68BD4CFABA24309DA7A179D41127DC L_3 = V_0;
 		intptr_t L_4;
-		L_4 = GCHandle_ToIntPtr_m45294AA913461A070BD555F81103A8BF2E5ED976(L_3, NULL);
+		L_4 = GCHandle_ToIntPtr_m45294AA913461A070BD555F81103A8BF2E5ED976_inline(L_3, NULL);
 		intptr_t L_5 = ___dict0;
 		ReceiveNSDictionaryKeyValueCallback_tA8DB9C3C323EB0E5C364BDBD4D5EA233BA1863E4* L_6 = (ReceiveNSDictionaryKeyValueCallback_tA8DB9C3C323EB0E5C364BDBD4D5EA233BA1863E4*)il2cpp_codegen_object_new(ReceiveNSDictionaryKeyValueCallback_tA8DB9C3C323EB0E5C364BDBD4D5EA233BA1863E4_il2cpp_TypeInfo_var);
 		NullCheck(L_6);
@@ -5982,7 +5982,7 @@ IL_000f:
 		// _ReadAttachmentsNSArray(GCHandle.ToIntPtr(handle), array, ReceiveUNNotificationAttachment);
 		GCHandle_tC44F6F72EE68BD4CFABA24309DA7A179D41127DC L_6 = V_0;
 		intptr_t L_7;
-		L_7 = GCHandle_ToIntPtr_m45294AA913461A070BD555F81103A8BF2E5ED976(L_6, NULL);
+		L_7 = GCHandle_ToIntPtr_m45294AA913461A070BD555F81103A8BF2E5ED976_inline(L_6, NULL);
 		intptr_t L_8 = ___array0;
 		ReceiveUNNotificationAttachmentCallback_t83B0A933BF29517D6BB5FA8A81B837112C902D3E* L_9 = (ReceiveUNNotificationAttachmentCallback_t83B0A933BF29517D6BB5FA8A81B837112C902D3E*)il2cpp_codegen_object_new(ReceiveUNNotificationAttachmentCallback_t83B0A933BF29517D6BB5FA8A81B837112C902D3E_il2cpp_TypeInfo_var);
 		NullCheck(L_9);
@@ -8125,6 +8125,14 @@ IL2CPP_EXTERN_C  void iOSNotificationCalendarTrigger_AssignNonEmptyComponents_m0
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR intptr_t GCHandle_ToIntPtr_m45294AA913461A070BD555F81103A8BF2E5ED976_inline (GCHandle_tC44F6F72EE68BD4CFABA24309DA7A179D41127DC ___value0, const RuntimeMethod* method) 
+{
+	{
+		GCHandle_tC44F6F72EE68BD4CFABA24309DA7A179D41127DC L_0 = ___value0;
+		intptr_t L_1 = L_0.___handle_0;
+		return L_1;
+	}
+}
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AuthorizationRequest_set_IsFinished_m9AF9F366ABC34678151252ECFC3B4FF6959E6ED9_inline (AuthorizationRequest_t47AE642A3B68B0822738A9B2101E8F28D47A99A6* __this, bool ___value0, const RuntimeMethod* method) 
 {
 	{

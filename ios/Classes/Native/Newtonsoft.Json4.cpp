@@ -13749,7 +13749,7 @@ IL_003e_1:
 				L_14 = Enumerator_get_Current_m894DFFA678072980ECF786B52912E28891E006DB_inline((&V_2), Enumerator_get_Current_m894DFFA678072980ECF786B52912E28891E006DB_RuntimeMethod_var);
 				XmlNamespaceManager_t95431ADE7A94108629DFF894819FB1A9709D810F* L_15 = ___manager1;
 				NullCheck(L_15);
-				VirtualActionInvoker0::Invoke(10 /* System.Void System.Xml.XmlNamespaceManager::PushScope() */, L_15);
+				VirtualActionInvoker0::Invoke(9 /* System.Void System.Xml.XmlNamespaceManager::PushScope() */, L_15);
 				NullCheck(L_14);
 				List_1_tCA41878C726B03CC852C13E2FB0D9FFA9CEE458E* L_16;
 				L_16 = InterfaceFuncInvoker0< List_1_tCA41878C726B03CC852C13E2FB0D9FFA9CEE458E* >::Invoke(3 /* System.Collections.Generic.List`1<Newtonsoft.Json.Converters.IXmlNode> Newtonsoft.Json.Converters.IXmlNode::get_Attributes() */, IXmlNode_tF33B9C36278838790766F098BDF3C8649F0ED47B_il2cpp_TypeInfo_var, L_14);
@@ -13813,7 +13813,7 @@ IL_0058_2:
 						String_t* L_29;
 						L_29 = InterfaceFuncInvoker0< String_t* >::Invoke(5 /* System.String Newtonsoft.Json.Converters.IXmlNode::get_Value() */, IXmlNode_tF33B9C36278838790766F098BDF3C8649F0ED47B_il2cpp_TypeInfo_var, L_28);
 						NullCheck(L_25);
-						VirtualActionInvoker2< String_t*, String_t* >::Invoke(12 /* System.Void System.Xml.XmlNamespaceManager::AddNamespace(System.String,System.String) */, L_25, L_27, L_29);
+						VirtualActionInvoker2< String_t*, String_t* >::Invoke(11 /* System.Void System.Xml.XmlNamespaceManager::AddNamespace(System.String,System.String) */, L_25, L_27, L_29);
 					}
 
 IL_009b_2:
@@ -13918,7 +13918,7 @@ IL_002c:
 		L_10 = InterfaceFuncInvoker0< String_t* >::Invoke(7 /* System.String Newtonsoft.Json.Converters.IXmlNode::get_NamespaceUri() */, IXmlNode_tF33B9C36278838790766F098BDF3C8649F0ED47B_il2cpp_TypeInfo_var, L_9);
 		NullCheck(L_8);
 		String_t* L_11;
-		L_11 = VirtualFuncInvoker1< String_t*, String_t* >::Invoke(17 /* System.String System.Xml.XmlNamespaceManager::LookupPrefix(System.String) */, L_8, L_10);
+		L_11 = VirtualFuncInvoker1< String_t*, String_t* >::Invoke(16 /* System.String System.Xml.XmlNamespaceManager::LookupPrefix(System.String) */, L_8, L_10);
 		G_B5_0 = L_11;
 		goto IL_003b;
 	}
@@ -15072,7 +15072,7 @@ IL_008e:
 	{
 		XmlNamespaceManager_t95431ADE7A94108629DFF894819FB1A9709D810F* L_17 = ___manager2;
 		NullCheck(L_17);
-		VirtualActionInvoker0::Invoke(10 /* System.Void System.Xml.XmlNamespaceManager::PushScope() */, L_17);
+		VirtualActionInvoker0::Invoke(9 /* System.Void System.Xml.XmlNamespaceManager::PushScope() */, L_17);
 		RuntimeObject* L_18 = ___node1;
 		NullCheck(L_18);
 		List_1_tCA41878C726B03CC852C13E2FB0D9FFA9CEE458E* L_19;
@@ -15171,7 +15171,7 @@ IL_00fe_1:
 				String_t* L_37 = V_5;
 				String_t* L_38 = V_6;
 				NullCheck(L_36);
-				VirtualActionInvoker2< String_t*, String_t* >::Invoke(12 /* System.Void System.Xml.XmlNamespaceManager::AddNamespace(System.String,System.String) */, L_36, L_37, L_38);
+				VirtualActionInvoker2< String_t*, String_t* >::Invoke(11 /* System.Void System.Xml.XmlNamespaceManager::AddNamespace(System.String,System.String) */, L_36, L_37, L_38);
 			}
 
 IL_0108_1:
@@ -15379,7 +15379,7 @@ IL_0201:
 		XmlNamespaceManager_t95431ADE7A94108629DFF894819FB1A9709D810F* L_87 = ___manager2;
 		NullCheck(L_87);
 		bool L_88;
-		L_88 = VirtualFuncInvoker0< bool >::Invoke(11 /* System.Boolean System.Xml.XmlNamespaceManager::PopScope() */, L_87);
+		L_88 = VirtualFuncInvoker0< bool >::Invoke(10 /* System.Boolean System.Xml.XmlNamespaceManager::PopScope() */, L_87);
 		return;
 	}
 
@@ -16629,7 +16629,7 @@ IL_00c2:
 		XmlNamespaceManager_t95431ADE7A94108629DFF894819FB1A9709D810F* L_39 = ___manager4;
 		NullCheck(L_39);
 		String_t* L_40;
-		L_40 = VirtualFuncInvoker1< String_t*, String_t* >::Invoke(17 /* System.String System.Xml.XmlNamespaceManager::LookupPrefix(System.String) */, L_39, _stringLiteral125BCB7A4232428BFD5FFB1F3E5905A4F6B0B075);
+		L_40 = VirtualFuncInvoker1< String_t*, String_t* >::Invoke(16 /* System.String System.Xml.XmlNamespaceManager::LookupPrefix(System.String) */, L_39, _stringLiteral125BCB7A4232428BFD5FFB1F3E5905A4F6B0B075);
 		V_1 = L_40;
 		JsonReader_tB90522FA9D4C1C218A3F2C529A27D95123847765* L_41 = ___reader0;
 		RuntimeObject* L_42 = ___document1;
@@ -16652,7 +16652,7 @@ IL_00e9:
 		XmlNamespaceManager_t95431ADE7A94108629DFF894819FB1A9709D810F* L_50 = ___manager4;
 		NullCheck(L_50);
 		String_t* L_51;
-		L_51 = VirtualFuncInvoker1< String_t*, String_t* >::Invoke(17 /* System.String System.Xml.XmlNamespaceManager::LookupPrefix(System.String) */, L_50, _stringLiteral125BCB7A4232428BFD5FFB1F3E5905A4F6B0B075);
+		L_51 = VirtualFuncInvoker1< String_t*, String_t* >::Invoke(16 /* System.String System.Xml.XmlNamespaceManager::LookupPrefix(System.String) */, L_50, _stringLiteral125BCB7A4232428BFD5FFB1F3E5905A4F6B0B075);
 		V_5 = L_51;
 		JsonReader_tB90522FA9D4C1C218A3F2C529A27D95123847765* L_52 = ___reader0;
 		RuntimeObject* L_53 = ___document1;
@@ -16818,7 +16818,7 @@ IL_0063_1:
 				String_t* L_25 = V_4;
 				NullCheck(L_24);
 				String_t* L_26;
-				L_26 = VirtualFuncInvoker1< String_t*, String_t* >::Invoke(16 /* System.String System.Xml.XmlNamespaceManager::LookupNamespace(System.String) */, L_24, L_25);
+				L_26 = VirtualFuncInvoker1< String_t*, String_t* >::Invoke(15 /* System.String System.Xml.XmlNamespaceManager::LookupNamespace(System.String) */, L_24, L_25);
 				String_t* L_27 = L_26;
 				G_B6_0 = L_27;
 				G_B6_1 = L_23;
@@ -16969,9 +16969,9 @@ IL_0101:
 		XmlNamespaceManager_t95431ADE7A94108629DFF894819FB1A9709D810F* L_47 = ___manager4;
 		NullCheck(L_47);
 		String_t* L_48;
-		L_48 = VirtualFuncInvoker0< String_t* >::Invoke(9 /* System.String System.Xml.XmlNamespaceManager::get_DefaultNamespace() */, L_47);
+		L_48 = VirtualFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Xml.XmlNamespaceManager::get_DefaultNamespace() */, L_47);
 		NullCheck(L_45);
-		VirtualActionInvoker2< String_t*, String_t* >::Invoke(13 /* System.Void System.Xml.XmlNamespaceManager::RemoveNamespace(System.String,System.String) */, L_45, L_46, L_48);
+		VirtualActionInvoker2< String_t*, String_t* >::Invoke(12 /* System.Void System.Xml.XmlNamespaceManager::RemoveNamespace(System.String,System.String) */, L_45, L_46, L_48);
 		return;
 	}
 
@@ -16979,7 +16979,7 @@ IL_0115:
 	{
 		XmlNamespaceManager_t95431ADE7A94108629DFF894819FB1A9709D810F* L_49 = ___manager4;
 		NullCheck(L_49);
-		VirtualActionInvoker0::Invoke(10 /* System.Void System.Xml.XmlNamespaceManager::PushScope() */, L_49);
+		VirtualActionInvoker0::Invoke(9 /* System.Void System.Xml.XmlNamespaceManager::PushScope() */, L_49);
 		JsonReader_tB90522FA9D4C1C218A3F2C529A27D95123847765* L_50 = ___reader0;
 		RuntimeObject* L_51 = ___document1;
 		XmlNamespaceManager_t95431ADE7A94108629DFF894819FB1A9709D810F* L_52 = ___manager4;
@@ -16988,15 +16988,15 @@ IL_0115:
 		XmlNamespaceManager_t95431ADE7A94108629DFF894819FB1A9709D810F* L_54 = ___manager4;
 		NullCheck(L_54);
 		bool L_55;
-		L_55 = VirtualFuncInvoker0< bool >::Invoke(11 /* System.Boolean System.Xml.XmlNamespaceManager::PopScope() */, L_54);
+		L_55 = VirtualFuncInvoker0< bool >::Invoke(10 /* System.Boolean System.Xml.XmlNamespaceManager::PopScope() */, L_54);
 		XmlNamespaceManager_t95431ADE7A94108629DFF894819FB1A9709D810F* L_56 = ___manager4;
 		String_t* L_57 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->___Empty_6;
 		XmlNamespaceManager_t95431ADE7A94108629DFF894819FB1A9709D810F* L_58 = ___manager4;
 		NullCheck(L_58);
 		String_t* L_59;
-		L_59 = VirtualFuncInvoker0< String_t* >::Invoke(9 /* System.String System.Xml.XmlNamespaceManager::get_DefaultNamespace() */, L_58);
+		L_59 = VirtualFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Xml.XmlNamespaceManager::get_DefaultNamespace() */, L_58);
 		NullCheck(L_56);
-		VirtualActionInvoker2< String_t*, String_t* >::Invoke(13 /* System.Void System.Xml.XmlNamespaceManager::RemoveNamespace(System.String,System.String) */, L_56, L_57, L_59);
+		VirtualActionInvoker2< String_t*, String_t* >::Invoke(12 /* System.Void System.Xml.XmlNamespaceManager::RemoveNamespace(System.String,System.String) */, L_56, L_57, L_59);
 	}
 
 IL_0142:
@@ -17083,7 +17083,7 @@ IL_0043:
 		String_t* L_20 = ___attributePrefix6;
 		NullCheck(L_19);
 		String_t* L_21;
-		L_21 = VirtualFuncInvoker1< String_t*, String_t* >::Invoke(16 /* System.String System.Xml.XmlNamespaceManager::LookupNamespace(System.String) */, L_19, L_20);
+		L_21 = VirtualFuncInvoker1< String_t*, String_t* >::Invoke(15 /* System.String System.Xml.XmlNamespaceManager::LookupNamespace(System.String) */, L_19, L_20);
 		String_t* L_22 = V_1;
 		NullCheck(L_17);
 		RuntimeObject* L_23;
@@ -17916,7 +17916,7 @@ IL_0060:
 		String_t* L_27 = V_6;
 		String_t* L_28 = V_5;
 		NullCheck(L_26);
-		VirtualActionInvoker2< String_t*, String_t* >::Invoke(12 /* System.Void System.Xml.XmlNamespaceManager::AddNamespace(System.String,System.String) */, L_26, L_27, L_28);
+		VirtualActionInvoker2< String_t*, String_t* >::Invoke(11 /* System.Void System.Xml.XmlNamespaceManager::AddNamespace(System.String,System.String) */, L_26, L_27, L_28);
 		goto IL_023a;
 	}
 
@@ -17972,7 +17972,7 @@ IL_00e0:
 		XmlNamespaceManager_t95431ADE7A94108629DFF894819FB1A9709D810F* L_39 = ___manager1;
 		NullCheck(L_39);
 		String_t* L_40;
-		L_40 = VirtualFuncInvoker1< String_t*, String_t* >::Invoke(17 /* System.String System.Xml.XmlNamespaceManager::LookupPrefix(System.String) */, L_39, _stringLiteral125BCB7A4232428BFD5FFB1F3E5905A4F6B0B075);
+		L_40 = VirtualFuncInvoker1< String_t*, String_t* >::Invoke(16 /* System.String System.Xml.XmlNamespaceManager::LookupPrefix(System.String) */, L_39, _stringLiteral125BCB7A4232428BFD5FFB1F3E5905A4F6B0B075);
 		V_7 = L_40;
 		String_t* L_41 = V_7;
 		if (L_41)
@@ -18018,7 +18018,7 @@ IL_0117:
 		L_48 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteral43187C90BBB5DFB063A95733C9BD65ECD25A2E84, L_47, NULL);
 		NullCheck(L_45);
 		String_t* L_49;
-		L_49 = VirtualFuncInvoker1< String_t*, String_t* >::Invoke(16 /* System.String System.Xml.XmlNamespaceManager::LookupNamespace(System.String) */, L_45, L_48);
+		L_49 = VirtualFuncInvoker1< String_t*, String_t* >::Invoke(15 /* System.String System.Xml.XmlNamespaceManager::LookupNamespace(System.String) */, L_45, L_48);
 		if (L_49)
 		{
 			goto IL_0107;
@@ -18041,7 +18041,7 @@ IL_0117:
 		XmlNamespaceManager_t95431ADE7A94108629DFF894819FB1A9709D810F* L_56 = ___manager1;
 		String_t* L_57 = V_7;
 		NullCheck(L_56);
-		VirtualActionInvoker2< String_t*, String_t* >::Invoke(12 /* System.Void System.Xml.XmlNamespaceManager::AddNamespace(System.String,System.String) */, L_56, L_57, _stringLiteral125BCB7A4232428BFD5FFB1F3E5905A4F6B0B075);
+		VirtualActionInvoker2< String_t*, String_t* >::Invoke(11 /* System.Void System.Xml.XmlNamespaceManager::AddNamespace(System.String,System.String) */, L_56, L_57, _stringLiteral125BCB7A4232428BFD5FFB1F3E5905A4F6B0B075);
 	}
 
 IL_017b:
@@ -18780,7 +18780,7 @@ IL_0016:
 		String_t* L_8 = ___elementPrefix2;
 		NullCheck(L_7);
 		String_t* L_9;
-		L_9 = VirtualFuncInvoker1< String_t*, String_t* >::Invoke(16 /* System.String System.Xml.XmlNamespaceManager::LookupNamespace(System.String) */, L_7, L_8);
+		L_9 = VirtualFuncInvoker1< String_t*, String_t* >::Invoke(15 /* System.String System.Xml.XmlNamespaceManager::LookupNamespace(System.String) */, L_7, L_8);
 		G_B6_0 = L_9;
 		goto IL_0030;
 	}
@@ -18790,7 +18790,7 @@ IL_0029:
 		XmlNamespaceManager_t95431ADE7A94108629DFF894819FB1A9709D810F* L_10 = ___manager3;
 		NullCheck(L_10);
 		String_t* L_11;
-		L_11 = VirtualFuncInvoker0< String_t* >::Invoke(9 /* System.String System.Xml.XmlNamespaceManager::get_DefaultNamespace() */, L_10);
+		L_11 = VirtualFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Xml.XmlNamespaceManager::get_DefaultNamespace() */, L_10);
 		G_B6_0 = L_11;
 	}
 
@@ -19010,7 +19010,7 @@ IL_008d:
 		String_t* L_32 = V_4;
 		NullCheck(L_31);
 		String_t* L_33;
-		L_33 = VirtualFuncInvoker1< String_t*, String_t* >::Invoke(16 /* System.String System.Xml.XmlNamespaceManager::LookupNamespace(System.String) */, L_31, L_32);
+		L_33 = VirtualFuncInvoker1< String_t*, String_t* >::Invoke(15 /* System.String System.Xml.XmlNamespaceManager::LookupNamespace(System.String) */, L_31, L_32);
 		G_B16_0 = L_33;
 		goto IL_00c2;
 	}
@@ -19020,7 +19020,7 @@ IL_00bc:
 		XmlNamespaceManager_t95431ADE7A94108629DFF894819FB1A9709D810F* L_34 = ___manager2;
 		NullCheck(L_34);
 		String_t* L_35;
-		L_35 = VirtualFuncInvoker0< String_t* >::Invoke(9 /* System.String System.Xml.XmlNamespaceManager::get_DefaultNamespace() */, L_34);
+		L_35 = VirtualFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Xml.XmlNamespaceManager::get_DefaultNamespace() */, L_34);
 		G_B16_0 = L_35;
 	}
 

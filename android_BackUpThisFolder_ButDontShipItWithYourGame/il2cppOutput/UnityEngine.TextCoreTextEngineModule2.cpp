@@ -7941,13 +7941,6 @@ IL_0192:
 		return L_78;
 	}
 }
-// System.Void UnityEngine.TextCore.Text.FontAsset::Awake()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FontAsset_Awake_mB7906A1E21F5FAB84A023B97435F75C09EAB92ED (FontAsset_t61A6446D934E582651044E33D250EA8D306AB958* __this, const RuntimeMethod* method) 
-{
-	{
-		return;
-	}
-}
 // System.Void UnityEngine.TextCore.Text.FontAsset::OnDestroy()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FontAsset_OnDestroy_m3587016A089072C5C03168AA4C6AA1956FE12785 (FontAsset_t61A6446D934E582651044E33D250EA8D306AB958* __this, const RuntimeMethod* method) 
 {
@@ -14217,13 +14210,6 @@ IL_0195:
 		return L_69;
 	}
 }
-// System.Void UnityEngine.TextCore.Text.FontAsset::TryAddGlyphsToAtlasTextures()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FontAsset_TryAddGlyphsToAtlasTextures_m83F7EDB3193B3C9A4FA86B89A51E9FA6A41F6834 (FontAsset_t61A6446D934E582651044E33D250EA8D306AB958* __this, const RuntimeMethod* method) 
-{
-	{
-		return;
-	}
-}
 // System.Boolean UnityEngine.TextCore.Text.FontAsset::TryAddGlyphsToNewAtlasTexture()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool FontAsset_TryAddGlyphsToNewAtlasTexture_m8F98FBF7A0EC1B37C4DB43536DA42D3864F6F3AB (FontAsset_t61A6446D934E582651044E33D250EA8D306AB958* __this, const RuntimeMethod* method) 
 {
@@ -15044,20 +15030,6 @@ IL_00de:
 	}
 
 IL_00e7:
-	{
-		return;
-	}
-}
-// System.Void UnityEngine.TextCore.Text.FontAsset::UpdateGlyphAdjustmentRecords(System.Collections.Generic.List`1<System.UInt32>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FontAsset_UpdateGlyphAdjustmentRecords_m2D0444352012E8DFDD6036025886EC0CED0AD82A (FontAsset_t61A6446D934E582651044E33D250EA8D306AB958* __this, List_1_t9B68833848E4C4D7F623C05F6B77F0449396354A* ___glyphIndexes0, const RuntimeMethod* method) 
-{
-	{
-		return;
-	}
-}
-// System.Void UnityEngine.TextCore.Text.FontAsset::UpdateGlyphAdjustmentRecords(System.Collections.Generic.List`1<System.UInt32>,System.Collections.Generic.List`1<System.UInt32>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FontAsset_UpdateGlyphAdjustmentRecords_m9410421BA99635607C50EED1C9C374570EFABC60 (FontAsset_t61A6446D934E582651044E33D250EA8D306AB958* __this, List_1_t9B68833848E4C4D7F623C05F6B77F0449396354A* ___newGlyphIndexes0, List_1_t9B68833848E4C4D7F623C05F6B77F0449396354A* ___allGlyphIndexes1, const RuntimeMethod* method) 
-{
 	{
 		return;
 	}
@@ -18599,13 +18571,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpriteAsset_set_spriteGlyphTable_m7402B7
 		List_1_t063B87D3CFDC3AEE80E33EFBDA1410C697D71AD6* L_0 = ___value0;
 		__this->___m_SpriteGlyphTable_15 = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_SpriteGlyphTable_15), (void*)L_0);
-		return;
-	}
-}
-// System.Void UnityEngine.TextCore.Text.SpriteAsset::Awake()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpriteAsset_Awake_m3A012935612A7EB924A77B85EDCF6C09257F60BE (SpriteAsset_t1D3CF1D9DC350A4690CB09DE228A8B59F2F02313* __this, const RuntimeMethod* method) 
-{
-	{
 		return;
 	}
 }

@@ -2149,23 +2149,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CanvasRenderer_CreateUIVertexStream_mBA2
 		return;
 	}
 }
-// System.Void UnityEngine.CanvasRenderer::AddUIVertexStream(System.Collections.Generic.List`1<UnityEngine.UIVertex>,System.Collections.Generic.List`1<UnityEngine.Vector3>,System.Collections.Generic.List`1<UnityEngine.Color32>,System.Collections.Generic.List`1<UnityEngine.Vector4>,System.Collections.Generic.List`1<UnityEngine.Vector4>,System.Collections.Generic.List`1<UnityEngine.Vector4>,System.Collections.Generic.List`1<UnityEngine.Vector4>,System.Collections.Generic.List`1<UnityEngine.Vector3>,System.Collections.Generic.List`1<UnityEngine.Vector4>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CanvasRenderer_AddUIVertexStream_mD839C4D23B91E99AE2BD8F89C537FE62F5DB5DF5 (List_1_t09F8990ACE8783E311B473B0090859BA9C00FC2A* ___verts0, List_1_t77B94703E05C519A9010DD0614F757F974E1CD8B* ___positions1, List_1_t3517D52AE25CA3B19051E691E9C06ED03A3AB9B8* ___colors2, List_1_tF42FEB6C3B18B7E7C8F2DE1FEBA00D2491736317* ___uv0S3, List_1_tF42FEB6C3B18B7E7C8F2DE1FEBA00D2491736317* ___uv1S4, List_1_tF42FEB6C3B18B7E7C8F2DE1FEBA00D2491736317* ___uv2S5, List_1_tF42FEB6C3B18B7E7C8F2DE1FEBA00D2491736317* ___uv3S6, List_1_t77B94703E05C519A9010DD0614F757F974E1CD8B* ___normals7, List_1_tF42FEB6C3B18B7E7C8F2DE1FEBA00D2491736317* ___tangents8, const RuntimeMethod* method) 
-{
-	{
-		List_1_t09F8990ACE8783E311B473B0090859BA9C00FC2A* L_0 = ___verts0;
-		List_1_t77B94703E05C519A9010DD0614F757F974E1CD8B* L_1 = ___positions1;
-		List_1_t3517D52AE25CA3B19051E691E9C06ED03A3AB9B8* L_2 = ___colors2;
-		List_1_tF42FEB6C3B18B7E7C8F2DE1FEBA00D2491736317* L_3 = ___uv0S3;
-		List_1_tF42FEB6C3B18B7E7C8F2DE1FEBA00D2491736317* L_4 = ___uv1S4;
-		List_1_tF42FEB6C3B18B7E7C8F2DE1FEBA00D2491736317* L_5 = ___uv2S5;
-		List_1_tF42FEB6C3B18B7E7C8F2DE1FEBA00D2491736317* L_6 = ___uv3S6;
-		List_1_t77B94703E05C519A9010DD0614F757F974E1CD8B* L_7 = ___normals7;
-		List_1_tF42FEB6C3B18B7E7C8F2DE1FEBA00D2491736317* L_8 = ___tangents8;
-		CanvasRenderer_SplitUIVertexStreamsInternal_mE0E7EF4A1B611F30DA5D236F81985154A2D2E50A(L_0, L_1, L_2, L_3, L_4, L_5, L_6, L_7, L_8, NULL);
-		return;
-	}
-}
 // System.Void UnityEngine.CanvasRenderer::SplitIndicesStreamsInternal(System.Object,System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CanvasRenderer_SplitIndicesStreamsInternal_m1CAD8F8DFEBFE03778B72F1AD290CADBAFA63848 (RuntimeObject* ___verts0, RuntimeObject* ___indices1, const RuntimeMethod* method) 
 {

@@ -2387,15 +2387,6 @@ IL_0070:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Collections.Generic.IReadOnlyDictionary`2<System.String,System.String> Unity.Services.Core.Telemetry.Internal.DiagnosticsFactory::get_CommonTags()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* DiagnosticsFactory_get_CommonTags_mA08B1FB6FCB5AB504EF2ED3C2ED27EF41C442B7C (DiagnosticsFactory_tD2C64CDF0CC356965DB1993359515DC82D715CF2* __this, const RuntimeMethod* method) 
-{
-	{
-		// public IReadOnlyDictionary<string, string> CommonTags { get; }
-		RuntimeObject* L_0 = __this->___U3CCommonTagsU3Ek__BackingField_1;
-		return L_0;
-	}
-}
 // Unity.Services.Core.Telemetry.Internal.DiagnosticsHandler Unity.Services.Core.Telemetry.Internal.DiagnosticsFactory::get_Handler()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR DiagnosticsHandler_t9AE9840AF25655F717E0584299B3608FCE227C22* DiagnosticsFactory_get_Handler_m9FB222AA7FDAC429798F295C9A8AE89BC40BBC76 (DiagnosticsFactory_tD2C64CDF0CC356965DB1993359515DC82D715CF2* __this, const RuntimeMethod* method) 
 {
@@ -2534,15 +2525,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DisabledDiagnostics__ctor_m0F80E600FAE38
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Collections.Generic.IReadOnlyDictionary`2<System.String,System.String> Unity.Services.Core.Telemetry.Internal.DisabledDiagnosticsFactory::Unity.Services.Core.Telemetry.Internal.IDiagnosticsFactory.get_CommonTags()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* DisabledDiagnosticsFactory_Unity_Services_Core_Telemetry_Internal_IDiagnosticsFactory_get_CommonTags_mC128791A1E678548DE130031F4C9A63222EEA16B (DisabledDiagnosticsFactory_tC83C6D31A42BFAD606C61B6ACB2D1A140786A6DD* __this, const RuntimeMethod* method) 
-{
-	{
-		// IReadOnlyDictionary<string, string> IDiagnosticsFactory.CommonTags { get; }
-		RuntimeObject* L_0 = __this->___U3CUnity_Services_Core_Telemetry_Internal_IDiagnosticsFactory_CommonTagsU3Ek__BackingField_0;
-		return L_0;
-	}
-}
 // Unity.Services.Core.Telemetry.Internal.IDiagnostics Unity.Services.Core.Telemetry.Internal.DisabledDiagnosticsFactory::Unity.Services.Core.Telemetry.Internal.IDiagnosticsFactory.Create(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* DisabledDiagnosticsFactory_Unity_Services_Core_Telemetry_Internal_IDiagnosticsFactory_Create_m92971BDFE96563E0F354BA39B2489FB6FAA0994F (DisabledDiagnosticsFactory_tC83C6D31A42BFAD606C61B6ACB2D1A140786A6DD* __this, String_t* ___packageName0, const RuntimeMethod* method) 
 {
@@ -3439,15 +3421,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DisabledMetrics__ctor_mED3AD0A9283DB0685
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Collections.Generic.IReadOnlyDictionary`2<System.String,System.String> Unity.Services.Core.Telemetry.Internal.DisabledMetricsFactory::Unity.Services.Core.Telemetry.Internal.IMetricsFactory.get_CommonTags()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* DisabledMetricsFactory_Unity_Services_Core_Telemetry_Internal_IMetricsFactory_get_CommonTags_m21C88307D510EAFD5B1615A11E54A2412930288C (DisabledMetricsFactory_t60F6C496E8CC6F5C6636793C571038D864BD48D6* __this, const RuntimeMethod* method) 
-{
-	{
-		// IReadOnlyDictionary<string, string> IMetricsFactory.CommonTags { get; }
-		RuntimeObject* L_0 = __this->___U3CUnity_Services_Core_Telemetry_Internal_IMetricsFactory_CommonTagsU3Ek__BackingField_0;
-		return L_0;
-	}
-}
 // Unity.Services.Core.Telemetry.Internal.IMetrics Unity.Services.Core.Telemetry.Internal.DisabledMetricsFactory::Unity.Services.Core.Telemetry.Internal.IMetricsFactory.Create(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* DisabledMetricsFactory_Unity_Services_Core_Telemetry_Internal_IMetricsFactory_Create_m837C4BEC6FE6FEB5AC854A3DD19D2E5400A3D284 (DisabledMetricsFactory_t60F6C496E8CC6F5C6636793C571038D864BD48D6* __this, String_t* ___packageName0, const RuntimeMethod* method) 
 {
@@ -3692,15 +3665,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Metrics_Unity_Services_Core_Telemetry_In
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Collections.Generic.IReadOnlyDictionary`2<System.String,System.String> Unity.Services.Core.Telemetry.Internal.MetricsFactory::get_CommonTags()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* MetricsFactory_get_CommonTags_m8B0B37504BB0C83E60181E6C273B5710E595B37E (MetricsFactory_tFED08C34B8CB569B801796787E82F2818606FA05* __this, const RuntimeMethod* method) 
-{
-	{
-		// public IReadOnlyDictionary<string, string> CommonTags { get; }
-		RuntimeObject* L_0 = __this->___U3CCommonTagsU3Ek__BackingField_1;
-		return L_0;
-	}
-}
 // Unity.Services.Core.Telemetry.Internal.MetricsHandler Unity.Services.Core.Telemetry.Internal.MetricsFactory::get_Handler()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MetricsHandler_tEB5A2227BB53393F34EF42AE8F015A673466FE74* MetricsFactory_get_Handler_mEEC4790D8D67895DDDB3AC14E796F260A8B9780A (MetricsFactory_tFED08C34B8CB569B801796787E82F2818606FA05* __this, const RuntimeMethod* method) 
 {
@@ -4980,7 +4944,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* FactoryUtils_CreatePackageTags
 		String_t* L_3 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->___Empty_6;
 		NullCheck(L_0);
 		String_t* L_4;
-		L_4 = InterfaceFuncInvoker2< String_t*, String_t*, String_t* >::Invoke(3 /* System.String Unity.Services.Core.Configuration.Internal.IProjectConfiguration::GetString(System.String,System.String) */, IProjectConfiguration_tB5A7516DEB869AD005431EC83C6E02221D2B60D2_il2cpp_TypeInfo_var, L_0, L_2, L_3);
+		L_4 = InterfaceFuncInvoker2< String_t*, String_t*, String_t* >::Invoke(2 /* System.String Unity.Services.Core.Configuration.Internal.IProjectConfiguration::GetString(System.String,System.String) */, IProjectConfiguration_tB5A7516DEB869AD005431EC83C6E02221D2B60D2_il2cpp_TypeInfo_var, L_0, L_2, L_3);
 		V_0 = L_4;
 		// if (string.IsNullOrEmpty(packageVersion))
 		String_t* L_5 = V_0;
@@ -5369,7 +5333,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TelemetryConfig_t7D6911708D0C402786B501769520
 		RuntimeObject* L_2 = ___projectConfiguration0;
 		NullCheck(L_2);
 		String_t* L_3;
-		L_3 = InterfaceFuncInvoker2< String_t*, String_t*, String_t* >::Invoke(3 /* System.String Unity.Services.Core.Configuration.Internal.IProjectConfiguration::GetString(System.String,System.String) */, IProjectConfiguration_tB5A7516DEB869AD005431EC83C6E02221D2B60D2_il2cpp_TypeInfo_var, L_2, _stringLiteral9D3C19E3A647A2449C174675979309A559260621, _stringLiteral01C466FBD86FBB7A01FEE5B4420364EB13779331);
+		L_3 = InterfaceFuncInvoker2< String_t*, String_t*, String_t* >::Invoke(2 /* System.String Unity.Services.Core.Configuration.Internal.IProjectConfiguration::GetString(System.String,System.String) */, IProjectConfiguration_tB5A7516DEB869AD005431EC83C6E02221D2B60D2_il2cpp_TypeInfo_var, L_2, _stringLiteral9D3C19E3A647A2449C174675979309A559260621, _stringLiteral01C466FBD86FBB7A01FEE5B4420364EB13779331);
 		NullCheck(L_1);
 		L_1->___TargetUrl_0 = L_3;
 		Il2CppCodeGenWriteBarrier((void**)(&L_1->___TargetUrl_0), (void*)L_3);
@@ -5377,7 +5341,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TelemetryConfig_t7D6911708D0C402786B501769520
 		RuntimeObject* L_5 = ___projectConfiguration0;
 		NullCheck(L_5);
 		String_t* L_6;
-		L_6 = InterfaceFuncInvoker2< String_t*, String_t*, String_t* >::Invoke(3 /* System.String Unity.Services.Core.Configuration.Internal.IProjectConfiguration::GetString(System.String,System.String) */, IProjectConfiguration_tB5A7516DEB869AD005431EC83C6E02221D2B60D2_il2cpp_TypeInfo_var, L_5, _stringLiteral71D28320423B0978CBA625BE0E4846EC97389105, _stringLiteral7B9C8571450A4F167BFFD8C1D0899412FD5DD5F7);
+		L_6 = InterfaceFuncInvoker2< String_t*, String_t*, String_t* >::Invoke(2 /* System.String Unity.Services.Core.Configuration.Internal.IProjectConfiguration::GetString(System.String,System.String) */, IProjectConfiguration_tB5A7516DEB869AD005431EC83C6E02221D2B60D2_il2cpp_TypeInfo_var, L_5, _stringLiteral71D28320423B0978CBA625BE0E4846EC97389105, _stringLiteral7B9C8571450A4F167BFFD8C1D0899412FD5DD5F7);
 		NullCheck(L_4);
 		L_4->___ServicePath_1 = L_6;
 		Il2CppCodeGenWriteBarrier((void**)(&L_4->___ServicePath_1), (void*)L_6);

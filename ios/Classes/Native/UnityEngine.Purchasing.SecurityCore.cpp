@@ -32,8 +32,6 @@ struct Exception_t;
 struct IAPSecurityException_t0CF168A490D20D9F3A643C75A77826B27ABDEA9B;
 // System.Collections.IDictionary
 struct IDictionary_t6D03155AF1FA9083817AA5B6AD7DEEACC26AB220;
-// UnityEngine.Purchasing.Security.InvalidSignatureException
-struct InvalidSignatureException_tA19C73ABD87C5D1CAE5A0AC33BF1914B68C74A98;
 // System.Runtime.Serialization.SafeSerializationManager
 struct SafeSerializationManager_tCBB85B95DFD1634237140CD892E82D06ECB3F5E6;
 // System.String
@@ -184,18 +182,16 @@ struct AppleReceipt_t16E9FEBF193F54B9B4E5D3323C48E487DCF3414C  : public RuntimeO
 	String_t* ___U3CbundleIDU3Ek__BackingField_0;
 	// System.String UnityEngine.Purchasing.Security.AppleReceipt::<appVersion>k__BackingField
 	String_t* ___U3CappVersionU3Ek__BackingField_1;
-	// System.DateTime UnityEngine.Purchasing.Security.AppleReceipt::<expirationDate>k__BackingField
-	DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D ___U3CexpirationDateU3Ek__BackingField_2;
 	// System.Byte[] UnityEngine.Purchasing.Security.AppleReceipt::<opaque>k__BackingField
-	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___U3CopaqueU3Ek__BackingField_3;
+	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___U3CopaqueU3Ek__BackingField_2;
 	// System.Byte[] UnityEngine.Purchasing.Security.AppleReceipt::<hash>k__BackingField
-	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___U3ChashU3Ek__BackingField_4;
+	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___U3ChashU3Ek__BackingField_3;
 	// System.String UnityEngine.Purchasing.Security.AppleReceipt::<originalApplicationVersion>k__BackingField
-	String_t* ___U3CoriginalApplicationVersionU3Ek__BackingField_5;
+	String_t* ___U3CoriginalApplicationVersionU3Ek__BackingField_4;
 	// System.DateTime UnityEngine.Purchasing.Security.AppleReceipt::<receiptCreationDate>k__BackingField
-	DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D ___U3CreceiptCreationDateU3Ek__BackingField_6;
+	DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D ___U3CreceiptCreationDateU3Ek__BackingField_5;
 	// UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt[] UnityEngine.Purchasing.Security.AppleReceipt::inAppPurchaseReceipts
-	AppleInAppPurchaseReceiptU5BU5D_t8A8951A16B47F87B92AC3879619FB94166150C8A* ___inAppPurchaseReceipts_7;
+	AppleInAppPurchaseReceiptU5BU5D_t8A8951A16B47F87B92AC3879619FB94166150C8A* ___inAppPurchaseReceipts_6;
 };
 
 // System.Exception
@@ -285,11 +281,6 @@ struct Exception_t_marshaled_com
 struct IAPSecurityException_t0CF168A490D20D9F3A643C75A77826B27ABDEA9B  : public Exception_t
 {
 };
-
-// UnityEngine.Purchasing.Security.InvalidSignatureException
-struct InvalidSignatureException_tA19C73ABD87C5D1CAE5A0AC33BF1914B68C74A98  : public IAPSecurityException_t0CF168A490D20D9F3A643C75A77826B27ABDEA9B
-{
-};
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -333,10 +324,6 @@ struct ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031  : public RuntimeArr
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2 (RuntimeObject* __this, const RuntimeMethod* method) ;
 // System.Void System.Exception::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Exception__ctor_m203319D1EA1274689B380A947B4ADC8445662B8F (Exception_t* __this, const RuntimeMethod* method) ;
-// System.Void System.Exception::.ctor(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Exception__ctor_m9B2BD92CD68916245A75109105D9071C9D430E7F (Exception_t* __this, String_t* ___message0, const RuntimeMethod* method) ;
-// System.Void UnityEngine.Purchasing.Security.IAPSecurityException::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IAPSecurityException__ctor_m6A57B7B67543FE72E27DF1424812F14667CC38D0 (IAPSecurityException_t0CF168A490D20D9F3A643C75A77826B27ABDEA9B* __this, const RuntimeMethod* method) ;
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -350,15 +337,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IAPSecurityException__ctor_m6A57B7B67543
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.String UnityEngine.Purchasing.Security.AppleReceipt::get_bundleID()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AppleReceipt_get_bundleID_m701C0D922D93E3FA7D23E5373CBBEC673BD49F0A (AppleReceipt_t16E9FEBF193F54B9B4E5D3323C48E487DCF3414C* __this, const RuntimeMethod* method) 
-{
-	{
-		// public string bundleID { get; internal set; }
-		String_t* L_0 = __this->___U3CbundleIDU3Ek__BackingField_0;
-		return L_0;
-	}
-}
 // System.Void UnityEngine.Purchasing.Security.AppleReceipt::set_bundleID(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AppleReceipt_set_bundleID_mA1F88F87405C2A5979ACBB58D5DC010716EFB877 (AppleReceipt_t16E9FEBF193F54B9B4E5D3323C48E487DCF3414C* __this, String_t* ___value0, const RuntimeMethod* method) 
 {
@@ -368,15 +346,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AppleReceipt_set_bundleID_mA1F88F87405C2
 		__this->___U3CbundleIDU3Ek__BackingField_0 = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CbundleIDU3Ek__BackingField_0), (void*)L_0);
 		return;
-	}
-}
-// System.String UnityEngine.Purchasing.Security.AppleReceipt::get_appVersion()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AppleReceipt_get_appVersion_m3AC19E39B67362C514E3E4DECB776FCAECB24C4A (AppleReceipt_t16E9FEBF193F54B9B4E5D3323C48E487DCF3414C* __this, const RuntimeMethod* method) 
-{
-	{
-		// public string appVersion { get; internal set; }
-		String_t* L_0 = __this->___U3CappVersionU3Ek__BackingField_1;
-		return L_0;
 	}
 }
 // System.Void UnityEngine.Purchasing.Security.AppleReceipt::set_appVersion(System.String)
@@ -390,52 +359,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AppleReceipt_set_appVersion_m59F5F0B3DF8
 		return;
 	}
 }
-// System.DateTime UnityEngine.Purchasing.Security.AppleReceipt::get_expirationDate()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D AppleReceipt_get_expirationDate_m3DBE6E49A936DCCDC26F66A2B40116F5EEAB7BFF (AppleReceipt_t16E9FEBF193F54B9B4E5D3323C48E487DCF3414C* __this, const RuntimeMethod* method) 
-{
-	{
-		// public DateTime expirationDate { get; internal set; }
-		DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D L_0 = __this->___U3CexpirationDateU3Ek__BackingField_2;
-		return L_0;
-	}
-}
-// System.Void UnityEngine.Purchasing.Security.AppleReceipt::set_expirationDate(System.DateTime)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AppleReceipt_set_expirationDate_m59212EF6F98F9643105525A6997E385DE6A3D373 (AppleReceipt_t16E9FEBF193F54B9B4E5D3323C48E487DCF3414C* __this, DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D ___value0, const RuntimeMethod* method) 
-{
-	{
-		// public DateTime expirationDate { get; internal set; }
-		DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D L_0 = ___value0;
-		__this->___U3CexpirationDateU3Ek__BackingField_2 = L_0;
-		return;
-	}
-}
-// System.Byte[] UnityEngine.Purchasing.Security.AppleReceipt::get_opaque()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* AppleReceipt_get_opaque_mF8EDE95E37A18F949140F78112AAFF6B05A42FA2 (AppleReceipt_t16E9FEBF193F54B9B4E5D3323C48E487DCF3414C* __this, const RuntimeMethod* method) 
-{
-	{
-		// public byte[] opaque { get; internal set; }
-		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_0 = __this->___U3CopaqueU3Ek__BackingField_3;
-		return L_0;
-	}
-}
 // System.Void UnityEngine.Purchasing.Security.AppleReceipt::set_opaque(System.Byte[])
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AppleReceipt_set_opaque_m4FDDBCA4DB089D281154D7F537533B764875276C (AppleReceipt_t16E9FEBF193F54B9B4E5D3323C48E487DCF3414C* __this, ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___value0, const RuntimeMethod* method) 
 {
 	{
 		// public byte[] opaque { get; internal set; }
 		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_0 = ___value0;
-		__this->___U3CopaqueU3Ek__BackingField_3 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CopaqueU3Ek__BackingField_3), (void*)L_0);
+		__this->___U3CopaqueU3Ek__BackingField_2 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CopaqueU3Ek__BackingField_2), (void*)L_0);
 		return;
-	}
-}
-// System.Byte[] UnityEngine.Purchasing.Security.AppleReceipt::get_hash()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* AppleReceipt_get_hash_mBF3760971A8CE9101C22B608515FE688D4DA6CE2 (AppleReceipt_t16E9FEBF193F54B9B4E5D3323C48E487DCF3414C* __this, const RuntimeMethod* method) 
-{
-	{
-		// public byte[] hash { get; internal set; }
-		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_0 = __this->___U3ChashU3Ek__BackingField_4;
-		return L_0;
 	}
 }
 // System.Void UnityEngine.Purchasing.Security.AppleReceipt::set_hash(System.Byte[])
@@ -444,18 +376,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AppleReceipt_set_hash_mBDA78FE22F99E68A4
 	{
 		// public byte[] hash { get; internal set; }
 		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_0 = ___value0;
-		__this->___U3ChashU3Ek__BackingField_4 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3ChashU3Ek__BackingField_4), (void*)L_0);
+		__this->___U3ChashU3Ek__BackingField_3 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3ChashU3Ek__BackingField_3), (void*)L_0);
 		return;
-	}
-}
-// System.String UnityEngine.Purchasing.Security.AppleReceipt::get_originalApplicationVersion()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AppleReceipt_get_originalApplicationVersion_mC482D5135D5A257E737CD233FC5DC46FB4907943 (AppleReceipt_t16E9FEBF193F54B9B4E5D3323C48E487DCF3414C* __this, const RuntimeMethod* method) 
-{
-	{
-		// public string originalApplicationVersion { get; internal set; }
-		String_t* L_0 = __this->___U3CoriginalApplicationVersionU3Ek__BackingField_5;
-		return L_0;
 	}
 }
 // System.Void UnityEngine.Purchasing.Security.AppleReceipt::set_originalApplicationVersion(System.String)
@@ -464,18 +387,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AppleReceipt_set_originalApplicationVers
 	{
 		// public string originalApplicationVersion { get; internal set; }
 		String_t* L_0 = ___value0;
-		__this->___U3CoriginalApplicationVersionU3Ek__BackingField_5 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CoriginalApplicationVersionU3Ek__BackingField_5), (void*)L_0);
+		__this->___U3CoriginalApplicationVersionU3Ek__BackingField_4 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CoriginalApplicationVersionU3Ek__BackingField_4), (void*)L_0);
 		return;
-	}
-}
-// System.DateTime UnityEngine.Purchasing.Security.AppleReceipt::get_receiptCreationDate()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D AppleReceipt_get_receiptCreationDate_mE1C0D4765B91E32A56DD4465D829A73892E46FE6 (AppleReceipt_t16E9FEBF193F54B9B4E5D3323C48E487DCF3414C* __this, const RuntimeMethod* method) 
-{
-	{
-		// public DateTime receiptCreationDate { get; internal set; }
-		DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D L_0 = __this->___U3CreceiptCreationDateU3Ek__BackingField_6;
-		return L_0;
 	}
 }
 // System.Void UnityEngine.Purchasing.Security.AppleReceipt::set_receiptCreationDate(System.DateTime)
@@ -484,7 +398,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AppleReceipt_set_receiptCreationDate_mE8
 	{
 		// public DateTime receiptCreationDate { get; internal set; }
 		DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D L_0 = ___value0;
-		__this->___U3CreceiptCreationDateU3Ek__BackingField_6 = L_0;
+		__this->___U3CreceiptCreationDateU3Ek__BackingField_5 = L_0;
 		return;
 	}
 }
@@ -504,15 +418,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AppleReceipt__ctor_mBC2D8186C1DD8B5601E6
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Int32 UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt::get_quantity()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t AppleInAppPurchaseReceipt_get_quantity_m023A035E937493261EF5130C6BC59FF652210B1E (AppleInAppPurchaseReceipt_t45E81B173E0600832D2E259DA4A6CFA9C54A7CD6* __this, const RuntimeMethod* method) 
-{
-	{
-		// public int quantity { get; internal set; }
-		int32_t L_0 = __this->___U3CquantityU3Ek__BackingField_0;
-		return L_0;
-	}
-}
 // System.Void UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt::set_quantity(System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AppleInAppPurchaseReceipt_set_quantity_mE9F9F54A27DAE0A441147CCB2995FC37BAA47F14 (AppleInAppPurchaseReceipt_t45E81B173E0600832D2E259DA4A6CFA9C54A7CD6* __this, int32_t ___value0, const RuntimeMethod* method) 
 {
@@ -563,15 +468,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AppleInAppPurchaseReceipt_set_transactio
 		return;
 	}
 }
-// System.String UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt::get_originalTransactionIdentifier()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AppleInAppPurchaseReceipt_get_originalTransactionIdentifier_m4CCC48A28E54C696DB545948158A86906EA4B052 (AppleInAppPurchaseReceipt_t45E81B173E0600832D2E259DA4A6CFA9C54A7CD6* __this, const RuntimeMethod* method) 
-{
-	{
-		// public string originalTransactionIdentifier { get; internal set; }
-		String_t* L_0 = __this->___U3CoriginalTransactionIdentifierU3Ek__BackingField_3;
-		return L_0;
-	}
-}
 // System.Void UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt::set_originalTransactionIdentifier(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AppleInAppPurchaseReceipt_set_originalTransactionIdentifier_m987D93700377FB81897D206F65D08CC908BDFB96 (AppleInAppPurchaseReceipt_t45E81B173E0600832D2E259DA4A6CFA9C54A7CD6* __this, String_t* ___value0, const RuntimeMethod* method) 
 {
@@ -600,15 +496,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AppleInAppPurchaseReceipt_set_purchaseDa
 		DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D L_0 = ___value0;
 		__this->___U3CpurchaseDateU3Ek__BackingField_4 = L_0;
 		return;
-	}
-}
-// System.DateTime UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt::get_originalPurchaseDate()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D AppleInAppPurchaseReceipt_get_originalPurchaseDate_mFE6FAF0E5BFFC390A3649BD1C0A0A9FBCD5E0B47 (AppleInAppPurchaseReceipt_t45E81B173E0600832D2E259DA4A6CFA9C54A7CD6* __this, const RuntimeMethod* method) 
-{
-	{
-		// public DateTime originalPurchaseDate { get; internal set; }
-		DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D L_0 = __this->___U3CoriginalPurchaseDateU3Ek__BackingField_5;
-		return L_0;
 	}
 }
 // System.Void UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt::set_originalPurchaseDate(System.DateTime)
@@ -746,40 +633,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IAPSecurityException__ctor_m6A57B7B67543
 		il2cpp_codegen_runtime_class_init_inline(Exception_t_il2cpp_TypeInfo_var);
 		Exception__ctor_m203319D1EA1274689B380A947B4ADC8445662B8F(__this, NULL);
 		// public IAPSecurityException() { }
-		return;
-	}
-}
-// System.Void UnityEngine.Purchasing.Security.IAPSecurityException::.ctor(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IAPSecurityException__ctor_m0503EF2A0C27262F779469F186B03F84E7995458 (IAPSecurityException_t0CF168A490D20D9F3A643C75A77826B27ABDEA9B* __this, String_t* ___message0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Exception_t_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// public IAPSecurityException(string message) : base(message)
-		String_t* L_0 = ___message0;
-		il2cpp_codegen_runtime_class_init_inline(Exception_t_il2cpp_TypeInfo_var);
-		Exception__ctor_m9B2BD92CD68916245A75109105D9071C9D430E7F(__this, L_0, NULL);
-		// }
-		return;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void UnityEngine.Purchasing.Security.InvalidSignatureException::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InvalidSignatureException__ctor_m7861DAA19E1CE053504025520EFC0C673E0DA947 (InvalidSignatureException_tA19C73ABD87C5D1CAE5A0AC33BF1914B68C74A98* __this, const RuntimeMethod* method) 
-{
-	{
-		IAPSecurityException__ctor_m6A57B7B67543FE72E27DF1424812F14667CC38D0(__this, NULL);
 		return;
 	}
 }

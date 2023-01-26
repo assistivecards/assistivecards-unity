@@ -501,8 +501,6 @@ struct XmlTypeMapMemberAnyElement_tC9C6D58B08CB2C84148376C77AC4259AF149C950;
 struct XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4;
 // System.Xml.Serialization.XmlTypeMapMemberElement
 struct XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840;
-// System.Xml.Serialization.XmlTypeMapMemberExpandable
-struct XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE;
 // System.Xml.Serialization.XmlTypeMapMemberFlatList
 struct XmlTypeMapMemberFlatList_t443422643AA0E5FA5166EF6451BBA01D02004B38;
 // System.Xml.Serialization.XmlTypeMapMemberList
@@ -764,7 +762,6 @@ IL2CPP_EXTERN_C String_t* _stringLiteral96EC52420EC5AB3C6D55AE97C6E038E918ED0EC4
 IL2CPP_EXTERN_C String_t* _stringLiteral996E5360F80E16B2189CC1E536C91CE68083F694;
 IL2CPP_EXTERN_C String_t* _stringLiteral9A181C52772E2BE53A280EA09B2A3C3BAC1681E5;
 IL2CPP_EXTERN_C String_t* _stringLiteral9A24CC7BE5FB2E4DFFA4A80AD8B0335DAE91B662;
-IL2CPP_EXTERN_C String_t* _stringLiteral9B54B99D2D01A816F2DDC997E399877B2A8DB19C;
 IL2CPP_EXTERN_C String_t* _stringLiteral9CDCEEB7A12F71E8DF3D6AC05D04621DD4FBABF3;
 IL2CPP_EXTERN_C String_t* _stringLiteral9D585EFA72289B5EB83C4E729C8843ADEA8F08D2;
 IL2CPP_EXTERN_C String_t* _stringLiteral9DFFC3267C5F999585E61B45BA9C8DF18D4B02CA;
@@ -807,7 +804,6 @@ IL2CPP_EXTERN_C String_t* _stringLiteralE227F5E574CC64695563B031F22527F1B72B2D46
 IL2CPP_EXTERN_C String_t* _stringLiteralE234C34099947BE8BB6C958B450C81758FC6EC63;
 IL2CPP_EXTERN_C String_t* _stringLiteralE249DDFD90EBFAAEE63734F28F6668A2FB5BD5AF;
 IL2CPP_EXTERN_C String_t* _stringLiteralE25534321226D9693D71A59D74F97A2E7C087499;
-IL2CPP_EXTERN_C String_t* _stringLiteralE2B88E46159CFC01C6A8623898739CB2A93FAE87;
 IL2CPP_EXTERN_C String_t* _stringLiteralE3DFC065B6A6D9931B797808DD066491AAB82B29;
 IL2CPP_EXTERN_C String_t* _stringLiteralE86D98C6DCF741AC261234D4DD6564807FFD6604;
 IL2CPP_EXTERN_C String_t* _stringLiteralEC8D2B1EC3E954083D64BF4DDCCC9E46BE24B490;
@@ -825,19 +821,14 @@ IL2CPP_EXTERN_C String_t* _stringLiteralFB5F5BC179359BB02810BD7BD8F296B34A8C6EE8
 IL2CPP_EXTERN_C String_t* _stringLiteralFC0CDAC241F1E33895C656656CCAFD1419A41699;
 IL2CPP_EXTERN_C String_t* _stringLiteralFC344454A143AB042DC5757AA44FB10C745C1E4D;
 IL2CPP_EXTERN_C String_t* _stringLiteralFC52EF0E935F6937D21D16F8AE523FA90242C407;
-IL2CPP_EXTERN_C const RuntimeMethod* Enumerator_Dispose_mD5F9D6967D1A793EC5B859797AF46CA0638E673C_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Enumerator_MoveNext_m1056299E91A99CDB7E024E6CE4FAEDD876131610_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* Enumerator_get_Current_m9B13FBB007BA67B906DE032E50FEC11C7652193A_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* FixupCallbackInfo_FixupMembers_m80AD28B889F16F84A04A47F8895B582A50981E63_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1_Add_mE42853650C380A1F9A8E4ABE752EA8050EF84C26_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1_GetEnumerator_m921F9E417EFD8F903D71509F8EFC4C4566D76CAC_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1_Sort_mEAA5A22918AD0DC18FCF48568E89C0F5794B105A_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1__ctor_m4A66450CDA32222827A7E731E42D9B9D85CB8324_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* Nullable_1_GetValueOrDefault_m86E1210429A6EA0082CC7806DD638E8B4555F148_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Nullable_1__ctor_m141FA88563AC0B5179132FB929EABD02C47FF703_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Nullable_1__ctor_m4FAA8281CB4EFFD8B817734351FB3AC20A0CD6F5_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* Nullable_1_get_HasValue_m6B76D139692C43B2AF7C695FAB044B16ACFAF355_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* Nullable_1_get_HasValue_mCF2FD8B3055FA87FC9C504F2122B3B0FAEDE3EC9_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Nullable_1_get_Value_m0DF3B826A745419D26A168689AEB4BE6F8698ECA_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* ReaderCallbackInfo_ReadObject_m9D91DB389AC65B4941DC11773FECC6EEAF180249_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Type_GetType_m71A077E0B5DA3BD1DC0AB9AE387056CFCF56F93F_RuntimeMethod_var;
@@ -1410,17 +1401,6 @@ struct ReflectionHelper_tC70C244386E812ED1E4C85AAF108E85F470C68AB_StaticFields
 {
 	// System.Reflection.ParameterModifier[] System.Xml.Serialization.ReflectionHelper::empty_modifiers
 	ParameterModifierU5BU5D_t685261AD991B1E6582A0E53243DEE3B745E13364* ___empty_modifiers_2;
-};
-
-// System.Xml.Serialization.SerializationSource
-struct SerializationSource_t2F3A53A0FFC7BF8994CF332961FD3C0671E4A58C  : public RuntimeObject
-{
-	// System.Type[] System.Xml.Serialization.SerializationSource::includedTypes
-	TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB* ___includedTypes_0;
-	// System.String System.Xml.Serialization.SerializationSource::namspace
-	String_t* ___namspace_1;
-	// System.Boolean System.Xml.Serialization.SerializationSource::canBeGenerated
-	bool ___canBeGenerated_2;
 };
 
 // System.String
@@ -3752,22 +3732,12 @@ struct XmlQualifiedNameU5BU5D_t95C376ACDEA9261B842F45A4C4DF9ABEE0FB35D1  : publi
 
 // System.Void System.Nullable`1<System.Int32>::.ctor(T)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Nullable_1__ctor_m141FA88563AC0B5179132FB929EABD02C47FF703_gshared (Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28* __this, int32_t ___value0, const RuntimeMethod* method) ;
-// System.Boolean System.Nullable`1<System.Int32>::get_HasValue()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Nullable_1_get_HasValue_mCF2FD8B3055FA87FC9C504F2122B3B0FAEDE3EC9_gshared_inline (Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28* __this, const RuntimeMethod* method) ;
 // T System.Nullable`1<System.Int32>::get_Value()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Nullable_1_get_Value_m0DF3B826A745419D26A168689AEB4BE6F8698ECA_gshared (Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28* __this, const RuntimeMethod* method) ;
 // System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<System.Object>::GetEnumerator()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Enumerator_t9473BAB568A27E2339D48C1F91319E0F6D244D7A List_1_GetEnumerator_mD8294A7FA2BEB1929487127D476F8EC1CDC23BFC_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.List`1/Enumerator<System.Object>::Dispose()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Enumerator_Dispose_mD9DC3E3C3697830A4823047AB29A77DBBB5ED419_gshared (Enumerator_t9473BAB568A27E2339D48C1F91319E0F6D244D7A* __this, const RuntimeMethod* method) ;
-// T System.Collections.Generic.List`1/Enumerator<System.Object>::get_Current()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Enumerator_get_Current_m6330F15D18EE4F547C05DF9BF83C5EB710376027_gshared_inline (Enumerator_t9473BAB568A27E2339D48C1F91319E0F6D244D7A* __this, const RuntimeMethod* method) ;
-// System.Boolean System.Nullable`1<System.Boolean>::get_HasValue()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Nullable_1_get_HasValue_m6B76D139692C43B2AF7C695FAB044B16ACFAF355_gshared_inline (Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01* __this, const RuntimeMethod* method) ;
 // System.Void System.Nullable`1<System.Boolean>::.ctor(T)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Nullable_1__ctor_m4FAA8281CB4EFFD8B817734351FB3AC20A0CD6F5_gshared (Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01* __this, bool ___value0, const RuntimeMethod* method) ;
-// T System.Nullable`1<System.Boolean>::GetValueOrDefault()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Nullable_1_GetValueOrDefault_m86E1210429A6EA0082CC7806DD638E8B4555F148_gshared_inline (Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01* __this, const RuntimeMethod* method) ;
 // System.Boolean System.Collections.Generic.List`1/Enumerator<System.Object>::MoveNext()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Enumerator_MoveNext_mE921CC8F29FBBDE7CC3209A0ED0D921D58D00BCB_gshared (Enumerator_t9473BAB568A27E2339D48C1F91319E0F6D244D7A* __this, const RuntimeMethod* method) ;
 // System.Void System.Comparison`1<System.Object>::.ctor(System.Object,System.IntPtr)
@@ -3781,36 +3751,30 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mEBCF994CC3814631
 // System.Void System.Collections.Generic.List`1<System.Object>::AddWithResize(T)
 IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method) ;
 
+// System.Collections.IList System.Collections.CollectionBase::get_List()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* CollectionBase_get_List_m0862A9A7D875A18C50A0F914C95C22A397DF13D8 (CollectionBase_t44F966CC555C87F2815D668FB4586526E1C2383F* __this, const RuntimeMethod* method) ;
+// System.Int32 System.Collections.CollectionBase::get_Count()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t CollectionBase_get_Count_m2BD48A6DDD376554A7956E4B26EC27F9F1E43C72 (CollectionBase_t44F966CC555C87F2815D668FB4586526E1C2383F* __this, const RuntimeMethod* method) ;
 // System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D (StringBuilder_t* __this, String_t* ___value0, const RuntimeMethod* method) ;
+// System.Xml.Serialization.XmlArrayItemAttribute System.Xml.Serialization.XmlArrayItemAttributes::get_Item(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* XmlArrayItemAttributes_get_Item_m3A37EA7333F946C6C6F52A46BFCDD4FC0B420DD8 (XmlArrayItemAttributes_tD468A7CCAF036962F37A7CDDDE042A6258D03513* __this, int32_t ___index0, const RuntimeMethod* method) ;
+// System.Void System.Xml.Serialization.XmlArrayItemAttribute::AddKeyHash(System.Text.StringBuilder)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlArrayItemAttribute_AddKeyHash_m899C82648223097CA3798612D04E7C0E6D8DC440 (XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* __this, StringBuilder_t* ___sb0, const RuntimeMethod* method) ;
+// System.Text.StringBuilder System.Text.StringBuilder::Append(System.Char)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* StringBuilder_Append_m71228B30F05724CD2CD96D9611DCD61BFB96A6E1 (StringBuilder_t* __this, Il2CppChar ___value0, const RuntimeMethod* method) ;
+// System.Void System.Collections.CollectionBase::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CollectionBase__ctor_m9AB03A7692AA8F78FA5519ACA74FF3FA2F9520BC (CollectionBase_t44F966CC555C87F2815D668FB4586526E1C2383F* __this, const RuntimeMethod* method) ;
+// System.Void System.Attribute::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Attribute__ctor_m79ED1BF1EE36D1E417BA89A0D9F91F8AAD8D19E2 (Attribute_tFDA8EFEFB0711976D22474794576DAF28F7440AA* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.KeyHelper::AddField(System.Text.StringBuilder,System.Int32,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void KeyHelper_AddField_m768E2F45F0F3BF4B11D640BE8CCB308BA9FCE439 (StringBuilder_t* ___sb0, int32_t ___n1, String_t* ___val2, const RuntimeMethod* method) ;
 // System.String System.Enum::ToString()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Enum_ToString_m946B0B83C4470457D0FF555D862022C72BB55741 (RuntimeObject* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.KeyHelper::AddField(System.Text.StringBuilder,System.Int32,System.String,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void KeyHelper_AddField_m8D6784F8A282272797904301802EDF06F12FBD8E (StringBuilder_t* ___sb0, int32_t ___n1, String_t* ___val2, String_t* ___def3, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.KeyHelper::AddField(System.Text.StringBuilder,System.Int32,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void KeyHelper_AddField_mDC2C3F5C998DFFF8EEA9842D02A98A18796ADBFD (StringBuilder_t* ___sb0, int32_t ___n1, bool ___val2, const RuntimeMethod* method) ;
-// System.Text.StringBuilder System.Text.StringBuilder::Append(System.Char)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* StringBuilder_Append_m71228B30F05724CD2CD96D9611DCD61BFB96A6E1 (StringBuilder_t* __this, Il2CppChar ___value0, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.KeyHelper::AddField(System.Text.StringBuilder,System.Int32,System.Boolean,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void KeyHelper_AddField_m78047BE7001905F258ACFD9EE9591C0FB91346B0 (StringBuilder_t* ___sb0, int32_t ___n1, bool ___val2, bool ___def3, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.KeyHelper::AddField(System.Text.StringBuilder,System.Int32,System.Int32,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void KeyHelper_AddField_m81821A6F1695929FBE2ABE69CE4243B0694ACB93 (StringBuilder_t* ___sb0, int32_t ___n1, int32_t ___val2, int32_t ___def3, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.KeyHelper::AddField(System.Text.StringBuilder,System.Int32,System.Type)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void KeyHelper_AddField_m0F0BB7334D857FD3C3C45CED49E29A85D13CD966 (StringBuilder_t* ___sb0, int32_t ___n1, Type_t* ___val2, const RuntimeMethod* method) ;
-// System.Collections.IList System.Collections.CollectionBase::get_List()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* CollectionBase_get_List_m0862A9A7D875A18C50A0F914C95C22A397DF13D8 (CollectionBase_t44F966CC555C87F2815D668FB4586526E1C2383F* __this, const RuntimeMethod* method) ;
-// System.Int32 System.Collections.CollectionBase::get_Count()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t CollectionBase_get_Count_m2BD48A6DDD376554A7956E4B26EC27F9F1E43C72 (CollectionBase_t44F966CC555C87F2815D668FB4586526E1C2383F* __this, const RuntimeMethod* method) ;
-// System.Xml.Serialization.XmlArrayItemAttribute System.Xml.Serialization.XmlArrayItemAttributes::get_Item(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* XmlArrayItemAttributes_get_Item_m3A37EA7333F946C6C6F52A46BFCDD4FC0B420DD8 (XmlArrayItemAttributes_tD468A7CCAF036962F37A7CDDDE042A6258D03513* __this, int32_t ___index0, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlArrayItemAttribute::AddKeyHash(System.Text.StringBuilder)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlArrayItemAttribute_AddKeyHash_m899C82648223097CA3798612D04E7C0E6D8DC440 (XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* __this, StringBuilder_t* ___sb0, const RuntimeMethod* method) ;
-// System.Void System.Collections.CollectionBase::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CollectionBase__ctor_m9AB03A7692AA8F78FA5519ACA74FF3FA2F9520BC (CollectionBase_t44F966CC555C87F2815D668FB4586526E1C2383F* __this, const RuntimeMethod* method) ;
-// System.Void System.Attribute::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Attribute__ctor_m79ED1BF1EE36D1E417BA89A0D9F91F8AAD8D19E2 (Attribute_tFDA8EFEFB0711976D22474794576DAF28F7440AA* __this, const RuntimeMethod* method) ;
 // System.Void System.Object::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2 (RuntimeObject* __this, const RuntimeMethod* method) ;
 // System.Void System.Collections.Hashtable::.ctor()
@@ -3821,10 +3785,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TypeMember_tC50D33D2FBD149BB3F9B76E6AFD752A4B4E2AE1D* XmlAttributeOverrides_GetKey_m2A1C08CCB0F0A887808DF7DE7440609181A9B383 (XmlAttributeOverrides_tEE6AE9EC795CDEF943B35BA538C86222F905EB60* __this, Type_t* ___type0, String_t* ___member1, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.TypeMember::.ctor(System.Type,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TypeMember__ctor_m0151EB46D0BF9AB4D68680469BB3B1D0382191CF (TypeMember_tC50D33D2FBD149BB3F9B76E6AFD752A4B4E2AE1D* __this, Type_t* ___type0, String_t* ___member1, const RuntimeMethod* method) ;
-// System.Object System.Collections.DictionaryEntry::get_Value()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* DictionaryEntry_get_Value_m75FD18FE968AE131F28AA2CB0DF4895EBA39075E_inline (DictionaryEntry_t171080F37B311C25AA9E75888F9C9D703FA721BB* __this, const RuntimeMethod* method) ;
-// System.Object System.Collections.DictionaryEntry::get_Key()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* DictionaryEntry_get_Key_m09845C00732E530E6FCB9042079E90D3912215FE_inline (DictionaryEntry_t171080F37B311C25AA9E75888F9C9D703FA721BB* __this, const RuntimeMethod* method) ;
 // System.Globalization.CultureInfo System.Globalization.CultureInfo::get_InvariantCulture()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0* CultureInfo_get_InvariantCulture_mD1E96DC845E34B10F78CB744B0CB5D7D63CEB1E6 (const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlAttributes::AddKeyHash(System.Text.StringBuilder)
@@ -3843,6 +3803,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t XmlArrayItemAttributes_Add_m5409D5F1D
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t XmlElementAttributes_Add_mFAF753CA050A16F260EAA885AD4A565B96DB4C40 (XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* __this, XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* ___attribute0, const RuntimeMethod* method) ;
 // System.Void System.Collections.CollectionBase::Clear()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CollectionBase_Clear_m0357C9FEC2BDB351726BA642093656CB1025968F (CollectionBase_t44F966CC555C87F2815D668FB4586526E1C2383F* __this, const RuntimeMethod* method) ;
+// System.Void System.Xml.Serialization.KeyHelper::AddField(System.Text.StringBuilder,System.Int32,System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void KeyHelper_AddField_mDC2C3F5C998DFFF8EEA9842D02A98A18796ADBFD (StringBuilder_t* ___sb0, int32_t ___n1, bool ___val2, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlAnyElementAttributes::AddKeyHash(System.Text.StringBuilder)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlAnyElementAttributes_AddKeyHash_m8E7B73641DDBEB048ED0C413F5B5A13B8192EF7D (XmlAnyElementAttributes_t8709780E4C7D8E9B453BB4AE51A3CFBC462286CF* __this, StringBuilder_t* ___sb0, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlArrayItemAttributes::AddKeyHash(System.Text.StringBuilder)
@@ -3871,8 +3833,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlTextAttribute_AddKeyHash_m5084FCEC37C
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlTypeAttribute_AddKeyHash_mC4DAB0436EA984594404652066A6EFCF264465F9 (XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* __this, StringBuilder_t* ___sb0, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlChoiceIdentifierAttribute::AddKeyHash(System.Text.StringBuilder)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlChoiceIdentifierAttribute_AddKeyHash_mF380D6DE99B750E124549D3892E8E009F65C41D5 (XmlChoiceIdentifierAttribute_t1DF770FBF01EBD518F55C363C703F86A7712301E* __this, StringBuilder_t* ___sb0, const RuntimeMethod* method) ;
-// System.Xml.Serialization.XmlElementAttributes System.Xml.Serialization.XmlAttributes::get_XmlElements()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* XmlAttributes_get_XmlElements_m416689A3226C3C399772C0E9E618DC1B61E2EB89_inline (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) ;
 // System.Int32 System.Xml.Serialization.XmlElementAttributes::get_Order()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t XmlElementAttributes_get_Order_mAE0BF907973526BBAF7AAF9CACD9CDD665624215 (XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* __this, const RuntimeMethod* method) ;
 // System.Void System.Nullable`1<System.Int32>::.ctor(T)
@@ -3880,21 +3840,10 @@ inline void Nullable_1__ctor_m141FA88563AC0B5179132FB929EABD02C47FF703 (Nullable
 {
 	((  void (*) (Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28*, int32_t, const RuntimeMethod*))Nullable_1__ctor_m141FA88563AC0B5179132FB929EABD02C47FF703_gshared)(__this, ___value0, method);
 }
-// System.Xml.Serialization.XmlArrayAttribute System.Xml.Serialization.XmlAttributes::get_XmlArray()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* XmlAttributes_get_XmlArray_m47C136BD864E01CEF392D4556950383154E21CC1_inline (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) ;
-// System.Int32 System.Xml.Serialization.XmlArrayAttribute::get_Order()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlArrayAttribute_get_Order_m82A05D0B48CDF77EEAC644B324916768C3DCC219_inline (XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* __this, const RuntimeMethod* method) ;
-// System.Xml.Serialization.XmlAnyElementAttributes System.Xml.Serialization.XmlAttributes::get_XmlAnyElements()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlAnyElementAttributes_t8709780E4C7D8E9B453BB4AE51A3CFBC462286CF* XmlAttributes_get_XmlAnyElements_m3216504EBB4407E5FF8149C2A95CDF7826C5043C_inline (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) ;
 // System.Int32 System.Xml.Serialization.XmlAnyElementAttributes::get_Order()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t XmlAnyElementAttributes_get_Order_m01A17B17DAC7BFCE5C2B854C9B4751583480A986 (XmlAnyElementAttributes_t8709780E4C7D8E9B453BB4AE51A3CFBC462286CF* __this, const RuntimeMethod* method) ;
 // System.Nullable`1<System.Int32> System.Xml.Serialization.XmlAttributes::get_Order()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 XmlAttributes_get_Order_mFDA027D8E65B6FA40F5D935825673C832309FF28 (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) ;
-// System.Boolean System.Nullable`1<System.Int32>::get_HasValue()
-inline bool Nullable_1_get_HasValue_mCF2FD8B3055FA87FC9C504F2122B3B0FAEDE3EC9_inline (Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28* __this, const RuntimeMethod* method)
-{
-	return ((  bool (*) (Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28*, const RuntimeMethod*))Nullable_1_get_HasValue_mCF2FD8B3055FA87FC9C504F2122B3B0FAEDE3EC9_gshared_inline)(__this, method);
-}
 // T System.Nullable`1<System.Int32>::get_Value()
 inline int32_t Nullable_1_get_Value_m0DF3B826A745419D26A168689AEB4BE6F8698ECA (Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28* __this, const RuntimeMethod* method)
 {
@@ -3916,8 +3865,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Format_m3844098E7C18576D263A
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlConvert_EncodeName_m5CDC8BEC5CE63A019C9E7C52AADF9F44B90E6CB5 (String_t* ___name0, const RuntimeMethod* method) ;
 // System.String System.Xml.XmlConvert::EncodeLocalName(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlConvert_EncodeLocalName_m8AD743C94643F82D5B6FF1617EDAF4145E67D318 (String_t* ___name0, const RuntimeMethod* method) ;
-// System.String System.Xml.Serialization.TypeData::get_XmlType()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* TypeData_get_XmlType_m06749C1B19C57EB8649CBCD9B106C014DF511453_inline (TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* __this, const RuntimeMethod* method) ;
 // System.UInt32 <PrivateImplementationDetails>::ComputeStringHash(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint32_t U3CPrivateImplementationDetailsU3E_ComputeStringHash_m8AD748350993B116B2C4A98803EE1E291A0ADFEE (String_t* ___s0, const RuntimeMethod* method) ;
 // System.Boolean System.String::op_Equality(System.String,System.String)
@@ -3996,8 +3943,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Guid_t XmlConvert_ToGuid_m3B2378387DFAACD9C49
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* Convert_FromBase64String_m267327B074B41D93C9622D142B95CFAA4ACCCA9C (String_t* ___s0, const RuntimeMethod* method) ;
 // System.Byte[] System.Xml.XmlConvert::FromBinHexString(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* XmlConvert_FromBinHexString_m6EC5D0535AB77161DC3494909964E3774E7D0822 (String_t* ___s0, const RuntimeMethod* method) ;
-// System.Type System.Xml.Serialization.TypeData::get_Type()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Type_t* TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline (TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* __this, const RuntimeMethod* method) ;
 // System.Boolean System.Type::op_Inequality(System.Type,System.Type)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Type_op_Inequality_m83209C7BB3C05DFBEA3B6199B0BEFE8037301172 (Type_t* ___left0, Type_t* ___right1, const RuntimeMethod* method) ;
 // System.Object System.Convert::ChangeType(System.Object,System.Type,System.IFormatProvider)
@@ -4008,8 +3953,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlElementAttribute_AddKeyHash_m0107CE4587A6C7922A47FCD9151D320FDEDDB43D (XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* __this, StringBuilder_t* ___sb0, const RuntimeMethod* method) ;
 // System.Collections.IEnumerator System.Collections.CollectionBase::GetEnumerator()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* CollectionBase_GetEnumerator_m8121D67DEBB0009A93BFEBB1DA46BA8A671FD862 (CollectionBase_t44F966CC555C87F2815D668FB4586526E1C2383F* __this, const RuntimeMethod* method) ;
-// System.Int32 System.Xml.Serialization.XmlElementAttribute::get_Order()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlElementAttribute_get_Order_mCF42C8462D6BAE16562CD7E16E56DD5BBD56A34F_inline (XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.ReflectionHelper::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReflectionHelper__ctor_m8FD2C662187A6CCCA9BB61F4D6A9827EFC18C3FF (ReflectionHelper_tC70C244386E812ED1E4C85AAF108E85F470C68AB* __this, const RuntimeMethod* method) ;
 // System.Void System.Collections.ArrayList::.ctor()
@@ -4032,8 +3975,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotSupportedException__ctor_mE174750CF02
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* XmlReflectionImporter_ImportTypeMapping_m081D9DAE809FA220D314842C6881DF186D7B1E1A (XmlReflectionImporter_t35377D35396A0B7AF610724CE3256E34C0D271E6* __this, TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* ___typeData0, XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* ___root1, String_t* ___defaultNamespace2, const RuntimeMethod* method) ;
 // System.Void System.ArgumentException::.ctor(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArgumentException__ctor_m026938A67AF9D36BB7ED27F80425D7194B514465 (ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263* __this, String_t* ___message0, const RuntimeMethod* method) ;
-// System.Xml.Serialization.SchemaTypes System.Xml.Serialization.TypeData::get_SchemaType()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline (TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* __this, const RuntimeMethod* method) ;
 // System.Xml.Serialization.XmlTypeMapping System.Xml.Serialization.XmlReflectionImporter::ImportClassMapping(System.Xml.Serialization.TypeData,System.Xml.Serialization.XmlRootAttribute,System.String,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* XmlReflectionImporter_ImportClassMapping_mE428971015FDEB313F3252FF1BD02C717D9938DC (XmlReflectionImporter_t35377D35396A0B7AF610724CE3256E34C0D271E6* __this, TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* ___typeData0, XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* ___root1, String_t* ___defaultNamespace2, bool ___isBaseType3, const RuntimeMethod* method) ;
 // System.Xml.Serialization.XmlTypeMapping System.Xml.Serialization.XmlReflectionImporter::ImportListMapping(System.Xml.Serialization.TypeData,System.Xml.Serialization.XmlRootAttribute,System.String,System.Xml.Serialization.XmlAttributes,System.Int32)
@@ -4046,12 +3987,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* XmlReflectionImporter_ImportEnumMapping_m0B068134E99537E6B81FE5459AE245F08429EDEA (XmlReflectionImporter_t35377D35396A0B7AF610724CE3256E34C0D271E6* __this, TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* ___typeData0, XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* ___root1, String_t* ___defaultNamespace2, const RuntimeMethod* method) ;
 // System.Xml.Serialization.XmlTypeMapping System.Xml.Serialization.XmlReflectionImporter::ImportXmlSerializableMapping(System.Xml.Serialization.TypeData,System.Xml.Serialization.XmlRootAttribute,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* XmlReflectionImporter_ImportXmlSerializableMapping_mBD9C080184E58C2498B8E40D43583816EAAF7974 (XmlReflectionImporter_t35377D35396A0B7AF610724CE3256E34C0D271E6* __this, TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* ___typeData0, XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* ___root1, String_t* ___defaultNamespace2, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlMapping::SetKey(System.String)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlMapping_SetKey_m29AA9DBD54FBFC2C50A282C1D8C33547CD6D7686_inline (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, String_t* ___key0, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlMapping::set_RelatedMaps(System.Collections.ArrayList)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlMapping_set_RelatedMaps_m6A89B4318BA4BA04099D938C36CA3A83AAC3BC44_inline (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* ___value0, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlMapping::set_Format(System.Xml.Serialization.SerializationFormat)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlMapping_set_Format_m84E84DA7E6927678C90D903E2A8599E6BF6748B9_inline (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, int32_t ___value0, const RuntimeMethod* method) ;
 // System.Void System.InvalidOperationException::.ctor(System.String,System.Exception)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InvalidOperationException__ctor_m63F5561BE647F655D22C8289E53A5D3A2196B668 (InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB* __this, String_t* ___message0, Exception_t* ___innerException1, const RuntimeMethod* method) ;
 // System.Boolean System.String::IsNullOrEmpty(System.String)
@@ -4062,40 +3997,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XmlReflectionImporter_CanBeNull_m52BC441
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TypeData_get_IsListType_m40A6A12749C9A2F1729D6411A76C62768DB2D4F2 (TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* __this, const RuntimeMethod* method) ;
 // System.Xml.Serialization.XmlAttributes System.Xml.Serialization.XmlAttributeOverrides::get_Item(System.Type)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* XmlAttributeOverrides_get_Item_m2FAD5994E54196E78D169E8CCAB3D71E817A1025 (XmlAttributeOverrides_tEE6AE9EC795CDEF943B35BA538C86222F905EB60* __this, Type_t* ___type0, const RuntimeMethod* method) ;
-// System.String System.Xml.Serialization.TypeData::get_FullTypeName()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* TypeData_get_FullTypeName_m391893730DDFEE90F76197075F599FEA2E60BE43_inline (TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlAttributes::.ctor(System.Reflection.ICustomAttributeProvider)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlAttributes__ctor_mFEEAECF61BFB18BAA8D5767AF38A2D51D7CBC15F (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, RuntimeObject* ___provider0, const RuntimeMethod* method) ;
-// System.Xml.Serialization.XmlRootAttribute System.Xml.Serialization.XmlAttributes::get_XmlRoot()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* XmlAttributes_get_XmlRoot_m72B3B5B4B3D50069A4D9CEB7EEC08EF4E6A51EEC_inline (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) ;
-// System.Xml.Serialization.XmlTypeAttribute System.Xml.Serialization.XmlAttributes::get_XmlType()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* XmlAttributes_get_XmlType_m1DDCEC132704F0A2C74E2C1C0EC5194BBC72BE0F_inline (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) ;
-// System.String System.Xml.Serialization.XmlTypeAttribute::get_Namespace()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlTypeAttribute_get_Namespace_m856E7657F70CD29601993200EEAA7D1771F0FCC9_inline (XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* __this, const RuntimeMethod* method) ;
 // System.String System.Xml.Serialization.XmlTypeAttribute::get_TypeName()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlTypeAttribute_get_TypeName_mB06CCEC7168EF5AF9B5286049A3E0571CAFDAD42 (XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* __this, const RuntimeMethod* method) ;
 // System.Boolean System.String::op_Inequality(System.String,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_op_Inequality_m8C940F3CFC42866709D7CA931B3D77B4BE94BCB6 (String_t* ___a0, String_t* ___b1, const RuntimeMethod* method) ;
-// System.Boolean System.Xml.Serialization.XmlTypeAttribute::get_IncludeInSchema()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XmlTypeAttribute_get_IncludeInSchema_mDC85FE2BB6FE9BE2A457394CEEF91341CAA84DA3_inline (XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* __this, const RuntimeMethod* method) ;
 // System.String System.Xml.Serialization.XmlRootAttribute::get_ElementName()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlRootAttribute_get_ElementName_m8E9F810E8C3AEA05914EF8AEA47DCC31EDD7B2AE (XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* __this, const RuntimeMethod* method) ;
-// System.Int32 System.String::get_Length()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline (String_t* __this, const RuntimeMethod* method) ;
-// System.String System.Xml.Serialization.XmlRootAttribute::get_Namespace()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlRootAttribute_get_Namespace_mFB0A84474D83BF812BA15DA2D59498384F202FE4_inline (XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* __this, const RuntimeMethod* method) ;
-// System.Boolean System.Xml.Serialization.XmlRootAttribute::get_IsNullable()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XmlRootAttribute_get_IsNullable_m2838215306230F5E93695672074B66ACC39E0092_inline (XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlSerializableMapping::.ctor(System.Xml.Serialization.XmlRootAttribute,System.String,System.String,System.Xml.Serialization.TypeData,System.String,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializableMapping__ctor_mF15D3F92AF6B8B5698F26636C0ACCC8EC20CABD2 (XmlSerializableMapping_tE7BDFC1308A79813DF734102D332FD528FD841E7* __this, XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* ___root0, String_t* ___elementName1, String_t* ___ns2, TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* ___typeData3, String_t* ___xmlType4, String_t* ___xmlTypeNamespace5, const RuntimeMethod* method) ;
 // System.Boolean System.Xml.Serialization.TypeData::get_IsXsdType()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TypeData_get_IsXsdType_m57CB2DF2ACE378E27A686B5AE138CA6749FF004A (TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlTypeMapping::.ctor(System.String,System.String,System.Xml.Serialization.TypeData,System.String,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlTypeMapping__ctor_m1F3CFD9D36CE8A9EFA55D3A44070D97AB1605558 (XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* __this, String_t* ___elementName0, String_t* ___ns1, TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* ___typeData2, String_t* ___xmlType3, String_t* ___xmlTypeNamespace4, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlTypeMapping::set_IncludeInSchema(System.Boolean)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapping_set_IncludeInSchema_m4ADFB54087375F1E855F955A23FD6A75499C95CB_inline (XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* __this, bool ___value0, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlTypeMapping::set_IsNullable(System.Boolean)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapping_set_IsNullable_mD892626D9838297535D63A2CE20F0F0E93B0E06F_inline (XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* __this, bool ___value0, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.ReflectionHelper::CheckSerializableType(System.Type,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReflectionHelper_CheckSerializableType_m26E0398D1BA626109E07C701C184E23A32D3F4DA (Type_t* ___type0, bool ___allowPrivateConstructors1, const RuntimeMethod* method) ;
 // System.String System.Xml.Serialization.XmlReflectionImporter::GetTypeNamespace(System.Xml.Serialization.TypeData,System.Xml.Serialization.XmlRootAttribute,System.String)
@@ -4108,14 +4023,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlTypeMapping_get_XmlTypeNamespace_m9EF835B324606DBC55DF96AEFD62A9F4F7ED2B96 (XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.ReflectionHelper::RegisterClrType(System.Xml.Serialization.XmlTypeMapping,System.Type,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReflectionHelper_RegisterClrType_mD0C72D14AAB753E89AF6E0B99BC9F53FD8ED1188 (ReflectionHelper_tC70C244386E812ED1E4C85AAF108E85F470C68AB* __this, XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* ___map0, Type_t* ___type1, String_t* ___ns2, const RuntimeMethod* method) ;
-// System.String System.Xml.Serialization.XmlTypeMapping::get_XmlType()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlTypeMapping_get_XmlType_m5A30CB4EE3541CC1C65003757D5E743042846222_inline (XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.ReflectionHelper::RegisterSchemaType(System.Xml.Serialization.XmlTypeMapping,System.String,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReflectionHelper_RegisterSchemaType_m579F388E056C327FC96BFCDF5E0CB4F8122FFF1D (ReflectionHelper_tC70C244386E812ED1E4C85AAF108E85F470C68AB* __this, XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* ___map0, String_t* ___xmlType1, String_t* ___ns2, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.ClassMap::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ClassMap__ctor_m2E0CDD6C951F89A117B800D1EFA07A15B61D32F6 (ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* __this, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlMapping::set_ObjectMap(System.Xml.Serialization.ObjectMap)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlMapping_set_ObjectMap_m34272FA1B72AD9AE95E70C84665290EA6C0C0FCD_inline (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* ___value0, const RuntimeMethod* method) ;
 // System.Collections.Generic.List`1<System.Xml.Serialization.XmlReflectionMember> System.Xml.Serialization.XmlReflectionImporter::GetReflectionMembers(System.Type)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_t935DFC399F3035CE8ADB557E0DC325268F81E472* XmlReflectionImporter_GetReflectionMembers_mD6792F16E5A5CB03415A976ED3EAD616E5DA9256 (XmlReflectionImporter_t35377D35396A0B7AF610724CE3256E34C0D271E6* __this, Type_t* ___type0, const RuntimeMethod* method) ;
 // System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<System.Xml.Serialization.XmlReflectionMember>::GetEnumerator()
@@ -4123,32 +4034,12 @@ inline Enumerator_tC60126DAC7C21C3268F8444A555270DCD3F8CB3A List_1_GetEnumerator
 {
 	return ((  Enumerator_tC60126DAC7C21C3268F8444A555270DCD3F8CB3A (*) (List_1_t935DFC399F3035CE8ADB557E0DC325268F81E472*, const RuntimeMethod*))List_1_GetEnumerator_mD8294A7FA2BEB1929487127D476F8EC1CDC23BFC_gshared)(__this, method);
 }
-// System.Void System.Collections.Generic.List`1/Enumerator<System.Xml.Serialization.XmlReflectionMember>::Dispose()
-inline void Enumerator_Dispose_mD5F9D6967D1A793EC5B859797AF46CA0638E673C (Enumerator_tC60126DAC7C21C3268F8444A555270DCD3F8CB3A* __this, const RuntimeMethod* method)
-{
-	((  void (*) (Enumerator_tC60126DAC7C21C3268F8444A555270DCD3F8CB3A*, const RuntimeMethod*))Enumerator_Dispose_mD9DC3E3C3697830A4823047AB29A77DBBB5ED419_gshared)(__this, method);
-}
-// T System.Collections.Generic.List`1/Enumerator<System.Xml.Serialization.XmlReflectionMember>::get_Current()
-inline XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* Enumerator_get_Current_m9B13FBB007BA67B906DE032E50FEC11C7652193A_inline (Enumerator_tC60126DAC7C21C3268F8444A555270DCD3F8CB3A* __this, const RuntimeMethod* method)
-{
-	return ((  XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* (*) (Enumerator_tC60126DAC7C21C3268F8444A555270DCD3F8CB3A*, const RuntimeMethod*))Enumerator_get_Current_m6330F15D18EE4F547C05DF9BF83C5EB710376027_gshared_inline)(__this, method);
-}
 // System.Xml.Serialization.XmlAttributes System.Xml.Serialization.XmlReflectionMember::get_XmlAttributes()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* XmlReflectionMember_get_XmlAttributes_mCC188BF7A0827BC124D67F7BB86D6CC34F806952 (XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* __this, const RuntimeMethod* method) ;
-// System.Boolean System.Nullable`1<System.Boolean>::get_HasValue()
-inline bool Nullable_1_get_HasValue_m6B76D139692C43B2AF7C695FAB044B16ACFAF355_inline (Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01* __this, const RuntimeMethod* method)
-{
-	return ((  bool (*) (Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01*, const RuntimeMethod*))Nullable_1_get_HasValue_m6B76D139692C43B2AF7C695FAB044B16ACFAF355_gshared_inline)(__this, method);
-}
 // System.Void System.Nullable`1<System.Boolean>::.ctor(T)
 inline void Nullable_1__ctor_m4FAA8281CB4EFFD8B817734351FB3AC20A0CD6F5 (Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01* __this, bool ___value0, const RuntimeMethod* method)
 {
 	((  void (*) (Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01*, bool, const RuntimeMethod*))Nullable_1__ctor_m4FAA8281CB4EFFD8B817734351FB3AC20A0CD6F5_gshared)(__this, ___value0, method);
-}
-// T System.Nullable`1<System.Boolean>::GetValueOrDefault()
-inline bool Nullable_1_GetValueOrDefault_m86E1210429A6EA0082CC7806DD638E8B4555F148_inline (Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01* __this, const RuntimeMethod* method)
-{
-	return ((  bool (*) (Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01*, const RuntimeMethod*))Nullable_1_GetValueOrDefault_m86E1210429A6EA0082CC7806DD638E8B4555F148_gshared_inline)(__this, method);
 }
 // System.Boolean System.Collections.Generic.List`1/Enumerator<System.Xml.Serialization.XmlReflectionMember>::MoveNext()
 inline bool Enumerator_MoveNext_m1056299E91A99CDB7E024E6CE4FAEDD876131610 (Enumerator_tC60126DAC7C21C3268F8444A555270DCD3F8CB3A* __this, const RuntimeMethod* method)
@@ -4165,10 +4056,6 @@ inline void List_1_Sort_mEAA5A22918AD0DC18FCF48568E89C0F5794B105A (List_1_t935DF
 {
 	((  void (*) (List_1_t935DFC399F3035CE8ADB557E0DC325268F81E472*, Comparison_1_tD5FD2097BD5BC359CEADD4E997824D7A80DAC3ED*, const RuntimeMethod*))List_1_Sort_mEB3B61CB86B1419919338B0668DC4E568C2FFF93_gshared)(__this, ___comparison0, method);
 }
-// System.Boolean System.Xml.Serialization.XmlAttributes::get_XmlIgnore()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XmlAttributes_get_XmlIgnore_m817F5C7648E0CADEBE452A1EF3E59A0D07A80627_inline (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) ;
-// System.Type System.Xml.Serialization.XmlReflectionMember::get_DeclaringType()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Type_t* XmlReflectionMember_get_DeclaringType_mA84E638B63CD926ED1DB32628B7747DE0BA7F355_inline (XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* __this, const RuntimeMethod* method) ;
 // System.Xml.Serialization.XmlTypeMapping System.Xml.Serialization.XmlReflectionImporter::ImportClassMapping(System.Type,System.Xml.Serialization.XmlRootAttribute,System.String,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* XmlReflectionImporter_ImportClassMapping_m435E0FBB161DB459B4E0C4FFB73916C45D5EED0D (XmlReflectionImporter_t35377D35396A0B7AF610724CE3256E34C0D271E6* __this, Type_t* ___type0, XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* ___root1, String_t* ___defaultNamespace2, bool ___isBaseType3, const RuntimeMethod* method) ;
 // System.Boolean System.Xml.Serialization.XmlTypeMapping::get_HasXmlTypeNamespace()
@@ -4179,40 +4066,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapMember_t54E80D1B6FF58F90D480933D89D
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlTypeMapMember_CheckOptionalValueType_mC3A9B15424B4E2F537CAD6602EA32522C47FC36B (XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* __this, Type_t* ___type0, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.ClassMap::AddMember(System.Xml.Serialization.XmlTypeMapMember)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ClassMap_AddMember_m68EC50B8B34647C81D1EFEC1D14083A150A2B49B (ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* __this, XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* ___member0, const RuntimeMethod* method) ;
-// System.String System.Xml.Serialization.XmlReflectionMember::get_MemberName()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlReflectionMember_get_MemberName_mE4607A6A8054A867138901FA83DFEB24CCCE1A39_inline (XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* __this, const RuntimeMethod* method) ;
-// System.Collections.ArrayList System.Xml.Serialization.XmlTypeMapping::get_DerivedTypes()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* XmlTypeMapping_get_DerivedTypes_mC03579CBAD487E7DF121E24DF3CD0F4976CB3A16_inline (XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* __this, const RuntimeMethod* method) ;
 // System.Xml.Serialization.XmlTypeMapping System.Xml.Serialization.XmlReflectionImporter::ImportTypeMapping(System.Type,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* XmlReflectionImporter_ImportTypeMapping_m9682FD802D4138CDD616855551EB57D7FA3FF84C (XmlReflectionImporter_t35377D35396A0B7AF610724CE3256E34C0D271E6* __this, Type_t* ___type0, String_t* ___defaultNamespace1, const RuntimeMethod* method) ;
-// System.Xml.Serialization.ObjectMap System.Xml.Serialization.XmlMapping::get_ObjectMap()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* XmlMapping_get_ObjectMap_m63D1AEAC8EDD8396357898D337E350673A1E9003_inline (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlTypeMapping::set_BaseMap(System.Xml.Serialization.XmlTypeMapping)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapping_set_BaseMap_m1B6EC933148E6ED405775C6A56CF888DF489988F_inline (XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* __this, XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* ___value0, const RuntimeMethod* method) ;
 // System.Boolean System.Xml.Serialization.ClassMap::get_HasSimpleContent()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ClassMap_get_HasSimpleContent_m7023F99D0994EB07A18F31EC2FFF7CEC4FA38960 (ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* __this, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.ClassMap::SetCanBeSimpleType(System.Boolean)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void ClassMap_SetCanBeSimpleType_mEFA2779827B16C4BACF378B6536121C5FE1AE74C_inline (ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* __this, bool ___can0, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlReflectionImporter::RegisterDerivedMap(System.Xml.Serialization.XmlTypeMapping,System.Xml.Serialization.XmlTypeMapping)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlReflectionImporter_RegisterDerivedMap_m6ACF611372A2C13FFDCE8865E267D47079A36EAA (XmlReflectionImporter_t35377D35396A0B7AF610724CE3256E34C0D271E6* __this, XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* ___map0, XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* ___derivedMap1, const RuntimeMethod* method) ;
-// System.Collections.ICollection System.Xml.Serialization.ClassMap::get_ElementMembers()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* ClassMap_get_ElementMembers_m28BCFDC1D5FC50F910FBCF82D9C30472482A505D_inline (ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* __this, const RuntimeMethod* method) ;
-// System.Xml.Serialization.TypeData System.Xml.Serialization.XmlTypeMapping::get_TypeData()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline (XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* __this, const RuntimeMethod* method) ;
-// System.String System.Xml.Serialization.TypeData::get_TypeName()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* TypeData_get_TypeName_mC7AF987BA3129B6648CE999111BE0E739E5A25A8_inline (TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* __this, const RuntimeMethod* method) ;
-// System.Xml.Serialization.XmlTypeMapping System.Xml.Serialization.XmlTypeMapping::get_BaseMap()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* XmlTypeMapping_get_BaseMap_m4596D5703D08B93CE429A7C62CEB9AA91506B32D_inline (XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* __this, const RuntimeMethod* method) ;
 // System.String System.String::Format(System.String,System.Object,System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Format_mFB7DA489BD99F4670881FF50EC017BFB0A5C0987 (String_t* ___format0, RuntimeObject* ___arg01, RuntimeObject* ___arg12, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlReflectionImporter::ImportIncludedTypes(System.Type,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlReflectionImporter_ImportIncludedTypes_m14EFED9CB15D6C7C5F828BE68F77E59D0710EF3E (XmlReflectionImporter_t35377D35396A0B7AF610724CE3256E34C0D271E6* __this, Type_t* ___type0, String_t* ___defaultNamespace1, const RuntimeMethod* method) ;
-// System.Xml.Serialization.XmlTypeMapMember System.Xml.Serialization.ClassMap::get_XmlTextCollector()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* ClassMap_get_XmlTextCollector_m3FC50A0C0DEFAC7D4D70209D7D96C58AB7D1DA09_inline (ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* __this, const RuntimeMethod* method) ;
-// System.Xml.Serialization.TypeData System.Xml.Serialization.XmlTypeMapMember::get_TypeData()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline (XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* __this, const RuntimeMethod* method) ;
-// System.String System.Xml.Serialization.XmlTypeMapMember::get_Name()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlTypeMapMember_get_Name_mCF37113EDBC93BBAE3E38DDA503BF83C752287F9_inline (XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* __this, const RuntimeMethod* method) ;
 // System.String System.String::Format(System.String,System.Object,System.Object,System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Format_mA0534D6E2AE4D67A6BD8D45B3321323930EB930C (String_t* ___format0, RuntimeObject* ___arg01, RuntimeObject* ___arg12, RuntimeObject* ___arg23, const RuntimeMethod* method) ;
 // System.Xml.Serialization.XmlTypeMapping System.Xml.Serialization.XmlReflectionImporter::ImportTypeMapping(System.Type)
@@ -4227,16 +4090,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Type_t* TypeData_get_ListItemType_m649E9D1FF5
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Type_get_IsArray_mB9B8CA713B2AA9D6AFECC24E05AF78D22532B673 (Type_t* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlTypeMapElementInfoList::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlTypeMapElementInfoList__ctor_mEEBEB4330F01D3172DDE3C685C96D1FDB5E70D1B (XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* __this, const RuntimeMethod* method) ;
-// System.Xml.Serialization.XmlArrayItemAttributes System.Xml.Serialization.XmlAttributes::get_XmlArrayItems()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlArrayItemAttributes_tD468A7CCAF036962F37A7CDDDE042A6258D03513* XmlAttributes_get_XmlArrayItems_mA3EA68D61FCFD9DBAD4175F48035F95AC10EDB6E_inline (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) ;
-// System.String System.Xml.Serialization.XmlArrayItemAttribute::get_Namespace()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlArrayItemAttribute_get_Namespace_m18BA85AB457B0ED70ABDA1C89B32A10BA24D0113_inline (XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* __this, const RuntimeMethod* method) ;
-// System.Xml.Schema.XmlSchemaForm System.Xml.Serialization.XmlArrayItemAttribute::get_Form()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlArrayItemAttribute_get_Form_mBBFA635F531B819D8E43AFF6110670FB383C1F33_inline (XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* __this, const RuntimeMethod* method) ;
-// System.Int32 System.Xml.Serialization.XmlArrayItemAttribute::get_NestingLevel()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlArrayItemAttribute_get_NestingLevel_mE927341768913F399DAB59E37BB38EB4B5CF33ED_inline (XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* __this, const RuntimeMethod* method) ;
-// System.Type System.Xml.Serialization.XmlArrayItemAttribute::get_Type()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Type_t* XmlArrayItemAttribute_get_Type_m80FA2D88365496E4C5090375F0E014976B6B7417_inline (XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* __this, const RuntimeMethod* method) ;
 // System.String System.Xml.Serialization.XmlArrayItemAttribute::get_DataType()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlArrayItemAttribute_get_DataType_m781844E00CC1400EE1F3960B9D8367FC06C5B1C9 (XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* __this, const RuntimeMethod* method) ;
 // System.Xml.Serialization.TypeData System.Xml.Serialization.TypeTranslator::GetTypeData(System.Type,System.String,System.Boolean)
@@ -4245,52 +4098,24 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TypeData_t7337956773D9138116ADAB3E8CB50EDD106
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlTypeMapElementInfo__ctor_m8E544F8C477BEB4FBA162B7D5B2DB2502EB4EE1D (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* ___member0, TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* ___type1, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlTypeMapElementInfo::set_Namespace(System.String)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapElementInfo_set_Namespace_mB1BAB4E18DAF612183E318500F2010C73D7B3B5A_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, String_t* ___value0, const RuntimeMethod* method) ;
-// System.String System.Xml.Serialization.XmlTypeMapElementInfo::get_Namespace()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlTypeMapElementInfo_get_Namespace_m94DAAADC3EFEBC302C4D3574BD4835F222345498_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlTypeMapElementInfo::set_Form(System.Xml.Schema.XmlSchemaForm)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapElementInfo_set_Form_m404075D5C7B4E4CE0EC5ED46881D4D84C73E0102_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, int32_t ___value0, const RuntimeMethod* method) ;
-// System.Boolean System.Xml.Serialization.XmlArrayItemAttribute::get_IsNullableSpecified()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XmlArrayItemAttribute_get_IsNullableSpecified_mDC4FABB753BA60A10CEED9BDD82011C47E14B4F0_inline (XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* __this, const RuntimeMethod* method) ;
-// System.Boolean System.Xml.Serialization.XmlArrayItemAttribute::get_IsNullable()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XmlArrayItemAttribute_get_IsNullable_mC7A6E27D7259FF7DD81A2C575EBD4578651857D8_inline (XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* __this, const RuntimeMethod* method) ;
-// System.Xml.Serialization.TypeData System.Xml.Serialization.XmlTypeMapElementInfo::get_TypeData()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlTypeMapElementInfo::set_IsNullable(System.Boolean)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapElementInfo_set_IsNullable_m3F3A06CB2CB7DACBB6CF90B60346469EA5EE0A6F_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, bool ___value0, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlTypeMapElementInfo::set_NestingLevel(System.Int32)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapElementInfo_set_NestingLevel_m104B8F548E5E7B0982E55AFA8900F9BB4E0E1A35_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, int32_t ___value0, const RuntimeMethod* method) ;
 // System.Xml.Serialization.XmlTypeMapping System.Xml.Serialization.XmlReflectionImporter::ImportListMapping(System.Type,System.Xml.Serialization.XmlRootAttribute,System.String,System.Xml.Serialization.XmlAttributes,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* XmlReflectionImporter_ImportListMapping_m2DE4BB63B5D578F38690F0CECD77C0E87268CEFC (XmlReflectionImporter_t35377D35396A0B7AF610724CE3256E34C0D271E6* __this, Type_t* ___type0, XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* ___root1, String_t* ___defaultNamespace2, XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* ___atts3, int32_t ___nestingLevel4, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlTypeMapElementInfo::set_MappedType(System.Xml.Serialization.XmlTypeMapping)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapElementInfo_set_MappedType_m2FD5B0A4823A3FAF00E86D03C959D9B0E0D2A409_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* ___value0, const RuntimeMethod* method) ;
 // System.Boolean System.Xml.Serialization.TypeData::get_IsComplexType()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TypeData_get_IsComplexType_m13C3810EB4DD4C512B9A472A24D12BFE443FF749 (TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* __this, const RuntimeMethod* method) ;
 // System.String System.Xml.Serialization.XmlArrayItemAttribute::get_ElementName()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlArrayItemAttribute_get_ElementName_m2882B401E27852A6CC2129A6B0CBD8DAE7EE6677 (XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* __this, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlTypeMapElementInfo::set_ElementName(System.String)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapElementInfo_set_ElementName_mEE8DF5FA9A346D3D437DF38E2B5E0BC20AA5DC40_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, String_t* ___value0, const RuntimeMethod* method) ;
-// System.Xml.Serialization.XmlTypeMapping System.Xml.Serialization.XmlTypeMapElementInfo::get_MappedType()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* XmlTypeMapElementInfo_get_MappedType_m240A78959A2E9A6CE992F5EC6B77DDFC137AF032_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, const RuntimeMethod* method) ;
-// System.String System.Xml.Serialization.XmlMapping::get_ElementName()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlMapping_get_ElementName_m2BDBF7797A1F38972A4355CF694E0D468B2A9FC0_inline (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.ListMap::set_ItemInfo(System.Xml.Serialization.XmlTypeMapElementInfoList)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void ListMap_set_ItemInfo_mD0E132CC2807675C9308B26F69EA38EC9EB3EF11_inline (ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* __this, XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* ___value0, const RuntimeMethod* method) ;
 // System.String System.Int32::ToString()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Int32_ToString_m030E01C24E294D6762FB0B6F37CB541581F55CA5 (int32_t* __this, const RuntimeMethod* method) ;
 // System.String System.Xml.Serialization.TypeTranslator::GetArrayName(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* TypeTranslator_GetArrayName_m8DC1F56140E3B949EFD93B9F984D8E5000901269 (String_t* ___elemName0, const RuntimeMethod* method) ;
-// System.String System.Xml.Serialization.XmlTypeMapElementInfo::get_ElementName()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlTypeMapElementInfo_get_ElementName_m2B2B6484154E046A7FE5BE46092BF91A7B75D9CC_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, const RuntimeMethod* method) ;
 // System.Xml.Serialization.XmlTypeMapping System.Xml.Serialization.ReflectionHelper::GetRegisteredSchemaType(System.String,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* ReflectionHelper_GetRegisteredSchemaType_m7B43FB39F0723B94240F271D7ADDFCFF2EDF85D7 (ReflectionHelper_tC70C244386E812ED1E4C85AAF108E85F470C68AB* __this, String_t* ___xmlType0, String_t* ___ns1, const RuntimeMethod* method) ;
-// System.Type System.Xml.Serialization.XmlIncludeAttribute::get_Type()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Type_t* XmlIncludeAttribute_get_Type_m933A769AE46F8B8FE3612605D6B0E890AE3A1EDD_inline (XmlIncludeAttribute_t444D78BD01B445F31C9E0828BB2EEB88C0BDB736* __this, const RuntimeMethod* method) ;
 // System.String[] System.Enum::GetNames(System.Type)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* Enum_GetNames_m382A68AE28D7B6035331EC0685315144F15957C3 (Type_t* ___enumType0, const RuntimeMethod* method) ;
 // System.Reflection.FieldInfo System.Type::GetField(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR FieldInfo_t* Type_GetField_m0BF55B1A27A1B6AB6D3477E7F9E1CF2A3451E1E0 (Type_t* __this, String_t* ___name0, const RuntimeMethod* method) ;
-// System.String System.Xml.Serialization.XmlEnumAttribute::get_Name()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlEnumAttribute_get_Name_m13FF8A329D3569F4C785968B3928A1554EC9CCF3_inline (XmlEnumAttribute_t06EEAB820B4C664382E2A018C682E64D4B10E695* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.EnumMap/EnumMapMember::.ctor(System.String,System.String,System.Int64)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EnumMapMember__ctor_m706EC5F580B4D0A8E3470E22AF8B091AE551ABA1 (EnumMapMember_tB7A0813F20CFA0758843C38C2ECE325B13893E38* __this, String_t* ___xmlName0, String_t* ___enumName1, int64_t ___value2, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.EnumMap::.ctor(System.Xml.Serialization.EnumMap/EnumMapMember[],System.Boolean)
@@ -4302,8 +4127,6 @@ inline void List_1__ctor_m4A66450CDA32222827A7E731E42D9B9D85CB8324 (List_1_t935D
 }
 // System.Void System.Xml.Serialization.XmlReflectionMember::.ctor(System.String,System.Type,System.Xml.Serialization.XmlAttributes)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlReflectionMember__ctor_m7B83DEED7CE7FDD74528D8863C8243F70D6DE355 (XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* __this, String_t* ___name0, Type_t* ___type1, XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* ___attributes2, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlReflectionMember::set_DeclaringType(System.Type)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlReflectionMember_set_DeclaringType_m1FEBB9DF4BDFE905A76D4E297BE992C89B39B1A8_inline (XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* __this, Type_t* ___value0, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<System.Xml.Serialization.XmlReflectionMember>::Add(T)
 inline void List_1_Add_mE42853650C380A1F9A8E4ABE752EA8050EF84C26_inline (List_1_t935DFC399F3035CE8ADB557E0DC325268F81E472* __this, XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* ___item0, const RuntimeMethod* method)
 {
@@ -4313,118 +4136,52 @@ inline void List_1_Add_mE42853650C380A1F9A8E4ABE752EA8050EF84C26_inline (List_1_
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Type_get_IsInterface_m484A7D9321E72758EABE7F36AE266EB0905957EC (Type_t* __this, const RuntimeMethod* method) ;
 // System.Type System.Xml.Serialization.TypeData::GetGenericListItemType(System.Type)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Type_t* TypeData_GetGenericListItemType_mB59700AFF8BA633C1AD588CCE39F25D4E48BD0B7 (Type_t* ___type0, const RuntimeMethod* method) ;
-// System.Type System.Xml.Serialization.XmlReflectionMember::get_MemberType()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Type_t* XmlReflectionMember_get_MemberType_m26CB81C88E06E782EFF7EE40F31F88A7A954504A_inline (XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* __this, const RuntimeMethod* method) ;
-// System.String System.Xml.Serialization.XmlArrayAttribute::get_Namespace()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlArrayAttribute_get_Namespace_m37B65FCCE7A60AEADBF394DB6210DA1CC8A91CF8_inline (XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* __this, const RuntimeMethod* method) ;
-// System.Xml.Schema.XmlSchemaForm System.Xml.Serialization.XmlArrayAttribute::get_Form()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlArrayAttribute_get_Form_mD5222A61AE3D5908142D9DBF1A5BE0986466F008_inline (XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* __this, const RuntimeMethod* method) ;
-// System.Xml.Serialization.XmlAnyAttributeAttribute System.Xml.Serialization.XmlAttributes::get_XmlAnyAttribute()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlAnyAttributeAttribute_t3B95B49DDDDA70D79EBC045F925BDE39DFB0E96A* XmlAttributes_get_XmlAnyAttribute_m3116C8A13795C5AEB267B6C78EE406EB7F1C79D7_inline (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlTypeMapMemberAnyAttribute::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlTypeMapMemberAnyAttribute__ctor_m55E6BD862DFD1709C359931225EFCC70AF9F8C35 (XmlTypeMapMemberAnyAttribute_t936B5C08A209D3F342575957ACCBF1F7984095F1* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlTypeMapMemberAnyElement::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlTypeMapMemberAnyElement__ctor_m66FD3FF1033A6C41F21CA1677897AA554794E750 (XmlTypeMapMemberAnyElement_tC9C6D58B08CB2C84148376C77AC4259AF149C950* __this, const RuntimeMethod* method) ;
 // System.Xml.Serialization.XmlTypeMapElementInfoList System.Xml.Serialization.XmlReflectionImporter::ImportAnyElementInfo(System.String,System.Xml.Serialization.XmlReflectionMember,System.Xml.Serialization.XmlTypeMapMemberElement,System.Xml.Serialization.XmlAttributes)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* XmlReflectionImporter_ImportAnyElementInfo_m26B24C22E7A373EF178E830CFF15E0E04EA0155A (XmlReflectionImporter_t35377D35396A0B7AF610724CE3256E34C0D271E6* __this, String_t* ___defaultNamespace0, XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* ___rmember1, XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* ___member2, XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* ___atts3, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlTypeMapMemberElement::set_ElementInfo(System.Xml.Serialization.XmlTypeMapElementInfoList)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapMemberElement_set_ElementInfo_m3E7B4C2A13CE5733E5C41B5A559A64327795C038_inline (XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* __this, XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* ___value0, const RuntimeMethod* method) ;
-// System.Boolean System.Xml.Serialization.XmlAttributes::get_Xmlns()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XmlAttributes_get_Xmlns_m470230B52FC047B9820991B287C46CFACAACBB33_inline (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlTypeMapMemberNamespaces::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlTypeMapMemberNamespaces__ctor_m655334756FB0C4721F7AB415FF4C7D25E2A7863B (XmlTypeMapMemberNamespaces_t1493E4BE21467D51FB1CDE88D538FA97815D3112* __this, const RuntimeMethod* method) ;
-// System.Xml.Serialization.XmlAttributeAttribute System.Xml.Serialization.XmlAttributes::get_XmlAttribute()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* XmlAttributes_get_XmlAttribute_m44681566D98881832A9FD898A985552CFF4699F7_inline (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) ;
 // System.Void System.Exception::.ctor(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Exception__ctor_m9B2BD92CD68916245A75109105D9071C9D430E7F (Exception_t* __this, String_t* ___message0, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlTypeMapMemberAttribute::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlTypeMapMemberAttribute__ctor_m114811B0B3047CF56B5C834D9B72D64CE7DA45AD (XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* __this, const RuntimeMethod* method) ;
 // System.String System.Xml.Serialization.XmlAttributeAttribute::get_AttributeName()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlAttributeAttribute_get_AttributeName_mD12BFE7D2970617D6BAEA2C7726BFCC1E78043B9 (XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* __this, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlTypeMapMemberAttribute::set_AttributeName(System.String)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapMemberAttribute_set_AttributeName_m9FA871900139C9A680D39F3FA1D64593EA0A8A37_inline (XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* __this, String_t* ___value0, const RuntimeMethod* method) ;
-// System.String System.Xml.Serialization.XmlTypeMapMemberAttribute::get_AttributeName()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlTypeMapMemberAttribute_get_AttributeName_m79384B2B6097452969DD46364D07C2F8B353B064_inline (XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* __this, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlTypeMapMemberAttribute::set_MappedType(System.Xml.Serialization.XmlTypeMapping)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapMemberAttribute_set_MappedType_mA7E95DC2D885930465A715589EF224E64286F518_inline (XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* __this, XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* ___value0, const RuntimeMethod* method) ;
-// System.String System.Xml.Serialization.XmlAttributeAttribute::get_Namespace()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlAttributeAttribute_get_Namespace_m66DDB72831548F3B23A4A68E11826303CEE42835_inline (XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* __this, const RuntimeMethod* method) ;
-// System.Xml.Schema.XmlSchemaForm System.Xml.Serialization.XmlAttributeAttribute::get_Form()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlAttributeAttribute_get_Form_m49A9D062DB2C8CED21041D3FBF941A7C3A4E06BD_inline (XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* __this, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlTypeMapMemberAttribute::set_Form(System.Xml.Schema.XmlSchemaForm)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapMemberAttribute_set_Form_m060BDBE9694B862C8E46DCEB5CAD8F6C52E9691B_inline (XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* __this, int32_t ___value0, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlTypeMapMemberAttribute::set_Namespace(System.String)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapMemberAttribute_set_Namespace_m75CC38F536B9F3D71532845F4D741A6A37489277_inline (XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* __this, String_t* ___value0, const RuntimeMethod* method) ;
 // System.String System.Xml.Serialization.XmlAttributeAttribute::get_DataType()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlAttributeAttribute_get_DataType_m0F9734D465582A44A3DF13505EBF817307233310 (XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* __this, const RuntimeMethod* method) ;
-// System.Type System.Xml.Serialization.XmlElementAttribute::get_Type()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Type_t* XmlElementAttribute_get_Type_m3B355841D7F13F4CD84F8C3ED4D28917BB170CCB_inline (XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* __this, const RuntimeMethod* method) ;
-// System.Xml.Serialization.XmlTextAttribute System.Xml.Serialization.XmlAttributes::get_XmlText()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlTextAttribute_tAA8BE9BA759F78BB4CDF00D3848B7746C0EDEFE0* XmlAttributes_get_XmlText_m021CE7CB4BE20DEE5FC8FAE724015FF2C4BDFD1B_inline (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlTypeMapMemberFlatList::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlTypeMapMemberFlatList__ctor_m184FE28F5A2FAA15F1BFBC27F3A2904497E4C8B7 (XmlTypeMapMemberFlatList_t443422643AA0E5FA5166EF6451BBA01D02004B38* __this, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlTypeMapMemberFlatList::set_ListMap(System.Xml.Serialization.ListMap)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapMemberFlatList_set_ListMap_mFEBE950843FA798DFC8628E296696296C953071E_inline (XmlTypeMapMemberFlatList_t443422643AA0E5FA5166EF6451BBA01D02004B38* __this, ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* ___value0, const RuntimeMethod* method) ;
-// System.Xml.Serialization.ListMap System.Xml.Serialization.XmlTypeMapMemberFlatList::get_ListMap()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* XmlTypeMapMemberFlatList_get_ListMap_mAAD12C509481E6855A9C4865874566320C256EBC_inline (XmlTypeMapMemberFlatList_t443422643AA0E5FA5166EF6451BBA01D02004B38* __this, const RuntimeMethod* method) ;
 // System.Xml.Serialization.XmlTypeMapElementInfoList System.Xml.Serialization.XmlReflectionImporter::ImportElementInfo(System.Type,System.String,System.String,System.Type,System.Xml.Serialization.XmlTypeMapMemberElement,System.Xml.Serialization.XmlAttributes)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* XmlReflectionImporter_ImportElementInfo_m1343282D0C9BF75E4F7CCF7B3020BD15F50C361D (XmlReflectionImporter_t35377D35396A0B7AF610724CE3256E34C0D271E6* __this, Type_t* ___cls0, String_t* ___defaultName1, String_t* ___defaultNamespace2, Type_t* ___defaultType3, XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* ___member4, XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* ___atts5, const RuntimeMethod* method) ;
-// System.Xml.Serialization.XmlTypeMapElementInfoList System.Xml.Serialization.ListMap::get_ItemInfo()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* ListMap_get_ItemInfo_mF4B1E24F5658D05E8E1E6296F4A220D33E7EC579_inline (ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* __this, const RuntimeMethod* method) ;
-// System.String System.Xml.Serialization.XmlTypeMapMemberElement::get_ChoiceMember()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlTypeMapMemberElement_get_ChoiceMember_m182A4AB876036DDA005F0760EF51C5FCA7F682D8_inline (XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* __this, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.ListMap::set_ChoiceMember(System.String)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void ListMap_set_ChoiceMember_m25EB1F93541895E0647E420B7BF9C8C7194621D6_inline (ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* __this, String_t* ___value0, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlTypeMapMemberList::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlTypeMapMemberList__ctor_mBD734CDCEE34AF3580EF194A4AB86CDBFD5F47D7 (XmlTypeMapMemberList_t5542A0234B55CC3AD3EDD7B830E7C4603FAAD63E* __this, const RuntimeMethod* method) ;
 // System.String System.Xml.Serialization.XmlArrayAttribute::get_ElementName()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlArrayAttribute_get_ElementName_mFDDFF359B711CC6348AD07853053BB37C405CDC2 (XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* __this, const RuntimeMethod* method) ;
-// System.Boolean System.Xml.Serialization.XmlArrayAttribute::get_IsNullable()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XmlArrayAttribute_get_IsNullable_m84FB7E08614BFAFE7C6D5B72F4E43CBA42583CFB_inline (XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* __this, const RuntimeMethod* method) ;
+// System.Void System.Xml.Serialization.XmlTypeMapElementInfo::set_ElementName(System.String)
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapElementInfo_set_ElementName_mEE8DF5FA9A346D3D437DF38E2B5E0BC20AA5DC40_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, String_t* ___value0, const RuntimeMethod* method) ;
+// System.Void System.Xml.Serialization.XmlTypeMapElementInfo::set_Form(System.Xml.Schema.XmlSchemaForm)
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapElementInfo_set_Form_m404075D5C7B4E4CE0EC5ED46881D4D84C73E0102_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, int32_t ___value0, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlTypeMapElementInfo::set_ExplicitOrder(System.Int32)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapElementInfo_set_ExplicitOrder_mD893A153D81289F4A8C4A429800FEDB81E3578B4_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, int32_t ___value0, const RuntimeMethod* method) ;
 // System.Xml.Serialization.XmlTypeMapElementInfoList System.Xml.Serialization.XmlTypeMapMemberElement::get_ElementInfo()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* XmlTypeMapMemberElement_get_ElementInfo_m62E3A285CDAFF7621EA03A0DA6B1966D5432D337 (XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlTypeMapMemberElement::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlTypeMapMemberElement__ctor_m1C521481C567615C591328B512832B144B153169 (XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* __this, const RuntimeMethod* method) ;
-// System.Object System.Xml.Serialization.XmlAttributes::get_XmlDefaultValue()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* XmlAttributes_get_XmlDefaultValue_m24022111D30B964CF2DDE2EC6ACC870DB4BA7ED1_inline (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) ;
 // System.Object System.Xml.Serialization.XmlReflectionImporter::GetDefaultValue(System.Xml.Serialization.TypeData,System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlReflectionImporter_GetDefaultValue_m9AC659BFACAF9F4E2ED88A32F9B0622C5FBACDA8 (XmlReflectionImporter_t35377D35396A0B7AF610724CE3256E34C0D271E6* __this, TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* ___typeData0, RuntimeObject* ___defaultValue1, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlTypeMapMember::set_DefaultValue(System.Object)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapMember_set_DefaultValue_m97AC90D89BFEE878DA9FE3150292AD6E69B6FA27_inline (XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* __this, RuntimeObject* ___value0, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlTypeMapMember::set_TypeData(System.Xml.Serialization.TypeData)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapMember_set_TypeData_m9C4CAF5B4A21DE54C9DE9F90C1332BBDAA4A4B4C_inline (XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* __this, TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* ___value0, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlTypeMapMember::set_Name(System.String)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapMember_set_Name_m388D6A30E3DD11FD6068A5D5C180110C327EFC08_inline (XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* __this, String_t* ___value0, const RuntimeMethod* method) ;
-// System.Boolean System.Xml.Serialization.XmlReflectionMember::get_IsReturnValue()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XmlReflectionMember_get_IsReturnValue_m85EB9A5F4C984353A4BEA4A10D90BEB715158255_inline (XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlTypeMapMember::set_IsReturnValue(System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlTypeMapMember_set_IsReturnValue_m8E27F10143941CADA16EEB3F2B81DCE9BB573AD1 (XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* __this, bool ___value0, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlReflectionImporter::ImportTextElementInfo(System.Xml.Serialization.XmlTypeMapElementInfoList,System.Type,System.Xml.Serialization.XmlTypeMapMemberElement,System.Xml.Serialization.XmlAttributes,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlReflectionImporter_ImportTextElementInfo_m95E321788636ECB35EED75B9983452E4025D0599 (XmlReflectionImporter_t35377D35396A0B7AF610724CE3256E34C0D271E6* __this, XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* ___list0, Type_t* ___defaultType1, XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* ___member2, XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* ___atts3, String_t* ___defaultNamespace4, const RuntimeMethod* method) ;
-// System.Xml.Serialization.XmlChoiceIdentifierAttribute System.Xml.Serialization.XmlAttributes::get_XmlChoiceIdentifier()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlChoiceIdentifierAttribute_t1DF770FBF01EBD518F55C363C703F86A7712301E* XmlAttributes_get_XmlChoiceIdentifier_mA6096A2AFE2439889FA8F48E22AD7335C9B7EE45_inline (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) ;
 // System.String System.Xml.Serialization.XmlChoiceIdentifierAttribute::get_MemberName()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlChoiceIdentifierAttribute_get_MemberName_mFB0A7699A652AE5EEB3AF341F1EEE4C91B46EE9A (XmlChoiceIdentifierAttribute_t1DF770FBF01EBD518F55C363C703F86A7712301E* __this, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlTypeMapMemberElement::set_ChoiceMember(System.String)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapMemberElement_set_ChoiceMember_m8F271920DC329BABB1F6CC20C327EFABC5D5FAD4_inline (XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* __this, String_t* ___value0, const RuntimeMethod* method) ;
 // System.String System.String::Concat(System.String,System.String,System.String,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m093934F71A9B351911EE46311674ED463B180006 (String_t* ___str00, String_t* ___str11, String_t* ___str22, String_t* ___str33, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlTypeMapMemberElement::set_ChoiceTypeData(System.Xml.Serialization.TypeData)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapMemberElement_set_ChoiceTypeData_mC09197CF2429D39C3771B2E1903663FEE114877D_inline (XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* __this, TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* ___value0, const RuntimeMethod* method) ;
 // System.String System.Xml.Serialization.XmlElementAttribute::get_DataType()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlElementAttribute_get_DataType_mC74327AED7D2D68D57E769EDB5125BDE0D0A6ABF (XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* __this, const RuntimeMethod* method) ;
-// System.Xml.Schema.XmlSchemaForm System.Xml.Serialization.XmlElementAttribute::get_Form()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlElementAttribute_get_Form_mAB6C265C412AD6BA37FF7802EB207C726F3ADADC_inline (XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* __this, const RuntimeMethod* method) ;
-// System.Xml.Schema.XmlSchemaForm System.Xml.Serialization.XmlTypeMapElementInfo::get_Form()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlTypeMapElementInfo_get_Form_m6D632374F4C5C58870DFDB60928B518C216180FA_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, const RuntimeMethod* method) ;
-// System.String System.Xml.Serialization.XmlElementAttribute::get_Namespace()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlElementAttribute_get_Namespace_m79825FA7B795B8D0FF3E71637AEB426DC3AFB1FA_inline (XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* __this, const RuntimeMethod* method) ;
-// System.Boolean System.Xml.Serialization.XmlElementAttribute::get_IsNullable()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XmlElementAttribute_get_IsNullable_mC31D59FDBE93193FDF0409AC0DC191E8B11A387F_inline (XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* __this, const RuntimeMethod* method) ;
-// System.Boolean System.Xml.Serialization.XmlTypeMapElementInfo::get_IsNullable()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XmlTypeMapElementInfo_get_IsNullable_m5E6F72E9E7ADFA39100C6C0FFA1585BCDE4ACE75_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, const RuntimeMethod* method) ;
 // System.Boolean System.Xml.Serialization.TypeData::get_IsNullable()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TypeData_get_IsNullable_m31728B62ACF57A01989472F565DAAC86DA179D07 (TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* __this, const RuntimeMethod* method) ;
 // System.String System.String::Concat(System.String[])
@@ -4439,28 +4196,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* EnumMap_GetEnumName_m10DDCE7A6EB148
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Format_mF8E53122BE8F0F617357DFB75C3912D1242DE263 (RuntimeObject* ___provider0, String_t* ___format1, RuntimeObject* ___arg02, RuntimeObject* ___arg13, RuntimeObject* ___arg24, const RuntimeMethod* method) ;
 // System.Object System.Enum::Parse(System.Type,System.String,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Enum_Parse_m0316ABE916ED60AA2257A464A33A33D544EDEE12 (Type_t* ___enumType0, String_t* ___value1, bool ___ignoreCase2, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlTypeMapElementInfo::set_ChoiceValue(System.Object)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapElementInfo_set_ChoiceValue_m51083B31BC4A97D6C58F2A8FA96355BED2E37AAB_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, RuntimeObject* ___value0, const RuntimeMethod* method) ;
 // System.String System.Xml.Serialization.XmlAnyElementAttribute::get_Name()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlAnyElementAttribute_get_Name_m4A874C74BA795155B3B95CD2A423E1C8A0CAE8F0 (XmlAnyElementAttribute_tFDA3FEFA37983298C29CC84E5564E41600C5EDAB* __this, const RuntimeMethod* method) ;
-// System.String System.Xml.Serialization.XmlAnyElementAttribute::get_Namespace()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlAnyElementAttribute_get_Namespace_m566B2C6EC08903732765430EE526F8D5BDFA4FF6_inline (XmlAnyElementAttribute_tFDA3FEFA37983298C29CC84E5564E41600C5EDAB* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlTypeMapElementInfo::set_IsUnnamedAnyElement(System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlTypeMapElementInfo_set_IsUnnamedAnyElement_m9C07E7FD57FE290F705A2EC1EF3F4F3C36AB1DDD (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, bool ___value0, const RuntimeMethod* method) ;
-// System.Int32 System.Xml.Serialization.XmlAnyElementAttribute::get_Order()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlAnyElementAttribute_get_Order_m2CCED3AB699ADBDE0F16C41EB0EFE8921DF4BA6A_inline (XmlAnyElementAttribute_tFDA3FEFA37983298C29CC84E5564E41600C5EDAB* __this, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlTypeMapMemberElement::set_IsXmlTextCollector(System.Boolean)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapMemberElement_set_IsXmlTextCollector_m3825384EFF73E2990FD5746E45CE7AF2D69B456B_inline (XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* __this, bool ___value0, const RuntimeMethod* method) ;
-// System.Type System.Xml.Serialization.XmlTextAttribute::get_Type()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Type_t* XmlTextAttribute_get_Type_m6D956F711B1336CEAE650DDC4A35A9899CEF9861_inline (XmlTextAttribute_tAA8BE9BA759F78BB4CDF00D3848B7746C0EDEFE0* __this, const RuntimeMethod* method) ;
 // System.String System.Xml.Serialization.XmlTextAttribute::get_DataType()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlTextAttribute_get_DataType_m6B266372322103E2D735DC26D210652ECD475B07 (XmlTextAttribute_tAA8BE9BA759F78BB4CDF00D3848B7746C0EDEFE0* __this, const RuntimeMethod* method) ;
 // System.Xml.Serialization.TypeData System.Xml.Serialization.TypeData::get_ListItemTypeData()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* TypeData_get_ListItemTypeData_m08EBC7760A430966A31E3C138C9BB359E429C6D7 (TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlTypeMapElementInfo::set_IsTextElement(System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlTypeMapElementInfo_set_IsTextElement_mCE031A8FDAFEACF48094CCDF5C90BBB2A64E2655 (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, bool ___value0, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlTypeMapElementInfo::set_WrappedElement(System.Boolean)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapElementInfo_set_WrappedElement_m45FA9CFAFC7B8EB395F59D7832542F3410089195_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, bool ___value0, const RuntimeMethod* method) ;
 // System.Boolean System.Type::get_IsValueType()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Type_get_IsValueType_m59AE2E0439DC06347B8D6B38548F3CBA54D38318 (Type_t* __this, const RuntimeMethod* method) ;
 // System.String System.Enum::Format(System.Type,System.Object,System.String)
@@ -4477,10 +4222,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationGeneratedCode__ctor_mBC7
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlDocument__ctor_m23D3FC333FDD50BBCAF64B57184A889E0F6B7468 (XmlDocument_t4DE82998E642C5C21A4A620A5278237C70D3E42B* __this, XmlNameTable_tBDBAACFF3DB40A8E6AF3BDC11F0FF166CF11ABB8* ___nt0, const RuntimeMethod* method) ;
 // System.Collections.Hashtable System.Xml.Serialization.XmlSerializationReader::EnsureHashtable(System.Collections.Hashtable)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Hashtable_tEFC3B6496E6747787D8BB761B51F2AE3A8CFFE2D* XmlSerializationReader_EnsureHashtable_m676AEE49C5641981561013079ECF69CE82957B06 (XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597* __this, Hashtable_tEFC3B6496E6747787D8BB761B51F2AE3A8CFFE2D* ___hash0, const RuntimeMethod* method) ;
-// System.Object System.Xml.Serialization.XmlSerializationReader/CollectionFixup::get_Id()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* CollectionFixup_get_Id_m02C21982C2A3986E65A34429213F203558849D40_inline (CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* __this, const RuntimeMethod* method) ;
-// System.Void System.Xml.Serialization.XmlSerializationReader/CollectionFixup::set_CollectionItems(System.Object)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void CollectionFixup_set_CollectionItems_mE1B2C71D40112F90E2ECC65D1E14234BA2ED351F_inline (CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* __this, RuntimeObject* ___value0, const RuntimeMethod* method) ;
 // System.Collections.ArrayList System.Xml.Serialization.XmlSerializationReader::EnsureArrayList(System.Collections.ArrayList)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* XmlSerializationReader_EnsureArrayList_m4F967D2DD5EFCFBEA524BB8FE5A608FE4A6BA956 (XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597* __this, ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* ___list0, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlSerializationReader/WriteCallbackInfo::.ctor()
@@ -4489,18 +4230,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WriteCallbackInfo__ctor_m37F31F6AFF382B8
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8 (String_t* ___format0, RuntimeObject* ___arg01, const RuntimeMethod* method) ;
 // System.String System.Xml.Serialization.XmlSerializationReader::CurrentTag()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlSerializationReader_CurrentTag_mE1917EC42A8114332387EE718C252B726CA05E14 (XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597* __this, const RuntimeMethod* method) ;
-// System.String System.Xml.XmlQualifiedName::get_Name()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlQualifiedName_get_Name_mC9D21D5BADE11AEAC7ED5886B39E1A774C63B830_inline (XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* __this, const RuntimeMethod* method) ;
-// System.String System.Xml.XmlQualifiedName::get_Namespace()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlQualifiedName_get_Namespace_m0CAE4A651EF1CA6F0EB657C83608A796038A2615_inline (XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* __this, const RuntimeMethod* method) ;
 // System.Int32 System.Array::get_Length()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Array_get_Length_m361285FB7CF44045DC369834D1CD01F72F94EF57 (RuntimeArray* __this, const RuntimeMethod* method) ;
 // System.Array System.Array::CreateInstance(System.Type,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeArray* Array_CreateInstance_m13B202130951A03AF5F52470A19E17D3AD2A8983 (Type_t* ___elementType0, int32_t ___length1, const RuntimeMethod* method) ;
 // System.Void System.Array::Copy(System.Array,System.Array,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_Copy_m4233828B4E6288B6D815F539AAA38575DE627900 (RuntimeArray* ___sourceArray0, RuntimeArray* ___destinationArray1, int32_t ___length2, const RuntimeMethod* method) ;
-// System.Xml.XmlReader System.Xml.Serialization.XmlSerializationReader::get_Reader()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline (XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597* __this, const RuntimeMethod* method) ;
 // System.Int32 System.String::IndexOf(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t String_IndexOf_m69E9BDAFD93767C85A7FF861B453415D3B4A200F (String_t* __this, String_t* ___value0, const RuntimeMethod* method) ;
 // System.String System.String::Substring(System.Int32,System.Int32)
@@ -4531,10 +4266,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlQualifiedName_t2794880B373257E4108CC3F36D7
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XmlQualifiedName_op_Equality_mAE17874DCEBAFB74CBFEC5CC1EE5399470A61D44 (XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* ___a0, XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* ___b1, const RuntimeMethod* method) ;
 // System.Boolean System.Xml.Serialization.XmlSerializationReader::ReadList(System.Object&)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XmlSerializationReader_ReadList_m78AEC7BB70D7C5DD317E84DF1247101EB30A671C (XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597* __this, RuntimeObject** ___resultList0, const RuntimeMethod* method) ;
-// System.Xml.Serialization.XmlSerializationCollectionFixupCallback System.Xml.Serialization.XmlSerializationReader/CollectionFixup::get_Callback()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlSerializationCollectionFixupCallback_t7A477E768FFD9DF76301088150243A493D5A4842* CollectionFixup_get_Callback_m1F1435C58DB8A0FDDC6EF46BAE8C871531BEDBAE_inline (CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* __this, const RuntimeMethod* method) ;
-// System.Object System.Xml.Serialization.XmlSerializationReader/CollectionFixup::get_Collection()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* CollectionFixup_get_Collection_m33F4B486A798DB34A155875436454D248ADF0FD0_inline (CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlSerializationCollectionFixupCallback::Invoke(System.Object,System.Object)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlSerializationCollectionFixupCallback_Invoke_mFB736B20C467F37986192F47B50619B4E126B36E_inline (XmlSerializationCollectionFixupCallback_t7A477E768FFD9DF76301088150243A493D5A4842* __this, RuntimeObject* ___collection0, RuntimeObject* ___collectionItems1, const RuntimeMethod* method) ;
 // System.Xml.Serialization.XmlSerializationReader/WriteCallbackInfo System.Xml.Serialization.XmlSerializationReader::GetCallbackInfo(System.Xml.XmlQualifiedName)
@@ -4563,18 +4294,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CollectionItemFixup__ctor_mE654E8182AAE3
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReader_AddFixup_m8F4D571A2124FFD8159D128335BB0E76C723814A (XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597* __this, CollectionItemFixup_tB93D197F97AEEE471775D4EC6C7227434D7EDA11* ___fixup0, const RuntimeMethod* method) ;
 // System.Object System.Xml.Serialization.XmlSerializationReader::ReadReferencedElement()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReader_ReadReferencedElement_mFB866A61C9C26FA31E53EFCB673506A455120493 (XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597* __this, const RuntimeMethod* method) ;
-// System.Array System.Xml.Serialization.XmlSerializationReader/CollectionItemFixup::get_Collection()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeArray* CollectionItemFixup_get_Collection_m3A3D1F07DD384677EB43842B4E0C9AE6CAA8B8F6_inline (CollectionItemFixup_tB93D197F97AEEE471775D4EC6C7227434D7EDA11* __this, const RuntimeMethod* method) ;
-// System.String System.Xml.Serialization.XmlSerializationReader/CollectionItemFixup::get_Id()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* CollectionItemFixup_get_Id_m01A755FF6A3F989910289A67DD5ADFA0528FD39F_inline (CollectionItemFixup_tB93D197F97AEEE471775D4EC6C7227434D7EDA11* __this, const RuntimeMethod* method) ;
 // System.Object System.Xml.Serialization.XmlSerializationReader::GetTarget(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReader_GetTarget_mA46C91CC3F9CD7D7C907903992390A28F388213F (XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597* __this, String_t* ___id0, const RuntimeMethod* method) ;
-// System.Int32 System.Xml.Serialization.XmlSerializationReader/CollectionItemFixup::get_Index()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t CollectionItemFixup_get_Index_m455C70697C9BD61D8E47E5867796671FAECBF958_inline (CollectionItemFixup_tB93D197F97AEEE471775D4EC6C7227434D7EDA11* __this, const RuntimeMethod* method) ;
-// System.Object System.Xml.Serialization.XmlSerializationReader/CollectionFixup::get_CollectionItems()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* CollectionFixup_get_CollectionItems_m7C8D7CB07A7C17F517B09A5145424EB1DE0EB497_inline (CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* __this, const RuntimeMethod* method) ;
-// System.Xml.Serialization.XmlSerializationFixupCallback System.Xml.Serialization.XmlSerializationReader/Fixup::get_Callback()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlSerializationFixupCallback_t882A7D135707B29ECA0198EFF9BB512C8F54A3AE* Fixup_get_Callback_mF6D51DD8D4089ED7510FA16D29095F75BFB54D9B_inline (Fixup_tE94672CE3DEBD4DCFFB6AC052A9A6E0E7C6AA566* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlSerializationFixupCallback::Invoke(System.Object)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlSerializationFixupCallback_Invoke_m20E59EA8A1BB770EB6C5391C419FA821C425EDF7_inline (XmlSerializationFixupCallback_t882A7D135707B29ECA0198EFF9BB512C8F54A3AE* __this, RuntimeObject* ___fixup0, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlSerializationReader::UnreferencedObject(System.String,System.Object)
@@ -4617,14 +4338,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlNodeEventArgs__ctor_m0E50754A95E4FD3A
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnreferencedObjectEventArgs__ctor_mD16B06CE6C6B0BC9066D72C98273D6F55A24EC70 (UnreferencedObjectEventArgs_tA88A95B9F0BE849323A166089D04903D288C5760* __this, RuntimeObject* ___o0, String_t* ___id1, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlSerializationReader::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReader__ctor_mE7A1AB3E151A31FE7D934FBFBB9823F5C0D70C68 (XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597* __this, const RuntimeMethod* method) ;
-// System.Xml.Serialization.SerializationFormat System.Xml.Serialization.XmlMapping::get_Format()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlMapping_get_Format_mB9ACDCC642A2589BF20C9D02C2FA14F2C5D1C3F3_inline (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, const RuntimeMethod* method) ;
-// System.Collections.ArrayList System.Xml.Serialization.XmlMapping::get_RelatedMaps()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* XmlMapping_get_RelatedMaps_m359C8ADACB98609060F82DCB82FB18E39274918C_inline (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlSerializationReaderInterpreter/ReaderCallbackInfo::.ctor(System.Xml.Serialization.XmlSerializationReaderInterpreter,System.Xml.Serialization.XmlTypeMapping)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReaderCallbackInfo__ctor_mA1DE9023122B9D262150A2AABCCB839AC4E31CBC (ReaderCallbackInfo_t414F9FC8F93718A4EAF961E66DE7A6C43B6A08FB* __this, XmlSerializationReaderInterpreter_t912EF8FEC9E40E218B269BB1B990E9732A442CB8* ___sri0, XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* ___typeMap1, const RuntimeMethod* method) ;
-// System.String System.Xml.Serialization.XmlMapping::get_Namespace()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlMapping_get_Namespace_m196651C91FB3C3442AC616C977345E89450F024F_inline (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlSerializationReadCallback::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReadCallback__ctor_m3E8920B08440F5007D60B89120F500D80C24B4F7 (XmlSerializationReadCallback_tAEB657961D305723E5F13AF0D7ADE852E81D413B* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlSerializationReader::AddReadCallback(System.String,System.String,System.Type,System.Xml.Serialization.XmlSerializationReadCallback)
@@ -4639,10 +4354,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Exception_t* XmlSerializationReader_CreateUnk
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReader_ReadReferencedElements_m49D3E58756DF9713D6C2D358461E020FC7855BF8 (XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597* __this, const RuntimeMethod* method) ;
 // System.Int32 System.Xml.Serialization.XmlMembersMapping::get_Count()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t XmlMembersMapping_get_Count_mDAFF3965B76D19DE0EFAE018FEE1B429419855A7 (XmlMembersMapping_t0D686C86E19B598F10E53AF79EC905A7E2BDB62C* __this, const RuntimeMethod* method) ;
-// System.Boolean System.Xml.Serialization.XmlMembersMapping::get_HasWrapperElement()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XmlMembersMapping_get_HasWrapperElement_mE921652D9CEADD03E4BCC13C9AC26E457C640CE5_inline (XmlMembersMapping_t0D686C86E19B598F10E53AF79EC905A7E2BDB62C* __this, const RuntimeMethod* method) ;
-// System.Collections.ArrayList System.Xml.Serialization.ClassMap::get_AllMembers()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* ClassMap_get_AllMembers_m68939A09AB79846A722998916E288759CB918FED_inline (ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* __this, const RuntimeMethod* method) ;
 // System.Boolean System.Xml.Serialization.XmlTypeMapMember::get_IsReturnValue()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XmlTypeMapMember_get_IsReturnValue_m2FF8236466A439AB4412508BE3D78C3C71A47481 (XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* __this, const RuntimeMethod* method) ;
 // System.Boolean System.Xml.Serialization.TypeData::get_IsValueType()
@@ -4657,10 +4368,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReaderInterpreter_ReadAt
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReaderInterpreter_ReadMembers_m92FC821665FFF506E537CCDA5A70F4B1172E626B (XmlSerializationReaderInterpreter_t912EF8FEC9E40E218B269BB1B990E9732A442CB8* __this, ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* ___map0, RuntimeObject* ___ob1, bool ___isValueList2, bool ___readBySoapOrder3, const RuntimeMethod* method) ;
 // System.Object System.Xml.Serialization.XmlSerializationReaderInterpreter::ReadXmlNodeElement(System.Xml.Serialization.XmlTypeMapping,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpreter_ReadXmlNodeElement_mDDA1AC3864A682EB162DF1A8A7A3A05B80674709 (XmlSerializationReaderInterpreter_t912EF8FEC9E40E218B269BB1B990E9732A442CB8* __this, XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* ___typeMap0, bool ___isNullable1, const RuntimeMethod* method) ;
-// System.Boolean System.Xml.Serialization.XmlTypeMapping::get_IsAny()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XmlTypeMapping_get_IsAny_m0C45955548B231D2E892D2924768B068138CBDD8_inline (XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* __this, const RuntimeMethod* method) ;
-// System.Boolean System.Xml.Serialization.XmlTypeMapping::get_IsNullable()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XmlTypeMapping_get_IsNullable_m2CE4D69DE9C4D1A7AFC01D0BE8C2369BD1C8107B_inline (XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* __this, const RuntimeMethod* method) ;
 // System.Object System.Xml.Serialization.XmlSerializationReaderInterpreter::ReadListElement(System.Xml.Serialization.XmlTypeMapping,System.Boolean,System.Object,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpreter_ReadListElement_m9DA9C6F2AC8812B8783E85AF2F99A4FE6CB14B14 (XmlSerializationReaderInterpreter_t912EF8FEC9E40E218B269BB1B990E9732A442CB8* __this, XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* ___typeMap0, bool ___isNullable1, RuntimeObject* ___list2, bool ___canCreateInstance3, const RuntimeMethod* method) ;
 // System.Object System.Xml.Serialization.XmlSerializationReaderInterpreter::ReadPrimitiveElement(System.Xml.Serialization.XmlTypeMapping,System.Boolean)
@@ -4679,20 +4386,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReader_ReadTyp
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Exception_t* XmlSerializationReader_CreateUnknownTypeException_m158A6883E878D4147D071564F3BFF3B6B42D5296 (XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597* __this, XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* ___type0, const RuntimeMethod* method) ;
 // System.Object System.Xml.Serialization.XmlSerializationReaderInterpreter::CreateInstance(System.Type,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpreter_CreateInstance_m52A3B7A31873EA03F569A85E7F1E874AAA07F55E (Type_t* ___type0, bool ___nonPublic1, const RuntimeMethod* method) ;
-// System.Xml.Serialization.XmlTypeMapMemberAnyAttribute System.Xml.Serialization.ClassMap::get_DefaultAnyAttributeMember()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlTypeMapMemberAnyAttribute_t936B5C08A209D3F342575957ACCBF1F7984095F1* ClassMap_get_DefaultAnyAttributeMember_m88660193A65BE269D1E4F7ADEA4778BC78D40B08_inline (ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* __this, const RuntimeMethod* method) ;
 // System.Xml.Serialization.XmlTypeMapMemberAttribute System.Xml.Serialization.ClassMap::GetAttribute(System.String,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* ClassMap_GetAttribute_mFAA51D19B1F7AAC3105A581FA1F2738B15BBBCD0 (ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* __this, String_t* ___name0, String_t* ___ns1, const RuntimeMethod* method) ;
-// System.Xml.Serialization.XmlTypeMapping System.Xml.Serialization.XmlTypeMapMemberAttribute::get_MappedType()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* XmlTypeMapMemberAttribute_get_MappedType_mD2DBE6E539F3B9A6F922C1DD37084DCDACE07025_inline (XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* __this, const RuntimeMethod* method) ;
 // System.Object System.Xml.Serialization.XmlSerializationReaderInterpreter::GetValueFromXmlString(System.String,System.Xml.Serialization.TypeData,System.Xml.Serialization.XmlTypeMapping)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpreter_GetValueFromXmlString_m21DC6B65AAF2E79AE5EC5C7B62A5E40B4C5498CA (XmlSerializationReaderInterpreter_t912EF8FEC9E40E218B269BB1B990E9732A442CB8* __this, String_t* ___value0, TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* ___typeData1, XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* ___typeMap2, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlSerializationReaderInterpreter::SetMemberValue(System.Xml.Serialization.XmlTypeMapMember,System.Object,System.Object,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReaderInterpreter_SetMemberValue_mABB21E3AEFF2EB1B198A0B915622E84D542D1D99 (XmlSerializationReaderInterpreter_t912EF8FEC9E40E218B269BB1B990E9732A442CB8* __this, XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* ___member0, RuntimeObject* ___ob1, RuntimeObject* ___value2, bool ___isValueList3, const RuntimeMethod* method) ;
 // System.Boolean System.Xml.Serialization.XmlSerializationReader::IsXmlnsAttribute(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XmlSerializationReader_IsXmlnsAttribute_m82CD3BEBE6E81699B23FDC923B5029DAFB05B06D (XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597* __this, String_t* ___name0, const RuntimeMethod* method) ;
-// System.Xml.Serialization.XmlTypeMapMemberNamespaces System.Xml.Serialization.ClassMap::get_NamespaceDeclarations()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlTypeMapMemberNamespaces_t1493E4BE21467D51FB1CDE88D538FA97815D3112* ClassMap_get_NamespaceDeclarations_m5EF288255B1F07783CF889C781DB6D6BEAF133E1_inline (ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* __this, const RuntimeMethod* method) ;
 // System.Object System.Xml.Serialization.XmlSerializationReaderInterpreter::GetMemberValue(System.Xml.Serialization.XmlTypeMapMember,System.Object,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpreter_GetMemberValue_mFA240C18B7888ACCAC3CED8800EAF6E2670BEF41 (XmlSerializationReaderInterpreter_t912EF8FEC9E40E218B269BB1B990E9732A442CB8* __this, XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* ___member0, RuntimeObject* ___ob1, bool ___isValueList2, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlSerializerNamespaces::.ctor()
@@ -4707,20 +4408,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReaderInterpreter_AddLis
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeArray* XmlSerializationReader_ShrinkArray_m76FE9D0683F22CDDEECBC9284FB9BB6C3A238552 (XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597* __this, RuntimeArray* ___a0, int32_t ___length1, Type_t* ___elementType2, bool ___isNullable3, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlSerializationReaderInterpreter::SetListMembersDefaults(System.Xml.Serialization.ClassMap,System.Object,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReaderInterpreter_SetListMembersDefaults_m9C3CFA88D73B9F2C87B02C6787802F9EB9CEE954 (XmlSerializationReaderInterpreter_t912EF8FEC9E40E218B269BB1B990E9732A442CB8* __this, ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* ___map0, RuntimeObject* ___ob1, bool ___isValueList2, const RuntimeMethod* method) ;
-// System.Xml.Serialization.XmlTypeMapMember System.Xml.Serialization.ClassMap::get_ReturnMember()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* ClassMap_get_ReturnMember_m17D5284F4873CF87F02814AF5BD96CFD23737F32_inline (ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* __this, const RuntimeMethod* method) ;
-// System.Collections.ArrayList System.Xml.Serialization.ClassMap::get_FlatLists()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* ClassMap_get_FlatLists_m852941CF165941C1EB03137482353B221F335DE9_inline (ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* __this, const RuntimeMethod* method) ;
 // System.Boolean System.Xml.Serialization.XmlSerializationReaderInterpreter::IsReadOnly(System.Xml.Serialization.XmlTypeMapMember,System.Xml.Serialization.TypeData,System.Object,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XmlSerializationReaderInterpreter_IsReadOnly_m2C12724B3F9B47E6A7F30F73BD6279385A29AD58 (XmlSerializationReaderInterpreter_t912EF8FEC9E40E218B269BB1B990E9732A442CB8* __this, XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* ___member0, TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* ___memType1, RuntimeObject* ___ob2, bool ___isValueList3, const RuntimeMethod* method) ;
-// System.Int32 System.Xml.Serialization.XmlTypeMapMemberExpandable::get_FlatArrayIndex()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlTypeMapMemberExpandable_get_FlatArrayIndex_mD83A6C690F8EA40C0FAF882E1549E0BD0831CC83_inline (XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* __this, const RuntimeMethod* method) ;
 // System.Object System.Xml.Serialization.XmlTypeMapMember::GetValue(System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlTypeMapMember_GetValue_mB762710324E36B398ED02670400043C5462A5ECF (XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* __this, RuntimeObject* ___ob0, const RuntimeMethod* method) ;
 // System.Object System.Xml.Serialization.XmlSerializationReaderInterpreter::InitializeList(System.Xml.Serialization.TypeData)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpreter_InitializeList_m9B8DC26F07D1636336A807E8AE75FA5E5BA74DA6 (XmlSerializationReaderInterpreter_t912EF8FEC9E40E218B269BB1B990E9732A442CB8* __this, TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* ___listType0, const RuntimeMethod* method) ;
-// System.Xml.Serialization.TypeData System.Xml.Serialization.XmlTypeMapMemberElement::get_ChoiceTypeData()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* XmlTypeMapMemberElement_get_ChoiceTypeData_m1C40274707406AC69F5536776D0276266332B845_inline (XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlSerializationReaderInterpreter/FixupCallbackInfo::.ctor(System.Xml.Serialization.XmlSerializationReaderInterpreter,System.Xml.Serialization.ClassMap,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FixupCallbackInfo__ctor_m21B1A474D5B56C19F301C9D9EF4B235B7B8AE639 (FixupCallbackInfo_t4F096851101229F0692C9397633C653DE18E2475* __this, XmlSerializationReaderInterpreter_t912EF8FEC9E40E218B269BB1B990E9732A442CB8* ___sri0, ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* ___map1, bool ___isValueList2, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlSerializationFixupCallback::.ctor(System.Object,System.IntPtr)
@@ -4735,16 +4428,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapElementInfo_t5F83002BBC016801717A20
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ClassMap_get_IsOrderDependentMap_m0B479BCCCAECE8D9D5DC7659B5CFFB7CB949C93A (ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* __this, const RuntimeMethod* method) ;
 // System.Xml.Serialization.XmlTypeMapElementInfo System.Xml.Serialization.ClassMap::GetElement(System.String,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* ClassMap_GetElement_m60767CE50696152D35651B8202236E105721F3C3 (ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* __this, String_t* ___name0, String_t* ___ns1, const RuntimeMethod* method) ;
-// System.Xml.Serialization.XmlTypeMapMember System.Xml.Serialization.XmlTypeMapElementInfo::get_Member()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, const RuntimeMethod* method) ;
-// System.Int32 System.Xml.Serialization.XmlTypeMapMember::get_Index()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlTypeMapMember_get_Index_m3EAB1243B03E5DBD10C6E7CA245E5A6C04406D12_inline (XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* __this, const RuntimeMethod* method) ;
-// System.Int32 System.Xml.Serialization.XmlTypeMapElementInfo::get_ExplicitOrder()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlTypeMapElementInfo_get_ExplicitOrder_m929232F83C9F294565C56EC38C5BACCA530DEDAB_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, const RuntimeMethod* method) ;
 // System.Boolean System.Xml.Serialization.XmlTypeMapElementInfo::get_MultiReferenceType()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XmlTypeMapElementInfo_get_MultiReferenceType_m4176293D1962C6176A28D752B43F207817A93D2F (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, const RuntimeMethod* method) ;
-// System.String[] System.Xml.Serialization.XmlSerializationReader/Fixup::get_Ids()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* Fixup_get_Ids_m9B1A1A8EC0662A14A92B000F90A276C18E7690B2_inline (Fixup_tE94672CE3DEBD4DCFFB6AC052A9A6E0E7C6AA566* __this, const RuntimeMethod* method) ;
 // System.Object System.Xml.Serialization.XmlSerializationReader::ReadReferencingElement(System.String&)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReader_ReadReferencingElement_mC2F7F98DBC0683ECE865560DBB9F1CBA0798EBB6 (XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597* __this, String_t** ___fixupReference0, const RuntimeMethod* method) ;
 // System.Exception System.Xml.Serialization.XmlSerializationReader::CreateReadOnlyCollectionException(System.String)
@@ -4759,30 +4444,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CollectionFixup__ctor_m1F4ADF9D829F9B0BF
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReader_AddFixup_m846FB4EEF12E21F5803BC41685952AFE6A3D98E1 (XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597* __this, CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* ___fixup0, const RuntimeMethod* method) ;
 // System.Object System.Xml.Serialization.XmlSerializationReaderInterpreter::ReadObjectElement(System.Xml.Serialization.XmlTypeMapElementInfo)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpreter_ReadObjectElement_mB76E426F3F5A3C4F36AC5563C3A546ECC8B6DF05 (XmlSerializationReaderInterpreter_t912EF8FEC9E40E218B269BB1B990E9732A442CB8* __this, XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* ___elem0, const RuntimeMethod* method) ;
-// System.Object System.Xml.Serialization.XmlTypeMapElementInfo::get_ChoiceValue()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* XmlTypeMapElementInfo_get_ChoiceValue_m7BC9464A497AFA7A1BF250BA0D88928706C6412E_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, const RuntimeMethod* method) ;
 // System.Object System.Xml.Serialization.XmlSerializationReaderInterpreter::ReadXmlNode(System.Xml.Serialization.TypeData,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpreter_ReadXmlNode_m1EDAD554730C9248E429BADBBA381E16C94647CA (XmlSerializationReaderInterpreter_t912EF8FEC9E40E218B269BB1B990E9732A442CB8* __this, TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* ___type0, bool ___wrapped1, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlTypeMapMemberElement::SetChoice(System.Object,System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlTypeMapMemberElement_SetChoice_m70A2968411084153BBDD57111C740A75C9D7AEB5 (XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* __this, RuntimeObject* ___ob0, RuntimeObject* ___choice1, const RuntimeMethod* method) ;
-// System.Xml.Serialization.XmlTypeMapMemberAnyElement System.Xml.Serialization.ClassMap::get_DefaultAnyElementMember()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlTypeMapMemberAnyElement_tC9C6D58B08CB2C84148376C77AC4259AF149C950* ClassMap_get_DefaultAnyElementMember_m65CFF55B342204FE2E39B8BDF46E733DD43C6B4B_inline (ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* __this, const RuntimeMethod* method) ;
 // System.Xml.Serialization.XmlTypeMapElementInfo System.Xml.Serialization.ListMap::FindTextElement()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* ListMap_FindTextElement_m4A953DA460CF998CB59D87819531224C9069FC0A (ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlTypeMapMember::SetValue(System.Object,System.String,System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlTypeMapMember_SetValue_mE1E56C2E7FF4BC0699E6B6EF73CB23C436438F30 (RuntimeObject* ___ob0, String_t* ___name1, RuntimeObject* ___value2, const RuntimeMethod* method) ;
-// System.Collections.ArrayList System.Xml.Serialization.ClassMap::get_ListMembers()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* ClassMap_get_ListMembers_m21D695B14B2AF42EC1850374FDA24CDE2B356649_inline (ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* __this, const RuntimeMethod* method) ;
-// System.Object System.Xml.Serialization.XmlSerializationReader/Fixup::get_Source()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Fixup_get_Source_mF424839086899F18C33B9604622D390C359819AE_inline (Fixup_tE94672CE3DEBD4DCFFB6AC052A9A6E0E7C6AA566* __this, const RuntimeMethod* method) ;
-// System.Boolean System.Xml.Serialization.TypeData::get_HasPublicConstructor()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool TypeData_get_HasPublicConstructor_mB467688E3EC6E6B3AF0E9A179C1E173AB4FAC89D_inline (TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* __this, const RuntimeMethod* method) ;
 // System.Boolean System.Xml.Serialization.XmlTypeMapMember::IsReadOnly(System.Type)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XmlTypeMapMember_IsReadOnly_mE3DBCC6D4CA65E2E2CAA00D4E21C30CAAC03F805 (XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* __this, Type_t* ___type0, const RuntimeMethod* method) ;
 // System.Object System.Xml.Serialization.XmlSerializationWriterInterpreter::ImplicitConvert(System.Object,System.Type)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationWriterInterpreter_ImplicitConvert_mC0A90835FFBC3F85D2DB9BA8944517142467716D (RuntimeObject* ___obj0, Type_t* ___type1, const RuntimeMethod* method) ;
-// System.Int32 System.Xml.Serialization.XmlTypeMapMember::get_GlobalIndex()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlTypeMapMember_get_GlobalIndex_mC43A1F277B76C624EFAF264B32293499D51853B6_inline (XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlTypeMapMember::SetValue(System.Object,System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlTypeMapMember_SetValue_m22E52C02AD75799B95A242B6B73EECFC0B20B81D (XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* __this, RuntimeObject* ___ob0, RuntimeObject* ___value1, const RuntimeMethod* method) ;
 // System.Boolean System.Xml.Serialization.XmlTypeMapMember::get_IsOptionalValueType()
@@ -4841,8 +4514,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Exception_t* XmlSerializationWriter_CreateUnk
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlSerializationWriter_GetQualifiedName_m6A393BACF5677C132F4FF0717F6F96522C55D518 (XmlSerializationWriter_t96B46BC33680D6D6AB2580CA44C228109865151B* __this, String_t* ___name0, String_t* ___ns1, const RuntimeMethod* method) ;
 // System.Void System.Runtime.Serialization.ObjectIDGenerator::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ObjectIDGenerator__ctor_m26261E5BF8675579F39157564153ECA733453B10 (ObjectIDGenerator_tB34B9C0F2DDAED17FE8AB8D54462528D37DE101B* __this, const RuntimeMethod* method) ;
-// System.Xml.XmlWriter System.Xml.Serialization.XmlSerializationWriter::get_Writer()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline (XmlSerializationWriter_t96B46BC33680D6D6AB2580CA44C228109865151B* __this, const RuntimeMethod* method) ;
 // System.Void System.Xml.Serialization.XmlSerializationWriter::WriteAttribute(System.String,System.String,System.String,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationWriter_WriteAttribute_m25B87065E059F9AA2D8E46158DB0C3A9180CC63B (XmlSerializationWriter_t96B46BC33680D6D6AB2580CA44C228109865151B* __this, String_t* ___prefix0, String_t* ___localName1, String_t* ___ns2, String_t* ___value3, const RuntimeMethod* method) ;
 // System.String System.Xml.Serialization.XmlSerializationWriter::GetNamespacePrefix(System.String)
@@ -4922,276 +4593,6 @@ inline void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4 (List
 {
 	((  void (*) (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D*, RuntimeObject*, const RuntimeMethod*))List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4_gshared)(__this, ___item0, method);
 }
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.String System.Xml.Serialization.XmlArrayAttribute::get_ElementName()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlArrayAttribute_get_ElementName_mFDDFF359B711CC6348AD07853053BB37C405CDC2 (XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* __this, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&String_t_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		String_t* L_0 = __this->___elementName_0;
-		if (L_0)
-		{
-			goto IL_000e;
-		}
-	}
-	{
-		String_t* L_1 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->___Empty_6;
-		return L_1;
-	}
-
-IL_000e:
-	{
-		String_t* L_2 = __this->___elementName_0;
-		return L_2;
-	}
-}
-// System.Xml.Schema.XmlSchemaForm System.Xml.Serialization.XmlArrayAttribute::get_Form()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t XmlArrayAttribute_get_Form_mD5222A61AE3D5908142D9DBF1A5BE0986466F008 (XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = __this->___form_1;
-		return L_0;
-	}
-}
-// System.Boolean System.Xml.Serialization.XmlArrayAttribute::get_IsNullable()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XmlArrayAttribute_get_IsNullable_m84FB7E08614BFAFE7C6D5B72F4E43CBA42583CFB (XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = __this->___isNullable_2;
-		return L_0;
-	}
-}
-// System.String System.Xml.Serialization.XmlArrayAttribute::get_Namespace()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlArrayAttribute_get_Namespace_m37B65FCCE7A60AEADBF394DB6210DA1CC8A91CF8 (XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->___ns_3;
-		return L_0;
-	}
-}
-// System.Int32 System.Xml.Serialization.XmlArrayAttribute::get_Order()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t XmlArrayAttribute_get_Order_m82A05D0B48CDF77EEAC644B324916768C3DCC219 (XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = __this->___order_4;
-		return L_0;
-	}
-}
-// System.Void System.Xml.Serialization.XmlArrayAttribute::AddKeyHash(System.Text.StringBuilder)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlArrayAttribute_AddKeyHash_mD3E532419B5B132CD226CE174AEEEC03D8F08FBF (XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* __this, StringBuilder_t* ___sb0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&XmlSchemaForm_tC5DCA5084B752EA562D9EB206F7F1C283BF4566B_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralE2B88E46159CFC01C6A8623898739CB2A93FAE87);
-		s_Il2CppMethodInitialized = true;
-	}
-	int32_t V_0 = 0;
-	{
-		StringBuilder_t* L_0 = ___sb0;
-		NullCheck(L_0);
-		StringBuilder_t* L_1;
-		L_1 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_0, _stringLiteralE2B88E46159CFC01C6A8623898739CB2A93FAE87, NULL);
-		StringBuilder_t* L_2 = ___sb0;
-		String_t* L_3 = __this->___ns_3;
-		KeyHelper_AddField_m768E2F45F0F3BF4B11D640BE8CCB308BA9FCE439(L_2, 1, L_3, NULL);
-		StringBuilder_t* L_4 = ___sb0;
-		String_t* L_5 = __this->___elementName_0;
-		KeyHelper_AddField_m768E2F45F0F3BF4B11D640BE8CCB308BA9FCE439(L_4, 2, L_5, NULL);
-		StringBuilder_t* L_6 = ___sb0;
-		int32_t* L_7 = (&__this->___form_1);
-		Il2CppFakeBox<int32_t> L_8(XmlSchemaForm_tC5DCA5084B752EA562D9EB206F7F1C283BF4566B_il2cpp_TypeInfo_var, L_7);
-		String_t* L_9;
-		L_9 = Enum_ToString_m946B0B83C4470457D0FF555D862022C72BB55741((Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2*)(&L_8), NULL);
-		V_0 = 0;
-		Il2CppFakeBox<int32_t> L_10(XmlSchemaForm_tC5DCA5084B752EA562D9EB206F7F1C283BF4566B_il2cpp_TypeInfo_var, (&V_0));
-		String_t* L_11;
-		L_11 = Enum_ToString_m946B0B83C4470457D0FF555D862022C72BB55741((Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2*)(&L_10), NULL);
-		KeyHelper_AddField_m8D6784F8A282272797904301802EDF06F12FBD8E(L_6, 3, L_9, L_11, NULL);
-		StringBuilder_t* L_12 = ___sb0;
-		bool L_13 = __this->___isNullable_2;
-		KeyHelper_AddField_mDC2C3F5C998DFFF8EEA9842D02A98A18796ADBFD(L_12, 4, L_13, NULL);
-		StringBuilder_t* L_14 = ___sb0;
-		NullCheck(L_14);
-		StringBuilder_t* L_15;
-		L_15 = StringBuilder_Append_m71228B30F05724CD2CD96D9611DCD61BFB96A6E1(L_14, ((int32_t)124), NULL);
-		return;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.String System.Xml.Serialization.XmlArrayItemAttribute::get_DataType()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlArrayItemAttribute_get_DataType_m781844E00CC1400EE1F3960B9D8367FC06C5B1C9 (XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* __this, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&String_t_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		String_t* L_0 = __this->___dataType_0;
-		if (L_0)
-		{
-			goto IL_000e;
-		}
-	}
-	{
-		String_t* L_1 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->___Empty_6;
-		return L_1;
-	}
-
-IL_000e:
-	{
-		String_t* L_2 = __this->___dataType_0;
-		return L_2;
-	}
-}
-// System.String System.Xml.Serialization.XmlArrayItemAttribute::get_ElementName()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlArrayItemAttribute_get_ElementName_m2882B401E27852A6CC2129A6B0CBD8DAE7EE6677 (XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* __this, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&String_t_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		String_t* L_0 = __this->___elementName_1;
-		if (L_0)
-		{
-			goto IL_000e;
-		}
-	}
-	{
-		String_t* L_1 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->___Empty_6;
-		return L_1;
-	}
-
-IL_000e:
-	{
-		String_t* L_2 = __this->___elementName_1;
-		return L_2;
-	}
-}
-// System.Xml.Schema.XmlSchemaForm System.Xml.Serialization.XmlArrayItemAttribute::get_Form()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t XmlArrayItemAttribute_get_Form_mBBFA635F531B819D8E43AFF6110670FB383C1F33 (XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = __this->___form_2;
-		return L_0;
-	}
-}
-// System.String System.Xml.Serialization.XmlArrayItemAttribute::get_Namespace()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlArrayItemAttribute_get_Namespace_m18BA85AB457B0ED70ABDA1C89B32A10BA24D0113 (XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->___ns_3;
-		return L_0;
-	}
-}
-// System.Boolean System.Xml.Serialization.XmlArrayItemAttribute::get_IsNullable()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XmlArrayItemAttribute_get_IsNullable_mC7A6E27D7259FF7DD81A2C575EBD4578651857D8 (XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = __this->___isNullable_4;
-		return L_0;
-	}
-}
-// System.Boolean System.Xml.Serialization.XmlArrayItemAttribute::get_IsNullableSpecified()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XmlArrayItemAttribute_get_IsNullableSpecified_mDC4FABB753BA60A10CEED9BDD82011C47E14B4F0 (XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = __this->___isNullableSpecified_5;
-		return L_0;
-	}
-}
-// System.Type System.Xml.Serialization.XmlArrayItemAttribute::get_Type()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Type_t* XmlArrayItemAttribute_get_Type_m80FA2D88365496E4C5090375F0E014976B6B7417 (XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* __this, const RuntimeMethod* method) 
-{
-	{
-		Type_t* L_0 = __this->___type_7;
-		return L_0;
-	}
-}
-// System.Int32 System.Xml.Serialization.XmlArrayItemAttribute::get_NestingLevel()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t XmlArrayItemAttribute_get_NestingLevel_mE927341768913F399DAB59E37BB38EB4B5CF33ED (XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = __this->___nestingLevel_6;
-		return L_0;
-	}
-}
-// System.Void System.Xml.Serialization.XmlArrayItemAttribute::AddKeyHash(System.Text.StringBuilder)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlArrayItemAttribute_AddKeyHash_m899C82648223097CA3798612D04E7C0E6D8DC440 (XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* __this, StringBuilder_t* ___sb0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&XmlSchemaForm_tC5DCA5084B752EA562D9EB206F7F1C283BF4566B_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral9B54B99D2D01A816F2DDC997E399877B2A8DB19C);
-		s_Il2CppMethodInitialized = true;
-	}
-	int32_t V_0 = 0;
-	{
-		StringBuilder_t* L_0 = ___sb0;
-		NullCheck(L_0);
-		StringBuilder_t* L_1;
-		L_1 = StringBuilder_Append_m08904D74E0C78E5F36DCD9C9303BDD07886D9F7D(L_0, _stringLiteral9B54B99D2D01A816F2DDC997E399877B2A8DB19C, NULL);
-		StringBuilder_t* L_2 = ___sb0;
-		String_t* L_3 = __this->___ns_3;
-		KeyHelper_AddField_m768E2F45F0F3BF4B11D640BE8CCB308BA9FCE439(L_2, 1, L_3, NULL);
-		StringBuilder_t* L_4 = ___sb0;
-		String_t* L_5 = __this->___elementName_1;
-		KeyHelper_AddField_m768E2F45F0F3BF4B11D640BE8CCB308BA9FCE439(L_4, 2, L_5, NULL);
-		StringBuilder_t* L_6 = ___sb0;
-		int32_t* L_7 = (&__this->___form_2);
-		Il2CppFakeBox<int32_t> L_8(XmlSchemaForm_tC5DCA5084B752EA562D9EB206F7F1C283BF4566B_il2cpp_TypeInfo_var, L_7);
-		String_t* L_9;
-		L_9 = Enum_ToString_m946B0B83C4470457D0FF555D862022C72BB55741((Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2*)(&L_8), NULL);
-		V_0 = 0;
-		Il2CppFakeBox<int32_t> L_10(XmlSchemaForm_tC5DCA5084B752EA562D9EB206F7F1C283BF4566B_il2cpp_TypeInfo_var, (&V_0));
-		String_t* L_11;
-		L_11 = Enum_ToString_m946B0B83C4470457D0FF555D862022C72BB55741((Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2*)(&L_10), NULL);
-		KeyHelper_AddField_m8D6784F8A282272797904301802EDF06F12FBD8E(L_6, 3, L_9, L_11, NULL);
-		StringBuilder_t* L_12 = ___sb0;
-		bool L_13 = __this->___isNullable_4;
-		KeyHelper_AddField_m78047BE7001905F258ACFD9EE9591C0FB91346B0(L_12, 4, L_13, (bool)1, NULL);
-		StringBuilder_t* L_14 = ___sb0;
-		String_t* L_15 = __this->___dataType_0;
-		KeyHelper_AddField_m768E2F45F0F3BF4B11D640BE8CCB308BA9FCE439(L_14, 5, L_15, NULL);
-		StringBuilder_t* L_16 = ___sb0;
-		int32_t L_17 = __this->___nestingLevel_6;
-		KeyHelper_AddField_m81821A6F1695929FBE2ABE69CE4243B0694ACB93(L_16, 6, L_17, 0, NULL);
-		StringBuilder_t* L_18 = ___sb0;
-		Type_t* L_19 = __this->___type_7;
-		KeyHelper_AddField_m0F0BB7334D857FD3C3C45CED49E29A85D13CD966(L_18, 7, L_19, NULL);
-		StringBuilder_t* L_20 = ___sb0;
-		NullCheck(L_20);
-		StringBuilder_t* L_21;
-		L_21 = StringBuilder_Append_m71228B30F05724CD2CD96D9611DCD61BFB96A6E1(L_20, ((int32_t)124), NULL);
-		return;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -5379,32 +4780,6 @@ IL_000e:
 		return L_2;
 	}
 }
-// System.Void System.Xml.Serialization.XmlAttributeAttribute::set_DataType(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlAttributeAttribute_set_DataType_m8F11C42E4B1FACC380B885DAB91D1A3FEBF7C70B (XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* __this, String_t* ___value0, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = ___value0;
-		__this->___dataType_1 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___dataType_1), (void*)L_0);
-		return;
-	}
-}
-// System.Xml.Schema.XmlSchemaForm System.Xml.Serialization.XmlAttributeAttribute::get_Form()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t XmlAttributeAttribute_get_Form_m49A9D062DB2C8CED21041D3FBF941A7C3A4E06BD (XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = __this->___form_3;
-		return L_0;
-	}
-}
-// System.String System.Xml.Serialization.XmlAttributeAttribute::get_Namespace()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlAttributeAttribute_get_Namespace_m66DDB72831548F3B23A4A68E11826303CEE42835 (XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->___ns_4;
-		return L_0;
-	}
-}
 // System.Void System.Xml.Serialization.XmlAttributeAttribute::AddKeyHash(System.Text.StringBuilder)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlAttributeAttribute_AddKeyHash_m2B3F08466F301B25ED496A73DB10AFA5645BBC26 (XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* __this, StringBuilder_t* ___sb0, const RuntimeMethod* method) 
 {
@@ -5511,7 +4886,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D
 		L_3 = XmlAttributeOverrides_GetKey_m2A1C08CCB0F0A887808DF7DE7440609181A9B383(__this, L_1, L_2, NULL);
 		NullCheck(L_0);
 		RuntimeObject* L_4;
-		L_4 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(29 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_0, L_3);
+		L_4 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(28 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_0, L_3);
 		return ((XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739*)CastclassClass((RuntimeObject*)L_4, XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739_il2cpp_TypeInfo_var));
 	}
 }
@@ -5569,7 +4944,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlAttributeOverrides_AddKeyHash_mD14920
 		Hashtable_tEFC3B6496E6747787D8BB761B51F2AE3A8CFFE2D* L_2 = __this->___overrides_0;
 		NullCheck(L_2);
 		RuntimeObject* L_3;
-		L_3 = VirtualFuncInvoker0< RuntimeObject* >::Invoke(31 /* System.Collections.IDictionaryEnumerator System.Collections.Hashtable::GetEnumerator() */, L_2);
+		L_3 = VirtualFuncInvoker0< RuntimeObject* >::Invoke(30 /* System.Collections.IDictionaryEnumerator System.Collections.Hashtable::GetEnumerator() */, L_2);
 		V_0 = L_3;
 	}
 	{
@@ -5612,10 +4987,8 @@ IL_001a_1:
 				RuntimeObject* L_8;
 				L_8 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Object System.Collections.IEnumerator::get_Current() */, IEnumerator_t7B609C2FFA6EB5167D9C62A0C32A21DE2F666DAA_il2cpp_TypeInfo_var, L_7);
 				V_1 = ((*(DictionaryEntry_t171080F37B311C25AA9E75888F9C9D703FA721BB*)((DictionaryEntry_t171080F37B311C25AA9E75888F9C9D703FA721BB*)(DictionaryEntry_t171080F37B311C25AA9E75888F9C9D703FA721BB*)UnBox(L_8, DictionaryEntry_t171080F37B311C25AA9E75888F9C9D703FA721BB_il2cpp_TypeInfo_var))));
-				RuntimeObject* L_9;
-				L_9 = DictionaryEntry_get_Value_m75FD18FE968AE131F28AA2CB0DF4895EBA39075E_inline((&V_1), NULL);
-				RuntimeObject* L_10;
-				L_10 = DictionaryEntry_get_Key_m09845C00732E530E6FCB9042079E90D3912215FE_inline((&V_1), NULL);
+				RuntimeObject* L_9 = (&V_1)->____value_1;
+				RuntimeObject* L_10 = (&V_1)->____key_0;
 				V_2 = ((RuntimeObject*)IsInst((RuntimeObject*)L_10, IFormattable_t235A539BD9771E1E118DB99384BA8385D2F971CA_il2cpp_TypeInfo_var));
 				StringBuilder_t* L_11 = ___sb0;
 				RuntimeObject* L_12 = V_2;
@@ -5629,8 +5002,7 @@ IL_001a_1:
 				}
 			}
 			{
-				RuntimeObject* L_13;
-				L_13 = DictionaryEntry_get_Key_m09845C00732E530E6FCB9042079E90D3912215FE_inline((&V_1), NULL);
+				RuntimeObject* L_13 = (&V_1)->____key_0;
 				NullCheck(L_13);
 				String_t* L_14;
 				L_14 = VirtualFuncInvoker0< String_t* >::Invoke(3 /* System.String System.Object::ToString() */, L_13);
@@ -5912,8 +5284,7 @@ IL_00e7:
 	{
 		RuntimeObject* L_27 = V_2;
 		NullCheck(((DefaultValueAttribute_tD45612CBB8D83D43A266980AB11467557BF753CC*)CastclassClass((RuntimeObject*)L_27, DefaultValueAttribute_tD45612CBB8D83D43A266980AB11467557BF753CC_il2cpp_TypeInfo_var)));
-		RuntimeObject* L_28;
-		L_28 = VirtualFuncInvoker0< RuntimeObject* >::Invoke(7 /* System.Object System.ComponentModel.DefaultValueAttribute::get_Value() */, ((DefaultValueAttribute_tD45612CBB8D83D43A266980AB11467557BF753CC*)CastclassClass((RuntimeObject*)L_27, DefaultValueAttribute_tD45612CBB8D83D43A266980AB11467557BF753CC_il2cpp_TypeInfo_var)));
+		RuntimeObject* L_28 = ((DefaultValueAttribute_tD45612CBB8D83D43A266980AB11467557BF753CC*)CastclassClass((RuntimeObject*)L_27, DefaultValueAttribute_tD45612CBB8D83D43A266980AB11467557BF753CC_il2cpp_TypeInfo_var))->____value_0;
 		__this->___xmlDefaultValue_6 = L_28;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___xmlDefaultValue_6), (void*)L_28);
 		goto IL_0199;
@@ -6078,110 +5449,6 @@ IL_019d:
 IL_0215:
 	{
 		return;
-	}
-}
-// System.Xml.Serialization.XmlAnyAttributeAttribute System.Xml.Serialization.XmlAttributes::get_XmlAnyAttribute()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlAnyAttributeAttribute_t3B95B49DDDDA70D79EBC045F925BDE39DFB0E96A* XmlAttributes_get_XmlAnyAttribute_m3116C8A13795C5AEB267B6C78EE406EB7F1C79D7 (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlAnyAttributeAttribute_t3B95B49DDDDA70D79EBC045F925BDE39DFB0E96A* L_0 = __this->___xmlAnyAttribute_0;
-		return L_0;
-	}
-}
-// System.Xml.Serialization.XmlAnyElementAttributes System.Xml.Serialization.XmlAttributes::get_XmlAnyElements()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlAnyElementAttributes_t8709780E4C7D8E9B453BB4AE51A3CFBC462286CF* XmlAttributes_get_XmlAnyElements_m3216504EBB4407E5FF8149C2A95CDF7826C5043C (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlAnyElementAttributes_t8709780E4C7D8E9B453BB4AE51A3CFBC462286CF* L_0 = __this->___xmlAnyElements_1;
-		return L_0;
-	}
-}
-// System.Xml.Serialization.XmlArrayAttribute System.Xml.Serialization.XmlAttributes::get_XmlArray()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* XmlAttributes_get_XmlArray_m47C136BD864E01CEF392D4556950383154E21CC1 (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_0 = __this->___xmlArray_2;
-		return L_0;
-	}
-}
-// System.Xml.Serialization.XmlArrayItemAttributes System.Xml.Serialization.XmlAttributes::get_XmlArrayItems()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlArrayItemAttributes_tD468A7CCAF036962F37A7CDDDE042A6258D03513* XmlAttributes_get_XmlArrayItems_mA3EA68D61FCFD9DBAD4175F48035F95AC10EDB6E (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlArrayItemAttributes_tD468A7CCAF036962F37A7CDDDE042A6258D03513* L_0 = __this->___xmlArrayItems_3;
-		return L_0;
-	}
-}
-// System.Xml.Serialization.XmlAttributeAttribute System.Xml.Serialization.XmlAttributes::get_XmlAttribute()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* XmlAttributes_get_XmlAttribute_m44681566D98881832A9FD898A985552CFF4699F7 (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* L_0 = __this->___xmlAttribute_4;
-		return L_0;
-	}
-}
-// System.Xml.Serialization.XmlChoiceIdentifierAttribute System.Xml.Serialization.XmlAttributes::get_XmlChoiceIdentifier()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlChoiceIdentifierAttribute_t1DF770FBF01EBD518F55C363C703F86A7712301E* XmlAttributes_get_XmlChoiceIdentifier_mA6096A2AFE2439889FA8F48E22AD7335C9B7EE45 (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlChoiceIdentifierAttribute_t1DF770FBF01EBD518F55C363C703F86A7712301E* L_0 = __this->___xmlChoiceIdentifier_5;
-		return L_0;
-	}
-}
-// System.Object System.Xml.Serialization.XmlAttributes::get_XmlDefaultValue()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlAttributes_get_XmlDefaultValue_m24022111D30B964CF2DDE2EC6ACC870DB4BA7ED1 (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) 
-{
-	{
-		RuntimeObject* L_0 = __this->___xmlDefaultValue_6;
-		return L_0;
-	}
-}
-// System.Xml.Serialization.XmlElementAttributes System.Xml.Serialization.XmlAttributes::get_XmlElements()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* XmlAttributes_get_XmlElements_m416689A3226C3C399772C0E9E618DC1B61E2EB89 (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* L_0 = __this->___xmlElements_7;
-		return L_0;
-	}
-}
-// System.Boolean System.Xml.Serialization.XmlAttributes::get_XmlIgnore()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XmlAttributes_get_XmlIgnore_m817F5C7648E0CADEBE452A1EF3E59A0D07A80627 (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = __this->___xmlIgnore_9;
-		return L_0;
-	}
-}
-// System.Boolean System.Xml.Serialization.XmlAttributes::get_Xmlns()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XmlAttributes_get_Xmlns_m470230B52FC047B9820991B287C46CFACAACBB33 (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = __this->___xmlns_10;
-		return L_0;
-	}
-}
-// System.Xml.Serialization.XmlRootAttribute System.Xml.Serialization.XmlAttributes::get_XmlRoot()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* XmlAttributes_get_XmlRoot_m72B3B5B4B3D50069A4D9CEB7EEC08EF4E6A51EEC (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* L_0 = __this->___xmlRoot_11;
-		return L_0;
-	}
-}
-// System.Xml.Serialization.XmlTextAttribute System.Xml.Serialization.XmlAttributes::get_XmlText()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTextAttribute_tAA8BE9BA759F78BB4CDF00D3848B7746C0EDEFE0* XmlAttributes_get_XmlText_m021CE7CB4BE20DEE5FC8FAE724015FF2C4BDFD1B (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlTextAttribute_tAA8BE9BA759F78BB4CDF00D3848B7746C0EDEFE0* L_0 = __this->___xmlText_12;
-		return L_0;
-	}
-}
-// System.Xml.Serialization.XmlTypeAttribute System.Xml.Serialization.XmlAttributes::get_XmlType()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* XmlAttributes_get_XmlType_m1DDCEC132704F0A2C74E2C1C0EC5194BBC72BE0F (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* L_0 = __this->___xmlType_13;
-		return L_0;
 	}
 }
 // System.Void System.Xml.Serialization.XmlAttributes::AddKeyHash(System.Text.StringBuilder)
@@ -6397,8 +5664,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1
 	memset((&V_0), 0, sizeof(V_0));
 	{
 		il2cpp_codegen_initobj((&V_0), sizeof(Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28));
-		XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* L_0;
-		L_0 = XmlAttributes_get_XmlElements_m416689A3226C3C399772C0E9E618DC1B61E2EB89_inline(__this, NULL);
+		XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* L_0 = __this->___xmlElements_7;
 		NullCheck(L_0);
 		int32_t L_1;
 		L_1 = CollectionBase_get_Count_m2BD48A6DDD376554A7956E4B26EC27F9F1E43C72(L_0, NULL);
@@ -6408,8 +5674,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1
 		}
 	}
 	{
-		XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* L_2;
-		L_2 = XmlAttributes_get_XmlElements_m416689A3226C3C399772C0E9E618DC1B61E2EB89_inline(__this, NULL);
+		XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* L_2 = __this->___xmlElements_7;
 		NullCheck(L_2);
 		int32_t L_3;
 		L_3 = XmlElementAttributes_get_Order_mAE0BF907973526BBAF7AAF9CACD9CDD665624215(L_2, NULL);
@@ -6419,27 +5684,23 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1
 
 IL_002a:
 	{
-		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_4;
-		L_4 = XmlAttributes_get_XmlArray_m47C136BD864E01CEF392D4556950383154E21CC1_inline(__this, NULL);
+		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_4 = __this->___xmlArray_2;
 		if (!L_4)
 		{
 			goto IL_0046;
 		}
 	}
 	{
-		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_5;
-		L_5 = XmlAttributes_get_XmlArray_m47C136BD864E01CEF392D4556950383154E21CC1_inline(__this, NULL);
+		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_5 = __this->___xmlArray_2;
 		NullCheck(L_5);
-		int32_t L_6;
-		L_6 = XmlArrayAttribute_get_Order_m82A05D0B48CDF77EEAC644B324916768C3DCC219_inline(L_5, NULL);
+		int32_t L_6 = L_5->___order_4;
 		Nullable_1__ctor_m141FA88563AC0B5179132FB929EABD02C47FF703((&V_0), L_6, Nullable_1__ctor_m141FA88563AC0B5179132FB929EABD02C47FF703_RuntimeMethod_var);
 		goto IL_0066;
 	}
 
 IL_0046:
 	{
-		XmlAnyElementAttributes_t8709780E4C7D8E9B453BB4AE51A3CFBC462286CF* L_7;
-		L_7 = XmlAttributes_get_XmlAnyElements_m3216504EBB4407E5FF8149C2A95CDF7826C5043C_inline(__this, NULL);
+		XmlAnyElementAttributes_t8709780E4C7D8E9B453BB4AE51A3CFBC462286CF* L_7 = __this->___xmlAnyElements_1;
 		NullCheck(L_7);
 		int32_t L_8;
 		L_8 = CollectionBase_get_Count_m2BD48A6DDD376554A7956E4B26EC27F9F1E43C72(L_7, NULL);
@@ -6449,8 +5710,7 @@ IL_0046:
 		}
 	}
 	{
-		XmlAnyElementAttributes_t8709780E4C7D8E9B453BB4AE51A3CFBC462286CF* L_9;
-		L_9 = XmlAttributes_get_XmlAnyElements_m3216504EBB4407E5FF8149C2A95CDF7826C5043C_inline(__this, NULL);
+		XmlAnyElementAttributes_t8709780E4C7D8E9B453BB4AE51A3CFBC462286CF* L_9 = __this->___xmlAnyElements_1;
 		NullCheck(L_9);
 		int32_t L_10;
 		L_10 = XmlAnyElementAttributes_get_Order_m01A17B17DAC7BFCE5C2B854C9B4751583480A986(L_9, NULL);
@@ -6469,7 +5729,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t XmlAttributes_get_SortableOrder_m3D4F
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Nullable_1_get_HasValue_mCF2FD8B3055FA87FC9C504F2122B3B0FAEDE3EC9_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Nullable_1_get_Value_m0DF3B826A745419D26A168689AEB4BE6F8698ECA_RuntimeMethod_var);
 		s_Il2CppMethodInitialized = true;
 	}
@@ -6479,8 +5738,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t XmlAttributes_get_SortableOrder_m3D4F
 		Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 L_0;
 		L_0 = XmlAttributes_get_Order_mFDA027D8E65B6FA40F5D935825673C832309FF28(__this, NULL);
 		V_0 = L_0;
-		bool L_1;
-		L_1 = Nullable_1_get_HasValue_mCF2FD8B3055FA87FC9C504F2122B3B0FAEDE3EC9_inline((&V_0), Nullable_1_get_HasValue_mCF2FD8B3055FA87FC9C504F2122B3B0FAEDE3EC9_RuntimeMethod_var);
+		bool L_1 = (&V_0)->___hasValue_0;
 		if (L_1)
 		{
 			goto IL_0016;
@@ -6883,8 +6141,7 @@ IL_0005:
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_1 = ___type0;
 		NullCheck(L_1);
-		String_t* L_2;
-		L_2 = TypeData_get_XmlType_m06749C1B19C57EB8649CBCD9B106C014DF511453_inline(L_1, NULL);
+		String_t* L_2 = L_1->___elementName_1;
 		V_0 = L_2;
 		String_t* L_3 = V_0;
 		uint32_t L_4;
@@ -7723,8 +6980,7 @@ IL_0005:
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_1 = ___type0;
 		NullCheck(L_1);
-		String_t* L_2;
-		L_2 = TypeData_get_XmlType_m06749C1B19C57EB8649CBCD9B106C014DF511453_inline(L_1, NULL);
+		String_t* L_2 = L_1->___elementName_1;
 		V_0 = L_2;
 		String_t* L_3 = V_0;
 		uint32_t L_4;
@@ -8481,8 +7737,7 @@ IL_0405:
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_151 = ___type0;
 		NullCheck(L_151);
-		Type_t* L_152;
-		L_152 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_151, NULL);
+		Type_t* L_152 = L_151->___type_0;
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		bool L_153;
 		L_153 = Type_op_Inequality_m83209C7BB3C05DFBEA3B6199B0BEFE8037301172(L_152, (Type_t*)NULL, NULL);
@@ -8495,8 +7750,7 @@ IL_0405:
 		String_t* L_154 = ___value1;
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_155 = ___type0;
 		NullCheck(L_155);
-		Type_t* L_156;
-		L_156 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_155, NULL);
+		Type_t* L_156 = L_155->___type_0;
 		il2cpp_codegen_runtime_class_init_inline(Convert_t7097FF336D592F7C06D88A98349A44646F91EFFC_il2cpp_TypeInfo_var);
 		RuntimeObject* L_157;
 		L_157 = Convert_ChangeType_m2AA053891B5D1BD5CA7689B72EE5ADC95CD3E14B(L_154, L_156, (RuntimeObject*)NULL, NULL);
@@ -8654,18 +7908,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlCustomFormatter__cctor_m66D04E23D84AE
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Void System.Xml.Serialization.XmlElementAttribute::.ctor(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlElementAttribute__ctor_mDDADAAD04CDE2A8EA714357DF5E42A9B76C9822D (XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* __this, String_t* ___elementName0, const RuntimeMethod* method) 
-{
-	{
-		__this->___order_6 = (-1);
-		Attribute__ctor_m79ED1BF1EE36D1E417BA89A0D9F91F8AAD8D19E2(__this, NULL);
-		String_t* L_0 = ___elementName0;
-		__this->___elementName_1 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___elementName_1), (void*)L_0);
-		return;
-	}
-}
 // System.Void System.Xml.Serialization.XmlElementAttribute::.ctor(System.String,System.Type)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlElementAttribute__ctor_m922E7D34E93F4105165AE89660751F73A20742B6 (XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* __this, String_t* ___elementName0, Type_t* ___type1, const RuntimeMethod* method) 
 {
@@ -8733,46 +7975,6 @@ IL_000e:
 	{
 		String_t* L_2 = __this->___elementName_1;
 		return L_2;
-	}
-}
-// System.Xml.Schema.XmlSchemaForm System.Xml.Serialization.XmlElementAttribute::get_Form()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t XmlElementAttribute_get_Form_mAB6C265C412AD6BA37FF7802EB207C726F3ADADC (XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = __this->___form_2;
-		return L_0;
-	}
-}
-// System.String System.Xml.Serialization.XmlElementAttribute::get_Namespace()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlElementAttribute_get_Namespace_m79825FA7B795B8D0FF3E71637AEB426DC3AFB1FA (XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->___ns_3;
-		return L_0;
-	}
-}
-// System.Boolean System.Xml.Serialization.XmlElementAttribute::get_IsNullable()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XmlElementAttribute_get_IsNullable_mC31D59FDBE93193FDF0409AC0DC191E8B11A387F (XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = __this->___isNullable_4;
-		return L_0;
-	}
-}
-// System.Int32 System.Xml.Serialization.XmlElementAttribute::get_Order()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t XmlElementAttribute_get_Order_mCF42C8462D6BAE16562CD7E16E56DD5BBD56A34F (XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = __this->___order_6;
-		return L_0;
-	}
-}
-// System.Type System.Xml.Serialization.XmlElementAttribute::get_Type()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Type_t* XmlElementAttribute_get_Type_m3B355841D7F13F4CD84F8C3ED4D28917BB170CCB (XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* __this, const RuntimeMethod* method) 
-{
-	{
-		Type_t* L_0 = __this->___type_5;
-		return L_0;
 	}
 }
 // System.Void System.Xml.Serialization.XmlElementAttribute::AddKeyHash(System.Text.StringBuilder)
@@ -8994,8 +8196,7 @@ IL_0009_1:
 				V_1 = ((XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5*)CastclassClass((RuntimeObject*)L_5, XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5_il2cpp_TypeInfo_var));
 				XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* L_6 = V_1;
 				NullCheck(L_6);
-				int32_t L_7;
-				L_7 = XmlElementAttribute_get_Order_mCF42C8462D6BAE16562CD7E16E56DD5BBD56A34F_inline(L_6, NULL);
+				int32_t L_7 = L_6->___order_6;
 				if ((((int32_t)L_7) < ((int32_t)0)))
 				{
 					goto IL_0027_1;
@@ -9004,8 +8205,7 @@ IL_0009_1:
 			{
 				XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* L_8 = V_1;
 				NullCheck(L_8);
-				int32_t L_9;
-				L_9 = XmlElementAttribute_get_Order_mCF42C8462D6BAE16562CD7E16E56DD5BBD56A34F_inline(L_8, NULL);
+				int32_t L_9 = L_8->___order_6;
 				V_2 = L_9;
 				goto IL_0044;
 			}
@@ -9069,14 +8269,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlEnumAttribute__ctor_m8A6E7F96ED9724DA
 		return;
 	}
 }
-// System.String System.Xml.Serialization.XmlEnumAttribute::get_Name()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlEnumAttribute_get_Name_m13FF8A329D3569F4C785968B3928A1554EC9CCF3 (XmlEnumAttribute_t06EEAB820B4C664382E2A018C682E64D4B10E695* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->___name_0;
-		return L_0;
-	}
-}
 // System.Void System.Xml.Serialization.XmlEnumAttribute::AddKeyHash(System.Text.StringBuilder)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlEnumAttribute_AddKeyHash_mBD6CCFBA2AF5A0E9FA46F35AF30E1DFF8CE2217C (XmlEnumAttribute_t06EEAB820B4C664382E2A018C682E64D4B10E695* __this, StringBuilder_t* ___sb0, const RuntimeMethod* method) 
 {
@@ -9125,14 +8317,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlIgnoreAttribute__ctor_m864B47EB1DF49D
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Type System.Xml.Serialization.XmlIncludeAttribute::get_Type()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Type_t* XmlIncludeAttribute_get_Type_m933A769AE46F8B8FE3612605D6B0E890AE3A1EDD (XmlIncludeAttribute_t444D78BD01B445F31C9E0828BB2EEB88C0BDB736* __this, const RuntimeMethod* method) 
-{
-	{
-		Type_t* L_0 = __this->___type_0;
-		return L_0;
-	}
-}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -9153,93 +8337,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlMapping__ctor_mC78EC821A5F29E9EFEE0DE
 		__this->____namespace_5 = L_1;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____namespace_5), (void*)L_1);
 		return;
-	}
-}
-// System.String System.Xml.Serialization.XmlMapping::get_ElementName()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlMapping_get_ElementName_m2BDBF7797A1F38972A4355CF694E0D468B2A9FC0 (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->____elementName_4;
-		return L_0;
-	}
-}
-// System.String System.Xml.Serialization.XmlMapping::get_Namespace()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlMapping_get_Namespace_m196651C91FB3C3442AC616C977345E89450F024F (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->____namespace_5;
-		return L_0;
-	}
-}
-// System.Void System.Xml.Serialization.XmlMapping::SetKey(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlMapping_SetKey_m29AA9DBD54FBFC2C50A282C1D8C33547CD6D7686 (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, String_t* ___key0, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = ___key0;
-		__this->___key_6 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___key_6), (void*)L_0);
-		return;
-	}
-}
-// System.Xml.Serialization.ObjectMap System.Xml.Serialization.XmlMapping::get_ObjectMap()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* XmlMapping_get_ObjectMap_m63D1AEAC8EDD8396357898D337E350673A1E9003 (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, const RuntimeMethod* method) 
-{
-	{
-		ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* L_0 = __this->___map_0;
-		return L_0;
-	}
-}
-// System.Void System.Xml.Serialization.XmlMapping::set_ObjectMap(System.Xml.Serialization.ObjectMap)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlMapping_set_ObjectMap_m34272FA1B72AD9AE95E70C84665290EA6C0C0FCD (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* ___value0, const RuntimeMethod* method) 
-{
-	{
-		ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* L_0 = ___value0;
-		__this->___map_0 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___map_0), (void*)L_0);
-		return;
-	}
-}
-// System.Collections.ArrayList System.Xml.Serialization.XmlMapping::get_RelatedMaps()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* XmlMapping_get_RelatedMaps_m359C8ADACB98609060F82DCB82FB18E39274918C (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, const RuntimeMethod* method) 
-{
-	{
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_0 = __this->___relatedMaps_1;
-		return L_0;
-	}
-}
-// System.Void System.Xml.Serialization.XmlMapping::set_RelatedMaps(System.Collections.ArrayList)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlMapping_set_RelatedMaps_m6A89B4318BA4BA04099D938C36CA3A83AAC3BC44 (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* ___value0, const RuntimeMethod* method) 
-{
-	{
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_0 = ___value0;
-		__this->___relatedMaps_1 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___relatedMaps_1), (void*)L_0);
-		return;
-	}
-}
-// System.Xml.Serialization.SerializationFormat System.Xml.Serialization.XmlMapping::get_Format()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t XmlMapping_get_Format_mB9ACDCC642A2589BF20C9D02C2FA14F2C5D1C3F3 (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = __this->___format_2;
-		return L_0;
-	}
-}
-// System.Void System.Xml.Serialization.XmlMapping::set_Format(System.Xml.Serialization.SerializationFormat)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlMapping_set_Format_m84E84DA7E6927678C90D903E2A8599E6BF6748B9 (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, int32_t ___value0, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = ___value0;
-		__this->___format_2 = L_0;
-		return;
-	}
-}
-// System.Xml.Serialization.SerializationSource System.Xml.Serialization.XmlMapping::get_Source()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SerializationSource_t2F3A53A0FFC7BF8994CF332961FD3C0671E4A58C* XmlMapping_get_Source_mE7270AE0C3619E1C39600FDE01BC069D94BB6652 (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, const RuntimeMethod* method) 
-{
-	{
-		SerializationSource_t2F3A53A0FFC7BF8994CF332961FD3C0671E4A58C* L_0 = __this->___source_3;
-		return L_0;
 	}
 }
 #ifdef __clang__
@@ -9281,14 +8378,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t XmlMembersMapping_get_Count_mDAFF3965
 		XmlMemberMappingU5BU5D_t98364948854B71F146515DCCD516FFA9900EE7CF* L_0 = __this->____mapping_8;
 		NullCheck(L_0);
 		return ((int32_t)(((RuntimeArray*)L_0)->max_length));
-	}
-}
-// System.Boolean System.Xml.Serialization.XmlMembersMapping::get_HasWrapperElement()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XmlMembersMapping_get_HasWrapperElement_mE921652D9CEADD03E4BCC13C9AC26E457C640CE5 (XmlMembersMapping_t0D686C86E19B598F10E53AF79EC905A7E2BDB62C* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = __this->____hasWrapperElement_7;
-		return L_0;
 	}
 }
 #ifdef __clang__
@@ -9509,8 +8598,7 @@ IL_000e:
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_2 = ___typeData0;
 		NullCheck(L_2);
-		Type_t* L_3;
-		L_3 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_2, NULL);
+		Type_t* L_3 = L_2->___type_0;
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		bool L_4;
 		L_4 = Type_op_Equality_m99930A0E44E420A685FABA60E60BA1CC5FA0EBDC(L_3, (Type_t*)NULL, NULL);
@@ -9560,8 +8648,7 @@ IL_003c:
 		{
 			TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_10 = ___typeData0;
 			NullCheck(L_10);
-			int32_t L_11;
-			L_11 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_10, NULL);
+			int32_t L_11 = L_10->___sType_2;
 			V_1 = L_11;
 			int32_t L_12 = V_1;
 			switch (((int32_t)il2cpp_codegen_subtract((int32_t)L_12, 1)))
@@ -9666,8 +8753,7 @@ IL_00b1_1:
 		{
 			TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_37 = ___typeData0;
 			NullCheck(L_37);
-			Type_t* L_38;
-			L_38 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_37, NULL);
+			Type_t* L_38 = L_37->___type_0;
 			NullCheck(L_38);
 			String_t* L_39;
 			L_39 = VirtualFuncInvoker0< String_t* >::Invoke(26 /* System.String System.Type::get_FullName() */, L_38);
@@ -9684,20 +8770,21 @@ IL_00d1_1:
 			XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_42 = V_0;
 			TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_43 = ___typeData0;
 			NullCheck(L_43);
-			Type_t* L_44;
-			L_44 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_43, NULL);
+			Type_t* L_44 = L_43->___type_0;
 			NullCheck(L_44);
 			String_t* L_45;
 			L_45 = VirtualFuncInvoker0< String_t* >::Invoke(3 /* System.String System.Object::ToString() */, L_44);
 			NullCheck(L_42);
-			XmlMapping_SetKey_m29AA9DBD54FBFC2C50A282C1D8C33547CD6D7686_inline(L_42, L_45, NULL);
+			((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_42)->___key_6 = L_45;
+			Il2CppCodeGenWriteBarrier((void**)(&((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_42)->___key_6), (void*)L_45);
 			XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_46 = V_0;
 			ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_47 = __this->___relatedMaps_5;
 			NullCheck(L_46);
-			XmlMapping_set_RelatedMaps_m6A89B4318BA4BA04099D938C36CA3A83AAC3BC44_inline(L_46, L_47, NULL);
+			((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_46)->___relatedMaps_1 = L_47;
+			Il2CppCodeGenWriteBarrier((void**)(&((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_46)->___relatedMaps_1), (void*)L_47);
 			XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_48 = V_0;
 			NullCheck(L_48);
-			XmlMapping_set_Format_m84E84DA7E6927678C90D903E2A8599E6BF6748B9_inline(L_48, 1, NULL);
+			((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_48)->___format_2 = 1;
 			ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_49 = __this->___includedTypes_2;
 			if (!L_49)
 			{
@@ -9740,8 +8827,7 @@ CATCH_011c:
 		L_55 = CultureInfo_get_InvariantCulture_mD1E96DC845E34B10F78CB744B0CB5D7D63CEB1E6(NULL);
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_56 = ___typeData0;
 		NullCheck(L_56);
-		Type_t* L_57;
-		L_57 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_56, NULL);
+		Type_t* L_57 = L_56->___type_0;
 		NullCheck(L_57);
 		String_t* L_58;
 		L_58 = VirtualFuncInvoker0< String_t* >::Invoke(26 /* System.String System.Type::get_FullName() */, L_57);
@@ -9823,8 +8909,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_5 = ___typeData0;
 		NullCheck(L_5);
-		String_t* L_6;
-		L_6 = TypeData_get_XmlType_m06749C1B19C57EB8649CBCD9B106C014DF511453_inline(L_5, NULL);
+		String_t* L_6 = L_5->___elementName_1;
 		___defaultXmlType2 = L_6;
 	}
 
@@ -9850,8 +8935,7 @@ IL_0029:
 		XmlAttributeOverrides_tEE6AE9EC795CDEF943B35BA538C86222F905EB60* L_10 = __this->___attributeOverrides_1;
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_11 = ___typeData0;
 		NullCheck(L_11);
-		Type_t* L_12;
-		L_12 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_11, NULL);
+		Type_t* L_12 = L_11->___type_0;
 		NullCheck(L_10);
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_13;
 		L_13 = XmlAttributeOverrides_get_Item_m2FAD5994E54196E78D169E8CCAB3D71E817A1025(L_10, L_12, NULL);
@@ -9869,8 +8953,7 @@ IL_004c:
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_15 = ___typeData0;
 		NullCheck(L_15);
-		int32_t L_16;
-		L_16 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_15, NULL);
+		int32_t L_16 = L_15->___sType_2;
 		if ((!(((uint32_t)L_16) == ((uint32_t)1))))
 		{
 			goto IL_006f;
@@ -9879,8 +8962,7 @@ IL_004c:
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_17 = ___typeData0;
 		NullCheck(L_17);
-		String_t* L_18;
-		L_18 = TypeData_get_FullTypeName_m391893730DDFEE90F76197075F599FEA2E60BE43_inline(L_17, NULL);
+		String_t* L_18 = L_17->___fullTypeName_5;
 		String_t* L_19;
 		L_19 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral432809284A61C8EDD9D90D5ABBBAFC0B4DBC7FB7)), L_18, NULL);
 		InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB* L_20 = (InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB_il2cpp_TypeInfo_var)));
@@ -9900,8 +8982,7 @@ IL_006f:
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_22 = ___typeData0;
 		NullCheck(L_22);
-		Type_t* L_23;
-		L_23 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_22, NULL);
+		Type_t* L_23 = L_22->___type_0;
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_24 = (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739*)il2cpp_codegen_object_new(XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739_il2cpp_TypeInfo_var);
 		NullCheck(L_24);
 		XmlAttributes__ctor_mFEEAECF61BFB18BAA8D5767AF38A2D51D7CBC15F(L_24, L_23, NULL);
@@ -9912,8 +8993,7 @@ IL_0080:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_25 = V_5;
 		NullCheck(L_25);
-		XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* L_26;
-		L_26 = XmlAttributes_get_XmlRoot_m72B3B5B4B3D50069A4D9CEB7EEC08EF4E6A51EEC_inline(L_25, NULL);
+		XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* L_26 = L_25->___xmlRoot_11;
 		if (!L_26)
 		{
 			goto IL_0095;
@@ -9929,8 +9009,7 @@ IL_0080:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_28 = V_5;
 		NullCheck(L_28);
-		XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* L_29;
-		L_29 = XmlAttributes_get_XmlRoot_m72B3B5B4B3D50069A4D9CEB7EEC08EF4E6A51EEC_inline(L_28, NULL);
+		XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* L_29 = L_28->___xmlRoot_11;
 		___root1 = L_29;
 	}
 
@@ -9938,8 +9017,7 @@ IL_0095:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_30 = V_5;
 		NullCheck(L_30);
-		XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* L_31;
-		L_31 = XmlAttributes_get_XmlType_m1DDCEC132704F0A2C74E2C1C0EC5194BBC72BE0F_inline(L_30, NULL);
+		XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* L_31 = L_30->___xmlType_13;
 		if (!L_31)
 		{
 			goto IL_0102;
@@ -9948,11 +9026,9 @@ IL_0095:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_32 = V_5;
 		NullCheck(L_32);
-		XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* L_33;
-		L_33 = XmlAttributes_get_XmlType_m1DDCEC132704F0A2C74E2C1C0EC5194BBC72BE0F_inline(L_32, NULL);
+		XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* L_33 = L_32->___xmlType_13;
 		NullCheck(L_33);
-		String_t* L_34;
-		L_34 = XmlTypeAttribute_get_Namespace_m856E7657F70CD29601993200EEAA7D1771F0FCC9_inline(L_33, NULL);
+		String_t* L_34 = L_33->___ns_1;
 		if (!L_34)
 		{
 			goto IL_00bb;
@@ -9961,11 +9037,9 @@ IL_0095:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_35 = V_5;
 		NullCheck(L_35);
-		XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* L_36;
-		L_36 = XmlAttributes_get_XmlType_m1DDCEC132704F0A2C74E2C1C0EC5194BBC72BE0F_inline(L_35, NULL);
+		XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* L_36 = L_35->___xmlType_13;
 		NullCheck(L_36);
-		String_t* L_37;
-		L_37 = XmlTypeAttribute_get_Namespace_m856E7657F70CD29601993200EEAA7D1771F0FCC9_inline(L_36, NULL);
+		String_t* L_37 = L_36->___ns_1;
 		V_2 = L_37;
 		V_0 = (bool)1;
 	}
@@ -9974,8 +9048,7 @@ IL_00bb:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_38 = V_5;
 		NullCheck(L_38);
-		XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* L_39;
-		L_39 = XmlAttributes_get_XmlType_m1DDCEC132704F0A2C74E2C1C0EC5194BBC72BE0F_inline(L_38, NULL);
+		XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* L_39 = L_38->___xmlType_13;
 		NullCheck(L_39);
 		String_t* L_40;
 		L_40 = XmlTypeAttribute_get_TypeName_mB06CCEC7168EF5AF9B5286049A3E0571CAFDAD42(L_39, NULL);
@@ -9987,8 +9060,7 @@ IL_00bb:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_41 = V_5;
 		NullCheck(L_41);
-		XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* L_42;
-		L_42 = XmlAttributes_get_XmlType_m1DDCEC132704F0A2C74E2C1C0EC5194BBC72BE0F_inline(L_41, NULL);
+		XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* L_42 = L_41->___xmlType_13;
 		NullCheck(L_42);
 		String_t* L_43;
 		L_43 = XmlTypeAttribute_get_TypeName_mB06CCEC7168EF5AF9B5286049A3E0571CAFDAD42(L_42, NULL);
@@ -10003,8 +9075,7 @@ IL_00bb:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_46 = V_5;
 		NullCheck(L_46);
-		XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* L_47;
-		L_47 = XmlAttributes_get_XmlType_m1DDCEC132704F0A2C74E2C1C0EC5194BBC72BE0F_inline(L_46, NULL);
+		XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* L_47 = L_46->___xmlType_13;
 		NullCheck(L_47);
 		String_t* L_48;
 		L_48 = XmlTypeAttribute_get_TypeName_mB06CCEC7168EF5AF9B5286049A3E0571CAFDAD42(L_47, NULL);
@@ -10018,11 +9089,9 @@ IL_00f4:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_50 = V_5;
 		NullCheck(L_50);
-		XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* L_51;
-		L_51 = XmlAttributes_get_XmlType_m1DDCEC132704F0A2C74E2C1C0EC5194BBC72BE0F_inline(L_50, NULL);
+		XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* L_51 = L_50->___xmlType_13;
 		NullCheck(L_51);
-		bool L_52;
-		L_52 = XmlTypeAttribute_get_IncludeInSchema_mDC85FE2BB6FE9BE2A457394CEEF91341CAA84DA3_inline(L_51, NULL);
+		bool L_52 = L_51->___includeInSchema_0;
 		V_4 = L_52;
 	}
 
@@ -10042,8 +9111,7 @@ IL_0102:
 		String_t* L_56;
 		L_56 = XmlRootAttribute_get_ElementName_m8E9F810E8C3AEA05914EF8AEA47DCC31EDD7B2AE(L_55, NULL);
 		NullCheck(L_56);
-		int32_t L_57;
-		L_57 = String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline(L_56, NULL);
+		int32_t L_57 = L_56->____stringLength_4;
 		if (!L_57)
 		{
 			goto IL_0120;
@@ -10064,8 +9132,7 @@ IL_0120:
 	{
 		XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* L_61 = ___root1;
 		NullCheck(L_61);
-		String_t* L_62;
-		L_62 = XmlRootAttribute_get_Namespace_mFB0A84474D83BF812BA15DA2D59498384F202FE4_inline(L_61, NULL);
+		String_t* L_62 = L_61->___ns_3;
 		if (!L_62)
 		{
 			goto IL_0131;
@@ -10074,8 +9141,7 @@ IL_0120:
 	{
 		XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* L_63 = ___root1;
 		NullCheck(L_63);
-		String_t* L_64;
-		L_64 = XmlRootAttribute_get_Namespace_mFB0A84474D83BF812BA15DA2D59498384F202FE4_inline(L_63, NULL);
+		String_t* L_64 = L_63->___ns_3;
 		V_1 = L_64;
 		V_0 = (bool)1;
 	}
@@ -10084,8 +9150,7 @@ IL_0131:
 	{
 		XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* L_65 = ___root1;
 		NullCheck(L_65);
-		bool L_66;
-		L_66 = XmlRootAttribute_get_IsNullable_m2838215306230F5E93695672074B66ACC39E0092_inline(L_65, NULL);
+		bool L_66 = L_65->___isNullable_2;
 		V_6 = L_66;
 	}
 
@@ -10137,8 +9202,7 @@ IL_0150:
 		V_2 = G_B31_0;
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_75 = ___typeData0;
 		NullCheck(L_75);
-		int32_t L_76;
-		L_76 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_75, NULL);
+		int32_t L_76 = L_75->___sType_2;
 		V_8 = L_76;
 		int32_t L_77 = V_8;
 		if ((((int32_t)L_77) == ((int32_t)1)))
@@ -10256,11 +9320,11 @@ IL_01ac:
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_106 = V_7;
 		bool L_107 = V_4;
 		NullCheck(L_106);
-		XmlTypeMapping_set_IncludeInSchema_m4ADFB54087375F1E855F955A23FD6A75499C95CB_inline(L_106, L_107, NULL);
+		L_106->___includeInSchema_12 = L_107;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_108 = V_7;
 		bool L_109 = V_6;
 		NullCheck(L_108);
-		XmlTypeMapping_set_IsNullable_mD892626D9838297535D63A2CE20F0F0E93B0E06F_inline(L_108, L_109, NULL);
+		L_108->___isNullable_13 = L_109;
 		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_110 = __this->___relatedMaps_5;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_111 = V_7;
 		NullCheck(L_110);
@@ -10303,18 +9367,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Comparison_1_tD5FD2097BD5BC359CEADD4E997824D7A80DAC3ED_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Enumerator_Dispose_mD5F9D6967D1A793EC5B859797AF46CA0638E673C_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Enumerator_MoveNext_m1056299E91A99CDB7E024E6CE4FAEDD876131610_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Enumerator_get_Current_m9B13FBB007BA67B906DE032E50FEC11C7652193A_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ICollection_t37E7B9DC5B4EF41D190D607F92835BF1171C0E8E_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDisposable_t030E0496B4E0E4E4F086825007979AF51F7248C5_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IEnumerator_t7B609C2FFA6EB5167D9C62A0C32A21DE2F666DAA_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_GetEnumerator_m921F9E417EFD8F903D71509F8EFC4C4566D76CAC_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_Sort_mEAA5A22918AD0DC18FCF48568E89C0F5794B105A_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Nullable_1_GetValueOrDefault_m86E1210429A6EA0082CC7806DD638E8B4555F148_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Nullable_1__ctor_m4FAA8281CB4EFFD8B817734351FB3AC20A0CD6F5_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Nullable_1_get_HasValue_m6B76D139692C43B2AF7C695FAB044B16ACFAF355_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Nullable_1_get_HasValue_mCF2FD8B3055FA87FC9C504F2122B3B0FAEDE3EC9_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Nullable_1_get_Value_m0DF3B826A745419D26A168689AEB4BE6F8698ECA_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_0_0_0_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ReflectionHelper_tC70C244386E812ED1E4C85AAF108E85F470C68AB_il2cpp_TypeInfo_var);
@@ -10352,15 +9411,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB
 	ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* V_18 = NULL;
 	XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* V_19 = NULL;
 	il2cpp::utils::ExceptionSupportStack<RuntimeObject*, 1> __active_exceptions;
-	Comparison_1_tD5FD2097BD5BC359CEADD4E997824D7A80DAC3ED* G_B19_0 = NULL;
-	List_1_t935DFC399F3035CE8ADB557E0DC325268F81E472* G_B19_1 = NULL;
-	Comparison_1_tD5FD2097BD5BC359CEADD4E997824D7A80DAC3ED* G_B18_0 = NULL;
-	List_1_t935DFC399F3035CE8ADB557E0DC325268F81E472* G_B18_1 = NULL;
+	Comparison_1_tD5FD2097BD5BC359CEADD4E997824D7A80DAC3ED* G_B16_0 = NULL;
+	List_1_t935DFC399F3035CE8ADB557E0DC325268F81E472* G_B16_1 = NULL;
+	Comparison_1_tD5FD2097BD5BC359CEADD4E997824D7A80DAC3ED* G_B15_0 = NULL;
+	List_1_t935DFC399F3035CE8ADB557E0DC325268F81E472* G_B15_1 = NULL;
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_0 = ___typeData0;
 		NullCheck(L_0);
-		Type_t* L_1;
-		L_1 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_0, NULL);
+		Type_t* L_1 = L_0->___type_0;
 		V_0 = L_1;
 		bool L_2 = __this->___allowPrivateTypes_6;
 		if (L_2)
@@ -10426,8 +9484,7 @@ IL_0035:
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_24 = V_1;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_25 = V_1;
 		NullCheck(L_25);
-		String_t* L_26;
-		L_26 = XmlTypeMapping_get_XmlType_m5A30CB4EE3541CC1C65003757D5E743042846222_inline(L_25, NULL);
+		String_t* L_26 = L_25->___xmlType_7;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_27 = V_1;
 		NullCheck(L_27);
 		String_t* L_28;
@@ -10441,7 +9498,8 @@ IL_0035:
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_30 = V_1;
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_31 = V_2;
 		NullCheck(L_30);
-		XmlMapping_set_ObjectMap_m34272FA1B72AD9AE95E70C84665290EA6C0C0FCD_inline(L_30, L_31, NULL);
+		((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_30)->___map_0 = L_31;
+		Il2CppCodeGenWriteBarrier((void**)(&((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_30)->___map_0), (void*)L_31);
 		Type_t* L_32 = V_0;
 		List_1_t935DFC399F3035CE8ADB557E0DC325268F81E472* L_33;
 		L_33 = XmlReflectionImporter_GetReflectionMembers_mD6792F16E5A5CB03415A976ED3EAD616E5DA9256(__this, L_32, NULL);
@@ -10452,123 +9510,90 @@ IL_0035:
 		Enumerator_tC60126DAC7C21C3268F8444A555270DCD3F8CB3A L_35;
 		L_35 = List_1_GetEnumerator_m921F9E417EFD8F903D71509F8EFC4C4566D76CAC(L_34, List_1_GetEnumerator_m921F9E417EFD8F903D71509F8EFC4C4566D76CAC_RuntimeMethod_var);
 		V_5 = L_35;
+		goto IL_0109;
 	}
+
+IL_0092:
 	{
-		auto __finallyBlock = il2cpp::utils::Finally([&]
+		XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_36 = (&V_5)->____current_3;
+		NullCheck(L_36);
+		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_37;
+		L_37 = XmlReflectionMember_get_XmlAttributes_mCC188BF7A0827BC124D67F7BB86D6CC34F806952(L_36, NULL);
+		NullCheck(L_37);
+		Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 L_38;
+		L_38 = XmlAttributes_get_Order_mFDA027D8E65B6FA40F5D935825673C832309FF28(L_37, NULL);
+		V_6 = L_38;
+		bool L_39 = (&V_4)->___hasValue_0;
+		if (L_39)
 		{
-
-FINALLY_0114:
-			{// begin finally (depth: 1)
-				Enumerator_Dispose_mD5F9D6967D1A793EC5B859797AF46CA0638E673C((&V_5), Enumerator_Dispose_mD5F9D6967D1A793EC5B859797AF46CA0638E673C_RuntimeMethod_var);
-				return;
-			}// end finally (depth: 1)
-		});
-		try
-		{// begin try (depth: 1)
-			{
-				goto IL_0109_1;
-			}
-
-IL_0092_1:
-			{
-				XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_36;
-				L_36 = Enumerator_get_Current_m9B13FBB007BA67B906DE032E50FEC11C7652193A_inline((&V_5), Enumerator_get_Current_m9B13FBB007BA67B906DE032E50FEC11C7652193A_RuntimeMethod_var);
-				NullCheck(L_36);
-				XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_37;
-				L_37 = XmlReflectionMember_get_XmlAttributes_mCC188BF7A0827BC124D67F7BB86D6CC34F806952(L_36, NULL);
-				NullCheck(L_37);
-				Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 L_38;
-				L_38 = XmlAttributes_get_Order_mFDA027D8E65B6FA40F5D935825673C832309FF28(L_37, NULL);
-				V_6 = L_38;
-				bool L_39;
-				L_39 = Nullable_1_get_HasValue_m6B76D139692C43B2AF7C695FAB044B16ACFAF355_inline((&V_4), Nullable_1_get_HasValue_m6B76D139692C43B2AF7C695FAB044B16ACFAF355_RuntimeMethod_var);
-				if (L_39)
-				{
-					goto IL_00cd_1;
-				}
-			}
-			{
-				bool L_40;
-				L_40 = Nullable_1_get_HasValue_mCF2FD8B3055FA87FC9C504F2122B3B0FAEDE3EC9_inline((&V_6), Nullable_1_get_HasValue_mCF2FD8B3055FA87FC9C504F2122B3B0FAEDE3EC9_RuntimeMethod_var);
-				if (!L_40)
-				{
-					goto IL_0109_1;
-				}
-			}
-			{
-				int32_t L_41;
-				L_41 = Nullable_1_get_Value_m0DF3B826A745419D26A168689AEB4BE6F8698ECA((&V_6), Nullable_1_get_Value_m0DF3B826A745419D26A168689AEB4BE6F8698ECA_RuntimeMethod_var);
-				Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01 L_42;
-				memset((&L_42), 0, sizeof(L_42));
-				Nullable_1__ctor_m4FAA8281CB4EFFD8B817734351FB3AC20A0CD6F5((&L_42), (bool)((((int32_t)((((int32_t)L_41) < ((int32_t)0))? 1 : 0)) == ((int32_t)0))? 1 : 0), /*hidden argument*/Nullable_1__ctor_m4FAA8281CB4EFFD8B817734351FB3AC20A0CD6F5_RuntimeMethod_var);
-				V_4 = L_42;
-				goto IL_0109_1;
-			}
-
-IL_00cd_1:
-			{
-				bool L_43;
-				L_43 = Nullable_1_get_HasValue_mCF2FD8B3055FA87FC9C504F2122B3B0FAEDE3EC9_inline((&V_6), Nullable_1_get_HasValue_mCF2FD8B3055FA87FC9C504F2122B3B0FAEDE3EC9_RuntimeMethod_var);
-				if (!L_43)
-				{
-					goto IL_0109_1;
-				}
-			}
-			{
-				Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01 L_44 = V_4;
-				V_7 = L_44;
-				int32_t L_45;
-				L_45 = Nullable_1_get_Value_m0DF3B826A745419D26A168689AEB4BE6F8698ECA((&V_6), Nullable_1_get_Value_m0DF3B826A745419D26A168689AEB4BE6F8698ECA_RuntimeMethod_var);
-				V_8 = (bool)((((int32_t)((((int32_t)L_45) < ((int32_t)0))? 1 : 0)) == ((int32_t)0))? 1 : 0);
-				bool L_46;
-				L_46 = Nullable_1_GetValueOrDefault_m86E1210429A6EA0082CC7806DD638E8B4555F148_inline((&V_7), Nullable_1_GetValueOrDefault_m86E1210429A6EA0082CC7806DD638E8B4555F148_RuntimeMethod_var);
-				bool L_47 = V_8;
-				bool L_48;
-				L_48 = Nullable_1_get_HasValue_m6B76D139692C43B2AF7C695FAB044B16ACFAF355_inline((&V_7), Nullable_1_get_HasValue_m6B76D139692C43B2AF7C695FAB044B16ACFAF355_RuntimeMethod_var);
-				if (((int32_t)(((((int32_t)L_46) == ((int32_t)L_47))? 1 : 0)&(int32_t)L_48)))
-				{
-					goto IL_0109_1;
-				}
-			}
-			{
-				InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB* L_49 = (InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB_il2cpp_TypeInfo_var)));
-				NullCheck(L_49);
-				InvalidOperationException__ctor_mE4CB6F4712AB6D99A2358FBAE2E052B3EE976162(L_49, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral42073B4C2D04446C6E19D4601BE7F290195813C4)), NULL);
-				IL2CPP_RAISE_MANAGED_EXCEPTION(L_49, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&XmlReflectionImporter_ImportClassMapping_mE428971015FDEB313F3252FF1BD02C717D9938DC_RuntimeMethod_var)));
-			}
-
-IL_0109_1:
-			{
-				bool L_50;
-				L_50 = Enumerator_MoveNext_m1056299E91A99CDB7E024E6CE4FAEDD876131610((&V_5), Enumerator_MoveNext_m1056299E91A99CDB7E024E6CE4FAEDD876131610_RuntimeMethod_var);
-				if (L_50)
-				{
-					goto IL_0092_1;
-				}
-			}
-			{
-				goto IL_0122;
-			}
-		}// end try (depth: 1)
-		catch(Il2CppExceptionWrapper& e)
-		{
-			__finallyBlock.StoreException(e.ex);
+			goto IL_00cd;
 		}
 	}
+	{
+		bool L_40 = (&V_6)->___hasValue_0;
+		if (!L_40)
+		{
+			goto IL_0109;
+		}
+	}
+	{
+		int32_t L_41;
+		L_41 = Nullable_1_get_Value_m0DF3B826A745419D26A168689AEB4BE6F8698ECA((&V_6), Nullable_1_get_Value_m0DF3B826A745419D26A168689AEB4BE6F8698ECA_RuntimeMethod_var);
+		Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01 L_42;
+		memset((&L_42), 0, sizeof(L_42));
+		Nullable_1__ctor_m4FAA8281CB4EFFD8B817734351FB3AC20A0CD6F5((&L_42), (bool)((((int32_t)((((int32_t)L_41) < ((int32_t)0))? 1 : 0)) == ((int32_t)0))? 1 : 0), /*hidden argument*/Nullable_1__ctor_m4FAA8281CB4EFFD8B817734351FB3AC20A0CD6F5_RuntimeMethod_var);
+		V_4 = L_42;
+		goto IL_0109;
+	}
 
-IL_0122:
+IL_00cd:
+	{
+		bool L_43 = (&V_6)->___hasValue_0;
+		if (!L_43)
+		{
+			goto IL_0109;
+		}
+	}
+	{
+		Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01 L_44 = V_4;
+		V_7 = L_44;
+		int32_t L_45;
+		L_45 = Nullable_1_get_Value_m0DF3B826A745419D26A168689AEB4BE6F8698ECA((&V_6), Nullable_1_get_Value_m0DF3B826A745419D26A168689AEB4BE6F8698ECA_RuntimeMethod_var);
+		V_8 = (bool)((((int32_t)((((int32_t)L_45) < ((int32_t)0))? 1 : 0)) == ((int32_t)0))? 1 : 0);
+		bool L_46 = (&V_7)->___value_1;
+		bool L_47 = V_8;
+		bool L_48 = (&V_7)->___hasValue_0;
+		if (((int32_t)(((((int32_t)L_46) == ((int32_t)L_47))? 1 : 0)&(int32_t)L_48)))
+		{
+			goto IL_0109;
+		}
+	}
+	{
+		InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB* L_49 = (InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB_il2cpp_TypeInfo_var)));
+		NullCheck(L_49);
+		InvalidOperationException__ctor_mE4CB6F4712AB6D99A2358FBAE2E052B3EE976162(L_49, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral42073B4C2D04446C6E19D4601BE7F290195813C4)), NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_49, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&XmlReflectionImporter_ImportClassMapping_mE428971015FDEB313F3252FF1BD02C717D9938DC_RuntimeMethod_var)));
+	}
+
+IL_0109:
+	{
+		bool L_50;
+		L_50 = Enumerator_MoveNext_m1056299E91A99CDB7E024E6CE4FAEDD876131610((&V_5), Enumerator_MoveNext_m1056299E91A99CDB7E024E6CE4FAEDD876131610_RuntimeMethod_var);
+		if (L_50)
+		{
+			goto IL_0092;
+		}
+	}
 	{
 		Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01 L_51 = V_4;
 		V_7 = L_51;
 		V_8 = (bool)1;
-		bool L_52;
-		L_52 = Nullable_1_GetValueOrDefault_m86E1210429A6EA0082CC7806DD638E8B4555F148_inline((&V_7), Nullable_1_GetValueOrDefault_m86E1210429A6EA0082CC7806DD638E8B4555F148_RuntimeMethod_var);
+		bool L_52 = (&V_7)->___value_1;
 		bool L_53 = V_8;
-		bool L_54;
-		L_54 = Nullable_1_get_HasValue_m6B76D139692C43B2AF7C695FAB044B16ACFAF355_inline((&V_7), Nullable_1_get_HasValue_m6B76D139692C43B2AF7C695FAB044B16ACFAF355_RuntimeMethod_var);
+		bool L_54 = (&V_7)->___hasValue_0;
 		if (!((int32_t)(((((int32_t)L_52) == ((int32_t)L_53))? 1 : 0)&(int32_t)L_54)))
 		{
-			goto IL_0163;
+			goto IL_0153;
 		}
 	}
 	{
@@ -10576,13 +9601,13 @@ IL_0122:
 		il2cpp_codegen_runtime_class_init_inline(U3CU3Ec_tA49B5EA98D805D188FFC338455BCAECCDFF18E81_il2cpp_TypeInfo_var);
 		Comparison_1_tD5FD2097BD5BC359CEADD4E997824D7A80DAC3ED* L_56 = ((U3CU3Ec_tA49B5EA98D805D188FFC338455BCAECCDFF18E81_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_tA49B5EA98D805D188FFC338455BCAECCDFF18E81_il2cpp_TypeInfo_var))->___U3CU3E9__28_0_1;
 		Comparison_1_tD5FD2097BD5BC359CEADD4E997824D7A80DAC3ED* L_57 = L_56;
-		G_B18_0 = L_57;
-		G_B18_1 = L_55;
+		G_B15_0 = L_57;
+		G_B15_1 = L_55;
 		if (L_57)
 		{
-			G_B19_0 = L_57;
-			G_B19_1 = L_55;
-			goto IL_015e;
+			G_B16_0 = L_57;
+			G_B16_1 = L_55;
+			goto IL_014e;
 		}
 	}
 	{
@@ -10594,186 +9619,155 @@ IL_0122:
 		Comparison_1_tD5FD2097BD5BC359CEADD4E997824D7A80DAC3ED* L_60 = L_59;
 		((U3CU3Ec_tA49B5EA98D805D188FFC338455BCAECCDFF18E81_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_tA49B5EA98D805D188FFC338455BCAECCDFF18E81_il2cpp_TypeInfo_var))->___U3CU3E9__28_0_1 = L_60;
 		Il2CppCodeGenWriteBarrier((void**)(&((U3CU3Ec_tA49B5EA98D805D188FFC338455BCAECCDFF18E81_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_tA49B5EA98D805D188FFC338455BCAECCDFF18E81_il2cpp_TypeInfo_var))->___U3CU3E9__28_0_1), (void*)L_60);
-		G_B19_0 = L_60;
-		G_B19_1 = G_B18_1;
+		G_B16_0 = L_60;
+		G_B16_1 = G_B15_1;
 	}
 
-IL_015e:
+IL_014e:
 	{
-		NullCheck(G_B19_1);
-		List_1_Sort_mEAA5A22918AD0DC18FCF48568E89C0F5794B105A(G_B19_1, G_B19_0, List_1_Sort_mEAA5A22918AD0DC18FCF48568E89C0F5794B105A_RuntimeMethod_var);
+		NullCheck(G_B16_1);
+		List_1_Sort_mEAA5A22918AD0DC18FCF48568E89C0F5794B105A(G_B16_1, G_B16_0, List_1_Sort_mEAA5A22918AD0DC18FCF48568E89C0F5794B105A_RuntimeMethod_var);
 	}
 
-IL_0163:
+IL_0153:
 	{
 		List_1_t935DFC399F3035CE8ADB557E0DC325268F81E472* L_61 = V_3;
 		NullCheck(L_61);
 		Enumerator_tC60126DAC7C21C3268F8444A555270DCD3F8CB3A L_62;
 		L_62 = List_1_GetEnumerator_m921F9E417EFD8F903D71509F8EFC4C4566D76CAC(L_61, List_1_GetEnumerator_m921F9E417EFD8F903D71509F8EFC4C4566D76CAC_RuntimeMethod_var);
 		V_5 = L_62;
+		goto IL_0204;
 	}
+
+IL_0160:
 	{
-		auto __finallyBlock = il2cpp::utils::Finally([&]
+		XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_63 = (&V_5)->____current_3;
+		V_9 = L_63;
+		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_64 = V_1;
+		NullCheck(L_64);
+		String_t* L_65;
+		L_65 = XmlTypeMapping_get_XmlTypeNamespace_m9EF835B324606DBC55DF96AEFD62A9F4F7ED2B96(L_64, NULL);
+		V_10 = L_65;
+		XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_66 = V_9;
+		NullCheck(L_66);
+		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_67;
+		L_67 = XmlReflectionMember_get_XmlAttributes_mCC188BF7A0827BC124D67F7BB86D6CC34F806952(L_66, NULL);
+		NullCheck(L_67);
+		bool L_68 = L_67->___xmlIgnore_9;
+		if (L_68)
 		{
-
-FINALLY_0222:
-			{// begin finally (depth: 1)
-				Enumerator_Dispose_mD5F9D6967D1A793EC5B859797AF46CA0638E673C((&V_5), Enumerator_Dispose_mD5F9D6967D1A793EC5B859797AF46CA0638E673C_RuntimeMethod_var);
-				return;
-			}// end finally (depth: 1)
-		});
-		try
-		{// begin try (depth: 1)
-			{
-				goto IL_0214_1;
-			}
-
-IL_0170_1:
-			{
-				XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_63;
-				L_63 = Enumerator_get_Current_m9B13FBB007BA67B906DE032E50FEC11C7652193A_inline((&V_5), Enumerator_get_Current_m9B13FBB007BA67B906DE032E50FEC11C7652193A_RuntimeMethod_var);
-				V_9 = L_63;
-				XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_64 = V_1;
-				NullCheck(L_64);
-				String_t* L_65;
-				L_65 = XmlTypeMapping_get_XmlTypeNamespace_m9EF835B324606DBC55DF96AEFD62A9F4F7ED2B96(L_64, NULL);
-				V_10 = L_65;
-				XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_66 = V_9;
-				NullCheck(L_66);
-				XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_67;
-				L_67 = XmlReflectionMember_get_XmlAttributes_mCC188BF7A0827BC124D67F7BB86D6CC34F806952(L_66, NULL);
-				NullCheck(L_67);
-				bool L_68;
-				L_68 = XmlAttributes_get_XmlIgnore_m817F5C7648E0CADEBE452A1EF3E59A0D07A80627_inline(L_67, NULL);
-				if (L_68)
-				{
-					goto IL_0214_1;
-				}
-			}
-			{
-				XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_69 = V_9;
-				NullCheck(L_69);
-				Type_t* L_70;
-				L_70 = XmlReflectionMember_get_DeclaringType_mA84E638B63CD926ED1DB32628B7747DE0BA7F355_inline(L_69, NULL);
-				il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
-				bool L_71;
-				L_71 = Type_op_Inequality_m83209C7BB3C05DFBEA3B6199B0BEFE8037301172(L_70, (Type_t*)NULL, NULL);
-				if (!L_71)
-				{
-					goto IL_01d4_1;
-				}
-			}
-			{
-				XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_72 = V_9;
-				NullCheck(L_72);
-				Type_t* L_73;
-				L_73 = XmlReflectionMember_get_DeclaringType_mA84E638B63CD926ED1DB32628B7747DE0BA7F355_inline(L_72, NULL);
-				Type_t* L_74 = V_0;
-				il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
-				bool L_75;
-				L_75 = Type_op_Inequality_m83209C7BB3C05DFBEA3B6199B0BEFE8037301172(L_73, L_74, NULL);
-				if (!L_75)
-				{
-					goto IL_01d4_1;
-				}
-			}
-			{
-				XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_76 = V_9;
-				NullCheck(L_76);
-				Type_t* L_77;
-				L_77 = XmlReflectionMember_get_DeclaringType_mA84E638B63CD926ED1DB32628B7747DE0BA7F355_inline(L_76, NULL);
-				XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* L_78 = ___root1;
-				String_t* L_79 = ___defaultNamespace2;
-				XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_80;
-				L_80 = XmlReflectionImporter_ImportClassMapping_m435E0FBB161DB459B4E0C4FFB73916C45D5EED0D(__this, L_77, L_78, L_79, (bool)1, NULL);
-				V_11 = L_80;
-				XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_81 = V_11;
-				NullCheck(L_81);
-				bool L_82;
-				L_82 = XmlTypeMapping_get_HasXmlTypeNamespace_m461935579477604F7ECB9D989B49EF4621DF3FF8(L_81, NULL);
-				if (!L_82)
-				{
-					goto IL_01d4_1;
-				}
-			}
-			{
-				XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_83 = V_11;
-				NullCheck(L_83);
-				String_t* L_84;
-				L_84 = XmlTypeMapping_get_XmlTypeNamespace_m9EF835B324606DBC55DF96AEFD62A9F4F7ED2B96(L_83, NULL);
-				V_10 = L_84;
-			}
-
-IL_01d4_1:
-			{
-			}
-			try
-			{// begin try (depth: 2)
-				Type_t* L_85 = V_0;
-				XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_86 = V_9;
-				String_t* L_87 = V_10;
-				XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_88;
-				L_88 = XmlReflectionImporter_CreateMapMember_m079162A1618129963465EF4D1B1F734F11AEF41D(__this, L_85, L_86, L_87, NULL);
-				V_12 = L_88;
-				XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_89 = V_12;
-				Type_t* L_90 = V_0;
-				NullCheck(L_89);
-				XmlTypeMapMember_CheckOptionalValueType_mC3A9B15424B4E2F537CAD6602EA32522C47FC36B(L_89, L_90, NULL);
-				ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_91 = V_2;
-				XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_92 = V_12;
-				NullCheck(L_91);
-				ClassMap_AddMember_m68EC50B8B34647C81D1EFEC1D14083A150A2B49B(L_91, L_92, NULL);
-				goto IL_0214_1;
-			}// end try (depth: 2)
-			catch(Il2CppExceptionWrapper& e)
-			{
-				if(il2cpp_codegen_class_is_assignable_from (((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Exception_t_il2cpp_TypeInfo_var)), il2cpp_codegen_object_class(e.ex)))
-				{
-					IL2CPP_PUSH_ACTIVE_EXCEPTION(e.ex);
-					goto CATCH_01f4_1;
-				}
-				throw e;
-			}
-
-CATCH_01f4_1:
-			{// begin catch(System.Exception)
-				V_13 = ((Exception_t*)IL2CPP_GET_ACTIVE_EXCEPTION(Exception_t*));
-				il2cpp_codegen_runtime_class_init_inline(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0_il2cpp_TypeInfo_var)));
-				CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0* L_93;
-				L_93 = CultureInfo_get_InvariantCulture_mD1E96DC845E34B10F78CB744B0CB5D7D63CEB1E6(NULL);
-				XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_94 = V_9;
-				NullCheck(L_94);
-				String_t* L_95;
-				L_95 = XmlReflectionMember_get_MemberName_mE4607A6A8054A867138901FA83DFEB24CCCE1A39_inline(L_94, NULL);
-				String_t* L_96;
-				L_96 = String_Format_m3844098E7C18576D263AAF62F69BE5C70BF9A744(L_93, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral8A151D6090743D9E886008285DE3A3FB22BC228F)), L_95, NULL);
-				Exception_t* L_97 = V_13;
-				InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB* L_98 = (InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB_il2cpp_TypeInfo_var)));
-				NullCheck(L_98);
-				InvalidOperationException__ctor_m63F5561BE647F655D22C8289E53A5D3A2196B668(L_98, L_96, L_97, NULL);
-				IL2CPP_RAISE_MANAGED_EXCEPTION(L_98, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&XmlReflectionImporter_ImportClassMapping_mE428971015FDEB313F3252FF1BD02C717D9938DC_RuntimeMethod_var)));
-			}// end catch (depth: 2)
-
-IL_0214_1:
-			{
-				bool L_99;
-				L_99 = Enumerator_MoveNext_m1056299E91A99CDB7E024E6CE4FAEDD876131610((&V_5), Enumerator_MoveNext_m1056299E91A99CDB7E024E6CE4FAEDD876131610_RuntimeMethod_var);
-				if (L_99)
-				{
-					goto IL_0170_1;
-				}
-			}
-			{
-				goto IL_0230;
-			}
-		}// end try (depth: 1)
-		catch(Il2CppExceptionWrapper& e)
-		{
-			__finallyBlock.StoreException(e.ex);
+			goto IL_0204;
 		}
 	}
+	{
+		XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_69 = V_9;
+		NullCheck(L_69);
+		Type_t* L_70 = L_69->___declaringType_4;
+		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
+		bool L_71;
+		L_71 = Type_op_Inequality_m83209C7BB3C05DFBEA3B6199B0BEFE8037301172(L_70, (Type_t*)NULL, NULL);
+		if (!L_71)
+		{
+			goto IL_01c4;
+		}
+	}
+	{
+		XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_72 = V_9;
+		NullCheck(L_72);
+		Type_t* L_73 = L_72->___declaringType_4;
+		Type_t* L_74 = V_0;
+		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
+		bool L_75;
+		L_75 = Type_op_Inequality_m83209C7BB3C05DFBEA3B6199B0BEFE8037301172(L_73, L_74, NULL);
+		if (!L_75)
+		{
+			goto IL_01c4;
+		}
+	}
+	{
+		XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_76 = V_9;
+		NullCheck(L_76);
+		Type_t* L_77 = L_76->___declaringType_4;
+		XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* L_78 = ___root1;
+		String_t* L_79 = ___defaultNamespace2;
+		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_80;
+		L_80 = XmlReflectionImporter_ImportClassMapping_m435E0FBB161DB459B4E0C4FFB73916C45D5EED0D(__this, L_77, L_78, L_79, (bool)1, NULL);
+		V_11 = L_80;
+		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_81 = V_11;
+		NullCheck(L_81);
+		bool L_82;
+		L_82 = XmlTypeMapping_get_HasXmlTypeNamespace_m461935579477604F7ECB9D989B49EF4621DF3FF8(L_81, NULL);
+		if (!L_82)
+		{
+			goto IL_01c4;
+		}
+	}
+	{
+		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_83 = V_11;
+		NullCheck(L_83);
+		String_t* L_84;
+		L_84 = XmlTypeMapping_get_XmlTypeNamespace_m9EF835B324606DBC55DF96AEFD62A9F4F7ED2B96(L_83, NULL);
+		V_10 = L_84;
+	}
 
-IL_0230:
+IL_01c4:
+	{
+	}
+	try
+	{// begin try (depth: 1)
+		Type_t* L_85 = V_0;
+		XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_86 = V_9;
+		String_t* L_87 = V_10;
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_88;
+		L_88 = XmlReflectionImporter_CreateMapMember_m079162A1618129963465EF4D1B1F734F11AEF41D(__this, L_85, L_86, L_87, NULL);
+		V_12 = L_88;
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_89 = V_12;
+		Type_t* L_90 = V_0;
+		NullCheck(L_89);
+		XmlTypeMapMember_CheckOptionalValueType_mC3A9B15424B4E2F537CAD6602EA32522C47FC36B(L_89, L_90, NULL);
+		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_91 = V_2;
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_92 = V_12;
+		NullCheck(L_91);
+		ClassMap_AddMember_m68EC50B8B34647C81D1EFEC1D14083A150A2B49B(L_91, L_92, NULL);
+		goto IL_0204;
+	}// end try (depth: 1)
+	catch(Il2CppExceptionWrapper& e)
+	{
+		if(il2cpp_codegen_class_is_assignable_from (((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Exception_t_il2cpp_TypeInfo_var)), il2cpp_codegen_object_class(e.ex)))
+		{
+			IL2CPP_PUSH_ACTIVE_EXCEPTION(e.ex);
+			goto CATCH_01e4;
+		}
+		throw e;
+	}
+
+CATCH_01e4:
+	{// begin catch(System.Exception)
+		V_13 = ((Exception_t*)IL2CPP_GET_ACTIVE_EXCEPTION(Exception_t*));
+		il2cpp_codegen_runtime_class_init_inline(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0_il2cpp_TypeInfo_var)));
+		CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0* L_93;
+		L_93 = CultureInfo_get_InvariantCulture_mD1E96DC845E34B10F78CB744B0CB5D7D63CEB1E6(NULL);
+		XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_94 = V_9;
+		NullCheck(L_94);
+		String_t* L_95 = L_94->___memberName_1;
+		String_t* L_96;
+		L_96 = String_Format_m3844098E7C18576D263AAF62F69BE5C70BF9A744(L_93, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral8A151D6090743D9E886008285DE3A3FB22BC228F)), L_95, NULL);
+		Exception_t* L_97 = V_13;
+		InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB* L_98 = (InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB_il2cpp_TypeInfo_var)));
+		NullCheck(L_98);
+		InvalidOperationException__ctor_m63F5561BE647F655D22C8289E53A5D3A2196B668(L_98, L_96, L_97, NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_98, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&XmlReflectionImporter_ImportClassMapping_mE428971015FDEB313F3252FF1BD02C717D9938DC_RuntimeMethod_var)));
+	}// end catch (depth: 1)
+
+IL_0204:
+	{
+		bool L_99;
+		L_99 = Enumerator_MoveNext_m1056299E91A99CDB7E024E6CE4FAEDD876131610((&V_5), Enumerator_MoveNext_m1056299E91A99CDB7E024E6CE4FAEDD876131610_RuntimeMethod_var);
+		if (L_99)
+		{
+			goto IL_0160;
+		}
+	}
 	{
 		Type_t* L_100 = V_0;
 		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_101 = { reinterpret_cast<intptr_t> (RuntimeObject_0_0_0_var) };
@@ -10784,14 +9778,14 @@ IL_0230:
 		L_103 = Type_op_Equality_m99930A0E44E420A685FABA60E60BA1CC5FA0EBDC(L_100, L_102, NULL);
 		if (!L_103)
 		{
-			goto IL_029c;
+			goto IL_027c;
 		}
 	}
 	{
 		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_104 = __this->___includedTypes_2;
 		if (!L_104)
 		{
-			goto IL_029c;
+			goto IL_027c;
 		}
 	}
 	{
@@ -10805,7 +9799,7 @@ IL_0230:
 		auto __finallyBlock = il2cpp::utils::Finally([&]
 		{
 
-FINALLY_0287:
+FINALLY_0267:
 			{// begin finally (depth: 1)
 				{
 					RuntimeObject* L_107 = V_14;
@@ -10813,7 +9807,7 @@ FINALLY_0287:
 					RuntimeObject* L_108 = V_16;
 					if (!L_108)
 					{
-						goto IL_029b;
+						goto IL_027b;
 					}
 				}
 				{
@@ -10822,7 +9816,7 @@ FINALLY_0287:
 					InterfaceActionInvoker0::Invoke(0 /* System.Void System.IDisposable::Dispose() */, IDisposable_t030E0496B4E0E4E4F086825007979AF51F7248C5_il2cpp_TypeInfo_var, L_109);
 				}
 
-IL_029b:
+IL_027b:
 				{
 					return;
 				}
@@ -10831,10 +9825,10 @@ IL_029b:
 		try
 		{// begin try (depth: 1)
 			{
-				goto IL_027c_1;
+				goto IL_025c_1;
 			}
 
-IL_0259_1:
+IL_0239_1:
 			{
 				RuntimeObject* L_110 = V_14;
 				NullCheck(L_110);
@@ -10843,8 +9837,7 @@ IL_0259_1:
 				V_15 = ((Type_t*)CastclassClass((RuntimeObject*)L_111, Type_t_il2cpp_TypeInfo_var));
 				XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_112 = V_1;
 				NullCheck(L_112);
-				ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_113;
-				L_113 = XmlTypeMapping_get_DerivedTypes_mC03579CBAD487E7DF121E24DF3CD0F4976CB3A16_inline(L_112, NULL);
+				ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_113 = L_112->____derivedTypes_15;
 				Type_t* L_114 = V_15;
 				String_t* L_115 = ___defaultNamespace2;
 				XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_116;
@@ -10854,7 +9847,7 @@ IL_0259_1:
 				L_117 = VirtualFuncInvoker1< int32_t, RuntimeObject* >::Invoke(29 /* System.Int32 System.Collections.ArrayList::Add(System.Object) */, L_113, L_116);
 			}
 
-IL_027c_1:
+IL_025c_1:
 			{
 				RuntimeObject* L_118 = V_14;
 				NullCheck(L_118);
@@ -10862,11 +9855,11 @@ IL_027c_1:
 				L_119 = InterfaceFuncInvoker0< bool >::Invoke(0 /* System.Boolean System.Collections.IEnumerator::MoveNext() */, IEnumerator_t7B609C2FFA6EB5167D9C62A0C32A21DE2F666DAA_il2cpp_TypeInfo_var, L_118);
 				if (L_119)
 				{
-					goto IL_0259_1;
+					goto IL_0239_1;
 				}
 			}
 			{
-				goto IL_029c;
+				goto IL_027c;
 			}
 		}// end try (depth: 1)
 		catch(Il2CppExceptionWrapper& e)
@@ -10875,25 +9868,25 @@ IL_027c_1:
 		}
 	}
 
-IL_029c:
+IL_027c:
 	{
 		Type_t* L_120 = V_0;
 		NullCheck(L_120);
 		Type_t* L_121;
-		L_121 = VirtualFuncInvoker0< Type_t* >::Invoke(113 /* System.Type System.Type::get_BaseType() */, L_120);
+		L_121 = VirtualFuncInvoker0< Type_t* >::Invoke(107 /* System.Type System.Type::get_BaseType() */, L_120);
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		bool L_122;
 		L_122 = Type_op_Inequality_m83209C7BB3C05DFBEA3B6199B0BEFE8037301172(L_121, (Type_t*)NULL, NULL);
 		if (!L_122)
 		{
-			goto IL_034e;
+			goto IL_032e;
 		}
 	}
 	{
 		Type_t* L_123 = V_0;
 		NullCheck(L_123);
 		Type_t* L_124;
-		L_124 = VirtualFuncInvoker0< Type_t* >::Invoke(113 /* System.Type System.Type::get_BaseType() */, L_123);
+		L_124 = VirtualFuncInvoker0< Type_t* >::Invoke(107 /* System.Type System.Type::get_BaseType() */, L_123);
 		XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* L_125 = ___root1;
 		String_t* L_126 = ___defaultNamespace2;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_127;
@@ -10901,13 +9894,12 @@ IL_029c:
 		V_17 = L_127;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_128 = V_17;
 		NullCheck(L_128);
-		ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* L_129;
-		L_129 = XmlMapping_get_ObjectMap_m63D1AEAC8EDD8396357898D337E350673A1E9003_inline(L_128, NULL);
+		ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* L_129 = ((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_128)->___map_0;
 		V_18 = ((ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109*)IsInstClass((RuntimeObject*)L_129, ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109_il2cpp_TypeInfo_var));
 		Type_t* L_130 = V_0;
 		NullCheck(L_130);
 		Type_t* L_131;
-		L_131 = VirtualFuncInvoker0< Type_t* >::Invoke(113 /* System.Type System.Type::get_BaseType() */, L_130);
+		L_131 = VirtualFuncInvoker0< Type_t* >::Invoke(107 /* System.Type System.Type::get_BaseType() */, L_130);
 		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_132 = { reinterpret_cast<intptr_t> (RuntimeObject_0_0_0_var) };
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		Type_t* L_133;
@@ -10916,30 +9908,31 @@ IL_029c:
 		L_134 = Type_op_Inequality_m83209C7BB3C05DFBEA3B6199B0BEFE8037301172(L_131, L_133, NULL);
 		if (!L_134)
 		{
-			goto IL_02fb;
+			goto IL_02db;
 		}
 	}
 	{
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_135 = V_1;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_136 = V_17;
 		NullCheck(L_135);
-		XmlTypeMapping_set_BaseMap_m1B6EC933148E6ED405775C6A56CF888DF489988F_inline(L_135, L_136, NULL);
+		L_135->___baseMap_10 = L_136;
+		Il2CppCodeGenWriteBarrier((void**)(&L_135->___baseMap_10), (void*)L_136);
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_137 = V_18;
 		NullCheck(L_137);
 		bool L_138;
 		L_138 = ClassMap_get_HasSimpleContent_m7023F99D0994EB07A18F31EC2FFF7CEC4FA38960(L_137, NULL);
 		if (L_138)
 		{
-			goto IL_02fb;
+			goto IL_02db;
 		}
 	}
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_139 = V_2;
 		NullCheck(L_139);
-		ClassMap_SetCanBeSimpleType_mEFA2779827B16C4BACF378B6536121C5FE1AE74C_inline(L_139, (bool)0, NULL);
+		L_139->____canBeSimpleType_14 = (bool)0;
 	}
 
-IL_02fb:
+IL_02db:
 	{
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_140 = V_17;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_141 = V_1;
@@ -10950,30 +9943,28 @@ IL_02fb:
 		L_143 = ClassMap_get_HasSimpleContent_m7023F99D0994EB07A18F31EC2FFF7CEC4FA38960(L_142, NULL);
 		if (!L_143)
 		{
-			goto IL_034e;
+			goto IL_032e;
 		}
 	}
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_144 = V_2;
 		NullCheck(L_144);
-		RuntimeObject* L_145;
-		L_145 = ClassMap_get_ElementMembers_m28BCFDC1D5FC50F910FBCF82D9C30472482A505D_inline(L_144, NULL);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_145 = L_144->____elementMembers_1;
 		if (!L_145)
 		{
-			goto IL_034e;
+			goto IL_032e;
 		}
 	}
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_146 = V_2;
 		NullCheck(L_146);
-		RuntimeObject* L_147;
-		L_147 = ClassMap_get_ElementMembers_m28BCFDC1D5FC50F910FBCF82D9C30472482A505D_inline(L_146, NULL);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_147 = L_146->____elementMembers_1;
 		NullCheck(L_147);
 		int32_t L_148;
 		L_148 = InterfaceFuncInvoker0< int32_t >::Invoke(1 /* System.Int32 System.Collections.ICollection::get_Count() */, ICollection_t37E7B9DC5B4EF41D190D607F92835BF1171C0E8E_il2cpp_TypeInfo_var, L_147);
 		if ((((int32_t)L_148) == ((int32_t)1)))
 		{
-			goto IL_034e;
+			goto IL_032e;
 		}
 	}
 	{
@@ -10981,21 +9972,16 @@ IL_02fb:
 		String_t* L_149 = ((XmlReflectionImporter_t35377D35396A0B7AF610724CE3256E34C0D271E6_StaticFields*)il2cpp_codegen_static_fields_for(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&XmlReflectionImporter_t35377D35396A0B7AF610724CE3256E34C0D271E6_il2cpp_TypeInfo_var))))->___errSimple_7;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_150 = V_1;
 		NullCheck(L_150);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_151;
-		L_151 = XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline(L_150, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_151 = L_150->___type_9;
 		NullCheck(L_151);
-		String_t* L_152;
-		L_152 = TypeData_get_TypeName_mC7AF987BA3129B6648CE999111BE0E739E5A25A8_inline(L_151, NULL);
+		String_t* L_152 = L_151->___typeName_4;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_153 = V_1;
 		NullCheck(L_153);
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_154;
-		L_154 = XmlTypeMapping_get_BaseMap_m4596D5703D08B93CE429A7C62CEB9AA91506B32D_inline(L_153, NULL);
+		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_154 = L_153->___baseMap_10;
 		NullCheck(L_154);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_155;
-		L_155 = XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline(L_154, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_155 = L_154->___type_9;
 		NullCheck(L_155);
-		String_t* L_156;
-		L_156 = TypeData_get_TypeName_mC7AF987BA3129B6648CE999111BE0E739E5A25A8_inline(L_155, NULL);
+		String_t* L_156 = L_155->___typeName_4;
 		String_t* L_157;
 		L_157 = String_Format_mFB7DA489BD99F4670881FF50EC017BFB0A5C0987(L_149, L_152, L_156, NULL);
 		InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB* L_158 = (InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB_il2cpp_TypeInfo_var)));
@@ -11004,18 +9990,17 @@ IL_02fb:
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_158, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&XmlReflectionImporter_ImportClassMapping_mE428971015FDEB313F3252FF1BD02C717D9938DC_RuntimeMethod_var)));
 	}
 
-IL_034e:
+IL_032e:
 	{
 		Type_t* L_159 = V_0;
 		String_t* L_160 = ___defaultNamespace2;
 		XmlReflectionImporter_ImportIncludedTypes_m14EFED9CB15D6C7C5F828BE68F77E59D0710EF3E(__this, L_159, L_160, NULL);
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_161 = V_2;
 		NullCheck(L_161);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_162;
-		L_162 = ClassMap_get_XmlTextCollector_m3FC50A0C0DEFAC7D4D70209D7D96C58AB7D1DA09_inline(L_161, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_162 = L_161->____xmlTextCollector_11;
 		if (!L_162)
 		{
-			goto IL_0419;
+			goto IL_03f9;
 		}
 	}
 	{
@@ -11025,22 +10010,19 @@ IL_034e:
 		L_164 = ClassMap_get_HasSimpleContent_m7023F99D0994EB07A18F31EC2FFF7CEC4FA38960(L_163, NULL);
 		if (L_164)
 		{
-			goto IL_0419;
+			goto IL_03f9;
 		}
 	}
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_165 = V_2;
 		NullCheck(L_165);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_166;
-		L_166 = ClassMap_get_XmlTextCollector_m3FC50A0C0DEFAC7D4D70209D7D96C58AB7D1DA09_inline(L_165, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_166 = L_165->____xmlTextCollector_11;
 		V_19 = L_166;
 		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_167 = V_19;
 		NullCheck(L_167);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_168;
-		L_168 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_167, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_168 = L_167->____typeData_4;
 		NullCheck(L_168);
-		Type_t* L_169;
-		L_169 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_168, NULL);
+		Type_t* L_169 = L_168->___type_0;
 		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_170 = { reinterpret_cast<intptr_t> (String_t_0_0_0_var) };
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		Type_t* L_171;
@@ -11049,17 +10031,15 @@ IL_034e:
 		L_172 = Type_op_Inequality_m83209C7BB3C05DFBEA3B6199B0BEFE8037301172(L_169, L_171, NULL);
 		if (!L_172)
 		{
-			goto IL_0419;
+			goto IL_03f9;
 		}
 	}
 	{
 		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_173 = V_19;
 		NullCheck(L_173);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_174;
-		L_174 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_173, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_174 = L_173->____typeData_4;
 		NullCheck(L_174);
-		Type_t* L_175;
-		L_175 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_174, NULL);
+		Type_t* L_175 = L_174->___type_0;
 		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_176 = { reinterpret_cast<intptr_t> (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_0_0_0_var) };
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		Type_t* L_177;
@@ -11068,17 +10048,15 @@ IL_034e:
 		L_178 = Type_op_Inequality_m83209C7BB3C05DFBEA3B6199B0BEFE8037301172(L_175, L_177, NULL);
 		if (!L_178)
 		{
-			goto IL_0419;
+			goto IL_03f9;
 		}
 	}
 	{
 		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_179 = V_19;
 		NullCheck(L_179);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_180;
-		L_180 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_179, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_180 = L_179->____typeData_4;
 		NullCheck(L_180);
-		Type_t* L_181;
-		L_181 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_180, NULL);
+		Type_t* L_181 = L_180->___type_0;
 		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_182 = { reinterpret_cast<intptr_t> (XmlNodeU5BU5D_t78C0A54365D1948C7F4D12D324F7CBF7B1505F4E_0_0_0_var) };
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		Type_t* L_183;
@@ -11087,17 +10065,15 @@ IL_034e:
 		L_184 = Type_op_Inequality_m83209C7BB3C05DFBEA3B6199B0BEFE8037301172(L_181, L_183, NULL);
 		if (!L_184)
 		{
-			goto IL_0419;
+			goto IL_03f9;
 		}
 	}
 	{
 		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_185 = V_19;
 		NullCheck(L_185);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_186;
-		L_186 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_185, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_186 = L_185->____typeData_4;
 		NullCheck(L_186);
-		Type_t* L_187;
-		L_187 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_186, NULL);
+		Type_t* L_187 = L_186->___type_0;
 		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_188 = { reinterpret_cast<intptr_t> (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_0_0_0_var) };
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		Type_t* L_189;
@@ -11106,7 +10082,7 @@ IL_034e:
 		L_190 = Type_op_Inequality_m83209C7BB3C05DFBEA3B6199B0BEFE8037301172(L_187, L_189, NULL);
 		if (!L_190)
 		{
-			goto IL_0419;
+			goto IL_03f9;
 		}
 	}
 	{
@@ -11114,22 +10090,17 @@ IL_034e:
 		String_t* L_191 = ((XmlReflectionImporter_t35377D35396A0B7AF610724CE3256E34C0D271E6_StaticFields*)il2cpp_codegen_static_fields_for(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&XmlReflectionImporter_t35377D35396A0B7AF610724CE3256E34C0D271E6_il2cpp_TypeInfo_var))))->___errSimple2_8;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_192 = V_1;
 		NullCheck(L_192);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_193;
-		L_193 = XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline(L_192, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_193 = L_192->___type_9;
 		NullCheck(L_193);
-		String_t* L_194;
-		L_194 = TypeData_get_TypeName_mC7AF987BA3129B6648CE999111BE0E739E5A25A8_inline(L_193, NULL);
+		String_t* L_194 = L_193->___typeName_4;
 		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_195 = V_19;
 		NullCheck(L_195);
-		String_t* L_196;
-		L_196 = XmlTypeMapMember_get_Name_mCF37113EDBC93BBAE3E38DDA503BF83C752287F9_inline(L_195, NULL);
+		String_t* L_196 = L_195->____name_0;
 		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_197 = V_19;
 		NullCheck(L_197);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_198;
-		L_198 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_197, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_198 = L_197->____typeData_4;
 		NullCheck(L_198);
-		String_t* L_199;
-		L_199 = TypeData_get_TypeName_mC7AF987BA3129B6648CE999111BE0E739E5A25A8_inline(L_198, NULL);
+		String_t* L_199 = L_198->___typeName_4;
 		String_t* L_200;
 		L_200 = String_Format_mA0534D6E2AE4D67A6BD8D45B3321323930EB930C(L_191, L_194, L_196, L_199, NULL);
 		InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB* L_201 = (InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB_il2cpp_TypeInfo_var)));
@@ -11138,7 +10109,7 @@ IL_034e:
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_201, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&XmlReflectionImporter_ImportClassMapping_mE428971015FDEB313F3252FF1BD02C717D9938DC_RuntimeMethod_var)));
 	}
 
-IL_0419:
+IL_03f9:
 	{
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_202 = V_1;
 		return L_202;
@@ -11158,26 +10129,22 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlReflectionImporter_RegisterDerivedMap
 	{
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_0 = ___map0;
 		NullCheck(L_0);
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_1;
-		L_1 = XmlTypeMapping_get_DerivedTypes_mC03579CBAD487E7DF121E24DF3CD0F4976CB3A16_inline(L_0, NULL);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_1 = L_0->____derivedTypes_15;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_2 = ___derivedMap1;
 		NullCheck(L_1);
 		int32_t L_3;
 		L_3 = VirtualFuncInvoker1< int32_t, RuntimeObject* >::Invoke(29 /* System.Int32 System.Collections.ArrayList::Add(System.Object) */, L_1, L_2);
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_4 = ___map0;
 		NullCheck(L_4);
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_5;
-		L_5 = XmlTypeMapping_get_DerivedTypes_mC03579CBAD487E7DF121E24DF3CD0F4976CB3A16_inline(L_4, NULL);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_5 = L_4->____derivedTypes_15;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_6 = ___derivedMap1;
 		NullCheck(L_6);
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_7;
-		L_7 = XmlTypeMapping_get_DerivedTypes_mC03579CBAD487E7DF121E24DF3CD0F4976CB3A16_inline(L_6, NULL);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_7 = L_6->____derivedTypes_15;
 		NullCheck(L_5);
 		VirtualActionInvoker1< RuntimeObject* >::Invoke(30 /* System.Void System.Collections.ArrayList::AddRange(System.Collections.ICollection) */, L_5, L_7);
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_8 = ___map0;
 		NullCheck(L_8);
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_9;
-		L_9 = XmlTypeMapping_get_BaseMap_m4596D5703D08B93CE429A7C62CEB9AA91506B32D_inline(L_8, NULL);
+		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_9 = L_8->___baseMap_10;
 		if (!L_9)
 		{
 			goto IL_0034;
@@ -11186,8 +10153,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlReflectionImporter_RegisterDerivedMap
 	{
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_10 = ___map0;
 		NullCheck(L_10);
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_11;
-		L_11 = XmlTypeMapping_get_BaseMap_m4596D5703D08B93CE429A7C62CEB9AA91506B32D_inline(L_10, NULL);
+		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_11 = L_10->___baseMap_10;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_12 = ___derivedMap1;
 		XmlReflectionImporter_RegisterDerivedMap_m6ACF611372A2C13FFDCE8865E267D47079A36EAA(__this, L_11, L_12, NULL);
 		return;
@@ -11212,8 +10178,7 @@ IL_0034:
 	{
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_18 = V_0;
 		NullCheck(L_18);
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_19;
-		L_19 = XmlTypeMapping_get_DerivedTypes_mC03579CBAD487E7DF121E24DF3CD0F4976CB3A16_inline(L_18, NULL);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_19 = L_18->____derivedTypes_15;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_20 = ___derivedMap1;
 		NullCheck(L_19);
 		int32_t L_21;
@@ -11260,8 +10225,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlReflectionImporter_GetTypeNamesp
 		XmlAttributeOverrides_tEE6AE9EC795CDEF943B35BA538C86222F905EB60* L_3 = __this->___attributeOverrides_1;
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_4 = ___typeData0;
 		NullCheck(L_4);
-		Type_t* L_5;
-		L_5 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_4, NULL);
+		Type_t* L_5 = L_4->___type_0;
 		NullCheck(L_3);
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_6;
 		L_6 = XmlAttributeOverrides_get_Item_m2FAD5994E54196E78D169E8CCAB3D71E817A1025(L_3, L_5, NULL);
@@ -11279,8 +10243,7 @@ IL_0026:
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_8 = ___typeData0;
 		NullCheck(L_8);
-		Type_t* L_9;
-		L_9 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_8, NULL);
+		Type_t* L_9 = L_8->___type_0;
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_10 = (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739*)il2cpp_codegen_object_new(XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739_il2cpp_TypeInfo_var);
 		NullCheck(L_10);
 		XmlAttributes__ctor_mFEEAECF61BFB18BAA8D5767AF38A2D51D7CBC15F(L_10, L_9, NULL);
@@ -11291,8 +10254,7 @@ IL_0035:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_11 = V_1;
 		NullCheck(L_11);
-		XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* L_12;
-		L_12 = XmlAttributes_get_XmlType_m1DDCEC132704F0A2C74E2C1C0EC5194BBC72BE0F_inline(L_11, NULL);
+		XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* L_12 = L_11->___xmlType_13;
 		if (!L_12)
 		{
 			goto IL_0071;
@@ -11301,11 +10263,9 @@ IL_0035:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_13 = V_1;
 		NullCheck(L_13);
-		XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* L_14;
-		L_14 = XmlAttributes_get_XmlType_m1DDCEC132704F0A2C74E2C1C0EC5194BBC72BE0F_inline(L_13, NULL);
+		XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* L_14 = L_13->___xmlType_13;
 		NullCheck(L_14);
-		String_t* L_15;
-		L_15 = XmlTypeAttribute_get_Namespace_m856E7657F70CD29601993200EEAA7D1771F0FCC9_inline(L_14, NULL);
+		String_t* L_15 = L_14->___ns_1;
 		if (!L_15)
 		{
 			goto IL_0071;
@@ -11314,14 +10274,11 @@ IL_0035:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_16 = V_1;
 		NullCheck(L_16);
-		XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* L_17;
-		L_17 = XmlAttributes_get_XmlType_m1DDCEC132704F0A2C74E2C1C0EC5194BBC72BE0F_inline(L_16, NULL);
+		XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* L_17 = L_16->___xmlType_13;
 		NullCheck(L_17);
-		String_t* L_18;
-		L_18 = XmlTypeAttribute_get_Namespace_m856E7657F70CD29601993200EEAA7D1771F0FCC9_inline(L_17, NULL);
+		String_t* L_18 = L_17->___ns_1;
 		NullCheck(L_18);
-		int32_t L_19;
-		L_19 = String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline(L_18, NULL);
+		int32_t L_19 = L_18->____stringLength_4;
 		if (!L_19)
 		{
 			goto IL_0071;
@@ -11330,8 +10287,7 @@ IL_0035:
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_20 = ___typeData0;
 		NullCheck(L_20);
-		int32_t L_21;
-		L_21 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_20, NULL);
+		int32_t L_21 = L_20->___sType_2;
 		if ((((int32_t)L_21) == ((int32_t)2)))
 		{
 			goto IL_0071;
@@ -11340,11 +10296,9 @@ IL_0035:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_22 = V_1;
 		NullCheck(L_22);
-		XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* L_23;
-		L_23 = XmlAttributes_get_XmlType_m1DDCEC132704F0A2C74E2C1C0EC5194BBC72BE0F_inline(L_22, NULL);
+		XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* L_23 = L_22->___xmlType_13;
 		NullCheck(L_23);
-		String_t* L_24;
-		L_24 = XmlTypeAttribute_get_Namespace_m856E7657F70CD29601993200EEAA7D1771F0FCC9_inline(L_23, NULL);
+		String_t* L_24 = L_23->___ns_1;
 		V_0 = L_24;
 	}
 
@@ -11359,8 +10313,7 @@ IL_0071:
 	{
 		String_t* L_26 = V_0;
 		NullCheck(L_26);
-		int32_t L_27;
-		L_27 = String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline(L_26, NULL);
+		int32_t L_27 = L_26->____stringLength_4;
 		if (!L_27)
 		{
 			goto IL_007e;
@@ -11375,8 +10328,7 @@ IL_007e:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_29 = V_1;
 		NullCheck(L_29);
-		XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* L_30;
-		L_30 = XmlAttributes_get_XmlRoot_m72B3B5B4B3D50069A4D9CEB7EEC08EF4E6A51EEC_inline(L_29, NULL);
+		XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* L_30 = L_29->___xmlRoot_11;
 		if (!L_30)
 		{
 			goto IL_0091;
@@ -11392,8 +10344,7 @@ IL_007e:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_32 = V_1;
 		NullCheck(L_32);
-		XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* L_33;
-		L_33 = XmlAttributes_get_XmlRoot_m72B3B5B4B3D50069A4D9CEB7EEC08EF4E6A51EEC_inline(L_32, NULL);
+		XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* L_33 = L_32->___xmlRoot_11;
 		___root1 = L_33;
 	}
 
@@ -11408,8 +10359,7 @@ IL_0091:
 	{
 		XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* L_35 = ___root1;
 		NullCheck(L_35);
-		String_t* L_36;
-		L_36 = XmlRootAttribute_get_Namespace_mFB0A84474D83BF812BA15DA2D59498384F202FE4_inline(L_35, NULL);
+		String_t* L_36 = L_35->___ns_3;
 		if (!L_36)
 		{
 			goto IL_00b0;
@@ -11418,11 +10368,9 @@ IL_0091:
 	{
 		XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* L_37 = ___root1;
 		NullCheck(L_37);
-		String_t* L_38;
-		L_38 = XmlRootAttribute_get_Namespace_mFB0A84474D83BF812BA15DA2D59498384F202FE4_inline(L_37, NULL);
+		String_t* L_38 = L_37->___ns_3;
 		NullCheck(L_38);
-		int32_t L_39;
-		L_39 = String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline(L_38, NULL);
+		int32_t L_39 = L_38->____stringLength_4;
 		if (!L_39)
 		{
 			goto IL_00b0;
@@ -11431,8 +10379,7 @@ IL_0091:
 	{
 		XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* L_40 = ___root1;
 		NullCheck(L_40);
-		String_t* L_41;
-		L_41 = XmlRootAttribute_get_Namespace_mFB0A84474D83BF812BA15DA2D59498384F202FE4_inline(L_40, NULL);
+		String_t* L_41 = L_40->___ns_3;
 		return L_41;
 	}
 
@@ -11545,8 +10492,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_0 = ___typeData0;
 		NullCheck(L_0);
-		Type_t* L_1;
-		L_1 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_0, NULL);
+		Type_t* L_1 = L_0->___type_0;
 		V_0 = L_1;
 		ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* L_2 = (ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC*)il2cpp_codegen_object_new(ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC_il2cpp_TypeInfo_var);
 		NullCheck(L_2);
@@ -11601,8 +10547,7 @@ IL_0027:
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_12;
 		L_12 = TypeTranslator_GetTypeData_mF04C45D9093601749D33BB31BD3D6F4C4ADAC501(L_11, NULL);
 		NullCheck(L_12);
-		int32_t L_13;
-		L_13 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_12, NULL);
+		int32_t L_13 = L_12->___sType_2;
 		if ((!(((uint32_t)L_13) == ((uint32_t)3))))
 		{
 			goto IL_004c;
@@ -11631,8 +10576,7 @@ IL_004d:
 		V_4 = L_16;
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_17 = ___atts3;
 		NullCheck(L_17);
-		XmlArrayItemAttributes_tD468A7CCAF036962F37A7CDDDE042A6258D03513* L_18;
-		L_18 = XmlAttributes_get_XmlArrayItems_mA3EA68D61FCFD9DBAD4175F48035F95AC10EDB6E_inline(L_17, NULL);
+		XmlArrayItemAttributes_tD468A7CCAF036962F37A7CDDDE042A6258D03513* L_18 = L_17->___xmlArrayItems_3;
 		NullCheck(L_18);
 		RuntimeObject* L_19;
 		L_19 = CollectionBase_GetEnumerator_m8121D67DEBB0009A93BFEBB1DA46BA8A671FD862(L_18, NULL);
@@ -11680,8 +10624,7 @@ IL_0068_1:
 				V_12 = ((XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40*)CastclassClass((RuntimeObject*)L_24, XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40_il2cpp_TypeInfo_var));
 				XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* L_25 = V_12;
 				NullCheck(L_25);
-				String_t* L_26;
-				L_26 = XmlArrayItemAttribute_get_Namespace_m18BA85AB457B0ED70ABDA1C89B32A10BA24D0113_inline(L_25, NULL);
+				String_t* L_26 = L_25->___ns_3;
 				if (!L_26)
 				{
 					goto IL_0094_1;
@@ -11690,8 +10633,7 @@ IL_0068_1:
 			{
 				XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* L_27 = V_12;
 				NullCheck(L_27);
-				int32_t L_28;
-				L_28 = XmlArrayItemAttribute_get_Form_mBBFA635F531B819D8E43AFF6110670FB383C1F33_inline(L_27, NULL);
+				int32_t L_28 = L_27->___form_2;
 				if ((!(((uint32_t)L_28) == ((uint32_t)2))))
 				{
 					goto IL_0094_1;
@@ -11708,8 +10650,7 @@ IL_0094_1:
 			{
 				XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* L_30 = V_12;
 				NullCheck(L_30);
-				int32_t L_31;
-				L_31 = XmlArrayItemAttribute_get_NestingLevel_mE927341768913F399DAB59E37BB38EB4B5CF33ED_inline(L_30, NULL);
+				int32_t L_31 = L_30->___nestingLevel_6;
 				int32_t L_32 = ___nestingLevel4;
 				if ((!(((uint32_t)L_31) == ((uint32_t)L_32))))
 				{
@@ -11719,8 +10660,7 @@ IL_0094_1:
 			{
 				XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* L_33 = V_12;
 				NullCheck(L_33);
-				Type_t* L_34;
-				L_34 = XmlArrayItemAttribute_get_Type_m80FA2D88365496E4C5090375F0E014976B6B7417_inline(L_33, NULL);
+				Type_t* L_34 = L_33->___type_7;
 				il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 				bool L_35;
 				L_35 = Type_op_Inequality_m83209C7BB3C05DFBEA3B6199B0BEFE8037301172(L_34, (Type_t*)NULL, NULL);
@@ -11739,8 +10679,7 @@ IL_00b4_1:
 			{
 				XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* L_37 = V_12;
 				NullCheck(L_37);
-				Type_t* L_38;
-				L_38 = XmlArrayItemAttribute_get_Type_m80FA2D88365496E4C5090375F0E014976B6B7417_inline(L_37, NULL);
+				Type_t* L_38 = L_37->___type_7;
 				G_B17_0 = L_38;
 			}
 
@@ -11762,8 +10701,7 @@ IL_00bb_1:
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_44 = V_14;
 				XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* L_45 = V_12;
 				NullCheck(L_45);
-				String_t* L_46;
-				L_46 = XmlArrayItemAttribute_get_Namespace_m18BA85AB457B0ED70ABDA1C89B32A10BA24D0113_inline(L_45, NULL);
+				String_t* L_46 = L_45->___ns_3;
 				G_B18_0 = L_44;
 				if (L_46)
 				{
@@ -11782,8 +10720,7 @@ IL_00e2_1:
 			{
 				XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* L_48 = V_12;
 				NullCheck(L_48);
-				String_t* L_49;
-				L_49 = XmlArrayItemAttribute_get_Namespace_m18BA85AB457B0ED70ABDA1C89B32A10BA24D0113_inline(L_48, NULL);
+				String_t* L_49 = L_48->___ns_3;
 				G_B20_0 = L_49;
 				G_B20_1 = G_B19_0;
 			}
@@ -11794,8 +10731,7 @@ IL_00e9_1:
 				XmlTypeMapElementInfo_set_Namespace_mB1BAB4E18DAF612183E318500F2010C73D7B3B5A_inline(G_B20_1, G_B20_0, NULL);
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_50 = V_14;
 				NullCheck(L_50);
-				String_t* L_51;
-				L_51 = XmlTypeMapElementInfo_get_Namespace_m94DAAADC3EFEBC302C4D3574BD4835F222345498_inline(L_50, NULL);
+				String_t* L_51 = L_50->____namespace_1;
 				if (L_51)
 				{
 					goto IL_0103_1;
@@ -11804,7 +10740,8 @@ IL_00e9_1:
 			{
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_52 = V_14;
 				NullCheck(L_52);
-				XmlTypeMapElementInfo_set_Namespace_mB1BAB4E18DAF612183E318500F2010C73D7B3B5A_inline(L_52, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, NULL);
+				L_52->____namespace_1 = _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709;
+				Il2CppCodeGenWriteBarrier((void**)(&L_52->____namespace_1), (void*)_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
 			}
 
 IL_0103_1:
@@ -11812,14 +10749,12 @@ IL_0103_1:
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_53 = V_14;
 				XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* L_54 = V_12;
 				NullCheck(L_54);
-				int32_t L_55;
-				L_55 = XmlArrayItemAttribute_get_Form_mBBFA635F531B819D8E43AFF6110670FB383C1F33_inline(L_54, NULL);
+				int32_t L_55 = L_54->___form_2;
 				NullCheck(L_53);
-				XmlTypeMapElementInfo_set_Form_m404075D5C7B4E4CE0EC5ED46881D4D84C73E0102_inline(L_53, L_55, NULL);
+				L_53->____form_2 = L_55;
 				XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* L_56 = V_12;
 				NullCheck(L_56);
-				int32_t L_57;
-				L_57 = XmlArrayItemAttribute_get_Form_mBBFA635F531B819D8E43AFF6110670FB383C1F33_inline(L_56, NULL);
+				int32_t L_57 = L_56->___form_2;
 				if ((!(((uint32_t)L_57) == ((uint32_t)2))))
 				{
 					goto IL_0127_1;
@@ -11829,7 +10764,8 @@ IL_0103_1:
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_58 = V_14;
 				String_t* L_59 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->___Empty_6;
 				NullCheck(L_58);
-				XmlTypeMapElementInfo_set_Namespace_mB1BAB4E18DAF612183E318500F2010C73D7B3B5A_inline(L_58, L_59, NULL);
+				L_58->____namespace_1 = L_59;
+				Il2CppCodeGenWriteBarrier((void**)(&L_58->____namespace_1), (void*)L_59);
 			}
 
 IL_0127_1:
@@ -11837,8 +10773,7 @@ IL_0127_1:
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_60 = V_14;
 				XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* L_61 = V_12;
 				NullCheck(L_61);
-				bool L_62;
-				L_62 = XmlArrayItemAttribute_get_IsNullableSpecified_mDC4FABB753BA60A10CEED9BDD82011C47E14B4F0_inline(L_61, NULL);
+				bool L_62 = L_61->___isNullableSpecified_5;
 				G_B25_0 = L_60;
 				if (!L_62)
 				{
@@ -11849,8 +10784,7 @@ IL_0127_1:
 			{
 				XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* L_63 = V_12;
 				NullCheck(L_63);
-				bool L_64;
-				L_64 = XmlArrayItemAttribute_get_IsNullable_mC7A6E27D7259FF7DD81A2C575EBD4578651857D8_inline(L_63, NULL);
+				bool L_64 = L_63->___isNullable_4;
 				G_B26_0 = G_B25_0;
 				if (!L_64)
 				{
@@ -11863,8 +10797,7 @@ IL_013b_1:
 			{
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_65 = V_14;
 				NullCheck(L_65);
-				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_66;
-				L_66 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_65, NULL);
+				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_66 = L_65->____type_8;
 				bool L_67;
 				L_67 = XmlReflectionImporter_CanBeNull_m52BC441CF224DCDF490BEE6ED280AB778BFFC3A6(__this, L_66, NULL);
 				G_B28_0 = ((int32_t)(L_67));
@@ -11885,10 +10818,9 @@ IL_014b_1:
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_68 = V_14;
 				XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* L_69 = V_12;
 				NullCheck(L_69);
-				int32_t L_70;
-				L_70 = XmlArrayItemAttribute_get_NestingLevel_mE927341768913F399DAB59E37BB38EB4B5CF33ED_inline(L_69, NULL);
+				int32_t L_70 = L_69->___nestingLevel_6;
 				NullCheck(L_68);
-				XmlTypeMapElementInfo_set_NestingLevel_m104B8F548E5E7B0982E55AFA8900F9BB4E0E1A35_inline(L_68, L_70, NULL);
+				L_68->____nestingLevel_6 = L_70;
 				bool L_71 = V_3;
 				if (!L_71)
 				{
@@ -11900,14 +10832,14 @@ IL_014b_1:
 				Type_t* L_73 = V_13;
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_74 = V_14;
 				NullCheck(L_74);
-				String_t* L_75;
-				L_75 = XmlTypeMapElementInfo_get_Namespace_m94DAAADC3EFEBC302C4D3574BD4835F222345498_inline(L_74, NULL);
+				String_t* L_75 = L_74->____namespace_1;
 				XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_76 = ___atts3;
 				int32_t L_77 = ___nestingLevel4;
 				XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_78;
 				L_78 = XmlReflectionImporter_ImportListMapping_m2DE4BB63B5D578F38690F0CECD77C0E87268CEFC(__this, L_73, (XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF*)NULL, L_75, L_76, ((int32_t)il2cpp_codegen_add(L_77, 1)), NULL);
 				NullCheck(L_72);
-				XmlTypeMapElementInfo_set_MappedType_m2FD5B0A4823A3FAF00E86D03C959D9B0E0D2A409_inline(L_72, L_78, NULL);
+				L_72->____mappedType_7 = L_78;
+				Il2CppCodeGenWriteBarrier((void**)(&L_72->____mappedType_7), (void*)L_78);
 				goto IL_01a5_1;
 			}
 
@@ -11915,8 +10847,7 @@ IL_0180_1:
 			{
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_79 = V_14;
 				NullCheck(L_79);
-				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_80;
-				L_80 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_79, NULL);
+				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_80 = L_79->____type_8;
 				NullCheck(L_80);
 				bool L_81;
 				L_81 = TypeData_get_IsComplexType_m13C3810EB4DD4C512B9A472A24D12BFE443FF749(L_80, NULL);
@@ -11930,12 +10861,12 @@ IL_0180_1:
 				Type_t* L_83 = V_13;
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_84 = V_14;
 				NullCheck(L_84);
-				String_t* L_85;
-				L_85 = XmlTypeMapElementInfo_get_Namespace_m94DAAADC3EFEBC302C4D3574BD4835F222345498_inline(L_84, NULL);
+				String_t* L_85 = L_84->____namespace_1;
 				XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_86;
 				L_86 = XmlReflectionImporter_ImportTypeMapping_m9A034588C8D63CE07DB971D8C4647FE55145077D(__this, L_83, (XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF*)NULL, L_85, NULL);
 				NullCheck(L_82);
-				XmlTypeMapElementInfo_set_MappedType_m2FD5B0A4823A3FAF00E86D03C959D9B0E0D2A409_inline(L_82, L_86, NULL);
+				L_82->____mappedType_7 = L_86;
+				Il2CppCodeGenWriteBarrier((void**)(&L_82->____mappedType_7), (void*)L_86);
 			}
 
 IL_01a5_1:
@@ -11945,8 +10876,7 @@ IL_01a5_1:
 				String_t* L_88;
 				L_88 = XmlArrayItemAttribute_get_ElementName_m2882B401E27852A6CC2129A6B0CBD8DAE7EE6677(L_87, NULL);
 				NullCheck(L_88);
-				int32_t L_89;
-				L_89 = String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline(L_88, NULL);
+				int32_t L_89 = L_88->____stringLength_4;
 				if (!L_89)
 				{
 					goto IL_01c8_1;
@@ -11962,7 +10892,8 @@ IL_01a5_1:
 				String_t* L_93;
 				L_93 = XmlConvert_EncodeLocalName_m8AD743C94643F82D5B6FF1617EDAF4145E67D318(L_92, NULL);
 				NullCheck(L_90);
-				XmlTypeMapElementInfo_set_ElementName_mEE8DF5FA9A346D3D437DF38E2B5E0BC20AA5DC40_inline(L_90, L_93, NULL);
+				L_90->____elementName_0 = L_93;
+				Il2CppCodeGenWriteBarrier((void**)(&L_90->____elementName_0), (void*)L_93);
 				goto IL_01f9_1;
 			}
 
@@ -11970,8 +10901,7 @@ IL_01c8_1:
 			{
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_94 = V_14;
 				NullCheck(L_94);
-				XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_95;
-				L_95 = XmlTypeMapElementInfo_get_MappedType_m240A78959A2E9A6CE992F5EC6B77DDFC137AF032_inline(L_94, NULL);
+				XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_95 = L_94->____mappedType_7;
 				if (!L_95)
 				{
 					goto IL_01e6_1;
@@ -11981,13 +10911,12 @@ IL_01c8_1:
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_96 = V_14;
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_97 = V_14;
 				NullCheck(L_97);
-				XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_98;
-				L_98 = XmlTypeMapElementInfo_get_MappedType_m240A78959A2E9A6CE992F5EC6B77DDFC137AF032_inline(L_97, NULL);
+				XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_98 = L_97->____mappedType_7;
 				NullCheck(L_98);
-				String_t* L_99;
-				L_99 = XmlMapping_get_ElementName_m2BDBF7797A1F38972A4355CF694E0D468B2A9FC0_inline(L_98, NULL);
+				String_t* L_99 = ((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_98)->____elementName_4;
 				NullCheck(L_96);
-				XmlTypeMapElementInfo_set_ElementName_mEE8DF5FA9A346D3D437DF38E2B5E0BC20AA5DC40_inline(L_96, L_99, NULL);
+				L_96->____elementName_0 = L_99;
+				Il2CppCodeGenWriteBarrier((void**)(&L_96->____elementName_0), (void*)L_99);
 				goto IL_01f9_1;
 			}
 
@@ -11999,10 +10928,10 @@ IL_01e6_1:
 				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_102;
 				L_102 = TypeTranslator_GetTypeData_mF04C45D9093601749D33BB31BD3D6F4C4ADAC501(L_101, NULL);
 				NullCheck(L_102);
-				String_t* L_103;
-				L_103 = TypeData_get_XmlType_m06749C1B19C57EB8649CBCD9B106C014DF511453_inline(L_102, NULL);
+				String_t* L_103 = L_102->___elementName_1;
 				NullCheck(L_100);
-				XmlTypeMapElementInfo_set_ElementName_mEE8DF5FA9A346D3D437DF38E2B5E0BC20AA5DC40_inline(L_100, L_103, NULL);
+				L_100->____elementName_0 = L_103;
+				Il2CppCodeGenWriteBarrier((void**)(&L_100->____elementName_0), (void*)L_103);
 			}
 
 IL_01f9_1:
@@ -12070,7 +10999,8 @@ IL_0226:
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_120;
 		L_120 = XmlReflectionImporter_ImportListMapping_m2DE4BB63B5D578F38690F0CECD77C0E87268CEFC(__this, L_116, (XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF*)NULL, L_117, L_118, ((int32_t)il2cpp_codegen_add(L_119, 1)), NULL);
 		NullCheck(L_115);
-		XmlTypeMapElementInfo_set_MappedType_m2FD5B0A4823A3FAF00E86D03C959D9B0E0D2A409_inline(L_115, L_120, NULL);
+		L_115->____mappedType_7 = L_120;
+		Il2CppCodeGenWriteBarrier((void**)(&L_115->____mappedType_7), (void*)L_120);
 		goto IL_0279;
 	}
 
@@ -12078,8 +11008,7 @@ IL_025b:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_121 = V_16;
 		NullCheck(L_121);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_122;
-		L_122 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_121, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_122 = L_121->____type_8;
 		NullCheck(L_122);
 		bool L_123;
 		L_123 = TypeData_get_IsComplexType_m13C3810EB4DD4C512B9A472A24D12BFE443FF749(L_122, NULL);
@@ -12095,15 +11024,15 @@ IL_025b:
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_127;
 		L_127 = XmlReflectionImporter_ImportTypeMapping_m9A034588C8D63CE07DB971D8C4647FE55145077D(__this, L_125, (XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF*)NULL, L_126, NULL);
 		NullCheck(L_124);
-		XmlTypeMapElementInfo_set_MappedType_m2FD5B0A4823A3FAF00E86D03C959D9B0E0D2A409_inline(L_124, L_127, NULL);
+		L_124->____mappedType_7 = L_127;
+		Il2CppCodeGenWriteBarrier((void**)(&L_124->____mappedType_7), (void*)L_127);
 	}
 
 IL_0279:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_128 = V_16;
 		NullCheck(L_128);
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_129;
-		L_129 = XmlTypeMapElementInfo_get_MappedType_m240A78959A2E9A6CE992F5EC6B77DDFC137AF032_inline(L_128, NULL);
+		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_129 = L_128->____mappedType_7;
 		if (!L_129)
 		{
 			goto IL_0297;
@@ -12113,13 +11042,12 @@ IL_0279:
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_130 = V_16;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_131 = V_16;
 		NullCheck(L_131);
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_132;
-		L_132 = XmlTypeMapElementInfo_get_MappedType_m240A78959A2E9A6CE992F5EC6B77DDFC137AF032_inline(L_131, NULL);
+		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_132 = L_131->____mappedType_7;
 		NullCheck(L_132);
-		String_t* L_133;
-		L_133 = XmlTypeMapping_get_XmlType_m5A30CB4EE3541CC1C65003757D5E743042846222_inline(L_132, NULL);
+		String_t* L_133 = L_132->___xmlType_7;
 		NullCheck(L_130);
-		XmlTypeMapElementInfo_set_ElementName_mEE8DF5FA9A346D3D437DF38E2B5E0BC20AA5DC40_inline(L_130, L_133, NULL);
+		L_130->____elementName_0 = L_133;
+		Il2CppCodeGenWriteBarrier((void**)(&L_130->____elementName_0), (void*)L_133);
 		goto IL_02a9;
 	}
 
@@ -12131,10 +11059,10 @@ IL_0297:
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_136;
 		L_136 = TypeTranslator_GetTypeData_mF04C45D9093601749D33BB31BD3D6F4C4ADAC501(L_135, NULL);
 		NullCheck(L_136);
-		String_t* L_137;
-		L_137 = TypeData_get_XmlType_m06749C1B19C57EB8649CBCD9B106C014DF511453_inline(L_136, NULL);
+		String_t* L_137 = L_136->___elementName_1;
 		NullCheck(L_134);
-		XmlTypeMapElementInfo_set_ElementName_mEE8DF5FA9A346D3D437DF38E2B5E0BC20AA5DC40_inline(L_134, L_137, NULL);
+		L_134->____elementName_0 = L_137;
+		Il2CppCodeGenWriteBarrier((void**)(&L_134->____elementName_0), (void*)L_137);
 	}
 
 IL_02a9:
@@ -12168,12 +11096,11 @@ IL_02b6:
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_141 = V_16;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_142 = V_16;
 		NullCheck(L_142);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_143;
-		L_143 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_142, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_143 = L_142->____type_8;
 		bool L_144;
 		L_144 = XmlReflectionImporter_CanBeNull_m52BC441CF224DCDF490BEE6ED280AB778BFFC3A6(__this, L_143, NULL);
 		NullCheck(L_141);
-		XmlTypeMapElementInfo_set_IsNullable_m3F3A06CB2CB7DACBB6CF90B60346469EA5EE0A6F_inline(L_141, L_144, NULL);
+		L_141->____isNullable_5 = L_144;
 		XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* L_145 = V_4;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_146 = V_16;
 		NullCheck(L_145);
@@ -12186,7 +11113,8 @@ IL_02d9:
 		ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* L_148 = V_1;
 		XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* L_149 = V_4;
 		NullCheck(L_148);
-		ListMap_set_ItemInfo_mD0E132CC2807675C9308B26F69EA38EC9EB3EF11_inline(L_148, L_149, NULL);
+		L_148->____itemInfo_0 = L_149;
+		Il2CppCodeGenWriteBarrier((void**)(&L_148->____itemInfo_0), (void*)L_149);
 		XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* L_150 = V_4;
 		NullCheck(L_150);
 		int32_t L_151;
@@ -12218,8 +11146,7 @@ IL_0312:
 		V_18 = ((XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32*)CastclassClass((RuntimeObject*)L_157, XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32_il2cpp_TypeInfo_var));
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_158 = V_18;
 		NullCheck(L_158);
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_159;
-		L_159 = XmlTypeMapElementInfo_get_MappedType_m240A78959A2E9A6CE992F5EC6B77DDFC137AF032_inline(L_158, NULL);
+		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_159 = L_158->____mappedType_7;
 		if (!L_159)
 		{
 			goto IL_033f;
@@ -12228,11 +11155,9 @@ IL_0312:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_160 = V_18;
 		NullCheck(L_160);
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_161;
-		L_161 = XmlTypeMapElementInfo_get_MappedType_m240A78959A2E9A6CE992F5EC6B77DDFC137AF032_inline(L_160, NULL);
+		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_161 = L_160->____mappedType_7;
 		NullCheck(L_161);
-		String_t* L_162;
-		L_162 = XmlTypeMapping_get_XmlType_m5A30CB4EE3541CC1C65003757D5E743042846222_inline(L_161, NULL);
+		String_t* L_162 = L_161->___xmlType_7;
 		il2cpp_codegen_runtime_class_init_inline(TypeTranslator_t46FF5D65D6B7BE54B8643952A528D5930429C60D_il2cpp_TypeInfo_var);
 		String_t* L_163;
 		L_163 = TypeTranslator_GetArrayName_m8DC1F56140E3B949EFD93B9F984D8E5000901269(L_162, NULL);
@@ -12244,8 +11169,7 @@ IL_033f:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_164 = V_18;
 		NullCheck(L_164);
-		String_t* L_165;
-		L_165 = XmlTypeMapElementInfo_get_ElementName_m2B2B6484154E046A7FE5BE46092BF91A7B75D9CC_inline(L_164, NULL);
+		String_t* L_165 = L_164->____elementName_0;
 		il2cpp_codegen_runtime_class_init_inline(TypeTranslator_t46FF5D65D6B7BE54B8643952A528D5930429C60D_il2cpp_TypeInfo_var);
 		String_t* L_166;
 		L_166 = TypeTranslator_GetArrayName_m8DC1F56140E3B949EFD93B9F984D8E5000901269(L_165, NULL);
@@ -12284,8 +11208,7 @@ IL_036d:
 		ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* L_173 = V_1;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_174 = V_19;
 		NullCheck(L_174);
-		ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* L_175;
-		L_175 = XmlMapping_get_ObjectMap_m63D1AEAC8EDD8396357898D337E350673A1E9003_inline(L_174, NULL);
+		ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* L_175 = ((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_174)->___map_0;
 		NullCheck(L_173);
 		bool L_176;
 		L_176 = VirtualFuncInvoker1< bool, RuntimeObject* >::Invoke(0 /* System.Boolean System.Object::Equals(System.Object) */, L_173, L_175);
@@ -12297,15 +11220,12 @@ IL_036d:
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_177 = ___typeData0;
 		NullCheck(L_177);
-		Type_t* L_178;
-		L_178 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_177, NULL);
+		Type_t* L_178 = L_177->___type_0;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_179 = V_19;
 		NullCheck(L_179);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_180;
-		L_180 = XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline(L_179, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_180 = L_179->___type_9;
 		NullCheck(L_180);
-		Type_t* L_181;
-		L_181 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_180, NULL);
+		Type_t* L_181 = L_180->___type_0;
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		bool L_182;
 		L_182 = Type_op_Equality_m99930A0E44E420A685FABA60E60BA1CC5FA0EBDC(L_178, L_181, NULL);
@@ -12352,7 +11272,8 @@ IL_03b1:
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_195 = V_8;
 		ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* L_196 = V_1;
 		NullCheck(L_195);
-		XmlMapping_set_ObjectMap_m34272FA1B72AD9AE95E70C84665290EA6C0C0FCD_inline(L_195, L_196, NULL);
+		((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_195)->___map_0 = L_196;
+		Il2CppCodeGenWriteBarrier((void**)(&((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_195)->___map_0), (void*)L_196);
 		Type_t* L_197 = V_0;
 		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_198 = { reinterpret_cast<intptr_t> (XmlIncludeAttribute_t444D78BD01B445F31C9E0828BB2EEB88C0BDB736_0_0_0_var) };
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
@@ -12380,13 +11301,11 @@ IL_03fa:
 		int32_t L_206 = L_205;
 		XmlIncludeAttribute_t444D78BD01B445F31C9E0828BB2EEB88C0BDB736* L_207 = (L_204)->GetAt(static_cast<il2cpp_array_size_t>(L_206));
 		NullCheck(L_207);
-		Type_t* L_208;
-		L_208 = XmlIncludeAttribute_get_Type_m933A769AE46F8B8FE3612605D6B0E890AE3A1EDD_inline(L_207, NULL);
+		Type_t* L_208 = L_207->___type_0;
 		V_21 = L_208;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_209 = V_10;
 		NullCheck(L_209);
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_210;
-		L_210 = XmlTypeMapping_get_DerivedTypes_mC03579CBAD487E7DF121E24DF3CD0F4976CB3A16_inline(L_209, NULL);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_210 = L_209->____derivedTypes_15;
 		Type_t* L_211 = V_21;
 		String_t* L_212 = ___defaultNamespace2;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_213;
@@ -12422,8 +11341,7 @@ IL_0423:
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_224;
 		L_224 = XmlReflectionImporter_ImportTypeMapping_m3AE556A476B6CA920DE1BDDEB20F261A351A7B18(__this, L_223, NULL);
 		NullCheck(L_224);
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_225;
-		L_225 = XmlTypeMapping_get_DerivedTypes_mC03579CBAD487E7DF121E24DF3CD0F4976CB3A16_inline(L_224, NULL);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_225 = L_224->____derivedTypes_15;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_226 = V_8;
 		NullCheck(L_225);
 		int32_t L_227;
@@ -12448,8 +11366,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_0 = ___typeData0;
 		NullCheck(L_0);
-		Type_t* L_1;
-		L_1 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_0, NULL);
+		Type_t* L_1 = L_0->___type_0;
 		V_0 = L_1;
 		ReflectionHelper_tC70C244386E812ED1E4C85AAF108E85F470C68AB* L_2 = __this->___helper_3;
 		Type_t* L_3 = V_0;
@@ -12493,7 +11410,7 @@ IL_0022:
 		Type_t* L_20 = V_0;
 		NullCheck(L_20);
 		Type_t* L_21;
-		L_21 = VirtualFuncInvoker0< Type_t* >::Invoke(113 /* System.Type System.Type::get_BaseType() */, L_20);
+		L_21 = VirtualFuncInvoker0< Type_t* >::Invoke(107 /* System.Type System.Type::get_BaseType() */, L_20);
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		bool L_22;
 		L_22 = Type_op_Inequality_m83209C7BB3C05DFBEA3B6199B0BEFE8037301172(L_21, (Type_t*)NULL, NULL);
@@ -12506,7 +11423,7 @@ IL_0022:
 		Type_t* L_23 = V_0;
 		NullCheck(L_23);
 		Type_t* L_24;
-		L_24 = VirtualFuncInvoker0< Type_t* >::Invoke(113 /* System.Type System.Type::get_BaseType() */, L_23);
+		L_24 = VirtualFuncInvoker0< Type_t* >::Invoke(107 /* System.Type System.Type::get_BaseType() */, L_23);
 		XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* L_25 = ___root1;
 		String_t* L_26 = ___defaultNamespace2;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_27;
@@ -12515,7 +11432,7 @@ IL_0022:
 		Type_t* L_28 = V_0;
 		NullCheck(L_28);
 		Type_t* L_29;
-		L_29 = VirtualFuncInvoker0< Type_t* >::Invoke(113 /* System.Type System.Type::get_BaseType() */, L_28);
+		L_29 = VirtualFuncInvoker0< Type_t* >::Invoke(107 /* System.Type System.Type::get_BaseType() */, L_28);
 		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_30 = { reinterpret_cast<intptr_t> (RuntimeObject_0_0_0_var) };
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		Type_t* L_31;
@@ -12531,7 +11448,8 @@ IL_0022:
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_33 = V_1;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_34 = V_2;
 		NullCheck(L_33);
-		XmlTypeMapping_set_BaseMap_m1B6EC933148E6ED405775C6A56CF888DF489988F_inline(L_33, L_34, NULL);
+		L_33->___baseMap_10 = L_34;
+		Il2CppCodeGenWriteBarrier((void**)(&L_33->___baseMap_10), (void*)L_34);
 	}
 
 IL_007b:
@@ -12555,8 +11473,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_0 = ___typeData0;
 		NullCheck(L_0);
-		Type_t* L_1;
-		L_1 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_0, NULL);
+		Type_t* L_1 = L_0->___type_0;
 		V_0 = L_1;
 		ReflectionHelper_tC70C244386E812ED1E4C85AAF108E85F470C68AB* L_2 = __this->___helper_3;
 		Type_t* L_3 = V_0;
@@ -12638,8 +11555,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_0 = ___typeData0;
 		NullCheck(L_0);
-		Type_t* L_1;
-		L_1 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_0, NULL);
+		Type_t* L_1 = L_0->___type_0;
 		V_0 = L_1;
 		ReflectionHelper_tC70C244386E812ED1E4C85AAF108E85F470C68AB* L_2 = __this->___helper_3;
 		Type_t* L_3 = V_0;
@@ -12687,7 +11603,7 @@ IL_0031:
 		V_1 = L_16;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_17 = V_1;
 		NullCheck(L_17);
-		XmlTypeMapping_set_IsNullable_mD892626D9838297535D63A2CE20F0F0E93B0E06F_inline(L_17, (bool)0, NULL);
+		L_17->___isNullable_13 = (bool)0;
 		ReflectionHelper_tC70C244386E812ED1E4C85AAF108E85F470C68AB* L_18 = __this->___helper_3;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_19 = V_1;
 		Type_t* L_20 = V_0;
@@ -12761,8 +11677,7 @@ IL_006c:
 		int32_t L_43 = 0;
 		RuntimeObject* L_44 = (L_42)->GetAt(static_cast<il2cpp_array_size_t>(L_43));
 		NullCheck(((XmlEnumAttribute_t06EEAB820B4C664382E2A018C682E64D4B10E695*)CastclassClass((RuntimeObject*)L_44, XmlEnumAttribute_t06EEAB820B4C664382E2A018C682E64D4B10E695_il2cpp_TypeInfo_var)));
-		String_t* L_45;
-		L_45 = XmlEnumAttribute_get_Name_m13FF8A329D3569F4C785968B3928A1554EC9CCF3_inline(((XmlEnumAttribute_t06EEAB820B4C664382E2A018C682E64D4B10E695*)CastclassClass((RuntimeObject*)L_44, XmlEnumAttribute_t06EEAB820B4C664382E2A018C682E64D4B10E695_il2cpp_TypeInfo_var)), NULL);
+		String_t* L_45 = ((XmlEnumAttribute_t06EEAB820B4C664382E2A018C682E64D4B10E695*)CastclassClass((RuntimeObject*)L_44, XmlEnumAttribute_t06EEAB820B4C664382E2A018C682E64D4B10E695_il2cpp_TypeInfo_var))->___name_0;
 		V_8 = L_45;
 	}
 
@@ -12784,7 +11699,7 @@ IL_00c5:
 		FieldInfo_t* L_48 = V_7;
 		NullCheck(L_48);
 		RuntimeObject* L_49;
-		L_49 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(25 /* System.Object System.Reflection.FieldInfo::GetValue(System.Object) */, L_48, NULL);
+		L_49 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(24 /* System.Object System.Reflection.FieldInfo::GetValue(System.Object) */, L_48, NULL);
 		il2cpp_codegen_runtime_class_init_inline(CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0_il2cpp_TypeInfo_var);
 		CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0* L_50;
 		L_50 = CultureInfo_get_InvariantCulture_mD1E96DC845E34B10F78CB744B0CB5D7D63CEB1E6(NULL);
@@ -12843,15 +11758,15 @@ IL_00f6:
 		NullCheck(L_71);
 		EnumMap__ctor_m8B507CB9A313B5FEC589E7C3F0A6B573D665768D(L_71, ((EnumMapMemberU5BU5D_t9142B305BA0F44DC126D50BA43D74FAA86A7D520*)Castclass((RuntimeObject*)L_69, EnumMapMemberU5BU5D_t9142B305BA0F44DC126D50BA43D74FAA86A7D520_il2cpp_TypeInfo_var)), L_70, NULL);
 		NullCheck(L_65);
-		XmlMapping_set_ObjectMap_m34272FA1B72AD9AE95E70C84665290EA6C0C0FCD_inline(L_65, L_71, NULL);
+		((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_65)->___map_0 = L_71;
+		Il2CppCodeGenWriteBarrier((void**)(&((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_65)->___map_0), (void*)L_71);
 		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_72 = { reinterpret_cast<intptr_t> (RuntimeObject_0_0_0_var) };
 		Type_t* L_73;
 		L_73 = Type_GetTypeFromHandle_m6062B81682F79A4D6DF2640692EE6D9987858C57(L_72, NULL);
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_74;
 		L_74 = XmlReflectionImporter_ImportTypeMapping_m3AE556A476B6CA920DE1BDDEB20F261A351A7B18(__this, L_73, NULL);
 		NullCheck(L_74);
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_75;
-		L_75 = XmlTypeMapping_get_DerivedTypes_mC03579CBAD487E7DF121E24DF3CD0F4976CB3A16_inline(L_74, NULL);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_75 = L_74->____derivedTypes_15;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_76 = V_1;
 		NullCheck(L_75);
 		int32_t L_77;
@@ -12874,8 +11789,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_0 = ___typeData0;
 		NullCheck(L_0);
-		Type_t* L_1;
-		L_1 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_0, NULL);
+		Type_t* L_1 = L_0->___type_0;
 		V_0 = L_1;
 		ReflectionHelper_tC70C244386E812ED1E4C85AAF108E85F470C68AB* L_2 = __this->___helper_3;
 		Type_t* L_3 = V_0;
@@ -12970,8 +11884,7 @@ IL_001b:
 		int32_t L_6 = L_5;
 		XmlIncludeAttribute_t444D78BD01B445F31C9E0828BB2EEB88C0BDB736* L_7 = (L_4)->GetAt(static_cast<il2cpp_array_size_t>(L_6));
 		NullCheck(L_7);
-		Type_t* L_8;
-		L_8 = XmlIncludeAttribute_get_Type_m933A769AE46F8B8FE3612605D6B0E890AE3A1EDD_inline(L_7, NULL);
+		Type_t* L_8 = L_7->___type_0;
 		V_2 = L_8;
 		Type_t* L_9 = V_2;
 		String_t* L_10 = ___defaultNamespace1;
@@ -13060,7 +11973,7 @@ IL_0012:
 		Type_t* L_5 = V_0;
 		NullCheck(L_5);
 		Type_t* L_6;
-		L_6 = VirtualFuncInvoker0< Type_t* >::Invoke(113 /* System.Type System.Type::get_BaseType() */, L_5);
+		L_6 = VirtualFuncInvoker0< Type_t* >::Invoke(107 /* System.Type System.Type::get_BaseType() */, L_5);
 		V_0 = L_6;
 		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_7 = V_1;
 		Type_t* L_8 = V_0;
@@ -13090,7 +12003,7 @@ IL_0021:
 		Type_t* L_14 = ___type0;
 		NullCheck(L_14);
 		FieldInfoU5BU5D_t50D47CBECF1AEB152F555803E3329D9E34DBF8D8* L_15;
-		L_15 = VirtualFuncInvoker1< FieldInfoU5BU5D_t50D47CBECF1AEB152F555803E3329D9E34DBF8D8*, int32_t >::Invoke(88 /* System.Reflection.FieldInfo[] System.Type::GetFields(System.Reflection.BindingFlags) */, L_14, ((int32_t)20));
+		L_15 = VirtualFuncInvoker1< FieldInfoU5BU5D_t50D47CBECF1AEB152F555803E3329D9E34DBF8D8*, int32_t >::Invoke(82 /* System.Reflection.FieldInfo[] System.Type::GetFields(System.Reflection.BindingFlags) */, L_14, ((int32_t)20));
 		V_0 = (Type_t*)NULL;
 		V_3 = 0;
 		V_8 = L_15;
@@ -13159,7 +12072,7 @@ IL_007f:
 		Type_t* L_34 = ___type0;
 		NullCheck(L_34);
 		PropertyInfoU5BU5D_tD81C248B41D0C76207C42DB9C332DC79F490B1D7* L_35;
-		L_35 = VirtualFuncInvoker1< PropertyInfoU5BU5D_tD81C248B41D0C76207C42DB9C332DC79F490B1D7*, int32_t >::Invoke(110 /* System.Reflection.PropertyInfo[] System.Type::GetProperties(System.Reflection.BindingFlags) */, L_34, ((int32_t)20));
+		L_35 = VirtualFuncInvoker1< PropertyInfoU5BU5D_tD81C248B41D0C76207C42DB9C332DC79F490B1D7*, int32_t >::Invoke(104 /* System.Reflection.PropertyInfo[] System.Type::GetProperties(System.Reflection.BindingFlags) */, L_34, ((int32_t)20));
 		V_0 = (Type_t*)NULL;
 		V_3 = 0;
 		V_11 = L_35;
@@ -13353,8 +12266,7 @@ IL_0167_1:
 			{
 				XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_81 = V_16;
 				NullCheck(L_81);
-				bool L_82;
-				L_82 = XmlAttributes_get_XmlIgnore_m817F5C7648E0CADEBE452A1EF3E59A0D07A80627_inline(L_81, NULL);
+				bool L_82 = L_81->___xmlIgnore_9;
 				if (L_82)
 				{
 					goto IL_019e_1;
@@ -13380,7 +12292,8 @@ IL_0167_1:
 				Type_t* L_91;
 				L_91 = VirtualFuncInvoker0< Type_t* >::Invoke(9 /* System.Type System.Reflection.MemberInfo::get_DeclaringType() */, L_90);
 				NullCheck(L_89);
-				XmlReflectionMember_set_DeclaringType_m1FEBB9DF4BDFE905A76D4E297BE992C89B39B1A8_inline(L_89, L_91, NULL);
+				L_89->___declaringType_4 = L_91;
+				Il2CppCodeGenWriteBarrier((void**)(&L_89->___declaringType_4), (void*)L_91);
 				List_1_t935DFC399F3035CE8ADB557E0DC325268F81E472* L_92 = V_5;
 				XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_93 = V_17;
 				NullCheck(L_92);
@@ -13455,8 +12368,7 @@ IL_01fb_1:
 			{
 				XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_113 = V_19;
 				NullCheck(L_113);
-				bool L_114;
-				L_114 = XmlAttributes_get_XmlIgnore_m817F5C7648E0CADEBE452A1EF3E59A0D07A80627_inline(L_113, NULL);
+				bool L_114 = L_113->___xmlIgnore_9;
 				if (L_114)
 				{
 					goto IL_02a8_1;
@@ -13544,8 +12456,7 @@ IL_0258_1:
 				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_134;
 				L_134 = TypeTranslator_GetTypeData_mF04C45D9093601749D33BB31BD3D6F4C4ADAC501(L_133, NULL);
 				NullCheck(L_134);
-				int32_t L_135;
-				L_135 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_134, NULL);
+				int32_t L_135 = L_134->___sType_2;
 				if ((!(((uint32_t)L_135) == ((uint32_t)3))))
 				{
 					goto IL_02a8_1;
@@ -13586,7 +12497,8 @@ IL_027a_1:
 				Type_t* L_147;
 				L_147 = VirtualFuncInvoker0< Type_t* >::Invoke(9 /* System.Type System.Reflection.MemberInfo::get_DeclaringType() */, L_146);
 				NullCheck(L_145);
-				XmlReflectionMember_set_DeclaringType_m1FEBB9DF4BDFE905A76D4E297BE992C89B39B1A8_inline(L_145, L_147, NULL);
+				L_145->___declaringType_4 = L_147;
+				Il2CppCodeGenWriteBarrier((void**)(&L_145->___declaringType_4), (void*)L_147);
 				List_1_t935DFC399F3035CE8ADB557E0DC325268F81E472* L_148 = V_5;
 				XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_149 = V_20;
 				NullCheck(L_148);
@@ -13717,16 +12629,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapMember_t54E80D1B6FF58F90D480933D89D
 		V_1 = L_1;
 		XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_2 = ___rmember1;
 		NullCheck(L_2);
-		Type_t* L_3;
-		L_3 = XmlReflectionMember_get_MemberType_m26CB81C88E06E782EFF7EE40F31F88A7A954504A_inline(L_2, NULL);
+		Type_t* L_3 = L_2->___memberType_2;
 		il2cpp_codegen_runtime_class_init_inline(TypeTranslator_t46FF5D65D6B7BE54B8643952A528D5930429C60D_il2cpp_TypeInfo_var);
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_4;
 		L_4 = TypeTranslator_GetTypeData_mF04C45D9093601749D33BB31BD3D6F4C4ADAC501(L_3, NULL);
 		V_2 = L_4;
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_5 = V_1;
 		NullCheck(L_5);
-		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_6;
-		L_6 = XmlAttributes_get_XmlArray_m47C136BD864E01CEF392D4556950383154E21CC1_inline(L_5, NULL);
+		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_6 = L_5->___xmlArray_2;
 		if (!L_6)
 		{
 			goto IL_0075;
@@ -13735,11 +12645,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapMember_t54E80D1B6FF58F90D480933D89D
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_7 = V_1;
 		NullCheck(L_7);
-		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_8;
-		L_8 = XmlAttributes_get_XmlArray_m47C136BD864E01CEF392D4556950383154E21CC1_inline(L_7, NULL);
+		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_8 = L_7->___xmlArray_2;
 		NullCheck(L_8);
-		String_t* L_9;
-		L_9 = XmlArrayAttribute_get_Namespace_m37B65FCCE7A60AEADBF394DB6210DA1CC8A91CF8_inline(L_8, NULL);
+		String_t* L_9 = L_8->___ns_3;
 		if (!L_9)
 		{
 			goto IL_0041;
@@ -13748,11 +12656,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapMember_t54E80D1B6FF58F90D480933D89D
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_10 = V_1;
 		NullCheck(L_10);
-		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_11;
-		L_11 = XmlAttributes_get_XmlArray_m47C136BD864E01CEF392D4556950383154E21CC1_inline(L_10, NULL);
+		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_11 = L_10->___xmlArray_2;
 		NullCheck(L_11);
-		int32_t L_12;
-		L_12 = XmlArrayAttribute_get_Form_mD5222A61AE3D5908142D9DBF1A5BE0986466F008_inline(L_11, NULL);
+		int32_t L_12 = L_11->___form_1;
 		if ((!(((uint32_t)L_12) == ((uint32_t)2))))
 		{
 			goto IL_0041;
@@ -13769,8 +12675,7 @@ IL_0041:
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_14 = V_2;
 		NullCheck(L_14);
-		int32_t L_15;
-		L_15 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_14, NULL);
+		int32_t L_15 = L_14->___sType_2;
 		if ((((int32_t)L_15) == ((int32_t)3)))
 		{
 			goto IL_0075;
@@ -13779,8 +12684,7 @@ IL_0041:
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_16 = V_2;
 		NullCheck(L_16);
-		int32_t L_17;
-		L_17 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_16, NULL);
+		int32_t L_17 = L_16->___sType_2;
 		if ((!(((uint32_t)L_17) == ((uint32_t)1))))
 		{
 			goto IL_006a;
@@ -13789,8 +12693,7 @@ IL_0041:
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_18 = V_2;
 		NullCheck(L_18);
-		Type_t* L_19;
-		L_19 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_18, NULL);
+		Type_t* L_19 = L_18->___type_0;
 		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_20 = { reinterpret_cast<intptr_t> (ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031_0_0_0_var) };
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		Type_t* L_21;
@@ -13815,8 +12718,7 @@ IL_0075:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_24 = V_1;
 		NullCheck(L_24);
-		XmlAnyAttributeAttribute_t3B95B49DDDDA70D79EBC045F925BDE39DFB0E96A* L_25;
-		L_25 = XmlAttributes_get_XmlAnyAttribute_m3116C8A13795C5AEB267B6C78EE406EB7F1C79D7_inline(L_24, NULL);
+		XmlAnyAttributeAttribute_t3B95B49DDDDA70D79EBC045F925BDE39DFB0E96A* L_25 = L_24->___xmlAnyAttribute_0;
 		if (!L_25)
 		{
 			goto IL_00c1;
@@ -13825,8 +12727,7 @@ IL_0075:
 	{
 		XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_26 = ___rmember1;
 		NullCheck(L_26);
-		Type_t* L_27;
-		L_27 = XmlReflectionMember_get_MemberType_m26CB81C88E06E782EFF7EE40F31F88A7A954504A_inline(L_26, NULL);
+		Type_t* L_27 = L_26->___memberType_2;
 		NullCheck(L_27);
 		String_t* L_28;
 		L_28 = VirtualFuncInvoker0< String_t* >::Invoke(26 /* System.String System.Type::get_FullName() */, L_27);
@@ -13840,8 +12741,7 @@ IL_0075:
 	{
 		XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_30 = ___rmember1;
 		NullCheck(L_30);
-		Type_t* L_31;
-		L_31 = XmlReflectionMember_get_MemberType_m26CB81C88E06E782EFF7EE40F31F88A7A954504A_inline(L_30, NULL);
+		Type_t* L_31 = L_30->___memberType_2;
 		NullCheck(L_31);
 		String_t* L_32;
 		L_32 = VirtualFuncInvoker0< String_t* >::Invoke(26 /* System.String System.Type::get_FullName() */, L_31);
@@ -13874,8 +12774,7 @@ IL_00c1:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_36 = V_1;
 		NullCheck(L_36);
-		XmlAnyElementAttributes_t8709780E4C7D8E9B453BB4AE51A3CFBC462286CF* L_37;
-		L_37 = XmlAttributes_get_XmlAnyElements_m3216504EBB4407E5FF8149C2A95CDF7826C5043C_inline(L_36, NULL);
+		XmlAnyElementAttributes_t8709780E4C7D8E9B453BB4AE51A3CFBC462286CF* L_37 = L_36->___xmlAnyElements_1;
 		if (!L_37)
 		{
 			goto IL_00f4;
@@ -13884,8 +12783,7 @@ IL_00c1:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_38 = V_1;
 		NullCheck(L_38);
-		XmlAnyElementAttributes_t8709780E4C7D8E9B453BB4AE51A3CFBC462286CF* L_39;
-		L_39 = XmlAttributes_get_XmlAnyElements_m3216504EBB4407E5FF8149C2A95CDF7826C5043C_inline(L_38, NULL);
+		XmlAnyElementAttributes_t8709780E4C7D8E9B453BB4AE51A3CFBC462286CF* L_39 = L_38->___xmlAnyElements_1;
 		NullCheck(L_39);
 		int32_t L_40;
 		L_40 = CollectionBase_get_Count_m2BD48A6DDD376554A7956E4B26EC27F9F1E43C72(L_39, NULL);
@@ -13907,7 +12805,8 @@ IL_00c1:
 		XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* L_47;
 		L_47 = XmlReflectionImporter_ImportAnyElementInfo_m26B24C22E7A373EF178E830CFF15E0E04EA0155A(__this, L_43, L_44, L_45, L_46, NULL);
 		NullCheck(L_42);
-		XmlTypeMapMemberElement_set_ElementInfo_m3E7B4C2A13CE5733E5C41B5A559A64327795C038_inline(L_42, L_47, NULL);
+		((XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840*)L_42)->____elementInfo_10 = L_47;
+		Il2CppCodeGenWriteBarrier((void**)(&((XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840*)L_42)->____elementInfo_10), (void*)L_47);
 		XmlTypeMapMemberAnyElement_tC9C6D58B08CB2C84148376C77AC4259AF149C950* L_48 = V_3;
 		V_0 = L_48;
 		goto IL_0462;
@@ -13917,8 +12816,7 @@ IL_00f4:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_49 = V_1;
 		NullCheck(L_49);
-		bool L_50;
-		L_50 = XmlAttributes_get_Xmlns_m470230B52FC047B9820991B287C46CFACAACBB33_inline(L_49, NULL);
+		bool L_50 = L_49->___xmlns_10;
 		if (!L_50)
 		{
 			goto IL_0107;
@@ -13936,8 +12834,7 @@ IL_0107:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_52 = V_1;
 		NullCheck(L_52);
-		XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* L_53;
-		L_53 = XmlAttributes_get_XmlAttribute_m44681566D98881832A9FD898A985552CFF4699F7_inline(L_52, NULL);
+		XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* L_53 = L_52->___xmlAttribute_4;
 		if (!L_53)
 		{
 			goto IL_0248;
@@ -13946,8 +12843,7 @@ IL_0107:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_54 = V_1;
 		NullCheck(L_54);
-		XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* L_55;
-		L_55 = XmlAttributes_get_XmlElements_m416689A3226C3C399772C0E9E618DC1B61E2EB89_inline(L_54, NULL);
+		XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* L_55 = L_54->___xmlElements_7;
 		if (!L_55)
 		{
 			goto IL_0133;
@@ -13956,8 +12852,7 @@ IL_0107:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_56 = V_1;
 		NullCheck(L_56);
-		XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* L_57;
-		L_57 = XmlAttributes_get_XmlElements_m416689A3226C3C399772C0E9E618DC1B61E2EB89_inline(L_56, NULL);
+		XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* L_57 = L_56->___xmlElements_7;
 		NullCheck(L_57);
 		int32_t L_58;
 		L_58 = CollectionBase_get_Count_m2BD48A6DDD376554A7956E4B26EC27F9F1E43C72(L_57, NULL);
@@ -13981,14 +12876,12 @@ IL_0133:
 		V_4 = L_60;
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_61 = V_1;
 		NullCheck(L_61);
-		XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* L_62;
-		L_62 = XmlAttributes_get_XmlAttribute_m44681566D98881832A9FD898A985552CFF4699F7_inline(L_61, NULL);
+		XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* L_62 = L_61->___xmlAttribute_4;
 		NullCheck(L_62);
 		String_t* L_63;
 		L_63 = XmlAttributeAttribute_get_AttributeName_mD12BFE7D2970617D6BAEA2C7726BFCC1E78043B9(L_62, NULL);
 		NullCheck(L_63);
-		int32_t L_64;
-		L_64 = String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline(L_63, NULL);
+		int32_t L_64 = L_63->____stringLength_4;
 		if (L_64)
 		{
 			goto IL_015b;
@@ -13998,10 +12891,10 @@ IL_0133:
 		XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* L_65 = V_4;
 		XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_66 = ___rmember1;
 		NullCheck(L_66);
-		String_t* L_67;
-		L_67 = XmlReflectionMember_get_MemberName_mE4607A6A8054A867138901FA83DFEB24CCCE1A39_inline(L_66, NULL);
+		String_t* L_67 = L_66->___memberName_1;
 		NullCheck(L_65);
-		XmlTypeMapMemberAttribute_set_AttributeName_m9FA871900139C9A680D39F3FA1D64593EA0A8A37_inline(L_65, L_67, NULL);
+		L_65->____attributeName_10 = L_67;
+		Il2CppCodeGenWriteBarrier((void**)(&L_65->____attributeName_10), (void*)L_67);
 		goto IL_016d;
 	}
 
@@ -14010,13 +12903,13 @@ IL_015b:
 		XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* L_68 = V_4;
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_69 = V_1;
 		NullCheck(L_69);
-		XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* L_70;
-		L_70 = XmlAttributes_get_XmlAttribute_m44681566D98881832A9FD898A985552CFF4699F7_inline(L_69, NULL);
+		XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* L_70 = L_69->___xmlAttribute_4;
 		NullCheck(L_70);
 		String_t* L_71;
 		L_71 = XmlAttributeAttribute_get_AttributeName_mD12BFE7D2970617D6BAEA2C7726BFCC1E78043B9(L_70, NULL);
 		NullCheck(L_68);
-		XmlTypeMapMemberAttribute_set_AttributeName_m9FA871900139C9A680D39F3FA1D64593EA0A8A37_inline(L_68, L_71, NULL);
+		L_68->____attributeName_10 = L_71;
+		Il2CppCodeGenWriteBarrier((void**)(&L_68->____attributeName_10), (void*)L_71);
 	}
 
 IL_016d:
@@ -14024,13 +12917,13 @@ IL_016d:
 		XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* L_72 = V_4;
 		XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* L_73 = V_4;
 		NullCheck(L_73);
-		String_t* L_74;
-		L_74 = XmlTypeMapMemberAttribute_get_AttributeName_m79384B2B6097452969DD46364D07C2F8B353B064_inline(L_73, NULL);
+		String_t* L_74 = L_73->____attributeName_10;
 		il2cpp_codegen_runtime_class_init_inline(XmlConvert_t5D100AFD62FF717BD4F8A6CABA9EDF7A5DF719EA_il2cpp_TypeInfo_var);
 		String_t* L_75;
 		L_75 = XmlConvert_EncodeName_m5CDC8BEC5CE63A019C9E7C52AADF9F44B90E6CB5(L_74, NULL);
 		NullCheck(L_72);
-		XmlTypeMapMemberAttribute_set_AttributeName_m9FA871900139C9A680D39F3FA1D64593EA0A8A37_inline(L_72, L_75, NULL);
+		L_72->____attributeName_10 = L_75;
+		Il2CppCodeGenWriteBarrier((void**)(&L_72->____attributeName_10), (void*)L_75);
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_76 = V_2;
 		NullCheck(L_76);
 		bool L_77;
@@ -14044,24 +12937,22 @@ IL_016d:
 		XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* L_78 = V_4;
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_79 = V_2;
 		NullCheck(L_79);
-		Type_t* L_80;
-		L_80 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_79, NULL);
+		Type_t* L_80 = L_79->___type_0;
 		String_t* L_81 = ___defaultNamespace2;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_82;
 		L_82 = XmlReflectionImporter_ImportTypeMapping_m9A034588C8D63CE07DB971D8C4647FE55145077D(__this, L_80, (XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF*)NULL, L_81, NULL);
 		NullCheck(L_78);
-		XmlTypeMapMemberAttribute_set_MappedType_mA7E95DC2D885930465A715589EF224E64286F518_inline(L_78, L_82, NULL);
+		L_78->____mappedType_13 = L_82;
+		Il2CppCodeGenWriteBarrier((void**)(&L_78->____mappedType_13), (void*)L_82);
 	}
 
 IL_019d:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_83 = V_1;
 		NullCheck(L_83);
-		XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* L_84;
-		L_84 = XmlAttributes_get_XmlAttribute_m44681566D98881832A9FD898A985552CFF4699F7_inline(L_83, NULL);
+		XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* L_84 = L_83->___xmlAttribute_4;
 		NullCheck(L_84);
-		String_t* L_85;
-		L_85 = XmlAttributeAttribute_get_Namespace_m66DDB72831548F3B23A4A68E11826303CEE42835_inline(L_84, NULL);
+		String_t* L_85 = L_84->___ns_4;
 		if (!L_85)
 		{
 			goto IL_01f2;
@@ -14070,11 +12961,9 @@ IL_019d:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_86 = V_1;
 		NullCheck(L_86);
-		XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* L_87;
-		L_87 = XmlAttributes_get_XmlAttribute_m44681566D98881832A9FD898A985552CFF4699F7_inline(L_86, NULL);
+		XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* L_87 = L_86->___xmlAttribute_4;
 		NullCheck(L_87);
-		String_t* L_88;
-		L_88 = XmlAttributeAttribute_get_Namespace_m66DDB72831548F3B23A4A68E11826303CEE42835_inline(L_87, NULL);
+		String_t* L_88 = L_87->___ns_4;
 		String_t* L_89 = ___defaultNamespace2;
 		bool L_90;
 		L_90 = String_op_Inequality_m8C940F3CFC42866709D7CA931B3D77B4BE94BCB6(L_88, L_89, NULL);
@@ -14086,11 +12975,9 @@ IL_019d:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_91 = V_1;
 		NullCheck(L_91);
-		XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* L_92;
-		L_92 = XmlAttributes_get_XmlAttribute_m44681566D98881832A9FD898A985552CFF4699F7_inline(L_91, NULL);
+		XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* L_92 = L_91->___xmlAttribute_4;
 		NullCheck(L_92);
-		int32_t L_93;
-		L_93 = XmlAttributeAttribute_get_Form_m49A9D062DB2C8CED21041D3FBF941A7C3A4E06BD_inline(L_92, NULL);
+		int32_t L_93 = L_92->___form_3;
 		if ((!(((uint32_t)L_93) == ((uint32_t)2))))
 		{
 			goto IL_01d6;
@@ -14107,17 +12994,16 @@ IL_01d6:
 	{
 		XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* L_95 = V_4;
 		NullCheck(L_95);
-		XmlTypeMapMemberAttribute_set_Form_m060BDBE9694B862C8E46DCEB5CAD8F6C52E9691B_inline(L_95, 1, NULL);
+		L_95->____form_12 = 1;
 		XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* L_96 = V_4;
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_97 = V_1;
 		NullCheck(L_97);
-		XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* L_98;
-		L_98 = XmlAttributes_get_XmlAttribute_m44681566D98881832A9FD898A985552CFF4699F7_inline(L_97, NULL);
+		XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* L_98 = L_97->___xmlAttribute_4;
 		NullCheck(L_98);
-		String_t* L_99;
-		L_99 = XmlAttributeAttribute_get_Namespace_m66DDB72831548F3B23A4A68E11826303CEE42835_inline(L_98, NULL);
+		String_t* L_99 = L_98->___ns_4;
 		NullCheck(L_96);
-		XmlTypeMapMemberAttribute_set_Namespace_m75CC38F536B9F3D71532845F4D741A6A37489277_inline(L_96, L_99, NULL);
+		L_96->____namespace_11 = L_99;
+		Il2CppCodeGenWriteBarrier((void**)(&L_96->____namespace_11), (void*)L_99);
 		goto IL_0228;
 	}
 
@@ -14126,20 +13012,16 @@ IL_01f2:
 		XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* L_100 = V_4;
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_101 = V_1;
 		NullCheck(L_101);
-		XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* L_102;
-		L_102 = XmlAttributes_get_XmlAttribute_m44681566D98881832A9FD898A985552CFF4699F7_inline(L_101, NULL);
+		XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* L_102 = L_101->___xmlAttribute_4;
 		NullCheck(L_102);
-		int32_t L_103;
-		L_103 = XmlAttributeAttribute_get_Form_m49A9D062DB2C8CED21041D3FBF941A7C3A4E06BD_inline(L_102, NULL);
+		int32_t L_103 = L_102->___form_3;
 		NullCheck(L_100);
-		XmlTypeMapMemberAttribute_set_Form_m060BDBE9694B862C8E46DCEB5CAD8F6C52E9691B_inline(L_100, L_103, NULL);
+		L_100->____form_12 = L_103;
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_104 = V_1;
 		NullCheck(L_104);
-		XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* L_105;
-		L_105 = XmlAttributes_get_XmlAttribute_m44681566D98881832A9FD898A985552CFF4699F7_inline(L_104, NULL);
+		XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* L_105 = L_104->___xmlAttribute_4;
 		NullCheck(L_105);
-		int32_t L_106;
-		L_106 = XmlAttributeAttribute_get_Form_m49A9D062DB2C8CED21041D3FBF941A7C3A4E06BD_inline(L_105, NULL);
+		int32_t L_106 = L_105->___form_3;
 		if ((!(((uint32_t)L_106) == ((uint32_t)1))))
 		{
 			goto IL_021c;
@@ -14149,7 +13031,8 @@ IL_01f2:
 		XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* L_107 = V_4;
 		String_t* L_108 = ___defaultNamespace2;
 		NullCheck(L_107);
-		XmlTypeMapMemberAttribute_set_Namespace_m75CC38F536B9F3D71532845F4D741A6A37489277_inline(L_107, L_108, NULL);
+		L_107->____namespace_11 = L_108;
+		Il2CppCodeGenWriteBarrier((void**)(&L_107->____namespace_11), (void*)L_108);
 		goto IL_0228;
 	}
 
@@ -14157,19 +13040,18 @@ IL_021c:
 	{
 		XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* L_109 = V_4;
 		NullCheck(L_109);
-		XmlTypeMapMemberAttribute_set_Namespace_m75CC38F536B9F3D71532845F4D741A6A37489277_inline(L_109, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, NULL);
+		L_109->____namespace_11 = _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709;
+		Il2CppCodeGenWriteBarrier((void**)(&L_109->____namespace_11), (void*)_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
 	}
 
 IL_0228:
 	{
 		XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_110 = ___rmember1;
 		NullCheck(L_110);
-		Type_t* L_111;
-		L_111 = XmlReflectionMember_get_MemberType_m26CB81C88E06E782EFF7EE40F31F88A7A954504A_inline(L_110, NULL);
+		Type_t* L_111 = L_110->___memberType_2;
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_112 = V_1;
 		NullCheck(L_112);
-		XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* L_113;
-		L_113 = XmlAttributes_get_XmlAttribute_m44681566D98881832A9FD898A985552CFF4699F7_inline(L_112, NULL);
+		XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* L_113 = L_112->___xmlAttribute_4;
 		NullCheck(L_113);
 		String_t* L_114;
 		L_114 = XmlAttributeAttribute_get_DataType_m0F9734D465582A44A3DF13505EBF817307233310(L_113, NULL);
@@ -14186,8 +13068,7 @@ IL_0248:
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_117 = V_2;
 		NullCheck(L_117);
-		int32_t L_118;
-		L_118 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_117, NULL);
+		int32_t L_118 = L_117->___sType_2;
 		if ((!(((uint32_t)L_118) == ((uint32_t)3))))
 		{
 			goto IL_0435;
@@ -14196,8 +13077,7 @@ IL_0248:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_119 = V_1;
 		NullCheck(L_119);
-		XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* L_120;
-		L_120 = XmlAttributes_get_XmlElements_m416689A3226C3C399772C0E9E618DC1B61E2EB89_inline(L_119, NULL);
+		XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* L_120 = L_119->___xmlElements_7;
 		NullCheck(L_120);
 		int32_t L_121;
 		L_121 = CollectionBase_get_Count_m2BD48A6DDD376554A7956E4B26EC27F9F1E43C72(L_120, NULL);
@@ -14209,8 +13089,7 @@ IL_0248:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_122 = V_1;
 		NullCheck(L_122);
-		XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* L_123;
-		L_123 = XmlAttributes_get_XmlElements_m416689A3226C3C399772C0E9E618DC1B61E2EB89_inline(L_122, NULL);
+		XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* L_123 = L_122->___xmlElements_7;
 		NullCheck(L_123);
 		int32_t L_124;
 		L_124 = CollectionBase_get_Count_m2BD48A6DDD376554A7956E4B26EC27F9F1E43C72(L_123, NULL);
@@ -14222,18 +13101,15 @@ IL_0248:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_125 = V_1;
 		NullCheck(L_125);
-		XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* L_126;
-		L_126 = XmlAttributes_get_XmlElements_m416689A3226C3C399772C0E9E618DC1B61E2EB89_inline(L_125, NULL);
+		XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* L_126 = L_125->___xmlElements_7;
 		NullCheck(L_126);
 		XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* L_127;
 		L_127 = XmlElementAttributes_get_Item_m724D3FD8DE8930D19D825A2B81348C3EAE41630D(L_126, 0, NULL);
 		NullCheck(L_127);
-		Type_t* L_128;
-		L_128 = XmlElementAttribute_get_Type_m3B355841D7F13F4CD84F8C3ED4D28917BB170CCB_inline(L_127, NULL);
+		Type_t* L_128 = L_127->___type_5;
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_129 = V_2;
 		NullCheck(L_129);
-		Type_t* L_130;
-		L_130 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_129, NULL);
+		Type_t* L_130 = L_129->___type_0;
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		bool L_131;
 		L_131 = Type_op_Inequality_m83209C7BB3C05DFBEA3B6199B0BEFE8037301172(L_128, L_130, NULL);
@@ -14247,8 +13123,7 @@ IL_028e:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_132 = V_1;
 		NullCheck(L_132);
-		XmlTextAttribute_tAA8BE9BA759F78BB4CDF00D3848B7746C0EDEFE0* L_133;
-		L_133 = XmlAttributes_get_XmlText_m021CE7CB4BE20DEE5FC8FAE724015FF2C4BDFD1B_inline(L_132, NULL);
+		XmlTextAttribute_tAA8BE9BA759F78BB4CDF00D3848B7746C0EDEFE0* L_133 = L_132->___xmlText_12;
 		if (!L_133)
 		{
 			goto IL_0312;
@@ -14259,8 +13134,7 @@ IL_0296:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_134 = V_1;
 		NullCheck(L_134);
-		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_135;
-		L_135 = XmlAttributes_get_XmlArray_m47C136BD864E01CEF392D4556950383154E21CC1_inline(L_134, NULL);
+		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_135 = L_134->___xmlArray_2;
 		if (!L_135)
 		{
 			goto IL_02a9;
@@ -14284,16 +13158,15 @@ IL_02a9:
 		NullCheck(L_139);
 		ListMap__ctor_m89E81F66CB6B669B50E293853AAF98AD4DED0F67(L_139, NULL);
 		NullCheck(L_138);
-		XmlTypeMapMemberFlatList_set_ListMap_mFEBE950843FA798DFC8628E296696296C953071E_inline(L_138, L_139, NULL);
+		L_138->____listMap_15 = L_139;
+		Il2CppCodeGenWriteBarrier((void**)(&L_138->____listMap_15), (void*)L_139);
 		XmlTypeMapMemberFlatList_t443422643AA0E5FA5166EF6451BBA01D02004B38* L_140 = V_5;
 		NullCheck(L_140);
-		ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* L_141;
-		L_141 = XmlTypeMapMemberFlatList_get_ListMap_mAAD12C509481E6855A9C4865874566320C256EBC_inline(L_140, NULL);
+		ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* L_141 = L_140->____listMap_15;
 		Type_t* L_142 = ___declaringType0;
 		XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_143 = ___rmember1;
 		NullCheck(L_143);
-		String_t* L_144;
-		L_144 = XmlReflectionMember_get_MemberName_mE4607A6A8054A867138901FA83DFEB24CCCE1A39_inline(L_143, NULL);
+		String_t* L_144 = L_143->___memberName_1;
 		il2cpp_codegen_runtime_class_init_inline(XmlConvert_t5D100AFD62FF717BD4F8A6CABA9EDF7A5DF719EA_il2cpp_TypeInfo_var);
 		String_t* L_145;
 		L_145 = XmlConvert_EncodeLocalName_m8AD743C94643F82D5B6FF1617EDAF4145E67D318(L_144, NULL);
@@ -14307,27 +13180,26 @@ IL_02a9:
 		XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* L_151;
 		L_151 = XmlReflectionImporter_ImportElementInfo_m1343282D0C9BF75E4F7CCF7B3020BD15F50C361D(__this, L_142, L_145, L_146, L_148, L_149, L_150, NULL);
 		NullCheck(L_141);
-		ListMap_set_ItemInfo_mD0E132CC2807675C9308B26F69EA38EC9EB3EF11_inline(L_141, L_151, NULL);
+		L_141->____itemInfo_0 = L_151;
+		Il2CppCodeGenWriteBarrier((void**)(&L_141->____itemInfo_0), (void*)L_151);
 		XmlTypeMapMemberFlatList_t443422643AA0E5FA5166EF6451BBA01D02004B38* L_152 = V_5;
 		XmlTypeMapMemberFlatList_t443422643AA0E5FA5166EF6451BBA01D02004B38* L_153 = V_5;
 		NullCheck(L_153);
-		ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* L_154;
-		L_154 = XmlTypeMapMemberFlatList_get_ListMap_mAAD12C509481E6855A9C4865874566320C256EBC_inline(L_153, NULL);
+		ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* L_154 = L_153->____listMap_15;
 		NullCheck(L_154);
-		XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* L_155;
-		L_155 = ListMap_get_ItemInfo_mF4B1E24F5658D05E8E1E6296F4A220D33E7EC579_inline(L_154, NULL);
+		XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* L_155 = L_154->____itemInfo_0;
 		NullCheck(L_152);
-		XmlTypeMapMemberElement_set_ElementInfo_m3E7B4C2A13CE5733E5C41B5A559A64327795C038_inline(L_152, L_155, NULL);
+		((XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840*)L_152)->____elementInfo_10 = L_155;
+		Il2CppCodeGenWriteBarrier((void**)(&((XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840*)L_152)->____elementInfo_10), (void*)L_155);
 		XmlTypeMapMemberFlatList_t443422643AA0E5FA5166EF6451BBA01D02004B38* L_156 = V_5;
 		NullCheck(L_156);
-		ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* L_157;
-		L_157 = XmlTypeMapMemberFlatList_get_ListMap_mAAD12C509481E6855A9C4865874566320C256EBC_inline(L_156, NULL);
+		ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* L_157 = L_156->____listMap_15;
 		XmlTypeMapMemberFlatList_t443422643AA0E5FA5166EF6451BBA01D02004B38* L_158 = V_5;
 		NullCheck(L_158);
-		String_t* L_159;
-		L_159 = XmlTypeMapMemberElement_get_ChoiceMember_m182A4AB876036DDA005F0760EF51C5FCA7F682D8_inline(L_158, NULL);
+		String_t* L_159 = ((XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840*)L_158)->____choiceMember_11;
 		NullCheck(L_157);
-		ListMap_set_ChoiceMember_m25EB1F93541895E0647E420B7BF9C8C7194621D6_inline(L_157, L_159, NULL);
+		L_157->____choiceMember_1 = L_159;
+		Il2CppCodeGenWriteBarrier((void**)(&L_157->____choiceMember_1), (void*)L_159);
 		XmlTypeMapMemberFlatList_t443422643AA0E5FA5166EF6451BBA01D02004B38* L_160 = V_5;
 		V_0 = L_160;
 		goto IL_0462;
@@ -14343,7 +13215,8 @@ IL_0312:
 		NullCheck(L_163);
 		XmlTypeMapElementInfoList__ctor_mEEBEB4330F01D3172DDE3C685C96D1FDB5E70D1B(L_163, NULL);
 		NullCheck(L_162);
-		XmlTypeMapMemberElement_set_ElementInfo_m3E7B4C2A13CE5733E5C41B5A559A64327795C038_inline(L_162, L_163, NULL);
+		((XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840*)L_162)->____elementInfo_10 = L_163;
+		Il2CppCodeGenWriteBarrier((void**)(&((XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840*)L_162)->____elementInfo_10), (void*)L_163);
 		XmlTypeMapMemberList_t5542A0234B55CC3AD3EDD7B830E7C4603FAAD63E* L_164 = L_162;
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_165 = V_2;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_166 = (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32*)il2cpp_codegen_object_new(XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32_il2cpp_TypeInfo_var);
@@ -14353,8 +13226,7 @@ IL_0312:
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_167 = V_6;
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_168 = V_1;
 		NullCheck(L_168);
-		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_169;
-		L_169 = XmlAttributes_get_XmlArray_m47C136BD864E01CEF392D4556950383154E21CC1_inline(L_168, NULL);
+		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_169 = L_168->___xmlArray_2;
 		G_B45_0 = L_167;
 		G_B45_1 = L_164;
 		if (!L_169)
@@ -14367,14 +13239,12 @@ IL_0312:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_170 = V_1;
 		NullCheck(L_170);
-		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_171;
-		L_171 = XmlAttributes_get_XmlArray_m47C136BD864E01CEF392D4556950383154E21CC1_inline(L_170, NULL);
+		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_171 = L_170->___xmlArray_2;
 		NullCheck(L_171);
 		String_t* L_172;
 		L_172 = XmlArrayAttribute_get_ElementName_mFDDFF359B711CC6348AD07853053BB37C405CDC2(L_171, NULL);
 		NullCheck(L_172);
-		int32_t L_173;
-		L_173 = String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline(L_172, NULL);
+		int32_t L_173 = L_172->____stringLength_4;
 		G_B46_0 = G_B45_0;
 		G_B46_1 = G_B45_1;
 		if (L_173)
@@ -14389,8 +13259,7 @@ IL_0347:
 	{
 		XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_174 = ___rmember1;
 		NullCheck(L_174);
-		String_t* L_175;
-		L_175 = XmlReflectionMember_get_MemberName_mE4607A6A8054A867138901FA83DFEB24CCCE1A39_inline(L_174, NULL);
+		String_t* L_175 = L_174->___memberName_1;
 		G_B48_0 = L_175;
 		G_B48_1 = G_B46_0;
 		G_B48_2 = G_B46_1;
@@ -14401,8 +13270,7 @@ IL_034f:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_176 = V_1;
 		NullCheck(L_176);
-		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_177;
-		L_177 = XmlAttributes_get_XmlArray_m47C136BD864E01CEF392D4556950383154E21CC1_inline(L_176, NULL);
+		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_177 = L_176->___xmlArray_2;
 		NullCheck(L_177);
 		String_t* L_178;
 		L_178 = XmlArrayAttribute_get_ElementName_mFDDFF359B711CC6348AD07853053BB37C405CDC2(L_177, NULL);
@@ -14421,8 +13289,7 @@ IL_035a:
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_180 = V_6;
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_181 = V_1;
 		NullCheck(L_181);
-		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_182;
-		L_182 = XmlAttributes_get_XmlArray_m47C136BD864E01CEF392D4556950383154E21CC1_inline(L_181, NULL);
+		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_182 = L_181->___xmlArray_2;
 		G_B49_0 = L_180;
 		G_B49_1 = G_B48_2;
 		if (!L_182)
@@ -14435,11 +13302,9 @@ IL_035a:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_183 = V_1;
 		NullCheck(L_183);
-		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_184;
-		L_184 = XmlAttributes_get_XmlArray_m47C136BD864E01CEF392D4556950383154E21CC1_inline(L_183, NULL);
+		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_184 = L_183->___xmlArray_2;
 		NullCheck(L_184);
-		String_t* L_185;
-		L_185 = XmlArrayAttribute_get_Namespace_m37B65FCCE7A60AEADBF394DB6210DA1CC8A91CF8_inline(L_184, NULL);
+		String_t* L_185 = L_184->___ns_3;
 		G_B50_0 = G_B49_0;
 		G_B50_1 = G_B49_1;
 		if (L_185)
@@ -14463,11 +13328,9 @@ IL_037e:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_187 = V_1;
 		NullCheck(L_187);
-		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_188;
-		L_188 = XmlAttributes_get_XmlArray_m47C136BD864E01CEF392D4556950383154E21CC1_inline(L_187, NULL);
+		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_188 = L_187->___xmlArray_2;
 		NullCheck(L_188);
-		String_t* L_189;
-		L_189 = XmlArrayAttribute_get_Namespace_m37B65FCCE7A60AEADBF394DB6210DA1CC8A91CF8_inline(L_188, NULL);
+		String_t* L_189 = L_188->___ns_3;
 		G_B52_0 = L_189;
 		G_B52_1 = G_B51_0;
 		G_B52_2 = G_B51_1;
@@ -14480,22 +13343,20 @@ IL_0389:
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_190 = V_6;
 		XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_191 = ___rmember1;
 		NullCheck(L_191);
-		Type_t* L_192;
-		L_192 = XmlReflectionMember_get_MemberType_m26CB81C88E06E782EFF7EE40F31F88A7A954504A_inline(L_191, NULL);
+		Type_t* L_192 = L_191->___memberType_2;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_193 = V_6;
 		NullCheck(L_193);
-		String_t* L_194;
-		L_194 = XmlTypeMapElementInfo_get_Namespace_m94DAAADC3EFEBC302C4D3574BD4835F222345498_inline(L_193, NULL);
+		String_t* L_194 = L_193->____namespace_1;
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_195 = V_1;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_196;
 		L_196 = XmlReflectionImporter_ImportListMapping_m2DE4BB63B5D578F38690F0CECD77C0E87268CEFC(__this, L_192, (XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF*)NULL, L_194, L_195, 0, NULL);
 		NullCheck(L_190);
-		XmlTypeMapElementInfo_set_MappedType_m2FD5B0A4823A3FAF00E86D03C959D9B0E0D2A409_inline(L_190, L_196, NULL);
+		L_190->____mappedType_7 = L_196;
+		Il2CppCodeGenWriteBarrier((void**)(&L_190->____mappedType_7), (void*)L_196);
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_197 = V_6;
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_198 = V_1;
 		NullCheck(L_198);
-		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_199;
-		L_199 = XmlAttributes_get_XmlArray_m47C136BD864E01CEF392D4556950383154E21CC1_inline(L_198, NULL);
+		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_199 = L_198->___xmlArray_2;
 		G_B53_0 = L_197;
 		G_B53_1 = G_B52_2;
 		if (L_199)
@@ -14516,11 +13377,9 @@ IL_03b8:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_200 = V_1;
 		NullCheck(L_200);
-		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_201;
-		L_201 = XmlAttributes_get_XmlArray_m47C136BD864E01CEF392D4556950383154E21CC1_inline(L_200, NULL);
+		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_201 = L_200->___xmlArray_2;
 		NullCheck(L_201);
-		bool L_202;
-		L_202 = XmlArrayAttribute_get_IsNullable_m84FB7E08614BFAFE7C6D5B72F4E43CBA42583CFB_inline(L_201, NULL);
+		bool L_202 = L_201->___isNullable_2;
 		G_B55_0 = ((int32_t)(L_202));
 		G_B55_1 = G_B54_0;
 		G_B55_2 = G_B54_1;
@@ -14533,8 +13392,7 @@ IL_03c3:
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_203 = V_6;
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_204 = V_1;
 		NullCheck(L_204);
-		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_205;
-		L_205 = XmlAttributes_get_XmlArray_m47C136BD864E01CEF392D4556950383154E21CC1_inline(L_204, NULL);
+		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_205 = L_204->___xmlArray_2;
 		G_B56_0 = L_203;
 		G_B56_1 = G_B55_2;
 		if (L_205)
@@ -14555,11 +13413,9 @@ IL_03d5:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_206 = V_1;
 		NullCheck(L_206);
-		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_207;
-		L_207 = XmlAttributes_get_XmlArray_m47C136BD864E01CEF392D4556950383154E21CC1_inline(L_206, NULL);
+		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_207 = L_206->___xmlArray_2;
 		NullCheck(L_207);
-		int32_t L_208;
-		L_208 = XmlArrayAttribute_get_Form_mD5222A61AE3D5908142D9DBF1A5BE0986466F008_inline(L_207, NULL);
+		int32_t L_208 = L_207->___form_1;
 		G_B58_0 = ((int32_t)(L_208));
 		G_B58_1 = G_B57_0;
 		G_B58_2 = G_B57_1;
@@ -14572,8 +13428,7 @@ IL_03e0:
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_209 = V_6;
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_210 = V_1;
 		NullCheck(L_210);
-		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_211;
-		L_211 = XmlAttributes_get_XmlArray_m47C136BD864E01CEF392D4556950383154E21CC1_inline(L_210, NULL);
+		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_211 = L_210->___xmlArray_2;
 		G_B59_0 = L_209;
 		G_B59_1 = G_B58_2;
 		if (L_211)
@@ -14594,11 +13449,9 @@ IL_03f2:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_212 = V_1;
 		NullCheck(L_212);
-		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_213;
-		L_213 = XmlAttributes_get_XmlArray_m47C136BD864E01CEF392D4556950383154E21CC1_inline(L_212, NULL);
+		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_213 = L_212->___xmlArray_2;
 		NullCheck(L_213);
-		int32_t L_214;
-		L_214 = XmlArrayAttribute_get_Order_m82A05D0B48CDF77EEAC644B324916768C3DCC219_inline(L_213, NULL);
+		int32_t L_214 = L_213->___order_4;
 		G_B61_0 = L_214;
 		G_B61_1 = G_B60_0;
 		G_B61_2 = G_B60_1;
@@ -14610,8 +13463,7 @@ IL_03fd:
 		XmlTypeMapElementInfo_set_ExplicitOrder_mD893A153D81289F4A8C4A429800FEDB81E3578B4_inline(G_B61_1, G_B61_0, NULL);
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_215 = V_1;
 		NullCheck(L_215);
-		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_216;
-		L_216 = XmlAttributes_get_XmlArray_m47C136BD864E01CEF392D4556950383154E21CC1_inline(L_215, NULL);
+		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_216 = L_215->___xmlArray_2;
 		G_B62_0 = G_B61_2;
 		if (!L_216)
 		{
@@ -14622,11 +13474,9 @@ IL_03fd:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_217 = V_1;
 		NullCheck(L_217);
-		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_218;
-		L_218 = XmlAttributes_get_XmlArray_m47C136BD864E01CEF392D4556950383154E21CC1_inline(L_217, NULL);
+		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_218 = L_217->___xmlArray_2;
 		NullCheck(L_218);
-		int32_t L_219;
-		L_219 = XmlArrayAttribute_get_Form_mD5222A61AE3D5908142D9DBF1A5BE0986466F008_inline(L_218, NULL);
+		int32_t L_219 = L_218->___form_1;
 		G_B63_0 = G_B62_0;
 		if ((!(((uint32_t)L_219) == ((uint32_t)2))))
 		{
@@ -14638,7 +13488,8 @@ IL_03fd:
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_220 = V_6;
 		String_t* L_221 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->___Empty_6;
 		NullCheck(L_220);
-		XmlTypeMapElementInfo_set_Namespace_mB1BAB4E18DAF612183E318500F2010C73D7B3B5A_inline(L_220, L_221, NULL);
+		L_220->____namespace_1 = L_221;
+		Il2CppCodeGenWriteBarrier((void**)(&L_220->____namespace_1), (void*)L_221);
 		G_B64_0 = G_B63_0;
 	}
 
@@ -14666,22 +13517,21 @@ IL_0435:
 		Type_t* L_228 = ___declaringType0;
 		XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_229 = ___rmember1;
 		NullCheck(L_229);
-		String_t* L_230;
-		L_230 = XmlReflectionMember_get_MemberName_mE4607A6A8054A867138901FA83DFEB24CCCE1A39_inline(L_229, NULL);
+		String_t* L_230 = L_229->___memberName_1;
 		il2cpp_codegen_runtime_class_init_inline(XmlConvert_t5D100AFD62FF717BD4F8A6CABA9EDF7A5DF719EA_il2cpp_TypeInfo_var);
 		String_t* L_231;
 		L_231 = XmlConvert_EncodeLocalName_m8AD743C94643F82D5B6FF1617EDAF4145E67D318(L_230, NULL);
 		String_t* L_232 = ___defaultNamespace2;
 		XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_233 = ___rmember1;
 		NullCheck(L_233);
-		Type_t* L_234;
-		L_234 = XmlReflectionMember_get_MemberType_m26CB81C88E06E782EFF7EE40F31F88A7A954504A_inline(L_233, NULL);
+		Type_t* L_234 = L_233->___memberType_2;
 		XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* L_235 = V_7;
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_236 = V_1;
 		XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* L_237;
 		L_237 = XmlReflectionImporter_ImportElementInfo_m1343282D0C9BF75E4F7CCF7B3020BD15F50C361D(__this, L_228, L_231, L_232, L_234, L_235, L_236, NULL);
 		NullCheck(L_227);
-		XmlTypeMapMemberElement_set_ElementInfo_m3E7B4C2A13CE5733E5C41B5A559A64327795C038_inline(L_227, L_237, NULL);
+		L_227->____elementInfo_10 = L_237;
+		Il2CppCodeGenWriteBarrier((void**)(&L_227->____elementInfo_10), (void*)L_237);
 		XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* L_238 = V_7;
 		V_0 = L_238;
 	}
@@ -14692,28 +13542,28 @@ IL_0462:
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_240 = V_2;
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_241 = V_1;
 		NullCheck(L_241);
-		RuntimeObject* L_242;
-		L_242 = XmlAttributes_get_XmlDefaultValue_m24022111D30B964CF2DDE2EC6ACC870DB4BA7ED1_inline(L_241, NULL);
+		RuntimeObject* L_242 = L_241->___xmlDefaultValue_6;
 		RuntimeObject* L_243;
 		L_243 = XmlReflectionImporter_GetDefaultValue_m9AC659BFACAF9F4E2ED88A32F9B0622C5FBACDA8(__this, L_240, L_242, NULL);
 		NullCheck(L_239);
-		XmlTypeMapMember_set_DefaultValue_m97AC90D89BFEE878DA9FE3150292AD6E69B6FA27_inline(L_239, L_243, NULL);
+		L_239->____defaultValue_8 = L_243;
+		Il2CppCodeGenWriteBarrier((void**)(&L_239->____defaultValue_8), (void*)L_243);
 		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_244 = V_0;
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_245 = V_2;
 		NullCheck(L_244);
-		XmlTypeMapMember_set_TypeData_m9C4CAF5B4A21DE54C9DE9F90C1332BBDAA4A4B4C_inline(L_244, L_245, NULL);
+		L_244->____typeData_4 = L_245;
+		Il2CppCodeGenWriteBarrier((void**)(&L_244->____typeData_4), (void*)L_245);
 		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_246 = V_0;
 		XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_247 = ___rmember1;
 		NullCheck(L_247);
-		String_t* L_248;
-		L_248 = XmlReflectionMember_get_MemberName_mE4607A6A8054A867138901FA83DFEB24CCCE1A39_inline(L_247, NULL);
+		String_t* L_248 = L_247->___memberName_1;
 		NullCheck(L_246);
-		XmlTypeMapMember_set_Name_m388D6A30E3DD11FD6068A5D5C180110C327EFC08_inline(L_246, L_248, NULL);
+		L_246->____name_0 = L_248;
+		Il2CppCodeGenWriteBarrier((void**)(&L_246->____name_0), (void*)L_248);
 		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_249 = V_0;
 		XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_250 = ___rmember1;
 		NullCheck(L_250);
-		bool L_251;
-		L_251 = XmlReflectionMember_get_IsReturnValue_m85EB9A5F4C984353A4BEA4A10D90BEB715158255_inline(L_250, NULL);
+		bool L_251 = L_250->___isReturnValue_0;
 		NullCheck(L_249);
 		XmlTypeMapMember_set_IsReturnValue_m8E27F10143941CADA16EEB3F2B81DCE9BB573AD1(L_249, L_251, NULL);
 		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_252 = V_0;
@@ -14786,8 +13636,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapElementInfoList_tFE45CC481B284D4ADA
 		XmlReflectionImporter_ImportTextElementInfo_m95E321788636ECB35EED75B9983452E4025D0599(__this, L_1, L_2, L_3, L_4, L_5, NULL);
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_6 = ___atts5;
 		NullCheck(L_6);
-		XmlChoiceIdentifierAttribute_t1DF770FBF01EBD518F55C363C703F86A7712301E* L_7;
-		L_7 = XmlAttributes_get_XmlChoiceIdentifier_mA6096A2AFE2439889FA8F48E22AD7335C9B7EE45_inline(L_6, NULL);
+		XmlChoiceIdentifierAttribute_t1DF770FBF01EBD518F55C363C703F86A7712301E* L_7 = L_6->___xmlChoiceIdentifier_5;
 		if (!L_7)
 		{
 			goto IL_0136;
@@ -14815,21 +13664,20 @@ IL_0038:
 		XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* L_11 = ___member4;
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_12 = ___atts5;
 		NullCheck(L_12);
-		XmlChoiceIdentifierAttribute_t1DF770FBF01EBD518F55C363C703F86A7712301E* L_13;
-		L_13 = XmlAttributes_get_XmlChoiceIdentifier_mA6096A2AFE2439889FA8F48E22AD7335C9B7EE45_inline(L_12, NULL);
+		XmlChoiceIdentifierAttribute_t1DF770FBF01EBD518F55C363C703F86A7712301E* L_13 = L_12->___xmlChoiceIdentifier_5;
 		NullCheck(L_13);
 		String_t* L_14;
 		L_14 = XmlChoiceIdentifierAttribute_get_MemberName_mFB0A7699A652AE5EEB3AF341F1EEE4C91B46EE9A(L_13, NULL);
 		NullCheck(L_11);
-		XmlTypeMapMemberElement_set_ChoiceMember_m8F271920DC329BABB1F6CC20C327EFABC5D5FAD4_inline(L_11, L_14, NULL);
+		L_11->____choiceMember_11 = L_14;
+		Il2CppCodeGenWriteBarrier((void**)(&L_11->____choiceMember_11), (void*)L_14);
 		Type_t* L_15 = ___cls0;
 		XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* L_16 = ___member4;
 		NullCheck(L_16);
-		String_t* L_17;
-		L_17 = XmlTypeMapMemberElement_get_ChoiceMember_m182A4AB876036DDA005F0760EF51C5FCA7F682D8_inline(L_16, NULL);
+		String_t* L_17 = L_16->____choiceMember_11;
 		NullCheck(L_15);
 		MemberInfoU5BU5D_t4CB6970BB166E8E1CFB06152B2A2284971873053* L_18;
-		L_18 = VirtualFuncInvoker2< MemberInfoU5BU5D_t4CB6970BB166E8E1CFB06152B2A2284971873053*, String_t*, int32_t >::Invoke(90 /* System.Reflection.MemberInfo[] System.Type::GetMember(System.String,System.Reflection.BindingFlags) */, L_15, L_17, ((int32_t)20));
+		L_18 = VirtualFuncInvoker2< MemberInfoU5BU5D_t4CB6970BB166E8E1CFB06152B2A2284971873053*, String_t*, int32_t >::Invoke(84 /* System.Reflection.MemberInfo[] System.Type::GetMember(System.String,System.Reflection.BindingFlags) */, L_15, L_17, ((int32_t)20));
 		V_4 = L_18;
 		MemberInfoU5BU5D_t4CB6970BB166E8E1CFB06152B2A2284971873053* L_19 = V_4;
 		NullCheck(L_19);
@@ -14841,8 +13689,7 @@ IL_0038:
 	{
 		XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* L_20 = ___member4;
 		NullCheck(L_20);
-		String_t* L_21;
-		L_21 = XmlTypeMapMemberElement_get_ChoiceMember_m182A4AB876036DDA005F0760EF51C5FCA7F682D8_inline(L_20, NULL);
+		String_t* L_21 = L_20->____choiceMember_11;
 		Type_t* L_22 = ___cls0;
 		Type_t* L_23 = L_22;
 		G_B5_0 = L_23;
@@ -14928,8 +13775,7 @@ IL_00b2:
 	{
 		XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* L_37 = ___member4;
 		NullCheck(L_37);
-		String_t* L_38;
-		L_38 = XmlTypeMapMemberElement_get_ChoiceMember_m182A4AB876036DDA005F0760EF51C5FCA7F682D8_inline(L_37, NULL);
+		String_t* L_38 = L_37->____choiceMember_11;
 		String_t* L_39;
 		L_39 = String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B(((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral75DAA5C16AD22FC6CBDC55CD16AD259D5A8F883D)), L_38, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral78B67CC5FE62A8456C7B569FBAC1CD4B1E7A9285)), NULL);
 		InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB* L_40 = (InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB_il2cpp_TypeInfo_var)));
@@ -14968,7 +13814,8 @@ IL_00e7:
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_49;
 		L_49 = TypeTranslator_GetTypeData_mF04C45D9093601749D33BB31BD3D6F4C4ADAC501(L_48, NULL);
 		NullCheck(L_47);
-		XmlTypeMapMemberElement_set_ChoiceTypeData_mC09197CF2429D39C3771B2E1903663FEE114877D_inline(L_47, L_49, NULL);
+		L_47->____choiceTypeData_13 = L_49;
+		Il2CppCodeGenWriteBarrier((void**)(&L_47->____choiceTypeData_13), (void*)L_49);
 		Type_t* L_50 = V_1;
 		NullCheck(L_50);
 		bool L_51;
@@ -14992,8 +13839,7 @@ IL_0103:
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_55;
 		L_55 = XmlReflectionImporter_ImportTypeMapping_m3AE556A476B6CA920DE1BDDEB20F261A351A7B18(__this, L_54, NULL);
 		NullCheck(L_55);
-		ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* L_56;
-		L_56 = XmlMapping_get_ObjectMap_m63D1AEAC8EDD8396357898D337E350673A1E9003_inline(L_55, NULL);
+		ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* L_56 = ((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_55)->___map_0;
 		V_0 = ((EnumMap_tB4A35B61F48010A5BBDBAB1CA145F3345576E30C*)IsInstClass((RuntimeObject*)L_56, EnumMap_tB4A35B61F48010A5BBDBAB1CA145F3345576E30C_il2cpp_TypeInfo_var));
 		EnumMap_tB4A35B61F48010A5BBDBAB1CA145F3345576E30C* L_57 = V_0;
 		if (L_57)
@@ -15021,8 +13867,7 @@ IL_0136:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_64 = ___atts5;
 		NullCheck(L_64);
-		XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* L_65;
-		L_65 = XmlAttributes_get_XmlElements_m416689A3226C3C399772C0E9E618DC1B61E2EB89_inline(L_64, NULL);
+		XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* L_65 = L_64->___xmlElements_7;
 		NullCheck(L_65);
 		int32_t L_66;
 		L_66 = CollectionBase_get_Count_m2BD48A6DDD376554A7956E4B26EC27F9F1E43C72(L_65, NULL);
@@ -15054,15 +13899,16 @@ IL_0136:
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_73 = V_6;
 		String_t* L_74 = ___defaultName1;
 		NullCheck(L_73);
-		XmlTypeMapElementInfo_set_ElementName_mEE8DF5FA9A346D3D437DF38E2B5E0BC20AA5DC40_inline(L_73, L_74, NULL);
+		L_73->____elementName_0 = L_74;
+		Il2CppCodeGenWriteBarrier((void**)(&L_73->____elementName_0), (void*)L_74);
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_75 = V_6;
 		String_t* L_76 = ___defaultNamespace2;
 		NullCheck(L_75);
-		XmlTypeMapElementInfo_set_Namespace_mB1BAB4E18DAF612183E318500F2010C73D7B3B5A_inline(L_75, L_76, NULL);
+		L_75->____namespace_1 = L_76;
+		Il2CppCodeGenWriteBarrier((void**)(&L_75->____namespace_1), (void*)L_76);
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_77 = V_6;
 		NullCheck(L_77);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_78;
-		L_78 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_77, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_78 = L_77->____type_8;
 		NullCheck(L_78);
 		bool L_79;
 		L_79 = TypeData_get_IsComplexType_m13C3810EB4DD4C512B9A472A24D12BFE443FF749(L_78, NULL);
@@ -15078,7 +13924,8 @@ IL_0136:
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_83;
 		L_83 = XmlReflectionImporter_ImportTypeMapping_m9A034588C8D63CE07DB971D8C4647FE55145077D(__this, L_81, (XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF*)NULL, L_82, NULL);
 		NullCheck(L_80);
-		XmlTypeMapElementInfo_set_MappedType_m2FD5B0A4823A3FAF00E86D03C959D9B0E0D2A409_inline(L_80, L_83, NULL);
+		L_80->____mappedType_7 = L_83;
+		Il2CppCodeGenWriteBarrier((void**)(&L_80->____mappedType_7), (void*)L_83);
 	}
 
 IL_018b:
@@ -15094,16 +13941,14 @@ IL_0194:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_87 = ___atts5;
 		NullCheck(L_87);
-		XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* L_88;
-		L_88 = XmlAttributes_get_XmlElements_m416689A3226C3C399772C0E9E618DC1B61E2EB89_inline(L_87, NULL);
+		XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* L_88 = L_87->___xmlElements_7;
 		NullCheck(L_88);
 		int32_t L_89;
 		L_89 = CollectionBase_get_Count_m2BD48A6DDD376554A7956E4B26EC27F9F1E43C72(L_88, NULL);
 		V_3 = (bool)((((int32_t)L_89) > ((int32_t)1))? 1 : 0);
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_90 = ___atts5;
 		NullCheck(L_90);
-		XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* L_91;
-		L_91 = XmlAttributes_get_XmlElements_m416689A3226C3C399772C0E9E618DC1B61E2EB89_inline(L_90, NULL);
+		XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* L_91 = L_90->___xmlElements_7;
 		NullCheck(L_91);
 		RuntimeObject* L_92;
 		L_92 = CollectionBase_GetEnumerator_m8121D67DEBB0009A93BFEBB1DA46BA8A671FD862(L_91, NULL);
@@ -15151,8 +13996,7 @@ IL_01b7_1:
 				V_8 = ((XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5*)CastclassClass((RuntimeObject*)L_97, XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5_il2cpp_TypeInfo_var));
 				XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* L_98 = V_8;
 				NullCheck(L_98);
-				Type_t* L_99;
-				L_99 = XmlElementAttribute_get_Type_m3B355841D7F13F4CD84F8C3ED4D28917BB170CCB_inline(L_98, NULL);
+				Type_t* L_99 = L_98->___type_5;
 				il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 				bool L_100;
 				L_100 = Type_op_Inequality_m83209C7BB3C05DFBEA3B6199B0BEFE8037301172(L_99, (Type_t*)NULL, NULL);
@@ -15171,8 +14015,7 @@ IL_01d8_1:
 			{
 				XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* L_102 = V_8;
 				NullCheck(L_102);
-				Type_t* L_103;
-				L_103 = XmlElementAttribute_get_Type_m3B355841D7F13F4CD84F8C3ED4D28917BB170CCB_inline(L_102, NULL);
+				Type_t* L_103 = L_102->___type_5;
 				G_B28_0 = L_103;
 			}
 
@@ -15195,14 +14038,12 @@ IL_01df_1:
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_110 = V_10;
 				XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* L_111 = V_8;
 				NullCheck(L_111);
-				int32_t L_112;
-				L_112 = XmlElementAttribute_get_Form_mAB6C265C412AD6BA37FF7802EB207C726F3ADADC_inline(L_111, NULL);
+				int32_t L_112 = L_111->___form_2;
 				NullCheck(L_110);
-				XmlTypeMapElementInfo_set_Form_m404075D5C7B4E4CE0EC5ED46881D4D84C73E0102_inline(L_110, L_112, NULL);
+				L_110->____form_2 = L_112;
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_113 = V_10;
 				NullCheck(L_113);
-				int32_t L_114;
-				L_114 = XmlTypeMapElementInfo_get_Form_m6D632374F4C5C58870DFDB60928B518C216180FA_inline(L_113, NULL);
+				int32_t L_114 = L_113->____form_2;
 				if ((((int32_t)L_114) == ((int32_t)2)))
 				{
 					goto IL_022b_1;
@@ -15212,8 +14053,7 @@ IL_01df_1:
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_115 = V_10;
 				XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* L_116 = V_8;
 				NullCheck(L_116);
-				String_t* L_117;
-				L_117 = XmlElementAttribute_get_Namespace_m79825FA7B795B8D0FF3E71637AEB426DC3AFB1FA_inline(L_116, NULL);
+				String_t* L_117 = L_116->___ns_3;
 				G_B30_0 = L_115;
 				if (L_117)
 				{
@@ -15232,8 +14072,7 @@ IL_021f_1:
 			{
 				XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* L_119 = V_8;
 				NullCheck(L_119);
-				String_t* L_120;
-				L_120 = XmlElementAttribute_get_Namespace_m79825FA7B795B8D0FF3E71637AEB426DC3AFB1FA_inline(L_119, NULL);
+				String_t* L_120 = L_119->___ns_3;
 				G_B32_0 = L_120;
 				G_B32_1 = G_B31_0;
 			}
@@ -15248,8 +14087,7 @@ IL_022b_1:
 			{
 				XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* L_121 = V_8;
 				NullCheck(L_121);
-				bool L_122;
-				L_122 = XmlElementAttribute_get_IsNullable_mC31D59FDBE93193FDF0409AC0DC191E8B11A387F_inline(L_121, NULL);
+				bool L_122 = L_121->___isNullable_4;
 				if (!L_122)
 				{
 					goto IL_024b_1;
@@ -15258,8 +14096,7 @@ IL_022b_1:
 			{
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_123 = V_10;
 				NullCheck(L_123);
-				bool L_124;
-				L_124 = XmlTypeMapElementInfo_get_IsNullable_m5E6F72E9E7ADFA39100C6C0FFA1585BCDE4ACE75_inline(L_123, NULL);
+				bool L_124 = L_123->____isNullable_5;
 				if (L_124)
 				{
 					goto IL_024b_1;
@@ -15269,10 +14106,9 @@ IL_022b_1:
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_125 = V_10;
 				XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* L_126 = V_8;
 				NullCheck(L_126);
-				bool L_127;
-				L_127 = XmlElementAttribute_get_IsNullable_mC31D59FDBE93193FDF0409AC0DC191E8B11A387F_inline(L_126, NULL);
+				bool L_127 = L_126->___isNullable_4;
 				NullCheck(L_125);
-				XmlTypeMapElementInfo_set_IsNullable_m3F3A06CB2CB7DACBB6CF90B60346469EA5EE0A6F_inline(L_125, L_127, NULL);
+				L_125->____isNullable_5 = L_127;
 			}
 
 IL_024b_1:
@@ -15280,14 +14116,12 @@ IL_024b_1:
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_128 = V_10;
 				XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* L_129 = V_8;
 				NullCheck(L_129);
-				int32_t L_130;
-				L_130 = XmlElementAttribute_get_Order_mCF42C8462D6BAE16562CD7E16E56DD5BBD56A34F_inline(L_129, NULL);
+				int32_t L_130 = L_129->___order_6;
 				NullCheck(L_128);
-				XmlTypeMapElementInfo_set_ExplicitOrder_mD893A153D81289F4A8C4A429800FEDB81E3578B4_inline(L_128, L_130, NULL);
+				L_128->____explicitOrder_10 = L_130;
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_131 = V_10;
 				NullCheck(L_131);
-				bool L_132;
-				L_132 = XmlTypeMapElementInfo_get_IsNullable_m5E6F72E9E7ADFA39100C6C0FFA1585BCDE4ACE75_inline(L_131, NULL);
+				bool L_132 = L_131->____isNullable_5;
 				if (!L_132)
 				{
 					goto IL_02ac_1;
@@ -15296,8 +14130,7 @@ IL_024b_1:
 			{
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_133 = V_10;
 				NullCheck(L_133);
-				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_134;
-				L_134 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_133, NULL);
+				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_134 = L_133->____type_8;
 				NullCheck(L_134);
 				bool L_135;
 				L_135 = TypeData_get_IsNullable_m31728B62ACF57A01989472F565DAAC86DA179D07(L_134, NULL);
@@ -15315,11 +14148,9 @@ IL_024b_1:
 				StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_138 = L_137;
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_139 = V_10;
 				NullCheck(L_139);
-				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_140;
-				L_140 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_139, NULL);
+				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_140 = L_139->____type_8;
 				NullCheck(L_140);
-				String_t* L_141;
-				L_141 = TypeData_get_FullTypeName_m391893730DDFEE90F76197075F599FEA2E60BE43_inline(L_140, NULL);
+				String_t* L_141 = L_140->___fullTypeName_5;
 				NullCheck(L_138);
 				ArrayElementTypeCheck (L_138, L_141);
 				(L_138)->SetAt(static_cast<il2cpp_array_size_t>(1), (String_t*)L_141);
@@ -15348,8 +14179,7 @@ IL_02ac_1:
 			{
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_148 = V_10;
 				NullCheck(L_148);
-				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_149;
-				L_149 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_148, NULL);
+				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_149 = L_148->____type_8;
 				NullCheck(L_149);
 				bool L_150;
 				L_150 = TypeData_get_IsComplexType_m13C3810EB4DD4C512B9A472A24D12BFE443FF749(L_149, NULL);
@@ -15364,8 +14194,7 @@ IL_02ac_1:
 				String_t* L_152;
 				L_152 = XmlElementAttribute_get_DataType_mC74327AED7D2D68D57E769EDB5125BDE0D0A6ABF(L_151, NULL);
 				NullCheck(L_152);
-				int32_t L_153;
-				L_153 = String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline(L_152, NULL);
+				int32_t L_153 = L_152->____stringLength_4;
 				if (!L_153)
 				{
 					goto IL_0309_1;
@@ -15400,11 +14229,9 @@ IL_02ac_1:
 				ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_164 = L_162;
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_165 = V_10;
 				NullCheck(L_165);
-				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_166;
-				L_166 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_165, NULL);
+				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_166 = L_165->____type_8;
 				NullCheck(L_166);
-				String_t* L_167;
-				L_167 = TypeData_get_FullTypeName_m391893730DDFEE90F76197075F599FEA2E60BE43_inline(L_166, NULL);
+				String_t* L_167 = L_166->___fullTypeName_5;
 				NullCheck(L_164);
 				ArrayElementTypeCheck (L_164, L_167);
 				(L_164)->SetAt(static_cast<il2cpp_array_size_t>(3), (RuntimeObject*)L_167);
@@ -15422,12 +14249,12 @@ IL_0309_1:
 				Type_t* L_171 = V_9;
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_172 = V_10;
 				NullCheck(L_172);
-				String_t* L_173;
-				L_173 = XmlTypeMapElementInfo_get_Namespace_m94DAAADC3EFEBC302C4D3574BD4835F222345498_inline(L_172, NULL);
+				String_t* L_173 = L_172->____namespace_1;
 				XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_174;
 				L_174 = XmlReflectionImporter_ImportTypeMapping_m9A034588C8D63CE07DB971D8C4647FE55145077D(__this, L_171, (XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF*)NULL, L_173, NULL);
 				NullCheck(L_170);
-				XmlTypeMapElementInfo_set_MappedType_m2FD5B0A4823A3FAF00E86D03C959D9B0E0D2A409_inline(L_170, L_174, NULL);
+				L_170->____mappedType_7 = L_174;
+				Il2CppCodeGenWriteBarrier((void**)(&L_170->____mappedType_7), (void*)L_174);
 			}
 
 IL_0320_1:
@@ -15437,8 +14264,7 @@ IL_0320_1:
 				String_t* L_176;
 				L_176 = XmlElementAttribute_get_ElementName_mFD5C95EC3061DC2A2D88E0EACC2DDFFA91C76F6F(L_175, NULL);
 				NullCheck(L_176);
-				int32_t L_177;
-				L_177 = String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline(L_176, NULL);
+				int32_t L_177 = L_176->____stringLength_4;
 				if (!L_177)
 				{
 					goto IL_0343_1;
@@ -15454,7 +14280,8 @@ IL_0320_1:
 				String_t* L_181;
 				L_181 = XmlConvert_EncodeLocalName_m8AD743C94643F82D5B6FF1617EDAF4145E67D318(L_180, NULL);
 				NullCheck(L_178);
-				XmlTypeMapElementInfo_set_ElementName_mEE8DF5FA9A346D3D437DF38E2B5E0BC20AA5DC40_inline(L_178, L_181, NULL);
+				L_178->____elementName_0 = L_181;
+				Il2CppCodeGenWriteBarrier((void**)(&L_178->____elementName_0), (void*)L_181);
 				goto IL_0381_1;
 			}
 
@@ -15469,8 +14296,7 @@ IL_0343_1:
 			{
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_183 = V_10;
 				NullCheck(L_183);
-				XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_184;
-				L_184 = XmlTypeMapElementInfo_get_MappedType_m240A78959A2E9A6CE992F5EC6B77DDFC137AF032_inline(L_183, NULL);
+				XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_184 = L_183->____mappedType_7;
 				if (!L_184)
 				{
 					goto IL_0364_1;
@@ -15480,13 +14306,12 @@ IL_0343_1:
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_185 = V_10;
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_186 = V_10;
 				NullCheck(L_186);
-				XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_187;
-				L_187 = XmlTypeMapElementInfo_get_MappedType_m240A78959A2E9A6CE992F5EC6B77DDFC137AF032_inline(L_186, NULL);
+				XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_187 = L_186->____mappedType_7;
 				NullCheck(L_187);
-				String_t* L_188;
-				L_188 = XmlMapping_get_ElementName_m2BDBF7797A1F38972A4355CF694E0D468B2A9FC0_inline(L_187, NULL);
+				String_t* L_188 = ((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_187)->____elementName_4;
 				NullCheck(L_185);
-				XmlTypeMapElementInfo_set_ElementName_mEE8DF5FA9A346D3D437DF38E2B5E0BC20AA5DC40_inline(L_185, L_188, NULL);
+				L_185->____elementName_0 = L_188;
+				Il2CppCodeGenWriteBarrier((void**)(&L_185->____elementName_0), (void*)L_188);
 				goto IL_0381_1;
 			}
 
@@ -15498,10 +14323,10 @@ IL_0364_1:
 				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_191;
 				L_191 = TypeTranslator_GetTypeData_mF04C45D9093601749D33BB31BD3D6F4C4ADAC501(L_190, NULL);
 				NullCheck(L_191);
-				String_t* L_192;
-				L_192 = TypeData_get_XmlType_m06749C1B19C57EB8649CBCD9B106C014DF511453_inline(L_191, NULL);
+				String_t* L_192 = L_191->___elementName_1;
 				NullCheck(L_189);
-				XmlTypeMapElementInfo_set_ElementName_mEE8DF5FA9A346D3D437DF38E2B5E0BC20AA5DC40_inline(L_189, L_192, NULL);
+				L_189->____elementName_0 = L_192;
+				Il2CppCodeGenWriteBarrier((void**)(&L_189->____elementName_0), (void*)L_192);
 				goto IL_0381_1;
 			}
 
@@ -15510,7 +14335,8 @@ IL_0379_1:
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_193 = V_10;
 				String_t* L_194 = ___defaultName1;
 				NullCheck(L_193);
-				XmlTypeMapElementInfo_set_ElementName_mEE8DF5FA9A346D3D437DF38E2B5E0BC20AA5DC40_inline(L_193, L_194, NULL);
+				L_193->____elementName_0 = L_194;
+				Il2CppCodeGenWriteBarrier((void**)(&L_193->____elementName_0), (void*)L_194);
 			}
 
 IL_0381_1:
@@ -15529,8 +14355,7 @@ IL_0381_1:
 				L_198 = VirtualFuncInvoker0< String_t* >::Invoke(26 /* System.String System.Type::get_FullName() */, L_197);
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_199 = V_10;
 				NullCheck(L_199);
-				String_t* L_200;
-				L_200 = XmlTypeMapElementInfo_get_ElementName_m2B2B6484154E046A7FE5BE46092BF91A7B75D9CC_inline(L_199, NULL);
+				String_t* L_200 = L_199->____elementName_0;
 				NullCheck(L_196);
 				String_t* L_201;
 				L_201 = EnumMap_GetEnumName_m10DDCE7A6EB14899540AF62430B6133BBAF0CB94(L_196, L_198, L_200, NULL);
@@ -15544,8 +14369,7 @@ IL_0381_1:
 			{
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_203 = V_10;
 				NullCheck(L_203);
-				String_t* L_204;
-				L_204 = XmlTypeMapElementInfo_get_Namespace_m94DAAADC3EFEBC302C4D3574BD4835F222345498_inline(L_203, NULL);
+				String_t* L_204 = L_203->____namespace_1;
 				if (!L_204)
 				{
 					goto IL_03d4_1;
@@ -15559,15 +14383,13 @@ IL_0381_1:
 				L_207 = VirtualFuncInvoker0< String_t* >::Invoke(26 /* System.String System.Type::get_FullName() */, L_206);
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_208 = V_10;
 				NullCheck(L_208);
-				String_t* L_209;
-				L_209 = XmlTypeMapElementInfo_get_Namespace_m94DAAADC3EFEBC302C4D3574BD4835F222345498_inline(L_208, NULL);
+				String_t* L_209 = L_208->____namespace_1;
 				NullCheck(L_209);
 				String_t* L_210;
 				L_210 = VirtualFuncInvoker0< String_t* >::Invoke(3 /* System.String System.Object::ToString() */, L_209);
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_211 = V_10;
 				NullCheck(L_211);
-				String_t* L_212;
-				L_212 = XmlTypeMapElementInfo_get_ElementName_m2B2B6484154E046A7FE5BE46092BF91A7B75D9CC_inline(L_211, NULL);
+				String_t* L_212 = L_211->____elementName_0;
 				String_t* L_213;
 				L_213 = String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B(L_210, _stringLiteral876C4B39B6E4D0187090400768899C71D99DE90D, L_212, NULL);
 				NullCheck(L_205);
@@ -15591,12 +14413,10 @@ IL_03d4_1:
 				Type_t* L_217 = V_1;
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_218 = V_10;
 				NullCheck(L_218);
-				String_t* L_219;
-				L_219 = XmlTypeMapElementInfo_get_ElementName_m2B2B6484154E046A7FE5BE46092BF91A7B75D9CC_inline(L_218, NULL);
+				String_t* L_219 = L_218->____elementName_0;
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_220 = V_10;
 				NullCheck(L_220);
-				String_t* L_221;
-				L_221 = XmlTypeMapElementInfo_get_Namespace_m94DAAADC3EFEBC302C4D3574BD4835F222345498_inline(L_220, NULL);
+				String_t* L_221 = L_220->____namespace_1;
 				String_t* L_222;
 				L_222 = String_Format_mF8E53122BE8F0F617357DFB75C3912D1242DE263(L_216, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral6F8F57CB4EFADE4F9EB4B28556590324C8D0B936)), L_217, L_219, L_221, NULL);
 				InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB* L_223 = (InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB_il2cpp_TypeInfo_var)));
@@ -15614,7 +14434,8 @@ IL_03fc_1:
 				RuntimeObject* L_227;
 				L_227 = Enum_Parse_m0316ABE916ED60AA2257A464A33A33D544EDEE12(L_225, L_226, (bool)0, NULL);
 				NullCheck(L_224);
-				XmlTypeMapElementInfo_set_ChoiceValue_m51083B31BC4A97D6C58F2A8FA96355BED2E37AAB_inline(L_224, L_227, NULL);
+				L_224->____choiceValue_4 = L_227;
+				Il2CppCodeGenWriteBarrier((void**)(&L_224->____choiceValue_4), (void*)L_227);
 			}
 
 IL_040c_1:
@@ -15688,16 +14509,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlTypeMapElementInfoList_tFE45CC481B284D4ADA
 		XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* L_1 = V_0;
 		XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_2 = ___rmember1;
 		NullCheck(L_2);
-		Type_t* L_3;
-		L_3 = XmlReflectionMember_get_MemberType_m26CB81C88E06E782EFF7EE40F31F88A7A954504A_inline(L_2, NULL);
+		Type_t* L_3 = L_2->___memberType_2;
 		XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* L_4 = ___member2;
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_5 = ___atts3;
 		String_t* L_6 = ___defaultNamespace0;
 		XmlReflectionImporter_ImportTextElementInfo_m95E321788636ECB35EED75B9983452E4025D0599(__this, L_1, L_3, L_4, L_5, L_6, NULL);
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_7 = ___atts3;
 		NullCheck(L_7);
-		XmlAnyElementAttributes_t8709780E4C7D8E9B453BB4AE51A3CFBC462286CF* L_8;
-		L_8 = XmlAttributes_get_XmlAnyElements_m3216504EBB4407E5FF8149C2A95CDF7826C5043C_inline(L_7, NULL);
+		XmlAnyElementAttributes_t8709780E4C7D8E9B453BB4AE51A3CFBC462286CF* L_8 = L_7->___xmlAnyElements_1;
 		NullCheck(L_8);
 		RuntimeObject* L_9;
 		L_9 = CollectionBase_GetEnumerator_m8121D67DEBB0009A93BFEBB1DA46BA8A671FD862(L_8, NULL);
@@ -15760,8 +14579,7 @@ IL_0029_1:
 				String_t* L_21;
 				L_21 = XmlAnyElementAttribute_get_Name_m4A874C74BA795155B3B95CD2A423E1C8A0CAE8F0(L_20, NULL);
 				NullCheck(L_21);
-				int32_t L_22;
-				L_22 = String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline(L_21, NULL);
+				int32_t L_22 = L_21->____stringLength_4;
 				if (!L_22)
 				{
 					goto IL_0086_1;
@@ -15777,12 +14595,12 @@ IL_0029_1:
 				String_t* L_26;
 				L_26 = XmlConvert_EncodeLocalName_m8AD743C94643F82D5B6FF1617EDAF4145E67D318(L_25, NULL);
 				NullCheck(L_23);
-				XmlTypeMapElementInfo_set_ElementName_mEE8DF5FA9A346D3D437DF38E2B5E0BC20AA5DC40_inline(L_23, L_26, NULL);
+				L_23->____elementName_0 = L_26;
+				Il2CppCodeGenWriteBarrier((void**)(&L_23->____elementName_0), (void*)L_26);
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_27 = V_3;
 				XmlAnyElementAttribute_tFDA3FEFA37983298C29CC84E5564E41600C5EDAB* L_28 = V_2;
 				NullCheck(L_28);
-				String_t* L_29;
-				L_29 = XmlAnyElementAttribute_get_Namespace_m566B2C6EC08903732765430EE526F8D5BDFA4FF6_inline(L_28, NULL);
+				String_t* L_29 = L_28->___ns_1;
 				G_B4_0 = L_27;
 				if (L_29)
 				{
@@ -15800,8 +14618,7 @@ IL_0079_1:
 			{
 				XmlAnyElementAttribute_tFDA3FEFA37983298C29CC84E5564E41600C5EDAB* L_30 = V_2;
 				NullCheck(L_30);
-				String_t* L_31;
-				L_31 = XmlAnyElementAttribute_get_Namespace_m566B2C6EC08903732765430EE526F8D5BDFA4FF6_inline(L_30, NULL);
+				String_t* L_31 = L_30->___ns_1;
 				G_B6_0 = L_31;
 				G_B6_1 = G_B5_0;
 			}
@@ -15821,11 +14638,11 @@ IL_0086_1:
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_33 = V_3;
 				String_t* L_34 = ___defaultNamespace0;
 				NullCheck(L_33);
-				XmlTypeMapElementInfo_set_Namespace_mB1BAB4E18DAF612183E318500F2010C73D7B3B5A_inline(L_33, L_34, NULL);
+				L_33->____namespace_1 = L_34;
+				Il2CppCodeGenWriteBarrier((void**)(&L_33->____namespace_1), (void*)L_34);
 				XmlAnyElementAttribute_tFDA3FEFA37983298C29CC84E5564E41600C5EDAB* L_35 = V_2;
 				NullCheck(L_35);
-				String_t* L_36;
-				L_36 = XmlAnyElementAttribute_get_Namespace_m566B2C6EC08903732765430EE526F8D5BDFA4FF6_inline(L_35, NULL);
+				String_t* L_36 = L_35->___ns_1;
 				if (!L_36)
 				{
 					goto IL_00d7_1;
@@ -15840,8 +14657,7 @@ IL_0086_1:
 				StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_39 = L_38;
 				XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* L_40 = ___rmember1;
 				NullCheck(L_40);
-				String_t* L_41;
-				L_41 = XmlReflectionMember_get_MemberName_mE4607A6A8054A867138901FA83DFEB24CCCE1A39_inline(L_40, NULL);
+				String_t* L_41 = L_40->___memberName_1;
 				NullCheck(L_39);
 				ArrayElementTypeCheck (L_39, L_41);
 				(L_39)->SetAt(static_cast<il2cpp_array_size_t>(1), (String_t*)L_41);
@@ -15852,8 +14668,7 @@ IL_0086_1:
 				StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_43 = L_42;
 				XmlAnyElementAttribute_tFDA3FEFA37983298C29CC84E5564E41600C5EDAB* L_44 = V_2;
 				NullCheck(L_44);
-				String_t* L_45;
-				L_45 = XmlAnyElementAttribute_get_Namespace_m566B2C6EC08903732765430EE526F8D5BDFA4FF6_inline(L_44, NULL);
+				String_t* L_45 = L_44->___ns_1;
 				NullCheck(L_43);
 				ArrayElementTypeCheck (L_43, L_45);
 				(L_43)->SetAt(static_cast<il2cpp_array_size_t>(3), (String_t*)L_45);
@@ -15874,10 +14689,9 @@ IL_00d7_1:
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_49 = V_3;
 				XmlAnyElementAttribute_tFDA3FEFA37983298C29CC84E5564E41600C5EDAB* L_50 = V_2;
 				NullCheck(L_50);
-				int32_t L_51;
-				L_51 = XmlAnyElementAttribute_get_Order_m2CCED3AB699ADBDE0F16C41EB0EFE8921DF4BA6A_inline(L_50, NULL);
+				int32_t L_51 = L_50->___order_2;
 				NullCheck(L_49);
-				XmlTypeMapElementInfo_set_ExplicitOrder_mD893A153D81289F4A8C4A429800FEDB81E3578B4_inline(L_49, L_51, NULL);
+				L_49->____explicitOrder_10 = L_51;
 				XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* L_52 = V_0;
 				XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_53 = V_3;
 				NullCheck(L_52);
@@ -15930,8 +14744,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlReflectionImporter_ImportTextElementI
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_0 = ___atts3;
 		NullCheck(L_0);
-		XmlTextAttribute_tAA8BE9BA759F78BB4CDF00D3848B7746C0EDEFE0* L_1;
-		L_1 = XmlAttributes_get_XmlText_m021CE7CB4BE20DEE5FC8FAE724015FF2C4BDFD1B_inline(L_0, NULL);
+		XmlTextAttribute_tAA8BE9BA759F78BB4CDF00D3848B7746C0EDEFE0* L_1 = L_0->___xmlText_12;
 		if (!L_1)
 		{
 			goto IL_012e;
@@ -15940,14 +14753,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlReflectionImporter_ImportTextElementI
 	{
 		XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* L_2 = ___member2;
 		NullCheck(L_2);
-		XmlTypeMapMemberElement_set_IsXmlTextCollector_m3825384EFF73E2990FD5746E45CE7AF2D69B456B_inline(L_2, (bool)1, NULL);
+		L_2->____isTextCollector_12 = (bool)1;
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_3 = ___atts3;
 		NullCheck(L_3);
-		XmlTextAttribute_tAA8BE9BA759F78BB4CDF00D3848B7746C0EDEFE0* L_4;
-		L_4 = XmlAttributes_get_XmlText_m021CE7CB4BE20DEE5FC8FAE724015FF2C4BDFD1B_inline(L_3, NULL);
+		XmlTextAttribute_tAA8BE9BA759F78BB4CDF00D3848B7746C0EDEFE0* L_4 = L_3->___xmlText_12;
 		NullCheck(L_4);
-		Type_t* L_5;
-		L_5 = XmlTextAttribute_get_Type_m6D956F711B1336CEAE650DDC4A35A9899CEF9861_inline(L_4, NULL);
+		Type_t* L_5 = L_4->___type_1;
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		bool L_6;
 		L_6 = Type_op_Inequality_m83209C7BB3C05DFBEA3B6199B0BEFE8037301172(L_5, (Type_t*)NULL, NULL);
@@ -15964,8 +14775,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlReflectionImporter_ImportTextElementI
 		V_1 = L_8;
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_9 = V_1;
 		NullCheck(L_9);
-		int32_t L_10;
-		L_10 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_9, NULL);
+		int32_t L_10 = L_9->___sType_2;
 		if ((((int32_t)L_10) == ((int32_t)1)))
 		{
 			goto IL_0040;
@@ -15974,8 +14784,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlReflectionImporter_ImportTextElementI
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_11 = V_1;
 		NullCheck(L_11);
-		int32_t L_12;
-		L_12 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_11, NULL);
+		int32_t L_12 = L_11->___sType_2;
 		if ((!(((uint32_t)L_12) == ((uint32_t)2))))
 		{
 			goto IL_005f;
@@ -15986,11 +14795,9 @@ IL_0040:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_13 = ___atts3;
 		NullCheck(L_13);
-		XmlTextAttribute_tAA8BE9BA759F78BB4CDF00D3848B7746C0EDEFE0* L_14;
-		L_14 = XmlAttributes_get_XmlText_m021CE7CB4BE20DEE5FC8FAE724015FF2C4BDFD1B_inline(L_13, NULL);
+		XmlTextAttribute_tAA8BE9BA759F78BB4CDF00D3848B7746C0EDEFE0* L_14 = L_13->___xmlText_12;
 		NullCheck(L_14);
-		Type_t* L_15;
-		L_15 = XmlTextAttribute_get_Type_m6D956F711B1336CEAE650DDC4A35A9899CEF9861_inline(L_14, NULL);
+		Type_t* L_15 = L_14->___type_1;
 		Type_t* L_16 = ___defaultType1;
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		bool L_17;
@@ -16011,11 +14818,9 @@ IL_005f:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_19 = ___atts3;
 		NullCheck(L_19);
-		XmlTextAttribute_tAA8BE9BA759F78BB4CDF00D3848B7746C0EDEFE0* L_20;
-		L_20 = XmlAttributes_get_XmlText_m021CE7CB4BE20DEE5FC8FAE724015FF2C4BDFD1B_inline(L_19, NULL);
+		XmlTextAttribute_tAA8BE9BA759F78BB4CDF00D3848B7746C0EDEFE0* L_20 = L_19->___xmlText_12;
 		NullCheck(L_20);
-		Type_t* L_21;
-		L_21 = XmlTextAttribute_get_Type_m6D956F711B1336CEAE650DDC4A35A9899CEF9861_inline(L_20, NULL);
+		Type_t* L_21 = L_20->___type_1;
 		___defaultType1 = L_21;
 	}
 
@@ -16047,8 +14852,7 @@ IL_008b:
 		Type_t* L_29 = ___defaultType1;
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_30 = ___atts3;
 		NullCheck(L_30);
-		XmlTextAttribute_tAA8BE9BA759F78BB4CDF00D3848B7746C0EDEFE0* L_31;
-		L_31 = XmlAttributes_get_XmlText_m021CE7CB4BE20DEE5FC8FAE724015FF2C4BDFD1B_inline(L_30, NULL);
+		XmlTextAttribute_tAA8BE9BA759F78BB4CDF00D3848B7746C0EDEFE0* L_31 = L_30->___xmlText_12;
 		NullCheck(L_31);
 		String_t* L_32;
 		L_32 = XmlTextAttribute_get_DataType_m6B266372322103E2D735DC26D210652ECD475B07(L_31, NULL);
@@ -16061,11 +14865,9 @@ IL_008b:
 		V_0 = L_34;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_35 = V_0;
 		NullCheck(L_35);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_36;
-		L_36 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_35, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_36 = L_35->____type_8;
 		NullCheck(L_36);
-		int32_t L_37;
-		L_37 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_36, NULL);
+		int32_t L_37 = L_36->___sType_2;
 		if ((((int32_t)L_37) == ((int32_t)1)))
 		{
 			goto IL_00fb;
@@ -16074,11 +14876,9 @@ IL_008b:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_38 = V_0;
 		NullCheck(L_38);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_39;
-		L_39 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_38, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_39 = L_38->____type_8;
 		NullCheck(L_39);
-		int32_t L_40;
-		L_40 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_39, NULL);
+		int32_t L_40 = L_39->___sType_2;
 		if ((((int32_t)L_40) == ((int32_t)2)))
 		{
 			goto IL_00fb;
@@ -16087,11 +14887,9 @@ IL_008b:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_41 = V_0;
 		NullCheck(L_41);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_42;
-		L_42 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_41, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_42 = L_41->____type_8;
 		NullCheck(L_42);
-		int32_t L_43;
-		L_43 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_42, NULL);
+		int32_t L_43 = L_42->___sType_2;
 		if ((((int32_t)L_43) == ((int32_t)6)))
 		{
 			goto IL_00fb;
@@ -16100,11 +14898,9 @@ IL_008b:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_44 = V_0;
 		NullCheck(L_44);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_45;
-		L_45 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_44, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_45 = L_44->____type_8;
 		NullCheck(L_45);
-		int32_t L_46;
-		L_46 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_45, NULL);
+		int32_t L_46 = L_45->___sType_2;
 		if ((!(((uint32_t)L_46) == ((uint32_t)3))))
 		{
 			goto IL_00f0;
@@ -16113,14 +14909,12 @@ IL_008b:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_47 = V_0;
 		NullCheck(L_47);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_48;
-		L_48 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_47, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_48 = L_47->____type_8;
 		NullCheck(L_48);
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_49;
 		L_49 = TypeData_get_ListItemTypeData_m08EBC7760A430966A31E3C138C9BB359E429C6D7(L_48, NULL);
 		NullCheck(L_49);
-		int32_t L_50;
-		L_50 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_49, NULL);
+		int32_t L_50 = L_49->___sType_2;
 		if ((((int32_t)L_50) == ((int32_t)6)))
 		{
 			goto IL_00fb;
@@ -16139,8 +14933,7 @@ IL_00fb:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_52 = V_0;
 		NullCheck(L_52);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_53;
-		L_53 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_52, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_53 = L_52->____type_8;
 		NullCheck(L_53);
 		bool L_54;
 		L_54 = TypeData_get_IsComplexType_m13C3810EB4DD4C512B9A472A24D12BFE443FF749(L_53, NULL);
@@ -16156,7 +14949,8 @@ IL_00fb:
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_58;
 		L_58 = XmlReflectionImporter_ImportTypeMapping_m9A034588C8D63CE07DB971D8C4647FE55145077D(__this, L_56, (XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF*)NULL, L_57, NULL);
 		NullCheck(L_55);
-		XmlTypeMapElementInfo_set_MappedType_m2FD5B0A4823A3FAF00E86D03C959D9B0E0D2A409_inline(L_55, L_58, NULL);
+		L_55->____mappedType_7 = L_58;
+		Il2CppCodeGenWriteBarrier((void**)(&L_55->____mappedType_7), (void*)L_58);
 	}
 
 IL_0118:
@@ -16166,7 +14960,7 @@ IL_0118:
 		XmlTypeMapElementInfo_set_IsTextElement_mCE031A8FDAFEACF48094CCDF5C90BBB2A64E2655(L_59, (bool)1, NULL);
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_60 = V_0;
 		NullCheck(L_60);
-		XmlTypeMapElementInfo_set_WrappedElement_m45FA9CFAFC7B8EB395F59D7832542F3410089195_inline(L_60, (bool)0, NULL);
+		L_60->____wrappedElement_9 = (bool)0;
 		XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* L_61 = ___list0;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_62 = V_0;
 		NullCheck(L_61);
@@ -16185,8 +14979,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XmlReflectionImporter_CanBeNull_m52BC441
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_0 = ___type0;
 		NullCheck(L_0);
-		Type_t* L_1;
-		L_1 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_0, NULL);
+		Type_t* L_1 = L_0->___type_0;
 		NullCheck(L_1);
 		bool L_2;
 		L_2 = Type_get_IsValueType_m59AE2E0439DC06347B8D6B38548F3CBA54D38318(L_1, NULL);
@@ -16341,11 +15134,9 @@ IL_0068_1:
 				V_1 = ((XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9*)CastclassClass((RuntimeObject*)L_20, XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9_il2cpp_TypeInfo_var));
 				XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_21 = V_1;
 				NullCheck(L_21);
-				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_22;
-				L_22 = XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline(L_21, NULL);
+				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_22 = L_21->___type_9;
 				NullCheck(L_22);
-				Type_t* L_23;
-				L_23 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_22, NULL);
+				Type_t* L_23 = L_22->___type_0;
 				RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_24 = { reinterpret_cast<intptr_t> (RuntimeObject_0_0_0_var) };
 				il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 				Type_t* L_25;
@@ -16360,8 +15151,7 @@ IL_0068_1:
 			{
 				XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_27 = V_1;
 				NullCheck(L_27);
-				ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_28;
-				L_28 = XmlTypeMapping_get_DerivedTypes_mC03579CBAD487E7DF121E24DF3CD0F4976CB3A16_inline(L_27, NULL);
+				ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_28 = L_27->____derivedTypes_15;
 				Type_t* L_29 = ___type0;
 				XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_30;
 				L_30 = XmlReflectionImporter_ImportTypeMapping_m3AE556A476B6CA920DE1BDDEB20F261A351A7B18(__this, L_29, NULL);
@@ -16421,8 +15211,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlReflectionImporter_GetDefau
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_2 = ___typeData0;
 		NullCheck(L_2);
-		int32_t L_3;
-		L_3 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_2, NULL);
+		int32_t L_3 = L_2->___sType_2;
 		if ((((int32_t)L_3) == ((int32_t)2)))
 		{
 			goto IL_0013;
@@ -16439,16 +15228,14 @@ IL_0013:
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_5 = ___typeData0;
 		NullCheck(L_5);
-		Type_t* L_6;
-		L_6 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_5, NULL);
+		Type_t* L_6 = L_5->___type_0;
 		RuntimeObject* L_7 = ___defaultValue1;
 		il2cpp_codegen_runtime_class_init_inline(Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_il2cpp_TypeInfo_var);
 		String_t* L_8;
 		L_8 = Enum_Format_mD3003265952FEAACFE90887811F9C8855B799ACD(L_6, L_7, _stringLiteral2B9B6C84CC15492CCB290C4B79418FA6D7DD24C1, NULL);
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_9 = ___typeData0;
 		NullCheck(L_9);
-		Type_t* L_10;
-		L_10 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_9, NULL);
+		Type_t* L_10 = L_9->___type_0;
 		RuntimeObject* L_11 = ___defaultValue1;
 		String_t* L_12;
 		L_12 = Enum_Format_mD3003265952FEAACFE90887811F9C8855B799ACD(L_10, L_11, _stringLiteralA02431CF7C501A5B368C91E41283419D8FA9FB03, NULL);
@@ -16586,30 +15373,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlReflectionMember__ctor_m7B83DEED7CE7F
 		return;
 	}
 }
-// System.Boolean System.Xml.Serialization.XmlReflectionMember::get_IsReturnValue()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XmlReflectionMember_get_IsReturnValue_m85EB9A5F4C984353A4BEA4A10D90BEB715158255 (XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = __this->___isReturnValue_0;
-		return L_0;
-	}
-}
-// System.String System.Xml.Serialization.XmlReflectionMember::get_MemberName()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlReflectionMember_get_MemberName_mE4607A6A8054A867138901FA83DFEB24CCCE1A39 (XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->___memberName_1;
-		return L_0;
-	}
-}
-// System.Type System.Xml.Serialization.XmlReflectionMember::get_MemberType()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Type_t* XmlReflectionMember_get_MemberType_m26CB81C88E06E782EFF7EE40F31F88A7A954504A (XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* __this, const RuntimeMethod* method) 
-{
-	{
-		Type_t* L_0 = __this->___memberType_2;
-		return L_0;
-	}
-}
 // System.Xml.Serialization.XmlAttributes System.Xml.Serialization.XmlReflectionMember::get_XmlAttributes()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* XmlReflectionMember_get_XmlAttributes_mCC188BF7A0827BC124D67F7BB86D6CC34F806952 (XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* __this, const RuntimeMethod* method) 
 {
@@ -16638,24 +15401,6 @@ IL_0013:
 	{
 		XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* L_2 = __this->___xmlAttributes_3;
 		return L_2;
-	}
-}
-// System.Type System.Xml.Serialization.XmlReflectionMember::get_DeclaringType()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Type_t* XmlReflectionMember_get_DeclaringType_mA84E638B63CD926ED1DB32628B7747DE0BA7F355 (XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* __this, const RuntimeMethod* method) 
-{
-	{
-		Type_t* L_0 = __this->___declaringType_4;
-		return L_0;
-	}
-}
-// System.Void System.Xml.Serialization.XmlReflectionMember::set_DeclaringType(System.Type)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlReflectionMember_set_DeclaringType_m1FEBB9DF4BDFE905A76D4E297BE992C89B39B1A8 (XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* __this, Type_t* ___value0, const RuntimeMethod* method) 
-{
-	{
-		Type_t* L_0 = ___value0;
-		__this->___declaringType_4 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___declaringType_4), (void*)L_0);
-		return;
 	}
 }
 #ifdef __clang__
@@ -16846,22 +15591,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSchemaProviderAttribute__ctor_mB072D2
 		__this->____methodName_0 = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____methodName_0), (void*)L_0);
 		return;
-	}
-}
-// System.String System.Xml.Serialization.XmlSchemaProviderAttribute::get_MethodName()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlSchemaProviderAttribute_get_MethodName_mC1499496A0CFF04AD9F315ABB8D3709508EBF23A (XmlSchemaProviderAttribute_t913656BFB1429C8144C9EE53E18CC300D1C431AF* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->____methodName_0;
-		return L_0;
-	}
-}
-// System.Boolean System.Xml.Serialization.XmlSchemaProviderAttribute::get_IsAny()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XmlSchemaProviderAttribute_get_IsAny_mEEC8E5450FC08174F878AE52B6DD1DB1E1E03014 (XmlSchemaProviderAttribute_t913656BFB1429C8144C9EE53E18CC300D1C431AF* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = __this->____isAny_1;
-		return L_0;
 	}
 }
 // System.Void System.Xml.Serialization.XmlSchemaProviderAttribute::set_IsAny(System.Boolean)
@@ -17408,14 +16137,6 @@ IL_001e:
 		return L_4;
 	}
 }
-// System.Xml.XmlReader System.Xml.Serialization.XmlSerializationReader::get_Reader()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F (XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_0 = __this->___reader_1;
-		return L_0;
-	}
-}
 // System.Void System.Xml.Serialization.XmlSerializationReader::AddFixup(System.Xml.Serialization.XmlSerializationReader/CollectionFixup)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReader_AddFixup_m846FB4EEF12E21F5803BC41685952AFE6A3D98E1 (XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597* __this, CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* ___fixup0, const RuntimeMethod* method) 
 {
@@ -17428,11 +16149,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReader_AddFixup_m846FB4E
 		Hashtable_tEFC3B6496E6747787D8BB761B51F2AE3A8CFFE2D* L_2 = __this->___collFixups_3;
 		CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* L_3 = ___fixup0;
 		NullCheck(L_3);
-		RuntimeObject* L_4;
-		L_4 = CollectionFixup_get_Id_m02C21982C2A3986E65A34429213F203558849D40_inline(L_3, NULL);
+		String_t* L_4 = L_3->___id_3;
 		CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* L_5 = ___fixup0;
 		NullCheck(L_2);
-		VirtualActionInvoker2< RuntimeObject*, RuntimeObject* >::Invoke(30 /* System.Void System.Collections.Hashtable::set_Item(System.Object,System.Object) */, L_2, L_4, L_5);
+		VirtualActionInvoker2< RuntimeObject*, RuntimeObject* >::Invoke(29 /* System.Void System.Collections.Hashtable::set_Item(System.Object,System.Object) */, L_2, L_4, L_5);
 		Hashtable_tEFC3B6496E6747787D8BB761B51F2AE3A8CFFE2D* L_6 = __this->___delayedListFixups_8;
 		if (!L_6)
 		{
@@ -17443,11 +16163,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReader_AddFixup_m846FB4E
 		Hashtable_tEFC3B6496E6747787D8BB761B51F2AE3A8CFFE2D* L_7 = __this->___delayedListFixups_8;
 		CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* L_8 = ___fixup0;
 		NullCheck(L_8);
-		RuntimeObject* L_9;
-		L_9 = CollectionFixup_get_Id_m02C21982C2A3986E65A34429213F203558849D40_inline(L_8, NULL);
+		String_t* L_9 = L_8->___id_3;
 		NullCheck(L_7);
 		bool L_10;
-		L_10 = VirtualFuncInvoker1< bool, RuntimeObject* >::Invoke(27 /* System.Boolean System.Collections.Hashtable::ContainsKey(System.Object) */, L_7, L_9);
+		L_10 = VirtualFuncInvoker1< bool, RuntimeObject* >::Invoke(26 /* System.Boolean System.Collections.Hashtable::ContainsKey(System.Object) */, L_7, L_9);
 		if (!L_10)
 		{
 			goto IL_0067;
@@ -17458,20 +16177,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReader_AddFixup_m846FB4E
 		Hashtable_tEFC3B6496E6747787D8BB761B51F2AE3A8CFFE2D* L_12 = __this->___delayedListFixups_8;
 		CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* L_13 = ___fixup0;
 		NullCheck(L_13);
-		RuntimeObject* L_14;
-		L_14 = CollectionFixup_get_Id_m02C21982C2A3986E65A34429213F203558849D40_inline(L_13, NULL);
+		String_t* L_14 = L_13->___id_3;
 		NullCheck(L_12);
 		RuntimeObject* L_15;
-		L_15 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(29 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_12, L_14);
+		L_15 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(28 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_12, L_14);
 		NullCheck(L_11);
-		CollectionFixup_set_CollectionItems_mE1B2C71D40112F90E2ECC65D1E14234BA2ED351F_inline(L_11, L_15, NULL);
+		L_11->___collectionItems_2 = L_15;
+		Il2CppCodeGenWriteBarrier((void**)(&L_11->___collectionItems_2), (void*)L_15);
 		Hashtable_tEFC3B6496E6747787D8BB761B51F2AE3A8CFFE2D* L_16 = __this->___delayedListFixups_8;
 		CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* L_17 = ___fixup0;
 		NullCheck(L_17);
-		RuntimeObject* L_18;
-		L_18 = CollectionFixup_get_Id_m02C21982C2A3986E65A34429213F203558849D40_inline(L_17, NULL);
+		String_t* L_18 = L_17->___id_3;
 		NullCheck(L_16);
-		VirtualActionInvoker1< RuntimeObject* >::Invoke(39 /* System.Void System.Collections.Hashtable::Remove(System.Object) */, L_16, L_18);
+		VirtualActionInvoker1< RuntimeObject* >::Invoke(37 /* System.Void System.Collections.Hashtable::Remove(System.Object) */, L_16, L_18);
 	}
 
 IL_0067:
@@ -17562,7 +16280,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReader_AddReadCallback_m
 		XmlQualifiedName__ctor_m65632114A1726D9FAD0338BC2A8C28BB9D262C7B(L_14, L_12, L_13, NULL);
 		WriteCallbackInfo_t1B01208EBEF54FE064CBE2DD5062C89EBD7A4F7D* L_15 = V_0;
 		NullCheck(L_11);
-		VirtualActionInvoker2< RuntimeObject*, RuntimeObject* >::Invoke(23 /* System.Void System.Collections.Hashtable::Add(System.Object,System.Object) */, L_11, L_14, L_15);
+		VirtualActionInvoker2< RuntimeObject*, RuntimeObject* >::Invoke(22 /* System.Void System.Collections.Hashtable::Add(System.Object,System.Object) */, L_11, L_14, L_15);
 		return;
 	}
 }
@@ -17586,7 +16304,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReader_AddTarget_mF2FDE6
 		String_t* L_4 = ___id0;
 		NullCheck(L_3);
 		RuntimeObject* L_5;
-		L_5 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(29 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_3, L_4);
+		L_5 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(28 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_3, L_4);
 		if (L_5)
 		{
 			goto IL_0054;
@@ -17597,7 +16315,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReader_AddTarget_mF2FDE6
 		String_t* L_7 = ___id0;
 		RuntimeObject* L_8 = ___o1;
 		NullCheck(L_6);
-		VirtualActionInvoker2< RuntimeObject*, RuntimeObject* >::Invoke(23 /* System.Void System.Collections.Hashtable::Add(System.Object,System.Object) */, L_6, L_7, L_8);
+		VirtualActionInvoker2< RuntimeObject*, RuntimeObject* >::Invoke(22 /* System.Void System.Collections.Hashtable::Add(System.Object,System.Object) */, L_6, L_7, L_8);
 		return;
 	}
 
@@ -17830,8 +16548,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Exception_t* XmlSerializationReader_CreateUnk
 		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_2 = L_1;
 		XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_3 = ___type0;
 		NullCheck(L_3);
-		String_t* L_4;
-		L_4 = XmlQualifiedName_get_Name_mC9D21D5BADE11AEAC7ED5886B39E1A774C63B830_inline(L_3, NULL);
+		String_t* L_4 = L_3->___name_1;
 		NullCheck(L_2);
 		ArrayElementTypeCheck (L_2, L_4);
 		(L_2)->SetAt(static_cast<il2cpp_array_size_t>(1), (String_t*)L_4);
@@ -17842,8 +16559,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Exception_t* XmlSerializationReader_CreateUnk
 		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_6 = L_5;
 		XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_7 = ___type0;
 		NullCheck(L_7);
-		String_t* L_8;
-		L_8 = XmlQualifiedName_get_Namespace_m0CAE4A651EF1CA6F0EB657C83608A796038A2615_inline(L_7, NULL);
+		String_t* L_8 = L_7->___ns_2;
 		NullCheck(L_6);
 		ArrayElementTypeCheck (L_6, L_8);
 		(L_6)->SetAt(static_cast<il2cpp_array_size_t>(3), (String_t*)L_8);
@@ -18030,7 +16746,7 @@ IL_000a:
 		String_t* L_2 = ___id0;
 		NullCheck(L_1);
 		RuntimeObject* L_3;
-		L_3 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(29 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_1, L_2);
+		L_3 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(28 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_1, L_2);
 		V_0 = L_3;
 		RuntimeObject* L_4 = V_0;
 		if (!L_4)
@@ -18059,7 +16775,7 @@ IL_002d:
 		RuntimeObject* L_8 = V_0;
 		RuntimeObject* L_9 = V_0;
 		NullCheck(L_7);
-		VirtualActionInvoker2< RuntimeObject*, RuntimeObject* >::Invoke(30 /* System.Void System.Collections.Hashtable::set_Item(System.Object,System.Object) */, L_7, L_8, L_9);
+		VirtualActionInvoker2< RuntimeObject*, RuntimeObject* >::Invoke(29 /* System.Void System.Collections.Hashtable::set_Item(System.Object,System.Object) */, L_7, L_8, L_9);
 	}
 
 IL_003a:
@@ -18088,7 +16804,7 @@ IL_000a:
 		String_t* L_2 = ___id0;
 		NullCheck(L_1);
 		bool L_3;
-		L_3 = VirtualFuncInvoker1< bool, RuntimeObject* >::Invoke(27 /* System.Boolean System.Collections.Hashtable::ContainsKey(System.Object) */, L_1, L_2);
+		L_3 = VirtualFuncInvoker1< bool, RuntimeObject* >::Invoke(26 /* System.Boolean System.Collections.Hashtable::ContainsKey(System.Object) */, L_1, L_2);
 		return L_3;
 	}
 }
@@ -18108,8 +16824,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlQualifiedName_t2794880B373257E4108CC3F36D7
 	int32_t V_1 = 0;
 	String_t* V_2 = NULL;
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_0;
-		L_0 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_0 = __this->___reader_1;
 		String_t* L_1 = __this->___typeX_22;
 		NullCheck(L_0);
 		String_t* L_2;
@@ -18134,8 +16849,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlQualifiedName_t2794880B373257E4108CC3F36D7
 
 IL_0027:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_7;
-		L_7 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_7 = __this->___reader_1;
 		String_t* L_8 = __this->___typeX_22;
 		String_t* L_9 = __this->___w3InstanceNS1999_17;
 		NullCheck(L_7);
@@ -18161,8 +16875,7 @@ IL_0027:
 
 IL_004f:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_15;
-		L_15 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_15 = __this->___reader_1;
 		String_t* L_16 = __this->___typeX_22;
 		String_t* L_17 = __this->___w3InstanceNS2000_16;
 		NullCheck(L_15);
@@ -18206,8 +16919,7 @@ IL_0079:
 	}
 	{
 		String_t* L_26 = V_0;
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_27;
-		L_27 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_27 = __this->___reader_1;
 		NullCheck(L_27);
 		String_t* L_28;
 		L_28 = VirtualFuncInvoker0< String_t* >::Invoke(9 /* System.String System.Xml.XmlReader::get_NamespaceURI() */, L_27);
@@ -18230,8 +16942,7 @@ IL_009b:
 		NullCheck(L_33);
 		String_t* L_35;
 		L_35 = String_Substring_m6BA4A3FA3800FE92662D0847CC8E1EEF940DF472(L_33, ((int32_t)il2cpp_codegen_add(L_34, 1)), NULL);
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_36;
-		L_36 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_36 = __this->___reader_1;
 		String_t* L_37 = V_2;
 		NullCheck(L_36);
 		String_t* L_38;
@@ -18256,8 +16967,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XmlSerializationReader_IsXmlnsAttribute_
 	{
 		String_t* L_0 = ___name0;
 		NullCheck(L_0);
-		int32_t L_1;
-		L_1 = String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline(L_0, NULL);
+		int32_t L_1 = L_0->____stringLength_4;
 		V_0 = L_1;
 		int32_t L_2 = V_0;
 		if ((((int32_t)L_2) >= ((int32_t)5)))
@@ -18350,8 +17060,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReader_ParseWsdlArrayTyp
 		}
 	}
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_12;
-		L_12 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_12 = __this->___reader_1;
 		String_t* L_13 = V_0;
 		NullCheck(L_12);
 		String_t* L_14;
@@ -18594,13 +17303,11 @@ IL_000a:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReader_ReadReferencedElement_mFB866A61C9C26FA31E53EFCB673506A455120493 (XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597* __this, const RuntimeMethod* method) 
 {
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_0;
-		L_0 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_0 = __this->___reader_1;
 		NullCheck(L_0);
 		String_t* L_1;
 		L_1 = VirtualFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Xml.XmlReader::get_LocalName() */, L_0);
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_2;
-		L_2 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_2 = __this->___reader_1;
 		NullCheck(L_2);
 		String_t* L_3;
 		L_3 = VirtualFuncInvoker0< String_t* >::Invoke(9 /* System.String System.Xml.XmlReader::get_NamespaceURI() */, L_2);
@@ -18641,7 +17348,7 @@ IL_0019:
 		XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_3 = ___qname0;
 		NullCheck(L_2);
 		RuntimeObject* L_4;
-		L_4 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(29 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_2, L_3);
+		L_4 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(28 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_2, L_3);
 		return ((WriteCallbackInfo_t1B01208EBEF54FE064CBE2DD5062C89EBD7A4F7D*)CastclassClass((RuntimeObject*)L_4, WriteCallbackInfo_t1B01208EBEF54FE064CBE2DD5062C89EBD7A4F7D_il2cpp_TypeInfo_var));
 	}
 }
@@ -18688,14 +17395,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReader_ReadRef
 
 IL_0018:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_6;
-		L_6 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_6 = __this->___reader_1;
 		NullCheck(L_6);
 		String_t* L_7;
 		L_7 = VirtualFuncInvoker1< String_t*, String_t* >::Invoke(22 /* System.String System.Xml.XmlReader::GetAttribute(System.String) */, L_6, _stringLiteral996E5360F80E16B2189CC1E536C91CE68083F694);
 		V_1 = L_7;
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_8;
-		L_8 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_8 = __this->___reader_1;
 		String_t* L_9 = __this->___arrayType_23;
 		String_t* L_10 = __this->___soapNS_18;
 		NullCheck(L_8);
@@ -18722,8 +17427,7 @@ IL_0018:
 	{
 		String_t* L_16 = V_3;
 		NullCheck(L_16);
-		int32_t L_17;
-		L_17 = String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline(L_16, NULL);
+		int32_t L_17 = L_16->____stringLength_4;
 		if ((((int32_t)L_17) <= ((int32_t)0)))
 		{
 			goto IL_00cc;
@@ -18749,7 +17453,7 @@ IL_0066:
 		String_t* L_20 = V_1;
 		NullCheck(L_19);
 		RuntimeObject* L_21;
-		L_21 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(29 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_19, L_20);
+		L_21 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(28 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_19, L_20);
 		G_B8_0 = ((CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702*)CastclassClass((RuntimeObject*)L_21, CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702_il2cpp_TypeInfo_var));
 	}
 
@@ -18773,23 +17477,20 @@ IL_0077:
 	{
 		CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* L_24 = V_4;
 		NullCheck(L_24);
-		XmlSerializationCollectionFixupCallback_t7A477E768FFD9DF76301088150243A493D5A4842* L_25;
-		L_25 = CollectionFixup_get_Callback_m1F1435C58DB8A0FDDC6EF46BAE8C871531BEDBAE_inline(L_24, NULL);
+		XmlSerializationCollectionFixupCallback_t7A477E768FFD9DF76301088150243A493D5A4842* L_25 = L_24->___callback_0;
 		CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* L_26 = V_4;
 		NullCheck(L_26);
-		RuntimeObject* L_27;
-		L_27 = CollectionFixup_get_Collection_m33F4B486A798DB34A155875436454D248ADF0FD0_inline(L_26, NULL);
+		RuntimeObject* L_27 = L_26->___collection_1;
 		RuntimeObject* L_28 = V_2;
 		NullCheck(L_25);
 		XmlSerializationCollectionFixupCallback_Invoke_mFB736B20C467F37986192F47B50619B4E126B36E_inline(L_25, L_27, L_28, NULL);
 		Hashtable_tEFC3B6496E6747787D8BB761B51F2AE3A8CFFE2D* L_29 = __this->___collFixups_3;
 		String_t* L_30 = V_1;
 		NullCheck(L_29);
-		VirtualActionInvoker1< RuntimeObject* >::Invoke(39 /* System.Void System.Collections.Hashtable::Remove(System.Object) */, L_29, L_30);
+		VirtualActionInvoker1< RuntimeObject* >::Invoke(37 /* System.Void System.Collections.Hashtable::Remove(System.Object) */, L_29, L_30);
 		CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* L_31 = V_4;
 		NullCheck(L_31);
-		RuntimeObject* L_32;
-		L_32 = CollectionFixup_get_Collection_m33F4B486A798DB34A155875436454D248ADF0FD0_inline(L_31, NULL);
+		RuntimeObject* L_32 = L_31->___collection_1;
 		V_2 = L_32;
 		goto IL_00f4;
 	}
@@ -18806,11 +17507,11 @@ IL_00b1:
 		CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* L_34 = V_4;
 		RuntimeObject* L_35 = V_2;
 		NullCheck(L_34);
-		CollectionFixup_set_CollectionItems_mE1B2C71D40112F90E2ECC65D1E14234BA2ED351F_inline(L_34, (RuntimeObject*)((ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)Castclass((RuntimeObject*)L_35, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var)), NULL);
+		L_34->___collectionItems_2 = (RuntimeObject*)((ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)Castclass((RuntimeObject*)L_35, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var));
+		Il2CppCodeGenWriteBarrier((void**)(&L_34->___collectionItems_2), (void*)(RuntimeObject*)((ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)Castclass((RuntimeObject*)L_35, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var)));
 		CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* L_36 = V_4;
 		NullCheck(L_36);
-		RuntimeObject* L_37;
-		L_37 = CollectionFixup_get_Collection_m33F4B486A798DB34A155875436454D248ADF0FD0_inline(L_36, NULL);
+		RuntimeObject* L_37 = L_36->___collection_1;
 		V_2 = L_37;
 		goto IL_00f4;
 	}
@@ -18887,8 +17588,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XmlSerializationReader_ReadList_m78AEC7B
 	String_t* V_12 = NULL;
 	RuntimeObject* V_13 = NULL;
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_0;
-		L_0 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_0 = __this->___reader_1;
 		String_t* L_1 = __this->___arrayType_23;
 		String_t* L_2 = __this->___soapNS_18;
 		NullCheck(L_0);
@@ -18902,8 +17602,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XmlSerializationReader_ReadList_m78AEC7B
 		}
 	}
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_5;
-		L_5 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_5 = __this->___reader_1;
 		String_t* L_6 = __this->___arrayType_23;
 		String_t* L_7 = __this->___wsdlNS_19;
 		NullCheck(L_5);
@@ -18920,16 +17619,14 @@ IL_0033:
 		V_1 = L_10;
 		XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_11 = V_1;
 		NullCheck(L_11);
-		String_t* L_12;
-		L_12 = XmlQualifiedName_get_Name_mC9D21D5BADE11AEAC7ED5886B39E1A774C63B830_inline(L_11, NULL);
+		String_t* L_12 = L_11->___name_1;
 		NullCheck(L_12);
 		int32_t L_13;
 		L_13 = String_LastIndexOf_m6BB3E7E1B48702D4C715FA423F8A822C053B290E(L_12, ((int32_t)91), NULL);
 		V_2 = L_13;
 		XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_14 = V_1;
 		NullCheck(L_14);
-		String_t* L_15;
-		L_15 = XmlQualifiedName_get_Name_mC9D21D5BADE11AEAC7ED5886B39E1A774C63B830_inline(L_14, NULL);
+		String_t* L_15 = L_14->___name_1;
 		int32_t L_16 = V_2;
 		NullCheck(L_15);
 		String_t* L_17;
@@ -18937,8 +17634,7 @@ IL_0033:
 		V_3 = L_17;
 		XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_18 = V_1;
 		NullCheck(L_18);
-		String_t* L_19;
-		L_19 = XmlQualifiedName_get_Name_mC9D21D5BADE11AEAC7ED5886B39E1A774C63B830_inline(L_18, NULL);
+		String_t* L_19 = L_18->___name_1;
 		int32_t L_20 = V_2;
 		NullCheck(L_19);
 		String_t* L_21;
@@ -18947,8 +17643,7 @@ IL_0033:
 		String_t* L_22 = V_3;
 		String_t* L_23 = V_3;
 		NullCheck(L_23);
-		int32_t L_24;
-		L_24 = String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline(L_23, NULL);
+		int32_t L_24 = L_23->____stringLength_4;
 		NullCheck(L_22);
 		String_t* L_25;
 		L_25 = String_Substring_mB1D94F47935D22E130FF2C01DBB6A4135FBB76CE(L_22, 1, ((int32_t)il2cpp_codegen_subtract(L_24, 2)), NULL);
@@ -18972,8 +17667,7 @@ IL_0033:
 	{
 		String_t* L_31 = V_4;
 		NullCheck(L_31);
-		int32_t L_32;
-		L_32 = String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline(L_31, NULL);
+		int32_t L_32 = L_31->____stringLength_4;
 		V_2 = L_32;
 	}
 
@@ -18987,8 +17681,7 @@ IL_0096:
 		V_7 = L_35;
 		XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_36 = V_1;
 		NullCheck(L_36);
-		String_t* L_37;
-		L_37 = XmlQualifiedName_get_Namespace_m0CAE4A651EF1CA6F0EB657C83608A796038A2615_inline(L_36, NULL);
+		String_t* L_37 = L_36->___ns_2;
 		String_t* L_38 = __this->___w3SchemaNS_14;
 		bool L_39;
 		L_39 = String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1(L_37, L_38, NULL);
@@ -19003,8 +17696,7 @@ IL_0096:
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_41;
 		L_41 = TypeTranslator_GetPrimitiveTypeData_mC2F2599020E2317432CF7EA5EC1C7197E4F63CA0(L_40, NULL);
 		NullCheck(L_41);
-		Type_t* L_42;
-		L_42 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_41, NULL);
+		Type_t* L_42 = L_41->___type_0;
 		NullCheck(L_42);
 		String_t* L_43;
 		L_43 = VirtualFuncInvoker0< String_t* >::Invoke(26 /* System.String System.Type::get_FullName() */, L_42);
@@ -19024,8 +17716,7 @@ IL_00d6:
 		String_t* L_48 = V_7;
 		XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_49 = V_1;
 		NullCheck(L_49);
-		String_t* L_50;
-		L_50 = XmlQualifiedName_get_Namespace_m0CAE4A651EF1CA6F0EB657C83608A796038A2615_inline(L_49, NULL);
+		String_t* L_50 = L_49->___ns_2;
 		XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_51 = (XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9*)il2cpp_codegen_object_new(XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9_il2cpp_TypeInfo_var);
 		NullCheck(L_51);
 		XmlQualifiedName__ctor_m65632114A1726D9FAD0338BC2A8C28BB9D262C7B(L_51, L_48, L_50, NULL);
@@ -19068,8 +17759,7 @@ IL_011c:
 		L_67 = Array_CreateInstance_m13B202130951A03AF5F52470A19E17D3AD2A8983(L_65, L_66, NULL);
 		V_6 = L_67;
 		V_9 = (bool)1;
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_68;
-		L_68 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_68 = __this->___reader_1;
 		NullCheck(L_68);
 		bool L_69;
 		L_69 = VirtualFuncInvoker0< bool >::Invoke(14 /* System.Boolean System.Xml.XmlReader::get_IsEmptyElement() */, L_68);
@@ -19081,8 +17771,7 @@ IL_011c:
 	{
 		int32_t L_70 = __this->___readCount_12;
 		__this->___readCount_12 = ((int32_t)il2cpp_codegen_add(L_70, 1));
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_71;
-		L_71 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_71 = __this->___reader_1;
 		NullCheck(L_71);
 		VirtualActionInvoker0::Invoke(35 /* System.Void System.Xml.XmlReader::Skip() */, L_71);
 		goto IL_01e7;
@@ -19090,8 +17779,7 @@ IL_011c:
 
 IL_015a:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_72;
-		L_72 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_72 = __this->___reader_1;
 		NullCheck(L_72);
 		VirtualActionInvoker0::Invoke(44 /* System.Void System.Xml.XmlReader::ReadStartElement() */, L_72);
 		V_11 = 0;
@@ -19104,16 +17792,14 @@ IL_016a:
 		__this->___whileIterationCount_13 = ((int32_t)il2cpp_codegen_add(L_73, 1));
 		int32_t L_74 = __this->___readCount_12;
 		__this->___readCount_12 = ((int32_t)il2cpp_codegen_add(L_74, 1));
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_75;
-		L_75 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_75 = __this->___reader_1;
 		NullCheck(L_75);
 		int32_t L_76;
 		L_76 = VirtualFuncInvoker0< int32_t >::Invoke(43 /* System.Xml.XmlNodeType System.Xml.XmlReader::MoveToContent() */, L_75);
 		String_t* L_77 = V_4;
 		XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_78 = V_1;
 		NullCheck(L_78);
-		String_t* L_79;
-		L_79 = XmlQualifiedName_get_Namespace_m0CAE4A651EF1CA6F0EB657C83608A796038A2615_inline(L_78, NULL);
+		String_t* L_79 = L_78->___ns_2;
 		RuntimeObject* L_80;
 		L_80 = XmlSerializationReader_ReadReferencingElement_m83079F8026EBB9E442B5F5BD09D7E5C1B53595D0(__this, L_77, L_79, (&V_12), NULL);
 		V_13 = L_80;
@@ -19161,8 +17847,7 @@ IL_01cf:
 	}
 	{
 		__this->___whileIterationCount_13 = 0;
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_92;
-		L_92 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_92 = __this->___reader_1;
 		NullCheck(L_92);
 		VirtualActionInvoker0::Invoke(46 /* System.Void System.Xml.XmlReader::ReadEndElement() */, L_92);
 	}
@@ -19265,7 +17950,7 @@ IL_005d:
 		Hashtable_tEFC3B6496E6747787D8BB761B51F2AE3A8CFFE2D* L_14 = __this->___delayedListFixups_8;
 		NullCheck(L_14);
 		RuntimeObject* L_15;
-		L_15 = VirtualFuncInvoker0< RuntimeObject* >::Invoke(31 /* System.Collections.IDictionaryEnumerator System.Collections.Hashtable::GetEnumerator() */, L_14);
+		L_15 = VirtualFuncInvoker0< RuntimeObject* >::Invoke(30 /* System.Collections.IDictionaryEnumerator System.Collections.Hashtable::GetEnumerator() */, L_14);
 		V_1 = L_15;
 	}
 	{
@@ -19308,10 +17993,8 @@ IL_007a_1:
 				RuntimeObject* L_20;
 				L_20 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Object System.Collections.IEnumerator::get_Current() */, IEnumerator_t7B609C2FFA6EB5167D9C62A0C32A21DE2F666DAA_il2cpp_TypeInfo_var, L_19);
 				V_2 = ((*(DictionaryEntry_t171080F37B311C25AA9E75888F9C9D703FA721BB*)((DictionaryEntry_t171080F37B311C25AA9E75888F9C9D703FA721BB*)(DictionaryEntry_t171080F37B311C25AA9E75888F9C9D703FA721BB*)UnBox(L_20, DictionaryEntry_t171080F37B311C25AA9E75888F9C9D703FA721BB_il2cpp_TypeInfo_var))));
-				RuntimeObject* L_21;
-				L_21 = DictionaryEntry_get_Key_m09845C00732E530E6FCB9042079E90D3912215FE_inline((&V_2), NULL);
-				RuntimeObject* L_22;
-				L_22 = DictionaryEntry_get_Value_m75FD18FE968AE131F28AA2CB0DF4895EBA39075E_inline((&V_2), NULL);
+				RuntimeObject* L_21 = (&V_2)->____key_0;
+				RuntimeObject* L_22 = (&V_2)->____value_1;
 				XmlSerializationReader_AddTarget_mF2FDE667DDECBA83C6CC7F7D0278E11B95FBDBC2(__this, ((String_t*)CastclassSealed((RuntimeObject*)L_21, String_t_il2cpp_TypeInfo_var)), L_22, NULL);
 			}
 
@@ -19393,18 +18076,15 @@ IL_00d1_1:
 				V_5 = ((CollectionItemFixup_tB93D197F97AEEE471775D4EC6C7227434D7EDA11*)CastclassClass((RuntimeObject*)L_32, CollectionItemFixup_tB93D197F97AEEE471775D4EC6C7227434D7EDA11_il2cpp_TypeInfo_var));
 				CollectionItemFixup_tB93D197F97AEEE471775D4EC6C7227434D7EDA11* L_33 = V_5;
 				NullCheck(L_33);
-				RuntimeArray* L_34;
-				L_34 = CollectionItemFixup_get_Collection_m3A3D1F07DD384677EB43842B4E0C9AE6CAA8B8F6_inline(L_33, NULL);
+				RuntimeArray* L_34 = L_33->___list_0;
 				CollectionItemFixup_tB93D197F97AEEE471775D4EC6C7227434D7EDA11* L_35 = V_5;
 				NullCheck(L_35);
-				String_t* L_36;
-				L_36 = CollectionItemFixup_get_Id_m01A755FF6A3F989910289A67DD5ADFA0528FD39F_inline(L_35, NULL);
+				String_t* L_36 = L_35->___id_2;
 				RuntimeObject* L_37;
 				L_37 = XmlSerializationReader_GetTarget_mA46C91CC3F9CD7D7C907903992390A28F388213F(__this, L_36, NULL);
 				CollectionItemFixup_tB93D197F97AEEE471775D4EC6C7227434D7EDA11* L_38 = V_5;
 				NullCheck(L_38);
-				int32_t L_39;
-				L_39 = CollectionItemFixup_get_Index_m455C70697C9BD61D8E47E5867796671FAECBF958_inline(L_38, NULL);
+				int32_t L_39 = L_38->___index_1;
 				NullCheck(L_34);
 				Array_SetValue_mE9507B366ED84E91E92BF32649D36916F96C67B8(L_34, L_37, L_39, NULL);
 			}
@@ -19442,7 +18122,7 @@ IL_011c:
 		Hashtable_tEFC3B6496E6747787D8BB761B51F2AE3A8CFFE2D* L_43 = __this->___collFixups_3;
 		NullCheck(L_43);
 		RuntimeObject* L_44;
-		L_44 = VirtualFuncInvoker0< RuntimeObject* >::Invoke(38 /* System.Collections.ICollection System.Collections.Hashtable::get_Values() */, L_43);
+		L_44 = VirtualFuncInvoker0< RuntimeObject* >::Invoke(36 /* System.Collections.ICollection System.Collections.Hashtable::get_Values() */, L_43);
 		NullCheck(L_44);
 		RuntimeObject* L_45;
 		L_45 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(0 /* System.Collections.IEnumerator System.Collections.IEnumerable::GetEnumerator() */, IEnumerable_t6331596D5DD37C462B1B8D49CF6B319B00AB7131_il2cpp_TypeInfo_var, L_44);
@@ -19490,16 +18170,13 @@ IL_0138_1:
 				V_6 = ((CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702*)CastclassClass((RuntimeObject*)L_50, CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702_il2cpp_TypeInfo_var));
 				CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* L_51 = V_6;
 				NullCheck(L_51);
-				XmlSerializationCollectionFixupCallback_t7A477E768FFD9DF76301088150243A493D5A4842* L_52;
-				L_52 = CollectionFixup_get_Callback_m1F1435C58DB8A0FDDC6EF46BAE8C871531BEDBAE_inline(L_51, NULL);
+				XmlSerializationCollectionFixupCallback_t7A477E768FFD9DF76301088150243A493D5A4842* L_52 = L_51->___callback_0;
 				CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* L_53 = V_6;
 				NullCheck(L_53);
-				RuntimeObject* L_54;
-				L_54 = CollectionFixup_get_Collection_m33F4B486A798DB34A155875436454D248ADF0FD0_inline(L_53, NULL);
+				RuntimeObject* L_54 = L_53->___collection_1;
 				CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* L_55 = V_6;
 				NullCheck(L_55);
-				RuntimeObject* L_56;
-				L_56 = CollectionFixup_get_CollectionItems_m7C8D7CB07A7C17F517B09A5145424EB1DE0EB497_inline(L_55, NULL);
+				RuntimeObject* L_56 = L_55->___collectionItems_2;
 				NullCheck(L_52);
 				XmlSerializationCollectionFixupCallback_Invoke_mFB736B20C467F37986192F47B50619B4E126B36E_inline(L_52, L_54, L_56, NULL);
 			}
@@ -19582,8 +18259,7 @@ IL_0194_1:
 				V_7 = ((Fixup_tE94672CE3DEBD4DCFFB6AC052A9A6E0E7C6AA566*)CastclassClass((RuntimeObject*)L_66, Fixup_tE94672CE3DEBD4DCFFB6AC052A9A6E0E7C6AA566_il2cpp_TypeInfo_var));
 				Fixup_tE94672CE3DEBD4DCFFB6AC052A9A6E0E7C6AA566* L_67 = V_7;
 				NullCheck(L_67);
-				XmlSerializationFixupCallback_t882A7D135707B29ECA0198EFF9BB512C8F54A3AE* L_68;
-				L_68 = Fixup_get_Callback_mF6D51DD8D4089ED7510FA16D29095F75BFB54D9B_inline(L_67, NULL);
+				XmlSerializationFixupCallback_t882A7D135707B29ECA0198EFF9BB512C8F54A3AE* L_68 = L_67->___callback_2;
 				Fixup_tE94672CE3DEBD4DCFFB6AC052A9A6E0E7C6AA566* L_69 = V_7;
 				NullCheck(L_68);
 				XmlSerializationFixupCallback_Invoke_m20E59EA8A1BB770EB6C5391C419FA821C425EDF7_inline(L_68, L_69, NULL);
@@ -19622,7 +18298,7 @@ IL_01cd:
 		Hashtable_tEFC3B6496E6747787D8BB761B51F2AE3A8CFFE2D* L_73 = __this->___targets_7;
 		NullCheck(L_73);
 		RuntimeObject* L_74;
-		L_74 = VirtualFuncInvoker0< RuntimeObject* >::Invoke(31 /* System.Collections.IDictionaryEnumerator System.Collections.Hashtable::GetEnumerator() */, L_73);
+		L_74 = VirtualFuncInvoker0< RuntimeObject* >::Invoke(30 /* System.Collections.IDictionaryEnumerator System.Collections.Hashtable::GetEnumerator() */, L_73);
 		V_1 = L_74;
 	}
 	{
@@ -19665,8 +18341,7 @@ IL_01e3_1:
 				RuntimeObject* L_79;
 				L_79 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Object System.Collections.IEnumerator::get_Current() */, IEnumerator_t7B609C2FFA6EB5167D9C62A0C32A21DE2F666DAA_il2cpp_TypeInfo_var, L_78);
 				V_8 = ((*(DictionaryEntry_t171080F37B311C25AA9E75888F9C9D703FA721BB*)((DictionaryEntry_t171080F37B311C25AA9E75888F9C9D703FA721BB*)(DictionaryEntry_t171080F37B311C25AA9E75888F9C9D703FA721BB*)UnBox(L_79, DictionaryEntry_t171080F37B311C25AA9E75888F9C9D703FA721BB_il2cpp_TypeInfo_var))));
-				RuntimeObject* L_80;
-				L_80 = DictionaryEntry_get_Value_m75FD18FE968AE131F28AA2CB0DF4895EBA39075E_inline((&V_8), NULL);
+				RuntimeObject* L_80 = (&V_8)->____value_1;
 				if (!L_80)
 				{
 					goto IL_022e_1;
@@ -19681,11 +18356,10 @@ IL_01e3_1:
 			}
 			{
 				Hashtable_tEFC3B6496E6747787D8BB761B51F2AE3A8CFFE2D* L_82 = __this->___referencedObjects_11;
-				RuntimeObject* L_83;
-				L_83 = DictionaryEntry_get_Value_m75FD18FE968AE131F28AA2CB0DF4895EBA39075E_inline((&V_8), NULL);
+				RuntimeObject* L_83 = (&V_8)->____value_1;
 				NullCheck(L_82);
 				bool L_84;
-				L_84 = VirtualFuncInvoker1< bool, RuntimeObject* >::Invoke(26 /* System.Boolean System.Collections.Hashtable::Contains(System.Object) */, L_82, L_83);
+				L_84 = VirtualFuncInvoker1< bool, RuntimeObject* >::Invoke(25 /* System.Boolean System.Collections.Hashtable::Contains(System.Object) */, L_82, L_83);
 				if (L_84)
 				{
 					goto IL_022e_1;
@@ -19694,10 +18368,8 @@ IL_01e3_1:
 
 IL_0215_1:
 			{
-				RuntimeObject* L_85;
-				L_85 = DictionaryEntry_get_Key_m09845C00732E530E6FCB9042079E90D3912215FE_inline((&V_8), NULL);
-				RuntimeObject* L_86;
-				L_86 = DictionaryEntry_get_Value_m75FD18FE968AE131F28AA2CB0DF4895EBA39075E_inline((&V_8), NULL);
+				RuntimeObject* L_85 = (&V_8)->____key_0;
+				RuntimeObject* L_86 = (&V_8)->____value_1;
 				XmlSerializationReader_UnreferencedObject_m4487CEE93EAE9E4A76ACCE73F1336B21E7060461(__this, ((String_t*)CastclassSealed((RuntimeObject*)L_85, String_t_il2cpp_TypeInfo_var)), L_86, NULL);
 			}
 
@@ -19731,13 +18403,11 @@ IL_0249:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReader_ReadReferencingElement_mC2F7F98DBC0683ECE865560DBB9F1CBA0798EBB6 (XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597* __this, String_t** ___fixupReference0, const RuntimeMethod* method) 
 {
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_0;
-		L_0 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_0 = __this->___reader_1;
 		NullCheck(L_0);
 		String_t* L_1;
 		L_1 = VirtualFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Xml.XmlReader::get_LocalName() */, L_0);
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_2;
-		L_2 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_2 = __this->___reader_1;
 		NullCheck(L_2);
 		String_t* L_3;
 		L_3 = VirtualFuncInvoker0< String_t* >::Invoke(9 /* System.String System.Xml.XmlReader::get_NamespaceURI() */, L_2);
@@ -19796,8 +18466,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReader_ReadRef
 
 IL_000e:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_2;
-		L_2 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_2 = __this->___reader_1;
 		NullCheck(L_2);
 		String_t* L_3;
 		L_3 = VirtualFuncInvoker1< String_t*, String_t* >::Invoke(22 /* System.String System.Xml.XmlReader::GetAttribute(System.String) */, L_2, _stringLiteral0AEA83737E2216962B6144625FC860B3F361A5ED);
@@ -19847,8 +18516,7 @@ IL_0032:
 
 IL_004e:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_15;
-		L_15 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_15 = __this->___reader_1;
 		String_t* L_16 = __this->___arrayType_23;
 		String_t* L_17 = __this->___soapNS_18;
 		NullCheck(L_15);
@@ -19898,7 +18566,7 @@ IL_0077:
 		String_t* L_33 = *((String_t**)L_32);
 		RuntimeObject* L_34 = V_3;
 		NullCheck(L_31);
-		VirtualActionInvoker2< RuntimeObject*, RuntimeObject* >::Invoke(30 /* System.Void System.Collections.Hashtable::set_Item(System.Object,System.Object) */, L_31, L_33, L_34);
+		VirtualActionInvoker2< RuntimeObject*, RuntimeObject* >::Invoke(29 /* System.Void System.Collections.Hashtable::set_Item(System.Object,System.Object) */, L_31, L_33, L_34);
 		return NULL;
 	}
 
@@ -19955,8 +18623,7 @@ IL_0106:
 	{
 		int32_t L_47 = __this->___readCount_12;
 		__this->___readCount_12 = ((int32_t)il2cpp_codegen_add(L_47, 1));
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_48;
-		L_48 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_48 = __this->___reader_1;
 		NullCheck(L_48);
 		VirtualActionInvoker0::Invoke(35 /* System.Void System.Xml.XmlReader::Skip() */, L_48);
 		String_t* L_49 = V_0;
@@ -20021,8 +18688,7 @@ IL_000a:
 		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_5 = __this->___reader_1;
 		NullCheck(L_4);
 		InterfaceActionInvoker1< XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* >::Invoke(1 /* System.Void System.Xml.Serialization.IXmlSerializable::ReadXml(System.Xml.XmlReader) */, IXmlSerializable_tE36AB1894460107283308E142C1106C4AB31A526_il2cpp_TypeInfo_var, L_4, L_5);
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_6;
-		L_6 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_6 = __this->___reader_1;
 		NullCheck(L_6);
 		int32_t L_7;
 		L_7 = VirtualFuncInvoker0< int32_t >::Invoke(43 /* System.Xml.XmlNodeType System.Xml.XmlReader::MoveToContent() */, L_6);
@@ -20139,8 +18805,7 @@ IL_0011:
 	{
 		XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_3 = ___qname0;
 		NullCheck(L_3);
-		String_t* L_4;
-		L_4 = XmlQualifiedName_get_Name_mC9D21D5BADE11AEAC7ED5886B39E1A774C63B830_inline(L_3, NULL);
+		String_t* L_4 = L_3->___name_1;
 		il2cpp_codegen_runtime_class_init_inline(TypeTranslator_t46FF5D65D6B7BE54B8643952A528D5930429C60D_il2cpp_TypeInfo_var);
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_5;
 		L_5 = TypeTranslator_FindPrimitiveTypeData_m1C26F5AE5A6932AAB6112FFDD9D0FF1E683878BC(L_4, NULL);
@@ -20154,8 +18819,7 @@ IL_0011:
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_7 = V_0;
 		NullCheck(L_7);
-		int32_t L_8;
-		L_8 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_7, NULL);
+		int32_t L_8 = L_7->___sType_2;
 		if ((((int32_t)L_8) == ((int32_t)1)))
 		{
 			goto IL_013f;
@@ -20429,8 +19093,7 @@ IL_013f:
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_63 = V_0;
 		NullCheck(L_63);
-		Type_t* L_64;
-		L_64 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_63, NULL);
+		Type_t* L_64 = L_63->___type_0;
 		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_65 = { reinterpret_cast<intptr_t> (XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9_0_0_0_var) };
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		Type_t* L_66;
@@ -20453,8 +19116,7 @@ IL_015d:
 		int32_t L_69 = __this->___readCount_12;
 		__this->___readCount_12 = ((int32_t)il2cpp_codegen_add(L_69, 1));
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_70 = V_0;
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_71;
-		L_71 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_71 = __this->___reader_1;
 		NullCheck(L_71);
 		String_t* L_72;
 		L_72 = VirtualFuncInvoker0< String_t* >::Invoke(45 /* System.String System.Xml.XmlReader::ReadElementString() */, L_71);
@@ -20756,22 +19418,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReader_UnknownAttribute_
 	int32_t V_1 = 0;
 	XmlAttributeEventArgs_tE2113D9D778F9CC7EBD3D619A0342DB8C9CC7897* V_2 = NULL;
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_0;
-		L_0 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_0 = __this->___reader_1;
 		if (!((XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B*)IsInstClass((RuntimeObject*)L_0, XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B_il2cpp_TypeInfo_var)))
 		{
 			goto IL_0031;
 		}
 	}
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_1;
-		L_1 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_1 = __this->___reader_1;
 		NullCheck(((XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B*)CastclassClass((RuntimeObject*)L_1, XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B_il2cpp_TypeInfo_var)));
 		int32_t L_2;
 		L_2 = XmlTextReader_get_LineNumber_m55D50DD933052EA9E291E92516B920C1C258D4A8(((XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B*)CastclassClass((RuntimeObject*)L_1, XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B_il2cpp_TypeInfo_var)), NULL);
 		V_0 = L_2;
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_3;
-		L_3 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_3 = __this->___reader_1;
 		NullCheck(((XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B*)CastclassClass((RuntimeObject*)L_3, XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B_il2cpp_TypeInfo_var)));
 		int32_t L_4;
 		L_4 = XmlTextReader_get_LinePosition_m2ADEA694B3B86523797ADD4EB117DCC6BA4D4D14(((XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B*)CastclassClass((RuntimeObject*)L_3, XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B_il2cpp_TypeInfo_var)), NULL);
@@ -20828,22 +19487,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReader_UnknownElement_m0
 	int32_t V_1 = 0;
 	XmlElementEventArgs_t415AB97F2EC45400E0E5FD5DCEE66D2FC4912036* V_2 = NULL;
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_0;
-		L_0 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_0 = __this->___reader_1;
 		if (!((XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B*)IsInstClass((RuntimeObject*)L_0, XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B_il2cpp_TypeInfo_var)))
 		{
 			goto IL_0031;
 		}
 	}
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_1;
-		L_1 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_1 = __this->___reader_1;
 		NullCheck(((XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B*)CastclassClass((RuntimeObject*)L_1, XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B_il2cpp_TypeInfo_var)));
 		int32_t L_2;
 		L_2 = XmlTextReader_get_LineNumber_m55D50DD933052EA9E291E92516B920C1C258D4A8(((XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B*)CastclassClass((RuntimeObject*)L_1, XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B_il2cpp_TypeInfo_var)), NULL);
 		V_0 = L_2;
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_3;
-		L_3 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_3 = __this->___reader_1;
 		NullCheck(((XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B*)CastclassClass((RuntimeObject*)L_3, XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B_il2cpp_TypeInfo_var)));
 		int32_t L_4;
 		L_4 = XmlTextReader_get_LinePosition_m2ADEA694B3B86523797ADD4EB117DCC6BA4D4D14(((XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B*)CastclassClass((RuntimeObject*)L_3, XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B_il2cpp_TypeInfo_var)), NULL);
@@ -20922,22 +19578,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReader_OnUnknownNode_m9A
 	int32_t V_0 = 0;
 	int32_t V_1 = 0;
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_0;
-		L_0 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_0 = __this->___reader_1;
 		if (!((XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B*)IsInstClass((RuntimeObject*)L_0, XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B_il2cpp_TypeInfo_var)))
 		{
 			goto IL_0031;
 		}
 	}
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_1;
-		L_1 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_1 = __this->___reader_1;
 		NullCheck(((XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B*)CastclassClass((RuntimeObject*)L_1, XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B_il2cpp_TypeInfo_var)));
 		int32_t L_2;
 		L_2 = XmlTextReader_get_LineNumber_m55D50DD933052EA9E291E92516B920C1C258D4A8(((XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B*)CastclassClass((RuntimeObject*)L_1, XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B_il2cpp_TypeInfo_var)), NULL);
 		V_0 = L_2;
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_3;
-		L_3 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_3 = __this->___reader_1;
 		NullCheck(((XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B*)CastclassClass((RuntimeObject*)L_3, XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B_il2cpp_TypeInfo_var)));
 		int32_t L_4;
 		L_4 = XmlTextReader_get_LinePosition_m2ADEA694B3B86523797ADD4EB117DCC6BA4D4D14(((XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B*)CastclassClass((RuntimeObject*)L_3, XmlTextReader_tC907887DA34B51126640DA590B4C9358DF45738B_il2cpp_TypeInfo_var)), NULL);
@@ -21006,8 +19659,7 @@ IL_0063:
 
 IL_007f:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_20;
-		L_20 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_20 = __this->___reader_1;
 		NullCheck(L_20);
 		int32_t L_21;
 		L_21 = VirtualFuncInvoker0< int32_t >::Invoke(34 /* System.Xml.ReadState System.Xml.XmlReader::get_ReadState() */, L_20);
@@ -21101,48 +19753,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CollectionFixup__ctor_m1F4ADF9D829F9B0BF
 		return;
 	}
 }
-// System.Xml.Serialization.XmlSerializationCollectionFixupCallback System.Xml.Serialization.XmlSerializationReader/CollectionFixup::get_Callback()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlSerializationCollectionFixupCallback_t7A477E768FFD9DF76301088150243A493D5A4842* CollectionFixup_get_Callback_m1F1435C58DB8A0FDDC6EF46BAE8C871531BEDBAE (CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlSerializationCollectionFixupCallback_t7A477E768FFD9DF76301088150243A493D5A4842* L_0 = __this->___callback_0;
-		return L_0;
-	}
-}
-// System.Object System.Xml.Serialization.XmlSerializationReader/CollectionFixup::get_Collection()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* CollectionFixup_get_Collection_m33F4B486A798DB34A155875436454D248ADF0FD0 (CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* __this, const RuntimeMethod* method) 
-{
-	{
-		RuntimeObject* L_0 = __this->___collection_1;
-		return L_0;
-	}
-}
-// System.Object System.Xml.Serialization.XmlSerializationReader/CollectionFixup::get_Id()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* CollectionFixup_get_Id_m02C21982C2A3986E65A34429213F203558849D40 (CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->___id_3;
-		return L_0;
-	}
-}
-// System.Object System.Xml.Serialization.XmlSerializationReader/CollectionFixup::get_CollectionItems()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* CollectionFixup_get_CollectionItems_m7C8D7CB07A7C17F517B09A5145424EB1DE0EB497 (CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* __this, const RuntimeMethod* method) 
-{
-	{
-		RuntimeObject* L_0 = __this->___collectionItems_2;
-		return L_0;
-	}
-}
-// System.Void System.Xml.Serialization.XmlSerializationReader/CollectionFixup::set_CollectionItems(System.Object)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CollectionFixup_set_CollectionItems_mE1B2C71D40112F90E2ECC65D1E14234BA2ED351F (CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* __this, RuntimeObject* ___value0, const RuntimeMethod* method) 
-{
-	{
-		RuntimeObject* L_0 = ___value0;
-		__this->___collectionItems_2 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___collectionItems_2), (void*)L_0);
-		return;
-	}
-}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -21175,30 +19785,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Fixup__ctor_m7213A65447CD4248AA5F086E4C7
 		return;
 	}
 }
-// System.Xml.Serialization.XmlSerializationFixupCallback System.Xml.Serialization.XmlSerializationReader/Fixup::get_Callback()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlSerializationFixupCallback_t882A7D135707B29ECA0198EFF9BB512C8F54A3AE* Fixup_get_Callback_mF6D51DD8D4089ED7510FA16D29095F75BFB54D9B (Fixup_tE94672CE3DEBD4DCFFB6AC052A9A6E0E7C6AA566* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlSerializationFixupCallback_t882A7D135707B29ECA0198EFF9BB512C8F54A3AE* L_0 = __this->___callback_2;
-		return L_0;
-	}
-}
-// System.String[] System.Xml.Serialization.XmlSerializationReader/Fixup::get_Ids()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* Fixup_get_Ids_m9B1A1A8EC0662A14A92B000F90A276C18E7690B2 (Fixup_tE94672CE3DEBD4DCFFB6AC052A9A6E0E7C6AA566* __this, const RuntimeMethod* method) 
-{
-	{
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_0 = __this->___ids_1;
-		return L_0;
-	}
-}
-// System.Object System.Xml.Serialization.XmlSerializationReader/Fixup::get_Source()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Fixup_get_Source_mF424839086899F18C33B9604622D390C359819AE (Fixup_tE94672CE3DEBD4DCFFB6AC052A9A6E0E7C6AA566* __this, const RuntimeMethod* method) 
-{
-	{
-		RuntimeObject* L_0 = __this->___source_0;
-		return L_0;
-	}
-}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -21223,30 +19809,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CollectionItemFixup__ctor_mE654E8182AAE3
 		return;
 	}
 }
-// System.Array System.Xml.Serialization.XmlSerializationReader/CollectionItemFixup::get_Collection()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeArray* CollectionItemFixup_get_Collection_m3A3D1F07DD384677EB43842B4E0C9AE6CAA8B8F6 (CollectionItemFixup_tB93D197F97AEEE471775D4EC6C7227434D7EDA11* __this, const RuntimeMethod* method) 
-{
-	{
-		RuntimeArray* L_0 = __this->___list_0;
-		return L_0;
-	}
-}
-// System.Int32 System.Xml.Serialization.XmlSerializationReader/CollectionItemFixup::get_Index()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t CollectionItemFixup_get_Index_m455C70697C9BD61D8E47E5867796671FAECBF958 (CollectionItemFixup_tB93D197F97AEEE471775D4EC6C7227434D7EDA11* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = __this->___index_1;
-		return L_0;
-	}
-}
-// System.String System.Xml.Serialization.XmlSerializationReader/CollectionItemFixup::get_Id()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* CollectionItemFixup_get_Id_m01A755FF6A3F989910289A67DD5ADFA0528FD39F (CollectionItemFixup_tB93D197F97AEEE471775D4EC6C7227434D7EDA11* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->___id_2;
-		return L_0;
-	}
-}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -21265,8 +19827,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReaderInterpreter__ctor_
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____typeMap_25), (void*)L_0);
 		XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* L_1 = ___typeMap0;
 		NullCheck(L_1);
-		int32_t L_2;
-		L_2 = XmlMapping_get_Format_mB9ACDCC642A2589BF20C9D02C2FA14F2C5D1C3F3_inline(L_1, NULL);
+		int32_t L_2 = L_1->___format_2;
 		__this->____format_26 = L_2;
 		return;
 	}
@@ -21293,8 +19854,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReaderInterpreter_InitCa
 	{
 		XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* L_0 = __this->____typeMap_25;
 		NullCheck(L_0);
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_1;
-		L_1 = XmlMapping_get_RelatedMaps_m359C8ADACB98609060F82DCB82FB18E39274918C_inline(L_0, NULL);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_1 = L_0->___relatedMaps_1;
 		V_0 = L_1;
 		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_2 = V_0;
 		if (!L_2)
@@ -21351,11 +19911,9 @@ IL_001b_1:
 				V_2 = ((XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9*)CastclassClass((RuntimeObject*)L_9, XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9_il2cpp_TypeInfo_var));
 				XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_10 = V_2;
 				NullCheck(L_10);
-				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_11;
-				L_11 = XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline(L_10, NULL);
+				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_11 = L_10->___type_9;
 				NullCheck(L_11);
-				int32_t L_12;
-				L_12 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_11, NULL);
+				int32_t L_12 = L_11->___sType_2;
 				if ((((int32_t)L_12) == ((int32_t)4)))
 				{
 					goto IL_0043_1;
@@ -21364,11 +19922,9 @@ IL_001b_1:
 			{
 				XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_13 = V_2;
 				NullCheck(L_13);
-				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_14;
-				L_14 = XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline(L_13, NULL);
+				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_14 = L_13->___type_9;
 				NullCheck(L_14);
-				int32_t L_15;
-				L_15 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_14, NULL);
+				int32_t L_15 = L_14->___sType_2;
 				if ((!(((uint32_t)L_15) == ((uint32_t)2))))
 				{
 					goto IL_0074_1;
@@ -21384,19 +19940,15 @@ IL_0043_1:
 				V_3 = L_17;
 				XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_18 = V_2;
 				NullCheck(L_18);
-				String_t* L_19;
-				L_19 = XmlTypeMapping_get_XmlType_m5A30CB4EE3541CC1C65003757D5E743042846222_inline(L_18, NULL);
+				String_t* L_19 = L_18->___xmlType_7;
 				XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_20 = V_2;
 				NullCheck(L_20);
-				String_t* L_21;
-				L_21 = XmlMapping_get_Namespace_m196651C91FB3C3442AC616C977345E89450F024F_inline(L_20, NULL);
+				String_t* L_21 = ((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_20)->____namespace_5;
 				XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_22 = V_2;
 				NullCheck(L_22);
-				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_23;
-				L_23 = XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline(L_22, NULL);
+				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_23 = L_22->___type_9;
 				NullCheck(L_23);
-				Type_t* L_24;
-				L_24 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_23, NULL);
+				Type_t* L_24 = L_23->___type_0;
 				ReaderCallbackInfo_t414F9FC8F93718A4EAF961E66DE7A6C43B6A08FB* L_25 = V_3;
 				XmlSerializationReadCallback_tAEB657961D305723E5F13AF0D7ADE852E81D413B* L_26 = (XmlSerializationReadCallback_tAEB657961D305723E5F13AF0D7ADE852E81D413B*)il2cpp_codegen_object_new(XmlSerializationReadCallback_tAEB657961D305723E5F13AF0D7ADE852E81D413B_il2cpp_TypeInfo_var);
 				NullCheck(L_26);
@@ -21448,8 +20000,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpre
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_0;
-		L_0 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_0 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_0);
 		int32_t L_1;
 		L_1 = VirtualFuncInvoker0< int32_t >::Invoke(43 /* System.Xml.XmlNodeType System.Xml.XmlReader::MoveToContent() */, L_0);
@@ -21495,13 +20046,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpre
 	RuntimeObject* V_0 = NULL;
 	{
 		V_0 = NULL;
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_0;
-		L_0 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_0 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_0);
 		int32_t L_1;
 		L_1 = VirtualFuncInvoker0< int32_t >::Invoke(43 /* System.Xml.XmlNodeType System.Xml.XmlReader::MoveToContent() */, L_0);
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_2;
-		L_2 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_2 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_2);
 		int32_t L_3;
 		L_3 = VirtualFuncInvoker0< int32_t >::Invoke(6 /* System.Xml.XmlNodeType System.Xml.XmlReader::get_NodeType() */, L_2);
@@ -21511,15 +20060,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpre
 		}
 	}
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_4;
-		L_4 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_4 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_4);
 		String_t* L_5;
 		L_5 = VirtualFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Xml.XmlReader::get_LocalName() */, L_4);
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_6 = ___typeMap0;
 		NullCheck(L_6);
-		String_t* L_7;
-		L_7 = XmlMapping_get_ElementName_m2BDBF7797A1F38972A4355CF694E0D468B2A9FC0_inline(L_6, NULL);
+		String_t* L_7 = ((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_6)->____elementName_4;
 		bool L_8;
 		L_8 = String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1(L_5, L_7, NULL);
 		if (!L_8)
@@ -21528,15 +20075,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpre
 		}
 	}
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_9;
-		L_9 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_9 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_9);
 		String_t* L_10;
 		L_10 = VirtualFuncInvoker0< String_t* >::Invoke(9 /* System.String System.Xml.XmlReader::get_NamespaceURI() */, L_9);
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_11 = ___typeMap0;
 		NullCheck(L_11);
-		String_t* L_12;
-		L_12 = XmlMapping_get_Namespace_m196651C91FB3C3442AC616C977345E89450F024F_inline(L_11, NULL);
+		String_t* L_12 = ((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_11)->____namespace_5;
 		bool L_13;
 		L_13 = String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1(L_10, L_12, NULL);
 		if (!L_13)
@@ -21598,8 +20143,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpre
 		V_0 = L_2;
 		XmlMembersMapping_t0D686C86E19B598F10E53AF79EC905A7E2BDB62C* L_3 = ___typeMap0;
 		NullCheck(L_3);
-		bool L_4;
-		L_4 = XmlMembersMapping_get_HasWrapperElement_mE921652D9CEADD03E4BCC13C9AC26E457C640CE5_inline(L_3, NULL);
+		bool L_4 = L_3->____hasWrapperElement_7;
 		if (!L_4)
 		{
 			goto IL_0188;
@@ -21608,11 +20152,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpre
 	{
 		XmlMembersMapping_t0D686C86E19B598F10E53AF79EC905A7E2BDB62C* L_5 = ___typeMap0;
 		NullCheck(L_5);
-		ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* L_6;
-		L_6 = XmlMapping_get_ObjectMap_m63D1AEAC8EDD8396357898D337E350673A1E9003_inline(L_5, NULL);
+		ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* L_6 = ((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_5)->___map_0;
 		NullCheck(((ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109*)CastclassClass((RuntimeObject*)L_6, ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109_il2cpp_TypeInfo_var)));
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_7;
-		L_7 = ClassMap_get_AllMembers_m68939A09AB79846A722998916E288759CB918FED_inline(((ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109*)CastclassClass((RuntimeObject*)L_6, ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109_il2cpp_TypeInfo_var)), NULL);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_7 = ((ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109*)CastclassClass((RuntimeObject*)L_6, ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109_il2cpp_TypeInfo_var))->____allMembers_5;
 		V_1 = L_7;
 		V_2 = 0;
 		goto IL_006c;
@@ -21638,8 +20180,7 @@ IL_002c:
 	{
 		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_13 = V_3;
 		NullCheck(L_13);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_14;
-		L_14 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_13, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_14 = L_13->____typeData_4;
 		NullCheck(L_14);
 		bool L_15;
 		L_15 = TypeData_get_IsValueType_m6A1F44C35FE034599DE34B16D1E5DFD8B83A021B(L_14, NULL);
@@ -21653,11 +20194,9 @@ IL_002c:
 		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_17 = V_0;
 		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_18 = V_3;
 		NullCheck(L_18);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_19;
-		L_19 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_18, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_19 = L_18->____typeData_4;
 		NullCheck(L_19);
-		Type_t* L_20;
-		L_20 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_19, NULL);
+		Type_t* L_20 = L_19->___type_0;
 		RuntimeObject* L_21;
 		L_21 = XmlSerializationReaderInterpreter_CreateInstance_m9CB41129916C0B5A2323C6EBD6031BB9CF3B693C(__this, L_20, NULL);
 		XmlSerializationReaderInterpreter_SetMemberValueFromAttr_m7DCD796BFED1BC399DDA708281D49BAF3EF5CAF8(__this, L_16, (RuntimeObject*)L_17, L_21, (bool)1, NULL);
@@ -21694,8 +20233,7 @@ IL_006c:
 
 IL_0082:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_27;
-		L_27 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_27 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_27);
 		String_t* L_28;
 		L_28 = VirtualFuncInvoker2< String_t*, String_t*, String_t* >::Invoke(23 /* System.String System.Xml.XmlReader::GetAttribute(System.String,System.String) */, L_27, _stringLiteralA2E138AD319A0E08FFC4A185CE05933BF5C01D5C, _stringLiteralD29B87DC6B1B722C619FAD071A9157749710CDA6);
@@ -21719,8 +20257,7 @@ IL_0082:
 	{
 		RuntimeObject* L_32;
 		L_32 = XmlSerializationReader_ReadReferencedElement_mFB866A61C9C26FA31E53EFCB673506A455120493(__this, NULL);
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_33;
-		L_33 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_33 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_33);
 		int32_t L_34;
 		L_34 = VirtualFuncInvoker0< int32_t >::Invoke(43 /* System.Xml.XmlNodeType System.Xml.XmlReader::MoveToContent() */, L_33);
@@ -21728,8 +20265,7 @@ IL_0082:
 
 IL_00bf:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_35;
-		L_35 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_35 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_35);
 		int32_t L_36;
 		L_36 = VirtualFuncInvoker0< int32_t >::Invoke(6 /* System.Xml.XmlNodeType System.Xml.XmlReader::get_NodeType() */, L_35);
@@ -21744,16 +20280,13 @@ IL_00bf:
 
 IL_00d2:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_37;
-		L_37 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_37 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		XmlMembersMapping_t0D686C86E19B598F10E53AF79EC905A7E2BDB62C* L_38 = ___typeMap0;
 		NullCheck(L_38);
-		String_t* L_39;
-		L_39 = XmlMapping_get_ElementName_m2BDBF7797A1F38972A4355CF694E0D468B2A9FC0_inline(L_38, NULL);
+		String_t* L_39 = ((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_38)->____elementName_4;
 		XmlMembersMapping_t0D686C86E19B598F10E53AF79EC905A7E2BDB62C* L_40 = ___typeMap0;
 		NullCheck(L_40);
-		String_t* L_41;
-		L_41 = XmlMapping_get_Namespace_m196651C91FB3C3442AC616C977345E89450F024F_inline(L_40, NULL);
+		String_t* L_41 = ((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_40)->____namespace_5;
 		NullCheck(L_37);
 		bool L_42;
 		L_42 = VirtualFuncInvoker2< bool, String_t*, String_t* >::Invoke(47 /* System.Boolean System.Xml.XmlReader::IsStartElement(System.String,System.String) */, L_37, L_39, L_41);
@@ -21774,12 +20307,10 @@ IL_00f3:
 	{
 		XmlMembersMapping_t0D686C86E19B598F10E53AF79EC905A7E2BDB62C* L_44 = ___typeMap0;
 		NullCheck(L_44);
-		ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* L_45;
-		L_45 = XmlMapping_get_ObjectMap_m63D1AEAC8EDD8396357898D337E350673A1E9003_inline(L_44, NULL);
+		ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* L_45 = ((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_44)->___map_0;
 		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_46 = V_0;
 		XmlSerializationReaderInterpreter_ReadAttributeMembers_m7DAF4EA9F9401AC7C7ED1C8BC89E28C607203EB9(__this, ((ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109*)CastclassClass((RuntimeObject*)L_45, ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109_il2cpp_TypeInfo_var)), (RuntimeObject*)L_46, (bool)1, NULL);
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_47;
-		L_47 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_47 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_47);
 		bool L_48;
 		L_48 = VirtualFuncInvoker0< bool >::Invoke(14 /* System.Boolean System.Xml.XmlReader::get_IsEmptyElement() */, L_47);
@@ -21789,12 +20320,10 @@ IL_00f3:
 		}
 	}
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_49;
-		L_49 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_49 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_49);
 		VirtualActionInvoker0::Invoke(35 /* System.Void System.Xml.XmlReader::Skip() */, L_49);
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_50;
-		L_50 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_50 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_50);
 		int32_t L_51;
 		L_51 = VirtualFuncInvoker0< int32_t >::Invoke(43 /* System.Xml.XmlNodeType System.Xml.XmlReader::MoveToContent() */, L_50);
@@ -21803,14 +20332,12 @@ IL_00f3:
 
 IL_012c:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_52;
-		L_52 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_52 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_52);
 		VirtualActionInvoker0::Invoke(44 /* System.Void System.Xml.XmlReader::ReadStartElement() */, L_52);
 		XmlMembersMapping_t0D686C86E19B598F10E53AF79EC905A7E2BDB62C* L_53 = ___typeMap0;
 		NullCheck(L_53);
-		ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* L_54;
-		L_54 = XmlMapping_get_ObjectMap_m63D1AEAC8EDD8396357898D337E350673A1E9003_inline(L_53, NULL);
+		ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* L_54 = ((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_53)->___map_0;
 		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_55 = V_0;
 		XmlSerializationReaderInterpreter_ReadMembers_m92FC821665FFF506E537CCDA5A70F4B1172E626B(__this, ((ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109*)CastclassClass((RuntimeObject*)L_54, ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109_il2cpp_TypeInfo_var)), (RuntimeObject*)L_55, (bool)1, (bool)0, NULL);
 		XmlSerializationReader_ReadEndElement_mA33A1CB94EF5CA65501A3F63C4EBEBC53662E35E(__this, NULL);
@@ -21820,8 +20347,7 @@ IL_012c:
 IL_0153:
 	{
 		XmlSerializationReader_UnknownNode_m2F762DBC510F96D1B12D002D405F4CEFBF2A2E18(__this, NULL, NULL);
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_56;
-		L_56 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_56 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_56);
 		int32_t L_57;
 		L_57 = VirtualFuncInvoker0< int32_t >::Invoke(43 /* System.Xml.XmlNodeType System.Xml.XmlReader::MoveToContent() */, L_56);
@@ -21829,8 +20355,7 @@ IL_0153:
 
 IL_0166:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_58;
-		L_58 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_58 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_58);
 		int32_t L_59;
 		L_59 = VirtualFuncInvoker0< int32_t >::Invoke(6 /* System.Xml.XmlNodeType System.Xml.XmlReader::get_NodeType() */, L_58);
@@ -21840,8 +20365,7 @@ IL_0166:
 		}
 	}
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_60;
-		L_60 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_60 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_60);
 		int32_t L_61;
 		L_61 = VirtualFuncInvoker0< int32_t >::Invoke(34 /* System.Xml.ReadState System.Xml.XmlReader::get_ReadState() */, L_60);
@@ -21858,8 +20382,7 @@ IL_0188:
 	{
 		XmlMembersMapping_t0D686C86E19B598F10E53AF79EC905A7E2BDB62C* L_62 = ___typeMap0;
 		NullCheck(L_62);
-		ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* L_63;
-		L_63 = XmlMapping_get_ObjectMap_m63D1AEAC8EDD8396357898D337E350673A1E9003_inline(L_62, NULL);
+		ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* L_63 = ((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_62)->___map_0;
 		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_64 = V_0;
 		int32_t L_65 = __this->____format_26;
 		XmlSerializationReaderInterpreter_ReadMembers_m92FC821665FFF506E537CCDA5A70F4B1172E626B(__this, ((ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109*)CastclassClass((RuntimeObject*)L_63, ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109_il2cpp_TypeInfo_var)), (RuntimeObject*)L_64, (bool)1, (bool)((((int32_t)L_65) == ((int32_t)0))? 1 : 0), NULL);
@@ -21889,11 +20412,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpre
 	{
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_0 = ___rootMap0;
 		NullCheck(L_0);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_1;
-		L_1 = XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline(L_0, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_1 = L_0->___type_9;
 		NullCheck(L_1);
-		int32_t L_2;
-		L_2 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_1, NULL);
+		int32_t L_2 = L_1->___sType_2;
 		if ((!(((uint32_t)L_2) == ((uint32_t)6))))
 		{
 			goto IL_0017;
@@ -21910,23 +20431,20 @@ IL_0017:
 	{
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_5 = ___rootMap0;
 		NullCheck(L_5);
-		bool L_6;
-		L_6 = XmlTypeMapping_get_IsAny_m0C45955548B231D2E892D2924768B068138CBDD8_inline(L_5, NULL);
+		bool L_6 = L_5->___isAny_14;
 		if (L_6)
 		{
 			goto IL_0056;
 		}
 	}
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_7;
-		L_7 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_7 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_7);
 		String_t* L_8;
 		L_8 = VirtualFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Xml.XmlReader::get_LocalName() */, L_7);
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_9 = ___rootMap0;
 		NullCheck(L_9);
-		String_t* L_10;
-		L_10 = XmlMapping_get_ElementName_m2BDBF7797A1F38972A4355CF694E0D468B2A9FC0_inline(L_9, NULL);
+		String_t* L_10 = ((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_9)->____elementName_4;
 		bool L_11;
 		L_11 = String_op_Inequality_m8C940F3CFC42866709D7CA931B3D77B4BE94BCB6(L_8, L_10, NULL);
 		if (L_11)
@@ -21935,15 +20453,13 @@ IL_0017:
 		}
 	}
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_12;
-		L_12 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_12 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_12);
 		String_t* L_13;
 		L_13 = VirtualFuncInvoker0< String_t* >::Invoke(9 /* System.String System.Xml.XmlReader::get_NamespaceURI() */, L_12);
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_14 = ___rootMap0;
 		NullCheck(L_14);
-		String_t* L_15;
-		L_15 = XmlMapping_get_Namespace_m196651C91FB3C3442AC616C977345E89450F024F_inline(L_14, NULL);
+		String_t* L_15 = ((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_14)->____namespace_5;
 		bool L_16;
 		L_16 = String_op_Inequality_m8C940F3CFC42866709D7CA931B3D77B4BE94BCB6(L_13, L_15, NULL);
 		if (!L_16)
@@ -21964,8 +20480,7 @@ IL_0056:
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_18 = ___rootMap0;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_19 = ___rootMap0;
 		NullCheck(L_19);
-		bool L_20;
-		L_20 = XmlTypeMapping_get_IsNullable_m2CE4D69DE9C4D1A7AFC01D0BE8C2369BD1C8107B_inline(L_19, NULL);
+		bool L_20 = L_19->___isNullable_13;
 		RuntimeObject* L_21;
 		L_21 = VirtualFuncInvoker3< RuntimeObject*, XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9*, bool, bool >::Invoke(7 /* System.Object System.Xml.Serialization.XmlSerializationReaderInterpreter::ReadObject(System.Xml.Serialization.XmlTypeMapping,System.Boolean,System.Boolean) */, __this, L_18, L_20, (bool)1);
 		return L_21;
@@ -21978,11 +20493,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpre
 	{
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_0 = ___typeMap0;
 		NullCheck(L_0);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_1;
-		L_1 = XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline(L_0, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_1 = L_0->___type_9;
 		NullCheck(L_1);
-		int32_t L_2;
-		L_2 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_1, NULL);
+		int32_t L_2 = L_1->___sType_2;
 		V_0 = L_2;
 		int32_t L_3 = V_0;
 		switch (((int32_t)il2cpp_codegen_subtract((int32_t)L_3, 1)))
@@ -22139,12 +20652,10 @@ IL_000d:
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_6 = ___typeMap0;
 		XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_7 = V_1;
 		NullCheck(L_7);
-		String_t* L_8;
-		L_8 = XmlQualifiedName_get_Name_mC9D21D5BADE11AEAC7ED5886B39E1A774C63B830_inline(L_7, NULL);
+		String_t* L_8 = L_7->___name_1;
 		XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_9 = V_1;
 		NullCheck(L_9);
-		String_t* L_10;
-		L_10 = XmlQualifiedName_get_Namespace_m0CAE4A651EF1CA6F0EB657C83608A796038A2615_inline(L_9, NULL);
+		String_t* L_10 = L_9->___ns_2;
 		NullCheck(L_6);
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_11;
 		L_11 = XmlTypeMapping_GetRealElementMap_m2488C8E8ABFB81EE1181A68DA85C142579599ED8(L_6, L_8, L_10, NULL);
@@ -22158,11 +20669,9 @@ IL_000d:
 	{
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_13 = ___typeMap0;
 		NullCheck(L_13);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_14;
-		L_14 = XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline(L_13, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_14 = L_13->___type_9;
 		NullCheck(L_14);
-		Type_t* L_15;
-		L_15 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_14, NULL);
+		Type_t* L_15 = L_14->___type_0;
 		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_16 = { reinterpret_cast<intptr_t> (RuntimeObject_0_0_0_var) };
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		Type_t* L_17;
@@ -22209,11 +20718,9 @@ IL_0073:
 	{
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_27 = ___typeMap0;
 		NullCheck(L_27);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_28;
-		L_28 = XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline(L_27, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_28 = L_27->___type_9;
 		NullCheck(L_28);
-		Type_t* L_29;
-		L_29 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_28, NULL);
+		Type_t* L_29 = L_28->___type_0;
 		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_30 = { reinterpret_cast<intptr_t> (RuntimeObject_0_0_0_var) };
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		Type_t* L_31;
@@ -22237,22 +20744,18 @@ IL_009b:
 	{
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_35 = ___typeMap0;
 		NullCheck(L_35);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_36;
-		L_36 = XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline(L_35, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_36 = L_35->___type_9;
 		NullCheck(L_36);
-		Type_t* L_37;
-		L_37 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_36, NULL);
+		Type_t* L_37 = L_36->___type_0;
 		il2cpp_codegen_runtime_class_init_inline(XmlSerializationReaderInterpreter_t912EF8FEC9E40E218B269BB1B990E9732A442CB8_il2cpp_TypeInfo_var);
 		RuntimeObject* L_38;
 		L_38 = XmlSerializationReaderInterpreter_CreateInstance_m52A3B7A31873EA03F569A85E7F1E874AAA07F55E(L_37, (bool)1, NULL);
 		V_0 = L_38;
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_39;
-		L_39 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_39 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_39);
 		bool L_40;
 		L_40 = VirtualFuncInvoker0< bool >::Invoke(29 /* System.Boolean System.Xml.XmlReader::MoveToElement() */, L_39);
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_41;
-		L_41 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_41 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_41);
 		bool L_42;
 		L_42 = VirtualFuncInvoker0< bool >::Invoke(14 /* System.Boolean System.Xml.XmlReader::get_IsEmptyElement() */, L_41);
@@ -22265,8 +20768,7 @@ IL_009b:
 		}
 	}
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_45;
-		L_45 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_45 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_45);
 		VirtualActionInvoker0::Invoke(35 /* System.Void System.Xml.XmlReader::Skip() */, L_45);
 		goto IL_00e1;
@@ -22295,8 +20797,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReaderInterpreter_ReadCl
 	{
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_0 = ___typeMap0;
 		NullCheck(L_0);
-		ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* L_1;
-		L_1 = XmlMapping_get_ObjectMap_m63D1AEAC8EDD8396357898D337E350673A1E9003_inline(L_0, NULL);
+		ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* L_1 = ((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_0)->___map_0;
 		RuntimeObject* L_2 = ___ob1;
 		XmlSerializationReaderInterpreter_ReadMembers_m92FC821665FFF506E537CCDA5A70F4B1172E626B(__this, ((ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109*)CastclassClass((RuntimeObject*)L_1, ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109_il2cpp_TypeInfo_var)), L_2, (bool)0, (bool)0, NULL);
 		return;
@@ -22324,8 +20825,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReaderInterpreter_ReadAt
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_0 = ___map0;
 		NullCheck(L_0);
-		XmlTypeMapMemberAnyAttribute_t936B5C08A209D3F342575957ACCBF1F7984095F1* L_1;
-		L_1 = ClassMap_get_DefaultAnyAttributeMember_m88660193A65BE269D1E4F7ADEA4778BC78D40B08_inline(L_0, NULL);
+		XmlTypeMapMemberAnyAttribute_t936B5C08A209D3F342575957ACCBF1F7984095F1* L_1 = L_0->____defaultAnyAttribute_9;
 		V_0 = L_1;
 		V_1 = 0;
 		V_2 = NULL;
@@ -22335,13 +20835,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReaderInterpreter_ReadAt
 IL_0010:
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_2 = ___map0;
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_3;
-		L_3 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_3 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_3);
 		String_t* L_4;
 		L_4 = VirtualFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Xml.XmlReader::get_LocalName() */, L_3);
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_5;
-		L_5 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_5 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_5);
 		String_t* L_6;
 		L_6 = VirtualFuncInvoker0< String_t* >::Invoke(9 /* System.String System.Xml.XmlReader::get_NamespaceURI() */, L_5);
@@ -22358,19 +20856,16 @@ IL_0010:
 	{
 		XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* L_9 = V_3;
 		RuntimeObject* L_10 = ___ob1;
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_11;
-		L_11 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_11 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_11);
 		String_t* L_12;
 		L_12 = VirtualFuncInvoker0< String_t* >::Invoke(11 /* System.String System.Xml.XmlReader::get_Value() */, L_11);
 		XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* L_13 = V_3;
 		NullCheck(L_13);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_14;
-		L_14 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_13, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_14 = ((XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A*)L_13)->____typeData_4;
 		XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* L_15 = V_3;
 		NullCheck(L_15);
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_16;
-		L_16 = XmlTypeMapMemberAttribute_get_MappedType_mD2DBE6E539F3B9A6F922C1DD37084DCDACE07025_inline(L_15, NULL);
+		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_16 = L_15->____mappedType_13;
 		RuntimeObject* L_17;
 		L_17 = XmlSerializationReaderInterpreter_GetValueFromXmlString_m21DC6B65AAF2E79AE5EC5C7B62A5E40B4C5498CA(__this, L_12, L_14, L_16, NULL);
 		bool L_18 = ___isValueList2;
@@ -22380,8 +20875,7 @@ IL_0010:
 
 IL_005b:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_19;
-		L_19 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_19 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_19);
 		String_t* L_20;
 		L_20 = VirtualFuncInvoker0< String_t* >::Invoke(7 /* System.String System.Xml.XmlReader::get_Name() */, L_19);
@@ -22395,8 +20889,7 @@ IL_005b:
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_22 = ___map0;
 		NullCheck(L_22);
-		XmlTypeMapMemberNamespaces_t1493E4BE21467D51FB1CDE88D538FA97815D3112* L_23;
-		L_23 = ClassMap_get_NamespaceDeclarations_m5EF288255B1F07783CF889C781DB6D6BEAF133E1_inline(L_22, NULL);
+		XmlTypeMapMemberNamespaces_t1493E4BE21467D51FB1CDE88D538FA97815D3112* L_23 = L_22->____namespaceDeclarations_10;
 		if (!L_23)
 		{
 			goto IL_013d;
@@ -22405,8 +20898,7 @@ IL_005b:
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_24 = ___map0;
 		NullCheck(L_24);
-		XmlTypeMapMemberNamespaces_t1493E4BE21467D51FB1CDE88D538FA97815D3112* L_25;
-		L_25 = ClassMap_get_NamespaceDeclarations_m5EF288255B1F07783CF889C781DB6D6BEAF133E1_inline(L_24, NULL);
+		XmlTypeMapMemberNamespaces_t1493E4BE21467D51FB1CDE88D538FA97815D3112* L_25 = L_24->____namespaceDeclarations_10;
 		RuntimeObject* L_26 = ___ob1;
 		bool L_27 = ___isValueList2;
 		RuntimeObject* L_28;
@@ -22425,8 +20917,7 @@ IL_005b:
 		V_4 = L_30;
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_31 = ___map0;
 		NullCheck(L_31);
-		XmlTypeMapMemberNamespaces_t1493E4BE21467D51FB1CDE88D538FA97815D3112* L_32;
-		L_32 = ClassMap_get_NamespaceDeclarations_m5EF288255B1F07783CF889C781DB6D6BEAF133E1_inline(L_31, NULL);
+		XmlTypeMapMemberNamespaces_t1493E4BE21467D51FB1CDE88D538FA97815D3112* L_32 = L_31->____namespaceDeclarations_10;
 		RuntimeObject* L_33 = ___ob1;
 		XmlSerializerNamespaces_t55D593FB2AB45488862F2C620A08F84A422A7E93* L_34 = V_4;
 		bool L_35 = ___isValueList2;
@@ -22435,8 +20926,7 @@ IL_005b:
 
 IL_00ac:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_36;
-		L_36 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_36 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_36);
 		String_t* L_37;
 		L_37 = VirtualFuncInvoker0< String_t* >::Invoke(10 /* System.String System.Xml.XmlReader::get_Prefix() */, L_36);
@@ -22449,13 +20939,11 @@ IL_00ac:
 	}
 	{
 		XmlSerializerNamespaces_t55D593FB2AB45488862F2C620A08F84A422A7E93* L_39 = V_4;
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_40;
-		L_40 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_40 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_40);
 		String_t* L_41;
 		L_41 = VirtualFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Xml.XmlReader::get_LocalName() */, L_40);
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_42;
-		L_42 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_42 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_42);
 		String_t* L_43;
 		L_43 = VirtualFuncInvoker0< String_t* >::Invoke(11 /* System.String System.Xml.XmlReader::get_Value() */, L_42);
@@ -22467,8 +20955,7 @@ IL_00ac:
 IL_00e2:
 	{
 		XmlSerializerNamespaces_t55D593FB2AB45488862F2C620A08F84A422A7E93* L_44 = V_4;
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_45;
-		L_45 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_45 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_45);
 		String_t* L_46;
 		L_46 = VirtualFuncInvoker0< String_t* >::Invoke(11 /* System.String System.Xml.XmlReader::get_Value() */, L_45);
@@ -22488,8 +20975,7 @@ IL_00fb:
 	{
 		XmlDocument_t4DE82998E642C5C21A4A620A5278237C70D3E42B* L_48;
 		L_48 = XmlSerializationReader_get_Document_mBDB6BC605B4A08F7174559852E281793D8F20CBA(__this, NULL);
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_49;
-		L_49 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_49 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_48);
 		XmlNode_t3180B9B3D5C36CD58F5327D9F13458E3B3F030AF* L_50;
 		L_50 = VirtualFuncInvoker1< XmlNode_t3180B9B3D5C36CD58F5327D9F13458E3B3F030AF*, XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* >::Invoke(72 /* System.Xml.XmlNode System.Xml.XmlDocument::ReadNode(System.Xml.XmlReader) */, L_48, L_49);
@@ -22498,8 +20984,7 @@ IL_00fb:
 		XmlSerializationReader_ParseWsdlArrayType_mD66086D7B4A80B5F9F77DC8546472BD1B8087598(__this, L_51, NULL);
 		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_52 = V_0;
 		NullCheck(L_52);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_53;
-		L_53 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_52, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_53 = L_52->____typeData_4;
 		int32_t L_54 = V_1;
 		int32_t L_55 = L_54;
 		V_1 = ((int32_t)il2cpp_codegen_add(L_55, 1));
@@ -22516,8 +21001,7 @@ IL_0136:
 
 IL_013d:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_58;
-		L_58 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_58 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_58);
 		bool L_59;
 		L_59 = VirtualFuncInvoker0< bool >::Invoke(28 /* System.Boolean System.Xml.XmlReader::MoveToNextAttribute() */, L_58);
@@ -22538,11 +21022,9 @@ IL_013d:
 		int32_t L_62 = V_1;
 		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_63 = V_0;
 		NullCheck(L_63);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_64;
-		L_64 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_63, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_64 = L_63->____typeData_4;
 		NullCheck(L_64);
-		Type_t* L_65;
-		L_65 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_64, NULL);
+		Type_t* L_65 = L_64->___type_0;
 		NullCheck(L_65);
 		Type_t* L_66;
 		L_66 = VirtualFuncInvoker0< Type_t* >::Invoke(46 /* System.Type System.Type::GetElementType() */, L_65);
@@ -22558,8 +21040,7 @@ IL_013d:
 
 IL_0179:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_72;
-		L_72 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_72 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_72);
 		bool L_73;
 		L_73 = VirtualFuncInvoker0< bool >::Invoke(29 /* System.Boolean System.Xml.XmlReader::MoveToElement() */, L_72);
@@ -22649,13 +21130,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReaderInterpreter_ReadMe
 		}
 	}
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_4;
-		L_4 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_4 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_4);
 		bool L_5;
 		L_5 = VirtualFuncInvoker0< bool >::Invoke(29 /* System.Boolean System.Xml.XmlReader::MoveToElement() */, L_4);
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_6;
-		L_6 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_6 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_6);
 		bool L_7;
 		L_7 = VirtualFuncInvoker0< bool >::Invoke(14 /* System.Boolean System.Xml.XmlReader::get_IsEmptyElement() */, L_6);
@@ -22674,8 +21153,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReaderInterpreter_ReadMe
 
 IL_002f:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_11;
-		L_11 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_11 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_11);
 		VirtualActionInvoker0::Invoke(44 /* System.Void System.Xml.XmlReader::ReadStartElement() */, L_11);
 	}
@@ -22684,8 +21162,7 @@ IL_003a:
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_12 = ___map0;
 		NullCheck(L_12);
-		RuntimeObject* L_13;
-		L_13 = ClassMap_get_ElementMembers_m28BCFDC1D5FC50F910FBCF82D9C30472482A505D_inline(L_12, NULL);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_13 = L_12->____elementMembers_1;
 		if (L_13)
 		{
 			goto IL_0045;
@@ -22700,8 +21177,7 @@ IL_0045:
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_14 = ___map0;
 		NullCheck(L_14);
-		RuntimeObject* L_15;
-		L_15 = ClassMap_get_ElementMembers_m28BCFDC1D5FC50F910FBCF82D9C30472482A505D_inline(L_14, NULL);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_15 = L_14->____elementMembers_1;
 		NullCheck(L_15);
 		int32_t L_16;
 		L_16 = InterfaceFuncInvoker0< int32_t >::Invoke(1 /* System.Int32 System.Collections.ICollection::get_Count() */, ICollection_t37E7B9DC5B4EF41D190D607F92835BF1171C0E8E_il2cpp_TypeInfo_var, L_15);
@@ -22728,8 +21204,7 @@ IL_0050:
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_20 = ___map0;
 		NullCheck(L_20);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_21;
-		L_21 = ClassMap_get_ReturnMember_m17D5284F4873CF87F02814AF5BD96CFD23737F32_inline(L_20, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_21 = L_20->____returnMember_12;
 		G_B11_0 = ((!(((RuntimeObject*)(XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A*)L_21) <= ((RuntimeObject*)(RuntimeObject*)NULL)))? 1 : 0);
 		goto IL_006d;
 	}
@@ -22742,8 +21217,7 @@ IL_006c:
 IL_006d:
 	{
 		V_1 = (bool)G_B11_0;
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_22;
-		L_22 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_22 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_22);
 		int32_t L_23;
 		L_23 = VirtualFuncInvoker0< int32_t >::Invoke(43 /* System.Xml.XmlNodeType System.Xml.XmlReader::MoveToContent() */, L_22);
@@ -22761,8 +21235,7 @@ IL_006d:
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_25 = ___map0;
 		NullCheck(L_25);
-		RuntimeObject* L_26;
-		L_26 = ClassMap_get_ElementMembers_m28BCFDC1D5FC50F910FBCF82D9C30472482A505D_inline(L_25, NULL);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_26 = L_25->____elementMembers_1;
 		if (!L_26)
 		{
 			goto IL_00a2;
@@ -22771,8 +21244,7 @@ IL_006d:
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_27 = ___map0;
 		NullCheck(L_27);
-		RuntimeObject* L_28;
-		L_28 = ClassMap_get_ElementMembers_m28BCFDC1D5FC50F910FBCF82D9C30472482A505D_inline(L_27, NULL);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_28 = L_27->____elementMembers_1;
 		NullCheck(L_28);
 		int32_t L_29;
 		L_29 = InterfaceFuncInvoker0< int32_t >::Invoke(1 /* System.Int32 System.Collections.ICollection::get_Count() */, ICollection_t37E7B9DC5B4EF41D190D607F92835BF1171C0E8E_il2cpp_TypeInfo_var, L_28);
@@ -22795,8 +21267,7 @@ IL_00ae:
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_30 = ___map0;
 		NullCheck(L_30);
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_31;
-		L_31 = ClassMap_get_FlatLists_m852941CF165941C1EB03137482353B221F335DE9_inline(L_30, NULL);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_31 = L_30->____flatLists_4;
 		if (!L_31)
 		{
 			goto IL_01d9;
@@ -22805,8 +21276,7 @@ IL_00ae:
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_32 = ___map0;
 		NullCheck(L_32);
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_33;
-		L_33 = ClassMap_get_FlatLists_m852941CF165941C1EB03137482353B221F335DE9_inline(L_32, NULL);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_33 = L_32->____flatLists_4;
 		NullCheck(L_33);
 		int32_t L_34;
 		L_34 = VirtualFuncInvoker0< int32_t >::Invoke(22 /* System.Int32 System.Collections.ArrayList::get_Count() */, L_33);
@@ -22814,8 +21284,7 @@ IL_00ae:
 		V_2 = L_35;
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_36 = ___map0;
 		NullCheck(L_36);
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_37;
-		L_37 = ClassMap_get_FlatLists_m852941CF165941C1EB03137482353B221F335DE9_inline(L_36, NULL);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_37 = L_36->____flatLists_4;
 		NullCheck(L_37);
 		int32_t L_38;
 		L_38 = VirtualFuncInvoker0< int32_t >::Invoke(22 /* System.Int32 System.Collections.ArrayList::get_Count() */, L_37);
@@ -22823,8 +21292,7 @@ IL_00ae:
 		V_3 = L_39;
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_40 = ___map0;
 		NullCheck(L_40);
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_41;
-		L_41 = ClassMap_get_FlatLists_m852941CF165941C1EB03137482353B221F335DE9_inline(L_40, NULL);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_41 = L_40->____flatLists_4;
 		NullCheck(L_41);
 		RuntimeObject* L_42;
 		L_42 = VirtualFuncInvoker0< RuntimeObject* >::Invoke(37 /* System.Collections.IEnumerator System.Collections.ArrayList::GetEnumerator() */, L_41);
@@ -22873,8 +21341,7 @@ IL_00ed_1:
 				XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_48 = V_10;
 				XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_49 = V_10;
 				NullCheck(L_49);
-				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_50;
-				L_50 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_49, NULL);
+				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_50 = ((XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A*)L_49)->____typeData_4;
 				RuntimeObject* L_51 = ___ob1;
 				bool L_52 = ___isValueList2;
 				bool L_53;
@@ -22888,8 +21355,7 @@ IL_00ed_1:
 				ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_54 = V_3;
 				XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_55 = V_10;
 				NullCheck(L_55);
-				int32_t L_56;
-				L_56 = XmlTypeMapMemberExpandable_get_FlatArrayIndex_mD83A6C690F8EA40C0FAF882E1549E0BD0831CC83_inline(L_55, NULL);
+				int32_t L_56 = L_55->____flatArrayIndex_14;
 				XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_57 = V_10;
 				RuntimeObject* L_58 = ___ob1;
 				NullCheck(L_57);
@@ -22905,11 +21371,9 @@ IL_0121_1:
 			{
 				XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_60 = V_10;
 				NullCheck(L_60);
-				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_61;
-				L_61 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_60, NULL);
+				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_61 = ((XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A*)L_60)->____typeData_4;
 				NullCheck(L_61);
-				Type_t* L_62;
-				L_62 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_61, NULL);
+				Type_t* L_62 = L_61->___type_0;
 				NullCheck(L_62);
 				bool L_63;
 				L_63 = Type_get_IsArray_mB9B8CA713B2AA9D6AFECC24E05AF78D22532B673(L_62, NULL);
@@ -22922,12 +21386,10 @@ IL_0121_1:
 				ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_64 = V_3;
 				XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_65 = V_10;
 				NullCheck(L_65);
-				int32_t L_66;
-				L_66 = XmlTypeMapMemberExpandable_get_FlatArrayIndex_mD83A6C690F8EA40C0FAF882E1549E0BD0831CC83_inline(L_65, NULL);
+				int32_t L_66 = L_65->____flatArrayIndex_14;
 				XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_67 = V_10;
 				NullCheck(L_67);
-				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_68;
-				L_68 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_67, NULL);
+				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_68 = ((XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A*)L_67)->____typeData_4;
 				RuntimeObject* L_69;
 				L_69 = XmlSerializationReaderInterpreter_InitializeList_m9B8DC26F07D1636336A807E8AE75FA5E5BA74DA6(__this, L_68, NULL);
 				NullCheck(L_64);
@@ -22953,8 +21415,7 @@ IL_014c_1:
 			{
 				XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_74 = V_10;
 				NullCheck(L_74);
-				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_75;
-				L_75 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_74, NULL);
+				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_75 = ((XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A*)L_74)->____typeData_4;
 				RuntimeObject* L_76;
 				L_76 = XmlSerializationReaderInterpreter_InitializeList_m9B8DC26F07D1636336A807E8AE75FA5E5BA74DA6(__this, L_75, NULL);
 				V_11 = L_76;
@@ -22970,8 +21431,7 @@ IL_0175_1:
 				ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_81 = V_3;
 				XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_82 = V_10;
 				NullCheck(L_82);
-				int32_t L_83;
-				L_83 = XmlTypeMapMemberExpandable_get_FlatArrayIndex_mD83A6C690F8EA40C0FAF882E1549E0BD0831CC83_inline(L_82, NULL);
+				int32_t L_83 = L_82->____flatArrayIndex_14;
 				RuntimeObject* L_84 = V_11;
 				NullCheck(L_81);
 				ArrayElementTypeCheck (L_81, L_84);
@@ -22982,8 +21442,7 @@ IL_0180_1:
 			{
 				XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_85 = V_10;
 				NullCheck(L_85);
-				String_t* L_86;
-				L_86 = XmlTypeMapMemberElement_get_ChoiceMember_m182A4AB876036DDA005F0760EF51C5FCA7F682D8_inline(L_85, NULL);
+				String_t* L_86 = ((XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840*)L_85)->____choiceMember_11;
 				if (!L_86)
 				{
 					goto IL_01b6_1;
@@ -22999,8 +21458,7 @@ IL_0180_1:
 			{
 				ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_88 = ___map0;
 				NullCheck(L_88);
-				ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_89;
-				L_89 = ClassMap_get_FlatLists_m852941CF165941C1EB03137482353B221F335DE9_inline(L_88, NULL);
+				ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_89 = L_88->____flatLists_4;
 				NullCheck(L_89);
 				int32_t L_90;
 				L_90 = VirtualFuncInvoker0< int32_t >::Invoke(22 /* System.Int32 System.Collections.ArrayList::get_Count() */, L_89);
@@ -23013,12 +21471,10 @@ IL_019f_1:
 				ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_92 = V_4;
 				XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_93 = V_10;
 				NullCheck(L_93);
-				int32_t L_94;
-				L_94 = XmlTypeMapMemberExpandable_get_FlatArrayIndex_mD83A6C690F8EA40C0FAF882E1549E0BD0831CC83_inline(L_93, NULL);
+				int32_t L_94 = L_93->____flatArrayIndex_14;
 				XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_95 = V_10;
 				NullCheck(L_95);
-				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_96;
-				L_96 = XmlTypeMapMemberElement_get_ChoiceTypeData_m1C40274707406AC69F5536776D0276266332B845_inline(L_95, NULL);
+				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_96 = ((XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840*)L_95)->____choiceTypeData_13;
 				RuntimeObject* L_97;
 				L_97 = XmlSerializationReaderInterpreter_InitializeList_m9B8DC26F07D1636336A807E8AE75FA5E5BA74DA6(__this, L_96, NULL);
 				NullCheck(L_92);
@@ -23058,8 +21514,7 @@ IL_01d9:
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_101 = ___map0;
 		NullCheck(L_101);
-		RuntimeObject* L_102;
-		L_102 = ClassMap_get_ElementMembers_m28BCFDC1D5FC50F910FBCF82D9C30472482A505D_inline(L_101, NULL);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_102 = L_101->____elementMembers_1;
 		if (!L_102)
 		{
 			goto IL_021b;
@@ -23079,8 +21534,7 @@ IL_01d9:
 		XmlSerializationFixupCallback__ctor_mB41C79CFAA7CD40502E2C121836DF8A12FB521DD(L_108, L_107, (intptr_t)((void*)FixupCallbackInfo_FixupMembers_m80AD28B889F16F84A04A47F8895B582A50981E63_RuntimeMethod_var), NULL);
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_109 = ___map0;
 		NullCheck(L_109);
-		RuntimeObject* L_110;
-		L_110 = ClassMap_get_ElementMembers_m28BCFDC1D5FC50F910FBCF82D9C30472482A505D_inline(L_109, NULL);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_110 = L_109->____elementMembers_1;
 		NullCheck(L_110);
 		int32_t L_111;
 		L_111 = InterfaceFuncInvoker0< int32_t >::Invoke(1 /* System.Int32 System.Collections.ICollection::get_Count() */, ICollection_t37E7B9DC5B4EF41D190D607F92835BF1171C0E8E_il2cpp_TypeInfo_var, L_110);
@@ -23100,8 +21554,7 @@ IL_021b:
 
 IL_0223:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_114;
-		L_114 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_114 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_114);
 		int32_t L_115;
 		L_115 = VirtualFuncInvoker0< int32_t >::Invoke(6 /* System.Xml.XmlNodeType System.Xml.XmlReader::get_NodeType() */, L_114);
@@ -23119,13 +21572,11 @@ IL_0223:
 	}
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_117 = ___map0;
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_118;
-		L_118 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_118 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_118);
 		String_t* L_119;
 		L_119 = VirtualFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Xml.XmlReader::get_LocalName() */, L_118);
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_120;
-		L_120 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_120 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_120);
 		String_t* L_121;
 		L_121 = VirtualFuncInvoker0< String_t* >::Invoke(9 /* System.String System.Xml.XmlReader::get_NamespaceURI() */, L_120);
@@ -23148,8 +21599,7 @@ IL_025a:
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_125 = ___map0;
 		NullCheck(L_125);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_126;
-		L_126 = ClassMap_get_ReturnMember_m17D5284F4873CF87F02814AF5BD96CFD23737F32_inline(L_125, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_126 = L_125->____returnMember_12;
 		NullCheck(((XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840*)CastclassClass((RuntimeObject*)L_126, XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840_il2cpp_TypeInfo_var)));
 		XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* L_127;
 		L_127 = XmlTypeMapMemberElement_get_ElementInfo_m62E3A285CDAFF7621EA03A0DA6B1966D5432D337(((XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840*)CastclassClass((RuntimeObject*)L_126, XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840_il2cpp_TypeInfo_var)), NULL);
@@ -23174,13 +21624,11 @@ IL_027e:
 	}
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_131 = ___map0;
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_132;
-		L_132 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_132 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_132);
 		String_t* L_133;
 		L_133 = VirtualFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Xml.XmlReader::get_LocalName() */, L_132);
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_134;
-		L_134 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_134 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_134);
 		String_t* L_135;
 		L_135 = VirtualFuncInvoker0< String_t* >::Invoke(9 /* System.String System.Xml.XmlReader::get_NamespaceURI() */, L_134);
@@ -23195,13 +21643,11 @@ IL_027e:
 IL_02a8:
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_138 = ___map0;
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_139;
-		L_139 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_139 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_139);
 		String_t* L_140;
 		L_140 = VirtualFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Xml.XmlReader::get_LocalName() */, L_139);
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_141;
-		L_141 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_141 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_141);
 		String_t* L_142;
 		L_142 = VirtualFuncInvoker0< String_t* >::Invoke(9 /* System.String System.Xml.XmlReader::get_NamespaceURI() */, L_141);
@@ -23223,11 +21669,9 @@ IL_02c6:
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_145 = V_0;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_146 = V_14;
 		NullCheck(L_146);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_147;
-		L_147 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_146, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_147 = L_146->____member_3;
 		NullCheck(L_147);
-		int32_t L_148;
-		L_148 = XmlTypeMapMember_get_Index_m3EAB1243B03E5DBD10C6E7CA245E5A6C04406D12_inline(L_147, NULL);
+		int32_t L_148 = L_147->____index_1;
 		NullCheck(L_145);
 		int32_t L_149 = L_148;
 		uint8_t L_150 = (uint8_t)(L_145)->GetAt(static_cast<il2cpp_array_size_t>(L_149));
@@ -23239,8 +21683,7 @@ IL_02c6:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_151 = V_14;
 		NullCheck(L_151);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_152;
-		L_152 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_151, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_152 = L_151->____member_3;
 		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_153 = V_8;
 		if ((((RuntimeObject*)(XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A*)L_152) == ((RuntimeObject*)(XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A*)L_153)))
 		{
@@ -23250,13 +21693,11 @@ IL_02c6:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_154 = V_14;
 		NullCheck(L_154);
-		int32_t L_155;
-		L_155 = XmlTypeMapElementInfo_get_ExplicitOrder_m929232F83C9F294565C56EC38C5BACCA530DEDAB_inline(L_154, NULL);
+		int32_t L_155 = L_154->____explicitOrder_10;
 		V_6 = ((int32_t)il2cpp_codegen_add(L_155, 1));
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_156 = V_14;
 		NullCheck(L_156);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_157;
-		L_157 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_156, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_157 = L_156->____member_3;
 		if (!((XmlTypeMapMemberFlatList_t443422643AA0E5FA5166EF6451BBA01D02004B38*)IsInstClass((RuntimeObject*)L_157, XmlTypeMapMemberFlatList_t443422643AA0E5FA5166EF6451BBA01D02004B38_il2cpp_TypeInfo_var)))
 		{
 			goto IL_030a;
@@ -23271,8 +21712,7 @@ IL_030a:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_159 = V_14;
 		NullCheck(L_159);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_160;
-		L_160 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_159, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_160 = L_159->____member_3;
 		V_8 = L_160;
 	}
 
@@ -23280,8 +21720,7 @@ IL_0313:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_161 = V_14;
 		NullCheck(L_161);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_162;
-		L_162 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_161, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_162 = L_161->____member_3;
 		NullCheck(L_162);
 		Type_t* L_163;
 		L_163 = Object_GetType_mE10A8FC1E57F3DF29972CCBC026C2DC3942263B3(L_162, NULL);
@@ -23316,30 +21755,24 @@ IL_0313:
 	{
 		Fixup_tE94672CE3DEBD4DCFFB6AC052A9A6E0E7C6AA566* L_170 = V_5;
 		NullCheck(L_170);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_171;
-		L_171 = Fixup_get_Ids_m9B1A1A8EC0662A14A92B000F90A276C18E7690B2_inline(L_170, NULL);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_171 = L_170->___ids_1;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_172 = V_14;
 		NullCheck(L_172);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_173;
-		L_173 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_172, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_173 = L_172->____member_3;
 		NullCheck(L_173);
-		int32_t L_174;
-		L_174 = XmlTypeMapMember_get_Index_m3EAB1243B03E5DBD10C6E7CA245E5A6C04406D12_inline(L_173, NULL);
+		int32_t L_174 = L_173->____index_1;
 		NullCheck(L_171);
 		RuntimeObject* L_175;
 		L_175 = XmlSerializationReader_ReadReferencingElement_mC2F7F98DBC0683ECE865560DBB9F1CBA0798EBB6(__this, ((L_171)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_174))), NULL);
 		V_15 = L_175;
 		Fixup_tE94672CE3DEBD4DCFFB6AC052A9A6E0E7C6AA566* L_176 = V_5;
 		NullCheck(L_176);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_177;
-		L_177 = Fixup_get_Ids_m9B1A1A8EC0662A14A92B000F90A276C18E7690B2_inline(L_176, NULL);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_177 = L_176->___ids_1;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_178 = V_14;
 		NullCheck(L_178);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_179;
-		L_179 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_178, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_179 = L_178->____member_3;
 		NullCheck(L_179);
-		int32_t L_180;
-		L_180 = XmlTypeMapMember_get_Index_m3EAB1243B03E5DBD10C6E7CA245E5A6C04406D12_inline(L_179, NULL);
+		int32_t L_180 = L_179->____index_1;
 		NullCheck(L_177);
 		int32_t L_181 = L_180;
 		String_t* L_182 = (L_177)->GetAt(static_cast<il2cpp_array_size_t>(L_181));
@@ -23351,12 +21784,10 @@ IL_0313:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_183 = V_14;
 		NullCheck(L_183);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_184;
-		L_184 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_183, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_184 = L_183->____member_3;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_185 = V_14;
 		NullCheck(L_185);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_186;
-		L_186 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_185, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_186 = L_185->____type_8;
 		RuntimeObject* L_187 = ___ob1;
 		bool L_188 = ___isValueList2;
 		bool L_189;
@@ -23369,11 +21800,9 @@ IL_0313:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_190 = V_14;
 		NullCheck(L_190);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_191;
-		L_191 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_190, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_191 = L_190->____type_8;
 		NullCheck(L_191);
-		String_t* L_192;
-		L_192 = TypeData_get_FullTypeName_m391893730DDFEE90F76197075F599FEA2E60BE43_inline(L_191, NULL);
+		String_t* L_192 = L_191->___fullTypeName_5;
 		Exception_t* L_193;
 		L_193 = XmlSerializationReader_CreateReadOnlyCollectionException_m7FDF903691CC369CC0F6E939D337DC0A8CB734C7(__this, L_192, NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_193, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&XmlSerializationReaderInterpreter_ReadMembers_m92FC821665FFF506E537CCDA5A70F4B1172E626B_RuntimeMethod_var)));
@@ -23383,8 +21812,7 @@ IL_03ab:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_194 = V_14;
 		NullCheck(L_194);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_195;
-		L_195 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_194, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_195 = L_194->____member_3;
 		RuntimeObject* L_196 = ___ob1;
 		RuntimeObject* L_197 = V_15;
 		bool L_198 = ___isValueList2;
@@ -23396,14 +21824,11 @@ IL_03c1:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_199 = V_14;
 		NullCheck(L_199);
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_200;
-		L_200 = XmlTypeMapElementInfo_get_MappedType_m240A78959A2E9A6CE992F5EC6B77DDFC137AF032_inline(L_199, NULL);
+		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_200 = L_199->____mappedType_7;
 		NullCheck(L_200);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_201;
-		L_201 = XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline(L_200, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_201 = L_200->___type_9;
 		NullCheck(L_201);
-		Type_t* L_202;
-		L_202 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_201, NULL);
+		Type_t* L_202 = L_201->___type_0;
 		NullCheck(L_202);
 		bool L_203;
 		L_203 = Type_get_IsArray_mB9B8CA713B2AA9D6AFECC24E05AF78D22532B673(L_202, NULL);
@@ -23415,12 +21840,10 @@ IL_03c1:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_204 = V_14;
 		NullCheck(L_204);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_205;
-		L_205 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_204, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_205 = L_204->____member_3;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_206 = V_14;
 		NullCheck(L_206);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_207;
-		L_207 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_206, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_207 = L_206->____type_8;
 		RuntimeObject* L_208 = ___ob1;
 		bool L_209 = ___isValueList2;
 		bool L_210;
@@ -23433,8 +21856,7 @@ IL_03c1:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_211 = V_14;
 		NullCheck(L_211);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_212;
-		L_212 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_211, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_212 = L_211->____member_3;
 		RuntimeObject* L_213 = ___ob1;
 		bool L_214 = ___isValueList2;
 		RuntimeObject* L_215;
@@ -23447,21 +21869,17 @@ IL_0407:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_216 = V_14;
 		NullCheck(L_216);
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_217;
-		L_217 = XmlTypeMapElementInfo_get_MappedType_m240A78959A2E9A6CE992F5EC6B77DDFC137AF032_inline(L_216, NULL);
+		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_217 = L_216->____mappedType_7;
 		NullCheck(L_217);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_218;
-		L_218 = XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline(L_217, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_218 = L_217->___type_9;
 		NullCheck(L_218);
-		Type_t* L_219;
-		L_219 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_218, NULL);
+		Type_t* L_219 = L_218->___type_0;
 		RuntimeObject* L_220;
 		L_220 = XmlSerializationReaderInterpreter_CreateList_m8DEC17C3A9D8AB9C6659C503168A670217F052A3(__this, L_219, NULL);
 		V_15 = L_220;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_221 = V_14;
 		NullCheck(L_221);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_222;
-		L_222 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_221, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_222 = L_221->____member_3;
 		RuntimeObject* L_223 = ___ob1;
 		RuntimeObject* L_224 = V_15;
 		bool L_225 = ___isValueList2;
@@ -23476,15 +21894,12 @@ IL_0431:
 		XmlSerializationCollectionFixupCallback__ctor_mB50149D9773BF51E099E574127D057F454EC6DF8(L_227, __this, (intptr_t)((void*)XmlSerializationReaderInterpreter_FillList_m5396649C8AB2996C6C7D25983BDAD9479A3F29D9_RuntimeMethod_var), NULL);
 		Fixup_tE94672CE3DEBD4DCFFB6AC052A9A6E0E7C6AA566* L_228 = V_5;
 		NullCheck(L_228);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_229;
-		L_229 = Fixup_get_Ids_m9B1A1A8EC0662A14A92B000F90A276C18E7690B2_inline(L_228, NULL);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_229 = L_228->___ids_1;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_230 = V_14;
 		NullCheck(L_230);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_231;
-		L_231 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_230, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_231 = L_230->____member_3;
 		NullCheck(L_231);
-		int32_t L_232;
-		L_232 = XmlTypeMapMember_get_Index_m3EAB1243B03E5DBD10C6E7CA245E5A6C04406D12_inline(L_231, NULL);
+		int32_t L_232 = L_231->____index_1;
 		NullCheck(L_229);
 		int32_t L_233 = L_232;
 		String_t* L_234 = (L_229)->GetAt(static_cast<il2cpp_array_size_t>(L_233));
@@ -23494,15 +21909,12 @@ IL_0431:
 		XmlSerializationReader_AddFixup_m846FB4EEF12E21F5803BC41685952AFE6A3D98E1(__this, L_235, NULL);
 		Fixup_tE94672CE3DEBD4DCFFB6AC052A9A6E0E7C6AA566* L_236 = V_5;
 		NullCheck(L_236);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_237;
-		L_237 = Fixup_get_Ids_m9B1A1A8EC0662A14A92B000F90A276C18E7690B2_inline(L_236, NULL);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_237 = L_236->___ids_1;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_238 = V_14;
 		NullCheck(L_238);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_239;
-		L_239 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_238, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_239 = L_238->____member_3;
 		NullCheck(L_239);
-		int32_t L_240;
-		L_240 = XmlTypeMapMember_get_Index_m3EAB1243B03E5DBD10C6E7CA245E5A6C04406D12_inline(L_239, NULL);
+		int32_t L_240 = L_239->____index_1;
 		NullCheck(L_237);
 		ArrayElementTypeCheck (L_237, NULL);
 		(L_237)->SetAt(static_cast<il2cpp_array_size_t>(L_240), (String_t*)NULL);
@@ -23513,12 +21925,10 @@ IL_0478:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_241 = V_14;
 		NullCheck(L_241);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_242;
-		L_242 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_241, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_242 = L_241->____member_3;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_243 = V_14;
 		NullCheck(L_243);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_244;
-		L_244 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_243, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_244 = L_243->____type_8;
 		RuntimeObject* L_245 = ___ob1;
 		bool L_246 = ___isValueList2;
 		bool L_247;
@@ -23531,16 +21941,13 @@ IL_0478:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_248 = V_14;
 		NullCheck(L_248);
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_249;
-		L_249 = XmlTypeMapElementInfo_get_MappedType_m240A78959A2E9A6CE992F5EC6B77DDFC137AF032_inline(L_248, NULL);
+		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_249 = L_248->____mappedType_7;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_250 = V_14;
 		NullCheck(L_250);
-		bool L_251;
-		L_251 = XmlTypeMapElementInfo_get_IsNullable_m5E6F72E9E7ADFA39100C6C0FFA1585BCDE4ACE75_inline(L_250, NULL);
+		bool L_251 = L_250->____isNullable_5;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_252 = V_14;
 		NullCheck(L_252);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_253;
-		L_253 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_252, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_253 = L_252->____member_3;
 		RuntimeObject* L_254 = ___ob1;
 		bool L_255 = ___isValueList2;
 		RuntimeObject* L_256;
@@ -23554,14 +21961,11 @@ IL_04ba:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_258 = V_14;
 		NullCheck(L_258);
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_259;
-		L_259 = XmlTypeMapElementInfo_get_MappedType_m240A78959A2E9A6CE992F5EC6B77DDFC137AF032_inline(L_258, NULL);
+		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_259 = L_258->____mappedType_7;
 		NullCheck(L_259);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_260;
-		L_260 = XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline(L_259, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_260 = L_259->___type_9;
 		NullCheck(L_260);
-		Type_t* L_261;
-		L_261 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_260, NULL);
+		Type_t* L_261 = L_260->___type_0;
 		NullCheck(L_261);
 		bool L_262;
 		L_262 = Type_get_IsArray_mB9B8CA713B2AA9D6AFECC24E05AF78D22532B673(L_261, NULL);
@@ -23573,12 +21977,10 @@ IL_04ba:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_263 = V_14;
 		NullCheck(L_263);
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_264;
-		L_264 = XmlTypeMapElementInfo_get_MappedType_m240A78959A2E9A6CE992F5EC6B77DDFC137AF032_inline(L_263, NULL);
+		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_264 = L_263->____mappedType_7;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_265 = V_14;
 		NullCheck(L_265);
-		bool L_266;
-		L_266 = XmlTypeMapElementInfo_get_IsNullable_m5E6F72E9E7ADFA39100C6C0FFA1585BCDE4ACE75_inline(L_265, NULL);
+		bool L_266 = L_265->____isNullable_5;
 		RuntimeObject* L_267;
 		L_267 = XmlSerializationReaderInterpreter_ReadListElement_m9DA9C6F2AC8812B8783E85AF2F99A4FE6CB14B14(__this, L_264, L_266, NULL, (bool)1, NULL);
 		V_16 = L_267;
@@ -23591,8 +21993,7 @@ IL_04ba:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_269 = V_14;
 		NullCheck(L_269);
-		bool L_270;
-		L_270 = XmlTypeMapElementInfo_get_IsNullable_m5E6F72E9E7ADFA39100C6C0FFA1585BCDE4ACE75_inline(L_269, NULL);
+		bool L_270 = L_269->____isNullable_5;
 		if (!L_270)
 		{
 			goto IL_0561;
@@ -23603,8 +22004,7 @@ IL_04f7:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_271 = V_14;
 		NullCheck(L_271);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_272;
-		L_272 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_271, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_272 = L_271->____member_3;
 		RuntimeObject* L_273 = ___ob1;
 		RuntimeObject* L_274 = V_16;
 		bool L_275 = ___isValueList2;
@@ -23616,8 +22016,7 @@ IL_050a:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_276 = V_14;
 		NullCheck(L_276);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_277;
-		L_277 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_276, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_277 = L_276->____member_3;
 		RuntimeObject* L_278 = ___ob1;
 		bool L_279 = ___isValueList2;
 		RuntimeObject* L_280;
@@ -23632,21 +22031,17 @@ IL_050a:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_282 = V_14;
 		NullCheck(L_282);
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_283;
-		L_283 = XmlTypeMapElementInfo_get_MappedType_m240A78959A2E9A6CE992F5EC6B77DDFC137AF032_inline(L_282, NULL);
+		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_283 = L_282->____mappedType_7;
 		NullCheck(L_283);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_284;
-		L_284 = XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline(L_283, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_284 = L_283->___type_9;
 		NullCheck(L_284);
-		Type_t* L_285;
-		L_285 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_284, NULL);
+		Type_t* L_285 = L_284->___type_0;
 		RuntimeObject* L_286;
 		L_286 = XmlSerializationReaderInterpreter_CreateList_m8DEC17C3A9D8AB9C6659C503168A670217F052A3(__this, L_285, NULL);
 		V_17 = L_286;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_287 = V_14;
 		NullCheck(L_287);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_288;
-		L_288 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_287, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_288 = L_287->____member_3;
 		RuntimeObject* L_289 = ___ob1;
 		RuntimeObject* L_290 = V_17;
 		bool L_291 = ___isValueList2;
@@ -23657,12 +22052,10 @@ IL_0549:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_292 = V_14;
 		NullCheck(L_292);
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_293;
-		L_293 = XmlTypeMapElementInfo_get_MappedType_m240A78959A2E9A6CE992F5EC6B77DDFC137AF032_inline(L_292, NULL);
+		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_293 = L_292->____mappedType_7;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_294 = V_14;
 		NullCheck(L_294);
-		bool L_295;
-		L_295 = XmlTypeMapElementInfo_get_IsNullable_m5E6F72E9E7ADFA39100C6C0FFA1585BCDE4ACE75_inline(L_294, NULL);
+		bool L_295 = L_294->____isNullable_5;
 		RuntimeObject* L_296 = V_17;
 		RuntimeObject* L_297;
 		L_297 = XmlSerializationReaderInterpreter_ReadListElement_m9DA9C6F2AC8812B8783E85AF2F99A4FE6CB14B14(__this, L_293, L_295, L_296, (bool)1, NULL);
@@ -23673,11 +22066,9 @@ IL_0561:
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_298 = V_0;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_299 = V_14;
 		NullCheck(L_299);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_300;
-		L_300 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_299, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_300 = L_299->____member_3;
 		NullCheck(L_300);
-		int32_t L_301;
-		L_301 = XmlTypeMapMember_get_Index_m3EAB1243B03E5DBD10C6E7CA245E5A6C04406D12_inline(L_300, NULL);
+		int32_t L_301 = L_300->____index_1;
 		NullCheck(L_298);
 		(L_298)->SetAt(static_cast<il2cpp_array_size_t>(L_301), (bool)1);
 		goto IL_0a18;
@@ -23687,8 +22078,7 @@ IL_0575:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_302 = V_14;
 		NullCheck(L_302);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_303;
-		L_303 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_302, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_303 = L_302->____member_3;
 		NullCheck(L_303);
 		Type_t* L_304;
 		L_304 = Object_GetType_mE10A8FC1E57F3DF29972CCBC026C2DC3942263B3(L_303, NULL);
@@ -23706,24 +22096,20 @@ IL_0575:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_308 = V_14;
 		NullCheck(L_308);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_309;
-		L_309 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_308, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_309 = L_308->____member_3;
 		V_18 = ((XmlTypeMapMemberFlatList_t443422643AA0E5FA5166EF6451BBA01D02004B38*)CastclassClass((RuntimeObject*)L_309, XmlTypeMapMemberFlatList_t443422643AA0E5FA5166EF6451BBA01D02004B38_il2cpp_TypeInfo_var));
 		XmlTypeMapMemberFlatList_t443422643AA0E5FA5166EF6451BBA01D02004B38* L_310 = V_18;
 		NullCheck(L_310);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_311;
-		L_311 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_310, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_311 = ((XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A*)L_310)->____typeData_4;
 		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_312 = V_3;
 		XmlTypeMapMemberFlatList_t443422643AA0E5FA5166EF6451BBA01D02004B38* L_313 = V_18;
 		NullCheck(L_313);
-		int32_t L_314;
-		L_314 = XmlTypeMapMemberExpandable_get_FlatArrayIndex_mD83A6C690F8EA40C0FAF882E1549E0BD0831CC83_inline(L_313, NULL);
+		int32_t L_314 = ((XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE*)L_313)->____flatArrayIndex_14;
 		NullCheck(L_312);
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_315 = V_2;
 		XmlTypeMapMemberFlatList_t443422643AA0E5FA5166EF6451BBA01D02004B38* L_316 = V_18;
 		NullCheck(L_316);
-		int32_t L_317;
-		L_317 = XmlTypeMapMemberExpandable_get_FlatArrayIndex_mD83A6C690F8EA40C0FAF882E1549E0BD0831CC83_inline(L_316, NULL);
+		int32_t L_317 = ((XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE*)L_316)->____flatArrayIndex_14;
 		NullCheck(L_315);
 		int32_t* L_318 = ((L_315)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_317)));
 		int32_t L_319 = *((int32_t*)L_318);
@@ -23736,12 +22122,10 @@ IL_0575:
 		L_323 = XmlSerializationReaderInterpreter_ReadObjectElement_mB76E426F3F5A3C4F36AC5563C3A546ECC8B6DF05(__this, L_322, NULL);
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_324 = V_14;
 		NullCheck(L_324);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_325;
-		L_325 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_324, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_325 = L_324->____member_3;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_326 = V_14;
 		NullCheck(L_326);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_327;
-		L_327 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_326, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_327 = L_326->____type_8;
 		RuntimeObject* L_328 = ___ob1;
 		bool L_329 = ___isValueList2;
 		bool L_330;
@@ -23749,8 +22133,7 @@ IL_0575:
 		XmlSerializationReaderInterpreter_AddListValue_m12D3A8F7A8612DBA89872F736C275807EBB57EA4(__this, L_311, ((L_312)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_314))), L_321, L_323, (bool)((((int32_t)L_330) == ((int32_t)0))? 1 : 0), NULL);
 		XmlTypeMapMemberFlatList_t443422643AA0E5FA5166EF6451BBA01D02004B38* L_331 = V_18;
 		NullCheck(L_331);
-		String_t* L_332;
-		L_332 = XmlTypeMapMemberElement_get_ChoiceMember_m182A4AB876036DDA005F0760EF51C5FCA7F682D8_inline(L_331, NULL);
+		String_t* L_332 = ((XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840*)L_331)->____choiceMember_11;
 		if (!L_332)
 		{
 			goto IL_0a18;
@@ -23759,26 +22142,22 @@ IL_0575:
 	{
 		XmlTypeMapMemberFlatList_t443422643AA0E5FA5166EF6451BBA01D02004B38* L_333 = V_18;
 		NullCheck(L_333);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_334;
-		L_334 = XmlTypeMapMemberElement_get_ChoiceTypeData_m1C40274707406AC69F5536776D0276266332B845_inline(L_333, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_334 = ((XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840*)L_333)->____choiceTypeData_13;
 		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_335 = V_4;
 		XmlTypeMapMemberFlatList_t443422643AA0E5FA5166EF6451BBA01D02004B38* L_336 = V_18;
 		NullCheck(L_336);
-		int32_t L_337;
-		L_337 = XmlTypeMapMemberExpandable_get_FlatArrayIndex_mD83A6C690F8EA40C0FAF882E1549E0BD0831CC83_inline(L_336, NULL);
+		int32_t L_337 = ((XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE*)L_336)->____flatArrayIndex_14;
 		NullCheck(L_335);
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_338 = V_2;
 		XmlTypeMapMemberFlatList_t443422643AA0E5FA5166EF6451BBA01D02004B38* L_339 = V_18;
 		NullCheck(L_339);
-		int32_t L_340;
-		L_340 = XmlTypeMapMemberExpandable_get_FlatArrayIndex_mD83A6C690F8EA40C0FAF882E1549E0BD0831CC83_inline(L_339, NULL);
+		int32_t L_340 = ((XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE*)L_339)->____flatArrayIndex_14;
 		NullCheck(L_338);
 		int32_t L_341 = L_340;
 		int32_t L_342 = (L_338)->GetAt(static_cast<il2cpp_array_size_t>(L_341));
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_343 = V_14;
 		NullCheck(L_343);
-		RuntimeObject* L_344;
-		L_344 = XmlTypeMapElementInfo_get_ChoiceValue_m7BC9464A497AFA7A1BF250BA0D88928706C6412E_inline(L_343, NULL);
+		RuntimeObject* L_344 = L_343->____choiceValue_4;
 		XmlSerializationReaderInterpreter_AddListValue_m12D3A8F7A8612DBA89872F736C275807EBB57EA4(__this, L_334, ((L_335)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_337))), ((int32_t)il2cpp_codegen_subtract(L_342, 1)), L_344, (bool)1, NULL);
 		goto IL_0a18;
 	}
@@ -23787,8 +22166,7 @@ IL_0635:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_345 = V_14;
 		NullCheck(L_345);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_346;
-		L_346 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_345, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_346 = L_345->____member_3;
 		NullCheck(L_346);
 		Type_t* L_347;
 		L_347 = Object_GetType_mE10A8FC1E57F3DF29972CCBC026C2DC3942263B3(L_346, NULL);
@@ -23806,13 +22184,11 @@ IL_0635:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_351 = V_14;
 		NullCheck(L_351);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_352;
-		L_352 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_351, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_352 = L_351->____member_3;
 		V_20 = ((XmlTypeMapMemberAnyElement_tC9C6D58B08CB2C84148376C77AC4259AF149C950*)CastclassClass((RuntimeObject*)L_352, XmlTypeMapMemberAnyElement_tC9C6D58B08CB2C84148376C77AC4259AF149C950_il2cpp_TypeInfo_var));
 		XmlTypeMapMemberAnyElement_tC9C6D58B08CB2C84148376C77AC4259AF149C950* L_353 = V_20;
 		NullCheck(L_353);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_354;
-		L_354 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_353, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_354 = ((XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A*)L_353)->____typeData_4;
 		NullCheck(L_354);
 		bool L_355;
 		L_355 = TypeData_get_IsListType_m40A6A12749C9A2F1729D6411A76C62768DB2D4F2(L_354, NULL);
@@ -23824,19 +22200,16 @@ IL_0635:
 	{
 		XmlTypeMapMemberAnyElement_tC9C6D58B08CB2C84148376C77AC4259AF149C950* L_356 = V_20;
 		NullCheck(L_356);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_357;
-		L_357 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_356, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_357 = ((XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A*)L_356)->____typeData_4;
 		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_358 = V_3;
 		XmlTypeMapMemberAnyElement_tC9C6D58B08CB2C84148376C77AC4259AF149C950* L_359 = V_20;
 		NullCheck(L_359);
-		int32_t L_360;
-		L_360 = XmlTypeMapMemberExpandable_get_FlatArrayIndex_mD83A6C690F8EA40C0FAF882E1549E0BD0831CC83_inline(L_359, NULL);
+		int32_t L_360 = ((XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE*)L_359)->____flatArrayIndex_14;
 		NullCheck(L_358);
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_361 = V_2;
 		XmlTypeMapMemberAnyElement_tC9C6D58B08CB2C84148376C77AC4259AF149C950* L_362 = V_20;
 		NullCheck(L_362);
-		int32_t L_363;
-		L_363 = XmlTypeMapMemberExpandable_get_FlatArrayIndex_mD83A6C690F8EA40C0FAF882E1549E0BD0831CC83_inline(L_362, NULL);
+		int32_t L_363 = ((XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE*)L_362)->____flatArrayIndex_14;
 		NullCheck(L_361);
 		int32_t* L_364 = ((L_361)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_363)));
 		int32_t L_365 = *((int32_t*)L_364);
@@ -23846,8 +22219,7 @@ IL_0635:
 		int32_t L_367 = V_19;
 		XmlTypeMapMemberAnyElement_tC9C6D58B08CB2C84148376C77AC4259AF149C950* L_368 = V_20;
 		NullCheck(L_368);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_369;
-		L_369 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_368, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_369 = ((XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A*)L_368)->____typeData_4;
 		NullCheck(L_369);
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_370;
 		L_370 = TypeData_get_ListItemTypeData_m08EBC7760A430966A31E3C138C9BB359E429C6D7(L_369, NULL);
@@ -23863,8 +22235,7 @@ IL_06bc:
 		RuntimeObject* L_373 = ___ob1;
 		XmlTypeMapMemberAnyElement_tC9C6D58B08CB2C84148376C77AC4259AF149C950* L_374 = V_20;
 		NullCheck(L_374);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_375;
-		L_375 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_374, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_375 = ((XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A*)L_374)->____typeData_4;
 		RuntimeObject* L_376;
 		L_376 = XmlSerializationReaderInterpreter_ReadXmlNode_m1EDAD554730C9248E429BADBBA381E16C94647CA(__this, L_375, (bool)0, NULL);
 		bool L_377 = ___isValueList2;
@@ -23876,8 +22247,7 @@ IL_06d9:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_378 = V_14;
 		NullCheck(L_378);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_379;
-		L_379 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_378, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_379 = L_378->____member_3;
 		NullCheck(L_379);
 		Type_t* L_380;
 		L_380 = Object_GetType_mE10A8FC1E57F3DF29972CCBC026C2DC3942263B3(L_379, NULL);
@@ -23896,11 +22266,9 @@ IL_06d9:
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_384 = V_0;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_385 = V_14;
 		NullCheck(L_385);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_386;
-		L_386 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_385, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_386 = L_385->____member_3;
 		NullCheck(L_386);
-		int32_t L_387;
-		L_387 = XmlTypeMapMember_get_Index_m3EAB1243B03E5DBD10C6E7CA245E5A6C04406D12_inline(L_386, NULL);
+		int32_t L_387 = L_386->____index_1;
 		NullCheck(L_384);
 		(L_384)->SetAt(static_cast<il2cpp_array_size_t>(L_387), (bool)1);
 		int32_t L_388 = __this->____format_26;
@@ -23912,14 +22280,11 @@ IL_06d9:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_389 = V_14;
 		NullCheck(L_389);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_390;
-		L_390 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_389, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_390 = L_389->____member_3;
 		NullCheck(L_390);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_391;
-		L_391 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_390, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_391 = L_390->____typeData_4;
 		NullCheck(L_391);
-		int32_t L_392;
-		L_392 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_391, NULL);
+		int32_t L_392 = L_391->___sType_2;
 		if ((((int32_t)L_392) == ((int32_t)1)))
 		{
 			goto IL_0749;
@@ -23928,15 +22293,12 @@ IL_06d9:
 	{
 		Fixup_tE94672CE3DEBD4DCFFB6AC052A9A6E0E7C6AA566* L_393 = V_5;
 		NullCheck(L_393);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_394;
-		L_394 = Fixup_get_Ids_m9B1A1A8EC0662A14A92B000F90A276C18E7690B2_inline(L_393, NULL);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_394 = L_393->___ids_1;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_395 = V_14;
 		NullCheck(L_395);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_396;
-		L_396 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_395, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_396 = L_395->____member_3;
 		NullCheck(L_396);
-		int32_t L_397;
-		L_397 = XmlTypeMapMember_get_Index_m3EAB1243B03E5DBD10C6E7CA245E5A6C04406D12_inline(L_396, NULL);
+		int32_t L_397 = L_396->____index_1;
 		NullCheck(L_394);
 		RuntimeObject* L_398;
 		L_398 = XmlSerializationReader_ReadReferencingElement_mC2F7F98DBC0683ECE865560DBB9F1CBA0798EBB6(__this, ((L_394)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_397))), NULL);
@@ -23948,25 +22310,19 @@ IL_0749:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_399 = V_14;
 		NullCheck(L_399);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_400;
-		L_400 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_399, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_400 = L_399->____member_3;
 		NullCheck(L_400);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_401;
-		L_401 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_400, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_401 = L_400->____typeData_4;
 		NullCheck(L_401);
-		String_t* L_402;
-		L_402 = TypeData_get_XmlType_m06749C1B19C57EB8649CBCD9B106C014DF511453_inline(L_401, NULL);
+		String_t* L_402 = L_401->___elementName_1;
 		Fixup_tE94672CE3DEBD4DCFFB6AC052A9A6E0E7C6AA566* L_403 = V_5;
 		NullCheck(L_403);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_404;
-		L_404 = Fixup_get_Ids_m9B1A1A8EC0662A14A92B000F90A276C18E7690B2_inline(L_403, NULL);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_404 = L_403->___ids_1;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_405 = V_14;
 		NullCheck(L_405);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_406;
-		L_406 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_405, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_406 = L_405->____member_3;
 		NullCheck(L_406);
-		int32_t L_407;
-		L_407 = XmlTypeMapMember_get_Index_m3EAB1243B03E5DBD10C6E7CA245E5A6C04406D12_inline(L_406, NULL);
+		int32_t L_407 = L_406->____index_1;
 		NullCheck(L_404);
 		RuntimeObject* L_408;
 		L_408 = XmlSerializationReader_ReadReferencingElement_m83079F8026EBB9E442B5F5BD09D7E5C1B53595D0(__this, L_402, _stringLiteralE249DDFD90EBFAAEE63734F28F6668A2FB5BD5AF, ((L_404)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_407))), NULL);
@@ -23987,15 +22343,12 @@ IL_077f:
 	{
 		Fixup_tE94672CE3DEBD4DCFFB6AC052A9A6E0E7C6AA566* L_411 = V_5;
 		NullCheck(L_411);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_412;
-		L_412 = Fixup_get_Ids_m9B1A1A8EC0662A14A92B000F90A276C18E7690B2_inline(L_411, NULL);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_412 = L_411->___ids_1;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_413 = V_14;
 		NullCheck(L_413);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_414;
-		L_414 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_413, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_414 = L_413->____member_3;
 		NullCheck(L_414);
-		int32_t L_415;
-		L_415 = XmlTypeMapMember_get_Index_m3EAB1243B03E5DBD10C6E7CA245E5A6C04406D12_inline(L_414, NULL);
+		int32_t L_415 = L_414->____index_1;
 		NullCheck(L_412);
 		int32_t L_416 = L_415;
 		String_t* L_417 = (L_412)->GetAt(static_cast<il2cpp_array_size_t>(L_416));
@@ -24007,8 +22360,7 @@ IL_077f:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_418 = V_14;
 		NullCheck(L_418);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_419;
-		L_419 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_418, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_419 = L_418->____member_3;
 		RuntimeObject* L_420 = ___ob1;
 		RuntimeObject* L_421 = V_21;
 		bool L_422 = ___isValueList2;
@@ -24027,8 +22379,7 @@ IL_07b7:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_424 = V_14;
 		NullCheck(L_424);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_425;
-		L_425 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_424, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_425 = L_424->____member_3;
 		RuntimeObject* L_426 = ___ob1;
 		RuntimeObject* L_427 = V_21;
 		bool L_428 = ___isValueList2;
@@ -24040,8 +22391,7 @@ IL_07d4:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_429 = V_14;
 		NullCheck(L_429);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_430;
-		L_430 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_429, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_430 = L_429->____member_3;
 		RuntimeObject* L_431 = ___ob1;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_432 = V_14;
 		RuntimeObject* L_433;
@@ -24050,8 +22400,7 @@ IL_07d4:
 		XmlSerializationReaderInterpreter_SetMemberValue_mABB21E3AEFF2EB1B198A0B915622E84D542D1D99(__this, L_430, L_431, L_433, L_434, NULL);
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_435 = V_14;
 		NullCheck(L_435);
-		RuntimeObject* L_436;
-		L_436 = XmlTypeMapElementInfo_get_ChoiceValue_m7BC9464A497AFA7A1BF250BA0D88928706C6412E_inline(L_435, NULL);
+		RuntimeObject* L_436 = L_435->____choiceValue_4;
 		if (!L_436)
 		{
 			goto IL_0a18;
@@ -24060,13 +22409,11 @@ IL_07d4:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_437 = V_14;
 		NullCheck(L_437);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_438;
-		L_438 = XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline(L_437, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_438 = L_437->____member_3;
 		RuntimeObject* L_439 = ___ob1;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_440 = V_14;
 		NullCheck(L_440);
-		RuntimeObject* L_441;
-		L_441 = XmlTypeMapElementInfo_get_ChoiceValue_m7BC9464A497AFA7A1BF250BA0D88928706C6412E_inline(L_440, NULL);
+		RuntimeObject* L_441 = L_440->____choiceValue_4;
 		NullCheck(((XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840*)CastclassClass((RuntimeObject*)L_438, XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840_il2cpp_TypeInfo_var)));
 		XmlTypeMapMemberElement_SetChoice_m70A2968411084153BBDD57111C740A75C9D7AEB5(((XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840*)CastclassClass((RuntimeObject*)L_438, XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840_il2cpp_TypeInfo_var)), L_439, L_441, NULL);
 		goto IL_0a18;
@@ -24084,8 +22431,7 @@ IL_0820:
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_443 = ___map0;
 		NullCheck(L_443);
-		XmlTypeMapMemberAnyElement_tC9C6D58B08CB2C84148376C77AC4259AF149C950* L_444;
-		L_444 = ClassMap_get_DefaultAnyElementMember_m65CFF55B342204FE2E39B8BDF46E733DD43C6B4B_inline(L_443, NULL);
+		XmlTypeMapMemberAnyElement_tC9C6D58B08CB2C84148376C77AC4259AF149C950* L_444 = L_443->____defaultAnyElement_8;
 		if (!L_444)
 		{
 			goto IL_08a6;
@@ -24094,13 +22440,11 @@ IL_0820:
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_445 = ___map0;
 		NullCheck(L_445);
-		XmlTypeMapMemberAnyElement_tC9C6D58B08CB2C84148376C77AC4259AF149C950* L_446;
-		L_446 = ClassMap_get_DefaultAnyElementMember_m65CFF55B342204FE2E39B8BDF46E733DD43C6B4B_inline(L_445, NULL);
+		XmlTypeMapMemberAnyElement_tC9C6D58B08CB2C84148376C77AC4259AF149C950* L_446 = L_445->____defaultAnyElement_8;
 		V_22 = L_446;
 		XmlTypeMapMemberAnyElement_tC9C6D58B08CB2C84148376C77AC4259AF149C950* L_447 = V_22;
 		NullCheck(L_447);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_448;
-		L_448 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_447, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_448 = ((XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A*)L_447)->____typeData_4;
 		NullCheck(L_448);
 		bool L_449;
 		L_449 = TypeData_get_IsListType_m40A6A12749C9A2F1729D6411A76C62768DB2D4F2(L_448, NULL);
@@ -24112,19 +22456,16 @@ IL_0820:
 	{
 		XmlTypeMapMemberAnyElement_tC9C6D58B08CB2C84148376C77AC4259AF149C950* L_450 = V_22;
 		NullCheck(L_450);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_451;
-		L_451 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_450, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_451 = ((XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A*)L_450)->____typeData_4;
 		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_452 = V_3;
 		XmlTypeMapMemberAnyElement_tC9C6D58B08CB2C84148376C77AC4259AF149C950* L_453 = V_22;
 		NullCheck(L_453);
-		int32_t L_454;
-		L_454 = XmlTypeMapMemberExpandable_get_FlatArrayIndex_mD83A6C690F8EA40C0FAF882E1549E0BD0831CC83_inline(L_453, NULL);
+		int32_t L_454 = ((XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE*)L_453)->____flatArrayIndex_14;
 		NullCheck(L_452);
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_455 = V_2;
 		XmlTypeMapMemberAnyElement_tC9C6D58B08CB2C84148376C77AC4259AF149C950* L_456 = V_22;
 		NullCheck(L_456);
-		int32_t L_457;
-		L_457 = XmlTypeMapMemberExpandable_get_FlatArrayIndex_mD83A6C690F8EA40C0FAF882E1549E0BD0831CC83_inline(L_456, NULL);
+		int32_t L_457 = ((XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE*)L_456)->____flatArrayIndex_14;
 		NullCheck(L_455);
 		int32_t* L_458 = ((L_455)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_457)));
 		int32_t L_459 = *((int32_t*)L_458);
@@ -24134,8 +22475,7 @@ IL_0820:
 		int32_t L_461 = V_19;
 		XmlTypeMapMemberAnyElement_tC9C6D58B08CB2C84148376C77AC4259AF149C950* L_462 = V_22;
 		NullCheck(L_462);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_463;
-		L_463 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_462, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_463 = ((XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A*)L_462)->____typeData_4;
 		NullCheck(L_463);
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_464;
 		L_464 = TypeData_get_ListItemTypeData_m08EBC7760A430966A31E3C138C9BB359E429C6D7(L_463, NULL);
@@ -24151,8 +22491,7 @@ IL_0889:
 		RuntimeObject* L_467 = ___ob1;
 		XmlTypeMapMemberAnyElement_tC9C6D58B08CB2C84148376C77AC4259AF149C950* L_468 = V_22;
 		NullCheck(L_468);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_469;
-		L_469 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_468, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_469 = ((XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A*)L_468)->____typeData_4;
 		RuntimeObject* L_470;
 		L_470 = XmlSerializationReaderInterpreter_ReadXmlNode_m1EDAD554730C9248E429BADBBA381E16C94647CA(__this, L_469, (bool)0, NULL);
 		bool L_471 = ___isValueList2;
@@ -24169,8 +22508,7 @@ IL_08a6:
 
 IL_08b2:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_473;
-		L_473 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_473 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_473);
 		int32_t L_474;
 		L_474 = VirtualFuncInvoker0< int32_t >::Invoke(6 /* System.Xml.XmlNodeType System.Xml.XmlReader::get_NodeType() */, L_473);
@@ -24180,8 +22518,7 @@ IL_08b2:
 		}
 	}
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_475;
-		L_475 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_475 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_475);
 		int32_t L_476;
 		L_476 = VirtualFuncInvoker0< int32_t >::Invoke(6 /* System.Xml.XmlNodeType System.Xml.XmlReader::get_NodeType() */, L_475);
@@ -24195,8 +22532,7 @@ IL_08d1:
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_477 = ___map0;
 		NullCheck(L_477);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_478;
-		L_478 = ClassMap_get_XmlTextCollector_m3FC50A0C0DEFAC7D4D70209D7D96C58AB7D1DA09_inline(L_477, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_478 = L_477->____xmlTextCollector_11;
 		if (!L_478)
 		{
 			goto IL_0a11;
@@ -24205,8 +22541,7 @@ IL_08d1:
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_479 = ___map0;
 		NullCheck(L_479);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_480;
-		L_480 = ClassMap_get_XmlTextCollector_m3FC50A0C0DEFAC7D4D70209D7D96C58AB7D1DA09_inline(L_479, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_480 = L_479->____xmlTextCollector_11;
 		if (!((XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE*)IsInstClass((RuntimeObject*)L_480, XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE_il2cpp_TypeInfo_var)))
 		{
 			goto IL_0991;
@@ -24215,8 +22550,7 @@ IL_08d1:
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_481 = ___map0;
 		NullCheck(L_481);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_482;
-		L_482 = ClassMap_get_XmlTextCollector_m3FC50A0C0DEFAC7D4D70209D7D96C58AB7D1DA09_inline(L_481, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_482 = L_481->____xmlTextCollector_11;
 		V_23 = ((XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE*)CastclassClass((RuntimeObject*)L_482, XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE_il2cpp_TypeInfo_var));
 		XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_483 = V_23;
 		V_24 = ((XmlTypeMapMemberFlatList_t443422643AA0E5FA5166EF6451BBA01D02004B38*)IsInstClass((RuntimeObject*)L_483, XmlTypeMapMemberFlatList_t443422643AA0E5FA5166EF6451BBA01D02004B38_il2cpp_TypeInfo_var));
@@ -24229,14 +22563,12 @@ IL_08d1:
 	{
 		XmlTypeMapMemberFlatList_t443422643AA0E5FA5166EF6451BBA01D02004B38* L_485 = V_24;
 		NullCheck(L_485);
-		ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* L_486;
-		L_486 = XmlTypeMapMemberFlatList_get_ListMap_mAAD12C509481E6855A9C4865874566320C256EBC_inline(L_485, NULL);
+		ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* L_486 = L_485->____listMap_15;
 		NullCheck(L_486);
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_487;
 		L_487 = ListMap_FindTextElement_m4A953DA460CF998CB59D87819531224C9069FC0A(L_486, NULL);
 		NullCheck(L_487);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_488;
-		L_488 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_487, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_488 = L_487->____type_8;
 		G_B107_0 = L_488;
 		goto IL_0925;
 	}
@@ -24245,8 +22577,7 @@ IL_0919:
 	{
 		XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_489 = V_23;
 		NullCheck(L_489);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_490;
-		L_490 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_489, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_490 = ((XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A*)L_489)->____typeData_4;
 		NullCheck(L_490);
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_491;
 		L_491 = TypeData_get_ListItemTypeData_m08EBC7760A430966A31E3C138C9BB359E429C6D7(L_490, NULL);
@@ -24258,8 +22589,7 @@ IL_0925:
 		V_25 = G_B107_0;
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_492 = V_25;
 		NullCheck(L_492);
-		Type_t* L_493;
-		L_493 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_492, NULL);
+		Type_t* L_493 = L_492->___type_0;
 		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_494 = { reinterpret_cast<intptr_t> (String_t_0_0_0_var) };
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		Type_t* L_495;
@@ -24281,8 +22611,7 @@ IL_0925:
 
 IL_094a:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_499;
-		L_499 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_499 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_499);
 		String_t* L_500;
 		L_500 = VirtualFuncInvoker0< String_t* >::Invoke(42 /* System.String System.Xml.XmlReader::ReadString() */, L_499);
@@ -24294,19 +22623,16 @@ IL_0955:
 		V_26 = G_B110_0;
 		XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_501 = V_23;
 		NullCheck(L_501);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_502;
-		L_502 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_501, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_502 = ((XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A*)L_501)->____typeData_4;
 		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_503 = V_3;
 		XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_504 = V_23;
 		NullCheck(L_504);
-		int32_t L_505;
-		L_505 = XmlTypeMapMemberExpandable_get_FlatArrayIndex_mD83A6C690F8EA40C0FAF882E1549E0BD0831CC83_inline(L_504, NULL);
+		int32_t L_505 = L_504->____flatArrayIndex_14;
 		NullCheck(L_503);
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_506 = V_2;
 		XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_507 = V_23;
 		NullCheck(L_507);
-		int32_t L_508;
-		L_508 = XmlTypeMapMemberExpandable_get_FlatArrayIndex_mD83A6C690F8EA40C0FAF882E1549E0BD0831CC83_inline(L_507, NULL);
+		int32_t L_508 = L_507->____flatArrayIndex_14;
 		NullCheck(L_506);
 		int32_t* L_509 = ((L_506)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_508)));
 		int32_t L_510 = *((int32_t*)L_509);
@@ -24323,8 +22649,7 @@ IL_0991:
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_514 = ___map0;
 		NullCheck(L_514);
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_515;
-		L_515 = ClassMap_get_XmlTextCollector_m3FC50A0C0DEFAC7D4D70209D7D96C58AB7D1DA09_inline(L_514, NULL);
+		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_515 = L_514->____xmlTextCollector_11;
 		V_27 = ((XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840*)CastclassClass((RuntimeObject*)L_515, XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840_il2cpp_TypeInfo_var));
 		XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* L_516 = V_27;
 		NullCheck(L_516);
@@ -24336,11 +22661,9 @@ IL_0991:
 		V_28 = ((XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32*)CastclassClass((RuntimeObject*)L_518, XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32_il2cpp_TypeInfo_var));
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_519 = V_28;
 		NullCheck(L_519);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_520;
-		L_520 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_519, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_520 = L_519->____type_8;
 		NullCheck(L_520);
-		Type_t* L_521;
-		L_521 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_520, NULL);
+		Type_t* L_521 = L_520->___type_0;
 		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_522 = { reinterpret_cast<intptr_t> (String_t_0_0_0_var) };
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		Type_t* L_523;
@@ -24355,8 +22678,7 @@ IL_0991:
 	{
 		XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* L_525 = V_27;
 		RuntimeObject* L_526 = ___ob1;
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_527;
-		L_527 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_527 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_527);
 		String_t* L_528;
 		L_528 = VirtualFuncInvoker0< String_t* >::Invoke(42 /* System.String System.Xml.XmlReader::ReadString() */, L_527);
@@ -24369,19 +22691,16 @@ IL_09e6:
 	{
 		XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* L_530 = V_27;
 		RuntimeObject* L_531 = ___ob1;
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_532;
-		L_532 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_532 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_532);
 		String_t* L_533;
 		L_533 = VirtualFuncInvoker0< String_t* >::Invoke(42 /* System.String System.Xml.XmlReader::ReadString() */, L_532);
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_534 = V_28;
 		NullCheck(L_534);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_535;
-		L_535 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_534, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_535 = L_534->____type_8;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_536 = V_28;
 		NullCheck(L_536);
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_537;
-		L_537 = XmlTypeMapElementInfo_get_MappedType_m240A78959A2E9A6CE992F5EC6B77DDFC137AF032_inline(L_536, NULL);
+		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_537 = L_536->____mappedType_7;
 		RuntimeObject* L_538;
 		L_538 = XmlSerializationReaderInterpreter_GetValueFromXmlString_m21DC6B65AAF2E79AE5EC5C7B62A5E40B4C5498CA(__this, L_533, L_535, L_537, NULL);
 		bool L_539 = ___isValueList2;
@@ -24397,8 +22716,7 @@ IL_0a11:
 
 IL_0a18:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_541;
-		L_541 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_541 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_541);
 		int32_t L_542;
 		L_542 = VirtualFuncInvoker0< int32_t >::Invoke(43 /* System.Xml.XmlNodeType System.Xml.XmlReader::MoveToContent() */, L_541);
@@ -24406,8 +22724,7 @@ IL_0a18:
 
 IL_0a24:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_543;
-		L_543 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_543 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_543);
 		int32_t L_544;
 		L_544 = VirtualFuncInvoker0< int32_t >::Invoke(6 /* System.Xml.XmlNodeType System.Xml.XmlReader::get_NodeType() */, L_543);
@@ -24436,8 +22753,7 @@ IL_0a3e:
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_548 = ___map0;
 		NullCheck(L_548);
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_549;
-		L_549 = ClassMap_get_FlatLists_m852941CF165941C1EB03137482353B221F335DE9_inline(L_548, NULL);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_549 = L_548->____flatLists_4;
 		NullCheck(L_549);
 		RuntimeObject* L_550;
 		L_550 = VirtualFuncInvoker0< RuntimeObject* >::Invoke(37 /* System.Collections.IEnumerator System.Collections.ArrayList::GetEnumerator() */, L_549);
@@ -24486,19 +22802,16 @@ IL_0a56_1:
 				ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_556 = V_3;
 				XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_557 = V_29;
 				NullCheck(L_557);
-				int32_t L_558;
-				L_558 = XmlTypeMapMemberExpandable_get_FlatArrayIndex_mD83A6C690F8EA40C0FAF882E1549E0BD0831CC83_inline(L_557, NULL);
+				int32_t L_558 = L_557->____flatArrayIndex_14;
 				NullCheck(L_556);
 				int32_t L_559 = L_558;
 				RuntimeObject* L_560 = (L_556)->GetAt(static_cast<il2cpp_array_size_t>(L_559));
 				V_30 = L_560;
 				XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_561 = V_29;
 				NullCheck(L_561);
-				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_562;
-				L_562 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_561, NULL);
+				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_562 = ((XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A*)L_561)->____typeData_4;
 				NullCheck(L_562);
-				Type_t* L_563;
-				L_563 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_562, NULL);
+				Type_t* L_563 = L_562->___type_0;
 				NullCheck(L_563);
 				bool L_564;
 				L_564 = Type_get_IsArray_mB9B8CA713B2AA9D6AFECC24E05AF78D22532B673(L_563, NULL);
@@ -24512,18 +22825,15 @@ IL_0a56_1:
 				Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_566 = V_2;
 				XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_567 = V_29;
 				NullCheck(L_567);
-				int32_t L_568;
-				L_568 = XmlTypeMapMemberExpandable_get_FlatArrayIndex_mD83A6C690F8EA40C0FAF882E1549E0BD0831CC83_inline(L_567, NULL);
+				int32_t L_568 = L_567->____flatArrayIndex_14;
 				NullCheck(L_566);
 				int32_t L_569 = L_568;
 				int32_t L_570 = (L_566)->GetAt(static_cast<il2cpp_array_size_t>(L_569));
 				XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_571 = V_29;
 				NullCheck(L_571);
-				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_572;
-				L_572 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_571, NULL);
+				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_572 = ((XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A*)L_571)->____typeData_4;
 				NullCheck(L_572);
-				Type_t* L_573;
-				L_573 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_572, NULL);
+				Type_t* L_573 = L_572->___type_0;
 				NullCheck(L_573);
 				Type_t* L_574;
 				L_574 = VirtualFuncInvoker0< Type_t* >::Invoke(46 /* System.Type System.Type::GetElementType() */, L_573);
@@ -24537,8 +22847,7 @@ IL_0aac_1:
 				XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_576 = V_29;
 				XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_577 = V_29;
 				NullCheck(L_577);
-				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_578;
-				L_578 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_577, NULL);
+				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_578 = ((XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A*)L_577)->____typeData_4;
 				RuntimeObject* L_579 = ___ob1;
 				bool L_580 = ___isValueList2;
 				bool L_581;
@@ -24551,11 +22860,9 @@ IL_0aac_1:
 			{
 				XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_582 = V_29;
 				NullCheck(L_582);
-				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_583;
-				L_583 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_582, NULL);
+				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_583 = ((XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A*)L_582)->____typeData_4;
 				NullCheck(L_583);
-				Type_t* L_584;
-				L_584 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_583, NULL);
+				Type_t* L_584 = L_583->___type_0;
 				NullCheck(L_584);
 				bool L_585;
 				L_585 = Type_get_IsArray_mB9B8CA713B2AA9D6AFECC24E05AF78D22532B673(L_584, NULL);
@@ -24604,8 +22911,7 @@ IL_0b01:
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_593 = ___map0;
 		NullCheck(L_593);
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_594;
-		L_594 = ClassMap_get_FlatLists_m852941CF165941C1EB03137482353B221F335DE9_inline(L_593, NULL);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_594 = L_593->____flatLists_4;
 		NullCheck(L_594);
 		RuntimeObject* L_595;
 		L_595 = VirtualFuncInvoker0< RuntimeObject* >::Invoke(37 /* System.Collections.IEnumerator System.Collections.ArrayList::GetEnumerator() */, L_594);
@@ -24654,8 +22960,7 @@ IL_0b17_1:
 				ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_601 = V_4;
 				XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_602 = V_31;
 				NullCheck(L_602);
-				int32_t L_603;
-				L_603 = XmlTypeMapMemberExpandable_get_FlatArrayIndex_mD83A6C690F8EA40C0FAF882E1549E0BD0831CC83_inline(L_602, NULL);
+				int32_t L_603 = L_602->____flatArrayIndex_14;
 				NullCheck(L_601);
 				int32_t L_604 = L_603;
 				RuntimeObject* L_605 = (L_601)->GetAt(static_cast<il2cpp_array_size_t>(L_604));
@@ -24671,18 +22976,15 @@ IL_0b17_1:
 				Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_608 = V_2;
 				XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_609 = V_31;
 				NullCheck(L_609);
-				int32_t L_610;
-				L_610 = XmlTypeMapMemberExpandable_get_FlatArrayIndex_mD83A6C690F8EA40C0FAF882E1549E0BD0831CC83_inline(L_609, NULL);
+				int32_t L_610 = L_609->____flatArrayIndex_14;
 				NullCheck(L_608);
 				int32_t L_611 = L_610;
 				int32_t L_612 = (L_608)->GetAt(static_cast<il2cpp_array_size_t>(L_611));
 				XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_613 = V_31;
 				NullCheck(L_613);
-				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_614;
-				L_614 = XmlTypeMapMemberElement_get_ChoiceTypeData_m1C40274707406AC69F5536776D0276266332B845_inline(L_613, NULL);
+				TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_614 = ((XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840*)L_613)->____choiceTypeData_13;
 				NullCheck(L_614);
-				Type_t* L_615;
-				L_615 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_614, NULL);
+				Type_t* L_615 = L_614->___type_0;
 				NullCheck(L_615);
 				Type_t* L_616;
 				L_616 = VirtualFuncInvoker0< Type_t* >::Invoke(46 /* System.Type System.Type::GetElementType() */, L_615);
@@ -24692,8 +22994,7 @@ IL_0b17_1:
 				RuntimeObject* L_618 = ___ob1;
 				XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* L_619 = V_31;
 				NullCheck(L_619);
-				String_t* L_620;
-				L_620 = XmlTypeMapMemberElement_get_ChoiceMember_m182A4AB876036DDA005F0760EF51C5FCA7F682D8_inline(L_619, NULL);
+				String_t* L_620 = ((XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840*)L_619)->____choiceMember_11;
 				RuntimeObject* L_621 = V_32;
 				XmlTypeMapMember_SetValue_mE1E56C2E7FF4BC0699E6B6EF73CB23C436438F30(L_618, L_620, L_621, NULL);
 			}
@@ -24743,8 +23044,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReaderInterpreter_SetLis
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_0 = ___map0;
 		NullCheck(L_0);
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_1;
-		L_1 = ClassMap_get_ListMembers_m21D695B14B2AF42EC1850374FDA24CDE2B356649_inline(L_0, NULL);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_1 = L_0->____listMembers_7;
 		if (!L_1)
 		{
 			goto IL_005e;
@@ -24753,8 +23053,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReaderInterpreter_SetLis
 	{
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_2 = ___map0;
 		NullCheck(L_2);
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_3;
-		L_3 = ClassMap_get_ListMembers_m21D695B14B2AF42EC1850374FDA24CDE2B356649_inline(L_2, NULL);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_3 = L_2->____listMembers_7;
 		V_0 = L_3;
 		V_1 = 0;
 		goto IL_0055;
@@ -24771,8 +23070,7 @@ IL_0013:
 		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_7 = V_2;
 		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_8 = V_2;
 		NullCheck(L_8);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_9;
-		L_9 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_8, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_9 = L_8->____typeData_4;
 		RuntimeObject* L_10 = ___ob1;
 		bool L_11 = ___isValueList2;
 		bool L_12;
@@ -24798,8 +23096,7 @@ IL_0013:
 		RuntimeObject* L_18 = ___ob1;
 		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_19 = V_2;
 		NullCheck(L_19);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_20;
-		L_20 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_19, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_20 = L_19->____typeData_4;
 		RuntimeObject* L_21;
 		L_21 = XmlSerializationReaderInterpreter_InitializeList_m9B8DC26F07D1636336A807E8AE75FA5E5BA74DA6(__this, L_20, NULL);
 		bool L_22 = ___isValueList2;
@@ -24853,12 +23150,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReaderInterpreter_FixupM
 		V_0 = ((Fixup_tE94672CE3DEBD4DCFFB6AC052A9A6E0E7C6AA566*)CastclassClass((RuntimeObject*)L_0, Fixup_tE94672CE3DEBD4DCFFB6AC052A9A6E0E7C6AA566_il2cpp_TypeInfo_var));
 		ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* L_1 = ___map0;
 		NullCheck(L_1);
-		RuntimeObject* L_2;
-		L_2 = ClassMap_get_ElementMembers_m28BCFDC1D5FC50F910FBCF82D9C30472482A505D_inline(L_1, NULL);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_2 = L_1->____elementMembers_1;
 		Fixup_tE94672CE3DEBD4DCFFB6AC052A9A6E0E7C6AA566* L_3 = V_0;
 		NullCheck(L_3);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_4;
-		L_4 = Fixup_get_Ids_m9B1A1A8EC0662A14A92B000F90A276C18E7690B2_inline(L_3, NULL);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_4 = L_3->___ids_1;
 		V_1 = L_4;
 		NullCheck(L_2);
 		RuntimeObject* L_5;
@@ -24908,8 +23203,7 @@ IL_001c_1:
 				StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_11 = V_1;
 				XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_12 = V_3;
 				NullCheck(L_12);
-				int32_t L_13;
-				L_13 = XmlTypeMapMember_get_Index_m3EAB1243B03E5DBD10C6E7CA245E5A6C04406D12_inline(L_12, NULL);
+				int32_t L_13 = L_12->____index_1;
 				NullCheck(L_11);
 				int32_t L_14 = L_13;
 				String_t* L_15 = (L_11)->GetAt(static_cast<il2cpp_array_size_t>(L_14));
@@ -24922,13 +23216,11 @@ IL_001c_1:
 				XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_16 = V_3;
 				Fixup_tE94672CE3DEBD4DCFFB6AC052A9A6E0E7C6AA566* L_17 = V_0;
 				NullCheck(L_17);
-				RuntimeObject* L_18;
-				L_18 = Fixup_get_Source_mF424839086899F18C33B9604622D390C359819AE_inline(L_17, NULL);
+				RuntimeObject* L_18 = L_17->___source_0;
 				StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_19 = V_1;
 				XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_20 = V_3;
 				NullCheck(L_20);
-				int32_t L_21;
-				L_21 = XmlTypeMapMember_get_Index_m3EAB1243B03E5DBD10C6E7CA245E5A6C04406D12_inline(L_20, NULL);
+				int32_t L_21 = L_20->____index_1;
 				NullCheck(L_19);
 				int32_t L_22 = L_21;
 				String_t* L_23 = (L_19)->GetAt(static_cast<il2cpp_array_size_t>(L_22));
@@ -24995,8 +23287,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XmlSerializationReaderInterpreter_IsRead
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_1 = ___memType1;
 		NullCheck(L_1);
-		bool L_2;
-		L_2 = TypeData_get_HasPublicConstructor_mB467688E3EC6E6B3AF0E9A179C1E173AB4FAC89D_inline(L_1, NULL);
+		bool L_2 = L_1->___hasPublicConstructor_10;
 		return (bool)((((int32_t)L_2) == ((int32_t)0))? 1 : 0);
 	}
 
@@ -25018,8 +23309,7 @@ IL_000e:
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_7 = ___memType1;
 		NullCheck(L_7);
-		bool L_8;
-		L_8 = TypeData_get_HasPublicConstructor_mB467688E3EC6E6B3AF0E9A179C1E173AB4FAC89D_inline(L_7, NULL);
+		bool L_8 = L_7->___hasPublicConstructor_10;
 		return (bool)((((int32_t)L_8) == ((int32_t)0))? 1 : 0);
 	}
 
@@ -25041,11 +23331,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReaderInterpreter_SetMem
 	{
 		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_0 = ___member0;
 		NullCheck(L_0);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_1;
-		L_1 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_0, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_1 = L_0->____typeData_4;
 		NullCheck(L_1);
-		Type_t* L_2;
-		L_2 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_1, NULL);
+		Type_t* L_2 = L_1->___type_0;
 		V_0 = L_2;
 		RuntimeObject* L_3 = ___value2;
 		if (!L_3)
@@ -25087,8 +23375,7 @@ IL_0026:
 		RuntimeObject* L_12 = ___ob1;
 		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_13 = ___member0;
 		NullCheck(L_13);
-		int32_t L_14;
-		L_14 = XmlTypeMapMember_get_GlobalIndex_mC43A1F277B76C624EFAF264B32293499D51853B6_inline(L_13, NULL);
+		int32_t L_14 = L_13->____globalIndex_2;
 		RuntimeObject* L_15 = ___value2;
 		NullCheck(((ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)Castclass((RuntimeObject*)L_12, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var)));
 		ArrayElementTypeCheck (((ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)Castclass((RuntimeObject*)L_12, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var)), L_15);
@@ -25140,14 +23427,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReaderInterpreter_SetMem
 	{
 		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_0 = ___member0;
 		NullCheck(L_0);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_1;
-		L_1 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_0, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_1 = L_0->____typeData_4;
 		NullCheck(L_1);
-		Type_t* L_2;
-		L_2 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_1, NULL);
+		Type_t* L_2 = L_1->___type_0;
 		NullCheck(L_2);
 		bool L_3;
-		L_3 = VirtualFuncInvoker0< bool >::Invoke(69 /* System.Boolean System.Type::get_IsEnum() */, L_2);
+		L_3 = VirtualFuncInvoker0< bool >::Invoke(67 /* System.Boolean System.Type::get_IsEnum() */, L_2);
 		if (!L_3)
 		{
 			goto IL_0025;
@@ -25156,11 +23441,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReaderInterpreter_SetMem
 	{
 		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_4 = ___member0;
 		NullCheck(L_4);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_5;
-		L_5 = XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline(L_4, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_5 = L_4->____typeData_4;
 		NullCheck(L_5);
-		Type_t* L_6;
-		L_6 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_5, NULL);
+		Type_t* L_6 = L_5->___type_0;
 		RuntimeObject* L_7 = ___value2;
 		il2cpp_codegen_runtime_class_init_inline(Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_il2cpp_TypeInfo_var);
 		RuntimeObject* L_8;
@@ -25198,8 +23481,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpre
 		RuntimeObject* L_1 = ___ob1;
 		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_2 = ___member0;
 		NullCheck(L_2);
-		int32_t L_3;
-		L_3 = XmlTypeMapMember_get_GlobalIndex_mC43A1F277B76C624EFAF264B32293499D51853B6_inline(L_2, NULL);
+		int32_t L_3 = L_2->____globalIndex_2;
 		NullCheck(((ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)Castclass((RuntimeObject*)L_1, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var)));
 		int32_t L_4 = L_3;
 		RuntimeObject* L_5 = (((ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)Castclass((RuntimeObject*)L_1, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var)))->GetAt(static_cast<il2cpp_array_size_t>(L_4));
@@ -25231,11 +23513,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpre
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_0 = ___elem0;
 		NullCheck(L_0);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_1;
-		L_1 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_0, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_1 = L_0->____type_8;
 		NullCheck(L_1);
-		int32_t L_2;
-		L_2 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_1, NULL);
+		int32_t L_2 = L_1->___sType_2;
 		V_1 = L_2;
 		int32_t L_3 = V_1;
 		switch (((int32_t)il2cpp_codegen_subtract((int32_t)L_3, 1)))
@@ -25274,8 +23554,7 @@ IL_002e:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_4 = ___elem0;
 		NullCheck(L_4);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_5;
-		L_5 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_4, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_5 = L_4->____type_8;
 		RuntimeObject* L_6;
 		L_6 = XmlSerializationReaderInterpreter_ReadXmlNode_m1EDAD554730C9248E429BADBBA381E16C94647CA(__this, L_5, (bool)1, NULL);
 		return L_6;
@@ -25293,12 +23572,10 @@ IL_0044:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_9 = ___elem0;
 		NullCheck(L_9);
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_10;
-		L_10 = XmlTypeMapElementInfo_get_MappedType_m240A78959A2E9A6CE992F5EC6B77DDFC137AF032_inline(L_9, NULL);
+		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_10 = L_9->____mappedType_7;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_11 = ___elem0;
 		NullCheck(L_11);
-		bool L_12;
-		L_12 = XmlTypeMapElementInfo_get_IsNullable_m5E6F72E9E7ADFA39100C6C0FFA1585BCDE4ACE75_inline(L_11, NULL);
+		bool L_12 = L_11->____isNullable_5;
 		RuntimeObject* L_13;
 		L_13 = XmlSerializationReaderInterpreter_ReadListElement_m9DA9C6F2AC8812B8783E85AF2F99A4FE6CB14B14(__this, L_10, L_12, NULL, (bool)1, NULL);
 		return L_13;
@@ -25308,12 +23585,10 @@ IL_0059:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_14 = ___elem0;
 		NullCheck(L_14);
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_15;
-		L_15 = XmlTypeMapElementInfo_get_MappedType_m240A78959A2E9A6CE992F5EC6B77DDFC137AF032_inline(L_14, NULL);
+		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_15 = L_14->____mappedType_7;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_16 = ___elem0;
 		NullCheck(L_16);
-		bool L_17;
-		L_17 = XmlTypeMapElementInfo_get_IsNullable_m5E6F72E9E7ADFA39100C6C0FFA1585BCDE4ACE75_inline(L_16, NULL);
+		bool L_17 = L_16->____isNullable_5;
 		RuntimeObject* L_18;
 		L_18 = VirtualFuncInvoker3< RuntimeObject*, XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9*, bool, bool >::Invoke(7 /* System.Object System.Xml.Serialization.XmlSerializationReaderInterpreter::ReadObject(System.Xml.Serialization.XmlTypeMapping,System.Boolean,System.Boolean) */, __this, L_15, L_17, (bool)1);
 		return L_18;
@@ -25323,11 +23598,9 @@ IL_006d:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_19 = ___elem0;
 		NullCheck(L_19);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_20;
-		L_20 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_19, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_20 = L_19->____type_8;
 		NullCheck(L_20);
-		Type_t* L_21;
-		L_21 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_20, NULL);
+		Type_t* L_21 = L_20->___type_0;
 		il2cpp_codegen_runtime_class_init_inline(XmlSerializationReaderInterpreter_t912EF8FEC9E40E218B269BB1B990E9732A442CB8_il2cpp_TypeInfo_var);
 		RuntimeObject* L_22;
 		L_22 = XmlSerializationReaderInterpreter_CreateInstance_m52A3B7A31873EA03F569A85E7F1E874AAA07F55E(L_21, (bool)1, NULL);
@@ -25359,11 +23632,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpre
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_0 = ___elem0;
 		NullCheck(L_0);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_1;
-		L_1 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_0, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_1 = L_0->____type_8;
 		NullCheck(L_1);
-		Type_t* L_2;
-		L_2 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_1, NULL);
+		Type_t* L_2 = L_1->___type_0;
 		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_3 = { reinterpret_cast<intptr_t> (XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9_0_0_0_var) };
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		Type_t* L_4;
@@ -25378,8 +23649,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpre
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_6 = ___elem0;
 		NullCheck(L_6);
-		bool L_7;
-		L_7 = XmlTypeMapElementInfo_get_IsNullable_m5E6F72E9E7ADFA39100C6C0FFA1585BCDE4ACE75_inline(L_6, NULL);
+		bool L_7 = L_6->____isNullable_5;
 		if (!L_7)
 		{
 			goto IL_002b;
@@ -25402,8 +23672,7 @@ IL_0032:
 	{
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_10 = ___elem0;
 		NullCheck(L_10);
-		bool L_11;
-		L_11 = XmlTypeMapElementInfo_get_IsNullable_m5E6F72E9E7ADFA39100C6C0FFA1585BCDE4ACE75_inline(L_10, NULL);
+		bool L_11 = L_10->____isNullable_5;
 		if (!L_11)
 		{
 			goto IL_0053;
@@ -25414,12 +23683,10 @@ IL_0032:
 		L_12 = XmlSerializationReader_ReadNullableString_mF87F51B907EF4DC621A112ACDA569F46CAF7733F(__this, NULL);
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_13 = ___elem0;
 		NullCheck(L_13);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_14;
-		L_14 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_13, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_14 = L_13->____type_8;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_15 = ___elem0;
 		NullCheck(L_15);
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_16;
-		L_16 = XmlTypeMapElementInfo_get_MappedType_m240A78959A2E9A6CE992F5EC6B77DDFC137AF032_inline(L_15, NULL);
+		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_16 = L_15->____mappedType_7;
 		RuntimeObject* L_17;
 		L_17 = XmlSerializationReaderInterpreter_GetValueFromXmlString_m21DC6B65AAF2E79AE5EC5C7B62A5E40B4C5498CA(__this, L_12, L_14, L_16, NULL);
 		return L_17;
@@ -25427,19 +23694,16 @@ IL_0032:
 
 IL_0053:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_18;
-		L_18 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_18 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_18);
 		String_t* L_19;
 		L_19 = VirtualFuncInvoker0< String_t* >::Invoke(45 /* System.String System.Xml.XmlReader::ReadElementString() */, L_18);
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_20 = ___elem0;
 		NullCheck(L_20);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_21;
-		L_21 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_20, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_21 = L_20->____type_8;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_22 = ___elem0;
 		NullCheck(L_22);
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_23;
-		L_23 = XmlTypeMapElementInfo_get_MappedType_m240A78959A2E9A6CE992F5EC6B77DDFC137AF032_inline(L_22, NULL);
+		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_23 = L_22->____mappedType_7;
 		RuntimeObject* L_24;
 		L_24 = XmlSerializationReaderInterpreter_GetValueFromXmlString_m21DC6B65AAF2E79AE5EC5C7B62A5E40B4C5498CA(__this, L_19, L_21, L_23, NULL);
 		return L_24;
@@ -25459,8 +23723,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpre
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_0 = ___typeData1;
 		NullCheck(L_0);
-		int32_t L_1;
-		L_1 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_0, NULL);
+		int32_t L_1 = L_0->___sType_2;
 		if ((!(((uint32_t)L_1) == ((uint32_t)3))))
 		{
 			goto IL_0012;
@@ -25478,8 +23741,7 @@ IL_0012:
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_5 = ___typeData1;
 		NullCheck(L_5);
-		int32_t L_6;
-		L_6 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_5, NULL);
+		int32_t L_6 = L_5->___sType_2;
 		if ((!(((uint32_t)L_6) == ((uint32_t)2))))
 		{
 			goto IL_0024;
@@ -25497,8 +23759,7 @@ IL_0024:
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_10 = ___typeData1;
 		NullCheck(L_10);
-		Type_t* L_11;
-		L_11 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_10, NULL);
+		Type_t* L_11 = L_10->___type_0;
 		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_12 = { reinterpret_cast<intptr_t> (XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9_0_0_0_var) };
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		Type_t* L_13;
@@ -25544,16 +23805,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpre
 	{
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_0 = ___typeMap0;
 		NullCheck(L_0);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_1;
-		L_1 = XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline(L_0, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_1 = L_0->___type_9;
 		NullCheck(L_1);
-		Type_t* L_2;
-		L_2 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_1, NULL);
+		Type_t* L_2 = L_1->___type_0;
 		V_0 = L_2;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_3 = ___typeMap0;
 		NullCheck(L_3);
-		ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* L_4;
-		L_4 = XmlMapping_get_ObjectMap_m63D1AEAC8EDD8396357898D337E350673A1E9003_inline(L_3, NULL);
+		ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* L_4 = ((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_3)->___map_0;
 		V_1 = ((ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC*)CastclassClass((RuntimeObject*)L_4, ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC_il2cpp_TypeInfo_var));
 		Type_t* L_5 = V_0;
 		NullCheck(L_5);
@@ -25594,11 +23852,9 @@ IL_002a:
 	{
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_10 = ___typeMap0;
 		NullCheck(L_10);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_11;
-		L_11 = XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline(L_10, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_11 = L_10->___type_9;
 		NullCheck(L_11);
-		bool L_12;
-		L_12 = TypeData_get_HasPublicConstructor_mB467688E3EC6E6B3AF0E9A179C1E173AB4FAC89D_inline(L_11, NULL);
+		bool L_12 = L_11->___hasPublicConstructor_10;
 		if (!L_12)
 		{
 			goto IL_0049;
@@ -25625,8 +23881,7 @@ IL_0049:
 
 IL_0056:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_18;
-		L_18 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_18 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_18);
 		bool L_19;
 		L_19 = VirtualFuncInvoker0< bool >::Invoke(14 /* System.Boolean System.Xml.XmlReader::get_IsEmptyElement() */, L_18);
@@ -25636,8 +23891,7 @@ IL_0056:
 		}
 	}
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_20;
-		L_20 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_20 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_20);
 		VirtualActionInvoker0::Invoke(35 /* System.Void System.Xml.XmlReader::Skip() */, L_20);
 		Type_t* L_21 = V_0;
@@ -25669,12 +23923,10 @@ IL_008c:
 IL_008e:
 	{
 		V_2 = 0;
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_28;
-		L_28 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_28 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_28);
 		VirtualActionInvoker0::Invoke(44 /* System.Void System.Xml.XmlReader::ReadStartElement() */, L_28);
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_29;
-		L_29 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_29 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_29);
 		int32_t L_30;
 		L_30 = VirtualFuncInvoker0< int32_t >::Invoke(43 /* System.Xml.XmlNodeType System.Xml.XmlReader::MoveToContent() */, L_29);
@@ -25683,8 +23935,7 @@ IL_008e:
 
 IL_00a9:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_31;
-		L_31 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_31 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_31);
 		int32_t L_32;
 		L_32 = VirtualFuncInvoker0< int32_t >::Invoke(6 /* System.Xml.XmlNodeType System.Xml.XmlReader::get_NodeType() */, L_31);
@@ -25695,13 +23946,11 @@ IL_00a9:
 	}
 	{
 		ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* L_33 = V_1;
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_34;
-		L_34 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_34 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_34);
 		String_t* L_35;
 		L_35 = VirtualFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Xml.XmlReader::get_LocalName() */, L_34);
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_36;
-		L_36 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_36 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_36);
 		String_t* L_37;
 		L_37 = VirtualFuncInvoker0< String_t* >::Invoke(9 /* System.String System.Xml.XmlReader::get_NamespaceURI() */, L_36);
@@ -25718,8 +23967,7 @@ IL_00a9:
 	{
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_40 = ___typeMap0;
 		NullCheck(L_40);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_41;
-		L_41 = XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline(L_40, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_41 = L_40->___type_9;
 		int32_t L_42 = V_2;
 		int32_t L_43 = L_42;
 		V_2 = ((int32_t)il2cpp_codegen_add(L_43, 1));
@@ -25743,8 +23991,7 @@ IL_00fd:
 
 IL_0104:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_46;
-		L_46 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_46 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_46);
 		int32_t L_47;
 		L_47 = VirtualFuncInvoker0< int32_t >::Invoke(43 /* System.Xml.XmlNodeType System.Xml.XmlReader::MoveToContent() */, L_46);
@@ -25752,8 +23999,7 @@ IL_0104:
 
 IL_0110:
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_48;
-		L_48 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_48 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_48);
 		int32_t L_49;
 		L_49 = VirtualFuncInvoker0< int32_t >::Invoke(6 /* System.Xml.XmlNodeType System.Xml.XmlReader::get_NodeType() */, L_48);
@@ -25811,16 +24057,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpre
 	{
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_0 = ___typeMap0;
 		NullCheck(L_0);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_1;
-		L_1 = XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline(L_0, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_1 = L_0->___type_9;
 		NullCheck(L_1);
-		Type_t* L_2;
-		L_2 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_1, NULL);
+		Type_t* L_2 = L_1->___type_0;
 		V_0 = L_2;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_3 = ___typeMap0;
 		NullCheck(L_3);
-		ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* L_4;
-		L_4 = XmlMapping_get_ObjectMap_m63D1AEAC8EDD8396357898D337E350673A1E9003_inline(L_3, NULL);
+		ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* L_4 = ((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_3)->___map_0;
 		V_1 = ((ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC*)CastclassClass((RuntimeObject*)L_4, ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC_il2cpp_TypeInfo_var));
 		String_t* L_5 = ___values1;
 		NullCheck(L_5);
@@ -25864,8 +24107,7 @@ IL_003a:
 		V_3 = L_18;
 		ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* L_19 = V_1;
 		NullCheck(L_19);
-		XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* L_20;
-		L_20 = ListMap_get_ItemInfo_mF4B1E24F5658D05E8E1E6296F4A220D33E7EC579_inline(L_19, NULL);
+		XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* L_20 = L_19->____itemInfo_0;
 		NullCheck(L_20);
 		RuntimeObject* L_21;
 		L_21 = VirtualFuncInvoker1< RuntimeObject*, int32_t >::Invoke(27 /* System.Object System.Collections.ArrayList::get_Item(System.Int32) */, L_20, 0);
@@ -25884,12 +24126,10 @@ IL_006b:
 		String_t* L_26 = (L_23)->GetAt(static_cast<il2cpp_array_size_t>(L_25));
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_27 = V_4;
 		NullCheck(L_27);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_28;
-		L_28 = XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline(L_27, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_28 = L_27->____type_8;
 		XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* L_29 = V_4;
 		NullCheck(L_29);
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_30;
-		L_30 = XmlTypeMapElementInfo_get_MappedType_m240A78959A2E9A6CE992F5EC6B77DDFC137AF032_inline(L_29, NULL);
+		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_30 = L_29->____mappedType_7;
 		RuntimeObject* L_31;
 		L_31 = XmlSerializationReaderInterpreter_GetValueFromXmlString_m21DC6B65AAF2E79AE5EC5C7B62A5E40B4C5498CA(__this, L_26, L_28, L_30, NULL);
 		int32_t L_32 = V_5;
@@ -25931,8 +24171,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationReaderInterpreter_AddLis
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_0 = ___listType0;
 		NullCheck(L_0);
-		Type_t* L_1;
-		L_1 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_0, NULL);
+		Type_t* L_1 = L_0->___type_0;
 		V_0 = L_1;
 		Type_t* L_2 = V_0;
 		NullCheck(L_2);
@@ -26114,8 +24353,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpre
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_0 = ___listType0;
 		NullCheck(L_0);
-		Type_t* L_1;
-		L_1 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_0, NULL);
+		Type_t* L_1 = L_0->___type_0;
 		NullCheck(L_1);
 		bool L_2;
 		L_2 = Type_get_IsArray_mB9B8CA713B2AA9D6AFECC24E05AF78D22532B673(L_1, NULL);
@@ -26132,8 +24370,7 @@ IL_000f:
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_3 = ___listType0;
 		NullCheck(L_3);
-		Type_t* L_4;
-		L_4 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_3, NULL);
+		Type_t* L_4 = L_3->___type_0;
 		il2cpp_codegen_runtime_class_init_inline(XmlSerializationReaderInterpreter_t912EF8FEC9E40E218B269BB1B990E9732A442CB8_il2cpp_TypeInfo_var);
 		RuntimeObject* L_5;
 		L_5 = XmlSerializationReaderInterpreter_CreateInstance_m52A3B7A31873EA03F569A85E7F1E874AAA07F55E(L_4, (bool)1, NULL);
@@ -26291,8 +24528,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpre
 	{
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_0 = ___typeMap0;
 		NullCheck(L_0);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_1;
-		L_1 = XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline(L_0, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_1 = L_0->___type_9;
 		RuntimeObject* L_2;
 		L_2 = XmlSerializationReaderInterpreter_ReadXmlNode_m1EDAD554730C9248E429BADBBA381E16C94647CA(__this, L_1, (bool)0, NULL);
 		return L_2;
@@ -26311,8 +24547,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpre
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_0 = ___type0;
 		NullCheck(L_0);
-		Type_t* L_1;
-		L_1 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_0, NULL);
+		Type_t* L_1 = L_0->___type_0;
 		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_2 = { reinterpret_cast<intptr_t> (XmlDocument_t4DE82998E642C5C21A4A620A5278237C70D3E42B_0_0_0_var) };
 		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
 		Type_t* L_3;
@@ -26365,12 +24600,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpre
 	{
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_3 = ___typeMap0;
 		NullCheck(L_3);
-		String_t* L_4;
-		L_4 = XmlTypeMapping_get_XmlType_m5A30CB4EE3541CC1C65003757D5E743042846222_inline(L_3, NULL);
+		String_t* L_4 = L_3->___xmlType_7;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_5 = ___typeMap0;
 		NullCheck(L_5);
-		String_t* L_6;
-		L_6 = XmlMapping_get_Namespace_m196651C91FB3C3442AC616C977345E89450F024F_inline(L_5, NULL);
+		String_t* L_6 = ((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_5)->____namespace_5;
 		XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_7 = (XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9*)il2cpp_codegen_object_new(XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9_il2cpp_TypeInfo_var);
 		NullCheck(L_7);
 		XmlQualifiedName__ctor_m65632114A1726D9FAD0338BC2A8C28BB9D262C7B(L_7, L_4, L_6, NULL);
@@ -26389,13 +24622,11 @@ IL_0022:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpreter_ReadEnumElement_mB13411EB63D3EEEF92A41C2E3E29B243132E02B4 (XmlSerializationReaderInterpreter_t912EF8FEC9E40E218B269BB1B990E9732A442CB8* __this, XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* ___typeMap0, bool ___isNullable1, const RuntimeMethod* method) 
 {
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_0;
-		L_0 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_0 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_0);
 		VirtualActionInvoker0::Invoke(44 /* System.Void System.Xml.XmlReader::ReadStartElement() */, L_0);
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_1 = ___typeMap0;
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_2;
-		L_2 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_2 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_2);
 		String_t* L_3;
 		L_3 = VirtualFuncInvoker0< String_t* >::Invoke(42 /* System.String System.Xml.XmlReader::ReadString() */, L_2);
@@ -26431,8 +24662,7 @@ IL_0005:
 	{
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_1 = ___typeMap0;
 		NullCheck(L_1);
-		ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* L_2;
-		L_2 = XmlMapping_get_ObjectMap_m63D1AEAC8EDD8396357898D337E350673A1E9003_inline(L_1, NULL);
+		ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* L_2 = ((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_1)->___map_0;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_3 = ___typeMap0;
 		NullCheck(L_3);
 		String_t* L_4;
@@ -26452,11 +24682,9 @@ IL_0005:
 		String_t* L_8 = ___val1;
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_9 = ___typeMap0;
 		NullCheck(L_9);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_10;
-		L_10 = XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline(L_9, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_10 = L_9->___type_9;
 		NullCheck(L_10);
-		Type_t* L_11;
-		L_11 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_10, NULL);
+		Type_t* L_11 = L_10->___type_0;
 		Exception_t* L_12;
 		L_12 = XmlSerializationReader_CreateUnknownConstantException_m0C39D77BDAD36BD8A62AC7BACAA8BA9767441E4F(__this, L_8, L_11, NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_12, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&XmlSerializationReaderInterpreter_GetEnumValue_m435EF964CCD4D11623F78F71622983D05FA4C556_RuntimeMethod_var)));
@@ -26466,11 +24694,9 @@ IL_0033:
 	{
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_13 = ___typeMap0;
 		NullCheck(L_13);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_14;
-		L_14 = XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline(L_13, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_14 = L_13->___type_9;
 		NullCheck(L_14);
-		Type_t* L_15;
-		L_15 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_14, NULL);
+		Type_t* L_15 = L_14->___type_0;
 		String_t* L_16 = V_0;
 		il2cpp_codegen_runtime_class_init_inline(Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_il2cpp_TypeInfo_var);
 		RuntimeObject* L_17;
@@ -26490,13 +24716,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpre
 	}
 	RuntimeObject* V_0 = NULL;
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_0;
-		L_0 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_0 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_0);
 		int32_t L_1;
 		L_1 = VirtualFuncInvoker0< int32_t >::Invoke(43 /* System.Xml.XmlNodeType System.Xml.XmlReader::MoveToContent() */, L_0);
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_2;
-		L_2 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_2 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_2);
 		int32_t L_3;
 		L_3 = VirtualFuncInvoker0< int32_t >::Invoke(6 /* System.Xml.XmlNodeType System.Xml.XmlReader::get_NodeType() */, L_2);
@@ -26508,23 +24732,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpre
 	{
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_4 = ___typeMap0;
 		NullCheck(L_4);
-		bool L_5;
-		L_5 = XmlTypeMapping_get_IsAny_m0C45955548B231D2E892D2924768B068138CBDD8_inline(L_4, NULL);
+		bool L_5 = L_4->___isAny_14;
 		if (L_5)
 		{
 			goto IL_0052;
 		}
 	}
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_6;
-		L_6 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_6 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_6);
 		String_t* L_7;
 		L_7 = VirtualFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Xml.XmlReader::get_LocalName() */, L_6);
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_8 = ___typeMap0;
 		NullCheck(L_8);
-		String_t* L_9;
-		L_9 = XmlMapping_get_ElementName_m2BDBF7797A1F38972A4355CF694E0D468B2A9FC0_inline(L_8, NULL);
+		String_t* L_9 = ((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_8)->____elementName_4;
 		bool L_10;
 		L_10 = String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1(L_7, L_9, NULL);
 		if (!L_10)
@@ -26533,15 +24754,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationReaderInterpre
 		}
 	}
 	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_11;
-		L_11 = XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline(__this, NULL);
+		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_11 = ((XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597*)__this)->___reader_1;
 		NullCheck(L_11);
 		String_t* L_12;
 		L_12 = VirtualFuncInvoker0< String_t* >::Invoke(9 /* System.String System.Xml.XmlReader::get_NamespaceURI() */, L_11);
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_13 = ___typeMap0;
 		NullCheck(L_13);
-		String_t* L_14;
-		L_14 = XmlMapping_get_Namespace_m196651C91FB3C3442AC616C977345E89450F024F_inline(L_13, NULL);
+		String_t* L_14 = ((XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97*)L_13)->____namespace_5;
 		bool L_15;
 		L_15 = String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1(L_12, L_14, NULL);
 		if (!L_15)
@@ -26554,11 +24773,9 @@ IL_0052:
 	{
 		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_16 = ___typeMap0;
 		NullCheck(L_16);
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_17;
-		L_17 = XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline(L_16, NULL);
+		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_17 = L_16->___type_9;
 		NullCheck(L_17);
-		Type_t* L_18;
-		L_18 = TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline(L_17, NULL);
+		Type_t* L_18 = L_17->___type_0;
 		il2cpp_codegen_runtime_class_init_inline(XmlSerializationReaderInterpreter_t912EF8FEC9E40E218B269BB1B990E9732A442CB8_il2cpp_TypeInfo_var);
 		RuntimeObject* L_19;
 		L_19 = XmlSerializationReaderInterpreter_CreateInstance_m52A3B7A31873EA03F569A85E7F1E874AAA07F55E(L_18, (bool)1, NULL);
@@ -26863,8 +25080,7 @@ IL_0020:
 		V_2 = L_8;
 		XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_9 = V_2;
 		NullCheck(L_9);
-		String_t* L_10;
-		L_10 = XmlQualifiedName_get_Name_mC9D21D5BADE11AEAC7ED5886B39E1A774C63B830_inline(L_9, NULL);
+		String_t* L_10 = L_9->___name_1;
 		bool L_11;
 		L_11 = String_op_Inequality_m8C940F3CFC42866709D7CA931B3D77B4BE94BCB6(L_10, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, NULL);
 		if (!L_11)
@@ -26875,8 +25091,7 @@ IL_0020:
 	{
 		XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_12 = V_2;
 		NullCheck(L_12);
-		String_t* L_13;
-		L_13 = XmlQualifiedName_get_Namespace_m0CAE4A651EF1CA6F0EB657C83608A796038A2615_inline(L_12, NULL);
+		String_t* L_13 = L_12->___ns_2;
 		bool L_14;
 		L_14 = String_op_Inequality_m8C940F3CFC42866709D7CA931B3D77B4BE94BCB6(L_13, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, NULL);
 		if (!L_14)
@@ -26912,14 +25127,6 @@ IL_0059:
 IL_005f:
 	{
 		return;
-	}
-}
-// System.Xml.XmlWriter System.Xml.Serialization.XmlSerializationWriter::get_Writer()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC (XmlSerializationWriter_t96B46BC33680D6D6AB2580CA44C228109865151B* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_0 = __this->___writer_4;
-		return L_0;
 	}
 }
 // System.Void System.Xml.Serialization.XmlSerializationWriter::AddWriteCallback(System.Type,System.String,System.String,System.Xml.Serialization.XmlSerializationWriteCallback)
@@ -26978,7 +25185,7 @@ IL_0036:
 		Type_t* L_12 = ___type0;
 		WriteCallbackInfo_t60E40304F6E1EF7671F3C52BA73695C193B3E9C6* L_13 = V_0;
 		NullCheck(L_11);
-		VirtualActionInvoker2< RuntimeObject*, RuntimeObject* >::Invoke(23 /* System.Void System.Collections.Hashtable::Add(System.Object,System.Object) */, L_11, L_12, L_13);
+		VirtualActionInvoker2< RuntimeObject*, RuntimeObject* >::Invoke(22 /* System.Void System.Collections.Hashtable::Add(System.Object,System.Object) */, L_11, L_12, L_13);
 		return;
 	}
 }
@@ -27076,12 +25283,10 @@ IL_0018:
 	{
 		XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_5 = ___xmlQualifiedName0;
 		NullCheck(L_5);
-		String_t* L_6;
-		L_6 = XmlQualifiedName_get_Name_mC9D21D5BADE11AEAC7ED5886B39E1A774C63B830_inline(L_5, NULL);
+		String_t* L_6 = L_5->___name_1;
 		XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_7 = ___xmlQualifiedName0;
 		NullCheck(L_7);
-		String_t* L_8;
-		L_8 = XmlQualifiedName_get_Namespace_m0CAE4A651EF1CA6F0EB657C83608A796038A2615_inline(L_7, NULL);
+		String_t* L_8 = L_7->___ns_2;
 		String_t* L_9;
 		L_9 = XmlSerializationWriter_GetQualifiedName_m6A393BACF5677C132F4FF0717F6F96522C55D518(__this, L_6, L_8, NULL);
 		return L_9;
@@ -27176,8 +25381,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* XmlSerializationWriter_GetNamespace
 	String_t* V_0 = NULL;
 	int32_t V_1 = 0;
 	{
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_0;
-		L_0 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_0 = __this->___writer_4;
 		String_t* L_1 = ___ns0;
 		NullCheck(L_0);
 		String_t* L_2;
@@ -27304,8 +25508,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationWriter_WriteAttribute_m2
 
 IL_0005:
 	{
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_1;
-		L_1 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_1 = __this->___writer_4;
 		String_t* L_2 = ___prefix0;
 		String_t* L_3 = ___localName1;
 		String_t* L_4 = ___ns2;
@@ -27342,8 +25545,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationWriter_WriteXmlNode_m1B2
 IL_0015:
 	{
 		XmlNode_t3180B9B3D5C36CD58F5327D9F13458E3B3F030AF* L_3 = ___node0;
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_4;
-		L_4 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_4 = __this->___writer_4;
 		NullCheck(L_3);
 		VirtualActionInvoker1< XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* >::Invoke(43 /* System.Void System.Xml.XmlNode::WriteTo(System.Xml.XmlWriter) */, L_3, L_4);
 		return;
@@ -27405,16 +25607,14 @@ IL_001d:
 
 IL_0029:
 	{
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_9;
-		L_9 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_9 = __this->___writer_4;
 		String_t* L_10 = ___name1;
 		String_t* L_11 = ___ns2;
 		NullCheck(L_9);
 		XmlWriter_WriteStartElement_mAC8867077A8F222C966E6720B70F8808A655E3A0(L_9, L_10, L_11, NULL);
 		XmlNode_t3180B9B3D5C36CD58F5327D9F13458E3B3F030AF* L_12 = ___node0;
 		XmlSerializationWriter_WriteXmlNode_m1B2279E9188950D212D082FE4A68AFE96A58D6CD(__this, L_12, NULL);
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_13;
-		L_13 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_13 = __this->___writer_4;
 		NullCheck(L_13);
 		VirtualActionInvoker0::Invoke(10 /* System.Void System.Xml.XmlWriter::WriteEndElement() */, L_13);
 		return;
@@ -27487,16 +25687,14 @@ IL_001d:
 
 IL_0029:
 	{
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_9;
-		L_9 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_9 = __this->___writer_4;
 		String_t* L_10 = ___name1;
 		String_t* L_11 = ___ns2;
 		NullCheck(L_9);
 		XmlWriter_WriteStartElement_mAC8867077A8F222C966E6720B70F8808A655E3A0(L_9, L_10, L_11, NULL);
 		XmlNode_t3180B9B3D5C36CD58F5327D9F13458E3B3F030AF* L_12 = ___node0;
 		XmlSerializationWriter_WriteXmlNode_m1B2279E9188950D212D082FE4A68AFE96A58D6CD(__this, L_12, NULL);
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_13;
-		L_13 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_13 = __this->___writer_4;
 		NullCheck(L_13);
 		VirtualActionInvoker0::Invoke(10 /* System.Void System.Xml.XmlWriter::WriteEndElement() */, L_13);
 		return;
@@ -27555,19 +25753,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationWriter_WriteElementQuali
 	{
 		XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_6 = ___xsiType3;
 		NullCheck(L_6);
-		String_t* L_7;
-		L_7 = XmlQualifiedName_get_Name_mC9D21D5BADE11AEAC7ED5886B39E1A774C63B830_inline(L_6, NULL);
+		String_t* L_7 = L_6->___name_1;
 		XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_8 = ___xsiType3;
 		NullCheck(L_8);
-		String_t* L_9;
-		L_9 = XmlQualifiedName_get_Namespace_m0CAE4A651EF1CA6F0EB657C83608A796038A2615_inline(L_8, NULL);
+		String_t* L_9 = L_8->___ns_2;
 		XmlSerializationWriter_WriteXsiType_m24C3B36D396116877E22848B9B12EF6D6BE4D122(__this, L_7, L_9, NULL);
 	}
 
 IL_002e:
 	{
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_10;
-		L_10 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_10 = __this->___writer_4;
 		XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_11 = ___value2;
 		String_t* L_12;
 		L_12 = XmlSerializationWriter_FromXmlQualifiedName_m0025FF4410A037F0310220E2F36A1F55DD106829(__this, L_11, NULL);
@@ -27631,15 +25826,12 @@ IL_0004:
 		XmlSerializationWriter_WriteStartElement_m14B47621699116DB0A0056C1437D1B0A1310E3BA(__this, L_5, L_6, NULL);
 		XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_7 = ___xsiType3;
 		NullCheck(L_7);
-		String_t* L_8;
-		L_8 = XmlQualifiedName_get_Name_mC9D21D5BADE11AEAC7ED5886B39E1A774C63B830_inline(L_7, NULL);
+		String_t* L_8 = L_7->___name_1;
 		XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_9 = ___xsiType3;
 		NullCheck(L_9);
-		String_t* L_10;
-		L_10 = XmlQualifiedName_get_Namespace_m0CAE4A651EF1CA6F0EB657C83608A796038A2615_inline(L_9, NULL);
+		String_t* L_10 = L_9->___ns_2;
 		XmlSerializationWriter_WriteXsiType_m24C3B36D396116877E22848B9B12EF6D6BE4D122(__this, L_8, L_10, NULL);
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_11;
-		L_11 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_11 = __this->___writer_4;
 		String_t* L_12 = ___value2;
 		NullCheck(L_11);
 		VirtualActionInvoker1< String_t* >::Invoke(20 /* System.Void System.Xml.XmlWriter::WriteString(System.String) */, L_11, L_12);
@@ -27649,8 +25841,7 @@ IL_0004:
 
 IL_0045:
 	{
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_13;
-		L_13 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_13 = __this->___writer_4;
 		String_t* L_14 = ___localName0;
 		String_t* L_15 = ___ns1;
 		String_t* L_16 = ___value2;
@@ -27681,13 +25872,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationWriter_WriteEndElement_m
 		Hashtable_tEFC3B6496E6747787D8BB761B51F2AE3A8CFFE2D* L_1 = __this->___serializedObjects_7;
 		RuntimeObject* L_2 = ___o0;
 		NullCheck(L_1);
-		VirtualActionInvoker1< RuntimeObject* >::Invoke(39 /* System.Void System.Collections.Hashtable::Remove(System.Object) */, L_1, L_2);
+		VirtualActionInvoker1< RuntimeObject* >::Invoke(37 /* System.Void System.Collections.Hashtable::Remove(System.Object) */, L_1, L_2);
 	}
 
 IL_000f:
 	{
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_3;
-		L_3 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_3 = __this->___writer_4;
 		NullCheck(L_3);
 		VirtualActionInvoker0::Invoke(10 /* System.Void System.Xml.XmlWriter::WriteEndElement() */, L_3);
 		return;
@@ -27730,7 +25920,7 @@ IL_0004:
 		L_2 = XmlSerializerNamespaces_get_Namespaces_mD6B8A3D282B91E40D13217289F2904CE4ACECD2D(L_1, NULL);
 		NullCheck(L_2);
 		RuntimeObject* L_3;
-		L_3 = VirtualFuncInvoker0< RuntimeObject* >::Invoke(31 /* System.Collections.IDictionaryEnumerator System.Collections.Hashtable::GetEnumerator() */, L_2);
+		L_3 = VirtualFuncInvoker0< RuntimeObject* >::Invoke(30 /* System.Collections.IDictionaryEnumerator System.Collections.Hashtable::GetEnumerator() */, L_2);
 		V_0 = L_3;
 	}
 	{
@@ -27773,8 +25963,7 @@ IL_0012_1:
 				RuntimeObject* L_8;
 				L_8 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Object System.Collections.IEnumerator::get_Current() */, IEnumerator_t7B609C2FFA6EB5167D9C62A0C32A21DE2F666DAA_il2cpp_TypeInfo_var, L_7);
 				V_1 = ((*(DictionaryEntry_t171080F37B311C25AA9E75888F9C9D703FA721BB*)((DictionaryEntry_t171080F37B311C25AA9E75888F9C9D703FA721BB*)(DictionaryEntry_t171080F37B311C25AA9E75888F9C9D703FA721BB*)UnBox(L_8, DictionaryEntry_t171080F37B311C25AA9E75888F9C9D703FA721BB_il2cpp_TypeInfo_var))));
-				RuntimeObject* L_9;
-				L_9 = DictionaryEntry_get_Value_m75FD18FE968AE131F28AA2CB0DF4895EBA39075E_inline((&V_1), NULL);
+				RuntimeObject* L_9 = (&V_1)->____value_1;
 				String_t* L_10 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->___Empty_6;
 				bool L_11;
 				L_11 = String_op_Inequality_m8C940F3CFC42866709D7CA931B3D77B4BE94BCB6(((String_t*)CastclassSealed((RuntimeObject*)L_9, String_t_il2cpp_TypeInfo_var)), L_10, NULL);
@@ -27784,15 +25973,12 @@ IL_0012_1:
 				}
 			}
 			{
-				XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_12;
-				L_12 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
-				RuntimeObject* L_13;
-				L_13 = DictionaryEntry_get_Value_m75FD18FE968AE131F28AA2CB0DF4895EBA39075E_inline((&V_1), NULL);
+				XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_12 = __this->___writer_4;
+				RuntimeObject* L_13 = (&V_1)->____value_1;
 				NullCheck(L_12);
 				String_t* L_14;
 				L_14 = VirtualFuncInvoker1< String_t*, String_t* >::Invoke(30 /* System.String System.Xml.XmlWriter::LookupPrefix(System.String) */, L_12, ((String_t*)CastclassSealed((RuntimeObject*)L_13, String_t_il2cpp_TypeInfo_var)));
-				RuntimeObject* L_15;
-				L_15 = DictionaryEntry_get_Key_m09845C00732E530E6FCB9042079E90D3912215FE_inline((&V_1), NULL);
+				RuntimeObject* L_15 = (&V_1)->____key_0;
 				bool L_16;
 				L_16 = String_op_Inequality_m8C940F3CFC42866709D7CA931B3D77B4BE94BCB6(L_14, ((String_t*)CastclassSealed((RuntimeObject*)L_15, String_t_il2cpp_TypeInfo_var)), NULL);
 				if (!L_16)
@@ -27801,10 +25987,8 @@ IL_0012_1:
 				}
 			}
 			{
-				RuntimeObject* L_17;
-				L_17 = DictionaryEntry_get_Key_m09845C00732E530E6FCB9042079E90D3912215FE_inline((&V_1), NULL);
-				RuntimeObject* L_18;
-				L_18 = DictionaryEntry_get_Value_m75FD18FE968AE131F28AA2CB0DF4895EBA39075E_inline((&V_1), NULL);
+				RuntimeObject* L_17 = (&V_1)->____key_0;
+				RuntimeObject* L_18 = (&V_1)->____value_1;
 				XmlSerializationWriter_WriteAttribute_m25B87065E059F9AA2D8E46158DB0C3A9180CC63B(__this, _stringLiteral9CDCEEB7A12F71E8DF3D6AC05D04621DD4FBABF3, ((String_t*)CastclassSealed((RuntimeObject*)L_17, String_t_il2cpp_TypeInfo_var)), _stringLiteral420B74A52534550B0DD14DCF7D8988C2BD4936CE, ((String_t*)CastclassSealed((RuntimeObject*)L_18, String_t_il2cpp_TypeInfo_var)), NULL);
 			}
 
@@ -27970,18 +26154,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationWriter_WriteNullTagEncod
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_0;
-		L_0 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_0 = __this->___writer_4;
 		String_t* L_1 = ___name0;
 		String_t* L_2 = ___ns1;
 		NullCheck(L_0);
 		XmlWriter_WriteStartElement_mAC8867077A8F222C966E6720B70F8808A655E3A0(L_0, L_1, L_2, NULL);
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_3;
-		L_3 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_3 = __this->___writer_4;
 		NullCheck(L_3);
 		XmlWriter_WriteAttributeString_m1F3481B4EB9D711B7CAF93FB2B7D077A43D1AABB(L_3, _stringLiteral2CAB73EF57D40E8B63A7CA91D057C0B68DB59100, _stringLiteral7C014955313A7D33D5D04696B884B25325E6393C, _stringLiteralB7C45DD316C68ABF3429C20058C2981C652192F2, NULL);
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_4;
-		L_4 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_4 = __this->___writer_4;
 		NullCheck(L_4);
 		VirtualActionInvoker0::Invoke(10 /* System.Void System.Xml.XmlWriter::WriteEndElement() */, L_4);
 		return;
@@ -28002,8 +26183,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationWriter_WriteNullTagLiter
 		String_t* L_0 = ___name0;
 		String_t* L_1 = ___ns1;
 		XmlSerializationWriter_WriteStartElement_m14B47621699116DB0A0056C1437D1B0A1310E3BA(__this, L_0, L_1, NULL);
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_2;
-		L_2 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_2 = __this->___writer_4;
 		NullCheck(L_2);
 		XmlWriter_WriteAttributeString_m1F3481B4EB9D711B7CAF93FB2B7D077A43D1AABB(L_2, _stringLiteral2CAB73EF57D40E8B63A7CA91D057C0B68DB59100, _stringLiteral7C014955313A7D33D5D04696B884B25325E6393C, _stringLiteralB7C45DD316C68ABF3429C20058C2981C652192F2, NULL);
 		XmlSerializationWriter_WriteEndElement_mDCC1D34A7B81C6B8EB8E6C924E5752EC39F9FA1F(__this, NULL);
@@ -28079,7 +26259,7 @@ IL_0010:
 		L_11 = Object_GetType_mE10A8FC1E57F3DF29972CCBC026C2DC3942263B3(L_10, NULL);
 		NullCheck(L_9);
 		bool L_12;
-		L_12 = VirtualFuncInvoker1< bool, RuntimeObject* >::Invoke(27 /* System.Boolean System.Collections.Hashtable::ContainsKey(System.Object) */, L_9, L_11);
+		L_12 = VirtualFuncInvoker1< bool, RuntimeObject* >::Invoke(26 /* System.Boolean System.Collections.Hashtable::ContainsKey(System.Object) */, L_9, L_11);
 		if (!L_12)
 		{
 			goto IL_00f7;
@@ -28090,12 +26270,12 @@ IL_0010:
 		Type_t* L_14 = V_0;
 		NullCheck(L_13);
 		RuntimeObject* L_15;
-		L_15 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(29 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_13, L_14);
+		L_15 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(28 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_13, L_14);
 		V_1 = ((WriteCallbackInfo_t60E40304F6E1EF7671F3C52BA73695C193B3E9C6*)CastclassClass((RuntimeObject*)L_15, WriteCallbackInfo_t60E40304F6E1EF7671F3C52BA73695C193B3E9C6_il2cpp_TypeInfo_var));
 		Type_t* L_16 = V_0;
 		NullCheck(L_16);
 		bool L_17;
-		L_17 = VirtualFuncInvoker0< bool >::Invoke(69 /* System.Boolean System.Type::get_IsEnum() */, L_16);
+		L_17 = VirtualFuncInvoker0< bool >::Invoke(67 /* System.Boolean System.Type::get_IsEnum() */, L_16);
 		if (!L_17)
 		{
 			goto IL_0072;
@@ -28120,8 +26300,7 @@ IL_0072:
 		}
 	}
 	{
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_22;
-		L_22 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_22 = __this->___writer_4;
 		RuntimeObject* L_23 = ___o2;
 		String_t* L_24;
 		L_24 = XmlSerializationWriter_GetId_m119A741C6DE06B31C89202A1AB5B6F5F9BDB400E(__this, L_23, (bool)0, NULL);
@@ -28177,8 +26356,7 @@ IL_00bb:
 
 IL_00d0:
 	{
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_39;
-		L_39 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_39 = __this->___writer_4;
 		RuntimeObject* L_40 = ___o2;
 		String_t* L_41;
 		L_41 = XmlSerializationWriter_GetId_m119A741C6DE06B31C89202A1AB5B6F5F9BDB400E(__this, L_40, (bool)1, NULL);
@@ -28198,8 +26376,7 @@ IL_00f7:
 		V_2 = L_44;
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_45 = V_2;
 		NullCheck(L_45);
-		int32_t L_46;
-		L_46 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_45, NULL);
+		int32_t L_46 = L_45->___sType_2;
 		if ((!(((uint32_t)L_46) == ((uint32_t)1))))
 		{
 			goto IL_0138;
@@ -28219,15 +26396,13 @@ IL_00f7:
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_50 = V_2;
 		NullCheck(L_50);
-		String_t* L_51;
-		L_51 = TypeData_get_XmlType_m06749C1B19C57EB8649CBCD9B106C014DF511453_inline(L_50, NULL);
+		String_t* L_51 = L_50->___elementName_1;
 		XmlSerializationWriter_WriteXsiType_m24C3B36D396116877E22848B9B12EF6D6BE4D122(__this, L_51, _stringLiteralE249DDFD90EBFAAEE63734F28F6668A2FB5BD5AF, NULL);
 	}
 
 IL_0124:
 	{
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_52;
-		L_52 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_52 = __this->___writer_4;
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_53 = V_2;
 		RuntimeObject* L_54 = ___o2;
 		il2cpp_codegen_runtime_class_init_inline(XmlCustomFormatter_t8021E588C6512752ACF5F834D7F8FF70E1D28471_il2cpp_TypeInfo_var);
@@ -28266,8 +26441,7 @@ IL_0138:
 
 IL_0156:
 	{
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_62;
-		L_62 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_62 = __this->___writer_4;
 		RuntimeObject* L_63 = ___o2;
 		String_t* L_64;
 		L_64 = XmlSerializationWriter_GetId_m119A741C6DE06B31C89202A1AB5B6F5F9BDB400E(__this, L_63, (bool)1, NULL);
@@ -28357,7 +26531,7 @@ IL_0015:
 		L_9 = Object_GetType_mE10A8FC1E57F3DF29972CCBC026C2DC3942263B3(L_8, NULL);
 		NullCheck(L_7);
 		RuntimeObject* L_10;
-		L_10 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(29 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_7, L_9);
+		L_10 = VirtualFuncInvoker1< RuntimeObject*, RuntimeObject* >::Invoke(28 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_7, L_9);
 		V_2 = ((WriteCallbackInfo_t60E40304F6E1EF7671F3C52BA73695C193B3E9C6*)CastclassClass((RuntimeObject*)L_10, WriteCallbackInfo_t60E40304F6E1EF7671F3C52BA73695C193B3E9C6_il2cpp_TypeInfo_var));
 		WriteCallbackInfo_t60E40304F6E1EF7671F3C52BA73695C193B3E9C6* L_11 = V_2;
 		if (!L_11)
@@ -28373,8 +26547,7 @@ IL_0015:
 		NullCheck(L_14);
 		String_t* L_15 = L_14->___TypeNs_2;
 		XmlSerializationWriter_WriteStartElement_m10BA6216843AE75F6DB9631DDA883F1B831BEAF6(__this, L_13, L_15, (bool)1, NULL);
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_16;
-		L_16 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_16 = __this->___writer_4;
 		RuntimeObject* L_17 = V_0;
 		String_t* L_18;
 		L_18 = XmlSerializationWriter_GetId_m119A741C6DE06B31C89202A1AB5B6F5F9BDB400E(__this, L_17, (bool)0, NULL);
@@ -28382,8 +26555,7 @@ IL_0015:
 		XmlWriter_WriteAttributeString_m828C9640305961C835B4B9B3D5C62E76649A08A7(L_16, _stringLiteral996E5360F80E16B2189CC1E536C91CE68083F694, L_18, NULL);
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_19 = V_1;
 		NullCheck(L_19);
-		int32_t L_20;
-		L_20 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_19, NULL);
+		int32_t L_20 = L_19->___sType_2;
 		if ((((int32_t)L_20) == ((int32_t)3)))
 		{
 			goto IL_008d;
@@ -28455,8 +26627,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XmlSerializationWriter_IsPrimitiveArray_
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_0 = ___td0;
 		NullCheck(L_0);
-		int32_t L_1;
-		L_1 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_0, NULL);
+		int32_t L_1 = L_0->___sType_2;
 		if ((!(((uint32_t)L_1) == ((uint32_t)3))))
 		{
 			goto IL_003d;
@@ -28468,8 +26639,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XmlSerializationWriter_IsPrimitiveArray_
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_3;
 		L_3 = TypeData_get_ListItemTypeData_m08EBC7760A430966A31E3C138C9BB359E429C6D7(L_2, NULL);
 		NullCheck(L_3);
-		int32_t L_4;
-		L_4 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_3, NULL);
+		int32_t L_4 = L_3->___sType_2;
 		if ((((int32_t)L_4) == ((int32_t)1)))
 		{
 			goto IL_002e;
@@ -28553,15 +26723,13 @@ IL_0004:
 		V_0 = L_2;
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_3 = V_0;
 		NullCheck(L_3);
-		String_t* L_4;
-		L_4 = TypeData_get_XmlType_m06749C1B19C57EB8649CBCD9B106C014DF511453_inline(L_3, NULL);
+		String_t* L_4 = L_3->___elementName_1;
 		V_1 = L_4;
 		int32_t L_5 = V_2;
 		V_2 = ((int32_t)il2cpp_codegen_add(L_5, 1));
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_6 = V_0;
 		NullCheck(L_6);
-		int32_t L_7;
-		L_7 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_6, NULL);
+		int32_t L_7 = L_6->___sType_2;
 		if ((((int32_t)L_7) == ((int32_t)3)))
 		{
 			goto IL_0004;
@@ -28591,8 +26759,7 @@ IL_002d:
 	}
 	{
 		XmlSerializationWriter_WriteStartElement_m10BA6216843AE75F6DB9631DDA883F1B831BEAF6(__this, _stringLiteralC3CA1105B0687AB04E8DB2CE95902C75EC2B661A, _stringLiteralD29B87DC6B1B722C619FAD071A9157749710CDA6, (bool)1, NULL);
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_12;
-		L_12 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_12 = __this->___writer_4;
 		RuntimeObject* L_13 = ___o0;
 		String_t* L_14;
 		L_14 = XmlSerializationWriter_GetId_m119A741C6DE06B31C89202A1AB5B6F5F9BDB400E(__this, L_13, (bool)0, NULL);
@@ -28600,8 +26767,7 @@ IL_002d:
 		XmlWriter_WriteAttributeString_m828C9640305961C835B4B9B3D5C62E76649A08A7(L_12, _stringLiteral996E5360F80E16B2189CC1E536C91CE68083F694, L_14, NULL);
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_15 = ___td1;
 		NullCheck(L_15);
-		int32_t L_16;
-		L_16 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_15, NULL);
+		int32_t L_16 = L_15->___sType_2;
 		if ((!(((uint32_t)L_16) == ((uint32_t)3))))
 		{
 			goto IL_00de;
@@ -28615,8 +26781,7 @@ IL_002d:
 		int32_t L_19;
 		L_19 = Array_get_Length_m361285FB7CF44045DC369834D1CD01F72F94EF57(L_18, NULL);
 		V_4 = L_19;
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_20;
-		L_20 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_20 = __this->___writer_4;
 		String_t* L_21 = V_1;
 		String_t* L_22;
 		L_22 = XmlSerializationWriter_GetQualifiedName_m6A393BACF5677C132F4FF0717F6F96522C55D518(__this, L_21, _stringLiteralE249DDFD90EBFAAEE63734F28F6668A2FB5BD5AF, NULL);
@@ -28717,14 +26882,12 @@ IL_0010:
 
 IL_002b:
 	{
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_8;
-		L_8 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_8 = __this->___writer_4;
 		String_t* L_9 = ___n0;
 		String_t* L_10 = ___ns1;
 		NullCheck(L_8);
 		XmlWriter_WriteStartElement_mAC8867077A8F222C966E6720B70F8808A655E3A0(L_8, L_9, L_10, NULL);
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_11;
-		L_11 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_11 = __this->___writer_4;
 		RuntimeObject* L_12 = ___o2;
 		String_t* L_13;
 		L_13 = XmlSerializationWriter_GetId_m119A741C6DE06B31C89202A1AB5B6F5F9BDB400E(__this, L_12, (bool)1, NULL);
@@ -28732,8 +26895,7 @@ IL_002b:
 		L_14 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteral0B0FEB3147CE20EB2C90076367F895C59BCD14B3, L_13, NULL);
 		NullCheck(L_11);
 		XmlWriter_WriteAttributeString_m828C9640305961C835B4B9B3D5C62E76649A08A7(L_11, _stringLiteral0AEA83737E2216962B6144625FC860B3F361A5ED, L_14, NULL);
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_15;
-		L_15 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_15 = __this->___writer_4;
 		NullCheck(L_15);
 		VirtualActionInvoker0::Invoke(10 /* System.Void System.Xml.XmlWriter::WriteEndElement() */, L_15);
 		return;
@@ -28825,8 +26987,7 @@ IL_0013:
 		}
 	}
 	{
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_6;
-		L_6 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_6 = __this->___writer_4;
 		String_t* L_7 = ___name1;
 		String_t* L_8 = ___ns2;
 		NullCheck(L_6);
@@ -28836,8 +26997,7 @@ IL_0013:
 IL_0024:
 	{
 		RuntimeObject* L_9 = ___serializable0;
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_10;
-		L_10 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_10 = __this->___writer_4;
 		NullCheck(L_9);
 		InterfaceActionInvoker1< XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* >::Invoke(2 /* System.Void System.Xml.Serialization.IXmlSerializable::WriteXml(System.Xml.XmlWriter) */, IXmlSerializable_tE36AB1894460107283308E142C1106C4AB31A526_il2cpp_TypeInfo_var, L_9, L_10);
 		bool L_11 = ___wrapped4;
@@ -28847,8 +27007,7 @@ IL_0024:
 		}
 	}
 	{
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_12;
-		L_12 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_12 = __this->___writer_4;
 		NullCheck(L_12);
 		VirtualActionInvoker0::Invoke(10 /* System.Void System.Xml.XmlWriter::WriteEndElement() */, L_12);
 	}
@@ -28862,8 +27021,7 @@ IL_003f:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationWriter_WriteStartDocument_m6E55154B291F834B4B5C7F692CCF53B6B3BF94FF (XmlSerializationWriter_t96B46BC33680D6D6AB2580CA44C228109865151B* __this, const RuntimeMethod* method) 
 {
 	{
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_0;
-		L_0 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_0 = __this->___writer_4;
 		NullCheck(L_0);
 		int32_t L_1;
 		L_1 = VirtualFuncInvoker0< int32_t >::Invoke(27 /* System.Xml.WriteState System.Xml.XmlWriter::get_WriteState() */, L_0);
@@ -28873,8 +27031,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationWriter_WriteStartDocumen
 		}
 	}
 	{
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_2;
-		L_2 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_2 = __this->___writer_4;
 		NullCheck(L_2);
 		VirtualActionInvoker0::Invoke(5 /* System.Void System.Xml.XmlWriter::WriteStartDocument() */, L_2);
 	}
@@ -28965,7 +27122,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationWriter_WriteStartElement
 		RuntimeObject* L_2 = ___o2;
 		NullCheck(L_1);
 		bool L_3;
-		L_3 = VirtualFuncInvoker1< bool, RuntimeObject* >::Invoke(26 /* System.Boolean System.Collections.Hashtable::Contains(System.Object) */, L_1, L_2);
+		L_3 = VirtualFuncInvoker1< bool, RuntimeObject* >::Invoke(25 /* System.Boolean System.Collections.Hashtable::Contains(System.Object) */, L_1, L_2);
 		if (!L_3)
 		{
 			goto IL_002c;
@@ -28993,7 +27150,7 @@ IL_002c:
 		RuntimeObject* L_10 = ___o2;
 		RuntimeObject* L_11 = ___o2;
 		NullCheck(L_9);
-		VirtualActionInvoker2< RuntimeObject*, RuntimeObject* >::Invoke(30 /* System.Void System.Collections.Hashtable::set_Item(System.Object,System.Object) */, L_9, L_10, L_11);
+		VirtualActionInvoker2< RuntimeObject*, RuntimeObject* >::Invoke(29 /* System.Void System.Collections.Hashtable::set_Item(System.Object,System.Object) */, L_9, L_10, L_11);
 	}
 
 IL_0039:
@@ -29015,8 +27172,7 @@ IL_0039:
 	{
 		String_t* L_14 = ___ns1;
 		NullCheck(L_14);
-		int32_t L_15;
-		L_15 = String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline(L_14, NULL);
+		int32_t L_15 = L_14->____stringLength_4;
 		if (!L_15)
 		{
 			goto IL_009d;
@@ -29078,8 +27234,7 @@ IL_005c_1:
 				V_2 = ((XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9*)CastclassClass((RuntimeObject*)L_23, XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9_il2cpp_TypeInfo_var));
 				XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_24 = V_2;
 				NullCheck(L_24);
-				String_t* L_25;
-				L_25 = XmlQualifiedName_get_Namespace_m0CAE4A651EF1CA6F0EB657C83608A796038A2615_inline(L_24, NULL);
+				String_t* L_25 = L_24->___ns_2;
 				String_t* L_26 = ___ns1;
 				bool L_27;
 				L_27 = String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1(L_25, L_26, NULL);
@@ -29091,8 +27246,7 @@ IL_005c_1:
 			{
 				XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_28 = V_2;
 				NullCheck(L_28);
-				String_t* L_29;
-				L_29 = XmlQualifiedName_get_Name_mC9D21D5BADE11AEAC7ED5886B39E1A774C63B830_inline(L_28, NULL);
+				String_t* L_29 = L_28->___name_1;
 				V_0 = L_29;
 				___writePrefixed3 = (bool)1;
 				goto IL_009d;
@@ -29150,8 +27304,7 @@ IL_009d:
 		}
 	}
 	{
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_39;
-		L_39 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_39 = __this->___writer_4;
 		String_t* L_40 = ___ns1;
 		NullCheck(L_39);
 		String_t* L_41;
@@ -29170,8 +27323,7 @@ IL_00c6:
 	{
 		String_t* L_43 = V_0;
 		NullCheck(L_43);
-		int32_t L_44;
-		L_44 = String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline(L_43, NULL);
+		int32_t L_44 = L_43->____stringLength_4;
 		if (L_44)
 		{
 			goto IL_00f5;
@@ -29193,8 +27345,7 @@ IL_00d1:
 
 IL_00f5:
 	{
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_49;
-		L_49 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_49 = __this->___writer_4;
 		String_t* L_50 = V_0;
 		String_t* L_51 = ___name0;
 		String_t* L_52 = ___ns1;
@@ -29205,8 +27356,7 @@ IL_00f5:
 
 IL_0105:
 	{
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_53;
-		L_53 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_53 = __this->___writer_4;
 		String_t* L_54 = ___name0;
 		String_t* L_55 = ___ns1;
 		NullCheck(L_53);
@@ -29275,12 +27425,10 @@ IL_0128_1:
 				RuntimeObject* L_64;
 				L_64 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Object System.Collections.IEnumerator::get_Current() */, IEnumerator_t7B609C2FFA6EB5167D9C62A0C32A21DE2F666DAA_il2cpp_TypeInfo_var, L_63);
 				V_5 = ((XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9*)CastclassClass((RuntimeObject*)L_64, XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9_il2cpp_TypeInfo_var));
-				XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_65;
-				L_65 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+				XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_65 = __this->___writer_4;
 				XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_66 = V_5;
 				NullCheck(L_66);
-				String_t* L_67;
-				L_67 = XmlQualifiedName_get_Namespace_m0CAE4A651EF1CA6F0EB657C83608A796038A2615_inline(L_66, NULL);
+				String_t* L_67 = L_66->___ns_2;
 				NullCheck(L_65);
 				String_t* L_68;
 				L_68 = VirtualFuncInvoker1< String_t*, String_t* >::Invoke(30 /* System.String System.Xml.XmlWriter::LookupPrefix(System.String) */, L_65, L_67);
@@ -29294,8 +27442,7 @@ IL_0128_1:
 			{
 				String_t* L_70 = V_6;
 				NullCheck(L_70);
-				int32_t L_71;
-				L_71 = String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline(L_70, NULL);
+				int32_t L_71 = L_70->____stringLength_4;
 				if (L_71)
 				{
 					goto IL_0174_1;
@@ -29306,12 +27453,10 @@ IL_0156_1:
 			{
 				XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_72 = V_5;
 				NullCheck(L_72);
-				String_t* L_73;
-				L_73 = XmlQualifiedName_get_Name_mC9D21D5BADE11AEAC7ED5886B39E1A774C63B830_inline(L_72, NULL);
+				String_t* L_73 = L_72->___name_1;
 				XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* L_74 = V_5;
 				NullCheck(L_74);
-				String_t* L_75;
-				L_75 = XmlQualifiedName_get_Namespace_m0CAE4A651EF1CA6F0EB657C83608A796038A2615_inline(L_74, NULL);
+				String_t* L_75 = L_74->___ns_2;
 				XmlSerializationWriter_WriteAttribute_m25B87065E059F9AA2D8E46158DB0C3A9180CC63B(__this, _stringLiteral9CDCEEB7A12F71E8DF3D6AC05D04621DD4FBABF3, L_73, _stringLiteral420B74A52534550B0DD14DCF7D8988C2BD4936CE, L_75, NULL);
 			}
 
@@ -29380,8 +27525,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationWriter_WriteTypedPrimiti
 		V_1 = L_2;
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_3 = V_1;
 		NullCheck(L_3);
-		int32_t L_4;
-		L_4 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_3, NULL);
+		int32_t L_4 = L_3->___sType_2;
 		if ((((int32_t)L_4) == ((int32_t)1)))
 		{
 			goto IL_002d;
@@ -29390,8 +27534,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationWriter_WriteTypedPrimiti
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_5 = V_1;
 		NullCheck(L_5);
-		String_t* L_6;
-		L_6 = TypeData_get_FullTypeName_m391893730DDFEE90F76197075F599FEA2E60BE43_inline(L_5, NULL);
+		String_t* L_6 = L_5->___fullTypeName_5;
 		String_t* L_7;
 		L_7 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral3BEF703FC97B2EF58FFDCB567F4C4F33758B77FD)), L_6, NULL);
 		InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB* L_8 = (InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB_il2cpp_TypeInfo_var)));
@@ -29433,8 +27576,7 @@ IL_0044:
 		___ns1 = G_B6_0;
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_12 = V_1;
 		NullCheck(L_12);
-		String_t* L_13;
-		L_13 = TypeData_get_XmlType_m06749C1B19C57EB8649CBCD9B106C014DF511453_inline(L_12, NULL);
+		String_t* L_13 = L_12->___elementName_1;
 		___name0 = L_13;
 		goto IL_0058;
 	}
@@ -29450,8 +27592,7 @@ IL_0050:
 
 IL_0058:
 	{
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_16;
-		L_16 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_16 = __this->___writer_4;
 		String_t* L_17 = ___name0;
 		String_t* L_18 = ___ns1;
 		NullCheck(L_16);
@@ -29491,8 +27632,7 @@ IL_0084:
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_26 = V_1;
 		NullCheck(L_26);
-		int32_t L_27;
-		L_27 = TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline(L_26, NULL);
+		int32_t L_27 = L_26->___sType_2;
 		if ((((int32_t)L_27) == ((int32_t)1)))
 		{
 			goto IL_00ac;
@@ -29518,8 +27658,7 @@ IL_00ac:
 	{
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_33 = V_1;
 		NullCheck(L_33);
-		String_t* L_34;
-		L_34 = TypeData_get_XmlType_m06749C1B19C57EB8649CBCD9B106C014DF511453_inline(L_33, NULL);
+		String_t* L_34 = L_33->___elementName_1;
 		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_35 = V_1;
 		NullCheck(L_35);
 		bool L_36;
@@ -29557,8 +27696,7 @@ IL_00cc:
 	{
 		String_t* L_37 = V_0;
 		XmlSerializationWriter_WriteValue_mFBAAF58EE4ECE002669126E42D9613880FA871A3(__this, L_37, NULL);
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_38;
-		L_38 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_38 = __this->___writer_4;
 		NullCheck(L_38);
 		VirtualActionInvoker0::Invoke(10 /* System.Void System.Xml.XmlWriter::WriteEndElement() */, L_38);
 		return;
@@ -29575,8 +27713,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlSerializationWriter_WriteValue_mFBAAF
 		}
 	}
 	{
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_1;
-		L_1 = XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline(__this, NULL);
+		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_1 = __this->___writer_4;
 		String_t* L_2 = ___value0;
 		NullCheck(L_1);
 		VirtualActionInvoker1< String_t* >::Invoke(20 /* System.Void System.Xml.XmlWriter::WriteString(System.String) */, L_1, L_2);
@@ -29746,326 +27883,6 @@ IL_0029:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* DictionaryEntry_get_Value_m75FD18FE968AE131F28AA2CB0DF4895EBA39075E_inline (DictionaryEntry_t171080F37B311C25AA9E75888F9C9D703FA721BB* __this, const RuntimeMethod* method) 
-{
-	{
-		RuntimeObject* L_0 = __this->____value_1;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* DictionaryEntry_get_Key_m09845C00732E530E6FCB9042079E90D3912215FE_inline (DictionaryEntry_t171080F37B311C25AA9E75888F9C9D703FA721BB* __this, const RuntimeMethod* method) 
-{
-	{
-		RuntimeObject* L_0 = __this->____key_0;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* XmlAttributes_get_XmlElements_m416689A3226C3C399772C0E9E618DC1B61E2EB89_inline (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlElementAttributes_tEB368B90FCC435053531198B17F7CD83BF616F50* L_0 = __this->___xmlElements_7;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* XmlAttributes_get_XmlArray_m47C136BD864E01CEF392D4556950383154E21CC1_inline (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* L_0 = __this->___xmlArray_2;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlArrayAttribute_get_Order_m82A05D0B48CDF77EEAC644B324916768C3DCC219_inline (XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = __this->___order_4;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlAnyElementAttributes_t8709780E4C7D8E9B453BB4AE51A3CFBC462286CF* XmlAttributes_get_XmlAnyElements_m3216504EBB4407E5FF8149C2A95CDF7826C5043C_inline (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlAnyElementAttributes_t8709780E4C7D8E9B453BB4AE51A3CFBC462286CF* L_0 = __this->___xmlAnyElements_1;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* TypeData_get_XmlType_m06749C1B19C57EB8649CBCD9B106C014DF511453_inline (TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->___elementName_1;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Type_t* TypeData_get_Type_m2B7E02EA472BB9C6C4306412332A73C7E8E86E4F_inline (TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* __this, const RuntimeMethod* method) 
-{
-	{
-		Type_t* L_0 = __this->___type_0;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlElementAttribute_get_Order_mCF42C8462D6BAE16562CD7E16E56DD5BBD56A34F_inline (XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = __this->___order_6;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t TypeData_get_SchemaType_mDD8AA1AED98E580047EFF8A9C74CA9DCC5FC2E28_inline (TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = __this->___sType_2;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlMapping_SetKey_m29AA9DBD54FBFC2C50A282C1D8C33547CD6D7686_inline (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, String_t* ___key0, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = ___key0;
-		__this->___key_6 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___key_6), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlMapping_set_RelatedMaps_m6A89B4318BA4BA04099D938C36CA3A83AAC3BC44_inline (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* ___value0, const RuntimeMethod* method) 
-{
-	{
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_0 = ___value0;
-		__this->___relatedMaps_1 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___relatedMaps_1), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlMapping_set_Format_m84E84DA7E6927678C90D903E2A8599E6BF6748B9_inline (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, int32_t ___value0, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = ___value0;
-		__this->___format_2 = L_0;
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* TypeData_get_FullTypeName_m391893730DDFEE90F76197075F599FEA2E60BE43_inline (TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->___fullTypeName_5;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* XmlAttributes_get_XmlRoot_m72B3B5B4B3D50069A4D9CEB7EEC08EF4E6A51EEC_inline (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* L_0 = __this->___xmlRoot_11;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* XmlAttributes_get_XmlType_m1DDCEC132704F0A2C74E2C1C0EC5194BBC72BE0F_inline (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* L_0 = __this->___xmlType_13;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlTypeAttribute_get_Namespace_m856E7657F70CD29601993200EEAA7D1771F0FCC9_inline (XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->___ns_1;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XmlTypeAttribute_get_IncludeInSchema_mDC85FE2BB6FE9BE2A457394CEEF91341CAA84DA3_inline (XmlTypeAttribute_t0EC23A25BEDDEB533D28BD2B87F5B3270E718EE5* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = __this->___includeInSchema_0;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline (String_t* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = __this->____stringLength_4;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlRootAttribute_get_Namespace_mFB0A84474D83BF812BA15DA2D59498384F202FE4_inline (XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->___ns_3;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XmlRootAttribute_get_IsNullable_m2838215306230F5E93695672074B66ACC39E0092_inline (XmlRootAttribute_t09EE81719C9B95C01B28D108765FB62737E75FAF* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = __this->___isNullable_2;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapping_set_IncludeInSchema_m4ADFB54087375F1E855F955A23FD6A75499C95CB_inline (XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* __this, bool ___value0, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = ___value0;
-		__this->___includeInSchema_12 = L_0;
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapping_set_IsNullable_mD892626D9838297535D63A2CE20F0F0E93B0E06F_inline (XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* __this, bool ___value0, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = ___value0;
-		__this->___isNullable_13 = L_0;
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlTypeMapping_get_XmlType_m5A30CB4EE3541CC1C65003757D5E743042846222_inline (XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->___xmlType_7;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlMapping_set_ObjectMap_m34272FA1B72AD9AE95E70C84665290EA6C0C0FCD_inline (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* ___value0, const RuntimeMethod* method) 
-{
-	{
-		ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* L_0 = ___value0;
-		__this->___map_0 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___map_0), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XmlAttributes_get_XmlIgnore_m817F5C7648E0CADEBE452A1EF3E59A0D07A80627_inline (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = __this->___xmlIgnore_9;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Type_t* XmlReflectionMember_get_DeclaringType_mA84E638B63CD926ED1DB32628B7747DE0BA7F355_inline (XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* __this, const RuntimeMethod* method) 
-{
-	{
-		Type_t* L_0 = __this->___declaringType_4;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlReflectionMember_get_MemberName_mE4607A6A8054A867138901FA83DFEB24CCCE1A39_inline (XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->___memberName_1;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* XmlTypeMapping_get_DerivedTypes_mC03579CBAD487E7DF121E24DF3CD0F4976CB3A16_inline (XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* __this, const RuntimeMethod* method) 
-{
-	{
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_0 = __this->____derivedTypes_15;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* XmlMapping_get_ObjectMap_m63D1AEAC8EDD8396357898D337E350673A1E9003_inline (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, const RuntimeMethod* method) 
-{
-	{
-		ObjectMap_t07CE2CF97F92E98E84AABBC27BFCE2418CD0D8C0* L_0 = __this->___map_0;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapping_set_BaseMap_m1B6EC933148E6ED405775C6A56CF888DF489988F_inline (XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* __this, XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* ___value0, const RuntimeMethod* method) 
-{
-	{
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_0 = ___value0;
-		__this->___baseMap_10 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___baseMap_10), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void ClassMap_SetCanBeSimpleType_mEFA2779827B16C4BACF378B6536121C5FE1AE74C_inline (ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* __this, bool ___can0, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = ___can0;
-		__this->____canBeSimpleType_14 = L_0;
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* ClassMap_get_ElementMembers_m28BCFDC1D5FC50F910FBCF82D9C30472482A505D_inline (ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* __this, const RuntimeMethod* method) 
-{
-	{
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_0 = __this->____elementMembers_1;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* XmlTypeMapping_get_TypeData_m1BBD3B003521D872988B91764C969FB5DF1C27F4_inline (XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* __this, const RuntimeMethod* method) 
-{
-	{
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_0 = __this->___type_9;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* TypeData_get_TypeName_mC7AF987BA3129B6648CE999111BE0E739E5A25A8_inline (TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->___typeName_4;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* XmlTypeMapping_get_BaseMap_m4596D5703D08B93CE429A7C62CEB9AA91506B32D_inline (XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_0 = __this->___baseMap_10;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* ClassMap_get_XmlTextCollector_m3FC50A0C0DEFAC7D4D70209D7D96C58AB7D1DA09_inline (ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_0 = __this->____xmlTextCollector_11;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* XmlTypeMapMember_get_TypeData_m071A2E1C32FA2AED8FB5D91556CF310A28898D1D_inline (XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* __this, const RuntimeMethod* method) 
-{
-	{
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_0 = __this->____typeData_4;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlTypeMapMember_get_Name_mCF37113EDBC93BBAE3E38DDA503BF83C752287F9_inline (XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->____name_0;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlArrayItemAttributes_tD468A7CCAF036962F37A7CDDDE042A6258D03513* XmlAttributes_get_XmlArrayItems_mA3EA68D61FCFD9DBAD4175F48035F95AC10EDB6E_inline (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlArrayItemAttributes_tD468A7CCAF036962F37A7CDDDE042A6258D03513* L_0 = __this->___xmlArrayItems_3;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlArrayItemAttribute_get_Namespace_m18BA85AB457B0ED70ABDA1C89B32A10BA24D0113_inline (XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->___ns_3;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlArrayItemAttribute_get_Form_mBBFA635F531B819D8E43AFF6110670FB383C1F33_inline (XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = __this->___form_2;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlArrayItemAttribute_get_NestingLevel_mE927341768913F399DAB59E37BB38EB4B5CF33ED_inline (XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = __this->___nestingLevel_6;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Type_t* XmlArrayItemAttribute_get_Type_m80FA2D88365496E4C5090375F0E014976B6B7417_inline (XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* __this, const RuntimeMethod* method) 
-{
-	{
-		Type_t* L_0 = __this->___type_7;
-		return L_0;
-	}
-}
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapElementInfo_set_Namespace_mB1BAB4E18DAF612183E318500F2010C73D7B3B5A_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, String_t* ___value0, const RuntimeMethod* method) 
 {
 	{
@@ -30075,64 +27892,11 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapElementInfo_set_Na
 		return;
 	}
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlTypeMapElementInfo_get_Namespace_m94DAAADC3EFEBC302C4D3574BD4835F222345498_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->____namespace_1;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapElementInfo_set_Form_m404075D5C7B4E4CE0EC5ED46881D4D84C73E0102_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, int32_t ___value0, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = ___value0;
-		__this->____form_2 = L_0;
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XmlArrayItemAttribute_get_IsNullableSpecified_mDC4FABB753BA60A10CEED9BDD82011C47E14B4F0_inline (XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = __this->___isNullableSpecified_5;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XmlArrayItemAttribute_get_IsNullable_mC7A6E27D7259FF7DD81A2C575EBD4578651857D8_inline (XmlArrayItemAttribute_tE97FFB019F6FE8EF2FA1BD5074CC15C701F59C40* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = __this->___isNullable_4;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* XmlTypeMapElementInfo_get_TypeData_m35F77B4421D417B4C175FD7A54571B7FBF96532E_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, const RuntimeMethod* method) 
-{
-	{
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_0 = __this->____type_8;
-		return L_0;
-	}
-}
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapElementInfo_set_IsNullable_m3F3A06CB2CB7DACBB6CF90B60346469EA5EE0A6F_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, bool ___value0, const RuntimeMethod* method) 
 {
 	{
 		bool L_0 = ___value0;
 		__this->____isNullable_5 = L_0;
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapElementInfo_set_NestingLevel_m104B8F548E5E7B0982E55AFA8900F9BB4E0E1A35_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, int32_t ___value0, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = ___value0;
-		__this->____nestingLevel_6 = L_0;
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapElementInfo_set_MappedType_m2FD5B0A4823A3FAF00E86D03C959D9B0E0D2A409_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* ___value0, const RuntimeMethod* method) 
-{
-	{
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_0 = ___value0;
-		__this->____mappedType_7 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____mappedType_7), (void*)L_0);
 		return;
 	}
 }
@@ -30145,224 +27909,12 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapElementInfo_set_El
 		return;
 	}
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* XmlTypeMapElementInfo_get_MappedType_m240A78959A2E9A6CE992F5EC6B77DDFC137AF032_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_0 = __this->____mappedType_7;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlMapping_get_ElementName_m2BDBF7797A1F38972A4355CF694E0D468B2A9FC0_inline (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->____elementName_4;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void ListMap_set_ItemInfo_mD0E132CC2807675C9308B26F69EA38EC9EB3EF11_inline (ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* __this, XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* ___value0, const RuntimeMethod* method) 
-{
-	{
-		XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* L_0 = ___value0;
-		__this->____itemInfo_0 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____itemInfo_0), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlTypeMapElementInfo_get_ElementName_m2B2B6484154E046A7FE5BE46092BF91A7B75D9CC_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->____elementName_0;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Type_t* XmlIncludeAttribute_get_Type_m933A769AE46F8B8FE3612605D6B0E890AE3A1EDD_inline (XmlIncludeAttribute_t444D78BD01B445F31C9E0828BB2EEB88C0BDB736* __this, const RuntimeMethod* method) 
-{
-	{
-		Type_t* L_0 = __this->___type_0;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlEnumAttribute_get_Name_m13FF8A329D3569F4C785968B3928A1554EC9CCF3_inline (XmlEnumAttribute_t06EEAB820B4C664382E2A018C682E64D4B10E695* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->___name_0;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlReflectionMember_set_DeclaringType_m1FEBB9DF4BDFE905A76D4E297BE992C89B39B1A8_inline (XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* __this, Type_t* ___value0, const RuntimeMethod* method) 
-{
-	{
-		Type_t* L_0 = ___value0;
-		__this->___declaringType_4 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___declaringType_4), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Type_t* XmlReflectionMember_get_MemberType_m26CB81C88E06E782EFF7EE40F31F88A7A954504A_inline (XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* __this, const RuntimeMethod* method) 
-{
-	{
-		Type_t* L_0 = __this->___memberType_2;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlArrayAttribute_get_Namespace_m37B65FCCE7A60AEADBF394DB6210DA1CC8A91CF8_inline (XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->___ns_3;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlArrayAttribute_get_Form_mD5222A61AE3D5908142D9DBF1A5BE0986466F008_inline (XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = __this->___form_1;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlAnyAttributeAttribute_t3B95B49DDDDA70D79EBC045F925BDE39DFB0E96A* XmlAttributes_get_XmlAnyAttribute_m3116C8A13795C5AEB267B6C78EE406EB7F1C79D7_inline (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlAnyAttributeAttribute_t3B95B49DDDDA70D79EBC045F925BDE39DFB0E96A* L_0 = __this->___xmlAnyAttribute_0;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapMemberElement_set_ElementInfo_m3E7B4C2A13CE5733E5C41B5A559A64327795C038_inline (XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* __this, XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* ___value0, const RuntimeMethod* method) 
-{
-	{
-		XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* L_0 = ___value0;
-		__this->____elementInfo_10 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____elementInfo_10), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XmlAttributes_get_Xmlns_m470230B52FC047B9820991B287C46CFACAACBB33_inline (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = __this->___xmlns_10;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* XmlAttributes_get_XmlAttribute_m44681566D98881832A9FD898A985552CFF4699F7_inline (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* L_0 = __this->___xmlAttribute_4;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapMemberAttribute_set_AttributeName_m9FA871900139C9A680D39F3FA1D64593EA0A8A37_inline (XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* __this, String_t* ___value0, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = ___value0;
-		__this->____attributeName_10 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____attributeName_10), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlTypeMapMemberAttribute_get_AttributeName_m79384B2B6097452969DD46364D07C2F8B353B064_inline (XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->____attributeName_10;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapMemberAttribute_set_MappedType_mA7E95DC2D885930465A715589EF224E64286F518_inline (XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* __this, XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* ___value0, const RuntimeMethod* method) 
-{
-	{
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_0 = ___value0;
-		__this->____mappedType_13 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____mappedType_13), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlAttributeAttribute_get_Namespace_m66DDB72831548F3B23A4A68E11826303CEE42835_inline (XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->___ns_4;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlAttributeAttribute_get_Form_m49A9D062DB2C8CED21041D3FBF941A7C3A4E06BD_inline (XmlAttributeAttribute_t157535EDD908EB83E442B1DEFF2A151B076962BE* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = __this->___form_3;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapMemberAttribute_set_Form_m060BDBE9694B862C8E46DCEB5CAD8F6C52E9691B_inline (XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* __this, int32_t ___value0, const RuntimeMethod* method) 
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapElementInfo_set_Form_m404075D5C7B4E4CE0EC5ED46881D4D84C73E0102_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, int32_t ___value0, const RuntimeMethod* method) 
 {
 	{
 		int32_t L_0 = ___value0;
-		__this->____form_12 = L_0;
+		__this->____form_2 = L_0;
 		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapMemberAttribute_set_Namespace_m75CC38F536B9F3D71532845F4D741A6A37489277_inline (XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* __this, String_t* ___value0, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = ___value0;
-		__this->____namespace_11 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____namespace_11), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Type_t* XmlElementAttribute_get_Type_m3B355841D7F13F4CD84F8C3ED4D28917BB170CCB_inline (XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* __this, const RuntimeMethod* method) 
-{
-	{
-		Type_t* L_0 = __this->___type_5;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlTextAttribute_tAA8BE9BA759F78BB4CDF00D3848B7746C0EDEFE0* XmlAttributes_get_XmlText_m021CE7CB4BE20DEE5FC8FAE724015FF2C4BDFD1B_inline (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlTextAttribute_tAA8BE9BA759F78BB4CDF00D3848B7746C0EDEFE0* L_0 = __this->___xmlText_12;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapMemberFlatList_set_ListMap_mFEBE950843FA798DFC8628E296696296C953071E_inline (XmlTypeMapMemberFlatList_t443422643AA0E5FA5166EF6451BBA01D02004B38* __this, ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* ___value0, const RuntimeMethod* method) 
-{
-	{
-		ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* L_0 = ___value0;
-		__this->____listMap_15 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____listMap_15), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* XmlTypeMapMemberFlatList_get_ListMap_mAAD12C509481E6855A9C4865874566320C256EBC_inline (XmlTypeMapMemberFlatList_t443422643AA0E5FA5166EF6451BBA01D02004B38* __this, const RuntimeMethod* method) 
-{
-	{
-		ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* L_0 = __this->____listMap_15;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* ListMap_get_ItemInfo_mF4B1E24F5658D05E8E1E6296F4A220D33E7EC579_inline (ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlTypeMapElementInfoList_tFE45CC481B284D4ADA542B95E06DB49ABAC4BC78* L_0 = __this->____itemInfo_0;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlTypeMapMemberElement_get_ChoiceMember_m182A4AB876036DDA005F0760EF51C5FCA7F682D8_inline (XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->____choiceMember_11;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void ListMap_set_ChoiceMember_m25EB1F93541895E0647E420B7BF9C8C7194621D6_inline (ListMap_t4510F861363E17F1129649412EDC36CBE8AFD2BC* __this, String_t* ___value0, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = ___value0;
-		__this->____choiceMember_1 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____choiceMember_1), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XmlArrayAttribute_get_IsNullable_m84FB7E08614BFAFE7C6D5B72F4E43CBA42583CFB_inline (XmlArrayAttribute_t7526C7D0DEFA9509CEA895DDBDFD5031F204FB15* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = __this->___isNullable_2;
-		return L_0;
 	}
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapElementInfo_set_ExplicitOrder_mD893A153D81289F4A8C4A429800FEDB81E3578B4_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, int32_t ___value0, const RuntimeMethod* method) 
@@ -30371,204 +27923,6 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapElementInfo_set_Ex
 		int32_t L_0 = ___value0;
 		__this->____explicitOrder_10 = L_0;
 		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* XmlAttributes_get_XmlDefaultValue_m24022111D30B964CF2DDE2EC6ACC870DB4BA7ED1_inline (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) 
-{
-	{
-		RuntimeObject* L_0 = __this->___xmlDefaultValue_6;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapMember_set_DefaultValue_m97AC90D89BFEE878DA9FE3150292AD6E69B6FA27_inline (XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* __this, RuntimeObject* ___value0, const RuntimeMethod* method) 
-{
-	{
-		RuntimeObject* L_0 = ___value0;
-		__this->____defaultValue_8 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____defaultValue_8), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapMember_set_TypeData_m9C4CAF5B4A21DE54C9DE9F90C1332BBDAA4A4B4C_inline (XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* __this, TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* ___value0, const RuntimeMethod* method) 
-{
-	{
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_0 = ___value0;
-		__this->____typeData_4 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____typeData_4), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapMember_set_Name_m388D6A30E3DD11FD6068A5D5C180110C327EFC08_inline (XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* __this, String_t* ___value0, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = ___value0;
-		__this->____name_0 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____name_0), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XmlReflectionMember_get_IsReturnValue_m85EB9A5F4C984353A4BEA4A10D90BEB715158255_inline (XmlReflectionMember_t87430F39B22016DC8AA31589169BFE0730D2949A* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = __this->___isReturnValue_0;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlChoiceIdentifierAttribute_t1DF770FBF01EBD518F55C363C703F86A7712301E* XmlAttributes_get_XmlChoiceIdentifier_mA6096A2AFE2439889FA8F48E22AD7335C9B7EE45_inline (XmlAttributes_t6A1DF68418FD9F41B74A1AFA9F753D2E80F81739* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlChoiceIdentifierAttribute_t1DF770FBF01EBD518F55C363C703F86A7712301E* L_0 = __this->___xmlChoiceIdentifier_5;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapMemberElement_set_ChoiceMember_m8F271920DC329BABB1F6CC20C327EFABC5D5FAD4_inline (XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* __this, String_t* ___value0, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = ___value0;
-		__this->____choiceMember_11 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____choiceMember_11), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapMemberElement_set_ChoiceTypeData_mC09197CF2429D39C3771B2E1903663FEE114877D_inline (XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* __this, TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* ___value0, const RuntimeMethod* method) 
-{
-	{
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_0 = ___value0;
-		__this->____choiceTypeData_13 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____choiceTypeData_13), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlElementAttribute_get_Form_mAB6C265C412AD6BA37FF7802EB207C726F3ADADC_inline (XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = __this->___form_2;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlTypeMapElementInfo_get_Form_m6D632374F4C5C58870DFDB60928B518C216180FA_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = __this->____form_2;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlElementAttribute_get_Namespace_m79825FA7B795B8D0FF3E71637AEB426DC3AFB1FA_inline (XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->___ns_3;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XmlElementAttribute_get_IsNullable_mC31D59FDBE93193FDF0409AC0DC191E8B11A387F_inline (XmlElementAttribute_t1E2EE1E1AB1D03CA9BD7774A39E44D81C649BDD5* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = __this->___isNullable_4;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XmlTypeMapElementInfo_get_IsNullable_m5E6F72E9E7ADFA39100C6C0FFA1585BCDE4ACE75_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = __this->____isNullable_5;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapElementInfo_set_ChoiceValue_m51083B31BC4A97D6C58F2A8FA96355BED2E37AAB_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, RuntimeObject* ___value0, const RuntimeMethod* method) 
-{
-	{
-		RuntimeObject* L_0 = ___value0;
-		__this->____choiceValue_4 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____choiceValue_4), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlAnyElementAttribute_get_Namespace_m566B2C6EC08903732765430EE526F8D5BDFA4FF6_inline (XmlAnyElementAttribute_tFDA3FEFA37983298C29CC84E5564E41600C5EDAB* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->___ns_1;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlAnyElementAttribute_get_Order_m2CCED3AB699ADBDE0F16C41EB0EFE8921DF4BA6A_inline (XmlAnyElementAttribute_tFDA3FEFA37983298C29CC84E5564E41600C5EDAB* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = __this->___order_2;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapMemberElement_set_IsXmlTextCollector_m3825384EFF73E2990FD5746E45CE7AF2D69B456B_inline (XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* __this, bool ___value0, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = ___value0;
-		__this->____isTextCollector_12 = L_0;
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Type_t* XmlTextAttribute_get_Type_m6D956F711B1336CEAE650DDC4A35A9899CEF9861_inline (XmlTextAttribute_tAA8BE9BA759F78BB4CDF00D3848B7746C0EDEFE0* __this, const RuntimeMethod* method) 
-{
-	{
-		Type_t* L_0 = __this->___type_1;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlTypeMapElementInfo_set_WrappedElement_m45FA9CFAFC7B8EB395F59D7832542F3410089195_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, bool ___value0, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = ___value0;
-		__this->____wrappedElement_9 = L_0;
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* CollectionFixup_get_Id_m02C21982C2A3986E65A34429213F203558849D40_inline (CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->___id_3;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void CollectionFixup_set_CollectionItems_mE1B2C71D40112F90E2ECC65D1E14234BA2ED351F_inline (CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* __this, RuntimeObject* ___value0, const RuntimeMethod* method) 
-{
-	{
-		RuntimeObject* L_0 = ___value0;
-		__this->___collectionItems_2 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___collectionItems_2), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlQualifiedName_get_Name_mC9D21D5BADE11AEAC7ED5886B39E1A774C63B830_inline (XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->___name_1;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlQualifiedName_get_Namespace_m0CAE4A651EF1CA6F0EB657C83608A796038A2615_inline (XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->___ns_2;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* XmlSerializationReader_get_Reader_m7DF9AE2DC2E3973AD6EDC5FC78822E50A3C5455F_inline (XmlSerializationReader_t9AD0D8849534C2406CD294857687A6170AC52597* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD* L_0 = __this->___reader_1;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlSerializationCollectionFixupCallback_t7A477E768FFD9DF76301088150243A493D5A4842* CollectionFixup_get_Callback_m1F1435C58DB8A0FDDC6EF46BAE8C871531BEDBAE_inline (CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlSerializationCollectionFixupCallback_t7A477E768FFD9DF76301088150243A493D5A4842* L_0 = __this->___callback_0;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* CollectionFixup_get_Collection_m33F4B486A798DB34A155875436454D248ADF0FD0_inline (CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* __this, const RuntimeMethod* method) 
-{
-	{
-		RuntimeObject* L_0 = __this->___collection_1;
-		return L_0;
 	}
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlSerializationCollectionFixupCallback_Invoke_mFB736B20C467F37986192F47B50619B4E126B36E_inline (XmlSerializationCollectionFixupCallback_t7A477E768FFD9DF76301088150243A493D5A4842* __this, RuntimeObject* ___collection0, RuntimeObject* ___collectionItems1, const RuntimeMethod* method) 
@@ -30581,253 +27935,15 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* XmlSerializationRe
 	typedef RuntimeObject* (*FunctionPointerType) (RuntimeObject*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeArray* CollectionItemFixup_get_Collection_m3A3D1F07DD384677EB43842B4E0C9AE6CAA8B8F6_inline (CollectionItemFixup_tB93D197F97AEEE471775D4EC6C7227434D7EDA11* __this, const RuntimeMethod* method) 
-{
-	{
-		RuntimeArray* L_0 = __this->___list_0;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* CollectionItemFixup_get_Id_m01A755FF6A3F989910289A67DD5ADFA0528FD39F_inline (CollectionItemFixup_tB93D197F97AEEE471775D4EC6C7227434D7EDA11* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->___id_2;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t CollectionItemFixup_get_Index_m455C70697C9BD61D8E47E5867796671FAECBF958_inline (CollectionItemFixup_tB93D197F97AEEE471775D4EC6C7227434D7EDA11* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = __this->___index_1;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* CollectionFixup_get_CollectionItems_m7C8D7CB07A7C17F517B09A5145424EB1DE0EB497_inline (CollectionFixup_t142C1E88C4ED855F059B391DBC2D2F9D4976E702* __this, const RuntimeMethod* method) 
-{
-	{
-		RuntimeObject* L_0 = __this->___collectionItems_2;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlSerializationFixupCallback_t882A7D135707B29ECA0198EFF9BB512C8F54A3AE* Fixup_get_Callback_mF6D51DD8D4089ED7510FA16D29095F75BFB54D9B_inline (Fixup_tE94672CE3DEBD4DCFFB6AC052A9A6E0E7C6AA566* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlSerializationFixupCallback_t882A7D135707B29ECA0198EFF9BB512C8F54A3AE* L_0 = __this->___callback_2;
-		return L_0;
-	}
-}
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlSerializationFixupCallback_Invoke_m20E59EA8A1BB770EB6C5391C419FA821C425EDF7_inline (XmlSerializationFixupCallback_t882A7D135707B29ECA0198EFF9BB512C8F54A3AE* __this, RuntimeObject* ___fixup0, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, RuntimeObject*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___fixup0, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlMapping_get_Format_mB9ACDCC642A2589BF20C9D02C2FA14F2C5D1C3F3_inline (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = __this->___format_2;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* XmlMapping_get_RelatedMaps_m359C8ADACB98609060F82DCB82FB18E39274918C_inline (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, const RuntimeMethod* method) 
-{
-	{
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_0 = __this->___relatedMaps_1;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* XmlMapping_get_Namespace_m196651C91FB3C3442AC616C977345E89450F024F_inline (XmlMapping_t8D4AC99C7F2D51F3161C7E91E41E51097640CE97* __this, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = __this->____namespace_5;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XmlMembersMapping_get_HasWrapperElement_mE921652D9CEADD03E4BCC13C9AC26E457C640CE5_inline (XmlMembersMapping_t0D686C86E19B598F10E53AF79EC905A7E2BDB62C* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = __this->____hasWrapperElement_7;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* ClassMap_get_AllMembers_m68939A09AB79846A722998916E288759CB918FED_inline (ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* __this, const RuntimeMethod* method) 
-{
-	{
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_0 = __this->____allMembers_5;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XmlTypeMapping_get_IsAny_m0C45955548B231D2E892D2924768B068138CBDD8_inline (XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = __this->___isAny_14;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XmlTypeMapping_get_IsNullable_m2CE4D69DE9C4D1A7AFC01D0BE8C2369BD1C8107B_inline (XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = __this->___isNullable_13;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlTypeMapMemberAnyAttribute_t936B5C08A209D3F342575957ACCBF1F7984095F1* ClassMap_get_DefaultAnyAttributeMember_m88660193A65BE269D1E4F7ADEA4778BC78D40B08_inline (ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlTypeMapMemberAnyAttribute_t936B5C08A209D3F342575957ACCBF1F7984095F1* L_0 = __this->____defaultAnyAttribute_9;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* XmlTypeMapMemberAttribute_get_MappedType_mD2DBE6E539F3B9A6F922C1DD37084DCDACE07025_inline (XmlTypeMapMemberAttribute_tD47726060DC8BC868E2BE2A613912531B2ED97A4* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlTypeMapping_tF9D5A0ADAF6340AEC2DB840127EAB75094AA58D9* L_0 = __this->____mappedType_13;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlTypeMapMemberNamespaces_t1493E4BE21467D51FB1CDE88D538FA97815D3112* ClassMap_get_NamespaceDeclarations_m5EF288255B1F07783CF889C781DB6D6BEAF133E1_inline (ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlTypeMapMemberNamespaces_t1493E4BE21467D51FB1CDE88D538FA97815D3112* L_0 = __this->____namespaceDeclarations_10;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* ClassMap_get_ReturnMember_m17D5284F4873CF87F02814AF5BD96CFD23737F32_inline (ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_0 = __this->____returnMember_12;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* ClassMap_get_FlatLists_m852941CF165941C1EB03137482353B221F335DE9_inline (ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* __this, const RuntimeMethod* method) 
-{
-	{
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_0 = __this->____flatLists_4;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlTypeMapMemberExpandable_get_FlatArrayIndex_mD83A6C690F8EA40C0FAF882E1549E0BD0831CC83_inline (XmlTypeMapMemberExpandable_tED3170CD402780E1250005E1131CD848660237FE* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = __this->____flatArrayIndex_14;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* XmlTypeMapMemberElement_get_ChoiceTypeData_m1C40274707406AC69F5536776D0276266332B845_inline (XmlTypeMapMemberElement_t0491AFE1B945AF7A354061BB5838673567076840* __this, const RuntimeMethod* method) 
-{
-	{
-		TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* L_0 = __this->____choiceTypeData_13;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* XmlTypeMapElementInfo_get_Member_m6212D4CEC25E2BC416734944F4A82DE373456742_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* L_0 = __this->____member_3;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlTypeMapMember_get_Index_m3EAB1243B03E5DBD10C6E7CA245E5A6C04406D12_inline (XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = __this->____index_1;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlTypeMapElementInfo_get_ExplicitOrder_m929232F83C9F294565C56EC38C5BACCA530DEDAB_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = __this->____explicitOrder_10;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* Fixup_get_Ids_m9B1A1A8EC0662A14A92B000F90A276C18E7690B2_inline (Fixup_tE94672CE3DEBD4DCFFB6AC052A9A6E0E7C6AA566* __this, const RuntimeMethod* method) 
-{
-	{
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_0 = __this->___ids_1;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* XmlTypeMapElementInfo_get_ChoiceValue_m7BC9464A497AFA7A1BF250BA0D88928706C6412E_inline (XmlTypeMapElementInfo_t5F83002BBC016801717A20C4B72781DEA06DEB32* __this, const RuntimeMethod* method) 
-{
-	{
-		RuntimeObject* L_0 = __this->____choiceValue_4;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlTypeMapMemberAnyElement_tC9C6D58B08CB2C84148376C77AC4259AF149C950* ClassMap_get_DefaultAnyElementMember_m65CFF55B342204FE2E39B8BDF46E733DD43C6B4B_inline (ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlTypeMapMemberAnyElement_tC9C6D58B08CB2C84148376C77AC4259AF149C950* L_0 = __this->____defaultAnyElement_8;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* ClassMap_get_ListMembers_m21D695B14B2AF42EC1850374FDA24CDE2B356649_inline (ClassMap_t4B31ADB19F7BB4DCFD9696C4F595B39B22677109* __this, const RuntimeMethod* method) 
-{
-	{
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_0 = __this->____listMembers_7;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Fixup_get_Source_mF424839086899F18C33B9604622D390C359819AE_inline (Fixup_tE94672CE3DEBD4DCFFB6AC052A9A6E0E7C6AA566* __this, const RuntimeMethod* method) 
-{
-	{
-		RuntimeObject* L_0 = __this->___source_0;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool TypeData_get_HasPublicConstructor_mB467688E3EC6E6B3AF0E9A179C1E173AB4FAC89D_inline (TypeData_t7337956773D9138116ADAB3E8CB50EDD106FA704* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = __this->___hasPublicConstructor_10;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t XmlTypeMapMember_get_GlobalIndex_mC43A1F277B76C624EFAF264B32293499D51853B6_inline (XmlTypeMapMember_t54E80D1B6FF58F90D480933D89DF25A6FDAF299A* __this, const RuntimeMethod* method) 
-{
-	{
-		int32_t L_0 = __this->____globalIndex_2;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* XmlSerializationWriter_get_Writer_m8083D941BEB14C7735FDB31C52ADBCCF5513C2BC_inline (XmlSerializationWriter_t96B46BC33680D6D6AB2580CA44C228109865151B* __this, const RuntimeMethod* method) 
-{
-	{
-		XmlWriter_tCBC8D0C4891828A0A384C68D0414337F20E1A17F* L_0 = __this->___writer_4;
-		return L_0;
-	}
-}
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XmlSerializationWriteCallback_Invoke_mC5FC4D5306E2C36BAE096E3B9BE05F4FC7488E9F_inline (XmlSerializationWriteCallback_t906E648579A93B5C0FAF441C570070927A3D7FAA* __this, RuntimeObject* ___o0, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, RuntimeObject*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___o0, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Nullable_1_get_HasValue_mCF2FD8B3055FA87FC9C504F2122B3B0FAEDE3EC9_gshared_inline (Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = (bool)__this->___hasValue_0;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Enumerator_get_Current_m6330F15D18EE4F547C05DF9BF83C5EB710376027_gshared_inline (Enumerator_t9473BAB568A27E2339D48C1F91319E0F6D244D7A* __this, const RuntimeMethod* method) 
-{
-	{
-		RuntimeObject* L_0 = (RuntimeObject*)__this->____current_3;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Nullable_1_get_HasValue_m6B76D139692C43B2AF7C695FAB044B16ACFAF355_gshared_inline (Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = (bool)__this->___hasValue_0;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Nullable_1_GetValueOrDefault_m86E1210429A6EA0082CC7806DD638E8B4555F148_gshared_inline (Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01* __this, const RuntimeMethod* method) 
-{
-	{
-		bool L_0 = (bool)__this->___value_1;
-		return L_0;
-	}
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mEBCF994CC3814631017F46A387B1A192ED6C85C7_gshared_inline (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method) 
 {

@@ -9,7 +9,6 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public float y;
     public Vector3 cardPosition;
     public string type;
-    private bool isMatched = false;
 
     private CardCrushGrid cardCrushGrid;
 
@@ -17,8 +16,6 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private Vector2 finalTouchPosition;
 
     private float swipeAngle;
-
-    private CardCrushCell targetCell;
 
     public GameObject rightNeighbour;
     public GameObject leftNeighbour;
@@ -44,7 +41,6 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         finalTouchPosition = pointerEventData.position;
         MoveDrops();
-        //isMatchedFunc();
     }
 
     private void CalculateAngle()
@@ -75,7 +71,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         DetectNeighbours();
         DetectMatch();
-        //isMatchedFunc();
+        DestroyMatched();
     }
 
     private void MoveDrops()
@@ -224,14 +220,6 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
     }
 
-    private void DestroyMatches()
-    {
-        foreach(var match in matched)
-        {
-            Destroy(match);
-        }
-    }
-
     private void DetectMatch()
     {
         if(rightNeighbour != null && rightNeighbour.GetComponent<CardElement>().type == type)
@@ -239,15 +227,25 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             if(rightNeighbour.GetComponent<CardElement>().rightNeighbour != null && 
             rightNeighbour.GetComponent<CardElement>().rightNeighbour.GetComponent<CardElement>().type == type)
             {
-                Destroy(rightNeighbour);
-                Destroy(rightNeighbour.GetComponent<CardElement>().rightNeighbour);
-                Destroy(this.gameObject);
+                if(!matched.Contains(rightNeighbour))
+                matched.Add(rightNeighbour);
+
+                if(!matched.Contains(rightNeighbour.GetComponent<CardElement>().rightNeighbour))
+                matched.Add(rightNeighbour.GetComponent<CardElement>().rightNeighbour);
+
+                if(!matched.Contains(this.gameObject))
+                matched.Add(this.gameObject);
             }
             else if(leftNeighbour != null && leftNeighbour.GetComponent<CardElement>().type == type)
             {
-                Destroy(rightNeighbour);
-                Destroy(leftNeighbour);
-                Destroy(this.gameObject);
+                if(!matched.Contains(rightNeighbour))
+                matched.Add(rightNeighbour);
+
+                if(!matched.Contains(leftNeighbour))
+                matched.Add(leftNeighbour);
+
+                if(!matched.Contains(this.gameObject))
+                matched.Add(this.gameObject);
             }
         }
 
@@ -256,15 +254,25 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             if(leftNeighbour.GetComponent<CardElement>().leftNeighbour != null && 
             leftNeighbour.GetComponent<CardElement>().leftNeighbour.GetComponent<CardElement>().type == type)
             {
-                Destroy(leftNeighbour);
-                Destroy(leftNeighbour.GetComponent<CardElement>().leftNeighbour);
-                Destroy(this.gameObject);
+                if(!matched.Contains(leftNeighbour))
+                matched.Add(leftNeighbour);
+
+                if(!matched.Contains(leftNeighbour.GetComponent<CardElement>().leftNeighbour))
+                matched.Add(leftNeighbour.GetComponent<CardElement>().leftNeighbour);
+
+                if(!matched.Contains(this.gameObject))
+                matched.Add(this.gameObject);
             }
             else if(rightNeighbour != null && rightNeighbour.GetComponent<CardElement>().type == type)
             {
-                Destroy(rightNeighbour);
-                Destroy(leftNeighbour);
-                Destroy(this.gameObject);
+                if(!matched.Contains(rightNeighbour))
+                matched.Add(rightNeighbour);
+
+                if(!matched.Contains(leftNeighbour))
+                matched.Add(leftNeighbour);
+
+                if(!matched.Contains(this.gameObject))
+                matched.Add(this.gameObject);
             }
         }
 
@@ -273,60 +281,34 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             if(topNeighbour.GetComponent<CardElement>().topNeighbour != null && 
             topNeighbour.GetComponent<CardElement>().topNeighbour.GetComponent<CardElement>().type == type)
             {
-                Destroy(topNeighbour);
-                Destroy(topNeighbour.GetComponent<CardElement>().topNeighbour);
-                Destroy(this.gameObject);
+                if(!matched.Contains(topNeighbour))
+                matched.Add(topNeighbour);
+
+                if(!matched.Contains(topNeighbour.GetComponent<CardElement>().topNeighbour))
+                matched.Add(topNeighbour.GetComponent<CardElement>().topNeighbour);
+
+                if(!matched.Contains(this.gameObject))
+                matched.Add(this.gameObject);
             }
             else if(bottomNeighbour != null && bottomNeighbour.GetComponent<CardElement>().type == type)
             {
-                Destroy(bottomNeighbour);
-                Destroy(topNeighbour);
-                Destroy(this.gameObject);
+                if(!matched.Contains(bottomNeighbour))
+                matched.Add(bottomNeighbour);
+
+                if(!matched.Contains(topNeighbour))
+                matched.Add(topNeighbour);
+
+                if(!matched.Contains(this.gameObject))
+                matched.Add(this.gameObject);
             }
         }
     }
 
-    // private void isMatchedFunc()
-    // {
-    //     if(type == rightNeighbour.GetComponent<CardElement>().type)
-    //     {
-    //         if(rightNeighbour.GetComponent<CardElement>().rightNeighbour.name == type)
-    //         {
-    //             Destroy(rightNeighbour.GetComponent<CardElement>().rightNeighbour);
-    //             Destroy(rightNeighbour);
-    //             Destroy(this.gameObject);
-    //         }
-    //     }
-    //     if(type == leftNeighbour.GetComponent<CardElement>().type)
-    //     {
-    //         if(leftNeighbour.GetComponent<CardElement>().leftNeighbour.name == type)
-    //         {
-    //             Destroy(leftNeighbour.GetComponent<CardElement>().leftNeighbour);
-    //             Destroy(leftNeighbour);
-    //             Destroy(this.gameObject);
-    //         }
-    //     }
-    //     if(type == bottomNeighbour.GetComponent<CardElement>().type)
-    //     {
-    //         if(bottomNeighbour.GetComponent<CardElement>().bottomNeighbour.name == type)
-    //         {
-    //             Destroy(bottomNeighbour.GetComponent<CardElement>().bottomNeighbour);
-    //             Destroy(bottomNeighbour);
-    //             Destroy(this.gameObject);
-    //         }
-    //     }
-    //     if(type == topNeighbour.GetComponent<CardElement>().type)
-    //     {
-    //         if(topNeighbour.GetComponent<CardElement>().topNeighbour.name == type)
-    //         {
-    //             Destroy(topNeighbour.GetComponent<CardElement>().topNeighbour);
-    //             Destroy(topNeighbour);
-    //             Destroy(this.gameObject);
-    //         }
-    //     }
-    // }
-
-
-
-
+    private void DestroyMatched()
+    {
+        foreach(var card in matched)
+        {
+            Destroy(card);
+        }
+    }
 }

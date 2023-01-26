@@ -54,22 +54,12 @@ struct GenericInterfaceActionInvoker0
 	}
 };
 
-// System.Action`1<System.Object>
-struct Action_1_t6F9EB113EB3F16226AEF811A2744F4111C116C87;
-// System.Action`1<System.String>
-struct Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A;
-// System.Func`2<Unity.Notifications.Android.AndroidNotificationChannel,System.Boolean>
-struct Func_2_tDF24EEAA8E333F9F52D9BFD8FFE14D866C8F3662;
-// System.Collections.Generic.IEnumerable`1<Unity.Notifications.Android.AndroidNotificationChannel>
-struct IEnumerable_1_t92B6310B9D585F15FA35F0DD8F779769D80AC053;
 // System.Collections.Generic.List`1<UnityEngine.AndroidJavaObject>
 struct List_1_t75A593D0EA566755481CBE3EAF0CD9CACD223EAF;
 // System.Collections.Generic.List`1<System.Object>
 struct List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D;
 // UnityEngine.AndroidJavaObject[]
 struct AndroidJavaObjectU5BU5D_tBCEB142050F282B940177011644246618E002001;
-// Unity.Notifications.Android.AndroidNotificationChannel[]
-struct AndroidNotificationChannelU5BU5D_t652D39DBFEA112B98179852322BD9ADBE8D8E6D4;
 // System.Delegate[]
 struct DelegateU5BU5D_tC5AB7E8F745616680F337909D3A8E6C722CDF771;
 // System.Int32[]
@@ -90,14 +80,10 @@ struct AndroidJavaClass_tE6296B30CC4BF84434A9B765267F3FD0DD8DDB03;
 struct AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0;
 // UnityEngine.AndroidJavaProxy
 struct AndroidJavaProxy_tE5521F9761F7B95444B9C39FB15FDFC23F80A78D;
-// Unity.Notifications.Android.AndroidNotificationCenter
-struct AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A;
 // Unity.Notifications.Android.AndroidNotificationIntentData
 struct AndroidNotificationIntentData_tF4201A845458829CA4214A2FEE5A4E67BC8E2729;
 // Unity.Notifications.Android.AndroidReceivedNotificationMainThreadDispatcher
 struct AndroidReceivedNotificationMainThreadDispatcher_t3D8EDA0C164384620EE8200D64F2EE77373E7AB7;
-// System.AsyncCallback
-struct AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C;
 // System.Reflection.Binder
 struct Binder_t91BFCE95A7057FADF4D8A1A342AFE52872246235;
 // Unity.Notifications.Android.BundleJni
@@ -114,8 +100,6 @@ struct Exception_t;
 struct GameObject_t76FEDD663AB33C991A9C9A23129337651094216F;
 // UnityEngine.GlobalJavaObjectRef
 struct GlobalJavaObjectRef_t20D8E5AAFC2EB2518FCABBF40465855E797FF0D8;
-// System.IAsyncResult
-struct IAsyncResult_t7B9B5A0ECB35DCEC31B8A8122C37D687369253B5;
 // System.Collections.IDictionary
 struct IDictionary_t6D03155AF1FA9083817AA5B6AD7DEEACC26AB220;
 // System.Reflection.MemberFilter
@@ -134,10 +118,6 @@ struct NotificationJni_t5252FE73A2521DFB853BCA6E1E81318D380B5654;
 struct NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1;
 // UnityEngine.Object
 struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C;
-// UnityEngine.Android.PermissionCallbacks
-struct PermissionCallbacks_t6C5002298E6649261FCB52C244695459E5C9890F;
-// Unity.Notifications.Android.PermissionRequest
-struct PermissionRequest_t8F5C0D4BD6DA912863FFE7329DBE056CD2F37046;
 // System.Runtime.Serialization.SafeSerializationManager
 struct SafeSerializationManager_tCBB85B95DFD1634237140CD892E82D06ECB3F5E6;
 // System.String
@@ -148,17 +128,13 @@ struct Type_t;
 struct Void_t4861ACF8F4594C3437BB48B6E56783494B843915;
 // Unity.Notifications.Android.AndroidNotificationCenter/<>c
 struct U3CU3Ec_t4795D2EA8B48B91D0F06A6042BB46861429ABF20;
-// Unity.Notifications.Android.AndroidNotificationCenter/<>c__DisplayClass17_0
-struct U3CU3Ec__DisplayClass17_0_t671B55005EAF3DDC85E9381871D79BE4C50FFCAF;
 // Unity.Notifications.Android.AndroidNotificationCenter/NotificationReceivedCallback
 struct NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C;
 
-IL2CPP_EXTERN_C RuntimeClass* Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* AndroidJavaClass_tE6296B30CC4BF84434A9B765267F3FD0DD8DDB03_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* AndroidJavaProxy_tE5521F9761F7B95444B9C39FB15FDFC23F80A78D_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* AndroidNotificationChannelU5BU5D_t652D39DBFEA112B98179852322BD9ADBE8D8E6D4_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* AndroidNotificationIntentData_tF4201A845458829CA4214A2FEE5A4E67BC8E2729_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* AndroidReceivedNotificationMainThreadDispatcher_t3D8EDA0C164384620EE8200D64F2EE77373E7AB7_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_il2cpp_TypeInfo_var;
@@ -166,7 +142,6 @@ IL2CPP_EXTERN_C RuntimeClass* DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D
 IL2CPP_EXTERN_C RuntimeClass* Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Exception_t_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* Func_2_tDF24EEAA8E333F9F52D9BFD8FFE14D866C8F3662_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* IDisposable_t030E0496B4E0E4E4F086825007979AF51F7248C5_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var;
@@ -177,16 +152,12 @@ IL2CPP_EXTERN_C RuntimeClass* NotificationCallback_t0467C5609E329D283C32629AAB1C
 IL2CPP_EXTERN_C RuntimeClass* NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* PermissionCallbacks_t6C5002298E6649261FCB52C244695459E5C9890F_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* String_t_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* TimeSpan_t8195C5B013A2C532FEBDF0B64B6911982E750F5A_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Type_t_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec__DisplayClass17_0_t671B55005EAF3DDC85E9381871D79BE4C50FFCAF_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec_t4795D2EA8B48B91D0F06A6042BB46861429ABF20_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C String_t* _stringLiteral003F1A0D4698F0D0994034CB42BE57F01E7071EE;
 IL2CPP_EXTERN_C String_t* _stringLiteral033E8D8F95BF400864BD2ACEF47CE582680E75E2;
 IL2CPP_EXTERN_C String_t* _stringLiteral03DFB66E5D14DA03A079639D89444EBC2DA49E3D;
-IL2CPP_EXTERN_C String_t* _stringLiteral042E506EAC403864CC8CA1FFC38CA1637017470F;
 IL2CPP_EXTERN_C String_t* _stringLiteral057C2C56F74B179155BC7BA52E8E5A8F720085C9;
 IL2CPP_EXTERN_C String_t* _stringLiteral05AFF8C43DBEA75E64A7AD340660B3E592F0036B;
 IL2CPP_EXTERN_C String_t* _stringLiteral09DF0F4EA30887D5D6E2833D4C620AAAB11E1C34;
@@ -202,7 +173,6 @@ IL2CPP_EXTERN_C String_t* _stringLiteral2371502F77FC4E06CEA26C3019181A650BF2FE0A
 IL2CPP_EXTERN_C String_t* _stringLiteral28E45B65F67DFEF09A216B89076AB46384ECAEFD;
 IL2CPP_EXTERN_C String_t* _stringLiteral2DE10CB9863FBD79A26BDD1E6581EC58F503024E;
 IL2CPP_EXTERN_C String_t* _stringLiteral309475E2FD5CCC4B93075E4B2F688139336E3976;
-IL2CPP_EXTERN_C String_t* _stringLiteral30F16A331B7FED670D062C2FF7797C91FB1ABEDC;
 IL2CPP_EXTERN_C String_t* _stringLiteral3507F14C18339414ED66D51C2A54704F4F66BF29;
 IL2CPP_EXTERN_C String_t* _stringLiteral35EA858EBEA1492F9EF3303EE0169F87CDEA9562;
 IL2CPP_EXTERN_C String_t* _stringLiteral396F6FE98EEDE5658931E136BFD8B8DC080A8BD9;
@@ -238,34 +208,25 @@ IL2CPP_EXTERN_C String_t* _stringLiteral773844F4EAB0720F10FB37E0065041ACDB243E16
 IL2CPP_EXTERN_C String_t* _stringLiteral77739BBFD23D47C94ED718EBC308956A5D4AB21D;
 IL2CPP_EXTERN_C String_t* _stringLiteral77EFF4F4CAEEA7AB0E9270868BE4E7EDF20D2A6D;
 IL2CPP_EXTERN_C String_t* _stringLiteral78A2E5F909763C2798506373D9793DA98ACAFD83;
-IL2CPP_EXTERN_C String_t* _stringLiteral79A3A135E5B5186F8B18862121F8DA14F4E3B1BB;
 IL2CPP_EXTERN_C String_t* _stringLiteral7A05A136E34451BA838B56C57A62ABDD1887D741;
 IL2CPP_EXTERN_C String_t* _stringLiteral7ABF5AFD3781BDE143E9F08C49EFA38071384201;
 IL2CPP_EXTERN_C String_t* _stringLiteral7C800E39CF656105FB08CCBDF7383FACFDB73DF7;
 IL2CPP_EXTERN_C String_t* _stringLiteral7D56777603D13DE0DE510705DC630AF80E83F083;
-IL2CPP_EXTERN_C String_t* _stringLiteral7E56EB3A14BB0A90B10A3F82FE0A66B0323ADC09;
 IL2CPP_EXTERN_C String_t* _stringLiteral812C47466403E44034C69DFF8C0737F3F368B65A;
 IL2CPP_EXTERN_C String_t* _stringLiteral8287EADB7084004EF45B96CC3CE0643C79A55CD4;
-IL2CPP_EXTERN_C String_t* _stringLiteral8605D3E2708C3D1F69E8F918B7E82EB7E671D987;
-IL2CPP_EXTERN_C String_t* _stringLiteral864C6EA0E6C9DCD77772BE341830783DAE6095A8;
 IL2CPP_EXTERN_C String_t* _stringLiteral8723347D88389B5B9D84FAF9C94118595E76A8D9;
 IL2CPP_EXTERN_C String_t* _stringLiteral8A454FE5D40CFA47B41A7601EE4C7E5A97793ABA;
-IL2CPP_EXTERN_C String_t* _stringLiteral8CB198D3AB14F5B2827707E988BEBDF73FC8251B;
 IL2CPP_EXTERN_C String_t* _stringLiteral8F9D1AC8003CE64AD22B0DA00079089562028B6C;
 IL2CPP_EXTERN_C String_t* _stringLiteral8FC7E3B9590667C5068E9E851357567AEEA3578B;
 IL2CPP_EXTERN_C String_t* _stringLiteral957C39ACF343DCE5F7AB145168656E7F288B57EA;
-IL2CPP_EXTERN_C String_t* _stringLiteral996E5360F80E16B2189CC1E536C91CE68083F694;
 IL2CPP_EXTERN_C String_t* _stringLiteral9AA19FA11729D14DDFFF88AB940E187C47936812;
 IL2CPP_EXTERN_C String_t* _stringLiteralA288610E4D4CA66B25A3D30E99F2259924083099;
 IL2CPP_EXTERN_C String_t* _stringLiteralA39D8B3C25D62F9AC74346490A808A083149BC3C;
-IL2CPP_EXTERN_C String_t* _stringLiteralA3C1749774F0E2DFDC58A4BABD710AAF76A0E543;
 IL2CPP_EXTERN_C String_t* _stringLiteralA59539643944A464E30D7011A21734B72919F5BF;
 IL2CPP_EXTERN_C String_t* _stringLiteralA69581B713E8DF5FDC303A301CB6B19917AD174B;
 IL2CPP_EXTERN_C String_t* _stringLiteralA79A01886CDD255DBAF604C7A51EF7370973E814;
-IL2CPP_EXTERN_C String_t* _stringLiteralA8AC977222A7FA0351E2E5F9ED0B1270C1355771;
 IL2CPP_EXTERN_C String_t* _stringLiteralAE95E08AFB79AEC96D3BDD6C9A3788BA259BF6DB;
 IL2CPP_EXTERN_C String_t* _stringLiteralB2471E258F48879198FDEA7BA87494515B30D9FF;
-IL2CPP_EXTERN_C String_t* _stringLiteralB2B2C9BF307CDCC16BAA83374FF3DB32FF40DC47;
 IL2CPP_EXTERN_C String_t* _stringLiteralB57FF4DA3CECFFF19270CA8823E13D52D4D8BC0A;
 IL2CPP_EXTERN_C String_t* _stringLiteralB6F3A12A164FFA69A27D2D6B5705EADEEC5D64B6;
 IL2CPP_EXTERN_C String_t* _stringLiteralB95030A25CC7A13566AE8FA422E467D13AB6FFDB;
@@ -274,30 +235,24 @@ IL2CPP_EXTERN_C String_t* _stringLiteralB9ED63726B3792A912D1DF4A5E4AEFDA0C6D02C9
 IL2CPP_EXTERN_C String_t* _stringLiteralBB51D9582FEA7F91BD3913A156D5F6C60CDF3C99;
 IL2CPP_EXTERN_C String_t* _stringLiteralC033F5E36FD3E211DA34178256F8F6BB2359A4AB;
 IL2CPP_EXTERN_C String_t* _stringLiteralC558F6B52615D04F88C1A2FEADC63E72310DECB5;
-IL2CPP_EXTERN_C String_t* _stringLiteralC55E14875AB248A8777CF4415B8B907416BCA185;
-IL2CPP_EXTERN_C String_t* _stringLiteralC6BB6E51318A73F893E5ECC5FA841B3043DC4C87;
 IL2CPP_EXTERN_C String_t* _stringLiteralC824FF3925D18F01BCB0B304E5C5B5A8D68D89C8;
 IL2CPP_EXTERN_C String_t* _stringLiteralC9B81E6CB678EF7D657F87AD3E4F30A67E57938C;
 IL2CPP_EXTERN_C String_t* _stringLiteralCAA743314C99A7A945A299B6748725F14C02714B;
 IL2CPP_EXTERN_C String_t* _stringLiteralCBD61AA457508E34A49244C75D8DEEC0740B84FE;
 IL2CPP_EXTERN_C String_t* _stringLiteralCCD7A6F8806A71C95F4E8692E1F9FC209B82C5A2;
-IL2CPP_EXTERN_C String_t* _stringLiteralCE18B047107AA23D1AA9B2ED32D316148E02655F;
 IL2CPP_EXTERN_C String_t* _stringLiteralD63BE7049C988C9471492DDB23802773752B93BE;
-IL2CPP_EXTERN_C String_t* _stringLiteralD63E5B8C1F7235D8901BA385D75F8988FD3A9182;
 IL2CPP_EXTERN_C String_t* _stringLiteralD6FF31FFC38A61B5DDA7B40E5CEFC7BA61DF54F2;
 IL2CPP_EXTERN_C String_t* _stringLiteralD76D61D6CB247074CC233E90926FDF3F2E3684E5;
 IL2CPP_EXTERN_C String_t* _stringLiteralDE9C9A97063C73F56F60488D14A05C3E7A4630EC;
 IL2CPP_EXTERN_C String_t* _stringLiteralE4EE767F8D4A5FC13E8CF3DB41F06A5631E37D56;
 IL2CPP_EXTERN_C String_t* _stringLiteralE6AF69C91C20A2D4C4D5FA56F7600A7BB5D305BF;
 IL2CPP_EXTERN_C String_t* _stringLiteralEADCD3C3021F28CA07F50C4363B7FA9428265172;
-IL2CPP_EXTERN_C String_t* _stringLiteralEB534843932D1025EEE09575458F840C63DC1063;
 IL2CPP_EXTERN_C String_t* _stringLiteralED4D3D8AFE804D2C2A2E71BE07B28F1C1FEFA1F8;
 IL2CPP_EXTERN_C String_t* _stringLiteralED77824C4E942D01BBA3961E822A4478B57D4FE0;
 IL2CPP_EXTERN_C String_t* _stringLiteralF0531D8CE590C96ADED66DEADF41A647EC9B4879;
 IL2CPP_EXTERN_C String_t* _stringLiteralF14739A4843901C4DA2BFDF445F221F53B320153;
 IL2CPP_EXTERN_C String_t* _stringLiteralF1FE9FE00151D9517E6FBD69234A14C1A63495E2;
 IL2CPP_EXTERN_C String_t* _stringLiteralF202BD9C29F9FE8967D2598978C59BC250D49ECC;
-IL2CPP_EXTERN_C String_t* _stringLiteralF56CF02460E3AE9330CB57E3E91202E7FEB01239;
 IL2CPP_EXTERN_C String_t* _stringLiteralF7182F1CC8575A67104E0B04F4657F2F3FF26E6F;
 IL2CPP_EXTERN_C String_t* _stringLiteralF91A960CB813ACBB09046C8766F780B73B27BC7C;
 IL2CPP_EXTERN_C String_t* _stringLiteralFB4AE4F77150C3A8E8E4F8B23E734E0C7277B7D9;
@@ -308,7 +263,6 @@ IL2CPP_EXTERN_C String_t* _stringLiteralFFF2E3CA72364727F71AA5E2A535E3DD8A40037F
 IL2CPP_EXTERN_C const RuntimeMethod* AndroidJavaObject_CallStatic_TisAndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0_m398EA96C1DE1BB885F2B1DD0E00E8BBA86B49E63_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* AndroidJavaObject_CallStatic_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m6619B03C8DA4F5A66785845A2E5B39DAEF36642A_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* AndroidJavaObject_CallStatic_TisString_t_mB5DC41208BD7C326A089C20F4F1C2B8B2444ACC3_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* AndroidJavaObject_Call_TisAndroidJavaObjectU5BU5D_tBCEB142050F282B940177011644246618E002001_m5ABE53E4F9B01E977767DB5BCE69E696B0EA257D_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* AndroidJavaObject_Call_TisAndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0_m020246E0988293B6126B690BD6CE4D894276AA3D_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* AndroidJavaObject_Call_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_m05D3284A3FA772D032190A0FE82363C61000F1DF_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* AndroidJavaObject_Call_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_mDC5FD095AFC55DFE596907E5B055B5774DA5B5AC_RuntimeMethod_var;
@@ -317,14 +271,10 @@ IL2CPP_EXTERN_C const RuntimeMethod* AndroidJavaObject_Call_TisString_t_m67FC293
 IL2CPP_EXTERN_C const RuntimeMethod* AndroidJavaObject_GetStatic_TisAndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0_mD7D192A35EB2B2DA3775FAB081958B72088251DD_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* AndroidJavaObject_GetStatic_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m740F3401DEA4A75BADD753EFF71D2328B4147BFC_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* AndroidJavaObject_Get_TisAndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0_mA11B51F5C7C2B8DA16D22E862BB40BF7057B5843_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* AndroidJavaObject_Get_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_m6F4712024377FBA61B40109CE304D4EA5C145016_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* AndroidJavaObject_Get_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m1C9D9590B9F7212AAD6D9BFFF3F2762BD090BCAB_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* AndroidJavaObject_Get_TisInt64U5BU5D_tAEDFCBDB5414E2A140A6F34C0538BF97FCF67A1D_m0EF4D6095F8812E9F918E88C5D4405FFFAB35531_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* AndroidJavaObject_Get_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_m01A8921E749471F6C977F5D16D18A076F5EB3244_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* AndroidJavaObject_Get_TisString_t_m1E165541E71E1CDCF224FC55CBD0955147BB9030_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* AndroidNotificationCenter_RegisterNotificationChannel_m3CA615ABEE46287503868C1585FCDF2A60D4C3D2_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Array_Empty_TisRuntimeObject_mFB8A63D602BB6974D31E20300D9EB89C6FE7C278_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* Enumerable_SingleOrDefault_TisAndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC_m99430960DA223E2202707F15B2922D53E52243C0_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Enumerator_Dispose_mCB6D44778A2A9B82659AE391FF506D93E045ABAE_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Enumerator_MoveNext_m3B5584B4C10CEA04D39E45C7CC34333022C16ACC_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Enumerator_get_Current_m1840848A627FD2045207C5361CCE21E6CB3F31A9_RuntimeMethod_var;
@@ -340,15 +290,8 @@ IL2CPP_EXTERN_C const RuntimeMethod* Nullable_1_get_HasValue_mD63976C410D14373D6
 IL2CPP_EXTERN_C const RuntimeMethod* Nullable_1_get_HasValue_mFAF0B4EEA878E596C80258FE3BDA57CEF40C8D7F_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Nullable_1_get_Value_m3FC15B40E747AA6A9F2AB10A00C46ABE84393637_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Nullable_1_get_Value_mC7511CCEBD1BB6FEEA7903DBB81ED7290D00DDD3_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* PermissionRequest_U3CRequestPermissionU3Eb__5_0_m08DC18B115C109B0CABA25101C8CE76B44045A52_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* PermissionRequest_U3CRequestPermissionU3Eb__5_1_mFC0C42667E163F82AF92E7A0CDDF0B0D780E7AF1_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* PermissionRequest_U3CRequestPermissionU3Eb__5_2_m1D18CC39A4FA2F7E176BC343FF5D0C254D66088E_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec_U3C_cctorU3Eb__41_0_m16234573F796C64BBB1D865F2887A6367AA162DC_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec__DisplayClass17_0_U3CGetNotificationChannelU3Eb__0_mC693539945E016CB682CFB6660B39651C73AB6E4_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeType* GroupAlertBehaviours_tC857504ABF5835A6033C1A8345A49C092389F237_0_0_0_var;
-IL2CPP_EXTERN_C const RuntimeType* Importance_tD55C9582B7EC0BCFC93E0ED83E92CF0D31492631_0_0_0_var;
-IL2CPP_EXTERN_C const RuntimeType* LockScreenVisibility_t80C35F9A0D54445669ED43A50B9F1F9A81F48179_0_0_0_var;
-IL2CPP_EXTERN_C const RuntimeType* NotificationStyle_t7BFBE5D9ABF0BA0CF5D1576511438DB9FBF38548_0_0_0_var;
 struct BundleJni_t578C7BD49F759A34A0B1B324FD7CAB3A57CB0701;;
 struct BundleJni_t578C7BD49F759A34A0B1B324FD7CAB3A57CB0701_marshaled_com;
 struct BundleJni_t578C7BD49F759A34A0B1B324FD7CAB3A57CB0701_marshaled_com;;
@@ -375,7 +318,6 @@ struct NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1_marshale
 struct NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1_marshaled_pinvoke;;
 
 struct AndroidJavaObjectU5BU5D_tBCEB142050F282B940177011644246618E002001;
-struct AndroidNotificationChannelU5BU5D_t652D39DBFEA112B98179852322BD9ADBE8D8E6D4;
 struct DelegateU5BU5D_tC5AB7E8F745616680F337909D3A8E6C722CDF771;
 struct Int64U5BU5D_tAEDFCBDB5414E2A140A6F34C0538BF97FCF67A1D;
 struct ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918;
@@ -469,13 +411,6 @@ struct MemberInfo_t  : public RuntimeObject
 {
 };
 
-// Unity.Notifications.Android.PermissionRequest
-struct PermissionRequest_t8F5C0D4BD6DA912863FFE7329DBE056CD2F37046  : public RuntimeObject
-{
-	// Unity.Notifications.Android.PermissionStatus Unity.Notifications.Android.PermissionRequest::<Status>k__BackingField
-	int32_t ___U3CStatusU3Ek__BackingField_0;
-};
-
 // System.String
 struct String_t  : public RuntimeObject
 {
@@ -513,13 +448,6 @@ struct U3CU3Ec_t4795D2EA8B48B91D0F06A6042BB46861429ABF20_StaticFields
 {
 	// Unity.Notifications.Android.AndroidNotificationCenter/<>c Unity.Notifications.Android.AndroidNotificationCenter/<>c::<>9
 	U3CU3Ec_t4795D2EA8B48B91D0F06A6042BB46861429ABF20* ___U3CU3E9_0;
-};
-
-// Unity.Notifications.Android.AndroidNotificationCenter/<>c__DisplayClass17_0
-struct U3CU3Ec__DisplayClass17_0_t671B55005EAF3DDC85E9381871D79BE4C50FFCAF  : public RuntimeObject
-{
-	// System.String Unity.Notifications.Android.AndroidNotificationCenter/<>c__DisplayClass17_0::channelId
-	String_t* ___channelId_0;
 };
 
 // System.Collections.Generic.List`1/Enumerator<UnityEngine.AndroidJavaObject>
@@ -1472,17 +1400,6 @@ struct NotificationCallback_t0467C5609E329D283C32629AAB1CDB1FD1BC1CF7  : public 
 {
 };
 
-// UnityEngine.Android.PermissionCallbacks
-struct PermissionCallbacks_t6C5002298E6649261FCB52C244695459E5C9890F  : public AndroidJavaProxy_tE5521F9761F7B95444B9C39FB15FDFC23F80A78D
-{
-	// System.Action`1<System.String> UnityEngine.Android.PermissionCallbacks::PermissionGranted
-	Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* ___PermissionGranted_4;
-	// System.Action`1<System.String> UnityEngine.Android.PermissionCallbacks::PermissionDenied
-	Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* ___PermissionDenied_5;
-	// System.Action`1<System.String> UnityEngine.Android.PermissionCallbacks::PermissionDeniedAndDontAskAgain
-	Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* ___PermissionDeniedAndDontAskAgain_6;
-};
-
 // System.Type
 struct Type_t  : public MemberInfo_t
 {
@@ -1506,21 +1423,6 @@ struct Type_t_StaticFields
 	MemberFilter_tF644F1AE82F611B677CE1964D5A3277DDA21D553* ___FilterName_5;
 	// System.Reflection.MemberFilter System.Type::FilterNameIgnoreCase
 	MemberFilter_tF644F1AE82F611B677CE1964D5A3277DDA21D553* ___FilterNameIgnoreCase_6;
-};
-
-// System.Action`1<System.String>
-struct Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A  : public MulticastDelegate_t
-{
-};
-
-// System.Func`2<Unity.Notifications.Android.AndroidNotificationChannel,System.Boolean>
-struct Func_2_tDF24EEAA8E333F9F52D9BFD8FFE14D866C8F3662  : public MulticastDelegate_t
-{
-};
-
-// System.AsyncCallback
-struct AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C  : public MulticastDelegate_t
-{
 };
 
 // UnityEngine.Behaviour
@@ -1658,59 +1560,6 @@ struct Int64U5BU5D_tAEDFCBDB5414E2A140A6F34C0538BF97FCF67A1D  : public RuntimeAr
 		m_Items[index] = value;
 	}
 };
-// Unity.Notifications.Android.AndroidNotificationChannel[]
-struct AndroidNotificationChannelU5BU5D_t652D39DBFEA112B98179852322BD9ADBE8D8E6D4  : public RuntimeArray
-{
-	ALIGN_FIELD (8) AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC m_Items[1];
-
-	inline AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC GetAt(il2cpp_array_size_t index) const
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		return m_Items[index];
-	}
-	inline AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* GetAddressAt(il2cpp_array_size_t index)
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		return m_Items + index;
-	}
-	inline void SetAt(il2cpp_array_size_t index, AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC value)
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___U3CIdU3Ek__BackingField_0), (void*)NULL);
-		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___U3CNameU3Ek__BackingField_1), (void*)NULL);
-		#endif
-		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___U3CDescriptionU3Ek__BackingField_2), (void*)NULL);
-		#endif
-		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___U3CVibrationPatternU3Ek__BackingField_8), (void*)NULL);
-		#endif
-	}
-	inline AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC GetAtUnchecked(il2cpp_array_size_t index) const
-	{
-		return m_Items[index];
-	}
-	inline AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* GetAddressAtUnchecked(il2cpp_array_size_t index)
-	{
-		return m_Items + index;
-	}
-	inline void SetAtUnchecked(il2cpp_array_size_t index, AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC value)
-	{
-		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___U3CIdU3Ek__BackingField_0), (void*)NULL);
-		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___U3CNameU3Ek__BackingField_1), (void*)NULL);
-		#endif
-		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___U3CDescriptionU3Ek__BackingField_2), (void*)NULL);
-		#endif
-		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___U3CVibrationPatternU3Ek__BackingField_8), (void*)NULL);
-		#endif
-	}
-};
 // System.Delegate[]
 struct DelegateU5BU5D_tC5AB7E8F745616680F337909D3A8E6C722CDF771  : public RuntimeArray
 {
@@ -1786,8 +1635,6 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Nullable_1_get_HasValue_mFAF
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F Nullable_1_get_Value_m3FC15B40E747AA6A9F2AB10A00C46ABE84393637_gshared (Nullable_1_tEE83D90B507D40B6C58B5EEF5B9D44D377B44F11* __this, const RuntimeMethod* method) ;
 // FieldType UnityEngine.AndroidJavaObject::GetStatic<System.Object>(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* AndroidJavaObject_GetStatic_TisRuntimeObject_m4EF4E4761A0A6E99E0A298F653E8129B1494E4C9_gshared (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* __this, String_t* ___fieldName0, const RuntimeMethod* method) ;
-// ReturnType UnityEngine.AndroidJavaObject::Call<System.Object>(System.String,System.Object[])
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* AndroidJavaObject_Call_TisRuntimeObject_mA5AF1A9E0463CE91F0ACB6AC2FE0C1922B579EF7_gshared (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* __this, String_t* ___methodName0, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* ___args1, const RuntimeMethod* method) ;
 // ReturnType UnityEngine.AndroidJavaObject::CallStatic<System.Object>(System.String,System.Object[])
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* AndroidJavaObject_CallStatic_TisRuntimeObject_mCAFE27630F6092C4910E14592B050DACFCBE146F_gshared (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* __this, String_t* ___methodName0, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* ___args1, const RuntimeMethod* method) ;
 // T[] System.Array::Empty<System.Object>()
@@ -1796,8 +1643,8 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ObjectU5BU5D_t8061030B0A12A55D5AD
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t AndroidJavaObject_Call_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_mDC5FD095AFC55DFE596907E5B055B5774DA5B5AC_gshared (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* __this, String_t* ___methodName0, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* ___args1, const RuntimeMethod* method) ;
 // ReturnType UnityEngine.AndroidJavaObject::CallStatic<System.Int32>(System.String,System.Object[])
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t AndroidJavaObject_CallStatic_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m6619B03C8DA4F5A66785845A2E5B39DAEF36642A_gshared (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* __this, String_t* ___methodName0, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* ___args1, const RuntimeMethod* method) ;
-// ReturnType UnityEngine.AndroidJavaObject::Call<System.Boolean>(System.String,System.Object[])
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AndroidJavaObject_Call_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_m05D3284A3FA772D032190A0FE82363C61000F1DF_gshared (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* __this, String_t* ___methodName0, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* ___args1, const RuntimeMethod* method) ;
+// ReturnType UnityEngine.AndroidJavaObject::Call<System.Object>(System.String,System.Object[])
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* AndroidJavaObject_Call_TisRuntimeObject_mA5AF1A9E0463CE91F0ACB6AC2FE0C1922B579EF7_gshared (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* __this, String_t* ___methodName0, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* ___args1, const RuntimeMethod* method) ;
 // FieldType UnityEngine.AndroidJavaObject::GetStatic<System.Int32>(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t AndroidJavaObject_GetStatic_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m740F3401DEA4A75BADD753EFF71D2328B4147BFC_gshared (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* __this, String_t* ___fieldName0, const RuntimeMethod* method) ;
 // FieldType UnityEngine.AndroidJavaObject::Get<System.Object>(System.String)
@@ -1806,16 +1653,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* AndroidJavaObject_Get_TisRunti
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t AndroidJavaObject_Get_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m1C9D9590B9F7212AAD6D9BFFF3F2762BD090BCAB_gshared (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* __this, String_t* ___fieldName0, const RuntimeMethod* method) ;
 // FieldType UnityEngine.AndroidJavaObject::Get<System.Int64>(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t AndroidJavaObject_Get_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_m01A8921E749471F6C977F5D16D18A076F5EB3244_gshared (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* __this, String_t* ___fieldName0, const RuntimeMethod* method) ;
+// ReturnType UnityEngine.AndroidJavaObject::Call<System.Boolean>(System.String,System.Object[])
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AndroidJavaObject_Call_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_m05D3284A3FA772D032190A0FE82363C61000F1DF_gshared (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* __this, String_t* ___methodName0, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* ___args1, const RuntimeMethod* method) ;
 // ReturnType UnityEngine.AndroidJavaObject::Call<System.Int64>(System.String,System.Object[])
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t AndroidJavaObject_Call_TisInt64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_m63E24F733CDC205FED0CF4659E49DB4AE06ADBB9_gshared (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* __this, String_t* ___methodName0, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* ___args1, const RuntimeMethod* method) ;
 // T UnityEngine.GameObject::AddComponent<System.Object>()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GameObject_AddComponent_TisRuntimeObject_m69B93700FACCF372F5753371C6E8FB780800B824_gshared (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method) ;
-// System.Void System.Func`2<Unity.Notifications.Android.AndroidNotificationChannel,System.Boolean>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Func_2__ctor_m7038815B9AC3A2B1743445F4477478C54A790E39_gshared (Func_2_tDF24EEAA8E333F9F52D9BFD8FFE14D866C8F3662* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// TSource System.Linq.Enumerable::SingleOrDefault<Unity.Notifications.Android.AndroidNotificationChannel>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC Enumerable_SingleOrDefault_TisAndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC_m99430960DA223E2202707F15B2922D53E52243C0_gshared (RuntimeObject* ___source0, Func_2_tDF24EEAA8E333F9F52D9BFD8FFE14D866C8F3662* ___predicate1, const RuntimeMethod* method) ;
-// FieldType UnityEngine.AndroidJavaObject::Get<System.Boolean>(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AndroidJavaObject_Get_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_m6F4712024377FBA61B40109CE304D4EA5C145016_gshared (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* __this, String_t* ___fieldName0, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<System.Object>::Add(T)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mEBCF994CC3814631017F46A387B1A192ED6C85C7_gshared_inline (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method) ;
 // System.Int32 System.Collections.Generic.List`1<System.Object>::get_Count()
@@ -1832,8 +1675,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Enumerator_MoveNext_mE921CC8F29FBBDE7CC3
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Clear_m16C1F2C61FED5955F10EB36BC1CB2DF34B128994_gshared_inline (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<System.Object>::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1__ctor_m7F078BB342729BDF11327FD89D7872265328F690_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, const RuntimeMethod* method) ;
-// System.Void System.Action`1<System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Action_1__ctor_m2E1DFA67718FC1A0B6E5DFEB78831FFE9C059EB4_gshared (Action_1_t6F9EB113EB3F16226AEF811A2744F4111C116C87* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<System.Object>::AddWithResize(T)
 IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method) ;
 
@@ -1951,14 +1792,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AndroidNotification_get_ShowInForeground
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotification_set_ShowInForeground_m71F7080AA848A067108E6E59D5028BD28EEBF5C9 (AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18* __this, bool ___value0, const RuntimeMethod* method) ;
 // System.Boolean Unity.Notifications.Android.AndroidNotification::get_ShowCustomTimestamp()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool AndroidNotification_get_ShowCustomTimestamp_mFD163DDA1AA335F2AB280AE5D37EA1EA19096DBC_inline (AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18* __this, const RuntimeMethod* method) ;
-// System.DateTime Unity.Notifications.Android.AndroidNotificationExtensions::ToDatetime(System.Int64)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D AndroidNotificationExtensions_ToDatetime_m768472E0022DD7ADD6F4C64F189EFC822D911D13 (int64_t ___dateTime0, const RuntimeMethod* method) ;
-// System.Void Unity.Notifications.Android.AndroidNotification::.ctor(System.String,System.String,System.DateTime)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotification__ctor_m18FDD732AA72F4C581F2677B6D446822B78AD170 (AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18* __this, String_t* ___title0, String_t* ___text1, DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D ___fireTime2, const RuntimeMethod* method) ;
-// System.Void Unity.Notifications.Android.AndroidNotification::.ctor(System.String,System.String,System.DateTime,System.TimeSpan)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotification__ctor_m87B49F2A8A6199ECBCCEE54E7D82C670B5CE89A6 (AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18* __this, String_t* ___title0, String_t* ___text1, DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D ___fireTime2, TimeSpan_t8195C5B013A2C532FEBDF0B64B6911982E750F5A ___repeatInterval3, const RuntimeMethod* method) ;
-// System.Void Unity.Notifications.Android.AndroidNotification::.ctor(System.String,System.String,System.DateTime,System.TimeSpan,System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotification__ctor_mFB35CBDA0AE001C4C5EA449304D14FDA2E7CD0A3 (AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18* __this, String_t* ___title0, String_t* ___text1, DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D ___fireTime2, TimeSpan_t8195C5B013A2C532FEBDF0B64B6911982E750F5A ___repeatInterval3, String_t* ___smallIcon4, const RuntimeMethod* method) ;
 // System.Void UnityEngine.AndroidJavaProxy::.ctor(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidJavaProxy__ctor_m2832886A0E1BBF6702653A7C6A4609F11FB712C7 (AndroidJavaProxy_tE5521F9761F7B95444B9C39FB15FDFC23F80A78D* __this, String_t* ___javaInterface0, const RuntimeMethod* method) ;
 // System.Boolean System.String::Equals(System.String,System.StringComparison)
@@ -1982,13 +1815,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationManagerJni_CollectMethods_m4
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationManagerJni__ctor_m6F37E4CF31D26173F6772F40D1ACBFEE5AF4B589 (NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* __this, AndroidJavaClass_tE6296B30CC4BF84434A9B765267F3FD0DD8DDB03* ___clazz0, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___obj1, const RuntimeMethod* method) ;
 // System.String Unity.Notifications.Android.JniApi::FindMethod(UnityEngine.AndroidJavaClass,System.String,System.String,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* JniApi_FindMethod_m7B990016763D958F1C694F93DC4A7A054C610F2D (AndroidJavaClass_tE6296B30CC4BF84434A9B765267F3FD0DD8DDB03* ___clazz0, String_t* ___name1, String_t* ___signature2, bool ___isStatic3, const RuntimeMethod* method) ;
-// ReturnType UnityEngine.AndroidJavaObject::Call<UnityEngine.AndroidJavaObject>(System.String,System.Object[])
-inline AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* AndroidJavaObject_Call_TisAndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0_m020246E0988293B6126B690BD6CE4D894276AA3D (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* __this, String_t* ___methodName0, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* ___args1, const RuntimeMethod* method)
-{
-	return ((  AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* (*) (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0*, String_t*, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*, const RuntimeMethod*))AndroidJavaObject_Call_TisRuntimeObject_mA5AF1A9E0463CE91F0ACB6AC2FE0C1922B579EF7_gshared)(__this, ___methodName0, ___args1, method);
-}
-// UnityEngine.AndroidJavaObject Unity.Notifications.Android.NotificationManagerJni::GetNotificationFromIntent(UnityEngine.AndroidJavaObject)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* NotificationManagerJni_GetNotificationFromIntent_m3FFECDFB9B4A70DA67A4687956D966C23471C390 (NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* __this, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___intent0, const RuntimeMethod* method) ;
 // System.Void UnityEngine.AndroidJavaObject::CallStatic(System.String,System.Object[])
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidJavaObject_CallStatic_mB677DE04369EDD8E6DECAF2F233116EE1F06555C (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* __this, String_t* ___methodName0, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* ___args1, const RuntimeMethod* method) ;
 // System.Void Unity.Notifications.Android.NotificationManagerJni::SetNotificationIcon(UnityEngine.AndroidJavaObject,UnityEngine.AndroidJavaObject,System.String)
@@ -2056,36 +1882,19 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t AndroidNotificationChanne
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidJavaObject_Call_mDEF7846E2AB1C5379069BB21049ED55A9D837B1C (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* __this, String_t* ___methodName0, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* ___args1, const RuntimeMethod* method) ;
 // System.Void Unity.Notifications.Android.NotificationManagerJni::RegisterNotificationChannel(Unity.Notifications.Android.AndroidNotificationChannel)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationManagerJni_RegisterNotificationChannel_m2287717194672598268CF5FEFFEC0FAB88302EFB (NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* __this, AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC ___channel0, const RuntimeMethod* method) ;
-// ReturnType UnityEngine.AndroidJavaObject::Call<UnityEngine.AndroidJavaObject[]>(System.String,System.Object[])
-inline AndroidJavaObjectU5BU5D_tBCEB142050F282B940177011644246618E002001* AndroidJavaObject_Call_TisAndroidJavaObjectU5BU5D_tBCEB142050F282B940177011644246618E002001_m5ABE53E4F9B01E977767DB5BCE69E696B0EA257D (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* __this, String_t* ___methodName0, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* ___args1, const RuntimeMethod* method)
-{
-	return ((  AndroidJavaObjectU5BU5D_tBCEB142050F282B940177011644246618E002001* (*) (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0*, String_t*, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*, const RuntimeMethod*))AndroidJavaObject_Call_TisRuntimeObject_mA5AF1A9E0463CE91F0ACB6AC2FE0C1922B579EF7_gshared)(__this, ___methodName0, ___args1, method);
-}
-// UnityEngine.AndroidJavaObject[] Unity.Notifications.Android.NotificationManagerJni::GetNotificationChannels()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidJavaObjectU5BU5D_tBCEB142050F282B940177011644246618E002001* NotificationManagerJni_GetNotificationChannels_mC61037390A373A8399FC851B35EEE9C27B35000F (NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* __this, const RuntimeMethod* method) ;
-// System.Void Unity.Notifications.Android.NotificationManagerJni::DeleteNotificationChannel(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationManagerJni_DeleteNotificationChannel_m7FDC2B1E83A82BD228A1B6CAF889978F92176092 (NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* __this, String_t* ___channelId0, const RuntimeMethod* method) ;
 // System.Int32 Unity.Notifications.Android.NotificationManagerJni::ScheduleNotification(UnityEngine.AndroidJavaObject,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t NotificationManagerJni_ScheduleNotification_mB13633DB9B5CF0BF86CAB28BD775BF5D6015C927 (NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* __this, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___notificationBuilder0, bool ___customized1, const RuntimeMethod* method) ;
-// ReturnType UnityEngine.AndroidJavaObject::Call<System.Boolean>(System.String,System.Object[])
-inline bool AndroidJavaObject_Call_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_m05D3284A3FA772D032190A0FE82363C61000F1DF (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* __this, String_t* ___methodName0, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* ___args1, const RuntimeMethod* method)
-{
-	return ((  bool (*) (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0*, String_t*, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*, const RuntimeMethod*))AndroidJavaObject_Call_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_m05D3284A3FA772D032190A0FE82363C61000F1DF_gshared)(__this, ___methodName0, ___args1, method);
-}
-// System.Boolean Unity.Notifications.Android.NotificationManagerJni::CheckIfPendingNotificationIsRegistered(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool NotificationManagerJni_CheckIfPendingNotificationIsRegistered_m9D7808AFE9DA28A59A431DEB49833D7E0BA483AD (NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* __this, int32_t ___id0, const RuntimeMethod* method) ;
-// System.Void Unity.Notifications.Android.NotificationManagerJni::CancelPendingNotification(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationManagerJni_CancelPendingNotification_m1483EB580A604FF6A1E97B56FDBC5CDBADFEDC23 (NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* __this, int32_t ___id0, const RuntimeMethod* method) ;
-// System.Void Unity.Notifications.Android.NotificationManagerJni::CancelDisplayedNotification(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationManagerJni_CancelDisplayedNotification_m4FF516A6AC87A0913E3C9A804F231F7DBFFFA02F (NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* __this, int32_t ___id0, const RuntimeMethod* method) ;
 // System.Void Unity.Notifications.Android.NotificationManagerJni::CancelAllPendingNotificationIntents()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationManagerJni_CancelAllPendingNotificationIntents_m8E4A41BC1F19F01F5A293FFF58B82216A785D32B (NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* __this, const RuntimeMethod* method) ;
 // System.Void Unity.Notifications.Android.NotificationManagerJni::CancelAllNotifications()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationManagerJni_CancelAllNotifications_mF7C3812EBDCEF4EBD7148B933C4E7702424294FE (NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* __this, const RuntimeMethod* method) ;
 // System.Int32 Unity.Notifications.Android.NotificationManagerJni::CheckNotificationStatus(System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t NotificationManagerJni_CheckNotificationStatus_m2E428C909BE14A13390BB4B6C1CAF744B7DA9E40 (NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* __this, int32_t ___id0, const RuntimeMethod* method) ;
-// System.Void Unity.Notifications.Android.NotificationManagerJni::ShowNotificationSettings(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationManagerJni_ShowNotificationSettings_m48069D862A543F2734AD157699ED869674D19EFE (NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* __this, String_t* ___channelId0, const RuntimeMethod* method) ;
+// ReturnType UnityEngine.AndroidJavaObject::Call<UnityEngine.AndroidJavaObject>(System.String,System.Object[])
+inline AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* AndroidJavaObject_Call_TisAndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0_m020246E0988293B6126B690BD6CE4D894276AA3D (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* __this, String_t* ___methodName0, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* ___args1, const RuntimeMethod* method)
+{
+	return ((  AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* (*) (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0*, String_t*, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*, const RuntimeMethod*))AndroidJavaObject_Call_TisRuntimeObject_mA5AF1A9E0463CE91F0ACB6AC2FE0C1922B579EF7_gshared)(__this, ___methodName0, ___args1, method);
+}
 // UnityEngine.AndroidJavaObject Unity.Notifications.Android.NotificationManagerJni::CreateNotificationBuilder(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* NotificationManagerJni_CreateNotificationBuilder_m16B298F40E0E30E8506C8159AD2AAFD00AFC9293 (NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* __this, String_t* ___channelId0, const RuntimeMethod* method) ;
 // System.Void UnityEngine.AndroidJavaClass::.ctor(System.String)
@@ -2165,6 +1974,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationBuilderJni_SetSortKey_m8C12F
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationBuilderJni_SetShowWhen_m2AFC51B0F677DCC8699CBEDE4532980C2FC77085 (NotificationBuilderJni_tC5EB229D0E08E461B60644CBBBAE3881DBDD2752* __this, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___builder0, bool ___showTimestamp1, const RuntimeMethod* method) ;
 // System.Void Unity.Notifications.Android.BundleJni::CollectJni()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BundleJni_CollectJni_m0A3A53F366A67BC5E2118E63A74F87368E53E415 (BundleJni_t578C7BD49F759A34A0B1B324FD7CAB3A57CB0701* __this, const RuntimeMethod* method) ;
+// ReturnType UnityEngine.AndroidJavaObject::Call<System.Boolean>(System.String,System.Object[])
+inline bool AndroidJavaObject_Call_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_m05D3284A3FA772D032190A0FE82363C61000F1DF (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* __this, String_t* ___methodName0, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* ___args1, const RuntimeMethod* method)
+{
+	return ((  bool (*) (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0*, String_t*, ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*, const RuntimeMethod*))AndroidJavaObject_Call_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_m05D3284A3FA772D032190A0FE82363C61000F1DF_gshared)(__this, ___methodName0, ___args1, method);
+}
 // System.Boolean Unity.Notifications.Android.BundleJni::ContainsKey(UnityEngine.AndroidJavaObject,UnityEngine.AndroidJavaObject)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool BundleJni_ContainsKey_m97F4A86715C874CC0C5E94A6B678943D3B11BC38 (BundleJni_t578C7BD49F759A34A0B1B324FD7CAB3A57CB0701* __this, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___bundle0, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___key1, const RuntimeMethod* method) ;
 // System.Boolean Unity.Notifications.Android.BundleJni::GetBoolean(UnityEngine.AndroidJavaObject,UnityEngine.AndroidJavaObject,System.Boolean)
@@ -2182,18 +1996,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t BundleJni_GetLong_m7CFD473890596791A0
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* BundleJni_GetString_mB958FCB77B630633828DD07732182FFC695CC47E (BundleJni_t578C7BD49F759A34A0B1B324FD7CAB3A57CB0701* __this, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___bundle0, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___key1, const RuntimeMethod* method) ;
 // System.Void Unity.Notifications.Android.BundleJni::PutBoolean(UnityEngine.AndroidJavaObject,UnityEngine.AndroidJavaObject,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BundleJni_PutBoolean_mE9CD311268F40FA3463F510C4446748C8147A7B5 (BundleJni_t578C7BD49F759A34A0B1B324FD7CAB3A57CB0701* __this, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___bundle0, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___key1, bool ___value2, const RuntimeMethod* method) ;
-// System.Void Unity.Notifications.Android.BundleJni::PutInt(UnityEngine.AndroidJavaObject,UnityEngine.AndroidJavaObject,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BundleJni_PutInt_mFBE2D0E3E837874612D9476E58F241899D1F1D85 (BundleJni_t578C7BD49F759A34A0B1B324FD7CAB3A57CB0701* __this, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___bundle0, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___key1, int32_t ___value2, const RuntimeMethod* method) ;
 // System.Void Unity.Notifications.Android.BundleJni::PutLong(UnityEngine.AndroidJavaObject,UnityEngine.AndroidJavaObject,System.Int64)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BundleJni_PutLong_m5AED6929547416D86FFD2FC0B0144CD1BE743335 (BundleJni_t578C7BD49F759A34A0B1B324FD7CAB3A57CB0701* __this, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___bundle0, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___key1, int64_t ___value2, const RuntimeMethod* method) ;
 // System.Void Unity.Notifications.Android.BundleJni::PutString(UnityEngine.AndroidJavaObject,UnityEngine.AndroidJavaObject,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BundleJni_PutString_mB0C8E5493629B0FBB7E2700A212679363321DC1B (BundleJni_t578C7BD49F759A34A0B1B324FD7CAB3A57CB0701* __this, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___bundle0, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___key1, String_t* ___value2, const RuntimeMethod* method) ;
 // System.Void Unity.Notifications.Android.JniApi::.ctor(UnityEngine.AndroidJavaClass,UnityEngine.AndroidJavaObject)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void JniApi__ctor_m4B0A801C84343FA62CEED8A6DAFBADDA17E67491 (JniApi_tB6AD56CE1342D28AE36EE491803BCD1AED31F22E* __this, AndroidJavaClass_tE6296B30CC4BF84434A9B765267F3FD0DD8DDB03* ___notificationManagerClass0, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___notificationManager1, const RuntimeMethod* method) ;
-// System.Delegate System.Delegate::Combine(System.Delegate,System.Delegate)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Delegate_t* Delegate_Combine_m1F725AEF318BE6F0426863490691A6F4606E7D00 (Delegate_t* ___a0, Delegate_t* ___b1, const RuntimeMethod* method) ;
-// System.Delegate System.Delegate::Remove(System.Delegate,System.Delegate)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Delegate_t* Delegate_Remove_m8B7DD5661308FA972E23CA1CC3FC9CEB355504E3 (Delegate_t* ___source0, Delegate_t* ___value1, const RuntimeMethod* method) ;
 // System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605 (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___x0, Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___y1, const RuntimeMethod* method) ;
 // System.Void UnityEngine.GameObject::.ctor(System.String)
@@ -2205,93 +2013,22 @@ inline AndroidReceivedNotificationMainThreadDispatcher_t3D8EDA0C164384620EE8200D
 }
 // System.Void Unity.Notifications.Android.NotificationCallback::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationCallback__ctor_m48B6FEB30BE7B1DD1981F178B417486ADE9E709A (NotificationCallback_t0467C5609E329D283C32629AAB1CDB1FD1BC1CF7* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.PlayerPrefs::SetInt(System.String,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerPrefs_SetInt_m956D3E2DB966F20CF42F842880DDF9E2BE94D948 (String_t* ___key0, int32_t ___value1, const RuntimeMethod* method) ;
 // System.Boolean Unity.Notifications.Android.AndroidNotificationCenter::Initialize()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AndroidNotificationCenter_Initialize_m7FE4465A27CB4DCF07D138715B26FF553C055CDA (const RuntimeMethod* method) ;
-// System.Int32 UnityEngine.PlayerPrefs::GetInt(System.String,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t PlayerPrefs_GetInt_m8AD1FA8BA54CC6CE2B2AEEE36B6D75587BB1692D (String_t* ___key0, int32_t ___defaultValue1, const RuntimeMethod* method) ;
-// System.Boolean UnityEngine.Android.Permission::HasUserAuthorizedPermission(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Permission_HasUserAuthorizedPermission_mF4C90E13124E28F6F672200E489CC25A9B645B8B (String_t* ___permission0, const RuntimeMethod* method) ;
-// System.Void Unity.Notifications.Android.AndroidNotificationCenter::SetPostPermissionSetting(Unity.Notifications.Android.PermissionStatus)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationCenter_SetPostPermissionSetting_m9E82B540263A30C469C3B4C3F7CD724F88FE9298 (int32_t ___status0, const RuntimeMethod* method) ;
 // System.Boolean System.String::IsNullOrEmpty(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_IsNullOrEmpty_mEA9E3FB005AC28FE02E69FCF95A7B8456192B478 (String_t* ___value0, const RuntimeMethod* method) ;
 // System.Void System.Exception::.ctor(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Exception__ctor_m9B2BD92CD68916245A75109105D9071C9D430E7F (Exception_t* __this, String_t* ___message0, const RuntimeMethod* method) ;
 // System.String System.String::Format(System.String,System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8 (String_t* ___format0, RuntimeObject* ___arg01, const RuntimeMethod* method) ;
-// System.Void Unity.Notifications.Android.AndroidNotificationCenter/<>c__DisplayClass17_0::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass17_0__ctor_mCD78899948E6FEE2CDBF6443B107DB44F2616F16 (U3CU3Ec__DisplayClass17_0_t671B55005EAF3DDC85E9381871D79BE4C50FFCAF* __this, const RuntimeMethod* method) ;
-// Unity.Notifications.Android.AndroidNotificationChannel[] Unity.Notifications.Android.AndroidNotificationCenter::GetNotificationChannels()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidNotificationChannelU5BU5D_t652D39DBFEA112B98179852322BD9ADBE8D8E6D4* AndroidNotificationCenter_GetNotificationChannels_m956F96F69B21B1F7783A6484C1F863AA3FB6CCEB (const RuntimeMethod* method) ;
-// System.Void System.Func`2<Unity.Notifications.Android.AndroidNotificationChannel,System.Boolean>::.ctor(System.Object,System.IntPtr)
-inline void Func_2__ctor_m7038815B9AC3A2B1743445F4477478C54A790E39 (Func_2_tDF24EEAA8E333F9F52D9BFD8FFE14D866C8F3662* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
-{
-	((  void (*) (Func_2_tDF24EEAA8E333F9F52D9BFD8FFE14D866C8F3662*, RuntimeObject*, intptr_t, const RuntimeMethod*))Func_2__ctor_m7038815B9AC3A2B1743445F4477478C54A790E39_gshared)(__this, ___object0, ___method1, method);
-}
-// TSource System.Linq.Enumerable::SingleOrDefault<Unity.Notifications.Android.AndroidNotificationChannel>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>)
-inline AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC Enumerable_SingleOrDefault_TisAndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC_m99430960DA223E2202707F15B2922D53E52243C0 (RuntimeObject* ___source0, Func_2_tDF24EEAA8E333F9F52D9BFD8FFE14D866C8F3662* ___predicate1, const RuntimeMethod* method)
-{
-	return ((  AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC (*) (RuntimeObject*, Func_2_tDF24EEAA8E333F9F52D9BFD8FFE14D866C8F3662*, const RuntimeMethod*))Enumerable_SingleOrDefault_TisAndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC_m99430960DA223E2202707F15B2922D53E52243C0_gshared)(___source0, ___predicate1, method);
-}
-// FieldType UnityEngine.AndroidJavaObject::Get<System.String>(System.String)
-inline String_t* AndroidJavaObject_Get_TisString_t_m1E165541E71E1CDCF224FC55CBD0955147BB9030 (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* __this, String_t* ___fieldName0, const RuntimeMethod* method)
-{
-	return ((  String_t* (*) (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0*, String_t*, const RuntimeMethod*))AndroidJavaObject_Get_TisRuntimeObject_mF7C8EFCB16140AB7116DAA3FCB1B585FC7A203F2_gshared)(__this, ___fieldName0, method);
-}
-// System.Void Unity.Notifications.Android.AndroidNotificationChannel::set_Id(System.String)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_Id_mF7C5C0A558A8B0936EAEE02E63FA75D3863491E8_inline (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, String_t* ___value0, const RuntimeMethod* method) ;
-// System.Void Unity.Notifications.Android.AndroidNotificationChannel::set_Name(System.String)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_Name_m7BFE6876244461FD7C31E44737BE531FA1C8D06F_inline (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, String_t* ___value0, const RuntimeMethod* method) ;
-// Unity.Notifications.Android.Importance Unity.Notifications.Android.AndroidNotificationExtensions::ToImportance(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t AndroidNotificationExtensions_ToImportance_mF825DF408EBA8407AA80A756321939165CDE9DED (int32_t ___importance0, const RuntimeMethod* method) ;
-// System.Void Unity.Notifications.Android.AndroidNotificationChannel::set_Importance(Unity.Notifications.Android.Importance)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_Importance_mE15044EC9CF9254A9667DEC1212C42162B34A980_inline (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, int32_t ___value0, const RuntimeMethod* method) ;
-// System.Void Unity.Notifications.Android.AndroidNotificationChannel::set_Description(System.String)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_Description_m1FEF9E6977640D864A5A47DFA4B88988E90C3D09_inline (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, String_t* ___value0, const RuntimeMethod* method) ;
-// FieldType UnityEngine.AndroidJavaObject::Get<System.Boolean>(System.String)
-inline bool AndroidJavaObject_Get_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_m6F4712024377FBA61B40109CE304D4EA5C145016 (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* __this, String_t* ___fieldName0, const RuntimeMethod* method)
-{
-	return ((  bool (*) (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0*, String_t*, const RuntimeMethod*))AndroidJavaObject_Get_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_m6F4712024377FBA61B40109CE304D4EA5C145016_gshared)(__this, ___fieldName0, method);
-}
-// System.Void Unity.Notifications.Android.AndroidNotificationChannel::set_EnableLights(System.Boolean)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_EnableLights_m7CD6A72DB5139D175ADBEB68984EF42E9BC5A19D_inline (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, bool ___value0, const RuntimeMethod* method) ;
-// System.Void Unity.Notifications.Android.AndroidNotificationChannel::set_EnableVibration(System.Boolean)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_EnableVibration_m1D7E703E1989322F82706642D5FDD30BB3FDBDAB_inline (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, bool ___value0, const RuntimeMethod* method) ;
-// System.Void Unity.Notifications.Android.AndroidNotificationChannel::set_CanBypassDnd(System.Boolean)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_CanBypassDnd_mC46CCD099353D872B2677782909AB6425709729C_inline (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, bool ___value0, const RuntimeMethod* method) ;
-// System.Void Unity.Notifications.Android.AndroidNotificationChannel::set_CanShowBadge(System.Boolean)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_CanShowBadge_mC62C1B6B1A53267281ACC54D88B1882AEBBF6E33_inline (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, bool ___value0, const RuntimeMethod* method) ;
-// FieldType UnityEngine.AndroidJavaObject::Get<System.Int64[]>(System.String)
-inline Int64U5BU5D_tAEDFCBDB5414E2A140A6F34C0538BF97FCF67A1D* AndroidJavaObject_Get_TisInt64U5BU5D_tAEDFCBDB5414E2A140A6F34C0538BF97FCF67A1D_m0EF4D6095F8812E9F918E88C5D4405FFFAB35531 (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* __this, String_t* ___fieldName0, const RuntimeMethod* method)
-{
-	return ((  Int64U5BU5D_tAEDFCBDB5414E2A140A6F34C0538BF97FCF67A1D* (*) (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0*, String_t*, const RuntimeMethod*))AndroidJavaObject_Get_TisRuntimeObject_mF7C8EFCB16140AB7116DAA3FCB1B585FC7A203F2_gshared)(__this, ___fieldName0, method);
-}
-// System.Void Unity.Notifications.Android.AndroidNotificationChannel::set_VibrationPattern(System.Int64[])
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_VibrationPattern_m5094F0617F624125303CACD9ABECE78F3CEDE5EF_inline (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, Int64U5BU5D_tAEDFCBDB5414E2A140A6F34C0538BF97FCF67A1D* ___value0, const RuntimeMethod* method) ;
-// Unity.Notifications.Android.LockScreenVisibility Unity.Notifications.Android.AndroidNotificationExtensions::ToLockScreenVisibility(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t AndroidNotificationExtensions_ToLockScreenVisibility_mDF748982613826246900C07483FD4417995D2637 (int32_t ___lockscreenVisibility0, const RuntimeMethod* method) ;
-// System.Void Unity.Notifications.Android.AndroidNotificationChannel::set_LockScreenVisibility(Unity.Notifications.Android.LockScreenVisibility)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_LockScreenVisibility_m60EA310F67DFC24F7BB72D956503A85E5AF81A6F_inline (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, int32_t ___value0, const RuntimeMethod* method) ;
 // UnityEngine.AndroidJavaObject Unity.Notifications.Android.AndroidNotificationCenter::CreateNotificationBuilder(Unity.Notifications.Android.AndroidNotification,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* AndroidNotificationCenter_CreateNotificationBuilder_m882FE96B446F7752DA065E70138C788AB9A97EA7 (AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18 ___notification0, String_t* ___channelId1, const RuntimeMethod* method) ;
 // System.Int32 Unity.Notifications.Android.AndroidNotificationCenter::ScheduleNotification(UnityEngine.AndroidJavaObject,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t AndroidNotificationCenter_ScheduleNotification_m9274C4F9EBB42FBD339E3AA95537FF13143417E3 (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___notificationBuilder0, bool ___customized1, const RuntimeMethod* method) ;
-// UnityEngine.AndroidJavaObject Unity.Notifications.Android.AndroidNotificationCenter::CreateNotificationBuilder(System.Int32,Unity.Notifications.Android.AndroidNotification,System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* AndroidNotificationCenter_CreateNotificationBuilder_mBAEF85164D0D956BF460D23859173B639EFE91F2 (int32_t ___id0, AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18 ___notification1, String_t* ___channelId2, const RuntimeMethod* method) ;
-// System.Void Unity.Notifications.Android.AndroidNotificationCenter::SendNotification(UnityEngine.AndroidJavaObject)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationCenter_SendNotification_m3A2F6E76507993670B90A56EBD2A455048455EAF (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___notificationBuilder0, const RuntimeMethod* method) ;
-// System.Void Unity.Notifications.Android.AndroidNotificationCenter::CancelScheduledNotification(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationCenter_CancelScheduledNotification_m09AF99C709F179487C1AC459160BD1F8482F2530 (int32_t ___id0, const RuntimeMethod* method) ;
-// System.Void Unity.Notifications.Android.AndroidNotificationCenter::CancelDisplayedNotification(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationCenter_CancelDisplayedNotification_mEDD943C7EACF9DF736A6024F83993DF96A4BB859 (int32_t ___id0, const RuntimeMethod* method) ;
 // System.Void Unity.Notifications.Android.AndroidNotificationCenter::CancelAllScheduledNotifications()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationCenter_CancelAllScheduledNotifications_mB9F7CB93FC4AA4E1E925523F11D715B2AC89D37B (const RuntimeMethod* method) ;
 // System.Void Unity.Notifications.Android.AndroidNotificationCenter::CancelAllDisplayedNotifications()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationCenter_CancelAllDisplayedNotifications_mE9F1775FEDCAE748489A98734F436E41485C0966 (const RuntimeMethod* method) ;
-// Unity.Notifications.Android.AndroidNotificationIntentData Unity.Notifications.Android.AndroidNotificationCenter::GetNotificationData(UnityEngine.AndroidJavaObject)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidNotificationIntentData_tF4201A845458829CA4214A2FEE5A4E67BC8E2729* AndroidNotificationCenter_GetNotificationData_mE28487D690B4635F58A28189AA4D7CA19EC7A56A (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___notificationObj0, const RuntimeMethod* method) ;
 // System.Void Unity.Notifications.Android.AndroidNotificationCenter::CreateNotificationBuilder(Unity.Notifications.Android.AndroidNotification,System.String,UnityEngine.AndroidJavaObject&,UnityEngine.AndroidJavaObject&)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationCenter_CreateNotificationBuilder_m9B96B90B140356DAE357B647D2E72A507BAC813B (AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18 ___notification0, String_t* ___channelId1, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0** ___notificationBuilder2, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0** ___extras3, const RuntimeMethod* method) ;
 // System.Int64 Unity.Notifications.Android.AndroidNotificationExtensions::ToLong(System.DateTime)
@@ -2304,26 +2041,32 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidJavaObject__ctor_m5A65B5D325C2CEF
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t AndroidNotificationExtensions_ToInt_m91C0B60EDBD614A641EE3E7AF2D30F227D8ECD67 (Nullable_1_tEE83D90B507D40B6C58B5EEF5B9D44D377B44F11 ___color0, const RuntimeMethod* method) ;
 // System.Int64 Unity.Notifications.Android.AndroidNotificationExtensions::ToLong(System.Nullable`1<System.TimeSpan>)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t AndroidNotificationExtensions_ToLong_m62D36F6E745B7E0EC706158960E0650F1A980FC6 (Nullable_1_tE151CE1F6892804B41C4004C95CB57020ABB3272 ___timeSpan0, const RuntimeMethod* method) ;
+// System.DateTime Unity.Notifications.Android.AndroidNotificationExtensions::ToDatetime(System.Int64)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D AndroidNotificationExtensions_ToDatetime_m768472E0022DD7ADD6F4C64F189EFC822D911D13 (int64_t ___dateTime0, const RuntimeMethod* method) ;
 // Unity.Notifications.Android.GroupAlertBehaviours Unity.Notifications.Android.AndroidNotificationExtensions::ToGroupAlertBehaviours(System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t AndroidNotificationExtensions_ToGroupAlertBehaviours_mC3532E41409A2AD93B89C88F6E52E12AC064E348 (int32_t ___groupAlertBehaviour0, const RuntimeMethod* method) ;
 // System.Void Unity.Notifications.Android.AndroidNotificationIntentData::.ctor(System.Int32,System.String,Unity.Notifications.Android.AndroidNotification)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationIntentData__ctor_mC71DBF52CCA5391F4F0D04F329F96E834E847383 (AndroidNotificationIntentData_tF4201A845458829CA4214A2FEE5A4E67BC8E2729* __this, int32_t ___id0, String_t* ___channelId1, AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18 ___notification2, const RuntimeMethod* method) ;
 // System.Void Unity.Notifications.Android.AndroidNotificationIntentData::set_NativeNotification(UnityEngine.AndroidJavaObject)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationIntentData_set_NativeNotification_m1D0827C74509785207483AF0C9F57EC4E945CD74_inline (AndroidNotificationIntentData_tF4201A845458829CA4214A2FEE5A4E67BC8E2729* __this, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___value0, const RuntimeMethod* method) ;
+// Unity.Notifications.Android.AndroidNotificationIntentData Unity.Notifications.Android.AndroidNotificationCenter::GetNotificationData(UnityEngine.AndroidJavaObject)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidNotificationIntentData_tF4201A845458829CA4214A2FEE5A4E67BC8E2729* AndroidNotificationCenter_GetNotificationData_mE28487D690B4635F58A28189AA4D7CA19EC7A56A (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___notificationObj0, const RuntimeMethod* method) ;
 // System.Void Unity.Notifications.Android.AndroidNotificationCenter/NotificationReceivedCallback::Invoke(Unity.Notifications.Android.AndroidNotificationIntentData)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void NotificationReceivedCallback_Invoke_m61C140E5347A44125C809D5E68530FB4EE7D74A4_inline (NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* __this, AndroidNotificationIntentData_tF4201A845458829CA4214A2FEE5A4E67BC8E2729* ___data0, const RuntimeMethod* method) ;
-// System.Void System.Object::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2 (RuntimeObject* __this, const RuntimeMethod* method) ;
 // System.Void Unity.Notifications.Android.AndroidNotificationCenter/NotificationReceivedCallback::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationReceivedCallback__ctor_m1C6581A2A364B5F84236592BEE8C44D9C06E356B (NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Boolean System.String::op_Equality(System.String,System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1 (String_t* ___a0, String_t* ___b1, const RuntimeMethod* method) ;
 // System.Void Unity.Notifications.Android.AndroidNotificationCenter/<>c::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__ctor_m6E71531692B5D59264A9AB9B2800CA786AD38E37 (U3CU3Ec_t4795D2EA8B48B91D0F06A6042BB46861429ABF20* __this, const RuntimeMethod* method) ;
-// System.Boolean Unity.Notifications.Android.AndroidNotificationChannel::get_Enabled()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AndroidNotificationChannel_get_Enabled_mF2DC76901E5D2ECD82EF274229D5D0188E8C2332 (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, const RuntimeMethod* method) ;
-// System.Void Unity.Notifications.Android.AndroidNotificationChannel::.ctor(System.String,System.String,System.String,Unity.Notifications.Android.Importance)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationChannel__ctor_m34B6C2E63FC733479B457A60CD32B17DB826C92C (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, String_t* ___id0, String_t* ___name1, String_t* ___description2, int32_t ___importance3, const RuntimeMethod* method) ;
+// System.Void System.Object::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2 (RuntimeObject* __this, const RuntimeMethod* method) ;
+// System.Void Unity.Notifications.Android.AndroidNotificationChannel::set_Id(System.String)
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_Id_mF7C5C0A558A8B0936EAEE02E63FA75D3863491E8_inline (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, String_t* ___value0, const RuntimeMethod* method) ;
+// System.Void Unity.Notifications.Android.AndroidNotificationChannel::set_Name(System.String)
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_Name_m7BFE6876244461FD7C31E44737BE531FA1C8D06F_inline (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, String_t* ___value0, const RuntimeMethod* method) ;
+// System.Void Unity.Notifications.Android.AndroidNotificationChannel::set_Description(System.String)
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_Description_m1FEF9E6977640D864A5A47DFA4B88988E90C3D09_inline (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, String_t* ___value0, const RuntimeMethod* method) ;
+// System.Void Unity.Notifications.Android.AndroidNotificationChannel::set_Importance(Unity.Notifications.Android.Importance)
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_Importance_mE15044EC9CF9254A9667DEC1212C42162B34A980_inline (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, int32_t ___value0, const RuntimeMethod* method) ;
 // System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Type_t* Type_GetTypeFromHandle_m6062B81682F79A4D6DF2640692EE6D9987858C57 (RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B ___handle0, const RuntimeMethod* method) ;
 // System.Boolean System.Enum::IsDefined(System.Type,System.Object)
@@ -2402,31 +2145,6 @@ inline void List_1__ctor_m21BC8DD8763514B160D7ECC2657F94E5E8031390 (List_1_t75A5
 }
 // System.Void UnityEngine.MonoBehaviour::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E (MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* __this, const RuntimeMethod* method) ;
-// Unity.Notifications.Android.PermissionStatus Unity.Notifications.Android.AndroidNotificationCenter::get_UserPermissionToPost()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t AndroidNotificationCenter_get_UserPermissionToPost_mB4CDF213C94793F39FB65977FD0709542DB2AF22 (const RuntimeMethod* method) ;
-// System.Void Unity.Notifications.Android.PermissionRequest::set_Status(Unity.Notifications.Android.PermissionStatus)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void PermissionRequest_set_Status_m71661050BE6920B47203A9A11E7517A6F1DF6B7B_inline (PermissionRequest_t8F5C0D4BD6DA912863FFE7329DBE056CD2F37046* __this, int32_t ___value0, const RuntimeMethod* method) ;
-// Unity.Notifications.Android.PermissionStatus Unity.Notifications.Android.PermissionRequest::get_Status()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t PermissionRequest_get_Status_m7F1362D18E272FC25BC085ACFD4892461C8CA561_inline (PermissionRequest_t8F5C0D4BD6DA912863FFE7329DBE056CD2F37046* __this, const RuntimeMethod* method) ;
-// System.Void Unity.Notifications.Android.PermissionRequest::RequestPermission()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PermissionRequest_RequestPermission_m859C69D73753CABD1B06709FB5577F6FAD117D5A (PermissionRequest_t8F5C0D4BD6DA912863FFE7329DBE056CD2F37046* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.Android.PermissionCallbacks::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PermissionCallbacks__ctor_m91B14BBBC8913C131E400BA0D13576822AAE7A75 (PermissionCallbacks_t6C5002298E6649261FCB52C244695459E5C9890F* __this, const RuntimeMethod* method) ;
-// System.Void System.Action`1<System.String>::.ctor(System.Object,System.IntPtr)
-inline void Action_1__ctor_m9DC2953C55C4D7D4B7BEFE03D84DA1F9362D652C (Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
-{
-	((  void (*) (Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A*, RuntimeObject*, intptr_t, const RuntimeMethod*))Action_1__ctor_m2E1DFA67718FC1A0B6E5DFEB78831FFE9C059EB4_gshared)(__this, ___object0, ___method1, method);
-}
-// System.Void UnityEngine.Android.PermissionCallbacks::add_PermissionGranted(System.Action`1<System.String>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PermissionCallbacks_add_PermissionGranted_m74335D4200D9B1A7C80AB9C133F95C61FCDCDF89 (PermissionCallbacks_t6C5002298E6649261FCB52C244695459E5C9890F* __this, Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* ___value0, const RuntimeMethod* method) ;
-// System.Void UnityEngine.Android.PermissionCallbacks::add_PermissionDenied(System.Action`1<System.String>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PermissionCallbacks_add_PermissionDenied_mE0B2826463785B050C999C70F443FCC3822563D0 (PermissionCallbacks_t6C5002298E6649261FCB52C244695459E5C9890F* __this, Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* ___value0, const RuntimeMethod* method) ;
-// System.Void UnityEngine.Android.PermissionCallbacks::add_PermissionDeniedAndDontAskAgain(System.Action`1<System.String>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PermissionCallbacks_add_PermissionDeniedAndDontAskAgain_mEDE8C00FEF2F649F10A47F30AC4ECB09E52DB9AA (PermissionCallbacks_t6C5002298E6649261FCB52C244695459E5C9890F* __this, Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* ___value0, const RuntimeMethod* method) ;
-// System.Void UnityEngine.Android.Permission::RequestUserPermission(System.String,UnityEngine.Android.PermissionCallbacks)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Permission_RequestUserPermission_m7B8E817C03FDB5C99F22002C7181F27BF031F117 (String_t* ___permission0, PermissionCallbacks_t6C5002298E6649261FCB52C244695459E5C9890F* ___callbacks1, const RuntimeMethod* method) ;
-// System.Void Unity.Notifications.Android.PermissionRequest::PermissionResponse(Unity.Notifications.Android.PermissionStatus)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PermissionRequest_PermissionResponse_mD1C6B563D20A5BDC42BFDD767C0B1AD4E61ABECB (PermissionRequest_t8F5C0D4BD6DA912863FFE7329DBE056CD2F37046* __this, int32_t ___status0, const RuntimeMethod* method) ;
 // System.Single UnityEngine.Mathf::Clamp01(System.Single)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Mathf_Clamp01_mA7E048DBDA832D399A581BE4D6DED9FA44CE0F14_inline (float ___value0, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<System.Object>::AddWithResize(T)
@@ -3286,138 +3004,6 @@ IL2CPP_EXTERN_C  void AndroidNotification_set_ShowCustomTimestamp_mEE51AFA134756
 	_thisAdjusted = reinterpret_cast<AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18*>(__this + _offset);
 	AndroidNotification_set_ShowCustomTimestamp_mEE51AFA13475644D5D23BEAB723EE934D7DC9A8E_inline(_thisAdjusted, ___value0, method);
 }
-// System.Void Unity.Notifications.Android.AndroidNotification::.ctor(System.String,System.String,System.DateTime)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotification__ctor_m18FDD732AA72F4C581F2677B6D446822B78AD170 (AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18* __this, String_t* ___title0, String_t* ___text1, DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D ___fireTime2, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&String_t_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// Title = title;
-		String_t* L_0 = ___title0;
-		AndroidNotification_set_Title_m35F0E43355F04357F2D9331A11704214DAB7A613_inline(__this, L_0, NULL);
-		// Text = text;
-		String_t* L_1 = ___text1;
-		AndroidNotification_set_Text_mDED33D1FDAF3BAB04DBFEB2CBD805A2BE91F4AE8_inline(__this, L_1, NULL);
-		// FireTime = fireTime;
-		DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D L_2 = ___fireTime2;
-		AndroidNotification_set_FireTime_mF3EF2E73DDC86E2A3C385005F6678DBDFF6BE340_inline(__this, L_2, NULL);
-		// SmallIcon = string.Empty;
-		String_t* L_3 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->___Empty_6;
-		AndroidNotification_set_SmallIcon_mA6AFEAD07BB549DF80E16532BB43301505E58083_inline(__this, L_3, NULL);
-		// ShouldAutoCancel = false;
-		AndroidNotification_set_ShouldAutoCancel_m3A7F5E5A2354D3CFEEB7F604904D5F43BBE41946_inline(__this, (bool)0, NULL);
-		// LargeIcon = string.Empty;
-		String_t* L_4 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->___Empty_6;
-		AndroidNotification_set_LargeIcon_m5E693366C2066AD15EA7B4E451E08491CD81C2EB_inline(__this, L_4, NULL);
-		// Style = NotificationStyle.None;
-		AndroidNotification_set_Style_m02F110048F9A62594E118CBBD10BF06C0F072BB7_inline(__this, 0, NULL);
-		// Number = -1;
-		AndroidNotification_set_Number_m15509D86A8A70CA85B834A31B42909D9386CD369_inline(__this, (-1), NULL);
-		// UsesStopwatch = false;
-		AndroidNotification_set_UsesStopwatch_mAD2AD8F67537B80B1D9659284880AF50F3FB747C_inline(__this, (bool)0, NULL);
-		// IntentData = string.Empty;
-		String_t* L_5 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->___Empty_6;
-		AndroidNotification_set_IntentData_m365B7A0B3DF0856F2731EFE61CB91291BAAFEE07_inline(__this, L_5, NULL);
-		// Group = string.Empty;
-		String_t* L_6 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->___Empty_6;
-		AndroidNotification_set_Group_mB9237D790F810E60D4C96AAE16CC4DE694EB3093_inline(__this, L_6, NULL);
-		// GroupSummary = false;
-		AndroidNotification_set_GroupSummary_mDE9377022547D20BE6ADEECA56A1A6D5E62AE371_inline(__this, (bool)0, NULL);
-		// SortKey = string.Empty;
-		String_t* L_7 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->___Empty_6;
-		AndroidNotification_set_SortKey_m2A97F9DA6AD77DE804BE4EA57319CA6382DF396F_inline(__this, L_7, NULL);
-		// GroupAlertBehaviour = GroupAlertBehaviours.GroupAlertAll;
-		AndroidNotification_set_GroupAlertBehaviour_mB3D0C8B3446F9AF3F866AE0AA34C0BA75513B2A8_inline(__this, 0, NULL);
-		// ShowTimestamp = false;
-		AndroidNotification_set_ShowTimestamp_m3F84DEBD26C1A233AE9FF0D84B4C1F01DBB75CF4_inline(__this, (bool)0, NULL);
-		// ShowCustomTimestamp = false;
-		AndroidNotification_set_ShowCustomTimestamp_mEE51AFA13475644D5D23BEAB723EE934D7DC9A8E_inline(__this, (bool)0, NULL);
-		// m_RepeatInterval = (-1L).ToTimeSpan();
-		TimeSpan_t8195C5B013A2C532FEBDF0B64B6911982E750F5A L_8;
-		L_8 = AndroidNotificationExtensions_ToTimeSpan_m296ABA6771A5DA8F6DAF364B998BB78246024E20(((int64_t)(-1)), NULL);
-		__this->___m_RepeatInterval_17 = L_8;
-		// m_Color = new Color(0, 0, 0, 0);
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_9;
-		memset((&L_9), 0, sizeof(L_9));
-		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_9), (0.0f), (0.0f), (0.0f), (0.0f), /*hidden argument*/NULL);
-		__this->___m_Color_16 = L_9;
-		// m_CustomTimestamp = (-1L).ToDatetime();
-		DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D L_10;
-		L_10 = AndroidNotificationExtensions_ToDatetime_m768472E0022DD7ADD6F4C64F189EFC822D911D13(((int64_t)(-1)), NULL);
-		__this->___m_CustomTimestamp_18 = L_10;
-		// m_SilentInForeground = false;
-		__this->___m_SilentInForeground_19 = (bool)0;
-		// }
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void AndroidNotification__ctor_m18FDD732AA72F4C581F2677B6D446822B78AD170_AdjustorThunk (RuntimeObject* __this, String_t* ___title0, String_t* ___text1, DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D ___fireTime2, const RuntimeMethod* method)
-{
-	AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18*>(__this + _offset);
-	AndroidNotification__ctor_m18FDD732AA72F4C581F2677B6D446822B78AD170(_thisAdjusted, ___title0, ___text1, ___fireTime2, method);
-}
-// System.Void Unity.Notifications.Android.AndroidNotification::.ctor(System.String,System.String,System.DateTime,System.TimeSpan)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotification__ctor_m87B49F2A8A6199ECBCCEE54E7D82C670B5CE89A6 (AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18* __this, String_t* ___title0, String_t* ___text1, DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D ___fireTime2, TimeSpan_t8195C5B013A2C532FEBDF0B64B6911982E750F5A ___repeatInterval3, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Nullable_1__ctor_m57671EDBF4C8A3BEF5EF30DC71BE6C17C6A657AC_RuntimeMethod_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// : this(title, text, fireTime)
-		String_t* L_0 = ___title0;
-		String_t* L_1 = ___text1;
-		DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D L_2 = ___fireTime2;
-		AndroidNotification__ctor_m18FDD732AA72F4C581F2677B6D446822B78AD170(__this, L_0, L_1, L_2, NULL);
-		// RepeatInterval = repeatInterval;
-		TimeSpan_t8195C5B013A2C532FEBDF0B64B6911982E750F5A L_3 = ___repeatInterval3;
-		Nullable_1_tE151CE1F6892804B41C4004C95CB57020ABB3272 L_4;
-		memset((&L_4), 0, sizeof(L_4));
-		Nullable_1__ctor_m57671EDBF4C8A3BEF5EF30DC71BE6C17C6A657AC((&L_4), L_3, /*hidden argument*/Nullable_1__ctor_m57671EDBF4C8A3BEF5EF30DC71BE6C17C6A657AC_RuntimeMethod_var);
-		AndroidNotification_set_RepeatInterval_mB1EA9612E566345CD14179C23212261954772C53(__this, L_4, NULL);
-		// }
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void AndroidNotification__ctor_m87B49F2A8A6199ECBCCEE54E7D82C670B5CE89A6_AdjustorThunk (RuntimeObject* __this, String_t* ___title0, String_t* ___text1, DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D ___fireTime2, TimeSpan_t8195C5B013A2C532FEBDF0B64B6911982E750F5A ___repeatInterval3, const RuntimeMethod* method)
-{
-	AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18*>(__this + _offset);
-	AndroidNotification__ctor_m87B49F2A8A6199ECBCCEE54E7D82C670B5CE89A6(_thisAdjusted, ___title0, ___text1, ___fireTime2, ___repeatInterval3, method);
-}
-// System.Void Unity.Notifications.Android.AndroidNotification::.ctor(System.String,System.String,System.DateTime,System.TimeSpan,System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotification__ctor_mFB35CBDA0AE001C4C5EA449304D14FDA2E7CD0A3 (AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18* __this, String_t* ___title0, String_t* ___text1, DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D ___fireTime2, TimeSpan_t8195C5B013A2C532FEBDF0B64B6911982E750F5A ___repeatInterval3, String_t* ___smallIcon4, const RuntimeMethod* method) 
-{
-	{
-		// : this(title, text, fireTime, repeatInterval)
-		String_t* L_0 = ___title0;
-		String_t* L_1 = ___text1;
-		DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D L_2 = ___fireTime2;
-		TimeSpan_t8195C5B013A2C532FEBDF0B64B6911982E750F5A L_3 = ___repeatInterval3;
-		AndroidNotification__ctor_m87B49F2A8A6199ECBCCEE54E7D82C670B5CE89A6(__this, L_0, L_1, L_2, L_3, NULL);
-		// SmallIcon = smallIcon;
-		String_t* L_4 = ___smallIcon4;
-		AndroidNotification_set_SmallIcon_mA6AFEAD07BB549DF80E16532BB43301505E58083_inline(__this, L_4, NULL);
-		// }
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void AndroidNotification__ctor_mFB35CBDA0AE001C4C5EA449304D14FDA2E7CD0A3_AdjustorThunk (RuntimeObject* __this, String_t* ___title0, String_t* ___text1, DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D ___fireTime2, TimeSpan_t8195C5B013A2C532FEBDF0B64B6911982E750F5A ___repeatInterval3, String_t* ___smallIcon4, const RuntimeMethod* method)
-{
-	AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18*>(__this + _offset);
-	AndroidNotification__ctor_mFB35CBDA0AE001C4C5EA449304D14FDA2E7CD0A3(_thisAdjusted, ___title0, ___text1, ___fireTime2, ___repeatInterval3, ___smallIcon4, method);
-}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -3776,41 +3362,6 @@ IL2CPP_EXTERN_C  void NotificationManagerJni_CollectMethods_m4D6DB433A2518E1A2F9
 	int32_t _offset = 1;
 	_thisAdjusted = reinterpret_cast<NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1*>(__this + _offset);
 	NotificationManagerJni_CollectMethods_m4D6DB433A2518E1A2F9462A2386368D4CE76546F(_thisAdjusted, ___clazz0, method);
-}
-// UnityEngine.AndroidJavaObject Unity.Notifications.Android.NotificationManagerJni::GetNotificationFromIntent(UnityEngine.AndroidJavaObject)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* NotificationManagerJni_GetNotificationFromIntent_m3FFECDFB9B4A70DA67A4687956D966C23471C390 (NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* __this, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___intent0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidJavaObject_Call_TisAndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0_m020246E0988293B6126B690BD6CE4D894276AA3D_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// return self.Call<AndroidJavaObject>(getNotificationFromIntent, intent);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_0 = __this->___self_1;
-		String_t* L_1 = __this->___getNotificationFromIntent_10;
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_2 = (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)SZArrayNew(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var, (uint32_t)1);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_3 = L_2;
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_4 = ___intent0;
-		NullCheck(L_3);
-		ArrayElementTypeCheck (L_3, L_4);
-		(L_3)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject*)L_4);
-		NullCheck(L_0);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_5;
-		L_5 = AndroidJavaObject_Call_TisAndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0_m020246E0988293B6126B690BD6CE4D894276AA3D(L_0, L_1, L_3, AndroidJavaObject_Call_TisAndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0_m020246E0988293B6126B690BD6CE4D894276AA3D_RuntimeMethod_var);
-		return L_5;
-	}
-}
-IL2CPP_EXTERN_C  AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* NotificationManagerJni_GetNotificationFromIntent_m3FFECDFB9B4A70DA67A4687956D966C23471C390_AdjustorThunk (RuntimeObject* __this, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___intent0, const RuntimeMethod* method)
-{
-	NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1*>(__this + _offset);
-	AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* _returnValue;
-	_returnValue = NotificationManagerJni_GetNotificationFromIntent_m3FFECDFB9B4A70DA67A4687956D966C23471C390(_thisAdjusted, ___intent0, method);
-	return _returnValue;
 }
 // System.Void Unity.Notifications.Android.NotificationManagerJni::SetNotificationIcon(UnityEngine.AndroidJavaObject,UnityEngine.AndroidJavaObject,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationManagerJni_SetNotificationIcon_mCD357B0BDB4DE6ED997A4AD21364B5397D4D21B0 (NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* __this, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___builder0, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___keyName1, String_t* ___icon2, const RuntimeMethod* method) 
@@ -4272,69 +3823,6 @@ IL2CPP_EXTERN_C  void NotificationManagerJni_RegisterNotificationChannel_m228771
 	_thisAdjusted = reinterpret_cast<NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1*>(__this + _offset);
 	NotificationManagerJni_RegisterNotificationChannel_m2287717194672598268CF5FEFFEC0FAB88302EFB(_thisAdjusted, ___channel0, method);
 }
-// UnityEngine.AndroidJavaObject[] Unity.Notifications.Android.NotificationManagerJni::GetNotificationChannels()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidJavaObjectU5BU5D_tBCEB142050F282B940177011644246618E002001* NotificationManagerJni_GetNotificationChannels_mC61037390A373A8399FC851B35EEE9C27B35000F (NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* __this, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidJavaObject_Call_TisAndroidJavaObjectU5BU5D_tBCEB142050F282B940177011644246618E002001_m5ABE53E4F9B01E977767DB5BCE69E696B0EA257D_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Array_Empty_TisRuntimeObject_mFB8A63D602BB6974D31E20300D9EB89C6FE7C278_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral864C6EA0E6C9DCD77772BE341830783DAE6095A8);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// return self.Call<AndroidJavaObject[]>("getNotificationChannels");
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_0 = __this->___self_1;
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_1;
-		L_1 = Array_Empty_TisRuntimeObject_mFB8A63D602BB6974D31E20300D9EB89C6FE7C278_inline(Array_Empty_TisRuntimeObject_mFB8A63D602BB6974D31E20300D9EB89C6FE7C278_RuntimeMethod_var);
-		NullCheck(L_0);
-		AndroidJavaObjectU5BU5D_tBCEB142050F282B940177011644246618E002001* L_2;
-		L_2 = AndroidJavaObject_Call_TisAndroidJavaObjectU5BU5D_tBCEB142050F282B940177011644246618E002001_m5ABE53E4F9B01E977767DB5BCE69E696B0EA257D(L_0, _stringLiteral864C6EA0E6C9DCD77772BE341830783DAE6095A8, L_1, AndroidJavaObject_Call_TisAndroidJavaObjectU5BU5D_tBCEB142050F282B940177011644246618E002001_m5ABE53E4F9B01E977767DB5BCE69E696B0EA257D_RuntimeMethod_var);
-		return L_2;
-	}
-}
-IL2CPP_EXTERN_C  AndroidJavaObjectU5BU5D_tBCEB142050F282B940177011644246618E002001* NotificationManagerJni_GetNotificationChannels_mC61037390A373A8399FC851B35EEE9C27B35000F_AdjustorThunk (RuntimeObject* __this, const RuntimeMethod* method)
-{
-	NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1*>(__this + _offset);
-	AndroidJavaObjectU5BU5D_tBCEB142050F282B940177011644246618E002001* _returnValue;
-	_returnValue = NotificationManagerJni_GetNotificationChannels_mC61037390A373A8399FC851B35EEE9C27B35000F(_thisAdjusted, method);
-	return _returnValue;
-}
-// System.Void Unity.Notifications.Android.NotificationManagerJni::DeleteNotificationChannel(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationManagerJni_DeleteNotificationChannel_m7FDC2B1E83A82BD228A1B6CAF889978F92176092 (NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* __this, String_t* ___channelId0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralA3C1749774F0E2DFDC58A4BABD710AAF76A0E543);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// self.Call("deleteNotificationChannel", channelId);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_0 = __this->___self_1;
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_1 = (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)SZArrayNew(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var, (uint32_t)1);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_2 = L_1;
-		String_t* L_3 = ___channelId0;
-		NullCheck(L_2);
-		ArrayElementTypeCheck (L_2, L_3);
-		(L_2)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject*)L_3);
-		NullCheck(L_0);
-		AndroidJavaObject_Call_mDEF7846E2AB1C5379069BB21049ED55A9D837B1C(L_0, _stringLiteralA3C1749774F0E2DFDC58A4BABD710AAF76A0E543, L_2, NULL);
-		// }
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void NotificationManagerJni_DeleteNotificationChannel_m7FDC2B1E83A82BD228A1B6CAF889978F92176092_AdjustorThunk (RuntimeObject* __this, String_t* ___channelId0, const RuntimeMethod* method)
-{
-	NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1*>(__this + _offset);
-	NotificationManagerJni_DeleteNotificationChannel_m7FDC2B1E83A82BD228A1B6CAF889978F92176092(_thisAdjusted, ___channelId0, method);
-}
 // System.Int32 Unity.Notifications.Android.NotificationManagerJni::ScheduleNotification(UnityEngine.AndroidJavaObject,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t NotificationManagerJni_ScheduleNotification_mB13633DB9B5CF0BF86CAB28BD775BF5D6015C927 (NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* __this, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___notificationBuilder0, bool ___customized1, const RuntimeMethod* method) 
 {
@@ -4377,114 +3865,6 @@ IL2CPP_EXTERN_C  int32_t NotificationManagerJni_ScheduleNotification_mB13633DB9B
 	int32_t _returnValue;
 	_returnValue = NotificationManagerJni_ScheduleNotification_mB13633DB9B5CF0BF86CAB28BD775BF5D6015C927(_thisAdjusted, ___notificationBuilder0, ___customized1, method);
 	return _returnValue;
-}
-// System.Boolean Unity.Notifications.Android.NotificationManagerJni::CheckIfPendingNotificationIsRegistered(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool NotificationManagerJni_CheckIfPendingNotificationIsRegistered_m9D7808AFE9DA28A59A431DEB49833D7E0BA483AD (NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* __this, int32_t ___id0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidJavaObject_Call_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_m05D3284A3FA772D032190A0FE82363C61000F1DF_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralF56CF02460E3AE9330CB57E3E91202E7FEB01239);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// return self.Call<bool>("checkIfPendingNotificationIsRegistered", id);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_0 = __this->___self_1;
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_1 = (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)SZArrayNew(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var, (uint32_t)1);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_2 = L_1;
-		int32_t L_3 = ___id0;
-		int32_t L_4 = L_3;
-		RuntimeObject* L_5 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_4);
-		NullCheck(L_2);
-		ArrayElementTypeCheck (L_2, L_5);
-		(L_2)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject*)L_5);
-		NullCheck(L_0);
-		bool L_6;
-		L_6 = AndroidJavaObject_Call_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_m05D3284A3FA772D032190A0FE82363C61000F1DF(L_0, _stringLiteralF56CF02460E3AE9330CB57E3E91202E7FEB01239, L_2, AndroidJavaObject_Call_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_m05D3284A3FA772D032190A0FE82363C61000F1DF_RuntimeMethod_var);
-		return L_6;
-	}
-}
-IL2CPP_EXTERN_C  bool NotificationManagerJni_CheckIfPendingNotificationIsRegistered_m9D7808AFE9DA28A59A431DEB49833D7E0BA483AD_AdjustorThunk (RuntimeObject* __this, int32_t ___id0, const RuntimeMethod* method)
-{
-	NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1*>(__this + _offset);
-	bool _returnValue;
-	_returnValue = NotificationManagerJni_CheckIfPendingNotificationIsRegistered_m9D7808AFE9DA28A59A431DEB49833D7E0BA483AD(_thisAdjusted, ___id0, method);
-	return _returnValue;
-}
-// System.Void Unity.Notifications.Android.NotificationManagerJni::CancelPendingNotification(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationManagerJni_CancelPendingNotification_m1483EB580A604FF6A1E97B56FDBC5CDBADFEDC23 (NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* __this, int32_t ___id0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB2B2C9BF307CDCC16BAA83374FF3DB32FF40DC47);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// self.Call("cancelPendingNotification", id);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_0 = __this->___self_1;
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_1 = (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)SZArrayNew(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var, (uint32_t)1);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_2 = L_1;
-		int32_t L_3 = ___id0;
-		int32_t L_4 = L_3;
-		RuntimeObject* L_5 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_4);
-		NullCheck(L_2);
-		ArrayElementTypeCheck (L_2, L_5);
-		(L_2)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject*)L_5);
-		NullCheck(L_0);
-		AndroidJavaObject_Call_mDEF7846E2AB1C5379069BB21049ED55A9D837B1C(L_0, _stringLiteralB2B2C9BF307CDCC16BAA83374FF3DB32FF40DC47, L_2, NULL);
-		// }
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void NotificationManagerJni_CancelPendingNotification_m1483EB580A604FF6A1E97B56FDBC5CDBADFEDC23_AdjustorThunk (RuntimeObject* __this, int32_t ___id0, const RuntimeMethod* method)
-{
-	NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1*>(__this + _offset);
-	NotificationManagerJni_CancelPendingNotification_m1483EB580A604FF6A1E97B56FDBC5CDBADFEDC23(_thisAdjusted, ___id0, method);
-}
-// System.Void Unity.Notifications.Android.NotificationManagerJni::CancelDisplayedNotification(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationManagerJni_CancelDisplayedNotification_m4FF516A6AC87A0913E3C9A804F231F7DBFFFA02F (NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* __this, int32_t ___id0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral8605D3E2708C3D1F69E8F918B7E82EB7E671D987);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// self.Call("cancelDisplayedNotification", id);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_0 = __this->___self_1;
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_1 = (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)SZArrayNew(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var, (uint32_t)1);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_2 = L_1;
-		int32_t L_3 = ___id0;
-		int32_t L_4 = L_3;
-		RuntimeObject* L_5 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_4);
-		NullCheck(L_2);
-		ArrayElementTypeCheck (L_2, L_5);
-		(L_2)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject*)L_5);
-		NullCheck(L_0);
-		AndroidJavaObject_Call_mDEF7846E2AB1C5379069BB21049ED55A9D837B1C(L_0, _stringLiteral8605D3E2708C3D1F69E8F918B7E82EB7E671D987, L_2, NULL);
-		// }
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void NotificationManagerJni_CancelDisplayedNotification_m4FF516A6AC87A0913E3C9A804F231F7DBFFFA02F_AdjustorThunk (RuntimeObject* __this, int32_t ___id0, const RuntimeMethod* method)
-{
-	NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1*>(__this + _offset);
-	NotificationManagerJni_CancelDisplayedNotification_m4FF516A6AC87A0913E3C9A804F231F7DBFFFA02F(_thisAdjusted, ___id0, method);
 }
 // System.Void Unity.Notifications.Android.NotificationManagerJni::CancelAllPendingNotificationIntents()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationManagerJni_CancelAllPendingNotificationIntents_m8E4A41BC1F19F01F5A293FFF58B82216A785D32B (NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* __this, const RuntimeMethod* method) 
@@ -4579,38 +3959,6 @@ IL2CPP_EXTERN_C  int32_t NotificationManagerJni_CheckNotificationStatus_m2E428C9
 	int32_t _returnValue;
 	_returnValue = NotificationManagerJni_CheckNotificationStatus_m2E428C909BE14A13390BB4B6C1CAF744B7DA9E40(_thisAdjusted, ___id0, method);
 	return _returnValue;
-}
-// System.Void Unity.Notifications.Android.NotificationManagerJni::ShowNotificationSettings(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationManagerJni_ShowNotificationSettings_m48069D862A543F2734AD157699ED869674D19EFE (NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* __this, String_t* ___channelId0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralC55E14875AB248A8777CF4415B8B907416BCA185);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// self.Call("showNotificationSettings", channelId);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_0 = __this->___self_1;
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_1 = (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)SZArrayNew(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var, (uint32_t)1);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_2 = L_1;
-		String_t* L_3 = ___channelId0;
-		NullCheck(L_2);
-		ArrayElementTypeCheck (L_2, L_3);
-		(L_2)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject*)L_3);
-		NullCheck(L_0);
-		AndroidJavaObject_Call_mDEF7846E2AB1C5379069BB21049ED55A9D837B1C(L_0, _stringLiteralC55E14875AB248A8777CF4415B8B907416BCA185, L_2, NULL);
-		// }
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void NotificationManagerJni_ShowNotificationSettings_m48069D862A543F2734AD157699ED869674D19EFE_AdjustorThunk (RuntimeObject* __this, String_t* ___channelId0, const RuntimeMethod* method)
-{
-	NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1*>(__this + _offset);
-	NotificationManagerJni_ShowNotificationSettings_m48069D862A543F2734AD157699ED869674D19EFE(_thisAdjusted, ___channelId0, method);
 }
 // UnityEngine.AndroidJavaObject Unity.Notifications.Android.NotificationManagerJni::CreateNotificationBuilder(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* NotificationManagerJni_CreateNotificationBuilder_m16B298F40E0E30E8506C8159AD2AAFD00AFC9293 (NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* __this, String_t* ___channelId0, const RuntimeMethod* method) 
@@ -6295,46 +5643,6 @@ IL2CPP_EXTERN_C  void BundleJni_PutBoolean_mE9CD311268F40FA3463F510C4446748C8147
 	_thisAdjusted = reinterpret_cast<BundleJni_t578C7BD49F759A34A0B1B324FD7CAB3A57CB0701*>(__this + _offset);
 	BundleJni_PutBoolean_mE9CD311268F40FA3463F510C4446748C8147A7B5(_thisAdjusted, ___bundle0, ___key1, ___value2, method);
 }
-// System.Void Unity.Notifications.Android.BundleJni::PutInt(UnityEngine.AndroidJavaObject,UnityEngine.AndroidJavaObject,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BundleJni_PutInt_mFBE2D0E3E837874612D9476E58F241899D1F1D85 (BundleJni_t578C7BD49F759A34A0B1B324FD7CAB3A57CB0701* __this, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___bundle0, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___key1, int32_t ___value2, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// bundle.Call(putInt, key, value);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_0 = ___bundle0;
-		String_t* L_1 = __this->___putInt_6;
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_2 = (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)SZArrayNew(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var, (uint32_t)2);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_3 = L_2;
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_4 = ___key1;
-		NullCheck(L_3);
-		ArrayElementTypeCheck (L_3, L_4);
-		(L_3)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject*)L_4);
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_5 = L_3;
-		int32_t L_6 = ___value2;
-		int32_t L_7 = L_6;
-		RuntimeObject* L_8 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_7);
-		NullCheck(L_5);
-		ArrayElementTypeCheck (L_5, L_8);
-		(L_5)->SetAt(static_cast<il2cpp_array_size_t>(1), (RuntimeObject*)L_8);
-		NullCheck(L_0);
-		AndroidJavaObject_Call_mDEF7846E2AB1C5379069BB21049ED55A9D837B1C(L_0, L_1, L_5, NULL);
-		// }
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void BundleJni_PutInt_mFBE2D0E3E837874612D9476E58F241899D1F1D85_AdjustorThunk (RuntimeObject* __this, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___bundle0, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___key1, int32_t ___value2, const RuntimeMethod* method)
-{
-	BundleJni_t578C7BD49F759A34A0B1B324FD7CAB3A57CB0701* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<BundleJni_t578C7BD49F759A34A0B1B324FD7CAB3A57CB0701*>(__this + _offset);
-	BundleJni_PutInt_mFBE2D0E3E837874612D9476E58F241899D1F1D85(_thisAdjusted, ___bundle0, ___key1, ___value2, method);
-}
 // System.Void Unity.Notifications.Android.BundleJni::PutLong(UnityEngine.AndroidJavaObject,UnityEngine.AndroidJavaObject,System.Int64)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BundleJni_PutLong_m5AED6929547416D86FFD2FC0B0144CD1BE743335 (BundleJni_t578C7BD49F759A34A0B1B324FD7CAB3A57CB0701* __this, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___bundle0, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___key1, int64_t ___value2, const RuntimeMethod* method) 
 {
@@ -6590,96 +5898,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* JniApi_FindMethod_m7B990016763D958F
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Void Unity.Notifications.Android.AndroidNotificationCenter::add_OnNotificationReceived(Unity.Notifications.Android.AndroidNotificationCenter/NotificationReceivedCallback)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationCenter_add_OnNotificationReceived_m87E4282897AF0BCEDBD54EAA56C7C76526EC3A0D (NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* ___value0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* V_0 = NULL;
-	NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* V_1 = NULL;
-	NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* V_2 = NULL;
-	{
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* L_0 = ((AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_StaticFields*)il2cpp_codegen_static_fields_for(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var))->___OnNotificationReceived_3;
-		V_0 = L_0;
-	}
-
-IL_0006:
-	{
-		NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* L_1 = V_0;
-		V_1 = L_1;
-		NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* L_2 = V_1;
-		NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* L_3 = ___value0;
-		Delegate_t* L_4;
-		L_4 = Delegate_Combine_m1F725AEF318BE6F0426863490691A6F4606E7D00(L_2, L_3, NULL);
-		V_2 = ((NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C*)CastclassSealed((RuntimeObject*)L_4, NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C_il2cpp_TypeInfo_var));
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* L_5 = V_2;
-		NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* L_6 = V_1;
-		NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* L_7;
-		L_7 = InterlockedCompareExchangeImpl<NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C*>((&((AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_StaticFields*)il2cpp_codegen_static_fields_for(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var))->___OnNotificationReceived_3), L_5, L_6);
-		V_0 = L_7;
-		NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* L_8 = V_0;
-		NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* L_9 = V_1;
-		if ((!(((RuntimeObject*)(NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C*)L_8) == ((RuntimeObject*)(NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C*)L_9))))
-		{
-			goto IL_0006;
-		}
-	}
-	{
-		return;
-	}
-}
-// System.Void Unity.Notifications.Android.AndroidNotificationCenter::remove_OnNotificationReceived(Unity.Notifications.Android.AndroidNotificationCenter/NotificationReceivedCallback)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationCenter_remove_OnNotificationReceived_mC7BC00BDDA2A56ABAF6F440DC49C73FBE81368CD (NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* ___value0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* V_0 = NULL;
-	NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* V_1 = NULL;
-	NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* V_2 = NULL;
-	{
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* L_0 = ((AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_StaticFields*)il2cpp_codegen_static_fields_for(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var))->___OnNotificationReceived_3;
-		V_0 = L_0;
-	}
-
-IL_0006:
-	{
-		NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* L_1 = V_0;
-		V_1 = L_1;
-		NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* L_2 = V_1;
-		NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* L_3 = ___value0;
-		Delegate_t* L_4;
-		L_4 = Delegate_Remove_m8B7DD5661308FA972E23CA1CC3FC9CEB355504E3(L_2, L_3, NULL);
-		V_2 = ((NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C*)CastclassSealed((RuntimeObject*)L_4, NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C_il2cpp_TypeInfo_var));
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* L_5 = V_2;
-		NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* L_6 = V_1;
-		NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* L_7;
-		L_7 = InterlockedCompareExchangeImpl<NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C*>((&((AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_StaticFields*)il2cpp_codegen_static_fields_for(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var))->___OnNotificationReceived_3), L_5, L_6);
-		V_0 = L_7;
-		NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* L_8 = V_0;
-		NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* L_9 = V_1;
-		if ((!(((RuntimeObject*)(NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C*)L_8) == ((RuntimeObject*)(NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C*)L_9))))
-		{
-			goto IL_0006;
-		}
-	}
-	{
-		return;
-	}
-}
 // System.Boolean Unity.Notifications.Android.AndroidNotificationCenter::Initialize()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AndroidNotificationCenter_Initialize_m7FE4465A27CB4DCF07D138715B26FF553C055CDA (const RuntimeMethod* method) 
 {
@@ -7053,135 +6271,6 @@ IL_00ad:
 		return L_29;
 	}
 }
-// System.Void Unity.Notifications.Android.AndroidNotificationCenter::SetPostPermissionSetting(Unity.Notifications.Android.PermissionStatus)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationCenter_SetPostPermissionSetting_m9E82B540263A30C469C3B4C3F7CD724F88FE9298 (int32_t ___status0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// PlayerPrefs.SetInt(SETTING_POST_NOTIFICATIONS_PERMISSION, (int)status);
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		String_t* L_0 = ((AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_StaticFields*)il2cpp_codegen_static_fields_for(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var))->___SETTING_POST_NOTIFICATIONS_PERMISSION_2;
-		int32_t L_1 = ___status0;
-		PlayerPrefs_SetInt_m956D3E2DB966F20CF42F842880DDF9E2BE94D948(L_0, L_1, NULL);
-		// }
-		return;
-	}
-}
-// Unity.Notifications.Android.PermissionStatus Unity.Notifications.Android.AndroidNotificationCenter::get_UserPermissionToPost()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t AndroidNotificationCenter_get_UserPermissionToPost_mB4CDF213C94793F39FB65977FD0709542DB2AF22 (const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	int32_t V_0 = 0;
-	{
-		// if (!Initialize())
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		bool L_0;
-		L_0 = AndroidNotificationCenter_Initialize_m7FE4465A27CB4DCF07D138715B26FF553C055CDA(NULL);
-		if (L_0)
-		{
-			goto IL_0009;
-		}
-	}
-	{
-		// return PermissionStatus.Denied;
-		return (int32_t)(2);
-	}
-
-IL_0009:
-	{
-		// if (s_DeviceApiLevel < API_POST_NOTIFICATIONS_PERMISSION_REQUIRED)
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		int32_t L_1 = ((AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_StaticFields*)il2cpp_codegen_static_fields_for(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var))->___s_DeviceApiLevel_6;
-		int32_t L_2 = ((AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_StaticFields*)il2cpp_codegen_static_fields_for(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var))->___API_POST_NOTIFICATIONS_PERMISSION_REQUIRED_0;
-		if ((((int32_t)L_1) >= ((int32_t)L_2)))
-		{
-			goto IL_0017;
-		}
-	}
-	{
-		// return PermissionStatus.Allowed;
-		return (int32_t)(1);
-	}
-
-IL_0017:
-	{
-		// var permissionStatus = (PermissionStatus)PlayerPrefs.GetInt(SETTING_POST_NOTIFICATIONS_PERMISSION, (int)PermissionStatus.NotRequested);
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		String_t* L_3 = ((AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_StaticFields*)il2cpp_codegen_static_fields_for(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var))->___SETTING_POST_NOTIFICATIONS_PERMISSION_2;
-		int32_t L_4;
-		L_4 = PlayerPrefs_GetInt_m8AD1FA8BA54CC6CE2B2AEEE36B6D75587BB1692D(L_3, 0, NULL);
-		V_0 = L_4;
-		// var allowed = Permission.HasUserAuthorizedPermission(PERMISSION_POST_NOTIFICATIONS);
-		String_t* L_5 = ((AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_StaticFields*)il2cpp_codegen_static_fields_for(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var))->___PERMISSION_POST_NOTIFICATIONS_1;
-		bool L_6;
-		L_6 = Permission_HasUserAuthorizedPermission_mF4C90E13124E28F6F672200E489CC25A9B645B8B(L_5, NULL);
-		// if (allowed)
-		if (!L_6)
-		{
-			goto IL_003b;
-		}
-	}
-	{
-		// if (permissionStatus != PermissionStatus.Allowed)
-		int32_t L_7 = V_0;
-		if ((((int32_t)L_7) == ((int32_t)1)))
-		{
-			goto IL_0039;
-		}
-	}
-	{
-		// SetPostPermissionSetting(PermissionStatus.Allowed);
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		AndroidNotificationCenter_SetPostPermissionSetting_m9E82B540263A30C469C3B4C3F7CD724F88FE9298(1, NULL);
-	}
-
-IL_0039:
-	{
-		// return PermissionStatus.Allowed;
-		return (int32_t)(1);
-	}
-
-IL_003b:
-	{
-		int32_t L_8 = V_0;
-		if (!L_8)
-		{
-			goto IL_004a;
-		}
-	}
-	{
-		int32_t L_9 = V_0;
-		if ((!(((uint32_t)L_9) == ((uint32_t)1))))
-		{
-			goto IL_004a;
-		}
-	}
-	{
-		// permissionStatus = PermissionStatus.Denied;
-		V_0 = 2;
-		// SetPostPermissionSetting(permissionStatus);
-		int32_t L_10 = V_0;
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		AndroidNotificationCenter_SetPostPermissionSetting_m9E82B540263A30C469C3B4C3F7CD724F88FE9298(L_10, NULL);
-	}
-
-IL_004a:
-	{
-		// return permissionStatus;
-		int32_t L_11 = V_0;
-		return L_11;
-	}
-}
 // System.Void Unity.Notifications.Android.AndroidNotificationCenter::RegisterNotificationChannel(Unity.Notifications.Android.AndroidNotificationChannel)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationCenter_RegisterNotificationChannel_m3CA615ABEE46287503868C1585FCDF2A60D4C3D2 (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC ___channel0, const RuntimeMethod* method) 
 {
@@ -7285,262 +6374,6 @@ IL_006b:
 		return;
 	}
 }
-// Unity.Notifications.Android.AndroidNotificationChannel Unity.Notifications.Android.AndroidNotificationCenter::GetNotificationChannel(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC AndroidNotificationCenter_GetNotificationChannel_m0AB088DD1A90862651E97A052BA7736DD8A1B336 (String_t* ___channelId0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Enumerable_SingleOrDefault_TisAndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC_m99430960DA223E2202707F15B2922D53E52243C0_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Func_2_tDF24EEAA8E333F9F52D9BFD8FFE14D866C8F3662_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec__DisplayClass17_0_U3CGetNotificationChannelU3Eb__0_mC693539945E016CB682CFB6660B39651C73AB6E4_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec__DisplayClass17_0_t671B55005EAF3DDC85E9381871D79BE4C50FFCAF_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	U3CU3Ec__DisplayClass17_0_t671B55005EAF3DDC85E9381871D79BE4C50FFCAF* V_0 = NULL;
-	{
-		U3CU3Ec__DisplayClass17_0_t671B55005EAF3DDC85E9381871D79BE4C50FFCAF* L_0 = (U3CU3Ec__DisplayClass17_0_t671B55005EAF3DDC85E9381871D79BE4C50FFCAF*)il2cpp_codegen_object_new(U3CU3Ec__DisplayClass17_0_t671B55005EAF3DDC85E9381871D79BE4C50FFCAF_il2cpp_TypeInfo_var);
-		NullCheck(L_0);
-		U3CU3Ec__DisplayClass17_0__ctor_mCD78899948E6FEE2CDBF6443B107DB44F2616F16(L_0, NULL);
-		V_0 = L_0;
-		U3CU3Ec__DisplayClass17_0_t671B55005EAF3DDC85E9381871D79BE4C50FFCAF* L_1 = V_0;
-		String_t* L_2 = ___channelId0;
-		NullCheck(L_1);
-		L_1->___channelId_0 = L_2;
-		Il2CppCodeGenWriteBarrier((void**)(&L_1->___channelId_0), (void*)L_2);
-		// return GetNotificationChannels().SingleOrDefault(channel => channel.Id == channelId);
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		AndroidNotificationChannelU5BU5D_t652D39DBFEA112B98179852322BD9ADBE8D8E6D4* L_3;
-		L_3 = AndroidNotificationCenter_GetNotificationChannels_m956F96F69B21B1F7783A6484C1F863AA3FB6CCEB(NULL);
-		U3CU3Ec__DisplayClass17_0_t671B55005EAF3DDC85E9381871D79BE4C50FFCAF* L_4 = V_0;
-		Func_2_tDF24EEAA8E333F9F52D9BFD8FFE14D866C8F3662* L_5 = (Func_2_tDF24EEAA8E333F9F52D9BFD8FFE14D866C8F3662*)il2cpp_codegen_object_new(Func_2_tDF24EEAA8E333F9F52D9BFD8FFE14D866C8F3662_il2cpp_TypeInfo_var);
-		NullCheck(L_5);
-		Func_2__ctor_m7038815B9AC3A2B1743445F4477478C54A790E39(L_5, L_4, (intptr_t)((void*)U3CU3Ec__DisplayClass17_0_U3CGetNotificationChannelU3Eb__0_mC693539945E016CB682CFB6660B39651C73AB6E4_RuntimeMethod_var), NULL);
-		AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC L_6;
-		L_6 = Enumerable_SingleOrDefault_TisAndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC_m99430960DA223E2202707F15B2922D53E52243C0((RuntimeObject*)L_3, L_5, Enumerable_SingleOrDefault_TisAndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC_m99430960DA223E2202707F15B2922D53E52243C0_RuntimeMethod_var);
-		return L_6;
-	}
-}
-// Unity.Notifications.Android.AndroidNotificationChannel[] Unity.Notifications.Android.AndroidNotificationCenter::GetNotificationChannels()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidNotificationChannelU5BU5D_t652D39DBFEA112B98179852322BD9ADBE8D8E6D4* AndroidNotificationCenter_GetNotificationChannels_m956F96F69B21B1F7783A6484C1F863AA3FB6CCEB (const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidJavaObject_Get_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_m6F4712024377FBA61B40109CE304D4EA5C145016_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidJavaObject_Get_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m1C9D9590B9F7212AAD6D9BFFF3F2762BD090BCAB_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidJavaObject_Get_TisInt64U5BU5D_tAEDFCBDB5414E2A140A6F34C0538BF97FCF67A1D_m0EF4D6095F8812E9F918E88C5D4405FFFAB35531_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidJavaObject_Get_TisString_t_m1E165541E71E1CDCF224FC55CBD0955147BB9030_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidNotificationChannelU5BU5D_t652D39DBFEA112B98179852322BD9ADBE8D8E6D4_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral042E506EAC403864CC8CA1FFC38CA1637017470F);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral30F16A331B7FED670D062C2FF7797C91FB1ABEDC);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral79A3A135E5B5186F8B18862121F8DA14F4E3B1BB);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral7E56EB3A14BB0A90B10A3F82FE0A66B0323ADC09);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral8CB198D3AB14F5B2827707E988BEBDF73FC8251B);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral996E5360F80E16B2189CC1E536C91CE68083F694);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralA8AC977222A7FA0351E2E5F9ED0B1270C1355771);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralCE18B047107AA23D1AA9B2ED32D316148E02655F);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralD63E5B8C1F7235D8901BA385D75F8988FD3A9182);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralEB534843932D1025EEE09575458F840C63DC1063);
-		s_Il2CppMethodInitialized = true;
-	}
-	AndroidJavaObjectU5BU5D_tBCEB142050F282B940177011644246618E002001* V_0 = NULL;
-	AndroidNotificationChannelU5BU5D_t652D39DBFEA112B98179852322BD9ADBE8D8E6D4* V_1 = NULL;
-	int32_t V_2 = 0;
-	AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* V_3 = NULL;
-	AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC V_4;
-	memset((&V_4), 0, sizeof(V_4));
-	int32_t G_B5_0 = 0;
-	{
-		// if (!Initialize())
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		bool L_0;
-		L_0 = AndroidNotificationCenter_Initialize_m7FE4465A27CB4DCF07D138715B26FF553C055CDA(NULL);
-		if (L_0)
-		{
-			goto IL_000e;
-		}
-	}
-	{
-		// return new AndroidNotificationChannel[0];
-		AndroidNotificationChannelU5BU5D_t652D39DBFEA112B98179852322BD9ADBE8D8E6D4* L_1 = (AndroidNotificationChannelU5BU5D_t652D39DBFEA112B98179852322BD9ADBE8D8E6D4*)(AndroidNotificationChannelU5BU5D_t652D39DBFEA112B98179852322BD9ADBE8D8E6D4*)SZArrayNew(AndroidNotificationChannelU5BU5D_t652D39DBFEA112B98179852322BD9ADBE8D8E6D4_il2cpp_TypeInfo_var, (uint32_t)0);
-		return L_1;
-	}
-
-IL_000e:
-	{
-		// var androidChannels = s_Jni.NotificationManager.GetNotificationChannels();
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* L_2 = (&(&((AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_StaticFields*)il2cpp_codegen_static_fields_for(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var))->___s_Jni_5)->___NotificationManager_0);
-		AndroidJavaObjectU5BU5D_tBCEB142050F282B940177011644246618E002001* L_3;
-		L_3 = NotificationManagerJni_GetNotificationChannels_mC61037390A373A8399FC851B35EEE9C27B35000F(L_2, NULL);
-		V_0 = L_3;
-		// var channels = new AndroidNotificationChannel[androidChannels == null ? 0 : androidChannels.Length];
-		AndroidJavaObjectU5BU5D_tBCEB142050F282B940177011644246618E002001* L_4 = V_0;
-		if (!L_4)
-		{
-			goto IL_0026;
-		}
-	}
-	{
-		AndroidJavaObjectU5BU5D_tBCEB142050F282B940177011644246618E002001* L_5 = V_0;
-		NullCheck(L_5);
-		G_B5_0 = ((int32_t)(((RuntimeArray*)L_5)->max_length));
-		goto IL_0027;
-	}
-
-IL_0026:
-	{
-		G_B5_0 = 0;
-	}
-
-IL_0027:
-	{
-		AndroidNotificationChannelU5BU5D_t652D39DBFEA112B98179852322BD9ADBE8D8E6D4* L_6 = (AndroidNotificationChannelU5BU5D_t652D39DBFEA112B98179852322BD9ADBE8D8E6D4*)(AndroidNotificationChannelU5BU5D_t652D39DBFEA112B98179852322BD9ADBE8D8E6D4*)SZArrayNew(AndroidNotificationChannelU5BU5D_t652D39DBFEA112B98179852322BD9ADBE8D8E6D4_il2cpp_TypeInfo_var, (uint32_t)G_B5_0);
-		V_1 = L_6;
-		// for (int i = 0; i < channels.Length; ++i)
-		V_2 = 0;
-		goto IL_010b;
-	}
-
-IL_0034:
-	{
-		// var channel = androidChannels[i];
-		AndroidJavaObjectU5BU5D_tBCEB142050F282B940177011644246618E002001* L_7 = V_0;
-		int32_t L_8 = V_2;
-		NullCheck(L_7);
-		int32_t L_9 = L_8;
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_10 = (L_7)->GetAt(static_cast<il2cpp_array_size_t>(L_9));
-		V_3 = L_10;
-		// var ch = new AndroidNotificationChannel();
-		il2cpp_codegen_initobj((&V_4), sizeof(AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC));
-		// ch.Id = channel.Get<string>("id");
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_11 = V_3;
-		NullCheck(L_11);
-		String_t* L_12;
-		L_12 = AndroidJavaObject_Get_TisString_t_m1E165541E71E1CDCF224FC55CBD0955147BB9030(L_11, _stringLiteral996E5360F80E16B2189CC1E536C91CE68083F694, AndroidJavaObject_Get_TisString_t_m1E165541E71E1CDCF224FC55CBD0955147BB9030_RuntimeMethod_var);
-		AndroidNotificationChannel_set_Id_mF7C5C0A558A8B0936EAEE02E63FA75D3863491E8_inline((&V_4), L_12, NULL);
-		// ch.Name = channel.Get<string>("name");
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_13 = V_3;
-		NullCheck(L_13);
-		String_t* L_14;
-		L_14 = AndroidJavaObject_Get_TisString_t_m1E165541E71E1CDCF224FC55CBD0955147BB9030(L_13, _stringLiteralCE18B047107AA23D1AA9B2ED32D316148E02655F, AndroidJavaObject_Get_TisString_t_m1E165541E71E1CDCF224FC55CBD0955147BB9030_RuntimeMethod_var);
-		AndroidNotificationChannel_set_Name_m7BFE6876244461FD7C31E44737BE531FA1C8D06F_inline((&V_4), L_14, NULL);
-		// ch.Importance = channel.Get<int>("importance").ToImportance();
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_15 = V_3;
-		NullCheck(L_15);
-		int32_t L_16;
-		L_16 = AndroidJavaObject_Get_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m1C9D9590B9F7212AAD6D9BFFF3F2762BD090BCAB(L_15, _stringLiteral8CB198D3AB14F5B2827707E988BEBDF73FC8251B, AndroidJavaObject_Get_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m1C9D9590B9F7212AAD6D9BFFF3F2762BD090BCAB_RuntimeMethod_var);
-		int32_t L_17;
-		L_17 = AndroidNotificationExtensions_ToImportance_mF825DF408EBA8407AA80A756321939165CDE9DED(L_16, NULL);
-		AndroidNotificationChannel_set_Importance_mE15044EC9CF9254A9667DEC1212C42162B34A980_inline((&V_4), L_17, NULL);
-		// ch.Description = channel.Get<string>("description");
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_18 = V_3;
-		NullCheck(L_18);
-		String_t* L_19;
-		L_19 = AndroidJavaObject_Get_TisString_t_m1E165541E71E1CDCF224FC55CBD0955147BB9030(L_18, _stringLiteralEB534843932D1025EEE09575458F840C63DC1063, AndroidJavaObject_Get_TisString_t_m1E165541E71E1CDCF224FC55CBD0955147BB9030_RuntimeMethod_var);
-		AndroidNotificationChannel_set_Description_m1FEF9E6977640D864A5A47DFA4B88988E90C3D09_inline((&V_4), L_19, NULL);
-		// ch.EnableLights = channel.Get<bool>("enableLights");
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_20 = V_3;
-		NullCheck(L_20);
-		bool L_21;
-		L_21 = AndroidJavaObject_Get_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_m6F4712024377FBA61B40109CE304D4EA5C145016(L_20, _stringLiteralA8AC977222A7FA0351E2E5F9ED0B1270C1355771, AndroidJavaObject_Get_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_m6F4712024377FBA61B40109CE304D4EA5C145016_RuntimeMethod_var);
-		AndroidNotificationChannel_set_EnableLights_m7CD6A72DB5139D175ADBEB68984EF42E9BC5A19D_inline((&V_4), L_21, NULL);
-		// ch.EnableVibration = channel.Get<bool>("enableVibration");
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_22 = V_3;
-		NullCheck(L_22);
-		bool L_23;
-		L_23 = AndroidJavaObject_Get_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_m6F4712024377FBA61B40109CE304D4EA5C145016(L_22, _stringLiteral042E506EAC403864CC8CA1FFC38CA1637017470F, AndroidJavaObject_Get_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_m6F4712024377FBA61B40109CE304D4EA5C145016_RuntimeMethod_var);
-		AndroidNotificationChannel_set_EnableVibration_m1D7E703E1989322F82706642D5FDD30BB3FDBDAB_inline((&V_4), L_23, NULL);
-		// ch.CanBypassDnd = channel.Get<bool>("canBypassDnd");
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_24 = V_3;
-		NullCheck(L_24);
-		bool L_25;
-		L_25 = AndroidJavaObject_Get_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_m6F4712024377FBA61B40109CE304D4EA5C145016(L_24, _stringLiteral7E56EB3A14BB0A90B10A3F82FE0A66B0323ADC09, AndroidJavaObject_Get_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_m6F4712024377FBA61B40109CE304D4EA5C145016_RuntimeMethod_var);
-		AndroidNotificationChannel_set_CanBypassDnd_mC46CCD099353D872B2677782909AB6425709729C_inline((&V_4), L_25, NULL);
-		// ch.CanShowBadge = channel.Get<bool>("canShowBadge");
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_26 = V_3;
-		NullCheck(L_26);
-		bool L_27;
-		L_27 = AndroidJavaObject_Get_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_m6F4712024377FBA61B40109CE304D4EA5C145016(L_26, _stringLiteral30F16A331B7FED670D062C2FF7797C91FB1ABEDC, AndroidJavaObject_Get_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_m6F4712024377FBA61B40109CE304D4EA5C145016_RuntimeMethod_var);
-		AndroidNotificationChannel_set_CanShowBadge_mC62C1B6B1A53267281ACC54D88B1882AEBBF6E33_inline((&V_4), L_27, NULL);
-		// ch.VibrationPattern = channel.Get<long[]>("vibrationPattern");
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_28 = V_3;
-		NullCheck(L_28);
-		Int64U5BU5D_tAEDFCBDB5414E2A140A6F34C0538BF97FCF67A1D* L_29;
-		L_29 = AndroidJavaObject_Get_TisInt64U5BU5D_tAEDFCBDB5414E2A140A6F34C0538BF97FCF67A1D_m0EF4D6095F8812E9F918E88C5D4405FFFAB35531(L_28, _stringLiteral79A3A135E5B5186F8B18862121F8DA14F4E3B1BB, AndroidJavaObject_Get_TisInt64U5BU5D_tAEDFCBDB5414E2A140A6F34C0538BF97FCF67A1D_m0EF4D6095F8812E9F918E88C5D4405FFFAB35531_RuntimeMethod_var);
-		AndroidNotificationChannel_set_VibrationPattern_m5094F0617F624125303CACD9ABECE78F3CEDE5EF_inline((&V_4), L_29, NULL);
-		// ch.LockScreenVisibility = channel.Get<int>("lockscreenVisibility").ToLockScreenVisibility();
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_30 = V_3;
-		NullCheck(L_30);
-		int32_t L_31;
-		L_31 = AndroidJavaObject_Get_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m1C9D9590B9F7212AAD6D9BFFF3F2762BD090BCAB(L_30, _stringLiteralD63E5B8C1F7235D8901BA385D75F8988FD3A9182, AndroidJavaObject_Get_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m1C9D9590B9F7212AAD6D9BFFF3F2762BD090BCAB_RuntimeMethod_var);
-		int32_t L_32;
-		L_32 = AndroidNotificationExtensions_ToLockScreenVisibility_mDF748982613826246900C07483FD4417995D2637(L_31, NULL);
-		AndroidNotificationChannel_set_LockScreenVisibility_m60EA310F67DFC24F7BB72D956503A85E5AF81A6F_inline((&V_4), L_32, NULL);
-		// channels[i] = ch;
-		AndroidNotificationChannelU5BU5D_t652D39DBFEA112B98179852322BD9ADBE8D8E6D4* L_33 = V_1;
-		int32_t L_34 = V_2;
-		AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC L_35 = V_4;
-		NullCheck(L_33);
-		(L_33)->SetAt(static_cast<il2cpp_array_size_t>(L_34), (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC)L_35);
-		// for (int i = 0; i < channels.Length; ++i)
-		int32_t L_36 = V_2;
-		V_2 = ((int32_t)il2cpp_codegen_add(L_36, 1));
-	}
-
-IL_010b:
-	{
-		// for (int i = 0; i < channels.Length; ++i)
-		int32_t L_37 = V_2;
-		AndroidNotificationChannelU5BU5D_t652D39DBFEA112B98179852322BD9ADBE8D8E6D4* L_38 = V_1;
-		NullCheck(L_38);
-		if ((((int32_t)L_37) < ((int32_t)((int32_t)(((RuntimeArray*)L_38)->max_length)))))
-		{
-			goto IL_0034;
-		}
-	}
-	{
-		// return channels;
-		AndroidNotificationChannelU5BU5D_t652D39DBFEA112B98179852322BD9ADBE8D8E6D4* L_39 = V_1;
-		return L_39;
-	}
-}
-// System.Void Unity.Notifications.Android.AndroidNotificationCenter::DeleteNotificationChannel(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationCenter_DeleteNotificationChannel_m5144723F93604650B197C84172DEC833BC233720 (String_t* ___channelId0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// if (Initialize())
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		bool L_0;
-		L_0 = AndroidNotificationCenter_Initialize_m7FE4465A27CB4DCF07D138715B26FF553C055CDA(NULL);
-		if (!L_0)
-		{
-			goto IL_0017;
-		}
-	}
-	{
-		// s_Jni.NotificationManager.DeleteNotificationChannel(channelId);
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* L_1 = (&(&((AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_StaticFields*)il2cpp_codegen_static_fields_for(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var))->___s_Jni_5)->___NotificationManager_0);
-		String_t* L_2 = ___channelId0;
-		NotificationManagerJni_DeleteNotificationChannel_m7FDC2B1E83A82BD228A1B6CAF889978F92176092(L_1, L_2, NULL);
-	}
-
-IL_0017:
-	{
-		// }
-		return;
-	}
-}
 // System.Int32 Unity.Notifications.Android.AndroidNotificationCenter::SendNotification(Unity.Notifications.Android.AndroidNotification,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t AndroidNotificationCenter_SendNotification_mFADE76DB5826511F62598D5DDC8982904AAD7684 (AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18 ___notification0, String_t* ___channelId1, const RuntimeMethod* method) 
 {
@@ -7626,154 +6459,6 @@ IL_0025:
 		return L_8;
 	}
 }
-// System.Void Unity.Notifications.Android.AndroidNotificationCenter::SendNotificationWithExplicitID(Unity.Notifications.Android.AndroidNotification,System.String,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationCenter_SendNotificationWithExplicitID_m30DBF4103DB97ECD750A2942CA5E233D0B17DED6 (AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18 ___notification0, String_t* ___channelId1, int32_t ___id2, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDisposable_t030E0496B4E0E4E4F086825007979AF51F7248C5_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* V_0 = NULL;
-	{
-		// if (Initialize())
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		bool L_0;
-		L_0 = AndroidNotificationCenter_Initialize_m7FE4465A27CB4DCF07D138715B26FF553C055CDA(NULL);
-		if (!L_0)
-		{
-			goto IL_0024;
-		}
-	}
-	{
-		// using (var builder = CreateNotificationBuilder(id, notification, channelId))
-		int32_t L_1 = ___id2;
-		AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18 L_2 = ___notification0;
-		String_t* L_3 = ___channelId1;
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_4;
-		L_4 = AndroidNotificationCenter_CreateNotificationBuilder_mBAEF85164D0D956BF460D23859173B639EFE91F2(L_1, L_2, L_3, NULL);
-		V_0 = L_4;
-	}
-	{
-		auto __finallyBlock = il2cpp::utils::Finally([&]
-		{
-
-FINALLY_001a:
-			{// begin finally (depth: 1)
-				{
-					AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_5 = V_0;
-					if (!L_5)
-					{
-						goto IL_0023;
-					}
-				}
-				{
-					AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_6 = V_0;
-					NullCheck(L_6);
-					InterfaceActionInvoker0::Invoke(0 /* System.Void System.IDisposable::Dispose() */, IDisposable_t030E0496B4E0E4E4F086825007979AF51F7248C5_il2cpp_TypeInfo_var, L_6);
-				}
-
-IL_0023:
-				{
-					return;
-				}
-			}// end finally (depth: 1)
-		});
-		try
-		{// begin try (depth: 1)
-			// ScheduleNotification(builder, false);
-			AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_7 = V_0;
-			il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-			int32_t L_8;
-			L_8 = AndroidNotificationCenter_ScheduleNotification_m9274C4F9EBB42FBD339E3AA95537FF13143417E3(L_7, (bool)0, NULL);
-			goto IL_0024;
-		}// end try (depth: 1)
-		catch(Il2CppExceptionWrapper& e)
-		{
-			__finallyBlock.StoreException(e.ex);
-		}
-	}
-
-IL_0024:
-	{
-		// }
-		return;
-	}
-}
-// System.Void Unity.Notifications.Android.AndroidNotificationCenter::SendNotification(UnityEngine.AndroidJavaObject)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationCenter_SendNotification_m3A2F6E76507993670B90A56EBD2A455048455EAF (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___notificationBuilder0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// if (Initialize())
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		bool L_0;
-		L_0 = AndroidNotificationCenter_Initialize_m7FE4465A27CB4DCF07D138715B26FF553C055CDA(NULL);
-		if (!L_0)
-		{
-			goto IL_000f;
-		}
-	}
-	{
-		// ScheduleNotification(notificationBuilder, true);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_1 = ___notificationBuilder0;
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		int32_t L_2;
-		L_2 = AndroidNotificationCenter_ScheduleNotification_m9274C4F9EBB42FBD339E3AA95537FF13143417E3(L_1, (bool)1, NULL);
-	}
-
-IL_000f:
-	{
-		// }
-		return;
-	}
-}
-// System.Void Unity.Notifications.Android.AndroidNotificationCenter::SendNotification(UnityEngine.AndroidJavaObject,System.Int32&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationCenter_SendNotification_m9B18BAEE98A243D221AB56EC6370B79356D7AF24 (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___notificationBuilder0, int32_t* ___id1, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// id = -1;
-		int32_t* L_0 = ___id1;
-		*((int32_t*)L_0) = (int32_t)(-1);
-		// if (Initialize())
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		bool L_1;
-		L_1 = AndroidNotificationCenter_Initialize_m7FE4465A27CB4DCF07D138715B26FF553C055CDA(NULL);
-		if (!L_1)
-		{
-			goto IL_0013;
-		}
-	}
-	{
-		// id = ScheduleNotification(notificationBuilder, true);
-		int32_t* L_2 = ___id1;
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_3 = ___notificationBuilder0;
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		int32_t L_4;
-		L_4 = AndroidNotificationCenter_ScheduleNotification_m9274C4F9EBB42FBD339E3AA95537FF13143417E3(L_3, (bool)1, NULL);
-		*((int32_t*)L_2) = (int32_t)L_4;
-	}
-
-IL_0013:
-	{
-		// }
-		return;
-	}
-}
 // System.Int32 Unity.Notifications.Android.AndroidNotificationCenter::ScheduleNotification(UnityEngine.AndroidJavaObject,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t AndroidNotificationCenter_ScheduleNotification_m9274C4F9EBB42FBD339E3AA95537FF13143417E3 (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___notificationBuilder0, bool ___customized1, const RuntimeMethod* method) 
 {
@@ -7792,204 +6477,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t AndroidNotificationCenter_ScheduleNot
 		int32_t L_3;
 		L_3 = NotificationManagerJni_ScheduleNotification_mB13633DB9B5CF0BF86CAB28BD775BF5D6015C927(L_0, L_1, L_2, NULL);
 		return L_3;
-	}
-}
-// System.Void Unity.Notifications.Android.AndroidNotificationCenter::UpdateScheduledNotification(System.Int32,Unity.Notifications.Android.AndroidNotification,System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationCenter_UpdateScheduledNotification_m483CD427E1B5FE58A9FAE8CAB8D95C261BBE1CA9 (int32_t ___id0, AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18 ___notification1, String_t* ___channelId2, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDisposable_t030E0496B4E0E4E4F086825007979AF51F7248C5_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* V_0 = NULL;
-	{
-		// if (!Initialize())
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		bool L_0;
-		L_0 = AndroidNotificationCenter_Initialize_m7FE4465A27CB4DCF07D138715B26FF553C055CDA(NULL);
-		if (L_0)
-		{
-			goto IL_0008;
-		}
-	}
-	{
-		// return;
-		return;
-	}
-
-IL_0008:
-	{
-		// if (s_Jni.NotificationManager.CheckIfPendingNotificationIsRegistered(id))
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* L_1 = (&(&((AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_StaticFields*)il2cpp_codegen_static_fields_for(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var))->___s_Jni_5)->___NotificationManager_0);
-		int32_t L_2 = ___id0;
-		bool L_3;
-		L_3 = NotificationManagerJni_CheckIfPendingNotificationIsRegistered_m9D7808AFE9DA28A59A431DEB49833D7E0BA483AD(L_1, L_2, NULL);
-		if (!L_3)
-		{
-			goto IL_0035;
-		}
-	}
-	{
-		// using (var builder = CreateNotificationBuilder(id, notification, channelId))
-		int32_t L_4 = ___id0;
-		AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18 L_5 = ___notification1;
-		String_t* L_6 = ___channelId2;
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_7;
-		L_7 = AndroidNotificationCenter_CreateNotificationBuilder_mBAEF85164D0D956BF460D23859173B639EFE91F2(L_4, L_5, L_6, NULL);
-		V_0 = L_7;
-	}
-	{
-		auto __finallyBlock = il2cpp::utils::Finally([&]
-		{
-
-FINALLY_002b:
-			{// begin finally (depth: 1)
-				{
-					AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_8 = V_0;
-					if (!L_8)
-					{
-						goto IL_0034;
-					}
-				}
-				{
-					AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_9 = V_0;
-					NullCheck(L_9);
-					InterfaceActionInvoker0::Invoke(0 /* System.Void System.IDisposable::Dispose() */, IDisposable_t030E0496B4E0E4E4F086825007979AF51F7248C5_il2cpp_TypeInfo_var, L_9);
-				}
-
-IL_0034:
-				{
-					return;
-				}
-			}// end finally (depth: 1)
-		});
-		try
-		{// begin try (depth: 1)
-			// SendNotification(builder);
-			AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_10 = V_0;
-			il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-			AndroidNotificationCenter_SendNotification_m3A2F6E76507993670B90A56EBD2A455048455EAF(L_10, NULL);
-			// }
-			goto IL_0035;
-		}// end try (depth: 1)
-		catch(Il2CppExceptionWrapper& e)
-		{
-			__finallyBlock.StoreException(e.ex);
-		}
-	}
-
-IL_0035:
-	{
-		// }
-		return;
-	}
-}
-// System.Void Unity.Notifications.Android.AndroidNotificationCenter::CancelNotification(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationCenter_CancelNotification_m50C48C439FB4E69662D5651A3EA04B0A494E1B9C (int32_t ___id0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// if (!Initialize())
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		bool L_0;
-		L_0 = AndroidNotificationCenter_Initialize_m7FE4465A27CB4DCF07D138715B26FF553C055CDA(NULL);
-		if (L_0)
-		{
-			goto IL_0008;
-		}
-	}
-	{
-		// return;
-		return;
-	}
-
-IL_0008:
-	{
-		// CancelScheduledNotification(id);
-		int32_t L_1 = ___id0;
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		AndroidNotificationCenter_CancelScheduledNotification_m09AF99C709F179487C1AC459160BD1F8482F2530(L_1, NULL);
-		// CancelDisplayedNotification(id);
-		int32_t L_2 = ___id0;
-		AndroidNotificationCenter_CancelDisplayedNotification_mEDD943C7EACF9DF736A6024F83993DF96A4BB859(L_2, NULL);
-		// }
-		return;
-	}
-}
-// System.Void Unity.Notifications.Android.AndroidNotificationCenter::CancelScheduledNotification(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationCenter_CancelScheduledNotification_m09AF99C709F179487C1AC459160BD1F8482F2530 (int32_t ___id0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// if (Initialize())
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		bool L_0;
-		L_0 = AndroidNotificationCenter_Initialize_m7FE4465A27CB4DCF07D138715B26FF553C055CDA(NULL);
-		if (!L_0)
-		{
-			goto IL_0017;
-		}
-	}
-	{
-		// s_Jni.NotificationManager.CancelPendingNotification(id);
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* L_1 = (&(&((AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_StaticFields*)il2cpp_codegen_static_fields_for(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var))->___s_Jni_5)->___NotificationManager_0);
-		int32_t L_2 = ___id0;
-		NotificationManagerJni_CancelPendingNotification_m1483EB580A604FF6A1E97B56FDBC5CDBADFEDC23(L_1, L_2, NULL);
-	}
-
-IL_0017:
-	{
-		// }
-		return;
-	}
-}
-// System.Void Unity.Notifications.Android.AndroidNotificationCenter::CancelDisplayedNotification(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationCenter_CancelDisplayedNotification_mEDD943C7EACF9DF736A6024F83993DF96A4BB859 (int32_t ___id0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// if (Initialize())
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		bool L_0;
-		L_0 = AndroidNotificationCenter_Initialize_m7FE4465A27CB4DCF07D138715B26FF553C055CDA(NULL);
-		if (!L_0)
-		{
-			goto IL_0017;
-		}
-	}
-	{
-		// s_Jni.NotificationManager.CancelDisplayedNotification(id);
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* L_1 = (&(&((AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_StaticFields*)il2cpp_codegen_static_fields_for(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var))->___s_Jni_5)->___NotificationManager_0);
-		int32_t L_2 = ___id0;
-		NotificationManagerJni_CancelDisplayedNotification_m4FF516A6AC87A0913E3C9A804F231F7DBFFFA02F(L_1, L_2, NULL);
-	}
-
-IL_0017:
-	{
-		// }
-		return;
 	}
 }
 // System.Void Unity.Notifications.Android.AndroidNotificationCenter::CancelAllNotifications()
@@ -8127,109 +6614,6 @@ IL_0009:
 		return (int32_t)(L_3);
 	}
 }
-// Unity.Notifications.Android.AndroidNotificationIntentData Unity.Notifications.Android.AndroidNotificationCenter::GetLastNotificationIntent()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidNotificationIntentData_tF4201A845458829CA4214A2FEE5A4E67BC8E2729* AndroidNotificationCenter_GetLastNotificationIntent_mFB308DC75D6A2BB8709BA34ADE13C0860CDC196C (const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidJavaObject_Call_TisAndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0_m020246E0988293B6126B690BD6CE4D894276AA3D_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Array_Empty_TisRuntimeObject_mFB8A63D602BB6974D31E20300D9EB89C6FE7C278_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralC6BB6E51318A73F893E5ECC5FA841B3043DC4C87);
-		s_Il2CppMethodInitialized = true;
-	}
-	AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* V_0 = NULL;
-	AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* V_1 = NULL;
-	{
-		// if (!Initialize())
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		bool L_0;
-		L_0 = AndroidNotificationCenter_Initialize_m7FE4465A27CB4DCF07D138715B26FF553C055CDA(NULL);
-		if (L_0)
-		{
-			goto IL_0009;
-		}
-	}
-	{
-		// return null;
-		return (AndroidNotificationIntentData_tF4201A845458829CA4214A2FEE5A4E67BC8E2729*)NULL;
-	}
-
-IL_0009:
-	{
-		// var intent = s_CurrentActivity.Call<AndroidJavaObject>("getIntent");
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_1 = ((AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_StaticFields*)il2cpp_codegen_static_fields_for(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var))->___s_CurrentActivity_4;
-		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_2;
-		L_2 = Array_Empty_TisRuntimeObject_mFB8A63D602BB6974D31E20300D9EB89C6FE7C278_inline(Array_Empty_TisRuntimeObject_mFB8A63D602BB6974D31E20300D9EB89C6FE7C278_RuntimeMethod_var);
-		NullCheck(L_1);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_3;
-		L_3 = AndroidJavaObject_Call_TisAndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0_m020246E0988293B6126B690BD6CE4D894276AA3D(L_1, _stringLiteralC6BB6E51318A73F893E5ECC5FA841B3043DC4C87, L_2, AndroidJavaObject_Call_TisAndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0_m020246E0988293B6126B690BD6CE4D894276AA3D_RuntimeMethod_var);
-		V_0 = L_3;
-		// var notification = s_Jni.NotificationManager.GetNotificationFromIntent(intent);
-		NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* L_4 = (&(&((AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_StaticFields*)il2cpp_codegen_static_fields_for(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var))->___s_Jni_5)->___NotificationManager_0);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_5 = V_0;
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_6;
-		L_6 = NotificationManagerJni_GetNotificationFromIntent_m3FFECDFB9B4A70DA67A4687956D966C23471C390(L_4, L_5, NULL);
-		V_1 = L_6;
-		// if (notification == null)
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_7 = V_1;
-		if (L_7)
-		{
-			goto IL_0034;
-		}
-	}
-	{
-		// return null;
-		return (AndroidNotificationIntentData_tF4201A845458829CA4214A2FEE5A4E67BC8E2729*)NULL;
-	}
-
-IL_0034:
-	{
-		// return GetNotificationData(notification);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_8 = V_1;
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		AndroidNotificationIntentData_tF4201A845458829CA4214A2FEE5A4E67BC8E2729* L_9;
-		L_9 = AndroidNotificationCenter_GetNotificationData_mE28487D690B4635F58A28189AA4D7CA19EC7A56A(L_8, NULL);
-		return L_9;
-	}
-}
-// System.Void Unity.Notifications.Android.AndroidNotificationCenter::OpenNotificationSettings(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationCenter_OpenNotificationSettings_mCBAB335D216FCE484181556733D187A3711CA3A1 (String_t* ___channelId0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// if (!Initialize())
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		bool L_0;
-		L_0 = AndroidNotificationCenter_Initialize_m7FE4465A27CB4DCF07D138715B26FF553C055CDA(NULL);
-		if (L_0)
-		{
-			goto IL_0008;
-		}
-	}
-	{
-		// return;
-		return;
-	}
-
-IL_0008:
-	{
-		// s_Jni.NotificationManager.ShowNotificationSettings(channelId);
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* L_1 = (&(&((AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_StaticFields*)il2cpp_codegen_static_fields_for(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var))->___s_Jni_5)->___NotificationManager_0);
-		String_t* L_2 = ___channelId0;
-		NotificationManagerJni_ShowNotificationSettings_m48069D862A543F2734AD157699ED869674D19EFE(L_1, L_2, NULL);
-		// }
-		return;
-	}
-}
 // UnityEngine.AndroidJavaObject Unity.Notifications.Android.AndroidNotificationCenter::CreateNotificationBuilder(Unity.Notifications.Android.AndroidNotification,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* AndroidNotificationCenter_CreateNotificationBuilder_m882FE96B446F7752DA065E70138C788AB9A97EA7 (AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18 ___notification0, String_t* ___channelId1, const RuntimeMethod* method) 
 {
@@ -8266,52 +6650,6 @@ IL_0014:
 		// return builder;
 		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_4 = V_0;
 		return L_4;
-	}
-}
-// UnityEngine.AndroidJavaObject Unity.Notifications.Android.AndroidNotificationCenter::CreateNotificationBuilder(System.Int32,Unity.Notifications.Android.AndroidNotification,System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* AndroidNotificationCenter_CreateNotificationBuilder_mBAEF85164D0D956BF460D23859173B639EFE91F2 (int32_t ___id0, AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18 ___notification1, String_t* ___channelId2, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* V_0 = NULL;
-	AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* V_1 = NULL;
-	{
-		// CreateNotificationBuilder(notification, channelId, out builder, out extras);
-		AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18 L_0 = ___notification1;
-		String_t* L_1 = ___channelId2;
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		AndroidNotificationCenter_CreateNotificationBuilder_m9B96B90B140356DAE357B647D2E72A507BAC813B(L_0, L_1, (&V_0), (&V_1), NULL);
-		// if (extras != null)
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_2 = V_1;
-		if (!L_2)
-		{
-			goto IL_0034;
-		}
-	}
-	{
-		// s_Jni.Bundle.PutInt(extras, s_Jni.NotificationManager.KEY_ID, id);
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		BundleJni_t578C7BD49F759A34A0B1B324FD7CAB3A57CB0701* L_3 = (&(&((AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_StaticFields*)il2cpp_codegen_static_fields_for(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var))->___s_Jni_5)->___Bundle_3);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_4 = V_1;
-		NotificationManagerJni_t1F9428BF0AD0E63A1650F9E32A470918D864A5C1* L_5 = (&(&((AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_StaticFields*)il2cpp_codegen_static_fields_for(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var))->___s_Jni_5)->___NotificationManager_0);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_6 = L_5->___KEY_ID_3;
-		int32_t L_7 = ___id0;
-		BundleJni_PutInt_mFBE2D0E3E837874612D9476E58F241899D1F1D85(L_3, L_4, L_6, L_7, NULL);
-		// extras.Dispose();
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_8 = V_1;
-		NullCheck(L_8);
-		AndroidJavaObject_Dispose_m2B1593C20B3CE1C8FF95982F638F50985F9DD9E6(L_8, NULL);
-	}
-
-IL_0034:
-	{
-		// return builder;
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_9 = V_0;
-		return L_9;
 	}
 }
 // System.Void Unity.Notifications.Android.AndroidNotificationCenter::CreateNotificationBuilder(Unity.Notifications.Android.AndroidNotification,System.String,UnityEngine.AndroidJavaObject&,UnityEngine.AndroidJavaObject&)
@@ -9179,14 +7517,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationCenter_ReceivedNotifi
 		return;
 	}
 }
-// System.Void Unity.Notifications.Android.AndroidNotificationCenter::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationCenter__ctor_m1356A1AC8BBBC3B884CDA2B45625E8EB7C54E73E (AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A* __this, const RuntimeMethod* method) 
-{
-	{
-		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
-		return;
-	}
-}
 // System.Void Unity.Notifications.Android.AndroidNotificationCenter::.cctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationCenter__cctor_m7D790FF1D3EBAB7D2D7BC7514DB39EAA46EF8FFD (const RuntimeMethod* method) 
 {
@@ -9331,47 +7661,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationReceivedCallback_Invoke_m61C
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, AndroidNotificationIntentData_tF4201A845458829CA4214A2FEE5A4E67BC8E2729*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___data0, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
-}
-// System.IAsyncResult Unity.Notifications.Android.AndroidNotificationCenter/NotificationReceivedCallback::BeginInvoke(Unity.Notifications.Android.AndroidNotificationIntentData,System.AsyncCallback,System.Object)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* NotificationReceivedCallback_BeginInvoke_m7195606CDAC49D51D798ED12E1D98A6B28358351 (NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* __this, AndroidNotificationIntentData_tF4201A845458829CA4214A2FEE5A4E67BC8E2729* ___data0, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___callback1, RuntimeObject* ___object2, const RuntimeMethod* method) 
-{
-	void *__d_args[2] = {0};
-	__d_args[0] = ___data0;
-	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___callback1, (RuntimeObject*)___object2);
-}
-// System.Void Unity.Notifications.Android.AndroidNotificationCenter/NotificationReceivedCallback::EndInvoke(System.IAsyncResult)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotificationReceivedCallback_EndInvoke_m85DF87F26C3E670626AB85868003EC5881A05430 (NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* __this, RuntimeObject* ___result0, const RuntimeMethod* method) 
-{
-	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___result0, 0);
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void Unity.Notifications.Android.AndroidNotificationCenter/<>c__DisplayClass17_0::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass17_0__ctor_mCD78899948E6FEE2CDBF6443B107DB44F2616F16 (U3CU3Ec__DisplayClass17_0_t671B55005EAF3DDC85E9381871D79BE4C50FFCAF* __this, const RuntimeMethod* method) 
-{
-	{
-		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
-		return;
-	}
-}
-// System.Boolean Unity.Notifications.Android.AndroidNotificationCenter/<>c__DisplayClass17_0::<GetNotificationChannel>b__0(Unity.Notifications.Android.AndroidNotificationChannel)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec__DisplayClass17_0_U3CGetNotificationChannelU3Eb__0_mC693539945E016CB682CFB6660B39651C73AB6E4 (U3CU3Ec__DisplayClass17_0_t671B55005EAF3DDC85E9381871D79BE4C50FFCAF* __this, AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC ___channel0, const RuntimeMethod* method) 
-{
-	{
-		// return GetNotificationChannels().SingleOrDefault(channel => channel.Id == channelId);
-		String_t* L_0;
-		L_0 = AndroidNotificationChannel_get_Id_m19881BA773D5AB3992A8CAFA89477A507FC778D3_inline((&___channel0), NULL);
-		String_t* L_1 = __this->___channelId_0;
-		bool L_2;
-		L_2 = String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1(L_0, L_1, NULL);
-		return L_2;
-	}
 }
 #ifdef __clang__
 #pragma clang diagnostic pop
@@ -9706,23 +7995,6 @@ IL2CPP_EXTERN_C  bool AndroidNotificationChannel_get_CanBypassDnd_m3366B1D352E9A
 	_returnValue = AndroidNotificationChannel_get_CanBypassDnd_m3366B1D352E9A859DA278D670F8884B3ABE0C73D_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// System.Void Unity.Notifications.Android.AndroidNotificationChannel::set_CanBypassDnd(System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_CanBypassDnd_mC46CCD099353D872B2677782909AB6425709729C (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, bool ___value0, const RuntimeMethod* method) 
-{
-	{
-		// public bool CanBypassDnd { get; set; }
-		bool L_0 = ___value0;
-		__this->___U3CCanBypassDndU3Ek__BackingField_4 = L_0;
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void AndroidNotificationChannel_set_CanBypassDnd_mC46CCD099353D872B2677782909AB6425709729C_AdjustorThunk (RuntimeObject* __this, bool ___value0, const RuntimeMethod* method)
-{
-	AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC*>(__this + _offset);
-	AndroidNotificationChannel_set_CanBypassDnd_mC46CCD099353D872B2677782909AB6425709729C_inline(_thisAdjusted, ___value0, method);
-}
 // System.Boolean Unity.Notifications.Android.AndroidNotificationChannel::get_CanShowBadge()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AndroidNotificationChannel_get_CanShowBadge_mAE60C3E658FB6D10A5A13DB7EF0F22C60B630EF4 (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, const RuntimeMethod* method) 
 {
@@ -9740,23 +8012,6 @@ IL2CPP_EXTERN_C  bool AndroidNotificationChannel_get_CanShowBadge_mAE60C3E658FB6
 	bool _returnValue;
 	_returnValue = AndroidNotificationChannel_get_CanShowBadge_mAE60C3E658FB6D10A5A13DB7EF0F22C60B630EF4_inline(_thisAdjusted, method);
 	return _returnValue;
-}
-// System.Void Unity.Notifications.Android.AndroidNotificationChannel::set_CanShowBadge(System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_CanShowBadge_mC62C1B6B1A53267281ACC54D88B1882AEBBF6E33 (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, bool ___value0, const RuntimeMethod* method) 
-{
-	{
-		// public bool CanShowBadge { get; set; }
-		bool L_0 = ___value0;
-		__this->___U3CCanShowBadgeU3Ek__BackingField_5 = L_0;
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void AndroidNotificationChannel_set_CanShowBadge_mC62C1B6B1A53267281ACC54D88B1882AEBBF6E33_AdjustorThunk (RuntimeObject* __this, bool ___value0, const RuntimeMethod* method)
-{
-	AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC*>(__this + _offset);
-	AndroidNotificationChannel_set_CanShowBadge_mC62C1B6B1A53267281ACC54D88B1882AEBBF6E33_inline(_thisAdjusted, ___value0, method);
 }
 // System.Boolean Unity.Notifications.Android.AndroidNotificationChannel::get_EnableLights()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AndroidNotificationChannel_get_EnableLights_m2BFE53D692477312544C36B8C592B671BBA7369C (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, const RuntimeMethod* method) 
@@ -9776,23 +8031,6 @@ IL2CPP_EXTERN_C  bool AndroidNotificationChannel_get_EnableLights_m2BFE53D692477
 	_returnValue = AndroidNotificationChannel_get_EnableLights_m2BFE53D692477312544C36B8C592B671BBA7369C_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// System.Void Unity.Notifications.Android.AndroidNotificationChannel::set_EnableLights(System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_EnableLights_m7CD6A72DB5139D175ADBEB68984EF42E9BC5A19D (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, bool ___value0, const RuntimeMethod* method) 
-{
-	{
-		// public bool EnableLights { get; set; }
-		bool L_0 = ___value0;
-		__this->___U3CEnableLightsU3Ek__BackingField_6 = L_0;
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void AndroidNotificationChannel_set_EnableLights_m7CD6A72DB5139D175ADBEB68984EF42E9BC5A19D_AdjustorThunk (RuntimeObject* __this, bool ___value0, const RuntimeMethod* method)
-{
-	AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC*>(__this + _offset);
-	AndroidNotificationChannel_set_EnableLights_m7CD6A72DB5139D175ADBEB68984EF42E9BC5A19D_inline(_thisAdjusted, ___value0, method);
-}
 // System.Boolean Unity.Notifications.Android.AndroidNotificationChannel::get_EnableVibration()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AndroidNotificationChannel_get_EnableVibration_m159BBC4105ED1415D1442D663FB39F527B905DBC (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, const RuntimeMethod* method) 
 {
@@ -9810,23 +8048,6 @@ IL2CPP_EXTERN_C  bool AndroidNotificationChannel_get_EnableVibration_m159BBC4105
 	bool _returnValue;
 	_returnValue = AndroidNotificationChannel_get_EnableVibration_m159BBC4105ED1415D1442D663FB39F527B905DBC_inline(_thisAdjusted, method);
 	return _returnValue;
-}
-// System.Void Unity.Notifications.Android.AndroidNotificationChannel::set_EnableVibration(System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_EnableVibration_m1D7E703E1989322F82706642D5FDD30BB3FDBDAB (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, bool ___value0, const RuntimeMethod* method) 
-{
-	{
-		// public bool EnableVibration { get; set; }
-		bool L_0 = ___value0;
-		__this->___U3CEnableVibrationU3Ek__BackingField_7 = L_0;
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void AndroidNotificationChannel_set_EnableVibration_m1D7E703E1989322F82706642D5FDD30BB3FDBDAB_AdjustorThunk (RuntimeObject* __this, bool ___value0, const RuntimeMethod* method)
-{
-	AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC*>(__this + _offset);
-	AndroidNotificationChannel_set_EnableVibration_m1D7E703E1989322F82706642D5FDD30BB3FDBDAB_inline(_thisAdjusted, ___value0, method);
 }
 // System.Int64[] Unity.Notifications.Android.AndroidNotificationChannel::get_VibrationPattern()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Int64U5BU5D_tAEDFCBDB5414E2A140A6F34C0538BF97FCF67A1D* AndroidNotificationChannel_get_VibrationPattern_m0FC62A16CA5A2E5CF5C908A556E3F3AA50B9FD53 (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, const RuntimeMethod* method) 
@@ -9846,24 +8067,6 @@ IL2CPP_EXTERN_C  Int64U5BU5D_tAEDFCBDB5414E2A140A6F34C0538BF97FCF67A1D* AndroidN
 	_returnValue = AndroidNotificationChannel_get_VibrationPattern_m0FC62A16CA5A2E5CF5C908A556E3F3AA50B9FD53_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// System.Void Unity.Notifications.Android.AndroidNotificationChannel::set_VibrationPattern(System.Int64[])
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_VibrationPattern_m5094F0617F624125303CACD9ABECE78F3CEDE5EF (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, Int64U5BU5D_tAEDFCBDB5414E2A140A6F34C0538BF97FCF67A1D* ___value0, const RuntimeMethod* method) 
-{
-	{
-		// public long[] VibrationPattern { get; set; }
-		Int64U5BU5D_tAEDFCBDB5414E2A140A6F34C0538BF97FCF67A1D* L_0 = ___value0;
-		__this->___U3CVibrationPatternU3Ek__BackingField_8 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CVibrationPatternU3Ek__BackingField_8), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void AndroidNotificationChannel_set_VibrationPattern_m5094F0617F624125303CACD9ABECE78F3CEDE5EF_AdjustorThunk (RuntimeObject* __this, Int64U5BU5D_tAEDFCBDB5414E2A140A6F34C0538BF97FCF67A1D* ___value0, const RuntimeMethod* method)
-{
-	AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC*>(__this + _offset);
-	AndroidNotificationChannel_set_VibrationPattern_m5094F0617F624125303CACD9ABECE78F3CEDE5EF_inline(_thisAdjusted, ___value0, method);
-}
 // Unity.Notifications.Android.LockScreenVisibility Unity.Notifications.Android.AndroidNotificationChannel::get_LockScreenVisibility()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t AndroidNotificationChannel_get_LockScreenVisibility_m107A11A94A036178B2AC78CD9BB19F7A4455B8F0 (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, const RuntimeMethod* method) 
 {
@@ -9882,81 +8085,6 @@ IL2CPP_EXTERN_C  int32_t AndroidNotificationChannel_get_LockScreenVisibility_m10
 	_returnValue = AndroidNotificationChannel_get_LockScreenVisibility_m107A11A94A036178B2AC78CD9BB19F7A4455B8F0_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// System.Void Unity.Notifications.Android.AndroidNotificationChannel::set_LockScreenVisibility(Unity.Notifications.Android.LockScreenVisibility)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_LockScreenVisibility_m60EA310F67DFC24F7BB72D956503A85E5AF81A6F (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, int32_t ___value0, const RuntimeMethod* method) 
-{
-	{
-		// public LockScreenVisibility LockScreenVisibility { get; set; }
-		int32_t L_0 = ___value0;
-		__this->___U3CLockScreenVisibilityU3Ek__BackingField_9 = L_0;
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void AndroidNotificationChannel_set_LockScreenVisibility_m60EA310F67DFC24F7BB72D956503A85E5AF81A6F_AdjustorThunk (RuntimeObject* __this, int32_t ___value0, const RuntimeMethod* method)
-{
-	AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC*>(__this + _offset);
-	AndroidNotificationChannel_set_LockScreenVisibility_m60EA310F67DFC24F7BB72D956503A85E5AF81A6F_inline(_thisAdjusted, ___value0, method);
-}
-// System.Boolean Unity.Notifications.Android.AndroidNotificationChannel::get_Enabled()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AndroidNotificationChannel_get_Enabled_mF2DC76901E5D2ECD82EF274229D5D0188E8C2332 (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, const RuntimeMethod* method) 
-{
-	{
-		// get { return Importance != Importance.None; }
-		int32_t L_0;
-		L_0 = AndroidNotificationChannel_get_Importance_mD71CC36503857B97A76BC864D29933770F605CA1_inline(__this, NULL);
-		return (bool)((!(((uint32_t)L_0) <= ((uint32_t)0)))? 1 : 0);
-	}
-}
-IL2CPP_EXTERN_C  bool AndroidNotificationChannel_get_Enabled_mF2DC76901E5D2ECD82EF274229D5D0188E8C2332_AdjustorThunk (RuntimeObject* __this, const RuntimeMethod* method)
-{
-	AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC*>(__this + _offset);
-	bool _returnValue;
-	_returnValue = AndroidNotificationChannel_get_Enabled_mF2DC76901E5D2ECD82EF274229D5D0188E8C2332(_thisAdjusted, method);
-	return _returnValue;
-}
-// System.Void Unity.Notifications.Android.AndroidNotificationChannel::.ctor(System.String,System.String,System.String,Unity.Notifications.Android.Importance)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationChannel__ctor_m34B6C2E63FC733479B457A60CD32B17DB826C92C (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, String_t* ___id0, String_t* ___name1, String_t* ___description2, int32_t ___importance3, const RuntimeMethod* method) 
-{
-	{
-		// Id = id;
-		String_t* L_0 = ___id0;
-		AndroidNotificationChannel_set_Id_mF7C5C0A558A8B0936EAEE02E63FA75D3863491E8_inline(__this, L_0, NULL);
-		// Name = name;
-		String_t* L_1 = ___name1;
-		AndroidNotificationChannel_set_Name_m7BFE6876244461FD7C31E44737BE531FA1C8D06F_inline(__this, L_1, NULL);
-		// Description = description;
-		String_t* L_2 = ___description2;
-		AndroidNotificationChannel_set_Description_m1FEF9E6977640D864A5A47DFA4B88988E90C3D09_inline(__this, L_2, NULL);
-		// this.Importance = importance;
-		int32_t L_3 = ___importance3;
-		AndroidNotificationChannel_set_Importance_mE15044EC9CF9254A9667DEC1212C42162B34A980_inline(__this, L_3, NULL);
-		// CanBypassDnd = false;
-		AndroidNotificationChannel_set_CanBypassDnd_mC46CCD099353D872B2677782909AB6425709729C_inline(__this, (bool)0, NULL);
-		// CanShowBadge = true;
-		AndroidNotificationChannel_set_CanShowBadge_mC62C1B6B1A53267281ACC54D88B1882AEBBF6E33_inline(__this, (bool)1, NULL);
-		// EnableLights = false;
-		AndroidNotificationChannel_set_EnableLights_m7CD6A72DB5139D175ADBEB68984EF42E9BC5A19D_inline(__this, (bool)0, NULL);
-		// EnableVibration = true;
-		AndroidNotificationChannel_set_EnableVibration_m1D7E703E1989322F82706642D5FDD30BB3FDBDAB_inline(__this, (bool)1, NULL);
-		// VibrationPattern = null;
-		AndroidNotificationChannel_set_VibrationPattern_m5094F0617F624125303CACD9ABECE78F3CEDE5EF_inline(__this, (Int64U5BU5D_tAEDFCBDB5414E2A140A6F34C0538BF97FCF67A1D*)NULL, NULL);
-		// this.LockScreenVisibility = LockScreenVisibility.Public;
-		AndroidNotificationChannel_set_LockScreenVisibility_m60EA310F67DFC24F7BB72D956503A85E5AF81A6F_inline(__this, 1, NULL);
-		// }
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void AndroidNotificationChannel__ctor_m34B6C2E63FC733479B457A60CD32B17DB826C92C_AdjustorThunk (RuntimeObject* __this, String_t* ___id0, String_t* ___name1, String_t* ___description2, int32_t ___importance3, const RuntimeMethod* method)
-{
-	AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC*>(__this + _offset);
-	AndroidNotificationChannel__ctor_m34B6C2E63FC733479B457A60CD32B17DB826C92C(_thisAdjusted, ___id0, ___name1, ___description2, ___importance3, method);
-}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -9965,129 +8093,6 @@ IL2CPP_EXTERN_C  void AndroidNotificationChannel__ctor_m34B6C2E63FC733479B457A60
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Unity.Notifications.Android.Importance Unity.Notifications.Android.AndroidNotificationExtensions::ToImportance(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t AndroidNotificationExtensions_ToImportance_mF825DF408EBA8407AA80A756321939165CDE9DED (int32_t ___importance0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Importance_tD55C9582B7EC0BCFC93E0ED83E92CF0D31492631_0_0_0_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Type_t_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// if (Enum.IsDefined(typeof(Importance), importance))
-		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_0 = { reinterpret_cast<intptr_t> (Importance_tD55C9582B7EC0BCFC93E0ED83E92CF0D31492631_0_0_0_var) };
-		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
-		Type_t* L_1;
-		L_1 = Type_GetTypeFromHandle_m6062B81682F79A4D6DF2640692EE6D9987858C57(L_0, NULL);
-		int32_t L_2 = ___importance0;
-		int32_t L_3 = L_2;
-		RuntimeObject* L_4 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_3);
-		il2cpp_codegen_runtime_class_init_inline(Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_il2cpp_TypeInfo_var);
-		bool L_5;
-		L_5 = Enum_IsDefined_m1C9A0C4F54B0538351585FF563A01091A6FE2F28(L_1, L_4, NULL);
-		if (!L_5)
-		{
-			goto IL_0019;
-		}
-	}
-	{
-		// return (Importance)importance;
-		int32_t L_6 = ___importance0;
-		return (int32_t)(L_6);
-	}
-
-IL_0019:
-	{
-		// return Importance.Default;
-		return (int32_t)(3);
-	}
-}
-// Unity.Notifications.Android.LockScreenVisibility Unity.Notifications.Android.AndroidNotificationExtensions::ToLockScreenVisibility(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t AndroidNotificationExtensions_ToLockScreenVisibility_mDF748982613826246900C07483FD4417995D2637 (int32_t ___lockscreenVisibility0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&LockScreenVisibility_t80C35F9A0D54445669ED43A50B9F1F9A81F48179_0_0_0_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Type_t_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// if (Enum.IsDefined(typeof(LockScreenVisibility), lockscreenVisibility))
-		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_0 = { reinterpret_cast<intptr_t> (LockScreenVisibility_t80C35F9A0D54445669ED43A50B9F1F9A81F48179_0_0_0_var) };
-		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
-		Type_t* L_1;
-		L_1 = Type_GetTypeFromHandle_m6062B81682F79A4D6DF2640692EE6D9987858C57(L_0, NULL);
-		int32_t L_2 = ___lockscreenVisibility0;
-		int32_t L_3 = L_2;
-		RuntimeObject* L_4 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_3);
-		il2cpp_codegen_runtime_class_init_inline(Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_il2cpp_TypeInfo_var);
-		bool L_5;
-		L_5 = Enum_IsDefined_m1C9A0C4F54B0538351585FF563A01091A6FE2F28(L_1, L_4, NULL);
-		if (!L_5)
-		{
-			goto IL_0019;
-		}
-	}
-	{
-		// return (LockScreenVisibility)lockscreenVisibility;
-		int32_t L_6 = ___lockscreenVisibility0;
-		return (int32_t)(L_6);
-	}
-
-IL_0019:
-	{
-		// return LockScreenVisibility.Public;
-		return (int32_t)(1);
-	}
-}
-// Unity.Notifications.Android.NotificationStyle Unity.Notifications.Android.AndroidNotificationExtensions::ToNotificationStyle(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t AndroidNotificationExtensions_ToNotificationStyle_mDE7A7950E6253E58B7C0AD54EAEBDC322EF273CD (int32_t ___notificationStyle0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&NotificationStyle_t7BFBE5D9ABF0BA0CF5D1576511438DB9FBF38548_0_0_0_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Type_t_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// if (Enum.IsDefined(typeof(NotificationStyle), notificationStyle))
-		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_0 = { reinterpret_cast<intptr_t> (NotificationStyle_t7BFBE5D9ABF0BA0CF5D1576511438DB9FBF38548_0_0_0_var) };
-		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
-		Type_t* L_1;
-		L_1 = Type_GetTypeFromHandle_m6062B81682F79A4D6DF2640692EE6D9987858C57(L_0, NULL);
-		int32_t L_2 = ___notificationStyle0;
-		int32_t L_3 = L_2;
-		RuntimeObject* L_4 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_3);
-		il2cpp_codegen_runtime_class_init_inline(Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2_il2cpp_TypeInfo_var);
-		bool L_5;
-		L_5 = Enum_IsDefined_m1C9A0C4F54B0538351585FF563A01091A6FE2F28(L_1, L_4, NULL);
-		if (!L_5)
-		{
-			goto IL_0019;
-		}
-	}
-	{
-		// return (NotificationStyle)notificationStyle;
-		int32_t L_6 = ___notificationStyle0;
-		return (int32_t)(L_6);
-	}
-
-IL_0019:
-	{
-		// return NotificationStyle.None;
-		return (int32_t)(0);
-	}
-}
 // Unity.Notifications.Android.GroupAlertBehaviours Unity.Notifications.Android.AndroidNotificationExtensions::ToGroupAlertBehaviours(System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t AndroidNotificationExtensions_ToGroupAlertBehaviours_mC3532E41409A2AD93B89C88F6E52E12AC064E348 (int32_t ___groupAlertBehaviour0, const RuntimeMethod* method) 
 {
@@ -10320,42 +8325,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TimeSpan_t8195C5B013A2C532FEBDF0B64B6911982E7
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Int32 Unity.Notifications.Android.AndroidNotificationIntentData::get_Id()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t AndroidNotificationIntentData_get_Id_m175F68AFE33EA2DAE228413B95BCDE53F29BE324 (AndroidNotificationIntentData_tF4201A845458829CA4214A2FEE5A4E67BC8E2729* __this, const RuntimeMethod* method) 
-{
-	{
-		// public int Id { get; }
-		int32_t L_0 = __this->___U3CIdU3Ek__BackingField_0;
-		return L_0;
-	}
-}
-// System.String Unity.Notifications.Android.AndroidNotificationIntentData::get_Channel()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AndroidNotificationIntentData_get_Channel_m8BCBFB16EFF93071E7E5739464F77B8A4A47F59F (AndroidNotificationIntentData_tF4201A845458829CA4214A2FEE5A4E67BC8E2729* __this, const RuntimeMethod* method) 
-{
-	{
-		// public string Channel { get; }
-		String_t* L_0 = __this->___U3CChannelU3Ek__BackingField_1;
-		return L_0;
-	}
-}
-// Unity.Notifications.Android.AndroidNotification Unity.Notifications.Android.AndroidNotificationIntentData::get_Notification()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18 AndroidNotificationIntentData_get_Notification_mB63B63D39E63886B1AEA01D3230B93A098112F96 (AndroidNotificationIntentData_tF4201A845458829CA4214A2FEE5A4E67BC8E2729* __this, const RuntimeMethod* method) 
-{
-	{
-		// public AndroidNotification Notification { get; }
-		AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18 L_0 = __this->___U3CNotificationU3Ek__BackingField_2;
-		return L_0;
-	}
-}
-// UnityEngine.AndroidJavaObject Unity.Notifications.Android.AndroidNotificationIntentData::get_NativeNotification()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* AndroidNotificationIntentData_get_NativeNotification_mB9ED64AF6E1698FBB0EE2174ACD22927B933C1F1 (AndroidNotificationIntentData_tF4201A845458829CA4214A2FEE5A4E67BC8E2729* __this, const RuntimeMethod* method) 
-{
-	{
-		// public AndroidJavaObject NativeNotification { get; internal set; }
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_0 = __this->___U3CNativeNotificationU3Ek__BackingField_3;
-		return L_0;
-	}
-}
 // System.Void Unity.Notifications.Android.AndroidNotificationIntentData::set_NativeNotification(UnityEngine.AndroidJavaObject)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidNotificationIntentData_set_NativeNotification_m1D0827C74509785207483AF0C9F57EC4E945CD74 (AndroidNotificationIntentData_tF4201A845458829CA4214A2FEE5A4E67BC8E2729* __this, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___value0, const RuntimeMethod* method) 
 {
@@ -10767,182 +8736,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidReceivedNotificationMainThreadDis
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// Unity.Notifications.Android.PermissionStatus Unity.Notifications.Android.PermissionRequest::get_Status()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t PermissionRequest_get_Status_m7F1362D18E272FC25BC085ACFD4892461C8CA561 (PermissionRequest_t8F5C0D4BD6DA912863FFE7329DBE056CD2F37046* __this, const RuntimeMethod* method) 
-{
-	{
-		// public PermissionStatus Status { get; set; }
-		int32_t L_0 = __this->___U3CStatusU3Ek__BackingField_0;
-		return L_0;
-	}
-}
-// System.Void Unity.Notifications.Android.PermissionRequest::set_Status(Unity.Notifications.Android.PermissionStatus)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PermissionRequest_set_Status_m71661050BE6920B47203A9A11E7517A6F1DF6B7B (PermissionRequest_t8F5C0D4BD6DA912863FFE7329DBE056CD2F37046* __this, int32_t ___value0, const RuntimeMethod* method) 
-{
-	{
-		// public PermissionStatus Status { get; set; }
-		int32_t L_0 = ___value0;
-		__this->___U3CStatusU3Ek__BackingField_0 = L_0;
-		return;
-	}
-}
-// System.Void Unity.Notifications.Android.PermissionRequest::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PermissionRequest__ctor_m64D09BECCD830256D6FF9173A9E399FD57F6651F (PermissionRequest_t8F5C0D4BD6DA912863FFE7329DBE056CD2F37046* __this, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	int32_t V_0 = 0;
-	{
-		// public PermissionRequest()
-		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
-		// Status = AndroidNotificationCenter.UserPermissionToPost;
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		int32_t L_0;
-		L_0 = AndroidNotificationCenter_get_UserPermissionToPost_mB4CDF213C94793F39FB65977FD0709542DB2AF22(NULL);
-		PermissionRequest_set_Status_m71661050BE6920B47203A9A11E7517A6F1DF6B7B_inline(__this, L_0, NULL);
-		// switch (Status)
-		int32_t L_1;
-		L_1 = PermissionRequest_get_Status_m7F1362D18E272FC25BC085ACFD4892461C8CA561_inline(__this, NULL);
-		V_0 = L_1;
-		int32_t L_2 = V_0;
-		if (!L_2)
-		{
-			goto IL_001f;
-		}
-	}
-	{
-		int32_t L_3 = V_0;
-		if ((!(((uint32_t)L_3) == ((uint32_t)2))))
-		{
-			goto IL_002c;
-		}
-	}
-
-IL_001f:
-	{
-		// Status = PermissionStatus.RequestPending;
-		PermissionRequest_set_Status_m71661050BE6920B47203A9A11E7517A6F1DF6B7B_inline(__this, 4, NULL);
-		// RequestPermission();
-		PermissionRequest_RequestPermission_m859C69D73753CABD1B06709FB5577F6FAD117D5A(__this, NULL);
-	}
-
-IL_002c:
-	{
-		// }
-		return;
-	}
-}
-// System.Void Unity.Notifications.Android.PermissionRequest::RequestPermission()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PermissionRequest_RequestPermission_m859C69D73753CABD1B06709FB5577F6FAD117D5A (PermissionRequest_t8F5C0D4BD6DA912863FFE7329DBE056CD2F37046* __this, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PermissionCallbacks_t6C5002298E6649261FCB52C244695459E5C9890F_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PermissionRequest_U3CRequestPermissionU3Eb__5_0_m08DC18B115C109B0CABA25101C8CE76B44045A52_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PermissionRequest_U3CRequestPermissionU3Eb__5_1_mFC0C42667E163F82AF92E7A0CDDF0B0D780E7AF1_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PermissionRequest_U3CRequestPermissionU3Eb__5_2_m1D18CC39A4FA2F7E176BC343FF5D0C254D66088E_RuntimeMethod_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	PermissionCallbacks_t6C5002298E6649261FCB52C244695459E5C9890F* V_0 = NULL;
-	{
-		// var callbacks = new PermissionCallbacks();
-		PermissionCallbacks_t6C5002298E6649261FCB52C244695459E5C9890F* L_0 = (PermissionCallbacks_t6C5002298E6649261FCB52C244695459E5C9890F*)il2cpp_codegen_object_new(PermissionCallbacks_t6C5002298E6649261FCB52C244695459E5C9890F_il2cpp_TypeInfo_var);
-		NullCheck(L_0);
-		PermissionCallbacks__ctor_m91B14BBBC8913C131E400BA0D13576822AAE7A75(L_0, NULL);
-		V_0 = L_0;
-		// callbacks.PermissionGranted += (unused) => PermissionResponse(PermissionStatus.Allowed);
-		PermissionCallbacks_t6C5002298E6649261FCB52C244695459E5C9890F* L_1 = V_0;
-		Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* L_2 = (Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A*)il2cpp_codegen_object_new(Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A_il2cpp_TypeInfo_var);
-		NullCheck(L_2);
-		Action_1__ctor_m9DC2953C55C4D7D4B7BEFE03D84DA1F9362D652C(L_2, __this, (intptr_t)((void*)PermissionRequest_U3CRequestPermissionU3Eb__5_0_m08DC18B115C109B0CABA25101C8CE76B44045A52_RuntimeMethod_var), NULL);
-		NullCheck(L_1);
-		PermissionCallbacks_add_PermissionGranted_m74335D4200D9B1A7C80AB9C133F95C61FCDCDF89(L_1, L_2, NULL);
-		// callbacks.PermissionDenied += (unused) => PermissionResponse(PermissionStatus.Denied);
-		PermissionCallbacks_t6C5002298E6649261FCB52C244695459E5C9890F* L_3 = V_0;
-		Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* L_4 = (Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A*)il2cpp_codegen_object_new(Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A_il2cpp_TypeInfo_var);
-		NullCheck(L_4);
-		Action_1__ctor_m9DC2953C55C4D7D4B7BEFE03D84DA1F9362D652C(L_4, __this, (intptr_t)((void*)PermissionRequest_U3CRequestPermissionU3Eb__5_1_mFC0C42667E163F82AF92E7A0CDDF0B0D780E7AF1_RuntimeMethod_var), NULL);
-		NullCheck(L_3);
-		PermissionCallbacks_add_PermissionDenied_mE0B2826463785B050C999C70F443FCC3822563D0(L_3, L_4, NULL);
-		// callbacks.PermissionDeniedAndDontAskAgain += (unused) => PermissionResponse(PermissionStatus.DeniedDontAskAgain);
-		PermissionCallbacks_t6C5002298E6649261FCB52C244695459E5C9890F* L_5 = V_0;
-		Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* L_6 = (Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A*)il2cpp_codegen_object_new(Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A_il2cpp_TypeInfo_var);
-		NullCheck(L_6);
-		Action_1__ctor_m9DC2953C55C4D7D4B7BEFE03D84DA1F9362D652C(L_6, __this, (intptr_t)((void*)PermissionRequest_U3CRequestPermissionU3Eb__5_2_m1D18CC39A4FA2F7E176BC343FF5D0C254D66088E_RuntimeMethod_var), NULL);
-		NullCheck(L_5);
-		PermissionCallbacks_add_PermissionDeniedAndDontAskAgain_mEDE8C00FEF2F649F10A47F30AC4ECB09E52DB9AA(L_5, L_6, NULL);
-		// Permission.RequestUserPermission(AndroidNotificationCenter.PERMISSION_POST_NOTIFICATIONS, callbacks);
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		String_t* L_7 = ((AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_StaticFields*)il2cpp_codegen_static_fields_for(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var))->___PERMISSION_POST_NOTIFICATIONS_1;
-		PermissionCallbacks_t6C5002298E6649261FCB52C244695459E5C9890F* L_8 = V_0;
-		Permission_RequestUserPermission_m7B8E817C03FDB5C99F22002C7181F27BF031F117(L_7, L_8, NULL);
-		// }
-		return;
-	}
-}
-// System.Void Unity.Notifications.Android.PermissionRequest::PermissionResponse(Unity.Notifications.Android.PermissionStatus)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PermissionRequest_PermissionResponse_mD1C6B563D20A5BDC42BFDD767C0B1AD4E61ABECB (PermissionRequest_t8F5C0D4BD6DA912863FFE7329DBE056CD2F37046* __this, int32_t ___status0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		// Status = status;
-		int32_t L_0 = ___status0;
-		PermissionRequest_set_Status_m71661050BE6920B47203A9A11E7517A6F1DF6B7B_inline(__this, L_0, NULL);
-		// AndroidNotificationCenter.SetPostPermissionSetting(status);
-		int32_t L_1 = ___status0;
-		il2cpp_codegen_runtime_class_init_inline(AndroidNotificationCenter_t2CFF9EDE8FB85C6993B260A6A9E6225D384D173A_il2cpp_TypeInfo_var);
-		AndroidNotificationCenter_SetPostPermissionSetting_m9E82B540263A30C469C3B4C3F7CD724F88FE9298(L_1, NULL);
-		// }
-		return;
-	}
-}
-// System.Void Unity.Notifications.Android.PermissionRequest::<RequestPermission>b__5_0(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PermissionRequest_U3CRequestPermissionU3Eb__5_0_m08DC18B115C109B0CABA25101C8CE76B44045A52 (PermissionRequest_t8F5C0D4BD6DA912863FFE7329DBE056CD2F37046* __this, String_t* ___unused0, const RuntimeMethod* method) 
-{
-	{
-		// callbacks.PermissionGranted += (unused) => PermissionResponse(PermissionStatus.Allowed);
-		PermissionRequest_PermissionResponse_mD1C6B563D20A5BDC42BFDD767C0B1AD4E61ABECB(__this, 1, NULL);
-		return;
-	}
-}
-// System.Void Unity.Notifications.Android.PermissionRequest::<RequestPermission>b__5_1(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PermissionRequest_U3CRequestPermissionU3Eb__5_1_mFC0C42667E163F82AF92E7A0CDDF0B0D780E7AF1 (PermissionRequest_t8F5C0D4BD6DA912863FFE7329DBE056CD2F37046* __this, String_t* ___unused0, const RuntimeMethod* method) 
-{
-	{
-		// callbacks.PermissionDenied += (unused) => PermissionResponse(PermissionStatus.Denied);
-		PermissionRequest_PermissionResponse_mD1C6B563D20A5BDC42BFDD767C0B1AD4E61ABECB(__this, 2, NULL);
-		return;
-	}
-}
-// System.Void Unity.Notifications.Android.PermissionRequest::<RequestPermission>b__5_2(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PermissionRequest_U3CRequestPermissionU3Eb__5_2_m1D18CC39A4FA2F7E176BC343FF5D0C254D66088E (PermissionRequest_t8F5C0D4BD6DA912863FFE7329DBE056CD2F37046* __this, String_t* ___unused0, const RuntimeMethod* method) 
-{
-	{
-		// callbacks.PermissionDeniedAndDontAskAgain += (unused) => PermissionResponse(PermissionStatus.DeniedDontAskAgain);
-		PermissionRequest_PermissionResponse_mD1C6B563D20A5BDC42BFDD767C0B1AD4E61ABECB(__this, 3, NULL);
-		return;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* AndroidNotification_get_Title_m46212F8E4679C44AB95B99590BBB348A18DD3731_inline (AndroidNotification_t870D188EFDC943952EB96ECD295B41095EAA7E18* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11338,6 +9131,21 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t AndroidNotificationChanne
 		return L_0;
 	}
 }
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationIntentData_set_NativeNotification_m1D0827C74509785207483AF0C9F57EC4E945CD74_inline (AndroidNotificationIntentData_tF4201A845458829CA4214A2FEE5A4E67BC8E2729* __this, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___value0, const RuntimeMethod* method) 
+{
+	{
+		// public AndroidJavaObject NativeNotification { get; internal set; }
+		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_0 = ___value0;
+		__this->___U3CNativeNotificationU3Ek__BackingField_3 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CNativeNotificationU3Ek__BackingField_3), (void*)L_0);
+		return;
+	}
+}
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void NotificationReceivedCallback_Invoke_m61C140E5347A44125C809D5E68530FB4EE7D74A4_inline (NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* __this, AndroidNotificationIntentData_tF4201A845458829CA4214A2FEE5A4E67BC8E2729* ___data0, const RuntimeMethod* method) 
+{
+	typedef void (*FunctionPointerType) (RuntimeObject*, AndroidNotificationIntentData_tF4201A845458829CA4214A2FEE5A4E67BC8E2729*, const RuntimeMethod*);
+	((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___data0, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
+}
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_Id_mF7C5C0A558A8B0936EAEE02E63FA75D3863491E8_inline (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, String_t* ___value0, const RuntimeMethod* method) 
 {
 	{
@@ -11358,15 +9166,6 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationChannel_s
 		return;
 	}
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_Importance_mE15044EC9CF9254A9667DEC1212C42162B34A980_inline (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, int32_t ___value0, const RuntimeMethod* method) 
-{
-	{
-		// public Importance Importance { get; set; }
-		int32_t L_0 = ___value0;
-		__this->___U3CImportanceU3Ek__BackingField_3 = L_0;
-		return;
-	}
-}
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_Description_m1FEF9E6977640D864A5A47DFA4B88988E90C3D09_inline (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, String_t* ___value0, const RuntimeMethod* method) 
 {
 	{
@@ -11377,75 +9176,14 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationChannel_s
 		return;
 	}
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_EnableLights_m7CD6A72DB5139D175ADBEB68984EF42E9BC5A19D_inline (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, bool ___value0, const RuntimeMethod* method) 
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_Importance_mE15044EC9CF9254A9667DEC1212C42162B34A980_inline (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, int32_t ___value0, const RuntimeMethod* method) 
 {
 	{
-		// public bool EnableLights { get; set; }
-		bool L_0 = ___value0;
-		__this->___U3CEnableLightsU3Ek__BackingField_6 = L_0;
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_EnableVibration_m1D7E703E1989322F82706642D5FDD30BB3FDBDAB_inline (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, bool ___value0, const RuntimeMethod* method) 
-{
-	{
-		// public bool EnableVibration { get; set; }
-		bool L_0 = ___value0;
-		__this->___U3CEnableVibrationU3Ek__BackingField_7 = L_0;
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_CanBypassDnd_mC46CCD099353D872B2677782909AB6425709729C_inline (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, bool ___value0, const RuntimeMethod* method) 
-{
-	{
-		// public bool CanBypassDnd { get; set; }
-		bool L_0 = ___value0;
-		__this->___U3CCanBypassDndU3Ek__BackingField_4 = L_0;
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_CanShowBadge_mC62C1B6B1A53267281ACC54D88B1882AEBBF6E33_inline (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, bool ___value0, const RuntimeMethod* method) 
-{
-	{
-		// public bool CanShowBadge { get; set; }
-		bool L_0 = ___value0;
-		__this->___U3CCanShowBadgeU3Ek__BackingField_5 = L_0;
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_VibrationPattern_m5094F0617F624125303CACD9ABECE78F3CEDE5EF_inline (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, Int64U5BU5D_tAEDFCBDB5414E2A140A6F34C0538BF97FCF67A1D* ___value0, const RuntimeMethod* method) 
-{
-	{
-		// public long[] VibrationPattern { get; set; }
-		Int64U5BU5D_tAEDFCBDB5414E2A140A6F34C0538BF97FCF67A1D* L_0 = ___value0;
-		__this->___U3CVibrationPatternU3Ek__BackingField_8 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CVibrationPatternU3Ek__BackingField_8), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationChannel_set_LockScreenVisibility_m60EA310F67DFC24F7BB72D956503A85E5AF81A6F_inline (AndroidNotificationChannel_tC6BA531E60083BC47807903A8486C2C2BF51FEEC* __this, int32_t ___value0, const RuntimeMethod* method) 
-{
-	{
-		// public LockScreenVisibility LockScreenVisibility { get; set; }
+		// public Importance Importance { get; set; }
 		int32_t L_0 = ___value0;
-		__this->___U3CLockScreenVisibilityU3Ek__BackingField_9 = L_0;
+		__this->___U3CImportanceU3Ek__BackingField_3 = L_0;
 		return;
 	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AndroidNotificationIntentData_set_NativeNotification_m1D0827C74509785207483AF0C9F57EC4E945CD74_inline (AndroidNotificationIntentData_tF4201A845458829CA4214A2FEE5A4E67BC8E2729* __this, AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* ___value0, const RuntimeMethod* method) 
-{
-	{
-		// public AndroidJavaObject NativeNotification { get; internal set; }
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_0 = ___value0;
-		__this->___U3CNativeNotificationU3Ek__BackingField_3 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CNativeNotificationU3Ek__BackingField_3), (void*)L_0);
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void NotificationReceivedCallback_Invoke_m61C140E5347A44125C809D5E68530FB4EE7D74A4_inline (NotificationReceivedCallback_t20019F37577336319249E69D13B9EB41D57C692C* __this, AndroidNotificationIntentData_tF4201A845458829CA4214A2FEE5A4E67BC8E2729* ___data0, const RuntimeMethod* method) 
-{
-	typedef void (*FunctionPointerType) (RuntimeObject*, AndroidNotificationIntentData_tF4201A845458829CA4214A2FEE5A4E67BC8E2729*, const RuntimeMethod*);
-	((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___data0, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Color32__ctor_mC9C6B443F0C7CA3F8B174158B2AF6F05E18EAC4E_inline (Color32_t73C5004937BF5BB8AD55323D51AAA40A898EF48B* __this, uint8_t ___r0, uint8_t ___g1, uint8_t ___b2, uint8_t ___a3, const RuntimeMethod* method) 
 {
@@ -11528,23 +9266,6 @@ IL_0065:
 	{
 		Color32_t73C5004937BF5BB8AD55323D51AAA40A898EF48B L_17 = V_0;
 		return L_17;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void PermissionRequest_set_Status_m71661050BE6920B47203A9A11E7517A6F1DF6B7B_inline (PermissionRequest_t8F5C0D4BD6DA912863FFE7329DBE056CD2F37046* __this, int32_t ___value0, const RuntimeMethod* method) 
-{
-	{
-		// public PermissionStatus Status { get; set; }
-		int32_t L_0 = ___value0;
-		__this->___U3CStatusU3Ek__BackingField_0 = L_0;
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t PermissionRequest_get_Status_m7F1362D18E272FC25BC085ACFD4892461C8CA561_inline (PermissionRequest_t8F5C0D4BD6DA912863FFE7329DBE056CD2F37046* __this, const RuntimeMethod* method) 
-{
-	{
-		// public PermissionStatus Status { get; set; }
-		int32_t L_0 = __this->___U3CStatusU3Ek__BackingField_0;
-		return L_0;
 	}
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Nullable_1_get_HasValue_mD63976C410D14373D6D1D3E713C09B1E152F2166_gshared_inline (Nullable_1_tE151CE1F6892804B41C4004C95CB57020ABB3272* __this, const RuntimeMethod* method) 

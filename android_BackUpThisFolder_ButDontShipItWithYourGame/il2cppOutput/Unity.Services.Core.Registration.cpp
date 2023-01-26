@@ -404,32 +404,32 @@ struct ConfigurationUtils_tF385B43626BC064FCBAA5093770ABE0C3D291DAC_StaticFields
 struct CoreDiagnostics_t49EFB1D1FF2AEF4D8F63E4EA96D7E221B86B2571  : public RuntimeObject
 {
 	// System.Collections.Generic.IDictionary`2<System.String,System.String> Unity.Services.Core.Internal.CoreDiagnostics::<CoreTags>k__BackingField
-	RuntimeObject* ___U3CCoreTagsU3Ek__BackingField_6;
+	RuntimeObject* ___U3CCoreTagsU3Ek__BackingField_1;
 	// Unity.Services.Core.Telemetry.Internal.IDiagnosticsComponentProvider Unity.Services.Core.Internal.CoreDiagnostics::<DiagnosticsComponentProvider>k__BackingField
-	RuntimeObject* ___U3CDiagnosticsComponentProviderU3Ek__BackingField_7;
+	RuntimeObject* ___U3CDiagnosticsComponentProviderU3Ek__BackingField_2;
 	// Unity.Services.Core.Telemetry.Internal.IDiagnostics Unity.Services.Core.Internal.CoreDiagnostics::<Diagnostics>k__BackingField
-	RuntimeObject* ___U3CDiagnosticsU3Ek__BackingField_8;
+	RuntimeObject* ___U3CDiagnosticsU3Ek__BackingField_3;
 };
 
 struct CoreDiagnostics_t49EFB1D1FF2AEF4D8F63E4EA96D7E221B86B2571_StaticFields
 {
 	// Unity.Services.Core.Internal.CoreDiagnostics Unity.Services.Core.Internal.CoreDiagnostics::<Instance>k__BackingField
-	CoreDiagnostics_t49EFB1D1FF2AEF4D8F63E4EA96D7E221B86B2571* ___U3CInstanceU3Ek__BackingField_5;
+	CoreDiagnostics_t49EFB1D1FF2AEF4D8F63E4EA96D7E221B86B2571* ___U3CInstanceU3Ek__BackingField_0;
 };
 
 // Unity.Services.Core.Internal.CoreMetrics
 struct CoreMetrics_t07426F0F7AC73A178340BE171F36C1D079CB6564  : public RuntimeObject
 {
 	// Unity.Services.Core.Telemetry.Internal.IMetrics Unity.Services.Core.Internal.CoreMetrics::<Metrics>k__BackingField
-	RuntimeObject* ___U3CMetricsU3Ek__BackingField_8;
+	RuntimeObject* ___U3CMetricsU3Ek__BackingField_1;
 	// System.Collections.Generic.IDictionary`2<System.Type,Unity.Services.Core.Telemetry.Internal.IMetrics> Unity.Services.Core.Internal.CoreMetrics::<AllPackageMetrics>k__BackingField
-	RuntimeObject* ___U3CAllPackageMetricsU3Ek__BackingField_9;
+	RuntimeObject* ___U3CAllPackageMetricsU3Ek__BackingField_2;
 };
 
 struct CoreMetrics_t07426F0F7AC73A178340BE171F36C1D079CB6564_StaticFields
 {
 	// Unity.Services.Core.Internal.CoreMetrics Unity.Services.Core.Internal.CoreMetrics::<Instance>k__BackingField
-	CoreMetrics_t07426F0F7AC73A178340BE171F36C1D079CB6564* ___U3CInstanceU3Ek__BackingField_7;
+	CoreMetrics_t07426F0F7AC73A178340BE171F36C1D079CB6564* ___U3CInstanceU3Ek__BackingField_0;
 };
 
 // Unity.Services.Core.Registration.CorePackageInitializer
@@ -2411,7 +2411,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CorePackageInitializer_InitializeExterna
 		RuntimeObject* L_1 = ___projectConfiguration0;
 		NullCheck(L_1);
 		String_t* L_2;
-		L_2 = InterfaceFuncInvoker2< String_t*, String_t*, String_t* >::Invoke(3 /* System.String Unity.Services.Core.Configuration.Internal.IProjectConfiguration::GetString(System.String,System.String) */, IProjectConfiguration_tB5A7516DEB869AD005431EC83C6E02221D2B60D2_il2cpp_TypeInfo_var, L_1, _stringLiteralFA56548758688972FE7FBEFF95E84D582BD574F0, (String_t*)NULL);
+		L_2 = InterfaceFuncInvoker2< String_t*, String_t*, String_t* >::Invoke(2 /* System.String Unity.Services.Core.Configuration.Internal.IProjectConfiguration::GetString(System.String,System.String) */, IProjectConfiguration_tB5A7516DEB869AD005431EC83C6E02221D2B60D2_il2cpp_TypeInfo_var, L_1, _stringLiteralFA56548758688972FE7FBEFF95E84D582BD574F0, (String_t*)NULL);
 		V_0 = L_2;
 		// if (!string.IsNullOrEmpty(analyticsUserId))
 		String_t* L_3 = V_0;
@@ -2489,7 +2489,7 @@ IL_0009:
 		RuntimeObject* L_1 = ___projectConfiguration0;
 		NullCheck(L_1);
 		String_t* L_2;
-		L_2 = InterfaceFuncInvoker2< String_t*, String_t*, String_t* >::Invoke(3 /* System.String Unity.Services.Core.Configuration.Internal.IProjectConfiguration::GetString(System.String,System.String) */, IProjectConfiguration_tB5A7516DEB869AD005431EC83C6E02221D2B60D2_il2cpp_TypeInfo_var, L_1, _stringLiteral84570E14F5CB57CA92CBBE945CEA229B6709C395, _stringLiteral1B3211DBE32867758EEF2D80E75AAE41597EA87C);
+		L_2 = InterfaceFuncInvoker2< String_t*, String_t*, String_t* >::Invoke(2 /* System.String Unity.Services.Core.Configuration.Internal.IProjectConfiguration::GetString(System.String,System.String) */, IProjectConfiguration_tB5A7516DEB869AD005431EC83C6E02221D2B60D2_il2cpp_TypeInfo_var, L_1, _stringLiteral84570E14F5CB57CA92CBBE945CEA229B6709C395, _stringLiteral1B3211DBE32867758EEF2D80E75AAE41597EA87C);
 		V_0 = L_2;
 		// Environments = new Environments.Internal.Environments
 		// {
@@ -3070,7 +3070,7 @@ IL_00f2_2:
 				L_48 = CorePackageInitializer_get_DiagnosticsFactory_m4C92587360F0ACDF55050FD59FCDA0ED7A750CB9_inline(L_47, NULL);
 				NullCheck(L_48);
 				RuntimeObject* L_49;
-				L_49 = InterfaceFuncInvoker1< RuntimeObject*, String_t* >::Invoke(1 /* Unity.Services.Core.Telemetry.Internal.IDiagnostics Unity.Services.Core.Telemetry.Internal.IDiagnosticsFactory::Create(System.String) */, IDiagnosticsFactory_t5DBE289089E6EAD4C111F0D8880F3FE812BE2CC0_il2cpp_TypeInfo_var, L_48, _stringLiteralB9EFC4E3BFC701CF3C9A03ED0C0CFA12327C22B8);
+				L_49 = InterfaceFuncInvoker1< RuntimeObject*, String_t* >::Invoke(0 /* Unity.Services.Core.Telemetry.Internal.IDiagnostics Unity.Services.Core.Telemetry.Internal.IDiagnosticsFactory::Create(System.String) */, IDiagnosticsFactory_t5DBE289089E6EAD4C111F0D8880F3FE812BE2CC0_il2cpp_TypeInfo_var, L_48, _stringLiteralB9EFC4E3BFC701CF3C9A03ED0C0CFA12327C22B8);
 				NullCheck(L_46);
 				CoreDiagnostics_set_Diagnostics_m2AF9AFE612FFCA542EFDB30AC5C15494D2E3982C_inline(L_46, L_49, NULL);
 				// CoreDiagnostics.Instance.SetProjectConfiguration(ProjectConfig.ToJson());
@@ -4243,7 +4243,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR CoreDiagnostics_t49EFB1D1FF2AEF4D
 	}
 	{
 		// public static CoreDiagnostics Instance { get; internal set; }
-		CoreDiagnostics_t49EFB1D1FF2AEF4D8F63E4EA96D7E221B86B2571* L_0 = ((CoreDiagnostics_t49EFB1D1FF2AEF4D8F63E4EA96D7E221B86B2571_StaticFields*)il2cpp_codegen_static_fields_for(CoreDiagnostics_t49EFB1D1FF2AEF4D8F63E4EA96D7E221B86B2571_il2cpp_TypeInfo_var))->___U3CInstanceU3Ek__BackingField_5;
+		CoreDiagnostics_t49EFB1D1FF2AEF4D8F63E4EA96D7E221B86B2571* L_0 = ((CoreDiagnostics_t49EFB1D1FF2AEF4D8F63E4EA96D7E221B86B2571_StaticFields*)il2cpp_codegen_static_fields_for(CoreDiagnostics_t49EFB1D1FF2AEF4D8F63E4EA96D7E221B86B2571_il2cpp_TypeInfo_var))->___U3CInstanceU3Ek__BackingField_0;
 		return L_0;
 	}
 }
@@ -4252,8 +4252,8 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void CoreDiagnostics_set_Diagnost
 	{
 		// internal IDiagnosticsComponentProvider DiagnosticsComponentProvider { get; set; }
 		RuntimeObject* L_0 = ___value0;
-		__this->___U3CDiagnosticsComponentProviderU3Ek__BackingField_7 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CDiagnosticsComponentProviderU3Ek__BackingField_7), (void*)L_0);
+		__this->___U3CDiagnosticsComponentProviderU3Ek__BackingField_2 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CDiagnosticsComponentProviderU3Ek__BackingField_2), (void*)L_0);
 		return;
 	}
 }
@@ -4471,8 +4471,8 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void CoreDiagnostics_set_Diagnost
 	{
 		// internal IDiagnostics Diagnostics { get; set; }
 		RuntimeObject* L_0 = ___value0;
-		__this->___U3CDiagnosticsU3Ek__BackingField_8 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CDiagnosticsU3Ek__BackingField_8), (void*)L_0);
+		__this->___U3CDiagnosticsU3Ek__BackingField_3 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CDiagnosticsU3Ek__BackingField_3), (void*)L_0);
 		return;
 	}
 }
@@ -4486,7 +4486,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR CoreMetrics_t07426F0F7AC73A178340
 	}
 	{
 		// public static CoreMetrics Instance { get; internal set; }
-		CoreMetrics_t07426F0F7AC73A178340BE171F36C1D079CB6564* L_0 = ((CoreMetrics_t07426F0F7AC73A178340BE171F36C1D079CB6564_StaticFields*)il2cpp_codegen_static_fields_for(CoreMetrics_t07426F0F7AC73A178340BE171F36C1D079CB6564_il2cpp_TypeInfo_var))->___U3CInstanceU3Ek__BackingField_7;
+		CoreMetrics_t07426F0F7AC73A178340BE171F36C1D079CB6564* L_0 = ((CoreMetrics_t07426F0F7AC73A178340BE171F36C1D079CB6564_StaticFields*)il2cpp_codegen_static_fields_for(CoreMetrics_t07426F0F7AC73A178340BE171F36C1D079CB6564_il2cpp_TypeInfo_var))->___U3CInstanceU3Ek__BackingField_0;
 		return L_0;
 	}
 }

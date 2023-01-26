@@ -70,10 +70,11 @@ public class PromoScreen : MonoBehaviour
 
                     if (packElement.transform != null)
                     {
-                        var packTexture = gameAPI.cachedPackImages[i];
-                        packTexture.wrapMode = TextureWrapMode.Clamp;
-                        packTexture.filterMode = FilterMode.Bilinear;
-                        packElement.transform.GetChild(2).GetComponent<Image>().sprite = Sprite.Create(packTexture, new Rect(0.0f, 0.0f, gameAPI.cachedPackImages[i].width, gameAPI.cachedPackImages[i].height), new Vector2(0.5f, 0.5f), 100.0f);
+                        var premiumPackTexture = gameAPI.premiumPackImages[i - 13];
+                        premiumPackTexture.wrapMode = TextureWrapMode.Clamp;
+                        premiumPackTexture.filterMode = FilterMode.Bilinear;
+
+                        packElement.transform.GetChild(2).GetComponent<Image>().sprite = Sprite.Create(premiumPackTexture, new Rect(0.0f, 0.0f, gameAPI.premiumPackImages[i - 13].width, gameAPI.premiumPackImages[i - 13].height), new Vector2(0.5f, 0.5f), 100.0f);
                     }
 
                     packElement.name = packs.packs[i].slug;

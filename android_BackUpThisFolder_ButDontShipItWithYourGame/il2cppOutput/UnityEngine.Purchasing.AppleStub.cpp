@@ -18,12 +18,8 @@ struct DelegateU5BU5D_tC5AB7E8F745616680F337909D3A8E6C722CDF771;
 struct IntPtrU5BU5D_tFD177F8C806A6921AD7150264CCC62FA00CAD832;
 // System.Diagnostics.StackTrace[]
 struct StackTraceU5BU5D_t32FBCB20930EAF5BAE3F450FF75228E5450DA0DF;
-// System.AsyncCallback
-struct AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C;
 // System.DelegateData
 struct DelegateData_t9B286B493293CD2D23A5B2B5EF0E5B1324C2B77E;
-// System.IAsyncResult
-struct IAsyncResult_t7B9B5A0ECB35DCEC31B8A8122C37D687369253B5;
 // System.Collections.IDictionary
 struct IDictionary_t6D03155AF1FA9083817AA5B6AD7DEEACC26AB220;
 // System.Reflection.MethodInfo
@@ -43,25 +39,13 @@ struct iOSStoreBindings_tDE97C3D8BF1A4E4E04A582AB778E727D39BD0A8F;
 
 IL2CPP_EXTERN_C RuntimeClass* NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C const RuntimeMethod* iOSStoreBindings_AddTransactionObserver_m5121AAEF022AC67F3C6DB6882296A86100362F7F_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* iOSStoreBindings_ContinuePromotionalPurchases_m8C1448DAB8B0A69FBAA8133F03C832ED48F256C4_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* iOSStoreBindings_FetchStorePromotionOrder_mD0F71A7734B82E3092ECC73F79D71C830CF24A98_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* iOSStoreBindings_FetchStorePromotionVisibility_mBAC79DD084C8BA7F42C939BB52ADBD2BB297A5E2_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* iOSStoreBindings_FinishTransaction_m35C1411AD6F14F441AB34126B5A500BD77FF7745_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* iOSStoreBindings_GetTransactionReceiptForProductId_mB64DF0880AA6C6F0CF0DE93728F3B0BA72A106BF_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* iOSStoreBindings_InterceptPromotionalPurchases_m89A0F3F96F5E90D74A8A6ED061528BBFAAB87E91_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* iOSStoreBindings_PresentCodeRedemptionSheet_m7D4A289017F3C014EDEB9F0C5A2E5E700A8AE194_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* iOSStoreBindings_Purchase_m6CBE0C13C5C8BF8BEC1FC9664E841CEF84A80DCB_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* iOSStoreBindings_RefreshAppReceipt_mEDAD764F89ED45ECDD029A2D330078772D6B8251_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* iOSStoreBindings_RestoreTransactions_m528B09EACB1EC8DC6ABFDB1F4C1B3D1267ECAD87_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* iOSStoreBindings_RetrieveProducts_mEB58BECF8A46AB4A465ED74ECD6CD38D5D9AFD9C_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* iOSStoreBindings_SetApplicationUsername_m129F3A37DF1582B95008B29CCDFCD11484EEDE5D_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* iOSStoreBindings_SetStorePromotionOrder_m94F0280669837961CDD0F2766F3E10510049F7E7_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* iOSStoreBindings_SetStorePromotionVisibility_m066EC9CBAF8C81FF2DDCAD1078768F1B226213BD_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* iOSStoreBindings_SetUnityPurchasingCallback_m59F7F0F591009E14980A9CEF2D4AB5B02C103DCD_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* iOSStoreBindings_get_appReceipt_m8A85115509BFBE88F48F5D55A65546AF13D970B2_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* iOSStoreBindings_get_canMakePayments_m4F4E8DD4A065350D93D00BC130DF7218245FE2B0_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* iOSStoreBindings_get_simulateAskToBuy_mBFB64C18924816E968C87931593D28CDEF68529D_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* iOSStoreBindings_set_simulateAskToBuy_m615465420A0AB15BCE3883B9123E5E433DB4BD04_RuntimeMethod_var;
 struct Delegate_t_marshaled_com;
 struct Delegate_t_marshaled_pinvoke;
 struct Exception_t_marshaled_com;
@@ -114,21 +98,6 @@ struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F_marshaled_com
 // UnityEngine.Purchasing.iOSStoreBindings
 struct iOSStoreBindings_tDE97C3D8BF1A4E4E04A582AB778E727D39BD0A8F  : public RuntimeObject
 {
-};
-
-// System.Boolean
-struct Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22 
-{
-	// System.Boolean System.Boolean::m_value
-	bool ___m_value_0;
-};
-
-struct Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_StaticFields
-{
-	// System.String System.Boolean::TrueString
-	String_t* ___TrueString_5;
-	// System.String System.Boolean::FalseString
-	String_t* ___FalseString_6;
 };
 
 // System.IntPtr
@@ -380,17 +349,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSStoreBindings_RestoreTransactions_m52
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&iOSStoreBindings_RestoreTransactions_m528B09EACB1EC8DC6ABFDB1F4C1B3D1267ECAD87_RuntimeMethod_var)));
 	}
 }
-// System.Void UnityEngine.Purchasing.iOSStoreBindings::RefreshAppReceipt()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSStoreBindings_RefreshAppReceipt_mEDAD764F89ED45ECDD029A2D330078772D6B8251 (iOSStoreBindings_tDE97C3D8BF1A4E4E04A582AB778E727D39BD0A8F* __this, const RuntimeMethod* method) 
-{
-	{
-		// throw new NotImplementedException();
-		NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8* L_0 = (NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8_il2cpp_TypeInfo_var)));
-		NullCheck(L_0);
-		NotImplementedException__ctor_mDAB47BC6BD0E342E8F2171E5CABE3E67EA049F1C(L_0, NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&iOSStoreBindings_RefreshAppReceipt_mEDAD764F89ED45ECDD029A2D330078772D6B8251_RuntimeMethod_var)));
-	}
-}
 // System.Void UnityEngine.Purchasing.iOSStoreBindings::AddTransactionObserver()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSStoreBindings_AddTransactionObserver_m5121AAEF022AC67F3C6DB6882296A86100362F7F (iOSStoreBindings_tDE97C3D8BF1A4E4E04A582AB778E727D39BD0A8F* __this, const RuntimeMethod* method) 
 {
@@ -400,17 +358,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSStoreBindings_AddTransactionObserver_
 		NullCheck(L_0);
 		NotImplementedException__ctor_mDAB47BC6BD0E342E8F2171E5CABE3E67EA049F1C(L_0, NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&iOSStoreBindings_AddTransactionObserver_m5121AAEF022AC67F3C6DB6882296A86100362F7F_RuntimeMethod_var)));
-	}
-}
-// System.Void UnityEngine.Purchasing.iOSStoreBindings::SetApplicationUsername(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSStoreBindings_SetApplicationUsername_m129F3A37DF1582B95008B29CCDFCD11484EEDE5D (iOSStoreBindings_tDE97C3D8BF1A4E4E04A582AB778E727D39BD0A8F* __this, String_t* ___applicationUsername0, const RuntimeMethod* method) 
-{
-	{
-		// throw new NotImplementedException();
-		NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8* L_0 = (NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8_il2cpp_TypeInfo_var)));
-		NullCheck(L_0);
-		NotImplementedException__ctor_mDAB47BC6BD0E342E8F2171E5CABE3E67EA049F1C(L_0, NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&iOSStoreBindings_SetApplicationUsername_m129F3A37DF1582B95008B29CCDFCD11484EEDE5D_RuntimeMethod_var)));
 	}
 }
 // System.Void UnityEngine.Purchasing.iOSStoreBindings::RetrieveProducts(System.String)
@@ -457,94 +404,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSStoreBindings_get_appReceipt_m8A
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&iOSStoreBindings_get_appReceipt_m8A85115509BFBE88F48F5D55A65546AF13D970B2_RuntimeMethod_var)));
 	}
 }
-// System.Boolean UnityEngine.Purchasing.iOSStoreBindings::get_canMakePayments()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool iOSStoreBindings_get_canMakePayments_m4F4E8DD4A065350D93D00BC130DF7218245FE2B0 (iOSStoreBindings_tDE97C3D8BF1A4E4E04A582AB778E727D39BD0A8F* __this, const RuntimeMethod* method) 
-{
-	{
-		// public bool canMakePayments => throw new NotImplementedException();
-		NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8* L_0 = (NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8_il2cpp_TypeInfo_var)));
-		NullCheck(L_0);
-		NotImplementedException__ctor_mDAB47BC6BD0E342E8F2171E5CABE3E67EA049F1C(L_0, NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&iOSStoreBindings_get_canMakePayments_m4F4E8DD4A065350D93D00BC130DF7218245FE2B0_RuntimeMethod_var)));
-	}
-}
-// System.Boolean UnityEngine.Purchasing.iOSStoreBindings::get_simulateAskToBuy()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool iOSStoreBindings_get_simulateAskToBuy_mBFB64C18924816E968C87931593D28CDEF68529D (iOSStoreBindings_tDE97C3D8BF1A4E4E04A582AB778E727D39BD0A8F* __this, const RuntimeMethod* method) 
-{
-	{
-		// get => throw new NotImplementedException();
-		NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8* L_0 = (NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8_il2cpp_TypeInfo_var)));
-		NullCheck(L_0);
-		NotImplementedException__ctor_mDAB47BC6BD0E342E8F2171E5CABE3E67EA049F1C(L_0, NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&iOSStoreBindings_get_simulateAskToBuy_mBFB64C18924816E968C87931593D28CDEF68529D_RuntimeMethod_var)));
-	}
-}
-// System.Void UnityEngine.Purchasing.iOSStoreBindings::set_simulateAskToBuy(System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSStoreBindings_set_simulateAskToBuy_m615465420A0AB15BCE3883B9123E5E433DB4BD04 (iOSStoreBindings_tDE97C3D8BF1A4E4E04A582AB778E727D39BD0A8F* __this, bool ___value0, const RuntimeMethod* method) 
-{
-	{
-		// set => throw new NotImplementedException();
-		NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8* L_0 = (NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8_il2cpp_TypeInfo_var)));
-		NullCheck(L_0);
-		NotImplementedException__ctor_mDAB47BC6BD0E342E8F2171E5CABE3E67EA049F1C(L_0, NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&iOSStoreBindings_set_simulateAskToBuy_m615465420A0AB15BCE3883B9123E5E433DB4BD04_RuntimeMethod_var)));
-	}
-}
-// System.Void UnityEngine.Purchasing.iOSStoreBindings::FetchStorePromotionOrder()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSStoreBindings_FetchStorePromotionOrder_mD0F71A7734B82E3092ECC73F79D71C830CF24A98 (iOSStoreBindings_tDE97C3D8BF1A4E4E04A582AB778E727D39BD0A8F* __this, const RuntimeMethod* method) 
-{
-	{
-		// throw new NotImplementedException();
-		NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8* L_0 = (NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8_il2cpp_TypeInfo_var)));
-		NullCheck(L_0);
-		NotImplementedException__ctor_mDAB47BC6BD0E342E8F2171E5CABE3E67EA049F1C(L_0, NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&iOSStoreBindings_FetchStorePromotionOrder_mD0F71A7734B82E3092ECC73F79D71C830CF24A98_RuntimeMethod_var)));
-	}
-}
-// System.Void UnityEngine.Purchasing.iOSStoreBindings::SetStorePromotionOrder(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSStoreBindings_SetStorePromotionOrder_m94F0280669837961CDD0F2766F3E10510049F7E7 (iOSStoreBindings_tDE97C3D8BF1A4E4E04A582AB778E727D39BD0A8F* __this, String_t* ___json0, const RuntimeMethod* method) 
-{
-	{
-		// throw new NotImplementedException();
-		NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8* L_0 = (NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8_il2cpp_TypeInfo_var)));
-		NullCheck(L_0);
-		NotImplementedException__ctor_mDAB47BC6BD0E342E8F2171E5CABE3E67EA049F1C(L_0, NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&iOSStoreBindings_SetStorePromotionOrder_m94F0280669837961CDD0F2766F3E10510049F7E7_RuntimeMethod_var)));
-	}
-}
-// System.Void UnityEngine.Purchasing.iOSStoreBindings::FetchStorePromotionVisibility(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSStoreBindings_FetchStorePromotionVisibility_mBAC79DD084C8BA7F42C939BB52ADBD2BB297A5E2 (iOSStoreBindings_tDE97C3D8BF1A4E4E04A582AB778E727D39BD0A8F* __this, String_t* ___productId0, const RuntimeMethod* method) 
-{
-	{
-		// throw new NotImplementedException();
-		NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8* L_0 = (NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8_il2cpp_TypeInfo_var)));
-		NullCheck(L_0);
-		NotImplementedException__ctor_mDAB47BC6BD0E342E8F2171E5CABE3E67EA049F1C(L_0, NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&iOSStoreBindings_FetchStorePromotionVisibility_mBAC79DD084C8BA7F42C939BB52ADBD2BB297A5E2_RuntimeMethod_var)));
-	}
-}
-// System.Void UnityEngine.Purchasing.iOSStoreBindings::SetStorePromotionVisibility(System.String,System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSStoreBindings_SetStorePromotionVisibility_m066EC9CBAF8C81FF2DDCAD1078768F1B226213BD (iOSStoreBindings_tDE97C3D8BF1A4E4E04A582AB778E727D39BD0A8F* __this, String_t* ___productId0, String_t* ___visibility1, const RuntimeMethod* method) 
-{
-	{
-		// throw new NotImplementedException();
-		NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8* L_0 = (NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8_il2cpp_TypeInfo_var)));
-		NullCheck(L_0);
-		NotImplementedException__ctor_mDAB47BC6BD0E342E8F2171E5CABE3E67EA049F1C(L_0, NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&iOSStoreBindings_SetStorePromotionVisibility_m066EC9CBAF8C81FF2DDCAD1078768F1B226213BD_RuntimeMethod_var)));
-	}
-}
-// System.String UnityEngine.Purchasing.iOSStoreBindings::GetTransactionReceiptForProductId(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSStoreBindings_GetTransactionReceiptForProductId_mB64DF0880AA6C6F0CF0DE93728F3B0BA72A106BF (iOSStoreBindings_tDE97C3D8BF1A4E4E04A582AB778E727D39BD0A8F* __this, String_t* ___productId0, const RuntimeMethod* method) 
-{
-	{
-		// throw new NotImplementedException();
-		NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8* L_0 = (NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8_il2cpp_TypeInfo_var)));
-		NullCheck(L_0);
-		NotImplementedException__ctor_mDAB47BC6BD0E342E8F2171E5CABE3E67EA049F1C(L_0, NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&iOSStoreBindings_GetTransactionReceiptForProductId_mB64DF0880AA6C6F0CF0DE93728F3B0BA72A106BF_RuntimeMethod_var)));
-	}
-}
 // System.Void UnityEngine.Purchasing.iOSStoreBindings::InterceptPromotionalPurchases()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSStoreBindings_InterceptPromotionalPurchases_m89A0F3F96F5E90D74A8A6ED061528BBFAAB87E91 (iOSStoreBindings_tDE97C3D8BF1A4E4E04A582AB778E727D39BD0A8F* __this, const RuntimeMethod* method) 
 {
@@ -554,28 +413,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSStoreBindings_InterceptPromotionalPur
 		NullCheck(L_0);
 		NotImplementedException__ctor_mDAB47BC6BD0E342E8F2171E5CABE3E67EA049F1C(L_0, NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&iOSStoreBindings_InterceptPromotionalPurchases_m89A0F3F96F5E90D74A8A6ED061528BBFAAB87E91_RuntimeMethod_var)));
-	}
-}
-// System.Void UnityEngine.Purchasing.iOSStoreBindings::ContinuePromotionalPurchases()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSStoreBindings_ContinuePromotionalPurchases_m8C1448DAB8B0A69FBAA8133F03C832ED48F256C4 (iOSStoreBindings_tDE97C3D8BF1A4E4E04A582AB778E727D39BD0A8F* __this, const RuntimeMethod* method) 
-{
-	{
-		// throw new NotImplementedException();
-		NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8* L_0 = (NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8_il2cpp_TypeInfo_var)));
-		NullCheck(L_0);
-		NotImplementedException__ctor_mDAB47BC6BD0E342E8F2171E5CABE3E67EA049F1C(L_0, NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&iOSStoreBindings_ContinuePromotionalPurchases_m8C1448DAB8B0A69FBAA8133F03C832ED48F256C4_RuntimeMethod_var)));
-	}
-}
-// System.Void UnityEngine.Purchasing.iOSStoreBindings::PresentCodeRedemptionSheet()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSStoreBindings_PresentCodeRedemptionSheet_m7D4A289017F3C014EDEB9F0C5A2E5E700A8AE194 (iOSStoreBindings_tDE97C3D8BF1A4E4E04A582AB778E727D39BD0A8F* __this, const RuntimeMethod* method) 
-{
-	{
-		// throw new NotImplementedException();
-		NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8* L_0 = (NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8_il2cpp_TypeInfo_var)));
-		NullCheck(L_0);
-		NotImplementedException__ctor_mDAB47BC6BD0E342E8F2171E5CABE3E67EA049F1C(L_0, NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&iOSStoreBindings_PresentCodeRedemptionSheet_m7D4A289017F3C014EDEB9F0C5A2E5E700A8AE194_RuntimeMethod_var)));
 	}
 }
 // System.Void UnityEngine.Purchasing.iOSStoreBindings::.ctor()

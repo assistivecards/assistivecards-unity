@@ -235,15 +235,6 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void WinProductDescription_set_co
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.String UnityEngine.Purchasing.Default.WinProductDescription::get_platformSpecificID()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* WinProductDescription_get_platformSpecificID_m2BE91A33BDA885A944E6ABB82BF7F9900F287E67 (WinProductDescription_tBF22B14F8B3F92A3EEB31026CBD2E29BE31F9974* __this, const RuntimeMethod* method) 
-{
-	{
-		// public string platformSpecificID { get; private set; }
-		String_t* L_0 = __this->___U3CplatformSpecificIDU3Ek__BackingField_0;
-		return L_0;
-	}
-}
 // System.Void UnityEngine.Purchasing.Default.WinProductDescription::set_platformSpecificID(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WinProductDescription_set_platformSpecificID_m794A68A614B5CD27330552592001C95A6653C8CA (WinProductDescription_tBF22B14F8B3F92A3EEB31026CBD2E29BE31F9974* __this, String_t* ___value0, const RuntimeMethod* method) 
 {
@@ -253,15 +244,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WinProductDescription_set_platformSpecif
 		__this->___U3CplatformSpecificIDU3Ek__BackingField_0 = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CplatformSpecificIDU3Ek__BackingField_0), (void*)L_0);
 		return;
-	}
-}
-// System.String UnityEngine.Purchasing.Default.WinProductDescription::get_price()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* WinProductDescription_get_price_m4C5A6EFC3A06202BD15D1FAEC9CC7539D0CAAA64 (WinProductDescription_tBF22B14F8B3F92A3EEB31026CBD2E29BE31F9974* __this, const RuntimeMethod* method) 
-{
-	{
-		// public string price { get; private set; }
-		String_t* L_0 = __this->___U3CpriceU3Ek__BackingField_1;
-		return L_0;
 	}
 }
 // System.Void UnityEngine.Purchasing.Default.WinProductDescription::set_price(System.String)
@@ -275,15 +257,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WinProductDescription_set_price_m96AE7CB
 		return;
 	}
 }
-// System.String UnityEngine.Purchasing.Default.WinProductDescription::get_title()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* WinProductDescription_get_title_m8AFD9BCF98434179779C1DE859B9E39BE6C73D05 (WinProductDescription_tBF22B14F8B3F92A3EEB31026CBD2E29BE31F9974* __this, const RuntimeMethod* method) 
-{
-	{
-		// public string title { get; private set; }
-		String_t* L_0 = __this->___U3CtitleU3Ek__BackingField_2;
-		return L_0;
-	}
-}
 // System.Void UnityEngine.Purchasing.Default.WinProductDescription::set_title(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WinProductDescription_set_title_m6B40401D075FE55E40B1EDD27B26A635B4941DBD (WinProductDescription_tBF22B14F8B3F92A3EEB31026CBD2E29BE31F9974* __this, String_t* ___value0, const RuntimeMethod* method) 
 {
@@ -293,15 +266,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WinProductDescription_set_title_m6B40401
 		__this->___U3CtitleU3Ek__BackingField_2 = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CtitleU3Ek__BackingField_2), (void*)L_0);
 		return;
-	}
-}
-// System.String UnityEngine.Purchasing.Default.WinProductDescription::get_description()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* WinProductDescription_get_description_m6147401DA122F5EF3FC17E7DBD745E000D72A9AF (WinProductDescription_tBF22B14F8B3F92A3EEB31026CBD2E29BE31F9974* __this, const RuntimeMethod* method) 
-{
-	{
-		// public string description { get; private set; }
-		String_t* L_0 = __this->___U3CdescriptionU3Ek__BackingField_3;
-		return L_0;
 	}
 }
 // System.Void UnityEngine.Purchasing.Default.WinProductDescription::set_description(System.String)
@@ -315,15 +279,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WinProductDescription_set_description_m2
 		return;
 	}
 }
-// System.String UnityEngine.Purchasing.Default.WinProductDescription::get_ISOCurrencyCode()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* WinProductDescription_get_ISOCurrencyCode_m9D640896DCB8F9D361C1AE27F731D6A539431BC0 (WinProductDescription_tBF22B14F8B3F92A3EEB31026CBD2E29BE31F9974* __this, const RuntimeMethod* method) 
-{
-	{
-		// public string ISOCurrencyCode { get; private set; }
-		String_t* L_0 = __this->___U3CISOCurrencyCodeU3Ek__BackingField_4;
-		return L_0;
-	}
-}
 // System.Void UnityEngine.Purchasing.Default.WinProductDescription::set_ISOCurrencyCode(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WinProductDescription_set_ISOCurrencyCode_m8EC42C553F0DA8DF4E32F9FADEDDA80CB1630908 (WinProductDescription_tBF22B14F8B3F92A3EEB31026CBD2E29BE31F9974* __this, String_t* ___value0, const RuntimeMethod* method) 
 {
@@ -335,15 +290,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WinProductDescription_set_ISOCurrencyCod
 		return;
 	}
 }
-// System.Decimal UnityEngine.Purchasing.Default.WinProductDescription::get_priceDecimal()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F WinProductDescription_get_priceDecimal_m6BA7AC2066EE2118C85BB3AC926060A3A1905C8B (WinProductDescription_tBF22B14F8B3F92A3EEB31026CBD2E29BE31F9974* __this, const RuntimeMethod* method) 
-{
-	{
-		// public decimal priceDecimal { get; private set; }
-		Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F L_0 = __this->___U3CpriceDecimalU3Ek__BackingField_5;
-		return L_0;
-	}
-}
 // System.Void UnityEngine.Purchasing.Default.WinProductDescription::set_priceDecimal(System.Decimal)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WinProductDescription_set_priceDecimal_mF0588EC4E45446E1317F36E529CFB0C3D8F09B3B (WinProductDescription_tBF22B14F8B3F92A3EEB31026CBD2E29BE31F9974* __this, Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F ___value0, const RuntimeMethod* method) 
 {
@@ -352,15 +298,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WinProductDescription_set_priceDecimal_m
 		Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F L_0 = ___value0;
 		__this->___U3CpriceDecimalU3Ek__BackingField_5 = L_0;
 		return;
-	}
-}
-// System.String UnityEngine.Purchasing.Default.WinProductDescription::get_receipt()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* WinProductDescription_get_receipt_m76168F7E15F726357D5EDF7EEAFF9B0362224866 (WinProductDescription_tBF22B14F8B3F92A3EEB31026CBD2E29BE31F9974* __this, const RuntimeMethod* method) 
-{
-	{
-		// public string receipt { get; private set; }
-		String_t* L_0 = __this->___U3CreceiptU3Ek__BackingField_6;
-		return L_0;
 	}
 }
 // System.Void UnityEngine.Purchasing.Default.WinProductDescription::set_receipt(System.String)
@@ -374,15 +311,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WinProductDescription_set_receipt_m0BBA3
 		return;
 	}
 }
-// System.String UnityEngine.Purchasing.Default.WinProductDescription::get_transactionID()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* WinProductDescription_get_transactionID_mD13D83227295190127566968BC9704214363E7D4 (WinProductDescription_tBF22B14F8B3F92A3EEB31026CBD2E29BE31F9974* __this, const RuntimeMethod* method) 
-{
-	{
-		// public string transactionID { get; private set; }
-		String_t* L_0 = __this->___U3CtransactionIDU3Ek__BackingField_7;
-		return L_0;
-	}
-}
 // System.Void UnityEngine.Purchasing.Default.WinProductDescription::set_transactionID(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WinProductDescription_set_transactionID_mD1D0774BACC0D8E16A25B499E21FCC0FFEB45E37 (WinProductDescription_tBF22B14F8B3F92A3EEB31026CBD2E29BE31F9974* __this, String_t* ___value0, const RuntimeMethod* method) 
 {
@@ -392,15 +320,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WinProductDescription_set_transactionID_
 		__this->___U3CtransactionIDU3Ek__BackingField_7 = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CtransactionIDU3Ek__BackingField_7), (void*)L_0);
 		return;
-	}
-}
-// System.Boolean UnityEngine.Purchasing.Default.WinProductDescription::get_consumable()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool WinProductDescription_get_consumable_m1AE9A49AEB6879C29DDB7AF4CB5A2D67D3D3BD85 (WinProductDescription_tBF22B14F8B3F92A3EEB31026CBD2E29BE31F9974* __this, const RuntimeMethod* method) 
-{
-	{
-		// public bool consumable { get; private set; }
-		bool L_0 = __this->___U3CconsumableU3Ek__BackingField_8;
-		return L_0;
 	}
 }
 // System.Void UnityEngine.Purchasing.Default.WinProductDescription::set_consumable(System.Boolean)

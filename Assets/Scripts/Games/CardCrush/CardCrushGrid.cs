@@ -26,8 +26,8 @@ public class CardCrushGrid : MonoBehaviour
                 GameObject cell = Instantiate(cellPrefab, new Vector3(i * spacing, j * spacing, 0), Quaternion.identity) as GameObject;
                 cell.transform.parent = this.transform;
                 cell.name = i + " , " + j + " tile";
-                cell.GetComponent<CardCrushCell>().x = cell.transform.position.x;
-                cell.GetComponent<CardCrushCell>().y = cell.transform.position.y;
+                cell.GetComponent<CardCrushCell>().x = i;
+                cell.GetComponent<CardCrushCell>().y = j;
                 allCells.Add(cell.GetComponent<CardCrushCell>());
             }
         }

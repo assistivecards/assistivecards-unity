@@ -77,10 +77,16 @@ public class CardCrushFillGrid : MonoBehaviour
             
             int cardImageRandom = randomValues[Random.Range(0,cardTypeCount)];
             var cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[cardImageRandom], 512);
+
             card.transform.name = cardNames[cardImageRandom];
-            card.transform.parent = this.transform;
-            card.transform.GetChild(0).name = cardNames[cardImageRandom];
+            card.transform.parent = cardCrushGrid.allCells[i].transform;
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+
+            cardCrushGrid.allCells[i].card = card;
+
+            card.GetComponent<CardElement>().x = cardCrushGrid.allCells[i].x;
+            card.GetComponent<CardElement>().y = cardCrushGrid.allCells[i].y;
+            card.GetComponent<CardElement>().type = cardNames[cardImageRandom];
         }
     }
 }

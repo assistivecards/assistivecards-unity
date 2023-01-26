@@ -43,6 +43,7 @@ public class PackSelectionPanel : MonoBehaviour
     public async void ListPacks()
     {
         await GameAPI.cacheData;
+        await GameAPI.cacheFreePackImages;
         loadingPanel.SetActive(false);
         currentLanguageCode = await gameAPI.GetSystemLanguageCode();
 
@@ -61,7 +62,7 @@ public class PackSelectionPanel : MonoBehaviour
 
         tempPackElement.SetActive(true);
 
-        for (int i = 0; i < packs.packs.Length; i++)
+        for (int i = 0; i < gameAPI.freePackImages.Count; i++)
         {
             packElement = Instantiate(tempPackElement, transform);
             ColorUtility.TryParseHtmlString(jsonPackss["packs"][i]["color"].ToString().Replace("\"", ""), out bgColor);
@@ -69,18 +70,21 @@ public class PackSelectionPanel : MonoBehaviour
 
 
             packElement.transform.GetChild(0).GetComponent<Text>().text = jsonPackss["packs"][i]["locale"].ToString().Replace("\"", "");
-            var packTexture = gameAPI.cachedPackImages[i];
+            var packTexture = gameAPI.freePackImages[i];
             packTexture.wrapMode = TextureWrapMode.Clamp;
             packTexture.filterMode = FilterMode.Bilinear;
 
-            packElement.transform.GetChild(1).GetComponent<Image>().sprite = Sprite.Create(packTexture, new Rect(0.0f, 0.0f, gameAPI.cachedPackImages[i].width, gameAPI.cachedPackImages[i].height), new Vector2(0.5f, 0.5f), 100.0f);
+            packElement.transform.GetChild(1).GetComponent<Image>().sprite = Sprite.Create(packTexture, new Rect(0.0f, 0.0f, gameAPI.freePackImages[i].width, gameAPI.freePackImages[i].height), new Vector2(0.5f, 0.5f), 100.0f);
 
             packElement.name = packs.packs[i].slug;
 
-            if (packs.packs[i].premium == 1)
-            {
-                packElement.transform.GetChild(3).gameObject.SetActive(true);
-            }
+            packElement.transform.GetChild(3).gameObject.SetActive(false);
+
+
+            // if (packs.packs[i].premium == 1)
+            // {
+            //     packElement.transform.GetChild(3).gameObject.SetActive(true);
+            // }
 
             packElementGameObject.Add(packElement);
 
@@ -92,7 +96,36 @@ public class PackSelectionPanel : MonoBehaviour
         }
         tempPackElement.SetActive(false);
 
-        Invoke("ScalePackSelectionPanelUp", 0.5f);
+        Invoke("ScalePackSelectionPanelUp", 0.25f);
+
+        await GameAPI.cachePremiumPackImages;
+
+        tempPackElement.SetActive(true);
+
+        for (int i = 0; i < gameAPI.premiumPackImages.Count; i++)
+        {
+            packElement = Instantiate(tempPackElement, transform);
+            ColorUtility.TryParseHtmlString(jsonPackss["packs"][i + 13]["color"].ToString().Replace("\"", ""), out bgColor);
+            packElement.GetComponent<Image>().color = bgColor;
+
+
+            packElement.transform.GetChild(0).GetComponent<Text>().text = jsonPackss["packs"][i + 13]["locale"].ToString().Replace("\"", "");
+            var packTexture = gameAPI.premiumPackImages[i];
+            packTexture.wrapMode = TextureWrapMode.Clamp;
+            packTexture.filterMode = FilterMode.Bilinear;
+
+            packElement.transform.GetChild(1).GetComponent<Image>().sprite = Sprite.Create(packTexture, new Rect(0.0f, 0.0f, gameAPI.premiumPackImages[i].width, gameAPI.premiumPackImages[i].height), new Vector2(0.5f, 0.5f), 100.0f);
+
+            packElement.name = packs.packs[i + 13].slug;
+
+            packElement.transform.GetChild(3).gameObject.SetActive(true);
+
+            packElementGameObject.Add(packElement);
+
+        }
+        tempPackElement.SetActive(false);
+
+
     }
 
     public void PackSelected(GameObject _PackElement)

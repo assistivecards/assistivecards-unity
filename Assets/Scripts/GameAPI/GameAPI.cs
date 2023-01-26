@@ -14,8 +14,11 @@ public class GameAPI : MonoBehaviour
     public AssistiveCardsSDK.AssistiveCardsSDK.Languages cachedLanguages = new AssistiveCardsSDK.AssistiveCardsSDK.Languages();
     public AssistiveCardsSDK.AssistiveCardsSDK.Apps cachedApps = new AssistiveCardsSDK.AssistiveCardsSDK.Apps();
     public List<Texture2D> cachedAppIcons = new List<Texture2D>();
-    public List<Texture2D> cachedPackImages = new List<Texture2D>();
+    public List<Texture2D> freePackImages = new List<Texture2D>();
+    public List<Texture2D> premiumPackImages = new List<Texture2D>();
     public static Task cacheData;
+    public static Task cacheFreePackImages;
+    public static Task cachePremiumPackImages;
     AssistiveCardsSDK.AssistiveCardsSDK assistiveCardsSDK;
     [SerializeField] Speakable speakable;
     public Sound[] sfxClips;
@@ -27,6 +30,10 @@ public class GameAPI : MonoBehaviour
         assistiveCardsSDK = Camera.main.GetComponent<AssistiveCardsSDK.AssistiveCardsSDK>();
         cacheData = CacheData();
         await cacheData;
+        cacheFreePackImages = CacheFreePackImages();
+        await cacheFreePackImages;
+        cachePremiumPackImages = CachePremiumPackImages();
+        await cachePremiumPackImages;
     }
 
     private void Start()
@@ -46,10 +53,33 @@ public class GameAPI : MonoBehaviour
             cachedAppIcons.Add(await GetAppIcon(cachedApps.apps[i].slug));
 
         }
+
+        // for (int i = 0; i < cachedPacks.packs.Length; i++)
+        // {
+        //     cachedPackImages.Add(await GetPackImage(cachedPacks.packs[i].slug));
+
+        // }
+    }
+
+    public async Task CacheFreePackImages()
+    {
         for (int i = 0; i < cachedPacks.packs.Length; i++)
         {
-            cachedPackImages.Add(await GetPackImage(cachedPacks.packs[i].slug));
+            if (cachedPacks.packs[i].premium == 0)
+            {
+                freePackImages.Add(await GetPackImage(cachedPacks.packs[i].slug));
+            }
+        }
+    }
 
+    public async Task CachePremiumPackImages()
+    {
+        for (int i = 0; i < cachedPacks.packs.Length; i++)
+        {
+            if (cachedPacks.packs[i].premium == 1)
+            {
+                premiumPackImages.Add(await GetPackImage(cachedPacks.packs[i].slug));
+            }
         }
     }
 

@@ -12,10 +12,10 @@
 
 
 
-// System.Action`1<System.Object>
-struct Action_1_t6F9EB113EB3F16226AEF811A2744F4111C116C87;
 // System.Action`1<System.String>
 struct Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A;
+// System.Action`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct Action_1_t923A20D1D4F6B55B2ED5AE21B90F1A0CE0450D99;
 // System.Delegate[]
 struct DelegateU5BU5D_tC5AB7E8F745616680F337909D3A8E6C722CDF771;
 // System.DelegateData
@@ -275,13 +275,13 @@ struct MulticastDelegate_t_marshaled_com : public Delegate_t_marshaled_com
 	Delegate_t_marshaled_com** ___delegates_13;
 };
 
-// System.Action`1<System.Object>
-struct Action_1_t6F9EB113EB3F16226AEF811A2744F4111C116C87  : public MulticastDelegate_t
+// System.Action`1<System.String>
+struct Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A  : public MulticastDelegate_t
 {
 };
 
-// System.Action`1<System.String>
-struct Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A  : public MulticastDelegate_t
+// System.Action`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct Action_1_t923A20D1D4F6B55B2ED5AE21B90F1A0CE0450D99  : public MulticastDelegate_t
 {
 };
 
@@ -344,8 +344,8 @@ struct WebViewObject_t60574107C4C5AD427329795E7DE921E79A446B56  : public MonoBeh
 #endif
 
 
-// System.Void System.Action`1<System.Object>::Invoke(T)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_1_Invoke_mF2422B2DD29F74CE66F791C3F68E288EC7C3DB9E_gshared_inline (Action_1_t6F9EB113EB3F16226AEF811A2744F4111C116C87* __this, RuntimeObject* ___obj0, const RuntimeMethod* method) ;
+// System.Void System.Action`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::Invoke(T)
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_1_Invoke_m5A038831CEB84A7E374FE59D43444412629F833F_gshared_inline (Action_1_t923A20D1D4F6B55B2ED5AE21B90F1A0CE0450D99* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___obj0, const RuntimeMethod* method) ;
 
 // System.Boolean UnityEngine.TouchScreenKeyboard::get_visible()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TouchScreenKeyboard_get_visible_m5994AFC21D2C48F997FC3DECF1235B0A620B0B63 (const RuntimeMethod* method) ;
@@ -400,7 +400,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WebViewObject__CWebViewPlugin_Reload_m1A
 // System.Void System.Action`1<System.String>::Invoke(T)
 inline void Action_1_Invoke_m690438AAE38F9762172E3AE0A33D0B42ACD35790_inline (Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A* __this, String_t* ___obj0, const RuntimeMethod* method)
 {
-	((  void (*) (Action_1_t3CB5D1A819C3ED3F99E9E39F890F18633253949A*, String_t*, const RuntimeMethod*))Action_1_Invoke_mF2422B2DD29F74CE66F791C3F68E288EC7C3DB9E_gshared_inline)(__this, ___obj0, method);
+	((  void (*) (Action_1_t923A20D1D4F6B55B2ED5AE21B90F1A0CE0450D99*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))Action_1_Invoke_m5A038831CEB84A7E374FE59D43444412629F833F_gshared_inline)((Action_1_t923A20D1D4F6B55B2ED5AE21B90F1A0CE0450D99*)__this, (Il2CppFullySharedGenericAny)___obj0, method);
 }
 // System.String UnityEngine.Networking.UnityWebRequest::UnEscapeURL(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* UnityWebRequest_UnEscapeURL_mF32D6DA1A428A932B9A57A48FE5FA86D4B1446BB (String_t* ___s0, const RuntimeMethod* method) ;
@@ -979,22 +979,6 @@ IL_0013:
 		return;
 	}
 }
-// System.Void WebViewObject::Pause()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WebViewObject_Pause_m871DBD0F191B6E56128FB8033D20A44045A41D61 (WebViewObject_t60574107C4C5AD427329795E7DE921E79A446B56* __this, const RuntimeMethod* method) 
-{
-	{
-		// }
-		return;
-	}
-}
-// System.Void WebViewObject::Resume()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WebViewObject_Resume_mC92B6E403B1C59C024FDEF2542DD57FF6ACFEB4C (WebViewObject_t60574107C4C5AD427329795E7DE921E79A446B56* __this, const RuntimeMethod* method) 
-{
-	{
-		// }
-		return;
-	}
-}
 // System.Void WebViewObject::SetCenterPositionWithScale(UnityEngine.Vector2,UnityEngine.Vector2)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WebViewObject_SetCenterPositionWithScale_m3AAEC2F29EFE6B7DB69FE3E414DE5EA00EDAC1B4 (WebViewObject_t60574107C4C5AD427329795E7DE921E79A446B56* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___center0, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___scale1, const RuntimeMethod* method) 
 {
@@ -1435,22 +1419,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool WebViewObject_GetScrollBounceEnabled_m5C
 		// return scrollBounceEnabled;
 		bool L_0 = __this->___scrollBounceEnabled_12;
 		return L_0;
-	}
-}
-// System.Void WebViewObject::SetCameraAccess(System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WebViewObject_SetCameraAccess_m47EAE84CD2558E13DF6AC182F12B1F9AA52B3974 (WebViewObject_t60574107C4C5AD427329795E7DE921E79A446B56* __this, bool ___allowed0, const RuntimeMethod* method) 
-{
-	{
-		// }
-		return;
-	}
-}
-// System.Void WebViewObject::SetMicrophoneAccess(System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WebViewObject_SetMicrophoneAccess_m22A6EAA4BE29704E62B5DC41701AC53DD5954549 (WebViewObject_t60574107C4C5AD427329795E7DE921E79A446B56* __this, bool ___allowed0, const RuntimeMethod* method) 
-{
-	{
-		// }
-		return;
 	}
 }
 // System.Boolean WebViewObject::SetURLPattern(System.String,System.String,System.String)
@@ -2340,8 +2308,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WebViewObject__ctor_mB6EABD80A28F1B3C876
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_1_Invoke_mF2422B2DD29F74CE66F791C3F68E288EC7C3DB9E_gshared_inline (Action_1_t6F9EB113EB3F16226AEF811A2744F4111C116C87* __this, RuntimeObject* ___obj0, const RuntimeMethod* method) 
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_1_Invoke_m5A038831CEB84A7E374FE59D43444412629F833F_gshared_inline (Action_1_t923A20D1D4F6B55B2ED5AE21B90F1A0CE0450D99* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___obj0, const RuntimeMethod* method) 
 {
-	typedef void (*FunctionPointerType) (RuntimeObject*, RuntimeObject*, const RuntimeMethod*);
+	typedef void (*FunctionPointerType) (RuntimeObject*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___obj0, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
 }

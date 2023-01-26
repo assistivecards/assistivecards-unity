@@ -54,6 +54,17 @@ struct InterfaceFuncInvoker2
 		return ((Func)invokeData.methodPtr)(obj, p1, p2, invokeData.method);
 	}
 };
+template <typename T1>
+struct InvokerActionInvoker1;
+template <typename T1>
+struct InvokerActionInvoker1<T1*>
+{
+	static inline void Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1)
+	{
+		void* params[1] = { p1 };
+		method->invoker_method(methodPtr, method, obj, params, params[0]);
+	}
+};
 
 // System.Action`1<UnityEngine.AsyncOperation>
 struct Action_1_tE8693FF0E67CDBA52BAFB211BFF1844D076ABAFB;
@@ -61,36 +72,44 @@ struct Action_1_tE8693FF0E67CDBA52BAFB211BFF1844D076ABAFB;
 struct Action_1_t6F9EB113EB3F16226AEF811A2744F4111C116C87;
 // System.Action`1<Unity.Services.Core.Telemetry.Internal.WebRequest>
 struct Action_1_t98E0ADA5F89D6F93D91113490DCD09FD00D684F1;
-// System.Action`2<System.Object,System.Object>
-struct Action_2_t156C43F079E7E68155FCDCD12DC77DD11AEF7E3C;
+// System.Action`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct Action_1_t923A20D1D4F6B55B2ED5AE21B90F1A0CE0450D99;
 // System.Action`2<System.Threading.Tasks.Task,System.Object>
 struct Action_2_tB3A2D09A16BB2D5A96CEEE66C2F9934F8AF9CEDB;
+// System.Action`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct Action_2_t1D42C7D8DCD2DEB7C556FB3783F0EDAFF694E5E8;
 // Unity.Services.Core.Telemetry.Internal.CachedPayload`1<Unity.Services.Core.Telemetry.Internal.DiagnosticsPayload>
 struct CachedPayload_1_tB2CA12BE14B7EE4471F02BB61F7FEBCF33F30B83;
 // Unity.Services.Core.Telemetry.Internal.CachedPayload`1<Unity.Services.Core.Telemetry.Internal.MetricsPayload>
 struct CachedPayload_1_tAAF20A1E90B5FF0B52131D6DE0A1024012EF2D75;
+// Unity.Services.Core.Telemetry.Internal.CachedPayload`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct CachedPayload_1_t1F13B45D13F0679B9ABA6DBC1EFD66D2E6636BB2;
 // System.Collections.Generic.Dictionary`2<System.Int32,System.Globalization.CultureInfo>
 struct Dictionary_2_t9FA6D82CAFC18769F7515BB51D1C56DAE09381C3;
 // System.Collections.Generic.Dictionary`2<System.Int32,System.Threading.Tasks.Task>
 struct Dictionary_2_t403063CE4960B4F46C688912237C6A27E550FF55;
-// System.Collections.Generic.Dictionary`2<System.Object,System.Object>
-struct Dictionary_2_t14FE4A752A83D53771C584E4C8D14E01F2AFD7BA;
 // System.Collections.Generic.Dictionary`2<System.String,System.Globalization.CultureInfo>
 struct Dictionary_2_tE1603CE612C16451D1E56FF4D4859D4FE4087C28;
 // System.Collections.Generic.Dictionary`2<System.String,System.String>
 struct Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83;
+// System.Collections.Generic.Dictionary`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E;
 // System.Func`1<System.Threading.Tasks.Task/ContingentProperties>
 struct Func_1_tD59A12717D79BFB403BF973694B1BE5B85474BD1;
 // Unity.Services.Core.Telemetry.Internal.ICachePersister`1<Unity.Services.Core.Telemetry.Internal.DiagnosticsPayload>
 struct ICachePersister_1_t01774310766A7B965AC2C38CE75B1001C6277449;
 // Unity.Services.Core.Telemetry.Internal.ICachePersister`1<Unity.Services.Core.Telemetry.Internal.MetricsPayload>
 struct ICachePersister_1_tF7A5B105765FB6A2DF9281C7FD48BBAE8DC7189C;
-// System.Collections.Generic.IDictionary`2<System.Object,System.Object>
-struct IDictionary_2_t823399AD16F88CDEB25958D8CB61771376A5ADED;
+// Unity.Services.Core.Telemetry.Internal.ICachePersister`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct ICachePersister_1_t06D4FAB7FB550A468EA2060097D1559096771D1B;
 // System.Collections.Generic.IDictionary`2<System.String,System.String>
 struct IDictionary_2_t51DBA2F8AFDC8E5CC588729B12034B8C4D30B0AF;
+// System.Collections.Generic.IDictionary`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct IDictionary_2_t4D3B65115D85F2C21975A2BBF4A23860F8BCD02F;
 // System.Collections.Generic.IEnumerable`1<Unity.Services.Core.Telemetry.Internal.Diagnostic>
 struct IEnumerable_1_tF8DCECD54092774BB0753244DEC430F64FDA60B4;
+// System.Collections.Generic.IEnumerable`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct IEnumerable_1_t29E7244AE33B71FA0981E50D5BC73B7938F35C66;
 // System.Collections.Generic.IEqualityComparer`1<System.String>
 struct IEqualityComparer_1_tAE94C8F24AD5B94D4EE85CA9FC59E3409D41CAF7;
 // System.Collections.Generic.IReadOnlyDictionary`2<System.String,System.String>
@@ -101,6 +120,8 @@ struct KeyCollection_t2EDD317F5771E575ACB63527B5AFB71291040342;
 struct List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87;
 // System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Metric>
 struct List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA;
+// System.Collections.Generic.List`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A;
 // System.Predicate`1<System.Object>
 struct Predicate_1_t8342C85FF4E41CD1F7024AC0CDC3E5312A32CB12;
 // System.Predicate`1<System.Threading.Tasks.Task>
@@ -109,6 +130,8 @@ struct Predicate_1_t7F48518B008C1472339EEEBABA3DE203FE1F26ED;
 struct TelemetryHandler_2_tACBE6FB667B76B9218CB9ACFAA5030F7416CDC0C;
 // Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.Services.Core.Telemetry.Internal.MetricsPayload,Unity.Services.Core.Telemetry.Internal.Metric>
 struct TelemetryHandler_2_tA3D5E2CA7153825BF54828A98F95123293889FC0;
+// Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314;
 // System.Collections.Generic.Dictionary`2/ValueCollection<System.String,System.String>
 struct ValueCollection_t238D0D2427C6B841A01F522A41540165A2C4AE76;
 // System.Collections.Generic.Dictionary`2/Entry<System.String,System.String>[]
@@ -131,6 +154,8 @@ struct MetricU5BU5D_tDD42D30B25EE55F74638B326DA32DBB3A98FBC39;
 struct StackTraceU5BU5D_t32FBCB20930EAF5BAE3F450FF75228E5450DA0DF;
 // System.String[]
 struct StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248;
+// Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType[]
+struct __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC;
 // System.ArgumentException
 struct ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263;
 // System.ArgumentNullException
@@ -391,8 +416,7 @@ struct UnityWebRequest_t6233B8E22992FC2364A831C1ACB033EF3260C39F_marshaled_pinvo
 struct UploadHandler_t7E504B1A83346248A0C8C4AF73A893226CB83EF6_marshaled_com;
 
 struct ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031;
-struct DiagnosticU5BU5D_t60834B63D750C1B7811C97EAFB789F900AED4301;
-struct MetricU5BU5D_tDD42D30B25EE55F74638B326DA32DBB3A98FBC39;
+struct __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC;
 
 IL2CPP_EXTERN_C_BEGIN
 IL2CPP_EXTERN_C_END
@@ -407,6 +431,9 @@ IL2CPP_EXTERN_C_END
 struct U3CModuleU3E_tA8E35B180310D6046FB6F4D10E1B4A172B9C0215 
 {
 };
+
+// Unity.Services.Core.Telemetry.Internal.CachedPayload`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct CachedPayload_1_t1F13B45D13F0679B9ABA6DBC1EFD66D2E6636BB2 : public RuntimeObject {};
 
 // System.Collections.Generic.Dictionary`2<System.String,System.String>
 struct Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83  : public RuntimeObject
@@ -469,6 +496,25 @@ struct List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA_StaticFields
 {
 	// T[] System.Collections.Generic.List`1::s_emptyArray
 	MetricU5BU5D_tDD42D30B25EE55F74638B326DA32DBB3A98FBC39* ___s_emptyArray_5;
+};
+
+// System.Collections.Generic.List`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A  : public RuntimeObject
+{
+	// T[] System.Collections.Generic.List`1::_items
+	__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* ____items_1;
+	// System.Int32 System.Collections.Generic.List`1::_size
+	int32_t ____size_2;
+	// System.Int32 System.Collections.Generic.List`1::_version
+	int32_t ____version_3;
+	// System.Object System.Collections.Generic.List`1::_syncRoot
+	RuntimeObject* ____syncRoot_4;
+};
+
+struct List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A_StaticFields
+{
+	// T[] System.Collections.Generic.List`1::s_emptyArray
+	__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* ___s_emptyArray_5;
 };
 struct Il2CppArrayBounds;
 
@@ -909,6 +955,25 @@ struct TelemetryHandler_2_tA3D5E2CA7153825BF54828A98F95123293889FC0  : public Te
 	TelemetryConfig_t7D6911708D0C402786B501769520404D9EF41601* ___U3CConfigU3Ek__BackingField_5;
 	// Unity.Services.Core.Telemetry.Internal.CachedPayload`1<TPayload> Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2::<Cache>k__BackingField
 	CachedPayload_1_tAAF20A1E90B5FF0B52131D6DE0A1024012EF2D75* ___U3CCacheU3Ek__BackingField_6;
+};
+
+// Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314  : public TelemetryHandler_t7692C25504218338692D86878A355488B828A13C
+{
+	// Unity.Services.Core.Scheduler.Internal.IActionScheduler Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2::m_Scheduler
+	RuntimeObject* ___m_Scheduler_0;
+	// Unity.Services.Core.Telemetry.Internal.ICachePersister`1<TPayload> Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2::m_CachePersister
+	RuntimeObject* ___m_CachePersister_1;
+	// Unity.Services.Core.Telemetry.Internal.TelemetrySender Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2::m_Sender
+	TelemetrySender_t67AA5E279317D039D339BB675990F0BB795ADA3F* ___m_Sender_2;
+	// System.Int64 Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2::SendingLoopScheduleId
+	int64_t ___SendingLoopScheduleId_3;
+	// System.Int64 Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2::PersistenceLoopScheduleId
+	int64_t ___PersistenceLoopScheduleId_4;
+	// Unity.Services.Core.Telemetry.Internal.TelemetryConfig Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2::<Config>k__BackingField
+	TelemetryConfig_t7D6911708D0C402786B501769520404D9EF41601* ___U3CConfigU3Ek__BackingField_5;
+	// Unity.Services.Core.Telemetry.Internal.CachedPayload`1<TPayload> Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2::<Cache>k__BackingField
+	CachedPayload_1_t1F13B45D13F0679B9ABA6DBC1EFD66D2E6636BB2* ___U3CCacheU3Ek__BackingField_6;
 };
 
 // System.Boolean
@@ -1553,6 +1618,11 @@ struct Action_1_t98E0ADA5F89D6F93D91113490DCD09FD00D684F1  : public MulticastDel
 {
 };
 
+// System.Action`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>
+struct Action_1_t923A20D1D4F6B55B2ED5AE21B90F1A0CE0450D99  : public MulticastDelegate_t
+{
+};
+
 // System.Action`2<System.Threading.Tasks.Task,System.Object>
 struct Action_2_tB3A2D09A16BB2D5A96CEEE66C2F9934F8AF9CEDB  : public MulticastDelegate_t
 {
@@ -1612,162 +1682,73 @@ struct ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031  : public RuntimeArr
 		m_Items[index] = value;
 	}
 };
-// Unity.Services.Core.Telemetry.Internal.Diagnostic[]
-struct DiagnosticU5BU5D_t60834B63D750C1B7811C97EAFB789F900AED4301  : public RuntimeArray
+// Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType[]
+struct __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC  : public RuntimeArray
 {
-	ALIGN_FIELD (8) Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A m_Items[1];
+	ALIGN_FIELD (8) uint8_t m_Items[1];
 
-	inline Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A GetAt(il2cpp_array_size_t index) const
+	inline uint8_t* GetAddressAt(il2cpp_array_size_t index)
 	{
 		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		return m_Items[index];
+		return m_Items + il2cpp_array_calc_byte_offset(this, index);
 	}
-	inline Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A* GetAddressAt(il2cpp_array_size_t index)
+	inline uint8_t* GetAddressAtUnchecked(il2cpp_array_size_t index)
 	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		return m_Items + index;
-	}
-	inline void SetAt(il2cpp_array_size_t index, Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A value)
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___Content_0), (void*)NULL);
-	}
-	inline Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A GetAtUnchecked(il2cpp_array_size_t index) const
-	{
-		return m_Items[index];
-	}
-	inline Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A* GetAddressAtUnchecked(il2cpp_array_size_t index)
-	{
-		return m_Items + index;
-	}
-	inline void SetAtUnchecked(il2cpp_array_size_t index, Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A value)
-	{
-		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___Content_0), (void*)NULL);
-	}
-};
-// Unity.Services.Core.Telemetry.Internal.Metric[]
-struct MetricU5BU5D_tDD42D30B25EE55F74638B326DA32DBB3A98FBC39  : public RuntimeArray
-{
-	ALIGN_FIELD (8) Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3 m_Items[1];
-
-	inline Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3 GetAt(il2cpp_array_size_t index) const
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		return m_Items[index];
-	}
-	inline Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3* GetAddressAt(il2cpp_array_size_t index)
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		return m_Items + index;
-	}
-	inline void SetAt(il2cpp_array_size_t index, Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3 value)
-	{
-		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
-		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___Name_0), (void*)NULL);
-		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___Tags_3), (void*)NULL);
-		#endif
-	}
-	inline Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3 GetAtUnchecked(il2cpp_array_size_t index) const
-	{
-		return m_Items[index];
-	}
-	inline Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3* GetAddressAtUnchecked(il2cpp_array_size_t index)
-	{
-		return m_Items + index;
-	}
-	inline void SetAtUnchecked(il2cpp_array_size_t index, Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3 value)
-	{
-		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___Name_0), (void*)NULL);
-		#if IL2CPP_ENABLE_STRICT_WRITE_BARRIERS
-		Il2CppCodeGenWriteBarrier((void**)&((m_Items + index)->___Tags_3), (void*)NULL);
-		#endif
+		return m_Items + il2cpp_array_calc_byte_offset(this, index);
 	}
 };
 
 
-// System.Void System.Collections.Generic.Dictionary`2<System.Object,System.Object>::.ctor(System.Collections.Generic.IDictionary`2<TKey,TValue>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2__ctor_m623BF34EB93B2B3A3B7D46743B508E2E2958939E_gshared (Dictionary_2_t14FE4A752A83D53771C584E4C8D14E01F2AFD7BA* __this, RuntimeObject* ___dictionary0, const RuntimeMethod* method) ;
-// TDictionary Unity.Services.Core.Internal.DictionaryExtensions::MergeAllowOverride<System.Object,System.Object,System.Object>(TDictionary,System.Collections.Generic.IDictionary`2<TKey,TValue>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* DictionaryExtensions_MergeAllowOverride_TisRuntimeObject_TisRuntimeObject_TisRuntimeObject_m80984F95B46A6F67D8893FE6052EC0FD2C189B5A_gshared (RuntimeObject* ___self0, RuntimeObject* ___dictionary1, const RuntimeMethod* method) ;
-// System.Void Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.Services.Core.Telemetry.Internal.DiagnosticsPayload,Unity.Services.Core.Telemetry.Internal.Diagnostic>::Register(TEvent)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TelemetryHandler_2_Register_m9568D76F69F2507297946630C027D1B35AA86D91_gshared (TelemetryHandler_2_tACBE6FB667B76B9218CB9ACFAA5030F7416CDC0C* __this, Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A ___telemetryEvent0, const RuntimeMethod* method) ;
-// Unity.Services.Core.Telemetry.Internal.CachedPayload`1<TPayload> Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.Services.Core.Telemetry.Internal.DiagnosticsPayload,Unity.Services.Core.Telemetry.Internal.Diagnostic>::get_Cache()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR CachedPayload_1_tB2CA12BE14B7EE4471F02BB61F7FEBCF33F30B83* TelemetryHandler_2_get_Cache_mABC919ED89C7DA6F0C00545C4E494016A5BBED7B_gshared_inline (TelemetryHandler_2_tACBE6FB667B76B9218CB9ACFAA5030F7416CDC0C* __this, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.Dictionary`2<System.Object,System.Object>::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2__ctor_m5B32FBC624618211EB461D59CFBB10E987FD1329_gshared (Dictionary_2_t14FE4A752A83D53771C584E4C8D14E01F2AFD7BA* __this, const RuntimeMethod* method) ;
-// System.Void Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.Services.Core.Telemetry.Internal.DiagnosticsPayload,Unity.Services.Core.Telemetry.Internal.Diagnostic>::.ctor(Unity.Services.Core.Telemetry.Internal.TelemetryConfig,Unity.Services.Core.Telemetry.Internal.CachedPayload`1<TPayload>,Unity.Services.Core.Scheduler.Internal.IActionScheduler,Unity.Services.Core.Telemetry.Internal.ICachePersister`1<TPayload>,Unity.Services.Core.Telemetry.Internal.TelemetrySender)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TelemetryHandler_2__ctor_mAABD95FFCFBA2F85D17FBF1A674F4A2669749BAD_gshared (TelemetryHandler_2_tACBE6FB667B76B9218CB9ACFAA5030F7416CDC0C* __this, TelemetryConfig_t7D6911708D0C402786B501769520404D9EF41601* ___config0, CachedPayload_1_tB2CA12BE14B7EE4471F02BB61F7FEBCF33F30B83* ___cache1, RuntimeObject* ___scheduler2, RuntimeObject* ___cachePersister3, TelemetrySender_t67AA5E279317D039D339BB675990F0BB795ADA3F* ___sender4, const RuntimeMethod* method) ;
-// System.Threading.Tasks.Task Unity.Services.Core.Telemetry.Internal.TelemetrySender::SendAsync<Unity.Services.Core.Telemetry.Internal.DiagnosticsPayload>(TPayload)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572* TelemetrySender_SendAsync_TisDiagnosticsPayload_tFACE4451747DC3F51B8260AFCF8183DD54D9FFFD_m3F0DC2470065D69F3EF35D681C94A8E59B944664_gshared (TelemetrySender_t67AA5E279317D039D339BB675990F0BB795ADA3F* __this, DiagnosticsPayload_tFACE4451747DC3F51B8260AFCF8183DD54D9FFFD ___payload0, const RuntimeMethod* method) ;
-// System.Void Unity.Services.Core.Telemetry.Internal.CachedPayload`1<Unity.Services.Core.Telemetry.Internal.DiagnosticsPayload>::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CachedPayload_1__ctor_m447B5533D2087B5DBAD5CE29FB14C86F650FE941_gshared (CachedPayload_1_tB2CA12BE14B7EE4471F02BB61F7FEBCF33F30B83* __this, const RuntimeMethod* method) ;
-// System.Void System.Action`2<System.Object,System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Action_2__ctor_m6A0E7FE9DF9AE6C4BEE58611CB55F64FC3D79052_gshared (Action_2_t156C43F079E7E68155FCDCD12DC77DD11AEF7E3C* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.Dictionary`2<System.Object,System.Object>::Clear()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2_Clear_mCFB5EA7351D5860D2B91592B91A84CA265A41433_gshared (Dictionary_2_t14FE4A752A83D53771C584E4C8D14E01F2AFD7BA* __this, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.Dictionary`2<System.Object,System.Object>::set_Item(TKey,TValue)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2_set_Item_m1A840355E8EDAECEA9D0C6F5E51B248FAA449CBD_gshared (Dictionary_2_t14FE4A752A83D53771C584E4C8D14E01F2AFD7BA* __this, RuntimeObject* ___key0, RuntimeObject* ___value1, const RuntimeMethod* method) ;
-// System.Boolean Unity.Services.Core.Telemetry.Internal.CacheExtensions::IsEmpty<Unity.Services.Core.Telemetry.Internal.DiagnosticsPayload>(Unity.Services.Core.Telemetry.Internal.CachedPayload`1<TPayload>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool CacheExtensions_IsEmpty_TisDiagnosticsPayload_tFACE4451747DC3F51B8260AFCF8183DD54D9FFFD_m7CC7F050495B3BFA4D70054B07E0945CE92C3B33_gshared (CachedPayload_1_tB2CA12BE14B7EE4471F02BB61F7FEBCF33F30B83* ___self0, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Diagnostic>::.ctor(System.Collections.Generic.IEnumerable`1<T>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1__ctor_mEE575FF8B00891CD6E764094F7591C758500A4D5_gshared (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87* __this, RuntimeObject* ___collection0, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Diagnostic>::Clear()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Clear_m09BD2C329D95D9ED08F9309AEA0ECCF6C48B5BB7_gshared_inline (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87* __this, const RuntimeMethod* method) ;
-// System.Void Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.Services.Core.Telemetry.Internal.MetricsPayload,Unity.Services.Core.Telemetry.Internal.Metric>::.ctor(Unity.Services.Core.Telemetry.Internal.TelemetryConfig,Unity.Services.Core.Telemetry.Internal.CachedPayload`1<TPayload>,Unity.Services.Core.Scheduler.Internal.IActionScheduler,Unity.Services.Core.Telemetry.Internal.ICachePersister`1<TPayload>,Unity.Services.Core.Telemetry.Internal.TelemetrySender)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TelemetryHandler_2__ctor_mDBFA06496CA614C25F7E28173EC8D521B4F01DC8_gshared (TelemetryHandler_2_tA3D5E2CA7153825BF54828A98F95123293889FC0* __this, TelemetryConfig_t7D6911708D0C402786B501769520404D9EF41601* ___config0, CachedPayload_1_tAAF20A1E90B5FF0B52131D6DE0A1024012EF2D75* ___cache1, RuntimeObject* ___scheduler2, RuntimeObject* ___cachePersister3, TelemetrySender_t67AA5E279317D039D339BB675990F0BB795ADA3F* ___sender4, const RuntimeMethod* method) ;
-// System.Void Newtonsoft.Json.Utilities.AotHelper::EnsureType<System.Object>()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AotHelper_EnsureType_TisRuntimeObject_m8D3D63845F34DADDDC746C0C444E40309347F992_gshared (const RuntimeMethod* method) ;
-// System.Threading.Tasks.Task Unity.Services.Core.Telemetry.Internal.TelemetrySender::SendAsync<Unity.Services.Core.Telemetry.Internal.MetricsPayload>(TPayload)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572* TelemetrySender_SendAsync_TisMetricsPayload_t2D7CB9F1AFE2ECB1AE26E70EECAB36D805E75F1B_mF66284D211194613C885C35CBC71723EF57E8638_gshared (TelemetrySender_t67AA5E279317D039D339BB675990F0BB795ADA3F* __this, MetricsPayload_t2D7CB9F1AFE2ECB1AE26E70EECAB36D805E75F1B ___payload0, const RuntimeMethod* method) ;
-// Unity.Services.Core.Telemetry.Internal.CachedPayload`1<TPayload> Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.Services.Core.Telemetry.Internal.MetricsPayload,Unity.Services.Core.Telemetry.Internal.Metric>::get_Cache()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR CachedPayload_1_tAAF20A1E90B5FF0B52131D6DE0A1024012EF2D75* TelemetryHandler_2_get_Cache_mF64411ABBC8FBF4CF2F309FA0D97F4AE12D8FF5A_gshared_inline (TelemetryHandler_2_tA3D5E2CA7153825BF54828A98F95123293889FC0* __this, const RuntimeMethod* method) ;
-// System.Int32 System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Metric>::get_Count()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t List_1_get_Count_mB78998C760772531BF23B271EC995F20FF111F8D_gshared_inline (List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA* __this, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Metric>::Clear()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Clear_m203D6B144E830E38A7277C56A0E4478AAE492853_gshared_inline (List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA* __this, const RuntimeMethod* method) ;
-// Unity.Services.Core.Telemetry.Internal.TelemetryConfig Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.Services.Core.Telemetry.Internal.MetricsPayload,Unity.Services.Core.Telemetry.Internal.Metric>::get_Config()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TelemetryConfig_t7D6911708D0C402786B501769520404D9EF41601* TelemetryHandler_2_get_Config_m7D7528D1ABD233F97CE10E7E0A1DBDDF18203455_gshared_inline (TelemetryHandler_2_tA3D5E2CA7153825BF54828A98F95123293889FC0* __this, const RuntimeMethod* method) ;
-// System.Void Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.Services.Core.Telemetry.Internal.MetricsPayload,Unity.Services.Core.Telemetry.Internal.Metric>::Register(TEvent)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TelemetryHandler_2_Register_m75836815F537898F8E9388A5E3E0AC11A2E12BEB_gshared (TelemetryHandler_2_tA3D5E2CA7153825BF54828A98F95123293889FC0* __this, Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3 ___telemetryEvent0, const RuntimeMethod* method) ;
-// System.Int32 System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Diagnostic>::get_Count()
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t List_1_get_Count_m10ECF13A4D03A6AA1FF22092658DD6EAB2BA4256_gshared_inline (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87* __this, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Diagnostic>::.ctor(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1__ctor_mDE8FD2CC867BCFD8DDDF78483279A5AB2B16DB0B_gshared (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87* __this, int32_t ___capacity0, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Diagnostic>::Add(T)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_m8004FEA76065612822149F3602D2E0FC863CD695_gshared_inline (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87* __this, Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A ___item0, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Metric>::.ctor(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1__ctor_m24AC156E244B49B87728E8F3C10F3052A38523FA_gshared (List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA* __this, int32_t ___capacity0, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Metric>::Add(T)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mBDDFD218EA8F751936639E6A5D618992077B91A4_gshared_inline (List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA* __this, Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3 ___item0, const RuntimeMethod* method) ;
-// System.Void System.Action`1<System.Object>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Action_1__ctor_m2E1DFA67718FC1A0B6E5DFEB78831FFE9C059EB4_gshared (Action_1_t6F9EB113EB3F16226AEF811A2744F4111C116C87* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
-// System.Void System.Action`1<Unity.Services.Core.Telemetry.Internal.WebRequest>::Invoke(T)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_1_Invoke_m8B0C3F4FA0508CD1823F82CF8CD995A0C910DAFE_gshared_inline (Action_1_t98E0ADA5F89D6F93D91113490DCD09FD00D684F1* __this, WebRequest_t4CF804EE9852A8DB80C31D8016F18749C647206E ___obj0, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Diagnostic>::AddRange(System.Collections.Generic.IEnumerable`1<T>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1_AddRange_m44C394E4EABE58F1C3F98F15A17BEBFE98ED81E3_gshared (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87* __this, RuntimeObject* ___collection0, const RuntimeMethod* method) ;
-// System.Void Unity.Services.Core.Telemetry.Internal.CachedPayload`1<Unity.Services.Core.Telemetry.Internal.MetricsPayload>::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CachedPayload_1__ctor_mFFE79054BF40C1ED0F09204F2CBA47557DF53DEB_gshared (CachedPayload_1_tAAF20A1E90B5FF0B52131D6DE0A1024012EF2D75* __this, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Metric>::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1__ctor_m0E5759C3AA1DEB73437F7F0843557CA8A3387B41_gshared (List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA* __this, const RuntimeMethod* method) ;
-// Unity.Services.Core.Telemetry.Internal.ICachePersister`1<TPayload> Unity.Services.Core.Telemetry.Internal.TelemetryUtils::CreateCachePersister<Unity.Services.Core.Telemetry.Internal.MetricsPayload>(System.String,UnityEngine.RuntimePlatform)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* TelemetryUtils_CreateCachePersister_TisMetricsPayload_t2D7CB9F1AFE2ECB1AE26E70EECAB36D805E75F1B_m98843C4E1CA526F608C2E9350F4A850A9D7F30DB_gshared (String_t* ___fileName0, int32_t ___platform1, const RuntimeMethod* method) ;
-// System.Void Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.Services.Core.Telemetry.Internal.MetricsPayload,Unity.Services.Core.Telemetry.Internal.Metric>::Initialize(Unity.Services.Core.Configuration.Internal.ICloudProjectId,Unity.Services.Core.Environments.Internal.IEnvironments)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TelemetryHandler_2_Initialize_mC4FAADC6B628B4978932A1EFEE5BDEE73641D33F_gshared (TelemetryHandler_2_tA3D5E2CA7153825BF54828A98F95123293889FC0* __this, RuntimeObject* ___cloudProjectId0, RuntimeObject* ___environments1, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Diagnostic>::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1__ctor_m10D43F52BCD06D9D822ED38C2F64182953E8ECA8_gshared (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87* __this, const RuntimeMethod* method) ;
-// Unity.Services.Core.Telemetry.Internal.ICachePersister`1<TPayload> Unity.Services.Core.Telemetry.Internal.TelemetryUtils::CreateCachePersister<Unity.Services.Core.Telemetry.Internal.DiagnosticsPayload>(System.String,UnityEngine.RuntimePlatform)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* TelemetryUtils_CreateCachePersister_TisDiagnosticsPayload_tFACE4451747DC3F51B8260AFCF8183DD54D9FFFD_m3F204710C094AC433BDF212C69BCC95E731D05DD_gshared (String_t* ___fileName0, int32_t ___platform1, const RuntimeMethod* method) ;
-// System.Void Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.Services.Core.Telemetry.Internal.DiagnosticsPayload,Unity.Services.Core.Telemetry.Internal.Diagnostic>::Initialize(Unity.Services.Core.Configuration.Internal.ICloudProjectId,Unity.Services.Core.Environments.Internal.IEnvironments)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TelemetryHandler_2_Initialize_mF83887007D69683927853CF6A2D58C66255ED457_gshared (TelemetryHandler_2_tACBE6FB667B76B9218CB9ACFAA5030F7416CDC0C* __this, RuntimeObject* ___cloudProjectId0, RuntimeObject* ___environments1, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Diagnostic>::AddWithResize(T)
-IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void List_1_AddWithResize_m488C0FE43760EA1EC385AB2603088F1560EC2BEF_gshared (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87* __this, Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A ___item0, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Metric>::AddWithResize(T)
-IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void List_1_AddWithResize_m8458E8543A17AD67BCFB8B3A7C9D069A6BFAD0B3_gshared (List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA* __this, Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3 ___item0, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.Dictionary`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::.ctor(System.Collections.Generic.IDictionary`2<TKey,TValue>)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2__ctor_m3CE78C81B3C997FF9C14675CFBBAD014EF68FE30_gshared (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E* __this, RuntimeObject* ___dictionary0, const RuntimeMethod* method) ;
+// TDictionary Unity.Services.Core.Internal.DictionaryExtensions::MergeAllowOverride<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>(TDictionary,System.Collections.Generic.IDictionary`2<TKey,TValue>)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DictionaryExtensions_MergeAllowOverride_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m191DDE5D3B24C4AC300575E3696AADBA44175C8F_gshared (/*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___self0, RuntimeObject* ___dictionary1, Il2CppFullySharedGenericAny* il2cppRetVal, const RuntimeMethod* method) ;
+// System.Void Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::Register(TEvent)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TelemetryHandler_2_Register_m3E64A34256B80F0F9CD91BF561F80E0E45FB1C2B_gshared (TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___telemetryEvent0, const RuntimeMethod* method) ;
+// Unity.Services.Core.Telemetry.Internal.CachedPayload`1<TPayload> Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::get_Cache()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR CachedPayload_1_t1F13B45D13F0679B9ABA6DBC1EFD66D2E6636BB2* TelemetryHandler_2_get_Cache_m2A4516524A9F7473C4DE2206FBC91E97A3147677_gshared_inline (TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314* __this, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.Dictionary`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2__ctor_m7745B6ED71E47C95E1BFCE647C4F026A404C668F_gshared (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E* __this, const RuntimeMethod* method) ;
+// System.Void Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::.ctor(Unity.Services.Core.Telemetry.Internal.TelemetryConfig,Unity.Services.Core.Telemetry.Internal.CachedPayload`1<TPayload>,Unity.Services.Core.Scheduler.Internal.IActionScheduler,Unity.Services.Core.Telemetry.Internal.ICachePersister`1<TPayload>,Unity.Services.Core.Telemetry.Internal.TelemetrySender)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TelemetryHandler_2__ctor_m1E93EF92CBE7CCFAA673D4BAEA1AF3749E1F5276_gshared (TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314* __this, TelemetryConfig_t7D6911708D0C402786B501769520404D9EF41601* ___config0, /*Unity.Services.Core.Telemetry.Internal.CachedPayload`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>*/CachedPayload_1_t1F13B45D13F0679B9ABA6DBC1EFD66D2E6636BB2* ___cache1, RuntimeObject* ___scheduler2, RuntimeObject* ___cachePersister3, TelemetrySender_t67AA5E279317D039D339BB675990F0BB795ADA3F* ___sender4, const RuntimeMethod* method) ;
+// System.Threading.Tasks.Task Unity.Services.Core.Telemetry.Internal.TelemetrySender::SendAsync<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>(TPayload)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572* TelemetrySender_SendAsync_TisIl2CppFullySharedGenericAny_m15C9271EC69BDC07C9366D058B8ABBA432BDD65C_gshared (TelemetrySender_t67AA5E279317D039D339BB675990F0BB795ADA3F* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___payload0, const RuntimeMethod* method) ;
+// System.Void Unity.Services.Core.Telemetry.Internal.CachedPayload`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CachedPayload_1__ctor_m2F0B76469A83DF07BEC17D6A4D9E09749C179ACC_gshared (/*Unity.Services.Core.Telemetry.Internal.CachedPayload`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>*/CachedPayload_1_t1F13B45D13F0679B9ABA6DBC1EFD66D2E6636BB2* __this, const RuntimeMethod* method) ;
+// System.Void System.Action`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::.ctor(System.Object,System.IntPtr)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Action_2__ctor_m8E9B7F6EE50FEF26FF7537F554B4F5E434F70550_gshared (Action_2_t1D42C7D8DCD2DEB7C556FB3783F0EDAFF694E5E8* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.Dictionary`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::Clear()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2_Clear_m935B3F117860376DC854C9E0C80CBD99BE77EEA4_gshared (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E* __this, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.Dictionary`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::set_Item(TKey,TValue)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2_set_Item_m4C6841170DD11AED683D2D71919F362A4CFF4A80_gshared (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___key0, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___value1, const RuntimeMethod* method) ;
+// System.Boolean Unity.Services.Core.Telemetry.Internal.CacheExtensions::IsEmpty<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>(Unity.Services.Core.Telemetry.Internal.CachedPayload`1<TPayload>)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool CacheExtensions_IsEmpty_TisIl2CppFullySharedGenericAny_m28723D2F812EAA70F678AD427CD230F23EE27139_gshared (/*Unity.Services.Core.Telemetry.Internal.CachedPayload`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>*/CachedPayload_1_t1F13B45D13F0679B9ABA6DBC1EFD66D2E6636BB2* ___self0, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::.ctor(System.Collections.Generic.IEnumerable`1<T>)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1__ctor_mACCB7726C2E9728AE336F99C68B334459F9F30FB_gshared (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* __this, RuntimeObject* ___collection0, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::Clear()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Clear_mD615D1BCB2C9DD91DAD86A2F9E5CF1DFFCBF7925_gshared_inline (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* __this, const RuntimeMethod* method) ;
+// System.Void Newtonsoft.Json.Utilities.AotHelper::EnsureType<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AotHelper_EnsureType_TisIl2CppFullySharedGenericAny_m8D94D34831BFD767668F5DE3953A46FD59601BA7_gshared (const RuntimeMethod* method) ;
+// System.Int32 System.Collections.Generic.List`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::get_Count()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t List_1_get_Count_mD2ED26ACAF3BAF386FFEA83893BA51DB9FD8BA30_gshared_inline (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* __this, const RuntimeMethod* method) ;
+// Unity.Services.Core.Telemetry.Internal.TelemetryConfig Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::get_Config()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TelemetryConfig_t7D6911708D0C402786B501769520404D9EF41601* TelemetryHandler_2_get_Config_mFD690F241195151A3DA6BCF66DA3B1F9166AE61E_gshared_inline (TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314* __this, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::.ctor(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1__ctor_m3069CACB5775E013107F559C825422266A09F9E8_gshared (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* __this, int32_t ___capacity0, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::Add(T)
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mD4F3498FBD3BDD3F03CBCFB38041CBAC9C28CAFC_gshared_inline (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___item0, const RuntimeMethod* method) ;
+// System.Void System.Action`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::.ctor(System.Object,System.IntPtr)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Action_1__ctor_m685A441EC9FAC9D554B26FA83A08F4BEF96DFF0E_gshared (Action_1_t923A20D1D4F6B55B2ED5AE21B90F1A0CE0450D99* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
+// System.Void System.Action`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::Invoke(T)
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_1_Invoke_m5A038831CEB84A7E374FE59D43444412629F833F_gshared_inline (Action_1_t923A20D1D4F6B55B2ED5AE21B90F1A0CE0450D99* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___obj0, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::AddRange(System.Collections.Generic.IEnumerable`1<T>)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1_AddRange_m44DED39FFEBC8F2ACF6162DB065B649E888B9C57_gshared (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* __this, RuntimeObject* ___collection0, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1__ctor_m0AFBAEA7EC427E32CC9CA267B1930DC5DF67A374_gshared (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* __this, const RuntimeMethod* method) ;
+// Unity.Services.Core.Telemetry.Internal.ICachePersister`1<TPayload> Unity.Services.Core.Telemetry.Internal.TelemetryUtils::CreateCachePersister<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>(System.String,UnityEngine.RuntimePlatform)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* TelemetryUtils_CreateCachePersister_TisIl2CppFullySharedGenericAny_m447D877CF53FE71D3E7DD6F2C6F2C8A88337F288_gshared (String_t* ___fileName0, int32_t ___platform1, const RuntimeMethod* method) ;
+// System.Void Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType,Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>::Initialize(Unity.Services.Core.Configuration.Internal.ICloudProjectId,Unity.Services.Core.Environments.Internal.IEnvironments)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TelemetryHandler_2_Initialize_mDEE49A1320C7253718A0F819DD595C433D33A26B_gshared (TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314* __this, RuntimeObject* ___cloudProjectId0, RuntimeObject* ___environments1, const RuntimeMethod* method) ;
 
 // System.String Unity.Services.Core.Telemetry.Internal.FileCachePersister::GetPersistentDataPathFor(UnityEngine.RuntimePlatform)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* FileCachePersister_GetPersistentDataPathFor_mAA3C085B70D73236A56C8DF6C16FE348F910EE0B (int32_t ___platform0, const RuntimeMethod* method) ;
@@ -1780,14 +1761,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object__ctor_mE837C6B9FA8C6D5D109F4B2EC8
 // System.Void System.Collections.Generic.Dictionary`2<System.String,System.String>::.ctor(System.Collections.Generic.IDictionary`2<TKey,TValue>)
 inline void Dictionary_2__ctor_m1D3CFAA07F0EE9405CAF58853C2E25690A51D0F9 (Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83* __this, RuntimeObject* ___dictionary0, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83*, RuntimeObject*, const RuntimeMethod*))Dictionary_2__ctor_m623BF34EB93B2B3A3B7D46743B508E2E2958939E_gshared)(__this, ___dictionary0, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, RuntimeObject*, const RuntimeMethod*))Dictionary_2__ctor_m3CE78C81B3C997FF9C14675CFBBAD014EF68FE30_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (RuntimeObject*)___dictionary0, method);
 }
 // System.Collections.Generic.IDictionary`2<System.String,System.String> Unity.Services.Core.Telemetry.Internal.Diagnostics::get_PackageTags()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Diagnostics_get_PackageTags_m9D51DB44CC22531F216C7408EA8065044D0E4BE9_inline (Diagnostics_t24C9DED6F621BBF7D712D62FD3776D29B3CE5012* __this, const RuntimeMethod* method) ;
 // TDictionary Unity.Services.Core.Internal.DictionaryExtensions::MergeAllowOverride<System.Collections.Generic.Dictionary`2<System.String,System.String>,System.String,System.String>(TDictionary,System.Collections.Generic.IDictionary`2<TKey,TValue>)
 inline Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83* DictionaryExtensions_MergeAllowOverride_TisDictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83_TisString_t_TisString_t_m4A386C7FA6BA2824CB5BCC50DCC3A157679E9E1F (Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83* ___self0, RuntimeObject* ___dictionary1, const RuntimeMethod* method)
 {
-	return ((  Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83* (*) (Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83*, RuntimeObject*, const RuntimeMethod*))DictionaryExtensions_MergeAllowOverride_TisRuntimeObject_TisRuntimeObject_TisRuntimeObject_m80984F95B46A6F67D8893FE6052EC0FD2C189B5A_gshared)(___self0, ___dictionary1, method);
+	Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83* il2cppRetVal;
+	((  void (*) (/*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, RuntimeObject*, Il2CppFullySharedGenericAny*, const RuntimeMethod*))DictionaryExtensions_MergeAllowOverride_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m191DDE5D3B24C4AC300575E3696AADBA44175C8F_gshared)((Il2CppFullySharedGenericAny)___self0, (RuntimeObject*)___dictionary1, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // System.Int32 System.String::get_Length()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline (String_t* __this, const RuntimeMethod* method) ;
@@ -1802,12 +1785,13 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR DiagnosticsHandler_t9AE9840AF2565
 // System.Void Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.Services.Core.Telemetry.Internal.DiagnosticsPayload,Unity.Services.Core.Telemetry.Internal.Diagnostic>::Register(TEvent)
 inline void TelemetryHandler_2_Register_m9568D76F69F2507297946630C027D1B35AA86D91 (TelemetryHandler_2_tACBE6FB667B76B9218CB9ACFAA5030F7416CDC0C* __this, Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A ___telemetryEvent0, const RuntimeMethod* method)
 {
-	((  void (*) (TelemetryHandler_2_tACBE6FB667B76B9218CB9ACFAA5030F7416CDC0C*, Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A, const RuntimeMethod*))TelemetryHandler_2_Register_m9568D76F69F2507297946630C027D1B35AA86D91_gshared)(__this, ___telemetryEvent0, method);
+	((  void (*) (TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))TelemetryHandler_2_Register_m3E64A34256B80F0F9CD91BF561F80E0E45FB1C2B_gshared)((TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314*)__this, (Il2CppFullySharedGenericAny)&___telemetryEvent0, method);
 }
 // Unity.Services.Core.Telemetry.Internal.CachedPayload`1<TPayload> Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.Services.Core.Telemetry.Internal.DiagnosticsPayload,Unity.Services.Core.Telemetry.Internal.Diagnostic>::get_Cache()
 inline CachedPayload_1_tB2CA12BE14B7EE4471F02BB61F7FEBCF33F30B83* TelemetryHandler_2_get_Cache_mABC919ED89C7DA6F0C00545C4E494016A5BBED7B_inline (TelemetryHandler_2_tACBE6FB667B76B9218CB9ACFAA5030F7416CDC0C* __this, const RuntimeMethod* method)
 {
-	return ((  CachedPayload_1_tB2CA12BE14B7EE4471F02BB61F7FEBCF33F30B83* (*) (TelemetryHandler_2_tACBE6FB667B76B9218CB9ACFAA5030F7416CDC0C*, const RuntimeMethod*))TelemetryHandler_2_get_Cache_mABC919ED89C7DA6F0C00545C4E494016A5BBED7B_gshared_inline)(__this, method);
+	CachedPayload_1_t1F13B45D13F0679B9ABA6DBC1EFD66D2E6636BB2* il2cppRetVal = ((  CachedPayload_1_t1F13B45D13F0679B9ABA6DBC1EFD66D2E6636BB2* (*) (TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314*, const RuntimeMethod*))TelemetryHandler_2_get_Cache_m2A4516524A9F7473C4DE2206FBC91E97A3147677_gshared_inline)((TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314*)__this, method);
+	return (CachedPayload_1_tB2CA12BE14B7EE4471F02BB61F7FEBCF33F30B83*)il2cppRetVal;
 }
 // System.Void System.ArgumentNullException::.ctor(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArgumentNullException__ctor_m444AE141157E333844FC1A9500224C2F9FD24F4B (ArgumentNullException_t327031E412FAB2351B0022DD5DAD47E67E597129* __this, String_t* ___paramName0, const RuntimeMethod* method) ;
@@ -1822,29 +1806,29 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DisabledDiagnostics__ctor_m0F80E600FAE38
 // System.Void System.Collections.Generic.Dictionary`2<System.String,System.String>::.ctor()
 inline void Dictionary_2__ctor_m768E076F1E804CE4959F4E71D3E6A9ADE2F55052 (Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83* __this, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83*, const RuntimeMethod*))Dictionary_2__ctor_m5B32FBC624618211EB461D59CFBB10E987FD1329_gshared)(__this, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, const RuntimeMethod*))Dictionary_2__ctor_m7745B6ED71E47C95E1BFCE647C4F026A404C668F_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, method);
 }
 // System.Void Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.Services.Core.Telemetry.Internal.DiagnosticsPayload,Unity.Services.Core.Telemetry.Internal.Diagnostic>::.ctor(Unity.Services.Core.Telemetry.Internal.TelemetryConfig,Unity.Services.Core.Telemetry.Internal.CachedPayload`1<TPayload>,Unity.Services.Core.Scheduler.Internal.IActionScheduler,Unity.Services.Core.Telemetry.Internal.ICachePersister`1<TPayload>,Unity.Services.Core.Telemetry.Internal.TelemetrySender)
 inline void TelemetryHandler_2__ctor_mAABD95FFCFBA2F85D17FBF1A674F4A2669749BAD (TelemetryHandler_2_tACBE6FB667B76B9218CB9ACFAA5030F7416CDC0C* __this, TelemetryConfig_t7D6911708D0C402786B501769520404D9EF41601* ___config0, CachedPayload_1_tB2CA12BE14B7EE4471F02BB61F7FEBCF33F30B83* ___cache1, RuntimeObject* ___scheduler2, RuntimeObject* ___cachePersister3, TelemetrySender_t67AA5E279317D039D339BB675990F0BB795ADA3F* ___sender4, const RuntimeMethod* method)
 {
-	((  void (*) (TelemetryHandler_2_tACBE6FB667B76B9218CB9ACFAA5030F7416CDC0C*, TelemetryConfig_t7D6911708D0C402786B501769520404D9EF41601*, CachedPayload_1_tB2CA12BE14B7EE4471F02BB61F7FEBCF33F30B83*, RuntimeObject*, RuntimeObject*, TelemetrySender_t67AA5E279317D039D339BB675990F0BB795ADA3F*, const RuntimeMethod*))TelemetryHandler_2__ctor_mAABD95FFCFBA2F85D17FBF1A674F4A2669749BAD_gshared)(__this, ___config0, ___cache1, ___scheduler2, ___cachePersister3, ___sender4, method);
+	((  void (*) (TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314*, TelemetryConfig_t7D6911708D0C402786B501769520404D9EF41601*, /*Unity.Services.Core.Telemetry.Internal.CachedPayload`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>*/CachedPayload_1_t1F13B45D13F0679B9ABA6DBC1EFD66D2E6636BB2*, RuntimeObject*, RuntimeObject*, TelemetrySender_t67AA5E279317D039D339BB675990F0BB795ADA3F*, const RuntimeMethod*))TelemetryHandler_2__ctor_m1E93EF92CBE7CCFAA673D4BAEA1AF3749E1F5276_gshared)((TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314*)__this, ___config0, (CachedPayload_1_t1F13B45D13F0679B9ABA6DBC1EFD66D2E6636BB2*)___cache1, ___scheduler2, (RuntimeObject*)___cachePersister3, ___sender4, method);
 }
 // System.Threading.Tasks.Task Unity.Services.Core.Telemetry.Internal.TelemetrySender::SendAsync<Unity.Services.Core.Telemetry.Internal.DiagnosticsPayload>(TPayload)
 inline Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572* TelemetrySender_SendAsync_TisDiagnosticsPayload_tFACE4451747DC3F51B8260AFCF8183DD54D9FFFD_m3F0DC2470065D69F3EF35D681C94A8E59B944664 (TelemetrySender_t67AA5E279317D039D339BB675990F0BB795ADA3F* __this, DiagnosticsPayload_tFACE4451747DC3F51B8260AFCF8183DD54D9FFFD ___payload0, const RuntimeMethod* method)
 {
-	return ((  Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572* (*) (TelemetrySender_t67AA5E279317D039D339BB675990F0BB795ADA3F*, DiagnosticsPayload_tFACE4451747DC3F51B8260AFCF8183DD54D9FFFD, const RuntimeMethod*))TelemetrySender_SendAsync_TisDiagnosticsPayload_tFACE4451747DC3F51B8260AFCF8183DD54D9FFFD_m3F0DC2470065D69F3EF35D681C94A8E59B944664_gshared)(__this, ___payload0, method);
+	return ((  Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572* (*) (TelemetrySender_t67AA5E279317D039D339BB675990F0BB795ADA3F*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))TelemetrySender_SendAsync_TisIl2CppFullySharedGenericAny_m15C9271EC69BDC07C9366D058B8ABBA432BDD65C_gshared)((TelemetrySender_t67AA5E279317D039D339BB675990F0BB795ADA3F*)__this, (Il2CppFullySharedGenericAny)&___payload0, method);
 }
 // System.Void Unity.Services.Core.Telemetry.Internal.DiagnosticsHandler/SendState::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SendState__ctor_mB8B88DE6EEED157A4F2316B78925D3295BAD16DB (SendState_t1BAC864E67898182B54C4EDB04FFE59CD5C08DAD* __this, const RuntimeMethod* method) ;
 // System.Void Unity.Services.Core.Telemetry.Internal.CachedPayload`1<Unity.Services.Core.Telemetry.Internal.DiagnosticsPayload>::.ctor()
 inline void CachedPayload_1__ctor_m447B5533D2087B5DBAD5CE29FB14C86F650FE941 (CachedPayload_1_tB2CA12BE14B7EE4471F02BB61F7FEBCF33F30B83* __this, const RuntimeMethod* method)
 {
-	((  void (*) (CachedPayload_1_tB2CA12BE14B7EE4471F02BB61F7FEBCF33F30B83*, const RuntimeMethod*))CachedPayload_1__ctor_m447B5533D2087B5DBAD5CE29FB14C86F650FE941_gshared)(__this, method);
+	((  void (*) (/*Unity.Services.Core.Telemetry.Internal.CachedPayload`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>*/CachedPayload_1_t1F13B45D13F0679B9ABA6DBC1EFD66D2E6636BB2*, const RuntimeMethod*))CachedPayload_1__ctor_m2F0B76469A83DF07BEC17D6A4D9E09749C179ACC_gshared)((CachedPayload_1_t1F13B45D13F0679B9ABA6DBC1EFD66D2E6636BB2*)__this, method);
 }
 // System.Void System.Action`2<System.Threading.Tasks.Task,System.Object>::.ctor(System.Object,System.IntPtr)
 inline void Action_2__ctor_mCB8799E12AB6CA46E55E300245D89C3B2A3955E9 (Action_2_tB3A2D09A16BB2D5A96CEEE66C2F9934F8AF9CEDB* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Action_2_tB3A2D09A16BB2D5A96CEEE66C2F9934F8AF9CEDB*, RuntimeObject*, intptr_t, const RuntimeMethod*))Action_2__ctor_m6A0E7FE9DF9AE6C4BEE58611CB55F64FC3D79052_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Action_2_t1D42C7D8DCD2DEB7C556FB3783F0EDAFF694E5E8*, RuntimeObject*, intptr_t, const RuntimeMethod*))Action_2__ctor_m8E9B7F6EE50FEF26FF7537F554B4F5E434F70550_gshared)((Action_2_t1D42C7D8DCD2DEB7C556FB3783F0EDAFF694E5E8*)__this, ___object0, ___method1, method);
 }
 // System.Threading.Tasks.Task System.Threading.Tasks.Task::ContinueWith(System.Action`2<System.Threading.Tasks.Task,System.Object>,System.Object,System.Threading.Tasks.TaskContinuationOptions)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572* Task_ContinueWith_m0DCFBDCE81D5E39BD04277A2CBA00B76D5B85479 (Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572* __this, Action_2_tB3A2D09A16BB2D5A96CEEE66C2F9934F8AF9CEDB* ___continuationAction0, RuntimeObject* ___state1, int32_t ___continuationOptions2, const RuntimeMethod* method) ;
@@ -1859,14 +1843,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArgumentOutOfRangeException__ctor_mE5B27
 // System.Void System.Collections.Generic.Dictionary`2<System.String,System.String>::Clear()
 inline void Dictionary_2_Clear_m96A01966628B0B9F973D4E29050CC769B116A586 (Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83* __this, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83*, const RuntimeMethod*))Dictionary_2_Clear_mCFB5EA7351D5860D2B91592B91A84CA265A41433_gshared)(__this, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, const RuntimeMethod*))Dictionary_2_Clear_m935B3F117860376DC854C9E0C80CBD99BE77EEA4_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, method);
 }
 // System.String UnityEngine.Application::get_version()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Application_get_version_m9CC0E94F12493682C1A2CA803083F6F01BA43124 (const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.Dictionary`2<System.String,System.String>::set_Item(TKey,TValue)
 inline void Dictionary_2_set_Item_m9BF625649E96E60C1509898A992A6447E351D1A2 (Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83* __this, String_t* ___key0, String_t* ___value1, const RuntimeMethod* method)
 {
-	((  void (*) (Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83*, String_t*, String_t*, const RuntimeMethod*))Dictionary_2_set_Item_m1A840355E8EDAECEA9D0C6F5E51B248FAA449CBD_gshared)(__this, ___key0, ___value1, method);
+	((  void (*) (Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))Dictionary_2_set_Item_m4C6841170DD11AED683D2D71919F362A4CFF4A80_gshared)((Dictionary_2_t5C32AF17A5801FB3109E5B0E622BA8402A04E08E*)__this, (Il2CppFullySharedGenericAny)___key0, (Il2CppFullySharedGenericAny)___value1, method);
 }
 // System.String UnityEngine.Application::get_productName()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Application_get_productName_m9314FB94C4DE1F1731084FF30B9555F44BA477EB (const RuntimeMethod* method) ;
@@ -1885,49 +1869,50 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Enum_ToString_m946B0B83C4470457D0FF
 // System.Boolean Unity.Services.Core.Telemetry.Internal.CacheExtensions::IsEmpty<Unity.Services.Core.Telemetry.Internal.DiagnosticsPayload>(Unity.Services.Core.Telemetry.Internal.CachedPayload`1<TPayload>)
 inline bool CacheExtensions_IsEmpty_TisDiagnosticsPayload_tFACE4451747DC3F51B8260AFCF8183DD54D9FFFD_m7CC7F050495B3BFA4D70054B07E0945CE92C3B33 (CachedPayload_1_tB2CA12BE14B7EE4471F02BB61F7FEBCF33F30B83* ___self0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (CachedPayload_1_tB2CA12BE14B7EE4471F02BB61F7FEBCF33F30B83*, const RuntimeMethod*))CacheExtensions_IsEmpty_TisDiagnosticsPayload_tFACE4451747DC3F51B8260AFCF8183DD54D9FFFD_m7CC7F050495B3BFA4D70054B07E0945CE92C3B33_gshared)(___self0, method);
+	return ((  bool (*) (/*Unity.Services.Core.Telemetry.Internal.CachedPayload`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>*/CachedPayload_1_t1F13B45D13F0679B9ABA6DBC1EFD66D2E6636BB2*, const RuntimeMethod*))CacheExtensions_IsEmpty_TisIl2CppFullySharedGenericAny_m28723D2F812EAA70F678AD427CD230F23EE27139_gshared)((CachedPayload_1_t1F13B45D13F0679B9ABA6DBC1EFD66D2E6636BB2*)___self0, method);
 }
 // System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Diagnostic>::.ctor(System.Collections.Generic.IEnumerable`1<T>)
 inline void List_1__ctor_mEE575FF8B00891CD6E764094F7591C758500A4D5 (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87* __this, RuntimeObject* ___collection0, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87*, RuntimeObject*, const RuntimeMethod*))List_1__ctor_mEE575FF8B00891CD6E764094F7591C758500A4D5_gshared)(__this, ___collection0, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, RuntimeObject*, const RuntimeMethod*))List_1__ctor_mACCB7726C2E9728AE336F99C68B334459F9F30FB_gshared)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, (RuntimeObject*)___collection0, method);
 }
 // System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Diagnostic>::Clear()
 inline void List_1_Clear_m09BD2C329D95D9ED08F9309AEA0ECCF6C48B5BB7_inline (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87* __this, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87*, const RuntimeMethod*))List_1_Clear_m09BD2C329D95D9ED08F9309AEA0ECCF6C48B5BB7_gshared_inline)(__this, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, const RuntimeMethod*))List_1_Clear_mD615D1BCB2C9DD91DAD86A2F9E5CF1DFFCBF7925_gshared_inline)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, method);
 }
 // System.Void Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.Services.Core.Telemetry.Internal.MetricsPayload,Unity.Services.Core.Telemetry.Internal.Metric>::.ctor(Unity.Services.Core.Telemetry.Internal.TelemetryConfig,Unity.Services.Core.Telemetry.Internal.CachedPayload`1<TPayload>,Unity.Services.Core.Scheduler.Internal.IActionScheduler,Unity.Services.Core.Telemetry.Internal.ICachePersister`1<TPayload>,Unity.Services.Core.Telemetry.Internal.TelemetrySender)
 inline void TelemetryHandler_2__ctor_mDBFA06496CA614C25F7E28173EC8D521B4F01DC8 (TelemetryHandler_2_tA3D5E2CA7153825BF54828A98F95123293889FC0* __this, TelemetryConfig_t7D6911708D0C402786B501769520404D9EF41601* ___config0, CachedPayload_1_tAAF20A1E90B5FF0B52131D6DE0A1024012EF2D75* ___cache1, RuntimeObject* ___scheduler2, RuntimeObject* ___cachePersister3, TelemetrySender_t67AA5E279317D039D339BB675990F0BB795ADA3F* ___sender4, const RuntimeMethod* method)
 {
-	((  void (*) (TelemetryHandler_2_tA3D5E2CA7153825BF54828A98F95123293889FC0*, TelemetryConfig_t7D6911708D0C402786B501769520404D9EF41601*, CachedPayload_1_tAAF20A1E90B5FF0B52131D6DE0A1024012EF2D75*, RuntimeObject*, RuntimeObject*, TelemetrySender_t67AA5E279317D039D339BB675990F0BB795ADA3F*, const RuntimeMethod*))TelemetryHandler_2__ctor_mDBFA06496CA614C25F7E28173EC8D521B4F01DC8_gshared)(__this, ___config0, ___cache1, ___scheduler2, ___cachePersister3, ___sender4, method);
+	((  void (*) (TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314*, TelemetryConfig_t7D6911708D0C402786B501769520404D9EF41601*, /*Unity.Services.Core.Telemetry.Internal.CachedPayload`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>*/CachedPayload_1_t1F13B45D13F0679B9ABA6DBC1EFD66D2E6636BB2*, RuntimeObject*, RuntimeObject*, TelemetrySender_t67AA5E279317D039D339BB675990F0BB795ADA3F*, const RuntimeMethod*))TelemetryHandler_2__ctor_m1E93EF92CBE7CCFAA673D4BAEA1AF3749E1F5276_gshared)((TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314*)__this, ___config0, (CachedPayload_1_t1F13B45D13F0679B9ABA6DBC1EFD66D2E6636BB2*)___cache1, ___scheduler2, (RuntimeObject*)___cachePersister3, ___sender4, method);
 }
 // System.Void Newtonsoft.Json.Utilities.AotHelper::EnsureType<Newtonsoft.Json.Converters.StringEnumConverter>()
 inline void AotHelper_EnsureType_TisStringEnumConverter_t7C66875DF7AB0719190AEEF8924A99F49C480184_m6A1C428F1F47D693B537597E785391C4D42AD480 (const RuntimeMethod* method)
 {
-	((  void (*) (const RuntimeMethod*))AotHelper_EnsureType_TisRuntimeObject_m8D3D63845F34DADDDC746C0C444E40309347F992_gshared)(method);
+	((  void (*) (const RuntimeMethod*))AotHelper_EnsureType_TisIl2CppFullySharedGenericAny_m8D94D34831BFD767668F5DE3953A46FD59601BA7_gshared)(method);
 }
 // System.Boolean Unity.Services.Core.Telemetry.Internal.MetricsHandler::<SendPersistedCache>g__AreMetricsOutdated|1_0(Unity.Services.Core.Telemetry.Internal.MetricsHandler/<>c__DisplayClass1_0&)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MetricsHandler_U3CSendPersistedCacheU3Eg__AreMetricsOutdatedU7C1_0_mB5A2589A6176921768AA96F769F3AB52B412FAEC (MetricsHandler_tEB5A2227BB53393F34EF42AE8F015A673466FE74* __this, U3CU3Ec__DisplayClass1_0_t3D6D1D3DE0606CD7655DDBBD1B4FE0030B982A1A* p0, const RuntimeMethod* method) ;
 // System.Threading.Tasks.Task Unity.Services.Core.Telemetry.Internal.TelemetrySender::SendAsync<Unity.Services.Core.Telemetry.Internal.MetricsPayload>(TPayload)
 inline Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572* TelemetrySender_SendAsync_TisMetricsPayload_t2D7CB9F1AFE2ECB1AE26E70EECAB36D805E75F1B_mF66284D211194613C885C35CBC71723EF57E8638 (TelemetrySender_t67AA5E279317D039D339BB675990F0BB795ADA3F* __this, MetricsPayload_t2D7CB9F1AFE2ECB1AE26E70EECAB36D805E75F1B ___payload0, const RuntimeMethod* method)
 {
-	return ((  Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572* (*) (TelemetrySender_t67AA5E279317D039D339BB675990F0BB795ADA3F*, MetricsPayload_t2D7CB9F1AFE2ECB1AE26E70EECAB36D805E75F1B, const RuntimeMethod*))TelemetrySender_SendAsync_TisMetricsPayload_t2D7CB9F1AFE2ECB1AE26E70EECAB36D805E75F1B_mF66284D211194613C885C35CBC71723EF57E8638_gshared)(__this, ___payload0, method);
+	return ((  Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572* (*) (TelemetrySender_t67AA5E279317D039D339BB675990F0BB795ADA3F*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))TelemetrySender_SendAsync_TisIl2CppFullySharedGenericAny_m15C9271EC69BDC07C9366D058B8ABBA432BDD65C_gshared)((TelemetrySender_t67AA5E279317D039D339BB675990F0BB795ADA3F*)__this, (Il2CppFullySharedGenericAny)&___payload0, method);
 }
 // Unity.Services.Core.Telemetry.Internal.CachedPayload`1<TPayload> Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.Services.Core.Telemetry.Internal.MetricsPayload,Unity.Services.Core.Telemetry.Internal.Metric>::get_Cache()
 inline CachedPayload_1_tAAF20A1E90B5FF0B52131D6DE0A1024012EF2D75* TelemetryHandler_2_get_Cache_mF64411ABBC8FBF4CF2F309FA0D97F4AE12D8FF5A_inline (TelemetryHandler_2_tA3D5E2CA7153825BF54828A98F95123293889FC0* __this, const RuntimeMethod* method)
 {
-	return ((  CachedPayload_1_tAAF20A1E90B5FF0B52131D6DE0A1024012EF2D75* (*) (TelemetryHandler_2_tA3D5E2CA7153825BF54828A98F95123293889FC0*, const RuntimeMethod*))TelemetryHandler_2_get_Cache_mF64411ABBC8FBF4CF2F309FA0D97F4AE12D8FF5A_gshared_inline)(__this, method);
+	CachedPayload_1_t1F13B45D13F0679B9ABA6DBC1EFD66D2E6636BB2* il2cppRetVal = ((  CachedPayload_1_t1F13B45D13F0679B9ABA6DBC1EFD66D2E6636BB2* (*) (TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314*, const RuntimeMethod*))TelemetryHandler_2_get_Cache_m2A4516524A9F7473C4DE2206FBC91E97A3147677_gshared_inline)((TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314*)__this, method);
+	return (CachedPayload_1_tAAF20A1E90B5FF0B52131D6DE0A1024012EF2D75*)il2cppRetVal;
 }
 // System.Int32 System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Metric>::get_Count()
 inline int32_t List_1_get_Count_mB78998C760772531BF23B271EC995F20FF111F8D_inline (List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA* __this, const RuntimeMethod* method)
 {
-	return ((  int32_t (*) (List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA*, const RuntimeMethod*))List_1_get_Count_mB78998C760772531BF23B271EC995F20FF111F8D_gshared_inline)(__this, method);
+	return ((  int32_t (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, const RuntimeMethod*))List_1_get_Count_mD2ED26ACAF3BAF386FFEA83893BA51DB9FD8BA30_gshared_inline)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, method);
 }
 // System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Metric>::Clear()
 inline void List_1_Clear_m203D6B144E830E38A7277C56A0E4478AAE492853_inline (List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA* __this, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA*, const RuntimeMethod*))List_1_Clear_m203D6B144E830E38A7277C56A0E4478AAE492853_gshared_inline)(__this, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, const RuntimeMethod*))List_1_Clear_mD615D1BCB2C9DD91DAD86A2F9E5CF1DFFCBF7925_gshared_inline)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, method);
 }
 // System.DateTime System.DateTime::get_UtcNow()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D DateTime_get_UtcNow_m06B6E9995FE16846A0F71EC9DB23E90BE2C5F9FA (const RuntimeMethod* method) ;
@@ -1940,7 +1925,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double TimeSpan_get_TotalSeconds_mED686E7CECE
 // Unity.Services.Core.Telemetry.Internal.TelemetryConfig Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.Services.Core.Telemetry.Internal.MetricsPayload,Unity.Services.Core.Telemetry.Internal.Metric>::get_Config()
 inline TelemetryConfig_t7D6911708D0C402786B501769520404D9EF41601* TelemetryHandler_2_get_Config_m7D7528D1ABD233F97CE10E7E0A1DBDDF18203455_inline (TelemetryHandler_2_tA3D5E2CA7153825BF54828A98F95123293889FC0* __this, const RuntimeMethod* method)
 {
-	return ((  TelemetryConfig_t7D6911708D0C402786B501769520404D9EF41601* (*) (TelemetryHandler_2_tA3D5E2CA7153825BF54828A98F95123293889FC0*, const RuntimeMethod*))TelemetryHandler_2_get_Config_m7D7528D1ABD233F97CE10E7E0A1DBDDF18203455_gshared_inline)(__this, method);
+	return ((  TelemetryConfig_t7D6911708D0C402786B501769520404D9EF41601* (*) (TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314*, const RuntimeMethod*))TelemetryHandler_2_get_Config_mFD690F241195151A3DA6BCF66DA3B1F9166AE61E_gshared_inline)((TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314*)__this, method);
 }
 // System.Void Unity.Services.Core.Telemetry.Internal.DisabledMetrics::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DisabledMetrics__ctor_mED3AD0A9283DB0685B28202DE0ED41849D0FC3CD (DisabledMetrics_tDD1FEF93B7BF27F4AF3ED32521415AEE0769C338* __this, const RuntimeMethod* method) ;
@@ -1949,7 +1934,9 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Metrics_get_Packag
 // TDictionary Unity.Services.Core.Internal.DictionaryExtensions::MergeAllowOverride<System.Collections.Generic.IDictionary`2<System.String,System.String>,System.String,System.String>(TDictionary,System.Collections.Generic.IDictionary`2<TKey,TValue>)
 inline RuntimeObject* DictionaryExtensions_MergeAllowOverride_TisIDictionary_2_t51DBA2F8AFDC8E5CC588729B12034B8C4D30B0AF_TisString_t_TisString_t_m2D5D98C51F556720066C9CB1EE05C8290D306079 (RuntimeObject* ___self0, RuntimeObject* ___dictionary1, const RuntimeMethod* method)
 {
-	return ((  RuntimeObject* (*) (RuntimeObject*, RuntimeObject*, const RuntimeMethod*))DictionaryExtensions_MergeAllowOverride_TisRuntimeObject_TisRuntimeObject_TisRuntimeObject_m80984F95B46A6F67D8893FE6052EC0FD2C189B5A_gshared)(___self0, ___dictionary1, method);
+	RuntimeObject* il2cppRetVal;
+	((  void (*) (/*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, RuntimeObject*, Il2CppFullySharedGenericAny*, const RuntimeMethod*))DictionaryExtensions_MergeAllowOverride_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m191DDE5D3B24C4AC300575E3696AADBA44175C8F_gshared)((Il2CppFullySharedGenericAny)___self0, (RuntimeObject*)___dictionary1, (Il2CppFullySharedGenericAny*)&il2cppRetVal, method);
+	return il2cppRetVal;
 }
 // Unity.Services.Core.Telemetry.Internal.Metric Unity.Services.Core.Telemetry.Internal.Metrics::CreateMetric(System.String,System.Double,Unity.Services.Core.Telemetry.Internal.MetricType,System.Collections.Generic.IDictionary`2<System.String,System.String>)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3 Metrics_CreateMetric_m9024DA7257F4F1E8F0F18870FE29E5A6347EE11F (Metrics_t64BEB1BA35E4B6D2D709508D665841289875F1D1* __this, String_t* ___name0, double ___value1, int32_t ___type2, RuntimeObject* ___tags3, const RuntimeMethod* method) ;
@@ -1958,7 +1945,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR MetricsHandler_tEB5A2227BB53393F3
 // System.Void Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.Services.Core.Telemetry.Internal.MetricsPayload,Unity.Services.Core.Telemetry.Internal.Metric>::Register(TEvent)
 inline void TelemetryHandler_2_Register_m75836815F537898F8E9388A5E3E0AC11A2E12BEB (TelemetryHandler_2_tA3D5E2CA7153825BF54828A98F95123293889FC0* __this, Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3 ___telemetryEvent0, const RuntimeMethod* method)
 {
-	((  void (*) (TelemetryHandler_2_tA3D5E2CA7153825BF54828A98F95123293889FC0*, Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3, const RuntimeMethod*))TelemetryHandler_2_Register_m75836815F537898F8E9388A5E3E0AC11A2E12BEB_gshared)(__this, ___telemetryEvent0, method);
+	((  void (*) (TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))TelemetryHandler_2_Register_m3E64A34256B80F0F9CD91BF561F80E0E45FB1C2B_gshared)((TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314*)__this, (Il2CppFullySharedGenericAny)&___telemetryEvent0, method);
 }
 // Unity.Services.Core.Telemetry.Internal.MetricsHandler Unity.Services.Core.Telemetry.Internal.MetricsFactory::get_Handler()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR MetricsHandler_tEB5A2227BB53393F34EF42AE8F015A673466FE74* MetricsFactory_get_Handler_mEEC4790D8D67895DDDB3AC14E796F260A8B9780A_inline (MetricsFactory_tFED08C34B8CB569B801796787E82F2818606FA05* __this, const RuntimeMethod* method) ;
@@ -1969,19 +1956,19 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Dictionary_2_t46B2DB028096FA2B828
 // System.Int32 System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Diagnostic>::get_Count()
 inline int32_t List_1_get_Count_m10ECF13A4D03A6AA1FF22092658DD6EAB2BA4256_inline (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87* __this, const RuntimeMethod* method)
 {
-	return ((  int32_t (*) (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87*, const RuntimeMethod*))List_1_get_Count_m10ECF13A4D03A6AA1FF22092658DD6EAB2BA4256_gshared_inline)(__this, method);
+	return ((  int32_t (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, const RuntimeMethod*))List_1_get_Count_mD2ED26ACAF3BAF386FFEA83893BA51DB9FD8BA30_gshared_inline)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, method);
 }
 // System.Int32 Unity.Services.Core.Telemetry.Internal.DiagnosticsPayload::Unity.Services.Core.Telemetry.Internal.ITelemetryPayload.get_Count()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t DiagnosticsPayload_Unity_Services_Core_Telemetry_Internal_ITelemetryPayload_get_Count_m1D942807C7387C00A179CD6B5B80E859F42FD22D (DiagnosticsPayload_tFACE4451747DC3F51B8260AFCF8183DD54D9FFFD* __this, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Diagnostic>::.ctor(System.Int32)
 inline void List_1__ctor_mDE8FD2CC867BCFD8DDDF78483279A5AB2B16DB0B (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87* __this, int32_t ___capacity0, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87*, int32_t, const RuntimeMethod*))List_1__ctor_mDE8FD2CC867BCFD8DDDF78483279A5AB2B16DB0B_gshared)(__this, ___capacity0, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, int32_t, const RuntimeMethod*))List_1__ctor_m3069CACB5775E013107F559C825422266A09F9E8_gshared)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, ___capacity0, method);
 }
 // System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Diagnostic>::Add(T)
 inline void List_1_Add_m8004FEA76065612822149F3602D2E0FC863CD695_inline (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87* __this, Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A ___item0, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87*, Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A, const RuntimeMethod*))List_1_Add_m8004FEA76065612822149F3602D2E0FC863CD695_gshared_inline)(__this, ___item0, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))List_1_Add_mD4F3498FBD3BDD3F03CBCFB38041CBAC9C28CAFC_gshared_inline)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, (Il2CppFullySharedGenericAny)&___item0, method);
 }
 // System.Void Unity.Services.Core.Telemetry.Internal.DiagnosticsPayload::Unity.Services.Core.Telemetry.Internal.ITelemetryPayload.Add(Unity.Services.Core.Telemetry.Internal.ITelemetryEvent)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DiagnosticsPayload_Unity_Services_Core_Telemetry_Internal_ITelemetryPayload_Add_m0356DD93E34EC022453F77FB555AA32FDA4B59B3 (DiagnosticsPayload_tFACE4451747DC3F51B8260AFCF8183DD54D9FFFD* __this, RuntimeObject* ___telemetryEvent0, const RuntimeMethod* method) ;
@@ -1992,12 +1979,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t MetricsPayload_Unity_Services_Core_Te
 // System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Metric>::.ctor(System.Int32)
 inline void List_1__ctor_m24AC156E244B49B87728E8F3C10F3052A38523FA (List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA* __this, int32_t ___capacity0, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA*, int32_t, const RuntimeMethod*))List_1__ctor_m24AC156E244B49B87728E8F3C10F3052A38523FA_gshared)(__this, ___capacity0, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, int32_t, const RuntimeMethod*))List_1__ctor_m3069CACB5775E013107F559C825422266A09F9E8_gshared)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, ___capacity0, method);
 }
 // System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Metric>::Add(T)
 inline void List_1_Add_mBDDFD218EA8F751936639E6A5D618992077B91A4_inline (List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA* __this, Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3 ___item0, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA*, Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3, const RuntimeMethod*))List_1_Add_mBDDFD218EA8F751936639E6A5D618992077B91A4_gshared_inline)(__this, ___item0, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))List_1_Add_mD4F3498FBD3BDD3F03CBCFB38041CBAC9C28CAFC_gshared_inline)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, (Il2CppFullySharedGenericAny)&___item0, method);
 }
 // System.Void Unity.Services.Core.Telemetry.Internal.MetricsPayload::Unity.Services.Core.Telemetry.Internal.ITelemetryPayload.Add(Unity.Services.Core.Telemetry.Internal.ITelemetryEvent)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MetricsPayload_Unity_Services_Core_Telemetry_Internal_ITelemetryPayload_Add_m3A2A212B08D337BCEC1A4679361D431B3D728D5C (MetricsPayload_t2D7CB9F1AFE2ECB1AE26E70EECAB36D805E75F1B* __this, RuntimeObject* ___telemetryEvent0, const RuntimeMethod* method) ;
@@ -2032,7 +2019,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR UnityWebRequestAsyncOperation_t14BE94558FF3A2
 // System.Void System.Action`1<UnityEngine.AsyncOperation>::.ctor(System.Object,System.IntPtr)
 inline void Action_1__ctor_m33ABB7530487276910BEFB499A97D33FB2E06D7D (Action_1_tE8693FF0E67CDBA52BAFB211BFF1844D076ABAFB* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
-	((  void (*) (Action_1_tE8693FF0E67CDBA52BAFB211BFF1844D076ABAFB*, RuntimeObject*, intptr_t, const RuntimeMethod*))Action_1__ctor_m2E1DFA67718FC1A0B6E5DFEB78831FFE9C059EB4_gshared)(__this, ___object0, ___method1, method);
+	((  void (*) (Action_1_t923A20D1D4F6B55B2ED5AE21B90F1A0CE0450D99*, RuntimeObject*, intptr_t, const RuntimeMethod*))Action_1__ctor_m685A441EC9FAC9D554B26FA83A08F4BEF96DFF0E_gshared)((Action_1_t923A20D1D4F6B55B2ED5AE21B90F1A0CE0450D99*)__this, ___object0, ___method1, method);
 }
 // System.Void UnityEngine.AsyncOperation::add_completed(System.Action`1<UnityEngine.AsyncOperation>)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncOperation_add_completed_mD6F21BA8127D6D4B7ABDEFAA995A7A347A20A793 (AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* __this, Action_1_tE8693FF0E67CDBA52BAFB211BFF1844D076ABAFB* ___value0, const RuntimeMethod* method) ;
@@ -2055,14 +2042,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR WebRequest_t4CF804EE9852A8DB80C31D8016F18749C
 // System.Void System.Action`1<Unity.Services.Core.Telemetry.Internal.WebRequest>::Invoke(T)
 inline void Action_1_Invoke_m8B0C3F4FA0508CD1823F82CF8CD995A0C910DAFE_inline (Action_1_t98E0ADA5F89D6F93D91113490DCD09FD00D684F1* __this, WebRequest_t4CF804EE9852A8DB80C31D8016F18749C647206E ___obj0, const RuntimeMethod* method)
 {
-	((  void (*) (Action_1_t98E0ADA5F89D6F93D91113490DCD09FD00D684F1*, WebRequest_t4CF804EE9852A8DB80C31D8016F18749C647206E, const RuntimeMethod*))Action_1_Invoke_m8B0C3F4FA0508CD1823F82CF8CD995A0C910DAFE_gshared_inline)(__this, ___obj0, method);
+	((  void (*) (Action_1_t923A20D1D4F6B55B2ED5AE21B90F1A0CE0450D99*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*))Action_1_Invoke_m5A038831CEB84A7E374FE59D43444412629F833F_gshared_inline)((Action_1_t923A20D1D4F6B55B2ED5AE21B90F1A0CE0450D99*)__this, (Il2CppFullySharedGenericAny)&___obj0, method);
 }
 // System.Boolean Unity.Services.Core.Telemetry.Internal.WebRequest::get_IsSuccess()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool WebRequest_get_IsSuccess_m9E4F85136A009257104579C8342DEC50EB4F15E6 (WebRequest_t4CF804EE9852A8DB80C31D8016F18749C647206E* __this, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Diagnostic>::AddRange(System.Collections.Generic.IEnumerable`1<T>)
 inline void List_1_AddRange_m44C394E4EABE58F1C3F98F15A17BEBFE98ED81E3 (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87* __this, RuntimeObject* ___collection0, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87*, RuntimeObject*, const RuntimeMethod*))List_1_AddRange_m44C394E4EABE58F1C3F98F15A17BEBFE98ED81E3_gshared)(__this, ___collection0, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, RuntimeObject*, const RuntimeMethod*))List_1_AddRange_m44DED39FFEBC8F2ACF6162DB065B649E888B9C57_gshared)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, (RuntimeObject*)___collection0, method);
 }
 // System.String System.String::Format(System.String,System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8 (String_t* ___format0, RuntimeObject* ___arg01, const RuntimeMethod* method) ;
@@ -2075,19 +2062,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TelemetryConfig_t7D6911708D0C402786B501769520
 // System.Void Unity.Services.Core.Telemetry.Internal.CachedPayload`1<Unity.Services.Core.Telemetry.Internal.MetricsPayload>::.ctor()
 inline void CachedPayload_1__ctor_mFFE79054BF40C1ED0F09204F2CBA47557DF53DEB (CachedPayload_1_tAAF20A1E90B5FF0B52131D6DE0A1024012EF2D75* __this, const RuntimeMethod* method)
 {
-	((  void (*) (CachedPayload_1_tAAF20A1E90B5FF0B52131D6DE0A1024012EF2D75*, const RuntimeMethod*))CachedPayload_1__ctor_mFFE79054BF40C1ED0F09204F2CBA47557DF53DEB_gshared)(__this, method);
+	((  void (*) (/*Unity.Services.Core.Telemetry.Internal.CachedPayload`1<Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType>*/CachedPayload_1_t1F13B45D13F0679B9ABA6DBC1EFD66D2E6636BB2*, const RuntimeMethod*))CachedPayload_1__ctor_m2F0B76469A83DF07BEC17D6A4D9E09749C179ACC_gshared)((CachedPayload_1_t1F13B45D13F0679B9ABA6DBC1EFD66D2E6636BB2*)__this, method);
 }
 // System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Metric>::.ctor()
 inline void List_1__ctor_m0E5759C3AA1DEB73437F7F0843557CA8A3387B41 (List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA* __this, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA*, const RuntimeMethod*))List_1__ctor_m0E5759C3AA1DEB73437F7F0843557CA8A3387B41_gshared)(__this, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, const RuntimeMethod*))List_1__ctor_m0AFBAEA7EC427E32CC9CA267B1930DC5DF67A374_gshared)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, method);
 }
 // UnityEngine.RuntimePlatform UnityEngine.Application::get_platform()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Application_get_platform_m59EF7D6155D18891B24767F83F388160B1FF2138 (const RuntimeMethod* method) ;
 // Unity.Services.Core.Telemetry.Internal.ICachePersister`1<TPayload> Unity.Services.Core.Telemetry.Internal.TelemetryUtils::CreateCachePersister<Unity.Services.Core.Telemetry.Internal.MetricsPayload>(System.String,UnityEngine.RuntimePlatform)
 inline RuntimeObject* TelemetryUtils_CreateCachePersister_TisMetricsPayload_t2D7CB9F1AFE2ECB1AE26E70EECAB36D805E75F1B_m98843C4E1CA526F608C2E9350F4A850A9D7F30DB (String_t* ___fileName0, int32_t ___platform1, const RuntimeMethod* method)
 {
-	return ((  RuntimeObject* (*) (String_t*, int32_t, const RuntimeMethod*))TelemetryUtils_CreateCachePersister_TisMetricsPayload_t2D7CB9F1AFE2ECB1AE26E70EECAB36D805E75F1B_m98843C4E1CA526F608C2E9350F4A850A9D7F30DB_gshared)(___fileName0, ___platform1, method);
+	RuntimeObject* il2cppRetVal = ((  RuntimeObject* (*) (String_t*, int32_t, const RuntimeMethod*))TelemetryUtils_CreateCachePersister_TisIl2CppFullySharedGenericAny_m447D877CF53FE71D3E7DD6F2C6F2C8A88337F288_gshared)(___fileName0, ___platform1, method);
+	return (RuntimeObject*)il2cppRetVal;
 }
 // System.Void Unity.Services.Core.Telemetry.Internal.ExponentialBackOffRetryPolicy::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExponentialBackOffRetryPolicy__ctor_m7A6BA95E28DC18CBF7F44BE204AF156CB341BF5E (ExponentialBackOffRetryPolicy_t96CDC709DB5E2ED182D549B2DBABC6E157954DCF* __this, const RuntimeMethod* method) ;
@@ -2100,7 +2088,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MetricsHandler__ctor_mA99FCDF9FE29231858
 // System.Void Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.Services.Core.Telemetry.Internal.MetricsPayload,Unity.Services.Core.Telemetry.Internal.Metric>::Initialize(Unity.Services.Core.Configuration.Internal.ICloudProjectId,Unity.Services.Core.Environments.Internal.IEnvironments)
 inline void TelemetryHandler_2_Initialize_mC4FAADC6B628B4978932A1EFEE5BDEE73641D33F (TelemetryHandler_2_tA3D5E2CA7153825BF54828A98F95123293889FC0* __this, RuntimeObject* ___cloudProjectId0, RuntimeObject* ___environments1, const RuntimeMethod* method)
 {
-	((  void (*) (TelemetryHandler_2_tA3D5E2CA7153825BF54828A98F95123293889FC0*, RuntimeObject*, RuntimeObject*, const RuntimeMethod*))TelemetryHandler_2_Initialize_mC4FAADC6B628B4978932A1EFEE5BDEE73641D33F_gshared)(__this, ___cloudProjectId0, ___environments1, method);
+	((  void (*) (TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314*, RuntimeObject*, RuntimeObject*, const RuntimeMethod*))TelemetryHandler_2_Initialize_mDEE49A1320C7253718A0F819DD595C433D33A26B_gshared)((TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314*)__this, ___cloudProjectId0, ___environments1, method);
 }
 // System.Void Unity.Services.Core.Telemetry.Internal.MetricsFactory::.ctor(Unity.Services.Core.Telemetry.Internal.MetricsHandler,Unity.Services.Core.Configuration.Internal.IProjectConfiguration)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MetricsFactory__ctor_mA1187E29AC3E1EDC2A11A8FB63C1AF0F91C27ED0 (MetricsFactory_tFED08C34B8CB569B801796787E82F2818606FA05* __this, MetricsHandler_tEB5A2227BB53393F34EF42AE8F015A673466FE74* ___handler0, RuntimeObject* ___projectConfig1, const RuntimeMethod* method) ;
@@ -2109,19 +2097,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DisabledDiagnosticsFactory__ctor_mD9A490
 // System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Diagnostic>::.ctor()
 inline void List_1__ctor_m10D43F52BCD06D9D822ED38C2F64182953E8ECA8 (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87* __this, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87*, const RuntimeMethod*))List_1__ctor_m10D43F52BCD06D9D822ED38C2F64182953E8ECA8_gshared)(__this, method);
+	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, const RuntimeMethod*))List_1__ctor_m0AFBAEA7EC427E32CC9CA267B1930DC5DF67A374_gshared)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, method);
 }
 // Unity.Services.Core.Telemetry.Internal.ICachePersister`1<TPayload> Unity.Services.Core.Telemetry.Internal.TelemetryUtils::CreateCachePersister<Unity.Services.Core.Telemetry.Internal.DiagnosticsPayload>(System.String,UnityEngine.RuntimePlatform)
 inline RuntimeObject* TelemetryUtils_CreateCachePersister_TisDiagnosticsPayload_tFACE4451747DC3F51B8260AFCF8183DD54D9FFFD_m3F204710C094AC433BDF212C69BCC95E731D05DD (String_t* ___fileName0, int32_t ___platform1, const RuntimeMethod* method)
 {
-	return ((  RuntimeObject* (*) (String_t*, int32_t, const RuntimeMethod*))TelemetryUtils_CreateCachePersister_TisDiagnosticsPayload_tFACE4451747DC3F51B8260AFCF8183DD54D9FFFD_m3F204710C094AC433BDF212C69BCC95E731D05DD_gshared)(___fileName0, ___platform1, method);
+	RuntimeObject* il2cppRetVal = ((  RuntimeObject* (*) (String_t*, int32_t, const RuntimeMethod*))TelemetryUtils_CreateCachePersister_TisIl2CppFullySharedGenericAny_m447D877CF53FE71D3E7DD6F2C6F2C8A88337F288_gshared)(___fileName0, ___platform1, method);
+	return (RuntimeObject*)il2cppRetVal;
 }
 // System.Void Unity.Services.Core.Telemetry.Internal.DiagnosticsHandler::.ctor(Unity.Services.Core.Telemetry.Internal.TelemetryConfig,Unity.Services.Core.Telemetry.Internal.CachedPayload`1<Unity.Services.Core.Telemetry.Internal.DiagnosticsPayload>,Unity.Services.Core.Scheduler.Internal.IActionScheduler,Unity.Services.Core.Telemetry.Internal.ICachePersister`1<Unity.Services.Core.Telemetry.Internal.DiagnosticsPayload>,Unity.Services.Core.Telemetry.Internal.TelemetrySender)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DiagnosticsHandler__ctor_m34388FAB309CF69EBF0560966DF5C53BA6EC85F9 (DiagnosticsHandler_t9AE9840AF25655F717E0584299B3608FCE227C22* __this, TelemetryConfig_t7D6911708D0C402786B501769520404D9EF41601* ___config0, CachedPayload_1_tB2CA12BE14B7EE4471F02BB61F7FEBCF33F30B83* ___cache1, RuntimeObject* ___scheduler2, RuntimeObject* ___cachePersister3, TelemetrySender_t67AA5E279317D039D339BB675990F0BB795ADA3F* ___sender4, const RuntimeMethod* method) ;
 // System.Void Unity.Services.Core.Telemetry.Internal.TelemetryHandler`2<Unity.Services.Core.Telemetry.Internal.DiagnosticsPayload,Unity.Services.Core.Telemetry.Internal.Diagnostic>::Initialize(Unity.Services.Core.Configuration.Internal.ICloudProjectId,Unity.Services.Core.Environments.Internal.IEnvironments)
 inline void TelemetryHandler_2_Initialize_mF83887007D69683927853CF6A2D58C66255ED457 (TelemetryHandler_2_tACBE6FB667B76B9218CB9ACFAA5030F7416CDC0C* __this, RuntimeObject* ___cloudProjectId0, RuntimeObject* ___environments1, const RuntimeMethod* method)
 {
-	((  void (*) (TelemetryHandler_2_tACBE6FB667B76B9218CB9ACFAA5030F7416CDC0C*, RuntimeObject*, RuntimeObject*, const RuntimeMethod*))TelemetryHandler_2_Initialize_mF83887007D69683927853CF6A2D58C66255ED457_gshared)(__this, ___cloudProjectId0, ___environments1, method);
+	((  void (*) (TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314*, RuntimeObject*, RuntimeObject*, const RuntimeMethod*))TelemetryHandler_2_Initialize_mDEE49A1320C7253718A0F819DD595C433D33A26B_gshared)((TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314*)__this, ___cloudProjectId0, ___environments1, method);
 }
 // System.Void Unity.Services.Core.Telemetry.Internal.DiagnosticsFactory::.ctor(Unity.Services.Core.Telemetry.Internal.DiagnosticsHandler,Unity.Services.Core.Configuration.Internal.IProjectConfiguration)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DiagnosticsFactory__ctor_mD328A7AFD1858E30D437C423780E98460C78B84C (DiagnosticsFactory_tD2C64CDF0CC356965DB1993359515DC82D715CF2* __this, DiagnosticsHandler_t9AE9840AF25655F717E0584299B3608FCE227C22* ___handler0, RuntimeObject* ___projectConfig1, const RuntimeMethod* method) ;
@@ -2131,16 +2120,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TelemetryConfig__ctor_m36010D53C70E15DC0
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Math_Min_m53C488772A34D53917BCA2A491E79A0A5356ED52 (int32_t ___val10, int32_t ___val21, const RuntimeMethod* method) ;
 // System.Void System.Array::Clear(System.Array,System.Int32,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_Clear_m50BAA3751899858B097D3FF2ED31F284703FE5CB (RuntimeArray* ___array0, int32_t ___index1, int32_t ___length2, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Diagnostic>::AddWithResize(T)
-inline void List_1_AddWithResize_m488C0FE43760EA1EC385AB2603088F1560EC2BEF (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87* __this, Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A ___item0, const RuntimeMethod* method)
-{
-	((  void (*) (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87*, Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A, const RuntimeMethod*))List_1_AddWithResize_m488C0FE43760EA1EC385AB2603088F1560EC2BEF_gshared)(__this, ___item0, method);
-}
-// System.Void System.Collections.Generic.List`1<Unity.Services.Core.Telemetry.Internal.Metric>::AddWithResize(T)
-inline void List_1_AddWithResize_m8458E8543A17AD67BCFB8B3A7C9D069A6BFAD0B3 (List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA* __this, Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3 ___item0, const RuntimeMethod* method)
-{
-	((  void (*) (List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA*, Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3, const RuntimeMethod*))List_1_AddWithResize_m8458E8543A17AD67BCFB8B3A7C9D069A6BFAD0B3_gshared)(__this, ___item0, method);
-}
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -2384,15 +2363,6 @@ IL_0070:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Collections.Generic.IReadOnlyDictionary`2<System.String,System.String> Unity.Services.Core.Telemetry.Internal.DiagnosticsFactory::get_CommonTags()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* DiagnosticsFactory_get_CommonTags_mA08B1FB6FCB5AB504EF2ED3C2ED27EF41C442B7C (DiagnosticsFactory_tD2C64CDF0CC356965DB1993359515DC82D715CF2* __this, const RuntimeMethod* method) 
-{
-	{
-		// public IReadOnlyDictionary<string, string> CommonTags { get; }
-		RuntimeObject* L_0 = __this->___U3CCommonTagsU3Ek__BackingField_1;
-		return L_0;
-	}
-}
 // Unity.Services.Core.Telemetry.Internal.DiagnosticsHandler Unity.Services.Core.Telemetry.Internal.DiagnosticsFactory::get_Handler()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR DiagnosticsHandler_t9AE9840AF25655F717E0584299B3608FCE227C22* DiagnosticsFactory_get_Handler_m9FB222AA7FDAC429798F295C9A8AE89BC40BBC76 (DiagnosticsFactory_tD2C64CDF0CC356965DB1993359515DC82D715CF2* __this, const RuntimeMethod* method) 
 {
@@ -2531,15 +2501,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DisabledDiagnostics__ctor_m0F80E600FAE38
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Collections.Generic.IReadOnlyDictionary`2<System.String,System.String> Unity.Services.Core.Telemetry.Internal.DisabledDiagnosticsFactory::Unity.Services.Core.Telemetry.Internal.IDiagnosticsFactory.get_CommonTags()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* DisabledDiagnosticsFactory_Unity_Services_Core_Telemetry_Internal_IDiagnosticsFactory_get_CommonTags_mC128791A1E678548DE130031F4C9A63222EEA16B (DisabledDiagnosticsFactory_tC83C6D31A42BFAD606C61B6ACB2D1A140786A6DD* __this, const RuntimeMethod* method) 
-{
-	{
-		// IReadOnlyDictionary<string, string> IDiagnosticsFactory.CommonTags { get; }
-		RuntimeObject* L_0 = __this->___U3CUnity_Services_Core_Telemetry_Internal_IDiagnosticsFactory_CommonTagsU3Ek__BackingField_0;
-		return L_0;
-	}
-}
 // Unity.Services.Core.Telemetry.Internal.IDiagnostics Unity.Services.Core.Telemetry.Internal.DisabledDiagnosticsFactory::Unity.Services.Core.Telemetry.Internal.IDiagnosticsFactory.Create(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* DisabledDiagnosticsFactory_Unity_Services_Core_Telemetry_Internal_IDiagnosticsFactory_Create_m92971BDFE96563E0F354BA39B2489FB6FAA0994F (DisabledDiagnosticsFactory_tC83C6D31A42BFAD606C61B6ACB2D1A140786A6DD* __this, String_t* ___packageName0, const RuntimeMethod* method) 
 {
@@ -3403,15 +3364,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DisabledMetrics__ctor_mED3AD0A9283DB0685
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Collections.Generic.IReadOnlyDictionary`2<System.String,System.String> Unity.Services.Core.Telemetry.Internal.DisabledMetricsFactory::Unity.Services.Core.Telemetry.Internal.IMetricsFactory.get_CommonTags()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* DisabledMetricsFactory_Unity_Services_Core_Telemetry_Internal_IMetricsFactory_get_CommonTags_m21C88307D510EAFD5B1615A11E54A2412930288C (DisabledMetricsFactory_t60F6C496E8CC6F5C6636793C571038D864BD48D6* __this, const RuntimeMethod* method) 
-{
-	{
-		// IReadOnlyDictionary<string, string> IMetricsFactory.CommonTags { get; }
-		RuntimeObject* L_0 = __this->___U3CUnity_Services_Core_Telemetry_Internal_IMetricsFactory_CommonTagsU3Ek__BackingField_0;
-		return L_0;
-	}
-}
 // Unity.Services.Core.Telemetry.Internal.IMetrics Unity.Services.Core.Telemetry.Internal.DisabledMetricsFactory::Unity.Services.Core.Telemetry.Internal.IMetricsFactory.Create(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* DisabledMetricsFactory_Unity_Services_Core_Telemetry_Internal_IMetricsFactory_Create_m837C4BEC6FE6FEB5AC854A3DD19D2E5400A3D284 (DisabledMetricsFactory_t60F6C496E8CC6F5C6636793C571038D864BD48D6* __this, String_t* ___packageName0, const RuntimeMethod* method) 
 {
@@ -3656,15 +3608,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Metrics_Unity_Services_Core_Telemetry_In
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Collections.Generic.IReadOnlyDictionary`2<System.String,System.String> Unity.Services.Core.Telemetry.Internal.MetricsFactory::get_CommonTags()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* MetricsFactory_get_CommonTags_m8B0B37504BB0C83E60181E6C273B5710E595B37E (MetricsFactory_tFED08C34B8CB569B801796787E82F2818606FA05* __this, const RuntimeMethod* method) 
-{
-	{
-		// public IReadOnlyDictionary<string, string> CommonTags { get; }
-		RuntimeObject* L_0 = __this->___U3CCommonTagsU3Ek__BackingField_1;
-		return L_0;
-	}
-}
 // Unity.Services.Core.Telemetry.Internal.MetricsHandler Unity.Services.Core.Telemetry.Internal.MetricsFactory::get_Handler()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MetricsHandler_tEB5A2227BB53393F34EF42AE8F015A673466FE74* MetricsFactory_get_Handler_mEEC4790D8D67895DDDB3AC14E796F260A8B9780A (MetricsFactory_tFED08C34B8CB569B801796787E82F2818606FA05* __this, const RuntimeMethod* method) 
 {
@@ -4944,7 +4887,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* FactoryUtils_CreatePackageTags
 		String_t* L_3 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->___Empty_6;
 		NullCheck(L_0);
 		String_t* L_4;
-		L_4 = InterfaceFuncInvoker2< String_t*, String_t*, String_t* >::Invoke(3 /* System.String Unity.Services.Core.Configuration.Internal.IProjectConfiguration::GetString(System.String,System.String) */, IProjectConfiguration_tB5A7516DEB869AD005431EC83C6E02221D2B60D2_il2cpp_TypeInfo_var, L_0, L_2, L_3);
+		L_4 = InterfaceFuncInvoker2< String_t*, String_t*, String_t* >::Invoke(2 /* System.String Unity.Services.Core.Configuration.Internal.IProjectConfiguration::GetString(System.String,System.String) */, IProjectConfiguration_tB5A7516DEB869AD005431EC83C6E02221D2B60D2_il2cpp_TypeInfo_var, L_0, L_2, L_3);
 		V_0 = L_4;
 		// if (string.IsNullOrEmpty(packageVersion))
 		String_t* L_5 = V_0;
@@ -5333,7 +5276,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TelemetryConfig_t7D6911708D0C402786B501769520
 		RuntimeObject* L_2 = ___projectConfiguration0;
 		NullCheck(L_2);
 		String_t* L_3;
-		L_3 = InterfaceFuncInvoker2< String_t*, String_t*, String_t* >::Invoke(3 /* System.String Unity.Services.Core.Configuration.Internal.IProjectConfiguration::GetString(System.String,System.String) */, IProjectConfiguration_tB5A7516DEB869AD005431EC83C6E02221D2B60D2_il2cpp_TypeInfo_var, L_2, _stringLiteral9D3C19E3A647A2449C174675979309A559260621, _stringLiteral01C466FBD86FBB7A01FEE5B4420364EB13779331);
+		L_3 = InterfaceFuncInvoker2< String_t*, String_t*, String_t* >::Invoke(2 /* System.String Unity.Services.Core.Configuration.Internal.IProjectConfiguration::GetString(System.String,System.String) */, IProjectConfiguration_tB5A7516DEB869AD005431EC83C6E02221D2B60D2_il2cpp_TypeInfo_var, L_2, _stringLiteral9D3C19E3A647A2449C174675979309A559260621, _stringLiteral01C466FBD86FBB7A01FEE5B4420364EB13779331);
 		NullCheck(L_1);
 		L_1->___TargetUrl_0 = L_3;
 		Il2CppCodeGenWriteBarrier((void**)(&L_1->___TargetUrl_0), (void*)L_3);
@@ -5341,7 +5284,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TelemetryConfig_t7D6911708D0C402786B501769520
 		RuntimeObject* L_5 = ___projectConfiguration0;
 		NullCheck(L_5);
 		String_t* L_6;
-		L_6 = InterfaceFuncInvoker2< String_t*, String_t*, String_t* >::Invoke(3 /* System.String Unity.Services.Core.Configuration.Internal.IProjectConfiguration::GetString(System.String,System.String) */, IProjectConfiguration_tB5A7516DEB869AD005431EC83C6E02221D2B60D2_il2cpp_TypeInfo_var, L_5, _stringLiteral71D28320423B0978CBA625BE0E4846EC97389105, _stringLiteral7B9C8571450A4F167BFFD8C1D0899412FD5DD5F7);
+		L_6 = InterfaceFuncInvoker2< String_t*, String_t*, String_t* >::Invoke(2 /* System.String Unity.Services.Core.Configuration.Internal.IProjectConfiguration::GetString(System.String,System.String) */, IProjectConfiguration_tB5A7516DEB869AD005431EC83C6E02221D2B60D2_il2cpp_TypeInfo_var, L_5, _stringLiteral71D28320423B0978CBA625BE0E4846EC97389105, _stringLiteral7B9C8571450A4F167BFFD8C1D0899412FD5DD5F7);
 		NullCheck(L_4);
 		L_4->___ServicePath_1 = L_6;
 		Il2CppCodeGenWriteBarrier((void**)(&L_4->___ServicePath_1), (void*)L_6);
@@ -5485,39 +5428,41 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR UnityWebRequest_t6233B8E22992FC23
 		return L_0;
 	}
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR CachedPayload_1_tB2CA12BE14B7EE4471F02BB61F7FEBCF33F30B83* TelemetryHandler_2_get_Cache_mABC919ED89C7DA6F0C00545C4E494016A5BBED7B_gshared_inline (TelemetryHandler_2_tACBE6FB667B76B9218CB9ACFAA5030F7416CDC0C* __this, const RuntimeMethod* method) 
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR CachedPayload_1_t1F13B45D13F0679B9ABA6DBC1EFD66D2E6636BB2* TelemetryHandler_2_get_Cache_m2A4516524A9F7473C4DE2206FBC91E97A3147677_gshared_inline (TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314* __this, const RuntimeMethod* method) 
 {
 	{
 		// public CachedPayload<TPayload> Cache { get; }
-		CachedPayload_1_tB2CA12BE14B7EE4471F02BB61F7FEBCF33F30B83* L_0 = (CachedPayload_1_tB2CA12BE14B7EE4471F02BB61F7FEBCF33F30B83*)__this->___U3CCacheU3Ek__BackingField_6;
+		CachedPayload_1_t1F13B45D13F0679B9ABA6DBC1EFD66D2E6636BB2* L_0 = (CachedPayload_1_t1F13B45D13F0679B9ABA6DBC1EFD66D2E6636BB2*)__this->___U3CCacheU3Ek__BackingField_6;
 		return L_0;
 	}
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Clear_m09BD2C329D95D9ED08F9309AEA0ECCF6C48B5BB7_gshared_inline (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87* __this, const RuntimeMethod* method) 
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Clear_mD615D1BCB2C9DD91DAD86A2F9E5CF1DFFCBF7925_gshared_inline (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
 	{
 		int32_t L_0 = (int32_t)__this->____version_3;
 		__this->____version_3 = ((int32_t)il2cpp_codegen_add(L_0, 1));
-		if (!true)
+		bool L_1;
+		L_1 = il2cpp_codegen_is_reference_or_contains_references(il2cpp_rgctx_method(method->klass->rgctx_data, 25));
+		if (!L_1)
 		{
 			goto IL_0035;
 		}
 	}
 	{
-		int32_t L_1 = (int32_t)__this->____size_2;
-		V_0 = L_1;
+		int32_t L_2 = (int32_t)__this->____size_2;
+		V_0 = L_2;
 		__this->____size_2 = 0;
-		int32_t L_2 = V_0;
-		if ((((int32_t)L_2) <= ((int32_t)0)))
+		int32_t L_3 = V_0;
+		if ((((int32_t)L_3) <= ((int32_t)0)))
 		{
 			goto IL_003c;
 		}
 	}
 	{
-		DiagnosticU5BU5D_t60834B63D750C1B7811C97EAFB789F900AED4301* L_3 = (DiagnosticU5BU5D_t60834B63D750C1B7811C97EAFB789F900AED4301*)__this->____items_1;
-		int32_t L_4 = V_0;
-		Array_Clear_m50BAA3751899858B097D3FF2ED31F284703FE5CB((RuntimeArray*)L_3, 0, L_4, NULL);
+		__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* L_4 = (__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC*)__this->____items_1;
+		int32_t L_5 = V_0;
+		Array_Clear_m50BAA3751899858B097D3FF2ED31F284703FE5CB((RuntimeArray*)L_4, 0, L_5, NULL);
 		return;
 	}
 
@@ -5531,60 +5476,14 @@ IL_003c:
 		return;
 	}
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR CachedPayload_1_tAAF20A1E90B5FF0B52131D6DE0A1024012EF2D75* TelemetryHandler_2_get_Cache_mF64411ABBC8FBF4CF2F309FA0D97F4AE12D8FF5A_gshared_inline (TelemetryHandler_2_tA3D5E2CA7153825BF54828A98F95123293889FC0* __this, const RuntimeMethod* method) 
-{
-	{
-		// public CachedPayload<TPayload> Cache { get; }
-		CachedPayload_1_tAAF20A1E90B5FF0B52131D6DE0A1024012EF2D75* L_0 = (CachedPayload_1_tAAF20A1E90B5FF0B52131D6DE0A1024012EF2D75*)__this->___U3CCacheU3Ek__BackingField_6;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t List_1_get_Count_mB78998C760772531BF23B271EC995F20FF111F8D_gshared_inline (List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA* __this, const RuntimeMethod* method) 
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t List_1_get_Count_mD2ED26ACAF3BAF386FFEA83893BA51DB9FD8BA30_gshared_inline (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* __this, const RuntimeMethod* method) 
 {
 	{
 		int32_t L_0 = (int32_t)__this->____size_2;
 		return L_0;
 	}
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Clear_m203D6B144E830E38A7277C56A0E4478AAE492853_gshared_inline (List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA* __this, const RuntimeMethod* method) 
-{
-	int32_t V_0 = 0;
-	{
-		int32_t L_0 = (int32_t)__this->____version_3;
-		__this->____version_3 = ((int32_t)il2cpp_codegen_add(L_0, 1));
-		if (!true)
-		{
-			goto IL_0035;
-		}
-	}
-	{
-		int32_t L_1 = (int32_t)__this->____size_2;
-		V_0 = L_1;
-		__this->____size_2 = 0;
-		int32_t L_2 = V_0;
-		if ((((int32_t)L_2) <= ((int32_t)0)))
-		{
-			goto IL_003c;
-		}
-	}
-	{
-		MetricU5BU5D_tDD42D30B25EE55F74638B326DA32DBB3A98FBC39* L_3 = (MetricU5BU5D_tDD42D30B25EE55F74638B326DA32DBB3A98FBC39*)__this->____items_1;
-		int32_t L_4 = V_0;
-		Array_Clear_m50BAA3751899858B097D3FF2ED31F284703FE5CB((RuntimeArray*)L_3, 0, L_4, NULL);
-		return;
-	}
-
-IL_0035:
-	{
-		__this->____size_2 = 0;
-	}
-
-IL_003c:
-	{
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TelemetryConfig_t7D6911708D0C402786B501769520404D9EF41601* TelemetryHandler_2_get_Config_m7D7528D1ABD233F97CE10E7E0A1DBDDF18203455_gshared_inline (TelemetryHandler_2_tA3D5E2CA7153825BF54828A98F95123293889FC0* __this, const RuntimeMethod* method) 
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TelemetryConfig_t7D6911708D0C402786B501769520404D9EF41601* TelemetryHandler_2_get_Config_mFD690F241195151A3DA6BCF66DA3B1F9166AE61E_gshared_inline (TelemetryHandler_2_t4A09943D9482811BA66BFC02DE8D396B7DFA7314* __this, const RuntimeMethod* method) 
 {
 	{
 		// public TelemetryConfig Config { get; }
@@ -5592,26 +5491,24 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TelemetryConfig_t7D6911708D0C4027
 		return L_0;
 	}
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t List_1_get_Count_m10ECF13A4D03A6AA1FF22092658DD6EAB2BA4256_gshared_inline (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87* __this, const RuntimeMethod* method) 
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mD4F3498FBD3BDD3F03CBCFB38041CBAC9C28CAFC_gshared_inline (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___item0, const RuntimeMethod* method) 
 {
-	{
-		int32_t L_0 = (int32_t)__this->____size_2;
-		return L_0;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_m8004FEA76065612822149F3602D2E0FC863CD695_gshared_inline (List_1_tD7FF0018F4BAEE8EE946582B89AA7DAF37AE5E87* __this, Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A ___item0, const RuntimeMethod* method) 
-{
-	DiagnosticU5BU5D_t60834B63D750C1B7811C97EAFB789F900AED4301* V_0 = NULL;
+	// sizeof(T)
+	const uint32_t SizeOf_T_t664E2061A913AF1FEE499655BC64F0FDE10D2A5E = il2cpp_codegen_sizeof(il2cpp_rgctx_data(method->klass->rgctx_data, 9));
+	// T
+	const Il2CppFullySharedGenericAny L_8 = alloca(SizeOf_T_t664E2061A913AF1FEE499655BC64F0FDE10D2A5E);
+	const Il2CppFullySharedGenericAny L_9 = L_8;
+	__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* V_0 = NULL;
 	int32_t V_1 = 0;
 	{
 		int32_t L_0 = (int32_t)__this->____version_3;
 		__this->____version_3 = ((int32_t)il2cpp_codegen_add(L_0, 1));
-		DiagnosticU5BU5D_t60834B63D750C1B7811C97EAFB789F900AED4301* L_1 = (DiagnosticU5BU5D_t60834B63D750C1B7811C97EAFB789F900AED4301*)__this->____items_1;
+		__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* L_1 = (__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC*)__this->____items_1;
 		V_0 = L_1;
 		int32_t L_2 = (int32_t)__this->____size_2;
 		V_1 = L_2;
 		int32_t L_3 = V_1;
-		DiagnosticU5BU5D_t60834B63D750C1B7811C97EAFB789F900AED4301* L_4 = V_0;
+		__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* L_4 = V_0;
 		NullCheck(L_4);
 		if ((!(((uint32_t)L_3) < ((uint32_t)((int32_t)(((RuntimeArray*)L_4)->max_length))))))
 		{
@@ -5621,60 +5518,24 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_m8004FEA760656128
 	{
 		int32_t L_5 = V_1;
 		__this->____size_2 = ((int32_t)il2cpp_codegen_add(L_5, 1));
-		DiagnosticU5BU5D_t60834B63D750C1B7811C97EAFB789F900AED4301* L_6 = V_0;
+		__Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* L_6 = V_0;
 		int32_t L_7 = V_1;
-		Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A L_8 = ___item0;
+		il2cpp_codegen_memcpy(L_8, (il2cpp_codegen_class_is_value_type(il2cpp_rgctx_data(method->klass->rgctx_data, 9)) ? ___item0 : &___item0), SizeOf_T_t664E2061A913AF1FEE499655BC64F0FDE10D2A5E);
 		NullCheck(L_6);
-		(L_6)->SetAt(static_cast<il2cpp_array_size_t>(L_7), (Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A)L_8);
+		il2cpp_codegen_memcpy((L_6)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_7)), L_8, SizeOf_T_t664E2061A913AF1FEE499655BC64F0FDE10D2A5E);
+		Il2CppCodeGenWriteBarrierForClass(il2cpp_rgctx_data(method->klass->rgctx_data, 9), (void**)(L_6)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_7)), (void*)L_8);
 		return;
 	}
 
 IL_0034:
 	{
-		Diagnostic_t6762F35062B939B79ECD2F38670A5A56FF25311A L_9 = ___item0;
-		List_1_AddWithResize_m488C0FE43760EA1EC385AB2603088F1560EC2BEF(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 14));
+		il2cpp_codegen_memcpy(L_9, (il2cpp_codegen_class_is_value_type(il2cpp_rgctx_data(method->klass->rgctx_data, 9)) ? ___item0 : &___item0), SizeOf_T_t664E2061A913AF1FEE499655BC64F0FDE10D2A5E);
+		InvokerActionInvoker1< Il2CppFullySharedGenericAny >::Invoke(il2cpp_codegen_get_direct_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 14)), il2cpp_rgctx_method(method->klass->rgctx_data, 14), __this, (il2cpp_codegen_class_is_value_type(il2cpp_rgctx_data(method->klass->rgctx_data, 9)) ? L_9: *(void**)L_9));
 		return;
 	}
 }
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mBDDFD218EA8F751936639E6A5D618992077B91A4_gshared_inline (List_1_t0E000AE0E09082F1D878813D84836DEAE5C1C3DA* __this, Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3 ___item0, const RuntimeMethod* method) 
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_1_Invoke_m5A038831CEB84A7E374FE59D43444412629F833F_gshared_inline (Action_1_t923A20D1D4F6B55B2ED5AE21B90F1A0CE0450D99* __this, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny ___obj0, const RuntimeMethod* method) 
 {
-	MetricU5BU5D_tDD42D30B25EE55F74638B326DA32DBB3A98FBC39* V_0 = NULL;
-	int32_t V_1 = 0;
-	{
-		int32_t L_0 = (int32_t)__this->____version_3;
-		__this->____version_3 = ((int32_t)il2cpp_codegen_add(L_0, 1));
-		MetricU5BU5D_tDD42D30B25EE55F74638B326DA32DBB3A98FBC39* L_1 = (MetricU5BU5D_tDD42D30B25EE55F74638B326DA32DBB3A98FBC39*)__this->____items_1;
-		V_0 = L_1;
-		int32_t L_2 = (int32_t)__this->____size_2;
-		V_1 = L_2;
-		int32_t L_3 = V_1;
-		MetricU5BU5D_tDD42D30B25EE55F74638B326DA32DBB3A98FBC39* L_4 = V_0;
-		NullCheck(L_4);
-		if ((!(((uint32_t)L_3) < ((uint32_t)((int32_t)(((RuntimeArray*)L_4)->max_length))))))
-		{
-			goto IL_0034;
-		}
-	}
-	{
-		int32_t L_5 = V_1;
-		__this->____size_2 = ((int32_t)il2cpp_codegen_add(L_5, 1));
-		MetricU5BU5D_tDD42D30B25EE55F74638B326DA32DBB3A98FBC39* L_6 = V_0;
-		int32_t L_7 = V_1;
-		Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3 L_8 = ___item0;
-		NullCheck(L_6);
-		(L_6)->SetAt(static_cast<il2cpp_array_size_t>(L_7), (Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3)L_8);
-		return;
-	}
-
-IL_0034:
-	{
-		Metric_t98E6B95DCBA4A31D77AF8DA5F592459AB3FE49F3 L_9 = ___item0;
-		List_1_AddWithResize_m8458E8543A17AD67BCFB8B3A7C9D069A6BFAD0B3(__this, L_9, il2cpp_rgctx_method(method->klass->rgctx_data, 14));
-		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_1_Invoke_m8B0C3F4FA0508CD1823F82CF8CD995A0C910DAFE_gshared_inline (Action_1_t98E0ADA5F89D6F93D91113490DCD09FD00D684F1* __this, WebRequest_t4CF804EE9852A8DB80C31D8016F18749C647206E ___obj0, const RuntimeMethod* method) 
-{
-	typedef void (*FunctionPointerType) (RuntimeObject*, WebRequest_t4CF804EE9852A8DB80C31D8016F18749C647206E, const RuntimeMethod*);
+	typedef void (*FunctionPointerType) (RuntimeObject*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType*/Il2CppFullySharedGenericAny, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___obj0, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
 }

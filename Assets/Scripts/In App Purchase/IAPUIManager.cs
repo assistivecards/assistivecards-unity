@@ -30,7 +30,7 @@ public class IAPUIManager : MonoBehaviour
     private async void Start()
     {
         CheckIfPremiumButtonInteractable();
-        await GameAPI.cacheData;
+        await GameAPI.cachePacks;
         GetAvailablePacks();
     }
 

@@ -48,41 +48,41 @@ public class PromoScreen : MonoBehaviour
                 packElementGameObject.Clear();
             }
 
-            packs = await gameAPI.GetPacks(currentLanguageCode);
-            var jsonPacks = JsonUtility.ToJson(packs);
+            // packs = await gameAPI.GetPacks(currentLanguageCode);
+            var jsonPacks = JsonUtility.ToJson(gameAPI.cachedPacks);
             JSONObject jsonPackss = new JSONObject(jsonPacks);
 
 
-            for (int i = 0; i < packs.packs.Length; i++)
+            for (int i = 0; i < gameAPI.premiumPackImages.Count; i++)
             {
-                if (packs.packs[i].premium == 1)
+                // if (packs.packs[i].premium == 1)
+                // {
+                packElement = Instantiate(tempPackElement, transform);
+                ColorUtility.TryParseHtmlString(jsonPackss["packs"][i + gameAPI.freePackImages.Count]["color"].ToString().Replace("\"", ""), out bgColor);
+                packElement.GetComponent<Image>().color = bgColor;
+
+
+                packElement.transform.GetChild(0).GetComponent<TMP_Text>().text = jsonPackss["packs"][i + gameAPI.freePackImages.Count]["locale"].ToString().Replace("\"", "");
+
+                var cardCount = jsonPackss["packs"][i + gameAPI.freePackImages.Count]["count"].ToString().Replace("\"", "");
+                cardCountsArray.Add(cardCount);
+                phraseCountsArray.Add((Int32.Parse(cardCount) * 3).ToString());
+
+                if (packElement.transform != null)
                 {
-                    packElement = Instantiate(tempPackElement, transform);
-                    ColorUtility.TryParseHtmlString(jsonPackss["packs"][i]["color"].ToString().Replace("\"", ""), out bgColor);
-                    packElement.GetComponent<Image>().color = bgColor;
+                    var premiumPackTexture = gameAPI.premiumPackImages[i];
+                    premiumPackTexture.wrapMode = TextureWrapMode.Clamp;
+                    premiumPackTexture.filterMode = FilterMode.Bilinear;
 
-
-                    packElement.transform.GetChild(0).GetComponent<TMP_Text>().text = jsonPackss["packs"][i]["locale"].ToString().Replace("\"", "");
-
-                    var cardCount = jsonPackss["packs"][i]["count"].ToString().Replace("\"", "");
-                    cardCountsArray.Add(cardCount);
-                    phraseCountsArray.Add((Int32.Parse(cardCount) * 3).ToString());
-
-                    if (packElement.transform != null)
-                    {
-                        var premiumPackTexture = gameAPI.premiumPackImages[i - 13];
-                        premiumPackTexture.wrapMode = TextureWrapMode.Clamp;
-                        premiumPackTexture.filterMode = FilterMode.Bilinear;
-
-                        packElement.transform.GetChild(2).GetComponent<Image>().sprite = Sprite.Create(premiumPackTexture, new Rect(0.0f, 0.0f, gameAPI.premiumPackImages[i - 13].width, gameAPI.premiumPackImages[i - 13].height), new Vector2(0.5f, 0.5f), 100.0f);
-                    }
-
-                    packElement.name = packs.packs[i].slug;
-
-
-
-                    packElementGameObject.Add(packElement);
+                    packElement.transform.GetChild(2).GetComponent<Image>().sprite = Sprite.Create(premiumPackTexture, new Rect(0.0f, 0.0f, gameAPI.premiumPackImages[i].width, gameAPI.premiumPackImages[i].height), new Vector2(0.5f, 0.5f), 100.0f);
                 }
+
+                packElement.name = gameAPI.cachedPacks.packs[i].slug;
+
+
+
+                packElementGameObject.Add(packElement);
+                // }
 
             }
             tempPackElement.SetActive(false);

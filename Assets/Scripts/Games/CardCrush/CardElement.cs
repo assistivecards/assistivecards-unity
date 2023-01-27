@@ -33,6 +33,16 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         cardCrushFillGrid = FindObjectOfType<CardCrushFillGrid>();
     }
 
+    private void OnEnable() 
+    {
+        LeanTween.scale(this.gameObject, Vector3.one, 0.5f);
+
+        if(this.transform.localScale.x > 1)
+        {
+            this.transform.localScale = Vector3.one;
+        }
+    }
+
 
     public void OnPointerDown(PointerEventData pointerEventData)
     {

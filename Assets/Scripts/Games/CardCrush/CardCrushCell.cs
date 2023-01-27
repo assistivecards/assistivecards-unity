@@ -6,5 +6,6 @@ public class CardCrushCell : MonoBehaviour
 {
     public float x;
     public float y;
+    public bool isEmpty;
     public GameObject card;
 }

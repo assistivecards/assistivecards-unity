@@ -155,40 +155,36 @@ public class CardCrushFillGrid : MonoBehaviour
         return false;
     }
 
-    void FixedUpdate()
+    // private void FixedUpdate() {
+    //     if(isBoardCreated)
+    //     {
+    //         foreach(var cell in cardCrushGrid.allCells)
+    //         {
+    //             if(cell.isEmpty)
+    //             {
+    //                 //Invoke("RefillBoard", 5f);
+    //                 //RefillCell(cell);
+    //             }
+    //         }
+    //     }
+    // }
+
+    public async void RefillCell(CardCrushCell _cell)
     {
-        if(isBoardCreated)
-            RefillBoard();
-    }
+        _cell.isEmpty = false;
+        GameObject card = Instantiate(cardPrefab, _cell.transform.position, Quaternion.identity);
+        
+        int cardImageRandom = randomValues[Random.Range(0, cardTypeCount)];
+        var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[cardImageRandom], 512);
 
+        card.transform.name = cardNames[cardImageRandom];
+        card.transform.parent = _cell.transform;
+        card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
 
-    public async void RefillBoard()
-    {
+        _cell.card = card;
 
-        foreach(var cell in cardCrushGrid.allCells)
-        {
-            if(cell.isEmpty == true)
-            {
-                cell.isEmpty = false;
-                GameObject card = Instantiate(cardPrefab, cell.transform.position, Quaternion.identity);
-                
-                int cardImageRandom = randomValues[Random.Range(0, cardTypeCount)];
-                var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[cardImageRandom], 512);
-
-                card.transform.name = cardNames[cardImageRandom];
-                card.transform.parent = cell.transform;
-                card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-
-                cell.card = card;
-
-                card.GetComponent<CardElement>().x = cell.x;
-                card.GetComponent<CardElement>().y = cell.y;
-                card.GetComponent<CardElement>().type = cardNames[cardImageRandom];
-            }
-            else
-            {
-                
-            }
-        }
+        card.GetComponent<CardElement>().x = _cell.x;
+        card.GetComponent<CardElement>().y = _cell.y;
+        card.GetComponent<CardElement>().type = cardNames[cardImageRandom];
     }
 }

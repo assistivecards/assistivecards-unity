@@ -33,6 +33,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         cardCrushFillGrid = FindObjectOfType<CardCrushFillGrid>();
     }
 
+
     public void OnPointerDown(PointerEventData pointerEventData)
     {
         cardPosition = this.transform.position;
@@ -53,8 +54,8 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private void MoveToTarget(CardCrushCell _cell, GameObject _card, Vector3 _transform, float _targetX, float _targetY)
     {
         _card.GetComponent<CardElement>().cardPosition = this.transform.position;
-        LeanTween.move(_card, cardPosition, 0.1f);
-        LeanTween.move(this.gameObject, _transform, 0.1f);
+        LeanTween.move(_card, cardPosition, 0.2f);
+        LeanTween.move(this.gameObject, _transform, 0.2f);
         cardPosition = this.transform.position;
 
         _card.transform.parent = this.transform.parent;
@@ -69,7 +70,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         y = _targetY;
     }
 
-    private void FixedUpdate() 
+    private void Update() 
     {
         DetectNeighbours();
         if(cardCrushFillGrid.isBoardCreated == true)
@@ -314,6 +315,11 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         foreach(var card in matched)
         {
             card.transform.GetComponentInParent<CardCrushCell>().isEmpty = true;
+            //if not neighbour dont destroy check ?
+            // if(card.transform.GetComponentInParent<CardCrushCell>().neighbours.Contains(card.GetComponentInParent<CardCrushCell>()))
+            // {
+            //     Destroy(card);
+            // }
             Destroy(card);
         }
     }

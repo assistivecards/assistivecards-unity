@@ -29,7 +29,7 @@ RectTransform:
   m_GameObject: {fileID: 1572616208917296617}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.726, y: 0.726, z: 0.726}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3188569986244754360}
@@ -91,7 +91,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaea5409acd44a31a86f8ae767fdb38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  x: 0
+  y: 0
+  cardPosition: {x: 0, y: 0, z: 0}
   type: 
+  rightNeighbour: {fileID: 0}
+  leftNeighbour: {fileID: 0}
+  topNeighbour: {fileID: 0}
+  bottomNeighbour: {fileID: 0}
+  matched: []
 --- !u!61 &6015160056906354179
 BoxCollider2D:
   m_ObjectHideFlags: 0

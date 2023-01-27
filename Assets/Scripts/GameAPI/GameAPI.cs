@@ -17,6 +17,7 @@ public class GameAPI : MonoBehaviour
     public List<Texture2D> freePackImages = new List<Texture2D>();
     public List<Texture2D> premiumPackImages = new List<Texture2D>();
     public static Task cacheData;
+    public static Task cachePacks;
     public static Task cacheFreePackImages;
     public static Task cachePremiumPackImages;
     AssistiveCardsSDK.AssistiveCardsSDK assistiveCardsSDK;
@@ -28,12 +29,14 @@ public class GameAPI : MonoBehaviour
     private async void Awake()
     {
         assistiveCardsSDK = Camera.main.GetComponent<AssistiveCardsSDK.AssistiveCardsSDK>();
-        cacheData = CacheData();
-        await cacheData;
+        cachePacks = CachePacks();
+        await cachePacks;
         cacheFreePackImages = CacheFreePackImages();
         await cacheFreePackImages;
         cachePremiumPackImages = CachePremiumPackImages();
         await cachePremiumPackImages;
+        cacheData = CacheData();
+        await cacheData;
     }
 
     private void Start()
@@ -41,24 +44,21 @@ public class GameAPI : MonoBehaviour
         Vibration.Init();
     }
 
-    public async Task CacheData()
+    public async Task CachePacks()
     {
         selectedLangCode = await GetSystemLanguageCode();
         cachedPacks = await GetPacks(selectedLangCode);
-        cachedActivities = await GetActivities(selectedLangCode);
+    }
+
+    public async Task CacheData()
+    {
         cachedLanguages = await GetLanguages();
         cachedApps = await GetApps();
         for (int i = 0; i < cachedApps.apps.Count; i++)
         {
             cachedAppIcons.Add(await GetAppIcon(cachedApps.apps[i].slug));
-
         }
-
-        // for (int i = 0; i < cachedPacks.packs.Length; i++)
-        // {
-        //     cachedPackImages.Add(await GetPackImage(cachedPacks.packs[i].slug));
-
-        // }
+        cachedActivities = await GetActivities(selectedLangCode);
     }
 
     public async Task CacheFreePackImages()

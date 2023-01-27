@@ -21,6 +21,7 @@ public class Test : MonoBehaviour
 
     private async void Start()
     {
+        await gameAPI.CachePacks();
         await gameAPI.CacheData();
         packResult = gameAPI.GetPackBySlug(gameAPI.cachedPacks, "animals");
         activityResult = gameAPI.GetActivityBySlug(gameAPI.cachedActivities, "practicing-speaking");

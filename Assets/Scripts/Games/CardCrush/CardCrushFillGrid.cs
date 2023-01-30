@@ -12,6 +12,7 @@ public class CardCrushFillGrid : MonoBehaviour
     public string selectedLangCode;
 
     [SerializeField] private GameObject cardPrefab;
+    [SerializeField] private PackSelectionPanel packSelectionPanel;
     [SerializeField] private CardCrushGrid cardCrushGrid;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
@@ -37,6 +38,7 @@ public class CardCrushFillGrid : MonoBehaviour
         selectedLangCode = await gameAPI.GetSystemLanguageCode();
 
         cachedCards = await gameAPI.GetCards("en", _packSlug);
+        packSlug = _packSlug;
 
         cardsList = cachedCards.cards.ToList();
 
@@ -44,7 +46,6 @@ public class CardCrushFillGrid : MonoBehaviour
         {
             cardNames.Add(cachedCards.cards[i].title.ToLower().Replace(" ", "-"));
         }
-
     }
 
     private void CreateRandomValue()
@@ -64,15 +65,19 @@ public class CardCrushFillGrid : MonoBehaviour
 
         }
     }
-    private void Start() {
-        GenerateBoard("animals");
+
+    public void GeneratStylized()
+    {
+        GenerateBoard(packSelectionPanel.selectedPackElement.name);
     }
+    // private void Start() {
+    //     GenerateBoard("animals");
+    // }
 
     private async void  GenerateBoard(string _packSlug)
     {
         await CacheCards(_packSlug);
         CreateRandomValue();
-        packSlug = _packSlug;
 
         for(int i = 0; i < cardCrushGrid.allCells.Count; i++)
         {

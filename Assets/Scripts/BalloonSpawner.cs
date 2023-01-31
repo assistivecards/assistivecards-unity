@@ -8,6 +8,7 @@ public class BalloonSpawner : MonoBehaviour
     [SerializeField] private GameObject balloonPrefab;
     public int fastestMoveTime = 5;
     public int slowestMoveTime = 10;
+    public float destroyTime = 13f;
     public Color[] colors;
     private GameObject gameCanvas;
     private void OnEnable()
@@ -26,7 +27,7 @@ public class BalloonSpawner : MonoBehaviour
             LeanTween.move(balloon, new Vector3(randomValue, worldCorners[1].y, 0), Random.Range(fastestMoveTime, slowestMoveTime));
         }
 
-        Invoke("DestroyBalloons", 5f);
+        Invoke("DestroyBalloons", destroyTime);
     }
 
     public void DestroyBalloons()

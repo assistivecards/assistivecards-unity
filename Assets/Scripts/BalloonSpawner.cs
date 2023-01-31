@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class BalloonSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject balloonPrefab;
+    public int fastestMoveTime = 5;
+    public int slowestMoveTime = 10;
     public Color[] colors;
     private GameObject gameCanvas;
     private void OnEnable()
@@ -21,7 +23,7 @@ public class BalloonSpawner : MonoBehaviour
             balloon.transform.SetParent(gameCanvas.transform);
             balloon.transform.localScale = Vector3.one * 2.5f;
             balloon.GetComponent<Image>().color = colors[Random.Range(0, colors.Length)];
-            LeanTween.move(balloon, new Vector3(randomValue, worldCorners[1].y, 0), Random.Range(2, 5));
+            LeanTween.move(balloon, new Vector3(randomValue, worldCorners[1].y, 0), Random.Range(fastestMoveTime, slowestMoveTime));
         }
 
         Invoke("DestroyBalloons", 5f);

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
@@ -25,7 +26,12 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public GameObject bottomNeighbour;
 
     public List<GameObject> matched = new List<GameObject>();
+    private bool oneTime = false;
 
+    private void OnEnable() 
+    {
+        LeanTween.scale(this.gameObject, Vector3.one, 0.3f);
+    }
     private void Start() 
     {
         cardPosition = this.transform.position;
@@ -37,32 +43,33 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
     }
 
-    private void OnEnable() 
-    {
-        LeanTween.scale(this.gameObject, Vector3.one, 0.5f);
-
-        if(this.transform.localScale.x > 1)
-        {
-            this.transform.localScale = Vector3.one;
-        }
-    }
-
     public void OnPointerDown(PointerEventData pointerEventData)
     {
         cardPosition = this.transform.position;
-        firstTouchPosition = pointerEventData.position;
+        if(cardCrushFillGrid.isBoardCreated && !cardCrushFillGrid.isOnRefill)
+        {
+            firstTouchPosition = pointerEventData.position;
+        }
     }
 
     public void OnPointerUp(PointerEventData pointerEventData)
     {
-        finalTouchPosition = pointerEventData.position;
-        MoveDrops();
+        if(cardCrushFillGrid.isBoardCreated && !cardCrushFillGrid.isOnRefill)
+        {
+            finalTouchPosition = pointerEventData.position;
+            MoveDrops();
+        }
     }
     private void Update() 
     {
+        if(!oneTime && this.transform.localScale.x > 1 && !cardCrushFillGrid.isOnRefill)
+        {
+            this.transform.localScale = Vector3.one;
+            oneTime = true;
+        }
         if(cardCrushFillGrid.isBoardCreated)
             DetectNeighbours();
-
+            
         if(!cardCrushFillGrid.isOnRefill)
             DetectMatch();
     }
@@ -207,14 +214,16 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 matched.Add(rightNeighbour);
                 matched.Add(rightNeighbour.GetComponent<CardElement>().rightNeighbour);
                 matched.Add(this.gameObject);
-                DestroyMatched();
+
+                ScaleUpMatch();
             }
             else if(leftNeighbour != null && leftNeighbour.GetComponent<CardElement>().type == type)
             {
                 matched.Add(rightNeighbour);
                 matched.Add(leftNeighbour);
                 matched.Add(this.gameObject);
-                DestroyMatched();
+
+                ScaleUpMatch();
             }
         }
 
@@ -226,7 +235,8 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 matched.Add(leftNeighbour);
                 matched.Add(leftNeighbour.GetComponent<CardElement>().leftNeighbour);
                 matched.Add(this.gameObject);
-                DestroyMatched();
+
+                ScaleUpMatch();
             }
         }
 
@@ -238,14 +248,16 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 matched.Add(topNeighbour);
                 matched.Add(topNeighbour.GetComponent<CardElement>().topNeighbour);
                 matched.Add(this.gameObject);
-                DestroyMatched();
+
+                ScaleUpMatch();
             }
             else if(bottomNeighbour != null && bottomNeighbour.GetComponent<CardElement>().type == type)
             {
                 matched.Add(topNeighbour);
                 matched.Add(bottomNeighbour);
                 matched.Add(this.gameObject);
-                DestroyMatched();
+
+                ScaleUpMatch();
             }
         }
         if(bottomNeighbour != null && bottomNeighbour.GetComponent<CardElement>().type == type)
@@ -256,7 +268,8 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 matched.Add(bottomNeighbour);
                 matched.Add(bottomNeighbour.GetComponent<CardElement>().bottomNeighbour);
                 matched.Add(this.gameObject);
-                DestroyMatched();
+
+                ScaleUpMatch();
             }
         }
     }
@@ -280,16 +293,21 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         foreach(var card in matched)
         {
-            cardCrushFillGrid.isOnRefill = true;
+            //LeanTween.scale(card, new Vector3(1.2f, 1.2f, 1.2f), 0f);
+            //cardCrushFillGrid.isOnRefill = true;
             card.transform.GetComponentInParent<CardCrushCell>().isEmpty = true;
             Destroy(card);
         }
     }
 
-    // private void ScaleUpMatch()
-    // {
-    //         LeanTween.scale(card, new Vector3(1.25f, 1.25f, 1.25f), 0.25f);
-
-    //     Invoke("DestroyMatched" , 0.25f);
-    // }
+    private void ScaleUpMatch()
+    {
+        cardCrushFillGrid.isOnRefill = true;
+        //isOnScaleUp = true;
+        foreach(var card in matched)
+        {
+            LeanTween.scale(card, new Vector3(0.5f, 0.5f, 0.5f), 0.1f);
+        }
+        Invoke("DestroyMatched", 0.1f);
+    }
 }

@@ -31,7 +31,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 804781093893846700}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -111,11 +111,11 @@ RectTransform:
   - {fileID: 804781093594687141}
   - {fileID: 804781095447215813}
   m_Father: {fileID: 804781094349168271}
-  m_RootOrder: -1
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 789, y: 195.07}
+  m_AnchoredPosition: {x: 275, y: 111.999985}
   m_SizeDelta: {x: 373.4084, y: 389.09}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &804781093893846697
@@ -200,9 +200,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 804781094349168274}
-        m_TargetAssemblyTypeName: LevelChangeScreenController, Assembly-CSharp
-        m_MethodName: ContinueClick
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CircleUIController, Assembly-CSharp
+        m_MethodName: ResetCounter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -213,8 +213,32 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PackageSelectManager, Assembly-CSharp
-        m_MethodName: GenerateStylizedBoard
+        m_TargetAssemblyTypeName: CircleUIController, Assembly-CSharp
+        m_MethodName: EnableBackButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CircleUIController, Assembly-CSharp
+        m_MethodName: CloseCheckpointPanelAndGenerateNewBoard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2219732562508632212}
+        m_TargetAssemblyTypeName: BalloonSpawner, Assembly-CSharp
+        m_MethodName: DestroyBalloons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -256,6 +280,7 @@ GameObject:
   - component: {fileID: 804781094349168272}
   - component: {fileID: 804781094349168273}
   - component: {fileID: 804781094349168274}
+  - component: {fileID: 2219732562508632212}
   m_Layer: 5
   m_Name: LevelChangeScreen
   m_TagString: Untagged
@@ -270,16 +295,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 804781094349168275}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 804781094745460803}
   - {fileID: 804781093893846700}
   - {fileID: 804781095377541592}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -331,7 +356,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 804781094349168275}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02839d6f1617248e7b0670900cf816a4, type: 3}
   m_Name: 
@@ -344,6 +369,33 @@ MonoBehaviour:
   isOnSelect: 0
   isOnContinue: 0
   isOnLevelChange: 0
+--- !u!114 &2219732562508632212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804781094349168275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaba938bce50a3046becc00d14fc056d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  balloonPrefab: {fileID: 6387976776864001687, guid: cb7a0a3317c49c34980e885ee32d7c73, type: 3}
+  fastestMoveTime: 5
+  slowestMoveTime: 10
+  destroyTime: 13
+  colors:
+  - {r: 0.97800004, g: 0.54768, b: 0.54768, a: 0.9019608}
+  - {r: 0.98, g: 0.73400813, b: 0.5475304, a: 0.9019608}
+  - {r: 0.98, g: 0.9006478, b: 0.5475304, a: 0.9019608}
+  - {r: 0.67846155, g: 0.98, b: 0.5475304, a: 0.9019608}
+  - {r: 0.54243135, g: 0.96862745, b: 0.9402144, a: 0.9019608}
+  - {r: 0.5475304, g: 0.8411337, b: 0.98, a: 0.9019608}
+  - {r: 0.54243135, g: 0.54243135, b: 0.96862745, a: 0.9019608}
+  - {r: 0.77368426, g: 0.5475304, b: 0.98, a: 0.9019608}
+  - {r: 0.98, g: 0.5475304, b: 0.95222664, a: 0.9019608}
+  - {r: 0.98, g: 0.5488, b: 0.7148919, a: 0.9019608}
 --- !u!1 &804781094361850333
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,7 +427,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 804781094745460803}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -451,7 +503,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 804781094745460803}
-  m_RootOrder: -1
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -590,11 +642,11 @@ RectTransform:
   - {fileID: 804781094361850332}
   - {fileID: 804781094632571446}
   m_Father: {fileID: 804781094349168271}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 234, y: 195.07}
+  m_AnchoredPosition: {x: -280, y: 112}
   m_SizeDelta: {x: 373.4084, y: 389.09}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &804781094745460800
@@ -679,9 +731,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 804781094349168274}
-        m_TargetAssemblyTypeName: LevelChangeScreenController, Assembly-CSharp
-        m_MethodName: SelectNewClick
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CircleUIController, Assembly-CSharp
+        m_MethodName: ResetCounter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -692,8 +744,20 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GamePanelUIController, Assembly-CSharp
-        m_MethodName: GamePanelUIControl
+        m_TargetAssemblyTypeName: CircleUIController, Assembly-CSharp
+        m_MethodName: ChooseNewPackButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2219732562508632212}
+        m_TargetAssemblyTypeName: BalloonSpawner, Assembly-CSharp
+        m_MethodName: DestroyBalloons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -754,11 +818,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 804781094349168271}
-  m_RootOrder: -1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 523.9749, y: 527}
+  m_AnchoredPosition: {x: 9.974913, y: 443.92996}
   m_SizeDelta: {x: 506.8926, y: 68.5997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &804781095377541590
@@ -889,7 +953,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 804781093893846700}
-  m_RootOrder: -1
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

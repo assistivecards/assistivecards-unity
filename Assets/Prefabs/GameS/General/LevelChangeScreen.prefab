@@ -256,6 +256,7 @@ GameObject:
   - component: {fileID: 804781094349168272}
   - component: {fileID: 804781094349168273}
   - component: {fileID: 804781094349168274}
+  - component: {fileID: 2219732562508632212}
   m_Layer: 5
   m_Name: LevelChangeScreen
   m_TagString: Untagged
@@ -344,6 +345,25 @@ MonoBehaviour:
   isOnSelect: 0
   isOnContinue: 0
   isOnLevelChange: 0
+--- !u!114 &2219732562508632212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804781094349168275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaba938bce50a3046becc00d14fc056d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  balloonPrefab: {fileID: 6387976776864001687, guid: cb7a0a3317c49c34980e885ee32d7c73, type: 3}
+  colors:
+  - {r: 0.9150943, g: 0.25467247, b: 0.25467247, a: 1}
+  - {r: 0.23131433, g: 0.5283019, b: 0.21181916, a: 1}
+  - {r: 0.24328054, g: 0.70787853, b: 0.7264151, a: 1}
+  - {r: 0.47608852, g: 0.23309009, b: 0.509434, a: 1}
+  - {r: 0.7830189, g: 0.7674628, b: 0.121885024, a: 1}
 --- !u!1 &804781094361850333
 GameObject:
   m_ObjectHideFlags: 0

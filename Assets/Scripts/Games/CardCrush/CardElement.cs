@@ -61,7 +61,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     }
     private void Update() 
     {
-        if(!oneTime && this.transform.localScale.x > 1)
+        if(!oneTime && this.transform.localScale.x > 1 && !cardCrushFillGrid.isOnRefill)
         {
             this.transform.localScale = Vector3.one;
             oneTime = true;
@@ -287,7 +287,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         foreach(var card in matched)
         {
             //LeanTween.scale(card, new Vector3(1.2f, 1.2f, 1.2f), 0f);
-            cardCrushFillGrid.isOnRefill = true;
+            //cardCrushFillGrid.isOnRefill = true;
             card.transform.GetComponentInParent<CardCrushCell>().isEmpty = true;
             Destroy(card);
         }
@@ -295,12 +295,12 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void ScaleUpMatch()
     {
+        cardCrushFillGrid.isOnRefill = true;
         //isOnScaleUp = true;
         foreach(var card in matched)
         {
             LeanTween.scale(card, new Vector3(1.3f, 1.3f, 1.3f), 0.001f);
         }
-
        Invoke("DestroyMatched", 0.1f);
     }
 }

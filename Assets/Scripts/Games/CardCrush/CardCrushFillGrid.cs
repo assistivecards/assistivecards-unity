@@ -221,6 +221,11 @@ public class CardCrushFillGrid : MonoBehaviour
         }
     }
 
+    public void SetBoardDifficulty(int _cardTypeCount)
+    {
+        cardTypeCount = _cardTypeCount;
+    }
+
     public async void RefillCell(CardCrushCell cell)
     {
         cell.isEmpty = false;

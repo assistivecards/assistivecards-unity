@@ -11,20 +11,27 @@ public class BalloonSpawner : MonoBehaviour
     public float destroyTime = 13f;
     public Color[] colors;
     private GameObject gameCanvas;
+    private float canvasOffset;
     private void OnEnable()
     {
         gameCanvas = GameObject.Find("GameCanvas");
+        if (gameCanvas.GetComponent<Canvas>().renderMode == RenderMode.ScreenSpaceCamera)
+        {
+            canvasOffset = 3;
+        }
+        else
+            canvasOffset = 300;
         Vector3[] worldCorners = new Vector3[4];
         gameCanvas.GetComponent<RectTransform>().GetWorldCorners(worldCorners);
 
         for (int i = 0; i < 5; i++)
         {
             var randomValue = Random.Range(worldCorners[0].x, worldCorners[3].x);
-            var balloon = Instantiate(balloonPrefab, new Vector3(randomValue, worldCorners[0].y, 0), Quaternion.identity);
+            var balloon = Instantiate(balloonPrefab, new Vector3(randomValue, worldCorners[0].y - canvasOffset, 0), Quaternion.identity);
             balloon.transform.SetParent(gameCanvas.transform);
             balloon.transform.localScale = Vector3.one * 2.5f;
             balloon.GetComponent<Image>().color = colors[Random.Range(0, colors.Length)];
-            LeanTween.move(balloon, new Vector3(randomValue, worldCorners[1].y, 0), Random.Range(fastestMoveTime, slowestMoveTime));
+            LeanTween.move(balloon, new Vector3(randomValue, worldCorners[1].y + canvasOffset, 0), Random.Range(fastestMoveTime, slowestMoveTime));
         }
 
         Invoke("DestroyBalloons", destroyTime);

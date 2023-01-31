@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
@@ -68,7 +69,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
         if(cardCrushFillGrid.isBoardCreated)
             DetectNeighbours();
-
+            
         if(!cardCrushFillGrid.isOnRefill)
             DetectMatch();
     }
@@ -213,6 +214,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 matched.Add(rightNeighbour);
                 matched.Add(rightNeighbour.GetComponent<CardElement>().rightNeighbour);
                 matched.Add(this.gameObject);
+
                 ScaleUpMatch();
             }
             else if(leftNeighbour != null && leftNeighbour.GetComponent<CardElement>().type == type)
@@ -220,6 +222,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 matched.Add(rightNeighbour);
                 matched.Add(leftNeighbour);
                 matched.Add(this.gameObject);
+
                 ScaleUpMatch();
             }
         }
@@ -232,6 +235,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 matched.Add(leftNeighbour);
                 matched.Add(leftNeighbour.GetComponent<CardElement>().leftNeighbour);
                 matched.Add(this.gameObject);
+
                 ScaleUpMatch();
             }
         }
@@ -244,6 +248,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 matched.Add(topNeighbour);
                 matched.Add(topNeighbour.GetComponent<CardElement>().topNeighbour);
                 matched.Add(this.gameObject);
+
                 ScaleUpMatch();
             }
             else if(bottomNeighbour != null && bottomNeighbour.GetComponent<CardElement>().type == type)
@@ -251,6 +256,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 matched.Add(topNeighbour);
                 matched.Add(bottomNeighbour);
                 matched.Add(this.gameObject);
+
                 ScaleUpMatch();
             }
         }
@@ -262,6 +268,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 matched.Add(bottomNeighbour);
                 matched.Add(bottomNeighbour.GetComponent<CardElement>().bottomNeighbour);
                 matched.Add(this.gameObject);
+
                 ScaleUpMatch();
             }
         }
@@ -299,8 +306,8 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         //isOnScaleUp = true;
         foreach(var card in matched)
         {
-            LeanTween.scale(card, new Vector3(1.3f, 1.3f, 1.3f), 0.001f);
+            LeanTween.scale(card, new Vector3(0.5f, 0.5f, 0.5f), 0.1f);
         }
-       Invoke("DestroyMatched", 0.1f);
+        Invoke("DestroyMatched", 0.1f);
     }
 }

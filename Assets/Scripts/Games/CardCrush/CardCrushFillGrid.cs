@@ -58,9 +58,18 @@ public class CardCrushFillGrid : MonoBehaviour
             {
                 randomValues.Add(tempRandomValue);
             }
-            else
+            else if(randomValues.Contains(tempRandomValue))
             {
-                CreateRandomValue();
+                tempRandomValue = Random.Range(0, cardsList.Count);
+
+                if(!randomValues.Contains(tempRandomValue))
+                {
+                    randomValues.Add(tempRandomValue);
+                }
+                else
+                {
+                    CreateRandomValue();
+                }
             }
 
         }
@@ -83,7 +92,7 @@ public class CardCrushFillGrid : MonoBehaviour
         {
             GameObject card = Instantiate(cardPrefab, cardCrushGrid.allCells[i].transform.position, Quaternion.identity);
             
-            int cardImageRandom = randomValues[Random.Range(0,cardTypeCount)];
+            int cardImageRandom = randomValues[Random.Range(0, cardTypeCount)];
             var cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[cardImageRandom], 512);
 
             card.transform.name = cardNames[cardImageRandom];
@@ -99,7 +108,7 @@ public class CardCrushFillGrid : MonoBehaviour
             int maxIterations = 0;
             while(FindVerticalMatchesAtBeginning(i) && maxIterations < 50)
             {   
-                cardImageRandom = randomValues[Random.Range(0,cardTypeCount)];
+                cardImageRandom = randomValues[Random.Range(0, cardTypeCount)];
                 cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[cardImageRandom], 512);
 
                 card.transform.name = cardNames[cardImageRandom];
@@ -117,7 +126,7 @@ public class CardCrushFillGrid : MonoBehaviour
             maxIterations = 0;
             while(FindHorizontalMatchesAtBeginning(i) && maxIterations < 50)
             {   
-                cardImageRandom = randomValues[Random.Range(0,cardTypeCount)];
+                cardImageRandom = randomValues[Random.Range(0, cardTypeCount)];
                 cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[cardImageRandom], 512);
 
                 card.transform.name = cardNames[cardImageRandom];

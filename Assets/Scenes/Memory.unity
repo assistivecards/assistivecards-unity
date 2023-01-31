@@ -809,6 +809,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 5fbdf8f9ebef6415ea4156e0c314686f, type: 3}
   - soundName: CardBackFlip
     clip: {fileID: 8300000, guid: 9f4ebd328c8a54d58aed1a981e3ee858, type: 3}
+  - soundName: Pop
+    clip: {fileID: 8300000, guid: 280be73e6b3a84a41a7ac5f039bb5d59, type: 3}
   musicSource: {fileID: 1487501776}
   sfxSource: {fileID: 601693157}
   musicClip: {fileID: 8300000, guid: 980d9e7fa483808439c454075f22a3aa, type: 3}

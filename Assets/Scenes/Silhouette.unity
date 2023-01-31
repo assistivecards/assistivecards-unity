@@ -494,6 +494,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
   - soundName: Pickup
     clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
+  - soundName: Pop
+    clip: {fileID: 8300000, guid: 280be73e6b3a84a41a7ac5f039bb5d59, type: 3}
   musicSource: {fileID: 1487501776}
   sfxSource: {fileID: 601693157}
   musicClip: {fileID: 8300000, guid: 039cbb6c20b64344c842b7ca5ffd2ef8, type: 3}
@@ -2857,6 +2859,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   balloonPrefab: {fileID: 6387976776864001687, guid: cb7a0a3317c49c34980e885ee32d7c73, type: 3}
+  fastestMoveTime: 5
+  slowestMoveTime: 10
+  destroyTime: 13
   colors:
   - {r: 0.9150943, g: 0.25467247, b: 0.25467247, a: 1}
   - {r: 0.23131433, g: 0.5283019, b: 0.21181916, a: 1}

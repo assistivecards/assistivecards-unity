@@ -25,6 +25,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public GameObject bottomNeighbour;
 
     public List<GameObject> matched = new List<GameObject>();
+    private bool oneTime = false;
 
     private void OnEnable() 
     {
@@ -45,17 +46,26 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         cardPosition = this.transform.position;
         if(cardCrushFillGrid.isBoardCreated && !cardCrushFillGrid.isOnRefill)
+        {
             firstTouchPosition = pointerEventData.position;
+        }
     }
 
     public void OnPointerUp(PointerEventData pointerEventData)
     {
-        finalTouchPosition = pointerEventData.position;
         if(cardCrushFillGrid.isBoardCreated && !cardCrushFillGrid.isOnRefill)
+        {
+            finalTouchPosition = pointerEventData.position;
             MoveDrops();
+        }
     }
     private void Update() 
     {
+        if(!oneTime && this.transform.localScale.x > 1)
+        {
+            this.transform.localScale = Vector3.one;
+            oneTime = true;
+        }
         if(cardCrushFillGrid.isBoardCreated)
             DetectNeighbours();
 
@@ -285,6 +295,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void ScaleUpMatch()
     {
+        //isOnScaleUp = true;
         foreach(var card in matched)
         {
             LeanTween.scale(card, new Vector3(1.3f, 1.3f, 1.3f), 0.001f);

@@ -32,7 +32,8 @@ public class BalloonSpawner : MonoBehaviour
         var balloons = GameObject.FindGameObjectsWithTag("Balloon");
         foreach (var balloon in balloons)
         {
-            Destroy(balloon);
+            LeanTween.alpha(balloon.GetComponent<RectTransform>(), 0, .25f);
+            Destroy(balloon, .25f);
         }
     }
 }

@@ -12,9 +12,21 @@ public class CardCrushGrid : MonoBehaviour
     [SerializeField] private GameObject cellPrefab;
     public List<CardCrushCell> allCells = new List<CardCrushCell>();
 
-    private void Start() {
+    [SerializeField] private GameObject referance;
+    private Vector2 referancePoint;
+
+    private float screenWidthQuo;
+    private float screenHeightQuo;
+    RectTransform rectTransform;
+
+    private void Start() 
+    {
+        rectTransform = GetComponent<RectTransform>();
+        screenWidthQuo = (Screen.width - 2048);
+
+        screenHeightQuo = (Screen.height / 15);
+        Debug.Log("Screen Hei : " + screenHeightQuo);
         SetUp();
-        // burası daha sonra difficulty seçim ekranıyla entegre çağırılıcak
     }
 
     private void SetUp()
@@ -23,7 +35,8 @@ public class CardCrushGrid : MonoBehaviour
         {
             for(int j = 0; j < height; j++)
             {
-                GameObject cell = Instantiate(cellPrefab, new Vector3(i * spacing, j * spacing, 0), Quaternion.identity) as GameObject;
+                Vector2 tempPosition = new Vector2(i, j);
+                GameObject cell = Instantiate(cellPrefab, tempPosition * spacing, Quaternion.identity) as GameObject;
                 cell.transform.parent = this.transform;
                 cell.name = i + " , " + j + " tile";
                 cell.GetComponent<CardCrushCell>().x = i;
@@ -31,5 +44,25 @@ public class CardCrushGrid : MonoBehaviour
                 allCells.Add(cell.GetComponent<CardCrushCell>());
             }
         }
+
+        SetLeft(rectTransform, screenWidthQuo / 3.6f);
+
+// 610 -> 4.2 |  484 -> 3.85 | 290 -> 3.6 | bölen sayısı screen width ile doğru orantılı büyücek şimdilik ort.değer 3.5
+
+        if(screenWidthQuo < 100)
+        {
+            this.transform.localScale = new Vector3(0.85f, 0.85f, 0.85f);
+            SetBottom(rectTransform, screenHeightQuo);
+        }
+    }
+
+    public static void SetLeft(RectTransform _rect, float left)
+    {
+        _rect.offsetMin = new Vector2(left, _rect.offsetMin.y);
+    }
+
+    public static void SetBottom(RectTransform rt, float bottom)
+    {
+        rt.offsetMin = new Vector2(rt.offsetMin.x, bottom);
     }
 }

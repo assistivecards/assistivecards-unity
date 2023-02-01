@@ -26,7 +26,9 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public GameObject bottomNeighbour;
 
     public List<GameObject> matched = new List<GameObject>();
-    private bool oneTime = false;
+
+    public List<GameObject> horizontalNeighbours = new List<GameObject>();
+    private bool notHorizontal = false;
 
     private void OnEnable() 
     {
@@ -62,16 +64,15 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     }
     private void Update() 
     {
-        if(!oneTime && this.transform.localScale.x > 1 && !cardCrushFillGrid.isOnRefill)
+        if(this.transform.localScale.x > 1)
         {
             this.transform.localScale = Vector3.one;
-            oneTime = true;
         }
         if(cardCrushFillGrid.isBoardCreated)
             DetectNeighbours();
             
         if(!cardCrushFillGrid.isOnRefill)
-            DetectMatch();
+            DetectLongMatch();
     }
 
     private void CalculateAngle()
@@ -167,134 +168,148 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public void DetectNeighbours()
     {
-        if(transform.parent.GetComponent<CardCrushCell>().rightNeighbour != null)
+        if(transform.parent != null)
         {
-            if(transform.parent.GetComponent<CardCrushCell>().rightNeighbour.transform.childCount > 0)
+            if(transform.parent.GetComponent<CardCrushCell>().rightNeighbour != null)
             {
-                rightNeighbour = transform.parent.GetComponent<CardCrushCell>()
-                    .rightNeighbour.transform.GetChild(0).gameObject;
+                if(transform.parent.GetComponent<CardCrushCell>().rightNeighbour.transform.childCount > 0)
+                {
+                    rightNeighbour = transform.parent.GetComponent<CardCrushCell>()
+                        .rightNeighbour.transform.GetChild(0).gameObject;
+                }
             }
-        }
 
-        if(transform.parent.GetComponent<CardCrushCell>().leftNeighbour != null)
-        {
-            if(transform.parent.GetComponent<CardCrushCell>().leftNeighbour.transform.childCount > 0)
+            if(transform.parent.GetComponent<CardCrushCell>().leftNeighbour != null)
             {
-                leftNeighbour = transform.parent.GetComponent<CardCrushCell>()
-                    .leftNeighbour.transform.GetChild(0).gameObject;
+                if(transform.parent.GetComponent<CardCrushCell>().leftNeighbour.transform.childCount > 0)
+                {
+                    leftNeighbour = transform.parent.GetComponent<CardCrushCell>()
+                        .leftNeighbour.transform.GetChild(0).gameObject;
+                }
             }
-        }
 
-        if(transform.parent.GetComponent<CardCrushCell>().topNeighbour != null)
-        {
-            if(transform.parent.GetComponent<CardCrushCell>().topNeighbour.transform.childCount > 0)
+            if(transform.parent.GetComponent<CardCrushCell>().topNeighbour != null)
             {
-                topNeighbour = transform.parent.GetComponent<CardCrushCell>()
-                    .topNeighbour.transform.GetChild(0).gameObject;
+                if(transform.parent.GetComponent<CardCrushCell>().topNeighbour.transform.childCount > 0)
+                {
+                    topNeighbour = transform.parent.GetComponent<CardCrushCell>()
+                        .topNeighbour.transform.GetChild(0).gameObject;
+                }
             }
-        }
 
-        if(transform.parent.GetComponent<CardCrushCell>().bottomNeighbour != null)
-        {
-            if(transform.parent.GetComponent<CardCrushCell>().bottomNeighbour.transform.childCount > 0)
+            if(transform.parent.GetComponent<CardCrushCell>().bottomNeighbour != null)
             {
-                bottomNeighbour = transform.parent.GetComponent<CardCrushCell>()
-                    .bottomNeighbour.transform.GetChild(0).gameObject;
-            }
-        }
-    }
-
-    private void DetectMatch()
-    {
-        if(rightNeighbour != null && rightNeighbour.GetComponent<CardElement>().type == type)
-        {
-            if(rightNeighbour.GetComponent<CardElement>().rightNeighbour != null && 
-            rightNeighbour.GetComponent<CardElement>().rightNeighbour.GetComponent<CardElement>().type == type)
-            {
-                matched.Add(rightNeighbour);
-                matched.Add(rightNeighbour.GetComponent<CardElement>().rightNeighbour);
-                matched.Add(this.gameObject);
-
-                ScaleUpMatch();
-            }
-            else if(leftNeighbour != null && leftNeighbour.GetComponent<CardElement>().type == type)
-            {
-                matched.Add(rightNeighbour);
-                matched.Add(leftNeighbour);
-                matched.Add(this.gameObject);
-
-                ScaleUpMatch();
-            }
-        }
-
-        if(leftNeighbour != null && leftNeighbour.GetComponent<CardElement>().type == type)
-        {
-            if(leftNeighbour.GetComponent<CardElement>().leftNeighbour != null && 
-            leftNeighbour.GetComponent<CardElement>().leftNeighbour.GetComponent<CardElement>().type == type)
-            {
-                matched.Add(leftNeighbour);
-                matched.Add(leftNeighbour.GetComponent<CardElement>().leftNeighbour);
-                matched.Add(this.gameObject);
-
-                ScaleUpMatch();
-            }
-        }
-
-        if(topNeighbour != null && topNeighbour.GetComponent<CardElement>().type == type)
-        {
-            if(topNeighbour.GetComponent<CardElement>().topNeighbour != null && 
-            topNeighbour.GetComponent<CardElement>().topNeighbour.GetComponent<CardElement>().type == type)
-            {
-                matched.Add(topNeighbour);
-                matched.Add(topNeighbour.GetComponent<CardElement>().topNeighbour);
-                matched.Add(this.gameObject);
-
-                ScaleUpMatch();
-            }
-            else if(bottomNeighbour != null && bottomNeighbour.GetComponent<CardElement>().type == type)
-            {
-                matched.Add(topNeighbour);
-                matched.Add(bottomNeighbour);
-                matched.Add(this.gameObject);
-
-                ScaleUpMatch();
-            }
-        }
-        if(bottomNeighbour != null && bottomNeighbour.GetComponent<CardElement>().type == type)
-        {
-            if(bottomNeighbour.GetComponent<CardElement>().bottomNeighbour != null && 
-            bottomNeighbour.GetComponent<CardElement>().bottomNeighbour.GetComponent<CardElement>().type == type)
-            {
-                matched.Add(bottomNeighbour);
-                matched.Add(bottomNeighbour.GetComponent<CardElement>().bottomNeighbour);
-                matched.Add(this.gameObject);
-
-                ScaleUpMatch();
+                if(transform.parent.GetComponent<CardCrushCell>().bottomNeighbour.transform.childCount > 0)
+                {
+                    bottomNeighbour = transform.parent.GetComponent<CardCrushCell>()
+                        .bottomNeighbour.transform.GetChild(0).gameObject;
+                }
             }
         }
     }
 
-    private void ChangeNeighboursAround()
+    private void DetectLongMatch()
     {
-        if(rightNeighbour != null)
-            rightNeighbour.GetComponent<CardElement>().DetectNeighbours();
+        if(transform.GetComponentInParent<CardCrushCell>() != null)
+        {
+            foreach(var neighbour in GetComponentInParent<CardCrushCell>().horizontalNeighboursRight)
+            {
+                if(neighbour.card != null)
+                {
+                    if(neighbour.card.GetComponent<CardElement>().type == type)
+                    {
+                        if(!matched.Contains(neighbour.card))
+                            matched.Add(neighbour.card);
+                    }
+                    else 
+                    {
+                        break;
+                    }
+                }
+            }
 
-        if(leftNeighbour != null)  
-            leftNeighbour.GetComponent<CardElement>().DetectNeighbours();
+            foreach(var neighbour in GetComponentInParent<CardCrushCell>().horizontalNeighboursLeft)
+            {
+                if(neighbour.card != null)
+                {
+                    if(neighbour.card.GetComponent<CardElement>().type == type)
+                    {
+                        if(!matched.Contains(neighbour.card))
+                            matched.Add(neighbour.card);
+                    }
+                    else 
+                    {
+                        break;
+                    }
+                }
+            }
 
-        if(topNeighbour != null)
-            topNeighbour.GetComponent<CardElement>().DetectNeighbours();
+            if(matched.Count >= 2)
+            {
+                if(!matched.Contains(this.gameObject))
+                    matched.Add(this.gameObject);
 
-        if(bottomNeighbour != null)
-            bottomNeighbour.GetComponent<CardElement>().DetectNeighbours();
+                ScaleUpMatch();
+            }
+            if(matched.Count < 2)
+            {
+                notHorizontal = true;
+                matched.Clear();
+            }
+            if(notHorizontal)
+            {
+                foreach(var neighbour in GetComponentInParent<CardCrushCell>().verticalNeightboursBottom)
+                {
+                    if(neighbour.card != null)
+                    {
+                        if(neighbour.card.GetComponent<CardElement>().type == type)
+                        {
+                            if(!matched.Contains(neighbour.card))
+                                matched.Add(neighbour.card);
+                        }
+                        else 
+                        {
+                            break;
+                        }
+                    }
+                }
+
+                foreach(var neighbour in GetComponentInParent<CardCrushCell>().verticalNeightboursTop)
+                {
+                    if(neighbour.card != null)
+                    {
+                        if(neighbour.card.GetComponent<CardElement>().type == type)
+                        {
+                            if(!matched.Contains(neighbour.card))
+                                matched.Add(neighbour.card);
+                        }
+                        else 
+                        {
+                            break;
+                        }
+                    }
+                }
+
+
+                if(matched.Count >= 2)
+                {
+                    if(!matched.Contains(this.gameObject))
+                        matched.Add(this.gameObject);
+                    ScaleUpMatch();
+                }
+                if(matched.Count < 2)
+                {
+                    matched.Clear();
+                }
+
+            }
+        }
     }
 
     private void DestroyMatched()
     {
         foreach(var card in matched)
         {
-            //LeanTween.scale(card, new Vector3(1.2f, 1.2f, 1.2f), 0f);
-            //cardCrushFillGrid.isOnRefill = true;
             card.transform.GetComponentInParent<CardCrushCell>().isEmpty = true;
             Destroy(card);
         }
@@ -303,7 +318,6 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private void ScaleUpMatch()
     {
         cardCrushFillGrid.isOnRefill = true;
-        //isOnScaleUp = true;
         foreach(var card in matched)
         {
             LeanTween.scale(card, new Vector3(0.5f, 0.5f, 0.5f), 0.1f);

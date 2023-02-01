@@ -149,6 +149,7 @@ public class CardCrushFillGrid : MonoBehaviour
         foreach(var cell in cardCrushGrid.allCells)
         {
             cell.GetComponent<CardCrushCell>().DetectNeighbourCells();
+            cell.GetComponent<CardCrushCell>().DetectNeighboursAround();
         }
     }
     private bool FindVerticalMatchesAtBeginning(int i)

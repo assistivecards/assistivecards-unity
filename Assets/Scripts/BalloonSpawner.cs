@@ -46,4 +46,10 @@ public class BalloonSpawner : MonoBehaviour
             Destroy(balloon, .25f);
         }
     }
+
+    private void OnDisable()
+    {
+        DestroyBalloons();
+    }
+
 }

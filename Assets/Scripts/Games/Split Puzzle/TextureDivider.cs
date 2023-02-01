@@ -8,7 +8,7 @@ public class TextureDivider : MonoBehaviour
     [SerializeField] Texture2D textureToDivide;
     [SerializeField] List<Image> images = new List<Image>();
     [SerializeField] List<Image> hintImages = new List<Image>();
-    [SerializeField] List<Sprite> pieces = new List<Sprite>();
+    private List<Sprite> pieces = new List<Sprite>();
 
     private void Start()
     {

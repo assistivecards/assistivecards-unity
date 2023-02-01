@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -16,7 +17,7 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
 
     static CustomBuildPreProcessor()
     {
-        productName = PlayerSettings.productName;
+        productName = PlayerSettings.productName.Replace("-", "_");
         productVersion = PlayerSettings.bundleVersion;
         Debug.Log("Current product name is: " + productName);
         Debug.Log("Current product version is: " + productVersion);
@@ -25,24 +26,23 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
 
     public void OnPreprocessBuild(BuildReport report)
     {
-        Texture2D icon = (Texture2D)AssetDatabase.LoadAssetAtPath("Assets/Sprites/AppIcons/" + PlayerSettings.productName.Replace(" ", "_").ToLower() + ".png", typeof(Texture2D));
+        Texture2D icon = (Texture2D)AssetDatabase.LoadAssetAtPath("Assets/Sprites/AppIcons/" + PlayerSettings.productName.Replace("-", "_").Replace("_", " ").Replace(" ", "_").ToLower() + ".png", typeof(Texture2D));
         PlayerSettings.SetIcons(NamedBuildTarget.Unknown, new Texture2D[] { icon }, IconKind.Any);
-        PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.Android, "com.assistivecards." + PlayerSettings.productName.Replace(" ", "_").ToLower());
+        PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.Android, "com.assistivecards." + PlayerSettings.productName.Replace("-", "_").Replace("_", " ").Replace(" ", "_").ToLower());
 
         var bundleVersionCode = PlayerSettings.bundleVersion.Replace(".", string.Empty);
         PlayerSettings.Android.bundleVersionCode = Int32.Parse(bundleVersionCode);
         PlayerSettings.iOS.buildNumber = PlayerSettings.bundleVersion;
-        PlayerSettings.iOS.applicationDisplayName = ToTitleCase(PlayerSettings.productName);
-        PlayerSettings.applicationIdentifier = "com.assistivecards." + PlayerSettings.productName.Replace(" ", "_").ToLower();
+        PlayerSettings.iOS.applicationDisplayName = ToTitleCase(PlayerSettings.productName.Replace("-", "_").Replace("_", " "));
+        PlayerSettings.applicationIdentifier = "com.assistivecards." + PlayerSettings.productName.Replace("-", "_").Replace("_", " ").Replace(" ", "_").ToLower();
         Debug.Log("preprocessing");
 
     }
 
     static string ToTitleCase(string stringToConvert)
     {
-        string firstChar = stringToConvert[0].ToString();
-        return (stringToConvert.Length > 0 ? firstChar.ToUpper() + stringToConvert.Substring(1) : stringToConvert);
-
+      var textinfo = new CultureInfo("en-US", false).TextInfo;
+      return textinfo.ToTitleCase(stringToConvert);
     }
 
     private static void OnClickBuildPlayer(BuildPlayerOptions options)
@@ -51,7 +51,7 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
         {
 
             List<EditorBuildSettingsScene> editorBuildSettingsScenesList = new List<EditorBuildSettingsScene>();
-            var sceneToAdd = new EditorBuildSettingsScene("Assets/Scenes/" + ToTitleCase(PlayerSettings.productName) + ".unity", true);
+            var sceneToAdd = new EditorBuildSettingsScene("Assets/Scenes/" + ToTitleCase(PlayerSettings.productName.Replace("-", "_").Replace("_", " ")) + ".unity", true);
             editorBuildSettingsScenesList.Add(sceneToAdd);
             EditorBuildSettings.scenes = editorBuildSettingsScenesList.ToArray();
             AssetDatabase.SaveAssets();

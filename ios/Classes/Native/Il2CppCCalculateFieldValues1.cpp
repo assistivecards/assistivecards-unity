@@ -29665,14 +29665,16 @@ struct BalloonSpawner_tB3C9515FF12198F39DE7BBC8E60C021008AB3143  : public MonoBe
 	int32_t ___fastestMoveTime_5;
 	// System.Int32 BalloonSpawner::slowestMoveTime
 	int32_t ___slowestMoveTime_6;
+	// System.Int32 BalloonSpawner::balloonAmount
+	int32_t ___balloonAmount_7;
 	// System.Single BalloonSpawner::destroyTime
-	float ___destroyTime_7;
+	float ___destroyTime_8;
 	// UnityEngine.Color[] BalloonSpawner::colors
-	ColorU5BU5D_t612261CF293F6FFC3D80AB52259FF0DC2B2CC389* ___colors_8;
+	ColorU5BU5D_t612261CF293F6FFC3D80AB52259FF0DC2B2CC389* ___colors_9;
 	// UnityEngine.GameObject BalloonSpawner::gameCanvas
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___gameCanvas_9;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___gameCanvas_10;
 	// System.Single BalloonSpawner::canvasOffset
-	float ___canvasOffset_10;
+	float ___canvasOffset_11;
 };
 
 // Board
@@ -38063,9 +38065,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5647[1] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5649[1] = 
 {
 	static_cast<int32_t>(offsetof(Balloon_t6CB988D52ACA6084C14555D88B6DB582F75902D7, ___gameAPI_4)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5650[7] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5650[8] = 
 {
-	static_cast<int32_t>(offsetof(BalloonSpawner_tB3C9515FF12198F39DE7BBC8E60C021008AB3143, ___balloonPrefab_4)),static_cast<int32_t>(offsetof(BalloonSpawner_tB3C9515FF12198F39DE7BBC8E60C021008AB3143, ___fastestMoveTime_5)),static_cast<int32_t>(offsetof(BalloonSpawner_tB3C9515FF12198F39DE7BBC8E60C021008AB3143, ___slowestMoveTime_6)),static_cast<int32_t>(offsetof(BalloonSpawner_tB3C9515FF12198F39DE7BBC8E60C021008AB3143, ___destroyTime_7)),static_cast<int32_t>(offsetof(BalloonSpawner_tB3C9515FF12198F39DE7BBC8E60C021008AB3143, ___colors_8)),static_cast<int32_t>(offsetof(BalloonSpawner_tB3C9515FF12198F39DE7BBC8E60C021008AB3143, ___gameCanvas_9)),static_cast<int32_t>(offsetof(BalloonSpawner_tB3C9515FF12198F39DE7BBC8E60C021008AB3143, ___canvasOffset_10)),};
+	static_cast<int32_t>(offsetof(BalloonSpawner_tB3C9515FF12198F39DE7BBC8E60C021008AB3143, ___balloonPrefab_4)),static_cast<int32_t>(offsetof(BalloonSpawner_tB3C9515FF12198F39DE7BBC8E60C021008AB3143, ___fastestMoveTime_5)),static_cast<int32_t>(offsetof(BalloonSpawner_tB3C9515FF12198F39DE7BBC8E60C021008AB3143, ___slowestMoveTime_6)),static_cast<int32_t>(offsetof(BalloonSpawner_tB3C9515FF12198F39DE7BBC8E60C021008AB3143, ___balloonAmount_7)),static_cast<int32_t>(offsetof(BalloonSpawner_tB3C9515FF12198F39DE7BBC8E60C021008AB3143, ___destroyTime_8)),static_cast<int32_t>(offsetof(BalloonSpawner_tB3C9515FF12198F39DE7BBC8E60C021008AB3143, ___colors_9)),static_cast<int32_t>(offsetof(BalloonSpawner_tB3C9515FF12198F39DE7BBC8E60C021008AB3143, ___gameCanvas_10)),static_cast<int32_t>(offsetof(BalloonSpawner_tB3C9515FF12198F39DE7BBC8E60C021008AB3143, ___canvasOffset_11)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5651[1] = 
 {
 	static_cast<int32_t>(offsetof(BundleVersionDisplayer_t0D4D5E3EE5727BC807B1649C524DF7FB4972E5FE, ___bundleText_4)),};

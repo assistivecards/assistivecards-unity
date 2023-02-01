@@ -152,7 +152,6 @@ class Texture3D; template <> void RegisterUnityClass<Texture3D>(const char*);
 class TimeManager; template <> void RegisterUnityClass<TimeManager>(const char*);
 class Transform; template <> void RegisterUnityClass<Transform>(const char*);
 class BoxCollider2D; template <> void RegisterUnityClass<BoxCollider2D>(const char*);
-class CircleCollider2D; template <> void RegisterUnityClass<CircleCollider2D>(const char*);
 class Collider2D; template <> void RegisterUnityClass<Collider2D>(const char*);
 class Physics2DSettings; template <> void RegisterUnityClass<Physics2DSettings>(const char*);
 class PolygonCollider2D; template <> void RegisterUnityClass<PolygonCollider2D>(const char*);
@@ -167,7 +166,7 @@ void RegisterAllClasses()
 {
 void RegisterBuiltinTypes();
 RegisterBuiltinTypes();
-	//Total: 77 non stripped classes
+	//Total: 76 non stripped classes
 	//0. Animation
 	RegisterUnityClass<Animation>("Animation");
 	//1. AnimationClip
@@ -302,25 +301,23 @@ RegisterBuiltinTypes();
 	RegisterUnityClass<Transform>("Core");
 	//66. BoxCollider2D
 	RegisterUnityClass<BoxCollider2D>("Physics2D");
-	//67. CircleCollider2D
-	RegisterUnityClass<CircleCollider2D>("Physics2D");
-	//68. Collider2D
+	//67. Collider2D
 	RegisterUnityClass<Collider2D>("Physics2D");
-	//69. Physics2DSettings
+	//68. Physics2DSettings
 	RegisterUnityClass<Physics2DSettings>("Physics2D");
-	//70. PolygonCollider2D
+	//69. PolygonCollider2D
 	RegisterUnityClass<PolygonCollider2D>("Physics2D");
-	//71. Rigidbody2D
+	//70. Rigidbody2D
 	RegisterUnityClass<Rigidbody2D>("Physics2D");
-	//72. Font
+	//71. Font
 	RegisterUnityClass<TextRendering::Font>("TextRendering");
-	//73. Canvas
+	//72. Canvas
 	RegisterUnityClass<UI::Canvas>("UI");
-	//74. CanvasGroup
+	//73. CanvasGroup
 	RegisterUnityClass<UI::CanvasGroup>("UI");
-	//75. CanvasRenderer
+	//74. CanvasRenderer
 	RegisterUnityClass<UI::CanvasRenderer>("UI");
-	//76. UnityConnectSettings
+	//75. UnityConnectSettings
 	RegisterUnityClass<UnityConnectSettings>("UnityConnect");
 
 }

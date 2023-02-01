@@ -8,6 +8,7 @@ public class BalloonSpawner : MonoBehaviour
     [SerializeField] private GameObject balloonPrefab;
     public int fastestMoveTime = 5;
     public int slowestMoveTime = 10;
+    public int balloonAmount = 8;
     public float destroyTime = 13f;
     public Color[] colors;
     private GameObject gameCanvas;
@@ -24,7 +25,7 @@ public class BalloonSpawner : MonoBehaviour
         Vector3[] worldCorners = new Vector3[4];
         gameCanvas.GetComponent<RectTransform>().GetWorldCorners(worldCorners);
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < balloonAmount; i++)
         {
             var randomValue = Random.Range(worldCorners[0].x, worldCorners[3].x);
             var balloon = Instantiate(balloonPrefab, new Vector3(randomValue, worldCorners[0].y - canvasOffset, 0), Quaternion.identity);

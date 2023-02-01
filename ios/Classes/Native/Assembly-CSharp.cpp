@@ -2356,22 +2356,24 @@ struct GameAPI_t06DB8F6ED3EAD74A3EC2BCA7DF0452E290F22C44  : public MonoBehaviour
 	Apps_t37319C9C689E3F0FA063395B29FAFC2A9F4C9C77* ___cachedApps_8;
 	// System.Collections.Generic.List`1<UnityEngine.Texture2D> GameAPI::cachedAppIcons
 	List_1_t0F231C3F13EBA1FF9081BD61489D01AA3CBE59D4* ___cachedAppIcons_9;
-	// System.Collections.Generic.List`1<UnityEngine.Texture2D> GameAPI::cachedPackImages
-	List_1_t0F231C3F13EBA1FF9081BD61489D01AA3CBE59D4* ___cachedPackImages_10;
+	// System.Collections.Generic.List`1<UnityEngine.Texture2D> GameAPI::freePackImages
+	List_1_t0F231C3F13EBA1FF9081BD61489D01AA3CBE59D4* ___freePackImages_10;
+	// System.Collections.Generic.List`1<UnityEngine.Texture2D> GameAPI::premiumPackImages
+	List_1_t0F231C3F13EBA1FF9081BD61489D01AA3CBE59D4* ___premiumPackImages_11;
 	// AssistiveCardsSDK.AssistiveCardsSDK GameAPI::assistiveCardsSDK
-	AssistiveCardsSDK_t522ECCC538D77D03253C5366AA7756C480A37AF5* ___assistiveCardsSDK_12;
+	AssistiveCardsSDK_t522ECCC538D77D03253C5366AA7756C480A37AF5* ___assistiveCardsSDK_16;
 	// Speakable GameAPI::speakable
-	Speakable_t516465558AF11C503C326B1ED1AB2DF5AF203DC4* ___speakable_13;
+	Speakable_t516465558AF11C503C326B1ED1AB2DF5AF203DC4* ___speakable_17;
 	// Sound[] GameAPI::sfxClips
-	SoundU5BU5D_t72FB050B36D0242C25330F8F4AC115C91598A1F5* ___sfxClips_14;
+	SoundU5BU5D_t72FB050B36D0242C25330F8F4AC115C91598A1F5* ___sfxClips_18;
 	// UnityEngine.AudioSource GameAPI::musicSource
-	AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* ___musicSource_15;
+	AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* ___musicSource_19;
 	// UnityEngine.AudioSource GameAPI::sfxSource
-	AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* ___sfxSource_16;
+	AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* ___sfxSource_20;
 	// UnityEngine.AudioClip GameAPI::musicClip
-	AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___musicClip_17;
+	AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___musicClip_21;
 	// AssistiveCardsSDK.AssistiveCardsSDK/Cards GameAPI::cards
-	Cards_tEA150A4B9B48E05AF6D8346C9FCA6E177913DDB1* ___cards_20;
+	Cards_tEA150A4B9B48E05AF6D8346C9FCA6E177913DDB1* ___cards_24;
 };
 
 struct GameAPI_t06DB8F6ED3EAD74A3EC2BCA7DF0452E290F22C44_StaticFields
@@ -2379,7 +2381,13 @@ struct GameAPI_t06DB8F6ED3EAD74A3EC2BCA7DF0452E290F22C44_StaticFields
 	// System.String GameAPI::selectedLangCode
 	String_t* ___selectedLangCode_4;
 	// System.Threading.Tasks.Task GameAPI::cacheData
-	Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572* ___cacheData_11;
+	Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572* ___cacheData_12;
+	// System.Threading.Tasks.Task GameAPI::cachePacks
+	Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572* ___cachePacks_13;
+	// System.Threading.Tasks.Task GameAPI::cacheFreePackImages
+	Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572* ___cacheFreePackImages_14;
+	// System.Threading.Tasks.Task GameAPI::cachePremiumPackImages
+	Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572* ___cachePremiumPackImages_15;
 };
 
 // LeanTester

@@ -47,8 +47,8 @@ namespace NativeTextToSpeech
 
         public void Start()
         {
+          try {
             Debug.Log("Starting native tts");
-
 #if UNITY_IOS
             start_tts(on_finish,on_error);
 #endif
@@ -58,31 +58,37 @@ namespace NativeTextToSpeech
                 _javaObject.Call("start");
             }));
 #endif
+          } catch (Exception e) { }
         }
 
 
         public void Stop()
         {
             Debug.Log("Stopping tts");
+            try {
 #if UNITY_IOS
             stop_tts();
 #endif
 #if UNITY_ANDROID
             activity.Call("runOnUiThread", new AndroidJavaRunnable(StopAndroid));
 #endif
+
+            } catch (Exception e) { }
+
         }
         private void StopAndroid()
         {
+          try {
 #if UNITY_ANDROID
             _javaObject.Call("stop");
 #endif
+          } catch (Exception e) { }
         }
 
         public void Speak(string text, string language, float rate)
         {
-            Debug.Log("Start speaking from Unity");
+            try {
 #if UNITY_IOS
-            Debug.Log("speaking with 0.5");
             speak_tts(text, language, 0.5f);
 #endif
 #if UNITY_ANDROID
@@ -91,6 +97,7 @@ namespace NativeTextToSpeech
                 _javaObject.Call("speak",text, language, rate);
             }));
 #endif
+            } catch (Exception e) { }
         }
 
         public static TextToSpeech Create(Action finish, Action<string> error)

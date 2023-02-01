@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
@@ -21,23 +22,36 @@ public class Speakable : MonoBehaviour
 
     public void Speak()
     {
-        Debug.Log(locale);
+      Debug.Log(locale);
+      try {
         var canGreet = gameAPI.GetVoiceGreetingPreference();
         if (canGreet == 1)
             _textToSpeech.Speak(gameObject.GetComponent<TMP_Text>().text, locale, 1);
         TTSStarted();
+      } catch (Exception e) {
+        Debug.Log("Tried to greet" + gameObject.GetComponent<TMP_Text>().text + "(" +locale+ ")");
+      }
     }
 
     public void Speak(string text)
     {
-        _textToSpeech.Speak(text, locale, 1);
-        TTSStarted();
+        try {
+          _textToSpeech.Speak(text, locale, 1);
+          TTSStarted();
+        } catch (Exception e) {
+          Debug.Log("Tried to speak: " + text + "(" +locale+ ")");
+        }
     }
 
     public void Stop()
     {
+      try {
         _textToSpeech.Stop();
         TTSFinished();
+      } catch (Exception e) {
+        // don't catch
+      }
+
     }
 
     private void OnFinish()

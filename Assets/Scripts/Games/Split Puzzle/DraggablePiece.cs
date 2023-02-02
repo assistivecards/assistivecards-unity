@@ -20,6 +20,7 @@ public class DraggablePiece : MonoBehaviour, IPointerDownHandler, IDragHandler
     public void OnPointerDown(PointerEventData eventData)
     {
         gameAPI.VibrateWeak();
+        gameAPI.PlaySFX("Pickup");
         transform.position = eventData.position;
     }
 }

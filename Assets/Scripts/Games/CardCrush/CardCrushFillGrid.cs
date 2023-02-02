@@ -79,9 +79,6 @@ public class CardCrushFillGrid : MonoBehaviour
     {
         GenerateBoard(packSelectionPanel.selectedPackElement.name);
     }
-    // private void Start() {
-    //     GenerateBoard("animals");
-    // }
 
     private async void  GenerateBoard(string _packSlug)
     {
@@ -106,7 +103,7 @@ public class CardCrushFillGrid : MonoBehaviour
             card.GetComponent<CardElement>().type = cardNames[cardImageRandom];
 
             int maxIterations = 0;
-            while(FindVerticalMatchesAtBeginning(i) && maxIterations < 50)
+            while(FindVerticalMatchesAtBeginning(i) && maxIterations < 100)
             {   
                 cardImageRandom = randomValues[Random.Range(0, cardTypeCount)];
                 cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[cardImageRandom], 512);
@@ -124,7 +121,7 @@ public class CardCrushFillGrid : MonoBehaviour
             }
 
             maxIterations = 0;
-            while(FindHorizontalMatchesAtBeginning(i) && maxIterations < 50)
+            while(FindHorizontalMatchesAtBeginning(i) && maxIterations < 100)
             {   
                 cardImageRandom = randomValues[Random.Range(0, cardTypeCount)];
                 cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[cardImageRandom], 512);
@@ -144,13 +141,13 @@ public class CardCrushFillGrid : MonoBehaviour
             maxIterations = 0;
 
         }
-        isBoardCreated = true;
 
         foreach(var cell in cardCrushGrid.allCells)
         {
             cell.GetComponent<CardCrushCell>().DetectNeighbourCells();
             cell.GetComponent<CardCrushCell>().DetectNeighboursAround();
         }
+        isBoardCreated = true;
     }
     private bool FindVerticalMatchesAtBeginning(int i)
     {
@@ -199,6 +196,7 @@ public class CardCrushFillGrid : MonoBehaviour
                 card.GetComponent<CardElement>().x = cell.x;
                 card.GetComponent<CardElement>().y = cell.y;
                 card.GetComponent<CardElement>().type = cardNames[cardImageRandom];
+                Debug.Log("Refill is done");
             }
         }
         Invoke("OnRefillBool", 1f);
@@ -215,7 +213,6 @@ public class CardCrushFillGrid : MonoBehaviour
             {
                 if(cell.isEmpty)
                 {
-                    //Invoke("RefillBoard", 0.6f);
                     RefillBoard();
                 }
             }
@@ -250,12 +247,15 @@ public class CardCrushFillGrid : MonoBehaviour
     {
         foreach(var cell in cardCrushGrid.allCells)
         {
-            GameObject card = cell.card;
-            cell.card = null;
-            Destroy(card);
+            //cell.isEmpty = true;
+            Destroy(cell.card.gameObject);
+            cell.neighbours.Clear();
+            cell.horizontalNeighboursLeft.Clear();
+            cell.horizontalNeighboursRight.Clear();
+            cell.verticalNeightboursBottom.Clear();
+            cell.verticalNeightboursTop.Clear();
 
             cardNames.Clear();
-            //cachedCards.Clear();
             randomValues.Clear();
             matchedCards.Clear();
         }

@@ -12,9 +12,6 @@ public class CardCrushGrid : MonoBehaviour
     [SerializeField] private GameObject cellPrefab;
     public List<CardCrushCell> allCells = new List<CardCrushCell>();
 
-    [SerializeField] private GameObject referance;
-    private Vector2 referancePoint;
-
     private float screenWidthQuo;
     private float screenHeightQuo;
     RectTransform rectTransform;
@@ -23,13 +20,11 @@ public class CardCrushGrid : MonoBehaviour
     {
         rectTransform = GetComponent<RectTransform>();
         screenWidthQuo = (Screen.width - 2048);
-
         screenHeightQuo = (Screen.height / 15);
-        Debug.Log("Screen Hei : " + screenHeightQuo);
         SetUp();
     }
 
-    private void SetUp()
+    public void SetUp()
     {
         for(int i = 0; i < width; i++)
         {
@@ -49,7 +44,7 @@ public class CardCrushGrid : MonoBehaviour
 
 // 610 -> 4.2 |  484 -> 3.85 | 290 -> 3.6 | bölen sayısı screen width ile doğru orantılı büyücek şimdilik ort.değer 3.5
 
-        if(screenWidthQuo < 100)
+        if(screenWidthQuo <= 100)
         {
             this.transform.localScale = new Vector3(0.85f, 0.85f, 0.85f);
             SetBottom(rectTransform, screenHeightQuo);

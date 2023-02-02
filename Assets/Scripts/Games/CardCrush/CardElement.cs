@@ -33,9 +33,6 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private void OnEnable() 
     {
         LeanTween.scale(this.gameObject, Vector3.one, 0.3f);
-    }
-    private void Start() 
-    {
         cardPosition = this.transform.position;
         cardCrushGrid = FindObjectOfType<CardCrushGrid>();
         cardCrushFillGrid = FindObjectOfType<CardCrushFillGrid>();

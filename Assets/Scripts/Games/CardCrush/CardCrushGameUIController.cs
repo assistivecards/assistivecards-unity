@@ -13,7 +13,7 @@ public class CardCrushGameUIController : MonoBehaviour
     [SerializeField] private GameObject packSelectionScreen;
     [SerializeField] private GameObject transitionScreen;
 
-        private void Update() 
+    private void Update() 
     {
         GamePanelUIControl();
     }
@@ -70,7 +70,7 @@ public class CardCrushGameUIController : MonoBehaviour
         transitionScreen.SetActive(false);
 
         fillGrid.ResetGrid();
-        fillGrid.isBoardCreated = false;
+        //fillGrid.isBoardCreated = false;
         GamePanelUIControl();
     }
 }

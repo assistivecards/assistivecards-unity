@@ -2574,8 +2574,8 @@ GameObject:
   - component: {fileID: 2013358570}
   - component: {fileID: 2013358569}
   m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_Name: score
+  m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2620,7 +2620,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score:'
+  m_text: '-'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7fff04f5987a23d4cae30a373aa09dd3, type: 2}
   m_sharedMaterial: {fileID: -3432494171301961357, guid: 7fff04f5987a23d4cae30a373aa09dd3, type: 2}

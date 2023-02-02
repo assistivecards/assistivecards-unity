@@ -215,6 +215,7 @@
 	"difficulty_selection_normal":"Normal",
 	"difficulty_selection_hard":"Hard",
 	"play":"Play",
+	"score":"Score: ",
 	"warning-nickname":"Nickname is too long!",
 	"circle_the_card":"Circle the $1"
 }

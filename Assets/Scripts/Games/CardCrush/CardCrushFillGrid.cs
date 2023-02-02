@@ -244,6 +244,20 @@ public class CardCrushFillGrid : MonoBehaviour
 
         card.GetComponent<CardElement>().x = cell.x;
         card.GetComponent<CardElement>().y = cell.y;
+    }
 
+    public void ResetGrid()
+    {
+        foreach(var cell in cardCrushGrid.allCells)
+        {
+            GameObject card = cell.card;
+            cell.card = null;
+            Destroy(card);
+
+            cardNames.Clear();
+            //cachedCards.Clear();
+            randomValues.Clear();
+            matchedCards.Clear();
+        }
     }
 }

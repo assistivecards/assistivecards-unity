@@ -12,6 +12,7 @@ public class CardCrushGameUIController : MonoBehaviour
     [SerializeField] private GameObject helloText;
     [SerializeField] private GameObject packSelectionScreen;
     [SerializeField] private GameObject transitionScreen;
+    [SerializeField] private GameObject score;
 
     private void Update() 
     {
@@ -20,33 +21,40 @@ public class CardCrushGameUIController : MonoBehaviour
 
     public void GamePanelUIControl()
     {
-        if(fillGrid.isBoardCreated)
+        if(fillGrid.isOnGame)
         {
+            score.SetActive(true);
             backButton.SetActive(true);
             helloText.SetActive(false);
         }
         else if(levelChangeScreenController.isOnLevelChange)
         {
+            score.SetActive(false);
             backButton.SetActive(false);
             helloText.SetActive(false);
         }
         else if(difficultSelectionPanelTween.isOnDifficultyScene)
         {
+            score.SetActive(false);
             backButton.SetActive(true);
             helloText.SetActive(false);
         }
         else if(packSelectionScreen.activeInHierarchy)
         {
+            Debug.Log("!");
+            score.SetActive(false);
             backButton.SetActive(false);
             helloText.SetActive(true);
         }
         else if(transitionScreen.activeInHierarchy)
         {
+            score.SetActive(false);
             backButton.SetActive(false);
             helloText.SetActive(false);
         }
         else
         {
+            score.SetActive(false);
             backButton.SetActive(false);
             helloText.SetActive(false);
         }
@@ -55,6 +63,7 @@ public class CardCrushGameUIController : MonoBehaviour
     public void GameBackButtonClick()
     {
         //LeanTween.scale(cardGrid, Vector3.one * 0.0001f, 0.01f);
+        fillGrid.isOnGame = false;
         LeanTween.scale(difficultSelectionPanelTween.gameObject, Vector3.one * 0.1f, 0.15f);
         LeanTween.scale(levelChangeScreenController.gameObject, Vector3.one * 0.1f, 0.15f);
 

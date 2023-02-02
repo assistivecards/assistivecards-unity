@@ -15,6 +15,7 @@ public class CardCrushFillGrid : MonoBehaviour
     [SerializeField] private PackSelectionPanel packSelectionPanel;
     [SerializeField] private CardCrushGrid cardCrushGrid;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
+    [SerializeField] private GameObject scoreObj;
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     private List<string> cardNames = new List<string>();
 
@@ -28,6 +29,10 @@ public class CardCrushFillGrid : MonoBehaviour
 
     public bool isOnRefill = false;
 
+    public float score = 0;
+    public int scoreInt = 0;
+
+    public bool isOnGame = false;
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
@@ -148,6 +153,7 @@ public class CardCrushFillGrid : MonoBehaviour
             cell.GetComponent<CardCrushCell>().DetectNeighboursAround();
         }
         isBoardCreated = true;
+        isOnGame = true;
     }
     private bool FindVerticalMatchesAtBeginning(int i)
     {
@@ -206,7 +212,10 @@ public class CardCrushFillGrid : MonoBehaviour
     {
         isOnRefill = false;
     }
-    private void FixedUpdate() {
+    private void FixedUpdate() 
+    {
+        scoreInt = (int)score / 2;
+        scoreObj.GetComponent<TMP_Text>().text = scoreInt.ToString() + "/100";
         if(isBoardCreated)
         {
             foreach(var cell in cardCrushGrid.allCells)
@@ -247,7 +256,6 @@ public class CardCrushFillGrid : MonoBehaviour
     {
         foreach(var cell in cardCrushGrid.allCells)
         {
-            //cell.isEmpty = true;
             Destroy(cell.card.gameObject);
             cell.neighbours.Clear();
             cell.horizontalNeighboursLeft.Clear();
@@ -258,6 +266,7 @@ public class CardCrushFillGrid : MonoBehaviour
             cardNames.Clear();
             randomValues.Clear();
             matchedCards.Clear();
+            score = 0;
         }
     }
 }

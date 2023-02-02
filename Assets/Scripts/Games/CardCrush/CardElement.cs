@@ -27,7 +27,6 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public List<GameObject> matched = new List<GameObject>();
 
-    public List<GameObject> horizontalNeighbours = new List<GameObject>();
     private bool notHorizontal = false;
 
     private void OnEnable() 
@@ -311,12 +310,12 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             Destroy(card);
         }
     }
-
     private void ScaleUpMatch()
     {
         cardCrushFillGrid.isOnRefill = true;
         foreach(var card in matched)
         {
+            cardCrushFillGrid.score += 1;
             LeanTween.scale(card, new Vector3(0.5f, 0.5f, 0.5f), 0.1f);
         }
         Invoke("DestroyMatched", 0.1f);

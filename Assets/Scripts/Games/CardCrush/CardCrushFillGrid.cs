@@ -215,7 +215,12 @@ public class CardCrushFillGrid : MonoBehaviour
 
     private void FixedUpdate() 
     {
+        if(scoreInt < 0)
+        {
+            scoreInt = 0;
+        }
         scoreObj.GetComponent<TMP_Text>().text = scoreInt.ToString() + "/100";
+        
         if(isBoardCreated && scoreInt < 100)
         {
             foreach(var cell in cardCrushGrid.allCells)

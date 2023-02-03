@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class SplitPuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
 {
+    private PuzzleProgressChecker puzzleProgressChecker;
     private GameAPI gameAPI;
     private bool isMatched = false;
     private Transform matchedSlotTransform;
@@ -13,6 +14,11 @@ public class SplitPuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
+
+    private void Start()
+    {
+        puzzleProgressChecker = GameObject.Find("GamePanel").GetComponent<PuzzleProgressChecker>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -37,9 +43,15 @@ public class SplitPuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
     {
         if (isMatched)
         {
+            puzzleProgressChecker.correctMatches++;
             gameObject.GetComponent<DraggablePiece>().enabled = false;
             LeanTween.move(gameObject, matchedSlotTransform.position, 0.25f);
             gameAPI.PlaySFX("Success");
+            if (puzzleProgressChecker.correctMatches == 4)
+            {
+                Debug.Log("Puzzle completed!");
+                puzzleProgressChecker.puzzlesCompleted++;
+            }
         }
         else
             Debug.Log("Wrong Match!");

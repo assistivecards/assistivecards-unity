@@ -315,7 +315,6 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         cardCrushFillGrid.isOnRefill = true;
         foreach(var card in matched)
         {
-            cardCrushFillGrid.score += 1;
             LeanTween.scale(card, new Vector3(0.5f, 0.5f, 0.5f), 0.1f);
         }
         Invoke("DestroyMatched", 0.1f);

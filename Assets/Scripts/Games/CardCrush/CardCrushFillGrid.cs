@@ -28,11 +28,9 @@ public class CardCrushFillGrid : MonoBehaviour
     public List<GameObject> matchedCards = new List<GameObject>();
 
     public bool isOnRefill = false;
-
-    public float score = 0;
     public int scoreInt = 0;
-
     public bool isOnGame = false;
+
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
@@ -183,6 +181,7 @@ public class CardCrushFillGrid : MonoBehaviour
 
     public async void RefillBoard()
     {
+        scoreInt += 1;
         foreach(var cell in cardCrushGrid.allCells)
         {
             if(cell.isEmpty == true)
@@ -206,15 +205,16 @@ public class CardCrushFillGrid : MonoBehaviour
             }
         }
         Invoke("OnRefillBool", 1f);
+
     }
 
     private void OnRefillBool()
     {
         isOnRefill = false;
     }
+
     private void FixedUpdate() 
     {
-        scoreInt = (int)score / 2;
         scoreObj.GetComponent<TMP_Text>().text = scoreInt.ToString() + "/100";
         if(isBoardCreated && scoreInt < 100)
         {
@@ -270,7 +270,7 @@ public class CardCrushFillGrid : MonoBehaviour
             cardNames.Clear();
             randomValues.Clear();
             matchedCards.Clear();
-            score = 0;
+            scoreInt = 0;
         }
     }
 }

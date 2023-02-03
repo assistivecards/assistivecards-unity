@@ -904,10 +904,14 @@ public class GameAPI : MonoBehaviour
         if (obj[UITextID] != null && variable != null)
         {
             var result = (obj[UITextID].ToString().Replace("$1", variable)).Replace("\"", "");
-            if (result.Contains("XXXX"))
+            if (result.Contains("XXXXX"))
+                result = result.Replace("XXXXX", variable);
+            else if (result.Contains("XXXX"))
                 result = result.Replace("XXXX", variable);
             else if (result.Contains("XXX"))
                 result = result.Replace("XXX", variable);
+            else if (result.Contains("XX"))
+                result = result.Replace("XX", variable);
             return result;
         }
         else

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CardCrushGameUIController : MonoBehaviour
 {
-    [SerializeField] private LevelChangeScreenController levelChangeScreenController;
+    [SerializeField] private CardCrushLevelControl levelChangeScreenController;
     [SerializeField] private DifficultSelectionPanelTween difficultSelectionPanelTween;
     [SerializeField] private PackSelectionScreenUIController packSelectionScreenUIController;
     [SerializeField] private CardCrushFillGrid fillGrid;
@@ -13,6 +13,8 @@ public class CardCrushGameUIController : MonoBehaviour
     [SerializeField] private GameObject packSelectionScreen;
     [SerializeField] private GameObject transitionScreen;
     [SerializeField] private GameObject score;
+    [SerializeField] private GameObject board;
+    [SerializeField] private GameObject levelChange;
 
     private void Update() 
     {
@@ -26,6 +28,10 @@ public class CardCrushGameUIController : MonoBehaviour
             score.SetActive(true);
             backButton.SetActive(true);
             helloText.SetActive(false);
+        }
+        else if(fillGrid.scoreInt >= 100)
+        {
+            levelChange.SetActive(true);
         }
         else if(levelChangeScreenController.isOnLevelChange)
         {
@@ -41,7 +47,6 @@ public class CardCrushGameUIController : MonoBehaviour
         }
         else if(packSelectionScreen.activeInHierarchy)
         {
-            Debug.Log("!");
             score.SetActive(false);
             backButton.SetActive(false);
             helloText.SetActive(true);

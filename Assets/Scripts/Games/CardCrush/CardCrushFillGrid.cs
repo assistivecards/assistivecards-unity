@@ -216,7 +216,7 @@ public class CardCrushFillGrid : MonoBehaviour
     {
         scoreInt = (int)score / 2;
         scoreObj.GetComponent<TMP_Text>().text = scoreInt.ToString() + "/100";
-        if(isBoardCreated)
+        if(isBoardCreated && scoreInt < 100)
         {
             foreach(var cell in cardCrushGrid.allCells)
             {
@@ -225,6 +225,10 @@ public class CardCrushFillGrid : MonoBehaviour
                     RefillBoard();
                 }
             }
+        }
+        if(scoreInt >= 100)
+        {
+            isOnGame = false;
         }
     }
 

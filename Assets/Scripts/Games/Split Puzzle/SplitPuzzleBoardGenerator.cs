@@ -21,7 +21,8 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
     [SerializeField] List<Image> hintImagePieces = new List<Image>();
     [SerializeField] GameObject[] puzzlePieceSlots;
     [SerializeField] List<Image> puzzlePieceImages = new List<Image>();
-    [SerializeField] GameObject puzzleSlotsParent;
+    [SerializeField] GameObject puzzleSlotsDarkParent;
+    [SerializeField] GameObject puzzleSlotsLightParent;
     private List<Sprite> puzzlePieces = new List<Sprite>();
 
     private void Awake()
@@ -67,7 +68,8 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
     public void ScaleImagesUp()
     {
         LeanTween.scale(hintImageParent, Vector3.one, 0.15f);
-        LeanTween.scale(puzzleSlotsParent, Vector3.one, 0.15f);
+        LeanTween.scale(puzzleSlotsDarkParent, Vector3.one, 0.15f);
+        LeanTween.scale(puzzleSlotsLightParent, Vector3.one, 0.15f);
 
 
         for (int i = 0; i < puzzlePieceSlots.Length; i++)

@@ -204,7 +204,7 @@ public class CardCrushFillGrid : MonoBehaviour
                 Debug.Log("Refill is done");
             }
         }
-        Invoke("OnRefillBool", 1f);
+        Invoke("OnRefillBool", 0.5f);
 
     }
 
@@ -220,7 +220,7 @@ public class CardCrushFillGrid : MonoBehaviour
             scoreInt = 0;
         }
         scoreObj.GetComponent<TMP_Text>().text = scoreInt.ToString() + "/100";
-        
+
         if(isBoardCreated && scoreInt < 100)
         {
             foreach(var cell in cardCrushGrid.allCells)

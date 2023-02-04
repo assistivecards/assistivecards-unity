@@ -12,9 +12,6 @@ public class CardCrushGrid : MonoBehaviour
     [SerializeField] private GameObject cellPrefab;
     public List<CardCrushCell> allCells = new List<CardCrushCell>();
 
-    [SerializeField] private GameObject referance;
-    private Vector2 referancePoint;
-
     private float screenWidthQuo;
     private float screenHeightQuo;
     RectTransform rectTransform;
@@ -23,13 +20,11 @@ public class CardCrushGrid : MonoBehaviour
     {
         rectTransform = GetComponent<RectTransform>();
         screenWidthQuo = (Screen.width - 2048);
-
         screenHeightQuo = (Screen.height / 15);
-        Debug.Log("Screen Hei : " + screenHeightQuo);
         SetUp();
     }
 
-    private void SetUp()
+    public void SetUp()
     {
         for(int i = 0; i < width; i++)
         {
@@ -44,16 +39,27 @@ public class CardCrushGrid : MonoBehaviour
                 allCells.Add(cell.GetComponent<CardCrushCell>());
             }
         }
+        Debug.Log("ssss" + screenHeightQuo);
 
-        SetLeft(rectTransform, screenWidthQuo / 3.6f);
+        SetLeft(rectTransform, screenWidthQuo / (float)(Screen.width/675f));
+        SetBottom(rectTransform, screenWidthQuo / (float)(Screen.height/25f));
 
-// 610 -> 4.2 |  484 -> 3.85 | 290 -> 3.6 | bölen sayısı screen width ile doğru orantılı büyücek şimdilik ort.değer 3.5
+// 610 -> 4.2  632,85|  484 -> 3.85 657 | 290 -> 3.6 649 | bölen sayısı screen width ile doğru orantılı büyücek şimdilik ort.değer 3.5
 
-        if(screenWidthQuo < 100)
+        if(screenHeightQuo >= 95)
         {
             this.transform.localScale = new Vector3(0.85f, 0.85f, 0.85f);
             SetBottom(rectTransform, screenHeightQuo);
         }
+        if(screenHeightQuo >= 70 && screenHeightQuo < 95)
+        {
+            this.transform.localScale = new Vector3(0.9f, 0.9f, 0.9f);
+        }
+        // if(screenHeightQuo <= 300)
+        // {
+        //     this.transform.localScale = new Vector3(0.9f, 0.9f, 0.9f);
+        //     SetBottom(rectTransform, screenHeightQuo);
+        // }
     }
 
     public static void SetLeft(RectTransform _rect, float left)

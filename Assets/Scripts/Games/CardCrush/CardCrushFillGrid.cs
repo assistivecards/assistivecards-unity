@@ -15,6 +15,7 @@ public class CardCrushFillGrid : MonoBehaviour
     [SerializeField] private PackSelectionPanel packSelectionPanel;
     [SerializeField] private CardCrushGrid cardCrushGrid;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
+    [SerializeField] private GameObject scoreObj;
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     private List<string> cardNames = new List<string>();
 
@@ -27,6 +28,8 @@ public class CardCrushFillGrid : MonoBehaviour
     public List<GameObject> matchedCards = new List<GameObject>();
 
     public bool isOnRefill = false;
+    public int scoreInt = 0;
+    public bool isOnGame = false;
 
     private void Awake()
     {
@@ -79,9 +82,6 @@ public class CardCrushFillGrid : MonoBehaviour
     {
         GenerateBoard(packSelectionPanel.selectedPackElement.name);
     }
-    // private void Start() {
-    //     GenerateBoard("animals");
-    // }
 
     private async void  GenerateBoard(string _packSlug)
     {
@@ -106,7 +106,7 @@ public class CardCrushFillGrid : MonoBehaviour
             card.GetComponent<CardElement>().type = cardNames[cardImageRandom];
 
             int maxIterations = 0;
-            while(FindVerticalMatchesAtBeginning(i) && maxIterations < 50)
+            while(FindVerticalMatchesAtBeginning(i) && maxIterations < 100)
             {   
                 cardImageRandom = randomValues[Random.Range(0, cardTypeCount)];
                 cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[cardImageRandom], 512);
@@ -124,7 +124,7 @@ public class CardCrushFillGrid : MonoBehaviour
             }
 
             maxIterations = 0;
-            while(FindHorizontalMatchesAtBeginning(i) && maxIterations < 50)
+            while(FindHorizontalMatchesAtBeginning(i) && maxIterations < 100)
             {   
                 cardImageRandom = randomValues[Random.Range(0, cardTypeCount)];
                 cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[cardImageRandom], 512);
@@ -144,13 +144,14 @@ public class CardCrushFillGrid : MonoBehaviour
             maxIterations = 0;
 
         }
-        isBoardCreated = true;
 
         foreach(var cell in cardCrushGrid.allCells)
         {
             cell.GetComponent<CardCrushCell>().DetectNeighbourCells();
             cell.GetComponent<CardCrushCell>().DetectNeighboursAround();
         }
+        isBoardCreated = true;
+        isOnGame = true;
     }
     private bool FindVerticalMatchesAtBeginning(int i)
     {
@@ -180,6 +181,7 @@ public class CardCrushFillGrid : MonoBehaviour
 
     public async void RefillBoard()
     {
+        scoreInt += 1;
         foreach(var cell in cardCrushGrid.allCells)
         {
             if(cell.isEmpty == true)
@@ -199,26 +201,39 @@ public class CardCrushFillGrid : MonoBehaviour
                 card.GetComponent<CardElement>().x = cell.x;
                 card.GetComponent<CardElement>().y = cell.y;
                 card.GetComponent<CardElement>().type = cardNames[cardImageRandom];
+                Debug.Log("Refill is done");
             }
         }
-        Invoke("OnRefillBool", 1f);
+        Invoke("OnRefillBool", 0.5f);
+
     }
 
     private void OnRefillBool()
     {
         isOnRefill = false;
     }
-    private void FixedUpdate() {
-        if(isBoardCreated)
+
+    private void FixedUpdate() 
+    {
+        if(scoreInt < 0)
+        {
+            scoreInt = 0;
+        }
+        scoreObj.GetComponent<TMP_Text>().text = scoreInt.ToString() + "/100";
+
+        if(isBoardCreated && scoreInt < 100)
         {
             foreach(var cell in cardCrushGrid.allCells)
             {
                 if(cell.isEmpty)
                 {
-                    //Invoke("RefillBoard", 0.6f);
                     RefillBoard();
                 }
             }
+        }
+        if(scoreInt >= 100)
+        {
+            isOnGame = false;
         }
     }
 
@@ -244,6 +259,23 @@ public class CardCrushFillGrid : MonoBehaviour
 
         card.GetComponent<CardElement>().x = cell.x;
         card.GetComponent<CardElement>().y = cell.y;
+    }
 
+    public void ResetGrid()
+    {
+        foreach(var cell in cardCrushGrid.allCells)
+        {
+            Destroy(cell.card.gameObject);
+            cell.neighbours.Clear();
+            cell.horizontalNeighboursLeft.Clear();
+            cell.horizontalNeighboursRight.Clear();
+            cell.verticalNeightboursBottom.Clear();
+            cell.verticalNeightboursTop.Clear();
+
+            cardNames.Clear();
+            randomValues.Clear();
+            matchedCards.Clear();
+            scoreInt = 0;
+        }
     }
 }

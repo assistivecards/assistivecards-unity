@@ -27,15 +27,12 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public List<GameObject> matched = new List<GameObject>();
 
-    public List<GameObject> horizontalNeighbours = new List<GameObject>();
     private bool notHorizontal = false;
+    private bool isMatched;
 
     private void OnEnable() 
     {
         LeanTween.scale(this.gameObject, Vector3.one, 0.3f);
-    }
-    private void Start() 
-    {
         cardPosition = this.transform.position;
         cardCrushGrid = FindObjectOfType<CardCrushGrid>();
         cardCrushFillGrid = FindObjectOfType<CardCrushFillGrid>();
@@ -97,6 +94,14 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         _card.GetComponent<CardElement>().y = y;
         x = _targetX;
         y = _targetY;
+        Invoke("CheckIsMatched", 0.1f);
+    }
+    private void CheckIsMatched()
+    {
+        if(!isMatched)
+        {
+            cardCrushFillGrid.scoreInt -= 1;
+        }
     }
 
     private void MoveDrops()
@@ -248,7 +253,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             {
                 if(!matched.Contains(this.gameObject))
                     matched.Add(this.gameObject);
-
+                    isMatched = true;
                 ScaleUpMatch();
             }
             if(matched.Count < 2)
@@ -296,6 +301,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                     if(!matched.Contains(this.gameObject))
                         matched.Add(this.gameObject);
                     ScaleUpMatch();
+                    isMatched = true;
                 }
                 if(matched.Count < 2)
                 {
@@ -314,7 +320,6 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             Destroy(card);
         }
     }
-
     private void ScaleUpMatch()
     {
         cardCrushFillGrid.isOnRefill = true;

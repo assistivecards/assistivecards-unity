@@ -17,11 +17,12 @@ public class CardCrushCell : MonoBehaviour
 
     public List<CardCrushCell> neighbours = new List<CardCrushCell>();
     public List<CardCrushCell> horizontalNeighboursRight = new List<CardCrushCell>();
-        public List<CardCrushCell> horizontalNeighboursLeft = new List<CardCrushCell>();
+    public List<CardCrushCell> horizontalNeighboursLeft = new List<CardCrushCell>();
 
     public List<CardCrushCell> verticalNeightboursTop = new List<CardCrushCell>();
     public List<CardCrushCell> verticalNeightboursBottom = new List<CardCrushCell>();
-    private void Awake() 
+
+    private void OnEnable() 
     {
         cardCrushGrid = FindObjectOfType<CardCrushGrid>();
     }

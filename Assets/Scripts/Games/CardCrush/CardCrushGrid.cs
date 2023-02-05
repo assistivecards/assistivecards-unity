@@ -39,27 +39,34 @@ public class CardCrushGrid : MonoBehaviour
                 allCells.Add(cell.GetComponent<CardCrushCell>());
             }
         }
-        Debug.Log("screen height: " + screenHeightQuo);
+        Debug.Log("SCREEN height: " + screenHeightQuo);
 
         SetLeft(rectTransform, screenWidthQuo / (float)(Screen.width/675f));
         SetBottom(rectTransform, screenWidthQuo / (float)(Screen.height/25f));
 
-// 610 -> 4.2  632,85|  484 -> 3.85 657 | 290 -> 3.6 649 | bölen sayısı screen width ile doğru orantılı büyücek şimdilik ort.değer 3.5
-
-        if(screenHeightQuo >= 95)
+        if(screenHeightQuo > 105)
+        {
+            SetBottom(rectTransform, screenHeightQuo * 1.25f);
+        }
+        else if(screenHeightQuo >= 100 && screenHeightQuo <= 105)
         {
             this.transform.localScale = new Vector3(0.85f, 0.85f, 0.85f);
-            SetBottom(rectTransform, screenHeightQuo);
+            SetBottom(rectTransform, screenHeightQuo * 1.1f);
         }
-        if(screenHeightQuo >= 70 && screenHeightQuo < 95)
+        else if(screenHeightQuo >= 95 && screenHeightQuo < 100)
+        {
+            this.transform.localScale = new Vector3(0.95f, 0.95f, 0.95f);
+            SetBottom(rectTransform, screenHeightQuo * 1.1f);
+        }
+        else if(screenHeightQuo >= 85 && screenHeightQuo < 95)
+        {
+            //SetBottom(rectTransform, screenHeightQuo * 1.1f);
+        }
+        else if(screenHeightQuo < 85)
         {
             this.transform.localScale = new Vector3(0.9f, 0.9f, 0.9f);
         }
-        // if(screenHeightQuo <= 300)
-        // {
-        //     this.transform.localScale = new Vector3(0.9f, 0.9f, 0.9f);
-        //     SetBottom(rectTransform, screenHeightQuo);
-        // }
+
     }
 
     public static void SetLeft(RectTransform _rect, float left)

@@ -13,6 +13,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private CardCrushGrid cardCrushGrid;
     private CardCrushFillGrid cardCrushFillGrid;
+    private SoundController soundController;
 
     private Vector2 firstTouchPosition;
     private Vector2 finalTouchPosition;
@@ -28,7 +29,8 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public List<GameObject> matched = new List<GameObject>();
 
     private bool notHorizontal = false;
-    private bool isMatched;
+    public bool isMatched;
+    public bool isMoved;
 
     private void OnEnable() 
     {
@@ -36,6 +38,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         cardPosition = this.transform.position;
         cardCrushGrid = FindObjectOfType<CardCrushGrid>();
         cardCrushFillGrid = FindObjectOfType<CardCrushFillGrid>();
+        soundController = FindObjectOfType<SoundController>();
         if(this.transform.localScale.x > 1)
         {
             this.transform.localScale = Vector3.one;
@@ -44,6 +47,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public void OnPointerDown(PointerEventData pointerEventData)
     {
+        isMoved = true;
         cardPosition = this.transform.position;
         if(cardCrushFillGrid.isBoardCreated && !cardCrushFillGrid.isOnRefill)
         {
@@ -70,6 +74,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             
         if(!cardCrushFillGrid.isOnRefill)
             DetectLongMatch();
+
     }
 
     private void CalculateAngle()
@@ -79,10 +84,13 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void MoveToTarget(CardCrushCell _cell, GameObject _card, Vector3 _transform, float _targetX, float _targetY)
     {
+        soundController.movedTargetList.Add(_card.name);
+        soundController.movedList.Add(this.gameObject.name);
         _card.GetComponent<CardElement>().cardPosition = this.transform.position;
         LeanTween.move(_card, cardPosition, 0.2f);
         LeanTween.move(this.gameObject, _transform, 0.2f);
         cardPosition = this.transform.position;
+        _card.GetComponent<CardElement>().isMoved = true;
 
         _card.transform.parent = this.transform.parent;
         this.transform.parent.GetComponent<CardCrushCell>().card = _card;
@@ -96,12 +104,18 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         y = _targetY;
         Invoke("CheckIsMatched", 0.1f);
     }
+
     private void CheckIsMatched()
     {
         if(!isMatched)
         {
             cardCrushFillGrid.scoreInt -= 1;
         }
+    }
+
+    private void IsMovedFalse()
+    {
+       isMoved = false;
     }
 
     private void MoveDrops()
@@ -254,7 +268,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 if(!matched.Contains(this.gameObject))
                     matched.Add(this.gameObject);
                     isMatched = true;
-                ScaleUpMatch();
+                    ScaleUpMatch();
             }
             if(matched.Count < 2)
             {
@@ -300,8 +314,10 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 {
                     if(!matched.Contains(this.gameObject))
                         matched.Add(this.gameObject);
-                    ScaleUpMatch();
-                    isMatched = true;
+                        isMatched = true;
+                        
+                        ScaleUpMatch();
+                    
                 }
                 if(matched.Count < 2)
                 {
@@ -314,9 +330,11 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void DestroyMatched()
     {
+       
         foreach(var card in matched)
         {
             card.transform.GetComponentInParent<CardCrushCell>().isEmpty = true;
+            
             Destroy(card);
         }
     }
@@ -325,7 +343,8 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         cardCrushFillGrid.isOnRefill = true;
         foreach(var card in matched)
         {
-            LeanTween.scale(card, new Vector3(0.5f, 0.5f, 0.5f), 0.1f);
+            soundController.matchedList.Add(this.gameObject.name);
+            LeanTween.scale(card, new Vector3(0.5f, 0.5f, 0.5f), 0.1f);   
         }
         Invoke("DestroyMatched", 0.1f);
     }

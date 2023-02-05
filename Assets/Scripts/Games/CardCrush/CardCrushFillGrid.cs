@@ -26,6 +26,7 @@ public class CardCrushFillGrid : MonoBehaviour
     private List<int> randomValues = new List<int>();
     private string packSlug;
     public List<GameObject> matchedCards = new List<GameObject>();
+    public List<string> matchedCardName = new List<string>();
 
     public bool isOnRefill = false;
     public int scoreInt = 0;
@@ -201,7 +202,7 @@ public class CardCrushFillGrid : MonoBehaviour
                 card.GetComponent<CardElement>().x = cell.x;
                 card.GetComponent<CardElement>().y = cell.y;
                 card.GetComponent<CardElement>().type = cardNames[cardImageRandom];
-                Debug.Log("Refill is done");
+                //Debug.Log("Refill is done");
             }
         }
         Invoke("OnRefillBool", 0.5f);

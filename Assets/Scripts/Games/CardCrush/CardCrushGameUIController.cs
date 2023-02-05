@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CardCrushGameUIController : MonoBehaviour
 {
+    GameAPI gameAPI;
     [SerializeField] private CardCrushLevelControl levelChangeScreenController;
     [SerializeField] private DifficultSelectionPanelTween difficultSelectionPanelTween;
     [SerializeField] private PackSelectionScreenUIController packSelectionScreenUIController;
@@ -15,6 +16,11 @@ public class CardCrushGameUIController : MonoBehaviour
     [SerializeField] private GameObject score;
     [SerializeField] private GameObject board;
     [SerializeField] private GameObject levelChange;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void Update() 
     {
@@ -32,6 +38,7 @@ public class CardCrushGameUIController : MonoBehaviour
         else if(fillGrid.scoreInt >= 100)
         {
             levelChange.SetActive(true);
+            gameAPI.PlaySFX("Finish");
         }
         else if(levelChangeScreenController.isOnLevelChange)
         {

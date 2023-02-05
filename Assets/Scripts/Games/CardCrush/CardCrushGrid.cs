@@ -39,7 +39,7 @@ public class CardCrushGrid : MonoBehaviour
                 allCells.Add(cell.GetComponent<CardCrushCell>());
             }
         }
-        Debug.Log("ssss" + screenHeightQuo);
+        Debug.Log("screen height: " + screenHeightQuo);
 
         SetLeft(rectTransform, screenWidthQuo / (float)(Screen.width/675f));
         SetBottom(rectTransform, screenWidthQuo / (float)(Screen.height/25f));

@@ -18,6 +18,10 @@ public class SoundController : MonoBehaviour
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
     }
+    private void Start() 
+    {
+        gameAPI.PlayMusic();
+    }
 
     private void Update() 
     {
@@ -30,6 +34,7 @@ public class SoundController : MonoBehaviour
         {
             if(matchedList.Last() == movedList.Last())
             {
+                gameAPI.PlaySFX("Success");
                 gameAPI.Speak(matchedList.Last());
                 matchedList.Clear();
                 movedList.Clear();
@@ -40,6 +45,7 @@ public class SoundController : MonoBehaviour
         {
             if(matchedList.Last() == movedTargetList.Last())
             {
+                gameAPI.PlaySFX("Success");
                 gameAPI.Speak(matchedList.Last());
                 matchedList.Clear();
                 movedList.Clear();

@@ -50,21 +50,29 @@ public class CardCrushGrid : MonoBehaviour
         }
         else if(screenHeightQuo >= 100 && screenHeightQuo <= 105)
         {
-            this.transform.localScale = new Vector3(0.85f, 0.85f, 0.85f);
+            this.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
             SetBottom(rectTransform, screenHeightQuo * 1.1f);
         }
         else if(screenHeightQuo >= 95 && screenHeightQuo < 100)
         {
-            this.transform.localScale = new Vector3(0.95f, 0.95f, 0.95f);
-            SetBottom(rectTransform, screenHeightQuo * 1.1f);
+            this.transform.localScale = new Vector3(1f, 1f, 1f);
+            SetBottom(rectTransform, screenHeightQuo * 0.5f);
         }
         else if(screenHeightQuo >= 85 && screenHeightQuo < 95)
         {
-            //SetBottom(rectTransform, screenHeightQuo * 1.1f);
+            SetLeft(rectTransform, screenWidthQuo / (float)(Screen.width/630));
+            SetBottom(rectTransform, screenHeightQuo * 0.5f);
         }
-        else if(screenHeightQuo < 85)
+        else if(screenHeightQuo < 85 && screenHeightQuo >= 60)
         {
-            this.transform.localScale = new Vector3(0.9f, 0.9f, 0.9f);
+            this.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+            SetBottom(rectTransform, screenHeightQuo * 0.5f);
+        }
+        else if(screenHeightQuo < 60)
+        {
+            this.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            SetBottom(rectTransform, screenHeightQuo * 0.5f);
+            SetLeft(rectTransform, screenWidthQuo / (float)(Screen.width/410f));
         }
 
     }

@@ -16,6 +16,7 @@ public class CardCrushGameUIController : MonoBehaviour
     [SerializeField] private GameObject score;
     [SerializeField] private GameObject board;
     [SerializeField] private GameObject levelChange;
+    [SerializeField] private GameObject difficultSelectionPanel;
 
     private void Awake()
     {
@@ -93,5 +94,13 @@ public class CardCrushGameUIController : MonoBehaviour
         fillGrid.ResetGrid();
         //fillGrid.isBoardCreated = false;
         GamePanelUIControl();
+    }
+
+    public void PackSelected()
+    {
+        if(packSelectionScreenUIController.canGenerate)
+        {
+            difficultSelectionPanel.SetActive(true);
+        }
     }
 }

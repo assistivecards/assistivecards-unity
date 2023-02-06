@@ -86,6 +86,7 @@ public class CardCrushFillGrid : MonoBehaviour
 
     private async void  GenerateBoard(string _packSlug)
     {
+        isOnGame = true;
         await CacheCards(_packSlug);
         CreateRandomValue();
 
@@ -152,7 +153,6 @@ public class CardCrushFillGrid : MonoBehaviour
             cell.GetComponent<CardCrushCell>().DetectNeighboursAround();
         }
         isBoardCreated = true;
-        isOnGame = true;
     }
     private bool FindVerticalMatchesAtBeginning(int i)
     {

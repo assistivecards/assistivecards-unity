@@ -15,6 +15,7 @@ public class SplitPuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
     private GameObject lightSlotsParent;
     [SerializeField] List<GameObject> puzzlePieceParents = new List<GameObject>();
     [SerializeField] GameObject hintImageParent;
+    private SplitPuzzleUIController UIController;
 
     private void Awake()
     {
@@ -27,6 +28,7 @@ public class SplitPuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
         puzzleBoard = GameObject.Find("GamePanel").GetComponent<SplitPuzzleBoardGenerator>();
         darkSlotsParent = GameObject.Find("PuzzleSlotsDark");
         lightSlotsParent = GameObject.Find("PuzzleSlotsLight");
+        UIController = GameObject.Find("GamePanel").GetComponent<SplitPuzzleUIController>();
 
     }
 
@@ -71,7 +73,13 @@ public class SplitPuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
 
                 Invoke("ScaleHintImageDown", .5f);
                 puzzleBoard.Invoke("ClearBoard", 1f);
-                puzzleBoard.Invoke("GenerateRandomBoardAsync", 1f);
+
+                if (puzzleProgressChecker.puzzlesCompleted == 5)
+                {
+                    UIController.Invoke("OpenCheckPointPanel", 1.25f);
+                }
+                else
+                    puzzleBoard.Invoke("GenerateRandomBoardAsync", 1f);
 
 
             }

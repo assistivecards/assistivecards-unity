@@ -70,16 +70,17 @@ public class SplitPuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
                 }
                 LeanTween.alpha(lightSlotsParent.GetComponent<RectTransform>(), 0, .5f);
                 LeanTween.alpha(darkSlotsParent.GetComponent<RectTransform>(), 0, .25f);
+                puzzleBoard.Invoke("ReadCard", 0.25f);
 
-                Invoke("ScaleHintImageDown", .5f);
-                puzzleBoard.Invoke("ClearBoard", 1f);
+                Invoke("ScaleHintImageDown", 1f);
+                puzzleBoard.Invoke("ClearBoard", 1.3f);
 
                 if (puzzleProgressChecker.puzzlesCompleted == 5)
                 {
-                    UIController.Invoke("OpenCheckPointPanel", 1.25f);
+                    UIController.Invoke("OpenCheckPointPanel", 1.3f);
                 }
                 else
-                    puzzleBoard.Invoke("GenerateRandomBoardAsync", 1f);
+                    puzzleBoard.Invoke("GenerateRandomBoardAsync", 1.3f);
 
 
             }

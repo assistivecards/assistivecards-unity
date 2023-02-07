@@ -16,7 +16,7 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
     [SerializeField] GameObject backButton;
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
-    private CircleUIController UIController;
+    private SplitPuzzleUIController UIController;
     [SerializeField] GameObject hintImageParent;
     [SerializeField] List<Image> hintImagePieces = new List<Image>();
     [SerializeField] GameObject[] puzzlePieceParents;
@@ -29,6 +29,22 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
+
+    private void Start()
+    {
+        gameAPI.PlayMusic();
+        UIController = gameObject.GetComponent<SplitPuzzleUIController>();
+    }
+
+    private void OnEnable()
+    {
+        if (isBackAfterSignOut)
+        {
+            gameAPI.PlayMusic();
+            // UIController.OnBackButtonClick();
+            isBackAfterSignOut = false;
+        }
     }
 
     public async Task CacheCards(string packName)

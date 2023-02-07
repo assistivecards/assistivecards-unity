@@ -23,6 +23,6 @@ public class LanguageController : MonoBehaviour
     {   
         selectedLanguage = _languageElement;
 
-        deviceLanguagePanel.CreateSelectLanguageElement(_languageElement);
+        //deviceLanguagePanel.CreateSelectLanguageElement(_languageElement);
     }
 }

@@ -50,16 +50,16 @@ public class SupportedLanguagesPanel : MonoBehaviour
             languageElement.name = languageArray[i].title;
             languageGameobjects.Add(languageElement);
 
-            if (languageArray[i].title == Application.systemLanguage.ToString())
-            {
-                deviceLanguageObject = languageElement;
+            // if (languageArray[i].title == Application.systemLanguage.ToString())
+            // {
+            //     deviceLanguageObject = languageElement;
 
-                deviceLanguagePanel.CreateSelectLanguageElement(deviceLanguageObject);
-            }
+            //     deviceLanguagePanel.CreateSelectLanguageElement(deviceLanguageObject);
+            // }
             if (languageArray[i].title == gameAPI.GetLanguage())
             {
                 languageElement.GetComponent<Toggle>().isOn = true;
-                deviceLanguagePanel.CreateSelectLanguageElement(languageElement);
+                //deviceLanguagePanel.CreateSelectLanguageElement(languageElement);
             }
         }
         Destroy(languageTempElement);

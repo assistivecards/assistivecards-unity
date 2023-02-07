@@ -1692,6 +1692,7 @@ GameObject:
   - component: {fileID: 1381051503}
   - component: {fileID: 1381051504}
   - component: {fileID: 1381051505}
+  - component: {fileID: 1381051506}
   m_Layer: 5
   m_Name: Board
   m_TagString: Untagged
@@ -1743,7 +1744,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1381051500}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e160cd34d4f604f1ca448946ed83e364, type: 3}
   m_Name: 
@@ -1770,7 +1771,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1381051500}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd6dee057c71d4060810373181c4c515, type: 3}
   m_Name: 
@@ -1794,7 +1795,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1381051500}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac38d4729062147cd9e673b0b0fd07b0, type: 3}
   m_Name: 
@@ -1805,6 +1806,31 @@ MonoBehaviour:
   movedTargetList: []
   movedList: []
   matchedList: []
+--- !u!114 &1381051506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381051500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c512acdabd0647b3836279b16b4766c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedLangCode: 
+  cardPrefab: {fileID: 0}
+  packSelectionPanel: {fileID: 0}
+  cardCrushGrid: {fileID: 0}
+  cachedCards:
+    cards: []
+  cardsList: []
+  cardTypeCount: 0
+  isBoardCreated: 0
+  matchedCards: []
+  matchedCardName: []
+  isOnRefill: 0
+  isOnGame: 0
 --- !u!114 &1407491092 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1242831490967550533, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}

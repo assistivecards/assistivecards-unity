@@ -42,7 +42,7 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
         if (isBackAfterSignOut)
         {
             gameAPI.PlayMusic();
-            // UIController.OnBackButtonClick();
+            UIController.OnBackButtonClick();
             isBackAfterSignOut = false;
         }
     }
@@ -106,12 +106,23 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
         for (int i = 0; i < puzzlePieceParents.Length; i++)
         {
             LeanTween.scale(puzzlePieceParents[i], Vector3.one, 0.15f);
+            puzzlePieceParents[i].GetComponent<SplitPuzzleMatchDetection>().isMatched = false;
         }
     }
 
     public void ScaleImagesDown()
     {
+        LeanTween.scale(puzzleSlotsDarkParent, Vector3.zero, .15f);
+        LeanTween.scale(puzzleSlotsLightParent, Vector3.zero, .15f);
+        for (int i = 0; i < puzzlePieceParents.Length; i++)
+        {
+            if (puzzlePieceParents[i].transform.parent.name != "HintImage")
+            {
+                LeanTween.scale(puzzlePieceParents[i], Vector3.zero, .15f);
+            }
 
+        }
+        LeanTween.scale(hintImageParent, Vector3.zero, .15f);
     }
 
     public void ReadCard()

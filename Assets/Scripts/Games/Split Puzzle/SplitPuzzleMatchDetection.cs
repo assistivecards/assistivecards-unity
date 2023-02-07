@@ -17,6 +17,7 @@ public class SplitPuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
     [SerializeField] GameObject hintImageParent;
     private SplitPuzzleUIController UIController;
 
+
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
@@ -57,17 +58,19 @@ public class SplitPuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
             puzzleProgressChecker.correctMatches++;
             gameObject.GetComponent<DraggablePiece>().enabled = false;
             LeanTween.move(gameObject, matchedSlotTransform.position, 0.25f);
+            transform.SetParent(hintImageParent.transform);
             gameAPI.PlaySFX("Success");
             if (puzzleProgressChecker.correctMatches == 4)
             {
                 Debug.Log("Puzzle completed!");
                 puzzleProgressChecker.puzzlesCompleted++;
                 puzzleProgressChecker.correctMatches = 0;
-                for (int i = 0; i < puzzlePieceParents.Count; i++)
-                {
-                    puzzlePieceParents[i].transform.SetParent(hintImageParent.transform);
-                    puzzlePieceParents[i].GetComponent<SplitPuzzleMatchDetection>().isMatched = false;
-                }
+                puzzleProgressChecker.backButton.GetComponent<Button>().interactable = false;
+                // for (int i = 0; i < puzzlePieceParents.Count; i++)
+                // {
+                //      puzzlePieceParents[i].transform.SetParent(hintImageParent.transform);
+                //      puzzlePieceParents[i].GetComponent<SplitPuzzleMatchDetection>().isMatched = false;
+                // }
                 LeanTween.alpha(lightSlotsParent.GetComponent<RectTransform>(), 0, .5f);
                 LeanTween.alpha(darkSlotsParent.GetComponent<RectTransform>(), 0, .25f);
                 puzzleBoard.Invoke("ReadCard", 0.25f);
@@ -81,7 +84,6 @@ public class SplitPuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
                 }
                 else
                     puzzleBoard.Invoke("GenerateRandomBoardAsync", 1.3f);
-
 
             }
         }

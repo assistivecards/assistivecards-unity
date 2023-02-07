@@ -280,6 +280,7 @@ public class CanvasController : MonoBehaviour
         PromoScreen.didLanguageChange = true;
         Board.isBackAfterSignOut = true;
         BoardGeneration.isBackAfterSignOut = true;
+        SplitPuzzleBoardGenerator.isBackAfterSignOut = true;
         deviceLanguage = languageScreen.GetComponentInChildren<DeviceLanguagePanel>().deviceLanguageObject;
         if (deviceLanguage != null)
         {

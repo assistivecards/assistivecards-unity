@@ -6,14 +6,6 @@ public class PuzzleProgressChecker : MonoBehaviour
 {
     public int correctMatches;
     public int puzzlesCompleted;
-    void Start()
-    {
+    public GameObject backButton;
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

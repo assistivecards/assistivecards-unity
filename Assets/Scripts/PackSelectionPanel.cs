@@ -113,7 +113,7 @@ public class PackSelectionPanel : MonoBehaviour
             packElement.GetComponent<Image>().color = bgColor;
 
 
-            packElement.transform.GetChild(0).GetComponent<Text>().text = jsonPackss["packs"][i + gameAPI.freePackImages.Count]["locale"].ToString().Replace("\"", "");
+            packElement.transform.GetChild(0).GetComponent<Text>().text = gameAPI.ToSentenceCase(jsonPackss["packs"][i + gameAPI.freePackImages.Count]["locale"].ToString().Replace("\"", ""));
             var packTexture = gameAPI.premiumPackImages[i];
             packTexture.wrapMode = TextureWrapMode.Clamp;
             packTexture.filterMode = FilterMode.Bilinear;

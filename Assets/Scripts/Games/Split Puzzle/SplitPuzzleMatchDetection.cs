@@ -88,7 +88,7 @@ public class SplitPuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
             }
         }
         else
-            Debug.Log("Wrong Match!");
+            LeanTween.move(gameObject, transform.parent.position, .5f);
     }
 
     public void ScaleHintImageDown()

@@ -103,7 +103,7 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
     {
         for (int i = 0; i < puzzlePieceSlots.Length; i++)
         {
-            puzzlePieceParents[i].transform.SetParent(GameObject.Find("GamePanel").transform);
+            puzzlePieceParents[i].transform.SetParent(puzzlePieceSlots[i].transform);
             puzzlePieceParents[i].transform.position = puzzlePieceSlots[i].transform.position;
             puzzlePieceParents[i].GetComponent<DraggablePiece>().enabled = true;
         }
@@ -180,13 +180,13 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
         if (!uniqueCards.Contains(cardToAdd))
         {
             uniqueCards.Add(cardToAdd);
-            Debug.Log(cardToAdd.slug + " uniqueCards'a eklendi!!");
+            // Debug.Log(cardToAdd.slug + " uniqueCards'a eklendi!!");
         }
         else
         {
             cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
             CheckIfCardExists(cardToAdd);
-            Debug.Log(cardToAdd.slug + " uniqueCards'a eklenmedi!!");
+            // Debug.Log(cardToAdd.slug + " uniqueCards'a eklenmedi!!");
         }
     }
 
@@ -200,7 +200,7 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
-            Debug.Log("Log before checkifcardexists " + cardToAdd.slug);
+            // Debug.Log("Log before checkifcardexists " + cardToAdd.slug);
             CheckIfCardExists(cardToAdd);
         }
     }

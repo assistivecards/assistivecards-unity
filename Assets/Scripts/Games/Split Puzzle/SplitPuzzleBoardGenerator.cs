@@ -9,7 +9,7 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
 {
     GameAPI gameAPI;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
-    [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Card randomCard;
+    [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd;
     [SerializeField] Texture2D randomImage;
     public string selectedLangCode;
     public string packSlug;
@@ -25,6 +25,8 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
     [SerializeField] GameObject puzzleSlotsDarkParent;
     [SerializeField] GameObject puzzleSlotsLightParent;
     private List<Sprite> puzzlePieces = new List<Sprite>();
+    [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> uniqueCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
+    private PuzzleProgressChecker puzzleProgressChecker;
 
     private void Awake()
     {
@@ -35,6 +37,7 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
     {
         gameAPI.PlayMusic();
         UIController = gameObject.GetComponent<SplitPuzzleUIController>();
+        puzzleProgressChecker = gameObject.GetComponent<PuzzleProgressChecker>();
     }
 
     private void OnEnable()
@@ -62,10 +65,19 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
             didLanguageChange = false;
         }
 
+        // for (int i = 0; i < 5; i++)
+        // {
+        //     cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+        //     Debug.Log("Log before checkifcardexists " + cardToAdd.slug);
+        //     CheckIfCardExists(cardToAdd);
+        // }
 
-        randomCard = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+        // cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+        // Debug.Log("Log before checkifcardexists " + cardToAdd.slug);
+        // await CheckIfCardExists(cardToAdd);
+        // randomCard = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
 
-        randomImage = await gameAPI.GetCardImage(packSlug, randomCard.slug);
+        randomImage = await gameAPI.GetCardImage(packSlug, uniqueCards[puzzleProgressChecker.puzzlesCompleted].slug);
         randomImage.wrapMode = TextureWrapMode.Clamp;
         randomImage.filterMode = FilterMode.Bilinear;
         Divide(randomImage);
@@ -78,7 +90,7 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
 
     public void ClearBoard()
     {
-        randomCard = null;
+        cardToAdd = null;
         randomImage = null;
         puzzlePieces.Clear();
         for (int i = 0; i < puzzlePieceImages.Count; i++)
@@ -91,7 +103,7 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
     {
         for (int i = 0; i < puzzlePieceSlots.Length; i++)
         {
-            puzzlePieceParents[i].transform.SetParent(GameObject.Find("GamePanel").transform);
+            puzzlePieceParents[i].transform.SetParent(puzzlePieceSlots[i].transform);
             puzzlePieceParents[i].transform.position = puzzlePieceSlots[i].transform.position;
             puzzlePieceParents[i].GetComponent<DraggablePiece>().enabled = true;
         }
@@ -127,7 +139,7 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
 
     public void ReadCard()
     {
-        gameAPI.Speak(randomCard.title);
+        gameAPI.Speak(uniqueCards[puzzleProgressChecker.puzzlesCompleted - 1].title);
     }
 
     public void EnableBackButton()
@@ -160,6 +172,36 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
                 puzzlePieces.RemoveAt(randomIndex);
                 puzzlePieceImages[i].sprite = sprite;
             }
+        }
+    }
+
+    public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)
+    {
+        if (!uniqueCards.Contains(cardToAdd))
+        {
+            uniqueCards.Add(cardToAdd);
+            // Debug.Log(cardToAdd.slug + " uniqueCards'a eklendi!!");
+        }
+        else
+        {
+            cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+            CheckIfCardExists(cardToAdd);
+            // Debug.Log(cardToAdd.slug + " uniqueCards'a eklenmedi!!");
+        }
+    }
+
+    public void ClearUniqueCards()
+    {
+        uniqueCards.Clear();
+    }
+
+    public void PopulateUniqueCards()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+            // Debug.Log("Log before checkifcardexists " + cardToAdd.slug);
+            CheckIfCardExists(cardToAdd);
         }
     }
 }

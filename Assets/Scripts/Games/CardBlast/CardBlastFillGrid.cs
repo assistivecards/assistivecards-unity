@@ -114,9 +114,33 @@ public class CardBlastFillGrid : MonoBehaviour
         isBoardCreated = true;
     }
 
+    private void FixedUpdate() 
+    {
+        // if(scoreInt < 0)
+        // {
+        //     scoreInt = 0;
+        // }
+        // scoreObj.GetComponent<TMP_Text>().text = scoreInt.ToString() + "/100";
+
+        if(isBoardCreated)
+        {
+            foreach(var cell in cardCrushGrid.allCells)
+            {
+                if(cell.isEmpty)
+                {
+                    RefillBoard();
+                }
+            }
+        }
+        // if(scoreInt >= 100)
+        // {
+        //     isOnGame = false;
+        // }
+    }
+
     public async void RefillBoard()
     {
-        gameAPI.PlaySFX("SmallSuccess");
+        //gameAPI.PlaySFX("SmallSuccess");
         foreach(var cell in cardCrushGrid.allCells)
         {
             if(cell.isEmpty == true)

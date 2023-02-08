@@ -101,9 +101,9 @@ public class CardBlastFillGrid : MonoBehaviour
 
             cardCrushGrid.allCells[i].card = card;
 
-            card.GetComponent<CardElement>().x = cardCrushGrid.allCells[i].x;
-            card.GetComponent<CardElement>().y = cardCrushGrid.allCells[i].y;
-            card.GetComponent<CardElement>().type = cardNames[cardImageRandom];
+            card.GetComponent<CardBlastElement>().x = cardCrushGrid.allCells[i].x;
+            card.GetComponent<CardBlastElement>().y = cardCrushGrid.allCells[i].y;
+            card.GetComponent<CardBlastElement>().type = cardNames[cardImageRandom];
         }
 
         foreach(var cell in cardCrushGrid.allCells)
@@ -133,10 +133,9 @@ public class CardBlastFillGrid : MonoBehaviour
 
                 cell.card = card;
 
-                card.GetComponent<CardElement>().x = cell.x;
-                card.GetComponent<CardElement>().y = cell.y;
-                card.GetComponent<CardElement>().type = cardNames[cardImageRandom];
-                //Debug.Log("Refill is done");
+                card.GetComponent<CardBlastElement>().x = cell.x;
+                card.GetComponent<CardBlastElement>().y = cell.y;
+                card.GetComponent<CardBlastElement>().type = cardNames[cardImageRandom];
             }
         }
         Invoke("OnRefillBool", 0.5f);
@@ -168,8 +167,8 @@ public class CardBlastFillGrid : MonoBehaviour
 
         cell.card = card;
 
-        card.GetComponent<CardElement>().x = cell.x;
-        card.GetComponent<CardElement>().y = cell.y;
+        card.GetComponent<CardBlastElement>().x = cell.x;
+        card.GetComponent<CardBlastElement>().y = cell.y;
     }
 
     public void ResetGrid()

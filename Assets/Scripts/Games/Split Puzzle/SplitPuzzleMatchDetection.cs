@@ -88,7 +88,10 @@ public class SplitPuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
             }
         }
         else
+        {
+            transform.SetParent(GameObject.Find(gameObject.GetComponent<DraggablePiece>().parentName).transform);
             LeanTween.move(gameObject, transform.parent.position, .5f);
+        }
     }
 
     public void ScaleHintImageDown()

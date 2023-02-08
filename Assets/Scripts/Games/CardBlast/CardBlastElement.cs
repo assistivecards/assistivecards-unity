@@ -27,8 +27,6 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     public GameObject bottomNeighbour;
 
     public List<GameObject> matched = new List<GameObject>();
-
-    private bool notHorizontal = false;
     public bool isMatched;
     public bool isMoved;
 
@@ -151,68 +149,64 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                 }
             }
 
-            if(matched.Count >= 2)
+            if(matched.Count >= 1)
             {
                 if(!matched.Contains(this.gameObject))
                     matched.Add(this.gameObject);
                     isMatched = true;
                     ScaleUpMatch();
             }
-            if(matched.Count < 2)
+            if(matched.Count < 1)
             {
-                notHorizontal = true;
                 matched.Clear();
             }
-            if(notHorizontal)
+            foreach(var neighbour in GetComponentInParent<CardCrushCell>().verticalNeightboursBottom)
             {
-                foreach(var neighbour in GetComponentInParent<CardCrushCell>().verticalNeightboursBottom)
+                if(neighbour.card != null)
                 {
-                    if(neighbour.card != null)
+                    if(neighbour.card.GetComponent<CardBlastElement>().type == type)
                     {
-                        if(neighbour.card.GetComponent<CardBlastElement>().type == type)
-                        {
-                            if(!matched.Contains(neighbour.card))
-                                matched.Add(neighbour.card);
-                        }
-                        else 
-                        {
-                            break;
-                        }
+                        if(!matched.Contains(neighbour.card))
+                            matched.Add(neighbour.card);
+                    }
+                    else 
+                    {
+                        break;
                     }
                 }
-
-                foreach(var neighbour in GetComponentInParent<CardCrushCell>().verticalNeightboursTop)
-                {
-                    if(neighbour.card != null)
-                    {
-                        if(neighbour.card.GetComponent<CardBlastElement>().type == type)
-                        {
-                            if(!matched.Contains(neighbour.card))
-                                matched.Add(neighbour.card);
-                        }
-                        else 
-                        {
-                            break;
-                        }
-                    }
-                }
-
-
-                if(matched.Count >= 2)
-                {
-                    if(!matched.Contains(this.gameObject))
-                        matched.Add(this.gameObject);
-                        isMatched = true;
-                        
-                        ScaleUpMatch();
-                    
-                }
-                if(matched.Count < 2)
-                {
-                    matched.Clear();
-                }
-
             }
+
+            foreach(var neighbour in GetComponentInParent<CardCrushCell>().verticalNeightboursTop)
+            {
+                if(neighbour.card != null)
+                {
+                    if(neighbour.card.GetComponent<CardBlastElement>().type == type)
+                    {
+                        if(!matched.Contains(neighbour.card))
+                            matched.Add(neighbour.card);
+                    }
+                    else 
+                    {
+                        break;
+                    }
+                }
+            }
+
+
+            if(matched.Count >= 2)
+            {
+                if(!matched.Contains(this.gameObject))
+                    matched.Add(this.gameObject);
+                    isMatched = true;
+                    
+                    ScaleUpMatch();
+                
+            }
+            if(matched.Count < 2)
+            {
+                matched.Clear();
+            }
+
         }
     }
 

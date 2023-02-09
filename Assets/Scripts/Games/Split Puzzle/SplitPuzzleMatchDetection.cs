@@ -73,9 +73,10 @@ public class SplitPuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
                 //      puzzlePieceParents[i].transform.SetParent(hintImageParent.transform);
                 //      puzzlePieceParents[i].GetComponent<SplitPuzzleMatchDetection>().isMatched = false;
                 // }
-                LeanTween.alpha(lightSlotsParent.GetComponent<RectTransform>(), 0, .5f);
+                LeanTween.alpha(lightSlotsParent.GetComponent<RectTransform>(), 0, .15f);
                 LeanTween.alpha(darkSlotsParent.GetComponent<RectTransform>(), 0, .25f);
                 puzzleBoard.Invoke("ReadCard", 0.25f);
+                Invoke("ScaleHintImageUp", 0.25f);
 
                 Invoke("ScaleHintImageDown", 1f);
                 puzzleBoard.Invoke("ClearBoard", 1.3f);
@@ -94,6 +95,11 @@ public class SplitPuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
         //     transform.SetParent(GameObject.Find(gameObject.GetComponent<DraggablePiece>().parentName).transform);
         //     LeanTween.move(gameObject, transform.parent.position, .5f);
         // }
+    }
+
+    public void ScaleHintImageUp()
+    {
+        LeanTween.scale(hintImageParent, Vector3.one * 1.25f, .25f);
     }
 
     public void ScaleHintImageDown()

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DraggablePiece : MonoBehaviour, IPointerDownHandler, IDragHandler
+public class DraggablePiece : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
     [SerializeField] GameObject gamePanel;
     private GameAPI gameAPI;
@@ -19,8 +19,7 @@ public class DraggablePiece : MonoBehaviour, IPointerDownHandler, IDragHandler
         // transform.SetParent(GameObject.Find("GamePanel").transform);
         // transform.SetSiblingIndex(10);
         var bounds = gamePanel.GetComponent<BoxCollider2D>().bounds;
-        transform.position = new Vector2(Mathf.Clamp(eventData.position.x, bounds.min.x + 145, bounds.max.x - 145), Mathf.Clamp(eventData.position.y, bounds.min.y + 155, bounds.max.y - 100));
-
+        transform.position = transform.position + new Vector3(eventData.delta.x, eventData.delta.y, 0);
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -28,6 +27,12 @@ public class DraggablePiece : MonoBehaviour, IPointerDownHandler, IDragHandler
         // parentName = transform.parent.name;
         gameAPI.VibrateWeak();
         gameAPI.PlaySFX("Pickup");
-        transform.position = eventData.position;
+        //transform.position = eventData.position;
+        transform.GetComponent<Rigidbody2D>().isKinematic = true;
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        transform.GetComponent<Rigidbody2D>().isKinematic = false;
     }
 }

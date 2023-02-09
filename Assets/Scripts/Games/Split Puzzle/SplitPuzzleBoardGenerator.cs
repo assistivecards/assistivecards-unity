@@ -107,6 +107,7 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
             puzzlePieceParents[i].transform.position = puzzlePieceSlots[i].transform.position;
             puzzlePieceParents[i].GetComponent<DraggablePiece>().enabled = true;
             puzzlePieceParents[i].GetComponent<Rigidbody2D>().isKinematic = false;
+            puzzlePieceParents[i].GetComponent<BoxCollider2D>().size = new Vector2(150f,150f);
             puzzlePieceParents[i].GetComponent<BoxCollider2D>().isTrigger = false;
         }
         puzzleSlotsLightParent.transform.SetAsLastSibling();

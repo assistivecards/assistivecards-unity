@@ -664,6 +664,14 @@ void RegisterAllStrippedInternalCalls()
 
 	//End Registrations for type : UnityEngine.Behaviour
 
+	//Start Registrations for type : UnityEngine.BoxCollider2D
+
+		//System.Void UnityEngine.BoxCollider2D::set_size_Injected(UnityEngine.Vector2&)
+		void Register_UnityEngine_BoxCollider2D_set_size_Injected();
+		Register_UnityEngine_BoxCollider2D_set_size_Injected();
+
+	//End Registrations for type : UnityEngine.BoxCollider2D
+
 	//Start Registrations for type : UnityEngine.Camera
 
 		//System.Int32 UnityEngine.Camera::GetAllCamerasCount()
@@ -989,6 +997,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.Collider2D::get_bounds_Injected(UnityEngine.Bounds&)
 		void Register_UnityEngine_Collider2D_get_bounds_Injected();
 		Register_UnityEngine_Collider2D_get_bounds_Injected();
+
+		//System.Void UnityEngine.Collider2D::set_isTrigger(System.Boolean)
+		void Register_UnityEngine_Collider2D_set_isTrigger();
+		Register_UnityEngine_Collider2D_set_isTrigger();
 
 	//End Registrations for type : UnityEngine.Collider2D
 
@@ -1329,6 +1341,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Array UnityEngine.GameObject::GetComponentsInternal(System.Type,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Object)
 		void Register_UnityEngine_GameObject_GetComponentsInternal();
 		Register_UnityEngine_GameObject_GetComponentsInternal();
+
+		//System.Boolean UnityEngine.GameObject::CompareTag(System.String)
+		void Register_UnityEngine_GameObject_CompareTag();
+		Register_UnityEngine_GameObject_CompareTag();
 
 		//System.Boolean UnityEngine.GameObject::get_activeInHierarchy()
 		void Register_UnityEngine_GameObject_get_activeInHierarchy();
@@ -3067,6 +3083,22 @@ void RegisterAllStrippedInternalCalls()
 		Register_UnityEngine_ResourcesAPIInternal_FindShaderByName();
 
 	//End Registrations for type : UnityEngine.ResourcesAPIInternal
+
+	//Start Registrations for type : UnityEngine.Rigidbody2D
+
+		//System.Void UnityEngine.Rigidbody2D::AddForce_Injected(UnityEngine.Vector2&,UnityEngine.ForceMode2D)
+		void Register_UnityEngine_Rigidbody2D_AddForce_Injected();
+		Register_UnityEngine_Rigidbody2D_AddForce_Injected();
+
+		//System.Void UnityEngine.Rigidbody2D::set_bodyType(UnityEngine.RigidbodyType2D)
+		void Register_UnityEngine_Rigidbody2D_set_bodyType();
+		Register_UnityEngine_Rigidbody2D_set_bodyType();
+
+		//System.Void UnityEngine.Rigidbody2D::set_velocity_Injected(UnityEngine.Vector2&)
+		void Register_UnityEngine_Rigidbody2D_set_velocity_Injected();
+		Register_UnityEngine_Rigidbody2D_set_velocity_Injected();
+
+	//End Registrations for type : UnityEngine.Rigidbody2D
 
 	//Start Registrations for type : UnityEngine.SceneManagement.Scene
 

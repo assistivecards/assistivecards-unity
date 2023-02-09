@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &62710214 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5444075738650717230, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
+  m_PrefabInstance: {fileID: 1524065858}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &88731552
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,6 +263,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88731552}
   m_CullTransparentMesh: 1
+--- !u!1 &169421534 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3699884338922838543, guid: 5bb4841276ee74ee38e00403db5fef74, type: 3}
+  m_PrefabInstance: {fileID: 1727350122}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &191490649 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1242831490340205118, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -385,7 +395,7 @@ PrefabInstance:
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1381051504}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -396,7 +406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: CardCrushGameUIController, Assembly-CSharp
+      value: CardBlastUIController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -859,6 +869,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &936406979 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3184117022417446875, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &967599304 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4400661311191622548, guid: 2cdd28110cbe4d64f9715da037b76e83, type: 3}
@@ -1481,6 +1496,7 @@ GameObject:
   - component: {fileID: 1381051501}
   - component: {fileID: 1381051502}
   - component: {fileID: 1381051503}
+  - component: {fileID: 1381051504}
   m_Layer: 5
   m_Name: Board
   m_TagString: Untagged
@@ -1550,6 +1566,34 @@ MonoBehaviour:
   matchedCardName: []
   isOnRefill: 0
   isOnGame: 0
+--- !u!114 &1381051504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381051500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b614abec9f53f479a8e7785b4cc1233a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficultSelectionPanelTween: {fileID: 1732710648}
+  packSelectionScreenUIController: {fileID: 1837497525}
+  fillGrid: {fileID: 1381051503}
+  backButton: {fileID: 1388156677}
+  helloText: {fileID: 936406979}
+  packSelectionScreen: {fileID: 2030526790}
+  transitionScreen: {fileID: 169421534}
+  score: {fileID: 0}
+  board: {fileID: 1381051500}
+  levelChange: {fileID: 1483766225}
+  difficultSelectionPanel: {fileID: 62710214}
+--- !u!1 &1388156677 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8438209764908285022, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1407491092 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1242831490967550533, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -2095,6 +2139,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5444075738650717231, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
   m_PrefabInstance: {fileID: 1524065858}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1732710648 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5444075738650717227, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
+  m_PrefabInstance: {fileID: 1524065858}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62710214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2f837e5680a4451b0c0c92dae1eaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1746600932 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 804781094745460804, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}

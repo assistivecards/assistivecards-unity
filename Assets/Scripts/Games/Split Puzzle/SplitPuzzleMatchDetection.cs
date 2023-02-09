@@ -57,6 +57,8 @@ public class SplitPuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
         {
             puzzleProgressChecker.correctMatches++;
             gameObject.GetComponent<DraggablePiece>().enabled = false;
+            gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+            gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
             LeanTween.move(gameObject, matchedSlotTransform.position, 0.25f);
             transform.SetParent(hintImageParent.transform);
             gameAPI.PlaySFX("Success");
@@ -87,11 +89,11 @@ public class SplitPuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
 
             }
         }
-        else
-        {
-            transform.SetParent(GameObject.Find(gameObject.GetComponent<DraggablePiece>().parentName).transform);
-            LeanTween.move(gameObject, transform.parent.position, .5f);
-        }
+        // else
+        // {
+        //     transform.SetParent(GameObject.Find(gameObject.GetComponent<DraggablePiece>().parentName).transform);
+        //     LeanTween.move(gameObject, transform.parent.position, .5f);
+        // }
     }
 
     public void ScaleHintImageDown()

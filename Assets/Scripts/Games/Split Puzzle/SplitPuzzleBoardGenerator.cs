@@ -110,7 +110,7 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
             puzzlePieceParents[i].GetComponent<BoxCollider2D>().isTrigger = false;
         }
         puzzleSlotsLightParent.transform.SetAsLastSibling();
-        LeanTween.alpha(puzzleSlotsLightParent.GetComponent<RectTransform>(), .4f, .15f);
+        LeanTween.alpha(puzzleSlotsLightParent.GetComponent<RectTransform>(), .2f, .15f);
         LeanTween.alpha(puzzleSlotsDarkParent.GetComponent<RectTransform>(), .7f, .15f);
         LeanTween.scale(hintImageParent, Vector3.one, 0.15f);
         LeanTween.scale(puzzleSlotsDarkParent, Vector3.one, 0.15f);

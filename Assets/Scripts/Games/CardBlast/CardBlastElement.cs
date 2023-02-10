@@ -122,26 +122,26 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     {
         if(transform.parent.GetComponent<CardCrushCell>().bottomNeighbour != null)
         {
-            if(transform.parent.GetComponent<CardCrushCell>().bottomNeighbour.GetComponent<CardCrushCell>().isEmpty)
+            if(transform.parent.GetComponent<CardCrushCell>().bottomNeighbour.transform.GetComponent<CardCrushCell>().isEmpty)
             {
                 Debug.Log("x: " + x + "y: " + y);
+                MoveToTarget(transform.parent.GetComponent<CardCrushCell>().bottomNeighbour);
             }
         }
     }
 
-    private void MoveToTarget(CardCrushCell _cell, Vector3 _transform, float _targetX, float _targetY)
+    private void MoveToTarget(GameObject _cell)
     {
-        soundController.movedList.Add(this.gameObject.name);
-        LeanTween.move(this.gameObject, _transform, 0.2f);
-        cardPosition = this.transform.position;
+        LeanTween.move(this.gameObject, _cell.transform.position, 0.2f);
 
+        this.transform.parent.GetComponent<CardCrushCell>().isEmpty = true;
         this.transform.parent = _cell.transform;
 
-        _cell.card = this.gameObject;
+        _cell.GetComponent<CardCrushCell>().card = this.gameObject;
 
-        x = _targetX;
-        y = _targetY;
-        Invoke("CheckIsMatched", 0.1f);
+        x = _cell.GetComponent<CardCrushCell>().x;
+        y = _cell.GetComponent<CardCrushCell>().y;
+        this.transform.parent.GetComponent<CardCrushCell>().isEmpty = false;
     }
 
     private void DetectLongMatch()

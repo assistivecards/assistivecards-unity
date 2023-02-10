@@ -253,6 +253,7 @@ public class CanvasController : MonoBehaviour
 
         soundManagerUI.musicToggle.isOn = gameAPI.GetMusicPreference() == 1 ? true : false;
         soundManagerUI.sfxToggle.isOn = gameAPI.GetSFXPreference() == 1 ? true : false;
+        soundManagerUI.ttsStatusToggle.isOn = gameAPI.GetTTSStatusPreference() == 1 ? true : false;
         soundManagerUI.musicSource.mute = soundManagerUI.musicToggle.isOn ? false : true;
         soundManagerUI.sfxSource.mute = soundManagerUI.sfxToggle.isOn ? false : true;
 

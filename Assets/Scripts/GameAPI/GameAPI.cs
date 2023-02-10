@@ -696,6 +696,22 @@ public class GameAPI : MonoBehaviour
     }
 
     ///<summary>
+    ///Takes in a single parameter of type integer named isTTSOn and stores it in PlayerPrefs.
+    ///</summary>
+    public void SetTTSStatusPreference(int isTTSOn)
+    {
+        PlayerPrefs.SetInt("isTTSOn", isTTSOn);
+    }
+
+    ///<summary>
+    ///Retrieves the TTS status preference data stored in PlayerPrefs. Default value is 1.
+    ///</summary>
+    public int GetTTSStatusPreference()
+    {
+        return PlayerPrefs.GetInt("isTTSOn", 1);
+    }
+
+    ///<summary>
     ///Deletes all the data stored in PlayerPrefs on sign out.
     ///</summary>
     public void ClearAllPrefs()
@@ -1085,7 +1101,11 @@ public class GameAPI : MonoBehaviour
     ///</summary>
     public void Speak(string text)
     {
-        speakable.Speak(text);
+        if (GetTTSStatusPreference() == 1)
+        {
+            speakable.Speak(text);
+        }
+
     }
 
     public string ToSentenceCase(string text)

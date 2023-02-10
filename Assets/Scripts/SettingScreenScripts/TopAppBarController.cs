@@ -44,6 +44,7 @@ public class TopAppBarController : MonoBehaviour
     public bool onAvatarSelection = false;
 
 
+
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
@@ -218,6 +219,7 @@ public class TopAppBarController : MonoBehaviour
                 soundManagerUI = canvas.GetComponent<SoundManagerUI>();
                 gameAPI.SetMusicPreference(soundManagerUI.musicToggle.isOn ? 1 : 0);
                 gameAPI.SetSFXPreference(soundManagerUI.sfxToggle.isOn ? 1 : 0);
+                gameAPI.SetTTSStatusPreference(soundManagerUI.ttsStatusToggle.isOn ? 1 : 0);
                 soundManagerUI.musicSource.mute = soundManagerUI.musicToggle.isOn ? false : true;
                 soundManagerUI.sfxSource.mute = soundManagerUI.sfxToggle.isOn ? false : true;
                 if (soundManagerUI.musicToggle.isOn == false)

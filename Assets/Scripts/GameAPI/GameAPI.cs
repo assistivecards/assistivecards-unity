@@ -695,6 +695,16 @@ public class GameAPI : MonoBehaviour
         return PlayerPrefs.GetInt("isMusicOn", 1);
     }
 
+    public void SetTTSStatusPreference(int isTTSOn)
+    {
+        PlayerPrefs.SetInt("isTTSOn", isTTSOn);
+    }
+
+    public int GetTTSStatusPreference()
+    {
+        return PlayerPrefs.GetInt("isTTSOn", 1);
+    }
+
     ///<summary>
     ///Deletes all the data stored in PlayerPrefs on sign out.
     ///</summary>
@@ -1085,7 +1095,11 @@ public class GameAPI : MonoBehaviour
     ///</summary>
     public void Speak(string text)
     {
-        speakable.Speak(text);
+        if (GetTTSStatusPreference() == 1)
+        {
+            speakable.Speak(text);
+        }
+
     }
 
     public string ToSentenceCase(string text)

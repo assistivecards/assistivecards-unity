@@ -68,7 +68,12 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
             this.transform.localScale = Vector3.one;
         }
 
-        DetectNeighbours();
+            DetectNeighbours();
+        if(cardBlastFillGrid.isBoardCreated)
+        {
+            CheckDrop();
+        }
+
     }
 
     public void DetectNeighbours()
@@ -111,6 +116,32 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                 }
             }
         }
+    }
+
+    private void CheckDrop()
+    {
+        if(transform.parent.GetComponent<CardCrushCell>().bottomNeighbour != null)
+        {
+            if(transform.parent.GetComponent<CardCrushCell>().bottomNeighbour.GetComponent<CardCrushCell>().isEmpty)
+            {
+                Debug.Log("x: " + x + "y: " + y);
+            }
+        }
+    }
+
+    private void MoveToTarget(CardCrushCell _cell, Vector3 _transform, float _targetX, float _targetY)
+    {
+        soundController.movedList.Add(this.gameObject.name);
+        LeanTween.move(this.gameObject, _transform, 0.2f);
+        cardPosition = this.transform.position;
+
+        this.transform.parent = _cell.transform;
+
+        _cell.card = this.gameObject;
+
+        x = _targetX;
+        y = _targetY;
+        Invoke("CheckIsMatched", 0.1f);
     }
 
     private void DetectLongMatch()

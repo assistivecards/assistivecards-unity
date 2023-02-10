@@ -128,7 +128,7 @@ public class CardBlastFillGrid : MonoBehaviour
             {
                 if(cell.isEmpty)
                 {
-                    RefillBoard();
+                    //RefillBoard();
                 }
             }
         }

@@ -68,7 +68,8 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
             this.transform.localScale = Vector3.one;
         }
 
-            DetectNeighbours();
+        DetectNeighbours();
+
         if(cardBlastFillGrid.isBoardCreated)
         {
             CheckDrop();
@@ -124,7 +125,6 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         {
             if(transform.parent.GetComponent<CardCrushCell>().bottomNeighbour.transform.GetComponent<CardCrushCell>().isEmpty)
             {
-                Debug.Log("x: " + x + "y: " + y);
                 MoveToTarget(transform.parent.GetComponent<CardCrushCell>().bottomNeighbour);
             }
         }

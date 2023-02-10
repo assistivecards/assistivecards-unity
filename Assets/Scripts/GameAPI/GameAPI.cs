@@ -695,11 +695,17 @@ public class GameAPI : MonoBehaviour
         return PlayerPrefs.GetInt("isMusicOn", 1);
     }
 
+    ///<summary>
+    ///Takes in a single parameter of type integer named isTTSOn and stores it in PlayerPrefs.
+    ///</summary>
     public void SetTTSStatusPreference(int isTTSOn)
     {
         PlayerPrefs.SetInt("isTTSOn", isTTSOn);
     }
 
+    ///<summary>
+    ///Retrieves the TTS status preference data stored in PlayerPrefs. Default value is 1.
+    ///</summary>
     public int GetTTSStatusPreference()
     {
         return PlayerPrefs.GetInt("isTTSOn", 1);

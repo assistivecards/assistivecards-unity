@@ -491,6 +491,24 @@ Retrieves the music preference data stored in PlayerPrefs.
 public int GetMusicPreference()
 ```
 
+## SetTTSStatusPreference
+
+Takes in a single parameter of type integer named isTTSOn and stores it in PlayerPrefs.
+
+```Csharp
+public void SetTTSStatusPreference(int isTTSOn)
+```
+
+## GetTTSStatusPreference
+
+Retrieves the TTS status preference data stored in PlayerPrefs.
+
+> Default value is 1.
+
+```Csharp
+public int GetTTSStatusPreference()
+```
+
 ## ClearAllPrefs
 
 Deletes all the data stored in PlayerPrefs on sign out.

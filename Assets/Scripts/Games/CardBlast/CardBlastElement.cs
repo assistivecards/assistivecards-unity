@@ -59,7 +59,9 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         {
             finalTouchPosition = pointerEventData.position;
         }
-        DetectLongMatch();
+
+        DetectLongVerticalMatch();
+        DetectLongHorizontalMatch();
     }
     private void Update() 
     {
@@ -144,7 +146,7 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         this.transform.parent.GetComponent<CardCrushCell>().isEmpty = false;
     }
 
-    private void DetectLongMatch()
+    public void DetectLongVerticalMatch()
     {
         if(transform.GetComponentInParent<CardCrushCell>() != null)
         {
@@ -191,53 +193,55 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
             {
                 matched.Clear();
             }
-            foreach(var neighbour in GetComponentInParent<CardCrushCell>().verticalNeightboursBottom)
+        }
+    }
+    private void DetectLongHorizontalMatch()
+    {
+        foreach(var neighbour in GetComponentInParent<CardCrushCell>().verticalNeightboursBottom)
+        {
+            if(neighbour.card != null)
             {
-                if(neighbour.card != null)
+                if(neighbour.card.GetComponent<CardBlastElement>().type == type)
                 {
-                    if(neighbour.card.GetComponent<CardBlastElement>().type == type)
-                    {
-                        if(!matched.Contains(neighbour.card))
-                            matched.Add(neighbour.card);
-                    }
-                    else 
-                    {
-                        break;
-                    }
+                    if(!matched.Contains(neighbour.card))
+                        matched.Add(neighbour.card);
+                }
+                else 
+                {
+                    break;
                 }
             }
+        }
 
-            foreach(var neighbour in GetComponentInParent<CardCrushCell>().verticalNeightboursTop)
+        foreach(var neighbour in GetComponentInParent<CardCrushCell>().verticalNeightboursTop)
+        {
+            if(neighbour.card != null)
             {
-                if(neighbour.card != null)
+                if(neighbour.card.GetComponent<CardBlastElement>().type == type)
                 {
-                    if(neighbour.card.GetComponent<CardBlastElement>().type == type)
-                    {
-                        if(!matched.Contains(neighbour.card))
-                            matched.Add(neighbour.card);
-                    }
-                    else 
-                    {
-                        break;
-                    }
+                    if(!matched.Contains(neighbour.card))
+                        matched.Add(neighbour.card);
+                }
+                else 
+                {
+                    break;
                 }
             }
+        }
 
 
-            if(matched.Count >= 2)
-            {
-                if(!matched.Contains(this.gameObject))
-                    matched.Add(this.gameObject);
-                    isMatched = true;
-                    
-                    ScaleUpMatch();
+        if(matched.Count >= 2)
+        {
+            if(!matched.Contains(this.gameObject))
+                matched.Add(this.gameObject);
+                isMatched = true;
                 
-            }
-            if(matched.Count < 2)
-            {
-                matched.Clear();
-            }
-
+                ScaleUpMatch();
+            
+        }
+        if(matched.Count < 2)
+        {
+            matched.Clear();
         }
     }
 

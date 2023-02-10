@@ -217,5 +217,6 @@
 	"play":"Play",
 	"score":"Score: ",
 	"warning-nickname":"Nickname is too long!",
-	"circle_the_card":"Circle the $1"
+	"circle_the_card":"Circle the $1",
+	"settings_tts":"Text-to-Speech"
 }

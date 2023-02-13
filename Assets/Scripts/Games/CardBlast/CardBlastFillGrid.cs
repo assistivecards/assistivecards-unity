@@ -15,6 +15,7 @@ public class CardBlastFillGrid : MonoBehaviour
     [SerializeField] private PackSelectionPanel packSelectionPanel;
     [SerializeField] private CardCrushGrid cardCrushGrid;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
+    [SerializeField] private GameObject scoreObj;
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     private List<string> cardNames = new List<string>();
 
@@ -28,6 +29,7 @@ public class CardBlastFillGrid : MonoBehaviour
     public List<string> matchedCardName = new List<string>();
 
     public bool isOnRefill = false;
+        public int scoreInt = 0;
     public bool isOnGame = false;
 
     public List<CardCrushCell> topCells = new List<CardCrushCell>();
@@ -119,11 +121,11 @@ public class CardBlastFillGrid : MonoBehaviour
 
     private void FixedUpdate() 
     {
-        // if(scoreInt < 0)
-        // {
-        //     scoreInt = 0;
-        // }
-        // scoreObj.GetComponent<TMP_Text>().text = scoreInt.ToString() + "/100";
+        if(scoreInt < 0)
+        {
+            scoreInt = 0;
+        }
+        scoreObj.GetComponent<TMP_Text>().text = scoreInt.ToString() + "/100";
 
         if(isBoardCreated)
         {
@@ -136,15 +138,17 @@ public class CardBlastFillGrid : MonoBehaviour
                 }
             }
         }
-        // if(scoreInt >= 100)
-        // {
-        //     isOnGame = false;
-        // 
+        if(scoreInt >= 100)
+        {
+            isOnGame = false;
+        }
+        
     }
 
     public async void RefillBoard()
     {
-        //gameAPI.PlaySFX("SmallSuccess");
+        scoreInt += 1;
+        gameAPI.PlaySFX("SmallSuccess");
         foreach(var cell in cardCrushGrid.allCells)
         {
             if(cell.isEmpty == true)
@@ -201,6 +205,7 @@ public class CardBlastFillGrid : MonoBehaviour
 
     private async void SpawnNewCard()
     {
+        scoreInt += 1;
         foreach(var cell in topCells)
         {
             cell.isEmpty = false;

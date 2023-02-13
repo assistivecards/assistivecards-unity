@@ -260,7 +260,7 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         cardBlastFillGrid.isOnRefill = true;
         foreach(var card in matched)
         {
-            //soundController.matchedList.Add(this.gameObject.name);
+            soundController.matchedList.Add(this.gameObject.name);
             LeanTween.scale(card, new Vector3(0.5f, 0.5f, 0.5f), 0.1f);   
         }
         Invoke("DestroyMatched", 0.1f);

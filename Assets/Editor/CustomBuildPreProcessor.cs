@@ -86,7 +86,7 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
             Debug.Log(request.error);
         else
         {
-            string path = Path.Combine(Application.persistentDataPath, "games.txt");
+            string path = Path.Combine(Application.dataPath, "Resources", "games.txt");
 
             if (!File.Exists(path))
             {

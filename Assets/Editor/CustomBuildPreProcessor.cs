@@ -7,6 +7,8 @@ using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
+using UnityEngine.Networking;
+using System.Threading.Tasks;
 
 [InitializeOnLoad]
 class CustomBuildPreProcessor : IPreprocessBuildWithReport
@@ -24,8 +26,9 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
         BuildPlayerWindow.RegisterBuildPlayerHandler(OnClickBuildPlayer);
     }
 
-    public void OnPreprocessBuild(BuildReport report)
+    public async void OnPreprocessBuild(BuildReport report)
     {
+        await CacheGames();
         Texture2D icon = (Texture2D)AssetDatabase.LoadAssetAtPath("Assets/Sprites/AppIcons/" + PlayerSettings.productName.Replace("-", "_").Replace("_", " ").Replace(" ", "_").ToLower() + ".png", typeof(Texture2D));
         PlayerSettings.SetIcons(NamedBuildTarget.Unknown, new Texture2D[] { icon }, IconKind.Any);
         PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.Android, "com.assistivecards." + PlayerSettings.productName.Replace("-", "_").Replace("_", " ").Replace(" ", "_").ToLower());
@@ -41,8 +44,8 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
 
     static string ToTitleCase(string stringToConvert)
     {
-      var textinfo = new CultureInfo("en-US", false).TextInfo;
-      return textinfo.ToTitleCase(stringToConvert);
+        var textinfo = new CultureInfo("en-US", false).TextInfo;
+        return textinfo.ToTitleCase(stringToConvert);
     }
 
     private static void OnClickBuildPlayer(BuildPlayerOptions options)
@@ -68,6 +71,36 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
             BuildPlayerWindow.DefaultBuildMethods.BuildPlayer(options);
         }
 
+    }
+
+    public static async Task CacheGames()
+    {
+
+        UnityWebRequest request = UnityWebRequest.Get("https://api.assistivecards.com/games/metadata.json");
+        request.SendWebRequest();
+        while (!request.isDone)
+        {
+            await Task.Yield();
+        }
+        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+            Debug.Log(request.error);
+        else
+        {
+            string path = Path.Combine(Application.persistentDataPath, "games.txt");
+
+            if (!File.Exists(path))
+            {
+                File.WriteAllText(path, request.downloadHandler.text.Replace("apps", "games"));
+            }
+            else
+            {
+                File.Delete(path);
+                File.WriteAllText(path, request.downloadHandler.text.Replace("apps", "games"));
+            }
+
+            AssetDatabase.Refresh();
+
+        }
     }
 
 }

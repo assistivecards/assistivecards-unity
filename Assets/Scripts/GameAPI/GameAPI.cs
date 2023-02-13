@@ -366,6 +366,9 @@ public class GameAPI : MonoBehaviour
         return result;
     }
 
+    ///<summary>
+    ///Takes in a game slug of type string and returns an object of type Texture2D corresponding to the specified game slug.
+    ///</summary>
     public async Task<Texture2D> GetGameIcon(string gameSlug)
     {
         var result = await assistiveCardsSDK.GetGameIcon(gameSlug);
@@ -390,6 +393,9 @@ public class GameAPI : MonoBehaviour
         return result;
     }
 
+    ///<summary>
+    ///Returns an object of type Games which holds an array of Game objects.
+    ///</summary>
     public AssistiveCardsSDK.AssistiveCardsSDK.Games GetGames()
     {
         var result = assistiveCardsSDK.GetGames();

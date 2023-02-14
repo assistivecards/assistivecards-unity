@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardBlastLevelControl : MonoBehaviour
+public class CardBlastLevelControl1 : MonoBehaviour
 {
     [SerializeField] private CardBlastFillGrid fillGrid;
     [SerializeField] private GameObject board;
@@ -18,7 +18,7 @@ public class CardBlastLevelControl : MonoBehaviour
     {
         isOnLevelChange = true;
         LeanTween.scale(this.gameObject, Vector3.one * 0.6f, 0.15f);
-        //fillGrid.scoreInt = 0;
+        fillGrid.scoreInt = 0;
         fillGrid.ResetGrid();
         fillGrid.isOnRefill = false;
     }

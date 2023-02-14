@@ -18,10 +18,8 @@ public class CardCrushGrid : MonoBehaviour
 
     private void Start() 
     {
-        rectTransform = GetComponent<RectTransform>();
-        screenWidthQuo = (Screen.width - 2048);
-        screenHeightQuo = (Screen.height / 15);
-        SetUp();
+        GetGrid();
+        //SetUp();
     }
 
     public void SetUp()
@@ -39,42 +37,15 @@ public class CardCrushGrid : MonoBehaviour
                 allCells.Add(cell.GetComponent<CardCrushCell>());
             }
         }
-        Debug.Log("SCREEN height: " + screenHeightQuo);
+    }
 
-        SetLeft(rectTransform, screenWidthQuo / (float)(Screen.width/675f));
-        SetBottom(rectTransform, screenWidthQuo / (float)(Screen.height/25f));
-
-        if(screenHeightQuo > 105)
+    private void GetGrid()
+    {
+        
+        foreach(Transform child in transform)
         {
-            SetBottom(rectTransform, screenHeightQuo * 1.25f);
+            allCells.Add(child.GetComponent<CardCrushCell>());
         }
-        else if(screenHeightQuo >= 100 && screenHeightQuo <= 105)
-        {
-            this.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
-            SetBottom(rectTransform, screenHeightQuo * 1.1f);
-        }
-        else if(screenHeightQuo >= 95 && screenHeightQuo < 100)
-        {
-            this.transform.localScale = new Vector3(1f, 1f, 1f);
-            SetBottom(rectTransform, screenHeightQuo * 0.5f);
-        }
-        else if(screenHeightQuo >= 85 && screenHeightQuo < 95)
-        {
-            SetLeft(rectTransform, screenWidthQuo / (float)(Screen.width/630));
-            SetBottom(rectTransform, screenHeightQuo * 0.5f);
-        }
-        else if(screenHeightQuo < 85 && screenHeightQuo >= 60)
-        {
-            this.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
-            SetBottom(rectTransform, screenHeightQuo * 0.5f);
-        }
-        else if(screenHeightQuo < 60)
-        {
-            this.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-            SetBottom(rectTransform, screenHeightQuo * 0.5f);
-            SetLeft(rectTransform, screenWidthQuo / (float)(Screen.width/410f));
-        }
-
     }
 
     public static void SetLeft(RectTransform _rect, float left)

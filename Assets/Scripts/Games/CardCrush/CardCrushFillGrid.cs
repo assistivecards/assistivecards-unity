@@ -31,10 +31,13 @@ public class CardCrushFillGrid : MonoBehaviour
     public bool isOnRefill = false;
     public int scoreInt = 0;
     public bool isOnGame = false;
+    [SerializeField] private GameObject loadingScreen;
+    private RectTransform rect;
 
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+        rect = GetComponent<RectTransform>();
     }
 
     public async Task CacheCards(string _packSlug)
@@ -86,6 +89,7 @@ public class CardCrushFillGrid : MonoBehaviour
 
     private async void  GenerateBoard(string _packSlug)
     {
+        loadingScreen.SetActive(true);
         isOnGame = true;
         await CacheCards(_packSlug);
         CreateRandomValue();
@@ -152,6 +156,10 @@ public class CardCrushFillGrid : MonoBehaviour
             cell.GetComponent<CardCrushCell>().DetectNeighbourCells();
             cell.GetComponent<CardCrushCell>().DetectNeighboursAround();
         }
+
+        LeanTween.scale(this.gameObject, new Vector2(0.75f, 0.75f), 0.1f);
+        SetLeft(rect, 3100);
+        loadingScreen.SetActive(false);
         isBoardCreated = true;
     }
     private bool FindVerticalMatchesAtBeginning(int i)
@@ -165,6 +173,11 @@ public class CardCrushFillGrid : MonoBehaviour
             return false;
         }
         return false;
+    }
+
+    public void ResetPosition()
+    {
+        SetLeft(rect, 1000000);
     }
 
     private bool FindHorizontalMatchesAtBeginning(int i)
@@ -279,5 +292,15 @@ public class CardCrushFillGrid : MonoBehaviour
             matchedCards.Clear();
             scoreInt = 0;
         }
+    }
+
+    public static void SetLeft(RectTransform _rect, float left)
+    {
+        _rect.offsetMin = new Vector2(left, _rect.offsetMin.y);
+    }
+
+    public static void SetBottom(RectTransform rt, float bottom)
+    {
+        rt.offsetMin = new Vector2(rt.offsetMin.x, bottom);
     }
 }

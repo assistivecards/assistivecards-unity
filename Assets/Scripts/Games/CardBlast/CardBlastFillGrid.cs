@@ -15,6 +15,8 @@ public class CardBlastFillGrid : MonoBehaviour
     [SerializeField] private PackSelectionPanel packSelectionPanel;
     [SerializeField] private CardCrushGrid cardCrushGrid;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
+    [SerializeField] private GameObject scoreObj;
+    [SerializeField] private GameObject loadingScreen;
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     private List<string> cardNames = new List<string>();
 
@@ -28,13 +30,19 @@ public class CardBlastFillGrid : MonoBehaviour
     public List<string> matchedCardName = new List<string>();
 
     public bool isOnRefill = false;
+    public int scoreInt = 0;
     public bool isOnGame = false;
+    private RectTransform rect;
 
     public List<CardCrushCell> topCells = new List<CardCrushCell>();
+    private Vector3 startPosition;
+    
 
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+        rect = GetComponent<RectTransform>();
+        startPosition = transform.position;
     }
 
     public async Task CacheCards(string _packSlug)
@@ -90,7 +98,7 @@ public class CardBlastFillGrid : MonoBehaviour
         isOnGame = true;
         await CacheCards(_packSlug);
         CreateRandomValue();
-
+        loadingScreen.SetActive(true);
         for(int i = 0; i < cardCrushGrid.allCells.Count; i++)
         {
             GameObject card = Instantiate(cardPrefab, cardCrushGrid.allCells[i].transform.position, Quaternion.identity);
@@ -114,16 +122,19 @@ public class CardBlastFillGrid : MonoBehaviour
             cell.GetComponent<CardCrushCell>().DetectNeighbourCells();
             cell.GetComponent<CardCrushCell>().DetectNeighboursAround();
         }
+        LeanTween.scale(this.gameObject, new Vector2(0.75f, 0.75f), 0.1f);
+        SetLeft(rect, -120);
+        loadingScreen.SetActive(false);
         isBoardCreated = true;
     }
 
     private void FixedUpdate() 
     {
-        // if(scoreInt < 0)
-        // {
-        //     scoreInt = 0;
-        // }
-        // scoreObj.GetComponent<TMP_Text>().text = scoreInt.ToString() + "/100";
+        if(scoreInt < 0)
+        {
+            scoreInt = 0;
+        }
+        scoreObj.GetComponent<TMP_Text>().text = scoreInt.ToString() + "/100";
 
         if(isBoardCreated)
         {
@@ -136,15 +147,16 @@ public class CardBlastFillGrid : MonoBehaviour
                 }
             }
         }
-        // if(scoreInt >= 100)
-        // {
-        //     isOnGame = false;
-        // 
+        if(scoreInt >= 100)
+        {
+            isOnGame = false;
+        }
     }
 
     public async void RefillBoard()
     {
-        //gameAPI.PlaySFX("SmallSuccess");
+        scoreInt += 1;
+        gameAPI.PlaySFX("SmallSuccess");
         foreach(var cell in cardCrushGrid.allCells)
         {
             if(cell.isEmpty == true)
@@ -160,7 +172,6 @@ public class CardBlastFillGrid : MonoBehaviour
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
 
                 cell.card = card;
-
                 card.GetComponent<CardBlastElement>().x = cell.x;
                 card.GetComponent<CardBlastElement>().y = cell.y;
                 card.GetComponent<CardBlastElement>().type = cardNames[cardImageRandom];
@@ -201,6 +212,7 @@ public class CardBlastFillGrid : MonoBehaviour
 
     private async void SpawnNewCard()
     {
+        scoreInt += 1;
         foreach(var cell in topCells)
         {
             cell.isEmpty = false;
@@ -218,7 +230,6 @@ public class CardBlastFillGrid : MonoBehaviour
 
             card.GetComponent<CardBlastElement>().x = cell.x;
             card.GetComponent<CardBlastElement>().y = cell.y;
-
         }
         
     }
@@ -249,6 +260,21 @@ public class CardBlastFillGrid : MonoBehaviour
             randomValues.Clear();
             matchedCards.Clear();
         }
+    }
+
+    public void ResetPosition()
+    {
+        SetLeft(rect, 1000000);
+    }
+
+    public static void SetLeft(RectTransform _rect, float left)
+    {
+        _rect.offsetMin = new Vector2(left, _rect.offsetMin.y);
+    }
+
+    public static void SetBottom(RectTransform rt, float bottom)
+    {
+        rt.offsetMin = new Vector2(rt.offsetMin.x, bottom);
     }
 
 }

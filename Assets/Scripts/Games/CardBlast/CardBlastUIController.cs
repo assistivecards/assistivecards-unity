@@ -5,6 +5,7 @@ using UnityEngine;
 public class CardBlastUIController : MonoBehaviour
 {
     GameAPI gameAPI;
+    [SerializeField] private CardBlastLevelControl1 levelChangeScreenController;
     [SerializeField] private DifficultSelectionPanelTween difficultSelectionPanelTween;
     [SerializeField] private PackSelectionScreenUIController packSelectionScreenUIController;
     [SerializeField] private CardBlastFillGrid fillGrid;
@@ -29,28 +30,44 @@ public class CardBlastUIController : MonoBehaviour
 
     public void GamePanelUIControl()
     {
-        if(fillGrid.isOnGame)
+        if(fillGrid.isOnGame && fillGrid.isBoardCreated)
         {
+            score.SetActive(true);
             backButton.SetActive(true);
+            helloText.SetActive(false);
+        }
+        else if(fillGrid.scoreInt >= 100)
+        {
+            levelChange.SetActive(true);
+            gameAPI.PlaySFX("Finish");
+        }
+        else if(levelChangeScreenController.isOnLevelChange)
+        {
+            score.SetActive(false);
+            backButton.SetActive(false);
             helloText.SetActive(false);
         }
         else if(difficultSelectionPanelTween.isOnDifficultyScene)
         {
+            score.SetActive(false);
             backButton.SetActive(true);
             helloText.SetActive(false);
         }
         else if(packSelectionScreen.activeInHierarchy)
         {
+            score.SetActive(false);
             backButton.SetActive(false);
             helloText.SetActive(true);
         }
         else if(transitionScreen.activeInHierarchy)
         {
+            score.SetActive(false);
             backButton.SetActive(false);
             helloText.SetActive(false);
         }
         else
         {
+            score.SetActive(false);
             backButton.SetActive(false);
             helloText.SetActive(false);
         }
@@ -71,6 +88,7 @@ public class CardBlastUIController : MonoBehaviour
         transitionScreen.SetActive(false);
 
         fillGrid.ResetGrid();
+        fillGrid.ResetPosition();
         GamePanelUIControl();
     }
 

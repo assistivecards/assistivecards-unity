@@ -21,11 +21,11 @@ public class MatchPairsDraggablePiece : MonoBehaviour, IPointerDownHandler, IPoi
     {
         gameAPI.VibrateWeak();
         gameAPI.PlaySFX("Pickup");
-        transform.GetChild(0).GetComponent<Rigidbody2D>().isKinematic = true;
+        transform.GetComponent<Rigidbody2D>().isKinematic = true;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        transform.GetChild(0).GetComponent<Rigidbody2D>().isKinematic = false;
+        transform.GetComponent<Rigidbody2D>().isKinematic = false;
     }
 }

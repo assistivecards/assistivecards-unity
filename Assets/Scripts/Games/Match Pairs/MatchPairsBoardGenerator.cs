@@ -87,6 +87,16 @@ public class MatchPairsBoardGenerator : MonoBehaviour
         {
             puzzlePieceParents[i].transform.SetParent(puzzlePieceSlots[i].transform);
             puzzlePieceParents[i].transform.position = puzzlePieceSlots[i].transform.position;
+            if (puzzlePieceParents[i].transform.GetChild(1).name.Contains("0"))
+            {
+                puzzlePieceParents[i].transform.rotation = Quaternion.Euler(0, 0, Random.Range(5, 25));
+            }
+            else if (puzzlePieceParents[i].transform.GetChild(1).name.Contains("1"))
+            {
+                puzzlePieceParents[i].transform.rotation = Quaternion.Euler(0, 0, Random.Range(-25, -5));
+            }
+
+
         }
 
         for (int i = 0; i < puzzlePieceParents.Length; i++)

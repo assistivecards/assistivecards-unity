@@ -77,6 +77,13 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
             CheckDrop();
         }
 
+        if(isMatched)
+        {
+            DetectNeighbours();
+            DetectLongVerticalMatch();
+            DetectLongHorizontalMatch();
+        }
+
     }
 
     public void DetectNeighbours()
@@ -182,7 +189,7 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                 }
             }
 
-            if(matched.Count >= 1)
+            if(matched.Count >= 2)
             {
                 if(!matched.Contains(this.gameObject))
                     matched.Add(this.gameObject);

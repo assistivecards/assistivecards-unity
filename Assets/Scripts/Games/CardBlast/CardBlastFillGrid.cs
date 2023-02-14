@@ -116,6 +116,7 @@ public class CardBlastFillGrid : MonoBehaviour
             cell.GetComponent<CardCrushCell>().DetectNeighbourCells();
             cell.GetComponent<CardCrushCell>().DetectNeighboursAround();
         }
+        LeanTween.scale(this.gameObject, new Vector2(0.75f, 0.75f), 0.1f);
         isBoardCreated = true;
     }
 
@@ -164,7 +165,6 @@ public class CardBlastFillGrid : MonoBehaviour
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
 
                 cell.card = card;
-
                 card.GetComponent<CardBlastElement>().x = cell.x;
                 card.GetComponent<CardBlastElement>().y = cell.y;
                 card.GetComponent<CardBlastElement>().type = cardNames[cardImageRandom];

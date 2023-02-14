@@ -16,6 +16,7 @@ public class CardBlastFillGrid : MonoBehaviour
     [SerializeField] private CardCrushGrid cardCrushGrid;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] private GameObject scoreObj;
+    [SerializeField] private GameObject loadingScreen;
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     private List<string> cardNames = new List<string>();
 
@@ -29,14 +30,19 @@ public class CardBlastFillGrid : MonoBehaviour
     public List<string> matchedCardName = new List<string>();
 
     public bool isOnRefill = false;
-        public int scoreInt = 0;
+    public int scoreInt = 0;
     public bool isOnGame = false;
+    private RectTransform rect;
 
     public List<CardCrushCell> topCells = new List<CardCrushCell>();
+    private Vector3 startPosition;
+    
 
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+        rect = GetComponent<RectTransform>();
+        startPosition = transform.position;
     }
 
     public async Task CacheCards(string _packSlug)
@@ -92,7 +98,7 @@ public class CardBlastFillGrid : MonoBehaviour
         isOnGame = true;
         await CacheCards(_packSlug);
         CreateRandomValue();
-
+        loadingScreen.SetActive(true);
         for(int i = 0; i < cardCrushGrid.allCells.Count; i++)
         {
             GameObject card = Instantiate(cardPrefab, cardCrushGrid.allCells[i].transform.position, Quaternion.identity);
@@ -117,6 +123,8 @@ public class CardBlastFillGrid : MonoBehaviour
             cell.GetComponent<CardCrushCell>().DetectNeighboursAround();
         }
         LeanTween.scale(this.gameObject, new Vector2(0.75f, 0.75f), 0.1f);
+        SetLeft(rect, -120);
+        loadingScreen.SetActive(false);
         isBoardCreated = true;
     }
 
@@ -143,7 +151,6 @@ public class CardBlastFillGrid : MonoBehaviour
         {
             isOnGame = false;
         }
-        
     }
 
     public async void RefillBoard()
@@ -223,7 +230,6 @@ public class CardBlastFillGrid : MonoBehaviour
 
             card.GetComponent<CardBlastElement>().x = cell.x;
             card.GetComponent<CardBlastElement>().y = cell.y;
-
         }
         
     }
@@ -254,6 +260,21 @@ public class CardBlastFillGrid : MonoBehaviour
             randomValues.Clear();
             matchedCards.Clear();
         }
+    }
+
+    public void ResetPosition()
+    {
+        SetLeft(rect, 1000000);
+    }
+
+    public static void SetLeft(RectTransform _rect, float left)
+    {
+        _rect.offsetMin = new Vector2(left, _rect.offsetMin.y);
+    }
+
+    public static void SetBottom(RectTransform rt, float bottom)
+    {
+        rt.offsetMin = new Vector2(rt.offsetMin.x, bottom);
     }
 
 }

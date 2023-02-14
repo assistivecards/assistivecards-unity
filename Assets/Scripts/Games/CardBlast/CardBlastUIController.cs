@@ -30,7 +30,7 @@ public class CardBlastUIController : MonoBehaviour
 
     public void GamePanelUIControl()
     {
-        if(fillGrid.isOnGame)
+        if(fillGrid.isOnGame && fillGrid.isBoardCreated)
         {
             score.SetActive(true);
             backButton.SetActive(true);
@@ -88,6 +88,7 @@ public class CardBlastUIController : MonoBehaviour
         transitionScreen.SetActive(false);
 
         fillGrid.ResetGrid();
+        fillGrid.ResetPosition();
         GamePanelUIControl();
     }
 

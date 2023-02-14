@@ -223,6 +223,36 @@ Texture2D texture;
 texture = await GetAppIcon("leeloo");
 ```
 
+## GetGames
+
+Returns an object of type Games which holds an array of Game objects.
+
+```Csharp
+public AssistiveCardsSDK.AssistiveCardsSDK.Games GetGames()
+```
+
+Example usage;
+
+```Csharp
+AssistiveCardsSDK.AssistiveCardsSDK.Games games = new AssistiveCardsSDK.AssistiveCardsSDK.Games();
+games = GetGames();
+```
+
+## GetGameIcon
+
+Takes in a game slug of type string and returns an object of type Texture2D corresponding to the specified game slug.
+
+```Csharp
+public async Task<Texture2D> GetGameIcon(string gameSlug)
+```
+
+Example usage;
+
+```Csharp
+Texture2D texture;
+texture = await GetGameIcon("memory");
+```
+
 ## GetCardImagesByPack
 
 Takes in a language code of type string as the first parameter, a pack slug of type string as the second parameter and an optional image size of type integer as the third parameter. Returns an array of Texture2D objects corresponding to the specified language, pack slug and image size.

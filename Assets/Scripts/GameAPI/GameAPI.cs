@@ -13,6 +13,7 @@ public class GameAPI : MonoBehaviour
     public AssistiveCardsSDK.AssistiveCardsSDK.Activities cachedActivities = new AssistiveCardsSDK.AssistiveCardsSDK.Activities();
     public AssistiveCardsSDK.AssistiveCardsSDK.Languages cachedLanguages = new AssistiveCardsSDK.AssistiveCardsSDK.Languages();
     public AssistiveCardsSDK.AssistiveCardsSDK.Apps cachedApps = new AssistiveCardsSDK.AssistiveCardsSDK.Apps();
+    public AssistiveCardsSDK.AssistiveCardsSDK.Games cachedGames = new AssistiveCardsSDK.AssistiveCardsSDK.Games();
     public List<Texture2D> cachedAppIcons = new List<Texture2D>();
     public List<Texture2D> freePackImages = new List<Texture2D>();
     public List<Texture2D> premiumPackImages = new List<Texture2D>();
@@ -54,6 +55,7 @@ public class GameAPI : MonoBehaviour
     {
         cachedLanguages = await GetLanguages();
         cachedApps = await GetApps();
+        cachedGames = GetGames();
         for (int i = 0; i < cachedApps.apps.Count; i++)
         {
             cachedAppIcons.Add(await GetAppIcon(cachedApps.apps[i].slug));
@@ -268,6 +270,24 @@ public class GameAPI : MonoBehaviour
         public string vi;
     }
 
+    [Serializable]
+    public class Game
+    {
+        public string slug;
+        public string name;
+        public Tagline tagline;
+        public Description description;
+        public StoreId storeId;
+        public bool released;
+        public bool premium;
+    }
+
+    [Serializable]
+    public class Games
+    {
+        public List<Game> games;
+    }
+
     public AssistiveCardsSDK.AssistiveCardsSDK.Cards cards = new AssistiveCardsSDK.AssistiveCardsSDK.Cards();
 
     ///<summary>
@@ -347,6 +367,15 @@ public class GameAPI : MonoBehaviour
     }
 
     ///<summary>
+    ///Takes in a game slug of type string and returns an object of type Texture2D corresponding to the specified game slug.
+    ///</summary>
+    public async Task<Texture2D> GetGameIcon(string gameSlug)
+    {
+        var result = await assistiveCardsSDK.GetGameIcon(gameSlug);
+        return result;
+    }
+
+    ///<summary>
     ///Takes in a pack slug of type string as the first parameter, a card slug of type string as the second parameter and an optional image size of type integer as the third parameter. Returns an object of type Texture2D corresponding to the specified pack slug, card slug and image size.
     ///</summary>
     public async Task<Texture2D> GetCardImage(string packSlug, string cardSlug, int imgSize = 256)
@@ -361,6 +390,15 @@ public class GameAPI : MonoBehaviour
     public async Task<AssistiveCardsSDK.AssistiveCardsSDK.Apps> GetApps()
     {
         var result = await assistiveCardsSDK.GetApps();
+        return result;
+    }
+
+    ///<summary>
+    ///Returns an object of type Games which holds an array of Game objects.
+    ///</summary>
+    public AssistiveCardsSDK.AssistiveCardsSDK.Games GetGames()
+    {
+        var result = assistiveCardsSDK.GetGames();
         return result;
     }
 

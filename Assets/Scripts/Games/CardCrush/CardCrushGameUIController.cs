@@ -96,6 +96,11 @@ public class CardCrushGameUIController : MonoBehaviour
         GamePanelUIControl();
     }
 
+    public void SetScoreZero()
+    {
+        fillGrid.scoreInt = 0;
+    }
+
     public void PackSelected()
     {
         if(packSelectionScreenUIController.canGenerate)

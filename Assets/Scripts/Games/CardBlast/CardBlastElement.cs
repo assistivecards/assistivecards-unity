@@ -130,11 +130,16 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
     private void CheckDrop()
     {
-        if(transform.parent.GetComponent<CardCrushCell>().bottomNeighbour != null)
+        var bottom = transform.parent.GetComponent<CardCrushCell>();
+
+        if(bottom.isOnBottom == false)
         {
-            if(transform.parent.GetComponent<CardCrushCell>().bottomNeighbour.transform.GetComponent<CardCrushCell>().isEmpty)
+            if(bottom.bottomNeighbour)
             {
-                MoveToTarget(transform.parent.GetComponent<CardCrushCell>().bottomNeighbour);
+                if(bottom.bottomNeighbour.transform.GetComponent<CardCrushCell>().isEmpty)
+                {
+                    MoveToTarget(transform.parent.GetComponent<CardCrushCell>().bottomNeighbour);
+                }
             }
         }
     }
@@ -165,6 +170,8 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                     {
                         if(!matched.Contains(neighbour.card))
                             matched.Add(neighbour.card);
+                            neighbour.DetectNeighbourCells();
+                            neighbour.DetectNeighboursAround();
                     }
                     else 
                     {
@@ -181,6 +188,8 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                     {
                         if(!matched.Contains(neighbour.card))
                             matched.Add(neighbour.card);
+                            neighbour.DetectNeighbourCells();
+                            neighbour.DetectNeighboursAround();
                     }
                     else 
                     {
@@ -212,6 +221,8 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                 {
                     if(!matched.Contains(neighbour.card))
                         matched.Add(neighbour.card);
+                            neighbour.DetectNeighbourCells();
+                            neighbour.DetectNeighboursAround();
                 }
                 else 
                 {
@@ -228,6 +239,8 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                 {
                     if(!matched.Contains(neighbour.card))
                         matched.Add(neighbour.card);
+                        neighbour.DetectNeighbourCells();
+                        neighbour.DetectNeighboursAround();
                 }
                 else 
                 {

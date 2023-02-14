@@ -167,6 +167,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &26566311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,6 +275,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &81308601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -635,6 +637,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &332540532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -737,6 +740,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &416611230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -860,6 +864,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &438890927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -962,6 +967,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &452605831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1298,6 +1304,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &520077122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1691,6 +1698,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &792630930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1793,6 +1801,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &818042982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1895,6 +1904,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &829505814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1997,6 +2007,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &903020108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2120,6 +2131,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1014833789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2360,6 +2372,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1051216598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2580,6 +2593,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1172148082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2682,6 +2696,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1175880353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2794,6 +2809,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1247137132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3268,6 +3284,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1359502089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3551,6 +3568,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1448201243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3659,7 +3677,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5444075737719559762, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5444075737719559762, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -3667,6 +3685,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5444075737719559762, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444075737719559762, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5444075737719559762, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
@@ -3678,11 +3700,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1381051503}
     - target: {fileID: 5444075737719559762, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1381051504}
+    - target: {fileID: 5444075737719559762, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5444075737719559762, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444075737719559762, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5444075737719559762, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
@@ -3694,12 +3724,20 @@ PrefabInstance:
       value: GeneratStylized
       objectReference: {fileID: 0}
     - target: {fileID: 5444075737719559762, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: SetScoreZero
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444075737719559762, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: CardBlastFillGrid, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5444075737719559762, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: CardBlastFillGrid, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444075737719559762, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: CardBlastUIController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5444075737719559762, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
@@ -3718,6 +3756,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5444075737719559762, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444075737719559762, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -3725,9 +3767,13 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5444075737719559762, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5444075738514452925, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5444075738514452925, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -3735,6 +3781,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5444075738514452925, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444075738514452925, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5444075738514452925, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
@@ -3746,11 +3796,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1381051503}
     - target: {fileID: 5444075738514452925, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1381051504}
+    - target: {fileID: 5444075738514452925, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5444075738514452925, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444075738514452925, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5444075738514452925, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
@@ -3762,12 +3820,20 @@ PrefabInstance:
       value: GeneratStylized
       objectReference: {fileID: 0}
     - target: {fileID: 5444075738514452925, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: SetScoreZero
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444075738514452925, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: CardBlastFillGrid, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5444075738514452925, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: CardBlastFillGrid, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444075738514452925, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: CardBlastUIController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5444075738514452925, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
@@ -3786,11 +3852,19 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5444075738514452925, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444075738514452925, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5444075738514452925, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444075738514452925, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5444075738650717230, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
@@ -3887,7 +3961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5444075738935711893, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5444075738935711893, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -3895,6 +3969,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5444075738935711893, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444075738935711893, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5444075738935711893, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
@@ -3906,11 +3984,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1381051503}
     - target: {fileID: 5444075738935711893, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1381051504}
+    - target: {fileID: 5444075738935711893, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5444075738935711893, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444075738935711893, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5444075738935711893, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
@@ -3922,12 +4008,20 @@ PrefabInstance:
       value: GeneratStylized
       objectReference: {fileID: 0}
     - target: {fileID: 5444075738935711893, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: SetScoreZero
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444075738935711893, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: CardBlastFillGrid, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5444075738935711893, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: CardBlastFillGrid, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444075738935711893, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: CardBlastUIController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5444075738935711893, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
@@ -3946,11 +4040,19 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5444075738935711893, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444075738935711893, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5444075738935711893, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444075738935711893, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4067,6 +4169,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1559065253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4169,6 +4272,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1571094045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4271,6 +4375,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1573845908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4373,6 +4478,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1596444265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4475,6 +4581,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1629410037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4577,6 +4684,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1692753272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4679,6 +4787,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1710033343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4792,6 +4901,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1719152870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5034,6 +5144,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1733771378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5121,6 +5232,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1796462978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5223,6 +5335,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1835960015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5589,6 +5702,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1969410115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5707,6 +5821,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &2054954658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5944,6 +6059,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &2130105942
 MonoBehaviour:
   m_ObjectHideFlags: 0

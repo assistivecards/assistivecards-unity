@@ -22,6 +22,8 @@ public class CardCrushCell : MonoBehaviour
     public List<CardCrushCell> verticalNeightboursTop = new List<CardCrushCell>();
     public List<CardCrushCell> verticalNeightboursBottom = new List<CardCrushCell>();
 
+    public bool isOnBottom = true;
+
     private void OnEnable() 
     {
         cardCrushGrid = FindObjectOfType<CardCrushGrid>();
@@ -49,6 +51,7 @@ public class CardCrushCell : MonoBehaviour
             }
             if(cell.x == x && cell.y == y - 1)
             {
+                isOnBottom = false;
                 bottomNeighbour = cell.gameObject;
                 if(!neighbours.Contains(cell))
                 {

@@ -21,6 +21,7 @@ public class MatchPairsBoardGenerator : MonoBehaviour
     [SerializeField] GameObject[] puzzlePieceSlots;
     [SerializeField] List<Image> pieceImages = new List<Image>();
     private List<Sprite> pieceSprites = new List<Sprite>();
+    private MatchPairsUIController UIController;
 
     private void Awake()
     {
@@ -30,6 +31,7 @@ public class MatchPairsBoardGenerator : MonoBehaviour
     private void Start()
     {
         gameAPI.PlayMusic();
+        UIController = gameObject.GetComponent<MatchPairsUIController>();
     }
 
     private void OnEnable()
@@ -37,6 +39,7 @@ public class MatchPairsBoardGenerator : MonoBehaviour
         if (isBackAfterSignOut)
         {
             gameAPI.PlayMusic();
+            UIController.OnBackButtonClick();
             isBackAfterSignOut = false;
         }
     }
@@ -123,6 +126,16 @@ public class MatchPairsBoardGenerator : MonoBehaviour
 
     public void ScaleImagesDown()
     {
+        for (int i = 0; i < puzzlePieceParents.Length; i++)
+        {
+            if (puzzlePieceParents[i].transform.parent.name != "TempParent(Clone)")
+            {
+                LeanTween.scale(puzzlePieceParents[i], Vector3.zero, .15f);
+            }
+            else
+                LeanTween.scale(puzzlePieceParents[i].transform.parent.gameObject, Vector3.zero, .15f);
+
+        }
 
     }
 

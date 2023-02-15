@@ -282,6 +282,7 @@ public class CanvasController : MonoBehaviour
         Board.isBackAfterSignOut = true;
         BoardGeneration.isBackAfterSignOut = true;
         SplitPuzzleBoardGenerator.isBackAfterSignOut = true;
+        MatchPairsBoardGenerator.isBackAfterSignOut = true;
         deviceLanguage = languageScreen.GetComponentInChildren<DeviceLanguagePanel>().deviceLanguageObject;
         if (deviceLanguage != null)
         {

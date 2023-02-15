@@ -93,6 +93,7 @@ public class MatchPairsMatchDetection : MonoBehaviour, IPointerUpHandler
                 Debug.Log("Level Completed!");
                 levelProgressChecker.levelsCompleted++;
                 levelProgressChecker.correctMatches = 0;
+                levelProgressChecker.backButton.GetComponent<Button>().interactable = false;
                 board.Invoke("ClearBoard", 1.75f);
                 board.Invoke("GenerateRandomBoardAsync", 1.75f);
             }

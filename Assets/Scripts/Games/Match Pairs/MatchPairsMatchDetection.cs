@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class MatchPairsMatchDetection : MonoBehaviour, IPointerUpHandler
 {
+    private MatchPairsLevelProgressChecker levelProgressChecker;
+    private MatchPairsBoardGenerator board;
     private GameAPI gameAPI;
     public bool isMatched = false;
     private Transform matchedTransform;
@@ -16,6 +18,12 @@ public class MatchPairsMatchDetection : MonoBehaviour, IPointerUpHandler
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
+
+    private void Start()
+    {
+        levelProgressChecker = GameObject.Find("GamePanel").GetComponent<MatchPairsLevelProgressChecker>();
+        board = GameObject.Find("GamePanel").GetComponent<MatchPairsBoardGenerator>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -55,6 +63,7 @@ public class MatchPairsMatchDetection : MonoBehaviour, IPointerUpHandler
         if (isMatched)
         {
             Debug.Log("Correct Match!");
+            levelProgressChecker.correctMatches++;
             var matchedBoxColliders = matchedTransform.gameObject.GetComponents<BoxCollider2D>();
             foreach (var collider in matchedBoxColliders)
             {
@@ -77,6 +86,16 @@ public class MatchPairsMatchDetection : MonoBehaviour, IPointerUpHandler
             LeanTween.rotate(gameObject, Vector3.zero, .25f);
             Invoke("SnapIntoPlace", .3f);
             Invoke("PlayScaleAnimation", .6f);
+
+            if (levelProgressChecker.correctMatches == 3)
+            {
+                Debug.Log("Level Completed!");
+                levelProgressChecker.levelsCompleted++;
+                levelProgressChecker.correctMatches = 0;
+                board.Invoke("ClearBoard", 1.75f);
+                board.Invoke("GenerateRandomBoardAsync", 1.75f);
+            }
+
         }
 
         else

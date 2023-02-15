@@ -66,6 +66,13 @@ public class MatchPairsBoardGenerator : MonoBehaviour
 
         PlaceIntoSlots();
         ScaleImagesUp();
+
+        var tempParents = GameObject.FindGameObjectsWithTag("Temp");
+        for (int i = 0; i < tempParents.Length; i++)
+        {
+            Destroy(tempParents[i]);
+        }
+
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);
     }
@@ -73,8 +80,9 @@ public class MatchPairsBoardGenerator : MonoBehaviour
     public void ClearBoard()
     {
         cardToAdd = null;
-        // randomImage = null;
         pieceSprites.Clear();
+        randomCards.Clear();
+        randomTextures.Clear();
         for (int i = 0; i < pieceImages.Count; i++)
         {
             pieceImages[i].sprite = null;
@@ -87,6 +95,13 @@ public class MatchPairsBoardGenerator : MonoBehaviour
         {
             puzzlePieceParents[i].transform.SetParent(puzzlePieceSlots[i].transform);
             puzzlePieceParents[i].transform.position = puzzlePieceSlots[i].transform.position;
+            puzzlePieceParents[i].GetComponent<MatchPairsDraggablePiece>().enabled = true;
+            var boxColliders = puzzlePieceParents[i].GetComponents<BoxCollider2D>();
+            foreach (var collider in boxColliders)
+            {
+                if (collider.size.x == 75)
+                    collider.isTrigger = false;
+            }
             if (puzzlePieceParents[i].transform.GetChild(1).name.Contains("0"))
             {
                 puzzlePieceParents[i].transform.rotation = Quaternion.Euler(0, 0, Random.Range(5, 25));
@@ -102,6 +117,7 @@ public class MatchPairsBoardGenerator : MonoBehaviour
         for (int i = 0; i < puzzlePieceParents.Length; i++)
         {
             LeanTween.scale(puzzlePieceParents[i], Vector3.one, 0.15f);
+            puzzlePieceParents[i].GetComponent<MatchPairsMatchDetection>().isMatched = false;
         }
     }
 

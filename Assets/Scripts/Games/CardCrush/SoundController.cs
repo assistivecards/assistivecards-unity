@@ -10,6 +10,7 @@ public class SoundController : MonoBehaviour
     public string matched;
     public bool isMovedGlobal = false;
 
+    public bool match = false;
     public List<string> movedTargetList = new List<string>();
     public List<string> movedList = new List<string>();
     public List<string> matchedList = new List<string>();
@@ -26,6 +27,12 @@ public class SoundController : MonoBehaviour
     private void Update() 
     {
       ReadCard();
+
+        if(match)
+        {
+            Invoke("TTSCardName" , 0.1f);
+            match = false;
+        }
     }
 
     private void ReadCard()

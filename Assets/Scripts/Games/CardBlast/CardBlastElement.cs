@@ -262,8 +262,12 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         foreach(var card in matched)
         {
             if(transform.parent != null)
+            {
                 if(card.transform.GetComponentInParent<CardCrushCell>() != null)
+                {
                     card.transform.GetComponentInParent<CardCrushCell>().isEmpty = true;
+                }
+            }
             
             Destroy(card);
         }
@@ -274,6 +278,7 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         foreach(var card in matched)
         {
             soundController.matchedList.Add(this.gameObject.name);
+            soundController.match = true;
             LeanTween.scale(card, new Vector3(0.5f, 0.5f, 0.5f), 0.1f);   
         }
         Invoke("DestroyMatched", 0.1f);

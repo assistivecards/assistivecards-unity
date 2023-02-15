@@ -30,6 +30,8 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     public bool isMatched;
     public bool isMoved;
 
+    public bool hasParent = false;
+
     private void OnEnable() 
     {
         LeanTween.scale(this.gameObject, Vector3.one, 0.3f);
@@ -78,7 +80,6 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
         if(isMatched)
         {
-            DetectNeighbours();
             DetectMatch();
         }
 
@@ -128,13 +129,13 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
     private void CheckDrop()
     {
-        var bottom = transform.parent.GetComponent<CardCrushCell>();
-
-        if(bottom.isOnBottom == false)
+        if(transform.parent != null)
         {
-            if(bottom.bottomNeighbour)
+            var bottom = transform.parent.GetComponent<CardCrushCell>().bottomNeighbour;
+            
+            if(bottom)
             {
-                if(bottom.bottomNeighbour.transform.GetComponent<CardCrushCell>().isEmpty)
+                if(bottom.transform.GetComponent<CardCrushCell>().isEmpty)
                 {
                     MoveToTarget(transform.parent.GetComponent<CardCrushCell>().bottomNeighbour);
                 }
@@ -169,8 +170,7 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                         if(!matched.Contains(neighbour.card))
                         {
                             matched.Add(neighbour.card);
-                            neighbour.DetectNeighbourCells();
-                            neighbour.DetectNeighboursAround();
+                            neighbour.card.GetComponent<CardBlastElement>().isMatched = true;
                         }
                     }
                     else 
@@ -189,8 +189,7 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                         if(!matched.Contains(neighbour.card))
                         {
                             matched.Add(neighbour.card);
-                            neighbour.DetectNeighbourCells();
-                            neighbour.DetectNeighboursAround();
+                            neighbour.card.GetComponent<CardBlastElement>().isMatched = true;
                         }
                     }
                     else 
@@ -210,8 +209,7 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                     if(!matched.Contains(neighbour.card))
                     {
                         matched.Add(neighbour.card);
-                        neighbour.DetectNeighbourCells();
-                        neighbour.DetectNeighboursAround();
+                        neighbour.card.GetComponent<CardBlastElement>().isMatched = true;
                     }
                 }
                 else 
@@ -230,8 +228,7 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                     if(!matched.Contains(neighbour.card))
                     {
                         matched.Add(neighbour.card);
-                        neighbour.DetectNeighbourCells();
-                        neighbour.DetectNeighboursAround();
+                        neighbour.card.GetComponent<CardBlastElement>().isMatched = true;
                     }
                 }
                 else 

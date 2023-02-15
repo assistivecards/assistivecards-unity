@@ -261,7 +261,9 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
        
         foreach(var card in matched)
         {
-            card.transform.GetComponentInParent<CardCrushCell>().isEmpty = true;
+            if(transform.parent != null)
+                if(card.transform.GetComponentInParent<CardCrushCell>() != null)
+                    card.transform.GetComponentInParent<CardCrushCell>().isEmpty = true;
             
             Destroy(card);
         }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4078790203237893514}
   m_Layer: 5
   m_Name: Card
-  m_TagString: Untagged
+  m_TagString: cardBlast
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,6 +128,7 @@ MonoBehaviour:
   matched: []
   isMatched: 0
   isMoved: 0
+  hasParent: 0
 --- !u!1 &3953419126043893981
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,8 @@ public class CardBlastLevelControl1 : MonoBehaviour
     [SerializeField] private GameObject contunieButton;
     [SerializeField] private GameObject selectNewButton;
 
+    public List<GameObject> clones = new List<GameObject>();
+
     public bool isOnSelect = false;
     public bool isOnContinue = false;
     public bool isOnLevelChange = false;
@@ -21,6 +23,7 @@ public class CardBlastLevelControl1 : MonoBehaviour
         fillGrid.scoreInt = 0;
         fillGrid.ResetGrid();
         fillGrid.isOnRefill = false;
+        CloneCheck();
     }
 
     public void ContinueClick()
@@ -47,5 +50,13 @@ public class CardBlastLevelControl1 : MonoBehaviour
 
         LeanTween.scale(contunieButton, Vector3.one, 0.01f);
         LeanTween.scale(selectNewButton, Vector3.one, 0.01f);
+    }
+
+    public void CloneCheck()
+    {
+        foreach(var clone in GameObject.FindGameObjectsWithTag("cardBlast"))
+        {
+            Destroy(clone);
+        }
     }
 }

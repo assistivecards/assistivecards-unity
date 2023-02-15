@@ -9,6 +9,7 @@ public class MatchPairsMatchDetection : MonoBehaviour, IPointerUpHandler
     private GameAPI gameAPI;
     public bool isMatched = false;
     private Transform matchedTransform;
+    private BoxCollider2D matchedCollider;
 
     private void Awake()
     {
@@ -52,8 +53,45 @@ public class MatchPairsMatchDetection : MonoBehaviour, IPointerUpHandler
         if (isMatched)
         {
             Debug.Log("Correct Match!");
+            var matchedBoxColliders = matchedTransform.gameObject.GetComponents<BoxCollider2D>();
+            foreach (var collider in matchedBoxColliders)
+            {
+                if (collider.size.x == 75)
+                    collider.isTrigger = true;
+                if (collider.size.x == 150)
+                    matchedCollider = collider;
+            }
+            var draggedBoxColliders = gameObject.GetComponents<BoxCollider2D>();
+            foreach (var collider in draggedBoxColliders)
+            {
+                if (collider.size.x == 75)
+                    collider.isTrigger = true;
+            }
+            gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+            gameObject.GetComponent<MatchPairsDraggablePiece>().enabled = false;
+            matchedTransform.GetComponent<MatchPairsDraggablePiece>().enabled = false;
+
+            LeanTween.rotate(matchedTransform.gameObject, Vector3.zero, .25f);
+            LeanTween.rotate(gameObject, Vector3.zero, .25f);
+            Invoke("SnapIntoPlace", .3f);
         }
+
         else
+        {
             Debug.Log("Wrong Match!");
+            LeanTween.move(gameObject, transform.parent.position, .35f);
+        }
+    }
+
+    public void SnapIntoPlace()
+    {
+        if (matchedTransform.GetChild(1).name.Contains("0"))
+            LeanTween.move(matchedTransform.gameObject, new Vector3(matchedCollider.bounds.center.x - matchedCollider.bounds.extents.x / 2, matchedCollider.bounds.center.y, matchedCollider.bounds.center.z), 0.25f);
+        else if (matchedTransform.GetChild(1).name.Contains("1"))
+            LeanTween.move(matchedTransform.gameObject, new Vector3(matchedCollider.bounds.center.x + matchedCollider.bounds.extents.x / 2, matchedCollider.bounds.center.y, matchedCollider.bounds.center.z), 0.25f);
+        if (transform.GetChild(1).name.Contains("0"))
+            LeanTween.move(gameObject, new Vector3(matchedCollider.bounds.center.x - matchedCollider.bounds.extents.x / 2, matchedCollider.bounds.center.y, matchedCollider.bounds.center.z), 0.25f);
+        else if (transform.GetChild(1).name.Contains("1"))
+            LeanTween.move(gameObject, new Vector3(matchedCollider.bounds.center.x + matchedCollider.bounds.extents.x / 2, matchedCollider.bounds.center.y, matchedCollider.bounds.center.z), 0.25f);
     }
 }

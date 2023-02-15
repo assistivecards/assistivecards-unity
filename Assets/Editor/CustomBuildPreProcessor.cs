@@ -28,7 +28,7 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
 
     public async void OnPreprocessBuild(BuildReport report)
     {
-        await CacheGames();
+
         Texture2D icon = (Texture2D)AssetDatabase.LoadAssetAtPath("Assets/Sprites/AppIcons/" + PlayerSettings.productName.Replace("-", "_").Replace("_", " ").Replace(" ", "_").ToLower() + ".png", typeof(Texture2D));
         PlayerSettings.SetIcons(NamedBuildTarget.Unknown, new Texture2D[] { icon }, IconKind.Any);
         PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.Android, "com.assistivecards." + PlayerSettings.productName.Replace("-", "_").Replace("_", " ").Replace(" ", "_").ToLower());
@@ -38,6 +38,7 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
         PlayerSettings.iOS.buildNumber = PlayerSettings.bundleVersion;
         PlayerSettings.iOS.applicationDisplayName = ToTitleCase(PlayerSettings.productName.Replace("-", "_").Replace("_", " "));
         PlayerSettings.applicationIdentifier = "com.assistivecards." + PlayerSettings.productName.Replace("-", "_").Replace("_", " ").Replace(" ", "_").ToLower();
+        await CacheGames();
         Debug.Log("preprocessing");
 
     }

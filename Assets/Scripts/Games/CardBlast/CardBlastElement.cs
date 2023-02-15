@@ -60,8 +60,7 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
             finalTouchPosition = pointerEventData.position;
         }
 
-        DetectLongVerticalMatch();
-        DetectLongHorizontalMatch();
+        DetectMatch();
     }
     private void Update() 
     {
@@ -80,8 +79,7 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         if(isMatched)
         {
             DetectNeighbours();
-            DetectLongVerticalMatch();
-            DetectLongHorizontalMatch();
+            DetectMatch();
         }
 
     }
@@ -158,7 +156,7 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         this.transform.parent.GetComponent<CardCrushCell>().isEmpty = false;
     }
 
-    public void DetectLongVerticalMatch()
+    public void DetectMatch()
     {
         if(transform.GetComponentInParent<CardCrushCell>() != null)
         {
@@ -169,9 +167,11 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                     if(neighbour.card.GetComponent<CardBlastElement>().type == type)
                     {
                         if(!matched.Contains(neighbour.card))
+                        {
                             matched.Add(neighbour.card);
                             neighbour.DetectNeighbourCells();
                             neighbour.DetectNeighboursAround();
+                        }
                     }
                     else 
                     {
@@ -187,9 +187,11 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                     if(neighbour.card.GetComponent<CardBlastElement>().type == type)
                     {
                         if(!matched.Contains(neighbour.card))
+                        {
                             matched.Add(neighbour.card);
                             neighbour.DetectNeighbourCells();
                             neighbour.DetectNeighboursAround();
+                        }
                     }
                     else 
                     {
@@ -197,22 +199,8 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                     }
                 }
             }
-
-            if(matched.Count >= 2)
-            {
-                if(!matched.Contains(this.gameObject))
-                    matched.Add(this.gameObject);
-                    isMatched = true;
-                    ScaleUpMatch();
-            }
-            if(matched.Count < 1)
-            {
-                matched.Clear();
-            }
         }
-    }
-    private void DetectLongHorizontalMatch()
-    {
+
         foreach(var neighbour in GetComponentInParent<CardCrushCell>().verticalNeightboursBottom)
         {
             if(neighbour.card != null)
@@ -220,9 +208,11 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                 if(neighbour.card.GetComponent<CardBlastElement>().type == type)
                 {
                     if(!matched.Contains(neighbour.card))
+                    {
                         matched.Add(neighbour.card);
-                            neighbour.DetectNeighbourCells();
-                            neighbour.DetectNeighboursAround();
+                        neighbour.DetectNeighbourCells();
+                        neighbour.DetectNeighboursAround();
+                    }
                 }
                 else 
                 {
@@ -238,9 +228,11 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                 if(neighbour.card.GetComponent<CardBlastElement>().type == type)
                 {
                     if(!matched.Contains(neighbour.card))
+                    {
                         matched.Add(neighbour.card);
                         neighbour.DetectNeighbourCells();
                         neighbour.DetectNeighboursAround();
+                    }
                 }
                 else 
                 {
@@ -253,10 +245,12 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         if(matched.Count >= 2)
         {
             if(!matched.Contains(this.gameObject))
+            {
                 matched.Add(this.gameObject);
                 isMatched = true;
                 
                 ScaleUpMatch();
+            }
             
         }
         if(matched.Count < 2)

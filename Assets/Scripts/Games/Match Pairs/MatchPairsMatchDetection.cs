@@ -84,6 +84,7 @@ public class MatchPairsMatchDetection : MonoBehaviour, IPointerUpHandler
 
             LeanTween.rotate(matchedTransform.gameObject, Vector3.zero, .25f);
             LeanTween.rotate(gameObject, Vector3.zero, .25f);
+            gameAPI.PlaySFX("Success");
             Invoke("SnapIntoPlace", .3f);
             Invoke("PlayScaleAnimation", .6f);
 
@@ -119,6 +120,7 @@ public class MatchPairsMatchDetection : MonoBehaviour, IPointerUpHandler
 
     public void PlayScaleAnimation()
     {
+        board.ReadCard(transform.GetChild(1).name.Substring(0, transform.GetChild(1).name.Length - 1));
         tempParent = Instantiate(tempParentPrefab, matchedCollider.bounds.center, Quaternion.identity);
         tempParent.transform.SetParent(GameObject.Find("GamePanel").transform);
         matchedTransform.SetParent(tempParent.transform);

@@ -126,6 +126,11 @@ public class MatchPairsBoardGenerator : MonoBehaviour
 
     }
 
+    public void ReadCard(string cardName)
+    {
+        gameAPI.Speak(cardName);
+    }
+
     public void EnableBackButton()
     {
         backButton.GetComponent<Button>().interactable = true;
@@ -193,7 +198,7 @@ public class MatchPairsBoardGenerator : MonoBehaviour
             var texture = await gameAPI.GetCardImage(packSlug, randomCards[i].slug);
             texture.wrapMode = TextureWrapMode.Clamp;
             texture.filterMode = FilterMode.Bilinear;
-            texture.name = randomCards[i].slug;
+            texture.name = randomCards[i].title;
             randomTextures.Add(texture);
         }
     }

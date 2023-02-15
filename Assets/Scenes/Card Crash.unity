@@ -167,6 +167,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &12701876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,6 +420,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &205455427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,6 +523,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &233103650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -668,6 +671,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &330144078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -770,6 +774,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &373692331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -893,6 +898,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &458670338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -995,6 +1001,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &463242068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1095,10 +1102,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
@@ -1106,7 +1117,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1381051504}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1381051503}
+    - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
@@ -1114,11 +1133,23 @@ PrefabInstance:
       value: GameBackButtonClick
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ResetPosition
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: CardCrushGameUIController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: CardCrushFillGrid, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4157986844284454155, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
@@ -1471,6 +1502,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &522236500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1573,6 +1605,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &541955715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1831,6 +1864,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &647782553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2046,6 +2080,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &688409673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2159,6 +2194,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &705778896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2261,6 +2297,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &719486199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2363,6 +2400,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &755206330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2476,6 +2514,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &772249212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2578,6 +2617,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &773746380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2744,6 +2784,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &916230861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2862,6 +2903,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1018731363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3102,6 +3144,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1110431464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3627,6 +3670,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1309113339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3798,6 +3842,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1367799230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3905,6 +3950,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1374482941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4232,6 +4278,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1487827389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4631,6 +4678,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1532975179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4800,6 +4848,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1588286059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4907,6 +4956,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1703991934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5145,6 +5195,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1797898990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5511,6 +5562,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1876705636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5613,6 +5665,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1879962241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5715,6 +5768,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &1884803387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5828,6 +5882,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &2026474456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5935,6 +5990,7 @@ MonoBehaviour:
   horizontalNeighboursLeft: []
   verticalNeightboursTop: []
   verticalNeightboursBottom: []
+  isOnBottom: 1
 --- !u!114 &2134394349
 MonoBehaviour:
   m_ObjectHideFlags: 0

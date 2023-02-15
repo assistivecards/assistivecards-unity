@@ -12,6 +12,7 @@ public class CardBlastFillGrid : MonoBehaviour
     public string selectedLangCode;
 
     [SerializeField] private GameObject cardPrefab;
+    [SerializeField] private SoundController soundController;
     [SerializeField] private PackSelectionPanel packSelectionPanel;
     [SerializeField] private CardCrushGrid cardCrushGrid;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
@@ -156,6 +157,7 @@ public class CardBlastFillGrid : MonoBehaviour
     public async void RefillBoard()
     {
         scoreInt += 1;
+        //soundController.TTSCardName();
         gameAPI.PlaySFX("SmallSuccess");
         foreach(var cell in cardCrushGrid.allCells)
         {

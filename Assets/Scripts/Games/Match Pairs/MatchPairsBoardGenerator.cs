@@ -21,6 +21,7 @@ public class MatchPairsBoardGenerator : MonoBehaviour
     [SerializeField] GameObject[] puzzlePieceSlots;
     [SerializeField] List<Image> pieceImages = new List<Image>();
     private List<Sprite> pieceSprites = new List<Sprite>();
+    private MatchPairsUIController UIController;
 
     private void Awake()
     {
@@ -30,6 +31,7 @@ public class MatchPairsBoardGenerator : MonoBehaviour
     private void Start()
     {
         gameAPI.PlayMusic();
+        UIController = gameObject.GetComponent<MatchPairsUIController>();
     }
 
     private void OnEnable()
@@ -37,6 +39,7 @@ public class MatchPairsBoardGenerator : MonoBehaviour
         if (isBackAfterSignOut)
         {
             gameAPI.PlayMusic();
+            UIController.OnBackButtonClick();
             isBackAfterSignOut = false;
         }
     }
@@ -66,6 +69,13 @@ public class MatchPairsBoardGenerator : MonoBehaviour
 
         PlaceIntoSlots();
         ScaleImagesUp();
+
+        var tempParents = GameObject.FindGameObjectsWithTag("Temp");
+        for (int i = 0; i < tempParents.Length; i++)
+        {
+            Destroy(tempParents[i]);
+        }
+
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);
     }
@@ -73,8 +83,9 @@ public class MatchPairsBoardGenerator : MonoBehaviour
     public void ClearBoard()
     {
         cardToAdd = null;
-        // randomImage = null;
         pieceSprites.Clear();
+        randomCards.Clear();
+        randomTextures.Clear();
         for (int i = 0; i < pieceImages.Count; i++)
         {
             pieceImages[i].sprite = null;
@@ -87,6 +98,13 @@ public class MatchPairsBoardGenerator : MonoBehaviour
         {
             puzzlePieceParents[i].transform.SetParent(puzzlePieceSlots[i].transform);
             puzzlePieceParents[i].transform.position = puzzlePieceSlots[i].transform.position;
+            puzzlePieceParents[i].GetComponent<MatchPairsDraggablePiece>().enabled = true;
+            var boxColliders = puzzlePieceParents[i].GetComponents<BoxCollider2D>();
+            foreach (var collider in boxColliders)
+            {
+                if (collider.size.x == 75)
+                    collider.isTrigger = false;
+            }
             if (puzzlePieceParents[i].transform.GetChild(1).name.Contains("0"))
             {
                 puzzlePieceParents[i].transform.rotation = Quaternion.Euler(0, 0, Random.Range(5, 25));
@@ -102,12 +120,28 @@ public class MatchPairsBoardGenerator : MonoBehaviour
         for (int i = 0; i < puzzlePieceParents.Length; i++)
         {
             LeanTween.scale(puzzlePieceParents[i], Vector3.one, 0.15f);
+            puzzlePieceParents[i].GetComponent<MatchPairsMatchDetection>().isMatched = false;
         }
     }
 
     public void ScaleImagesDown()
     {
+        for (int i = 0; i < puzzlePieceParents.Length; i++)
+        {
+            if (puzzlePieceParents[i].transform.parent.name != "TempParent(Clone)")
+            {
+                LeanTween.scale(puzzlePieceParents[i], Vector3.zero, .15f);
+            }
+            else
+                LeanTween.scale(puzzlePieceParents[i].transform.parent.gameObject, Vector3.zero, .15f);
 
+        }
+
+    }
+
+    public void ReadCard(string cardName)
+    {
+        gameAPI.Speak(cardName);
     }
 
     public void EnableBackButton()
@@ -177,7 +211,7 @@ public class MatchPairsBoardGenerator : MonoBehaviour
             var texture = await gameAPI.GetCardImage(packSlug, randomCards[i].slug);
             texture.wrapMode = TextureWrapMode.Clamp;
             texture.filterMode = FilterMode.Bilinear;
-            texture.name = randomCards[i].slug;
+            texture.name = randomCards[i].title;
             randomTextures.Add(texture);
         }
     }

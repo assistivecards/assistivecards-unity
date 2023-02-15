@@ -553,6 +553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMatched: 0
+  tempParentPrefab: {fileID: 780273591106433029, guid: 54cf3ec624b0b5f4baf407e64aad17ca, type: 3}
 --- !u!1 &191490649 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1242831490340205118, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -713,6 +714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMatched: 0
+  tempParentPrefab: {fileID: 780273591106433029, guid: 54cf3ec624b0b5f4baf407e64aad17ca, type: 3}
 --- !u!1 &252539107
 GameObject:
   m_ObjectHideFlags: 0
@@ -908,6 +910,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMatched: 0
+  tempParentPrefab: {fileID: 780273591106433029, guid: 54cf3ec624b0b5f4baf407e64aad17ca, type: 3}
 --- !u!1 &429505576 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1982601096855616903, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -2162,6 +2165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMatched: 0
+  tempParentPrefab: {fileID: 780273591106433029, guid: 54cf3ec624b0b5f4baf407e64aad17ca, type: 3}
 --- !u!1 &1120600894
 GameObject:
   m_ObjectHideFlags: 0
@@ -2398,6 +2402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMatched: 0
+  tempParentPrefab: {fileID: 780273591106433029, guid: 54cf3ec624b0b5f4baf407e64aad17ca, type: 3}
 --- !u!1 &1154749945
 GameObject:
   m_ObjectHideFlags: 0
@@ -3110,6 +3115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMatched: 0
+  tempParentPrefab: {fileID: 780273591106433029, guid: 54cf3ec624b0b5f4baf407e64aad17ca, type: 3}
 --- !u!1 &1551830231
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,8 @@ public class MatchPairsMatchDetection : MonoBehaviour, IPointerUpHandler
     public bool isMatched = false;
     private Transform matchedTransform;
     private BoxCollider2D matchedCollider;
+    [SerializeField] GameObject tempParentPrefab;
+    private GameObject tempParent;
 
     private void Awake()
     {
@@ -74,6 +76,7 @@ public class MatchPairsMatchDetection : MonoBehaviour, IPointerUpHandler
             LeanTween.rotate(matchedTransform.gameObject, Vector3.zero, .25f);
             LeanTween.rotate(gameObject, Vector3.zero, .25f);
             Invoke("SnapIntoPlace", .3f);
+            Invoke("PlayScaleAnimation", .6f);
         }
 
         else
@@ -93,5 +96,20 @@ public class MatchPairsMatchDetection : MonoBehaviour, IPointerUpHandler
             LeanTween.move(gameObject, new Vector3(matchedCollider.bounds.center.x - matchedCollider.bounds.extents.x / 2, matchedCollider.bounds.center.y, matchedCollider.bounds.center.z), 0.25f);
         else if (transform.GetChild(1).name.Contains("1"))
             LeanTween.move(gameObject, new Vector3(matchedCollider.bounds.center.x + matchedCollider.bounds.extents.x / 2, matchedCollider.bounds.center.y, matchedCollider.bounds.center.z), 0.25f);
+    }
+
+    public void PlayScaleAnimation()
+    {
+        tempParent = Instantiate(tempParentPrefab, matchedCollider.bounds.center, Quaternion.identity);
+        tempParent.transform.SetParent(GameObject.Find("GamePanel").transform);
+        matchedTransform.SetParent(tempParent.transform);
+        transform.SetParent(tempParent.transform);
+        LeanTween.scale(tempParent, tempParent.transform.localScale * 1.25f, .25f);
+        Invoke("ScaleImageDown", .75f);
+    }
+
+    public void ScaleImageDown()
+    {
+        LeanTween.scale(tempParent, Vector3.zero, .25f);
     }
 }

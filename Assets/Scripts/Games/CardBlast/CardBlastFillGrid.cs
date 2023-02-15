@@ -107,6 +107,9 @@ public class CardBlastFillGrid : MonoBehaviour
             int cardImageRandom = randomValues[Random.Range(0, cardTypeCount)];
             var cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[cardImageRandom], 512);
 
+            cardTexture.wrapMode = TextureWrapMode.Clamp;
+            cardTexture.filterMode = FilterMode.Bilinear;
+
             card.transform.name = cardNames[cardImageRandom];
             card.transform.SetParent(cardCrushGrid.allCells[i].transform);
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
@@ -167,6 +170,10 @@ public class CardBlastFillGrid : MonoBehaviour
                 
                 int cardImageRandom = randomValues[Random.Range(0, cardTypeCount)];
                 var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[cardImageRandom], 512);
+                
+                cardTexture.wrapMode = TextureWrapMode.Clamp;
+                cardTexture.filterMode = FilterMode.Bilinear;
+
                 if(card != null)
                 {
                     card.transform.name = cardNames[cardImageRandom];

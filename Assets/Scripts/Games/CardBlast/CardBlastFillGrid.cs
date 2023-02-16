@@ -127,7 +127,7 @@ public class CardBlastFillGrid : MonoBehaviour
             cell.GetComponent<CardCrushCell>().DetectNeighboursAround();
         }
         LeanTween.scale(this.gameObject, new Vector2(0.75f, 0.75f), 0.1f);
-        SetLeft(rect, -120);
+        SetLeft(rect, -124);
         loadingScreen.SetActive(false);
         isBoardCreated = true;
     }

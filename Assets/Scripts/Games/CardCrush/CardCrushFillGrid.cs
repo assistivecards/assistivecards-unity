@@ -158,7 +158,7 @@ public class CardCrushFillGrid : MonoBehaviour
         }
 
         LeanTween.scale(this.gameObject, new Vector2(0.75f, 0.75f), 0.1f);
-        SetLeft(rect, 3100);
+        SetLeft(rect, 3097);
         loadingScreen.SetActive(false);
         isBoardCreated = true;
     }

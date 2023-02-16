@@ -14,6 +14,7 @@ public class MatchPairsMatchDetection : MonoBehaviour, IPointerUpHandler
     private BoxCollider2D matchedCollider;
     [SerializeField] GameObject tempParentPrefab;
     private GameObject tempParent;
+    private MatchPairsUIController UIController;
 
     private void Awake()
     {
@@ -24,6 +25,8 @@ public class MatchPairsMatchDetection : MonoBehaviour, IPointerUpHandler
     {
         levelProgressChecker = GameObject.Find("GamePanel").GetComponent<MatchPairsLevelProgressChecker>();
         board = GameObject.Find("GamePanel").GetComponent<MatchPairsBoardGenerator>();
+        UIController = GameObject.Find("GamePanel").GetComponent<MatchPairsUIController>();
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -95,7 +98,13 @@ public class MatchPairsMatchDetection : MonoBehaviour, IPointerUpHandler
                 levelProgressChecker.correctMatches = 0;
                 levelProgressChecker.backButton.GetComponent<Button>().interactable = false;
                 board.Invoke("ClearBoard", 1.75f);
-                board.Invoke("GenerateRandomBoardAsync", 1.75f);
+
+                if (levelProgressChecker.levelsCompleted == 5)
+                {
+                    UIController.Invoke("OpenCheckPointPanel", 1.75f);
+                }
+                else
+                    board.Invoke("GenerateRandomBoardAsync", 1.75f);
             }
 
         }

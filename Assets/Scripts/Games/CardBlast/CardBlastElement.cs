@@ -30,7 +30,6 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     public bool isMatched;
     public bool isMoved;
 
-    public bool hasParent = false;
 
     private void OnEnable() 
     {
@@ -81,6 +80,7 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         if(isMatched)
         {
             DetectMatch();
+            Invoke("RestoreCard", 0.8f);
         }
 
     }
@@ -258,7 +258,6 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
     private void DestroyMatched()
     {
-       
         foreach(var card in matched)
         {
             if(transform.parent != null)
@@ -268,10 +267,16 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                     card.transform.GetComponentInParent<CardCrushCell>().isEmpty = true;
                 }
             }
-            
             Destroy(card);
         }
     }
+
+    private void RestoreCard()
+    {
+        LeanTween.scale(this.gameObject, Vector3.one, 0.1f); 
+        isMatched = false;
+    }
+
     private void ScaleUpMatch()
     {
         cardBlastFillGrid.isOnRefill = true;

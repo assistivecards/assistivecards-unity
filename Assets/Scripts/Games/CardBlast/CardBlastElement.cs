@@ -27,6 +27,7 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     public GameObject bottomNeighbour;
 
     public List<GameObject> matched = new List<GameObject>();
+    public List<GameObject> canMatch = new List<GameObject>();
     public bool isMatched;
     public bool isMoved;
 
@@ -75,6 +76,7 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         if(cardBlastFillGrid.isBoardCreated)
         {
             CheckDrop();
+            DetectPossibleMatch();
         }
 
         if(isMatched)
@@ -253,6 +255,99 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         if(matched.Count < 2)
         {
             matched.Clear();
+        }
+    }
+
+    public void DetectPossibleMatch()
+    {
+        if(transform.parent != null)
+        {
+
+            if(transform.GetComponentInParent<CardCrushCell>() != null)
+            {
+                foreach(var neighbour in GetComponentInParent<CardCrushCell>().horizontalNeighboursRight)
+                {
+                    if(neighbour.card != null)
+                    {
+                        if(neighbour.card.GetComponent<CardBlastElement>().type == type)
+                        {
+                            if(!canMatch.Contains(neighbour.card))
+                            {
+                                canMatch.Add(neighbour.card);
+                            }
+                        }
+                        else 
+                        {
+                            break;
+                        }
+                    }
+                }
+
+                foreach(var neighbour in GetComponentInParent<CardCrushCell>().horizontalNeighboursLeft)
+                {
+                    if(neighbour.card != null)
+                    {
+                        if(neighbour.card.GetComponent<CardBlastElement>().type == type)
+                        {
+                            if(!canMatch.Contains(neighbour.card))
+                            {
+                                canMatch.Add(neighbour.card);
+                            }
+                        }
+                        else 
+                        {
+                            break;
+                        }
+                    }
+                }
+            }
+
+            foreach(var neighbour in GetComponentInParent<CardCrushCell>().verticalNeightboursBottom)
+            {
+                if(neighbour.card != null)
+                {
+                    if(neighbour.card.GetComponent<CardBlastElement>().type == type)
+                    {
+                        if(!canMatch.Contains(neighbour.card))
+                        {
+                            canMatch.Add(neighbour.card);
+                        }
+                    }
+                    else 
+                    {
+                        break;
+                    }
+                }
+            }
+
+            foreach(var neighbour in GetComponentInParent<CardCrushCell>().verticalNeightboursTop)
+            {
+                if(neighbour.card != null)
+                {
+                    if(neighbour.card.GetComponent<CardBlastElement>().type == type)
+                    {
+                        if(!canMatch.Contains(neighbour.card))
+                        {
+                            canMatch.Add(neighbour.card);
+                        }
+                    }
+                    else 
+                    {
+                        break;
+                    }
+                }
+            }
+
+
+            if(canMatch.Count >= 2)
+            {
+                if(!canMatch.Contains(this.gameObject))
+                {
+                    cardBlastFillGrid.canMatch = true;
+                    canMatch.Clear();
+                }
+                
+            }
         }
     }
 

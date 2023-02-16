@@ -21,6 +21,8 @@ public class CardBlastFillGrid : MonoBehaviour
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     private List<string> cardNames = new List<string>();
 
+    public bool canMatch = true;
+
     public int cardTypeCount;
     public bool isBoardCreated = false;
 
@@ -37,6 +39,7 @@ public class CardBlastFillGrid : MonoBehaviour
 
     public List<CardCrushCell> topCells = new List<CardCrushCell>();
     private Vector3 startPosition;
+    
     
 
     private void Awake()
@@ -151,6 +154,10 @@ public class CardBlastFillGrid : MonoBehaviour
                 }
             }
         }
+        if(!canMatch)
+        {
+            Invoke("ResetScene", 0.75f);
+        }
         if(scoreInt >= 100)
         {
             isOnGame = false;
@@ -192,9 +199,18 @@ public class CardBlastFillGrid : MonoBehaviour
 
     }
 
+    private void CheckPossibleMatch()
+    {
+        if(isOnGame)
+        {
+            canMatch = false;
+        }
+    }
+
     private void OnRefillBool()
     {
         isOnRefill = false;
+        CheckPossibleMatch();
     }
 
     public void SetBoardDifficulty(int _cardTypeCount)
@@ -288,4 +304,8 @@ public class CardBlastFillGrid : MonoBehaviour
         rt.offsetMin = new Vector2(rt.offsetMin.x, bottom);
     }
 
+    private void ResetScene()
+    {
+        //canMatch = true;
+    }
 }

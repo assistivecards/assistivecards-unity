@@ -105,14 +105,16 @@ public class MatchPairsBoardGenerator : MonoBehaviour
                 if (collider.size.x == 75)
                     collider.isTrigger = false;
             }
-            if (puzzlePieceParents[i].transform.GetChild(1).name.Contains("0"))
-            {
-                puzzlePieceParents[i].transform.rotation = Quaternion.Euler(0, 0, Random.Range(5, 25));
-            }
-            else if (puzzlePieceParents[i].transform.GetChild(1).name.Contains("1"))
-            {
-                puzzlePieceParents[i].transform.rotation = Quaternion.Euler(0, 0, Random.Range(-25, -5));
-            }
+            // if (puzzlePieceParents[i].transform.GetChild(1).name.Contains("0"))
+            // {
+            //     puzzlePieceParents[i].transform.rotation = Quaternion.Euler(0, 0, Random.Range(5, 25));
+            // }
+            // else if (puzzlePieceParents[i].transform.GetChild(1).name.Contains("1"))
+            // {
+            //     puzzlePieceParents[i].transform.rotation = Quaternion.Euler(0, 0, Random.Range(-25, -5));
+            // }
+
+            puzzlePieceParents[i].transform.rotation = Quaternion.Euler(0, 0, Random.Range(-25, 25));
 
 
         }

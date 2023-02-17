@@ -223,7 +223,6 @@ public class CardCrushFillGrid : MonoBehaviour
             }
         }
         Invoke("OnRefillBool", 0.5f);
-
     }
 
     private void OnRefillBool()

@@ -39,7 +39,8 @@ public class CardBlastFillGrid : MonoBehaviour
 
     public List<CardCrushCell> topCells = new List<CardCrushCell>();
     private Vector3 startPosition;
-    
+    public List<GameObject> moveableCards = new List<GameObject>();
+    private bool oneTime = false;
     
 
     private void Awake()
@@ -95,6 +96,8 @@ public class CardBlastFillGrid : MonoBehaviour
     {
         GenerateBoard(packSelectionPanel.selectedPackElement.name);
         GetTopCells();
+        canMatch = true;
+        Debug.Log("GENERATE");
     }
 
     private async void  GenerateBoard(string _packSlug)
@@ -137,6 +140,7 @@ public class CardBlastFillGrid : MonoBehaviour
 
     private void FixedUpdate() 
     {
+        ResetScene();
         if(scoreInt < 0)
         {
             scoreInt = 0;
@@ -153,10 +157,6 @@ public class CardBlastFillGrid : MonoBehaviour
                     RefillBoard();
                 }
             }
-        }
-        if(!canMatch)
-        {
-            Invoke("ResetScene", 0.75f);
         }
         if(scoreInt >= 100)
         {
@@ -304,8 +304,21 @@ public class CardBlastFillGrid : MonoBehaviour
         rt.offsetMin = new Vector2(rt.offsetMin.x, bottom);
     }
 
-    private void ResetScene()
+    private async void ResetScene()
     {
-        //canMatch = true;
+        if(!canMatch && !oneTime && cardTypeCount > 3)
+        {
+            canMatch = true;
+            ResetPosition();
+            ResetGrid();
+            GeneratStylized();
+            oneTime = true;
+            Invoke("OneTimeFalse", 2f);
+        }
+    }
+
+    private void OneTimeFalse()
+    {
+        oneTime = false;
     }
 }

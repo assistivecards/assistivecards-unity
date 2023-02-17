@@ -259,6 +259,7 @@
 		A31704DD4E32F271F2FE571E /* mscorlib20.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9930D4366EEDCF4959F6F6CC /* mscorlib20.cpp */; };
 		A549377689210071A9FA39A3 /* Unity.Services.Core.Telemetry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93460E488F0E33EA2BFFBC14 /* Unity.Services.Core.Telemetry.cpp */; };
 		A573E50136EE71E5FF397264 /* System.Xml14.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB6B2D10F9BA72F1A9475243 /* System.Xml14.cpp */; };
+		A5F1CC508EE1AEB950F05703 /* PathCreator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83DEA958249CB5A4922DE75A /* PathCreator.cpp */; };
 		A6054A74A53DBA04B0EAD39E /* Unity.Services.Core.Environments.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F54CF2D8315F1F23EE9DFAC0 /* Unity.Services.Core.Environments.cpp */; };
 		A6C16E6DC2E46FE705807F33 /* Unity.TextMeshPro.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D02606C9288D83EB81733DB /* Unity.TextMeshPro.cpp */; };
 		A730B1CDC33735EB60F5E2B0 /* Unity.TextMeshPro5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DADCDF3E346C8C17940D6C54 /* Unity.TextMeshPro5.cpp */; };
@@ -330,6 +331,7 @@
 		D6EA4FE00927C38D9EFD9702 /* System10.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C07320A2F361603F7AA5C16 /* System10.cpp */; };
 		D7A8EF2F446D0E0C78B1650B /* Newtonsoft.Json3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7A017A5EE26B66A1A1DAB428 /* Newtonsoft.Json3.cpp */; };
 		D7AEFA52EA56659D542D2C5C /* UnityEngine.UI1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59702ED85597B8923B33B0D5 /* UnityEngine.UI1.cpp */; };
+		D92E2E5B6BE0B436BE2A1684 /* PathCreator_CodeGen.c in Sources */ = {isa = PBXBuildFile; fileRef = 430B9478FB402720C43EA3A2 /* PathCreator_CodeGen.c */; };
 		DA069D36EFA542F4AABE7535 /* AssistiveCardsSDK.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26B7A8850F1579ADCD9BBC45 /* AssistiveCardsSDK.cpp */; };
 		DB26D4E8486B164323444057 /* Il2CppGenericMethodTable.c in Sources */ = {isa = PBXBuildFile; fileRef = 739384E33146BF83662DDFBA /* Il2CppGenericMethodTable.c */; };
 		DB5A1412A47F954D469C11EE /* Unity.Services.Core.Scheduler_CodeGen.c in Sources */ = {isa = PBXBuildFile; fileRef = B35B0BB0866AEBFCE07D660A /* Unity.Services.Core.Scheduler_CodeGen.c */; };
@@ -501,6 +503,7 @@
 		40434022BC40FFC5BE01AF89 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		409EA2B565F5B8A84BCA3723 /* GenericMethods1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = GenericMethods1.cpp; path = Classes/Native/GenericMethods1.cpp; sourceTree = SOURCE_ROOT; };
 		4239A5CA43514863A2FE8CA6 /* Unity.Services.Core_CodeGen.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = Unity.Services.Core_CodeGen.c; path = Classes/Native/Unity.Services.Core_CodeGen.c; sourceTree = SOURCE_ROOT; };
+		430B9478FB402720C43EA3A2 /* PathCreator_CodeGen.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = PathCreator_CodeGen.c; path = Classes/Native/PathCreator_CodeGen.c; sourceTree = SOURCE_ROOT; };
 		44583318B5F99C539E4375F7 /* mscorlib9.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = mscorlib9.cpp; path = Classes/Native/mscorlib9.cpp; sourceTree = SOURCE_ROOT; };
 		447EE4F9AAA5F36FDDEE03C7 /* System.Xml6.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = System.Xml6.cpp; path = Classes/Native/System.Xml6.cpp; sourceTree = SOURCE_ROOT; };
 		44DE1338140C30DE892F167E /* Unity.Services.Core.Telemetry_CodeGen.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = Unity.Services.Core.Telemetry_CodeGen.c; path = Classes/Native/Unity.Services.Core.Telemetry_CodeGen.c; sourceTree = SOURCE_ROOT; };
@@ -609,6 +612,7 @@
 		83AE6D3228C96FB4FF6D7A48 /* System.Data_CodeGen.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = System.Data_CodeGen.c; path = Classes/Native/System.Data_CodeGen.c; sourceTree = SOURCE_ROOT; };
 		83B2570A0E62FF8A00468741 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		83B2574B0E63022200468741 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		83DEA958249CB5A4922DE75A /* PathCreator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PathCreator.cpp; path = Classes/Native/PathCreator.cpp; sourceTree = SOURCE_ROOT; };
 		844617BCDB8B337CE7F54C7F /* mscorlib1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = mscorlib1.cpp; path = Classes/Native/mscorlib1.cpp; sourceTree = SOURCE_ROOT; };
 		84609742D3366FEBA298A576 /* UnityEngine.TilemapModule.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = UnityEngine.TilemapModule.cpp; path = Classes/Native/UnityEngine.TilemapModule.cpp; sourceTree = SOURCE_ROOT; };
 		848031E01C5160D700FCEAB7 /* UnityReplayKit_Scripting.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UnityReplayKit_Scripting.mm; sourceTree = "<group>"; };
@@ -1302,6 +1306,8 @@
 				8E55C7289FD969A6A7E2C716 /* Newtonsoft.Json2.cpp */,
 				7A017A5EE26B66A1A1DAB428 /* Newtonsoft.Json3.cpp */,
 				24BC39B7AF9540645F5D6C92 /* Newtonsoft.Json4.cpp */,
+				430B9478FB402720C43EA3A2 /* PathCreator_CodeGen.c */,
+				83DEA958249CB5A4922DE75A /* PathCreator.cpp */,
 				D257CA4560F64CD8D41BE910 /* Purchasing.Common_CodeGen.c */,
 				3F6F4F4219343A3461429AC4 /* Purchasing.Common.cpp */,
 				68F5212C6DA79ACCB9DE86A8 /* System_CodeGen.c */,
@@ -2115,6 +2121,8 @@
 				D688698D7F457ADE3701AA43 /* Coffee.SoftMaskForUGUI.cpp in Sources */,
 				FDC1F291B3035B0B96B7E81E /* Coffee.SoftMaskForUGUI_CodeGen.c in Sources */,
 				B0FEAFD0A1B94BF4A8CFD1AD /* Assembly-CSharp4.cpp in Sources */,
+				A5F1CC508EE1AEB950F05703 /* PathCreator.cpp in Sources */,
+				D92E2E5B6BE0B436BE2A1684 /* PathCreator_CodeGen.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2174,7 +2182,7 @@
 					"$(inherited)",
 					"$(OTHER_CFLAGS)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.assistivecards.split-puzzle";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.assistivecards.card-blast";
 				PRODUCT_NAME = "$(PRODUCT_NAME_APP)";
 				PROVISIONING_PROFILE = "$(PROVISIONING_PROFILE_APP)";
 				PROVISIONING_PROFILE_APP = "";
@@ -2214,7 +2222,7 @@
 					"$(inherited)",
 					"$(OTHER_CFLAGS)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.assistivecards.split-puzzle";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.assistivecards.card-blast";
 				PRODUCT_NAME = "$(PRODUCT_NAME_APP)";
 				PROVISIONING_PROFILE = "$(PROVISIONING_PROFILE_APP)";
 				PROVISIONING_PROFILE_APP = "";
@@ -2362,7 +2370,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PRODUCT_NAME_APP = "Split Puzzle";
+				PRODUCT_NAME_APP = "Card Blast";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 			};
@@ -2396,7 +2404,7 @@
 					"$(inherited)",
 					"$(OTHER_CFLAGS)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.assistivecards.split-puzzle";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.assistivecards.card-blast";
 				PRODUCT_NAME = "$(PRODUCT_NAME_APP)";
 				PROVISIONING_PROFILE = "$(PROVISIONING_PROFILE_APP)";
 				PROVISIONING_PROFILE_APP = "";
@@ -2490,7 +2498,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PRODUCT_NAME_APP = "Split Puzzle";
+				PRODUCT_NAME_APP = "Card Blast";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 			};
@@ -2524,7 +2532,7 @@
 					"$(inherited)",
 					"$(OTHER_CFLAGS)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.assistivecards.split-puzzle";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.assistivecards.card-blast";
 				PRODUCT_NAME = "$(PRODUCT_NAME_APP)";
 				PROVISIONING_PROFILE = "$(PROVISIONING_PROFILE_APP)";
 				PROVISIONING_PROFILE_APP = "";
@@ -2946,7 +2954,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME_APP = "Split Puzzle";
+				PRODUCT_NAME_APP = "Card Blast";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 			};
@@ -2985,7 +2993,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PRODUCT_NAME_APP = "Split Puzzle";
+				PRODUCT_NAME_APP = "Card Blast";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 			};

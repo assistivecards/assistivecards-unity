@@ -666,6 +666,10 @@ void RegisterAllStrippedInternalCalls()
 
 	//Start Registrations for type : UnityEngine.BoxCollider2D
 
+		//System.Void UnityEngine.BoxCollider2D::get_size_Injected(UnityEngine.Vector2&)
+		void Register_UnityEngine_BoxCollider2D_get_size_Injected();
+		Register_UnityEngine_BoxCollider2D_get_size_Injected();
+
 		//System.Void UnityEngine.BoxCollider2D::set_size_Injected(UnityEngine.Vector2&)
 		void Register_UnityEngine_BoxCollider2D_set_size_Injected();
 		Register_UnityEngine_BoxCollider2D_set_size_Injected();
@@ -2150,6 +2154,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Material_SetTextureImpl();
 		Register_UnityEngine_Material_SetTextureImpl();
 
+		//System.Void UnityEngine.Material::SetTextureScaleImpl_Injected(System.Int32,UnityEngine.Vector2&)
+		void Register_UnityEngine_Material_SetTextureScaleImpl_Injected();
+		Register_UnityEngine_Material_SetTextureScaleImpl_Injected();
+
 		//System.Void UnityEngine.Material::set_renderQueue(System.Int32)
 		void Register_UnityEngine_Material_set_renderQueue();
 		Register_UnityEngine_Material_set_renderQueue();
@@ -2305,6 +2313,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.Mesh::set_bounds_Injected(UnityEngine.Bounds&)
 		void Register_UnityEngine_Mesh_set_bounds_Injected();
 		Register_UnityEngine_Mesh_set_bounds_Injected();
+
+		//System.Void UnityEngine.Mesh::set_subMeshCount(System.Int32)
+		void Register_UnityEngine_Mesh_set_subMeshCount();
+		Register_UnityEngine_Mesh_set_subMeshCount();
 
 	//End Registrations for type : UnityEngine.Mesh
 
@@ -2566,6 +2578,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Object_Internal_CloneSingleWithParent();
 		Register_UnityEngine_Object_Internal_CloneSingleWithParent();
 
+		//UnityEngine.Object UnityEngine.Object::Internal_InstantiateSingleWithParent_Injected(UnityEngine.Object,UnityEngine.Transform,UnityEngine.Vector3&,UnityEngine.Quaternion&)
+		void Register_UnityEngine_Object_Internal_InstantiateSingleWithParent_Injected();
+		Register_UnityEngine_Object_Internal_InstantiateSingleWithParent_Injected();
+
 		//UnityEngine.Object UnityEngine.Object::Internal_InstantiateSingle_Injected(UnityEngine.Object,UnityEngine.Vector3&,UnityEngine.Quaternion&)
 		void Register_UnityEngine_Object_Internal_InstantiateSingle_Injected();
 		Register_UnityEngine_Object_Internal_InstantiateSingle_Injected();
@@ -2754,6 +2770,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Quaternion_Inverse_Injected();
 		Register_UnityEngine_Quaternion_Inverse_Injected();
 
+		//System.Void UnityEngine.Quaternion::LookRotation_Injected(UnityEngine.Vector3&,UnityEngine.Vector3&,UnityEngine.Quaternion&)
+		void Register_UnityEngine_Quaternion_LookRotation_Injected();
+		Register_UnityEngine_Quaternion_LookRotation_Injected();
+
 	//End Registrations for type : UnityEngine.Quaternion
 
 	//Start Registrations for type : UnityEngine.Random
@@ -2898,6 +2918,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Renderer_SetMaterial();
 		Register_UnityEngine_Renderer_SetMaterial();
 
+		//System.Void UnityEngine.Renderer::SetMaterialArray(UnityEngine.Material[])
+		void Register_UnityEngine_Renderer_SetMaterialArray();
+		Register_UnityEngine_Renderer_SetMaterialArray();
+
 		//System.Void UnityEngine.Renderer::set_enabled(System.Boolean)
 		void Register_UnityEngine_Renderer_set_enabled();
 		Register_UnityEngine_Renderer_set_enabled();
@@ -2929,6 +2953,10 @@ void RegisterAllStrippedInternalCalls()
 		//UnityEngine.Material[] UnityEngine.Renderer::GetMaterialArray()
 		void Register_UnityEngine_Renderer_GetMaterialArray();
 		Register_UnityEngine_Renderer_GetMaterialArray();
+
+		//UnityEngine.Material[] UnityEngine.Renderer::GetSharedMaterialArray()
+		void Register_UnityEngine_Renderer_GetSharedMaterialArray();
+		Register_UnityEngine_Renderer_GetSharedMaterialArray();
 
 	//End Registrations for type : UnityEngine.Renderer
 

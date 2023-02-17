@@ -48,153 +48,171 @@ extern void AssistiveCardsSDK_asyncGetPackImage_m341DF17D1F34AE99C5F2883497C56B5
 extern void AssistiveCardsSDK_GetAppIcon_m98D0F850EA2DE01089BC0108E443193BD6F836CF (void);
 // 0x00000012 System.Threading.Tasks.Task`1<UnityEngine.Texture2D> AssistiveCardsSDK.AssistiveCardsSDK::asyncGetAppIcon(System.String)
 extern void AssistiveCardsSDK_asyncGetAppIcon_mB9C984B4D2713602574AB64B98CF945DC84EB875 (void);
-// 0x00000013 System.Threading.Tasks.Task`1<UnityEngine.Texture2D> AssistiveCardsSDK.AssistiveCardsSDK::GetCardImage(System.String,System.String,System.Int32)
+// 0x00000013 System.Threading.Tasks.Task`1<UnityEngine.Texture2D> AssistiveCardsSDK.AssistiveCardsSDK::GetGameIcon(System.String)
+extern void AssistiveCardsSDK_GetGameIcon_m2B6B7BA852827BF0F4355CCE9C38AA8D7E180BE0 (void);
+// 0x00000014 System.Threading.Tasks.Task`1<UnityEngine.Texture2D> AssistiveCardsSDK.AssistiveCardsSDK::asyncGetGameIcon(System.String)
+extern void AssistiveCardsSDK_asyncGetGameIcon_m19F4253C8699276EBCAF6E7C45FED9EF92078C4F (void);
+// 0x00000015 System.Threading.Tasks.Task`1<UnityEngine.Texture2D> AssistiveCardsSDK.AssistiveCardsSDK::GetCardImage(System.String,System.String,System.Int32)
 extern void AssistiveCardsSDK_GetCardImage_mE0260E3C2BC078751DFC1AFDE217A374D6B2AF7B (void);
-// 0x00000014 System.Threading.Tasks.Task`1<UnityEngine.Texture2D> AssistiveCardsSDK.AssistiveCardsSDK::asyncGetCardImage(System.String,System.String,System.Int32)
+// 0x00000016 System.Threading.Tasks.Task`1<UnityEngine.Texture2D> AssistiveCardsSDK.AssistiveCardsSDK::asyncGetCardImage(System.String,System.String,System.Int32)
 extern void AssistiveCardsSDK_asyncGetCardImage_m6E9309E40B3CA0E4DFFB188F3B6CB19D4A714EDD (void);
-// 0x00000015 System.Threading.Tasks.Task`1<AssistiveCardsSDK.AssistiveCardsSDK/Apps> AssistiveCardsSDK.AssistiveCardsSDK::GetApps()
+// 0x00000017 System.Threading.Tasks.Task`1<AssistiveCardsSDK.AssistiveCardsSDK/Apps> AssistiveCardsSDK.AssistiveCardsSDK::GetApps()
 extern void AssistiveCardsSDK_GetApps_m20C33D488B1BE9DDAFBAFE8C90ED48628618EBFE (void);
-// 0x00000016 System.Threading.Tasks.Task`1<AssistiveCardsSDK.AssistiveCardsSDK/Apps> AssistiveCardsSDK.AssistiveCardsSDK::asyncGetApps()
+// 0x00000018 System.Threading.Tasks.Task`1<AssistiveCardsSDK.AssistiveCardsSDK/Apps> AssistiveCardsSDK.AssistiveCardsSDK::asyncGetApps()
 extern void AssistiveCardsSDK_asyncGetApps_mCA290B0738FAFA1AF2CA58D66777B7DBD46A8285 (void);
-// 0x00000017 AssistiveCardsSDK.AssistiveCardsSDK/Pack AssistiveCardsSDK.AssistiveCardsSDK::GetPackBySlug(AssistiveCardsSDK.AssistiveCardsSDK/Packs,System.String)
+// 0x00000019 AssistiveCardsSDK.AssistiveCardsSDK/Games AssistiveCardsSDK.AssistiveCardsSDK::GetGames()
+extern void AssistiveCardsSDK_GetGames_m7BC9B445C5E0F2B389D3CFA7416336A1206619CB (void);
+// 0x0000001A AssistiveCardsSDK.AssistiveCardsSDK/Pack AssistiveCardsSDK.AssistiveCardsSDK::GetPackBySlug(AssistiveCardsSDK.AssistiveCardsSDK/Packs,System.String)
 extern void AssistiveCardsSDK_GetPackBySlug_m1394B3E3613E5EC74DA790FD3D560BEDEF9CAD3F (void);
-// 0x00000018 AssistiveCardsSDK.AssistiveCardsSDK/Card AssistiveCardsSDK.AssistiveCardsSDK::GetCardBySlug(AssistiveCardsSDK.AssistiveCardsSDK/Cards,System.String)
+// 0x0000001B AssistiveCardsSDK.AssistiveCardsSDK/Card AssistiveCardsSDK.AssistiveCardsSDK::GetCardBySlug(AssistiveCardsSDK.AssistiveCardsSDK/Cards,System.String)
 extern void AssistiveCardsSDK_GetCardBySlug_mE2819228D01BAEECFE6C68EEEC0CE6CD6E95E62D (void);
-// 0x00000019 AssistiveCardsSDK.AssistiveCardsSDK/Activity AssistiveCardsSDK.AssistiveCardsSDK::GetActivityBySlug(AssistiveCardsSDK.AssistiveCardsSDK/Activities,System.String)
+// 0x0000001C AssistiveCardsSDK.AssistiveCardsSDK/Activity AssistiveCardsSDK.AssistiveCardsSDK::GetActivityBySlug(AssistiveCardsSDK.AssistiveCardsSDK/Activities,System.String)
 extern void AssistiveCardsSDK_GetActivityBySlug_m9614D919A3249FE3DBC12CB2F4E34A95EDD6C839 (void);
-// 0x0000001A AssistiveCardsSDK.AssistiveCardsSDK/Language AssistiveCardsSDK.AssistiveCardsSDK::GetLanguageByCode(AssistiveCardsSDK.AssistiveCardsSDK/Languages,System.String)
+// 0x0000001D AssistiveCardsSDK.AssistiveCardsSDK/Language AssistiveCardsSDK.AssistiveCardsSDK::GetLanguageByCode(AssistiveCardsSDK.AssistiveCardsSDK/Languages,System.String)
 extern void AssistiveCardsSDK_GetLanguageByCode_m22F6782116BFC807A32A84E56BA9D1A74DBDD015 (void);
-// 0x0000001B System.Threading.Tasks.Task`1<UnityEngine.Texture2D[]> AssistiveCardsSDK.AssistiveCardsSDK::GetCardImagesByPack(System.String,System.String,System.Int32)
+// 0x0000001E System.Threading.Tasks.Task`1<UnityEngine.Texture2D[]> AssistiveCardsSDK.AssistiveCardsSDK::GetCardImagesByPack(System.String,System.String,System.Int32)
 extern void AssistiveCardsSDK_GetCardImagesByPack_mA568B901EAF1BA454F2499C60D88AC42C2F18212 (void);
-// 0x0000001C System.Threading.Tasks.Task`1<UnityEngine.Texture2D[]> AssistiveCardsSDK.AssistiveCardsSDK::GetAvatarImagesByCategory(System.String,System.Int32)
+// 0x0000001F System.Threading.Tasks.Task`1<UnityEngine.Texture2D[]> AssistiveCardsSDK.AssistiveCardsSDK::GetAvatarImagesByCategory(System.String,System.Int32)
 extern void AssistiveCardsSDK_GetAvatarImagesByCategory_mCD62F4F724980C59EEA3C13E59DAA9A1D89738FE (void);
-// 0x0000001D System.Void AssistiveCardsSDK.AssistiveCardsSDK::.ctor()
+// 0x00000020 System.Void AssistiveCardsSDK.AssistiveCardsSDK::.ctor()
 extern void AssistiveCardsSDK__ctor_m35DFCDBB65027CCA653860B7642023BCE97EBEE8 (void);
-// 0x0000001E System.Void AssistiveCardsSDK.AssistiveCardsSDK/Pack::.ctor()
+// 0x00000021 System.Void AssistiveCardsSDK.AssistiveCardsSDK/Pack::.ctor()
 extern void Pack__ctor_mF7501606148C4DF2579ECDDACF8BB444FD7BBF87 (void);
-// 0x0000001F System.Void AssistiveCardsSDK.AssistiveCardsSDK/Packs::.ctor()
+// 0x00000022 System.Void AssistiveCardsSDK.AssistiveCardsSDK/Packs::.ctor()
 extern void Packs__ctor_mA4DB8AEB7C92037F9FA567FF99D899444EC2CD55 (void);
-// 0x00000020 System.Void AssistiveCardsSDK.AssistiveCardsSDK/Phrase::.ctor()
+// 0x00000023 System.Void AssistiveCardsSDK.AssistiveCardsSDK/Phrase::.ctor()
 extern void Phrase__ctor_mA04653795F6EA5F0E9C0C660B866A8EA0601B521 (void);
-// 0x00000021 System.Void AssistiveCardsSDK.AssistiveCardsSDK/Card::.ctor()
+// 0x00000024 System.Void AssistiveCardsSDK.AssistiveCardsSDK/Card::.ctor()
 extern void Card__ctor_m166BB69A46ED47BF83DDDF868F142E56E363FF13 (void);
-// 0x00000022 System.Void AssistiveCardsSDK.AssistiveCardsSDK/Cards::.ctor()
+// 0x00000025 System.Void AssistiveCardsSDK.AssistiveCardsSDK/Cards::.ctor()
 extern void Cards__ctor_mCE0D809AF60FF2A89874C43CEC31D73ADA24C197 (void);
-// 0x00000023 System.Void AssistiveCardsSDK.AssistiveCardsSDK/Activity::.ctor()
+// 0x00000026 System.Void AssistiveCardsSDK.AssistiveCardsSDK/Activity::.ctor()
 extern void Activity__ctor_m1354040FD29BAF53BA3F607EED069D5CC46F82FA (void);
-// 0x00000024 System.Void AssistiveCardsSDK.AssistiveCardsSDK/Activities::.ctor()
+// 0x00000027 System.Void AssistiveCardsSDK.AssistiveCardsSDK/Activities::.ctor()
 extern void Activities__ctor_mA87A40CAEFBD3295718C6E12FE493522D032BACA (void);
-// 0x00000025 System.Void AssistiveCardsSDK.AssistiveCardsSDK/Language::.ctor()
+// 0x00000028 System.Void AssistiveCardsSDK.AssistiveCardsSDK/Language::.ctor()
 extern void Language__ctor_m2083B825E3BD0E1BA39978B901F3D8E7FCE1ACCA (void);
-// 0x00000026 System.Void AssistiveCardsSDK.AssistiveCardsSDK/Languages::.ctor()
+// 0x00000029 System.Void AssistiveCardsSDK.AssistiveCardsSDK/Languages::.ctor()
 extern void Languages__ctor_mF12FA5333F8BD831E9A12A26B9A4B993DDF59275 (void);
-// 0x00000027 System.Void AssistiveCardsSDK.AssistiveCardsSDK/App::.ctor()
+// 0x0000002A System.Void AssistiveCardsSDK.AssistiveCardsSDK/App::.ctor()
 extern void App__ctor_m3A2C74E09887453383635A952B68119FB45D6EB6 (void);
-// 0x00000028 System.Void AssistiveCardsSDK.AssistiveCardsSDK/Description::.ctor()
+// 0x0000002B System.Void AssistiveCardsSDK.AssistiveCardsSDK/Description::.ctor()
 extern void Description__ctor_mFBA8EFBED44B6CE12BA85AA24F68C0389D7F9673 (void);
-// 0x00000029 System.Void AssistiveCardsSDK.AssistiveCardsSDK/Apps::.ctor()
+// 0x0000002C System.Void AssistiveCardsSDK.AssistiveCardsSDK/Apps::.ctor()
 extern void Apps__ctor_m7EC9A98C478BBD12B0716E3D476349194763C487 (void);
-// 0x0000002A System.Void AssistiveCardsSDK.AssistiveCardsSDK/StoreId::.ctor()
+// 0x0000002D System.Void AssistiveCardsSDK.AssistiveCardsSDK/StoreId::.ctor()
 extern void StoreId__ctor_mA358DA20D5BCDB9A0AC3C9F0B3DC6D477FBDF8FD (void);
-// 0x0000002B System.Void AssistiveCardsSDK.AssistiveCardsSDK/Tagline::.ctor()
+// 0x0000002E System.Void AssistiveCardsSDK.AssistiveCardsSDK/Tagline::.ctor()
 extern void Tagline__ctor_m2741508CAC81AB99241F4A4F47B43612EBA60BD8 (void);
-// 0x0000002C System.Void AssistiveCardsSDK.AssistiveCardsSDK/<Awake>d__24::MoveNext()
-extern void U3CAwakeU3Ed__24_MoveNext_mC29194F8008579F400C2ADCC64E9C434F74990DF (void);
-// 0x0000002D System.Void AssistiveCardsSDK.AssistiveCardsSDK/<Awake>d__24::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern void U3CAwakeU3Ed__24_SetStateMachine_mB34D62D9F97627832958DC98DF3E29A6849BEF7A (void);
-// 0x0000002E System.Void AssistiveCardsSDK.AssistiveCardsSDK/<CacheData>d__25::MoveNext()
-extern void U3CCacheDataU3Ed__25_MoveNext_mB7CB9A96D452D477AFBC2D0C0AE1CA09D4A5BD18 (void);
-// 0x0000002F System.Void AssistiveCardsSDK.AssistiveCardsSDK/<CacheData>d__25::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern void U3CCacheDataU3Ed__25_SetStateMachine_m188BBAE64E58A4B9BCDDD69E2AA4384824064296 (void);
-// 0x00000030 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetPacks>d__26::MoveNext()
-extern void U3CGetPacksU3Ed__26_MoveNext_m500375271AFACA29AD56C334EA6509C34C37C293 (void);
-// 0x00000031 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetPacks>d__26::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern void U3CGetPacksU3Ed__26_SetStateMachine_m025E43AEB60AE070EA42B7C089998FB9DD3B0B7B (void);
-// 0x00000032 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetPacks>d__27::MoveNext()
-extern void U3CasyncGetPacksU3Ed__27_MoveNext_m181EDA7FCD08D22DF3633EF671D671CE191B27B8 (void);
-// 0x00000033 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetPacks>d__27::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern void U3CasyncGetPacksU3Ed__27_SetStateMachine_m6723E51AC0B186258F81CEAE5B306FD364126C28 (void);
-// 0x00000034 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetCards>d__28::MoveNext()
-extern void U3CGetCardsU3Ed__28_MoveNext_mAC3A80C5DEBAA9AFCFBF4572A7521EA6DC1B173C (void);
-// 0x00000035 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetCards>d__28::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern void U3CGetCardsU3Ed__28_SetStateMachine_m40D8DF64C5B8D137F54E504265FD6B330271C008 (void);
-// 0x00000036 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetCards>d__29::MoveNext()
-extern void U3CasyncGetCardsU3Ed__29_MoveNext_mC6B186A3DA1CC7C3C4FBB006556A52D68397D17F (void);
-// 0x00000037 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetCards>d__29::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern void U3CasyncGetCardsU3Ed__29_SetStateMachine_mD6E05D15B0A4E896F246675B265951B3F454AFBC (void);
-// 0x00000038 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetActivities>d__30::MoveNext()
-extern void U3CGetActivitiesU3Ed__30_MoveNext_mA193FCDA3386AE55282C36F7F32B4F4F7BA5B1AF (void);
-// 0x00000039 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetActivities>d__30::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern void U3CGetActivitiesU3Ed__30_SetStateMachine_m4E4D70FA07537A292D2E7958B0C56FA47859E92E (void);
-// 0x0000003A System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetActivities>d__31::MoveNext()
-extern void U3CasyncGetActivitiesU3Ed__31_MoveNext_mC7D29B42BDFA9268A8F99DE46A50000CEF5A57ED (void);
-// 0x0000003B System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetActivities>d__31::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern void U3CasyncGetActivitiesU3Ed__31_SetStateMachine_m6E9215DD77D9B9C72F28A18EE209B39BD9979D63 (void);
-// 0x0000003C System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetLanguages>d__32::MoveNext()
-extern void U3CGetLanguagesU3Ed__32_MoveNext_m3A7A73F4179B0B3724C0E3D220AC6E59ABFA3D46 (void);
-// 0x0000003D System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetLanguages>d__32::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern void U3CGetLanguagesU3Ed__32_SetStateMachine_m82623F7FB887EA7EBF2273333506FBF8C243119E (void);
-// 0x0000003E System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetLanguages>d__33::MoveNext()
-extern void U3CasyncGetLanguagesU3Ed__33_MoveNext_mA516B9036E825D2A6FB432723A78CA33A3107A11 (void);
-// 0x0000003F System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetLanguages>d__33::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern void U3CasyncGetLanguagesU3Ed__33_SetStateMachine_m4D363ADE084E1D3C8A3B951D3CF8CB32A7DBEA05 (void);
-// 0x00000040 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetActivityImage>d__34::MoveNext()
-extern void U3CGetActivityImageU3Ed__34_MoveNext_mD9C48C874CD1B035302DD4429B5FA8CC0486F801 (void);
-// 0x00000041 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetActivityImage>d__34::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern void U3CGetActivityImageU3Ed__34_SetStateMachine_m39BC43BD685EA92F7707020F8A94568B79763701 (void);
-// 0x00000042 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetActivityImage>d__35::MoveNext()
-extern void U3CasyncGetActivityImageU3Ed__35_MoveNext_mD0BCD4BDE1A5175DC2369901511445BD7318104D (void);
-// 0x00000043 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetActivityImage>d__35::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern void U3CasyncGetActivityImageU3Ed__35_SetStateMachine_m43BCEDDEF37627D9D3C7EC8615121D7F346CDD02 (void);
-// 0x00000044 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetAvatarImage>d__36::MoveNext()
-extern void U3CGetAvatarImageU3Ed__36_MoveNext_m4C5538CEEC5B1FE4400148DFD9A37FB4236B1D7D (void);
-// 0x00000045 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetAvatarImage>d__36::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern void U3CGetAvatarImageU3Ed__36_SetStateMachine_m1B0542033FCD52B71F2678D8759DE5BB4CDF847D (void);
-// 0x00000046 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetAvatarImage>d__37::MoveNext()
-extern void U3CasyncGetAvatarImageU3Ed__37_MoveNext_mD17B7337454D7B5473093594B7A86AC481A4123C (void);
-// 0x00000047 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetAvatarImage>d__37::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern void U3CasyncGetAvatarImageU3Ed__37_SetStateMachine_m84AB2343A6CEB0345287271C88EB16745DBF9047 (void);
-// 0x00000048 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetPackImage>d__38::MoveNext()
-extern void U3CGetPackImageU3Ed__38_MoveNext_mCB36A2C8C6F09FB83ACC561C248DEA301019AF6E (void);
-// 0x00000049 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetPackImage>d__38::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern void U3CGetPackImageU3Ed__38_SetStateMachine_mE2C5AC591D93F442D0F78C1632B9AAC2E225A187 (void);
-// 0x0000004A System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetPackImage>d__39::MoveNext()
-extern void U3CasyncGetPackImageU3Ed__39_MoveNext_mA7EDA3B8C8BB703934DD790494774C8E3426B7EF (void);
-// 0x0000004B System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetPackImage>d__39::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern void U3CasyncGetPackImageU3Ed__39_SetStateMachine_m24765A9632CFB91BE71D8A58506AE3F1AFFF7B72 (void);
-// 0x0000004C System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetAppIcon>d__40::MoveNext()
-extern void U3CGetAppIconU3Ed__40_MoveNext_m1937D4086C341C8F168FB1B5E3CD7BB5D58AB212 (void);
-// 0x0000004D System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetAppIcon>d__40::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern void U3CGetAppIconU3Ed__40_SetStateMachine_m77F2CCE54A19BE280E27421E51B7E43FF079E0C6 (void);
-// 0x0000004E System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetAppIcon>d__41::MoveNext()
-extern void U3CasyncGetAppIconU3Ed__41_MoveNext_m3286EC08881412A391806E2A543B871D8DDFC4BF (void);
-// 0x0000004F System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetAppIcon>d__41::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern void U3CasyncGetAppIconU3Ed__41_SetStateMachine_m92C2BF5A1D0DE7550B87C9156742198C3E59AE70 (void);
-// 0x00000050 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetCardImage>d__42::MoveNext()
-extern void U3CGetCardImageU3Ed__42_MoveNext_m57081219724F31738A5A51EC5D9DD7C6F5E6B696 (void);
-// 0x00000051 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetCardImage>d__42::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern void U3CGetCardImageU3Ed__42_SetStateMachine_mDF1C701A359519165E08978DED3A8D9899D7694E (void);
-// 0x00000052 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetCardImage>d__43::MoveNext()
-extern void U3CasyncGetCardImageU3Ed__43_MoveNext_mD340BE59A1A752893D13237C0D7A4449A3CAB5E6 (void);
-// 0x00000053 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetCardImage>d__43::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern void U3CasyncGetCardImageU3Ed__43_SetStateMachine_mC7211BACFA447AD74AD282B9E780F1CFBBC26857 (void);
-// 0x00000054 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetApps>d__44::MoveNext()
-extern void U3CGetAppsU3Ed__44_MoveNext_m1590677C94D164C42EC3A8630CDF110F06DE1E50 (void);
-// 0x00000055 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetApps>d__44::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern void U3CGetAppsU3Ed__44_SetStateMachine_mF479FC93ECA36BF39B4D0758E741D2C65630E76D (void);
-// 0x00000056 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetApps>d__45::MoveNext()
-extern void U3CasyncGetAppsU3Ed__45_MoveNext_mE9BBF8538E5C81C22FCC628D8FB24EA0E4CD97C2 (void);
-// 0x00000057 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetApps>d__45::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern void U3CasyncGetAppsU3Ed__45_SetStateMachine_mC8365F5DED78FD400E623E73D0EC426303729235 (void);
-// 0x00000058 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetCardImagesByPack>d__50::MoveNext()
-extern void U3CGetCardImagesByPackU3Ed__50_MoveNext_mB200EF2ACC4A14D363B44883CEC97ACF67468773 (void);
-// 0x00000059 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetCardImagesByPack>d__50::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern void U3CGetCardImagesByPackU3Ed__50_SetStateMachine_m6E1ECD46DA00F3DEF3BEB7C257EB1F6E1E6CA078 (void);
-// 0x0000005A System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetAvatarImagesByCategory>d__51::MoveNext()
-extern void U3CGetAvatarImagesByCategoryU3Ed__51_MoveNext_m8590F884B50CA0ACBC1F1E12D5730D289CF3B4D3 (void);
-// 0x0000005B System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetAvatarImagesByCategory>d__51::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-extern void U3CGetAvatarImagesByCategoryU3Ed__51_SetStateMachine_m7F6B33E79B71932CA8CDC00FD749A1C1DB42C2CC (void);
-static Il2CppMethodPointer s_methodPointers[91] = 
+// 0x0000002F System.Void AssistiveCardsSDK.AssistiveCardsSDK/Game::.ctor()
+extern void Game__ctor_m771F1455C9604CA13BE9DFACA0EF405899E3F6A2 (void);
+// 0x00000030 System.Void AssistiveCardsSDK.AssistiveCardsSDK/Games::.ctor()
+extern void Games__ctor_m4ECB24B4E1B92EEAE47DCF149266B29C0A416EB3 (void);
+// 0x00000031 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<Awake>d__27::MoveNext()
+extern void U3CAwakeU3Ed__27_MoveNext_m18FE49D510ADC33F9AB2BE3B3795E4AB9D45D25E (void);
+// 0x00000032 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<Awake>d__27::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CAwakeU3Ed__27_SetStateMachine_mE28EB959A3D6F800DD91A8D72238DF60FB1174A2 (void);
+// 0x00000033 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<CacheData>d__28::MoveNext()
+extern void U3CCacheDataU3Ed__28_MoveNext_mB00C0AC0DD946E99B2A9457087B0B3ED32D0A8AD (void);
+// 0x00000034 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<CacheData>d__28::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CCacheDataU3Ed__28_SetStateMachine_m6677327266DDB53CFA924FD3ED65E32F749C753E (void);
+// 0x00000035 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetPacks>d__29::MoveNext()
+extern void U3CGetPacksU3Ed__29_MoveNext_mA2FB812A2D9D5B65E060AE082B1F1FE8AD5BB13B (void);
+// 0x00000036 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetPacks>d__29::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CGetPacksU3Ed__29_SetStateMachine_m7C419FC34ABF11E6C83602F6C001440C87FEB3B4 (void);
+// 0x00000037 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetPacks>d__30::MoveNext()
+extern void U3CasyncGetPacksU3Ed__30_MoveNext_m24132676A608DF212497845E06BA17ECB14D0F3F (void);
+// 0x00000038 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetPacks>d__30::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CasyncGetPacksU3Ed__30_SetStateMachine_m4B9218668F7A268D3CD36DD752B030FD1A304118 (void);
+// 0x00000039 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetCards>d__31::MoveNext()
+extern void U3CGetCardsU3Ed__31_MoveNext_m6C5F7D6847D5589F261DFE7BAD041A6C862F850A (void);
+// 0x0000003A System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetCards>d__31::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CGetCardsU3Ed__31_SetStateMachine_m10A80B4369FE1F6B73DEA7D96DDF9CD72F8AA63A (void);
+// 0x0000003B System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetCards>d__32::MoveNext()
+extern void U3CasyncGetCardsU3Ed__32_MoveNext_mCEBECA354431B3C0EAE419E6960C9C81B80F7033 (void);
+// 0x0000003C System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetCards>d__32::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CasyncGetCardsU3Ed__32_SetStateMachine_m5E61541A5305ACDB0BD4BAF0AE71D892A673844A (void);
+// 0x0000003D System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetActivities>d__33::MoveNext()
+extern void U3CGetActivitiesU3Ed__33_MoveNext_m69CE49987DC5E2E547428B53536A7939DB385101 (void);
+// 0x0000003E System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetActivities>d__33::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CGetActivitiesU3Ed__33_SetStateMachine_mC421632344B6DC1CF13173A83637B99D6A34B271 (void);
+// 0x0000003F System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetActivities>d__34::MoveNext()
+extern void U3CasyncGetActivitiesU3Ed__34_MoveNext_m9259736A1EA32D966E345F14E2ADE31BC79D68D8 (void);
+// 0x00000040 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetActivities>d__34::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CasyncGetActivitiesU3Ed__34_SetStateMachine_m432BA7BD9A5589BB5DFFD021C776C6815FBB1D09 (void);
+// 0x00000041 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetLanguages>d__35::MoveNext()
+extern void U3CGetLanguagesU3Ed__35_MoveNext_mFFF4462D7375ABA7E01B9338A9A6BD6F6F3B9908 (void);
+// 0x00000042 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetLanguages>d__35::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CGetLanguagesU3Ed__35_SetStateMachine_m014E4927D1EAC6AC51CBE563946973F943731F25 (void);
+// 0x00000043 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetLanguages>d__36::MoveNext()
+extern void U3CasyncGetLanguagesU3Ed__36_MoveNext_m6E9D49E51465BA02A136DD47F7250C5791D29C51 (void);
+// 0x00000044 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetLanguages>d__36::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CasyncGetLanguagesU3Ed__36_SetStateMachine_m56545AD1C4FA91248DFA25C3AC6D4EF7E44042FE (void);
+// 0x00000045 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetActivityImage>d__37::MoveNext()
+extern void U3CGetActivityImageU3Ed__37_MoveNext_m7ED05080B579569B5243D02DA3768210ABDFA580 (void);
+// 0x00000046 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetActivityImage>d__37::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CGetActivityImageU3Ed__37_SetStateMachine_mB5A46EB11C9511E22314291A1B1FFCFF1E65F021 (void);
+// 0x00000047 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetActivityImage>d__38::MoveNext()
+extern void U3CasyncGetActivityImageU3Ed__38_MoveNext_mC3B42A79DEA01C85FC519459C2222320E7F596B9 (void);
+// 0x00000048 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetActivityImage>d__38::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CasyncGetActivityImageU3Ed__38_SetStateMachine_m0369F0CF0B78DEA871E73DD1D1D39D57B121768D (void);
+// 0x00000049 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetAvatarImage>d__39::MoveNext()
+extern void U3CGetAvatarImageU3Ed__39_MoveNext_m7D75C606E873E996669CEAEF21771CA0F75E6F0E (void);
+// 0x0000004A System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetAvatarImage>d__39::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CGetAvatarImageU3Ed__39_SetStateMachine_m33D0B6B066CA8AB490221CBDC29C541DF637D60A (void);
+// 0x0000004B System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetAvatarImage>d__40::MoveNext()
+extern void U3CasyncGetAvatarImageU3Ed__40_MoveNext_m3BE4F4974FC9789BE6FCC87E0FC9232CB28AD729 (void);
+// 0x0000004C System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetAvatarImage>d__40::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CasyncGetAvatarImageU3Ed__40_SetStateMachine_mAADD5768CEB27903DD5F04D42CCC874175D50D5D (void);
+// 0x0000004D System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetPackImage>d__41::MoveNext()
+extern void U3CGetPackImageU3Ed__41_MoveNext_m5DBDB035A4C627D4C618B4C1432083BC8D2D8D4B (void);
+// 0x0000004E System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetPackImage>d__41::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CGetPackImageU3Ed__41_SetStateMachine_m0EFA22B9D3AB4605AC745F50024D35A00611060F (void);
+// 0x0000004F System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetPackImage>d__42::MoveNext()
+extern void U3CasyncGetPackImageU3Ed__42_MoveNext_m1EADA6E839B7AF6E2DFA4DF1715EFF714EDD07AF (void);
+// 0x00000050 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetPackImage>d__42::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CasyncGetPackImageU3Ed__42_SetStateMachine_mF47EF4A166CE3B94125566C50F250DA4C21F1C4A (void);
+// 0x00000051 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetAppIcon>d__43::MoveNext()
+extern void U3CGetAppIconU3Ed__43_MoveNext_m13B8435BC68461132EE990C2FAA36F36FE5CDA29 (void);
+// 0x00000052 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetAppIcon>d__43::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CGetAppIconU3Ed__43_SetStateMachine_m652309D2DC409EE3B28E11591914A159EC47881D (void);
+// 0x00000053 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetAppIcon>d__44::MoveNext()
+extern void U3CasyncGetAppIconU3Ed__44_MoveNext_m22A8E3DF5423CC704C3505321CC78DE07206F548 (void);
+// 0x00000054 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetAppIcon>d__44::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CasyncGetAppIconU3Ed__44_SetStateMachine_m7E3DACEBB163FA5B807BE5473CE344E2F9A596F7 (void);
+// 0x00000055 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetGameIcon>d__45::MoveNext()
+extern void U3CGetGameIconU3Ed__45_MoveNext_mA0974DAB6AF0D850769FFDD79508E9FC45B8C3FE (void);
+// 0x00000056 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetGameIcon>d__45::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CGetGameIconU3Ed__45_SetStateMachine_mE67FDDC32C8E76A884045D835448A993C6AADBF6 (void);
+// 0x00000057 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetGameIcon>d__46::MoveNext()
+extern void U3CasyncGetGameIconU3Ed__46_MoveNext_m2A30FE7E19A06EF8F21D336B0E068763838A9847 (void);
+// 0x00000058 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetGameIcon>d__46::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CasyncGetGameIconU3Ed__46_SetStateMachine_m466E04E08B33A742C4C1580E9CDFB283C62359FC (void);
+// 0x00000059 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetCardImage>d__47::MoveNext()
+extern void U3CGetCardImageU3Ed__47_MoveNext_m6ADF8E23D554C8798C4C7B04FFF0E92FD2CDD0ED (void);
+// 0x0000005A System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetCardImage>d__47::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CGetCardImageU3Ed__47_SetStateMachine_m8F90F57C0D96C1EA65C087CDC193A08A89DF936C (void);
+// 0x0000005B System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetCardImage>d__48::MoveNext()
+extern void U3CasyncGetCardImageU3Ed__48_MoveNext_mD0390F953A6F59621336863945B9E90EA101E392 (void);
+// 0x0000005C System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetCardImage>d__48::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CasyncGetCardImageU3Ed__48_SetStateMachine_mFF635478D6311EB1D58E183A8412CE229A835823 (void);
+// 0x0000005D System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetApps>d__49::MoveNext()
+extern void U3CGetAppsU3Ed__49_MoveNext_mA5A44F477BFC81FD3DA6AED08766F231D1676DD5 (void);
+// 0x0000005E System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetApps>d__49::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CGetAppsU3Ed__49_SetStateMachine_m5B262C4F710FA4CEACF7ED52CDEACDDD36A21667 (void);
+// 0x0000005F System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetApps>d__50::MoveNext()
+extern void U3CasyncGetAppsU3Ed__50_MoveNext_mEB5CBCA49ECCD6C3425DDE34F6BFE210D0D34412 (void);
+// 0x00000060 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<asyncGetApps>d__50::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CasyncGetAppsU3Ed__50_SetStateMachine_m84506CBC9CB040EE2BC659AAD11756EBBB00B1CE (void);
+// 0x00000061 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetCardImagesByPack>d__56::MoveNext()
+extern void U3CGetCardImagesByPackU3Ed__56_MoveNext_m9226E16CC18D64FC7E55A3D63D6A709CC93A9579 (void);
+// 0x00000062 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetCardImagesByPack>d__56::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CGetCardImagesByPackU3Ed__56_SetStateMachine_m925AAE4992142A1279916E3DDCAB1F5EC0E453D3 (void);
+// 0x00000063 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetAvatarImagesByCategory>d__57::MoveNext()
+extern void U3CGetAvatarImagesByCategoryU3Ed__57_MoveNext_mCFF9F4689C31999B7D6D844FB3E6E5F9CA662F76 (void);
+// 0x00000064 System.Void AssistiveCardsSDK.AssistiveCardsSDK/<GetAvatarImagesByCategory>d__57::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+extern void U3CGetAvatarImagesByCategoryU3Ed__57_SetStateMachine_m3BAD341E43D1E9B2DEDBE2310EA7E30F41EBD222 (void);
+static Il2CppMethodPointer s_methodPointers[100] = 
 {
 	AssistiveCardsSDK_Awake_m5D5591062240400D897A816131D0D3FE7057BFF9,
 	AssistiveCardsSDK_CacheData_m72B51BE5CBE50FD14F05512A31F63DCDE7635432,
@@ -214,10 +232,13 @@ static Il2CppMethodPointer s_methodPointers[91] =
 	AssistiveCardsSDK_asyncGetPackImage_m341DF17D1F34AE99C5F2883497C56B5798BDA9FC,
 	AssistiveCardsSDK_GetAppIcon_m98D0F850EA2DE01089BC0108E443193BD6F836CF,
 	AssistiveCardsSDK_asyncGetAppIcon_mB9C984B4D2713602574AB64B98CF945DC84EB875,
+	AssistiveCardsSDK_GetGameIcon_m2B6B7BA852827BF0F4355CCE9C38AA8D7E180BE0,
+	AssistiveCardsSDK_asyncGetGameIcon_m19F4253C8699276EBCAF6E7C45FED9EF92078C4F,
 	AssistiveCardsSDK_GetCardImage_mE0260E3C2BC078751DFC1AFDE217A374D6B2AF7B,
 	AssistiveCardsSDK_asyncGetCardImage_m6E9309E40B3CA0E4DFFB188F3B6CB19D4A714EDD,
 	AssistiveCardsSDK_GetApps_m20C33D488B1BE9DDAFBAFE8C90ED48628618EBFE,
 	AssistiveCardsSDK_asyncGetApps_mCA290B0738FAFA1AF2CA58D66777B7DBD46A8285,
+	AssistiveCardsSDK_GetGames_m7BC9B445C5E0F2B389D3CFA7416336A1206619CB,
 	AssistiveCardsSDK_GetPackBySlug_m1394B3E3613E5EC74DA790FD3D560BEDEF9CAD3F,
 	AssistiveCardsSDK_GetCardBySlug_mE2819228D01BAEECFE6C68EEEC0CE6CD6E95E62D,
 	AssistiveCardsSDK_GetActivityBySlug_m9614D919A3249FE3DBC12CB2F4E34A95EDD6C839,
@@ -239,255 +260,278 @@ static Il2CppMethodPointer s_methodPointers[91] =
 	Apps__ctor_m7EC9A98C478BBD12B0716E3D476349194763C487,
 	StoreId__ctor_mA358DA20D5BCDB9A0AC3C9F0B3DC6D477FBDF8FD,
 	Tagline__ctor_m2741508CAC81AB99241F4A4F47B43612EBA60BD8,
-	U3CAwakeU3Ed__24_MoveNext_mC29194F8008579F400C2ADCC64E9C434F74990DF,
-	U3CAwakeU3Ed__24_SetStateMachine_mB34D62D9F97627832958DC98DF3E29A6849BEF7A,
-	U3CCacheDataU3Ed__25_MoveNext_mB7CB9A96D452D477AFBC2D0C0AE1CA09D4A5BD18,
-	U3CCacheDataU3Ed__25_SetStateMachine_m188BBAE64E58A4B9BCDDD69E2AA4384824064296,
-	U3CGetPacksU3Ed__26_MoveNext_m500375271AFACA29AD56C334EA6509C34C37C293,
-	U3CGetPacksU3Ed__26_SetStateMachine_m025E43AEB60AE070EA42B7C089998FB9DD3B0B7B,
-	U3CasyncGetPacksU3Ed__27_MoveNext_m181EDA7FCD08D22DF3633EF671D671CE191B27B8,
-	U3CasyncGetPacksU3Ed__27_SetStateMachine_m6723E51AC0B186258F81CEAE5B306FD364126C28,
-	U3CGetCardsU3Ed__28_MoveNext_mAC3A80C5DEBAA9AFCFBF4572A7521EA6DC1B173C,
-	U3CGetCardsU3Ed__28_SetStateMachine_m40D8DF64C5B8D137F54E504265FD6B330271C008,
-	U3CasyncGetCardsU3Ed__29_MoveNext_mC6B186A3DA1CC7C3C4FBB006556A52D68397D17F,
-	U3CasyncGetCardsU3Ed__29_SetStateMachine_mD6E05D15B0A4E896F246675B265951B3F454AFBC,
-	U3CGetActivitiesU3Ed__30_MoveNext_mA193FCDA3386AE55282C36F7F32B4F4F7BA5B1AF,
-	U3CGetActivitiesU3Ed__30_SetStateMachine_m4E4D70FA07537A292D2E7958B0C56FA47859E92E,
-	U3CasyncGetActivitiesU3Ed__31_MoveNext_mC7D29B42BDFA9268A8F99DE46A50000CEF5A57ED,
-	U3CasyncGetActivitiesU3Ed__31_SetStateMachine_m6E9215DD77D9B9C72F28A18EE209B39BD9979D63,
-	U3CGetLanguagesU3Ed__32_MoveNext_m3A7A73F4179B0B3724C0E3D220AC6E59ABFA3D46,
-	U3CGetLanguagesU3Ed__32_SetStateMachine_m82623F7FB887EA7EBF2273333506FBF8C243119E,
-	U3CasyncGetLanguagesU3Ed__33_MoveNext_mA516B9036E825D2A6FB432723A78CA33A3107A11,
-	U3CasyncGetLanguagesU3Ed__33_SetStateMachine_m4D363ADE084E1D3C8A3B951D3CF8CB32A7DBEA05,
-	U3CGetActivityImageU3Ed__34_MoveNext_mD9C48C874CD1B035302DD4429B5FA8CC0486F801,
-	U3CGetActivityImageU3Ed__34_SetStateMachine_m39BC43BD685EA92F7707020F8A94568B79763701,
-	U3CasyncGetActivityImageU3Ed__35_MoveNext_mD0BCD4BDE1A5175DC2369901511445BD7318104D,
-	U3CasyncGetActivityImageU3Ed__35_SetStateMachine_m43BCEDDEF37627D9D3C7EC8615121D7F346CDD02,
-	U3CGetAvatarImageU3Ed__36_MoveNext_m4C5538CEEC5B1FE4400148DFD9A37FB4236B1D7D,
-	U3CGetAvatarImageU3Ed__36_SetStateMachine_m1B0542033FCD52B71F2678D8759DE5BB4CDF847D,
-	U3CasyncGetAvatarImageU3Ed__37_MoveNext_mD17B7337454D7B5473093594B7A86AC481A4123C,
-	U3CasyncGetAvatarImageU3Ed__37_SetStateMachine_m84AB2343A6CEB0345287271C88EB16745DBF9047,
-	U3CGetPackImageU3Ed__38_MoveNext_mCB36A2C8C6F09FB83ACC561C248DEA301019AF6E,
-	U3CGetPackImageU3Ed__38_SetStateMachine_mE2C5AC591D93F442D0F78C1632B9AAC2E225A187,
-	U3CasyncGetPackImageU3Ed__39_MoveNext_mA7EDA3B8C8BB703934DD790494774C8E3426B7EF,
-	U3CasyncGetPackImageU3Ed__39_SetStateMachine_m24765A9632CFB91BE71D8A58506AE3F1AFFF7B72,
-	U3CGetAppIconU3Ed__40_MoveNext_m1937D4086C341C8F168FB1B5E3CD7BB5D58AB212,
-	U3CGetAppIconU3Ed__40_SetStateMachine_m77F2CCE54A19BE280E27421E51B7E43FF079E0C6,
-	U3CasyncGetAppIconU3Ed__41_MoveNext_m3286EC08881412A391806E2A543B871D8DDFC4BF,
-	U3CasyncGetAppIconU3Ed__41_SetStateMachine_m92C2BF5A1D0DE7550B87C9156742198C3E59AE70,
-	U3CGetCardImageU3Ed__42_MoveNext_m57081219724F31738A5A51EC5D9DD7C6F5E6B696,
-	U3CGetCardImageU3Ed__42_SetStateMachine_mDF1C701A359519165E08978DED3A8D9899D7694E,
-	U3CasyncGetCardImageU3Ed__43_MoveNext_mD340BE59A1A752893D13237C0D7A4449A3CAB5E6,
-	U3CasyncGetCardImageU3Ed__43_SetStateMachine_mC7211BACFA447AD74AD282B9E780F1CFBBC26857,
-	U3CGetAppsU3Ed__44_MoveNext_m1590677C94D164C42EC3A8630CDF110F06DE1E50,
-	U3CGetAppsU3Ed__44_SetStateMachine_mF479FC93ECA36BF39B4D0758E741D2C65630E76D,
-	U3CasyncGetAppsU3Ed__45_MoveNext_mE9BBF8538E5C81C22FCC628D8FB24EA0E4CD97C2,
-	U3CasyncGetAppsU3Ed__45_SetStateMachine_mC8365F5DED78FD400E623E73D0EC426303729235,
-	U3CGetCardImagesByPackU3Ed__50_MoveNext_mB200EF2ACC4A14D363B44883CEC97ACF67468773,
-	U3CGetCardImagesByPackU3Ed__50_SetStateMachine_m6E1ECD46DA00F3DEF3BEB7C257EB1F6E1E6CA078,
-	U3CGetAvatarImagesByCategoryU3Ed__51_MoveNext_m8590F884B50CA0ACBC1F1E12D5730D289CF3B4D3,
-	U3CGetAvatarImagesByCategoryU3Ed__51_SetStateMachine_m7F6B33E79B71932CA8CDC00FD749A1C1DB42C2CC,
+	Game__ctor_m771F1455C9604CA13BE9DFACA0EF405899E3F6A2,
+	Games__ctor_m4ECB24B4E1B92EEAE47DCF149266B29C0A416EB3,
+	U3CAwakeU3Ed__27_MoveNext_m18FE49D510ADC33F9AB2BE3B3795E4AB9D45D25E,
+	U3CAwakeU3Ed__27_SetStateMachine_mE28EB959A3D6F800DD91A8D72238DF60FB1174A2,
+	U3CCacheDataU3Ed__28_MoveNext_mB00C0AC0DD946E99B2A9457087B0B3ED32D0A8AD,
+	U3CCacheDataU3Ed__28_SetStateMachine_m6677327266DDB53CFA924FD3ED65E32F749C753E,
+	U3CGetPacksU3Ed__29_MoveNext_mA2FB812A2D9D5B65E060AE082B1F1FE8AD5BB13B,
+	U3CGetPacksU3Ed__29_SetStateMachine_m7C419FC34ABF11E6C83602F6C001440C87FEB3B4,
+	U3CasyncGetPacksU3Ed__30_MoveNext_m24132676A608DF212497845E06BA17ECB14D0F3F,
+	U3CasyncGetPacksU3Ed__30_SetStateMachine_m4B9218668F7A268D3CD36DD752B030FD1A304118,
+	U3CGetCardsU3Ed__31_MoveNext_m6C5F7D6847D5589F261DFE7BAD041A6C862F850A,
+	U3CGetCardsU3Ed__31_SetStateMachine_m10A80B4369FE1F6B73DEA7D96DDF9CD72F8AA63A,
+	U3CasyncGetCardsU3Ed__32_MoveNext_mCEBECA354431B3C0EAE419E6960C9C81B80F7033,
+	U3CasyncGetCardsU3Ed__32_SetStateMachine_m5E61541A5305ACDB0BD4BAF0AE71D892A673844A,
+	U3CGetActivitiesU3Ed__33_MoveNext_m69CE49987DC5E2E547428B53536A7939DB385101,
+	U3CGetActivitiesU3Ed__33_SetStateMachine_mC421632344B6DC1CF13173A83637B99D6A34B271,
+	U3CasyncGetActivitiesU3Ed__34_MoveNext_m9259736A1EA32D966E345F14E2ADE31BC79D68D8,
+	U3CasyncGetActivitiesU3Ed__34_SetStateMachine_m432BA7BD9A5589BB5DFFD021C776C6815FBB1D09,
+	U3CGetLanguagesU3Ed__35_MoveNext_mFFF4462D7375ABA7E01B9338A9A6BD6F6F3B9908,
+	U3CGetLanguagesU3Ed__35_SetStateMachine_m014E4927D1EAC6AC51CBE563946973F943731F25,
+	U3CasyncGetLanguagesU3Ed__36_MoveNext_m6E9D49E51465BA02A136DD47F7250C5791D29C51,
+	U3CasyncGetLanguagesU3Ed__36_SetStateMachine_m56545AD1C4FA91248DFA25C3AC6D4EF7E44042FE,
+	U3CGetActivityImageU3Ed__37_MoveNext_m7ED05080B579569B5243D02DA3768210ABDFA580,
+	U3CGetActivityImageU3Ed__37_SetStateMachine_mB5A46EB11C9511E22314291A1B1FFCFF1E65F021,
+	U3CasyncGetActivityImageU3Ed__38_MoveNext_mC3B42A79DEA01C85FC519459C2222320E7F596B9,
+	U3CasyncGetActivityImageU3Ed__38_SetStateMachine_m0369F0CF0B78DEA871E73DD1D1D39D57B121768D,
+	U3CGetAvatarImageU3Ed__39_MoveNext_m7D75C606E873E996669CEAEF21771CA0F75E6F0E,
+	U3CGetAvatarImageU3Ed__39_SetStateMachine_m33D0B6B066CA8AB490221CBDC29C541DF637D60A,
+	U3CasyncGetAvatarImageU3Ed__40_MoveNext_m3BE4F4974FC9789BE6FCC87E0FC9232CB28AD729,
+	U3CasyncGetAvatarImageU3Ed__40_SetStateMachine_mAADD5768CEB27903DD5F04D42CCC874175D50D5D,
+	U3CGetPackImageU3Ed__41_MoveNext_m5DBDB035A4C627D4C618B4C1432083BC8D2D8D4B,
+	U3CGetPackImageU3Ed__41_SetStateMachine_m0EFA22B9D3AB4605AC745F50024D35A00611060F,
+	U3CasyncGetPackImageU3Ed__42_MoveNext_m1EADA6E839B7AF6E2DFA4DF1715EFF714EDD07AF,
+	U3CasyncGetPackImageU3Ed__42_SetStateMachine_mF47EF4A166CE3B94125566C50F250DA4C21F1C4A,
+	U3CGetAppIconU3Ed__43_MoveNext_m13B8435BC68461132EE990C2FAA36F36FE5CDA29,
+	U3CGetAppIconU3Ed__43_SetStateMachine_m652309D2DC409EE3B28E11591914A159EC47881D,
+	U3CasyncGetAppIconU3Ed__44_MoveNext_m22A8E3DF5423CC704C3505321CC78DE07206F548,
+	U3CasyncGetAppIconU3Ed__44_SetStateMachine_m7E3DACEBB163FA5B807BE5473CE344E2F9A596F7,
+	U3CGetGameIconU3Ed__45_MoveNext_mA0974DAB6AF0D850769FFDD79508E9FC45B8C3FE,
+	U3CGetGameIconU3Ed__45_SetStateMachine_mE67FDDC32C8E76A884045D835448A993C6AADBF6,
+	U3CasyncGetGameIconU3Ed__46_MoveNext_m2A30FE7E19A06EF8F21D336B0E068763838A9847,
+	U3CasyncGetGameIconU3Ed__46_SetStateMachine_m466E04E08B33A742C4C1580E9CDFB283C62359FC,
+	U3CGetCardImageU3Ed__47_MoveNext_m6ADF8E23D554C8798C4C7B04FFF0E92FD2CDD0ED,
+	U3CGetCardImageU3Ed__47_SetStateMachine_m8F90F57C0D96C1EA65C087CDC193A08A89DF936C,
+	U3CasyncGetCardImageU3Ed__48_MoveNext_mD0390F953A6F59621336863945B9E90EA101E392,
+	U3CasyncGetCardImageU3Ed__48_SetStateMachine_mFF635478D6311EB1D58E183A8412CE229A835823,
+	U3CGetAppsU3Ed__49_MoveNext_mA5A44F477BFC81FD3DA6AED08766F231D1676DD5,
+	U3CGetAppsU3Ed__49_SetStateMachine_m5B262C4F710FA4CEACF7ED52CDEACDDD36A21667,
+	U3CasyncGetAppsU3Ed__50_MoveNext_mEB5CBCA49ECCD6C3425DDE34F6BFE210D0D34412,
+	U3CasyncGetAppsU3Ed__50_SetStateMachine_m84506CBC9CB040EE2BC659AAD11756EBBB00B1CE,
+	U3CGetCardImagesByPackU3Ed__56_MoveNext_m9226E16CC18D64FC7E55A3D63D6A709CC93A9579,
+	U3CGetCardImagesByPackU3Ed__56_SetStateMachine_m925AAE4992142A1279916E3DDCAB1F5EC0E453D3,
+	U3CGetAvatarImagesByCategoryU3Ed__57_MoveNext_mCFF9F4689C31999B7D6D844FB3E6E5F9CA662F76,
+	U3CGetAvatarImagesByCategoryU3Ed__57_SetStateMachine_m3BAD341E43D1E9B2DEDBE2310EA7E30F41EBD222,
 };
-extern void U3CAwakeU3Ed__24_MoveNext_mC29194F8008579F400C2ADCC64E9C434F74990DF_AdjustorThunk (void);
-extern void U3CAwakeU3Ed__24_SetStateMachine_mB34D62D9F97627832958DC98DF3E29A6849BEF7A_AdjustorThunk (void);
-extern void U3CCacheDataU3Ed__25_MoveNext_mB7CB9A96D452D477AFBC2D0C0AE1CA09D4A5BD18_AdjustorThunk (void);
-extern void U3CCacheDataU3Ed__25_SetStateMachine_m188BBAE64E58A4B9BCDDD69E2AA4384824064296_AdjustorThunk (void);
-extern void U3CGetPacksU3Ed__26_MoveNext_m500375271AFACA29AD56C334EA6509C34C37C293_AdjustorThunk (void);
-extern void U3CGetPacksU3Ed__26_SetStateMachine_m025E43AEB60AE070EA42B7C089998FB9DD3B0B7B_AdjustorThunk (void);
-extern void U3CasyncGetPacksU3Ed__27_MoveNext_m181EDA7FCD08D22DF3633EF671D671CE191B27B8_AdjustorThunk (void);
-extern void U3CasyncGetPacksU3Ed__27_SetStateMachine_m6723E51AC0B186258F81CEAE5B306FD364126C28_AdjustorThunk (void);
-extern void U3CGetCardsU3Ed__28_MoveNext_mAC3A80C5DEBAA9AFCFBF4572A7521EA6DC1B173C_AdjustorThunk (void);
-extern void U3CGetCardsU3Ed__28_SetStateMachine_m40D8DF64C5B8D137F54E504265FD6B330271C008_AdjustorThunk (void);
-extern void U3CasyncGetCardsU3Ed__29_MoveNext_mC6B186A3DA1CC7C3C4FBB006556A52D68397D17F_AdjustorThunk (void);
-extern void U3CasyncGetCardsU3Ed__29_SetStateMachine_mD6E05D15B0A4E896F246675B265951B3F454AFBC_AdjustorThunk (void);
-extern void U3CGetActivitiesU3Ed__30_MoveNext_mA193FCDA3386AE55282C36F7F32B4F4F7BA5B1AF_AdjustorThunk (void);
-extern void U3CGetActivitiesU3Ed__30_SetStateMachine_m4E4D70FA07537A292D2E7958B0C56FA47859E92E_AdjustorThunk (void);
-extern void U3CasyncGetActivitiesU3Ed__31_MoveNext_mC7D29B42BDFA9268A8F99DE46A50000CEF5A57ED_AdjustorThunk (void);
-extern void U3CasyncGetActivitiesU3Ed__31_SetStateMachine_m6E9215DD77D9B9C72F28A18EE209B39BD9979D63_AdjustorThunk (void);
-extern void U3CGetLanguagesU3Ed__32_MoveNext_m3A7A73F4179B0B3724C0E3D220AC6E59ABFA3D46_AdjustorThunk (void);
-extern void U3CGetLanguagesU3Ed__32_SetStateMachine_m82623F7FB887EA7EBF2273333506FBF8C243119E_AdjustorThunk (void);
-extern void U3CasyncGetLanguagesU3Ed__33_MoveNext_mA516B9036E825D2A6FB432723A78CA33A3107A11_AdjustorThunk (void);
-extern void U3CasyncGetLanguagesU3Ed__33_SetStateMachine_m4D363ADE084E1D3C8A3B951D3CF8CB32A7DBEA05_AdjustorThunk (void);
-extern void U3CGetActivityImageU3Ed__34_MoveNext_mD9C48C874CD1B035302DD4429B5FA8CC0486F801_AdjustorThunk (void);
-extern void U3CGetActivityImageU3Ed__34_SetStateMachine_m39BC43BD685EA92F7707020F8A94568B79763701_AdjustorThunk (void);
-extern void U3CasyncGetActivityImageU3Ed__35_MoveNext_mD0BCD4BDE1A5175DC2369901511445BD7318104D_AdjustorThunk (void);
-extern void U3CasyncGetActivityImageU3Ed__35_SetStateMachine_m43BCEDDEF37627D9D3C7EC8615121D7F346CDD02_AdjustorThunk (void);
-extern void U3CGetAvatarImageU3Ed__36_MoveNext_m4C5538CEEC5B1FE4400148DFD9A37FB4236B1D7D_AdjustorThunk (void);
-extern void U3CGetAvatarImageU3Ed__36_SetStateMachine_m1B0542033FCD52B71F2678D8759DE5BB4CDF847D_AdjustorThunk (void);
-extern void U3CasyncGetAvatarImageU3Ed__37_MoveNext_mD17B7337454D7B5473093594B7A86AC481A4123C_AdjustorThunk (void);
-extern void U3CasyncGetAvatarImageU3Ed__37_SetStateMachine_m84AB2343A6CEB0345287271C88EB16745DBF9047_AdjustorThunk (void);
-extern void U3CGetPackImageU3Ed__38_MoveNext_mCB36A2C8C6F09FB83ACC561C248DEA301019AF6E_AdjustorThunk (void);
-extern void U3CGetPackImageU3Ed__38_SetStateMachine_mE2C5AC591D93F442D0F78C1632B9AAC2E225A187_AdjustorThunk (void);
-extern void U3CasyncGetPackImageU3Ed__39_MoveNext_mA7EDA3B8C8BB703934DD790494774C8E3426B7EF_AdjustorThunk (void);
-extern void U3CasyncGetPackImageU3Ed__39_SetStateMachine_m24765A9632CFB91BE71D8A58506AE3F1AFFF7B72_AdjustorThunk (void);
-extern void U3CGetAppIconU3Ed__40_MoveNext_m1937D4086C341C8F168FB1B5E3CD7BB5D58AB212_AdjustorThunk (void);
-extern void U3CGetAppIconU3Ed__40_SetStateMachine_m77F2CCE54A19BE280E27421E51B7E43FF079E0C6_AdjustorThunk (void);
-extern void U3CasyncGetAppIconU3Ed__41_MoveNext_m3286EC08881412A391806E2A543B871D8DDFC4BF_AdjustorThunk (void);
-extern void U3CasyncGetAppIconU3Ed__41_SetStateMachine_m92C2BF5A1D0DE7550B87C9156742198C3E59AE70_AdjustorThunk (void);
-extern void U3CGetCardImageU3Ed__42_MoveNext_m57081219724F31738A5A51EC5D9DD7C6F5E6B696_AdjustorThunk (void);
-extern void U3CGetCardImageU3Ed__42_SetStateMachine_mDF1C701A359519165E08978DED3A8D9899D7694E_AdjustorThunk (void);
-extern void U3CasyncGetCardImageU3Ed__43_MoveNext_mD340BE59A1A752893D13237C0D7A4449A3CAB5E6_AdjustorThunk (void);
-extern void U3CasyncGetCardImageU3Ed__43_SetStateMachine_mC7211BACFA447AD74AD282B9E780F1CFBBC26857_AdjustorThunk (void);
-extern void U3CGetAppsU3Ed__44_MoveNext_m1590677C94D164C42EC3A8630CDF110F06DE1E50_AdjustorThunk (void);
-extern void U3CGetAppsU3Ed__44_SetStateMachine_mF479FC93ECA36BF39B4D0758E741D2C65630E76D_AdjustorThunk (void);
-extern void U3CasyncGetAppsU3Ed__45_MoveNext_mE9BBF8538E5C81C22FCC628D8FB24EA0E4CD97C2_AdjustorThunk (void);
-extern void U3CasyncGetAppsU3Ed__45_SetStateMachine_mC8365F5DED78FD400E623E73D0EC426303729235_AdjustorThunk (void);
-extern void U3CGetCardImagesByPackU3Ed__50_MoveNext_mB200EF2ACC4A14D363B44883CEC97ACF67468773_AdjustorThunk (void);
-extern void U3CGetCardImagesByPackU3Ed__50_SetStateMachine_m6E1ECD46DA00F3DEF3BEB7C257EB1F6E1E6CA078_AdjustorThunk (void);
-extern void U3CGetAvatarImagesByCategoryU3Ed__51_MoveNext_m8590F884B50CA0ACBC1F1E12D5730D289CF3B4D3_AdjustorThunk (void);
-extern void U3CGetAvatarImagesByCategoryU3Ed__51_SetStateMachine_m7F6B33E79B71932CA8CDC00FD749A1C1DB42C2CC_AdjustorThunk (void);
-static Il2CppTokenAdjustorThunkPair s_adjustorThunks[48] = 
+extern void U3CAwakeU3Ed__27_MoveNext_m18FE49D510ADC33F9AB2BE3B3795E4AB9D45D25E_AdjustorThunk (void);
+extern void U3CAwakeU3Ed__27_SetStateMachine_mE28EB959A3D6F800DD91A8D72238DF60FB1174A2_AdjustorThunk (void);
+extern void U3CCacheDataU3Ed__28_MoveNext_mB00C0AC0DD946E99B2A9457087B0B3ED32D0A8AD_AdjustorThunk (void);
+extern void U3CCacheDataU3Ed__28_SetStateMachine_m6677327266DDB53CFA924FD3ED65E32F749C753E_AdjustorThunk (void);
+extern void U3CGetPacksU3Ed__29_MoveNext_mA2FB812A2D9D5B65E060AE082B1F1FE8AD5BB13B_AdjustorThunk (void);
+extern void U3CGetPacksU3Ed__29_SetStateMachine_m7C419FC34ABF11E6C83602F6C001440C87FEB3B4_AdjustorThunk (void);
+extern void U3CasyncGetPacksU3Ed__30_MoveNext_m24132676A608DF212497845E06BA17ECB14D0F3F_AdjustorThunk (void);
+extern void U3CasyncGetPacksU3Ed__30_SetStateMachine_m4B9218668F7A268D3CD36DD752B030FD1A304118_AdjustorThunk (void);
+extern void U3CGetCardsU3Ed__31_MoveNext_m6C5F7D6847D5589F261DFE7BAD041A6C862F850A_AdjustorThunk (void);
+extern void U3CGetCardsU3Ed__31_SetStateMachine_m10A80B4369FE1F6B73DEA7D96DDF9CD72F8AA63A_AdjustorThunk (void);
+extern void U3CasyncGetCardsU3Ed__32_MoveNext_mCEBECA354431B3C0EAE419E6960C9C81B80F7033_AdjustorThunk (void);
+extern void U3CasyncGetCardsU3Ed__32_SetStateMachine_m5E61541A5305ACDB0BD4BAF0AE71D892A673844A_AdjustorThunk (void);
+extern void U3CGetActivitiesU3Ed__33_MoveNext_m69CE49987DC5E2E547428B53536A7939DB385101_AdjustorThunk (void);
+extern void U3CGetActivitiesU3Ed__33_SetStateMachine_mC421632344B6DC1CF13173A83637B99D6A34B271_AdjustorThunk (void);
+extern void U3CasyncGetActivitiesU3Ed__34_MoveNext_m9259736A1EA32D966E345F14E2ADE31BC79D68D8_AdjustorThunk (void);
+extern void U3CasyncGetActivitiesU3Ed__34_SetStateMachine_m432BA7BD9A5589BB5DFFD021C776C6815FBB1D09_AdjustorThunk (void);
+extern void U3CGetLanguagesU3Ed__35_MoveNext_mFFF4462D7375ABA7E01B9338A9A6BD6F6F3B9908_AdjustorThunk (void);
+extern void U3CGetLanguagesU3Ed__35_SetStateMachine_m014E4927D1EAC6AC51CBE563946973F943731F25_AdjustorThunk (void);
+extern void U3CasyncGetLanguagesU3Ed__36_MoveNext_m6E9D49E51465BA02A136DD47F7250C5791D29C51_AdjustorThunk (void);
+extern void U3CasyncGetLanguagesU3Ed__36_SetStateMachine_m56545AD1C4FA91248DFA25C3AC6D4EF7E44042FE_AdjustorThunk (void);
+extern void U3CGetActivityImageU3Ed__37_MoveNext_m7ED05080B579569B5243D02DA3768210ABDFA580_AdjustorThunk (void);
+extern void U3CGetActivityImageU3Ed__37_SetStateMachine_mB5A46EB11C9511E22314291A1B1FFCFF1E65F021_AdjustorThunk (void);
+extern void U3CasyncGetActivityImageU3Ed__38_MoveNext_mC3B42A79DEA01C85FC519459C2222320E7F596B9_AdjustorThunk (void);
+extern void U3CasyncGetActivityImageU3Ed__38_SetStateMachine_m0369F0CF0B78DEA871E73DD1D1D39D57B121768D_AdjustorThunk (void);
+extern void U3CGetAvatarImageU3Ed__39_MoveNext_m7D75C606E873E996669CEAEF21771CA0F75E6F0E_AdjustorThunk (void);
+extern void U3CGetAvatarImageU3Ed__39_SetStateMachine_m33D0B6B066CA8AB490221CBDC29C541DF637D60A_AdjustorThunk (void);
+extern void U3CasyncGetAvatarImageU3Ed__40_MoveNext_m3BE4F4974FC9789BE6FCC87E0FC9232CB28AD729_AdjustorThunk (void);
+extern void U3CasyncGetAvatarImageU3Ed__40_SetStateMachine_mAADD5768CEB27903DD5F04D42CCC874175D50D5D_AdjustorThunk (void);
+extern void U3CGetPackImageU3Ed__41_MoveNext_m5DBDB035A4C627D4C618B4C1432083BC8D2D8D4B_AdjustorThunk (void);
+extern void U3CGetPackImageU3Ed__41_SetStateMachine_m0EFA22B9D3AB4605AC745F50024D35A00611060F_AdjustorThunk (void);
+extern void U3CasyncGetPackImageU3Ed__42_MoveNext_m1EADA6E839B7AF6E2DFA4DF1715EFF714EDD07AF_AdjustorThunk (void);
+extern void U3CasyncGetPackImageU3Ed__42_SetStateMachine_mF47EF4A166CE3B94125566C50F250DA4C21F1C4A_AdjustorThunk (void);
+extern void U3CGetAppIconU3Ed__43_MoveNext_m13B8435BC68461132EE990C2FAA36F36FE5CDA29_AdjustorThunk (void);
+extern void U3CGetAppIconU3Ed__43_SetStateMachine_m652309D2DC409EE3B28E11591914A159EC47881D_AdjustorThunk (void);
+extern void U3CasyncGetAppIconU3Ed__44_MoveNext_m22A8E3DF5423CC704C3505321CC78DE07206F548_AdjustorThunk (void);
+extern void U3CasyncGetAppIconU3Ed__44_SetStateMachine_m7E3DACEBB163FA5B807BE5473CE344E2F9A596F7_AdjustorThunk (void);
+extern void U3CGetGameIconU3Ed__45_MoveNext_mA0974DAB6AF0D850769FFDD79508E9FC45B8C3FE_AdjustorThunk (void);
+extern void U3CGetGameIconU3Ed__45_SetStateMachine_mE67FDDC32C8E76A884045D835448A993C6AADBF6_AdjustorThunk (void);
+extern void U3CasyncGetGameIconU3Ed__46_MoveNext_m2A30FE7E19A06EF8F21D336B0E068763838A9847_AdjustorThunk (void);
+extern void U3CasyncGetGameIconU3Ed__46_SetStateMachine_m466E04E08B33A742C4C1580E9CDFB283C62359FC_AdjustorThunk (void);
+extern void U3CGetCardImageU3Ed__47_MoveNext_m6ADF8E23D554C8798C4C7B04FFF0E92FD2CDD0ED_AdjustorThunk (void);
+extern void U3CGetCardImageU3Ed__47_SetStateMachine_m8F90F57C0D96C1EA65C087CDC193A08A89DF936C_AdjustorThunk (void);
+extern void U3CasyncGetCardImageU3Ed__48_MoveNext_mD0390F953A6F59621336863945B9E90EA101E392_AdjustorThunk (void);
+extern void U3CasyncGetCardImageU3Ed__48_SetStateMachine_mFF635478D6311EB1D58E183A8412CE229A835823_AdjustorThunk (void);
+extern void U3CGetAppsU3Ed__49_MoveNext_mA5A44F477BFC81FD3DA6AED08766F231D1676DD5_AdjustorThunk (void);
+extern void U3CGetAppsU3Ed__49_SetStateMachine_m5B262C4F710FA4CEACF7ED52CDEACDDD36A21667_AdjustorThunk (void);
+extern void U3CasyncGetAppsU3Ed__50_MoveNext_mEB5CBCA49ECCD6C3425DDE34F6BFE210D0D34412_AdjustorThunk (void);
+extern void U3CasyncGetAppsU3Ed__50_SetStateMachine_m84506CBC9CB040EE2BC659AAD11756EBBB00B1CE_AdjustorThunk (void);
+extern void U3CGetCardImagesByPackU3Ed__56_MoveNext_m9226E16CC18D64FC7E55A3D63D6A709CC93A9579_AdjustorThunk (void);
+extern void U3CGetCardImagesByPackU3Ed__56_SetStateMachine_m925AAE4992142A1279916E3DDCAB1F5EC0E453D3_AdjustorThunk (void);
+extern void U3CGetAvatarImagesByCategoryU3Ed__57_MoveNext_mCFF9F4689C31999B7D6D844FB3E6E5F9CA662F76_AdjustorThunk (void);
+extern void U3CGetAvatarImagesByCategoryU3Ed__57_SetStateMachine_m3BAD341E43D1E9B2DEDBE2310EA7E30F41EBD222_AdjustorThunk (void);
+static Il2CppTokenAdjustorThunkPair s_adjustorThunks[52] = 
 {
-	{ 0x0600002C, U3CAwakeU3Ed__24_MoveNext_mC29194F8008579F400C2ADCC64E9C434F74990DF_AdjustorThunk },
-	{ 0x0600002D, U3CAwakeU3Ed__24_SetStateMachine_mB34D62D9F97627832958DC98DF3E29A6849BEF7A_AdjustorThunk },
-	{ 0x0600002E, U3CCacheDataU3Ed__25_MoveNext_mB7CB9A96D452D477AFBC2D0C0AE1CA09D4A5BD18_AdjustorThunk },
-	{ 0x0600002F, U3CCacheDataU3Ed__25_SetStateMachine_m188BBAE64E58A4B9BCDDD69E2AA4384824064296_AdjustorThunk },
-	{ 0x06000030, U3CGetPacksU3Ed__26_MoveNext_m500375271AFACA29AD56C334EA6509C34C37C293_AdjustorThunk },
-	{ 0x06000031, U3CGetPacksU3Ed__26_SetStateMachine_m025E43AEB60AE070EA42B7C089998FB9DD3B0B7B_AdjustorThunk },
-	{ 0x06000032, U3CasyncGetPacksU3Ed__27_MoveNext_m181EDA7FCD08D22DF3633EF671D671CE191B27B8_AdjustorThunk },
-	{ 0x06000033, U3CasyncGetPacksU3Ed__27_SetStateMachine_m6723E51AC0B186258F81CEAE5B306FD364126C28_AdjustorThunk },
-	{ 0x06000034, U3CGetCardsU3Ed__28_MoveNext_mAC3A80C5DEBAA9AFCFBF4572A7521EA6DC1B173C_AdjustorThunk },
-	{ 0x06000035, U3CGetCardsU3Ed__28_SetStateMachine_m40D8DF64C5B8D137F54E504265FD6B330271C008_AdjustorThunk },
-	{ 0x06000036, U3CasyncGetCardsU3Ed__29_MoveNext_mC6B186A3DA1CC7C3C4FBB006556A52D68397D17F_AdjustorThunk },
-	{ 0x06000037, U3CasyncGetCardsU3Ed__29_SetStateMachine_mD6E05D15B0A4E896F246675B265951B3F454AFBC_AdjustorThunk },
-	{ 0x06000038, U3CGetActivitiesU3Ed__30_MoveNext_mA193FCDA3386AE55282C36F7F32B4F4F7BA5B1AF_AdjustorThunk },
-	{ 0x06000039, U3CGetActivitiesU3Ed__30_SetStateMachine_m4E4D70FA07537A292D2E7958B0C56FA47859E92E_AdjustorThunk },
-	{ 0x0600003A, U3CasyncGetActivitiesU3Ed__31_MoveNext_mC7D29B42BDFA9268A8F99DE46A50000CEF5A57ED_AdjustorThunk },
-	{ 0x0600003B, U3CasyncGetActivitiesU3Ed__31_SetStateMachine_m6E9215DD77D9B9C72F28A18EE209B39BD9979D63_AdjustorThunk },
-	{ 0x0600003C, U3CGetLanguagesU3Ed__32_MoveNext_m3A7A73F4179B0B3724C0E3D220AC6E59ABFA3D46_AdjustorThunk },
-	{ 0x0600003D, U3CGetLanguagesU3Ed__32_SetStateMachine_m82623F7FB887EA7EBF2273333506FBF8C243119E_AdjustorThunk },
-	{ 0x0600003E, U3CasyncGetLanguagesU3Ed__33_MoveNext_mA516B9036E825D2A6FB432723A78CA33A3107A11_AdjustorThunk },
-	{ 0x0600003F, U3CasyncGetLanguagesU3Ed__33_SetStateMachine_m4D363ADE084E1D3C8A3B951D3CF8CB32A7DBEA05_AdjustorThunk },
-	{ 0x06000040, U3CGetActivityImageU3Ed__34_MoveNext_mD9C48C874CD1B035302DD4429B5FA8CC0486F801_AdjustorThunk },
-	{ 0x06000041, U3CGetActivityImageU3Ed__34_SetStateMachine_m39BC43BD685EA92F7707020F8A94568B79763701_AdjustorThunk },
-	{ 0x06000042, U3CasyncGetActivityImageU3Ed__35_MoveNext_mD0BCD4BDE1A5175DC2369901511445BD7318104D_AdjustorThunk },
-	{ 0x06000043, U3CasyncGetActivityImageU3Ed__35_SetStateMachine_m43BCEDDEF37627D9D3C7EC8615121D7F346CDD02_AdjustorThunk },
-	{ 0x06000044, U3CGetAvatarImageU3Ed__36_MoveNext_m4C5538CEEC5B1FE4400148DFD9A37FB4236B1D7D_AdjustorThunk },
-	{ 0x06000045, U3CGetAvatarImageU3Ed__36_SetStateMachine_m1B0542033FCD52B71F2678D8759DE5BB4CDF847D_AdjustorThunk },
-	{ 0x06000046, U3CasyncGetAvatarImageU3Ed__37_MoveNext_mD17B7337454D7B5473093594B7A86AC481A4123C_AdjustorThunk },
-	{ 0x06000047, U3CasyncGetAvatarImageU3Ed__37_SetStateMachine_m84AB2343A6CEB0345287271C88EB16745DBF9047_AdjustorThunk },
-	{ 0x06000048, U3CGetPackImageU3Ed__38_MoveNext_mCB36A2C8C6F09FB83ACC561C248DEA301019AF6E_AdjustorThunk },
-	{ 0x06000049, U3CGetPackImageU3Ed__38_SetStateMachine_mE2C5AC591D93F442D0F78C1632B9AAC2E225A187_AdjustorThunk },
-	{ 0x0600004A, U3CasyncGetPackImageU3Ed__39_MoveNext_mA7EDA3B8C8BB703934DD790494774C8E3426B7EF_AdjustorThunk },
-	{ 0x0600004B, U3CasyncGetPackImageU3Ed__39_SetStateMachine_m24765A9632CFB91BE71D8A58506AE3F1AFFF7B72_AdjustorThunk },
-	{ 0x0600004C, U3CGetAppIconU3Ed__40_MoveNext_m1937D4086C341C8F168FB1B5E3CD7BB5D58AB212_AdjustorThunk },
-	{ 0x0600004D, U3CGetAppIconU3Ed__40_SetStateMachine_m77F2CCE54A19BE280E27421E51B7E43FF079E0C6_AdjustorThunk },
-	{ 0x0600004E, U3CasyncGetAppIconU3Ed__41_MoveNext_m3286EC08881412A391806E2A543B871D8DDFC4BF_AdjustorThunk },
-	{ 0x0600004F, U3CasyncGetAppIconU3Ed__41_SetStateMachine_m92C2BF5A1D0DE7550B87C9156742198C3E59AE70_AdjustorThunk },
-	{ 0x06000050, U3CGetCardImageU3Ed__42_MoveNext_m57081219724F31738A5A51EC5D9DD7C6F5E6B696_AdjustorThunk },
-	{ 0x06000051, U3CGetCardImageU3Ed__42_SetStateMachine_mDF1C701A359519165E08978DED3A8D9899D7694E_AdjustorThunk },
-	{ 0x06000052, U3CasyncGetCardImageU3Ed__43_MoveNext_mD340BE59A1A752893D13237C0D7A4449A3CAB5E6_AdjustorThunk },
-	{ 0x06000053, U3CasyncGetCardImageU3Ed__43_SetStateMachine_mC7211BACFA447AD74AD282B9E780F1CFBBC26857_AdjustorThunk },
-	{ 0x06000054, U3CGetAppsU3Ed__44_MoveNext_m1590677C94D164C42EC3A8630CDF110F06DE1E50_AdjustorThunk },
-	{ 0x06000055, U3CGetAppsU3Ed__44_SetStateMachine_mF479FC93ECA36BF39B4D0758E741D2C65630E76D_AdjustorThunk },
-	{ 0x06000056, U3CasyncGetAppsU3Ed__45_MoveNext_mE9BBF8538E5C81C22FCC628D8FB24EA0E4CD97C2_AdjustorThunk },
-	{ 0x06000057, U3CasyncGetAppsU3Ed__45_SetStateMachine_mC8365F5DED78FD400E623E73D0EC426303729235_AdjustorThunk },
-	{ 0x06000058, U3CGetCardImagesByPackU3Ed__50_MoveNext_mB200EF2ACC4A14D363B44883CEC97ACF67468773_AdjustorThunk },
-	{ 0x06000059, U3CGetCardImagesByPackU3Ed__50_SetStateMachine_m6E1ECD46DA00F3DEF3BEB7C257EB1F6E1E6CA078_AdjustorThunk },
-	{ 0x0600005A, U3CGetAvatarImagesByCategoryU3Ed__51_MoveNext_m8590F884B50CA0ACBC1F1E12D5730D289CF3B4D3_AdjustorThunk },
-	{ 0x0600005B, U3CGetAvatarImagesByCategoryU3Ed__51_SetStateMachine_m7F6B33E79B71932CA8CDC00FD749A1C1DB42C2CC_AdjustorThunk },
+	{ 0x06000031, U3CAwakeU3Ed__27_MoveNext_m18FE49D510ADC33F9AB2BE3B3795E4AB9D45D25E_AdjustorThunk },
+	{ 0x06000032, U3CAwakeU3Ed__27_SetStateMachine_mE28EB959A3D6F800DD91A8D72238DF60FB1174A2_AdjustorThunk },
+	{ 0x06000033, U3CCacheDataU3Ed__28_MoveNext_mB00C0AC0DD946E99B2A9457087B0B3ED32D0A8AD_AdjustorThunk },
+	{ 0x06000034, U3CCacheDataU3Ed__28_SetStateMachine_m6677327266DDB53CFA924FD3ED65E32F749C753E_AdjustorThunk },
+	{ 0x06000035, U3CGetPacksU3Ed__29_MoveNext_mA2FB812A2D9D5B65E060AE082B1F1FE8AD5BB13B_AdjustorThunk },
+	{ 0x06000036, U3CGetPacksU3Ed__29_SetStateMachine_m7C419FC34ABF11E6C83602F6C001440C87FEB3B4_AdjustorThunk },
+	{ 0x06000037, U3CasyncGetPacksU3Ed__30_MoveNext_m24132676A608DF212497845E06BA17ECB14D0F3F_AdjustorThunk },
+	{ 0x06000038, U3CasyncGetPacksU3Ed__30_SetStateMachine_m4B9218668F7A268D3CD36DD752B030FD1A304118_AdjustorThunk },
+	{ 0x06000039, U3CGetCardsU3Ed__31_MoveNext_m6C5F7D6847D5589F261DFE7BAD041A6C862F850A_AdjustorThunk },
+	{ 0x0600003A, U3CGetCardsU3Ed__31_SetStateMachine_m10A80B4369FE1F6B73DEA7D96DDF9CD72F8AA63A_AdjustorThunk },
+	{ 0x0600003B, U3CasyncGetCardsU3Ed__32_MoveNext_mCEBECA354431B3C0EAE419E6960C9C81B80F7033_AdjustorThunk },
+	{ 0x0600003C, U3CasyncGetCardsU3Ed__32_SetStateMachine_m5E61541A5305ACDB0BD4BAF0AE71D892A673844A_AdjustorThunk },
+	{ 0x0600003D, U3CGetActivitiesU3Ed__33_MoveNext_m69CE49987DC5E2E547428B53536A7939DB385101_AdjustorThunk },
+	{ 0x0600003E, U3CGetActivitiesU3Ed__33_SetStateMachine_mC421632344B6DC1CF13173A83637B99D6A34B271_AdjustorThunk },
+	{ 0x0600003F, U3CasyncGetActivitiesU3Ed__34_MoveNext_m9259736A1EA32D966E345F14E2ADE31BC79D68D8_AdjustorThunk },
+	{ 0x06000040, U3CasyncGetActivitiesU3Ed__34_SetStateMachine_m432BA7BD9A5589BB5DFFD021C776C6815FBB1D09_AdjustorThunk },
+	{ 0x06000041, U3CGetLanguagesU3Ed__35_MoveNext_mFFF4462D7375ABA7E01B9338A9A6BD6F6F3B9908_AdjustorThunk },
+	{ 0x06000042, U3CGetLanguagesU3Ed__35_SetStateMachine_m014E4927D1EAC6AC51CBE563946973F943731F25_AdjustorThunk },
+	{ 0x06000043, U3CasyncGetLanguagesU3Ed__36_MoveNext_m6E9D49E51465BA02A136DD47F7250C5791D29C51_AdjustorThunk },
+	{ 0x06000044, U3CasyncGetLanguagesU3Ed__36_SetStateMachine_m56545AD1C4FA91248DFA25C3AC6D4EF7E44042FE_AdjustorThunk },
+	{ 0x06000045, U3CGetActivityImageU3Ed__37_MoveNext_m7ED05080B579569B5243D02DA3768210ABDFA580_AdjustorThunk },
+	{ 0x06000046, U3CGetActivityImageU3Ed__37_SetStateMachine_mB5A46EB11C9511E22314291A1B1FFCFF1E65F021_AdjustorThunk },
+	{ 0x06000047, U3CasyncGetActivityImageU3Ed__38_MoveNext_mC3B42A79DEA01C85FC519459C2222320E7F596B9_AdjustorThunk },
+	{ 0x06000048, U3CasyncGetActivityImageU3Ed__38_SetStateMachine_m0369F0CF0B78DEA871E73DD1D1D39D57B121768D_AdjustorThunk },
+	{ 0x06000049, U3CGetAvatarImageU3Ed__39_MoveNext_m7D75C606E873E996669CEAEF21771CA0F75E6F0E_AdjustorThunk },
+	{ 0x0600004A, U3CGetAvatarImageU3Ed__39_SetStateMachine_m33D0B6B066CA8AB490221CBDC29C541DF637D60A_AdjustorThunk },
+	{ 0x0600004B, U3CasyncGetAvatarImageU3Ed__40_MoveNext_m3BE4F4974FC9789BE6FCC87E0FC9232CB28AD729_AdjustorThunk },
+	{ 0x0600004C, U3CasyncGetAvatarImageU3Ed__40_SetStateMachine_mAADD5768CEB27903DD5F04D42CCC874175D50D5D_AdjustorThunk },
+	{ 0x0600004D, U3CGetPackImageU3Ed__41_MoveNext_m5DBDB035A4C627D4C618B4C1432083BC8D2D8D4B_AdjustorThunk },
+	{ 0x0600004E, U3CGetPackImageU3Ed__41_SetStateMachine_m0EFA22B9D3AB4605AC745F50024D35A00611060F_AdjustorThunk },
+	{ 0x0600004F, U3CasyncGetPackImageU3Ed__42_MoveNext_m1EADA6E839B7AF6E2DFA4DF1715EFF714EDD07AF_AdjustorThunk },
+	{ 0x06000050, U3CasyncGetPackImageU3Ed__42_SetStateMachine_mF47EF4A166CE3B94125566C50F250DA4C21F1C4A_AdjustorThunk },
+	{ 0x06000051, U3CGetAppIconU3Ed__43_MoveNext_m13B8435BC68461132EE990C2FAA36F36FE5CDA29_AdjustorThunk },
+	{ 0x06000052, U3CGetAppIconU3Ed__43_SetStateMachine_m652309D2DC409EE3B28E11591914A159EC47881D_AdjustorThunk },
+	{ 0x06000053, U3CasyncGetAppIconU3Ed__44_MoveNext_m22A8E3DF5423CC704C3505321CC78DE07206F548_AdjustorThunk },
+	{ 0x06000054, U3CasyncGetAppIconU3Ed__44_SetStateMachine_m7E3DACEBB163FA5B807BE5473CE344E2F9A596F7_AdjustorThunk },
+	{ 0x06000055, U3CGetGameIconU3Ed__45_MoveNext_mA0974DAB6AF0D850769FFDD79508E9FC45B8C3FE_AdjustorThunk },
+	{ 0x06000056, U3CGetGameIconU3Ed__45_SetStateMachine_mE67FDDC32C8E76A884045D835448A993C6AADBF6_AdjustorThunk },
+	{ 0x06000057, U3CasyncGetGameIconU3Ed__46_MoveNext_m2A30FE7E19A06EF8F21D336B0E068763838A9847_AdjustorThunk },
+	{ 0x06000058, U3CasyncGetGameIconU3Ed__46_SetStateMachine_m466E04E08B33A742C4C1580E9CDFB283C62359FC_AdjustorThunk },
+	{ 0x06000059, U3CGetCardImageU3Ed__47_MoveNext_m6ADF8E23D554C8798C4C7B04FFF0E92FD2CDD0ED_AdjustorThunk },
+	{ 0x0600005A, U3CGetCardImageU3Ed__47_SetStateMachine_m8F90F57C0D96C1EA65C087CDC193A08A89DF936C_AdjustorThunk },
+	{ 0x0600005B, U3CasyncGetCardImageU3Ed__48_MoveNext_mD0390F953A6F59621336863945B9E90EA101E392_AdjustorThunk },
+	{ 0x0600005C, U3CasyncGetCardImageU3Ed__48_SetStateMachine_mFF635478D6311EB1D58E183A8412CE229A835823_AdjustorThunk },
+	{ 0x0600005D, U3CGetAppsU3Ed__49_MoveNext_mA5A44F477BFC81FD3DA6AED08766F231D1676DD5_AdjustorThunk },
+	{ 0x0600005E, U3CGetAppsU3Ed__49_SetStateMachine_m5B262C4F710FA4CEACF7ED52CDEACDDD36A21667_AdjustorThunk },
+	{ 0x0600005F, U3CasyncGetAppsU3Ed__50_MoveNext_mEB5CBCA49ECCD6C3425DDE34F6BFE210D0D34412_AdjustorThunk },
+	{ 0x06000060, U3CasyncGetAppsU3Ed__50_SetStateMachine_m84506CBC9CB040EE2BC659AAD11756EBBB00B1CE_AdjustorThunk },
+	{ 0x06000061, U3CGetCardImagesByPackU3Ed__56_MoveNext_m9226E16CC18D64FC7E55A3D63D6A709CC93A9579_AdjustorThunk },
+	{ 0x06000062, U3CGetCardImagesByPackU3Ed__56_SetStateMachine_m925AAE4992142A1279916E3DDCAB1F5EC0E453D3_AdjustorThunk },
+	{ 0x06000063, U3CGetAvatarImagesByCategoryU3Ed__57_MoveNext_mCFF9F4689C31999B7D6D844FB3E6E5F9CA662F76_AdjustorThunk },
+	{ 0x06000064, U3CGetAvatarImagesByCategoryU3Ed__57_SetStateMachine_m3BAD341E43D1E9B2DEDBE2310EA7E30F41EBD222_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[91] = 
+static const int32_t s_InvokerIndices[100] = 
 {
-	5473,
-	5353,
-	3955,
-	3955,
-	2002,
-	2002,
-	3955,
-	3955,
-	5353,
-	5353,
-	3955,
-	3955,
-	2001,
-	2001,
-	2001,
-	2001,
-	3955,
-	3955,
-	1235,
-	1235,
-	5353,
-	5353,
-	2002,
-	2002,
-	2002,
-	2002,
-	1235,
-	2001,
-	5473,
-	5473,
-	5473,
-	5473,
-	5473,
-	5473,
-	5473,
-	5473,
-	5473,
-	5473,
-	5473,
-	5473,
-	5473,
-	5473,
-	5473,
-	5473,
-	4470,
-	5473,
-	4470,
-	5473,
-	4470,
-	5473,
-	4470,
-	5473,
-	4470,
-	5473,
-	4470,
-	5473,
-	4470,
-	5473,
-	4470,
-	5473,
-	4470,
-	5473,
-	4470,
-	5473,
-	4470,
-	5473,
-	4470,
-	5473,
-	4470,
-	5473,
-	4470,
-	5473,
-	4470,
-	5473,
-	4470,
-	5473,
-	4470,
-	5473,
-	4470,
-	5473,
-	4470,
-	5473,
-	4470,
-	5473,
-	4470,
-	5473,
-	4470,
-	5473,
-	4470,
-	5473,
-	4470,
+	5485,
+	5365,
+	3963,
+	3963,
+	2005,
+	2005,
+	3963,
+	3963,
+	5365,
+	5365,
+	3963,
+	3963,
+	2004,
+	2004,
+	2004,
+	2004,
+	3963,
+	3963,
+	3963,
+	3963,
+	1236,
+	1236,
+	5365,
+	5365,
+	5365,
+	2005,
+	2005,
+	2005,
+	2005,
+	1236,
+	2004,
+	5485,
+	5485,
+	5485,
+	5485,
+	5485,
+	5485,
+	5485,
+	5485,
+	5485,
+	5485,
+	5485,
+	5485,
+	5485,
+	5485,
+	5485,
+	5485,
+	5485,
+	5485,
+	4481,
+	5485,
+	4481,
+	5485,
+	4481,
+	5485,
+	4481,
+	5485,
+	4481,
+	5485,
+	4481,
+	5485,
+	4481,
+	5485,
+	4481,
+	5485,
+	4481,
+	5485,
+	4481,
+	5485,
+	4481,
+	5485,
+	4481,
+	5485,
+	4481,
+	5485,
+	4481,
+	5485,
+	4481,
+	5485,
+	4481,
+	5485,
+	4481,
+	5485,
+	4481,
+	5485,
+	4481,
+	5485,
+	4481,
+	5485,
+	4481,
+	5485,
+	4481,
+	5485,
+	4481,
+	5485,
+	4481,
+	5485,
+	4481,
+	5485,
+	4481,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssistiveCardsSDK_CodeGenModule;
 const Il2CppCodeGenModule g_AssistiveCardsSDK_CodeGenModule = 
 {
 	"AssistiveCardsSDK.dll",
-	91,
+	100,
 	s_methodPointers,
-	48,
+	52,
 	s_adjustorThunks,
 	s_InvokerIndices,
 	0,

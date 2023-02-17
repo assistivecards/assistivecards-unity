@@ -758,6 +758,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rigidbody2D_set_bodyType_mE2FAC2D78B06B4
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rigidbody2D_AddForce_Injected_mC5372C179362B25CA579A94DBB11C5719F16452F (Rigidbody2D_tBEBE9523CF4448544085AF46BF7E10AA499F320F* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* ___force0, int32_t ___mode1, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Collider2D::get_bounds_Injected(UnityEngine.Bounds&)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Collider2D_get_bounds_Injected_mB3F24D39428D3C8E314CC6452878BD9A62C216E4 (Collider2D_t6A17BA7734600EF3F26588E9ED903617D5B8EB52* __this, Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3* ___ret0, const RuntimeMethod* method) ;
+// System.Void UnityEngine.BoxCollider2D::get_size_Injected(UnityEngine.Vector2&)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BoxCollider2D_get_size_Injected_m6F9DD21D59E2B6D2B202DA657590DDA51A5B3EBF (BoxCollider2D_tF860C7737FFB062CEC06577E0CD8364EEC1D4EDA* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* ___ret0, const RuntimeMethod* method) ;
 // System.Void UnityEngine.BoxCollider2D::set_size_Injected(UnityEngine.Vector2&)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BoxCollider2D_set_size_Injected_mE40FB02D46FAF468524BBC5BDF7BE468E7F85B9E (BoxCollider2D_tF860C7737FFB062CEC06577E0CD8364EEC1D4EDA* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* ___value0, const RuntimeMethod* method) ;
 #ifdef __clang__
@@ -2599,6 +2601,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Collider2D_get_bounds_Injected_mB3F24D39
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+// UnityEngine.Vector2 UnityEngine.BoxCollider2D::get_size()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 BoxCollider2D_get_size_mBB657ADFC58A79CDFDB7478956BBD9032E41D3D1 (BoxCollider2D_tF860C7737FFB062CEC06577E0CD8364EEC1D4EDA* __this, const RuntimeMethod* method) 
+{
+	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	{
+		BoxCollider2D_get_size_Injected_m6F9DD21D59E2B6D2B202DA657590DDA51A5B3EBF(__this, (&V_0), NULL);
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_0 = V_0;
+		return L_0;
+	}
+}
 // System.Void UnityEngine.BoxCollider2D::set_size(UnityEngine.Vector2)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BoxCollider2D_set_size_mA69E48F639FFB614B5FC083D3FEED3DF78A9FF46 (BoxCollider2D_tF860C7737FFB062CEC06577E0CD8364EEC1D4EDA* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___value0, const RuntimeMethod* method) 
 {
@@ -2606,6 +2619,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BoxCollider2D_set_size_mA69E48F639FFB614
 		BoxCollider2D_set_size_Injected_mE40FB02D46FAF468524BBC5BDF7BE468E7F85B9E(__this, (&___value0), NULL);
 		return;
 	}
+}
+// System.Void UnityEngine.BoxCollider2D::get_size_Injected(UnityEngine.Vector2&)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BoxCollider2D_get_size_Injected_m6F9DD21D59E2B6D2B202DA657590DDA51A5B3EBF (BoxCollider2D_tF860C7737FFB062CEC06577E0CD8364EEC1D4EDA* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* ___ret0, const RuntimeMethod* method) 
+{
+	typedef void (*BoxCollider2D_get_size_Injected_m6F9DD21D59E2B6D2B202DA657590DDA51A5B3EBF_ftn) (BoxCollider2D_tF860C7737FFB062CEC06577E0CD8364EEC1D4EDA*, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*);
+	static BoxCollider2D_get_size_Injected_m6F9DD21D59E2B6D2B202DA657590DDA51A5B3EBF_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (BoxCollider2D_get_size_Injected_m6F9DD21D59E2B6D2B202DA657590DDA51A5B3EBF_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.BoxCollider2D::get_size_Injected(UnityEngine.Vector2&)");
+	_il2cpp_icall_func(__this, ___ret0);
 }
 // System.Void UnityEngine.BoxCollider2D::set_size_Injected(UnityEngine.Vector2&)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BoxCollider2D_set_size_Injected_mE40FB02D46FAF468524BBC5BDF7BE468E7F85B9E (BoxCollider2D_tF860C7737FFB062CEC06577E0CD8364EEC1D4EDA* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* ___value0, const RuntimeMethod* method) 

@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Split Puzzle.unity
-    guid: b98271b2041dc4c4594410ca08f257b1
+    path: Assets/Scenes/Card Blast.unity
+    guid: 3a13e14cc1bfa4390ad30204e9f38331
   m_configObjects: {}

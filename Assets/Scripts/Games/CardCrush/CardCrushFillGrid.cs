@@ -33,6 +33,8 @@ public class CardCrushFillGrid : MonoBehaviour
     public bool isOnGame = false;
     [SerializeField] private GameObject loadingScreen;
     private RectTransform rect;
+    [SerializeField] private AudioSource smallSuccess;
+    [SerializeField] private Sound sfx;
 
     private void Awake()
     {
@@ -196,7 +198,7 @@ public class CardCrushFillGrid : MonoBehaviour
     public async void RefillBoard()
     {
         scoreInt += 1;
-        gameAPI.PlaySFX("SmallSuccess");
+        Invoke("PlaySuccessSFX", 0.25f);
         foreach(var cell in cardCrushGrid.allCells)
         {
             if(cell.isEmpty == true)
@@ -279,6 +281,11 @@ public class CardCrushFillGrid : MonoBehaviour
 
         card.GetComponent<CardElement>().x = cell.x;
         card.GetComponent<CardElement>().y = cell.y;
+    }
+
+    private void PlaySuccessSFX()
+    {
+        smallSuccess.PlayOneShot(sfx.clip, 0.5f);
     }
 
     public void ResetGrid()

@@ -167,7 +167,7 @@ public class CardBlastFillGrid : MonoBehaviour
     public async void RefillBoard()
     {
         scoreInt += 1;
-        gameAPI.PlaySFX("SmallSuccess");
+        gameAPI.PlaySFX("Success");
         foreach(var cell in cardCrushGrid.allCells)
         {
             if(cell.isEmpty == true)

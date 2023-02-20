@@ -11,6 +11,8 @@ public class BoardCreatorHatchMatch : MonoBehaviour
     GameAPI gameAPI;
     public string selectedLangCode;
 
+    [SerializeField] private PackSelectionPanel packSelectionPanel;
+
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private Transform card1Position;
     [SerializeField] private Transform card2Position;
@@ -26,10 +28,6 @@ public class BoardCreatorHatchMatch : MonoBehaviour
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
-
-        GenerateCard("animals", card1Position, 1);
-        GenerateCard("animals", card2Position, 2);
-        GenerateCard("animals", card3Position, 3);
     }
 
     public async Task CacheCards(string _packSlug)
@@ -89,6 +87,13 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         card1.transform.name = cardNames[randomValues[_randomValue]];
         card1.transform.SetParent(this.transform);
         card1.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+    }
+
+    public void GeneratStylized()
+    {
+        GenerateCard(packSelectionPanel.selectedPackElement.name, card1Position, 1);
+        GenerateCard(packSelectionPanel.selectedPackElement.name, card2Position, 2);
+        GenerateCard(packSelectionPanel.selectedPackElement.name, card3Position, 3);
     }
 
 }

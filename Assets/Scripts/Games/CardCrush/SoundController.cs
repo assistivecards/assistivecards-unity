@@ -43,9 +43,6 @@ public class SoundController : MonoBehaviour
             {
                 gameAPI.PlaySFX("Success");
                 gameAPI.Speak(matchedList.Last());
-                matchedList.Clear();
-                movedList.Clear();
-                movedTargetList.Clear();
             }
         }
         if(matchedList.Count > 0 && movedTargetList.Count > 0)
@@ -54,19 +51,21 @@ public class SoundController : MonoBehaviour
             {
                 gameAPI.PlaySFX("Success");
                 gameAPI.Speak(matchedList.Last());
-                matchedList.Clear();
-                movedList.Clear();
-                movedTargetList.Clear();
             }
         }
+    }
+
+    private void ResetLists()
+    {
+        matchedList.Clear();
+        movedList.Clear();
+        movedTargetList.Clear();
     }
 
     public void TTSCardName()
     {
         gameAPI.Speak(matchedList.Last());
-        matchedList.Clear();
-        movedList.Clear();
-        movedTargetList.Clear();
+        Invoke("ResetLists", 2);
     }
 
 }

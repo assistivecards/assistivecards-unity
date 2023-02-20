@@ -14,9 +14,11 @@ public class BoardCreatorHatchMatch : MonoBehaviour
     [SerializeField] private PackSelectionPanel packSelectionPanel;
 
     [SerializeField] private GameObject cardPrefab;
+    [SerializeField] private GameObject actualCardPrefab;
     [SerializeField] private Transform card1Position;
     [SerializeField] private Transform card2Position;
     [SerializeField] private Transform card3Position;
+    [SerializeField] private Transform cardPosition;
     public int cardTypeCount;
 
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
@@ -89,10 +91,29 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         card1.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
     }
 
+    private async void  GenerateActualCard(string _packSlug, Transform _cardPosition, int _randomValue)
+    {
+        await CacheCards(_packSlug);
+        CreateRandomValue();
+        var cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[randomValues[_randomValue]], 512);
+        
+        GameObject card1 = Instantiate(actualCardPrefab, _cardPosition.position, Quaternion.identity);
+        
+
+        cardTexture.wrapMode = TextureWrapMode.Clamp;
+        cardTexture.filterMode = FilterMode.Bilinear;
+
+        card1.transform.name = cardNames[randomValues[_randomValue]];
+        card1.transform.SetParent(this.transform);
+        card1.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+    }
+
     public void GeneratStylized()
     {
         GenerateCard(packSelectionPanel.selectedPackElement.name, card1Position, 1);
         GenerateCard(packSelectionPanel.selectedPackElement.name, card2Position, 2);
         GenerateCard(packSelectionPanel.selectedPackElement.name, card3Position, 3);
+        
+        GenerateActualCard(packSelectionPanel.selectedPackElement.name, cardPosition, Random.Range(1,3));
     }
 }

@@ -95,5 +95,4 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         GenerateCard(packSelectionPanel.selectedPackElement.name, card2Position, 2);
         GenerateCard(packSelectionPanel.selectedPackElement.name, card3Position, 3);
     }
-
 }

@@ -1043,6 +1043,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1021200294}
     - target: {fileID: 543293290755305770, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: promoScreen
+      value: 
+      objectReference: {fileID: 1941239968}
+    - target: {fileID: 543293290755305770, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: fadeOutPanel
       value: 
       objectReference: {fileID: 3113681192153615922}
@@ -5711,6 +5715,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1941239968 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9084976097150636252, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+  m_PrefabInstance: {fileID: 1242831489266657176}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1969410113
 GameObject:
   m_ObjectHideFlags: 0

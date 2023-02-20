@@ -794,6 +794,8 @@ MonoBehaviour:
     languages: []
   cachedApps:
     apps: []
+  cachedGames:
+    games: []
   cachedAppIcons: []
   freePackImages: []
   premiumPackImages: []
@@ -838,6 +840,8 @@ MonoBehaviour:
     languages: []
   apps:
     apps: []
+  games:
+    games: []
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3852,6 +3856,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 631eedefcd7727c44960f49fc60b3afb, type: 3}
+--- !u!1 &698253393274164407 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5434973566421972235, guid: 631eedefcd7727c44960f49fc60b3afb, type: 3}
+  m_PrefabInstance: {fileID: 698253393274164406}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &804781095414775615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4450,6 +4459,10 @@ PrefabInstance:
       propertyPath: gamePrefab
       value: 
       objectReference: {fileID: 3312234165395231071}
+    - target: {fileID: 543293290755305770, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: promoScreen
+      value: 
+      objectReference: {fileID: 698253393274164407}
     - target: {fileID: 543293290755305770, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: fadeOutPanel
       value: 

@@ -346,6 +346,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1021200294}
     - target: {fileID: 543293290755305770, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: promoScreen
+      value: 
+      objectReference: {fileID: 1242831489266657178}
+    - target: {fileID: 543293290755305770, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: fadeOutPanel
       value: 
       objectReference: {fileID: 3113681192153615922}
@@ -4155,6 +4159,11 @@ PrefabInstance:
 --- !u!1 &1242831489266657177 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1242831489818517041, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+  m_PrefabInstance: {fileID: 1242831489266657176}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1242831489266657178 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9084976097150636252, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
   m_PrefabInstance: {fileID: 1242831489266657176}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &1242831489266657179 stripped

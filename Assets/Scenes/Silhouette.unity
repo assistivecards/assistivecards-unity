@@ -481,6 +481,8 @@ MonoBehaviour:
     languages: []
   cachedApps:
     apps: []
+  cachedGames:
+    games: []
   cachedAppIcons: []
   freePackImages: []
   premiumPackImages: []
@@ -523,6 +525,8 @@ MonoBehaviour:
     languages: []
   apps:
     apps: []
+  games:
+    games: []
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2861,6 +2865,7 @@ MonoBehaviour:
   balloonPrefab: {fileID: 6387976776864001687, guid: cb7a0a3317c49c34980e885ee32d7c73, type: 3}
   fastestMoveTime: 5
   slowestMoveTime: 10
+  balloonAmount: 8
   destroyTime: 13
   colors:
   - {r: 0.97800004, g: 0.54768, b: 0.54768, a: 0.9019608}
@@ -3702,6 +3707,7 @@ MonoBehaviour:
   settingPrefab: {fileID: 753248538}
   topAppBar: {fileID: 637096323}
   mainSettingScreen: {fileID: 2047322290}
+  promoScreen: {fileID: 4379759206372183551}
   gamePrefab: {fileID: 3312234165578591683}
   settingButtonObject: {fileID: 3312234165651687195}
   settingButton: {fileID: 3312234166752735719}
@@ -6235,6 +6241,11 @@ PrefabInstance:
 --- !u!224 &4379759206372183550 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1242831490724072404, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+  m_PrefabInstance: {fileID: 4379759206372183549}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4379759206372183551 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9084976097150636252, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
   m_PrefabInstance: {fileID: 4379759206372183549}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4503385205661991501

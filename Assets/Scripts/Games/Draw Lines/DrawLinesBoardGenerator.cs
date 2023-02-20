@@ -15,7 +15,7 @@ public class DrawLinesBoardGenerator : MonoBehaviour
     [SerializeField] List<GameObject> pathGroup2;
     [SerializeField] List<GameObject> pathGroup3;
     [SerializeField] List<Transform> handles;
-    [SerializeField] List<GameObject> randomPaths;
+    public List<GameObject> randomPaths;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     private AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd;
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
@@ -185,6 +185,7 @@ public class DrawLinesBoardGenerator : MonoBehaviour
         for (int i = 0; i < handles.Count; i++)
         {
             handles[i].position = randomPaths[i].GetComponent<PathCreator>().path.GetPoint(0);
+            handles[i].gameObject.SetActive(true);
             LeanTween.scale(handles[i].gameObject, Vector3.one * 0.5f, .15f);
         }
     }

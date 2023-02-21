@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5337748778006510765}
   - component: {fileID: 5270517298093753807}
   - component: {fileID: 6015160056906354179}
+  - component: {fileID: 6923687242284564735}
+  - component: {fileID: 4817728727631283572}
   m_Layer: 5
   m_Name: Card 1
   m_TagString: cardBlast
@@ -104,6 +106,39 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 277.96533, y: 278.24994}
   m_EdgeRadius: 0
+--- !u!114 &6923687242284564735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572616208917296617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91a6885c0330a4d48af0de40f2eb9376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &4817728727631283572
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572616208917296617}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &3953419126043893981
 GameObject:
   m_ObjectHideFlags: 0

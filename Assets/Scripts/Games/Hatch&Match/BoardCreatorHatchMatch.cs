@@ -19,6 +19,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
     [SerializeField] private Transform card2Position;
     [SerializeField] private Transform card3Position;
     [SerializeField] private Transform cardPosition;
+    [SerializeField] private GameObject egg;
     public int cardTypeCount;
 
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
@@ -67,7 +68,8 @@ public class BoardCreatorHatchMatch : MonoBehaviour
                 }
                 else
                 {
-                    CreateRandomValue();
+                    tempRandomValue = Random.Range(0, cardsList.Count);
+                    randomValues.Add(tempRandomValue);
                 }
             }
 
@@ -113,7 +115,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         GenerateCard(packSelectionPanel.selectedPackElement.name, card1Position, 1);
         GenerateCard(packSelectionPanel.selectedPackElement.name, card2Position, 2);
         GenerateCard(packSelectionPanel.selectedPackElement.name, card3Position, 3);
-        
+        egg.SetActive(true);
         GenerateActualCard(packSelectionPanel.selectedPackElement.name, cardPosition, Random.Range(1,3));
     }
 }

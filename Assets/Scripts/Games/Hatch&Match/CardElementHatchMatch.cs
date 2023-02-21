@@ -21,4 +21,14 @@ public class CardElementHatchMatch : MonoBehaviour, IPointerDownHandler, IDragHa
     {
         this.transform.position = eventData.position;
     }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log(other.gameObject.name);
+        
+        if(other.gameObject.name == this.gameObject.name)
+        {
+            Debug.Log("!!!!!!!!!!!!!!!!!");
+        }
+    }
 }

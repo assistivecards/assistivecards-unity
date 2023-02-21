@@ -173,9 +173,9 @@ public class DrawLinesBoardGenerator : MonoBehaviour
         randomPaths.Add(pathGroup3[Random.Range(0, pathGroup3.Count)]);
         for (int i = 0; i < randomPaths.Count; i++)
         {
-            randomPaths[i].transform.localScale = Vector3.zero;
+            // randomPaths[i].transform.localScale = Vector3.zero;
             randomPaths[i].SetActive(true);
-            randomPaths[i].GetComponent<PathCreator>().bezierPath.NotifyPathModified();
+            // randomPaths[i].GetComponent<PathCreator>().bezierPath.NotifyPathModified();
 
         }
     }
@@ -184,6 +184,7 @@ public class DrawLinesBoardGenerator : MonoBehaviour
     {
         for (int i = 0; i < handles.Count; i++)
         {
+            randomPaths[i].GetComponent<PathCreation.Examples.PathPlacer>().TriggerUpdate();
             handles[i].position = randomPaths[i].GetComponent<PathCreator>().path.GetPoint(0);
             handles[i].gameObject.SetActive(true);
             LeanTween.scale(handles[i].gameObject, Vector3.one * 0.5f, .15f);

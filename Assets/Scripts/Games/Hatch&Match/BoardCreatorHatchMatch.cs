@@ -67,7 +67,8 @@ public class BoardCreatorHatchMatch : MonoBehaviour
                 }
                 else
                 {
-                    CreateRandomValue();
+                    tempRandomValue = Random.Range(0, cardsList.Count);
+                    randomValues.Add(tempRandomValue);
                 }
             }
 

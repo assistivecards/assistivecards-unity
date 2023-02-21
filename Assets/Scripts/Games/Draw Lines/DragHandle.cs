@@ -9,6 +9,8 @@ public class DragHandle : MonoBehaviour, IPointerDownHandler, IDragHandler
 {
     [SerializeField] PathCreator path;
     private DrawLinesBoardGenerator board;
+    public float distanceThreshold;
+    public bool canDrag;
 
     private void Start()
     {
@@ -36,16 +38,27 @@ public class DragHandle : MonoBehaviour, IPointerDownHandler, IDragHandler
     public void OnDrag(PointerEventData eventData)
     {
         Debug.Log("Dragging");
-        transform.position = eventData.position;
-        Vector3 nearestWorldPositionOnPath = path.path.GetPointAtDistance(path.path.GetClosestDistanceAlongPath(transform.position));
-        transform.position = nearestWorldPositionOnPath;
+        if (canDrag)
+        {
+            transform.position = eventData.position;
+            Vector3 nearestWorldPositionOnPath = path.path.GetPointAtDistance(path.path.GetClosestDistanceAlongPath(transform.position));
+            // transform.position = nearestWorldPositionOnPath;
+            if (Vector3.Distance(eventData.position, nearestWorldPositionOnPath) > distanceThreshold)
+            {
+                canDrag = false;
+                LeanTween.move(gameObject, path.path.GetPoint(0), .25f);
+                // transform.position = path.path.GetPoint(0);
+            }
+        }
+
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         Debug.Log("OnPointerDown");
+        canDrag = true;
         transform.position = eventData.position;
         Vector3 nearestWorldPositionOnPath = path.path.GetPointAtDistance(path.path.GetClosestDistanceAlongPath(transform.position));
-        transform.position = nearestWorldPositionOnPath;
+        // transform.position = nearestWorldPositionOnPath;
     }
 }

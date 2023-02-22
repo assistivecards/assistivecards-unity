@@ -11,6 +11,12 @@ public class DragHandle : MonoBehaviour, IPointerDownHandler, IDragHandler
     private DrawLinesBoardGenerator board;
     public float distanceThreshold;
     public bool canDrag;
+    private GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void Start()
     {
@@ -37,7 +43,6 @@ public class DragHandle : MonoBehaviour, IPointerDownHandler, IDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("Dragging");
         if (canDrag)
         {
             transform.position = eventData.position;
@@ -55,7 +60,8 @@ public class DragHandle : MonoBehaviour, IPointerDownHandler, IDragHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("OnPointerDown");
+        gameAPI.VibrateWeak();
+        gameAPI.PlaySFX("Pickup");
         canDrag = true;
         transform.position = eventData.position;
         Vector3 nearestWorldPositionOnPath = path.path.GetPointAtDistance(path.path.GetClosestDistanceAlongPath(transform.position));

@@ -70,6 +70,7 @@ public class DrawLinesBoardGenerator : MonoBehaviour
         ChooseRandomPaths();
         PlaceSprites();
         ScaleImagesUp();
+        Invoke("TriggerUpdatePaths", .15f);
         Invoke("PlaceHandles", .25f);
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);
@@ -201,7 +202,6 @@ public class DrawLinesBoardGenerator : MonoBehaviour
     {
         for (int i = 0; i < handles.Count; i++)
         {
-            randomPaths[i].GetComponent<PathCreation.Examples.PathPlacer>().TriggerUpdate();
             handles[i].position = randomPaths[i].GetComponent<PathCreator>().path.GetPoint(0);
             handles[i].gameObject.SetActive(true);
             LeanTween.scale(handles[i].gameObject, Vector3.one * 0.5f, .15f);
@@ -217,4 +217,13 @@ public class DrawLinesBoardGenerator : MonoBehaviour
             handles[i].gameObject.SetActive(false);
         }
     }
+
+    public void TriggerUpdatePaths()
+    {
+        for (int i = 0; i < randomPaths.Count; i++)
+        {
+            randomPaths[i].GetComponent<PathCreation.Examples.PathPlacer>().TriggerUpdate();
+        }
+    }
+
 }

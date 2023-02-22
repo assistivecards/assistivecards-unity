@@ -18,11 +18,10 @@ public class DragHandle : MonoBehaviour, IPointerDownHandler, IDragHandler
         gameAPI = Camera.main.GetComponent<GameAPI>();
     }
 
-    private void Start()
+    private void OnEnable()
     {
         board = GameObject.Find("GamePanel").GetComponent<DrawLinesBoardGenerator>();
         MatchHandlesWithPaths();
-
     }
 
     public void MatchHandlesWithPaths()

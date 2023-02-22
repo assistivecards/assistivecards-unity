@@ -9,6 +9,12 @@ public class DrawLinesMatchDetection : MonoBehaviour
     public bool isMatched = false;
     [SerializeField] Image cardToBeMatched;
     private GameObject matchedOption;
+    private DrawLinesBoardGenerator board;
+
+    private void Start()
+    {
+        board = GameObject.Find("GamePanel").GetComponent<DrawLinesBoardGenerator>();
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -21,6 +27,10 @@ public class DrawLinesMatchDetection : MonoBehaviour
             LeanTween.scale(gameObject, Vector3.zero, .25f);
             Invoke("DisableCurrentHandle", 0.25f);
             LeanTween.scale(matchedOption, Vector3.one * 1.25f, .25f);
+
+            board.Invoke("ScaleImagesDown", .75f);
+            board.Invoke("ClearBoard", 1f);
+            board.Invoke("GenerateRandomBoardAsync", 1f);
         }
         else
         {

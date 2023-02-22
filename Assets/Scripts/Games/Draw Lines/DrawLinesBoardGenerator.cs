@@ -22,7 +22,6 @@ public class DrawLinesBoardGenerator : MonoBehaviour
     [SerializeField] List<Texture2D> randomTextures = new List<Texture2D>();
     private List<Sprite> randomSprites = new List<Sprite>();
 
-
     public string selectedLangCode;
     public string packSlug;
     [SerializeField] GameObject backButton;
@@ -66,13 +65,12 @@ public class DrawLinesBoardGenerator : MonoBehaviour
             didLanguageChange = false;
         }
 
-        ChooseRandomPaths();
         PopulateRandomCards();
         await PopulateRandomTextures();
+        ChooseRandomPaths();
         PlaceSprites();
         ScaleImagesUp();
         Invoke("PlaceHandles", .25f);
-
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);
     }
@@ -82,6 +80,12 @@ public class DrawLinesBoardGenerator : MonoBehaviour
         cardToAdd = null;
         randomCards.Clear();
         randomTextures.Clear();
+        randomSprites.Clear();
+        randomPaths.Clear();
+        for (int i = 0; i < options.Count; i++)
+        {
+            options[i].sprite = null;
+        }
 
     }
 
@@ -90,6 +94,7 @@ public class DrawLinesBoardGenerator : MonoBehaviour
         LeanTween.scale(cardToBeMatched.gameObject, Vector3.one, .15f);
         for (int i = 0; i < options.Count; i++)
         {
+            LeanTween.alpha(options[i].gameObject.GetComponent<RectTransform>(), 1f, .01f);
             LeanTween.scale(options[i].gameObject, Vector3.one, .15f);
         }
         for (int i = 0; i < randomPaths.Count; i++)
@@ -97,6 +102,18 @@ public class DrawLinesBoardGenerator : MonoBehaviour
             LeanTween.scale(randomPaths[i], Vector3.one, .15f);
         }
 
+    }
+
+    public void ScaleImagesDown()
+    {
+        LeanTween.scale(cardToBeMatched.gameObject, Vector3.zero, .25f);
+        for (int i = 0; i < options.Count; i++)
+        {
+            LeanTween.scale(options[i].gameObject, Vector3.zero, .25f);
+            LeanTween.scale(randomPaths[i], Vector3.zero, .25f);
+            LeanTween.scale(handles[i].gameObject, Vector3.zero, 0.25f);
+        }
+        Invoke("DisablePathsAndHandles", .25f);
     }
 
     public void ReadCard()
@@ -188,6 +205,16 @@ public class DrawLinesBoardGenerator : MonoBehaviour
             handles[i].position = randomPaths[i].GetComponent<PathCreator>().path.GetPoint(0);
             handles[i].gameObject.SetActive(true);
             LeanTween.scale(handles[i].gameObject, Vector3.one * 0.5f, .15f);
+            handles[i].gameObject.GetComponent<DragHandle>().enabled = true;
+        }
+    }
+
+    public void DisablePathsAndHandles()
+    {
+        for (int i = 0; i < randomPaths.Count; i++)
+        {
+            randomPaths[i].SetActive(false);
+            handles[i].gameObject.SetActive(false);
         }
     }
 }

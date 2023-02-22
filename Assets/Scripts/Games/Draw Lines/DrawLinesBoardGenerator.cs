@@ -101,6 +101,7 @@ public class DrawLinesBoardGenerator : MonoBehaviour
         for (int i = 0; i < randomPaths.Count; i++)
         {
             LeanTween.scale(randomPaths[i], Vector3.one, .15f);
+            handles[i].SetParent(randomPaths[i].transform);
         }
 
     }
@@ -215,6 +216,7 @@ public class DrawLinesBoardGenerator : MonoBehaviour
         {
             randomPaths[i].SetActive(false);
             handles[i].gameObject.SetActive(false);
+            handles[i].SetParent(GameObject.Find("GamePanel").transform);
         }
     }
 

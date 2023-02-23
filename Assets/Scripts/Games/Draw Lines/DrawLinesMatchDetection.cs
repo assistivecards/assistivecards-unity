@@ -10,6 +10,7 @@ public class DrawLinesMatchDetection : MonoBehaviour
     [SerializeField] Image cardToBeMatched;
     private GameObject matchedOption;
     private DrawLinesBoardGenerator board;
+    private DrawLinesUIController UIController;
     private GameAPI gameAPI;
 
     private void Awake()
@@ -20,6 +21,7 @@ public class DrawLinesMatchDetection : MonoBehaviour
     private void Start()
     {
         board = GameObject.Find("GamePanel").GetComponent<DrawLinesBoardGenerator>();
+        UIController = GameObject.Find("GamePanel").GetComponent<DrawLinesUIController>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -28,6 +30,8 @@ public class DrawLinesMatchDetection : MonoBehaviour
         if (other.tag == "Option" && other.GetComponent<Image>().sprite == cardToBeMatched.sprite)
         {
             isMatched = true;
+            UIController.correctMatches++;
+            UIController.backButton.GetComponent<Button>().interactable = false;
             Debug.Log("Correct Match!");
             gameAPI.PlaySFX("Success");
             gameObject.GetComponent<DragHandle>().enabled = false;

@@ -28,6 +28,7 @@ public class DrawLinesBoardGenerator : MonoBehaviour
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
     private DrawLinesUIController UIController;
+    private string shownImageSlug;
 
     private void Awake()
     {
@@ -147,7 +148,7 @@ public class DrawLinesBoardGenerator : MonoBehaviour
 
     public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)
     {
-        if (!randomCards.Contains(cardToAdd))
+        if (!randomCards.Contains(cardToAdd) && cardToAdd.slug != shownImageSlug)
         {
             randomCards.Add(cardToAdd);
         }
@@ -170,6 +171,7 @@ public class DrawLinesBoardGenerator : MonoBehaviour
             cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
             CheckIfCardExists(cardToAdd);
         }
+        shownImageSlug = randomCards[0].slug;
     }
 
     public async Task PopulateRandomTextures()

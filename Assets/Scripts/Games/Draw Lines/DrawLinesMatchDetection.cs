@@ -41,7 +41,12 @@ public class DrawLinesMatchDetection : MonoBehaviour
             board.Invoke("ReadCard", 0.25f);
             board.Invoke("ScaleImagesDown", .75f);
             board.Invoke("ClearBoard", 1f);
-            board.Invoke("GenerateRandomBoardAsync", 1f);
+            if (UIController.correctMatches == 10)
+            {
+                UIController.Invoke("OpenCheckPointPanel", 1f);
+            }
+            else
+                board.Invoke("GenerateRandomBoardAsync", 1f);
         }
         else
         {

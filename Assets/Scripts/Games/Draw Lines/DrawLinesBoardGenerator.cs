@@ -27,7 +27,7 @@ public class DrawLinesBoardGenerator : MonoBehaviour
     [SerializeField] GameObject backButton;
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
-    private MatchPairsUIController UIController;
+    private DrawLinesUIController UIController;
 
     private void Awake()
     {
@@ -37,7 +37,7 @@ public class DrawLinesBoardGenerator : MonoBehaviour
     private void Start()
     {
         gameAPI.PlayMusic();
-        UIController = gameObject.GetComponent<MatchPairsUIController>();
+        UIController = gameObject.GetComponent<DrawLinesUIController>();
     }
 
     private void OnEnable()

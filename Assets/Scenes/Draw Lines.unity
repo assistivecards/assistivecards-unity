@@ -18113,6 +18113,7 @@ MonoBehaviour:
   speakerIcon: {fileID: 472857507}
   correctMatches: 0
   checkPointPanel: {fileID: 1095398522}
+  checkpointFrequency: 5
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

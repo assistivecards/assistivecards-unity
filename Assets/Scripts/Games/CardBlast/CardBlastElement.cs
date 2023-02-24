@@ -379,6 +379,7 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         {
             soundController.matchedList.Add(this.gameObject.name);
             soundController.match = true;
+            soundController.Invoke("ReadMatch", 0.6f);
             LeanTween.scale(card, new Vector3(0.5f, 0.5f, 0.5f), 0.1f);   
         }
         Invoke("DestroyMatched", 0.1f);

@@ -27,11 +27,14 @@ public class SoundController : MonoBehaviour
     private void Update() 
     {
       ReadCard();
+    }
 
+    public void ReadMatch()
+    {
         if(match)
         {
             Invoke("TTSCardName" , 0.1f);
-            match = false;
+            match = false; 
         }
     }
 
@@ -67,5 +70,4 @@ public class SoundController : MonoBehaviour
         gameAPI.Speak(matchedList.Last());
         Invoke("ResetLists", 2);
     }
-
 }

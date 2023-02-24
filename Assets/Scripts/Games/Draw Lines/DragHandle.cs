@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using PathCreation;
-
+using UnityEngine.UI;
 
 public class DragHandle : MonoBehaviour, IPointerDownHandler, IDragHandler
 {
@@ -12,6 +12,9 @@ public class DragHandle : MonoBehaviour, IPointerDownHandler, IDragHandler
     public float distanceThreshold;
     public bool canDrag;
     private GameAPI gameAPI;
+    public List<GameObject> waypoints;
+    public Color waypointGrey;
+    public Color waypointGreen;
 
     private void Awake()
     {
@@ -38,6 +41,13 @@ public class DragHandle : MonoBehaviour, IPointerDownHandler, IDragHandler
         {
             path = board.randomPaths[2].GetComponent<PathCreator>();
         }
+
+        waypoints.Clear();
+
+        for (int i = 0; i < path.transform.GetChild(0).childCount; i++)
+        {
+            waypoints.Add(path.transform.GetChild(0).GetChild(i).gameObject);
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -51,7 +61,20 @@ public class DragHandle : MonoBehaviour, IPointerDownHandler, IDragHandler
             {
                 canDrag = false;
                 LeanTween.move(gameObject, path.path.GetPoint(0), .25f);
-                // transform.position = path.path.GetPoint(0);
+                for (int i = 0; i < waypoints.Count; i++)
+                {
+                    LeanTween.color(waypoints[i].GetComponent<RectTransform>(), waypointGrey, .25f);
+                }
+            }
+
+            for (int i = 0; i < waypoints.Count; i++)
+            {
+                if (transform.position.x > waypoints[i].transform.position.x)
+                {
+                    waypoints[i].GetComponent<Image>().color = waypointGreen;
+                }
+                else
+                    waypoints[i].GetComponent<Image>().color = waypointGrey;
             }
         }
 

@@ -29,6 +29,7 @@ public class DrawLinesBoardGenerator : MonoBehaviour
     private DrawLinesUIController UIController;
     private string shownImageSlug;
     public int correctMatchIndex;
+    [SerializeField] DragHandle dragHandle;
 
     private void Awake()
     {
@@ -117,6 +118,7 @@ public class DrawLinesBoardGenerator : MonoBehaviour
             LeanTween.scale(randomPaths[i], Vector3.zero, .25f);
             LeanTween.scale(handles[i].gameObject, Vector3.zero, 0.25f);
         }
+        Invoke("ResetWaypointColors", .25f);
         Invoke("DisablePathsAndHandles", .25f);
     }
 
@@ -238,6 +240,17 @@ public class DrawLinesBoardGenerator : MonoBehaviour
             if (options[i].sprite == cardToBeMatched.sprite)
             {
                 correctMatchIndex = i;
+            }
+        }
+    }
+
+    public void ResetWaypointColors()
+    {
+        for (int i = 0; i < randomPaths.Count; i++)
+        {
+            for (int j = 0; j < randomPaths[i].transform.GetChild(0).childCount; j++)
+            {
+                randomPaths[i].transform.GetChild(0).GetChild(j).GetComponent<Image>().color = dragHandle.waypointGrey;
             }
         }
     }

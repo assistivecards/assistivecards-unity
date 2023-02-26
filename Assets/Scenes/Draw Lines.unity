@@ -8149,6 +8149,10 @@ MonoBehaviour:
   path: {fileID: 0}
   distanceThreshold: 50
   canDrag: 0
+  waypoints: []
+  waypointGrey: {r: 0.24313726, g: 0.27058825, b: 0.35686275, a: 0.6862745}
+  waypointGreen: {r: 0.105882354, g: 0.5921569, b: 0.21960784, a: 0.6862745}
+  correctPath: {fileID: 0}
 --- !u!61 &1244630515
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10676,6 +10680,10 @@ MonoBehaviour:
   path: {fileID: 0}
   distanceThreshold: 50
   canDrag: 0
+  waypoints: []
+  waypointGrey: {r: 0.24313726, g: 0.27058825, b: 0.35686275, a: 0.6862745}
+  waypointGreen: {r: 0.105882354, g: 0.5921569, b: 0.21960784, a: 0.6862745}
+  correctPath: {fileID: 0}
 --- !u!61 &1543527142
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13730,6 +13738,10 @@ MonoBehaviour:
   path: {fileID: 0}
   distanceThreshold: 50
   canDrag: 0
+  waypoints: []
+  waypointGrey: {r: 0.24313726, g: 0.27058825, b: 0.35686275, a: 0.6862745}
+  waypointGreen: {r: 0.105882354, g: 0.5921569, b: 0.21960784, a: 0.6862745}
+  correctPath: {fileID: 0}
 --- !u!61 &1968911746
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18094,6 +18106,8 @@ MonoBehaviour:
   selectedLangCode: 
   packSlug: 
   backButton: {fileID: 472857508}
+  correctMatchIndex: 0
+  dragHandle: {fileID: 1543527141}
 --- !u!114 &8383894889009589328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18113,6 +18127,7 @@ MonoBehaviour:
   speakerIcon: {fileID: 472857507}
   correctMatches: 0
   checkPointPanel: {fileID: 1095398522}
+  checkpointFrequency: 5
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

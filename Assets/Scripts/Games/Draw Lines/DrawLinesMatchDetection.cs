@@ -12,6 +12,7 @@ public class DrawLinesMatchDetection : MonoBehaviour
     private DrawLinesBoardGenerator board;
     private DrawLinesUIController UIController;
     private GameAPI gameAPI;
+    private DragHandle dragHandle;
 
     private void Awake()
     {
@@ -22,6 +23,7 @@ public class DrawLinesMatchDetection : MonoBehaviour
     {
         board = GameObject.Find("GamePanel").GetComponent<DrawLinesBoardGenerator>();
         UIController = GameObject.Find("GamePanel").GetComponent<DrawLinesUIController>();
+        dragHandle = gameObject.GetComponent<DragHandle>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -36,17 +38,21 @@ public class DrawLinesMatchDetection : MonoBehaviour
             gameAPI.PlaySFX("Success");
             gameObject.GetComponent<DragHandle>().enabled = false;
             LeanTween.scale(gameObject, Vector3.zero, .25f);
+            for (int i = 0; i < dragHandle.waypoints.Count; i++)
+            {
+                LeanTween.color(dragHandle.waypoints[i].GetComponent<RectTransform>(), dragHandle.waypointGreen, .25f);
+            }
             Invoke("DisableCurrentHandle", 0.25f);
             LeanTween.scale(matchedOption, Vector3.one * 1.25f, .25f);
             board.Invoke("ReadCard", 0.25f);
             board.Invoke("ScaleImagesDown", .75f);
-            board.Invoke("ClearBoard", 1f);
-            if (UIController.correctMatches == 10)
+            board.Invoke("ClearBoard", 1.05f);
+            if (UIController.correctMatches == UIController.checkpointFrequency)
             {
-                UIController.Invoke("OpenCheckPointPanel", 1f);
+                UIController.Invoke("OpenCheckPointPanel", 1.05f);
             }
             else
-                board.Invoke("GenerateRandomBoardAsync", 1f);
+                board.Invoke("GenerateRandomBoardAsync", 1.05f);
         }
         else
         {
@@ -54,6 +60,10 @@ public class DrawLinesMatchDetection : MonoBehaviour
             Debug.Log("Wrong Match!");
             gameObject.GetComponent<DragHandle>().enabled = false;
             LeanTween.scale(gameObject, Vector3.zero, .25f);
+            for (int i = 0; i < dragHandle.waypoints.Count; i++)
+            {
+                LeanTween.color(dragHandle.waypoints[i].GetComponent<RectTransform>(), dragHandle.waypointGreen, .25f);
+            }
             Invoke("DisableCurrentHandle", 0.25f);
             LeanTween.alpha(matchedOption.GetComponent<RectTransform>(), .5f, .25f);
         }

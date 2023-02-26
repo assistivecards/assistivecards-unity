@@ -13,6 +13,7 @@ public class DrawLinesUIController : MonoBehaviour
     public int correctMatches;
     [SerializeField] GameObject checkPointPanel;
     private GameAPI gameAPI;
+    public int checkpointFrequency = 5;
 
     private void Awake()
     {

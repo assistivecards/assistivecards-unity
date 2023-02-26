@@ -21,7 +21,6 @@ public class DrawLinesBoardGenerator : MonoBehaviour
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     [SerializeField] List<Texture2D> randomTextures = new List<Texture2D>();
     private List<Sprite> randomSprites = new List<Sprite>();
-
     public string selectedLangCode;
     public string packSlug;
     [SerializeField] GameObject backButton;
@@ -29,6 +28,8 @@ public class DrawLinesBoardGenerator : MonoBehaviour
     public static bool isBackAfterSignOut = false;
     private DrawLinesUIController UIController;
     private string shownImageSlug;
+    public int correctMatchIndex;
+    [SerializeField] DragHandle dragHandle;
 
     private void Awake()
     {
@@ -70,6 +71,7 @@ public class DrawLinesBoardGenerator : MonoBehaviour
         await PopulateRandomTextures();
         ChooseRandomPaths();
         PlaceSprites();
+        FindCorrectMatchIndex();
         ScaleImagesUp();
         Invoke("TriggerUpdatePaths", .15f);
         Invoke("PlaceHandles", .25f);
@@ -116,6 +118,7 @@ public class DrawLinesBoardGenerator : MonoBehaviour
             LeanTween.scale(randomPaths[i], Vector3.zero, .25f);
             LeanTween.scale(handles[i].gameObject, Vector3.zero, 0.25f);
         }
+        Invoke("ResetWaypointColors", .25f);
         Invoke("DisablePathsAndHandles", .25f);
     }
 
@@ -227,6 +230,28 @@ public class DrawLinesBoardGenerator : MonoBehaviour
         for (int i = 0; i < randomPaths.Count; i++)
         {
             randomPaths[i].GetComponent<PathCreation.Examples.PathPlacer>().TriggerUpdate();
+        }
+    }
+
+    public void FindCorrectMatchIndex()
+    {
+        for (int i = 0; i < options.Count; i++)
+        {
+            if (options[i].sprite == cardToBeMatched.sprite)
+            {
+                correctMatchIndex = i;
+            }
+        }
+    }
+
+    public void ResetWaypointColors()
+    {
+        for (int i = 0; i < randomPaths.Count; i++)
+        {
+            for (int j = 0; j < randomPaths[i].transform.GetChild(0).childCount; j++)
+            {
+                randomPaths[i].transform.GetChild(0).GetChild(j).GetComponent<Image>().color = dragHandle.waypointGrey;
+            }
         }
     }
 

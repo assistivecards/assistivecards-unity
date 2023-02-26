@@ -26,7 +26,11 @@ public class BoardCreatorHatchMatch : MonoBehaviour
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     private List<string> cardNames = new List<string>();
     private int tempRandomValue;
-    private List<int> randomValues = new List<int>();
+    public List<int> randomValues = new List<int>();
+
+    public List<GameObject> cards = new List<GameObject>();
+    public GameObject card;
+    public bool levelEnd;
 
     private void Awake()
     {
@@ -91,6 +95,8 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         card1.transform.name = cardNames[randomValues[_randomValue]];
         card1.transform.SetParent(this.transform);
         card1.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+
+        cards.Add(card1);
     }
 
     private async void  GenerateActualCard(string _packSlug, Transform _cardPosition, int _randomValue)
@@ -108,6 +114,8 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         card1.transform.name = cardNames[randomValues[_randomValue]];
         card1.transform.SetParent(this.transform);
         card1.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+        card = card1;
+        cards.Add(card1);
     }
 
     public void GeneratStylized()
@@ -117,5 +125,28 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         GenerateCard(packSelectionPanel.selectedPackElement.name, card3Position, 3);
         egg.SetActive(true);
         GenerateActualCard(packSelectionPanel.selectedPackElement.name, cardPosition, Random.Range(1,3));
+    }
+
+    private void FixedUpdate() 
+    {
+        if(levelEnd)
+        {
+            ResetBoard();
+            levelEnd = false;
+        }
+    }
+
+    public void ResetBoard()
+    {
+        foreach (var card in cards)
+        {
+            Destroy(card);
+        }
+        cards.Clear();
+        egg.GetComponent<EggController>().clickCount = 0;
+        LeanTween.scale(egg, Vector3.one, 0.01f);
+        randomValues.Clear();
+        CreateRandomValue();
+        GeneratStylized();     
     }
 }

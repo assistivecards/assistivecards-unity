@@ -38,6 +38,7 @@ public class CardBlastFillGrid : MonoBehaviour
     private RectTransform rect;
 
     public List<CardCrushCell> topCells = new List<CardCrushCell>();
+    public List<CardCrushCell> bottomCells = new List<CardCrushCell>();
     private Vector3 startPosition;
     public List<GameObject> moveableCards = new List<GameObject>();
     private bool oneTime = false;
@@ -96,8 +97,9 @@ public class CardBlastFillGrid : MonoBehaviour
     {
         GenerateBoard(packSelectionPanel.selectedPackElement.name);
         GetTopCells();
+        GetBottomCells();
         canMatch = true;
-        Debug.Log("GENERATE");
+        loadingScreen.SetActive(true);
     }
 
     private async void  GenerateBoard(string _packSlug)
@@ -105,7 +107,6 @@ public class CardBlastFillGrid : MonoBehaviour
         isOnGame = true;
         await CacheCards(_packSlug);
         CreateRandomValue();
-        loadingScreen.SetActive(true);
         for(int i = 0; i < cardCrushGrid.allCells.Count; i++)
         {
             GameObject card = Instantiate(cardPrefab, cardCrushGrid.allCells[i].transform.position, Quaternion.identity);
@@ -140,7 +141,11 @@ public class CardBlastFillGrid : MonoBehaviour
 
     private void FixedUpdate() 
     {
-        ResetScene();
+        if(!canMatch && !oneTime && cardTypeCount > 3)
+        {
+            ResetMatch();
+        }
+
         if(scoreInt < 0)
         {
             scoreInt = 0;
@@ -153,7 +158,6 @@ public class CardBlastFillGrid : MonoBehaviour
             {
                 if(cell.isEmpty)
                 {
-                    //SpawnNewCard();
                     RefillBoard();
                 }
             }
@@ -161,6 +165,24 @@ public class CardBlastFillGrid : MonoBehaviour
         if(scoreInt >= 100)
         {
             isOnGame = false;
+        }
+    }
+
+    public void CheckPossibleMatch()
+    {
+        foreach(var cell in cardCrushGrid.allCells)
+        {
+            if(cell.card != null)
+            {
+                if(cell.card.GetComponent<CardBlastElement>().matcheable)
+                {
+                    canMatch = true;
+                }
+                else
+                {
+                    canMatch = false;
+                }
+            }
         }
     }
 
@@ -199,19 +221,9 @@ public class CardBlastFillGrid : MonoBehaviour
 
     }
 
-    private void CheckPossibleMatch()
-    {
-        if(isOnGame)
-        {
-            canMatch = false;
-        }
-    }
-
     private void OnRefillBool()
     {
-        //soundController.match = true;
         isOnRefill = false;
-        CheckPossibleMatch();
     }
 
     public void SetBoardDifficulty(int _cardTypeCount)
@@ -273,6 +285,17 @@ public class CardBlastFillGrid : MonoBehaviour
         }   
     }
 
+    private void GetBottomCells()
+    {
+        foreach(var cell in cardCrushGrid.allCells)
+        {
+            if(cell.y == 0)
+            {
+                bottomCells.Add(cell);
+            }
+        }   
+    }
+
     public void ResetGrid()
     {
         foreach(var cell in cardCrushGrid.allCells)
@@ -303,6 +326,22 @@ public class CardBlastFillGrid : MonoBehaviour
     public static void SetBottom(RectTransform rt, float bottom)
     {
         rt.offsetMin = new Vector2(rt.offsetMin.x, bottom);
+    }
+
+    private void ResetMatch()
+    {
+            foreach(var cell in bottomCells)
+            {
+                if(cell.card != null)
+                {
+                    if(cell.card.GetComponent<CardBlastElement>() != null)
+                    {
+                        cell.card.GetComponent<CardBlastElement>().DestroyCard();
+                    }
+                }
+            }
+            oneTime = true;
+            Invoke("OneTimeFalse", 1f);
     }
 
     private async void ResetScene()

@@ -68,6 +68,6 @@ public class SoundController : MonoBehaviour
     public void TTSCardName()
     {
         gameAPI.Speak(matchedList.Last());
-        Invoke("ResetLists", 2);
+        Invoke("ResetLists", 0.5f);
     }
 }

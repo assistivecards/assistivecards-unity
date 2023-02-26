@@ -30,6 +30,9 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     public List<GameObject> canMatch = new List<GameObject>();
     public bool isMatched;
     public bool isMoved;
+    public bool matcheable;
+
+    private bool oneTime = true;
 
 
     private void OnEnable() 
@@ -344,9 +347,15 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                 if(!canMatch.Contains(this.gameObject))
                 {
                     cardBlastFillGrid.canMatch = true;
+                    matcheable = true;
                     canMatch.Clear();
                 }
-                
+                else
+                {
+                    matcheable = false;
+                    cardBlastFillGrid.CheckPossibleMatch();
+
+                }
             }
         }
     }
@@ -383,5 +392,18 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
             LeanTween.scale(card, new Vector3(0.5f, 0.5f, 0.5f), 0.1f);   
         }
         Invoke("DestroyMatched", 0.1f);
+    }
+
+    public void DestroyCard()
+    {
+        cardBlastFillGrid.isOnRefill = true;
+        LeanTween.scale(this.gameObject, new Vector3(0.5f, 0.5f, 0.5f), 0.1f);  
+        Invoke("DestroySelf", 0.1f);
+    }
+
+    private void DestroySelf()
+    {
+        this.transform.GetComponentInParent<CardCrushCell>().isEmpty = true;
+        Destroy(this.gameObject);
     }
 }

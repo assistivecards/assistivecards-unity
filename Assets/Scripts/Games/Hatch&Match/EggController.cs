@@ -42,29 +42,29 @@ public class EggController : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 
             if(clickCount == 1)
             {
-                animator.SetFloat("Phase", 1);
+                animator.SetTrigger("Phase1");
                 GetComponent<Image>().sprite = eggPhase1;
             }
             else if(clickCount == 2)
             {
-                animator.SetFloat("Phase", 2);
+                animator.SetTrigger("Phase2");
                 GetComponent<Image>().sprite = eggPhase2;
             }
             else if(clickCount == 3)
             {
-                animator.SetFloat("Phase", 3);
+                animator.SetTrigger("Phase3");
                 GetComponent<Image>().sprite = eggPhase3;
             }
             else if(clickCount == 4)
             {
-                animator.SetFloat("Phase", 4);
+                animator.SetTrigger("Phase4");
                 GetComponent<Image>().sprite = eggPhase4;
             }
             else if(clickCount >= 5)
             {
                 LeanTween.scale(this.gameObject, Vector3.zero, 0.5f).setOnComplete(ResetEgg);
                 LeanTween.scale(card, Vector3.one * 0.5f, 0.5f);
-                animator.SetFloat("Phase", 6);
+                animator.SetTrigger("Empty");
             }
         }
     }
@@ -73,5 +73,9 @@ public class EggController : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     {
         animator.SetFloat("Phase", 0);
         GetComponent<Image>().sprite = eggPhase0;
+        animator.ResetTrigger("Phase1");
+        animator.ResetTrigger("Phase2");
+        animator.ResetTrigger("Phase3");
+        animator.ResetTrigger("Phase4");
     }
 }

@@ -2422,6 +2422,7 @@ MonoBehaviour:
   cardPosition: {fileID: 75126644}
   egg: {fileID: 409572155}
   cardTypeCount: 3
+  levelCount: 0
   cachedCards:
     cards: []
   cardsList: []

@@ -21,6 +21,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
     [SerializeField] private Transform cardPosition;
     [SerializeField] private GameObject egg;
     public int cardTypeCount;
+    public int levelCount;
 
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
@@ -126,6 +127,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         GenerateCard(packSelectionPanel.selectedPackElement.name, card2Position, 2);
         GenerateCard(packSelectionPanel.selectedPackElement.name, card3Position, 3);
         egg.SetActive(true);
+        LeanTween.scale(egg, Vector3.one, 1f);
         Invoke("GenerateStylizedCard", 0.5f);
     }
 
@@ -154,8 +156,8 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         egg.GetComponent<EggController>().clickCount = 0;
         randomValues.Clear();
         CreateRandomValue();
-        LeanTween.scale(egg, Vector3.one, 1f);
         boardCreated = false;
         Invoke("GeneratStylized", 1f);     
+        levelCount++;
     }
 }

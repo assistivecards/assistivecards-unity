@@ -30,6 +30,10 @@ public class DrawLinesBoardGenerator : MonoBehaviour
     private string shownImageSlug;
     public int correctMatchIndex;
     [SerializeField] DragHandle dragHandle;
+    private float refWidth = 1170;
+    private float refHeight = 2532;
+    [SerializeField] Canvas gameCanvas;
+    private bool isScreenSmall = false;
 
     private void Awake()
     {
@@ -40,6 +44,11 @@ public class DrawLinesBoardGenerator : MonoBehaviour
     {
         gameAPI.PlayMusic();
         UIController = gameObject.GetComponent<DrawLinesUIController>();
+        if (Screen.width < 1000 || Screen.height < 1000)
+            isScreenSmall = true;
+        else
+            isScreenSmall = false;
+
     }
 
     private void OnEnable()
@@ -72,7 +81,7 @@ public class DrawLinesBoardGenerator : MonoBehaviour
         ChooseRandomPaths();
         PlaceSprites();
         FindCorrectMatchIndex();
-        ScaleImagesUp();
+        ScalePathsUp();
         Invoke("TriggerUpdatePaths", .15f);
         Invoke("PlaceHandles", .25f);
         backButton.SetActive(true);
@@ -93,17 +102,25 @@ public class DrawLinesBoardGenerator : MonoBehaviour
 
     }
 
-    public void ScaleImagesUp()
+    public void ScalePathsUp()
     {
-        LeanTween.scale(cardToBeMatched.gameObject, Vector3.one, .15f);
-        for (int i = 0; i < options.Count; i++)
+        if (isScreenSmall)
         {
-            LeanTween.alpha(options[i].gameObject.GetComponent<RectTransform>(), 1f, .01f);
-            LeanTween.scale(options[i].gameObject, Vector3.one, .15f);
+            for (int i = 0; i < pathGroup1.Count; i++)
+            {
+                pathGroup1[i].transform.localPosition = new Vector3(pathGroup1[i].transform.localPosition.x, 50, 0);
+                pathGroup2[i].transform.localPosition = new Vector3(40, pathGroup2[i].transform.localPosition.y, 0);
+                pathGroup3[i].transform.localPosition = new Vector3(pathGroup3[i].transform.localPosition.x, -50, 0);
+            }
         }
+
         for (int i = 0; i < randomPaths.Count; i++)
         {
-            LeanTween.scale(randomPaths[i], Vector3.one, .15f);
+            // LeanTween.scale(randomPaths[i], new Vector3((refHeight / Screen.width), (refWidth / Screen.height), 1), .15f);
+            if (isScreenSmall)
+                LeanTween.scale(randomPaths[i], Vector3.one * 1.3f, .15f);
+            else
+                LeanTween.scale(randomPaths[i], Vector3.one, .15f);
             handles[i].SetParent(randomPaths[i].transform);
         }
 
@@ -213,6 +230,8 @@ public class DrawLinesBoardGenerator : MonoBehaviour
             LeanTween.scale(handles[i].gameObject, Vector3.one * 0.5f, .15f);
             handles[i].gameObject.GetComponent<DragHandle>().enabled = true;
         }
+
+        ScaleOptionsUp();
     }
 
     public void DisablePathsAndHandles()
@@ -252,6 +271,19 @@ public class DrawLinesBoardGenerator : MonoBehaviour
             {
                 randomPaths[i].transform.GetChild(0).GetChild(j).GetComponent<Image>().color = dragHandle.waypointGrey;
             }
+        }
+    }
+
+    public void ScaleOptionsUp()
+    {
+        cardToBeMatched.transform.position = new Vector3(handles[0].position.x, cardToBeMatched.transform.position.y, 0);
+        float xPos = Mathf.Abs(cardToBeMatched.transform.localPosition.x);
+        LeanTween.scale(cardToBeMatched.gameObject, Vector3.one, .15f);
+        for (int i = 0; i < options.Count; i++)
+        {
+            options[i].transform.localPosition = new Vector3(xPos, options[i].transform.localPosition.y, options[i].transform.localPosition.z);
+            LeanTween.alpha(options[i].gameObject.GetComponent<RectTransform>(), 1f, .01f);
+            LeanTween.scale(options[i].gameObject, Vector3.one, .15f);
         }
     }
 

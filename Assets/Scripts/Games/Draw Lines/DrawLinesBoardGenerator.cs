@@ -33,6 +33,7 @@ public class DrawLinesBoardGenerator : MonoBehaviour
     private float refWidth = 1170;
     private float refHeight = 2532;
     [SerializeField] Canvas gameCanvas;
+    private bool isScreenSmall = false;
 
     private void Awake()
     {
@@ -43,6 +44,11 @@ public class DrawLinesBoardGenerator : MonoBehaviour
     {
         gameAPI.PlayMusic();
         UIController = gameObject.GetComponent<DrawLinesUIController>();
+        if (Screen.width < 1000 || Screen.height < 1000)
+            isScreenSmall = true;
+        else
+            isScreenSmall = false;
+
     }
 
     private void OnEnable()
@@ -98,11 +104,23 @@ public class DrawLinesBoardGenerator : MonoBehaviour
 
     public void ScalePathsUp()
     {
+        if (isScreenSmall)
+        {
+            for (int i = 0; i < pathGroup1.Count; i++)
+            {
+                pathGroup1[i].transform.localPosition = new Vector3(pathGroup1[i].transform.localPosition.x, 50, 0);
+                pathGroup2[i].transform.localPosition = new Vector3(40, pathGroup2[i].transform.localPosition.y, 0);
+                pathGroup3[i].transform.localPosition = new Vector3(pathGroup3[i].transform.localPosition.x, -50, 0);
+            }
+        }
 
         for (int i = 0; i < randomPaths.Count; i++)
         {
             // LeanTween.scale(randomPaths[i], new Vector3((refHeight / Screen.width), (refWidth / Screen.height), 1), .15f);
-            LeanTween.scale(randomPaths[i], Vector3.one, .15f);
+            if (isScreenSmall)
+                LeanTween.scale(randomPaths[i], Vector3.one * 1.3f, .15f);
+            else
+                LeanTween.scale(randomPaths[i], Vector3.one, .15f);
             handles[i].SetParent(randomPaths[i].transform);
         }
 

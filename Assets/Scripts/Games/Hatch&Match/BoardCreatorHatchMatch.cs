@@ -139,14 +139,14 @@ public class BoardCreatorHatchMatch : MonoBehaviour
 
     private void FixedUpdate() 
     {
-        if(levelEnd)
+        if(levelEnd && levelCount < 6)
         {
-            ResetBoard();
+            ReloadBoard();
             levelEnd = false;
         }
     }
 
-    public void ResetBoard()
+    private void ReloadBoard()
     {
         foreach (var card in cards)
         {
@@ -159,5 +159,23 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         boardCreated = false;
         Invoke("GeneratStylized", 1f);     
         levelCount++;
+    }
+
+    public void ResetBoard()
+    {
+        foreach (var card in cards)
+        {
+            Destroy(card);
+        }
+        cards.Clear();
+        egg.GetComponent<EggController>().clickCount = 0;
+        LeanTween.scale(egg, Vector3.zero, 0.1f);
+        randomValues.Clear();
+        boardCreated = false;    
+    }
+
+    public void ResetLevelCount()
+    {
+        levelCount = 0;
     }
 }

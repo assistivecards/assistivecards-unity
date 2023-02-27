@@ -18,8 +18,8 @@ public class HatchMatchUIController : MonoBehaviour
     {
         if(boardCreatorHatchMatch.levelCount > 5)
         {
-            // boardCreatorHatchMatch.ResetBoard();
-            // levelChange.SetActive(true);
+            boardCreatorHatchMatch.ResetBoard();
+            levelChange.SetActive(true);
         }
     }
 

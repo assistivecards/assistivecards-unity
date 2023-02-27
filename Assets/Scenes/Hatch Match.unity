@@ -479,6 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19aa06fd4541f42d0af6fbf166225eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boardCreatorHatchMatch: {fileID: 2048667398}
   eggPhase1: {fileID: 21300000, guid: 3ca78d32269de436b8bc13499c16941c, type: 3}
   eggPhase2: {fileID: 21300000, guid: 71e1cf20a59b14ea5b465c0bb098ea0b, type: 3}
   eggPhase3: {fileID: 21300000, guid: 606ccdd0717ad4d6eb137d3f8811c73d, type: 3}
@@ -2378,9 +2379,11 @@ MonoBehaviour:
   cachedCards:
     cards: []
   cardsList: []
+  randomValues: 
   cards: []
-  card: {fileID: 0}
   levelEnd: 0
+  boardCreated: 0
+  card: {fileID: 0}
 --- !u!114 &2048667399
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class CardElementHatchMatch : MonoBehaviour, IPointerDownHandler, IDragHa
 {
     private EggController eggController;
     private BoardCreatorHatchMatch boardCreatorHatchMatch;
-    public bool levelEnd;
+    public bool match;
 
     private void Start() 
     {
@@ -22,7 +22,8 @@ public class CardElementHatchMatch : MonoBehaviour, IPointerDownHandler, IDragHa
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        this.transform.position = eventData.position;
+        if(!match)
+            this.transform.position = eventData.position;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -31,7 +32,13 @@ public class CardElementHatchMatch : MonoBehaviour, IPointerDownHandler, IDragHa
         
         if(other.gameObject.name == this.gameObject.name)
         {
-            boardCreatorHatchMatch.levelEnd = true;
+            match = true;
+            LeanTween.move(this.gameObject, other.transform.position, 0.75f).setOnComplete(LevelEnd);
         }
+    }
+
+    private void LevelEnd()
+    {
+        boardCreatorHatchMatch.levelEnd = true;
     }
 }

@@ -29,8 +29,10 @@ public class BoardCreatorHatchMatch : MonoBehaviour
     public List<int> randomValues = new List<int>();
 
     public List<GameObject> cards = new List<GameObject>();
-    public GameObject card;
     public bool levelEnd;
+    public bool boardCreated = false;
+
+    public GameObject card;
 
     private void Awake()
     {
@@ -112,9 +114,9 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         cardTexture.filterMode = FilterMode.Bilinear;
 
         card1.transform.name = cardNames[randomValues[_randomValue]];
-        card1.transform.SetParent(this.transform);
         card1.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
         card = card1;
+        card1.transform.SetParent(this.transform);
         cards.Add(card1);
     }
 
@@ -124,7 +126,13 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         GenerateCard(packSelectionPanel.selectedPackElement.name, card2Position, 2);
         GenerateCard(packSelectionPanel.selectedPackElement.name, card3Position, 3);
         egg.SetActive(true);
-        GenerateActualCard(packSelectionPanel.selectedPackElement.name, cardPosition, Random.Range(1,3));
+        Invoke("GenerateStylizedCard", 0.5f);
+    }
+
+    private void GenerateStylizedCard()
+    {
+        GenerateActualCard(packSelectionPanel.selectedPackElement.name, cardPosition, Random.Range(1,4));
+        boardCreated = true;
     }
 
     private void FixedUpdate() 
@@ -144,9 +152,10 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         }
         cards.Clear();
         egg.GetComponent<EggController>().clickCount = 0;
-        LeanTween.scale(egg, Vector3.one, 0.01f);
         randomValues.Clear();
         CreateRandomValue();
-        GeneratStylized();     
+        LeanTween.scale(egg, Vector3.one, 1f);
+        boardCreated = false;
+        Invoke("GeneratStylized", 1f);     
     }
 }

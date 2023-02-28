@@ -21,6 +21,13 @@ public class EggController : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 
     public int clickCount;
 
+    public Color[] colors;
+
+    private void OnEnable() 
+    {
+        this.GetComponent<Image>().color = colors[Random.Range(0, colors.Length)];
+    }
+
     private void Awake() 
     {
         animator = GetComponent<Animator>();
@@ -71,6 +78,7 @@ public class EggController : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 
     private void ResetEgg()
     {
+        this.GetComponent<Image>().color = colors[Random.Range(0, colors.Length)];
         animator.SetFloat("Phase", 0);
         GetComponent<Image>().sprite = eggPhase0;
         animator.ResetTrigger("Phase1");

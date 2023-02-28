@@ -19,6 +19,7 @@ public class HatchMatchUIController : MonoBehaviour
         if(boardCreatorHatchMatch.levelCount > 5)
         {
             boardCreatorHatchMatch.ResetBoard();
+            LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.15f);
             levelChange.SetActive(true);
         }
     }

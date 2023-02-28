@@ -9,6 +9,10 @@ public class HatchMatchUIController : MonoBehaviour
     [SerializeField] private GameObject levelChange;
     private LevelChangeScreenHatchMatch levelChangeScreenHatchMatch;
 
+    [SerializeField] private GameObject backButton;
+    [SerializeField] private GameObject helloText;
+    [SerializeField] private GameObject packSelectionPanel;
+
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
@@ -17,11 +21,21 @@ public class HatchMatchUIController : MonoBehaviour
 
     private void FixedUpdate() 
     {
-        // if(boardCreatorHatchMatch.levelCount > 5)
-        // {
-        //     levelChange.SetActive(true);
-        //     LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.5f);
-        // }
+        if(levelChangeScreenHatchMatch.isOnpackSelect)
+        {
+            backButton.SetActive(false);
+            helloText.SetActive(false);
+        }
+        if(boardCreatorHatchMatch.boardCreated)
+        {
+            backButton.SetActive(true);
+            helloText.SetActive(false);
+        }
+        if(packSelectionPanel.activeInHierarchy)
+        {
+            helloText.SetActive(true);
+            backButton.SetActive(false);
+        }
     }
 
 }

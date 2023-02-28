@@ -218,5 +218,6 @@
 	"score":"Score: ",
 	"warning-nickname":"Nickname is too long!",
 	"circle_the_card":"Circle the $1",
-	"settings_tts":"Text-to-Speech"
+	"settings_tts":"Text-to-Speech",
+	"find_the_card":"Find the $1"
 }

@@ -12,6 +12,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
     public string selectedLangCode;
 
     [SerializeField] private PackSelectionPanel packSelectionPanel;
+    [SerializeField] private LevelChangeScreenHatchMatch levelChangeScreenHatchMatch;
 
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject actualCardPrefab;
@@ -25,8 +26,8 @@ public class BoardCreatorHatchMatch : MonoBehaviour
 
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
-    private List<string> cardNames = new List<string>();
-    private int tempRandomValue;
+    public List<string> cardNames = new List<string>();
+    public int tempRandomValue;
     public List<int> randomValues = new List<int>();
 
     public List<GameObject> cards = new List<GameObject>();
@@ -34,6 +35,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
     public bool boardCreated = false;
 
     public GameObject card;
+    public GameObject[] clones;
 
     private void Awake()
     {
@@ -85,12 +87,9 @@ public class BoardCreatorHatchMatch : MonoBehaviour
 
     private async void  GenerateCard(string _packSlug, Transform _cardPosition, int _randomValue)
     {
-        await CacheCards(_packSlug);
-        CreateRandomValue();
         var cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[randomValues[_randomValue]], 512);
         
         GameObject card1 = Instantiate(cardPrefab, _cardPosition.position, Quaternion.identity);
-        
 
         cardTexture.wrapMode = TextureWrapMode.Clamp;
         cardTexture.filterMode = FilterMode.Bilinear;
@@ -104,12 +103,9 @@ public class BoardCreatorHatchMatch : MonoBehaviour
 
     private async void  GenerateActualCard(string _packSlug, Transform _cardPosition, int _randomValue)
     {
-        await CacheCards(_packSlug);
-        CreateRandomValue();
         var cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[randomValues[_randomValue]], 512);
         
         GameObject card1 = Instantiate(actualCardPrefab, _cardPosition.position, Quaternion.identity);
-        
 
         cardTexture.wrapMode = TextureWrapMode.Clamp;
         cardTexture.filterMode = FilterMode.Bilinear;
@@ -121,8 +117,11 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         cards.Add(card1);
     }
 
-    public void GeneratStylized()
+    public async void GeneratStylized()
     {
+        await CacheCards(packSelectionPanel.selectedPackElement.name);
+        CreateRandomValue();
+
         GenerateCard(packSelectionPanel.selectedPackElement.name, card1Position, 1);
         GenerateCard(packSelectionPanel.selectedPackElement.name, card2Position, 2);
         GenerateCard(packSelectionPanel.selectedPackElement.name, card3Position, 3);
@@ -137,19 +136,17 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         boardCreated = true;
     }
 
-    private void FixedUpdate() 
+    public void NewLevel() 
     {
-        if(levelEnd && levelCount < 6)
-        {
-            ReloadBoard();
-            levelEnd = false;
-        }
+        ReloadBoard();
+        levelEnd = false;
     }
 
     private void ReloadBoard()
     {
         foreach (var card in cards)
         {
+            LeanTween.scale(card, Vector3.zero, 0.15f);
             Destroy(card);
         }
         cards.Clear();
@@ -159,6 +156,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         boardCreated = false;
         Invoke("GeneratStylized", 1f);     
         levelCount++;
+        ClearLevel();
     }
 
     public void ResetBoard()
@@ -172,10 +170,32 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         LeanTween.scale(egg, Vector3.zero, 0.1f);
         randomValues.Clear();
         boardCreated = false;    
+        ClearLevel();
+    }
+
+    public void ActivateLevelChange()
+    {
+        levelChangeScreenHatchMatch.gameObject.SetActive(true);
+        levelChangeScreenHatchMatch.LevelScreenTween();
     }
 
     public void ResetLevelCount()
     {
         levelCount = 0;
+        cardsList.Clear();
+        cardNames.Clear();
+        tempRandomValue = 0;
+        randomValues.Clear();
+        cards.Clear();
+    }
+
+    private void ClearLevel()
+    {
+        clones = GameObject.FindGameObjectsWithTag("cardBlast");
+
+        foreach(var clone in clones)
+        {
+            Destroy(clone);
+        }
     }
 }

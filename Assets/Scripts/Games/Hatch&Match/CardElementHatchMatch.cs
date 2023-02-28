@@ -8,6 +8,8 @@ public class CardElementHatchMatch : MonoBehaviour, IPointerDownHandler, IDragHa
     private EggController eggController;
     private BoardCreatorHatchMatch boardCreatorHatchMatch;
     public bool match;
+    private GameObject levelChange;
+    private LevelChangeScreenHatchMatch levelChangeScreenHatchMatch;
 
     private void Start() 
     {
@@ -27,9 +29,7 @@ public class CardElementHatchMatch : MonoBehaviour, IPointerDownHandler, IDragHa
     }
 
     void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log(other.gameObject.name);
-        
+    {   
         if(other.gameObject.name == this.gameObject.name)
         {
             match = true;
@@ -40,5 +40,15 @@ public class CardElementHatchMatch : MonoBehaviour, IPointerDownHandler, IDragHa
     private void LevelEnd()
     {
         boardCreatorHatchMatch.levelEnd = true;
+
+        if(boardCreatorHatchMatch.levelCount < 6)
+        {
+            boardCreatorHatchMatch.NewLevel();
+        }
+        else
+        {
+            boardCreatorHatchMatch.ActivateLevelChange();
+            boardCreatorHatchMatch.ResetBoard();
+        }
     }
 }

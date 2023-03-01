@@ -42,6 +42,9 @@ public class CardBlastFillGrid : MonoBehaviour
     private Vector3 startPosition;
     public List<GameObject> moveableCards = new List<GameObject>();
     private bool oneTime = false;
+
+    AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
+    public List<string> cardLocalNames = new List<string>();
     
 
     private void Awake()
@@ -56,6 +59,7 @@ public class CardBlastFillGrid : MonoBehaviour
         selectedLangCode = await gameAPI.GetSystemLanguageCode();
 
         cachedCards = await gameAPI.GetCards("en", _packSlug);
+        cachedLocalCards = await gameAPI.GetCards(selectedLangCode, _packSlug);
         packSlug = _packSlug;
 
         cardsList = cachedCards.cards.ToList();
@@ -63,6 +67,7 @@ public class CardBlastFillGrid : MonoBehaviour
         for(int i = 0; i < cachedCards.cards.Length; i++)
         {
             cardNames.Add(cachedCards.cards[i].title.ToLower().Replace(" ", "-"));
+            cardLocalNames.Add(cachedLocalCards.cards[i].title);
         }
     }
 
@@ -126,6 +131,7 @@ public class CardBlastFillGrid : MonoBehaviour
             card.GetComponent<CardBlastElement>().x = cardCrushGrid.allCells[i].x;
             card.GetComponent<CardBlastElement>().y = cardCrushGrid.allCells[i].y;
             card.GetComponent<CardBlastElement>().type = cardNames[cardImageRandom];
+            card.GetComponent<CardBlastElement>().localName = cardLocalNames[cardImageRandom];
         }
 
         foreach(var cell in cardCrushGrid.allCells)
@@ -213,6 +219,7 @@ public class CardBlastFillGrid : MonoBehaviour
                     card.GetComponent<CardBlastElement>().x = cell.x;
                     card.GetComponent<CardBlastElement>().y = cell.y;
                     card.GetComponent<CardBlastElement>().type = cardNames[cardImageRandom];
+                    card.GetComponent<CardBlastElement>().localName = cardLocalNames[cardImageRandom];
                 }
 
             }

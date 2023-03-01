@@ -270,7 +270,13 @@ public class ScratchImage : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
             mouseStatus = 1;
         else if (Input.GetMouseButton(0))
+        {
             mouseStatus = 2;
+            if (!gameObject.GetComponent<ScratchManager>().isFullyScratched)
+            {
+                gameObject.GetComponent<ScratchManager>().GetStatsInfo();
+            }
+        }
         else if (Input.GetMouseButtonUp(0))
             mouseStatus = 3;
 

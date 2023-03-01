@@ -131,6 +131,7 @@ public class ScratcherBoardGenerator : MonoBehaviour
         LeanTween.scale(findText.gameObject, Vector3.one, 0.15f);
         for (int i = 0; i < scratchParents.Length; i++)
         {
+            scratchParents[i].transform.GetChild(0).GetComponent<ScratchImage>().ResetMask();
             LeanTween.scale(scratchParents[i].gameObject, Vector3.one, 0.15f);
         }
     }

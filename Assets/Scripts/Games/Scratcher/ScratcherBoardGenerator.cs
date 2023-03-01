@@ -84,6 +84,20 @@ public class ScratcherBoardGenerator : MonoBehaviour
 
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {
+            if (i != correctCardImageIndex)
+            {
+                cardImagesInScene[i].tag = "WrongCard";
+                cardImagesInScene[i].transform.GetChild(0).tag = "WrongCard";
+            }
+            else
+            {
+                cardImagesInScene[correctCardImageIndex].tag = "CorrectCard";
+                cardImagesInScene[correctCardImageIndex].transform.GetChild(0).tag = "CorrectCard";
+            }
+        }
+
+        for (int i = 0; i < cardImagesInScene.Length; i++)
+        {
             cardImagesInScene[i].gameObject.SetActive(true);
             if (cardImagesInScene[i].sprite == null)
             {

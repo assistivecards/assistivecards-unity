@@ -5,11 +5,19 @@ using UnityEngine.EventSystems;
 
 public class CardElementHatchMatch : MonoBehaviour, IPointerDownHandler, IDragHandler
 {
+    GameAPI gameAPI;
     private EggController eggController;
     private BoardCreatorHatchMatch boardCreatorHatchMatch;
     public bool match;
     private GameObject levelChange;
     private LevelChangeScreenHatchMatch levelChangeScreenHatchMatch;
+
+    public string cardName;
+
+    private void Awake() 
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void Start() 
     {
@@ -33,6 +41,7 @@ public class CardElementHatchMatch : MonoBehaviour, IPointerDownHandler, IDragHa
         if(other.gameObject.name == this.gameObject.name)
         {
             match = true;
+            gameAPI.Speak(cardName);
             LeanTween.move(this.gameObject, other.transform.position, 0.75f).setOnComplete(LevelEnd);
         }
     }

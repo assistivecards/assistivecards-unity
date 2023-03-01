@@ -36,6 +36,9 @@ public class BoardCreatorHatchMatch : MonoBehaviour
 
     public GameObject card;
     public GameObject[] clones;
+    private AssistiveCardsSDK.AssistiveCardsSDK.Cards cacheLocalNames;
+
+    private List<string> cardsLocalNames = new List<string>();
 
     private void Awake()
     {
@@ -48,11 +51,14 @@ public class BoardCreatorHatchMatch : MonoBehaviour
 
         cachedCards = await gameAPI.GetCards("en", _packSlug);
 
+        cacheLocalNames = await gameAPI.GetCards(selectedLangCode, _packSlug);
+
         cardsList = cachedCards.cards.ToList();
 
         for(int i = 0; i < cachedCards.cards.Length; i++)
         {
             cardNames.Add(cachedCards.cards[i].title.ToLower().Replace(" ", "-"));
+            cardsLocalNames.Add(cacheLocalNames.cards[i].title);
         }
     }
 
@@ -114,6 +120,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         card1.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
         card = card1;
         card1.transform.SetParent(this.transform);
+        card1.GetComponent<CardElementHatchMatch>().cardName = cardsLocalNames[randomValues[_randomValue]];
         cards.Add(card1);
     }
 
@@ -184,6 +191,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         levelCount = 0;
         cardsList.Clear();
         cardNames.Clear();
+        cardsLocalNames.Clear();
         tempRandomValue = 0;
         randomValues.Clear();
         cards.Clear();

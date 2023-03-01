@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -429, y: 18.999989}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -368.5, y: 25.9041}
+  m_SizeDelta: {x: 182.7085, y: 161.2889}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &75126645
 MonoBehaviour:
@@ -427,7 +427,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -429.0226, y: 25.9041}
+  m_AnchoredPosition: {x: -368.5, y: 25.9041}
   m_SizeDelta: {x: 182.7085, y: 161.2889}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &409572157
@@ -2659,7 +2659,6 @@ MonoBehaviour:
   card: {fileID: 0}
   clones: []
   previousCard: 
-  currentCard: 
   actualCardType: 
 --- !u!114 &2048667399
 MonoBehaviour:
@@ -4901,7 +4900,7 @@ PrefabInstance:
     - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
       propertyPath: musicClip
       value: 
-      objectReference: {fileID: 8300000, guid: 039cbb6c20b64344c842b7ca5ffd2ef8, type: 3}
+      objectReference: {fileID: 8300000, guid: f9e7306d36dc78943a2f4c28ab96cd3d, type: 3}
     - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
       propertyPath: speakable
       value: 

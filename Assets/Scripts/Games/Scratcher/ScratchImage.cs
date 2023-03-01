@@ -2,10 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
-public class ScratchImage : MonoBehaviour
+public class ScratchImage : MonoBehaviour, IDragHandler
 {
     public struct StatData
     {
@@ -54,6 +55,12 @@ public class ScratchImage : MonoBehaviour
     private Vector2 _maskSize;
 
     public Vector2 rtSize => new Vector2(_rt.width, _rt.height);
+    GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
 
     public void ResetMask()
@@ -312,5 +319,11 @@ public class ScratchImage : MonoBehaviour
                 _isDirty = true;
                 break;
         }
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        if (!gameObject.GetComponent<ScratchManager>().isFullyScratched && !Camera.main.transform.GetChild(1).GetComponent<AudioSource>().isPlaying)
+            gameAPI.PlaySFX("Scratch");
     }
 }

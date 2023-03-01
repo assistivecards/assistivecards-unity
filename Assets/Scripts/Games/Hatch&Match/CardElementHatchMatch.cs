@@ -40,10 +40,17 @@ public class CardElementHatchMatch : MonoBehaviour, IPointerDownHandler, IDragHa
     {   
         if(other.gameObject.name == this.gameObject.name)
         {
+            gameAPI.PlaySFX("Success");
+            Invoke("SpeakCardName", 0.5f);
             match = true;
-            gameAPI.Speak(cardName);
             LeanTween.move(this.gameObject, other.transform.position, 0.75f).setOnComplete(LevelEnd);
         }
+    }
+
+    private void SpeakCardName()
+    {
+
+        gameAPI.Speak(cardName);
     }
 
     private void LevelEnd()

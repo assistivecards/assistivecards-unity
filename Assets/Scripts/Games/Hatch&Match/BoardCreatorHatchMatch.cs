@@ -43,6 +43,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+        gameAPI.PlayMusic();
     }
 
     public async Task CacheCards(string _packSlug)

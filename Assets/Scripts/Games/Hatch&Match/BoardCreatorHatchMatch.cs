@@ -40,6 +40,9 @@ public class BoardCreatorHatchMatch : MonoBehaviour
 
     private List<string> cardsLocalNames = new List<string>();
 
+    public string previousCard;
+    public string actualCardType;
+
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
@@ -123,6 +126,8 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         card1.transform.SetParent(this.transform);
         card1.GetComponent<CardElementHatchMatch>().cardName = cardsLocalNames[randomValues[_randomValue]];
         cards.Add(card1);
+
+        actualCardType = cardNames[randomValues[_randomValue]];
     }
 
     public async void GeneratStylized()
@@ -141,7 +146,18 @@ public class BoardCreatorHatchMatch : MonoBehaviour
     private void GenerateStylizedCard()
     {
         GenerateActualCard(packSelectionPanel.selectedPackElement.name, cardPosition, Random.Range(1,4));
-        boardCreated = true;
+
+        if(actualCardType != previousCard)
+        {
+            previousCard = actualCardType;
+            boardCreated = true;
+        }
+        else if(actualCardType == previousCard)
+        {
+            GenerateActualCard(packSelectionPanel.selectedPackElement.name, cardPosition, Random.Range(1,4));
+            boardCreated = true;
+            previousCard = actualCardType;
+        }
     }
 
     public void NewLevel() 

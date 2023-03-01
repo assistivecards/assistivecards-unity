@@ -1,83 +1,38 @@
-/*
- * Author:Misaka-Mikoto
- * Date: 2021-02-08
- * Url:https://github.com/Misaka-Mikoto-Tech/ScratchImage
- */
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
-/// <summary>
-/// ���Թο���ͼ��
-/// </summary>
-public class ScratchImage : MonoBehaviour
+public class ScratchImage : MonoBehaviour, IDragHandler
 {
     public struct StatData
     {
-        public float fillPercent;  // ���ٷֱȣ���0ֵ��
-        public float avgVal;       // ƽ��ֵ
+        public float fillPercent;
+        public float avgVal;
     }
 
-    /// <summary>
-    /// ֱ��ͼͰ��������������shader�ж����һ��, ��С��256
-    /// </summary>
     public const int HISTOGRAM_BINS = 128;
-    /// <summary>
-    /// ��������͸���ȵ�RT���Image�ߴ�ı�����ֵԽС����Խ�ߣ����Ǿ��Ⱥ�Ч��ҲԽ��
-    /// </summary>
     public const float ALPHA_RT_SCALE = 0.4f;
-    /// <summary>
-    /// ÿһ���ε�ʵ���������ޣ�̫����Щ�豸�����쳣��
-    /// </summary>
     public const int INSTANCE_COUNT_PER_BATCH = 200;
 
     public Camera uiCamera;
-    /// <summary>
-    /// �ɰ���ͼ
-    /// </summary>
     public Image maskImage;
-    /// <summary>
-    /// ��ˢ��ͼ
-    /// </summary>
     public Texture2D brushTex;
 
-    /// <summary>
-    /// ��ˢ�ߴ�
-    /// </summary>
     [Range(1f, 200f)]
     public float brushSize = 50f;
-    /// <summary>
-    /// ���Ʋ�������(ֵ������ɵ�������С��������ѹ��)
-    /// TODO �ĳɸ���brushSize�Զ�����
-    /// </summary>
     [Range(1f, 20f)]
     public float paintStep = 5f;
-    /// <summary>
-    /// ��ˢ�ƶ������ֵ
-    /// </summary>
     [Range(1f, 10f)]
     public float moveThreshhold = 2f;
-    /// <summary>
-    /// ��ˢ��͸����
-    /// </summary>
     [Range(0f, 1f)]
     public float brushAlpha = 1f;
-    /// <summary>
-    /// ��ͼ����
-    /// </summary>
     public Material paintMaterial;
-    /// <summary>
-    /// ��������ֱ��ͼ���ݵ�shader
-    /// </summary>
     public ComputeShader histogramShader;
 
-    /// <summary>
-    /// ֱ��ͼ����
-    /// </summary>
     private uint[] _histogramData;
     private ComputeBuffer _histogramBuffer;
     private int _clearShaderKrnl;
@@ -100,11 +55,14 @@ public class ScratchImage : MonoBehaviour
     private Vector2 _maskSize;
 
     public Vector2 rtSize => new Vector2(_rt.width, _rt.height);
+    GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
 
-    /// <summary>
-    /// �����ɰ�
-    /// </summary>
     public void ResetMask()
     {
         SetupPaintContext(true);
@@ -112,10 +70,6 @@ public class ScratchImage : MonoBehaviour
         _isDirty = false;
     }
 
-    /// <summary>
-    /// ��ȡ�ο���ͳ����Ϣ
-    /// </summary>
-    /// <returns></returns>
     public StatData GetStatData()
     {
         if (_histogramShaderKrnl == -1)
@@ -138,8 +92,7 @@ public class ScratchImage : MonoBehaviour
         int dispatchCount = dispatchWidth * dispatchHeight;
 
         StatData ret = new StatData();
-        ret.fillPercent = 1.0f - _histogramData[0] / (dispatchCount * 1.0f); // ��0ֵ����
-
+        ret.fillPercent = 1.0f - _histogramData[0] / (dispatchCount * 1.0f);
         float sum = 0;
         float binScale = (256 / HISTOGRAM_BINS);
         for (int i = 0; i < HISTOGRAM_BINS; i++)
@@ -148,7 +101,6 @@ public class ScratchImage : MonoBehaviour
             sum += i * binScale * count;
         }
         ret.avgVal = sum / dispatchCount;
-        // ����Ͱ������С��256��shader���ֻͳ�Ƶ� 127 * 2 = 254, �޷���ʾ255�����ݣ���˴˴��ѽ��������һ��
         ret.avgVal *= 255.0f / ((HISTOGRAM_BINS - 1) * binScale);
         return ret;
     }
@@ -214,7 +166,7 @@ public class ScratchImage : MonoBehaviour
             }
 
             Vector2 tmpPt = _beginPos + dir * offset;
-            tmpPt -= Vector2.one * brushSize * 0.5f; // ����ˢ���е����Ƶ�
+            tmpPt -= Vector2.one * brushSize * 0.5f;
             offset += paintStep;
 
             _arrInstancingMatrixs[instCount++] = Matrix4x4.TRS(new Vector3(tmpPt.x, tmpPt.y, 0), Quaternion.identity, Vector3.one * brushSize);
@@ -297,7 +249,6 @@ public class ScratchImage : MonoBehaviour
 
                 _histogramShaderGroupSize = new Vector2Int((int)x, (int)y);
 
-                // Ҫ��shaderִ�еĿ���С����ʵ�������ߴ磬�Ա���uv���
                 histogramShader.SetVector("_TexScaledSize", new Vector2(dispatchWidth, dispatchHeight));
             }
         }
@@ -323,11 +274,17 @@ public class ScratchImage : MonoBehaviour
 
         int mouseStatus = 0;// 0��none, 1:down, 2:hold, 3:up
 
-        if (Input.GetMouseButtonDown(0)) // �������
+        if (Input.GetMouseButtonDown(0))
             mouseStatus = 1;
-        else if (Input.GetMouseButton(0)) // �ƶ������ߴ��ڰ���״̬
+        else if (Input.GetMouseButton(0))
+        {
             mouseStatus = 2;
-        else if (Input.GetMouseButtonUp(0)) // �ͷ����
+            if (!gameObject.GetComponent<ScratchManager>().isFullyScratched)
+            {
+                gameObject.GetComponent<ScratchManager>().GetStatsInfo();
+            }
+        }
+        else if (Input.GetMouseButtonUp(0))
             mouseStatus = 3;
 
         if (mouseStatus == 0)
@@ -336,8 +293,6 @@ public class ScratchImage : MonoBehaviour
         Vector2 localPt = Vector2.zero;
         Vector2 mPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         RectTransformUtility.ScreenPointToLocalPointInRectangle(transform as RectTransform, mPos, uiCamera, out localPt);
-        Debug.Log("Mouse position: " + Input.mousePosition);
-        Debug.Log("LocalPt: " + localPt);
 
         //Debug.Log($"pt:{localPt}, status:{mouseStatus}");
 
@@ -364,5 +319,11 @@ public class ScratchImage : MonoBehaviour
                 _isDirty = true;
                 break;
         }
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        if (!gameObject.GetComponent<ScratchManager>().isFullyScratched && !Camera.main.transform.GetChild(1).GetComponent<AudioSource>().isPlaying)
+            gameAPI.PlaySFX("Scratch");
     }
 }

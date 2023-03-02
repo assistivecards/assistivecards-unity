@@ -5,14 +5,17 @@ using UnityEngine;
 public class ScratchManager : MonoBehaviour
 {
     public bool isFullyScratched = false;
+    public float scratchThreshold;
 
     public void GetStatsInfo()
     {
         var data = gameObject.GetComponent<ScratchImage>().GetStatData();
         Debug.Log(gameObject.name + " " + data.fillPercent);
-        if (data.fillPercent == 1f)
+        if (data.fillPercent >= scratchThreshold)
         {
             isFullyScratched = true;
+            gameObject.GetComponent<ScratchImage>().enabled = false;
+            LeanTween.alpha(transform.GetChild(0).GetComponent<RectTransform>(), 0, .25f);
             Debug.Log("Fully Scratched!");
         }
     }

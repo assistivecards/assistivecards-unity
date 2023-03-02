@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFullyScratched: 0
+  scratchThreshold: 0.7
 --- !u!1 &88731552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1320,6 +1321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFullyScratched: 0
+  scratchThreshold: 0.7
 --- !u!1 &906524189
 GameObject:
   m_ObjectHideFlags: 0
@@ -2149,6 +2151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFullyScratched: 0
+  scratchThreshold: 0.7
 --- !u!1 &1551830231
 GameObject:
   m_ObjectHideFlags: 0

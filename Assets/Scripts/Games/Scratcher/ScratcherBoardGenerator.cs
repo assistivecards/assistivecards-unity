@@ -66,48 +66,11 @@ public class ScratcherBoardGenerator : MonoBehaviour
             didLanguageChange = false;
         }
 
-        for (int i = 0; i < cardImagesInScene.Length; i++)
-        {
-            var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
-            CheckIfCardExists(cardToAdd);
-
-            randomImages.Add(await gameAPI.GetCardImage(packSlug, randomCards[i].slug));
-            randomImages[i].wrapMode = TextureWrapMode.Clamp;
-            randomImages[i].filterMode = FilterMode.Bilinear;
-            randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
-        }
-
-        correctCardSlug = randomCards[0].slug;
-        findText.text = gameAPI.Translate(findText.gameObject.name, gameAPI.ToSentenceCase(randomCards[0].title).Replace("-", " "), selectedLangCode);
-        var correctCardImageIndex = Random.Range(0, cardImagesInScene.Length);
-        cardImagesInScene[correctCardImageIndex].sprite = randomSprites[0];
-
-        for (int i = 0; i < cardImagesInScene.Length; i++)
-        {
-            if (i != correctCardImageIndex)
-            {
-                cardImagesInScene[i].tag = "WrongCard";
-                cardImagesInScene[i].transform.GetChild(0).tag = "WrongCard";
-            }
-            else
-            {
-                cardImagesInScene[correctCardImageIndex].tag = "CorrectCard";
-                cardImagesInScene[correctCardImageIndex].transform.GetChild(0).tag = "CorrectCard";
-            }
-        }
-
-        for (int i = 0; i < cardImagesInScene.Length; i++)
-        {
-            cardImagesInScene[i].gameObject.SetActive(true);
-            if (cardImagesInScene[i].sprite == null)
-            {
-                var randomIndex = Random.Range(1, randomSprites.Count);
-                var sprite = randomSprites[randomIndex];
-                randomSprites.RemoveAt(randomIndex);
-                cardImagesInScene[i].sprite = sprite;
-            }
-        }
-
+        PopulateRandomCards();
+        TranslateFindCardText();
+        await PopulateRandomTextures();
+        AssignTags();
+        PlaceSprites();
         ScaleImagesUp();
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);
@@ -156,6 +119,69 @@ public class ScratcherBoardGenerator : MonoBehaviour
     public void EnableBackButton()
     {
         backButton.GetComponent<Button>().interactable = true;
+    }
+
+    public void PopulateRandomCards()
+    {
+        for (int i = 0; i < cardImagesInScene.Length; i++)
+        {
+            var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+            CheckIfCardExists(cardToAdd);
+        }
+
+        correctCardSlug = randomCards[0].slug;
+    }
+
+    public void TranslateFindCardText()
+    {
+        findText.text = gameAPI.Translate(findText.gameObject.name, gameAPI.ToSentenceCase(randomCards[0].title).Replace("-", " "), selectedLangCode);
+    }
+
+    public async Task PopulateRandomTextures()
+    {
+        for (int i = 0; i < cardImagesInScene.Length; i++)
+        {
+            var texture = await gameAPI.GetCardImage(packSlug, randomCards[i].slug);
+            texture.wrapMode = TextureWrapMode.Clamp;
+            texture.filterMode = FilterMode.Bilinear;
+            randomImages.Add(texture);
+            randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
+        }
+    }
+
+    public void AssignTags()
+    {
+        var correctCardImageIndex = Random.Range(0, cardImagesInScene.Length);
+        cardImagesInScene[correctCardImageIndex].sprite = randomSprites[0];
+
+        for (int i = 0; i < cardImagesInScene.Length; i++)
+        {
+            if (i != correctCardImageIndex)
+            {
+                cardImagesInScene[i].tag = "WrongCard";
+                cardImagesInScene[i].transform.GetChild(0).tag = "WrongCard";
+            }
+            else
+            {
+                cardImagesInScene[correctCardImageIndex].tag = "CorrectCard";
+                cardImagesInScene[correctCardImageIndex].transform.GetChild(0).tag = "CorrectCard";
+            }
+        }
+    }
+
+    public void PlaceSprites()
+    {
+        for (int i = 0; i < cardImagesInScene.Length; i++)
+        {
+            cardImagesInScene[i].gameObject.SetActive(true);
+            if (cardImagesInScene[i].sprite == null)
+            {
+                var randomIndex = Random.Range(1, randomSprites.Count);
+                var sprite = randomSprites[randomIndex];
+                randomSprites.RemoveAt(randomIndex);
+                cardImagesInScene[i].sprite = sprite;
+            }
+        }
     }
 
 

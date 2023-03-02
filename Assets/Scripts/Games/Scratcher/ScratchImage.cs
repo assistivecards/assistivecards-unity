@@ -279,6 +279,13 @@ public class ScratchImage : MonoBehaviour, IDragHandler
         else if (Input.GetMouseButton(0))
         {
             mouseStatus = 2;
+
+            if (!gameObject.GetComponent<ScratchManager>().isFullyScratched)
+            {
+                gameObject.GetComponent<ScratchManager>().GetStatsInfo();
+            }
+
+            gameObject.GetComponent<ScratcherMatchDetection>().DetectMatch();
         }
         else if (Input.GetMouseButtonUp(0))
             mouseStatus = 3;
@@ -319,12 +326,14 @@ public class ScratchImage : MonoBehaviour, IDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (!gameObject.GetComponent<ScratchManager>().isFullyScratched)
-        {
-            gameObject.GetComponent<ScratchManager>().GetStatsInfo();
-        }
+        // if (!gameObject.GetComponent<ScratchManager>().isFullyScratched)
+        // {
+        //     gameObject.GetComponent<ScratchManager>().GetStatsInfo();
+        // }
 
         if (!gameObject.GetComponent<ScratchManager>().isFullyScratched && !Camera.main.transform.GetChild(1).GetComponent<AudioSource>().isPlaying)
             gameAPI.PlaySFX("Scratch");
+
+        // gameObject.GetComponent<ScratcherMatchDetection>().DetectMatch();
     }
 }

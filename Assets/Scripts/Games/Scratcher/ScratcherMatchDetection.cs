@@ -5,6 +5,7 @@ using UnityEngine;
 public class ScratcherMatchDetection : MonoBehaviour
 {
     private ScratchManager scratchManager;
+    [SerializeField] ScratchImage[] scratchImages;
 
     private void Start()
     {
@@ -16,6 +17,10 @@ public class ScratcherMatchDetection : MonoBehaviour
         if (scratchManager.isFullyScratched && gameObject.tag == "CorrectCard")
         {
             Debug.Log("Correct Match!");
+            for (int i = 0; i < scratchImages.Length; i++)
+            {
+                scratchImages[i].enabled = false;
+            }
         }
         else if (scratchManager.isFullyScratched && gameObject.tag == "WrongCard")
         {

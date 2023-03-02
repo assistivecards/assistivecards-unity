@@ -21,6 +21,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
     [SerializeField] private Transform card3Position;
     [SerializeField] private Transform cardPosition;
     [SerializeField] private GameObject egg;
+    [SerializeField] private PackSelectionScreenUIController packageSelectManager;
     public int cardTypeCount;
     public int levelCount;
 
@@ -36,9 +37,9 @@ public class BoardCreatorHatchMatch : MonoBehaviour
 
     public GameObject card;
     public GameObject[] clones;
-    private AssistiveCardsSDK.AssistiveCardsSDK.Cards cacheLocalNames;
+    public AssistiveCardsSDK.AssistiveCardsSDK.Cards cacheLocalNames;
 
-    private List<string> cardsLocalNames = new List<string>();
+    public List<string> cardsLocalNames = new List<string>();
 
     public string previousCard;
     public string actualCardType;
@@ -132,15 +133,18 @@ public class BoardCreatorHatchMatch : MonoBehaviour
 
     public async void GeneratStylized()
     {
-        await CacheCards(packSelectionPanel.selectedPackElement.name);
-        CreateRandomValue();
+        if(packageSelectManager.canGenerate)
+        {
+            await CacheCards(packSelectionPanel.selectedPackElement.name);
+            CreateRandomValue();
 
-        GenerateCard(packSelectionPanel.selectedPackElement.name, card1Position, 1);
-        GenerateCard(packSelectionPanel.selectedPackElement.name, card2Position, 2);
-        GenerateCard(packSelectionPanel.selectedPackElement.name, card3Position, 3);
-        egg.SetActive(true);
-        LeanTween.scale(egg, Vector3.one, 1f);
-        Invoke("GenerateStylizedCard", 0.5f);
+            GenerateCard(packSelectionPanel.selectedPackElement.name, card1Position, 1);
+            GenerateCard(packSelectionPanel.selectedPackElement.name, card2Position, 2);
+            GenerateCard(packSelectionPanel.selectedPackElement.name, card3Position, 3);
+            egg.SetActive(true);
+            LeanTween.scale(egg, Vector3.one, 1f);
+            Invoke("GenerateStylizedCard", 0.5f);
+        }
     }
 
     private void GenerateStylizedCard()

@@ -19,6 +19,7 @@ public class SoundController : MonoBehaviour
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
     }
+    
     private void Start() 
     {
         gameAPI.PlayMusic();
@@ -35,6 +36,16 @@ public class SoundController : MonoBehaviour
         {
             Invoke("TTSCardName" , 0.1f);
             match = false; 
+        }
+    }
+
+    public void ReadCardBlast()
+    {
+        if(matchedList.Count > 0)
+        {
+            gameAPI.PlaySFX("Success");
+            gameAPI.Speak(matchedList.Last());
+            Debug.Log(matchedList.Last());
         }
     }
 
@@ -67,6 +78,7 @@ public class SoundController : MonoBehaviour
 
     public void TTSCardName()
     {
+        Debug.Log(matchedList.Last());
         gameAPI.Speak(matchedList.Last());
         Invoke("ResetLists", 0.5f);
     }

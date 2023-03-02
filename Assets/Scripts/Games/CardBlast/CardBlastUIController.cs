@@ -75,6 +75,7 @@ public class CardBlastUIController : MonoBehaviour
 
     public void GameBackButtonClick()
     {
+        fillGrid.cardLocalNames.Clear();
         fillGrid.isOnGame = false;
         LeanTween.scale(difficultSelectionPanelTween.gameObject, Vector3.one * 0.1f, 0.15f);
 

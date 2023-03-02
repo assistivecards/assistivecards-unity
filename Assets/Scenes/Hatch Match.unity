@@ -2727,6 +2727,7 @@ MonoBehaviour:
   card3Position: {fileID: 1242065588}
   cardPosition: {fileID: 75126644}
   egg: {fileID: 409572155}
+  packageSelectManager: {fileID: 1837497525}
   cardTypeCount: 3
   levelCount: 0
   cachedCards:
@@ -2740,6 +2741,9 @@ MonoBehaviour:
   boardCreated: 0
   card: {fileID: 0}
   clones: []
+  cacheLocalNames:
+    cards: []
+  cardsLocalNames: []
   previousCard: 
   actualCardType: 
 --- !u!114 &2048667399

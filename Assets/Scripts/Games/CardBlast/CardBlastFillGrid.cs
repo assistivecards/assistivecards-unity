@@ -45,7 +45,6 @@ public class CardBlastFillGrid : MonoBehaviour
 
     AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
     public List<string> cardLocalNames = new List<string>();
-    
 
     private void Awake()
     {
@@ -231,6 +230,7 @@ public class CardBlastFillGrid : MonoBehaviour
     private void OnRefillBool()
     {
         isOnRefill = false;
+        CheckPossibleMatch();
     }
 
     public void SetBoardDifficulty(int _cardTypeCount)

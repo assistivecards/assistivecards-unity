@@ -355,8 +355,6 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                 else
                 {
                     matcheable = false;
-                    cardBlastFillGrid.CheckPossibleMatch();
-
                 }
             }
         }

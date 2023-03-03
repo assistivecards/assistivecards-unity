@@ -21,6 +21,7 @@ public class ScratcherMatchDetection : MonoBehaviour
     {
         if (scratchManager.isFullyScratched && gameObject.tag == "CorrectCard")
         {
+            UIController.correctMatches++;
             Debug.Log("Correct Match!");
             for (int i = 0; i < scratchImages.Length; i++)
             {
@@ -30,7 +31,12 @@ public class ScratcherMatchDetection : MonoBehaviour
             Invoke("ScaleCorrectCardUp", .25f);
             board.Invoke("ScaleImagesDown", .75f);
             board.Invoke("ClearBoard", 1f);
-            board.Invoke("GenerateRandomBoardAsync", 1f);
+            if (UIController.correctMatches == UIController.checkpointFrequency)
+            {
+                UIController.Invoke("OpenCheckPointPanel", 1f);
+            }
+            else
+                board.Invoke("GenerateRandomBoardAsync", 1f);
         }
         else if (scratchManager.isFullyScratched && gameObject.tag == "WrongCard")
         {

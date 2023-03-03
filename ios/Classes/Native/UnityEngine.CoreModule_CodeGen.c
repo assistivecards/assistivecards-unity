@@ -10558,15 +10558,15 @@ static const Il2CppRGCTXDefinition s_rgctxValues[354] =
 };
 static TypeDefinitionIndex s_staticConstructorsToRunAtStartup[10] = 
 {
-	5338,
-	5499,
-	5500,
-	5501,
-	5502,
+	5342,
 	5503,
+	5504,
 	5505,
+	5506,
 	5507,
-	5510,
+	5509,
+	5511,
+	5514,
 	0,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_CoreModule_CodeGenModule;

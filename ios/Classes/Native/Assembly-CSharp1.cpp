@@ -7956,8 +7956,6 @@ inline void List_1_Clear_m32D399BDD753B5BD6CE27560249096418F3F0867_inline (List_
 {
 	((  void (*) (List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*, const RuntimeMethod*))List_1_Clear_mD615D1BCB2C9DD91DAD86A2F9E5CF1DFFCBF7925_gshared_inline)((List_1_tDBA89B0E21BAC58CFBD3C1F76E4668E3B562761A*)__this, method);
 }
-// System.Void CardBlastFillGrid::CheckPossibleMatch()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CardBlastFillGrid_CheckPossibleMatch_m83C7AC30CFB2245EC03C5ADC1022CA561F8BB641 (CardBlastFillGrid_tD222F52CDA5C36A1F97646EB38A1384899AA50FE* __this, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Object::Destroy(UnityEngine.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___obj0, const RuntimeMethod* method) ;
 // T UnityEngine.Component::GetComponent<UnityEngine.RectTransform>()
@@ -8018,6 +8016,8 @@ inline void AsyncVoidMethodBuilder_Start_TisU3CRefillBoardU3Ed__37_t0F6601FE3699
 {
 	((  void (*) (AsyncVoidMethodBuilder_t253E37B63E7E7B504878AE6563347C147F98EF2D*, /*Unity.IL2CPP.Metadata.__Il2CppFullySharedGenericType&*/Il2CppFullySharedGenericAny*, const RuntimeMethod*))AsyncVoidMethodBuilder_Start_TisIl2CppFullySharedGenericAny_mF2CE0E0265F13C43AAB330B33509540A399C62A2_gshared)((AsyncVoidMethodBuilder_t253E37B63E7E7B504878AE6563347C147F98EF2D*)__this, (Il2CppFullySharedGenericAny*)___stateMachine0, method);
 }
+// System.Void CardBlastFillGrid::CheckPossibleMatch()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CardBlastFillGrid_CheckPossibleMatch_m83C7AC30CFB2245EC03C5ADC1022CA561F8BB641 (CardBlastFillGrid_tD222F52CDA5C36A1F97646EB38A1384899AA50FE* __this, const RuntimeMethod* method) ;
 // System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::Start<CardBlastFillGrid/<RefillCell>d__40>(TStateMachine&)
 inline void AsyncVoidMethodBuilder_Start_TisU3CRefillCellU3Ed__40_t7C5520D5E7304693D4BB1395157760C32BFA8245_m446D87EA89E74CEB55DFD28DA220530A2B2044E6 (AsyncVoidMethodBuilder_t253E37B63E7E7B504878AE6563347C147F98EF2D* __this, U3CRefillCellU3Ed__40_t7C5520D5E7304693D4BB1395157760C32BFA8245* ___stateMachine0, const RuntimeMethod* method)
 {
@@ -18895,7 +18895,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CardBlastElement_DetectPossibleMatch_m63
 		L_2 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_1, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_2)
 		{
-			goto IL_028f;
+			goto IL_0284;
 		}
 	}
 	{
@@ -19361,7 +19361,7 @@ IL_023d:
 		L_91 = List_1_get_Count_m4C37ED2D928D63B80F55AF434730C2D64EEB9F22_inline(L_90, List_1_get_Count_m4C37ED2D928D63B80F55AF434730C2D64EEB9F22_RuntimeMethod_var);
 		if ((((int32_t)L_91) < ((int32_t)2)))
 		{
-			goto IL_028f;
+			goto IL_0284;
 		}
 	}
 	{
@@ -19395,13 +19395,9 @@ IL_027d:
 	{
 		// matcheable = false;
 		__this->___matcheable_22 = (bool)0;
-		// cardBlastFillGrid.CheckPossibleMatch();
-		CardBlastFillGrid_tD222F52CDA5C36A1F97646EB38A1384899AA50FE* L_97 = __this->___cardBlastFillGrid_9;
-		NullCheck(L_97);
-		CardBlastFillGrid_CheckPossibleMatch_m83C7AC30CFB2245EC03C5ADC1022CA561F8BB641(L_97, NULL);
 	}
 
-IL_028f:
+IL_0284:
 	{
 		// }
 		return;
@@ -20322,6 +20318,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CardBlastFillGrid_OnRefillBool_m18612809
 	{
 		// isOnRefill = false;
 		__this->___isOnRefill_23 = (bool)0;
+		// CheckPossibleMatch();
+		CardBlastFillGrid_CheckPossibleMatch_m83C7AC30CFB2245EC03C5ADC1022CA561F8BB641(__this, NULL);
 		// }
 		return;
 	}
@@ -23643,56 +23641,63 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CardBlastUIController_GameBackButtonClic
 	if (!s_Il2CppMethodInitialized)
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&LeanTween_tE7667F9B3DFA672F9F1D630808C05DF9A1BA99A3_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_Clear_mC6C7AEBB0F980A717A87C0D12377984A464F0934_RuntimeMethod_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		// fillGrid.isOnGame = false;
+		// fillGrid.cardLocalNames.Clear();
 		CardBlastFillGrid_tD222F52CDA5C36A1F97646EB38A1384899AA50FE* L_0 = __this->___fillGrid_8;
 		NullCheck(L_0);
-		L_0->___isOnGame_25 = (bool)0;
-		// LeanTween.scale(difficultSelectionPanelTween.gameObject, Vector3.one * 0.1f, 0.15f);
-		DifficultSelectionPanelTween_t68D89E6B30ADB20AFFB1ED52A8548F7770801654* L_1 = __this->___difficultSelectionPanelTween_6;
+		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_1 = L_0->___cardLocalNames_33;
 		NullCheck(L_1);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2;
-		L_2 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_1, NULL);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_3;
-		L_3 = Vector3_get_one_mC9B289F1E15C42C597180C9FE6FB492495B51D02_inline(NULL);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_4;
-		L_4 = Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline(L_3, (0.100000001f), NULL);
+		List_1_Clear_mC6C7AEBB0F980A717A87C0D12377984A464F0934_inline(L_1, List_1_Clear_mC6C7AEBB0F980A717A87C0D12377984A464F0934_RuntimeMethod_var);
+		// fillGrid.isOnGame = false;
+		CardBlastFillGrid_tD222F52CDA5C36A1F97646EB38A1384899AA50FE* L_2 = __this->___fillGrid_8;
+		NullCheck(L_2);
+		L_2->___isOnGame_25 = (bool)0;
+		// LeanTween.scale(difficultSelectionPanelTween.gameObject, Vector3.one * 0.1f, 0.15f);
+		DifficultSelectionPanelTween_t68D89E6B30ADB20AFFB1ED52A8548F7770801654* L_3 = __this->___difficultSelectionPanelTween_6;
+		NullCheck(L_3);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4;
+		L_4 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_3, NULL);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_5;
+		L_5 = Vector3_get_one_mC9B289F1E15C42C597180C9FE6FB492495B51D02_inline(NULL);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_6;
+		L_6 = Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline(L_5, (0.100000001f), NULL);
 		il2cpp_codegen_runtime_class_init_inline(LeanTween_tE7667F9B3DFA672F9F1D630808C05DF9A1BA99A3_il2cpp_TypeInfo_var);
-		LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* L_5;
-		L_5 = LeanTween_scale_m0EF13262C07DE45CD5D559BBFC94821393B7D4F6(L_2, L_4, (0.150000006f), NULL);
+		LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* L_7;
+		L_7 = LeanTween_scale_m0EF13262C07DE45CD5D559BBFC94821393B7D4F6(L_4, L_6, (0.150000006f), NULL);
 		// packSelectionScreen.SetActive(true);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6 = __this->___packSelectionScreen_11;
-		NullCheck(L_6);
-		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_6, (bool)1, NULL);
-		// packSelectionScreenUIController.ResetScrollPosition();
-		PackSelectionScreenUIController_t386F5D489FECB3648BCBA28E657D6155B6932937* L_7 = __this->___packSelectionScreenUIController_7;
-		NullCheck(L_7);
-		PackSelectionScreenUIController_ResetScrollPosition_m4B54D9711E596424483FD935D0FB99A085CFEA3F(L_7, NULL);
-		// difficultSelectionPanelTween.gameObject.SetActive(false);
-		DifficultSelectionPanelTween_t68D89E6B30ADB20AFFB1ED52A8548F7770801654* L_8 = __this->___difficultSelectionPanelTween_6;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_8 = __this->___packSelectionScreen_11;
 		NullCheck(L_8);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_9;
-		L_9 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_8, NULL);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_8, (bool)1, NULL);
+		// packSelectionScreenUIController.ResetScrollPosition();
+		PackSelectionScreenUIController_t386F5D489FECB3648BCBA28E657D6155B6932937* L_9 = __this->___packSelectionScreenUIController_7;
 		NullCheck(L_9);
-		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_9, (bool)0, NULL);
-		// difficultSelectionPanelTween.isOnDifficultyScene = false;
+		PackSelectionScreenUIController_ResetScrollPosition_m4B54D9711E596424483FD935D0FB99A085CFEA3F(L_9, NULL);
+		// difficultSelectionPanelTween.gameObject.SetActive(false);
 		DifficultSelectionPanelTween_t68D89E6B30ADB20AFFB1ED52A8548F7770801654* L_10 = __this->___difficultSelectionPanelTween_6;
 		NullCheck(L_10);
-		L_10->___isOnDifficultyScene_7 = (bool)0;
-		// transitionScreen.SetActive(false);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_11 = __this->___transitionScreen_12;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_11;
+		L_11 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_10, NULL);
 		NullCheck(L_11);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_11, (bool)0, NULL);
-		// fillGrid.ResetGrid();
-		CardBlastFillGrid_tD222F52CDA5C36A1F97646EB38A1384899AA50FE* L_12 = __this->___fillGrid_8;
+		// difficultSelectionPanelTween.isOnDifficultyScene = false;
+		DifficultSelectionPanelTween_t68D89E6B30ADB20AFFB1ED52A8548F7770801654* L_12 = __this->___difficultSelectionPanelTween_6;
 		NullCheck(L_12);
-		CardBlastFillGrid_ResetGrid_m6118C0DFAAF0BBBB825AE89121524F1F5275EADC(L_12, NULL);
-		// fillGrid.ResetPosition();
-		CardBlastFillGrid_tD222F52CDA5C36A1F97646EB38A1384899AA50FE* L_13 = __this->___fillGrid_8;
+		L_12->___isOnDifficultyScene_7 = (bool)0;
+		// transitionScreen.SetActive(false);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_13 = __this->___transitionScreen_12;
 		NullCheck(L_13);
-		CardBlastFillGrid_ResetPosition_mB4E864BC6CF24F29E599A067210ED346D2B06CA6(L_13, NULL);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_13, (bool)0, NULL);
+		// fillGrid.ResetGrid();
+		CardBlastFillGrid_tD222F52CDA5C36A1F97646EB38A1384899AA50FE* L_14 = __this->___fillGrid_8;
+		NullCheck(L_14);
+		CardBlastFillGrid_ResetGrid_m6118C0DFAAF0BBBB825AE89121524F1F5275EADC(L_14, NULL);
+		// fillGrid.ResetPosition();
+		CardBlastFillGrid_tD222F52CDA5C36A1F97646EB38A1384899AA50FE* L_15 = __this->___fillGrid_8;
+		NullCheck(L_15);
+		CardBlastFillGrid_ResetPosition_mB4E864BC6CF24F29E599A067210ED346D2B06CA6(L_15, NULL);
 		// GamePanelUIControl();
 		CardBlastUIController_GamePanelUIControl_m4795A48CA4A957880E93CFC90E910180A7AF2A7F(__this, NULL);
 		// }

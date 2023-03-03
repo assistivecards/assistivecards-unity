@@ -22,6 +22,7 @@ public class ScratcherBoardGenerator : MonoBehaviour
     [SerializeField] GameObject backButton;
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
+    private ScratcherUIController UIController;
 
     private void Awake()
     {
@@ -31,6 +32,7 @@ public class ScratcherBoardGenerator : MonoBehaviour
     private void Start()
     {
         gameAPI.PlayMusic();
+        UIController = GameObject.Find("GamePanel").GetComponent<ScratcherUIController>();
     }
 
     private void OnEnable()
@@ -38,7 +40,7 @@ public class ScratcherBoardGenerator : MonoBehaviour
         if (isBackAfterSignOut)
         {
             gameAPI.PlayMusic();
-            // UIController.OnBackButtonClick();
+            UIController.OnBackButtonClick();
             isBackAfterSignOut = false;
         }
     }
@@ -85,6 +87,7 @@ public class ScratcherBoardGenerator : MonoBehaviour
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {
             cardImagesInScene[i].sprite = null;
+            cardImagesInScene[i].GetComponent<ScratchManager>().isFullyScratched = false;
         }
 
     }
@@ -94,6 +97,7 @@ public class ScratcherBoardGenerator : MonoBehaviour
         LeanTween.scale(findText.gameObject, Vector3.one, 0.15f);
         for (int i = 0; i < scratchParents.Length; i++)
         {
+            cardImagesInScene[i].GetComponent<ScratchImage>().enabled = true;
             LeanTween.alpha(scratchParents[i].transform.GetChild(0).GetComponent<RectTransform>(), 1f, .01f);
             scratchParents[i].transform.GetChild(0).GetComponent<ScratchImage>().ResetMask();
             LeanTween.scale(scratchParents[i].gameObject, Vector3.one, 0.15f);
@@ -102,10 +106,10 @@ public class ScratcherBoardGenerator : MonoBehaviour
 
     public void ScaleImagesDown()
     {
-        LeanTween.scale(findText.gameObject, Vector3.zero, 0.15f);
+        LeanTween.scale(findText.gameObject, Vector3.zero, 0.25f);
         for (int i = 0; i < scratchParents.Length; i++)
         {
-            LeanTween.scale(scratchParents[i].gameObject, Vector3.zero, 0.15f);
+            LeanTween.scale(scratchParents[i].gameObject, Vector3.zero, 0.25f);
         }
     }
 

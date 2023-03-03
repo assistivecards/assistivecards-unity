@@ -9,6 +9,12 @@ public class ScratcherMatchDetection : MonoBehaviour
     [SerializeField] ScratchImage[] scratchImages;
     private ScratcherUIController UIController;
     private ScratcherBoardGenerator board;
+    private GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void Start()
     {
@@ -28,15 +34,17 @@ public class ScratcherMatchDetection : MonoBehaviour
                 scratchImages[i].enabled = false;
             }
             UIController.backButton.GetComponent<Button>().interactable = false;
+            gameAPI.PlaySFX("Success");
             Invoke("ScaleCorrectCardUp", .25f);
-            board.Invoke("ScaleImagesDown", .75f);
-            board.Invoke("ClearBoard", 1f);
+            board.Invoke("ReadCard", 0.25f);
+            board.Invoke("ScaleImagesDown", 1f);
+            board.Invoke("ClearBoard", 1.25f);
             if (UIController.correctMatches == UIController.checkpointFrequency)
             {
-                UIController.Invoke("OpenCheckPointPanel", 1f);
+                UIController.Invoke("OpenCheckPointPanel", 1.25f);
             }
             else
-                board.Invoke("GenerateRandomBoardAsync", 1f);
+                board.Invoke("GenerateRandomBoardAsync", 1.25f);
         }
         else if (scratchManager.isFullyScratched && gameObject.tag == "WrongCard")
         {

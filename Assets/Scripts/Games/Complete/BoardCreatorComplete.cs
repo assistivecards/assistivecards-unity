@@ -65,8 +65,10 @@ public class BoardCreatorComplete : MonoBehaviour
 
     public async Task GenerateRandomBoardAsync(string packSlug)
     {
-        CheckRandom();
-        CheckRandom();
+        for(int x = 0; x < cardCount; x++)
+        {
+            CheckRandom();
+        }
 
         for(int i = 0; i< cardTextures.cards.Length; i++)
         {
@@ -76,7 +78,7 @@ public class BoardCreatorComplete : MonoBehaviour
 
         for(int j = 0; j < cardCount; j++)
         {
-            var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[Random.Range(0,2)]], 512);
+            var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[Random.Range(0,12)]], 512);
 
             cards.Add(Instantiate(cardPrefab, Vector3.zero, Quaternion.identity));
             cards[j].transform.parent = this.transform;

@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
-public class ScratchImage : MonoBehaviour, IDragHandler
+public class ScratchImage : MonoBehaviour
 {
     public struct StatData
     {
@@ -56,6 +56,7 @@ public class ScratchImage : MonoBehaviour, IDragHandler
 
     public Vector2 rtSize => new Vector2(_rt.width, _rt.height);
     GameAPI gameAPI;
+    private bool isIdle;
 
     private void Awake()
     {
@@ -128,7 +129,16 @@ public class ScratchImage : MonoBehaviour, IDragHandler
 
     private void Update()
     {
-        CheckInput();
+
+        Vector2 localPt;
+        Vector2 mPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(transform as RectTransform, mPos, uiCamera, out localPt);
+
+        if (gameObject.GetComponent<RectTransform>().rect.Contains((localPt)))
+        {
+            CheckInput();
+        }
+
     }
 
     void LateUpdate()
@@ -272,10 +282,17 @@ public class ScratchImage : MonoBehaviour, IDragHandler
         if (uiCamera == null)
             return;
 
-        int mouseStatus = 0;// 0��none, 1:down, 2:hold, 3:up
+        int mouseStatus = 0;// 0  none, 1:down, 2:hold, 3:up
 
         if (Input.GetMouseButtonDown(0))
+        {
             mouseStatus = 1;
+
+            if (!gameObject.GetComponent<ScratchManager>().isFullyScratched && !Camera.main.transform.GetChild(1).GetComponent<AudioSource>().isPlaying && transform.parent.localScale == Vector3.one)
+                gameAPI.PlaySFX("Scratch");
+
+        }
+
         else if (Input.GetMouseButton(0))
         {
             mouseStatus = 2;
@@ -284,6 +301,9 @@ public class ScratchImage : MonoBehaviour, IDragHandler
             {
                 gameObject.GetComponent<ScratchManager>().GetStatsInfo();
             }
+
+            if (!gameObject.GetComponent<ScratchManager>().isFullyScratched && !Camera.main.transform.GetChild(1).GetComponent<AudioSource>().isPlaying && transform.parent.localScale == Vector3.one && !isIdle)
+                gameAPI.PlaySFX("Scratch");
 
             gameObject.GetComponent<ScratcherMatchDetection>().DetectMatch();
         }
@@ -314,7 +334,10 @@ public class ScratchImage : MonoBehaviour, IDragHandler
                     _endPos = localPt;
                     _lastPoint = localPt;
                     _isDirty = true;
+                    isIdle = false;
                 }
+                else
+                    isIdle = true;
                 break;
             case 3:
                 _endPos = localPt;
@@ -324,16 +347,4 @@ public class ScratchImage : MonoBehaviour, IDragHandler
         }
     }
 
-    public void OnDrag(PointerEventData eventData)
-    {
-        // if (!gameObject.GetComponent<ScratchManager>().isFullyScratched)
-        // {
-        //     gameObject.GetComponent<ScratchManager>().GetStatsInfo();
-        // }
-
-        if (!gameObject.GetComponent<ScratchManager>().isFullyScratched && !Camera.main.transform.GetChild(1).GetComponent<AudioSource>().isPlaying)
-            gameAPI.PlaySFX("Scratch");
-
-        // gameObject.GetComponent<ScratcherMatchDetection>().DetectMatch();
-    }
 }

@@ -38,13 +38,13 @@ public class ScratcherMatchDetection : MonoBehaviour
             Invoke("ScaleCorrectCardUp", .25f);
             board.Invoke("ReadCard", 0.25f);
             board.Invoke("ScaleImagesDown", 1f);
-            board.Invoke("ClearBoard", 1.25f);
+            board.Invoke("ClearBoard", 1.30f);
             if (UIController.correctMatches == UIController.checkpointFrequency)
             {
-                UIController.Invoke("OpenCheckPointPanel", 1.25f);
+                UIController.Invoke("OpenCheckPointPanel", 1.30f);
             }
             else
-                board.Invoke("GenerateRandomBoardAsync", 1.25f);
+                board.Invoke("GenerateRandomBoardAsync", 1.30f);
         }
         else if (scratchManager.isFullyScratched && gameObject.tag == "WrongCard")
         {

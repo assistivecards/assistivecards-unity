@@ -22,6 +22,7 @@ public class BoardCreatorComplete : MonoBehaviour
 
 
     [SerializeField] private GameObject cardPrefab;
+    [SerializeField] private GameObject actualCardPrefab;
     public List<GameObject> cards  = new List<GameObject>();
 
     private List<Transform> cardPositions = new List<Transform>();
@@ -103,7 +104,7 @@ public class BoardCreatorComplete : MonoBehaviour
             cardDefinitionsLocale.Add(cardDefinitions.cards[i].title);
         }
 
-        var card = Instantiate(cardPrefab, cardPositions[random].position, Quaternion.identity);
+        var card = Instantiate(actualCardPrefab, cardPositions[random].position, Quaternion.identity);
 
         cards.Add(card);
         card.transform.parent = cardPositions[random];

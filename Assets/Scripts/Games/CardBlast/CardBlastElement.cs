@@ -145,6 +145,7 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                 if(bottom.transform.GetComponent<CardCrushCell>().isEmpty)
                 {
                     MoveToTarget(transform.parent.GetComponent<CardCrushCell>().bottomNeighbour);
+                    cardBlastFillGrid.Invoke("RefillBoard", 0.5f);
                 }
             }
         }
@@ -383,6 +384,7 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
     private void ScaleUpMatch()
     {
+        cardBlastFillGrid.scoreInt += 1;
         cardBlastFillGrid.isOnRefill = true;
         foreach(var card in matched)
         {

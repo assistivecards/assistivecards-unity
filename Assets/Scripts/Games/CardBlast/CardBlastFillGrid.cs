@@ -163,7 +163,7 @@ public class CardBlastFillGrid : MonoBehaviour
             {
                 if(cell.isEmpty)
                 {
-                    RefillBoard();
+                    Invoke("RefillBoard", 0.55f);
                 }
             }
         }
@@ -193,7 +193,6 @@ public class CardBlastFillGrid : MonoBehaviour
 
     public async void RefillBoard()
     {
-        scoreInt += 1;
         gameAPI.PlaySFX("Success");
         foreach(var cell in cardCrushGrid.allCells)
         {
@@ -236,25 +235,6 @@ public class CardBlastFillGrid : MonoBehaviour
     public void SetBoardDifficulty(int _cardTypeCount)
     {
         cardTypeCount = _cardTypeCount;
-    }
-
-    public async void RefillCell(CardCrushCell cell)
-    {
-        cell.isEmpty = false;
-        cell.GetComponent<CardCrushCell>().isEmpty=false;
-        GameObject card = Instantiate(cardPrefab, cell.transform.position, Quaternion.identity);
-        
-        int cardImageRandom = randomValues[Random.Range(0,cardTypeCount)];
-        var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[cardImageRandom], 512);
-
-        card.transform.name = cardNames[cardImageRandom];
-        card.transform.SetParent(cell.transform);
-        card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-
-        cell.card = card;
-
-        card.GetComponent<CardBlastElement>().x = cell.x;
-        card.GetComponent<CardBlastElement>().y = cell.y;
     }
 
     private async void SpawnNewCard()

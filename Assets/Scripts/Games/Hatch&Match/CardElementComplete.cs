@@ -7,6 +7,13 @@ public class CardElementComplete : MonoBehaviour, IPointerDownHandler, IDragHand
 {
     public string cardType;
     public bool moveable;
+    private DetectMatchComplete detectMatchComplete;
+    public bool matched;
+
+    private void Start() 
+    {
+        detectMatchComplete = GetComponentInParent<DetectMatchComplete>();
+    }
 
     public void OnDrag(PointerEventData eventData)
     {
@@ -26,6 +33,7 @@ public class CardElementComplete : MonoBehaviour, IPointerDownHandler, IDragHand
             if(other.gameObject.name == this.gameObject.name)
             {
                 LeanTween.move(this.gameObject, other.transform.position, 0.75f);
+                matched = true;
             }
         }
     }

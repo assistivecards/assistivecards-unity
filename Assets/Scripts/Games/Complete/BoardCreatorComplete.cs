@@ -24,18 +24,16 @@ public class BoardCreatorComplete : MonoBehaviour
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject actualCardPrefab;
     public List<GameObject> cards  = new List<GameObject>();
-
-    private List<Transform> cardPositions = new List<Transform>();
     [SerializeField] private Transform card1Position;
     [SerializeField] private Transform card2Position;
     public int cardCount;
+    public string packSlug;
+    public bool isBoardCreated = false;
 
 
     private void OnEnable()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
-        cardPositions.Add(card1Position);
-        cardPositions.Add(card2Position);
     }
 
     public async Task CacheCards(string _packSlug)
@@ -45,6 +43,7 @@ public class BoardCreatorComplete : MonoBehaviour
         cardTextures = await gameAPI.GetCards("en", _packSlug);
 
         await GenerateRandomBoardAsync(_packSlug);
+        packSlug = _packSlug;
     }
 
     private void CheckRandom()
@@ -93,12 +92,41 @@ public class BoardCreatorComplete : MonoBehaviour
             cards[j].transform.GetChild(0).GetComponent<RawImage>().color = Color.black;
             cards[j].GetComponent<CardElementComplete>().cardType = cardName;
         }
+        GenerateCardFirst(packSlug, 3);
+        GenerateCardSecond(packSlug, 4);
 
-        GenerateCards(packSlug, 0);
-        GenerateCards(packSlug, 1);
+        isBoardCreated = true;
     }
 
-    public async void GenerateCards(string packSlug, int random)
+    public async void GenerateCardFirst(string packSlug, int random)
+    {
+        Debug.Log("generate");
+        var cardName = cardNames[randomValueList[random]];
+        var cardTexture = await gameAPI.GetCardImage(packSlug, cardName, 512);
+
+        for(int i = 0; i< cardTextures.cards.Length; i++)
+        {
+            cardNames.Add(cardTextures.cards[i].title.ToLower().Replace(" ", "-"));
+            cardDefinitionsLocale.Add(cardDefinitions.cards[i].title);
+        }
+
+        var card = Instantiate(actualCardPrefab, card1Position.position, Quaternion.identity);
+
+        cards.Add(card);
+        card.transform.parent = card1Position;
+        card.transform.name = "Card" + random;
+        card.transform.localScale = new Vector3(1.6f, 1.6f, 1.6f);
+
+        cardTexture.wrapMode = TextureWrapMode.Clamp;
+        cardTexture.filterMode = FilterMode.Bilinear;
+
+        card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+        card.transform.GetChild(0).transform.localScale = Vector3.one;
+        card.GetComponent<CardElementComplete>().cardType = cardName;
+        card.GetComponent<CardElementComplete>().moveable = true;
+    } 
+
+    public async void GenerateCardSecond(string packSlug, int random)
     {
         var cardName = cardNames[randomValueList[random]];
         var cardTexture = await gameAPI.GetCardImage(packSlug, cardName, 512);
@@ -109,10 +137,10 @@ public class BoardCreatorComplete : MonoBehaviour
             cardDefinitionsLocale.Add(cardDefinitions.cards[i].title);
         }
 
-        var card = Instantiate(actualCardPrefab, cardPositions[random].position, Quaternion.identity);
+        var card = Instantiate(actualCardPrefab, card2Position.position, Quaternion.identity);
 
         cards.Add(card);
-        card.transform.parent = cardPositions[random];
+        card.transform.parent = card2Position;
         card.transform.name = "Card" + random;
         card.transform.localScale = new Vector3(1.6f, 1.6f, 1.6f);
 

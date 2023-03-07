@@ -833,8 +833,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 701864988}
+  - component: {fileID: 701864989}
   m_Layer: 5
-  m_Name: Card0
+  m_Name: Card1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -860,6 +861,19 @@ RectTransform:
   m_AnchoredPosition: {x: 307, y: 108}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &701864989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701864987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e08f8e3b2984565927f39df7bc59f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boardCreatorComplete: {fileID: 832729303}
 --- !u!114 &754856831 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9209683490062830043, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
@@ -942,6 +956,8 @@ MonoBehaviour:
   card1Position: {fileID: 701864988}
   card2Position: {fileID: 2146932904}
   cardCount: 12
+  packSlug: 
+  isBoardCreated: 0
 --- !u!114 &832729304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2054,7 +2070,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2146932904}
   m_Layer: 5
-  m_Name: Card1
+  m_Name: Card2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

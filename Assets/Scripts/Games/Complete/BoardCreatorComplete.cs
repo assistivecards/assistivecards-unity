@@ -78,7 +78,8 @@ public class BoardCreatorComplete : MonoBehaviour
 
         for(int j = 0; j < cardCount; j++)
         {
-            var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[Random.Range(0,12)]], 512);
+            var cardName = cardNames[randomValueList[j]];
+            var cardTexture = await gameAPI.GetCardImage(packSlug, cardName, 512);
 
             cards.Add(Instantiate(cardPrefab, Vector3.zero, Quaternion.identity));
             cards[j].transform.parent = this.transform;
@@ -90,6 +91,7 @@ public class BoardCreatorComplete : MonoBehaviour
 
             cards[j].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             cards[j].transform.GetChild(0).GetComponent<RawImage>().color = Color.black;
+            cards[j].GetComponent<CardElementComplete>().cardType = cardName;
         }
 
         GenerateCards(packSlug, 0);
@@ -98,7 +100,8 @@ public class BoardCreatorComplete : MonoBehaviour
 
     public async void GenerateCards(string packSlug, int random)
     {
-        var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[random]], 512);
+        var cardName = cardNames[randomValueList[random]];
+        var cardTexture = await gameAPI.GetCardImage(packSlug, cardName, 512);
 
         for(int i = 0; i< cardTextures.cards.Length; i++)
         {
@@ -118,5 +121,7 @@ public class BoardCreatorComplete : MonoBehaviour
 
         card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
         card.transform.GetChild(0).transform.localScale = Vector3.one;
+        card.GetComponent<CardElementComplete>().cardType = cardName;
+        card.GetComponent<CardElementComplete>().moveable = true;
     } 
 }

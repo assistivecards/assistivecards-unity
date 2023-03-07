@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 5337748778006510765}
   - component: {fileID: 5270517298093753807}
   - component: {fileID: 6015160056906354179}
-  - component: {fileID: -3810858686116426033}
+  - component: {fileID: 8221403180870043319}
+  - component: {fileID: 5145398979259879384}
+  - component: {fileID: -8676556875721030953}
   m_Layer: 5
   m_Name: Card 1
   m_TagString: cardBlast
@@ -89,7 +91,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.7939453, y: 0.42780304}
@@ -105,7 +107,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 277.96533, y: 278.24994}
   m_EdgeRadius: 0
---- !u!114 &-3810858686116426033
+--- !u!114 &8221403180870043319
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,11 +116,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 1572616208917296617}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91a6885c0330a4d48af0de40f2eb9376, type: 3}
+  m_Script: {fileID: 11500000, guid: 8bfaf50ea87864af6bacb6d25a1fc99d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  match: 0
-  cardName: 
+  cardType: 
+--- !u!114 &5145398979259879384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572616208917296617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7979eb93897a4e95b1529cef5d9e7a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &-8676556875721030953
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572616208917296617}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &3953419126043893981
 GameObject:
   m_ObjectHideFlags: 0

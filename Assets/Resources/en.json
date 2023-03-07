@@ -219,5 +219,6 @@
 	"warning-nickname":"Nickname is too long!",
 	"circle_the_card":"Circle the $1",
 	"settings_tts":"Text-to-Speech",
-	"find_the_card":"Find the $1"
+	"find_the_card":"Find the $1",
+	"paint_the_card":"Paint the $1"
 }

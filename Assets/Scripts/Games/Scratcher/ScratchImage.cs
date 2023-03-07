@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
-public class ScratchImage : MonoBehaviour
+public class ScratchImage : MonoBehaviour, IPointerEnterHandler
 {
     public struct StatData
     {
@@ -57,6 +57,7 @@ public class ScratchImage : MonoBehaviour
     public Vector2 rtSize => new Vector2(_rt.width, _rt.height);
     GameAPI gameAPI;
     private bool isIdle;
+    Vector2 localPt = Vector2.zero;
 
     private void Awake()
     {
@@ -130,7 +131,7 @@ public class ScratchImage : MonoBehaviour
     private void Update()
     {
 
-        Vector2 localPt;
+        // Vector2 localPt;
         Vector2 mPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         RectTransformUtility.ScreenPointToLocalPointInRectangle(transform as RectTransform, mPos, uiCamera, out localPt);
 
@@ -313,7 +314,7 @@ public class ScratchImage : MonoBehaviour
         if (mouseStatus == 0)
             return;
 
-        Vector2 localPt = Vector2.zero;
+        // Vector2 localPt = Vector2.zero;
         Vector2 mPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         RectTransformUtility.ScreenPointToLocalPointInRectangle(transform as RectTransform, mPos, uiCamera, out localPt);
 
@@ -347,4 +348,9 @@ public class ScratchImage : MonoBehaviour
         }
     }
 
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        _beginPos = localPt;
+        _lastPoint = localPt;
+    }
 }

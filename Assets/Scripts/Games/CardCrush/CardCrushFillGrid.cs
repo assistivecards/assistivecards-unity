@@ -36,6 +36,10 @@ public class CardCrushFillGrid : MonoBehaviour
     [SerializeField] private AudioSource smallSuccess;
     [SerializeField] private Sound sfx;
 
+
+    AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
+    public List<string> cardLocalNames = new List<string>();
+
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
@@ -47,6 +51,7 @@ public class CardCrushFillGrid : MonoBehaviour
         selectedLangCode = await gameAPI.GetSystemLanguageCode();
 
         cachedCards = await gameAPI.GetCards("en", _packSlug);
+        cachedLocalCards = await gameAPI.GetCards(selectedLangCode, _packSlug);
         packSlug = _packSlug;
 
         cardsList = cachedCards.cards.ToList();
@@ -54,6 +59,7 @@ public class CardCrushFillGrid : MonoBehaviour
         for(int i = 0; i < cachedCards.cards.Length; i++)
         {
             cardNames.Add(cachedCards.cards[i].title.ToLower().Replace(" ", "-"));
+            cardLocalNames.Add(cachedLocalCards.cards[i].title);
         }
     }
 
@@ -112,6 +118,7 @@ public class CardCrushFillGrid : MonoBehaviour
             card.GetComponent<CardElement>().x = cardCrushGrid.allCells[i].x;
             card.GetComponent<CardElement>().y = cardCrushGrid.allCells[i].y;
             card.GetComponent<CardElement>().type = cardNames[cardImageRandom];
+            card.GetComponent<CardElement>().localName = cardLocalNames[cardImageRandom];
 
             int maxIterations = 0;
             while(FindVerticalMatchesAtBeginning(i) && maxIterations < 100)
@@ -128,6 +135,7 @@ public class CardCrushFillGrid : MonoBehaviour
                 card.GetComponent<CardElement>().x = cardCrushGrid.allCells[i].x;
                 card.GetComponent<CardElement>().y = cardCrushGrid.allCells[i].y;
                 card.GetComponent<CardElement>().type = cardNames[cardImageRandom];
+                card.GetComponent<CardElement>().localName = cardLocalNames[cardImageRandom];
                 maxIterations ++;
             }
 
@@ -146,6 +154,7 @@ public class CardCrushFillGrid : MonoBehaviour
                 card.GetComponent<CardElement>().x = cardCrushGrid.allCells[i].x;
                 card.GetComponent<CardElement>().y = cardCrushGrid.allCells[i].y;
                 card.GetComponent<CardElement>().type = cardNames[cardImageRandom];
+                card.GetComponent<CardElement>().localName = cardLocalNames[cardImageRandom];
                 maxIterations ++;
             }
 
@@ -298,6 +307,7 @@ public class CardCrushFillGrid : MonoBehaviour
             cell.horizontalNeighboursRight.Clear();
             cell.verticalNeightboursBottom.Clear();
             cell.verticalNeightboursTop.Clear();
+            cardLocalNames.Clear();
 
             cardNames.Clear();
             randomValues.Clear();

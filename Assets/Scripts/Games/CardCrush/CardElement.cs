@@ -31,6 +31,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private bool notHorizontal = false;
     public bool isMatched;
     public bool isMoved;
+    public string localName;
 
     private void OnEnable() 
     {
@@ -343,7 +344,9 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         cardCrushFillGrid.isOnRefill = true;
         foreach(var card in matched)
         {
-            soundController.matchedList.Add(this.gameObject.name);
+            soundController.matchedList.Add(localName);
+            soundController.match = true;
+            soundController.Invoke("ReadMatch", 0.6f);
             LeanTween.scale(card, new Vector3(0.5f, 0.5f, 0.5f), 0.1f);   
         }
         Invoke("DestroyMatched", 0.1f);

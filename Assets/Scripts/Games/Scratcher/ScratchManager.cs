@@ -10,7 +10,6 @@ public class ScratchManager : MonoBehaviour
     public void GetStatsInfo()
     {
         var data = gameObject.GetComponent<ScratchImage>().GetStatData();
-        Debug.Log(gameObject.name + " " + data.fillPercent);
         if (data.fillPercent >= scratchThreshold)
         {
             isFullyScratched = true;

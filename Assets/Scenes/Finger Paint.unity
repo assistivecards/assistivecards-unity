@@ -1068,7 +1068,7 @@ GameObject:
   - component: {fileID: 806506741}
   - component: {fileID: 806506740}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: paint_the_card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

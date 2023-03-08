@@ -980,7 +980,6 @@ GameObject:
   - component: {fileID: 714390669}
   - component: {fileID: 714390671}
   - component: {fileID: 714390670}
-  - component: {fileID: 714390672}
   m_Layer: 5
   m_Name: GrayscaleImage
   m_TagString: Untagged
@@ -1046,25 +1045,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714390668}
   m_CullTransparentMesh: 1
---- !u!114 &714390672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714390668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b2ed11d675446c5a49da1ea296d490, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectFactor: 1
-  m_ColorFactor: 1
-  m_BlurFactor: 1
-  m_EffectMode: 1
-  m_ColorMode: 0
-  m_BlurMode: 0
-  m_AdvancedBlur: 0
 --- !u!114 &770021530 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1242831490059102203, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -1927,7 +1907,6 @@ GameObject:
   - component: {fileID: 1443753599}
   - component: {fileID: 1443753601}
   - component: {fileID: 1443753600}
-  - component: {fileID: 1443753602}
   m_Layer: 5
   m_Name: GrayscaleImage
   m_TagString: Untagged
@@ -1993,25 +1972,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1443753598}
   m_CullTransparentMesh: 1
---- !u!114 &1443753602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1443753598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b2ed11d675446c5a49da1ea296d490, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectFactor: 1
-  m_ColorFactor: 1
-  m_BlurFactor: 1
-  m_EffectMode: 1
-  m_ColorMode: 0
-  m_BlurMode: 0
-  m_AdvancedBlur: 0
 --- !u!1 &1462969780
 GameObject:
   m_ObjectHideFlags: 0
@@ -2381,7 +2341,6 @@ GameObject:
   - component: {fileID: 1751520796}
   - component: {fileID: 1751520798}
   - component: {fileID: 1751520797}
-  - component: {fileID: 1751520799}
   m_Layer: 5
   m_Name: GrayscaleImage
   m_TagString: Untagged
@@ -2447,25 +2406,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1751520795}
   m_CullTransparentMesh: 1
---- !u!114 &1751520799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1751520795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b2ed11d675446c5a49da1ea296d490, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectFactor: 1
-  m_ColorFactor: 1
-  m_BlurFactor: 1
-  m_EffectMode: 1
-  m_ColorMode: 0
-  m_BlurMode: 0
-  m_AdvancedBlur: 0
 --- !u!1001 &1837497523
 PrefabInstance:
   m_ObjectHideFlags: 0

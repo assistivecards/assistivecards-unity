@@ -95,6 +95,7 @@ public class FingerPaintBoardGenerator : MonoBehaviour
         for (int i = 0; i < imageParents.Length; i++)
         {
             LeanTween.alpha(imageParents[i].transform.GetChild(0).GetComponent<RectTransform>(), 1f, .01f);
+            imageParents[i].transform.GetChild(0).GetComponent<PaintImage>().ResetMask();
             LeanTween.scale(imageParents[i].gameObject, Vector3.one, 0.25f);
         }
     }

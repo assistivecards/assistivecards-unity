@@ -279,6 +279,7 @@ GameObject:
   - component: {fileID: 243530859}
   - component: {fileID: 243530861}
   - component: {fileID: 243530860}
+  - component: {fileID: 243530862}
   m_Layer: 5
   m_Name: ColoredImage
   m_TagString: Untagged
@@ -319,7 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -345,6 +346,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 243530858}
   m_CullTransparentMesh: 1
+--- !u!114 &243530862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243530858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fee04a541fb84bc4388c60f06c09679b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiCamera: {fileID: 519420031}
+  maskImage: {fileID: 1443753600}
+  brushTex: {fileID: 2800000, guid: 176f2aecc15735640980e598eff8687e, type: 3}
+  brushSize: 50
+  paintStep: 5
+  moveThreshhold: 2
+  brushAlpha: 1
+  paintMaterial: {fileID: 2100000, guid: 505600d98b9505f4bb3a59ac9ccfef95, type: 2}
+  histogramShader: {fileID: 7200000, guid: 4a8156963a5ff724e9e528b8024e25b4, type: 3}
 --- !u!1 &252539107
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,7 +1016,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714390668}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1019,7 +1041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 3a0e9ed372e90924383c5fc4afbbe0fc, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1356,6 +1378,7 @@ GameObject:
   - component: {fileID: 1102984341}
   - component: {fileID: 1102984343}
   - component: {fileID: 1102984342}
+  - component: {fileID: 1102984344}
   m_Layer: 5
   m_Name: ColoredImage
   m_TagString: Untagged
@@ -1396,7 +1419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1422,6 +1445,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1102984340}
   m_CullTransparentMesh: 1
+--- !u!114 &1102984344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102984340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fee04a541fb84bc4388c60f06c09679b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiCamera: {fileID: 519420031}
+  maskImage: {fileID: 714390670}
+  brushTex: {fileID: 2800000, guid: 176f2aecc15735640980e598eff8687e, type: 3}
+  brushSize: 50
+  paintStep: 5
+  moveThreshhold: 2
+  brushAlpha: 1
+  paintMaterial: {fileID: 2100000, guid: 505600d98b9505f4bb3a59ac9ccfef95, type: 2}
+  histogramShader: {fileID: 7200000, guid: 6d281e3e270a06645b4357d71d156818, type: 3}
 --- !u!1 &1120600894
 GameObject:
   m_ObjectHideFlags: 0
@@ -1921,7 +1965,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1443753598}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1946,7 +1990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 0c044b7643c3eec4d887397eacb684e7, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -2264,6 +2308,7 @@ GameObject:
   - component: {fileID: 1738127176}
   - component: {fileID: 1738127178}
   - component: {fileID: 1738127177}
+  - component: {fileID: 1738127179}
   m_Layer: 5
   m_Name: ColoredImage
   m_TagString: Untagged
@@ -2304,7 +2349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -2330,6 +2375,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738127175}
   m_CullTransparentMesh: 1
+--- !u!114 &1738127179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738127175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fee04a541fb84bc4388c60f06c09679b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiCamera: {fileID: 519420031}
+  maskImage: {fileID: 1751520797}
+  brushTex: {fileID: 2800000, guid: 176f2aecc15735640980e598eff8687e, type: 3}
+  brushSize: 50
+  paintStep: 5
+  moveThreshhold: 2
+  brushAlpha: 1
+  paintMaterial: {fileID: 2100000, guid: 505600d98b9505f4bb3a59ac9ccfef95, type: 2}
+  histogramShader: {fileID: 7200000, guid: f08cded5a14214849badb1f325ec35e3, type: 3}
 --- !u!1 &1751520795
 GameObject:
   m_ObjectHideFlags: 0
@@ -2355,7 +2421,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1751520795}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2380,7 +2446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 1d9ea5da672d2ee4eabc372199b00d51, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}

@@ -93,7 +93,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.7939453, y: 0.42780304}
+  m_Offset: {x: 1.6540146, y: 4.5077057}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -104,7 +104,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 277.96533, y: 278.24994}
+  m_Size: {x: 171.88756, y: 195.01968}
   m_EdgeRadius: 0
 --- !u!114 &8221403180870043319
 MonoBehaviour:
@@ -120,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardType: 
   moveable: 0
+  matched: 0
 --- !u!50 &-8676556875721030953
 Rigidbody2D:
   serializedVersion: 4
@@ -168,7 +169,7 @@ RectTransform:
   m_GameObject: {fileID: 3953419126043893981}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 728687936500742958}

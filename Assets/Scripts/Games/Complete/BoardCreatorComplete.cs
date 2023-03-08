@@ -13,6 +13,7 @@ public class BoardCreatorComplete : MonoBehaviour
 
     AssistiveCardsSDK.AssistiveCardsSDK.Cards cardDefinitions;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cardTextures;
+    [SerializeField] private GameObject cardPool;
     private List<string> cardNames = new List<string>();
     private List<string> cardDefinitionsLocale = new List<string>();
 
@@ -24,6 +25,7 @@ public class BoardCreatorComplete : MonoBehaviour
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject actualCardPrefab;
     public List<GameObject> cards  = new List<GameObject>();
+    public List<GameObject> actualCards  = new List<GameObject>();
     [SerializeField] private Transform card1Position;
     [SerializeField] private Transform card2Position;
     public int cardCount;
@@ -91,65 +93,40 @@ public class BoardCreatorComplete : MonoBehaviour
             cards[j].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             cards[j].transform.GetChild(0).GetComponent<RawImage>().color = Color.black;
             cards[j].GetComponent<CardElementComplete>().cardType = cardName;
-        }
-        GenerateCardFirst(packSlug, 3);
-        GenerateCardSecond(packSlug, 4);
 
+
+            actualCards.Add(Instantiate(actualCardPrefab, Vector3.zero, Quaternion.identity));
+            actualCards[j].transform.parent = cardPool.transform;
+
+            actualCards[j].transform.name = "ActualCard" + j;
+
+            cardTexture.wrapMode = TextureWrapMode.Clamp;
+            cardTexture.filterMode = FilterMode.Bilinear;
+
+            actualCards[j].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+            actualCards[j].GetComponent<CardElementComplete>().cardType = cardName;
+            actualCards[j].GetComponent<CardElementComplete>().moveable = true;
+            actualCards[j].SetActive(false);
+        }
+        FillCardSlot();
         isBoardCreated = true;
     }
 
-    public async void GenerateCardFirst(string packSlug, int random)
+    public void FillCardSlot()
     {
-        Debug.Log("generate");
-        var cardName = cardNames[randomValueList[random]];
-        var cardTexture = await gameAPI.GetCardImage(packSlug, cardName, 512);
-
-        for(int i = 0; i< cardTextures.cards.Length; i++)
+        if(card1Position.GetComponent<CardSpawnerComplete>().hasChild == false)
         {
-            cardNames.Add(cardTextures.cards[i].title.ToLower().Replace(" ", "-"));
-            cardDefinitionsLocale.Add(cardDefinitions.cards[i].title);
+            var actualCard = actualCards[Random.Range(0, 12)];
+            actualCard.SetActive(true);
+            actualCard.transform.SetParent(card1Position);
+            actualCard.transform.position = card1Position.position;
         }
-
-        var card = Instantiate(actualCardPrefab, card1Position.position, Quaternion.identity);
-
-        cards.Add(card);
-        card.transform.parent = card1Position;
-        card.transform.name = "Card" + random;
-        card.transform.localScale = new Vector3(1.6f, 1.6f, 1.6f);
-
-        cardTexture.wrapMode = TextureWrapMode.Clamp;
-        cardTexture.filterMode = FilterMode.Bilinear;
-
-        card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-        card.transform.GetChild(0).transform.localScale = Vector3.one;
-        card.GetComponent<CardElementComplete>().cardType = cardName;
-        card.GetComponent<CardElementComplete>().moveable = true;
-    } 
-
-    public async void GenerateCardSecond(string packSlug, int random)
-    {
-        var cardName = cardNames[randomValueList[random]];
-        var cardTexture = await gameAPI.GetCardImage(packSlug, cardName, 512);
-
-        for(int i = 0; i< cardTextures.cards.Length; i++)
+        if(card2Position.GetComponent<CardSpawnerComplete>().hasChild == false)
         {
-            cardNames.Add(cardTextures.cards[i].title.ToLower().Replace(" ", "-"));
-            cardDefinitionsLocale.Add(cardDefinitions.cards[i].title);
+            var actualCard = actualCards[Random.Range(0, 12)];
+            actualCard.SetActive(true);
+            actualCard.transform.SetParent(card2Position);
+            actualCard.transform.position = card2Position.position;
         }
-
-        var card = Instantiate(actualCardPrefab, card2Position.position, Quaternion.identity);
-
-        cards.Add(card);
-        card.transform.parent = card2Position;
-        card.transform.name = "Card" + random;
-        card.transform.localScale = new Vector3(1.6f, 1.6f, 1.6f);
-
-        cardTexture.wrapMode = TextureWrapMode.Clamp;
-        cardTexture.filterMode = FilterMode.Bilinear;
-
-        card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-        card.transform.GetChild(0).transform.localScale = Vector3.one;
-        card.GetComponent<CardElementComplete>().cardType = cardName;
-        card.GetComponent<CardElementComplete>().moveable = true;
-    } 
+    }
 }

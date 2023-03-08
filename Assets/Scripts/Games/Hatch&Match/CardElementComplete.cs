@@ -28,12 +28,14 @@ public class CardElementComplete : MonoBehaviour, IPointerDownHandler, IDragHand
     }
 
     void OnTriggerEnter2D(Collider2D other)
-    {   if(moveable)
+    { 
+          if(moveable)
         {
-            if(other.gameObject.name == this.gameObject.name)
+            if(other.gameObject.GetComponent<CardElementComplete>().cardType == cardType)
             {
                 LeanTween.move(this.gameObject, other.transform.position, 0.75f);
                 matched = true;
+                this.transform.SetParent(other.transform);
             }
         }
     }

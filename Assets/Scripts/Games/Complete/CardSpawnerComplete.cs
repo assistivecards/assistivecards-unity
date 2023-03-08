@@ -5,28 +5,25 @@ using UnityEngine;
 public class CardSpawnerComplete : MonoBehaviour
 {
     [SerializeField] private BoardCreatorComplete boardCreatorComplete;
-    private bool oneTime = true;
-
+    public bool hasChild;
 
     private void Update() 
     {
-        if(oneTime)
-        {
-            CardSpawner();
-        }
+        CheckChild();
     }
 
-    public void CardSpawner()
+    public void CheckChild()
     {      
         if(boardCreatorComplete.isBoardCreated)    
         {
-            if(GetComponentInChildren<CardElementComplete>() != null)
+            if(transform.childCount == 0)
             {
-                if(GetComponentInChildren<CardElementComplete>().matched)
-                {
-                    boardCreatorComplete.GenerateCardFirst(boardCreatorComplete.packSlug, boardCreatorComplete.randomValueList[Random.Range(0,12)]);
-                    oneTime = false;
-                }
+                hasChild = false;
+                boardCreatorComplete.FillCardSlot();
+            }
+            else if(transform.childCount > 0)
+            {
+                hasChild = true;
             }
         }
     }

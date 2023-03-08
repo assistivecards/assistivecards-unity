@@ -191,6 +191,11 @@ public class FingerPaintBoardGenerator : MonoBehaviour
                 cardImagesInScene[i].sprite = sprite;
             }
         }
+
+        for (int i = 0; i < cardImagesInScene.Length; i++)
+        {
+            cardImagesInScene[i].transform.GetChild(0).GetComponent<Image>().sprite = cardImagesInScene[i].sprite;
+        }
     }
 
 }

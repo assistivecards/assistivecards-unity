@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using System.Linq;
 
 public class CheckMatches : MonoBehaviour
 {
@@ -35,7 +39,8 @@ public class CheckMatches : MonoBehaviour
 
     private void ReadCard()
     {
-        gameAPI.Speak(flippedCards[0].transform.GetChild(1).name);
+        Debug.Log(flippedCards[0].transform.GetChild(2).GetComponent<TMP_Text>().text);
+        gameAPI.Speak(flippedCards[0].transform.GetChild(2).GetComponent<TMP_Text>().text);
     }
 
     public void Match()

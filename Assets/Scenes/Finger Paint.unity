@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 243530861}
   - component: {fileID: 243530860}
   - component: {fileID: 243530862}
+  - component: {fileID: 243530863}
   m_Layer: 5
   m_Name: ColoredImage
   m_TagString: Untagged
@@ -367,6 +368,20 @@ MonoBehaviour:
   brushAlpha: 1
   paintMaterial: {fileID: 2100000, guid: 505600d98b9505f4bb3a59ac9ccfef95, type: 2}
   histogramShader: {fileID: 7200000, guid: 4a8156963a5ff724e9e528b8024e25b4, type: 3}
+--- !u!114 &243530863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243530858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6310c46446489014fa301501db0461e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFullyColorized: 0
+  paintThreshold: 0.6
 --- !u!1 &252539107
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,6 +1394,7 @@ GameObject:
   - component: {fileID: 1102984343}
   - component: {fileID: 1102984342}
   - component: {fileID: 1102984344}
+  - component: {fileID: 1102984345}
   m_Layer: 5
   m_Name: ColoredImage
   m_TagString: Untagged
@@ -1466,6 +1482,20 @@ MonoBehaviour:
   brushAlpha: 1
   paintMaterial: {fileID: 2100000, guid: 505600d98b9505f4bb3a59ac9ccfef95, type: 2}
   histogramShader: {fileID: 7200000, guid: 6d281e3e270a06645b4357d71d156818, type: 3}
+--- !u!114 &1102984345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102984340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6310c46446489014fa301501db0461e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFullyColorized: 0
+  paintThreshold: 0.6
 --- !u!1 &1120600894
 GameObject:
   m_ObjectHideFlags: 0
@@ -2309,6 +2339,7 @@ GameObject:
   - component: {fileID: 1738127178}
   - component: {fileID: 1738127177}
   - component: {fileID: 1738127179}
+  - component: {fileID: 1738127180}
   m_Layer: 5
   m_Name: ColoredImage
   m_TagString: Untagged
@@ -2396,6 +2427,20 @@ MonoBehaviour:
   brushAlpha: 1
   paintMaterial: {fileID: 2100000, guid: 505600d98b9505f4bb3a59ac9ccfef95, type: 2}
   histogramShader: {fileID: 7200000, guid: f08cded5a14214849badb1f325ec35e3, type: 3}
+--- !u!114 &1738127180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738127175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6310c46446489014fa301501db0461e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFullyColorized: 0
+  paintThreshold: 0.6
 --- !u!1 &1751520795
 GameObject:
   m_ObjectHideFlags: 0

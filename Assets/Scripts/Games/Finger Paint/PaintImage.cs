@@ -293,6 +293,11 @@ public class PaintImage : MonoBehaviour, IPointerEnterHandler
         else if (Input.GetMouseButton(0))
         {
             mouseStatus = 2;
+
+            if (!gameObject.GetComponent<PaintManager>().isFullyColorized)
+            {
+                gameObject.GetComponent<PaintManager>().GetStatsInfo();
+            }
         }
         else if (Input.GetMouseButtonUp(0))
             mouseStatus = 3;

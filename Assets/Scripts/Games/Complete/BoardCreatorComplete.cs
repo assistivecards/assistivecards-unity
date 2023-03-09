@@ -14,24 +14,30 @@ public class BoardCreatorComplete : MonoBehaviour
     AssistiveCardsSDK.AssistiveCardsSDK.Cards cardDefinitions;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cardTextures;
     [SerializeField] private GameObject cardPool;
-    private List<string> cardNames = new List<string>();
-    private List<string> cardDefinitionsLocale = new List<string>();
 
     private int tempRandomValue;
     private int randomValue;
+
+    private List<string> cardNames = new List<string>();
+    private List<string> cardDefinitionsLocale = new List<string>();
+
     public List<int> randomValueList = new List<int>();
     public List<int> usedRandomValues = new List<int>();
 
 
-    [SerializeField] private GameObject cardPrefab;
-    [SerializeField] private GameObject actualCardPrefab;
     public List<GameObject> cards  = new List<GameObject>();
     public List<GameObject> actualCards  = new List<GameObject>();
+
+    [SerializeField] private GameObject cardPrefab;
+    [SerializeField] private GameObject actualCardPrefab;
     [SerializeField] private Transform card1Position;
     [SerializeField] private Transform card2Position;
+
     public int cardCount;
     public string packSlug;
     public bool isBoardCreated = false;
+    public bool levelEnded;
+    public int matchCount;
 
 
     private void OnEnable()
@@ -109,7 +115,7 @@ public class BoardCreatorComplete : MonoBehaviour
             actualCards[j].GetComponent<CardElementComplete>().moveable = true;
             actualCards[j].SetActive(false);
         }
-        FillCardSlot();
+        Invoke("FillCardSlot", 0.5f);
         isBoardCreated = true;
     }
 
@@ -132,14 +138,16 @@ public class BoardCreatorComplete : MonoBehaviour
                     random = Random.Range(0, 12);
 
                     actualCard.SetActive(true);
-                    actualCard.transform.SetParent(card1Position);
                     actualCard.transform.position = card1Position.position;
+                    LeanTween.scale(actualCard, Vector3.one * 5, 0.8f);
+                    actualCard.transform.SetParent(card1Position);
                 }
                 else
                 {
                     actualCard.SetActive(true);
-                    actualCard.transform.SetParent(card1Position);
                     actualCard.transform.position = card1Position.position;
+                    LeanTween.scale(actualCard, Vector3.one * 5, 0.8f);
+                    actualCard.transform.SetParent(card1Position);
                 }
 
             }
@@ -158,16 +166,37 @@ public class BoardCreatorComplete : MonoBehaviour
                     random = UnityEngine.Random.Range(0, 12);
 
                     actualCard.SetActive(true);
-                    actualCard.transform.SetParent(card2Position);
                     actualCard.transform.position = card2Position.position;
+                    LeanTween.scale(actualCard, Vector3.one * 5, 0.8f);
+                    actualCard.transform.SetParent(card2Position);
                 }
                 else
                 {
                     actualCard.SetActive(true);
-                    actualCard.transform.SetParent(card2Position);
                     actualCard.transform.position = card2Position.position;
+                    LeanTween.scale(actualCard, Vector3.one * 5, 0.8f);
+                    actualCard.transform.SetParent(card2Position);
                 }
             }
+        }
+    }
+
+    public void ResetLevel()
+    {
+        cardNames.Clear();
+        usedRandomValues.Clear();
+        randomValueList.Clear();
+        cardDefinitionsLocale.Clear();
+        cards.Clear();
+        actualCards.Clear();
+    }
+
+    public void  EndLevel()
+    {
+        if(matchCount>= 12)
+        {
+            levelEnded = true;
+            Debug.Log("Level Ended");
         }
     }
 }

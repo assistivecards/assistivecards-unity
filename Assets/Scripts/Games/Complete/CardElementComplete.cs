@@ -7,12 +7,16 @@ public class CardElementComplete : MonoBehaviour, IPointerDownHandler, IDragHand
 {
     public string cardType;
     public bool moveable;
-    private DetectMatchComplete detectMatchComplete;
     public bool matched;
+    private GameObject board;
+    private DetectMatchComplete detectMatchComplete;
+    private BoardCreatorComplete boardCreatorComplete;
 
     private void Start() 
     {
         detectMatchComplete = GetComponentInParent<DetectMatchComplete>();
+        board = GameObject.Find("Grid");
+        boardCreatorComplete = board.GetComponent<BoardCreatorComplete>();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -29,13 +33,16 @@ public class CardElementComplete : MonoBehaviour, IPointerDownHandler, IDragHand
 
     void OnTriggerEnter2D(Collider2D other)
     { 
-          if(moveable)
+        if(moveable)
         {
             if(other.gameObject.GetComponent<CardElementComplete>().cardType == cardType)
             {
-                LeanTween.move(this.gameObject, other.transform.position, 0.75f);
+                LeanTween.move(this.gameObject, other.transform.position, 0.25f);
                 matched = true;
+                moveable = false;
                 this.transform.SetParent(other.transform);
+                boardCreatorComplete.matchCount += 1;
+                boardCreatorComplete.EndLevel();
             }
         }
     }

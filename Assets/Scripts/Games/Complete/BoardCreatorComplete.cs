@@ -121,7 +121,7 @@ public class BoardCreatorComplete : MonoBehaviour
 
     public void FillCardSlot()
     {
-        if(usedRandomValues.Count < 12)
+        if(usedRandomValues.Count < 12 && !levelEnded)
         {
             if(card1Position.GetComponent<CardSpawnerComplete>().hasChild == false)
             {
@@ -183,20 +183,28 @@ public class BoardCreatorComplete : MonoBehaviour
 
     public void ResetLevel()
     {
+        foreach (var card in cards)
+        {
+            Destroy(card);
+        }
+        foreach (var card in actualCards)
+        {
+            Destroy(card);
+        }
         cardNames.Clear();
-        usedRandomValues.Clear();
         randomValueList.Clear();
+        usedRandomValues.Clear();
         cardDefinitionsLocale.Clear();
         cards.Clear();
         actualCards.Clear();
+        matchCount = 0;
     }
 
     public void  EndLevel()
     {
-        if(matchCount>= 12)
+        if(matchCount >= 12)
         {
             levelEnded = true;
-            Debug.Log("Level Ended");
         }
     }
 }

@@ -9,7 +9,7 @@ public class PackSelectManagerComplete : MonoBehaviour
     [SerializeField] private BoardCreatorComplete boardCreatorComplete;
     private string selectedPack;
 
-        public void OnPackSelect()
+    public void OnPackSelect()
     {
         if(packSelectionScreenUIController.canGenerate)
         {
@@ -23,5 +23,10 @@ public class PackSelectManagerComplete : MonoBehaviour
         {
             await boardCreatorComplete.CacheCards(selectedPack);
         }  
+    }
+
+    public async void GenerateStylizedBoardContinue()
+    {
+        await boardCreatorComplete.CacheCards(selectedPack); 
     }
 }

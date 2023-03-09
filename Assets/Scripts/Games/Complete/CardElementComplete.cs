@@ -42,7 +42,7 @@ public class CardElementComplete : MonoBehaviour, IPointerDownHandler, IDragHand
                 moveable = false;
                 this.transform.SetParent(other.transform);
                 boardCreatorComplete.matchCount += 1;
-                boardCreatorComplete.EndLevel();
+                boardCreatorComplete.Invoke("EndLevel", 0.4f);
             }
         }
     }

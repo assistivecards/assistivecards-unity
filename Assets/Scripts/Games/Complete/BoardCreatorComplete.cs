@@ -20,7 +20,7 @@ public class BoardCreatorComplete : MonoBehaviour
     private int tempRandomValue;
     private int randomValue;
     public List<int> randomValueList = new List<int>();
-    public List<int> notUsedRandomValues = new List<int>();
+    public List<int> usedRandomValues = new List<int>();
 
 
     [SerializeField] private GameObject cardPrefab;
@@ -71,7 +71,6 @@ public class BoardCreatorComplete : MonoBehaviour
         {
             CheckRandom();
         }
-        CreateRandomList();
 
         for(int i = 0; i< cardTextures.cards.Length; i++)
         {
@@ -116,58 +115,59 @@ public class BoardCreatorComplete : MonoBehaviour
 
     public void FillCardSlot()
     {
-        if(card1Position.GetComponent<CardSpawnerComplete>().hasChild == false)
+        if(usedRandomValues.Count < 12)
         {
-            var random = Random.Range(0, notUsedRandomValues.Count);
-            var actualCard = actualCards[notUsedRandomValues[random]];
-
-            if(actualCard == null)
+            if(card1Position.GetComponent<CardSpawnerComplete>().hasChild == false)
             {
-                random = Random.Range(0, notUsedRandomValues.Count);
+                var random = UnityEngine.Random.Range(0, 12);
+                while(usedRandomValues.Contains(random))
+                {
+                    random = UnityEngine.Random.Range(0, 12);
+                }
+                usedRandomValues.Add(random);
+                var actualCard = actualCards[random];
 
-                actualCard.SetActive(true);
-                actualCard.transform.SetParent(card1Position);
-                actualCard.transform.position = card1Position.position;
-                notUsedRandomValues.RemoveAt(random);
+                if(actualCard == null)
+                {
+                    random = Random.Range(0, 12);
+
+                    actualCard.SetActive(true);
+                    actualCard.transform.SetParent(card1Position);
+                    actualCard.transform.position = card1Position.position;
+                }
+                else
+                {
+                    actualCard.SetActive(true);
+                    actualCard.transform.SetParent(card1Position);
+                    actualCard.transform.position = card1Position.position;
+                }
+
             }
-            else
+            if(card2Position.GetComponent<CardSpawnerComplete>().hasChild == false)
             {
-                actualCard.SetActive(true);
-                actualCard.transform.SetParent(card1Position);
-                actualCard.transform.position = card1Position.position;
-                notUsedRandomValues.RemoveAt(random);
+                var random = UnityEngine.Random.Range(0, 12);
+                while(usedRandomValues.Contains(random))
+                {
+                    random = UnityEngine.Random.Range(0, 12);
+                }
+                usedRandomValues.Add(random);
+                var actualCard = actualCards[random];
+
+                if(actualCard == null)
+                {
+                    random = UnityEngine.Random.Range(0, 12);
+
+                    actualCard.SetActive(true);
+                    actualCard.transform.SetParent(card2Position);
+                    actualCard.transform.position = card2Position.position;
+                }
+                else
+                {
+                    actualCard.SetActive(true);
+                    actualCard.transform.SetParent(card2Position);
+                    actualCard.transform.position = card2Position.position;
+                }
             }
-
-        }
-        if(card2Position.GetComponent<CardSpawnerComplete>().hasChild == false)
-        {
-            var random = Random.Range(0, notUsedRandomValues.Count);
-            var actualCard = actualCards[notUsedRandomValues[random]];
-
-            if(actualCard == null)
-            {
-                random = Random.Range(0, notUsedRandomValues.Count);
-
-                actualCard.SetActive(true);
-                actualCard.transform.SetParent(card2Position);
-                actualCard.transform.position = card2Position.position;
-                notUsedRandomValues.RemoveAt(random);
-            }
-            else
-            {
-                actualCard.SetActive(true);
-                actualCard.transform.SetParent(card2Position);
-                actualCard.transform.position = card2Position.position;
-                notUsedRandomValues.RemoveAt(random);
-            }
-        }
-    }
-
-    private void CreateRandomList()
-    {
-        for(int i = 0; i < randomValueList.Count; i++)
-        {
-            notUsedRandomValues.Add(randomValueList[i]);
         }
     }
 }

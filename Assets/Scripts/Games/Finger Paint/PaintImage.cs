@@ -298,6 +298,8 @@ public class PaintImage : MonoBehaviour, IPointerEnterHandler
             {
                 gameObject.GetComponent<PaintManager>().GetStatsInfo();
             }
+
+            gameObject.GetComponent<FingerPaintMatchDetection>().DetectMatch();
         }
         else if (Input.GetMouseButtonUp(0))
             mouseStatus = 3;

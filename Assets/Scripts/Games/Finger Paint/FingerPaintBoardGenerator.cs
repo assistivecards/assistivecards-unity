@@ -22,6 +22,7 @@ public class FingerPaintBoardGenerator : MonoBehaviour
     [SerializeField] GameObject backButton;
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
+    private FingerPaintUIController UIController;
 
     private void Awake()
     {
@@ -31,6 +32,7 @@ public class FingerPaintBoardGenerator : MonoBehaviour
     private void Start()
     {
         gameAPI.PlayMusic();
+        UIController = GameObject.Find("GamePanel").GetComponent<FingerPaintUIController>();
     }
 
     private void OnEnable()
@@ -38,7 +40,7 @@ public class FingerPaintBoardGenerator : MonoBehaviour
         if (isBackAfterSignOut)
         {
             gameAPI.PlayMusic();
-            // UIController.OnBackButtonClick();
+            UIController.OnBackButtonClick();
             isBackAfterSignOut = false;
         }
     }
@@ -73,7 +75,7 @@ public class FingerPaintBoardGenerator : MonoBehaviour
         PlaceSprites();
         ScaleImagesUp();
         backButton.SetActive(true);
-        Invoke("EnableBackButton", 0.25f);
+        Invoke("EnableBackButton", 0.30f);
     }
 
     public void ClearBoard()
@@ -85,19 +87,20 @@ public class FingerPaintBoardGenerator : MonoBehaviour
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {
             cardImagesInScene[i].sprite = null;
+            cardImagesInScene[i].GetComponent<PaintManager>().isFullyColorized = false;
         }
 
     }
 
     public void ScaleImagesUp()
     {
-        LeanTween.scale(paintText.gameObject, Vector3.one, 0.25f);
+        LeanTween.scale(paintText.gameObject, Vector3.one, 0.30f);
         for (int i = 0; i < imageParents.Length; i++)
         {
             cardImagesInScene[i].GetComponent<PaintImage>().enabled = true;
             LeanTween.alpha(imageParents[i].transform.GetChild(0).GetComponent<RectTransform>(), 1f, .01f);
             imageParents[i].transform.GetChild(0).GetComponent<PaintImage>().ResetMask();
-            LeanTween.scale(imageParents[i].gameObject, Vector3.one, 0.25f);
+            LeanTween.scale(imageParents[i].gameObject, Vector3.one, 0.30f);
         }
     }
 

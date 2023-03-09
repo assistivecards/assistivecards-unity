@@ -73,7 +73,7 @@ public class FingerPaintBoardGenerator : MonoBehaviour
         PlaceSprites();
         ScaleImagesUp();
         backButton.SetActive(true);
-        Invoke("EnableBackButton", 0.25f);
+        Invoke("EnableBackButton", 0.30f);
     }
 
     public void ClearBoard()
@@ -85,19 +85,20 @@ public class FingerPaintBoardGenerator : MonoBehaviour
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {
             cardImagesInScene[i].sprite = null;
+            cardImagesInScene[i].GetComponent<PaintManager>().isFullyColorized = false;
         }
 
     }
 
     public void ScaleImagesUp()
     {
-        LeanTween.scale(paintText.gameObject, Vector3.one, 0.25f);
+        LeanTween.scale(paintText.gameObject, Vector3.one, 0.30f);
         for (int i = 0; i < imageParents.Length; i++)
         {
             cardImagesInScene[i].GetComponent<PaintImage>().enabled = true;
             LeanTween.alpha(imageParents[i].transform.GetChild(0).GetComponent<RectTransform>(), 1f, .01f);
             imageParents[i].transform.GetChild(0).GetComponent<PaintImage>().ResetMask();
-            LeanTween.scale(imageParents[i].gameObject, Vector3.one, 0.25f);
+            LeanTween.scale(imageParents[i].gameObject, Vector3.one, 0.30f);
         }
     }
 

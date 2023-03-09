@@ -8,11 +8,13 @@ public class FingerPaintMatchDetection : MonoBehaviour
     private PaintManager paintManager;
     [SerializeField] PaintImage[] coloredImages;
     private FingerPaintBoardGenerator board;
+    private FingerPaintUIController UIController;
 
     private void Start()
     {
         paintManager = gameObject.GetComponent<PaintManager>();
         board = GameObject.Find("GamePanel").GetComponent<FingerPaintBoardGenerator>();
+        UIController = GameObject.Find("GamePanel").GetComponent<FingerPaintUIController>();
     }
 
     public void DetectMatch()
@@ -25,6 +27,7 @@ public class FingerPaintMatchDetection : MonoBehaviour
                 coloredImages[i].enabled = false;
             }
 
+            UIController.backButton.GetComponent<Button>().interactable = false;
             Invoke("ScaleCorrectCardUp", .25f);
             board.Invoke("ScaleImagesDown", 1f);
             board.Invoke("ClearBoard", 1.30f);

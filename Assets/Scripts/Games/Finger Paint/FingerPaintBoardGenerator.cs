@@ -22,6 +22,7 @@ public class FingerPaintBoardGenerator : MonoBehaviour
     [SerializeField] GameObject backButton;
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
+    private FingerPaintUIController UIController;
 
     private void Awake()
     {
@@ -31,6 +32,7 @@ public class FingerPaintBoardGenerator : MonoBehaviour
     private void Start()
     {
         gameAPI.PlayMusic();
+        UIController = GameObject.Find("GamePanel").GetComponent<FingerPaintUIController>();
     }
 
     private void OnEnable()
@@ -38,7 +40,7 @@ public class FingerPaintBoardGenerator : MonoBehaviour
         if (isBackAfterSignOut)
         {
             gameAPI.PlayMusic();
-            // UIController.OnBackButtonClick();
+            UIController.OnBackButtonClick();
             isBackAfterSignOut = false;
         }
     }

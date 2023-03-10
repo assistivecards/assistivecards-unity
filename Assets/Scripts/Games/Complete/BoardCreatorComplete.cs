@@ -208,4 +208,9 @@ public class BoardCreatorComplete : MonoBehaviour
             levelEnded = true;
         }
     }
+
+    public void BoardCreatedFalse()
+    {
+        isBoardCreated = false;
+    }
 }

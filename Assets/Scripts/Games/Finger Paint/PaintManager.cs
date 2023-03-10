@@ -10,7 +10,7 @@ public class PaintManager : MonoBehaviour
     public void GetStatsInfo()
     {
         var data = gameObject.GetComponent<PaintImage>().GetStatData();
-        Debug.Log(gameObject.name + " " + data.fillPercent);
+        // Debug.Log(gameObject.name + " " + data.fillPercent);
         if (data.fillPercent >= paintThreshold)
         {
             isFullyColorized = true;

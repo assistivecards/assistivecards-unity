@@ -22,6 +22,7 @@ public class FingerPaintMatchDetection : MonoBehaviour
         if (paintManager.isFullyColorized && gameObject.tag == "CorrectCard")
         {
             Debug.Log("Correct Match!");
+            UIController.correctMatches++;
             for (int i = 0; i < coloredImages.Length; i++)
             {
                 coloredImages[i].enabled = false;
@@ -31,7 +32,12 @@ public class FingerPaintMatchDetection : MonoBehaviour
             Invoke("ScaleCorrectCardUp", .25f);
             board.Invoke("ScaleImagesDown", 1f);
             board.Invoke("ClearBoard", 1.30f);
-            board.Invoke("GenerateRandomBoardAsync", 1.30f);
+            if (UIController.correctMatches == UIController.checkpointFrequency)
+            {
+                UIController.Invoke("OpenCheckPointPanel", 1.30f);
+            }
+            else
+                board.Invoke("GenerateRandomBoardAsync", 1.30f);
         }
         else if (paintManager.isFullyColorized && gameObject.tag == "WrongCard")
         {

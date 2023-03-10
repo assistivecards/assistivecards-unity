@@ -39,6 +39,8 @@ public class BoardCreatorComplete : MonoBehaviour
     public bool levelEnded;
     public int matchCount;
 
+    [SerializeField] private Color dark;
+
 
     private void OnEnable()
     {
@@ -97,7 +99,7 @@ public class BoardCreatorComplete : MonoBehaviour
             cardTexture.filterMode = FilterMode.Bilinear;
 
             cards[j].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-            cards[j].transform.GetChild(0).GetComponent<RawImage>().color = Color.black;
+            cards[j].transform.GetChild(0).GetComponent<RawImage>().color = dark;
             cards[j].GetComponent<CardElementComplete>().cardType = cardName;
 
 

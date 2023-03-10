@@ -5,12 +5,19 @@ using UnityEngine.EventSystems;
 
 public class CardElementComplete : MonoBehaviour, IPointerDownHandler, IDragHandler
 {
+    GameAPI gameAPI;
     public string cardType;
     public bool moveable;
     public bool matched;
     private GameObject board;
     private DetectMatchComplete detectMatchComplete;
     private BoardCreatorComplete boardCreatorComplete;
+    public string localName;
+
+    private void Awake() 
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void Start() 
     {
@@ -38,6 +45,8 @@ public class CardElementComplete : MonoBehaviour, IPointerDownHandler, IDragHand
             if(other.gameObject.GetComponent<CardElementComplete>().cardType == cardType)
             {
                 LeanTween.move(this.gameObject, other.transform.position, 0.25f);
+                gameAPI.PlaySFX("Success");
+                Invoke("ReadCard", 0.2f);
                 matched = true;
                 moveable = false;
                 this.transform.SetParent(other.transform);
@@ -45,6 +54,11 @@ public class CardElementComplete : MonoBehaviour, IPointerDownHandler, IDragHand
                 boardCreatorComplete.Invoke("EndLevel", 0.4f);
             }
         }
+    }
+
+    private void ReadCard()
+    {
+        gameAPI.Speak(localName);
     }
 
 }

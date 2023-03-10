@@ -119,6 +119,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardType: 
   moveable: 0
+  matched: 0
+  localName: 
 --- !u!1 &3953419126043893981
 GameObject:
   m_ObjectHideFlags: 0

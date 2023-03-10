@@ -39,6 +39,8 @@ public class BoardCreatorComplete : MonoBehaviour
     public bool levelEnded;
     public int matchCount;
 
+    [SerializeField] private Color dark;
+
 
     private void OnEnable()
     {
@@ -63,7 +65,6 @@ public class BoardCreatorComplete : MonoBehaviour
         {
             randomValue = tempRandomValue;
             randomValueList.Add(randomValue);
-            Debug.Log(randomValue);
         }
         else
         {
@@ -98,7 +99,7 @@ public class BoardCreatorComplete : MonoBehaviour
             cardTexture.filterMode = FilterMode.Bilinear;
 
             cards[j].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-            cards[j].transform.GetChild(0).GetComponent<RawImage>().color = Color.black;
+            cards[j].transform.GetChild(0).GetComponent<RawImage>().color = dark;
             cards[j].GetComponent<CardElementComplete>().cardType = cardName;
 
 
@@ -113,6 +114,7 @@ public class BoardCreatorComplete : MonoBehaviour
             actualCards[j].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             actualCards[j].GetComponent<CardElementComplete>().cardType = cardName;
             actualCards[j].GetComponent<CardElementComplete>().moveable = true;
+            actualCards[j].GetComponent<CardElementComplete>().localName = cardDefinitionsLocale[randomValueList[j]];
             actualCards[j].SetActive(false);
         }
         Invoke("FillCardSlot", 0.5f);
@@ -204,7 +206,13 @@ public class BoardCreatorComplete : MonoBehaviour
     {
         if(matchCount >= 12)
         {
+            gameAPI.PlaySFX("Finished");
             levelEnded = true;
         }
+    }
+
+    public void BoardCreatedFalse()
+    {
+        isBoardCreated = false;
     }
 }

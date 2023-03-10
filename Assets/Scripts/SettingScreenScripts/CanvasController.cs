@@ -286,13 +286,7 @@ public class CanvasController : MonoBehaviour
         DrawLinesBoardGenerator.isBackAfterSignOut = true;
         ScratcherBoardGenerator.isBackAfterSignOut = true;
         FingerPaintBoardGenerator.isBackAfterSignOut = true;
-        deviceLanguage = languageScreen.GetComponentInChildren<DeviceLanguagePanel>().deviceLanguageObject;
-        if (deviceLanguage != null)
-        {
-            deviceLanguage.GetComponent<Toggle>().isOn = true;
-        }
-
-
+        
         if (notificationPreferences.reminderPreference == "Daily")
         {
             notificationPreferences.dailyReminderToggle.isOn = true;

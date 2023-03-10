@@ -54,8 +54,10 @@ public class BoardGeneration : MonoBehaviour
         if (packName == "shapes")
         {
             var cardsList = cachedCards.cards.ToList();
-            cardsList.RemoveAt(8);
-            cardsList.RemoveAt(12);
+            var ellipse = cardsList.Single(card => card.slug == "ellipse");
+            var ring = cardsList.Single(card => card.slug == "ring");
+            cardsList.Remove(ellipse);
+            cardsList.Remove(ring);
             cachedCards.cards = cardsList.ToArray();
         }
         // for (int i = 0; i < cachedCards.cards.Length; i++)

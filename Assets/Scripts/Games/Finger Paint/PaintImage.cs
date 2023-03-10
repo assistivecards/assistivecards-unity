@@ -288,6 +288,10 @@ public class PaintImage : MonoBehaviour, IPointerEnterHandler
         if (Input.GetMouseButtonDown(0))
         {
             mouseStatus = 1;
+
+            if (!gameObject.GetComponent<PaintManager>().isFullyColorized && !Camera.main.transform.GetChild(1).GetComponent<AudioSource>().isPlaying && transform.parent.localScale == Vector3.one)
+                gameAPI.PlaySFX("Paint");
+
         }
 
         else if (Input.GetMouseButton(0))
@@ -298,6 +302,9 @@ public class PaintImage : MonoBehaviour, IPointerEnterHandler
             {
                 gameObject.GetComponent<PaintManager>().GetStatsInfo();
             }
+
+            if (!gameObject.GetComponent<PaintManager>().isFullyColorized && !Camera.main.transform.GetChild(1).GetComponent<AudioSource>().isPlaying && transform.parent.localScale == Vector3.one && !isIdle)
+                gameAPI.PlaySFX("Paint");
 
             gameObject.GetComponent<FingerPaintMatchDetection>().DetectMatch();
         }

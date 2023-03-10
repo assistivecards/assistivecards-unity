@@ -9,6 +9,12 @@ public class FingerPaintMatchDetection : MonoBehaviour
     [SerializeField] PaintImage[] coloredImages;
     private FingerPaintBoardGenerator board;
     private FingerPaintUIController UIController;
+    private GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void Start()
     {
@@ -29,7 +35,9 @@ public class FingerPaintMatchDetection : MonoBehaviour
             }
 
             UIController.backButton.GetComponent<Button>().interactable = false;
+            gameAPI.PlaySFX("Success");
             Invoke("ScaleCorrectCardUp", .25f);
+            board.Invoke("ReadCard", 0.25f);
             board.Invoke("ScaleImagesDown", 1f);
             board.Invoke("ClearBoard", 1.30f);
             if (UIController.correctMatches == UIController.checkpointFrequency)

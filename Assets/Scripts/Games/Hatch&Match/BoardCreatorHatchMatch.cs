@@ -142,7 +142,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
             GenerateCard(packSelectionPanel.selectedPackElement.name, card2Position, 2);
             GenerateCard(packSelectionPanel.selectedPackElement.name, card3Position, 3);
             egg.SetActive(true);
-            LeanTween.scale(egg, Vector3.one, 1f);
+            LeanTween.scale(egg, Vector3.one * 1.25f, 1f);
             Invoke("GenerateStylizedCard", 0.5f);
         }
     }

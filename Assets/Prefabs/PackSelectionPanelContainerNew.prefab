@@ -135,8 +135,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 48105.203}
-  m_SizeDelta: {x: -8.810547, y: -568.5324}
+  m_AnchoredPosition: {x: 0, y: 48444.258}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &8441382994790024703
 MonoBehaviour:
@@ -196,6 +196,10 @@ MonoBehaviour:
   currentLanguageCode: 
   loadingPanel: {fileID: 0}
   packSelectionPanel: {fileID: 8441382994831629479}
+  tempColor1: {r: 0, g: 0, b: 0, a: 0}
+  tempColor2: {r: 0, g: 0, b: 0, a: 0}
+  tempColor3: {r: 0, g: 0, b: 0, a: 0}
+  tempColor4: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &9209683489089641035
 MonoBehaviour:
   m_ObjectHideFlags: 0

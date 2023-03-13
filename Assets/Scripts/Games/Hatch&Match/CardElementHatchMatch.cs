@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class CardElementHatchMatch : MonoBehaviour, IPointerDownHandler, IDragHandler
 {
@@ -13,10 +14,12 @@ public class CardElementHatchMatch : MonoBehaviour, IPointerDownHandler, IDragHa
     private LevelChangeScreenHatchMatch levelChangeScreenHatchMatch;
 
     public string cardName;
+    private Vector3 startPosition;
 
     private void Awake() 
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+        startPosition = transform.position;
     }
 
     private void Start() 
@@ -45,6 +48,21 @@ public class CardElementHatchMatch : MonoBehaviour, IPointerDownHandler, IDragHa
             match = true;
             LeanTween.move(this.gameObject, other.transform.position, 0.75f).setOnComplete(LevelEnd);
         }
+        else if(other.gameObject.name != "Egg" && other.gameObject.name != this.gameObject.name)
+        {
+            other.GetComponent<Image>().CrossFadeAlpha(0, 1.3f, false);
+
+            if(other.transform.childCount > 0)
+            {
+                other.transform.GetChild(0).gameObject.GetComponent<RawImage>().CrossFadeAlpha(0, 1.3f, false);
+                Invoke("MoveToBegging", 0.15f);
+            }
+        }
+    }
+
+    private void MoveToBegging()
+    {
+        LeanTween.move(this.gameObject, startPosition, 1.25f);
     }
 
     private void SpeakCardName()

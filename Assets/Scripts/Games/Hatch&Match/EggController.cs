@@ -16,6 +16,7 @@ public class EggController : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 
     public int clickCount;
     public Color[] colors;
+    public bool isCracked;
 
     private void OnEnable() 
     {
@@ -72,6 +73,7 @@ public class EggController : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         {
             gameObject.GetComponent<Animator>().Play("Phase5", -1, 0f);
             Invoke("ActivateCard", 0.25f);
+            isCracked = true;
         }
     }
 
@@ -86,5 +88,6 @@ public class EggController : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         gameObject.GetComponent<Animator>().Play("Idle", -1, 0f);
         this.GetComponent<Image>().color = colors[Random.Range(0, colors.Length)];
         clickCount = 0;
+        isCracked = false;
     }
 }

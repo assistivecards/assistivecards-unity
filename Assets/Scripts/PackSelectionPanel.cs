@@ -97,6 +97,11 @@ public class PackSelectionPanel : MonoBehaviour
                 packElement.SetActive(false);
             }
 
+            if (Application.productName.Replace(" ", "_").ToLower() == "complete" && (packElement.name == "colors" || packElement.name == "feelings"))
+            {
+                packElement.SetActive(false);
+            }
+
             if (Application.productName.Replace(" ", "_").ToLower() == "finger_paint" && (packElement.name == "colors"))
             {
                 packElement.SetActive(false);

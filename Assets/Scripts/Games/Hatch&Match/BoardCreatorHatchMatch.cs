@@ -98,6 +98,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
 
     private async void  GenerateCard(string _packSlug, Transform _cardPosition, int _randomValue)
     {
+        egg.GetComponent<EggController>().ResetEgg();
         var cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[randomValues[_randomValue]], 512);
         
         GameObject card1 = Instantiate(cardPrefab, _cardPosition.position, Quaternion.identity);

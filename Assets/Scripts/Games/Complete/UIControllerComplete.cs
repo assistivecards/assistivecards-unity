@@ -9,6 +9,7 @@ public class UIControllerComplete : MonoBehaviour
     [Header("Screens")]
     [SerializeField] private GameObject levelScreen;
     [SerializeField] private GameObject grid;
+    [SerializeField] private GameObject gridBackground;
     [SerializeField] private GameObject packSelectionPanel;
 
     [Header("UI Elements")]
@@ -24,11 +25,13 @@ public class UIControllerComplete : MonoBehaviour
             levelScreen.SetActive(true);
             backButton.SetActive(true);
             helloText.SetActive(false);
+            gridBackground.SetActive(false);
         }
         else if(packSelectionPanel.activeInHierarchy)
         {
             helloText.SetActive(true);
             backButton.SetActive(false);
+            gridBackground.SetActive(false);
         }
         else
         {

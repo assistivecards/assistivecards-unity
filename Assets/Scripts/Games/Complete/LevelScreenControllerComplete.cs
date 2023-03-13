@@ -12,7 +12,8 @@ public class LevelScreenControllerComplete : MonoBehaviour
 
     public void LevelScreenClose()
     {
-        LeanTween.scale(this.gameObject, Vector3.zero, 0.25f).setOnComplete(Close);
+        LeanTween.scale(this.gameObject, Vector3.zero, 0.25f);
+        Invoke("Close", 1f);
     }
 
     private void Close()

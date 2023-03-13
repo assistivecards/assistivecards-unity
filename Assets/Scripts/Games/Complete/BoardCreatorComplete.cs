@@ -29,6 +29,7 @@ public class BoardCreatorComplete : MonoBehaviour
     public List<GameObject> actualCards  = new List<GameObject>();
 
     [SerializeField] private GameObject cardPrefab;
+    [SerializeField] private GameObject gridBackground;
     [SerializeField] private GameObject actualCardPrefab;
     [SerializeField] private Transform card1Position;
     [SerializeField] private Transform card2Position;
@@ -49,10 +50,11 @@ public class BoardCreatorComplete : MonoBehaviour
 
     public async Task CacheCards(string _packSlug)
     {
+        LeanTween.scale(gridBackground, Vector3.one, 0);
         selectedLangCode = await gameAPI.GetSystemLanguageCode();
         cardDefinitions = await gameAPI.GetCards(selectedLangCode, _packSlug);
         cardTextures = await gameAPI.GetCards("en", _packSlug);
-
+        gridBackground.SetActive(true);
         await GenerateRandomBoardAsync(_packSlug);
         packSlug = _packSlug;
     }
@@ -92,6 +94,7 @@ public class BoardCreatorComplete : MonoBehaviour
 
             cards.Add(Instantiate(cardPrefab, Vector3.zero, Quaternion.identity));
             cards[j].transform.parent = this.transform;
+            LeanTween.scale(cards[j], Vector3.one * 1.18f, 0);
 
             cards[j].transform.name = "Card" + j;
 

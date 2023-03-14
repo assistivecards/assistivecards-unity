@@ -20,7 +20,8 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
     [SerializeField] GameObject[] puzzlePieceParents;
     [SerializeField] GameObject[] puzzlePieceSlots;
     [SerializeField] List<Image> puzzlePieceImages = new List<Image>();
-    private List<Sprite> puzzlePieces = new List<Sprite>();
+    [SerializeField] List<Sprite> puzzlePiecesRef = new List<Sprite>();
+    [SerializeField] List<Sprite> puzzlePieces = new List<Sprite>();
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> uniqueCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
 
     private void Awake()
@@ -57,9 +58,28 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
             didLanguageChange = false;
         }
 
-        randomImage = await gameAPI.GetCardImage(packSlug, uniqueCards[0].slug);
+        if (puzzlePieces.Count == 0)
+        {
+            for (int i = 0; i < puzzlePiecesRef.Count; i++)
+            {
+                puzzlePieces.Add(puzzlePiecesRef[i]);
+            }
+        }
+
+        randomImage = await gameAPI.GetCardImage(packSlug, uniqueCards[Random.Range(0, uniqueCards.Count)].slug);
         randomImage.wrapMode = TextureWrapMode.Clamp;
         randomImage.filterMode = FilterMode.Bilinear;
+
+        for (int i = 0; i < puzzlePieceParents.Length; i++)
+        {
+            if (puzzlePieceParents[i].GetComponent<Image>().sprite == null)
+            {
+                var randomIndex = Random.Range(0, puzzlePieces.Count);
+                var sprite = puzzlePieces[randomIndex];
+                puzzlePieces.RemoveAt(randomIndex);
+                puzzlePieceParents[i].GetComponent<Image>().sprite = sprite;
+            }
+        }
 
         ScaleImagesUp();
         backButton.SetActive(true);
@@ -71,9 +91,9 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
         cardToAdd = null;
         randomImage = null;
         puzzlePieces.Clear();
-        for (int i = 0; i < puzzlePieceImages.Count; i++)
+        for (int i = 0; i < puzzlePieceParents.Length; i++)
         {
-            puzzlePieceImages[i].sprite = null;
+            puzzlePieceParents[i].GetComponent<Image>().sprite = null;
         }
     }
 

@@ -18,7 +18,7 @@ public class BoardGenerateCardChain : MonoBehaviour
     private int tempRandomValue;
     private int randomValue;
 
-    private List<string> cardNames = new List<string>();
+    public List<string> cardNames = new List<string>();
     private List<string> cardDefinitionsLocale = new List<string>();
     public List<GameObject> cards  = new List<GameObject>();
     public List<GameObject> cardPositions  = new List<GameObject>();
@@ -74,9 +74,17 @@ public class BoardGenerateCardChain : MonoBehaviour
         }
     }
 
+    private void SuffleList()
+    {
+        for(int i = 0; i < cardNames.Count; i++)
+        {
+            cardNames[i] = cardNames[Random.Range(0, cardNames.Count)];
+        }
+    }
+
     public async Task GenerateRandomBoardAsync(string packSlug)
     {
-        for(int x = 0; x < 6; x++)
+        for(int x = 0; x < 12; x++)
         {
             CheckRandom();
         }
@@ -86,34 +94,29 @@ public class BoardGenerateCardChain : MonoBehaviour
             cardNames.Add(cardTextures.cards[i].title.ToLower().Replace(" ", "-"));
             cardDefinitionsLocale.Add(cardDefinitions.cards[i].title);
         }
-
+        SuffleList();
         for(int j = 0; j < cardCount; j++)
         {
             cards.Add(Instantiate(cardPrefab, Vector3.zero, Quaternion.identity));
             cards[j].transform.parent = this.transform;
             cards[j].transform.name = "Card" + j;
-            var randomElement = randomValueList[Random.Range(0, randomValueList.Count)];
-            var cardName = cardNames[randomElement];
+
+            var cardName = cardNames[j];
             var cardTexture = await gameAPI.GetCardImage(packSlug, cardName, 512);
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear;
             cards[j].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
 
-            var randomElement2 = randomValueList[Random.Range(0, randomValueList.Count)];
-            var cardName2 = cardNames[randomValueList[Random.Range(0, randomValueList.Count)]];
-            while(cardName2 == cardName)
-            {
-                cardName2 = cardNames[randomValueList[Random.Range(0, randomValueList.Count)]];
-            }
+            var cardName2 = cardNames[j + 1];
             var cardTexture2 = await gameAPI.GetCardImage(packSlug, cardName2, 512);
             cardTexture2.wrapMode = TextureWrapMode.Clamp;
             cardTexture2.filterMode = FilterMode.Bilinear;
             cards[j].transform.GetChild(1).GetComponent<RawImage>().texture = cardTexture2;
 
             cards[j].transform.position = cardPositions[j].transform.position;
-            LeanTween.scale(cards[j], Vector3.one * 0.5f, 0);
+            cards[j].transform.rotation = Quaternion.Euler(0, 0, Random.Range(12, -12));
+            LeanTween.scale(cards[j], Vector3.one * 0.5f, 0.5f);
         }
-        Invoke("FillCardSlot", 0.5f);
         isBoardCreated = true;
     }
 

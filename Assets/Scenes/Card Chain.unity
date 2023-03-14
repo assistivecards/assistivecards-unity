@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 43174988}
   m_Layer: 5
-  m_Name: Card4
+  m_Name: CardPosition4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,7 +156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 167}
+  m_AnchoredPosition: {x: 0, y: 225}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &88731552
@@ -876,7 +876,7 @@ GameObject:
   m_Component:
   - component: {fileID: 771140372}
   m_Layer: 5
-  m_Name: Card1
+  m_Name: CardPosition1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -899,7 +899,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -85, y: -20}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &967599304 stripped
@@ -1066,7 +1066,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1112654012}
   m_Layer: 5
-  m_Name: Card2
+  m_Name: CardPosition2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1089,7 +1089,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 371, y: 0}
+  m_AnchoredPosition: {x: 371, y: -73}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1120600894
@@ -1548,7 +1548,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1461986426}
   m_Layer: 5
-  m_Name: Card3
+  m_Name: CardPosition3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1571,7 +1571,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -396, y: 0}
+  m_AnchoredPosition: {x: -434, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &1487501776 stripped
@@ -1589,7 +1589,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1490482138}
   m_Layer: 5
-  m_Name: Card5
+  m_Name: CardPosition5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2093,6 +2093,7 @@ MonoBehaviour:
   cardTextures:
     cards: []
   packSelectionPanel: {fileID: 1414549224}
+  cardNames: []
   cards: []
   cardPositions: []
   randomValueList: 

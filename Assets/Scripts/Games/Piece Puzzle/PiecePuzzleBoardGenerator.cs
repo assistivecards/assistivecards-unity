@@ -78,6 +78,7 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
                 var sprite = puzzlePieces[randomIndex];
                 puzzlePieces.RemoveAt(randomIndex);
                 puzzlePieceParents[i].GetComponent<Image>().sprite = sprite;
+                puzzlePieceParents[i].SetActive(true);
             }
         }
 

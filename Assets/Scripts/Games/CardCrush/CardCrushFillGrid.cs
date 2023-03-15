@@ -17,7 +17,7 @@ public class CardCrushFillGrid : MonoBehaviour
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] private GameObject scoreObj;
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
-    private List<string> cardNames = new List<string>();
+    public List<string> cardNames = new List<string>();
 
     public int cardTypeCount;
     public bool isBoardCreated = false;

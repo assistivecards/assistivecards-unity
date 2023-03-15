@@ -19,7 +19,7 @@ public class BoardGenerateCardChain : MonoBehaviour
     private int randomValue;
 
     public List<string> cardNames = new List<string>();
-    private List<string> cardDefinitionsLocale = new List<string>();
+    public List<string> cardDefinitionsLocale = new List<string>();
     public List<GameObject> cards  = new List<GameObject>();
     public List<GameObject> cardPositions  = new List<GameObject>();
 
@@ -77,8 +77,10 @@ public class BoardGenerateCardChain : MonoBehaviour
     private void SuffleList()
     {
         for(int i = 0; i < cardNames.Count; i++)
-        {
-            cardNames[i] = cardNames[Random.Range(0, cardNames.Count)];
+        {   
+            var random = Random.Range(0, cardNames.Count);
+            cardNames[i] = cardNames[random];
+            cardDefinitionsLocale[i] = cardDefinitionsLocale[random];
         }
     }
 
@@ -106,12 +108,14 @@ public class BoardGenerateCardChain : MonoBehaviour
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear;
             cards[j].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+            cards[j].GetComponent<CardControllerCardChain>().firstCardLocalName = cardDefinitionsLocale[j];
 
             var cardName2 = cardNames[j + 1];
             var cardTexture2 = await gameAPI.GetCardImage(packSlug, cardName2, 512);
             cardTexture2.wrapMode = TextureWrapMode.Clamp;
             cardTexture2.filterMode = FilterMode.Bilinear;
             cards[j].transform.GetChild(1).GetComponent<RawImage>().texture = cardTexture2;
+            cards[j].GetComponent<CardControllerCardChain>().secondCardLocalName = cardDefinitionsLocale[j + 1];
 
             cards[j].transform.position = cardPositions[j].transform.position;
             cards[j].transform.rotation = Quaternion.Euler(0, 0, Random.Range(12, -12));

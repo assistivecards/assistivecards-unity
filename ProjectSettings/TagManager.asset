@@ -10,6 +10,11 @@ TagManager:
   - notMatchedCard
   - avatarSelection
   - avatarSelectionSettings
+  - Balloon
+  - cardBlast
+  - HintPiece
+  - Piece
+  - TopLeft
   layers:
   - Default
   - TransparentFX

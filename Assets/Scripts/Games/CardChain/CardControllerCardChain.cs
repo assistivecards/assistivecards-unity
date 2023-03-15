@@ -11,27 +11,38 @@ public class CardControllerCardChain : MonoBehaviour, IPointerDownHandler, IDrag
 
     public void OnDrag(PointerEventData eventData)
     {
-        this.transform.position = eventData.position;
+        this.transform.parent.position = eventData.position;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        this.transform.position = eventData.position;
+        this.transform.parent.position = eventData.position;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     { 
-        if(other.gameObject.GetComponent<CardControllerCardChain>().firstCardLocalName == secondCardLocalName)
+
+        if(this.GetComponentInParent<ChainController>().cardTypes.Contains(other.gameObject.name))
         {
-            Debug.Log("second + first  Type:" + secondCardLocalName);
+            this.transform.parent.rotation = Quaternion.Euler(0, 0,0);
+            foreach (var card in other.gameObject.GetComponentInParent<ChainController>().cards)
+            {
+                card.transform.SetParent(this.transform.parent);
+            }
+            //other.gameObject.GetComponentInParent<ChainController>().cards.Remove(other.gameObject);
+            //Destroy(other.gameObject);
         }
-        else if(other.gameObject.GetComponent<CardControllerCardChain>().firstCardLocalName == firstCardLocalName)
-        {
-            Debug.Log("first + first  Type:" + firstCardLocalName);
-        }
-        else if(other.gameObject.GetComponent<CardControllerCardChain>().secondCardLocalName == secondCardLocalName)
-        {
-            Debug.Log("second + second   Type:" + secondCardLocalName);
-        }
+        // if(other.gameObject.GetComponent<CardControllerCardChain>().firstCardLocalName == secondCardLocalName)
+        // {
+        //     this.transform.parent.rotation = Quaternion.Euler(0, 0,0);
+        // }
+        // else if(other.gameObject.GetComponent<CardControllerCardChain>().firstCardLocalName == firstCardLocalName)
+        // {
+        //     this.transform.parent.rotation = Quaternion.Euler(0, 0,0);
+        // }
+        // else if(other.gameObject.GetComponent<CardControllerCardChain>().secondCardLocalName == secondCardLocalName)
+        // {
+        //     this.transform.parent.rotation = Quaternion.Euler(0, 0,0);
+        // }
     }
 }

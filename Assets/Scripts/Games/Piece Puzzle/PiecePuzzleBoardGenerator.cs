@@ -103,7 +103,7 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
         {
             puzzlePieceParents[i].transform.SetParent(puzzlePieceSlots[i].transform);
             puzzlePieceParents[i].transform.position = puzzlePieceSlots[i].transform.position;
-            puzzlePieceParents[i].transform.GetChild(0).GetComponent<Image>().sprite = Sprite.Create(randomImage, new Rect(0.0f, 0.0f, randomImage.width, randomImage.height), new Vector2(0.5f, 0.5f), 100.0f);
+            puzzlePieceParents[i].transform.GetChild(1).GetComponent<Image>().sprite = Sprite.Create(randomImage, new Rect(0.0f, 0.0f, randomImage.width, randomImage.height), new Vector2(0.5f, 0.5f), 100.0f);
         }
         hintImage.sprite = Sprite.Create(randomImage, new Rect(0.0f, 0.0f, randomImage.width, randomImage.height), new Vector2(0.5f, 0.5f), 100.0f);
 

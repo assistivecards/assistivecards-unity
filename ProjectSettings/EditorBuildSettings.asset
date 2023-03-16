@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Card Blast.unity
-    guid: 3a13e14cc1bfa4390ad30204e9f38331
+    path: Assets/Scenes/Hatch Match.unity
+    guid: 95c85cee1658c4a5eac634d096cd5f27
   m_configObjects: {}

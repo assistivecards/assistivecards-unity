@@ -23,6 +23,7 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
     [SerializeField] List<Sprite> puzzlePiecesRef = new List<Sprite>();
     [SerializeField] List<Sprite> puzzlePieces = new List<Sprite>();
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> uniqueCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
+    private PuzzleProgressChecker puzzleProgressChecker;
 
     private void Awake()
     {
@@ -32,6 +33,7 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
     private void Start()
     {
         gameAPI.PlayMusic();
+        puzzleProgressChecker = GameObject.Find("GamePanel").GetComponent<PuzzleProgressChecker>();
     }
 
     private void OnEnable()
@@ -66,7 +68,7 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
             }
         }
 
-        randomImage = await gameAPI.GetCardImage(packSlug, uniqueCards[Random.Range(0, uniqueCards.Count)].slug);
+        randomImage = await gameAPI.GetCardImage(packSlug, uniqueCards[puzzleProgressChecker.puzzlesCompleted].slug);
         randomImage.wrapMode = TextureWrapMode.Clamp;
         randomImage.filterMode = FilterMode.Bilinear;
 
@@ -79,6 +81,7 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
                 puzzlePieces.RemoveAt(randomIndex);
                 puzzlePieceParents[i].GetComponent<Image>().sprite = sprite;
                 puzzlePieceParents[i].SetActive(true);
+                puzzlePieceParents[i].GetComponent<PiecePuzzleDraggablePiece>().enabled = true;
             }
         }
 
@@ -95,6 +98,8 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
         for (int i = 0; i < puzzlePieceParents.Length; i++)
         {
             puzzlePieceParents[i].GetComponent<Image>().sprite = null;
+            puzzlePieceParents[i].GetComponent<PiecePuzzleMatchDetection>().correctMatch = false;
+            puzzlePieceParents[i].transform.GetChild(0).GetComponent<PiecePuzzleAnchorPointDetection>().isMatched = false;
         }
     }
 

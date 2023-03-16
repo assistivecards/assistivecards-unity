@@ -22,27 +22,26 @@ public class CardControllerCardChain : MonoBehaviour, IPointerDownHandler, IDrag
     void OnTriggerEnter2D(Collider2D other)
     { 
 
-        if(this.GetComponentInParent<ChainController>().cardTypes.Contains(other.gameObject.name))
+        if(this.gameObject.name == other.gameObject.name)
         {
-            this.transform.parent.rotation = Quaternion.Euler(0, 0,0);
-            foreach (var card in other.gameObject.GetComponentInParent<ChainController>().cards)
-            {
-                card.transform.SetParent(this.transform.parent);
-            }
-            //other.gameObject.GetComponentInParent<ChainController>().cards.Remove(other.gameObject);
-            //Destroy(other.gameObject);
+            StartCoroutine(MoveOtherCard(other));
         }
-        // if(other.gameObject.GetComponent<CardControllerCardChain>().firstCardLocalName == secondCardLocalName)
-        // {
-        //     this.transform.parent.rotation = Quaternion.Euler(0, 0,0);
-        // }
-        // else if(other.gameObject.GetComponent<CardControllerCardChain>().firstCardLocalName == firstCardLocalName)
-        // {
-        //     this.transform.parent.rotation = Quaternion.Euler(0, 0,0);
-        // }
-        // else if(other.gameObject.GetComponent<CardControllerCardChain>().secondCardLocalName == secondCardLocalName)
-        // {
-        //     this.transform.parent.rotation = Quaternion.Euler(0, 0,0);
-        // }
+
+        IEnumerator MoveOtherCard(Collider2D _other)
+        {
+            var othersParent = _other.transform.parent;
+            foreach (var card in othersParent.GetComponent<ChainController>().cards)
+            {
+                if(card.gameObject == _other.gameObject)
+                    othersParent.transform.SetParent(this.transform);
+            }
+            //_other.gameObject.SetActive(false);
+            //othersParent.SetParent(this.transform.parent);
+            GetComponentInParent<ChainController>().GetChildList();
+
+            yield return new WaitForSeconds(5);
+        }
+
+
     }
 }

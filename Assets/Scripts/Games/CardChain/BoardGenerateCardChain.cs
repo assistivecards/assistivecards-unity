@@ -117,6 +117,7 @@ public class BoardGenerateCardChain : MonoBehaviour
 
             var card2 = Instantiate(cardPrefab, Vector3.zero, Quaternion.identity);
             card2.transform.SetParent(cards[j].transform);
+            card2.transform.localPosition = new Vector3(250, 0, 0);
 
             var cardName2 = cardNames[j + 1];
             var cardTexture2 = await gameAPI.GetCardImage(packSlug, cardName2, 512);

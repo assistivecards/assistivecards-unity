@@ -8,6 +8,7 @@ public class GrabControllerCardChain : MonoBehaviour
     { 
         if(other.transform.parent.name == this.transform.parent.name)
         {
+            var otherParent = other.transform.parent;
             this.transform.rotation = Quaternion.Euler(0, 0, 0);
             other.transform.SetParent(this.transform);
         }

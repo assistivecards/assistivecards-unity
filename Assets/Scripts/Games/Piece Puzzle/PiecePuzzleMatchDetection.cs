@@ -9,11 +9,13 @@ public class PiecePuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
     private PuzzleProgressChecker puzzleProgressChecker;
     private PiecePuzzleBoardGenerator board;
     [SerializeField] GameObject hintImage;
+    private PiecePuzzleUIController UIController;
 
     private void Start()
     {
         puzzleProgressChecker = GameObject.Find("GamePanel").GetComponent<PuzzleProgressChecker>();
         board = GameObject.Find("GamePanel").GetComponent<PiecePuzzleBoardGenerator>();
+        UIController = GameObject.Find("GamePanel").GetComponent<PiecePuzzleUIController>();
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -34,7 +36,13 @@ public class PiecePuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
                 Invoke("ScaleHintImageUp", 0.25f);
                 Invoke("ScaleHintImageDown", 1f);
                 board.Invoke("ClearBoard", 1.3f);
-                board.Invoke("GenerateRandomBoardAsync", 1.3f);
+
+                if (puzzleProgressChecker.puzzlesCompleted == 5)
+                {
+                    UIController.Invoke("OpenCheckPointPanel", 1.3f);
+                }
+                else
+                    board.Invoke("GenerateRandomBoardAsync", 1.3f);
             }
         }
         else

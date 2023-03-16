@@ -31,6 +31,7 @@
 		0E722285BF06B01D84989273 /* System.Xml.Linq_CodeGen.c in Sources */ = {isa = PBXBuildFile; fileRef = B7EA5757990C37D2308F74A7 /* System.Xml.Linq_CodeGen.c */; };
 		0F3BA6662F69D49A98465BC3 /* Unity.Services.Core.Configuration_CodeGen.c in Sources */ = {isa = PBXBuildFile; fileRef = CEBBE23C323FC3EB3DFCC47A /* Unity.Services.Core.Configuration_CodeGen.c */; };
 		119E8219A8DA7342882BDBEA /* System.Xml5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEE80B4FBC52C70925876CE6 /* System.Xml5.cpp */; };
+		11DBD9994A3F96B0DB15F294 /* Assembly-CSharp6.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2BFEB8DB2632A564E4F32F9 /* Assembly-CSharp6.cpp */; };
 		13D8EE61509EF98549D2B0CB /* UnityEngine.SpriteShapeModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47F970719DBE6C06D3F37FFB /* UnityEngine.SpriteShapeModule.cpp */; };
 		14F5C789C5D63E88EE822746 /* System.Xml.Linq.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 77C139EB2AF0B791AD4BEFCF /* System.Xml.Linq.cpp */; };
 		15A1EA1CAFC86C873F13D4F2 /* System.Core2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5C401882F9A04E7AF11BE9D /* System.Core2.cpp */; };
@@ -811,6 +812,7 @@
 		DF631BB81D33CE19E95F2116 /* System.Core_CodeGen.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = System.Core_CodeGen.c; path = Classes/Native/System.Core_CodeGen.c; sourceTree = SOURCE_ROOT; };
 		E18F05E87FA1C5B0B4C1B5A0 /* mscorlib4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = mscorlib4.cpp; path = Classes/Native/mscorlib4.cpp; sourceTree = SOURCE_ROOT; };
 		E2139B13373C05EE15A19FFA /* UnityEngine.UIElementsModule11.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = UnityEngine.UIElementsModule11.cpp; path = Classes/Native/UnityEngine.UIElementsModule11.cpp; sourceTree = SOURCE_ROOT; };
+		E2BFEB8DB2632A564E4F32F9 /* Assembly-CSharp6.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Assembly-CSharp6.cpp"; path = "Classes/Native/Assembly-CSharp6.cpp"; sourceTree = SOURCE_ROOT; };
 		E4DB2C603BBFBF071E88C856 /* UnityEngine.Purchasing.WinRTCore_CodeGen.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = UnityEngine.Purchasing.WinRTCore_CodeGen.c; path = Classes/Native/UnityEngine.Purchasing.WinRTCore_CodeGen.c; sourceTree = SOURCE_ROOT; };
 		E4E0CF1ACB8285419E20C983 /* Unity.Services.Core.Environments.Internal_CodeGen.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = Unity.Services.Core.Environments.Internal_CodeGen.c; path = Classes/Native/Unity.Services.Core.Environments.Internal_CodeGen.c; sourceTree = SOURCE_ROOT; };
 		E572BFE81F620C07B24C9085 /* UnityEngine.UIElementsModule.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = UnityEngine.UIElementsModule.cpp; path = Classes/Native/UnityEngine.UIElementsModule.cpp; sourceTree = SOURCE_ROOT; };
@@ -1241,6 +1243,7 @@
 				9F952B76F136D2F746971438 /* Assembly-CSharp3.cpp */,
 				CFB645C2CF31E883E69E6BDB /* Assembly-CSharp4.cpp */,
 				B4427D06B6565C2A935B0067 /* Assembly-CSharp5.cpp */,
+				E2BFEB8DB2632A564E4F32F9 /* Assembly-CSharp6.cpp */,
 				2ED10ABADB22CAA0FE9A3AB6 /* AssistiveCardsSDK_CodeGen.c */,
 				26B7A8850F1579ADCD9BBC45 /* AssistiveCardsSDK.cpp */,
 				D451FB3B845209F99E919024 /* Coffee.SoftMaskForUGUI_CodeGen.c */,
@@ -2127,6 +2130,7 @@
 				BA9A39B837F0E1AAF3868B42 /* UnityClassRegistration.cpp in Sources */,
 				71CC1E9CE3720E7FDA2A0145 /* UnityICallRegistration.cpp in Sources */,
 				EDD44014886F809E0AB51884 /* lib_burst_generated.cpp in Sources */,
+				11DBD9994A3F96B0DB15F294 /* Assembly-CSharp6.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2186,7 +2190,7 @@
 					"$(inherited)",
 					"$(OTHER_CFLAGS)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.assistivecards.card-blast";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.assistivecards.hatch-match";
 				PRODUCT_NAME = "$(PRODUCT_NAME_APP)";
 				PROVISIONING_PROFILE = "$(PROVISIONING_PROFILE_APP)";
 				PROVISIONING_PROFILE_APP = "";
@@ -2226,7 +2230,7 @@
 					"$(inherited)",
 					"$(OTHER_CFLAGS)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.assistivecards.card-blast";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.assistivecards.hatch-match";
 				PRODUCT_NAME = "$(PRODUCT_NAME_APP)";
 				PROVISIONING_PROFILE = "$(PROVISIONING_PROFILE_APP)";
 				PROVISIONING_PROFILE_APP = "";
@@ -2374,7 +2378,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PRODUCT_NAME_APP = "Card Blast";
+				PRODUCT_NAME_APP = "Hatch Match";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 			};
@@ -2408,7 +2412,7 @@
 					"$(inherited)",
 					"$(OTHER_CFLAGS)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.assistivecards.card-blast";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.assistivecards.hatch-match";
 				PRODUCT_NAME = "$(PRODUCT_NAME_APP)";
 				PROVISIONING_PROFILE = "$(PROVISIONING_PROFILE_APP)";
 				PROVISIONING_PROFILE_APP = "";
@@ -2502,7 +2506,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PRODUCT_NAME_APP = "Card Blast";
+				PRODUCT_NAME_APP = "Hatch Match";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 			};
@@ -2535,7 +2539,7 @@
 					"$(inherited)",
 					"$(OTHER_CFLAGS)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.assistivecards.card-blast";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.assistivecards.hatch-match";
 				PRODUCT_NAME = "$(PRODUCT_NAME_APP)";
 				PROVISIONING_PROFILE = "$(PROVISIONING_PROFILE_APP)";
 				PROVISIONING_PROFILE_APP = "";
@@ -2957,7 +2961,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME_APP = "Card Blast";
+				PRODUCT_NAME_APP = "Hatch Match";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 			};
@@ -2996,7 +3000,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PRODUCT_NAME_APP = "Card Blast";
+				PRODUCT_NAME_APP = "Hatch Match";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 			};

@@ -137,6 +137,11 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
         LeanTween.scale(hintImage.gameObject, Vector3.zero, .15f);
     }
 
+    public void ReadCard()
+    {
+        gameAPI.Speak(uniqueCards[puzzleProgressChecker.puzzlesCompleted - 1].title);
+    }
+
     public void EnableBackButton()
     {
         backButton.GetComponent<Button>().interactable = true;
@@ -171,4 +176,5 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
             CheckIfCardExists(cardToAdd);
         }
     }
+
 }

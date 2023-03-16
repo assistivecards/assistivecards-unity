@@ -11,6 +11,12 @@ public class PiecePuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
     private PiecePuzzleBoardGenerator board;
     [SerializeField] GameObject hintImage;
     private PiecePuzzleUIController UIController;
+    private GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void Start()
     {
@@ -28,6 +34,7 @@ public class PiecePuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
             gameObject.GetComponent<PiecePuzzleDraggablePiece>().enabled = false;
             LeanTween.move(gameObject, transform.GetChild(0).GetComponent<PiecePuzzleAnchorPointDetection>().matchedTransform.parent.transform.position, .25f);
             transform.SetParent(transform.GetChild(0).GetComponent<PiecePuzzleAnchorPointDetection>().matchedTransform.parent);
+            gameAPI.PlaySFX("Success");
 
             if (puzzleProgressChecker.correctMatches == 4)
             {
@@ -35,6 +42,7 @@ public class PiecePuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
                 puzzleProgressChecker.puzzlesCompleted++;
                 puzzleProgressChecker.correctMatches = 0;
                 puzzleProgressChecker.backButton.GetComponent<Button>().interactable = false;
+                board.Invoke("ReadCard", 0.25f);
                 Invoke("ScaleHintImageUp", 0.25f);
                 Invoke("ScaleHintImageDown", 1f);
                 board.Invoke("ClearBoard", 1.3f);

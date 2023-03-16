@@ -24,6 +24,7 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
     [SerializeField] List<Sprite> puzzlePieces = new List<Sprite>();
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> uniqueCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     private PuzzleProgressChecker puzzleProgressChecker;
+    private PiecePuzzleUIController UIController;
 
     private void Awake()
     {
@@ -34,6 +35,7 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
     {
         gameAPI.PlayMusic();
         puzzleProgressChecker = GameObject.Find("GamePanel").GetComponent<PuzzleProgressChecker>();
+        UIController = gameObject.GetComponent<PiecePuzzleUIController>();
     }
 
     private void OnEnable()
@@ -41,6 +43,7 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
         if (isBackAfterSignOut)
         {
             gameAPI.PlayMusic();
+            UIController.OnBackButtonClick();
             isBackAfterSignOut = false;
         }
     }

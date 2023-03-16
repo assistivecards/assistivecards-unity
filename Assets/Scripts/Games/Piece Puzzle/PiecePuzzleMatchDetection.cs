@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PiecePuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
 {
@@ -33,6 +34,7 @@ public class PiecePuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
                 Debug.Log("Puzzle completed!");
                 puzzleProgressChecker.puzzlesCompleted++;
                 puzzleProgressChecker.correctMatches = 0;
+                puzzleProgressChecker.backButton.GetComponent<Button>().interactable = false;
                 Invoke("ScaleHintImageUp", 0.25f);
                 Invoke("ScaleHintImageDown", 1f);
                 board.Invoke("ClearBoard", 1.3f);

@@ -103,6 +103,7 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
             puzzlePieceParents[i].GetComponent<Image>().sprite = null;
             puzzlePieceParents[i].GetComponent<PiecePuzzleMatchDetection>().correctMatch = false;
             puzzlePieceParents[i].transform.GetChild(0).GetComponent<PiecePuzzleAnchorPointDetection>().isMatched = false;
+            puzzlePieceParents[i].SetActive(false);
         }
     }
 

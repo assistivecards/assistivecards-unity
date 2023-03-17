@@ -20,6 +20,8 @@ public class PiecePuzzleDraggablePiece : MonoBehaviour, IDragHandler, IPointerDo
     public void OnDrag(PointerEventData eventData)
     {
         transform.position = transform.position + new Vector3(eventData.delta.x, eventData.delta.y, 0);
+        transform.SetParent(GameObject.Find("GamePanel").transform);
+        transform.SetAsLastSibling();
     }
 
     public void OnPointerDown(PointerEventData eventData)

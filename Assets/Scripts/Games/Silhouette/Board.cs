@@ -54,9 +54,7 @@ public class Board : MonoBehaviour
         if (packName == "shapes")
         {
             var cardsList = cachedCards.cards.ToList();
-            var ellipse = cardsList.Single(card => card.slug == "ellipse");
             var ring = cardsList.Single(card => card.slug == "ring");
-            cardsList.Remove(ellipse);
             cardsList.Remove(ring);
             cachedCards.cards = cardsList.ToArray();
         }

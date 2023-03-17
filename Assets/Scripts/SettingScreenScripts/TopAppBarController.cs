@@ -204,6 +204,7 @@ public class TopAppBarController : MonoBehaviour
                 DrawLinesBoardGenerator.didLanguageChange = true;
                 ScratcherBoardGenerator.didLanguageChange = true;
                 FingerPaintBoardGenerator.didLanguageChange = true;
+                PiecePuzzleBoardGenerator.didLanguageChange = true;
 
                 if (languageController.selectedLanguage.name == "Arabic" || languageController.selectedLanguage.name == "Urdu")
                 {

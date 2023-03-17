@@ -277,7 +277,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -360, y: 198.8736}
+  m_AnchoredPosition: {x: -300, y: 168.8736}
   m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &88731552
@@ -449,7 +449,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 360, y: -161.1264}
+  m_AnchoredPosition: {x: 300, y: -161.1264}
   m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &130655110
@@ -741,7 +741,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 360, y: 198.8736}
+  m_AnchoredPosition: {x: 300, y: 168.8736}
   m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &346606618
@@ -2202,7 +2202,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -360, y: -161.1264}
+  m_AnchoredPosition: {x: -300, y: -161.1264}
   m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1241304286 stripped
@@ -6311,10 +6311,10 @@ MonoBehaviour:
   - {fileID: 304023798}
   puzzlePieceImages: []
   puzzlePiecesRef:
-  - {fileID: 21300000, guid: 1a56f93d8fe8cb14c84d0a33d82e4a4a, type: 3}
-  - {fileID: 21300000, guid: 9d526523b86b82b4eb1aca215e54ed38, type: 3}
-  - {fileID: 21300000, guid: 7f0de333ffb28334d934b0d5b6b1ef04, type: 3}
-  - {fileID: 21300000, guid: 7c1bc42fe17f3144f894c6740d76fff6, type: 3}
+  - {fileID: 21300000, guid: a7c9f7e257bffbf4390a7be787de20db, type: 3}
+  - {fileID: 21300000, guid: 8a5e4dc2c97da6e4ab97d6bf7f250b30, type: 3}
+  - {fileID: 21300000, guid: dad940ed748b5db44ab98d6be784a11f, type: 3}
+  - {fileID: 21300000, guid: 5e27dab6de1deec479a8a93c86aa49f7, type: 3}
   puzzlePieces: []
   uniqueCards: []
 --- !u!114 &8383894889009589327

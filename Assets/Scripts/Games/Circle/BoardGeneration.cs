@@ -51,15 +51,6 @@ public class BoardGeneration : MonoBehaviour
         selectedLangCode = await gameAPI.GetSystemLanguageCode();
         cachedCards = await gameAPI.GetCards(selectedLangCode, packName);
 
-        if (packName == "shapes")
-        {
-            var cardsList = cachedCards.cards.ToList();
-            var ellipse = cardsList.Single(card => card.slug == "ellipse");
-            var ring = cardsList.Single(card => card.slug == "ring");
-            cardsList.Remove(ellipse);
-            cardsList.Remove(ring);
-            cachedCards.cards = cardsList.ToArray();
-        }
         // for (int i = 0; i < cachedCards.cards.Length; i++)
         // {
         //     var cardImage = await gameAPI.GetCardImage(packSlug, cachedCards.cards[i].slug);

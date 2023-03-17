@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PackSelectManagerComplete : MonoBehaviour
 {
@@ -29,5 +30,10 @@ public class PackSelectManagerComplete : MonoBehaviour
     {
         boardCreatorComplete.CacheCards(selectedPack);
         //await boardCreatorComplete.CacheCards(selectedPack); 
+    }
+
+    public void ResetScroll()
+    {
+        this.transform.GetChild(0).GetChild(0).GetChild(0).transform.localPosition = Vector3.zero;
     }
 }

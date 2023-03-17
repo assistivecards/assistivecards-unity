@@ -151,6 +151,7 @@ public class BoardCreatorComplete : MonoBehaviour
                 {
                     actualCard.SetActive(true);
                     actualCard.transform.position = card1Position.position;
+                    actualCard.GetComponent<CardElementComplete>().startPosition = card1Position.position;
                     LeanTween.scale(actualCard, Vector3.one * 5, 0.8f);
                     actualCard.transform.SetParent(card1Position);
                 }
@@ -179,6 +180,7 @@ public class BoardCreatorComplete : MonoBehaviour
                 {
                     actualCard.SetActive(true);
                     actualCard.transform.position = card2Position.position;
+                    actualCard.GetComponent<CardElementComplete>().startPosition = card2Position.position;
                     LeanTween.scale(actualCard, Vector3.one * 5, 0.8f);
                     actualCard.transform.SetParent(card2Position);
                 }

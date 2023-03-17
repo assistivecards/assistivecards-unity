@@ -12,14 +12,18 @@ public class LevelScreenControllerComplete : MonoBehaviour
 
     public void LevelScreenClose()
     {
-        LeanTween.scale(this.gameObject, Vector3.zero, 0.25f);
-        Invoke("Close", 1f);
+        LeanTween.scale(this.gameObject, Vector3.zero, 0.25f).setOnComplete(Close);
     }
 
     private void Close()
     {
-        this.gameObject.SetActive(false);
+        Invoke("SetActiveFalse", 0.75f);
         boardCreatorComplete.levelEnded = false;
         boardCreatorComplete.isBoardCreated = false;
+    }
+
+    private void SetActiveFalse()
+    {
+        this.gameObject.SetActive(false);
     }
 }

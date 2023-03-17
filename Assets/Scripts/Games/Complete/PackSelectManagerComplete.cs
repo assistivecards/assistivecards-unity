@@ -27,6 +27,8 @@ public class PackSelectManagerComplete : MonoBehaviour
 
     public async void GenerateStylizedBoardContinue()
     {
-        await boardCreatorComplete.CacheCards(selectedPack); 
+        Debug.Log("!!!!!!!!!!!");
+        boardCreatorComplete.CacheCards(selectedPack);
+        //await boardCreatorComplete.CacheCards(selectedPack); 
     }
 }

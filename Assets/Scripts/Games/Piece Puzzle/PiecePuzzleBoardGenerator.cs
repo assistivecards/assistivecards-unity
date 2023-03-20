@@ -18,10 +18,12 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
     public static bool isBackAfterSignOut = false;
     [SerializeField] GameObject hintImage;
     [SerializeField] GameObject[] puzzlePieceParents;
+    [SerializeField] GameObject[] shadowGameObjects;
     [SerializeField] GameObject[] puzzlePieceSlots;
-    [SerializeField] List<Image> puzzlePieceImages = new List<Image>();
     [SerializeField] List<Sprite> puzzlePiecesRef = new List<Sprite>();
+    [SerializeField] List<Sprite> shadowsRef = new List<Sprite>();
     [SerializeField] List<Sprite> puzzlePieces = new List<Sprite>();
+    [SerializeField] List<Sprite> shadows = new List<Sprite>();
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> uniqueCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     private PuzzleProgressChecker puzzleProgressChecker;
     private PiecePuzzleUIController UIController;
@@ -68,6 +70,7 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
             for (int i = 0; i < puzzlePiecesRef.Count; i++)
             {
                 puzzlePieces.Add(puzzlePiecesRef[i]);
+                shadows.Add(shadowsRef[i]);
             }
         }
 
@@ -81,10 +84,13 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
             {
                 var randomIndex = Random.Range(0, puzzlePieces.Count);
                 var sprite = puzzlePieces[randomIndex];
+                var shadow = shadows[randomIndex];
                 puzzlePieces.RemoveAt(randomIndex);
+                shadows.RemoveAt(randomIndex);
                 puzzlePieceParents[i].GetComponent<Image>().sprite = sprite;
                 puzzlePieceParents[i].SetActive(true);
                 puzzlePieceParents[i].GetComponent<PiecePuzzleDraggablePiece>().enabled = true;
+                shadowGameObjects[i].GetComponent<Image>().sprite = shadow;
             }
         }
 

@@ -150,26 +150,29 @@ public class CardBlastFillGrid : MonoBehaviour
         {
             ResetMatch();
         }
-
+        if(isBoardCreated)
+        {
+            CheckIsCellOnTop();
+        }
         if(scoreInt < 0)
         {
             scoreInt = 0;
         }
         scoreObj.GetComponent<TMP_Text>().text = scoreInt.ToString() + "/100";
-
-        if(isBoardCreated)
-        {
-            foreach(var cell in cardCrushGrid.allCells)
-            {
-                if(cell.isEmpty)
-                {
-                    Invoke("RefillBoard", 0.55f);
-                }
-            }
-        }
         if(scoreInt >= 100)
         {
             isOnGame = false;
+        }
+    }
+
+    private void CheckIsCellOnTop()
+    {
+        foreach(var cell in cardCrushGrid.allCells)
+        {
+            if(cell.GetComponent<CardCrushCell>().isOnTop == true)
+            {
+                RefillBoard();
+            }
         }
     }
 
@@ -223,7 +226,6 @@ public class CardBlastFillGrid : MonoBehaviour
             }
         }
         Invoke("OnRefillBool", 0.5f);
-
     }
 
     private void OnRefillBool()

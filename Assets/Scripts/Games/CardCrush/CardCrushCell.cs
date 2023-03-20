@@ -22,6 +22,7 @@ public class CardCrushCell : MonoBehaviour
     public List<CardCrushCell> verticalNeightboursTop = new List<CardCrushCell>();
     public List<CardCrushCell> verticalNeightboursBottom = new List<CardCrushCell>();
 
+    public bool isOnTop = false;
     public bool isOnBottom = true;
 
     private void OnEnable() 
@@ -69,6 +70,8 @@ public class CardCrushCell : MonoBehaviour
         }
         if(!neighbours.Contains(this))
             neighbours.Add(this);
+
+        GetTopCells();
     }
 
     public void DetectNeighboursAround()
@@ -105,5 +108,13 @@ public class CardCrushCell : MonoBehaviour
         }
         horizontalNeighboursLeft.Reverse();
         verticalNeightboursBottom.Reverse();
+    }
+
+    private void GetTopCells()
+    {
+        if(y == 3)
+        {
+            isOnTop = true;
+        }
     }
 }

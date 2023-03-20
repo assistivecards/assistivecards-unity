@@ -91,6 +91,7 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
                 puzzlePieceParents[i].SetActive(true);
                 puzzlePieceParents[i].GetComponent<PiecePuzzleDraggablePiece>().enabled = true;
                 shadowGameObjects[i].GetComponent<Image>().sprite = shadow;
+                LeanTween.alpha(shadowGameObjects[i].GetComponent<RectTransform>(), .5f, .01f);
             }
         }
 

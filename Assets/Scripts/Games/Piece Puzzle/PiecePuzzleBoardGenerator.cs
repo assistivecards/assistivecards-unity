@@ -16,7 +16,7 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
     [SerializeField] GameObject backButton;
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
-    [SerializeField] Image hintImage;
+    [SerializeField] GameObject hintImage;
     [SerializeField] GameObject[] puzzlePieceParents;
     [SerializeField] GameObject[] puzzlePieceSlots;
     [SerializeField] List<Image> puzzlePieceImages = new List<Image>();
@@ -115,9 +115,9 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
             puzzlePieceParents[i].transform.position = puzzlePieceSlots[i].transform.position;
             puzzlePieceParents[i].transform.GetChild(1).GetComponent<Image>().sprite = Sprite.Create(randomImage, new Rect(0.0f, 0.0f, randomImage.width, randomImage.height), new Vector2(0.5f, 0.5f), 100.0f);
         }
-        hintImage.sprite = Sprite.Create(randomImage, new Rect(0.0f, 0.0f, randomImage.width, randomImage.height), new Vector2(0.5f, 0.5f), 100.0f);
+        hintImage.transform.GetChild(0).GetComponent<Image>().sprite = Sprite.Create(randomImage, new Rect(0.0f, 0.0f, randomImage.width, randomImage.height), new Vector2(0.5f, 0.5f), 100.0f);
 
-        LeanTween.scale(hintImage.gameObject, Vector3.one, 0.15f);
+        LeanTween.scale(hintImage, Vector3.one, 0.15f);
 
         for (int i = 0; i < puzzlePieceParents.Length; i++)
         {
@@ -135,7 +135,7 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
             }
 
         }
-        LeanTween.scale(hintImage.gameObject, Vector3.zero, .15f);
+        LeanTween.scale(hintImage, Vector3.zero, .15f);
     }
 
     public void ReadCard()

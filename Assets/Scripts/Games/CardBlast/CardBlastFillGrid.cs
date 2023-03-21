@@ -47,6 +47,8 @@ public class CardBlastFillGrid : MonoBehaviour
     AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
     public List<string> cardLocalNames = new List<string>();
 
+    bool sfxOneTime = true;
+
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
@@ -180,7 +182,6 @@ public class CardBlastFillGrid : MonoBehaviour
 
     public async void RefillBoard()
     {
-        gameAPI.PlaySFX("Success");
         foreach(var cell in cardCrushGrid.allCells)
         {
             if(cell.isEmpty == true)
@@ -193,7 +194,7 @@ public class CardBlastFillGrid : MonoBehaviour
                 
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
-
+                
                 if(card != null)
                 {
                     card.transform.name = cardNames[cardImageRandom];
@@ -206,13 +207,13 @@ public class CardBlastFillGrid : MonoBehaviour
                     card.GetComponent<CardBlastElement>().type = cardNames[cardImageRandom];
                     card.GetComponent<CardBlastElement>().localName = cardLocalNames[cardImageRandom];
                 }
-
             }
         }
 
         foreach(var cell in cardCrushGrid.allCells)
         {
-            cell.card.GetComponent<CardBlastElement>().canMatch.Clear();
+            if(cell.card != null)
+                cell.card.GetComponent<CardBlastElement>().canMatch.Clear();
         }
 
         Invoke("OnRefillBool", 0.5f);
@@ -260,6 +261,7 @@ public class CardBlastFillGrid : MonoBehaviour
             cell.horizontalNeighboursRight.Clear();
             cell.verticalNeightboursBottom.Clear();
             cell.verticalNeightboursTop.Clear();
+            matcheableCards.Clear();
 
             cardNames.Clear();
             randomValues.Clear();

@@ -15,6 +15,8 @@ public class SoundController : MonoBehaviour
     public List<string> movedList = new List<string>();
     public List<string> matchedList = new List<string>();
 
+    bool successOneTime = true;
+
     private void Awake() 
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
@@ -81,5 +83,21 @@ public class SoundController : MonoBehaviour
         Debug.Log(matchedList.Last());
         gameAPI.Speak(matchedList.Last());
         Invoke("ResetLists", 0.5f);
+    }
+
+    public void TriggerSuccessSFX()
+    {
+        if(successOneTime)
+        {
+            gameAPI.PlaySFX("Success");
+            Debug.Log("Successs");
+            successOneTime = false;
+        }
+        Invoke("SuccessBoolTrue", 1f);
+    }
+
+    private void SuccessBoolTrue()
+    {
+        successOneTime = true;
     }
 }

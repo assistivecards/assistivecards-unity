@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
+    GameAPI gameAPI;
     public float x;
     public float y;
     public Vector3 cardPosition;
@@ -35,6 +36,11 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     private bool oneTime = true;
 
     public string localName;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
 
     private void OnEnable() 
@@ -68,19 +74,16 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     private void Update() 
     {
         canMatch.RemoveAll(item => item == null);
-        if(this.transform.localScale.x > 1)
-        {
-            this.transform.localScale = Vector3.one;
-        }
-
-        DetectNeighbours();
-
         if(cardBlastFillGrid.isBoardCreated)
         {
             CheckDrop();
             DetectPossibleMatch();
         }
-
+        if(this.transform.localScale.x > 1)
+        {
+            this.transform.localScale = Vector3.one;
+        }
+        DetectNeighbours();
         if(isMatched)
         {
             DetectMatch();
@@ -159,7 +162,7 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                 if(bottom.transform.GetComponent<CardCrushCell>().isEmpty)
                 {
                     MoveToTarget(transform.parent.GetComponent<CardCrushCell>().bottomNeighbour);
-                    cardBlastFillGrid.Invoke("RefillBoard", 0.5f);
+                    cardBlastFillGrid.Invoke("RefillBoard", 0.75f);
                 }
             }
         }
@@ -390,6 +393,7 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
             soundController.matchedList.Add(localName);
             soundController.match = true;
             soundController.Invoke("ReadMatch", 0.6f);
+            soundController.Invoke("TriggerSuccessSFX", 0.25f);
             LeanTween.scale(card, new Vector3(0.5f, 0.5f, 0.5f), 0.1f);   
         }
         Invoke("DestroyMatched", 0.1f);

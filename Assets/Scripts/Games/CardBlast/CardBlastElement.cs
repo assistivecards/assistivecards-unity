@@ -44,10 +44,6 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         cardCrushGrid = FindObjectOfType<CardCrushGrid>();
         cardBlastFillGrid = FindObjectOfType<CardBlastFillGrid>();
         soundController = FindObjectOfType<SoundController>();
-        if(this.transform.localScale.x > 1)
-        {
-            this.transform.localScale = Vector3.one;
-        }
     }
 
     public void OnPointerDown(PointerEventData pointerEventData)
@@ -66,11 +62,12 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         {
             finalTouchPosition = pointerEventData.position;
         }
-
         DetectMatch();
+        LockMatch();
     }
     private void Update() 
     {
+        canMatch.RemoveAll(item => item == null);
         if(this.transform.localScale.x > 1)
         {
             this.transform.localScale = Vector3.one;
@@ -87,9 +84,26 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         if(isMatched)
         {
             DetectMatch();
+            LockMatch();
             Invoke("RestoreCard", 0.8f);
         }
 
+        if(canMatch.Count >= 2)
+        {
+            matcheable = true;
+
+            if(!cardBlastFillGrid.matcheableCards.Contains(this.gameObject)){
+
+                cardBlastFillGrid.matcheableCards.Add(this.gameObject);
+                Debug.Log(cardBlastFillGrid.matcheableCards + " Yeni eklenen: " + this.gameObject);
+            }
+        }
+        else if(canMatch.Count < 2)
+        {
+            matcheable = false;
+            if(cardBlastFillGrid.matcheableCards.Contains(this.gameObject))
+                cardBlastFillGrid.matcheableCards.Remove(this.gameObject);
+        }
     }
 
     public void DetectNeighbours()
@@ -245,30 +259,12 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                 }
             }
         }
-
-
-        if(matched.Count >= 2)
-        {
-            if(!matched.Contains(this.gameObject))
-            {
-                matched.Add(this.gameObject);
-                isMatched = true;
-                
-                ScaleUpMatch();
-            }
-            
-        }
-        if(matched.Count < 2)
-        {
-            matched.Clear();
-        }
     }
 
-    public void DetectPossibleMatch()
+    private void DetectPossibleMatch()
     {
         if(transform.parent != null)
         {
-
             if(transform.GetComponentInParent<CardCrushCell>() != null)
             {
                 foreach(var neighbour in GetComponentInParent<CardCrushCell>().horizontalNeighboursRight)
@@ -343,21 +339,24 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                     }
                 }
             }
+        }
+    }
 
-
-            if(canMatch.Count >= 2)
+    private void LockMatch()
+    {
+        if(matched.Count >= 2)
+        {
+            if(!matched.Contains(this.gameObject))
             {
-                if(!canMatch.Contains(this.gameObject))
-                {
-                    cardBlastFillGrid.canMatch = true;
-                    matcheable = true;
-                    canMatch.Clear();
-                }
-                else
-                {
-                    matcheable = false;
-                }
+                matched.Add(this.gameObject);
+                isMatched = true;
+                
+                ScaleUpMatch();
             }
+        }
+        if(matched.Count < 2)
+        {
+            matched.Clear();
         }
     }
 

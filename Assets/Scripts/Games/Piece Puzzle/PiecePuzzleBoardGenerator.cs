@@ -16,12 +16,14 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
     [SerializeField] GameObject backButton;
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
-    [SerializeField] Image hintImage;
+    [SerializeField] GameObject hintImage;
     [SerializeField] GameObject[] puzzlePieceParents;
+    [SerializeField] GameObject[] shadowGameObjects;
     [SerializeField] GameObject[] puzzlePieceSlots;
-    [SerializeField] List<Image> puzzlePieceImages = new List<Image>();
     [SerializeField] List<Sprite> puzzlePiecesRef = new List<Sprite>();
+    [SerializeField] List<Sprite> shadowsRef = new List<Sprite>();
     [SerializeField] List<Sprite> puzzlePieces = new List<Sprite>();
+    [SerializeField] List<Sprite> shadows = new List<Sprite>();
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> uniqueCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     private PuzzleProgressChecker puzzleProgressChecker;
     private PiecePuzzleUIController UIController;
@@ -68,6 +70,7 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
             for (int i = 0; i < puzzlePiecesRef.Count; i++)
             {
                 puzzlePieces.Add(puzzlePiecesRef[i]);
+                shadows.Add(shadowsRef[i]);
             }
         }
 
@@ -81,10 +84,14 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
             {
                 var randomIndex = Random.Range(0, puzzlePieces.Count);
                 var sprite = puzzlePieces[randomIndex];
+                var shadow = shadows[randomIndex];
                 puzzlePieces.RemoveAt(randomIndex);
+                shadows.RemoveAt(randomIndex);
                 puzzlePieceParents[i].GetComponent<Image>().sprite = sprite;
                 puzzlePieceParents[i].SetActive(true);
                 puzzlePieceParents[i].GetComponent<PiecePuzzleDraggablePiece>().enabled = true;
+                shadowGameObjects[i].GetComponent<Image>().sprite = shadow;
+                LeanTween.alpha(shadowGameObjects[i].GetComponent<RectTransform>(), .5f, .01f);
             }
         }
 
@@ -115,9 +122,9 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
             puzzlePieceParents[i].transform.position = puzzlePieceSlots[i].transform.position;
             puzzlePieceParents[i].transform.GetChild(1).GetComponent<Image>().sprite = Sprite.Create(randomImage, new Rect(0.0f, 0.0f, randomImage.width, randomImage.height), new Vector2(0.5f, 0.5f), 100.0f);
         }
-        hintImage.sprite = Sprite.Create(randomImage, new Rect(0.0f, 0.0f, randomImage.width, randomImage.height), new Vector2(0.5f, 0.5f), 100.0f);
+        hintImage.transform.GetChild(0).GetComponent<Image>().sprite = Sprite.Create(randomImage, new Rect(0.0f, 0.0f, randomImage.width, randomImage.height), new Vector2(0.5f, 0.5f), 100.0f);
 
-        LeanTween.scale(hintImage.gameObject, Vector3.one, 0.15f);
+        LeanTween.scale(hintImage, Vector3.one, 0.15f);
 
         for (int i = 0; i < puzzlePieceParents.Length; i++)
         {
@@ -135,7 +142,7 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
             }
 
         }
-        LeanTween.scale(hintImage.gameObject, Vector3.zero, .15f);
+        LeanTween.scale(hintImage, Vector3.zero, .15f);
     }
 
     public void ReadCard()

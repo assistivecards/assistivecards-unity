@@ -35,6 +35,7 @@ public class PiecePuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
             LeanTween.move(gameObject, transform.GetChild(0).GetComponent<PiecePuzzleAnchorPointDetection>().matchedTransform.parent.transform.position, .25f);
             transform.SetParent(transform.GetChild(0).GetComponent<PiecePuzzleAnchorPointDetection>().matchedTransform.parent);
             gameAPI.PlaySFX("Success");
+            LeanTween.alpha(transform.GetChild(2).GetComponent<RectTransform>(), 0, .25f);
 
             if (puzzleProgressChecker.correctMatches == 4)
             {

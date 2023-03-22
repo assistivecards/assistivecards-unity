@@ -6,6 +6,7 @@ public class RopeGenerator : MonoBehaviour
     public Rigidbody2D hook;
     public GameObject ropePrefab;
     public int ropes;
+    public CardAttacher cardAttacher;
 
     void Start()
     {
@@ -21,7 +22,15 @@ public class RopeGenerator : MonoBehaviour
             GameObject rope = Instantiate(ropePrefab, transform);
             HingeJoint2D joint = rope.GetComponent<HingeJoint2D>();
             joint.connectedBody = previousRB;
-            previousRB = rope.GetComponent<Rigidbody2D>();
+
+            if (i < ropes - 1)
+            {
+                previousRB = rope.GetComponent<Rigidbody2D>();
+            }
+            else
+            {
+                cardAttacher.ConnectRopeEnd(rope.GetComponent<Rigidbody2D>());
+            }
 
         }
     }

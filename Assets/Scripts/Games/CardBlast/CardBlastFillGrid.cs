@@ -134,6 +134,7 @@ public class CardBlastFillGrid : MonoBehaviour
             card.GetComponent<CardBlastElement>().y = cardCrushGrid.allCells[i].y;
             card.GetComponent<CardBlastElement>().type = cardNames[cardImageRandom];
             card.GetComponent<CardBlastElement>().localName = cardLocalNames[cardImageRandom];
+            card.transform.localPosition = Vector3.zero;
         }
 
         foreach(var cell in cardCrushGrid.allCells)
@@ -142,9 +143,11 @@ public class CardBlastFillGrid : MonoBehaviour
             cell.GetComponent<CardCrushCell>().DetectNeighboursAround();
         }
         LeanTween.scale(this.gameObject, new Vector2(0.75f, 0.75f), 0.1f);
-        SetLeft(rect, -124);
+        SetLeft(rect, -127);
         loadingScreen.SetActive(false);
         isBoardCreated = true;
+
+        Invoke("SetCardPositions", 0.25f);
     }
 
     private void FixedUpdate() 
@@ -154,10 +157,6 @@ public class CardBlastFillGrid : MonoBehaviour
         {
             ResetBottomCells();
         }
-        if(isBoardCreated)
-        {
-            CheckIsCellOnTop();
-        }
         if(scoreInt < 0)
         {
             scoreInt = 0;
@@ -166,17 +165,6 @@ public class CardBlastFillGrid : MonoBehaviour
         if(scoreInt >= 100)
         {
             isOnGame = false;
-        }
-    }
-
-    private void CheckIsCellOnTop()
-    {
-        foreach(var cell in cardCrushGrid.allCells)
-        {
-            if(cell.GetComponent<CardCrushCell>().isOnTop == true)
-            {
-                RefillBoard();
-            }
         }
     }
 
@@ -269,9 +257,20 @@ public class CardBlastFillGrid : MonoBehaviour
         }
     }
 
+    private void SetCardPositions()
+    {
+        foreach(var cell in cardCrushGrid.allCells)
+        {
+            if(cell.card != null)
+            {
+                cell.card.transform.localPosition = Vector3.zero;
+            }
+        }
+    }
+
     public void ResetPosition()
     {
-        SetLeft(rect, 1000000);
+        SetLeft(rect, 10000);
     }
 
     public static void SetLeft(RectTransform _rect, float left)
@@ -317,3 +316,4 @@ public class CardBlastFillGrid : MonoBehaviour
         oneTime = false;
     }
 }
+

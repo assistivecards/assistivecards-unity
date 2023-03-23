@@ -34,6 +34,7 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     public bool matcheable;
 
     private bool oneTime = true;
+    public bool isOnTop;
 
     public string localName;
 
@@ -50,6 +51,8 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         cardCrushGrid = FindObjectOfType<CardCrushGrid>();
         cardBlastFillGrid = FindObjectOfType<CardBlastFillGrid>();
         soundController = FindObjectOfType<SoundController>();
+        DetectNeighbours();
+        DetectPossibleMatch();
     }
 
     public void OnPointerDown(PointerEventData pointerEventData)
@@ -73,17 +76,14 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     }
     private void Update() 
     {
-        canMatch.RemoveAll(item => item == null);
         if(cardBlastFillGrid.isBoardCreated)
         {
             CheckDrop();
-            DetectPossibleMatch();
         }
         if(this.transform.localScale.x > 1)
         {
             this.transform.localScale = Vector3.one;
         }
-        DetectNeighbours();
         if(isMatched)
         {
             DetectMatch();
@@ -149,10 +149,13 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                 }
             }
         }
+        canMatch.RemoveAll(item => item == null);
     }
 
     private void CheckDrop()
     {
+        DetectNeighbours();
+        DetectPossibleMatch();
         if(transform.parent != null)
         {
             var bottom = transform.parent.GetComponent<CardCrushCell>().bottomNeighbour;
@@ -162,14 +165,18 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                 if(bottom.transform.GetComponent<CardCrushCell>().isEmpty)
                 {
                     MoveToTarget(transform.parent.GetComponent<CardCrushCell>().bottomNeighbour);
-                    cardBlastFillGrid.Invoke("RefillBoard", 0.75f);
+                    cardBlastFillGrid.Invoke("RefillBoard", 0.5f);
                 }
             }
         }
+
+        canMatch.RemoveAll(item => item == null);
     }
 
     private void MoveToTarget(GameObject _cell)
     {
+        DetectNeighbours();
+        DetectPossibleMatch();
         LeanTween.move(this.gameObject, _cell.transform.position, 0.2f);
 
         this.transform.parent.GetComponent<CardCrushCell>().isEmpty = true;
@@ -410,5 +417,17 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     {
         this.transform.GetComponentInParent<CardCrushCell>().isEmpty = true;
         Destroy(this.gameObject);
+    }
+
+    private void CheckIsOnTop()
+    {
+        if(GetComponentInParent<CardCrushCell>().isOnTop == true)
+        {
+            isOnTop = true;
+        }
+        else if(GetComponentInParent<CardCrushCell>().isOnTop == false)
+        {
+            isOnTop = false;
+        }
     }
 }

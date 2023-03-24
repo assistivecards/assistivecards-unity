@@ -136,6 +136,7 @@ public class CardBlastFillGrid : MonoBehaviour
             card.GetComponent<CardBlastElement>().type = cardNames[cardImageRandom];
             card.GetComponent<CardBlastElement>().localName = cardLocalNames[cardImageRandom];
             card.transform.localPosition = Vector3.zero;
+            LeanTween.scale(card, Vector3.one, 0.5f);
         }
 
         foreach(var cell in cardCrushGrid.allCells)
@@ -195,6 +196,7 @@ public class CardBlastFillGrid : MonoBehaviour
                     card.GetComponent<CardBlastElement>().y = cell.y;
                     card.GetComponent<CardBlastElement>().type = cardNames[cardImageRandom];
                     card.GetComponent<CardBlastElement>().localName = cardLocalNames[cardImageRandom];
+                    LeanTween.scale(card, Vector3.one, 0.5f);
                 }
             }
         }
@@ -234,6 +236,7 @@ public class CardBlastFillGrid : MonoBehaviour
                     card.GetComponent<CardBlastElement>().y = cell.y;
                     card.GetComponent<CardBlastElement>().type = cardNames[cardImageRandom];
                     card.GetComponent<CardBlastElement>().localName = cardLocalNames[cardImageRandom];
+                    LeanTween.scale(card, Vector3.one, 0.5f);
                 }
             }
         }

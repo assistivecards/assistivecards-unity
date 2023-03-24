@@ -64,6 +64,7 @@ public class RopeCutBoardGenerator : MonoBehaviour
         PopulateRandomCards();
         TranslateCutRopeText();
         await PopulateRandomTextures();
+        AssignTags();
         PlaceSprites();
         ScaleImagesUp();
         backButton.SetActive(true);
@@ -154,11 +155,25 @@ public class RopeCutBoardGenerator : MonoBehaviour
         {
             if (cardImagesInScene[i].sprite == null)
             {
-                var randomIndex = Random.Range(0, randomSprites.Count);
+                var randomIndex = Random.Range(1, randomSprites.Count);
                 var sprite = randomSprites[randomIndex];
                 randomSprites.RemoveAt(randomIndex);
                 cardImagesInScene[i].sprite = sprite;
             }
+        }
+    }
+
+    public void AssignTags()
+    {
+        var correctCardImageIndex = Random.Range(0, cardImagesInScene.Length);
+        cardImagesInScene[correctCardImageIndex].sprite = randomSprites[0];
+
+        for (int i = 0; i < cardImagesInScene.Length; i++)
+        {
+            if (i != correctCardImageIndex)
+                cardImagesInScene[i].transform.parent.tag = "WrongCard";
+            else
+                cardImagesInScene[correctCardImageIndex].transform.parent.tag = "CorrectCard";
         }
     }
 

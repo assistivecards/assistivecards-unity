@@ -2038,7 +2038,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1416613810
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3388,7 +3388,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1915469690
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6403,6 +6403,8 @@ MonoBehaviour:
   cutText: {fileID: 2123920298}
   packSlug: 
   backButton: {fileID: 1358853791}
+  ropeCutManager: {fileID: 1416613809}
+  trailManager: {fileID: 1915469689}
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

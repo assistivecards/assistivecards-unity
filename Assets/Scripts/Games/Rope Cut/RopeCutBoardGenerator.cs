@@ -23,6 +23,9 @@ public class RopeCutBoardGenerator : MonoBehaviour
     [SerializeField] GameObject backButton;
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
+    [SerializeField] GameObject ropeCutManager;
+    [SerializeField] GameObject trailManager;
+
 
     private void Awake()
     {
@@ -89,6 +92,10 @@ public class RopeCutBoardGenerator : MonoBehaviour
             LeanTween.scale(cardParents[i].gameObject, Vector3.one * 10, 0.15f);
 
         }
+
+        ropeCutManager.SetActive(true);
+        trailManager.SetActive(true);
+
     }
 
     public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)

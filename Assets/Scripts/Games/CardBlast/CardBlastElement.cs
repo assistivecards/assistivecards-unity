@@ -168,8 +168,11 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                     cardBlastFillGrid.Invoke("RefillBoard", 0.5f);
                 }
             }
+            else
+            {
+                cardBlastFillGrid.RefillBoardsTop();
+            }
         }
-
         canMatch.RemoveAll(item => item == null);
     }
 

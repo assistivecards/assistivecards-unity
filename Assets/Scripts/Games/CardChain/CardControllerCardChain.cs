@@ -6,42 +6,30 @@ using UnityEngine.UI;
 
 public class CardControllerCardChain : MonoBehaviour, IPointerDownHandler, IDragHandler
 {   
-    public string firstCardLocalName;
-    public string secondCardLocalName;
+    public string rightCardName;
+    public string leftCardName;
+
+    public string rightCarConnectionPos;
+    public string leftCardNameConnectionPos;
 
     public void OnDrag(PointerEventData eventData)
     {
-        this.transform.parent.position = eventData.position;
+        this.transform.position = eventData.position;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        this.transform.parent.position = eventData.position;
+        this.transform.position = eventData.position;
+    }
+
+    public void GetChildNames()
+    {
+        rightCardName = this.transform.GetChild(0).gameObject.name;
+        leftCardName = this.transform.GetChild(1).gameObject.name;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     { 
-
-        if(this.gameObject.name == other.gameObject.name)
-        {
-            StartCoroutine(MoveOtherCard(other));
-        }
-
-        IEnumerator MoveOtherCard(Collider2D _other)
-        {
-            var othersParent = _other.transform.parent;
-            foreach (var card in othersParent.GetComponent<ChainController>().cards)
-            {
-                if(card.gameObject == _other.gameObject)
-                    othersParent.transform.SetParent(this.transform);
-            }
-            //_other.gameObject.SetActive(false);
-            //othersParent.SetParent(this.transform.parent);
-            GetComponentInParent<ChainController>().GetChildList();
-
-            yield return new WaitForSeconds(5);
-        }
-
 
     }
 }

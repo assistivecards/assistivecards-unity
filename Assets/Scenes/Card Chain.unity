@@ -2099,8 +2099,7 @@ MonoBehaviour:
   cardPositions: []
   randomValueList: 
   usedRandomValues: 
-  cardParent: {fileID: 3923219562392573582, guid: 02ad8891cadad49099c695cda6605556, type: 3}
-  cardPrefab: {fileID: 1572616208917296617, guid: 4e646b1b57528490aae6c84ea6a674e9, type: 3}
+  doubleCard: {fileID: 1572616208917296617, guid: 568db8f982a184023b2959f423bd2574, type: 3}
   cardCount: 5
   packSlug: 
   isBoardCreated: 0

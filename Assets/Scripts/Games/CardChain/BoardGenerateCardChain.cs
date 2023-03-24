@@ -26,8 +26,7 @@ public class BoardGenerateCardChain : MonoBehaviour
     public List<int> randomValueList = new List<int>();
     public List<int> usedRandomValues = new List<int>();
 
-    [SerializeField] private GameObject cardParent;
-    [SerializeField] private GameObject cardPrefab;
+    [SerializeField] private GameObject doubleCard;
     public int cardCount;
     public string packSlug;
     public bool isBoardCreated = false;
@@ -100,38 +99,26 @@ public class BoardGenerateCardChain : MonoBehaviour
         SuffleList();
         for(int j = 0; j < cardCount; j++)
         {
-            cards.Add(Instantiate(cardParent, Vector3.zero, Quaternion.identity));
+            cards.Add(Instantiate(doubleCard, Vector3.zero, Quaternion.identity));
             cards[j].transform.parent = this.transform;
-
-
-            var card1 = Instantiate(cardPrefab, Vector3.zero, Quaternion.identity);
-            card1.transform.SetParent(cards[j].transform);
 
             var cardName = cardNames[j];
             var cardTexture = await gameAPI.GetCardImage(packSlug, cardName, 512);
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear;
-            card1.GetComponentInChildren<RawImage>().texture = cardTexture;
-            //cards[j].GetComponent<CardControllerCardChain>().firstCardLocalName = cardDefinitionsLocale[j];
-            card1.gameObject.name = cardDefinitionsLocale[j];
+            cards[j].transform.GetChild(0).GetComponentInChildren<RawImage>().texture = cardTexture;
+            cards[j].transform.GetChild(0).gameObject.name = cardDefinitionsLocale[j];
 
-            var card2 = Instantiate(cardPrefab, Vector3.zero, Quaternion.identity);
-            card2.transform.SetParent(cards[j].transform);
-            card2.transform.localPosition = new Vector3(250, 0, 0);
+            var cardName1 = cardNames[j + 1];
+            var cardTexture1 = await gameAPI.GetCardImage(packSlug, cardName1, 512);
 
-            var cardName2 = cardNames[j + 1];
-            var cardTexture2 = await gameAPI.GetCardImage(packSlug, cardName2, 512);
-            cardTexture2.wrapMode = TextureWrapMode.Clamp;
-            cardTexture2.filterMode = FilterMode.Bilinear;
-            card2.GetComponentInChildren<RawImage>().texture = cardTexture2;
-            //cards[j].GetComponent<CardControllerCardChain>().secondCardLocalName = cardDefinitionsLocale[j + 1];
-            card2.gameObject.name = cardDefinitionsLocale[j + 1];
-
-            cards[j].transform.position = cardPositions[j].transform.position;
-            //cards[j].transform.rotation = Quaternion.Euler(0, 0, Random.Range(11, -11));
+            cardTexture.wrapMode = TextureWrapMode.Clamp;
+            cardTexture.filterMode = FilterMode.Bilinear;
+            cards[j].transform.GetChild(1).GetComponentInChildren<RawImage>().texture = cardTexture1;
+            cards[j].transform.GetChild(1).gameObject.name = cardDefinitionsLocale[j + 1];
             LeanTween.scale(cards[j], Vector3.one * 0.5f, 0.5f);
-
-            cards[j].GetComponent<ChainController>().GetChildList();
+            LeanTween.move(cards[j], cardPositions[j].transform.position, 0.15f);
+            cards[j].GetComponent<CardControllerCardChain>().GetChildNames();
         }
         isBoardCreated = true;
     }

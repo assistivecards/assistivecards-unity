@@ -46,7 +46,6 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
     private void OnEnable() 
     {
-        LeanTween.scale(this.gameObject, Vector3.one, 0.3f);
         cardPosition = this.transform.position;
         cardCrushGrid = FindObjectOfType<CardCrushGrid>();
         cardBlastFillGrid = FindObjectOfType<CardBlastFillGrid>();
@@ -79,10 +78,6 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         if(cardBlastFillGrid.isBoardCreated)
         {
             CheckDrop();
-        }
-        if(this.transform.localScale.x > 1)
-        {
-            this.transform.localScale = Vector3.one;
         }
         if(isMatched)
         {
@@ -168,8 +163,11 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                     cardBlastFillGrid.Invoke("RefillBoard", 0.5f);
                 }
             }
+            else
+            {
+                cardBlastFillGrid.Invoke("RefillBoardsTop", 1f);
+            }
         }
-
         canMatch.RemoveAll(item => item == null);
     }
 
@@ -387,7 +385,7 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
     private void RestoreCard()
     {
-        LeanTween.scale(this.gameObject, Vector3.one, 0.1f); 
+        LeanTween.scale(this.gameObject, Vector3.one, 0);
         isMatched = false;
     }
 

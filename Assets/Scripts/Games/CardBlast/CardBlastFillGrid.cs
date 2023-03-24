@@ -48,6 +48,7 @@ public class CardBlastFillGrid : MonoBehaviour
     public List<string> cardLocalNames = new List<string>();
 
     bool sfxOneTime = true;
+    bool onBottomReset = true;
 
     private void Awake()
     {
@@ -135,6 +136,7 @@ public class CardBlastFillGrid : MonoBehaviour
             card.GetComponent<CardBlastElement>().type = cardNames[cardImageRandom];
             card.GetComponent<CardBlastElement>().localName = cardLocalNames[cardImageRandom];
             card.transform.localPosition = Vector3.zero;
+            LeanTween.scale(card, Vector3.one, 0.5f);
         }
 
         foreach(var cell in cardCrushGrid.allCells)
@@ -168,6 +170,46 @@ public class CardBlastFillGrid : MonoBehaviour
         }
     }
 
+    public async void RefillBoardsTop()
+    {
+        foreach(var cell in cardCrushGrid.allCells)
+        {
+            if(cell.isEmpty == true && cell.y == 3 && isBoardCreated)
+            {
+                cell.isEmpty = false;
+                GameObject card = Instantiate(cardPrefab, cell.transform.position, Quaternion.identity);
+                
+                int cardImageRandom = randomValues[Random.Range(0, cardTypeCount)];
+                var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[cardImageRandom], 512);
+                
+                cardTexture.wrapMode = TextureWrapMode.Clamp;
+                cardTexture.filterMode = FilterMode.Bilinear;
+                
+                if(card != null)
+                {
+                    card.transform.name = cardNames[cardImageRandom];
+                    card.transform.SetParent(cell.transform);
+                    card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+
+                    cell.card = card;
+                    card.GetComponent<CardBlastElement>().x = cell.x;
+                    card.GetComponent<CardBlastElement>().y = cell.y;
+                    card.GetComponent<CardBlastElement>().type = cardNames[cardImageRandom];
+                    card.GetComponent<CardBlastElement>().localName = cardLocalNames[cardImageRandom];
+                    LeanTween.scale(card, Vector3.one, 0.5f);
+                }
+            }
+        }
+
+        foreach(var cell in cardCrushGrid.allCells)
+        {
+            if(cell.card != null)
+                cell.card.GetComponent<CardBlastElement>().canMatch.Clear();
+        }
+
+        Invoke("OnRefillBool", 0.5f);
+    }
+
     public async void RefillBoard()
     {
         foreach(var cell in cardCrushGrid.allCells)
@@ -194,6 +236,7 @@ public class CardBlastFillGrid : MonoBehaviour
                     card.GetComponent<CardBlastElement>().y = cell.y;
                     card.GetComponent<CardBlastElement>().type = cardNames[cardImageRandom];
                     card.GetComponent<CardBlastElement>().localName = cardLocalNames[cardImageRandom];
+                    LeanTween.scale(card, Vector3.one, 0.5f);
                 }
             }
         }
@@ -285,17 +328,27 @@ public class CardBlastFillGrid : MonoBehaviour
 
     private void ResetBottomCells()
     {
-        foreach(var cell in bottomCells)
+        if(onBottomReset && isBoardCreated)
         {
-            if(cell.card != null)
+            onBottomReset = false;
+            foreach(var cell in bottomCells)
             {
-                if(cell.card.GetComponent<CardBlastElement>() != null)
+                if(cell.card != null)
                 {
-                    cell.card.GetComponent<CardBlastElement>().DestroyCard();
+                    if(cell.card.GetComponent<CardBlastElement>() != null)
+                    {
+                        cell.card.GetComponent<CardBlastElement>().DestroyCard();
+                    }
                 }
             }
+            matcheableCards.Clear();
+            Invoke("SetResetBottomTrue", 1f);
         }
-        matcheableCards.Clear();
+    }
+
+    private void SetResetBottomTrue()
+    {
+        onBottomReset = true;
     }
 
     private async void ResetScene()

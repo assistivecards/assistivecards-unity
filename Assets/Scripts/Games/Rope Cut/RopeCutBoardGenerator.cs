@@ -82,6 +82,13 @@ public class RopeCutBoardGenerator : MonoBehaviour
             cardImagesInScene[i].sprite = null;
         }
 
+        var ropeClones = GameObject.FindGameObjectsWithTag("Rope");
+
+        for (int i = 0; i < ropeClones.Length; i++)
+        {
+            Destroy(ropeClones[i]);
+        }
+
     }
 
     public void ScaleImagesUp()
@@ -90,6 +97,7 @@ public class RopeCutBoardGenerator : MonoBehaviour
         for (int i = 0; i < anchorPoints.Length; i++)
         {
             LeanTween.scale(anchorPoints[i].gameObject, Vector3.one * 5, 0.15f);
+            cardParents[i].GetComponent<BoxCollider2D>().enabled = true;
             LeanTween.scale(cardParents[i].gameObject, Vector3.one * 10, 0.15f);
             anchorPoints[i].GetComponent<RopeGenerator>().enabled = true;
 
@@ -98,6 +106,20 @@ public class RopeCutBoardGenerator : MonoBehaviour
         ropeCutManager.SetActive(true);
         trailManager.SetActive(true);
 
+    }
+
+    public void ScaleImagesDown()
+    {
+        LeanTween.scale(cutText.gameObject, Vector3.zero, 0.15f);
+        for (int i = 0; i < anchorPoints.Length; i++)
+        {
+            LeanTween.scale(anchorPoints[i].gameObject, Vector3.zero * 5, 0.15f);
+            LeanTween.scale(cardParents[i].gameObject, Vector3.zero * 10, 0.15f);
+            anchorPoints[i].GetComponent<RopeGenerator>().enabled = false;
+        }
+
+        ropeCutManager.SetActive(false);
+        trailManager.SetActive(false);
     }
 
     public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)

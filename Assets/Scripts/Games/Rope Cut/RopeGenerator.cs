@@ -8,7 +8,7 @@ public class RopeGenerator : MonoBehaviour
     public int ropes;
     public CardAttacher cardAttacher;
 
-    void Start()
+    void OnEnable()
     {
         GenerateRope();
     }

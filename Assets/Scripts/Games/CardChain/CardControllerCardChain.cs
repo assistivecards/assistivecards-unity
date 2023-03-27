@@ -36,22 +36,22 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
 
     void OnTriggerEnter2D(Collider2D other)
     { 
-        if(GetComponentInParent<BoardGenerateCardChain>().isBoardCreated)
+        if(GetComponentInParent<BoardGenerateCardChain>().isBoardCreated && drag)
         {
             if(other.gameObject.GetComponent<CardControllerCardChain>().rightCard.name == leftCard.name)
             {
+                rightCard = other.GetComponent<CardControllerCardChain>().leftCard;
                 other.transform.SetParent(this.transform);
                 other.GetComponent<CardControllerCardChain>().cantMove = true;
                 LeanTween.moveLocal(other.gameObject, new Vector3(280, 0, 0), 0.1f);
-                rightCard = other.GetComponent<CardControllerCardChain>().rightCard;
             }
-            // else if(other.gameObject.GetComponent<CardControllerCardChain>().leftCard.name == rightCard.name)
-            // {
-            //     other.transform.SetParent(this.transform);
-            //     other.GetComponent<CardControllerCardChain>().cantMove = true;
-            //     leftCard = other.GetComponent<CardControllerCardChain>().leftCard;
-            //     LeanTween.moveLocal(other.gameObject, new Vector3(-280, 0, 0), 0.1f);
-            // }
+            else if(other.gameObject.GetComponent<CardControllerCardChain>().leftCard.name == rightCard.name)
+            {
+                leftCard = other.GetComponent<CardControllerCardChain>().rightCard;
+                other.transform.SetParent(this.transform);
+                other.GetComponent<CardControllerCardChain>().cantMove = true;
+                LeanTween.moveLocal(other.gameObject, new Vector3(-280, 0, 0), 0.1f);
+            }
         }
     }
 }

@@ -91,6 +91,7 @@ public class RopeCutBoardGenerator : MonoBehaviour
         {
             LeanTween.scale(anchorPoints[i].gameObject, Vector3.one * 5, 0.15f);
             LeanTween.scale(cardParents[i].gameObject, Vector3.one * 10, 0.15f);
+            anchorPoints[i].GetComponent<RopeGenerator>().enabled = true;
 
         }
 

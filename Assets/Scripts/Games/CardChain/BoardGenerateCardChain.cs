@@ -117,9 +117,14 @@ public class BoardGenerateCardChain : MonoBehaviour
             cards[j].transform.GetChild(1).GetComponentInChildren<RawImage>().texture = cardTexture1;
             cards[j].transform.GetChild(1).gameObject.name = cardDefinitionsLocale[j + 1];
             LeanTween.scale(cards[j], Vector3.one * 0.5f, 0.5f);
-            LeanTween.move(cards[j], cardPositions[j].transform.position, 0.15f);
+            LeanTween.move(cards[j], cardPositions[j].transform.position, 0);
             cards[j].GetComponent<CardControllerCardChain>().GetChildNames();
         }
+        Invoke("BoardCreatedBool", 1f);
+    }
+
+    private void BoardCreatedBool()
+    {
         isBoardCreated = true;
     }
 

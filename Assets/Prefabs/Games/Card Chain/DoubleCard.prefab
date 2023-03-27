@@ -140,8 +140,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062d8f80fcdba48cbb07387cdc1aed79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightCardName: 
-  leftCardName: 
+  rightCardName: {fileID: 0}
+  leftCardName: {fileID: 0}
+  cantMove: 0
+  drag: 0
 --- !u!1 &3953419126043893981
 GameObject:
   m_ObjectHideFlags: 0

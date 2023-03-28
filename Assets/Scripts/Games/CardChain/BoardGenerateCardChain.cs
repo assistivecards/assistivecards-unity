@@ -31,6 +31,8 @@ public class BoardGenerateCardChain : MonoBehaviour
     public string packSlug;
     public bool isBoardCreated = false;
 
+    public int matchCount;
+
 
     private void OnEnable()
     {
@@ -121,6 +123,7 @@ public class BoardGenerateCardChain : MonoBehaviour
             LeanTween.scale(cards[j], Vector3.one * 0.5f, 0.5f);
             LeanTween.move(cards[j], cardPositions[j].transform.position, 0);
             cards[j].GetComponent<CardControllerCardChain>().GetChildNames();
+            cards[j].GetComponent<CardControllerCardChain>().boardGenerateCardChain = this;
         }
         Invoke("BoardCreatedBool", 1f);
     }

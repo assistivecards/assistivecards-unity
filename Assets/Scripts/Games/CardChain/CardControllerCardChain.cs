@@ -6,13 +6,13 @@ using UnityEngine.UI;
 
 public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPointerUpHandler , IDragHandler
 {   
+    public BoardGenerateCardChain boardGenerateCardChain;
     public GameObject rightCard;
     public GameObject leftCard;
     private Vector3 leftSnapPosition;
     private Vector3 rightSnapPosition;
     public bool cantMove = false;
     public bool drag;
-
     public void OnDrag(PointerEventData eventData)
     {
         if(!cantMove)
@@ -59,6 +59,11 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
                 other.GetComponent<CardControllerCardChain>().cantMove = true;
                 //LeanTween
                 LeanTween.moveLocal(other.gameObject, new Vector3(-280, 0, 0), 0.1f);
+                boardGenerateCardChain.matchCount ++;
+                if(boardGenerateCardChain.matchCount >= 4)
+                {
+                    Debug.Log("LEVEL END");
+                }
             }
             else if(other.gameObject.GetComponent<CardControllerCardChain>().leftCard.name == rightCard.name)
             {
@@ -69,6 +74,11 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
                 other.GetComponent<CardControllerCardChain>().cantMove = true;
                 LeanTween.moveLocal(other.gameObject, new Vector3(280, 0, 0), 0.1f);
                 //LeanTween.moveLocal(other.gameObject, rightSnapPosition, 0.1f);
+                boardGenerateCardChain.matchCount ++;
+                if(boardGenerateCardChain.matchCount >= 4)
+                {
+                    Debug.Log("LEVEL END");
+                }
             }
             //GetSnapPositions();
         }

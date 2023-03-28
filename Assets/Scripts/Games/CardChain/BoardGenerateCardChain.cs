@@ -96,7 +96,9 @@ public class BoardGenerateCardChain : MonoBehaviour
             cardNames.Add(cardTextures.cards[i].title.ToLower().Replace(" ", "-"));
             cardDefinitionsLocale.Add(cardDefinitions.cards[i].title);
         }
+
         SuffleList();
+        
         for(int j = 0; j < cardCount; j++)
         {
             cards.Add(Instantiate(doubleCard, Vector3.zero, Quaternion.identity));

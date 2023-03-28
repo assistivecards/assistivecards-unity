@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RopeCutMatchDetection : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class RopeCutMatchDetection : MonoBehaviour
         {
             Debug.Log("Correct Match!");
             UIController.correctMatches++;
+            UIController.backButton.GetComponent<Button>().interactable = false;
             other.GetComponent<BoxCollider2D>().enabled = false;
             board.Invoke("ScaleImagesDown", 1f);
             board.Invoke("ClearBoard", 1.30f);

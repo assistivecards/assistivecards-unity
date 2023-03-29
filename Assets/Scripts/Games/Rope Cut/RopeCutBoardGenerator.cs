@@ -25,6 +25,7 @@ public class RopeCutBoardGenerator : MonoBehaviour
     public static bool isBackAfterSignOut = false;
     [SerializeField] GameObject ropeCutManager;
     [SerializeField] GameObject trailManager;
+    private RopeCutUIController UIController;
 
 
     private void Awake()
@@ -35,6 +36,7 @@ public class RopeCutBoardGenerator : MonoBehaviour
     private void Start()
     {
         gameAPI.PlayMusic();
+        UIController = GameObject.Find("GamePanel").GetComponent<RopeCutUIController>();
     }
 
     private void OnEnable()
@@ -42,6 +44,7 @@ public class RopeCutBoardGenerator : MonoBehaviour
         if (isBackAfterSignOut)
         {
             gameAPI.PlayMusic();
+            UIController.OnBackButtonClick();
             isBackAfterSignOut = false;
         }
     }

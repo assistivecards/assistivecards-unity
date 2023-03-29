@@ -150,9 +150,13 @@ class Texture2D; template <> void RegisterUnityClass<Texture2D>(const char*);
 class Texture2DArray; template <> void RegisterUnityClass<Texture2DArray>(const char*);
 class Texture3D; template <> void RegisterUnityClass<Texture3D>(const char*);
 class TimeManager; template <> void RegisterUnityClass<TimeManager>(const char*);
+class TrailRenderer; template <> void RegisterUnityClass<TrailRenderer>(const char*);
 class Transform; template <> void RegisterUnityClass<Transform>(const char*);
+class AnchoredJoint2D; template <> void RegisterUnityClass<AnchoredJoint2D>(const char*);
 class BoxCollider2D; template <> void RegisterUnityClass<BoxCollider2D>(const char*);
 class Collider2D; template <> void RegisterUnityClass<Collider2D>(const char*);
+class HingeJoint2D; template <> void RegisterUnityClass<HingeJoint2D>(const char*);
+class Joint2D; template <> void RegisterUnityClass<Joint2D>(const char*);
 class Physics2DSettings; template <> void RegisterUnityClass<Physics2DSettings>(const char*);
 class PolygonCollider2D; template <> void RegisterUnityClass<PolygonCollider2D>(const char*);
 class Rigidbody2D; template <> void RegisterUnityClass<Rigidbody2D>(const char*);
@@ -166,7 +170,7 @@ void RegisterAllClasses()
 {
 void RegisterBuiltinTypes();
 RegisterBuiltinTypes();
-	//Total: 76 non stripped classes
+	//Total: 80 non stripped classes
 	//0. Animation
 	RegisterUnityClass<Animation>("Animation");
 	//1. AnimationClip
@@ -297,27 +301,35 @@ RegisterBuiltinTypes();
 	RegisterUnityClass<Texture3D>("Core");
 	//64. TimeManager
 	RegisterUnityClass<TimeManager>("Core");
-	//65. Transform
+	//65. TrailRenderer
+	RegisterUnityClass<TrailRenderer>("Core");
+	//66. Transform
 	RegisterUnityClass<Transform>("Core");
-	//66. BoxCollider2D
+	//67. AnchoredJoint2D
+	RegisterUnityClass<AnchoredJoint2D>("Physics2D");
+	//68. BoxCollider2D
 	RegisterUnityClass<BoxCollider2D>("Physics2D");
-	//67. Collider2D
+	//69. Collider2D
 	RegisterUnityClass<Collider2D>("Physics2D");
-	//68. Physics2DSettings
+	//70. HingeJoint2D
+	RegisterUnityClass<HingeJoint2D>("Physics2D");
+	//71. Joint2D
+	RegisterUnityClass<Joint2D>("Physics2D");
+	//72. Physics2DSettings
 	RegisterUnityClass<Physics2DSettings>("Physics2D");
-	//69. PolygonCollider2D
+	//73. PolygonCollider2D
 	RegisterUnityClass<PolygonCollider2D>("Physics2D");
-	//70. Rigidbody2D
+	//74. Rigidbody2D
 	RegisterUnityClass<Rigidbody2D>("Physics2D");
-	//71. Font
+	//75. Font
 	RegisterUnityClass<TextRendering::Font>("TextRendering");
-	//72. Canvas
+	//76. Canvas
 	RegisterUnityClass<UI::Canvas>("UI");
-	//73. CanvasGroup
+	//77. CanvasGroup
 	RegisterUnityClass<UI::CanvasGroup>("UI");
-	//74. CanvasRenderer
+	//78. CanvasRenderer
 	RegisterUnityClass<UI::CanvasRenderer>("UI");
-	//75. UnityConnectSettings
+	//79. UnityConnectSettings
 	RegisterUnityClass<UnityConnectSettings>("UnityConnect");
 
 }

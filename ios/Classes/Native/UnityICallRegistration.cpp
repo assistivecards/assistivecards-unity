@@ -144,6 +144,22 @@ void RegisterAllStrippedInternalCalls()
 
 	//End Registrations for type : UnityEngine.Analytics.CustomEventData
 
+	//Start Registrations for type : UnityEngine.AnchoredJoint2D
+
+		//System.Void UnityEngine.AnchoredJoint2D::set_anchor_Injected(UnityEngine.Vector2&)
+		void Register_UnityEngine_AnchoredJoint2D_set_anchor_Injected();
+		Register_UnityEngine_AnchoredJoint2D_set_anchor_Injected();
+
+		//System.Void UnityEngine.AnchoredJoint2D::set_autoConfigureConnectedAnchor(System.Boolean)
+		void Register_UnityEngine_AnchoredJoint2D_set_autoConfigureConnectedAnchor();
+		Register_UnityEngine_AnchoredJoint2D_set_autoConfigureConnectedAnchor();
+
+		//System.Void UnityEngine.AnchoredJoint2D::set_connectedAnchor_Injected(UnityEngine.Vector2&)
+		void Register_UnityEngine_AnchoredJoint2D_set_connectedAnchor_Injected();
+		Register_UnityEngine_AnchoredJoint2D_set_connectedAnchor_Injected();
+
+	//End Registrations for type : UnityEngine.AnchoredJoint2D
+
 	//Start Registrations for type : UnityEngine.AndroidJNI
 
 		//System.Boolean UnityEngine.AndroidJNI::CallBooleanMethod(System.IntPtr,System.IntPtr,UnityEngine.jvalue[])
@@ -1025,6 +1041,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.Collider2D::set_isTrigger(System.Boolean)
 		void Register_UnityEngine_Collider2D_set_isTrigger();
 		Register_UnityEngine_Collider2D_set_isTrigger();
+
+		//UnityEngine.Rigidbody2D UnityEngine.Collider2D::get_attachedRigidbody()
+		void Register_UnityEngine_Collider2D_get_attachedRigidbody();
+		Register_UnityEngine_Collider2D_get_attachedRigidbody();
 
 	//End Registrations for type : UnityEngine.Collider2D
 
@@ -2031,6 +2051,14 @@ void RegisterAllStrippedInternalCalls()
 		Register_UnityEngine_Input_get_imeCompositionMode();
 
 	//End Registrations for type : UnityEngine.Input
+
+	//Start Registrations for type : UnityEngine.Joint2D
+
+		//System.Void UnityEngine.Joint2D::set_connectedBody(UnityEngine.Rigidbody2D)
+		void Register_UnityEngine_Joint2D_set_connectedBody();
+		Register_UnityEngine_Joint2D_set_connectedBody();
+
+	//End Registrations for type : UnityEngine.Joint2D
 
 	//Start Registrations for type : UnityEngine.JsonUtility
 
@@ -3494,6 +3522,14 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_SpriteRenderer_set_color_Injected();
 		Register_UnityEngine_SpriteRenderer_set_color_Injected();
 
+		//System.Void UnityEngine.SpriteRenderer::set_sprite(UnityEngine.Sprite)
+		void Register_UnityEngine_SpriteRenderer_set_sprite();
+		Register_UnityEngine_SpriteRenderer_set_sprite();
+
+		//UnityEngine.Sprite UnityEngine.SpriteRenderer::get_sprite()
+		void Register_UnityEngine_SpriteRenderer_get_sprite();
+		Register_UnityEngine_SpriteRenderer_get_sprite();
+
 	//End Registrations for type : UnityEngine.SpriteRenderer
 
 	//Start Registrations for type : UnityEngine.SystemInfo
@@ -3929,6 +3965,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Boolean UnityEngine.Transform::get_hasChanged()
 		void Register_UnityEngine_Transform_get_hasChanged();
 		Register_UnityEngine_Transform_get_hasChanged();
+
+		//System.Int32 UnityEngine.Transform::GetSiblingIndex()
+		void Register_UnityEngine_Transform_GetSiblingIndex();
+		Register_UnityEngine_Transform_GetSiblingIndex();
 
 		//System.Int32 UnityEngine.Transform::get_childCount()
 		void Register_UnityEngine_Transform_get_childCount();

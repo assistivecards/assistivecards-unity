@@ -65,7 +65,7 @@ public class BoardGenerateCardChain : MonoBehaviour
     {
         tempRandomValue = Random.Range(0, cardTextures.cards.Length);
 
-        if(randomValueList.IndexOf(tempRandomValue) < 0)
+        if(!randomValueList.Contains(tempRandomValue))
         {
             randomValue = tempRandomValue;
             randomValueList.Add(randomValue);
@@ -73,16 +73,6 @@ public class BoardGenerateCardChain : MonoBehaviour
         else
         {
             CheckRandom();
-        }
-    }
-
-    private void SuffleList()
-    {
-        for(int i = 0; i < cardNames.Count; i++)
-        {   
-            var random = Random.Range(0, cardNames.Count);
-            cardNames[i] = cardNames[random];
-            cardDefinitionsLocale[i] = cardDefinitionsLocale[random];
         }
     }
 
@@ -98,22 +88,20 @@ public class BoardGenerateCardChain : MonoBehaviour
             cardNames.Add(cardTextures.cards[i].title.ToLower().Replace(" ", "-"));
             cardDefinitionsLocale.Add(cardDefinitions.cards[i].title);
         }
-
-        SuffleList();
         
         for(int j = 0; j < cardCount; j++)
         {
             cards.Add(Instantiate(doubleCard, Vector3.zero, Quaternion.identity));
             cards[j].transform.parent = this.transform;
 
-            var cardName = cardNames[j];
+            var cardName = cardNames[randomValueList[j]];
             var cardTexture = await gameAPI.GetCardImage(packSlug, cardName, 512);
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear;
             cards[j].transform.GetChild(0).GetComponentInChildren<RawImage>().texture = cardTexture;
             cards[j].transform.GetChild(0).gameObject.name = cardDefinitionsLocale[j];
 
-            var cardName1 = cardNames[j + 1];
+            var cardName1 = cardNames[randomValueList[j + 1]];
             var cardTexture1 = await gameAPI.GetCardImage(packSlug, cardName1, 512);
 
             cardTexture.wrapMode = TextureWrapMode.Clamp;

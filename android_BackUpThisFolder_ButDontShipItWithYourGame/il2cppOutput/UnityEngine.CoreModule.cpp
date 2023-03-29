@@ -4560,6 +4560,11 @@ struct ReflectionProbe_t7CFA63F0340447A0069E66DB261A8A1B79BA8A2D_StaticFields
 struct SkinnedMeshRenderer_t020C4E8648EA1C4C6BA5C41502919B387E7E1C2E  : public Renderer_t320575F223BCB177A982E5DDB5DB19FAA89E7FBF
 {
 };
+
+// UnityEngine.TrailRenderer
+struct TrailRenderer_tF7E185EF383CF4300DFC3E1DE59FA6100B93CA39  : public Renderer_t320575F223BCB177A982E5DDB5DB19FAA89E7FBF
+{
+};
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -14943,6 +14948,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Renderer_set_sharedMaterials_m665ADE4190
 		return;
 	}
 }
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -37456,6 +37469,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RequireComponent__ctor_mB1C4FD7EA20C0ADA
 		Type_t* L_0 = ___requiredComponent0;
 		__this->___m_Type0_0 = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_Type0_0), (void*)L_0);
+		return;
+	}
+}
+// System.Void UnityEngine.RequireComponent::.ctor(System.Type,System.Type)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RequireComponent__ctor_mB589C6197411F3187E219DC3370165E5B6EBE35E (RequireComponent_t8DDD209443A8519033BD1B38803A47077D2A1138* __this, Type_t* ___requiredComponent0, Type_t* ___requiredComponent21, const RuntimeMethod* method) 
+{
+	{
+		Attribute__ctor_m79ED1BF1EE36D1E417BA89A0D9F91F8AAD8D19E2(__this, NULL);
+		Type_t* L_0 = ___requiredComponent0;
+		__this->___m_Type0_0 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_Type0_0), (void*)L_0);
+		Type_t* L_1 = ___requiredComponent21;
+		__this->___m_Type1_1 = L_1;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_Type1_1), (void*)L_1);
 		return;
 	}
 }

@@ -29,6 +29,7 @@ public class RopeCutMatchDetection : MonoBehaviour
             UIController.backButton.GetComponent<Button>().interactable = false;
             gameAPI.PlaySFX("Success");
             other.GetComponent<BoxCollider2D>().enabled = false;
+            Destroy(other.GetComponent<HingeJoint2D>());
             board.Invoke("ReadCard", 0.25f);
             board.Invoke("ScaleImagesDown", 1f);
             board.Invoke("ClearBoard", 1.30f);
@@ -43,9 +44,10 @@ public class RopeCutMatchDetection : MonoBehaviour
         else if (other.tag == "WrongCard")
         {
             Debug.Log("Wrong Match!");
+            Destroy(other.GetComponent<HingeJoint2D>());
         }
 
-        Destroy(other.GetComponent<HingeJoint2D>());
+        // Destroy(other.GetComponent<HingeJoint2D>());
 
     }
 }

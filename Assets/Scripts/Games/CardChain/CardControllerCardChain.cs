@@ -6,13 +6,27 @@ using UnityEngine.UI;
 
 public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPointerUpHandler , IDragHandler
 {   
-    public BoardGenerateCardChain boardGenerateCardChain;
     public GameObject rightCard;
     public GameObject leftCard;
+
+    public GameObject preRightCard;
+    public GameObject preLeftCard;
+
+
+    public BoardGenerateCardChain boardGenerateCardChain;
+    private RectTransform rt;
     private Vector3 leftSnapPosition;
     private Vector3 rightSnapPosition;
     public bool cantMove = false;
     public bool drag;
+    float width;
+    float height;
+
+    private void Start() 
+    {
+        rt = this.GetComponent<RectTransform>();
+    }
+
     public void OnDrag(PointerEventData eventData)
     {
         if(!cantMove)
@@ -25,7 +39,6 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
     {
         drag = true;
         GetComponentInChildren<CardControllerCardChain>().drag = true;
-        //GetSnapPositions();
     }
     public void OnPointerUp(PointerEventData eventData)
     {
@@ -35,16 +48,10 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
 
     public void GetChildNames()
     {
-        rightCard = this.transform.GetChild(0).gameObject;
-        leftCard = this.transform.GetChild(1).gameObject;
-        //GetSnapPositions();
+        rightCard = this.transform.GetChild(1).gameObject;
+        leftCard = this.transform.GetChild(0).gameObject;
     }
     
-    // public void GetSnapPositions()
-    // {
-    //     leftSnapPosition = new Vector3(leftCard.transform.localPosition.x - 400, leftCard.transform.localPosition.y + 70, 0);
-    //     rightSnapPosition =  new Vector3(rightCard.transform.localPosition.x + 400, rightCard.transform.localPosition.y + 70, 0);
-    // }
 
     void OnTriggerEnter2D(Collider2D other)
     { 
@@ -52,13 +59,17 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
         {
             if(other.gameObject.GetComponent<CardControllerCardChain>().rightCard.name == leftCard.name)
             {
-                leftCard = other.GetComponent<CardControllerCardChain>().leftCard;
-                other.transform.SetParent(this.transform);
-                // other.GetComponent<CardControllerCardChain>().leftCard.transform.SetParent(this.transform);
-                // other.GetComponent<CardControllerCardChain>().rightCard.transform.SetParent(this.transform);
-                other.GetComponent<CardControllerCardChain>().cantMove = true;
-                //LeanTween
-                LeanTween.moveLocal(other.gameObject, new Vector3(-280, 0, 0), 0.1f);
+                preLeftCard = leftCard;
+                rt.sizeDelta = new Vector2(rt.sizeDelta.x + 283, rt.sizeDelta.y);
+                foreach(Transform child in transform)
+                {
+                    child.localPosition = new Vector3(child.localPosition.x + 141, child.localPosition.y, child.localPosition.z);
+                }
+                leftCard = other.gameObject.GetComponent<CardControllerCardChain>().leftCard;
+                other.gameObject.GetComponent<CardControllerCardChain>().leftCard.transform.SetParent(this.transform);
+                LeanTween.moveLocal(leftCard, new Vector3(preLeftCard.transform.localPosition.x - 283, 0, 0), 0.05f);
+                Destroy(other.gameObject);
+
                 boardGenerateCardChain.matchCount ++;
                 if(boardGenerateCardChain.matchCount >= 4)
                 {
@@ -67,20 +78,23 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
             }
             else if(other.gameObject.GetComponent<CardControllerCardChain>().leftCard.name == rightCard.name)
             {
-                rightCard = other.GetComponent<CardControllerCardChain>().rightCard;
-                other.transform.SetParent(this.transform);
-                // other.GetComponent<CardControllerCardChain>().leftCard.transform.SetParent(this.transform);
-                // other.GetComponent<CardControllerCardChain>().rightCard.transform.SetParent(this.transform);
-                other.GetComponent<CardControllerCardChain>().cantMove = true;
-                LeanTween.moveLocal(other.gameObject, new Vector3(280, 0, 0), 0.1f);
-                //LeanTween.moveLocal(other.gameObject, rightSnapPosition, 0.1f);
+                preRightCard = rightCard;
+                rt.sizeDelta = new Vector2(rt.sizeDelta.x + 283, rt.sizeDelta.y);
+                foreach(Transform child in transform)
+                {
+                    child.localPosition = new Vector3(child.localPosition.x - 141, child.localPosition.y, child.localPosition.z);
+                }
+                rightCard = other.gameObject.GetComponent<CardControllerCardChain>().rightCard;
+                other.gameObject.GetComponent<CardControllerCardChain>().rightCard.transform.SetParent(this.transform);
+                LeanTween.moveLocal(rightCard, new Vector3(preRightCard.transform.localPosition.x + 283, 0, 0), 0.05f);
+                Destroy(other.gameObject);
+
                 boardGenerateCardChain.matchCount ++;
                 if(boardGenerateCardChain.matchCount >= 4)
                 {
                     Debug.Log("LEVEL END");
                 }
             }
-            //GetSnapPositions();
         }
     }
 }

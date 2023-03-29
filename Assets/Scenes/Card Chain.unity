@@ -745,7 +745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5301644170934348992, guid: 975c28d7b7e66b44ca441b59134a85d4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5301644170934348999, guid: 975c28d7b7e66b44ca441b59134a85d4, type: 3}
       propertyPath: m_Pivot.x
@@ -2103,6 +2103,7 @@ MonoBehaviour:
   cardCount: 5
   packSlug: 
   isBoardCreated: 0
+  matchCount: 0
 --- !u!224 &2134643254
 RectTransform:
   m_ObjectHideFlags: 0

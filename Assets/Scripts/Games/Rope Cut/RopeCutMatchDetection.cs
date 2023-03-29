@@ -36,5 +36,8 @@ public class RopeCutMatchDetection : MonoBehaviour
         {
             Debug.Log("Wrong Match!");
         }
+
+        Destroy(other.GetComponent<HingeJoint2D>());
+
     }
 }

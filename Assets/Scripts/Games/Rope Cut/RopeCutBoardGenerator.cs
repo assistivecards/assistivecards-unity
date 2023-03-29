@@ -80,6 +80,7 @@ public class RopeCutBoardGenerator : MonoBehaviour
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {
             cardImagesInScene[i].sprite = null;
+            Destroy(cardImagesInScene[i].transform.parent.GetComponent<HingeJoint2D>());
         }
 
         var ropeClones = GameObject.FindGameObjectsWithTag("Rope");
@@ -93,13 +94,13 @@ public class RopeCutBoardGenerator : MonoBehaviour
 
     public void ScaleImagesUp()
     {
-        LeanTween.scale(cutText.gameObject, Vector3.one, 0.15f);
+        LeanTween.scale(cutText.gameObject, Vector3.one, 0.2f);
         for (int i = 0; i < anchorPoints.Length; i++)
         {
-            LeanTween.scale(anchorPoints[i].gameObject, Vector3.one * 5, 0.15f);
+            LeanTween.scale(anchorPoints[i].gameObject, Vector3.one * 5, 0.2f);
             cardParents[i].GetComponent<BoxCollider2D>().enabled = true;
-            LeanTween.scale(cardParents[i].gameObject, Vector3.one * 10, 0.15f);
-            anchorPoints[i].GetComponent<RopeGenerator>().enabled = true;
+            LeanTween.scale(cardParents[i].gameObject, Vector3.one * 10, 0.2f);
+            anchorPoints[i].GetComponent<RopeGenerator>().GenerateRope();
 
         }
 
@@ -110,12 +111,12 @@ public class RopeCutBoardGenerator : MonoBehaviour
 
     public void ScaleImagesDown()
     {
-        LeanTween.scale(cutText.gameObject, Vector3.zero, 0.15f);
+        LeanTween.scale(cutText.gameObject, Vector3.zero, 0.2f);
         for (int i = 0; i < anchorPoints.Length; i++)
         {
-            LeanTween.scale(anchorPoints[i].gameObject, Vector3.zero * 5, 0.15f);
-            LeanTween.scale(cardParents[i].gameObject, Vector3.zero * 10, 0.15f);
-            anchorPoints[i].GetComponent<RopeGenerator>().enabled = false;
+            LeanTween.scale(anchorPoints[i].gameObject, Vector3.zero * 5, 0.2f);
+            LeanTween.scale(cardParents[i].gameObject, Vector3.zero * 10, 0.2f);
+            // anchorPoints[i].GetComponent<RopeGenerator>().enabled = false;
         }
 
         ropeCutManager.SetActive(false);

@@ -8,12 +8,7 @@ public class RopeGenerator : MonoBehaviour
     public int ropes;
     public CardAttacher cardAttacher;
 
-    void OnEnable()
-    {
-        GenerateRope();
-    }
-
-    void GenerateRope()
+    public void GenerateRope()
     {
         Rigidbody2D previousRB = hook;
         for (int i = 0; i < ropes; i++)

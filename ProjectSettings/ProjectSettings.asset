@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: assistivecards
-  productName: Hatch Match
+  productName: Card Blast
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.6509804, g: 0.9411765, b: 1, a: 1}
@@ -139,7 +139,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.4.7
+  bundleVersion: 1.4.8
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -159,9 +159,9 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.assistivecards.hatch_match
+    Android: com.assistivecards.card_blast
     Standalone: com.DefaultCompany.2DProject
-    iPhone: com.assistivecards.hatch-match
+    iPhone: com.assistivecards.card-blast
   buildNumber:
     Standalone: 0
     iPhone: 1.4.7
@@ -280,7 +280,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 4832c906d7fcc487f8f98204bdd4a5f4, type: 3}
+      m_Icon: {fileID: 2800000, guid: df5147c866d7a430e89eea56a78c6ce1, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

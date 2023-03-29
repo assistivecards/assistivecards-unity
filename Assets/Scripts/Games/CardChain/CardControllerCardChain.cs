@@ -73,7 +73,7 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
                 boardGenerateCardChain.matchCount ++;
                 if(boardGenerateCardChain.matchCount >= 4)
                 {
-                    Debug.Log("LEVEL END");
+                    boardGenerateCardChain.Invoke("ResetBoard", 0.5f);
                 }
             }
             else if(other.gameObject.GetComponent<CardControllerCardChain>().leftCard.name == rightCard.name)
@@ -92,7 +92,7 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
                 boardGenerateCardChain.matchCount ++;
                 if(boardGenerateCardChain.matchCount >= 4)
                 {
-                    Debug.Log("LEVEL END");
+                    boardGenerateCardChain.Invoke("ResetBoard", 0.5f);
                 }
             }
         }

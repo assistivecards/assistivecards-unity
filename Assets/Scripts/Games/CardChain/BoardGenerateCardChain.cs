@@ -24,7 +24,6 @@ public class BoardGenerateCardChain : MonoBehaviour
     public List<GameObject> cardPositions  = new List<GameObject>();
 
     public List<int> randomValueList = new List<int>();
-    public List<int> usedRandomValues = new List<int>();
 
     [SerializeField] private GameObject doubleCard;
     public int cardCount;
@@ -124,5 +123,14 @@ public class BoardGenerateCardChain : MonoBehaviour
     public async void CreateBoard()
     {
         await CacheCards(packSelectionPanel.selectedPackElement.name);
+    }
+
+    public void ResetBoard()
+    {
+        cardNames.Clear();
+        randomValueList.Clear();
+        cardDefinitionsLocale.Clear();
+        GameObject card = GameObject.Find("DoubleCard(Clone)");
+        Destroy(card);
     }
 }

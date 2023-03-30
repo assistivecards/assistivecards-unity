@@ -11,8 +11,8 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
 
     public GameObject preRightCard;
     public GameObject preLeftCard;
-
-
+    private GameObject board;
+    public UIControllerCardChain uıController;
     public BoardGenerateCardChain boardGenerateCardChain;
     private RectTransform rt;
     private Vector3 leftSnapPosition;
@@ -21,7 +21,6 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
     public bool drag;
     float width;
     float height;
-
     private void Start() 
     {
         rt = this.GetComponent<RectTransform>();
@@ -73,7 +72,8 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
                 boardGenerateCardChain.matchCount ++;
                 if(boardGenerateCardChain.matchCount >= 4)
                 {
-                    boardGenerateCardChain.Invoke("ResetBoard", 0.5f);
+                    boardGenerateCardChain.ResetBoard();
+                    GetComponentInParent<UIControllerCardChain>().Invoke("LevelChangeActive", 0.75f);
                 }
             }
             else if(other.gameObject.GetComponent<CardControllerCardChain>().leftCard.name == rightCard.name)
@@ -92,7 +92,8 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
                 boardGenerateCardChain.matchCount ++;
                 if(boardGenerateCardChain.matchCount >= 4)
                 {
-                    boardGenerateCardChain.Invoke("ResetBoard", 0.5f);
+                    boardGenerateCardChain.ResetBoard();
+                    GetComponentInParent<UIControllerCardChain>().Invoke("LevelChangeActive", 0.5f);
                 }
             }
         }

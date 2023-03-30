@@ -11,6 +11,8 @@ public class BoardGenerateCardChain : MonoBehaviour
     GameAPI gameAPI;
     public string selectedLangCode;
 
+    [SerializeField] private UIControllerCardChain uıController;
+
     AssistiveCardsSDK.AssistiveCardsSDK.Cards cardDefinitions;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cardTextures;
     [SerializeField] private PackSelectionPanel packSelectionPanel;
@@ -122,15 +124,22 @@ public class BoardGenerateCardChain : MonoBehaviour
 
     public async void CreateBoard()
     {
+        uıController.InGameBar();
         await CacheCards(packSelectionPanel.selectedPackElement.name);
     }
 
     public void ResetBoard()
     {
+        GameObject card = GameObject.Find("DoubleCard(Clone)");
+        LeanTween.scale(card, Vector3.zero, 0.2f).setOnComplete(DestroyCard);
         cardNames.Clear();
         randomValueList.Clear();
         cardDefinitionsLocale.Clear();
-        GameObject card = GameObject.Find("DoubleCard(Clone)");
-        Destroy(card);
+    }
+
+    private void DestroyCard()
+    {
+        GameObject _card = GameObject.Find("DoubleCard(Clone)");
+        Destroy(_card);
     }
 }

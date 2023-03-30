@@ -20,11 +20,11 @@ public class UIControllerCardChain : MonoBehaviour
 
     public void PackSelectionActive()
     {
+        ResetScroll();
         helloText.SetActive(true);
         settingButton.SetActive(true);
         backButton.SetActive(false);
         packSelectionScreen.SetActive(true);
-        LeanTween.scale(levelChangeScreen, Vector3.zero, 0.25f);
     }
 
     public void LevelChangeActive()
@@ -34,5 +34,15 @@ public class UIControllerCardChain : MonoBehaviour
         helloText.SetActive(false);
         levelChangeScreen.SetActive(true);
         LeanTween.scale(levelChangeScreen, Vector3.one * 0.6f, 0.5f);
+    }
+
+    public void CloseLevelChange()
+    {
+        LeanTween.scale(levelChangeScreen, Vector3.zero, 0.25f);
+    }
+
+    public void ResetScroll()
+    {
+        packSelectionScreen.transform.GetChild(0).GetChild(0).GetChild(0).transform.localPosition = Vector3.zero;
     }
 }

@@ -130,11 +130,17 @@ public class BoardGenerateCardChain : MonoBehaviour
 
     public void ResetBoard()
     {
-        GameObject card = GameObject.Find("DoubleCard(Clone)");
-        LeanTween.scale(card, Vector3.zero, 0.2f).setOnComplete(DestroyCard);
+        isBoardCreated = false;
+        foreach(var card in cards)
+        {
+            if(card != null)
+                LeanTween.scale(card.gameObject, Vector3.zero, 0.2f).setOnComplete(DestroyCard);
+        }
         cardNames.Clear();
         randomValueList.Clear();
         cardDefinitionsLocale.Clear();
+        cards.Clear();
+        matchCount = 0;
     }
 
     private void DestroyCard()

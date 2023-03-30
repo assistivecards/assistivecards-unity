@@ -38,6 +38,7 @@ public class BoardGenerateCardChain : MonoBehaviour
     private void OnEnable()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+        gameAPI.PlayMusic();
     }
 
     private void Start() 
@@ -97,18 +98,25 @@ public class BoardGenerateCardChain : MonoBehaviour
 
             var cardName = cardNames[randomValueList[j]];
             var cardTexture = await gameAPI.GetCardImage(packSlug, cardName, 512);
+            var localName = cardDefinitionsLocale[randomValueList[j]];
+
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear;
             cards[j].transform.GetChild(0).GetComponentInChildren<RawImage>().texture = cardTexture;
             cards[j].transform.GetChild(0).gameObject.name = cardDefinitionsLocale[j];
+            cards[j].GetComponent<CardControllerCardChain>().leftCardLocalName = localName;
+
 
             var cardName1 = cardNames[randomValueList[j + 1]];
             var cardTexture1 = await gameAPI.GetCardImage(packSlug, cardName1, 512);
+            var localName1 = cardDefinitionsLocale[randomValueList[j + 1]];
 
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear;
             cards[j].transform.GetChild(1).GetComponentInChildren<RawImage>().texture = cardTexture1;
             cards[j].transform.GetChild(1).gameObject.name = cardDefinitionsLocale[j + 1];
+            cards[j].GetComponent<CardControllerCardChain>().rightCardLocalName = localName1;
+
             LeanTween.scale(cards[j], Vector3.one * 0.5f, 0.5f);
             LeanTween.move(cards[j], cardPositions[j].transform.position, 0);
             cards[j].GetComponent<CardControllerCardChain>().GetChildNames();

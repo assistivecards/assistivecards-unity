@@ -6,21 +6,24 @@ using UnityEngine.UI;
 
 public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPointerUpHandler , IDragHandler
 {   
+    GameAPI gameAPI;
     public GameObject rightCard;
     public GameObject leftCard;
-
     public GameObject preRightCard;
     public GameObject preLeftCard;
-
-
+    private GameObject board;
+    public UIControllerCardChain uıController;
     public BoardGenerateCardChain boardGenerateCardChain;
     private RectTransform rt;
-    private Vector3 leftSnapPosition;
-    private Vector3 rightSnapPosition;
     public bool cantMove = false;
     public bool drag;
-    float width;
-    float height;
+    public string leftCardLocalName;
+    public string rightCardLocalName;
+
+    private void OnEnable()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void Start() 
     {
@@ -48,8 +51,8 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
 
     public void GetChildNames()
     {
-        rightCard = this.transform.GetChild(1).gameObject;
         leftCard = this.transform.GetChild(0).gameObject;
+        rightCard = this.transform.GetChild(1).gameObject;
     }
     
 
@@ -60,6 +63,7 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
             if(other.gameObject.GetComponent<CardControllerCardChain>().rightCard.name == leftCard.name)
             {
                 preLeftCard = leftCard;
+                leftCardLocalName = other.gameObject.GetComponent<CardControllerCardChain>().rightCardLocalName;
                 rt.sizeDelta = new Vector2(rt.sizeDelta.x + 283, rt.sizeDelta.y);
                 foreach(Transform child in transform)
                 {
@@ -69,16 +73,19 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
                 other.gameObject.GetComponent<CardControllerCardChain>().leftCard.transform.SetParent(this.transform);
                 LeanTween.moveLocal(leftCard, new Vector3(preLeftCard.transform.localPosition.x - 283, 0, 0), 0.05f);
                 Destroy(other.gameObject);
+                gameAPI.PlaySFX("Success");
+                Invoke("ReadLeftCard", 0.25f);
 
                 boardGenerateCardChain.matchCount ++;
                 if(boardGenerateCardChain.matchCount >= 4)
                 {
-                    boardGenerateCardChain.Invoke("ResetBoard", 0.5f);
+                    Invoke("CallResetBoard", 0.3f);
                 }
             }
             else if(other.gameObject.GetComponent<CardControllerCardChain>().leftCard.name == rightCard.name)
             {
                 preRightCard = rightCard;
+                rightCardLocalName = other.gameObject.GetComponent<CardControllerCardChain>().leftCardLocalName;
                 rt.sizeDelta = new Vector2(rt.sizeDelta.x + 283, rt.sizeDelta.y);
                 foreach(Transform child in transform)
                 {
@@ -88,13 +95,32 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
                 other.gameObject.GetComponent<CardControllerCardChain>().rightCard.transform.SetParent(this.transform);
                 LeanTween.moveLocal(rightCard, new Vector3(preRightCard.transform.localPosition.x + 283, 0, 0), 0.05f);
                 Destroy(other.gameObject);
+                gameAPI.PlaySFX("Success");
+                Invoke("ReadRightCard", 0.25f);
 
                 boardGenerateCardChain.matchCount ++;
                 if(boardGenerateCardChain.matchCount >= 4)
                 {
-                    boardGenerateCardChain.Invoke("ResetBoard", 0.5f);
+                    Invoke("CallResetBoard", 0.3f);
                 }
             }
         }
+    }
+
+    private void CallResetBoard()
+    {
+        boardGenerateCardChain.ResetBoard();
+        GetComponentInParent<UIControllerCardChain>().Invoke("LevelChangeActive", 0.5f);
+    }
+
+    private void ReadRightCard()
+    {
+        gameAPI.Speak(rightCardLocalName);
+        Debug.Log("right" + rightCardLocalName);
+    }
+    private void ReadLeftCard()
+    {
+        gameAPI.Speak(leftCardLocalName);
+        Debug.Log("left" + leftCardLocalName);
     }
 }

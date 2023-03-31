@@ -1,4 +1,4 @@
-# unity-template
+# AssistiveCards Unity
 
 Template for unity games made by Assistive Cards
 

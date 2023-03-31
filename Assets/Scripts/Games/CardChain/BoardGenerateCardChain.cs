@@ -26,6 +26,7 @@ public class BoardGenerateCardChain : MonoBehaviour
     public List<GameObject> cardPositions  = new List<GameObject>();
 
     public List<int> randomValueList = new List<int>();
+    public List<int> usedPositionList = new List<int>();
 
     [SerializeField] private GameObject doubleCard;
     public int cardCount;
@@ -118,11 +119,27 @@ public class BoardGenerateCardChain : MonoBehaviour
             cards[j].GetComponent<CardControllerCardChain>().rightCardLocalName = localName1;
 
             LeanTween.scale(cards[j], Vector3.one * 0.5f, 0.5f);
-            LeanTween.move(cards[j], cardPositions[j].transform.position, 0);
+            CreateRandomPosition(cards[j]);
+
             cards[j].GetComponent<CardControllerCardChain>().GetChildNames();
             cards[j].GetComponent<CardControllerCardChain>().boardGenerateCardChain = this;
         }
         Invoke("BoardCreatedBool", 1f);
+    }
+
+    private void CreateRandomPosition(GameObject _card)
+    {
+        var randomPos = Random.Range(0,cardPositions.Count);
+
+        if(!usedPositionList.Contains(randomPos))
+        {
+            usedPositionList.Add(randomPos);
+            LeanTween.move(_card, cardPositions[randomPos].transform.position, 0);
+        }
+        else if(usedPositionList.Contains(randomPos))
+        {
+            CreateRandomPosition(_card);
+        }
     }
 
     private void BoardCreatedBool()
@@ -149,6 +166,7 @@ public class BoardGenerateCardChain : MonoBehaviour
         cardDefinitionsLocale.Clear();
         cards.Clear();
         matchCount = 0;
+        usedPositionList.Clear();
     }
 
     private void DestroyCard()

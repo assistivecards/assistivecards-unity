@@ -1128,7 +1128,7 @@
         "vi": "Draw Lines là một trò chơi thú vị và đầy thử thách, trong đó người chơi phải vẽ các đường liên tục giữa các đối tượng cùng màu. Mục tiêu là vẽ các đường mà không chạm vào các đường hoặc đối tượng khác. Trò chơi bắt đầu dễ dàng nhưng dần dần trở nên khó khăn hơn khi các cấp độ tăng dần. Người chơi phải sử dụng logic và kỹ năng giải quyết vấn đề của mình để tìm ra cách tốt nhất để vẽ các đường giữa các đối tượng. Người chơi cũng có thể chọn đấu với bạn bè hoặc gia đình trong một trận đấu trí. Draw Lines là niềm vui cho mọi lứa tuổi và cung cấp hàng giờ giải trí."
       },
       "storeId": {
-        "appStore": 0,
+        "appStore": 6445973759,
         "googlePlay": 0
       },
       "released": false,

@@ -15,6 +15,7 @@ public class FadeEffect : MonoBehaviour
     public float disableDelay;
     private float speed;
     private Image blackImage;
+    private SpriteRenderer blackSprite;
     private float currentValue;
     private bool performEffect = false;
     private bool finished = false;
@@ -29,15 +30,23 @@ public class FadeEffect : MonoBehaviour
         {
             blackImage = GetComponent<Image>();
         }
+        if (blackSprite == null && GetComponent<SpriteRenderer>() != null)
+        {
+            blackSprite = GetComponent<SpriteRenderer>();
+        }
         if (firstToLast)
         {
             currentValue = 0f;
             blackImage.color = firstColor;
+            if (blackSprite != null)
+                blackSprite.color = firstColor;
         }
         else
         {
             currentValue = 1f;
             blackImage.color = lastColor;
+            if (blackSprite != null)
+                blackSprite.color = lastColor;
         }
         if (playOnAwake)
         {
@@ -111,6 +120,8 @@ public class FadeEffect : MonoBehaviour
             }
 
             blackImage.color = Color.Lerp(firstColor, lastColor, currentValue);
+            if (blackSprite != null)
+                blackSprite.color = Color.Lerp(firstColor, lastColor, currentValue);
             if (finished)
             {
                 performEffect = false;

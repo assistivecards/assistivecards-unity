@@ -140,8 +140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062d8f80fcdba48cbb07387cdc1aed79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightCardName: {fileID: 0}
-  leftCardName: {fileID: 0}
+  boardGenerateCardChain: {fileID: 0}
+  rightCard: {fileID: 0}
+  leftCard: {fileID: 0}
   cantMove: 0
   drag: 0
 --- !u!1 &3953419126043893981
@@ -179,7 +180,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -157, y: 0}
+  m_AnchoredPosition: {x: -141, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7492769115888599034

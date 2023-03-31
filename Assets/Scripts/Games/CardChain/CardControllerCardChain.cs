@@ -6,13 +6,30 @@ using UnityEngine.UI;
 
 public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPointerUpHandler , IDragHandler
 {   
-    public BoardGenerateCardChain boardGenerateCardChain;
+    GameAPI gameAPI;
     public GameObject rightCard;
     public GameObject leftCard;
-    private Vector3 leftSnapPosition;
-    private Vector3 rightSnapPosition;
+    public GameObject preRightCard;
+    public GameObject preLeftCard;
+    private GameObject board;
+    public UIControllerCardChain uıController;
+    public BoardGenerateCardChain boardGenerateCardChain;
+    private RectTransform rt;
     public bool cantMove = false;
     public bool drag;
+    public string leftCardLocalName;
+    public string rightCardLocalName;
+
+    private void OnEnable()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
+
+    private void Start() 
+    {
+        rt = this.GetComponent<RectTransform>();
+    }
+
     public void OnDrag(PointerEventData eventData)
     {
         if(!cantMove)
@@ -25,7 +42,6 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
     {
         drag = true;
         GetComponentInChildren<CardControllerCardChain>().drag = true;
-        //GetSnapPositions();
     }
     public void OnPointerUp(PointerEventData eventData)
     {
@@ -35,16 +51,10 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
 
     public void GetChildNames()
     {
-        rightCard = this.transform.GetChild(0).gameObject;
-        leftCard = this.transform.GetChild(1).gameObject;
-        //GetSnapPositions();
+        leftCard = this.transform.GetChild(0).gameObject;
+        rightCard = this.transform.GetChild(1).gameObject;
     }
     
-    // public void GetSnapPositions()
-    // {
-    //     leftSnapPosition = new Vector3(leftCard.transform.localPosition.x - 400, leftCard.transform.localPosition.y + 70, 0);
-    //     rightSnapPosition =  new Vector3(rightCard.transform.localPosition.x + 400, rightCard.transform.localPosition.y + 70, 0);
-    // }
 
     void OnTriggerEnter2D(Collider2D other)
     { 
@@ -52,35 +62,65 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
         {
             if(other.gameObject.GetComponent<CardControllerCardChain>().rightCard.name == leftCard.name)
             {
-                leftCard = other.GetComponent<CardControllerCardChain>().leftCard;
-                other.transform.SetParent(this.transform);
-                // other.GetComponent<CardControllerCardChain>().leftCard.transform.SetParent(this.transform);
-                // other.GetComponent<CardControllerCardChain>().rightCard.transform.SetParent(this.transform);
-                other.GetComponent<CardControllerCardChain>().cantMove = true;
-                //LeanTween
-                LeanTween.moveLocal(other.gameObject, new Vector3(-280, 0, 0), 0.1f);
+                preLeftCard = leftCard;
+                leftCardLocalName = other.gameObject.GetComponent<CardControllerCardChain>().rightCardLocalName;
+                rt.sizeDelta = new Vector2(rt.sizeDelta.x + 283, rt.sizeDelta.y);
+                foreach(Transform child in transform)
+                {
+                    child.localPosition = new Vector3(child.localPosition.x + 141, child.localPosition.y, child.localPosition.z);
+                }
+                leftCard = other.gameObject.GetComponent<CardControllerCardChain>().leftCard;
+                other.gameObject.GetComponent<CardControllerCardChain>().leftCard.transform.SetParent(this.transform);
+                LeanTween.moveLocal(leftCard, new Vector3(preLeftCard.transform.localPosition.x - 283, 0, 0), 0.05f);
+                Destroy(other.gameObject);
+                gameAPI.PlaySFX("Success");
+                Invoke("ReadLeftCard", 0.25f);
+
                 boardGenerateCardChain.matchCount ++;
                 if(boardGenerateCardChain.matchCount >= 4)
                 {
-                    Debug.Log("LEVEL END");
+                    Invoke("CallResetBoard", 0.3f);
                 }
             }
             else if(other.gameObject.GetComponent<CardControllerCardChain>().leftCard.name == rightCard.name)
             {
-                rightCard = other.GetComponent<CardControllerCardChain>().rightCard;
-                other.transform.SetParent(this.transform);
-                // other.GetComponent<CardControllerCardChain>().leftCard.transform.SetParent(this.transform);
-                // other.GetComponent<CardControllerCardChain>().rightCard.transform.SetParent(this.transform);
-                other.GetComponent<CardControllerCardChain>().cantMove = true;
-                LeanTween.moveLocal(other.gameObject, new Vector3(280, 0, 0), 0.1f);
-                //LeanTween.moveLocal(other.gameObject, rightSnapPosition, 0.1f);
+                preRightCard = rightCard;
+                rightCardLocalName = other.gameObject.GetComponent<CardControllerCardChain>().leftCardLocalName;
+                rt.sizeDelta = new Vector2(rt.sizeDelta.x + 283, rt.sizeDelta.y);
+                foreach(Transform child in transform)
+                {
+                    child.localPosition = new Vector3(child.localPosition.x - 141, child.localPosition.y, child.localPosition.z);
+                }
+                rightCard = other.gameObject.GetComponent<CardControllerCardChain>().rightCard;
+                other.gameObject.GetComponent<CardControllerCardChain>().rightCard.transform.SetParent(this.transform);
+                LeanTween.moveLocal(rightCard, new Vector3(preRightCard.transform.localPosition.x + 283, 0, 0), 0.05f);
+                Destroy(other.gameObject);
+                gameAPI.PlaySFX("Success");
+                Invoke("ReadRightCard", 0.25f);
+
                 boardGenerateCardChain.matchCount ++;
                 if(boardGenerateCardChain.matchCount >= 4)
                 {
-                    Debug.Log("LEVEL END");
+                    Invoke("CallResetBoard", 0.3f);
                 }
             }
-            //GetSnapPositions();
         }
+    }
+
+    private void CallResetBoard()
+    {
+        boardGenerateCardChain.ResetBoard();
+        GetComponentInParent<UIControllerCardChain>().Invoke("LevelChangeActive", 0.5f);
+    }
+
+    private void ReadRightCard()
+    {
+        gameAPI.Speak(rightCardLocalName);
+        Debug.Log("right" + rightCardLocalName);
+    }
+    private void ReadLeftCard()
+    {
+        gameAPI.Speak(leftCardLocalName);
+        Debug.Log("left" + leftCardLocalName);
     }
 }

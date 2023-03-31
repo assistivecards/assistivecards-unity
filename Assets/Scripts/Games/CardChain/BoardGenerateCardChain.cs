@@ -11,6 +11,8 @@ public class BoardGenerateCardChain : MonoBehaviour
     GameAPI gameAPI;
     public string selectedLangCode;
 
+    [SerializeField] private UIControllerCardChain uıController;
+
     AssistiveCardsSDK.AssistiveCardsSDK.Cards cardDefinitions;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cardTextures;
     [SerializeField] private PackSelectionPanel packSelectionPanel;
@@ -24,7 +26,6 @@ public class BoardGenerateCardChain : MonoBehaviour
     public List<GameObject> cardPositions  = new List<GameObject>();
 
     public List<int> randomValueList = new List<int>();
-    public List<int> usedRandomValues = new List<int>();
 
     [SerializeField] private GameObject doubleCard;
     public int cardCount;
@@ -37,6 +38,7 @@ public class BoardGenerateCardChain : MonoBehaviour
     private void OnEnable()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+        gameAPI.PlayMusic();
     }
 
     private void Start() 
@@ -65,7 +67,7 @@ public class BoardGenerateCardChain : MonoBehaviour
     {
         tempRandomValue = Random.Range(0, cardTextures.cards.Length);
 
-        if(randomValueList.IndexOf(tempRandomValue) < 0)
+        if(!randomValueList.Contains(tempRandomValue))
         {
             randomValue = tempRandomValue;
             randomValueList.Add(randomValue);
@@ -73,16 +75,6 @@ public class BoardGenerateCardChain : MonoBehaviour
         else
         {
             CheckRandom();
-        }
-    }
-
-    private void SuffleList()
-    {
-        for(int i = 0; i < cardNames.Count; i++)
-        {   
-            var random = Random.Range(0, cardNames.Count);
-            cardNames[i] = cardNames[random];
-            cardDefinitionsLocale[i] = cardDefinitionsLocale[random];
         }
     }
 
@@ -98,28 +90,33 @@ public class BoardGenerateCardChain : MonoBehaviour
             cardNames.Add(cardTextures.cards[i].title.ToLower().Replace(" ", "-"));
             cardDefinitionsLocale.Add(cardDefinitions.cards[i].title);
         }
-
-        SuffleList();
         
         for(int j = 0; j < cardCount; j++)
         {
             cards.Add(Instantiate(doubleCard, Vector3.zero, Quaternion.identity));
             cards[j].transform.parent = this.transform;
 
-            var cardName = cardNames[j];
+            var cardName = cardNames[randomValueList[j]];
             var cardTexture = await gameAPI.GetCardImage(packSlug, cardName, 512);
+            var localName = cardDefinitionsLocale[randomValueList[j]];
+
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear;
             cards[j].transform.GetChild(0).GetComponentInChildren<RawImage>().texture = cardTexture;
             cards[j].transform.GetChild(0).gameObject.name = cardDefinitionsLocale[j];
+            cards[j].GetComponent<CardControllerCardChain>().leftCardLocalName = localName;
 
-            var cardName1 = cardNames[j + 1];
+
+            var cardName1 = cardNames[randomValueList[j + 1]];
             var cardTexture1 = await gameAPI.GetCardImage(packSlug, cardName1, 512);
+            var localName1 = cardDefinitionsLocale[randomValueList[j + 1]];
 
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear;
             cards[j].transform.GetChild(1).GetComponentInChildren<RawImage>().texture = cardTexture1;
             cards[j].transform.GetChild(1).gameObject.name = cardDefinitionsLocale[j + 1];
+            cards[j].GetComponent<CardControllerCardChain>().rightCardLocalName = localName1;
+
             LeanTween.scale(cards[j], Vector3.one * 0.5f, 0.5f);
             LeanTween.move(cards[j], cardPositions[j].transform.position, 0);
             cards[j].GetComponent<CardControllerCardChain>().GetChildNames();
@@ -135,6 +132,28 @@ public class BoardGenerateCardChain : MonoBehaviour
 
     public async void CreateBoard()
     {
+        uıController.InGameBar();
         await CacheCards(packSelectionPanel.selectedPackElement.name);
+    }
+
+    public void ResetBoard()
+    {
+        isBoardCreated = false;
+        foreach(var card in cards)
+        {
+            if(card != null)
+                LeanTween.scale(card.gameObject, Vector3.zero, 0.2f).setOnComplete(DestroyCard);
+        }
+        cardNames.Clear();
+        randomValueList.Clear();
+        cardDefinitionsLocale.Clear();
+        cards.Clear();
+        matchCount = 0;
+    }
+
+    private void DestroyCard()
+    {
+        GameObject _card = GameObject.Find("DoubleCard(Clone)");
+        Destroy(_card);
     }
 }

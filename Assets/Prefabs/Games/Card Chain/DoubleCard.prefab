@@ -94,7 +94,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.7940521, y: 0.4277954}
+  m_Offset: {x: 1.4282532, y: -3.2762413}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -105,7 +105,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 561.2567, y: 278.24994}
+  m_Size: {x: 444.2091, y: 199.72437}
   m_EdgeRadius: 0
 --- !u!50 &2196866624184662430
 Rigidbody2D:
@@ -140,11 +140,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062d8f80fcdba48cbb07387cdc1aed79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boardGenerateCardChain: {fileID: 0}
   rightCard: {fileID: 0}
   leftCard: {fileID: 0}
+  preRightCard: {fileID: 0}
+  preLeftCard: {fileID: 0}
+  "u\u0131Controller": {fileID: 0}
+  boardGenerateCardChain: {fileID: 0}
   cantMove: 0
   drag: 0
+  leftCardLocalName: 
+  rightCardLocalName: 
 --- !u!1 &3953419126043893981
 GameObject:
   m_ObjectHideFlags: 0

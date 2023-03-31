@@ -16,6 +16,7 @@ public class UIControllerCardChain : MonoBehaviour
         backButton.SetActive(true);
         helloText.SetActive(false);
         settingButton.SetActive(true);
+        levelChangeScreen.SetActive(false);
     }
 
     public void PackSelectionActive()
@@ -25,6 +26,7 @@ public class UIControllerCardChain : MonoBehaviour
         settingButton.SetActive(true);
         backButton.SetActive(false);
         packSelectionScreen.SetActive(true);
+        levelChangeScreen.SetActive(false);
     }
 
     public void LevelChangeActive()

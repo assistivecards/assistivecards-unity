@@ -2329,6 +2329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c580566a4cc9cf4eb8901905e0ae094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canCut: 1
 --- !u!1 &1433635852
 GameObject:
   m_ObjectHideFlags: 0
@@ -3930,6 +3931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf855e001921d2044a8c6488f3854248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ropeCutManager: {fileID: 1416613811}
 --- !u!68 &1915469693
 EdgeCollider2D:
   m_ObjectHideFlags: 0

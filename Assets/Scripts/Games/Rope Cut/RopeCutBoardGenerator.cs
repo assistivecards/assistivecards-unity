@@ -119,6 +119,7 @@ public class RopeCutBoardGenerator : MonoBehaviour
 
         ropeCutManager.SetActive(true);
         trailManager.SetActive(true);
+        ropeCutManager.GetComponent<RopeCutManager>().canCut = true;
 
     }
 

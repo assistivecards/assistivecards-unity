@@ -93,6 +93,8 @@ public class RopeCutBoardGenerator : MonoBehaviour
             Destroy(ropeClones[i]);
         }
 
+        trailManager.transform.localPosition = new Vector2(-1000, -1000);
+
     }
 
     public void ScaleImagesUp()

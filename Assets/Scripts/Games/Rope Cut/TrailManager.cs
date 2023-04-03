@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TrailManager : MonoBehaviour
 {
+    private int ropeIndex;
+    private Transform hitRope;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,25 @@ public class TrailManager : MonoBehaviour
         else
         {
             gameObject.GetComponent<TrailRenderer>().enabled = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Rope")
+        {
+            hitRope = other.transform.parent;
+            LeanTween.alpha(other.gameObject, 0, .15f);
+            Destroy(other.gameObject, .15f);
+
+            ropeIndex = other.transform.GetSiblingIndex();
+
+            for (int i = ropeIndex; i < hitRope.childCount; i++)
+            {
+                LeanTween.alpha(hitRope.GetChild(i).gameObject, 0, .25f).setDelay(.25f);
+                Destroy(hitRope.GetChild(i).gameObject, .5f);
+            }
+
         }
     }
 }

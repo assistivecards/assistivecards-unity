@@ -23,9 +23,9 @@ public class UIControllerComplete : MonoBehaviour
         {
             boardCreatorComplete.ResetLevel();
             levelScreen.SetActive(true);
-            backButton.SetActive(true);
             helloText.SetActive(false);
             gridBackground.SetActive(false);
+            backButton.SetActive(false);
         }
         else if(packSelectionPanel.activeInHierarchy)
         {

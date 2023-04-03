@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c438263a22bc641a7737d1f1915b1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceFromRopeEnd: 0.6
+  distanceFromRopeEnd: 3.5
 --- !u!50 &40618370
 Rigidbody2D:
   serializedVersion: 4
@@ -381,7 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c438263a22bc641a7737d1f1915b1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceFromRopeEnd: 0.6
+  distanceFromRopeEnd: 3.5
 --- !u!50 &58110688
 Rigidbody2D:
   serializedVersion: 4
@@ -1093,7 +1093,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5301644170934348992, guid: 975c28d7b7e66b44ca441b59134a85d4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5301644170934348999, guid: 975c28d7b7e66b44ca441b59134a85d4, type: 3}
       propertyPath: m_Pivot.x
@@ -2329,6 +2329,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c580566a4cc9cf4eb8901905e0ae094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canCut: 1
+  trailManager: {fileID: 1915469689}
 --- !u!1 &1433635852
 GameObject:
   m_ObjectHideFlags: 0
@@ -3704,7 +3706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c438263a22bc641a7737d1f1915b1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceFromRopeEnd: 0.6
+  distanceFromRopeEnd: 3.5
 --- !u!50 &1843090452
 Rigidbody2D:
   serializedVersion: 4
@@ -3879,7 +3881,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.8784314, g: 0.8784314, b: 0.8784314, a: 1}
+      key0: {r: 0.105882354, g: 0.5921569, b: 0.21960784, a: 0.47058824}
       key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -3930,6 +3932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf855e001921d2044a8c6488f3854248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ropeCutManager: {fileID: 1416613811}
 --- !u!68 &1915469693
 EdgeCollider2D:
   m_ObjectHideFlags: 0

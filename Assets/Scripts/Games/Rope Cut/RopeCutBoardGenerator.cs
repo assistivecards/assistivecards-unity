@@ -84,6 +84,7 @@ public class RopeCutBoardGenerator : MonoBehaviour
         {
             cardImagesInScene[i].sprite = null;
             Destroy(cardImagesInScene[i].transform.parent.GetComponent<HingeJoint2D>());
+            // cardImagesInScene[i].transform.parent.GetComponent<Rigidbody2D>().isKinematic = true;
         }
 
         var ropeClones = GameObject.FindGameObjectsWithTag("Rope");
@@ -100,17 +101,26 @@ public class RopeCutBoardGenerator : MonoBehaviour
     public void ScaleImagesUp()
     {
         LeanTween.scale(cutText.gameObject, Vector3.one, 0.2f);
+
+        // for (int i = 0; i < cardParents.Length; i++)
+        // {
+        //     cardParents[i].GetComponent<Rigidbody2D>().isKinematic = false;
+        // }
+
         for (int i = 0; i < anchorPoints.Length; i++)
         {
             LeanTween.scale(anchorPoints[i].gameObject, Vector3.one * 5, 0.2f);
             cardParents[i].GetComponent<BoxCollider2D>().enabled = true;
             LeanTween.scale(cardParents[i].gameObject, Vector3.one * 10, 0.2f);
+            // cardParents[i].GetComponent<Rigidbody2D>().isKinematic = false;
             anchorPoints[i].GetComponent<RopeGenerator>().GenerateRope();
 
         }
 
         ropeCutManager.SetActive(true);
         trailManager.SetActive(true);
+        ropeCutManager.GetComponent<RopeCutManager>().canCut = true;
+        LeanTween.alpha(trailManager, 1, .01f);
 
     }
 

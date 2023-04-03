@@ -6,6 +6,7 @@ public class TrailManager : MonoBehaviour
 {
     private int ropeIndex;
     private Transform hitRope;
+    [SerializeField] RopeCutManager ropeCutManager;
 
     // Start is called before the first frame update
     void Start()
@@ -36,8 +37,10 @@ public class TrailManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Rope")
+        if (other.tag == "Rope" && ropeCutManager.canCut)
         {
+            ropeCutManager.canCut = false;
+            LeanTween.alpha(gameObject, 0, .25f);
             hitRope = other.transform.parent;
             LeanTween.alpha(other.gameObject, 0, .15f);
             Destroy(other.gameObject, .15f);

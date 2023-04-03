@@ -53,6 +53,9 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
     {
         leftCard = this.transform.GetChild(0).gameObject;
         rightCard = this.transform.GetChild(1).gameObject;
+
+        leftCard.GetComponent<ElementDetectorCardChain>().cardType = leftCard.name;
+        rightCard.GetComponent<ElementDetectorCardChain>().cardType = rightCard.name;
     }
     
 
@@ -60,48 +63,53 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
     { 
         if(GetComponentInParent<BoardGenerateCardChain>().isBoardCreated && drag)
         {
-            if(other.gameObject.GetComponent<CardControllerCardChain>().rightCard.name == leftCard.name)
+            if(other.gameObject.GetComponent<ElementDetectorCardChain>() != null)
             {
-                preLeftCard = leftCard;
-                leftCardLocalName = other.gameObject.GetComponent<CardControllerCardChain>().rightCardLocalName;
-                rt.sizeDelta = new Vector2(rt.sizeDelta.x + 283, rt.sizeDelta.y);
-                foreach(Transform child in transform)
+                if(other.gameObject.GetComponent<ElementDetectorCardChain>().cardType == leftCard.name)
                 {
-                    child.localPosition = new Vector3(child.localPosition.x + 141, child.localPosition.y, child.localPosition.z);
-                }
-                leftCard = other.gameObject.GetComponent<CardControllerCardChain>().leftCard;
-                other.gameObject.GetComponent<CardControllerCardChain>().leftCard.transform.SetParent(this.transform);
-                LeanTween.moveLocal(leftCard, new Vector3(preLeftCard.transform.localPosition.x - 283, 0, 0), 0.05f);
-                Destroy(other.gameObject);
-                gameAPI.PlaySFX("Success");
-                Invoke("ReadLeftCard", 0.25f);
+                    GameObject doubleCardParent = other.transform.parent.gameObject;
+                    preLeftCard = leftCard;
+                    leftCardLocalName = doubleCardParent.GetComponent<CardControllerCardChain>().rightCardLocalName;
+                    rt.sizeDelta = new Vector2(rt.sizeDelta.x + 283, rt.sizeDelta.y);
+                    foreach(Transform child in transform)
+                    {
+                        child.localPosition = new Vector3(child.localPosition.x + 141, child.localPosition.y, child.localPosition.z);
+                    }
+                    leftCard = doubleCardParent.GetComponent<CardControllerCardChain>().leftCard;
+                    doubleCardParent.GetComponent<CardControllerCardChain>().leftCard.transform.SetParent(this.transform);
+                    LeanTween.moveLocal(leftCard, new Vector3(preLeftCard.transform.localPosition.x - 283, 0, 0), 0.05f);
+                    Destroy(doubleCardParent.gameObject);
+                    gameAPI.PlaySFX("Success");
+                    Invoke("ReadLeftCard", 0.25f);
 
-                boardGenerateCardChain.matchCount ++;
-                if(boardGenerateCardChain.matchCount >= 4)
-                {
-                    Invoke("CallResetBoard", 0.3f);
+                    boardGenerateCardChain.matchCount ++;
+                    if(boardGenerateCardChain.matchCount >= 4)
+                    {
+                        Invoke("CallResetBoard", 0.3f);
+                    }
                 }
-            }
-            else if(other.gameObject.GetComponent<CardControllerCardChain>().leftCard.name == rightCard.name)
-            {
-                preRightCard = rightCard;
-                rightCardLocalName = other.gameObject.GetComponent<CardControllerCardChain>().leftCardLocalName;
-                rt.sizeDelta = new Vector2(rt.sizeDelta.x + 283, rt.sizeDelta.y);
-                foreach(Transform child in transform)
+                else if(other.gameObject.GetComponent<ElementDetectorCardChain>().cardType == rightCard.name)
                 {
-                    child.localPosition = new Vector3(child.localPosition.x - 141, child.localPosition.y, child.localPosition.z);
-                }
-                rightCard = other.gameObject.GetComponent<CardControllerCardChain>().rightCard;
-                other.gameObject.GetComponent<CardControllerCardChain>().rightCard.transform.SetParent(this.transform);
-                LeanTween.moveLocal(rightCard, new Vector3(preRightCard.transform.localPosition.x + 283, 0, 0), 0.05f);
-                Destroy(other.gameObject);
-                gameAPI.PlaySFX("Success");
-                Invoke("ReadRightCard", 0.25f);
+                    GameObject doubleCardParent = other.transform.parent.gameObject;
+                    preRightCard = rightCard;
+                    rightCardLocalName = doubleCardParent.GetComponent<CardControllerCardChain>().leftCardLocalName;
+                    rt.sizeDelta = new Vector2(rt.sizeDelta.x + 283, rt.sizeDelta.y);
+                    foreach(Transform child in transform)
+                    {
+                        child.localPosition = new Vector3(child.localPosition.x - 141, child.localPosition.y, child.localPosition.z);
+                    }
+                    rightCard = doubleCardParent.GetComponent<CardControllerCardChain>().rightCard;
+                    doubleCardParent.GetComponent<CardControllerCardChain>().rightCard.transform.SetParent(this.transform);
+                    LeanTween.moveLocal(rightCard, new Vector3(preRightCard.transform.localPosition.x + 283, 0, 0), 0.05f);
+                    Destroy(doubleCardParent.gameObject);
+                    gameAPI.PlaySFX("Success");
+                    Invoke("ReadRightCard", 0.25f);
 
-                boardGenerateCardChain.matchCount ++;
-                if(boardGenerateCardChain.matchCount >= 4)
-                {
-                    Invoke("CallResetBoard", 0.3f);
+                    boardGenerateCardChain.matchCount ++;
+                    if(boardGenerateCardChain.matchCount >= 4)
+                    {
+                        Invoke("CallResetBoard", 0.3f);
+                    }
                 }
             }
         }

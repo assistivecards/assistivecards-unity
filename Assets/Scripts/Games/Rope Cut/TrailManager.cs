@@ -40,6 +40,7 @@ public class TrailManager : MonoBehaviour
         if (other.tag == "Rope" && ropeCutManager.canCut)
         {
             ropeCutManager.canCut = false;
+            LeanTween.alpha(gameObject, 0, .25f);
             hitRope = other.transform.parent;
             LeanTween.alpha(other.gameObject, 0, .15f);
             Destroy(other.gameObject, .15f);

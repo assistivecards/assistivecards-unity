@@ -7,6 +7,7 @@ public class RopeCutManager : MonoBehaviour
     private int ropeIndex;
     private Transform hitRope;
     public bool canCut = true;
+    [SerializeField] GameObject trailManager;
 
     // Update is called once per frame
     void Update()
@@ -21,6 +22,7 @@ public class RopeCutManager : MonoBehaviour
                     if (hit.collider.tag == "Rope" && canCut)
                     {
                         canCut = false;
+                        LeanTween.alpha(trailManager, 0, .25f);
                         hitRope = hit.collider.transform.parent;
                         LeanTween.alpha(hit.collider.gameObject, 0, .15f);
                         Destroy(hit.collider.gameObject, .15f);
@@ -39,6 +41,7 @@ public class RopeCutManager : MonoBehaviour
 
             if (Input.GetTouch(0).phase == TouchPhase.Ended)
             {
+                LeanTween.alpha(trailManager, 1, .001f);
                 canCut = true;
             }
         }

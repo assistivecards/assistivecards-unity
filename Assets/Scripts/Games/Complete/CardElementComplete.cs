@@ -16,6 +16,7 @@ public class CardElementComplete : MonoBehaviour, IPointerDownHandler, IDragHand
     public string localName;
     public Vector3 startPosition;
     public bool matchComplete;
+    public bool isPointerUp;
 
     private void Awake() 
     {
@@ -32,26 +33,33 @@ public class CardElementComplete : MonoBehaviour, IPointerDownHandler, IDragHand
     public void OnDrag(PointerEventData eventData)
     {
         if(moveable)
+        {
             this.transform.position = eventData.position;
+            isPointerUp = false;
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         if(moveable)
+        {
             this.transform.position = eventData.position;
+            isPointerUp = false;
+        }
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         if(moveable)
         {
-            ChangePosition();
+            isPointerUp = true;
+            Invoke("ChangePosition", 0.1f);
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     { 
-        if(moveable)
+        if(moveable && isPointerUp)
         {
             if(other.gameObject.GetComponent<CardElementComplete>().cardType == cardType)
             {

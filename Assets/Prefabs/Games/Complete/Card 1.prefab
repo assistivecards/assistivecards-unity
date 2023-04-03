@@ -98,6 +98,7 @@ MonoBehaviour:
   localName: 
   startPosition: {x: 0, y: 0, z: 0}
   matchComplete: 0
+  isPointerUp: 0
 --- !u!50 &-8676556875721030953
 Rigidbody2D:
   serializedVersion: 4
@@ -134,7 +135,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 45
+  m_Radius: 40
 --- !u!1 &3953419126043893981
 GameObject:
   m_ObjectHideFlags: 0

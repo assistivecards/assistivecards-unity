@@ -109,7 +109,9 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
             boardGenerateCardChain.matchCount ++;
             if(boardGenerateCardChain.matchCount >= 4)
             {
-                Invoke("CallResetBoard", 0.3f);
+                cantMove = true;
+                LeanTween.scale(this.gameObject, Vector3.one * 0.55f, 0.8f);
+                Invoke("CallResetBoard", 1.3f);
             }
         }
         else if(doubleCardParent.GetComponent<CardControllerCardChain>().childList.Count > 2)
@@ -141,7 +143,9 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
             boardGenerateCardChain.matchCount ++;
             if(boardGenerateCardChain.matchCount >= 4)
             {
-                Invoke("CallResetBoard", 0.3f);
+                cantMove = true;
+                LeanTween.scale(this.gameObject, Vector3.one * 0.55f, 0.8f);
+                Invoke("CallResetBoard", 1.3f);
             }
         }
         else if(doubleCardParent.GetComponent<CardControllerCardChain>().childList.Count > 2)

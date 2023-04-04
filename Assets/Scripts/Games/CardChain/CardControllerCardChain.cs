@@ -20,6 +20,7 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
     public string leftCardLocalName;
     public string rightCardLocalName;
     public List<GameObject> childList = new List<GameObject>();
+    private Collider2D otherCollider;
 
     private void OnEnable()
     {
@@ -76,19 +77,35 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
             {
                 if(other.gameObject.GetComponent<ElementDetectorCardChain>().cardType == leftCard.name)
                 {
-                    MatchLeft(other);
+                    otherCollider = other;
+                    GameObject doubleCardParent = other.transform.parent.gameObject;
+                    LeanTween.move(doubleCardParent, new Vector3(leftCard.transform.position.x, leftCard.transform.position.y, 0), 0.5f);
+                    Invoke("MatchLeftCollider", 0.5f);
                 }
                 else if(other.gameObject.GetComponent<ElementDetectorCardChain>().cardType == rightCard.name)
                 {
-                    MatchRight(other);
+                    otherCollider = other;
+                    GameObject doubleCardParent = other.transform.parent.gameObject;
+                    LeanTween.move(doubleCardParent, new Vector3(rightCard.transform.position.x, rightCard.transform.position.y, 0), 0.5f);
+                    Invoke("MatchRightCollider", 0.5f);
                 }
             }
         }
     }
 
-    public void MatchLeft(Collider2D other)
+    private void MatchLeftCollider()
     {
-        GameObject doubleCardParent = other.transform.parent.gameObject;
+        MatchLeft(otherCollider);
+    }
+
+    private void MatchRightCollider()
+    {
+        MatchRight(otherCollider);
+    }
+
+    public void MatchLeft(Collider2D _other)
+    {
+        GameObject doubleCardParent = _other.transform.parent.gameObject;
         if(doubleCardParent.GetComponent<CardControllerCardChain>().childList.Count <= 2)
         {
             preLeftCard = leftCard;
@@ -120,9 +137,9 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
         }
     }
 
-    public void MatchRight(Collider2D other)
+    public void MatchRight(Collider2D _other)
     {
-        GameObject doubleCardParent = other.transform.parent.gameObject;
+        GameObject doubleCardParent = _other.transform.parent.gameObject;
         if(doubleCardParent.GetComponent<CardControllerCardChain>().childList.Count <= 2)
         {
             preRightCard = rightCard;

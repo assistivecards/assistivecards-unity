@@ -150,6 +150,7 @@ MonoBehaviour:
   drag: 0
   leftCardLocalName: 
   rightCardLocalName: 
+  childList: []
 --- !u!1 &3953419126043893981
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +250,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 100, y: 100}
   m_EdgeRadius: 0
 --- !u!114 &5795189588210549776
 MonoBehaviour:
@@ -263,6 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaea6437ac3b84fd7b03a287160e6c94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardType: 
 --- !u!1 &5049060601835100722
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,7 +364,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 100, y: 100}
   m_EdgeRadius: 0
 --- !u!114 &6727843205858031714
 MonoBehaviour:
@@ -376,3 +378,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaea6437ac3b84fd7b03a287160e6c94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardType: 

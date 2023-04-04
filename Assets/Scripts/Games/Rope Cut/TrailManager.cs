@@ -17,8 +17,7 @@ public class TrailManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
-            || Input.GetMouseButton(0)))
+        if (((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved) || Input.GetMouseButton(0)))
         {
             gameObject.GetComponent<TrailRenderer>().enabled = true;
             Plane objPlane = new Plane(Camera.main.transform.forward * -1, new Vector3(transform.position.x, transform.position.y, transform.position.z));
@@ -40,7 +39,8 @@ public class TrailManager : MonoBehaviour
         if (other.tag == "Rope" && ropeCutManager.canCut)
         {
             ropeCutManager.canCut = false;
-            LeanTween.alpha(gameObject, 0, .25f);
+            // LeanTween.alpha(gameObject, 0, .25f);
+            // gameObject.SetActive(false);
             hitRope = other.transform.parent;
             LeanTween.alpha(other.gameObject, 0, .15f);
             Destroy(other.gameObject, .15f);

@@ -13,6 +13,7 @@ public class SwipeTest : MonoBehaviour
 
     [Range(0.05f, 1f)]
     public float throwForce = 0.3f;
+    bool isValid;
 
     void Start()
     {
@@ -25,12 +26,23 @@ public class SwipeTest : MonoBehaviour
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
 
-            touchTimeStart = Time.time;
-            startPos = Input.GetTouch(0).position;
+            var wp = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
+            var touchPosition = new Vector2(wp.x, wp.y);
+
+            if (GetComponent<Collider2D>() == Physics2D.OverlapPoint(touchPosition))
+            {
+                isValid = true;
+                touchTimeStart = Time.time;
+                startPos = Input.GetTouch(0).position;
+            }
+            else
+            {
+                Debug.Log("MISS");
+            }
 
         }
 
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && canThrow)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && canThrow && isValid)
         {
 
             touchTimeFinish = Time.time;

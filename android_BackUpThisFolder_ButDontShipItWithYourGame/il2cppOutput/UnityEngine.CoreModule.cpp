@@ -22641,6 +22641,15 @@ IL_0014:
 		return;
 	}
 }
+// System.Void UnityEngine.QualitySettings::set_vSyncCount(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void QualitySettings_set_vSyncCount_m0F1D9979392C140D248C6C3736F882A5A5C860E4 (int32_t ___value0, const RuntimeMethod* method) 
+{
+	typedef void (*QualitySettings_set_vSyncCount_m0F1D9979392C140D248C6C3736F882A5A5C860E4_ftn) (int32_t);
+	static QualitySettings_set_vSyncCount_m0F1D9979392C140D248C6C3736F882A5A5C860E4_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (QualitySettings_set_vSyncCount_m0F1D9979392C140D248C6C3736F882A5A5C860E4_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.QualitySettings::set_vSyncCount(System.Int32)");
+	_il2cpp_icall_func(___value0);
+}
 // UnityEngine.ColorSpace UnityEngine.QualitySettings::get_activeColorSpace()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t QualitySettings_get_activeColorSpace_m4F47784E7B0FE0A5497C8BAB9CA86BD576FB92F9 (const RuntimeMethod* method) 
 {

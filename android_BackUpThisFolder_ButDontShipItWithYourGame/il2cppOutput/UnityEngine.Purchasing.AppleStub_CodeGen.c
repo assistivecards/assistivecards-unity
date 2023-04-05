@@ -44,15 +44,15 @@ static Il2CppMethodPointer s_methodPointers[9] =
 };
 static const int32_t s_InvokerIndices[9] = 
 {
-	4488,
-	5492,
-	5492,
-	4488,
-	2535,
-	2535,
-	5372,
-	5492,
-	5492,
+	4489,
+	5493,
+	5493,
+	4489,
+	2536,
+	2536,
+	5373,
+	5493,
+	5493,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_Purchasing_AppleStub_CodeGenModule;
 const Il2CppCodeGenModule g_UnityEngine_Purchasing_AppleStub_CodeGenModule = 

@@ -87,15 +87,15 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
                 {
                     otherCollider = other;
                     GameObject doubleCardParent = other.transform.parent.gameObject;
-                    LeanTween.move(doubleCardParent, new Vector3(leftCard.transform.position.x, leftCard.transform.position.y, 0), 0.5f);
-                    Invoke("MatchLeftCollider", 0.5f);
+                    LeanTween.move(doubleCardParent, new Vector3(leftCard.transform.position.x, leftCard.transform.position.y, 0), 0.25f);
+                    Invoke("MatchLeftCollider", 0.25f);
                 }
                 else if(other.gameObject.GetComponent<ElementDetectorCardChain>().cardType == rightCard.name)
                 {
                     otherCollider = other;
                     GameObject doubleCardParent = other.transform.parent.gameObject;
-                    LeanTween.move(doubleCardParent, new Vector3(rightCard.transform.position.x, rightCard.transform.position.y, 0), 0.5f);
-                    Invoke("MatchRightCollider", 0.5f);
+                    LeanTween.move(doubleCardParent, new Vector3(rightCard.transform.position.x, rightCard.transform.position.y, 0), 0.25f);
+                    Invoke("MatchRightCollider", 0.25f);
                 }
             }
         }

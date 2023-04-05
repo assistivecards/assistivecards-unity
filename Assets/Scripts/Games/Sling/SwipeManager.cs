@@ -2,18 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwipeTest : MonoBehaviour
+public class SwipeManager : MonoBehaviour
 {
 
     Vector2 startPos, endPos, direction;
     float touchTimeStart, touchTimeFinish, timeInterval;
     Rigidbody2D rb;
-    bool canThrow = true;
-    [SerializeField] Transform cardSlot;
+    public bool canThrow = true;
 
     [Range(0.05f, 1f)]
     public float throwForce = 0.3f;
-    bool isValid;
+    public bool isValid;
 
     void Start()
     {

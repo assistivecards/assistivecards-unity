@@ -2734,6 +2734,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_PhysicsScene2D_Raycast_Internal_Injected();
 		Register_UnityEngine_PhysicsScene2D_Raycast_Internal_Injected();
 
+		//UnityEngine.Collider2D UnityEngine.PhysicsScene2D::OverlapPoint_Internal_Injected(UnityEngine.PhysicsScene2D&,UnityEngine.Vector2&,UnityEngine.ContactFilter2D&)
+		void Register_UnityEngine_PhysicsScene2D_OverlapPoint_Internal_Injected();
+		Register_UnityEngine_PhysicsScene2D_OverlapPoint_Internal_Injected();
+
 	//End Registrations for type : UnityEngine.PhysicsScene2D
 
 	//Start Registrations for type : UnityEngine.Playables.PlayableHandle

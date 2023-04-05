@@ -21,6 +21,7 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
     public string rightCardLocalName;
     public List<GameObject> childList = new List<GameObject>();
     private Collider2D otherCollider;
+    private bool isPointerUp;
 
     private void OnEnable()
     {
@@ -40,14 +41,21 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
         }
     }
 
+    private void DragFalse()
+    {
+        drag = false;
+    }
+
     public void OnPointerDown(PointerEventData eventData)
     {
+        isPointerUp = false;
         drag = true;
         GetComponentInChildren<CardControllerCardChain>().drag = true;
     }
     public void OnPointerUp(PointerEventData eventData)
     {
-        drag = false;
+        isPointerUp = true;
+        Invoke("DragFalse", 2f);
         GetComponentInChildren<CardControllerCardChain>().drag = false;
     }
 
@@ -69,7 +77,7 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
     }
     
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     { 
         if(GetComponentInParent<BoardGenerateCardChain>().isBoardCreated && drag)
         {
@@ -95,12 +103,14 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
 
     private void MatchLeftCollider()
     {
-        MatchLeft(otherCollider);
+        if(isPointerUp)
+            MatchLeft(otherCollider);
     }
 
     private void MatchRightCollider()
     {
-        MatchRight(otherCollider);
+        if(isPointerUp)
+            MatchRight(otherCollider);
     }
 
     public void MatchLeft(Collider2D _other)

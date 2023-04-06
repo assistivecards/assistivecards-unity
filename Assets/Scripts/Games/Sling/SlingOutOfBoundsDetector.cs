@@ -17,6 +17,7 @@ public class SlingOutOfBoundsDetector : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        Debug.Log("Out Of Bounds!!!");
         collidedCard = other;
         Invoke("ResetCardPosition", .25f);
 

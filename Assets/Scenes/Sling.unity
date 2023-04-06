@@ -5634,7 +5634,8 @@ MonoBehaviour:
   correctCardSlug: 
   packSlug: 
   backButton: {fileID: 1444386263}
-  box: {fileID: 1898790958}
+  box: {fileID: 1898790959}
+  cardSlot: {fileID: 420845267}
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

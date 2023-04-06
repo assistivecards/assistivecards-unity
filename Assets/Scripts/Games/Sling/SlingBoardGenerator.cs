@@ -21,7 +21,8 @@ public class SlingBoardGenerator : MonoBehaviour
     [SerializeField] GameObject backButton;
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
-    [SerializeField] GameObject box;
+    [SerializeField] Transform box;
+    [SerializeField] Transform cardSlot;
 
 
     private void Awake()
@@ -68,11 +69,25 @@ public class SlingBoardGenerator : MonoBehaviour
 
     public void ClearBoard()
     {
+        var rb = cardParent.GetComponent<Rigidbody2D>();
         randomCards.Clear();
         randomImages.Clear();
         randomSprites.Clear();
 
         cardTexture.sprite = null;
+        rb.isKinematic = true;
+        rb.velocity = Vector2.zero;
+        rb.freezeRotation = true;
+        cardParent.transform.rotation = Quaternion.Euler(0, 0, 0);
+        cardParent.transform.position = cardSlot.position;
+        rb.freezeRotation = false;
+        cardParent.GetComponent<SwipeManager>().canThrow = true;
+        cardParent.GetComponent<SwipeManager>().isValid = false;
+
+        for (int i = 0; i < box.childCount - 1; i++)
+        {
+            LeanTween.color(box.GetChild(i).gameObject, Color.black, .2f);
+        }
 
     }
 
@@ -80,8 +95,13 @@ public class SlingBoardGenerator : MonoBehaviour
     {
 
         LeanTween.scale(cardParent, Vector3.one * 10, 0.2f);
-        LeanTween.scale(box, Vector3.one, 0.2f);
+        LeanTween.scale(box.gameObject, Vector3.one, 0.2f);
 
+    }
+
+    public void ScaleImagesDown()
+    {
+        LeanTween.scale(cardParent, Vector3.zero, 0.2f);
     }
 
     public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)

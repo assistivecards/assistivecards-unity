@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SlingUIController : MonoBehaviour
 {
     [SerializeField] SlingBoardGenerator board;
-    [SerializeField] GameObject backButton;
+    public GameObject backButton;
     [SerializeField] GameObject packSelectionPanel;
     [SerializeField] GameObject helloText;
     [SerializeField] GameObject speakerIcon;
@@ -17,6 +17,29 @@ public class SlingUIController : MonoBehaviour
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
+
+    public void OnBackButtonClick()
+    {
+        StartCoroutine(BackButtonClickCoroutine());
+    }
+
+    IEnumerator BackButtonClickCoroutine()
+    {
+        ResetCounter();
+        board.ScaleImagesDown();
+        board.ScaleBoxDown();
+        backButton.SetActive(false);
+        yield return new WaitForSeconds(0.25f);
+        board.ClearBoard();
+        packSelectionPanel.transform.localScale = new Vector3(0, 0, 0);
+        ResetScrollRect();
+        packSelectionPanel.SetActive(true);
+        LeanTween.scale(packSelectionPanel, Vector3.one, 0.25f);
+        Invoke("EnableScrollRect", 0.26f);
+        helloText.SetActive(true);
+        speakerIcon.SetActive(true);
+
     }
 
     public void EnableScrollRect()

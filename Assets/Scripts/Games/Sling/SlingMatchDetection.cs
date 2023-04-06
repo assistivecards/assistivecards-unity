@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SlingMatchDetection : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class SlingMatchDetection : MonoBehaviour
         }
 
         correctMatches++;
+        UIController.backButton.GetComponent<Button>().interactable = false;
         board.Invoke("ScaleImagesDown", 1f);
         board.Invoke("ClearBoard", 1.3f);
 

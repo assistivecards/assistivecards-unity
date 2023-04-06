@@ -23,6 +23,7 @@ public class SlingBoardGenerator : MonoBehaviour
     public static bool isBackAfterSignOut = false;
     [SerializeField] Transform box;
     [SerializeField] Transform cardSlot;
+    private SlingUIController UIController;
 
 
     private void Awake()
@@ -33,6 +34,7 @@ public class SlingBoardGenerator : MonoBehaviour
     private void Start()
     {
         gameAPI.PlayMusic();
+        UIController = gameObject.GetComponent<SlingUIController>();
     }
 
     private void OnEnable()
@@ -40,6 +42,7 @@ public class SlingBoardGenerator : MonoBehaviour
         if (isBackAfterSignOut)
         {
             gameAPI.PlayMusic();
+            UIController.OnBackButtonClick();
             isBackAfterSignOut = false;
         }
     }

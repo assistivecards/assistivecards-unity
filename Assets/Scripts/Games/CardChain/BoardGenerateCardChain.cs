@@ -104,7 +104,7 @@ public class BoardGenerateCardChain : MonoBehaviour
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear;
             cards[j].transform.GetChild(0).GetComponentInChildren<RawImage>().texture = cardTexture;
-            cards[j].transform.GetChild(0).gameObject.name = cardDefinitionsLocale[j];
+            cards[j].transform.GetChild(0).gameObject.name = cardName;
             cards[j].GetComponent<CardControllerCardChain>().leftCardLocalName = localName;
 
 
@@ -115,7 +115,7 @@ public class BoardGenerateCardChain : MonoBehaviour
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear;
             cards[j].transform.GetChild(1).GetComponentInChildren<RawImage>().texture = cardTexture1;
-            cards[j].transform.GetChild(1).gameObject.name = cardDefinitionsLocale[j + 1];
+            cards[j].transform.GetChild(1).gameObject.name = cardName1;
             cards[j].GetComponent<CardControllerCardChain>().rightCardLocalName = localName1;
 
             LeanTween.scale(cards[j], Vector3.one * 0.5f, 0.5f);

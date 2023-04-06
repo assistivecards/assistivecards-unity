@@ -104,6 +104,11 @@ public class SlingBoardGenerator : MonoBehaviour
         LeanTween.scale(cardParent, Vector3.zero, 0.2f);
     }
 
+    public void ScaleBoxDown()
+    {
+        LeanTween.scale(box.gameObject, Vector3.zero, 0.2f);
+    }
+
     public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)
     {
         if (!randomCards.Contains(cardToAdd) && cardToAdd.slug != correctCardSlug)

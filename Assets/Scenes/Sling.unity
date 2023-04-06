@@ -1535,6 +1535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardSlot: {fileID: 420845267}
+  box: {fileID: 1898790959}
 --- !u!61 &1154749950
 BoxCollider2D:
   m_ObjectHideFlags: 0

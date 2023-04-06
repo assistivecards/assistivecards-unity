@@ -22,6 +22,8 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
     public List<GameObject> childList = new List<GameObject>();
     private Collider2D otherCollider;
     private bool isPointerUp;
+    public bool rightMatched;
+     public bool leftMatched;
 
     private void OnEnable()
     {
@@ -55,7 +57,7 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
     public void OnPointerUp(PointerEventData eventData)
     {
         isPointerUp = true;
-        Invoke("DragFalse", 2f);
+        Invoke("DragFalse", 5f);
         GetComponentInChildren<CardControllerCardChain>().drag = false;
     }
 
@@ -87,30 +89,50 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
                 {
                     otherCollider = other;
                     GameObject doubleCardParent = other.transform.parent.gameObject;
-                    LeanTween.move(doubleCardParent, new Vector3(leftCard.transform.position.x, leftCard.transform.position.y, 0), 0.25f);
-                    Invoke("MatchLeftCollider", 0.25f);
+                    leftMatched = true;
                 }
                 else if(other.gameObject.GetComponent<ElementDetectorCardChain>().cardType == rightCard.name)
                 {
                     otherCollider = other;
                     GameObject doubleCardParent = other.transform.parent.gameObject;
-                    LeanTween.move(doubleCardParent, new Vector3(rightCard.transform.position.x, rightCard.transform.position.y, 0), 0.25f);
-                    Invoke("MatchRightCollider", 0.25f);
+                    rightMatched = true;
                 }
             }
         }
     }
 
-    private void MatchLeftCollider()
-    {
-        if(isPointerUp)
-            MatchLeft(otherCollider);
+    void OnTriggerExit2D(Collider2D other)
+    { 
+        if(GetComponentInParent<BoardGenerateCardChain>().isBoardCreated && drag)
+        {
+            if(other.gameObject.GetComponent<ElementDetectorCardChain>() != null)
+            {
+                if(other.gameObject.GetComponent<ElementDetectorCardChain>().cardType == leftCard.name)
+                {
+                    otherCollider = other;
+                    GameObject doubleCardParent = other.transform.parent.gameObject;
+                    leftMatched = false;
+                }
+                else if(other.gameObject.GetComponent<ElementDetectorCardChain>().cardType == rightCard.name)
+                {
+                    otherCollider = other;
+                    GameObject doubleCardParent = other.transform.parent.gameObject;
+                    rightMatched = false;
+                }
+            }
+        }
     }
 
-    private void MatchRightCollider()
+    private void Update() 
     {
-        if(isPointerUp)
+        if(isPointerUp && leftMatched)
+        {
+            MatchLeft(otherCollider);
+        }
+        else if(isPointerUp && rightMatched)
+        {
             MatchRight(otherCollider);
+        }
     }
 
     public void MatchLeft(Collider2D _other)
@@ -143,8 +165,12 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
         }
         else if(doubleCardParent.GetComponent<CardControllerCardChain>().childList.Count > 2)
         {
+           
             doubleCardParent.transform.GetComponent<CardControllerCardChain>().MatchRight(this.transform.GetChild(1).GetComponent<Collider2D>());
         }
+
+        leftMatched = false;
+        otherCollider = null;
     }
 
     public void MatchRight(Collider2D _other)
@@ -180,6 +206,8 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
             doubleCardParent.transform.GetComponent<CardControllerCardChain>().MatchLeft(this.transform.GetChild(0).GetComponent<Collider2D>());
         }
 
+        rightMatched = false;
+        otherCollider = null;
     }
 
     private void CallResetBoard()

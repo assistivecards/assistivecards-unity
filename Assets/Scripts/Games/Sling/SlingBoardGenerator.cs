@@ -12,11 +12,9 @@ public class SlingBoardGenerator : MonoBehaviour
     [SerializeField] SpriteRenderer cardTexture;
     [SerializeField] GameObject cardParent;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
-    [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
-    [SerializeField] List<Texture2D> randomImages = new List<Texture2D>();
-    [SerializeField] List<Sprite> randomSprites = new List<Sprite>();
+    [SerializeField] Texture2D randomImage;
+    [SerializeField] Sprite randomSprite;
     public string selectedLangCode;
-    [SerializeField] string correctCardSlug;
     public string packSlug;
     [SerializeField] GameObject backButton;
     public static bool didLanguageChange = true;
@@ -24,6 +22,8 @@ public class SlingBoardGenerator : MonoBehaviour
     [SerializeField] Transform box;
     [SerializeField] Transform cardSlot;
     private SlingUIController UIController;
+    [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> uniqueCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
+    SlingProgressChecker progressChecker;
 
 
     private void Awake()
@@ -35,6 +35,7 @@ public class SlingBoardGenerator : MonoBehaviour
     {
         gameAPI.PlayMusic();
         UIController = gameObject.GetComponent<SlingUIController>();
+        progressChecker = gameObject.GetComponent<SlingProgressChecker>();
     }
 
     private void OnEnable()
@@ -62,7 +63,7 @@ public class SlingBoardGenerator : MonoBehaviour
             didLanguageChange = false;
         }
 
-        PopulateRandomCards();
+        // PopulateRandomCards();
         await PopulateRandomTextures();
         PlaceSprites();
         ScaleImagesUp();
@@ -73,9 +74,8 @@ public class SlingBoardGenerator : MonoBehaviour
     public void ClearBoard()
     {
         var rb = cardParent.GetComponent<Rigidbody2D>();
-        randomCards.Clear();
-        randomImages.Clear();
-        randomSprites.Clear();
+        randomImage = null;
+        randomSprite = null;
 
         cardTexture.sprite = null;
         rb.isKinematic = true;
@@ -86,6 +86,7 @@ public class SlingBoardGenerator : MonoBehaviour
         rb.freezeRotation = false;
         cardParent.GetComponent<SwipeManager>().canThrow = true;
         cardParent.GetComponent<SwipeManager>().isValid = false;
+        cardParent.GetComponent<SwipeManager>().enabled = false;
 
         for (int i = 0; i < box.childCount - 1; i++)
         {
@@ -96,9 +97,10 @@ public class SlingBoardGenerator : MonoBehaviour
 
     public void ScaleImagesUp()
     {
-
+        LeanTween.alpha(cardParent, 1, .001f);
         LeanTween.scale(cardParent, Vector3.one * 10, 0.2f);
         LeanTween.scale(box.gameObject, Vector3.one, 0.2f);
+        cardParent.GetComponent<SwipeManager>().enabled = true;
 
     }
 
@@ -114,9 +116,9 @@ public class SlingBoardGenerator : MonoBehaviour
 
     public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)
     {
-        if (!randomCards.Contains(cardToAdd) && cardToAdd.slug != correctCardSlug)
+        if (!uniqueCards.Contains(cardToAdd))
         {
-            randomCards.Add(cardToAdd);
+            uniqueCards.Add(cardToAdd);
         }
         else
         {
@@ -125,28 +127,42 @@ public class SlingBoardGenerator : MonoBehaviour
         }
     }
 
+    public void ReadCard()
+    {
+        gameAPI.Speak(uniqueCards[progressChecker.correctMatches - 1].title);
+    }
+
     public void EnableBackButton()
     {
         backButton.GetComponent<Button>().interactable = true;
     }
 
-    public void PopulateRandomCards()
+    public void PopulateUniqueCards()
     {
 
-        var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
-        CheckIfCardExists(cardToAdd);
+        for (int i = 0; i < 5; i++)
+        {
+            var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+            // Debug.Log("Log before checkifcardexists " + cardToAdd.slug);
+            CheckIfCardExists(cardToAdd);
+        }
 
+    }
+
+    public void ClearUniqueCards()
+    {
+        uniqueCards.Clear();
     }
 
 
     public async Task PopulateRandomTextures()
     {
 
-        var texture = await gameAPI.GetCardImage(packSlug, randomCards[0].slug);
+        var texture = await gameAPI.GetCardImage(packSlug, uniqueCards[progressChecker.correctMatches].slug);
         texture.wrapMode = TextureWrapMode.Clamp;
         texture.filterMode = FilterMode.Bilinear;
-        randomImages.Add(texture);
-        randomSprites.Add(Sprite.Create(randomImages[0], new Rect(0.0f, 0.0f, randomImages[0].width, randomImages[0].height), new Vector2(0.5f, 0.5f), 100.0f));
+        randomImage = texture;
+        randomSprite = Sprite.Create(randomImage, new Rect(0.0f, 0.0f, randomImage.width, randomImage.height), new Vector2(0.5f, 0.5f), 100.0f);
 
     }
 
@@ -156,7 +172,7 @@ public class SlingBoardGenerator : MonoBehaviour
         if (cardTexture.sprite == null)
         {
 
-            var sprite = randomSprites[0];
+            var sprite = randomSprite;
             cardTexture.sprite = sprite;
         }
     }

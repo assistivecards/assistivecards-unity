@@ -9,6 +9,12 @@ public class SlingMatchDetection : MonoBehaviour
     private SlingBoardGenerator board;
     public int correctMatches = 0;
     private SlingUIController UIController;
+    private GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void Start()
     {
@@ -28,6 +34,8 @@ public class SlingMatchDetection : MonoBehaviour
 
         correctMatches++;
         UIController.backButton.GetComponent<Button>().interactable = false;
+        gameAPI.PlaySFX("Success");
+        board.Invoke("ReadCard", 0.25f);
         board.Invoke("ScaleImagesDown", 1f);
         board.Invoke("ClearBoard", 1.3f);
 

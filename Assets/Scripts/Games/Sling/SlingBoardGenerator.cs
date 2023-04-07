@@ -125,6 +125,11 @@ public class SlingBoardGenerator : MonoBehaviour
         }
     }
 
+    public void ReadCard()
+    {
+        gameAPI.Speak(randomCards[0].title);
+    }
+
     public void EnableBackButton()
     {
         backButton.GetComponent<Button>().interactable = true;

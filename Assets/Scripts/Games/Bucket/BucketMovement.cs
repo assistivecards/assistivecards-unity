@@ -9,12 +9,11 @@ public class BucketMovement : MonoBehaviour, IDragHandler
     public void OnDrag(PointerEventData eventData) 
     {
         var currentPos = transform.position;
-        Debug.Log(currentPos);
-        if(transform.position.x > 190 && transform.position.x < 1880)
+        if(transform.position.x > 200 && transform.position.x < 1880)
         {
             transform.position = new Vector3(eventData.position.x, currentPos.y, currentPos.z);
         }
-        else if(transform.position.x <= 190)
+        else if(transform.position.x <= 200)
         {
             if(eventData.delta.x > 0)
             {

@@ -17,15 +17,13 @@ public class DropControllerBucket : MonoBehaviour
     public List<string> cardLocalNames = new List<string>();
     private string packSlug;
 
+    [SerializeField] private GameObject parentalObject;
     [SerializeField] private GameObject cardPrefab;
+    [SerializeField] private PackSelectionPanel packSelectionPanel;
 
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
-    }
-
-    private void Start() {
-        GeneratedDropable("animals");
     }
 
     public async Task CacheCards(string _packSlug)
@@ -45,7 +43,7 @@ public class DropControllerBucket : MonoBehaviour
         }
     }
 
-    private async void GeneratedDropable(string _packSlug)
+    private async void GeneratedDropableAsync(string _packSlug)
     {
         await CacheCards(_packSlug);
         for(int i=0; i < cardNames.Count; i++)
@@ -57,8 +55,13 @@ public class DropControllerBucket : MonoBehaviour
             cardTexture.filterMode = FilterMode.Bilinear;
 
             card.transform.name = cardNames[i];
-            card.transform.SetParent(this.transform);
+            card.transform.SetParent(parentalObject.transform);
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
         }
+    }
+
+    public void GenerateDropable()
+    {
+        GeneratedDropableAsync(packSelectionPanel.selectedPackElement.name);
     }
 }

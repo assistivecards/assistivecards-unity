@@ -86,6 +86,7 @@ public class SlingBoardGenerator : MonoBehaviour
         rb.freezeRotation = false;
         cardParent.GetComponent<SwipeManager>().canThrow = true;
         cardParent.GetComponent<SwipeManager>().isValid = false;
+        cardParent.GetComponent<SwipeManager>().enabled = false;
 
         for (int i = 0; i < box.childCount - 1; i++)
         {
@@ -96,9 +97,10 @@ public class SlingBoardGenerator : MonoBehaviour
 
     public void ScaleImagesUp()
     {
-
+        LeanTween.alpha(cardParent, 1, .001f);
         LeanTween.scale(cardParent, Vector3.one * 10, 0.2f);
         LeanTween.scale(box.gameObject, Vector3.one, 0.2f);
+        cardParent.GetComponent<SwipeManager>().enabled = true;
 
     }
 

@@ -25,6 +25,7 @@ public class SlingOutOfBoundsDetector : MonoBehaviour
         Debug.Log("Out Of Bounds!!!");
         collidedCard = other;
         UIController.backButton.GetComponent<Button>().interactable = false;
+        LeanTween.alpha(collidedCard.gameObject, 0, .2f);
         Invoke("ResetCardPosition", .25f);
 
     }
@@ -38,6 +39,7 @@ public class SlingOutOfBoundsDetector : MonoBehaviour
             rb.velocity = Vector2.zero;
             rb.freezeRotation = true;
             collidedCard.transform.localScale = Vector3.zero;
+            LeanTween.alpha(collidedCard.gameObject, 1, .001f);
             collidedCard.transform.rotation = Quaternion.Euler(0, 0, 0);
             collidedCard.transform.position = cardSlot.position;
             rb.freezeRotation = false;

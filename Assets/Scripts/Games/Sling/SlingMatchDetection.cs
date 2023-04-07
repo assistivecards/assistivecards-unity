@@ -7,9 +7,9 @@ public class SlingMatchDetection : MonoBehaviour
 {
     Color green;
     private SlingBoardGenerator board;
-    public int correctMatches = 0;
     private SlingUIController UIController;
     private GameAPI gameAPI;
+    SlingProgressChecker progressChecker;
 
     private void Awake()
     {
@@ -21,6 +21,7 @@ public class SlingMatchDetection : MonoBehaviour
         ColorUtility.TryParseHtmlString("#1B9738", out green);
         board = GameObject.Find("GamePanel").GetComponent<SlingBoardGenerator>();
         UIController = GameObject.Find("GamePanel").GetComponent<SlingUIController>();
+        progressChecker = GameObject.Find("GamePanel").GetComponent<SlingProgressChecker>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -32,14 +33,14 @@ public class SlingMatchDetection : MonoBehaviour
             LeanTween.color(transform.parent.GetChild(i).gameObject, green, .2f);
         }
 
-        correctMatches++;
+        progressChecker.correctMatches++;
         UIController.backButton.GetComponent<Button>().interactable = false;
         gameAPI.PlaySFX("Success");
         board.Invoke("ReadCard", 0.25f);
         board.Invoke("ScaleImagesDown", 1f);
         board.Invoke("ClearBoard", 1.3f);
 
-        if (correctMatches == 5)
+        if (progressChecker.correctMatches == 5)
         {
             board.Invoke("ScaleBoxDown", 1f);
             UIController.Invoke("OpenCheckPointPanel", 1.3f);

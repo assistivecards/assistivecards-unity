@@ -11,8 +11,8 @@ public class SlingUIController : MonoBehaviour
     [SerializeField] GameObject helloText;
     [SerializeField] GameObject speakerIcon;
     [SerializeField] GameObject checkPointPanel;
-    [SerializeField] SlingMatchDetection matchDetector;
     private GameAPI gameAPI;
+    [SerializeField] SlingProgressChecker progressChecker;
 
     private void Awake()
     {
@@ -27,6 +27,7 @@ public class SlingUIController : MonoBehaviour
     IEnumerator BackButtonClickCoroutine()
     {
         ResetCounter();
+        board.ClearUniqueCards();
         board.ScaleImagesDown();
         board.ScaleBoxDown();
         backButton.SetActive(false);
@@ -110,7 +111,7 @@ public class SlingUIController : MonoBehaviour
 
     public void ResetCounter()
     {
-        matchDetector.correctMatches = 0;
+        progressChecker.correctMatches = 0;
     }
 
     public void ResetScrollRect()

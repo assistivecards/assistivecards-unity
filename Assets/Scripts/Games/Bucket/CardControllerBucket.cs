@@ -8,28 +8,46 @@ public class CardControllerBucket : MonoBehaviour
     public bool move = false;
     private bool oneTime = true;
 
+
     private void Update() 
     {
-        if(move)
+        if(GetComponentInParent<DropControllerBucket>() != null)
         {
-            Move();
+            if(GetComponentInParent<DropControllerBucket>().moveCard != null)
+            {
+                if(this.gameObject == GetComponentInParent<DropControllerBucket>().moveCard)
+                {
+                    Move();
+                }
+            }
         }
     }
 
     public void Move() 
     {
-        transform.position += Vector3.down * Time.deltaTime * 900;
+        transform.position += Vector3.down * Time.deltaTime * 950;
         transform.GetChild(0).position += Vector3.down * Time.deltaTime * 5;
-
-        if(oneTime)
-        {
-            Invoke("CallMoveCard", 2.25f);
-            oneTime = false;
-        }
     }
 
     private void CallMoveCard()
     {
-        GetComponentInParent<DropControllerBucket>().MoveCard();
+        GetComponentInParent<DropControllerBucket>().SelectMoveCard();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+        if(other.gameObject.GetComponent<BucketMovement>() != null)
+        {
+            GetComponentInParent<DropControllerBucket>().cards.Remove(this.gameObject);
+            GetComponentInParent<DropControllerBucket>().SelectMoveCard();
+            GetComponentInParent<DropControllerBucket>().matchCount ++;
+            this.transform.SetParent(other.transform);
+        }
+        else if(other.gameObject.tag == "Finish" && GetComponentInParent<DropControllerBucket>().isBoardCreated)
+        {
+            GetComponentInParent<DropControllerBucket>().cards.Remove(this.gameObject);
+            GetComponentInParent<DropControllerBucket>().SelectMoveCard();
+            Destroy(this.gameObject);
+        }
     }
 }

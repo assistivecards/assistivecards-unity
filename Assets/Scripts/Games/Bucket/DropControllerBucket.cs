@@ -21,7 +21,10 @@ public class DropControllerBucket : MonoBehaviour
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private PackSelectionPanel packSelectionPanel;
     public List<GameObject> cards = new List<GameObject>();
-    public List<GameObject> usedCards = new List<GameObject>();
+
+    public GameObject moveCard;
+    public bool isBoardCreated;
+    public int matchCount;
 
     private void Awake()
     {
@@ -62,25 +65,15 @@ public class DropControllerBucket : MonoBehaviour
             card.GetComponent<CardControllerBucket>().cardLocalName = cardLocalNames[i];
             cards.Add(card);
         }
-        MoveCard();
+        Invoke("SelectMoveCard", 1.25f);
     }
 
-    public void MoveCard()
+    public void SelectMoveCard()
     {
         var random = Random.Range(0, cards.Count);
-
-        if(!usedCards.Contains(cards[random]))
-        {
-            cards[random].GetComponent<CardControllerBucket>().move = true;
-            usedCards.Add(cards[random]);
-        }
-        else
-        {
-            MoveCard();
-        }
+        moveCard = cards[random];
+        isBoardCreated = true;
     }
-
-
 
     public void GenerateDropable()
     {

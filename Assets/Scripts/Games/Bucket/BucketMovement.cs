@@ -10,18 +10,18 @@ public class BucketMovement : MonoBehaviour, IDragHandler
     {
         var currentPos = transform.position;
         
-        if(transform.position.x > 200 && transform.position.x < 1880)
+        if(transform.position.x > 300 && transform.position.x < 1780)
         {
             transform.position = new Vector3(eventData.position.x, currentPos.y, currentPos.z);
         }
-        else if(transform.position.x <= 200)
+        else if(transform.position.x <= 300)
         {
             if(eventData.delta.x > 0)
             {
                 transform.position = new Vector3(eventData.position.x, currentPos.y, currentPos.z);
             }
         }
-        else if(transform.position.x >= 1880)
+        else if(transform.position.x >= 1780)
         {
             if(eventData.delta.x < 0)
             {

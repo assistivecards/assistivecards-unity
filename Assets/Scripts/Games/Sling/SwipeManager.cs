@@ -10,9 +10,17 @@ public class SwipeManager : MonoBehaviour
     Rigidbody2D rb;
     public bool canThrow = true;
 
-    [Range(0.05f, 1f)]
-    public float throwForce = 0.3f;
+    // [Range(0.05f, 1f)]
+    // public float throwForce = 0.3f;
     public bool isValid;
+    private PositionQueue pastPositions;
+    Vector3 newPosition;
+    public float speedMultiplier;
+
+    void Awake()
+    {
+        pastPositions = new PositionQueue(5);
+    }
 
     void Start()
     {
@@ -22,39 +30,93 @@ public class SwipeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        if (Input.touchCount > 0)
         {
-
-            var wp = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
-            var touchPosition = new Vector2(wp.x, wp.y);
-
-            if (GetComponent<Collider2D>() == Physics2D.OverlapPoint(touchPosition))
+            if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
-                isValid = true;
-                touchTimeStart = Time.time;
-                startPos = Input.GetTouch(0).position;
+                pastPositions.Clear();
+                var wp = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
+                var touchPosition = new Vector2(wp.x, wp.y);
+
+                if (GetComponent<Collider2D>() == Physics2D.OverlapPoint(touchPosition))
+                {
+                    isValid = true;
+                    touchTimeStart = Time.time;
+                    startPos = Input.GetTouch(0).position;
+                }
+
+                else
+                {
+                    Debug.Log("MISS");
+                }
+
             }
-            else
+
+            if (Input.GetTouch(0).phase == TouchPhase.Moved && canThrow && isValid)
             {
-                Debug.Log("MISS");
+                var wp = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
+                newPosition = new Vector3(wp.x, wp.y, transform.position.z);
+
+                pastPositions.Enqueue(newPosition);
+                transform.position = newPosition;
+
+                // Debug.Log(Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position));
+            }
+
+            if (Input.GetTouch(0).phase == TouchPhase.Ended && canThrow && isValid)
+            {
+
+                // touchTimeFinish = Time.time;
+                // timeInterval = touchTimeFinish - touchTimeStart;
+
+                // endPos = Input.GetTouch(0).position;
+                // direction = startPos - endPos;
+
+                rb.isKinematic = false;
+                // rb.AddForce(-direction / timeInterval * throwForce);
+                if (pastPositions.Count != 0)
+                {
+                    var velocity = (newPosition - pastPositions.Peek()) / pastPositions.Count;
+                    transform.GetComponent<Rigidbody2D>().velocity = velocity * speedMultiplier;
+
+                    canThrow = false;
+                }
             }
 
         }
+    }
+}
 
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && canThrow && isValid)
+class PositionQueue
+{
+    private Queue<Vector3> _queue;
+    private int _maxSize;
+    public int Count
+    {
+        get
         {
-
-            touchTimeFinish = Time.time;
-            timeInterval = touchTimeFinish - touchTimeStart;
-
-            endPos = Input.GetTouch(0).position;
-            direction = startPos - endPos;
-
-            rb.isKinematic = false;
-            rb.AddForce(-direction / timeInterval * throwForce);
-
-            canThrow = false;
-
+            return _queue.Count;
         }
+    }
+    public PositionQueue(int maxSize)
+    {
+        _maxSize = maxSize;
+        _queue = new Queue<Vector3>();
+    }
+    public void Enqueue(Vector3 v)
+    {
+        if (_queue.Count >= _maxSize)
+        {
+            _queue.Dequeue();
+        }
+        _queue.Enqueue(v);
+    }
+    public Vector3 Peek()
+    {
+        return _queue.Peek();
+    }
+    public void Clear()
+    {
+        _queue.Clear();
     }
 }

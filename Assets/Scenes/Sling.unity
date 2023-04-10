@@ -1918,7 +1918,7 @@ GameObject:
   - component: {fileID: 1334320944}
   - component: {fileID: 1334320943}
   m_Layer: 5
-  m_Name: ThrowText
+  m_Name: throw_the_card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1964,7 +1964,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Throw the card into the bucket
+  m_text: Throw the XXX into the bucket
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7fff04f5987a23d4cae30a373aa09dd3, type: 2}
   m_sharedMaterial: {fileID: -3432494171301961357, guid: 7fff04f5987a23d4cae30a373aa09dd3, type: 2}

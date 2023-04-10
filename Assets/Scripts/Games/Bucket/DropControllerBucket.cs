@@ -30,6 +30,8 @@ public class DropControllerBucket : MonoBehaviour
     public bool isBoardCreated;
     public int matchCount;
 
+    public string collectableCard;
+
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
@@ -54,9 +56,11 @@ public class DropControllerBucket : MonoBehaviour
 
     private void CreateIntValues()
     {
-        random = Random.Range(0, cardNames.Count);
+        random = Random.Range(0, cardNames.Count - 5);
+        collectableCard = cardNames[random];
         Debug.Log("random :" + random);
         Debug.Log("card list :" + cardNames.Count);
+        Debug.Log(collectableCard);
     }
 
     private async void GeneratedDropableAsync(string _packSlug)

@@ -40,7 +40,10 @@ public class CardControllerBucket : MonoBehaviour
         {
             GetComponentInParent<DropControllerBucket>().cards.Remove(this.gameObject);
             GetComponentInParent<DropControllerBucket>().SelectMoveCard();
-            GetComponentInParent<DropControllerBucket>().matchCount ++;
+            if(this.gameObject.name == GetComponentInParent<DropControllerBucket>().collectableCard)
+            {
+                GetComponentInParent<DropControllerBucket>().matchCount ++;
+            }
             this.transform.SetParent(other.transform);
         }
         else if(other.gameObject.tag == "Finish" && GetComponentInParent<DropControllerBucket>().isBoardCreated)

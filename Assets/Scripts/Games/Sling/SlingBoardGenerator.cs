@@ -24,6 +24,7 @@ public class SlingBoardGenerator : MonoBehaviour
     private SlingUIController UIController;
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> uniqueCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     SlingProgressChecker progressChecker;
+    [SerializeField] TMP_Text throwText;
 
 
     private void Awake()
@@ -64,6 +65,7 @@ public class SlingBoardGenerator : MonoBehaviour
         }
 
         // PopulateRandomCards();
+        TranslateThrowCardText();
         await PopulateRandomTextures();
         PlaceSprites();
         ScaleImagesUp();
@@ -99,6 +101,7 @@ public class SlingBoardGenerator : MonoBehaviour
     {
         LeanTween.alpha(cardParent, 1, .001f);
         LeanTween.scale(cardParent, Vector3.one * 10, 0.2f);
+        LeanTween.scale(throwText.gameObject, Vector3.one, 0.2f);
         LeanTween.scale(box.gameObject, Vector3.one, 0.2f);
         cardParent.GetComponent<SwipeManager>().enabled = true;
 
@@ -107,6 +110,7 @@ public class SlingBoardGenerator : MonoBehaviour
     public void ScaleImagesDown()
     {
         LeanTween.scale(cardParent, Vector3.zero, 0.2f);
+        LeanTween.scale(throwText.gameObject, Vector3.zero, 0.2f);
     }
 
     public void ScaleBoxDown()
@@ -154,6 +158,10 @@ public class SlingBoardGenerator : MonoBehaviour
         uniqueCards.Clear();
     }
 
+    public void TranslateThrowCardText()
+    {
+        throwText.text = gameAPI.Translate(throwText.gameObject.name, gameAPI.ToSentenceCase(uniqueCards[progressChecker.correctMatches].title).Replace("-", " "), selectedLangCode);
+    }
 
     public async Task PopulateRandomTextures()
     {

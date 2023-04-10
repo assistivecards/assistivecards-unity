@@ -481,11 +481,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boardCreatorHatchMatch: {fileID: 2048667398}
-  eggPhase0: {fileID: 21300000, guid: a577cbc6017b040e7bfff483fbc4199e, type: 3}
-  eggPhase1: {fileID: 21300000, guid: 48fe09e4ba2114fe19e1053d852cbfc6, type: 3}
-  eggPhase2: {fileID: 21300000, guid: 3e5292312cc9c4f8c9329f0c373cb072, type: 3}
-  eggPhase3: {fileID: 21300000, guid: 5da7572e705ed4f2aa224b2b53a04671, type: 3}
-  eggPhase4: {fileID: 21300000, guid: b2e24ea6353b9418e8defde31e04f528, type: 3}
   clickCount: 0
   colors:
   - {r: 0.9764706, g: 0.54901963, b: 0.54901963, a: 1}
@@ -498,6 +493,7 @@ MonoBehaviour:
   - {r: 0.77254903, g: 0.54901963, b: 0.98039216, a: 1}
   - {r: 0.98039216, g: 0.54901963, b: 0.9529412, a: 1}
   - {r: 0.98039216, g: 0.54901963, b: 0.7137255, a: 1}
+  isCracked: 0
 --- !u!61 &409572160
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3109,7 +3105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1205307889519550455, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 820.9906
+      value: 493
       objectReference: {fileID: 0}
     - target: {fileID: 1242831488848445502, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_SizeDelta.x
@@ -4593,7 +4589,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6015960273470514223, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -141.927
+      value: -499.99997
       objectReference: {fileID: 0}
     - target: {fileID: 6015960273470514223, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -4601,7 +4597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6015960273470514223, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -429.03647
+      value: -249.99998
       objectReference: {fileID: 0}
     - target: {fileID: 6036846856643999378, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_SizeDelta.x

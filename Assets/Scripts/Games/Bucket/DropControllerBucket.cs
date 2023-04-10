@@ -22,6 +22,10 @@ public class DropControllerBucket : MonoBehaviour
     [SerializeField] private PackSelectionPanel packSelectionPanel;
     public List<GameObject> cards = new List<GameObject>();
 
+    private List<int> randomValues = new List<int>();
+    private List<int> usedRandomValues = new List<int>();
+    private int random;
+
     public GameObject moveCard;
     public bool isBoardCreated;
     public int matchCount;
@@ -48,18 +52,27 @@ public class DropControllerBucket : MonoBehaviour
         }
     }
 
+    private void CreateIntValues()
+    {
+        random = Random.Range(0, cardNames.Count);
+        Debug.Log("random :" + random);
+        Debug.Log("card list :" + cardNames.Count);
+    }
+
     private async void GeneratedDropableAsync(string _packSlug)
     {
         await CacheCards(_packSlug);
-        for(int i=0; i < cardNames.Count; i++)
+        CreateIntValues();
+        for(int i=0; i < 30; i++)
         {
             GameObject card = Instantiate(cardPrefab, Vector3.zero, Quaternion.identity);
 
-            var cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[i], 512);
+            int randomCard = Random.Range(random, random + 5);
+            var cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[randomCard], 512);
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear;
 
-            card.transform.name = cardNames[i];
+            card.transform.name = cardNames[randomCard];
             card.transform.SetParent(parentalObject.transform);
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             card.GetComponent<CardControllerBucket>().cardLocalName = cardLocalNames[i];

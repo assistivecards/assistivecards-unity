@@ -176,7 +176,7 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
         if(boardGenerateCardChain.matchCount >= 4)
         {
             cantMove = true;
-            LeanTween.scale(this.gameObject, Vector3.one * 0.55f, 0.8f);
+            LeanTween.move(this.gameObject, boardGenerateCardChain.centerPosition.transform.position , 0.25f).setOnComplete(ScaleUp);
             Invoke("CallResetBoard", 1.3f);
         }
 
@@ -224,13 +224,18 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
         if(boardGenerateCardChain.matchCount >= 4)
         {
             cantMove = true;
-            LeanTween.scale(this.gameObject, Vector3.one * 0.55f, 0.8f);
+            LeanTween.move(this.gameObject, boardGenerateCardChain.centerPosition.transform.position, 0.25f).setOnComplete(ScaleUp);
             Invoke("CallResetBoard", 1.3f);
         }
 
         rightMatched = false;
         otherCollider = null;
         doubleCardParent = null;
+    }
+
+    private void ScaleUp()
+    {
+        LeanTween.scale(this.gameObject, Vector3.one * 0.6f, 0.8f);
     }
 
     private void CallResetBoard()

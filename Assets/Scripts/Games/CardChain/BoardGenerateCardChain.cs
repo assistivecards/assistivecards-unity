@@ -24,6 +24,7 @@ public class BoardGenerateCardChain : MonoBehaviour
     public List<string> cardDefinitionsLocale = new List<string>();
     public List<GameObject> cards  = new List<GameObject>();
     public List<GameObject> cardPositions  = new List<GameObject>();
+    public GameObject centerPosition;
 
     public List<int> randomValueList = new List<int>();
     public List<int> usedPositionList = new List<int>();

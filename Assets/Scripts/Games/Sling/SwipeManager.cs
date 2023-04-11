@@ -17,9 +17,11 @@ public class SwipeManager : MonoBehaviour
     Vector3 newPosition;
     public float speedMultiplier;
     public bool isBeingDragged;
+    private GameAPI gameAPI;
 
     void Awake()
     {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
         pastPositions = new PositionQueue(5);
     }
 
@@ -35,6 +37,7 @@ public class SwipeManager : MonoBehaviour
         {
             if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
+                gameAPI.PlaySFX("Pickup");
                 pastPositions.Clear();
                 var wp = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
                 var touchPosition = new Vector2(wp.x, wp.y);

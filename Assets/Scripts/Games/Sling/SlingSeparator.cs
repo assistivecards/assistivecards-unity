@@ -43,6 +43,7 @@ public class SlingSeparator : MonoBehaviour
             rb.freezeRotation = false;
             collidedCard.GetComponent<SwipeManager>().canThrow = true;
             collidedCard.GetComponent<SwipeManager>().isValid = false;
+            collidedCard.GetComponent<SwipeManager>().isGrabbed = false;
             LeanTween.scale(collidedCard.gameObject, Vector3.one * 10, .2f);
         }
 

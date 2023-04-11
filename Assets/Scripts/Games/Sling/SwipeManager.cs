@@ -18,6 +18,7 @@ public class SwipeManager : MonoBehaviour
     public float speedMultiplier;
     public bool isBeingDragged;
     private GameAPI gameAPI;
+    public bool isGrabbed;
 
     void Awake()
     {
@@ -37,7 +38,7 @@ public class SwipeManager : MonoBehaviour
         {
             if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
-                gameAPI.PlaySFX("Pickup");
+                // Debug.Log("Began");
                 pastPositions.Clear();
                 var wp = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
                 var touchPosition = new Vector2(wp.x, wp.y);
@@ -58,6 +59,13 @@ public class SwipeManager : MonoBehaviour
 
             if (Input.GetTouch(0).phase == TouchPhase.Moved && canThrow && isValid)
             {
+                // Debug.Log("Moved");
+
+                if (!isGrabbed)
+                {
+                    gameAPI.PlaySFX("Pickup");
+                    isGrabbed = true;
+                }
                 isBeingDragged = true;
                 var wp = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
                 newPosition = new Vector3(wp.x, wp.y, transform.position.z);
@@ -70,6 +78,7 @@ public class SwipeManager : MonoBehaviour
 
             if (Input.GetTouch(0).phase == TouchPhase.Ended && canThrow && isValid)
             {
+                // Debug.Log("Ended");
                 isBeingDragged = false;
 
                 // touchTimeFinish = Time.time;
@@ -85,8 +94,10 @@ public class SwipeManager : MonoBehaviour
                     var velocity = (newPosition - pastPositions.Peek()) / pastPositions.Count;
                     transform.GetComponent<Rigidbody2D>().velocity = velocity * speedMultiplier;
 
-                    canThrow = false;
                 }
+
+                canThrow = false;
+                isGrabbed = false;
             }
 
         }

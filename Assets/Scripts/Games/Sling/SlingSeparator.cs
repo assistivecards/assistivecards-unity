@@ -1,32 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class SlingOutOfBoundsDetector : MonoBehaviour
+public class SlingSeparator : MonoBehaviour
 {
-    [SerializeField]
-    Transform cardSlot;
+    [SerializeField] GameObject panel;
     Collider2D collidedCard;
-    SlingUIController UIController;
-    [SerializeField]
-    Transform box;
+    [SerializeField] Transform box;
+    [SerializeField] Transform cardSlot;
 
     void Start()
     {
-        BoxCollider2D collider = GetComponent<BoxCollider2D>();
-        RectTransform rect = GetComponent<RectTransform>();
-        collider.size = new Vector2(rect.rect.width, rect.rect.height);
-        UIController = GameObject.Find("GamePanel").GetComponent<SlingUIController>();
+        RectTransform rect = panel.GetComponent<RectTransform>();
+        GetComponent<BoxCollider2D>().size = new Vector2(75, rect.rect.height);
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Out Of Bounds!!!");
-        collidedCard = other;
-        UIController.backButton.GetComponent<Button>().interactable = false;
-        LeanTween.alpha(collidedCard.gameObject, 0, .2f);
-        Invoke("ResetCardPosition", .25f);
+        if (other.GetComponent<SwipeManager>().isBeingDragged)
+        {
+            collidedCard = other;
+            LeanTween.alpha(collidedCard.gameObject, 0, .2f);
+            collidedCard.GetComponent<BoxCollider2D>().enabled = false;
+            Invoke("ResetCardPosition", .25f);
+        }
 
     }
 
@@ -34,6 +31,7 @@ public class SlingOutOfBoundsDetector : MonoBehaviour
     {
         if (box.localScale == Vector3.one)
         {
+            collidedCard.GetComponent<BoxCollider2D>().enabled = true;
             Rigidbody2D rb = collidedCard.GetComponent<Rigidbody2D>();
             rb.isKinematic = true;
             rb.velocity = Vector2.zero;
@@ -47,9 +45,7 @@ public class SlingOutOfBoundsDetector : MonoBehaviour
             collidedCard.GetComponent<SwipeManager>().isValid = false;
             collidedCard.GetComponent<SwipeManager>().isGrabbed = false;
             LeanTween.scale(collidedCard.gameObject, Vector3.one * 10, .2f);
-            UIController.backButton.GetComponent<Button>().interactable = true;
         }
 
     }
-
 }

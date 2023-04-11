@@ -42,8 +42,11 @@ public class GameAPI : MonoBehaviour
 
     private void Start()
     {
+#if !UNITY_EDITOR
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 60;
+#endif
+
         Vibration.Init();
     }
 

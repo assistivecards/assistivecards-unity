@@ -9,7 +9,8 @@ public class UIControllerCardChain : MonoBehaviour
     [SerializeField] private GameObject helloText;
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject settingButton;
-
+    [SerializeField] private GameObject selectNewPackButton;
+    [SerializeField] private GameObject continueButton;
 
     public void InGameBar()
     {
@@ -41,6 +42,13 @@ public class UIControllerCardChain : MonoBehaviour
     public void CloseLevelChange()
     {
         LeanTween.scale(levelChangeScreen, Vector3.zero, 0.25f);
+        Invoke("ResetLevelChangeScreen", 0.15f);
+    }
+
+    private void ResetLevelChangeScreen()
+    {
+        LeanTween.scale(selectNewPackButton, Vector3.one, 0.15f);
+        LeanTween.scale(continueButton, Vector3.one, 0.15f);
     }
 
     public void ResetScroll()

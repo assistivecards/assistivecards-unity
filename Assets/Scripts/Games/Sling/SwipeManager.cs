@@ -16,6 +16,7 @@ public class SwipeManager : MonoBehaviour
     private PositionQueue pastPositions;
     Vector3 newPosition;
     public float speedMultiplier;
+    public bool isBeingDragged;
 
     void Awake()
     {
@@ -54,6 +55,7 @@ public class SwipeManager : MonoBehaviour
 
             if (Input.GetTouch(0).phase == TouchPhase.Moved && canThrow && isValid)
             {
+                isBeingDragged = true;
                 var wp = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
                 newPosition = new Vector3(wp.x, wp.y, transform.position.z);
 
@@ -65,6 +67,7 @@ public class SwipeManager : MonoBehaviour
 
             if (Input.GetTouch(0).phase == TouchPhase.Ended && canThrow && isValid)
             {
+                isBeingDragged = false;
 
                 // touchTimeFinish = Time.time;
                 // timeInterval = touchTimeFinish - touchTimeStart;

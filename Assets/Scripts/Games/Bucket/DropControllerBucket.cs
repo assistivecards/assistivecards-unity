@@ -26,6 +26,8 @@ public class DropControllerBucket : MonoBehaviour
 
     private List<int> randomValues = new List<int>();
     private List<int> usedRandomValues = new List<int>();
+    private List<GameObject> collectedDrops = new List<GameObject>();
+    private List<GameObject> cardsInGrid = new List<GameObject>();
     private int random;
 
     public GameObject moveCard;
@@ -89,6 +91,8 @@ public class DropControllerBucket : MonoBehaviour
                 cards.Add(card);
             }
         }
+        uıControllerBucket.CloseTransitionScreen();
+        uıControllerBucket.InGame();
         bucket.SetActive(true);
         Invoke("SelectMoveCard", 1.25f);
     }
@@ -115,6 +119,7 @@ public class DropControllerBucket : MonoBehaviour
 
     public void ResetLevel()
     {
+        cards.Clear();
         bucket.SetActive(false);
         uıControllerBucket.LevelChangeActive();
         isBoardCreated = false;
@@ -124,5 +129,53 @@ public class DropControllerBucket : MonoBehaviour
         cardNames.Clear();
         randomValues.Clear();
         cardLocalNames.Clear();
+
+        GetBucketChildList();
+
+        foreach(var drop in collectedDrops)
+        {
+            Destroy(drop);
+        }
+    }
+
+    public void ResetLevelBackButtonClick()
+    {
+        cards.Clear();
+        bucket.SetActive(false);
+        uıControllerBucket.PackSelectionActive();
+        isBoardCreated = false;
+        cardsList.Clear();
+        matchCount = 0;
+        droppedCardCount = 0;
+        cardNames.Clear();
+        randomValues.Clear();
+        cardLocalNames.Clear();
+        GetGridChildList();
+        GetBucketChildList();
+
+        foreach(var drop in collectedDrops)
+        {
+            Destroy(drop);
+        }
+        foreach(var child in cardsInGrid)
+        {
+            Destroy(child);
+        }
+    }
+
+    private void GetBucketChildList()
+    {
+        for(int i = 0; i < bucket.transform.childCount; i++)
+        {
+            collectedDrops.Add(bucket.transform.GetChild(i).gameObject);
+        }
+    }
+
+    private void GetGridChildList()
+    {
+        for(int i = 0; i < parentalObject.transform.childCount; i++)
+        {
+            cardsInGrid.Add(parentalObject.transform.GetChild(i).gameObject);
+        }
     }
 }

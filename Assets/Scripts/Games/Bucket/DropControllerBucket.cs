@@ -87,7 +87,7 @@ public class DropControllerBucket : MonoBehaviour
                 card.transform.name = cardNames[randomCard];
                 card.transform.SetParent(parentalObject.transform);
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-                card.GetComponent<CardControllerBucket>().cardLocalName = cardLocalNames[i];
+                card.GetComponent<CardControllerBucket>().cardLocalName = cardLocalNames[randomCard];
                 cards.Add(card);
             }
         }
@@ -109,6 +109,7 @@ public class DropControllerBucket : MonoBehaviour
         else if(droppedCardCount >= 30)
         {
             Invoke("ResetLevel", 0.25f);
+            gameAPI.PlaySFX("Finished");
         }
     }
 

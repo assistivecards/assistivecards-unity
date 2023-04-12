@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CardControllerBucket : MonoBehaviour
-{
+{    
+    GameAPI gameAPI;
+
     public string cardLocalName;
     public bool move = false;
     private bool oneTime = true;
 
+
+    private void Awake() 
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void Update() 
     {
@@ -40,14 +47,17 @@ public class CardControllerBucket : MonoBehaviour
         {
             GetComponentInParent<DropControllerBucket>().cards.Remove(this.gameObject);
             GetComponentInParent<DropControllerBucket>().SelectMoveCard();
+            gameAPI.Speak(cardLocalName);
+            Debug.Log(cardLocalName);
+            gameAPI.PlaySFX("Success");
             if(this.gameObject.name == GetComponentInParent<DropControllerBucket>().collectableCard)
             {
                 GetComponentInParent<DropControllerBucket>().matchCount ++;
-                if(GetComponentInParent<DropControllerBucket>().matchCount >= 5)
-                {
-                    GetComponentInParent<DropControllerBucket>().isLevelEnd = true;
-                    GetComponentInParent<DropControllerBucket>().ResetLevel();
-                }
+                // if(GetComponentInParent<DropControllerBucket>().matchCount >= 5)
+                // {
+                //     GetComponentInParent<DropControllerBucket>().isLevelEnd = true;
+                //     GetComponentInParent<DropControllerBucket>().ResetLevel();
+                // }
             }
             this.transform.SetParent(other.transform);
         }

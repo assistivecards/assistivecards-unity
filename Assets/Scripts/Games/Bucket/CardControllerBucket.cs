@@ -43,6 +43,11 @@ public class CardControllerBucket : MonoBehaviour
             if(this.gameObject.name == GetComponentInParent<DropControllerBucket>().collectableCard)
             {
                 GetComponentInParent<DropControllerBucket>().matchCount ++;
+                if(GetComponentInParent<DropControllerBucket>().matchCount >= 5)
+                {
+                    GetComponentInParent<DropControllerBucket>().isLevelEnd = true;
+                    GetComponentInParent<DropControllerBucket>().ResetLevel();
+                }
             }
             this.transform.SetParent(other.transform);
         }

@@ -7,7 +7,7 @@
       "dependencies": {
         "com.unity.textmeshpro": "3.0.6"
       },
-      "hash": "d98060cded2b0eac2a2a55cb9e1bf22af8623d06"
+      "hash": "ee527aede96e31ffcbae84a87347fc9f2ef19369"
     },
     "com.coffee.softmask-for-ugui": {
       "version": "https://github.com/mob-sakai/SoftMaskForUGUI.git",
@@ -150,7 +150,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.16",
+      "version": "2.0.17",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -173,7 +173,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.mobile.notifications": {
-      "version": "2.1.0",
+      "version": "2.1.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -198,7 +198,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.purchasing": {
-      "version": "4.5.1",
+      "version": "4.5.2",
       "depth": 0,
       "source": "registry",
       "dependencies": {

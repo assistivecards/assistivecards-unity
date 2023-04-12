@@ -295,6 +295,12 @@ public class GameAPI : MonoBehaviour
 
     public AssistiveCardsSDK.AssistiveCardsSDK.Cards cards = new AssistiveCardsSDK.AssistiveCardsSDK.Cards();
 
+    public async Task<AssistiveCardsSDK.AssistiveCardsSDK.Status> CheckConnectionStatus()
+    {
+        var result = await assistiveCardsSDK.CheckConnectionStatus();
+        return result;
+    }
+
     ///<summary>
     ///Takes in a language code of type string and returns an object of type Packs which holds an array of Pack objects in the specified language.
     ///</summary>

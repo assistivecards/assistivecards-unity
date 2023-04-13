@@ -55,6 +55,7 @@ public class CardControllerBucket : MonoBehaviour
                 {
                     gameAPI.PlaySFX("Success");
                     GetComponentInParent<DropControllerBucket>().matchCount ++;
+                    GetComponentInParent<DropControllerBucket>().SetCount();
                     if(GetComponentInParent<DropControllerBucket>().matchCount >= 5)
                     {
                         GetComponentInParent<DropControllerBucket>().isLevelEnd = true;

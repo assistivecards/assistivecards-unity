@@ -21,6 +21,10 @@ public class DropControllerBucket : MonoBehaviour
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject bucket;
     [SerializeField] private GameObject end;
+    [SerializeField] private TMP_Text collectText;
+    [SerializeField] private TMP_Text collectedCountText;
+
+
     [SerializeField] private PackSelectionPanel packSelectionPanel;
     [SerializeField] private UIControllerBucket uıControllerBucket;
     public List<GameObject> cards = new List<GameObject>();
@@ -43,6 +47,7 @@ public class DropControllerBucket : MonoBehaviour
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+        SetCount();
     }
 
     public async Task CacheCards(string _packSlug)
@@ -65,7 +70,7 @@ public class DropControllerBucket : MonoBehaviour
     private void CreateIntValues()
     {
         random = Random.Range(0, cardNames.Count - 6);
-        collectableCard = cardNames[random];
+        collectableCard = cardNames[random + 2];
     }
 
     private async void GeneratedDropableAsync(string _packSlug)
@@ -94,6 +99,9 @@ public class DropControllerBucket : MonoBehaviour
         uıControllerBucket.InGame();
         bucket.SetActive(true);
         Invoke("SelectMoveCard", 1.25f);
+        collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(collectableCard).Replace("-", " "), selectedLangCode);
+        LeanTween.scale(collectText.gameObject, Vector3.one, 0.2f);
+        LeanTween.scale(collectedCountText.gameObject, Vector3.one, 0.2f);
     }
 
     public void SelectMoveCard()
@@ -105,7 +113,12 @@ public class DropControllerBucket : MonoBehaviour
             isBoardCreated = true;
             droppedCardCount ++;
         }
-        else if(droppedCardCount >= 30)
+        else if(droppedCardCount == 30)
+        {
+            isBoardCreated = true;
+            droppedCardCount ++;
+        }
+        else if(droppedCardCount > 30)
         {
             Invoke("ResetLevel", 0.25f);
             gameAPI.PlaySFX("Finished");
@@ -119,23 +132,31 @@ public class DropControllerBucket : MonoBehaviour
 
     public void ResetLevel()
     {
+        LeanTween.scale(collectText.gameObject, Vector3.zero, 0.15f).setOnComplete(ResetText);
+        LeanTween.scale(collectedCountText.gameObject, Vector3.zero, 0.15f).setOnComplete(ResetText);
         cards.Clear();
         bucket.SetActive(false);
         uıControllerBucket.LevelChangeActive();
         isBoardCreated = false;
         cardsList.Clear();
         matchCount = 0;
+        SetCount();
         droppedCardCount = 0;
         cardNames.Clear();
         randomValues.Clear();
         cardLocalNames.Clear();
 
+        GetGridChildList();
         GetBucketChildList();
         GetEndChildList();
 
         foreach(var drop in collectedDrops)
         {
             Destroy(drop);
+        }
+        foreach(var child in cardsInGrid)
+        {
+            Destroy(child);
         }
         foreach(var end in endCards)
         {
@@ -145,12 +166,15 @@ public class DropControllerBucket : MonoBehaviour
 
     public void ResetLevelBackButtonClick()
     {
+        LeanTween.scale(collectText.gameObject, Vector3.zero, 0.15f).setOnComplete(ResetText);
+        LeanTween.scale(collectedCountText.gameObject, Vector3.zero, 0.15f).setOnComplete(ResetText);
         cards.Clear();
         bucket.SetActive(false);
         uıControllerBucket.PackSelectionActive();
         isBoardCreated = false;
         cardsList.Clear();
         matchCount = 0;
+        SetCount();
         droppedCardCount = 0;
         cardNames.Clear();
         randomValues.Clear();
@@ -171,6 +195,11 @@ public class DropControllerBucket : MonoBehaviour
         {
             Destroy(end);
         }
+    }
+
+    private void ResetText()
+    {
+        collectText.text = "";
     }
 
     private void GetBucketChildList()
@@ -195,5 +224,10 @@ public class DropControllerBucket : MonoBehaviour
         {
             endCards.Add(end.transform.GetChild(i).gameObject);
         }
+    }
+
+    public void SetCount()
+    {
+        collectedCountText.text = matchCount.ToString();
     }
 }

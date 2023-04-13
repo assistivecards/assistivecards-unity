@@ -1710,7 +1710,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -109.42927, y: 4.5827084}
+  m_Offset: {x: -119.13497, y: 0.14579773}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1721,7 +1721,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 22.435501, y: 79.4646}
+  m_Size: {x: 47.39308, y: 98.32146}
   m_EdgeRadius: 0
 --- !u!114 &1407491092 stripped
 MonoBehaviour:
@@ -1816,7 +1816,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4284171582
   m_fontColor: {r: 0.24313726, g: 0.27058825, b: 0.35686275, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1829,7 +1829,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -1991,7 +1991,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13, y: -229.3}
+  m_AnchoredPosition: {x: -13, y: -230}
   m_SizeDelta: {x: 235.4805, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1623121720
@@ -2057,7 +2057,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -5.354725, y: -37.589977}
+  m_Offset: {x: 6.2921906, y: -37.589977}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2068,7 +2068,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 201.07349, y: 24.820045}
+  m_Size: {x: 174.45209, y: 24.820045}
   m_EdgeRadius: 0
 --- !u!50 &1623121724
 Rigidbody2D:
@@ -2350,7 +2350,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4284171582
   m_fontColor: {r: 0.24313726, g: 0.27058825, b: 0.35686275, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -2363,7 +2363,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -2540,7 +2540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994790024697, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 293090.22
+      value: 348967.44
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522234, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2768,7 +2768,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -109.42927, y: 4.5827084}
+  m_Offset: {x: -83.085075, y: 0.97772026}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2779,7 +2779,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 22.435501, y: 79.4646}
+  m_Size: {x: 66.249954, y: 96.65761}
   m_EdgeRadius: 0
 --- !u!1001 &300905862136274000
 PrefabInstance:

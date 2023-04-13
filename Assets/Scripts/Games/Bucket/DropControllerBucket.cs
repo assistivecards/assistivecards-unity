@@ -97,6 +97,7 @@ public class DropControllerBucket : MonoBehaviour
         }
         uıControllerBucket.CloseTransitionScreen();
         uıControllerBucket.InGame();
+        bucket.transform.localPosition = new Vector3(-13, -230, 0);
         bucket.SetActive(true);
         Invoke("SelectMoveCard", 1.25f);
         collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(collectableCard).Replace("-", " "), selectedLangCode);

@@ -2248,7 +2248,7 @@ GameObject:
   - component: {fileID: 2126691967}
   - component: {fileID: 2126691966}
   m_Layer: 5
-  m_Name: settings_selection_apps
+  m_Name: settings_selection_games
   m_TagString: Plain Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2294,7 +2294,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: All Apps
+  m_text: All Games
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7fff04f5987a23d4cae30a373aa09dd3, type: 2}
   m_sharedMaterial: {fileID: -3432494171301961357, guid: 7fff04f5987a23d4cae30a373aa09dd3, type: 2}

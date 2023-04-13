@@ -20,6 +20,7 @@ public class DropControllerBucket : MonoBehaviour
     [SerializeField] private GameObject parentalObject;
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject bucket;
+    [SerializeField] private GameObject end;
     [SerializeField] private PackSelectionPanel packSelectionPanel;
     [SerializeField] private UIControllerBucket uıControllerBucket;
     public List<GameObject> cards = new List<GameObject>();
@@ -28,6 +29,7 @@ public class DropControllerBucket : MonoBehaviour
     private List<int> usedRandomValues = new List<int>();
     private List<GameObject> collectedDrops = new List<GameObject>();
     private List<GameObject> cardsInGrid = new List<GameObject>();
+    private List<GameObject> endCards = new List<GameObject>();
     private int random;
 
     public GameObject moveCard;
@@ -129,10 +131,15 @@ public class DropControllerBucket : MonoBehaviour
         cardLocalNames.Clear();
 
         GetBucketChildList();
+        GetEndChildList();
 
         foreach(var drop in collectedDrops)
         {
             Destroy(drop);
+        }
+        foreach(var end in endCards)
+        {
+            Destroy(end);
         }
     }
 
@@ -150,6 +157,7 @@ public class DropControllerBucket : MonoBehaviour
         cardLocalNames.Clear();
         GetGridChildList();
         GetBucketChildList();
+        GetEndChildList();
 
         foreach(var drop in collectedDrops)
         {
@@ -158,6 +166,10 @@ public class DropControllerBucket : MonoBehaviour
         foreach(var child in cardsInGrid)
         {
             Destroy(child);
+        }
+        foreach(var end in endCards)
+        {
+            Destroy(end);
         }
     }
 
@@ -174,6 +186,14 @@ public class DropControllerBucket : MonoBehaviour
         for(int i = 0; i < parentalObject.transform.childCount; i++)
         {
             cardsInGrid.Add(parentalObject.transform.GetChild(i).gameObject);
+        }
+    }
+
+    private void GetEndChildList()
+    {
+        for(int i = 0; i < end.transform.childCount; i++)
+        {
+            endCards.Add(end.transform.GetChild(i).gameObject);
         }
     }
 }

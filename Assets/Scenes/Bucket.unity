@@ -5252,6 +5252,7 @@ MonoBehaviour:
   parentalObject: {fileID: 1686291071}
   cardPrefab: {fileID: 1572616208917296617, guid: c9aa7a3a001de41d89b8dabb2affecd1, type: 3}
   bucket: {fileID: 1623121718}
+  end: {fileID: 526222502}
   packSelectionPanel: {fileID: 97274552}
   "u\u0131ControllerBucket": {fileID: 8383894889009589327}
   cards: []

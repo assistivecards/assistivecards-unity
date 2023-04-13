@@ -8,6 +8,21 @@ Template for unity games made by Assistive Cards
 
 This is a documentation for GameAPI, which is the combination of Assistive Cards SDK, Settings API and Language Manager scripts. This module will be accessible from anywhere in game. GameAPI consists of methods for retrieving assets data, storing user preferences and translating UI elements at runtime.
 
+## CheckConnectionStatus
+
+Returns an object of type Status which holds information about network connection.
+
+```Csharp
+async Task<AssistiveCardsSDK.AssistiveCardsSDK.Status> CheckConnectionStatus()
+```
+
+Example usage;
+
+```Csharp
+AssistiveCardsSDK.AssistiveCardsSDK.Status status = new AssistiveCardsSDK.AssistiveCardsSDK.Status();
+status = await CheckConnectionStatus();
+```
+
 ## GetPacks
 
 Takes in a language code of type string and returns an object of type Packs which holds an array of Pack objects in the specified language.

@@ -295,6 +295,9 @@ public class GameAPI : MonoBehaviour
 
     public AssistiveCardsSDK.AssistiveCardsSDK.Cards cards = new AssistiveCardsSDK.AssistiveCardsSDK.Cards();
 
+    ///<summary>
+    ///Returns an object of type Status which holds information about network connection.
+    ///</summary>
     public async Task<AssistiveCardsSDK.AssistiveCardsSDK.Status> CheckConnectionStatus()
     {
         var result = await assistiveCardsSDK.CheckConnectionStatus();

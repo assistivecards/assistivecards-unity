@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5270517298093753807}
   - component: {fileID: 6015160056906354179}
   - component: {fileID: 8128462405908380560}
+  - component: {fileID: -8093227477347870033}
   m_Layer: 5
   m_Name: Card
   m_TagString: cardBlast
@@ -118,6 +119,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardLocalName: 
+  move: 0
+--- !u!50 &-8093227477347870033
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572616208917296617}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &3953419126043893981
 GameObject:
   m_ObjectHideFlags: 0

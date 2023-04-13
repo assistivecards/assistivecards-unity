@@ -64,9 +64,6 @@ public class DropControllerBucket : MonoBehaviour
     {
         random = Random.Range(0, cardNames.Count - 6);
         collectableCard = cardNames[random];
-        Debug.Log("random :" + random);
-        Debug.Log("card list :" + cardNames.Count);
-        Debug.Log(collectableCard);
     }
 
     private async void GeneratedDropableAsync(string _packSlug)

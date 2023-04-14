@@ -286,6 +286,7 @@ public class CanvasController : MonoBehaviour
         // this.GetComponent<LanguageTest>().ChangeLanguage();
         TTSPanel.didLanguageChange = true;
         AllAppsPage.didLanguageChange = true;
+        AllGamesPage.didLanguageChange = true;
         PackSelectionPanel.didLanguageChange = true;
         PromoScreen.didLanguageChange = true;
         Board.isBackAfterSignOut = true;

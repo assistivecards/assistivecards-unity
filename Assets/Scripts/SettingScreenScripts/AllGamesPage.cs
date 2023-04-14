@@ -15,6 +15,8 @@ public class AllGamesPage : MonoBehaviour
     public List<GameObject> gameElementGameObject = new List<GameObject>();
     private GameAPI gameAPI;
     public static bool didLanguageChange = true;
+    private string appStoreURL = "itms-apps://apps.apple.com/tr/app/";
+    private string playStoreURL = "market://details?id=com.assistivecards.";
 
     private void Awake()
     {
@@ -47,16 +49,16 @@ public class AllGamesPage : MonoBehaviour
             {
                 gameElement = Instantiate(tempGameElement, transform);
 
-                gameElement.transform.GetChild(0).GetComponent<TMP_Text>().text = jsonGamess["games"][i]["name"].ToString().Replace("\"", "");
+                gameElement.transform.GetChild(0).GetComponent<TMP_Text>().text = jsonGamess["games"][i]["name"][currentLanguageCode].ToString().Replace("\"", "");
                 // gameElement.transform.GetChild(1).GetComponent<TMP_Text>().text = jsonGamess["games"][i]["tagline"][currentLanguageCode].ToString().Replace("\"", "");
                 // gameElement.transform.GetChild(2).GetComponent<TMP_Text>().text = jsonGamess["games"][i]["description"][currentLanguageCode].ToString().Replace("\"", "");
                 gameElement.transform.GetChild(2).GetComponent<TMP_Text>().text = jsonGamess["games"][i]["tagline"][currentLanguageCode].ToString().Replace("\"", "");
 
-                // var appIcon = gameAPI.cachedAppIcons[i];
-                // appIcon.wrapMode = TextureWrapMode.Clamp;
-                // appIcon.filterMode = FilterMode.Bilinear;
+                var gameIcon = gameAPI.cachedGameIcons[i];
+                gameIcon.wrapMode = TextureWrapMode.Clamp;
+                gameIcon.filterMode = FilterMode.Bilinear;
 
-                // gameElement.transform.GetChild(3).GetChild(0).GetComponent<Image>().sprite = Sprite.Create(appIcon, new Rect(0.0f, 0.0f, gameAPI.cachedAppIcons[i].width, gameAPI.cachedAppIcons[i].height), new Vector2(0.5f, 0.5f), 100.0f);
+                gameElement.transform.GetChild(3).GetChild(0).GetComponent<Image>().sprite = Sprite.Create(gameIcon, new Rect(0.0f, 0.0f, gameAPI.cachedGameIcons[i].width, gameAPI.cachedGameIcons[i].height), new Vector2(0.5f, 0.5f), 100.0f);
 
                 gameElement.name = games.games[i].slug;
 
@@ -66,6 +68,35 @@ public class AllGamesPage : MonoBehaviour
             didLanguageChange = false;
         }
 
+    }
+
+    public void GameSelected(GameObject _GameElement)
+    {
+        string gameSlug;
+
+        selectedGameElement = _GameElement;
+
+        if (_GameElement.transform.GetChild(0).GetComponent<TMP_Text>().text.ToLower().Contains(' '))
+        {
+            gameSlug = _GameElement.transform.GetChild(0).GetComponent<TMP_Text>().text.ToLower().Substring(0, _GameElement.transform.GetChild(0).GetComponent<TMP_Text>().text.ToLower().IndexOf(' '));
+        }
+        else
+        {
+            gameSlug = _GameElement.transform.GetChild(0).GetComponent<TMP_Text>().text.ToLower();
+        }
+
+        foreach (var game in games.games)
+        {
+            if (game.slug == gameSlug)
+            {
+#if UNITY_IOS
+                Application.OpenURL(appStoreURL + app.storeId.appStore);
+#endif
+#if UNITY_ANDROID
+                Application.OpenURL(playStoreURL + gameSlug);
+#endif
+            }
+        }
     }
 
 }

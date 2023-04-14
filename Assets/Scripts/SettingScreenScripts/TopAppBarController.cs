@@ -195,6 +195,7 @@ public class TopAppBarController : MonoBehaviour
                 Camera.main.GetComponent<NotificationsManager>().OnLanguageChange();
                 PackSelectionPanel.didLanguageChange = true;
                 AllAppsPage.didLanguageChange = true;
+                AllGamesPage.didLanguageChange = true;
                 TTSPanel.didLanguageChange = true;
                 PromoScreen.didLanguageChange = true;
                 Board.didLanguageChange = true;

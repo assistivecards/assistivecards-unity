@@ -15,6 +15,7 @@ public class GameAPI : MonoBehaviour
     public AssistiveCardsSDK.AssistiveCardsSDK.Apps cachedApps = new AssistiveCardsSDK.AssistiveCardsSDK.Apps();
     public AssistiveCardsSDK.AssistiveCardsSDK.Games cachedGames = new AssistiveCardsSDK.AssistiveCardsSDK.Games();
     public List<Texture2D> cachedAppIcons = new List<Texture2D>();
+    public List<Texture2D> cachedGameIcons = new List<Texture2D>();
     public List<Texture2D> freePackImages = new List<Texture2D>();
     public List<Texture2D> premiumPackImages = new List<Texture2D>();
     public static Task cacheData;
@@ -64,6 +65,10 @@ public class GameAPI : MonoBehaviour
         for (int i = 0; i < cachedApps.apps.Count; i++)
         {
             cachedAppIcons.Add(await GetAppIcon(cachedApps.apps[i].slug));
+        }
+        for (int i = 0; i < cachedGames.games.Count; i++)
+        {
+            cachedGameIcons.Add(await GetGameIcon(cachedGames.games[i].slug));
         }
         cachedActivities = await GetActivities(selectedLangCode);
     }

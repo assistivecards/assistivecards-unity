@@ -1225,6 +1225,7 @@ MonoBehaviour:
   settingScreen: {fileID: 1242831489818517041}
   settingScreenFadePanel: {fileID: 1242831489759745152}
   fadeOutPanel: {fileID: 0}
+  versionText: {fileID: 798818619719120453}
   mainSettingsScreen: {fileID: 1242831489410636797}
   parentLockScreen: {fileID: 1242831490843936576}
   profileScreen: {fileID: 1242831488916699448}
@@ -1234,6 +1235,7 @@ MonoBehaviour:
   accessibilityScreen: {fileID: 1242831489179679985}
   subscriptionsScreen: {fileID: 1242831489557328479}
   allAppsScreen: {fileID: 1242831490486845541}
+  allGamesScreen: {fileID: 0}
   promoScreen: {fileID: 9084976097150636252}
   sendFeedbacksScreen: {fileID: 1242831489772679879}
   aboutApplicationScreen: {fileID: 1242831490364139775}
@@ -1243,7 +1245,9 @@ MonoBehaviour:
   loginPrefab: {fileID: 1242831489020382269}
   settingPrefab: {fileID: 1242831489818517041}
   topAppBar: {fileID: 1982601096855616903}
+  noInternetScreen: {fileID: 0}
   currentScreen: {fileID: 0}
+  versionCode: 0
 --- !u!114 &1242831489334970562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4528,6 +4532,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5291693120752409138, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
   m_PrefabInstance: {fileID: 5572762091375321270}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &798818619719120453 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5063054052106114803, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+  m_PrefabInstance: {fileID: 5572762091375321270}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1205307889519550455 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6767908288995114817, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}

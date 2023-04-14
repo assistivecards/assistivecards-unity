@@ -31,6 +31,7 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private GameObject settingScreen;
     [SerializeField] private Image settingScreenFadePanel;
     [SerializeField] GameObject fadeOutPanel;
+    [SerializeField] private TMP_Text versionText;
 
     [Header("Screens")]
     [SerializeField] private GameObject mainSettingsScreen;
@@ -67,6 +68,7 @@ public class CanvasController : MonoBehaviour
     private GameObject deviceLanguage;
     public GameObject currentScreen;
     private TopAppBarController topAppBarController;
+    public string version;
 
 
     private void Awake()
@@ -92,6 +94,7 @@ public class CanvasController : MonoBehaviour
     {
         AssistiveCardsSDK.AssistiveCardsSDK.Status status = new AssistiveCardsSDK.AssistiveCardsSDK.Status();
         status = await gameAPI.CheckConnectionStatus();
+        version = status.version;
         if(status == null || status.status == false)
         {
             noInternetScreen.SetActive(true);
@@ -101,6 +104,8 @@ public class CanvasController : MonoBehaviour
             noInternetScreen.SetActive(false);
             Debug.Log("CONNECTION STATUS: " + status.versionCode);
         }
+
+        versionText.text = "Version: " + version;
     }
 
     private void OnEnable()

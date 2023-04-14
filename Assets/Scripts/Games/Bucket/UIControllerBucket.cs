@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UIControllerBucket : MonoBehaviour
 {
+    [Header ("UI Elements")]
     [SerializeField] private GameObject levelChangeScreen;
     [SerializeField] private GameObject transitionScreen;
     [SerializeField] private GameObject packSelectionScreen;
@@ -12,6 +13,7 @@ public class UIControllerBucket : MonoBehaviour
     [SerializeField] private GameObject settingButton;
     [SerializeField] private GameObject selectNewPackButton;
     [SerializeField] private GameObject continueButton;
+    [SerializeField] private GameObject collectCount;
 
     public void InGame()
     {
@@ -19,6 +21,7 @@ public class UIControllerBucket : MonoBehaviour
         helloText.SetActive(false);
         settingButton.SetActive(true);
         levelChangeScreen.SetActive(false);
+        collectCount.SetActive(true);
     }
 
     public void PackSelectionActive()
@@ -29,6 +32,7 @@ public class UIControllerBucket : MonoBehaviour
         backButton.SetActive(false);
         packSelectionScreen.SetActive(true);
         levelChangeScreen.SetActive(false);
+        collectCount.SetActive(false);
     }
 
     public void LevelChangeActive()
@@ -38,6 +42,7 @@ public class UIControllerBucket : MonoBehaviour
         helloText.SetActive(false);
         levelChangeScreen.SetActive(true);
         LeanTween.scale(levelChangeScreen, Vector3.one * 0.6f, 0.5f);
+        collectCount.SetActive(false);
     }
 
     public void TransitionScreen()
@@ -45,6 +50,7 @@ public class UIControllerBucket : MonoBehaviour
         backButton.SetActive(false);
         helloText.SetActive(false);
         transitionScreen.SetActive(true);
+        collectCount.SetActive(false);
     }
 
     public void CloseTransitionScreen()

@@ -35,6 +35,7 @@ public class DropControllerBucket : MonoBehaviour
     
     [Header ("Random")]
     private List<int> randomValues = new List<int>();
+    private int preRandom;
     private int random;
 
 
@@ -76,7 +77,16 @@ public class DropControllerBucket : MonoBehaviour
     private void CreateIntValues()
     {
         random = Random.Range(0, cardNames.Count - 6);
-        collectableCard = cardNames[random + 2];
+
+        if(preRandom == random)
+        {
+            random =  random - 1;
+            collectableCard = cardNames[random + 2];
+        }
+        else if(preRandom != random)
+        {
+            collectableCard = cardNames[random + 2];
+        }
     }
 
     private async void GeneratedDropableAsync(string _packSlug)
@@ -147,6 +157,7 @@ public class DropControllerBucket : MonoBehaviour
 
     public void ResetLevel()
     {
+        preRandom = random;
         CloseCollectText();
         cards.Clear();
         bucket.SetActive(false);
@@ -179,6 +190,7 @@ public class DropControllerBucket : MonoBehaviour
 
     public void ResetLevelBackButtonClick()
     {
+        preRandom = random;
         CloseCollectText();
         cards.Clear();
         bucket.SetActive(false);

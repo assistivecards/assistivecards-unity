@@ -54,6 +54,11 @@ public class AllGamesPage : MonoBehaviour
                 // gameElement.transform.GetChild(2).GetComponent<TMP_Text>().text = jsonGamess["games"][i]["description"][currentLanguageCode].ToString().Replace("\"", "");
                 gameElement.transform.GetChild(2).GetComponent<TMP_Text>().text = jsonGamess["games"][i]["tagline"][currentLanguageCode].ToString().Replace("\"", "");
 
+                if (!games.games[i].released)
+                {
+                    gameElement.transform.GetChild(4).GetComponent<Image>().color = new Color32(255, 255, 255, 75);
+                }
+
                 var gameIcon = gameAPI.cachedGameIcons[i];
                 gameIcon.wrapMode = TextureWrapMode.Clamp;
                 gameIcon.filterMode = FilterMode.Bilinear;
@@ -72,28 +77,17 @@ public class AllGamesPage : MonoBehaviour
 
     public void GameSelected(GameObject _GameElement)
     {
-        string gameSlug;
-
         selectedGameElement = _GameElement;
-
-        if (_GameElement.transform.GetChild(0).GetComponent<TMP_Text>().text.ToLower().Contains(' '))
-        {
-            gameSlug = _GameElement.transform.GetChild(0).GetComponent<TMP_Text>().text.ToLower().Substring(0, _GameElement.transform.GetChild(0).GetComponent<TMP_Text>().text.ToLower().IndexOf(' '));
-        }
-        else
-        {
-            gameSlug = _GameElement.transform.GetChild(0).GetComponent<TMP_Text>().text.ToLower();
-        }
 
         foreach (var game in games.games)
         {
-            if (game.slug == gameSlug)
+            if (game.slug == selectedGameElement.name && game.released)
             {
 #if UNITY_IOS
-                Application.OpenURL(appStoreURL + app.storeId.appStore);
+                        Application.OpenURL(appStoreURL + app.storeId.appStore);
 #endif
 #if UNITY_ANDROID
-                Application.OpenURL(playStoreURL + gameSlug);
+                Application.OpenURL(playStoreURL + game.slug);
 #endif
             }
         }

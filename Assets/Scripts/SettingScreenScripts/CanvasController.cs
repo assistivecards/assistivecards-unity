@@ -54,6 +54,7 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private GameObject loginPrefab;
     [SerializeField] private GameObject settingPrefab;
     [SerializeField] private GameObject topAppBar;
+    [SerializeField] private GameObject noInternetScreen;
 
     [Header("Classes")]
     private NotificationPreferences notificationPreferences;
@@ -67,9 +68,11 @@ public class CanvasController : MonoBehaviour
     public GameObject currentScreen;
     private TopAppBarController topAppBarController;
 
+
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+        CheckConnection();
         nickname = gameAPI.GetNickname();
         topAppBarController = topAppBar.GetComponent<TopAppBarController>();
 
@@ -83,7 +86,21 @@ public class CanvasController : MonoBehaviour
         {
             gamePrefab.SetActive(false);
         }
+    }
 
+    public async void CheckConnection()
+    {
+        AssistiveCardsSDK.AssistiveCardsSDK.Status status = new AssistiveCardsSDK.AssistiveCardsSDK.Status();
+        status = await gameAPI.CheckConnectionStatus();
+        if(status == null || status.status == false)
+        {
+            noInternetScreen.SetActive(true);
+        }
+        else
+        {
+            noInternetScreen.SetActive(false);
+            Debug.Log("CONNECTION STATUS: " + status.versionCode);
+        }
     }
 
     private void OnEnable()

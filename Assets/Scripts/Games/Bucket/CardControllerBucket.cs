@@ -6,10 +6,7 @@ using UnityEngine.UI;
 public class CardControllerBucket : MonoBehaviour
 {    
     GameAPI gameAPI;
-
     public string cardLocalName;
-    public bool move = false;
-    private bool oneTime = true;
     private bool dropped = false;
 
 
@@ -56,8 +53,10 @@ public class CardControllerBucket : MonoBehaviour
                     gameAPI.PlaySFX("Success");
                     GetComponentInParent<DropControllerBucket>().matchCount ++;
                     GetComponentInParent<DropControllerBucket>().SetCount();
+                    
                     if(GetComponentInParent<DropControllerBucket>().matchCount >= 5)
                     {
+                        GetComponentInParent<DropControllerBucket>().CloseCollectText();
                         GetComponentInParent<DropControllerBucket>().isLevelEnd = true;
                         GetComponentInParent<DropControllerBucket>().ResetLevel();
                     }

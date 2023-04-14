@@ -9,45 +9,52 @@ using System.Linq;
 public class DropControllerBucket : MonoBehaviour
 {   
     GameAPI gameAPI;
+
+    [Header ("Cache Cards")]
     public string selectedLangCode;
+    public List<string> cardLocalNames = new List<string>();
+    public List<GameObject> cards = new List<GameObject>();
     private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     private List<string> cardNames = new List<string>();
     AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
-    public List<string> cardLocalNames = new List<string>();
     private string packSlug;
 
+
+    [Header ("Game Objects & UI")]
+    public GameObject moveCard;
     [SerializeField] private GameObject parentalObject;
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject bucket;
     [SerializeField] private GameObject end;
     [SerializeField] private TMP_Text collectText;
     [SerializeField] private TMP_Text collectedCountText;
-
-
     [SerializeField] private PackSelectionPanel packSelectionPanel;
     [SerializeField] private UIControllerBucket uıControllerBucket;
-    public List<GameObject> cards = new List<GameObject>();
 
+    
+    [Header ("Random")]
     private List<int> randomValues = new List<int>();
-    private List<int> usedRandomValues = new List<int>();
+    private int preRandom;
+    private int random;
+
+
+    [Header ("Reset")]
     private List<GameObject> collectedDrops = new List<GameObject>();
     private List<GameObject> cardsInGrid = new List<GameObject>();
     private List<GameObject> endCards = new List<GameObject>();
-    private int random;
 
-    public GameObject moveCard;
+
+    [Header ("Check ")]
     public bool isBoardCreated;
     public int matchCount;
     public bool isLevelEnd;
-
     public string collectableCard;
     public int droppedCardCount;
 
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
-        SetCount();
     }
 
     public async Task CacheCards(string _packSlug)
@@ -70,7 +77,16 @@ public class DropControllerBucket : MonoBehaviour
     private void CreateIntValues()
     {
         random = Random.Range(0, cardNames.Count - 6);
-        collectableCard = cardNames[random + 2];
+
+        if(preRandom == random)
+        {
+            random =  random - 1;
+            collectableCard = cardNames[random + 2];
+        }
+        else if(preRandom != random)
+        {
+            collectableCard = cardNames[random + 2];
+        }
     }
 
     private async void GeneratedDropableAsync(string _packSlug)
@@ -97,10 +113,12 @@ public class DropControllerBucket : MonoBehaviour
         }
         uıControllerBucket.CloseTransitionScreen();
         uıControllerBucket.InGame();
+        bucket.transform.localPosition = new Vector3(-13, -230, 0);
         bucket.SetActive(true);
         Invoke("SelectMoveCard", 1.25f);
         collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(collectableCard).Replace("-", " "), selectedLangCode);
         LeanTween.scale(collectText.gameObject, Vector3.one, 0.2f);
+        SetCount();
         LeanTween.scale(collectedCountText.gameObject, Vector3.one, 0.2f);
     }
 
@@ -109,7 +127,10 @@ public class DropControllerBucket : MonoBehaviour
         if(droppedCardCount < 30)
         {
             var random = Random.Range(0, cards.Count);
-            moveCard = cards[random];
+
+            if(cards.Count > 0)
+                moveCard = cards[random];
+
             isBoardCreated = true;
             droppedCardCount ++;
         }
@@ -117,6 +138,10 @@ public class DropControllerBucket : MonoBehaviour
         {
             isBoardCreated = true;
             droppedCardCount ++;
+            LeanTween.scale(collectText.gameObject, Vector3.zero, 0.15f).setOnComplete(ResetText);
+            LeanTween.scale(collectedCountText.gameObject, Vector3.zero, 0.15f).setOnComplete(ResetText);
+            Invoke("ResetLevel", 0.25f);
+            gameAPI.PlaySFX("Finished");
         }
         else if(droppedCardCount > 30)
         {
@@ -132,15 +157,14 @@ public class DropControllerBucket : MonoBehaviour
 
     public void ResetLevel()
     {
-        LeanTween.scale(collectText.gameObject, Vector3.zero, 0.15f).setOnComplete(ResetText);
-        LeanTween.scale(collectedCountText.gameObject, Vector3.zero, 0.15f).setOnComplete(ResetText);
+        preRandom = random;
+        CloseCollectText();
         cards.Clear();
         bucket.SetActive(false);
         uıControllerBucket.LevelChangeActive();
         isBoardCreated = false;
         cardsList.Clear();
         matchCount = 0;
-        SetCount();
         droppedCardCount = 0;
         cardNames.Clear();
         randomValues.Clear();
@@ -166,15 +190,14 @@ public class DropControllerBucket : MonoBehaviour
 
     public void ResetLevelBackButtonClick()
     {
-        LeanTween.scale(collectText.gameObject, Vector3.zero, 0.15f).setOnComplete(ResetText);
-        LeanTween.scale(collectedCountText.gameObject, Vector3.zero, 0.15f).setOnComplete(ResetText);
+        preRandom = random;
+        CloseCollectText();
         cards.Clear();
         bucket.SetActive(false);
         uıControllerBucket.PackSelectionActive();
         isBoardCreated = false;
         cardsList.Clear();
         matchCount = 0;
-        SetCount();
         droppedCardCount = 0;
         cardNames.Clear();
         randomValues.Clear();
@@ -197,6 +220,12 @@ public class DropControllerBucket : MonoBehaviour
         }
     }
 
+    public void CloseCollectText()
+    {
+        LeanTween.scale(collectedCountText.gameObject, Vector3.zero, 0);
+        LeanTween.scale(collectText.gameObject, Vector3.zero, 0).setOnComplete(ResetText);
+    }
+
     private void ResetText()
     {
         collectText.text = "";
@@ -204,7 +233,7 @@ public class DropControllerBucket : MonoBehaviour
 
     private void GetBucketChildList()
     {
-        for(int i = 0; i < bucket.transform.childCount; i++)
+        for(int i = 2; i < bucket.transform.childCount; i++)
         {
             collectedDrops.Add(bucket.transform.GetChild(i).gameObject);
         }
@@ -229,5 +258,14 @@ public class DropControllerBucket : MonoBehaviour
     public void SetCount()
     {
         collectedCountText.text = matchCount.ToString();
+        if(collectedCountText.transform.localScale.x > 0.5f)
+        {
+            LeanTween.scale(collectedCountText.gameObject, Vector3.one * 1.75f ,0.5f).setOnComplete(ScaleDownCollectText);
+        }
+    }
+
+    private void ScaleDownCollectText()
+    {
+        LeanTween.scale(collectedCountText.gameObject, Vector3.one ,0.5f);
     }
 }

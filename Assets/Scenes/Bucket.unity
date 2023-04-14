@@ -1710,7 +1710,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -109.42927, y: 4.5827084}
+  m_Offset: {x: -119.13497, y: 0.14579773}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1721,7 +1721,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 22.435501, y: 79.4646}
+  m_Size: {x: 47.39308, y: 98.32146}
   m_EdgeRadius: 0
 --- !u!114 &1407491092 stripped
 MonoBehaviour:
@@ -1760,9 +1760,10 @@ GameObject:
   - component: {fileID: 1523588992}
   - component: {fileID: 1523588994}
   - component: {fileID: 1523588993}
+  - component: {fileID: 1523588995}
   m_Layer: 5
   m_Name: collect_5_cards
-  m_TagString: Text With Variable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1816,7 +1817,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4284171582
   m_fontColor: {r: 0.24313726, g: 0.27058825, b: 0.35686275, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1829,7 +1830,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -1884,6 +1885,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523588991}
   m_CullTransparentMesh: 1
+--- !u!95 &1523588995
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523588991}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1551830231
 GameObject:
   m_ObjectHideFlags: 0
@@ -1991,7 +2012,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13, y: -229.3}
+  m_AnchoredPosition: {x: -13, y: -230}
   m_SizeDelta: {x: 235.4805, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1623121720
@@ -2057,7 +2078,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -5.354725, y: -37.589977}
+  m_Offset: {x: 6.2921906, y: -37.589977}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2068,7 +2089,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 201.07349, y: 24.820045}
+  m_Size: {x: 174.45209, y: 24.820045}
   m_EdgeRadius: 0
 --- !u!50 &1623121724
 Rigidbody2D:
@@ -2294,6 +2315,7 @@ GameObject:
   - component: {fileID: 1747071427}
   - component: {fileID: 1747071429}
   - component: {fileID: 1747071428}
+  - component: {fileID: 1747071430}
   m_Layer: 5
   m_Name: CollectCount
   m_TagString: Untagged
@@ -2350,7 +2372,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4284171582
   m_fontColor: {r: 0.24313726, g: 0.27058825, b: 0.35686275, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -2363,7 +2385,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -2418,6 +2440,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747071426}
   m_CullTransparentMesh: 1
+--- !u!95 &1747071430
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747071426}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7d658cf9ef46f4ad987a9587b0d0336f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1837497523
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2540,7 +2582,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994790024697, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 293090.22
+      value: 348967.44
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522234, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2768,7 +2810,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -109.42927, y: 4.5827084}
+  m_Offset: {x: -83.085075, y: 0.97772026}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2779,7 +2821,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 22.435501, y: 79.4646}
+  m_Size: {x: 66.249954, y: 96.65761}
   m_EdgeRadius: 0
 --- !u!1001 &300905862136274000
 PrefabInstance:
@@ -5519,8 +5561,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedLangCode: 
-  cardsList: []
   cardLocalNames: []
+  cards: []
+  cardsList: []
+  moveCard: {fileID: 0}
   parentalObject: {fileID: 1686291071}
   cardPrefab: {fileID: 1572616208917296617, guid: c9aa7a3a001de41d89b8dabb2affecd1, type: 3}
   bucket: {fileID: 1623121718}
@@ -5529,8 +5573,6 @@ MonoBehaviour:
   collectedCountText: {fileID: 1747071428}
   packSelectionPanel: {fileID: 97274552}
   "u\u0131ControllerBucket": {fileID: 8383894889009589327}
-  cards: []
-  moveCard: {fileID: 0}
   isBoardCreated: 0
   matchCount: 0
   isLevelEnd: 0
@@ -5556,6 +5598,7 @@ MonoBehaviour:
   settingButton: {fileID: 472857506}
   selectNewPackButton: {fileID: 1718755055}
   continueButton: {fileID: 1877445804}
+  collectCount: {fileID: 1747071426}
 --- !u!114 &8383894889009589328
 MonoBehaviour:
   m_ObjectHideFlags: 0

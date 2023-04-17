@@ -39,4 +39,16 @@ public class SoundManagerUI : MonoBehaviour
             musicSource.Play();
         }
     }
+
+    private void Update() 
+    {
+        if(Input.GetKeyDown(KeyCode.M) == true &&  musicSource.volume > 0f)
+        {
+            musicSource.volume = 0;
+        }
+        else if(Input.GetKeyDown(KeyCode.M) == true && musicSource.volume <= 0)
+        {
+            musicSource.volume = 0.6f;
+        }
+    }
 }

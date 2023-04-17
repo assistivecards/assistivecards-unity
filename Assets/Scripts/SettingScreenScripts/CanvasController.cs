@@ -94,14 +94,15 @@ public class CanvasController : MonoBehaviour
     {
         AssistiveCardsSDK.AssistiveCardsSDK.Status status = new AssistiveCardsSDK.AssistiveCardsSDK.Status();
         status = await gameAPI.CheckConnectionStatus();
-        version = status.version;
         if(status == null || status.status == false)
         {
             noInternetScreen.SetActive(true);
+            Debug.Log("NO INTERNET");
         }
         else
         {
             noInternetScreen.SetActive(false);
+            version = status.version;
             Debug.Log("CONNECTION STATUS: " + status.versionCode);
         }
 

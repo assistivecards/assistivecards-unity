@@ -29,7 +29,7 @@ public class AllGamesPage : MonoBehaviour
         {
             var currentLanguageCode = await gameAPI.GetSystemLanguageCode();
 
-            tempGameElement.SetActive(true);
+            // tempGameElement.SetActive(true);
 
             if (gameElementGameObject.Count != 0)
             {
@@ -59,17 +59,20 @@ public class AllGamesPage : MonoBehaviour
                     gameElement.transform.GetChild(4).GetComponent<Image>().color = new Color32(255, 255, 255, 75);
                 }
 
-                var gameIcon = gameAPI.cachedGameIcons[i];
+                var gameIcon = await gameAPI.GetGameIcon(games.games[i].slug);
                 gameIcon.wrapMode = TextureWrapMode.Clamp;
                 gameIcon.filterMode = FilterMode.Bilinear;
 
-                gameElement.transform.GetChild(3).GetChild(0).GetComponent<Image>().sprite = Sprite.Create(gameIcon, new Rect(0.0f, 0.0f, gameAPI.cachedGameIcons[i].width, gameAPI.cachedGameIcons[i].height), new Vector2(0.5f, 0.5f), 100.0f);
+                gameElement.transform.GetChild(3).GetChild(0).GetComponent<Image>().sprite = Sprite.Create(gameIcon, new Rect(0.0f, 0.0f, gameIcon.width, gameIcon.height), new Vector2(0.5f, 0.5f), 100.0f);
+
+                gameElement.SetActive(true);
+
 
                 gameElement.name = games.games[i].slug;
 
                 gameElementGameObject.Add(gameElement);
             }
-            tempGameElement.SetActive(false);
+            // tempGameElement.SetActive(false);
             didLanguageChange = false;
         }
 
@@ -84,7 +87,7 @@ public class AllGamesPage : MonoBehaviour
             if (game.slug == selectedGameElement.name && game.released)
             {
 #if UNITY_IOS
-                        Application.OpenURL(appStoreURL + app.storeId.appStore);
+                        Application.OpenURL(appStoreURL + game.storeId.appStore);
 #endif
 #if UNITY_ANDROID
                 Application.OpenURL(playStoreURL + game.slug);

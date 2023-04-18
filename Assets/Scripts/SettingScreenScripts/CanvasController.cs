@@ -69,6 +69,7 @@ public class CanvasController : MonoBehaviour
     public GameObject currentScreen;
     private TopAppBarController topAppBarController;
     public string version;
+    private bool loadScene = false;
 
 
     private void Awake()
@@ -98,11 +99,22 @@ public class CanvasController : MonoBehaviour
         {
             noInternetScreen.SetActive(true);
             Debug.Log("NO INTERNET");
+            if(loadScene)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                Debug.Log("RELOAD SCENE");
+            }
+            loadScene = true;
         }
         else
         {
+            if(loadScene)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
             noInternetScreen.SetActive(false);
             version = status.version;
+            loadScene = false;
             Debug.Log("CONNECTION STATUS: " + status.versionCode);
         }
 

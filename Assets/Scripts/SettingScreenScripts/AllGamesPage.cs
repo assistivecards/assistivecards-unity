@@ -17,6 +17,7 @@ public class AllGamesPage : MonoBehaviour
     public static bool didLanguageChange = true;
     private string appStoreURL = "itms-apps://apps.apple.com/tr/app/";
     private string playStoreURL = "market://details?id=com.assistivecards.";
+    private Texture2D gameIcon;
 
     private void Awake()
     {
@@ -27,6 +28,7 @@ public class AllGamesPage : MonoBehaviour
     {
         if (didLanguageChange)
         {
+            Debug.Log("didLanguageChange: " + didLanguageChange);
             var currentLanguageCode = await gameAPI.GetSystemLanguageCode();
 
             // tempGameElement.SetActive(true);
@@ -59,7 +61,16 @@ public class AllGamesPage : MonoBehaviour
                     gameElement.transform.GetChild(4).GetComponent<Image>().color = new Color32(255, 255, 255, 75);
                 }
 
-                var gameIcon = await gameAPI.GetGameIcon(games.games[i].slug);
+                if (gameAPI.cachedGames.games.Count != gameAPI.cachedGameIcons.Count)
+                {
+                    gameIcon = await gameAPI.GetGameIcon(games.games[i].slug);
+                }
+                else if (gameAPI.cachedGames.games.Count == gameAPI.cachedGameIcons.Count)
+                {
+                    gameIcon = gameAPI.cachedGameIcons[i];
+                }
+
+                // var gameIcon = await gameAPI.GetGameIcon(games.games[i].slug);
                 gameIcon.wrapMode = TextureWrapMode.Clamp;
                 gameIcon.filterMode = FilterMode.Bilinear;
 
@@ -71,9 +82,10 @@ public class AllGamesPage : MonoBehaviour
                 gameElement.name = games.games[i].slug;
 
                 gameElementGameObject.Add(gameElement);
+                didLanguageChange = false;
             }
             // tempGameElement.SetActive(false);
-            didLanguageChange = false;
+            // didLanguageChange = false;
         }
 
     }

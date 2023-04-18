@@ -49,7 +49,7 @@ public class AllGamesPage : MonoBehaviour
             {
                 gameElement = Instantiate(tempGameElement, transform);
 
-                gameElement.transform.GetChild(0).GetComponent<TMP_Text>().text = jsonGamess["games"][i]["name"][currentLanguageCode].ToString().Replace("\"", "");
+                gameElement.transform.GetChild(0).GetComponent<TMP_Text>().text = gameAPI.ToTitleCase(jsonGamess["games"][i]["name"][currentLanguageCode].ToString().Replace("\"", ""));
                 gameElement.transform.GetChild(1).GetComponent<TMP_Text>().text = jsonGamess["games"][i]["tagline"][currentLanguageCode].ToString().Replace("\"", "");
                 // gameElement.transform.GetChild(2).GetComponent<TMP_Text>().text = jsonGamess["games"][i]["description"][currentLanguageCode].ToString().Replace("\"", "");
                 // gameElement.transform.GetChild(2).GetComponent<TMP_Text>().text = jsonGamess["games"][i]["tagline"][currentLanguageCode].ToString().Replace("\"", "");

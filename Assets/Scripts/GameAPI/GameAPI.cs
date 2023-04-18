@@ -5,6 +5,7 @@ using System;
 using System.Threading.Tasks;
 using System.IO;
 using Defective.JSON;
+using System.Globalization;
 
 public class GameAPI : MonoBehaviour
 {
@@ -1169,6 +1170,12 @@ public class GameAPI : MonoBehaviour
     {
         string firstChar = text[0].ToString();
         return (text.Length > 0 ? firstChar.ToUpper() + text.Substring(1) : text);
+    }
+
+    public string ToTitleCase(string text)
+    {
+        var textinfo = new CultureInfo("en-US", false).TextInfo;
+        return textinfo.ToTitleCase(text);
     }
 
 }

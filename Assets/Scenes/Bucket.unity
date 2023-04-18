@@ -1716,7 +1716,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -119.13497, y: 0.14579773}
+  m_Offset: {x: -110.05896, y: -19.510107}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1727,7 +1727,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 47.39308, y: 98.32146}
+  m_Size: {x: 65.545105, y: 137.63304}
   m_EdgeRadius: 0
 --- !u!114 &1407491092 stripped
 MonoBehaviour:
@@ -2463,7 +2463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.8358, y: 300}
+  m_AnchoredPosition: {x: -1.8358, y: 150}
   m_SizeDelta: {x: 566.8077, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1747071428
@@ -2705,7 +2705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994790024697, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 348967.44
+      value: 367185.03
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522234, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2933,7 +2933,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -83.085075, y: 0.97772026}
+  m_Offset: {x: -83.085075, y: -19.460453}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2944,7 +2944,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 66.249954, y: 96.65761}
+  m_Size: {x: 66.249954, y: 137.5339}
   m_EdgeRadius: 0
 --- !u!1001 &300905862136274000
 PrefabInstance:
@@ -5071,10 +5071,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1623121719}
   - {fileID: 1686291072}
   - {fileID: 1523588992}
   - {fileID: 1747071427}
-  - {fileID: 1623121719}
   - {fileID: 526222503}
   - {fileID: 1837497524}
   - {fileID: 472857504}

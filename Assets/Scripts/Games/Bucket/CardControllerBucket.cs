@@ -64,6 +64,7 @@ public class CardControllerBucket : MonoBehaviour
                 else if(this.gameObject.name != GetComponentInParent<DropControllerBucket>().collectableCard)
                 {
                     gameAPI.PlaySFX("NotMatched");
+                    Invoke("FadeOutCard", 2f);
                 }
                 GetComponentInParent<DropControllerBucket>().cards.Remove(this.gameObject);
                 GetComponentInParent<DropControllerBucket>().SelectMoveCard();

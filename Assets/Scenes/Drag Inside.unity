@@ -1944,7 +1944,7 @@ GameObject:
   - component: {fileID: 1198532690}
   - component: {fileID: 1198532689}
   m_Layer: 5
-  m_Name: DragText
+  m_Name: drag_the_card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1990,7 +1990,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Drag the card inside
+  m_text: Drag the XXX inside
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7fff04f5987a23d4cae30a373aa09dd3, type: 2}
   m_sharedMaterial: {fileID: -3432494171301961357, guid: 7fff04f5987a23d4cae30a373aa09dd3, type: 2}

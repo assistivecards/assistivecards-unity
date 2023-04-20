@@ -14,14 +14,24 @@ public class UIControllerBucket : MonoBehaviour
     [SerializeField] private GameObject selectNewPackButton;
     [SerializeField] private GameObject continueButton;
     [SerializeField] private GameObject collectCount;
+    [SerializeField] private GameObject tutorial;
+
+
+    private bool firstTime = true;
 
     public void InGame()
     {
+        if(firstTime)
+        {
+            tutorial.SetActive(true);
+        }
+
         backButton.SetActive(true);
         helloText.SetActive(false);
         settingButton.SetActive(true);
         levelChangeScreen.SetActive(false);
         collectCount.SetActive(true);
+        firstTime = false;
     }
 
     public void PackSelectionActive()

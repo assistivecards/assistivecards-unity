@@ -7,7 +7,7 @@ public class Tutorial : MonoBehaviour, IDragHandler
 {
     public void OnDrag(PointerEventData eventData) 
     {
-        Invoke("SetActiveFalse", 0.25f);
+        Invoke("SetActiveFalse", 1f);
     }
 
     private void SetActiveFalse()

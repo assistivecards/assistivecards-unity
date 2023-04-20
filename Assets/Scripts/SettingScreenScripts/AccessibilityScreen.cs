@@ -14,6 +14,9 @@ public class AccessibilityScreen : MonoBehaviour
     public Toggle hapticsToggle;
     public Toggle activateOnPressToggle;
     public Toggle voiceGreetingToggle;
+    public Toggle tutorialToggle;
+
+    [SerializeField] private GameObject tutorial;
 
     private void Awake() 
     {
@@ -38,5 +41,15 @@ public class AccessibilityScreen : MonoBehaviour
         isVoiceGreetingActive = gameAPI.GetVoiceGreetingPreference() == 1 ? true : false;
     }
 
-
+    public void TutorialActivate()
+    {
+        if(tutorialToggle.isOn)
+        {
+            tutorial.SetActive(true);
+        }
+        else if(!tutorialToggle.isOn)
+        {
+            tutorial.SetActive(false);
+        }
+    }
 }

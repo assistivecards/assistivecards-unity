@@ -62,6 +62,7 @@ public class DragInsideBoardGenerator : MonoBehaviour
         TranslateDragCardText();
         await PopulateRandomTextures();
         PlaceSprites();
+        AssignTags();
         ScaleImagesUp();
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);
@@ -146,6 +147,35 @@ public class DragInsideBoardGenerator : MonoBehaviour
             randomImages.Add(texture);
             randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
             randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
+        }
+    }
+
+    public void AssignTags()
+    {
+        // var correctCardImageIndex = Random.Range(0, cardImagesInScene.Length);
+        // cardImagesInScene[correctCardImageIndex].sprite = randomSprites[0];
+
+        for (int i = 0; i < cardImagesInScene.Length; i++)
+        {
+            // if (i != correctCardImageIndex)
+            // {
+            //     cardImagesInScene[i].tag = "WrongCard";
+            //     // cardImagesInScene[i].transform.GetChild(0).tag = "WrongCard";
+            // }
+            // else
+            // {
+            //     cardImagesInScene[correctCardImageIndex].tag = "CorrectCard";
+            //     // cardImagesInScene[correctCardImageIndex].transform.GetChild(0).tag = "CorrectCard";
+            // }
+            if (cardImagesInScene[i].sprite.texture != randomImages[0])
+            {
+                cardImagesInScene[i].tag = "WrongCard";
+            }
+
+            else
+            {
+                cardImagesInScene[i].tag = "CorrectCard";
+            }
         }
     }
 

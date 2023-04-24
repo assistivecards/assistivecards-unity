@@ -706,6 +706,22 @@ public class GameAPI : MonoBehaviour
     }
 
     ///<summary>
+    ///Takes in a single parameter of type integer named isTutorialActive and stores it in PlayerPrefs.
+    ///</summary>
+    public void SetTutorialPreference(int isTutorialActive)
+    {
+        PlayerPrefs.SetInt("Tutorial", isTutorialActive);
+    }
+
+    ///<summary>
+    ///Retrieves the tutorial on start preference data stored in PlayerPrefs. Default value is 0.
+    ///</summary>
+    public int GetTutorialPreference()
+    {
+        return PlayerPrefs.GetInt("Tutorial", 1);
+    }
+
+    ///<summary>
     ///Takes in a single parameter of type string named isPremium and stores it in PlayerPrefs.
     ///</summary>
     public void SetPremium(string isPremium)

@@ -1116,7 +1116,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6658854895179340869}
         m_TargetAssemblyTypeName: AccessibilityScreen, Assembly-CSharp
-        m_MethodName: VoiceGreedingEnabled
+        m_MethodName: TutorialActivate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1126,7 +1126,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &1525314737108176478
 GameObject:
   m_ObjectHideFlags: 0
@@ -24450,9 +24450,12 @@ MonoBehaviour:
   isHapticsActive: 0
   isPressInActive: 0
   isVoiceGreetingActive: 0
+  isTutorialActive: 0
   hapticsToggle: {fileID: 6658854896179747315}
   activateOnPressToggle: {fileID: 6658854894315211638}
   voiceGreetingToggle: {fileID: 6658854895778338126}
+  tutorialToggle: {fileID: 9950254312555235}
+  tutorial: {fileID: 0}
 --- !u!1 &6658854895180552081
 GameObject:
   m_ObjectHideFlags: 0

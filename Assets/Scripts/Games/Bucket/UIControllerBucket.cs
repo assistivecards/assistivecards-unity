@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class UIControllerBucket : MonoBehaviour
 {
+    [SerializeField] private AccessibilityScreen accessibilityScreen;
+
     [Header ("UI Elements")]
     [SerializeField] private GameObject levelChangeScreen;
     [SerializeField] private GameObject transitionScreen;
@@ -21,11 +23,10 @@ public class UIControllerBucket : MonoBehaviour
 
     public void InGame()
     {
-        if(firstTime)
+        if(firstTime || accessibilityScreen.tutorialToggle.isOn)
         {
             tutorial.SetActive(true);
         }
-
         backButton.SetActive(true);
         helloText.SetActive(false);
         settingButton.SetActive(true);

@@ -10,6 +10,7 @@ public class AccessibilityScreen : MonoBehaviour
     public bool isHapticsActive;
     public bool isPressInActive;
     public bool isVoiceGreetingActive;
+    public bool isTutorialActive;
 
     public Toggle hapticsToggle;
     public Toggle activateOnPressToggle;

@@ -169,12 +169,12 @@ public class DragInsideBoardGenerator : MonoBehaviour
             // }
             if (cardImagesInScene[i].sprite.texture != randomImages[0])
             {
-                cardImagesInScene[i].tag = "WrongCard";
+                cardImagesInScene[i].transform.parent.tag = "WrongCard";
             }
 
             else
             {
-                cardImagesInScene[i].tag = "CorrectCard";
+                cardImagesInScene[i].transform.parent.tag = "CorrectCard";
             }
         }
     }

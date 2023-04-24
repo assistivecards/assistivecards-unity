@@ -4,9 +4,15 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DragInsideDraggableCard : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
+public class DragInsideDraggableCard : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler, IBeginDragHandler
 {
     private GameObject targetArea;
+    private GameAPI gameAPI;
+
+    void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void Start()
     {
@@ -30,4 +36,8 @@ public class DragInsideDraggableCard : MonoBehaviour, IDragHandler, IPointerUpHa
         targetArea.GetComponent<DragInsideMatchDetection>().CheckCardsInside();
     }
 
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        gameAPI.PlaySFX("Pickup");
+    }
 }

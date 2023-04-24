@@ -1,38 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
-public class DragInsideMatchDetection : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
+public class DragInsideMatchDetection : MonoBehaviour
 {
+    [SerializeField] List<GameObject> cardsInside = new List<GameObject>();
+    [SerializeField] List<GameObject> wrongCardsInside = new List<GameObject>();
+    [SerializeField] List<GameObject> correctCardsInside = new List<GameObject>();
 
-    [SerializeField] BoxCollider2D targetArea;
-
-    public void OnPointerDown(PointerEventData eventData)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        // Debug.Log("OnPointerDown");
+        cardsInside.Add(other.gameObject);
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    private void OnTriggerExit2D(Collider2D other)
     {
+        cardsInside.Remove(other.gameObject);
+    }
 
-        if (GetComponent<Collider2D>() == Physics2D.OverlapBox(targetArea.bounds.center, targetArea.size, 0))
+    public void CheckCardsInside()
+    {
+        wrongCardsInside = cardsInside.Where(card => card.tag == "WrongCard").ToList();
+        correctCardsInside = cardsInside.Where(card => card.tag == "CorrectCard").ToList();
+
+        if (correctCardsInside.Count == 2 && wrongCardsInside.Count == 0)
         {
-            if (gameObject.tag == "CorrectCard")
-            {
-                Debug.Log("CORRECT CARD INSIDE");
-            }
-
-            else if (gameObject.tag == "WrongCard")
-            {
-                Debug.Log("WRONG CARD INSIDE");
-            }
+            Debug.Log("LEVEL COMPLETED");
         }
 
         else
         {
-            Debug.Log("NOT INSIDE");
+            Debug.Log("LEVEL NOT COMPLETED");
         }
+
     }
 }

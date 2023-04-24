@@ -4,8 +4,20 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DragInsideDraggableCard : MonoBehaviour, IDragHandler
+public class DragInsideDraggableCard : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler, IBeginDragHandler
 {
+    private GameObject targetArea;
+    private GameAPI gameAPI;
+
+    void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
+
+    private void Start()
+    {
+        targetArea = GameObject.Find("TargetArea");
+    }
 
     public void OnDrag(PointerEventData eventData)
     {
@@ -14,4 +26,18 @@ public class DragInsideDraggableCard : MonoBehaviour, IDragHandler
         transform.SetAsLastSibling();
     }
 
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        // Debug.Log("OnPointerDown");
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        targetArea.GetComponent<DragInsideMatchDetection>().CheckCardsInside();
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        gameAPI.PlaySFX("Pickup");
+    }
 }

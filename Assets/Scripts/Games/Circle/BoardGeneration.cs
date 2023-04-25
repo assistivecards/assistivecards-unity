@@ -9,6 +9,7 @@ using System.Linq;
 public class BoardGeneration : MonoBehaviour
 {
     GameAPI gameAPI;
+    [SerializeField] private Tutorial tutorial;
     [SerializeField] Image[] cardImagesInScene;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     // [SerializeField] List<Texture2D> cachedCardImages;
@@ -111,6 +112,7 @@ public class BoardGeneration : MonoBehaviour
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);
         Invoke("EnableDrawManager", 0.15f);
+        tutorial.tutorialPosition = cardImagesInScene[correctCardImageIndex].transform;
     }
 
     public void ClearBoard()

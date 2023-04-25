@@ -11,6 +11,7 @@ public class DragInsideBoardGenerator : MonoBehaviour
     private GameAPI gameAPI;
     [SerializeField] Image[] cardImagesInScene;
     [SerializeField] GameObject[] cardParents;
+    [SerializeField] Transform[] cardSlots;
     [SerializeField] GameObject targetArea;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
@@ -23,6 +24,7 @@ public class DragInsideBoardGenerator : MonoBehaviour
     [SerializeField] GameObject backButton;
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
+    Color original;
 
     private void Awake()
     {
@@ -31,6 +33,7 @@ public class DragInsideBoardGenerator : MonoBehaviour
 
     private void Start()
     {
+        ColorUtility.TryParseHtmlString("#3E455B", out original);
         gameAPI.PlayMusic();
     }
 
@@ -74,10 +77,23 @@ public class DragInsideBoardGenerator : MonoBehaviour
         randomCards.Clear();
         randomImages.Clear();
         randomSprites.Clear();
+
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {
             cardImagesInScene[i].sprite = null;
         }
+
+        for (int i = 0; i < cardParents.Length; i++)
+        {
+            cardParents[i].transform.position = cardSlots[i].position;
+            cardParents[i].transform.SetParent(cardSlots[i]);
+        }
+
+        LeanTween.color(targetArea.GetComponent<Image>().rectTransform, original, .2f);
+
+        targetArea.GetComponent<DragInsideMatchDetection>().cardsInside.Clear();
+        targetArea.GetComponent<DragInsideMatchDetection>().correctCardsInside.Clear();
+        targetArea.GetComponent<DragInsideMatchDetection>().wrongCardsInside.Clear();
 
     }
 
@@ -95,12 +111,16 @@ public class DragInsideBoardGenerator : MonoBehaviour
     public void ScaleImagesDown()
     {
         LeanTween.scale(dragText.gameObject, Vector3.zero, 0.25f);
-        LeanTween.scale(targetArea, Vector3.zero, 0.15f);
 
         for (int i = 0; i < cardParents.Length; i++)
         {
             LeanTween.scale(cardParents[i].gameObject, Vector3.zero, 0.25f);
         }
+    }
+
+    public void ScaleFrameDown()
+    {
+        LeanTween.scale(targetArea, Vector3.zero, 0.25f);
     }
 
     public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)

@@ -18,7 +18,7 @@ public class UIControllerCardChain : MonoBehaviour
     [SerializeField] private GameObject continueButton;
     [SerializeField] private GameObject tutorialGameObject;
 
-    private bool firstTime = true;
+    public bool firstTime = true;
 
     public void TutorialActive()
     {
@@ -31,13 +31,13 @@ public class UIControllerCardChain : MonoBehaviour
         firstTime = false;
     }
 
-    private void TutorialLoopPosition()
+    public void TutorialLoopPosition()
     {
         if(tutorialGameObject.activeInHierarchy)
             LeanTween.move(tutorialGameObject, cardPosition.transform.position, 0f).setOnComplete(TutorialLoopPosition1);
     }
 
-    private void TutorialLoopPosition1()
+    public void TutorialLoopPosition1()
     {
         if(tutorialGameObject.activeInHierarchy)
             LeanTween.move(tutorialGameObject, cardPosition1.transform.position, 1.25f).setOnComplete(TutorialLoopPosition);

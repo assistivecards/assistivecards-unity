@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class DragInsideMatchDetection : MonoBehaviour
 {
-    [SerializeField] List<GameObject> cardsInside = new List<GameObject>();
-    [SerializeField] List<GameObject> wrongCardsInside = new List<GameObject>();
-    [SerializeField] List<GameObject> correctCardsInside = new List<GameObject>();
+    public List<GameObject> cardsInside = new List<GameObject>();
+    public List<GameObject> wrongCardsInside = new List<GameObject>();
+    public List<GameObject> correctCardsInside = new List<GameObject>();
     Color green;
     Color red;
     Color original;

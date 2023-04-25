@@ -91,6 +91,10 @@ public class DragInsideBoardGenerator : MonoBehaviour
 
         LeanTween.color(targetArea.GetComponent<Image>().rectTransform, original, .2f);
 
+        targetArea.GetComponent<DragInsideMatchDetection>().cardsInside.Clear();
+        targetArea.GetComponent<DragInsideMatchDetection>().correctCardsInside.Clear();
+        targetArea.GetComponent<DragInsideMatchDetection>().wrongCardsInside.Clear();
+
     }
 
     public void ScaleImagesUp()

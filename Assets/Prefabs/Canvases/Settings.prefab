@@ -5853,6 +5853,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1242831488916699448}
     - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
+      propertyPath: tutorialToggle
+      value: 
+      objectReference: {fileID: 5581424679858070101}
+    - target: {fileID: 9024035574527848318, guid: e6f74a65304f7594784561825a582f5d, type: 3}
       propertyPath: dailyReminderToggle
       value: 
       objectReference: {fileID: 1242831490196582987}
@@ -7397,6 +7401,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 304058624899853232, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
   m_PrefabInstance: {fileID: 5572762091375321270}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5581424679858070101 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9950254312555235, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}
+  m_PrefabInstance: {fileID: 5572762091375321270}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5707237679404738760 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 171774463050025086, guid: 83001b4a794ff504cafe1d4cb8e4de45, type: 3}

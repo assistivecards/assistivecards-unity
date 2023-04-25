@@ -22,10 +22,11 @@ public class TopAppBarController : MonoBehaviour
     [SerializeField] TTSPanel ttsPanel;
     private SoundManagerUI soundManagerUI;
 
-    [Header("UI Elements Accessility")]
+    [Header("UI Elements Accessibility")]
     public Toggle hapticsToggle;
     public Toggle activateOnPressToggle;
     public Toggle voiceGreetingToggle;
+    public Toggle tutorialToggle;
 
     [Header("UI Elements Noficication")]
 
@@ -178,6 +179,7 @@ public class TopAppBarController : MonoBehaviour
                 gameAPI.SetHapticsPreference(hapticsToggle.isOn ? 1 : 0);
                 gameAPI.SetActivateOnPressInPreference(activateOnPressToggle.isOn ? 1 : 0);
                 gameAPI.SetVoiceGreetingPreference(voiceGreetingToggle.isOn ? 1 : 0);
+                gameAPI.SetTutorialPreference(tutorialToggle.isOn ? 1 : 0);
             }
             if (canvasController.currentScreen.name == "Notifications")
             {

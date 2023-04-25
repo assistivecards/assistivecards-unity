@@ -5,18 +5,16 @@ using UnityEngine.EventSystems;
 
 public class Tutorial : MonoBehaviour, IDragHandler
 {
-    [SerializeField] private Transform tutorialPosition;
+    public Transform tutorialPosition;
 
     private void OnEnable() 
     {
-        if(tutorialPosition != null)
+        if(tutorialPosition == null)
         {
-            this.transform.position = tutorialPosition.position;
+            tutorialPosition.position = Vector3.zero;
         }
-        else if(tutorialPosition == null)
-        {
-            this.transform.position = Vector3.zero;
-        }
+
+        LeanTween.move(this.gameObject, tutorialPosition.position, 0);
     }
 
     public void OnDrag(PointerEventData eventData) 

@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class UIControllerCardChain : MonoBehaviour
 {
+    [SerializeField] private Tutorial tutorial;
+    [SerializeField] private AccessibilityScreen accessibilityScreen;
+
+    public GameObject cardPosition;
+    public GameObject cardPosition1;
     [SerializeField] private GameObject levelChangeScreen;
     [SerializeField] private GameObject packSelectionScreen;
     [SerializeField] private GameObject helloText;
@@ -11,6 +16,33 @@ public class UIControllerCardChain : MonoBehaviour
     [SerializeField] private GameObject settingButton;
     [SerializeField] private GameObject selectNewPackButton;
     [SerializeField] private GameObject continueButton;
+    [SerializeField] private GameObject tutorialGameObject;
+
+    private bool firstTime = true;
+
+    public void TutorialActive()
+    {
+        if(firstTime || accessibilityScreen.tutorialToggle.isOn)
+        {
+            tutorial.tutorialPosition = cardPosition.transform;
+            tutorialGameObject.SetActive(true);
+            TutorialLoopPosition1();
+        }
+        firstTime = false;
+    }
+
+    private void TutorialLoopPosition()
+    {
+        if(tutorialGameObject.activeInHierarchy)
+            LeanTween.move(tutorialGameObject, cardPosition.transform.position, 0f).setOnComplete(TutorialLoopPosition1);
+    }
+
+    private void TutorialLoopPosition1()
+    {
+        if(tutorialGameObject.activeInHierarchy)
+            LeanTween.move(tutorialGameObject, cardPosition1.transform.position, 1.25f).setOnComplete(TutorialLoopPosition);
+    }
+
 
     public void InGameBar()
     {

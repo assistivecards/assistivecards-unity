@@ -146,6 +146,9 @@ public class BoardGenerateCardChain : MonoBehaviour
     private void BoardCreatedBool()
     {
         isBoardCreated = true;
+        uıController.cardPosition = cards[0];
+        uıController.cardPosition1 = cards[1];
+        uıController.TutorialActive();
     }
 
     public async void CreateBoard()

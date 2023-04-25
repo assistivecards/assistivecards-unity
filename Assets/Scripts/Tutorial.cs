@@ -5,6 +5,20 @@ using UnityEngine.EventSystems;
 
 public class Tutorial : MonoBehaviour, IDragHandler
 {
+    [SerializeField] private Transform tutorialPosition;
+
+    private void OnEnable() 
+    {
+        if(tutorialPosition != null)
+        {
+            this.transform.position = tutorialPosition.position;
+        }
+        else if(tutorialPosition == null)
+        {
+            this.transform.position = Vector3.zero;
+        }
+    }
+
     public void OnDrag(PointerEventData eventData) 
     {
         Invoke("SetActiveFalse", 0.15f);

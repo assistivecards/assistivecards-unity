@@ -118,6 +118,11 @@ public class DragInsideBoardGenerator : MonoBehaviour
         }
     }
 
+    public void ScaleFrameDown()
+    {
+        LeanTween.scale(targetArea, Vector3.zero, 0.25f);
+    }
+
     public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)
     {
         if (!randomCards.Contains(cardToAdd) && cardToAdd.slug != correctCardSlug)

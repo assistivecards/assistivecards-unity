@@ -12,12 +12,14 @@ public class DragInsideMatchDetection : MonoBehaviour
     Color green;
     Color red;
     Color original;
+    private DragInsideBoardGenerator board;
 
     private void Start()
     {
         ColorUtility.TryParseHtmlString("#1B9738", out green);
         ColorUtility.TryParseHtmlString("#972F1B", out red);
         ColorUtility.TryParseHtmlString("#3E455B", out original);
+        board = GameObject.Find("GamePanel").GetComponent<DragInsideBoardGenerator>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -39,6 +41,9 @@ public class DragInsideMatchDetection : MonoBehaviour
         {
             Debug.Log("LEVEL COMPLETED");
             LeanTween.color(GetComponent<Image>().rectTransform, green, .2f);
+            board.Invoke("ScaleImagesDown", 1f);
+            board.Invoke("ClearBoard", 1.3f);
+            board.Invoke("GenerateRandomBoardAsync", 1.3f);
         }
 
         else if (cardsInside.Count >= 2 && wrongCardsInside.Count != 0)

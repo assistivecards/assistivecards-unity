@@ -15,6 +15,13 @@ public class DragInsideMatchDetection : MonoBehaviour
     private DragInsideBoardGenerator board;
     public int correctMatches;
     private DragInsideUIController UIController;
+    [SerializeField] GameObject[] cardParents;
+    private GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void Start()
     {
@@ -44,7 +51,16 @@ public class DragInsideMatchDetection : MonoBehaviour
         {
             Debug.Log("LEVEL COMPLETED");
             correctMatches++;
+            UIController.backButton.GetComponent<Button>().interactable = false;
+
+            for (int i = 0; i < cardParents.Length; i++)
+            {
+                cardParents[i].GetComponent<DragInsideDraggableCard>().enabled = false;
+            }
+
             LeanTween.color(GetComponent<Image>().rectTransform, green, .2f);
+            gameAPI.PlaySFX("Success");
+            board.Invoke("ReadCard", 0.25f);
             board.Invoke("ScaleImagesDown", 1f);
             board.Invoke("ClearBoard", 1.3f);
 

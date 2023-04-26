@@ -11,6 +11,7 @@ public class CircleUIController : MonoBehaviour
     [SerializeField] GameObject helloText;
     [SerializeField] GameObject speakerIcon;
     [SerializeField] GameObject checkPointPanel;
+    [SerializeField] private AccessibilityScreen accessibilityScreen;
     public int correctMatches;
     public bool firstTime = true;
 
@@ -23,7 +24,7 @@ public class CircleUIController : MonoBehaviour
 
     public void TutorialSetActive(GameObject _tutorial)
     {
-        if(firstTime)
+        if(firstTime || accessibilityScreen.tutorialToggle.isOn)
         {
             _tutorial.SetActive(true);
         }

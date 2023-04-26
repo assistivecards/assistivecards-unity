@@ -95,11 +95,11 @@ public class CanvasController : MonoBehaviour
     {
         AssistiveCardsSDK.AssistiveCardsSDK.Status status = new AssistiveCardsSDK.AssistiveCardsSDK.Status();
         status = await gameAPI.CheckConnectionStatus();
-        if(status == null || status.status == false)
+        if (status == null || status.status == false)
         {
             noInternetScreen.SetActive(true);
             Debug.Log("NO INTERNET");
-            if(loadScene)
+            if (loadScene)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 Debug.Log("RELOAD SCENE");
@@ -108,7 +108,7 @@ public class CanvasController : MonoBehaviour
         }
         else
         {
-            if(loadScene)
+            if (loadScene)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
@@ -334,6 +334,7 @@ public class CanvasController : MonoBehaviour
         PiecePuzzleBoardGenerator.isBackAfterSignOut = true;
         RopeCutBoardGenerator.isBackAfterSignOut = true;
         SlingBoardGenerator.isBackAfterSignOut = true;
+        DragInsideBoardGenerator.isBackAfterSignOut = true;
 
         if (notificationPreferences.reminderPreference == "Daily")
         {

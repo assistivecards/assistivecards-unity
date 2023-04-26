@@ -45,6 +45,7 @@ public class DragInsideMatchDetection : MonoBehaviour
         {
             Debug.Log("LEVEL COMPLETED");
             correctMatches++;
+            UIController.backButton.GetComponent<Button>().interactable = false;
 
             for (int i = 0; i < cardParents.Length; i++)
             {

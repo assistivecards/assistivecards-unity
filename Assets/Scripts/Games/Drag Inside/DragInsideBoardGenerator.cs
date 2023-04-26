@@ -25,6 +25,7 @@ public class DragInsideBoardGenerator : MonoBehaviour
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
     Color original;
+    private DragInsideUIController UIController;
 
     private void Awake()
     {
@@ -34,6 +35,7 @@ public class DragInsideBoardGenerator : MonoBehaviour
     private void Start()
     {
         ColorUtility.TryParseHtmlString("#3E455B", out original);
+        UIController = gameObject.GetComponent<DragInsideUIController>();
         gameAPI.PlayMusic();
     }
 
@@ -42,6 +44,7 @@ public class DragInsideBoardGenerator : MonoBehaviour
         if (isBackAfterSignOut)
         {
             gameAPI.PlayMusic();
+            UIController.OnBackButtonClick();
             isBackAfterSignOut = false;
         }
     }

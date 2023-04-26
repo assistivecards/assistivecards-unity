@@ -210,6 +210,7 @@ public class TopAppBarController : MonoBehaviour
                 PiecePuzzleBoardGenerator.didLanguageChange = true;
                 RopeCutBoardGenerator.didLanguageChange = true;
                 SlingBoardGenerator.didLanguageChange = true;
+                DragInsideBoardGenerator.didLanguageChange = true;
 
                 if (languageController.selectedLanguage.name == "Arabic" || languageController.selectedLanguage.name == "Urdu")
                 {

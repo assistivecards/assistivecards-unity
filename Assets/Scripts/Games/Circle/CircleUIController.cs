@@ -21,6 +21,11 @@ public class CircleUIController : MonoBehaviour
         gameAPI = Camera.main.GetComponent<GameAPI>();
     }
 
+    public void TutorialSetActive(GameObject _tutorial)
+    {
+        _tutorial.SetActive(true);
+    }
+
     public void OnBackButtonClick()
     {
         StartCoroutine(BackButtonClickCoroutine());

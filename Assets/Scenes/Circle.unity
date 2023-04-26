@@ -123,6 +123,27 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &15110508 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3236149540159706477, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
+  m_PrefabInstance: {fileID: 65934033}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &15110512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15110508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdde2e2dd26404a35ae610cf42b3a7ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  move: 0
+  moveValue: 0
+  rotationRadius: 120
+  speed: 2.5
 --- !u!1 &38099727
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,6 +205,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1021200298}
     m_Modifications:
+    - target: {fileID: 3236149540598557714, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
+      propertyPath: tutorialPosition
+      value: 
+      objectReference: {fileID: 154879778}
     - target: {fileID: 3236149540598557724, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_Name
       value: Tutorial
@@ -258,7 +283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3236149540598557725, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 355
       objectReference: {fileID: 0}
     - target: {fileID: 3236149540598557725, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1298,7 +1323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5301644170934348992, guid: 975c28d7b7e66b44ca441b59134a85d4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5301644170934348999, guid: 975c28d7b7e66b44ca441b59134a85d4, type: 3}
       propertyPath: m_Pivot.x
@@ -2213,31 +2238,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3236149540598557725, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
   m_PrefabInstance: {fileID: 65934033}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1452539005 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3236149540598557714, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
-  m_PrefabInstance: {fileID: 65934033}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 825688676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19d9c153a210e41d68d4db6ee2c05f74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1452539007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 825688676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdde2e2dd26404a35ae610cf42b3a7ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveValue: 0
-  rotationRadius: 1.25
 --- !u!82 &1487501776 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 2053396222163338408, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
@@ -5578,7 +5578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9492bdf534710747904722379db123b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorial: {fileID: 1452539005}
+  tutorial: {fileID: 825688676}
   cardImagesInScene:
   - {fileID: 154879779}
   - {fileID: 1516276728}

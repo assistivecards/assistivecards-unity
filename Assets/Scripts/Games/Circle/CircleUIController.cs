@@ -12,7 +12,7 @@ public class CircleUIController : MonoBehaviour
     [SerializeField] GameObject speakerIcon;
     [SerializeField] GameObject checkPointPanel;
     public int correctMatches;
-
+    public bool firstTime = true;
 
     private GameAPI gameAPI;
 
@@ -23,7 +23,11 @@ public class CircleUIController : MonoBehaviour
 
     public void TutorialSetActive(GameObject _tutorial)
     {
-        _tutorial.SetActive(true);
+        if(firstTime)
+        {
+            _tutorial.SetActive(true);
+        }
+        firstTime = false;
     }
 
     public void OnBackButtonClick()

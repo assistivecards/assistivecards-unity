@@ -208,7 +208,7 @@ PrefabInstance:
     - target: {fileID: 3236149540598557714, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: tutorialPosition
       value: 
-      objectReference: {fileID: 154879778}
+      objectReference: {fileID: 631553136}
     - target: {fileID: 3236149540598557724, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_Name
       value: Tutorial
@@ -5613,6 +5613,7 @@ MonoBehaviour:
   speakerIcon: {fileID: 472857507}
   checkPointPanel: {fileID: 2113253922}
   correctMatches: 0
+  firstTime: 1
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -114,7 +114,7 @@ public class BoardGeneration : MonoBehaviour
         Invoke("EnableDrawManager", 0.15f);
 
 
-        tutorial.transform.localPosition = cardImagesInScene[correctCardImageIndex].transform.position;
+        tutorial.GetComponent<Tutorial>().tutorialPosition = cardImagesInScene[correctCardImageIndex].transform;
         UIController.TutorialSetActive(tutorial);
     }
 

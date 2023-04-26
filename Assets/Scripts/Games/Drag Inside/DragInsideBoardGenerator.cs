@@ -95,6 +95,11 @@ public class DragInsideBoardGenerator : MonoBehaviour
         targetArea.GetComponent<DragInsideMatchDetection>().correctCardsInside.Clear();
         targetArea.GetComponent<DragInsideMatchDetection>().wrongCardsInside.Clear();
 
+        for (int i = 0; i < cardParents.Length; i++)
+        {
+            cardParents[i].GetComponent<DragInsideDraggableCard>().enabled = true;
+        }
+
     }
 
     public void ScaleImagesUp()

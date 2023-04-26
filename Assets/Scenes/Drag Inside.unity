@@ -1713,6 +1713,13 @@ MonoBehaviour:
   wrongCardsInside: []
   correctCardsInside: []
   correctMatches: 0
+  cardParents:
+  - {fileID: 432097887}
+  - {fileID: 1695406006}
+  - {fileID: 286140146}
+  - {fileID: 916077765}
+  - {fileID: 134183417}
+  - {fileID: 1955601649}
 --- !u!50 &1002252162
 Rigidbody2D:
   serializedVersion: 4

@@ -44,6 +44,10 @@ public class DragInsideMatchDetection : MonoBehaviour
 
     public void CheckCardsInside()
     {
+        for (int i = 0; i < cardsInside.Count; i++)
+        {
+            cardsInside[i].transform.SetParent(GameObject.Find("TargetAreaGhost").transform);
+        }
         wrongCardsInside = cardsInside.Where(card => card.tag == "WrongCard").ToList();
         correctCardsInside = cardsInside.Where(card => card.tag == "CorrectCard").ToList();
 
@@ -58,7 +62,7 @@ public class DragInsideMatchDetection : MonoBehaviour
                 cardParents[i].GetComponent<DragInsideDraggableCard>().enabled = false;
             }
 
-            LeanTween.color(GetComponent<Image>().rectTransform, green, .2f);
+            LeanTween.color(transform.GetChild(0).GetComponent<Image>().rectTransform, green, .2f);
             gameAPI.PlaySFX("Success");
             board.Invoke("ReadCard", 0.25f);
             board.Invoke("ScaleImagesDown", 1f);
@@ -78,12 +82,12 @@ public class DragInsideMatchDetection : MonoBehaviour
         else if (cardsInside.Count >= 2 && wrongCardsInside.Count != 0)
         {
             Debug.Log("LEVEL NOT COMPLETED");
-            LeanTween.color(GetComponent<Image>().rectTransform, red, .2f);
+            LeanTween.color(transform.GetChild(0).GetComponent<Image>().rectTransform, red, .2f);
         }
 
         else
         {
-            LeanTween.color(GetComponent<Image>().rectTransform, original, .2f);
+            LeanTween.color(transform.GetChild(0).GetComponent<Image>().rectTransform, original, .2f);
         }
 
     }

@@ -13,6 +13,7 @@ public class DragInsideBoardGenerator : MonoBehaviour
     [SerializeField] GameObject[] cardParents;
     [SerializeField] Transform[] cardSlots;
     [SerializeField] GameObject targetArea;
+    [SerializeField] GameObject targetAreaGhost;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     [SerializeField] List<Texture2D> randomImages = new List<Texture2D>();
@@ -88,11 +89,11 @@ public class DragInsideBoardGenerator : MonoBehaviour
 
         for (int i = 0; i < cardParents.Length; i++)
         {
-            cardParents[i].transform.position = cardSlots[i].position;
             cardParents[i].transform.SetParent(cardSlots[i]);
+            cardParents[i].transform.position = cardSlots[i].position;
         }
 
-        LeanTween.color(targetArea.GetComponent<Image>().rectTransform, original, .2f);
+        LeanTween.color(targetArea.transform.GetChild(0).GetComponent<Image>().rectTransform, original, .2f);
 
         targetArea.GetComponent<DragInsideMatchDetection>().cardsInside.Clear();
         targetArea.GetComponent<DragInsideMatchDetection>().correctCardsInside.Clear();
@@ -109,6 +110,7 @@ public class DragInsideBoardGenerator : MonoBehaviour
     {
         LeanTween.scale(dragText.gameObject, Vector3.one, 0.15f);
         LeanTween.scale(targetArea, Vector3.one, 0.15f);
+        LeanTween.scale(targetAreaGhost, Vector3.one, 0.15f);
 
         for (int i = 0; i < cardParents.Length; i++)
         {
@@ -129,6 +131,7 @@ public class DragInsideBoardGenerator : MonoBehaviour
     public void ScaleFrameDown()
     {
         LeanTween.scale(targetArea, Vector3.zero, 0.25f);
+        LeanTween.scale(targetAreaGhost, Vector3.zero, 0.25f);
     }
 
     public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)

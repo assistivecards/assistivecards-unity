@@ -17,6 +17,7 @@ public class DragInsideMatchDetection : MonoBehaviour
     private DragInsideUIController UIController;
     [SerializeField] GameObject[] cardParents;
     private GameAPI gameAPI;
+    private BoxCollider2D coll;
 
     private void Awake()
     {
@@ -30,16 +31,23 @@ public class DragInsideMatchDetection : MonoBehaviour
         ColorUtility.TryParseHtmlString("#3E455B", out original);
         board = GameObject.Find("GamePanel").GetComponent<DragInsideBoardGenerator>();
         UIController = GameObject.Find("GamePanel").GetComponent<DragInsideUIController>();
+        coll = GetComponent<BoxCollider2D>();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        cardsInside.Add(other.gameObject);
+        if (coll.bounds.Contains(other.bounds.max) && coll.bounds.Contains(other.bounds.min) && !other.GetComponent<DragInsideDraggableCard>().isAdded)
+        {
+            cardsInside.Add(other.gameObject);
+            other.GetComponent<DragInsideDraggableCard>().isAdded = true;
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         cardsInside.Remove(other.gameObject);
+        other.GetComponent<DragInsideDraggableCard>().isAdded = false;
     }
 
     public void CheckCardsInside()

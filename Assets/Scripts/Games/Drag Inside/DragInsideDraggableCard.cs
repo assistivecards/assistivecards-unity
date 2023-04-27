@@ -8,6 +8,7 @@ public class DragInsideDraggableCard : MonoBehaviour, IDragHandler, IPointerUpHa
 {
     private GameObject targetArea;
     private GameAPI gameAPI;
+    public bool isAdded = false;
 
     void Awake()
     {

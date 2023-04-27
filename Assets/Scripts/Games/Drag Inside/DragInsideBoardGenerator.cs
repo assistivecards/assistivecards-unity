@@ -102,6 +102,7 @@ public class DragInsideBoardGenerator : MonoBehaviour
         for (int i = 0; i < cardParents.Length; i++)
         {
             cardParents[i].GetComponent<DragInsideDraggableCard>().enabled = true;
+            cardParents[i].GetComponent<DragInsideDraggableCard>().isAdded = false;
         }
 
     }

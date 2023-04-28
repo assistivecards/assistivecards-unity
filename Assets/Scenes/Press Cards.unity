@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 52526655}
   - component: {fileID: 52526654}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: press_on_the_card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

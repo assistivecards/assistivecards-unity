@@ -21,6 +21,7 @@ public class PressCardsBoardGenerator : MonoBehaviour
     public static bool isBackAfterSignOut = false;
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> uniqueCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     [SerializeField] TMP_Text pressText;
+    private int pressCount;
 
 
     private void Awake()
@@ -57,6 +58,8 @@ public class PressCardsBoardGenerator : MonoBehaviour
             didLanguageChange = false;
         }
 
+        RandomizePressCount();
+        TranslatePressCardText();
         await PopulateRandomTextures();
         PlaceSprites();
         ScaleImagesUp();
@@ -120,6 +123,12 @@ public class PressCardsBoardGenerator : MonoBehaviour
         uniqueCards.Clear();
     }
 
+    public void TranslatePressCardText()
+    {
+        pressText.text = gameAPI.Translate(pressText.gameObject.name, gameAPI.ToSentenceCase(uniqueCards[0].title).Replace("-", " "), selectedLangCode);
+        pressText.text = pressText.text.Replace("$2", pressCount.ToString());
+    }
+
     public async Task PopulateRandomTextures()
     {
 
@@ -139,6 +148,11 @@ public class PressCardsBoardGenerator : MonoBehaviour
             var sprite = randomSprite;
             cardTexture.sprite = sprite;
         }
+    }
+
+    public void RandomizePressCount()
+    {
+        pressCount = Random.Range(1, 9);
     }
 
 }

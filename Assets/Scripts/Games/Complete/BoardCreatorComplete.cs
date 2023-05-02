@@ -14,6 +14,7 @@ public class BoardCreatorComplete : MonoBehaviour
     AssistiveCardsSDK.AssistiveCardsSDK.Cards cardDefinitions;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cardTextures;
     [SerializeField] private UIControllerComplete uıControllerComplete;
+    [SerializeField] private TutorialComplete tutorialComplete;
     [SerializeField] private GameObject cardPool;
 
     private int tempRandomValue;
@@ -124,7 +125,6 @@ public class BoardCreatorComplete : MonoBehaviour
         }
         Invoke("FillCardSlot", 0.5f);
         isBoardCreated = true;
-        uıControllerComplete.TutorialSetActive(tutorial);
     }
 
     public void FillCardSlot()
@@ -189,6 +189,9 @@ public class BoardCreatorComplete : MonoBehaviour
                 }
             }
         }
+
+        uıControllerComplete.TutorialSetActive(tutorial);
+        tutorialComplete.DetectDestination();
     }
 
     public void ResetLevel()

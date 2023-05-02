@@ -4765,6 +4765,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -240.9
       objectReference: {fileID: 0}
+    - target: {fileID: 5581424679858070101, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5581424679858070101, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2134643255}
+    - target: {fileID: 5581424679858070101, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5581424679858070101, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIControllerCardChain, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6015960273470514223, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4905,6 +4921,10 @@ PrefabInstance:
       propertyPath: warningNickname
       value: 
       objectReference: {fileID: 596757793}
+    - target: {fileID: 7783552956820105087, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: accessibilityScreen
+      value: 
+      objectReference: {fileID: 840801144}
     - target: {fileID: 7783552956820105087, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: profileEditorSettingScreenButton
       value: 

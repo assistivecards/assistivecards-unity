@@ -11,9 +11,8 @@ public class TutorialCardChain : MonoBehaviour
     {
         if(!uıController.firstTime)
        {
-        this.GetComponent<Tutorial>().tutorialPosition = uıController.cardPosition.transform;
-        uıController.TutorialLoopPosition1();
-
+            this.GetComponent<Tutorial>().tutorialPosition = uıController.cardPosition.transform;
+            uıController.TutorialLoopPosition1();
        } 
     }
 }

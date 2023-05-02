@@ -24,7 +24,7 @@ public class CircleUIController : MonoBehaviour
 
     public void TutorialSetActive(GameObject _tutorial)
     {
-        if(firstTime || accessibilityScreen.tutorialToggle.isOn)
+        if(firstTime || gameAPI.GetTutorialPreference() == 1)
         {
             _tutorial.SetActive(true);
         }

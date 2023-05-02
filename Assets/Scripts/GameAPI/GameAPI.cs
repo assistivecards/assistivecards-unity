@@ -718,7 +718,7 @@ public class GameAPI : MonoBehaviour
     ///</summary>
     public int GetTutorialPreference()
     {
-        return PlayerPrefs.GetInt("Tutorial", 1);
+        return PlayerPrefs.GetInt("Tutorial", 0);
     }
 
     ///<summary>

@@ -2542,14 +2542,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 142e9c9c3add084449f02b10428a8a00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoints:
+  spawnPointsLeft:
   - {fileID: 1245971927}
-  - {fileID: 1587859409}
   - {fileID: 1040718007}
-  - {fileID: 46731702}
   - {fileID: 1157681850}
+  spawnPointsRight:
+  - {fileID: 1587859409}
+  - {fileID: 46731702}
   - {fileID: 1652524269}
-  counter: {fileID: 1625525768381551665, guid: 83c08982d4c72fd489214bb62de0b414, type: 3}
+  availableSpawnPointsLeft: []
+  availableSpawnPointsRight: []
+  countingNumbersImages:
+  - {fileID: 21300000, guid: 780f700da59cf0b459a9febab6fb3e12, type: 3}
+  - {fileID: 21300000, guid: 4d7d9da33816c8842ab1c49f91fd2b4a, type: 3}
+  - {fileID: 21300000, guid: 1760a64764401d2498916a41e82f5f51, type: 3}
+  - {fileID: 21300000, guid: 498fe9f863cc4d242ae8fd06faf9e22e, type: 3}
+  - {fileID: 21300000, guid: 4021ca3444bc96448986b7c8d2828317, type: 3}
+  - {fileID: 21300000, guid: a5455c353a9b5f84180169b87b19fa50, type: 3}
+  - {fileID: 21300000, guid: 3189b992421ee094aa04fd96c00411b4, type: 3}
+  - {fileID: 21300000, guid: 46bc283cc38e24e49acaa42a57b82343, type: 3}
+  - {fileID: 21300000, guid: f118c7c21acc5e24bb4d4933f9608b59, type: 3}
+  counterPrefab: {fileID: 1625525768381551665, guid: 83c08982d4c72fd489214bb62de0b414, type: 3}
 --- !u!1 &1964994737
 GameObject:
   m_ObjectHideFlags: 0
@@ -5468,6 +5481,7 @@ MonoBehaviour:
   backButton: {fileID: 1341216861}
   uniqueCards: []
   pressText: {fileID: 52526654}
+  pressCount: 0
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

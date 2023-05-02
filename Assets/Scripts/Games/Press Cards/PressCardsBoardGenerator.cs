@@ -21,7 +21,7 @@ public class PressCardsBoardGenerator : MonoBehaviour
     public static bool isBackAfterSignOut = false;
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> uniqueCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     [SerializeField] TMP_Text pressText;
-    private int pressCount;
+    public int pressCount;
 
 
     private void Awake()

@@ -3,12 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Linq;
+using UnityEngine.UI;
 
 public class PressCardsCounterSpawner : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] Transform[] spawnPoints;
-    [SerializeField] List<Transform> availableSpawnPoints = new List<Transform>();
-    [SerializeField] GameObject counter;
+    [SerializeField] Transform[] spawnPointsLeft;
+    [SerializeField] Transform[] spawnPointsRight;
+    [SerializeField] List<Transform> availableSpawnPointsLeft = new List<Transform>();
+    [SerializeField] List<Transform> availableSpawnPointsRight = new List<Transform>();
+    [SerializeField] Sprite[] countingNumbersImages;
+    [SerializeField] GameObject counterPrefab;
+    public int counter;
+    PressCardsBoardGenerator board;
+
+    private void Start()
+    {
+        board = GameObject.Find("GamePanel").GetComponent<PressCardsBoardGenerator>();
+    }
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -17,14 +28,41 @@ public class PressCardsCounterSpawner : MonoBehaviour, IPointerClickHandler
 
     public void SpawnCounter()
     {
-        availableSpawnPoints = spawnPoints.Where(spawnPoint => spawnPoint.childCount == 0).ToList();
-        var randomIndex = Random.Range(0, availableSpawnPoints.Count);
+        if (counter < board.pressCount)
+        {
+            availableSpawnPointsLeft = spawnPointsLeft.Where(spawnPoint => spawnPoint.childCount == 0).ToList();
+            availableSpawnPointsRight = spawnPointsRight.Where(spawnPoint => spawnPoint.childCount == 0).ToList();
 
-        var counterObject = Instantiate(counter, availableSpawnPoints[randomIndex].position, Quaternion.identity);
-        counterObject.transform.SetParent(availableSpawnPoints[randomIndex]);
-        counterObject.transform.rotation = counterObject.transform.parent.rotation;
-        counterObject.transform.localScale = Vector3.one;
-        Destroy(counterObject, .25f);
+            if (counter % 2 == 0)
+            {
+                var randomIndex = Random.Range(0, availableSpawnPointsRight.Count);
+
+                var counterObject = Instantiate(counterPrefab, availableSpawnPointsRight[randomIndex].position, Quaternion.identity);
+                counterObject.transform.SetParent(availableSpawnPointsRight[randomIndex]);
+                counterObject.transform.rotation = counterObject.transform.parent.rotation;
+                counterObject.transform.localScale = Vector3.one;
+                counterObject.transform.GetChild(0).GetComponent<Image>().sprite = countingNumbersImages[counter];
+
+                counter++;
+                Destroy(counterObject, .25f);
+            }
+
+            else if (counter % 2 == 1)
+            {
+                var randomIndex = Random.Range(0, availableSpawnPointsLeft.Count);
+
+                var counterObject = Instantiate(counterPrefab, availableSpawnPointsLeft[randomIndex].position, Quaternion.identity);
+                counterObject.transform.SetParent(availableSpawnPointsLeft[randomIndex]);
+                counterObject.transform.rotation = counterObject.transform.parent.rotation;
+                counterObject.transform.localScale = Vector3.one;
+                counterObject.transform.GetChild(0).GetComponent<Image>().sprite = countingNumbersImages[counter];
+
+                counter++;
+                Destroy(counterObject, .25f);
+            }
+
+
+        }
 
     }
 }

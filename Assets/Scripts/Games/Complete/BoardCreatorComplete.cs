@@ -13,6 +13,8 @@ public class BoardCreatorComplete : MonoBehaviour
 
     AssistiveCardsSDK.AssistiveCardsSDK.Cards cardDefinitions;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cardTextures;
+    [SerializeField] private UIControllerComplete uıControllerComplete;
+    [SerializeField] private TutorialComplete tutorialComplete;
     [SerializeField] private GameObject cardPool;
 
     private int tempRandomValue;
@@ -31,6 +33,7 @@ public class BoardCreatorComplete : MonoBehaviour
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject gridBackground;
     [SerializeField] private GameObject actualCardPrefab;
+    [SerializeField] private GameObject tutorial;
     [SerializeField] private Transform card1Position;
     [SerializeField] private Transform card2Position;
 
@@ -186,6 +189,9 @@ public class BoardCreatorComplete : MonoBehaviour
                 }
             }
         }
+
+        uıControllerComplete.TutorialSetActive(tutorial);
+        tutorialComplete.DetectDestination();
     }
 
     public void ResetLevel()

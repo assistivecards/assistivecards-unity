@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UIControllerBucket : MonoBehaviour
 {
+    GameAPI gameAPI;
     [SerializeField] private AccessibilityScreen accessibilityScreen;
 
     [Header ("UI Elements")]
@@ -21,9 +22,14 @@ public class UIControllerBucket : MonoBehaviour
 
     private bool firstTime = true;
 
+    private void Awake() 
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
+
     public void InGame()
     {
-        if(firstTime || accessibilityScreen.tutorialToggle.isOn)
+        if(firstTime || gameAPI.GetTutorialPreference() == 1)
         {
             tutorial.SetActive(true);
         }

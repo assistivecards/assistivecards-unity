@@ -26,6 +26,7 @@ public class AccessibilityScreen : MonoBehaviour
         isHapticsActive = gameAPI.GetHapticsPreference() == 1 ? true : false;
         isPressInActive = gameAPI.GetActivateOnPressInPreference() == 1 ? true : false;
         isVoiceGreetingActive = gameAPI.GetVoiceGreetingPreference() == 1 ? true : false;
+        isTutorialActive = gameAPI.GetTutorialPreference() == 1 ? true : false;
     }
 
     private void Start() 
@@ -33,6 +34,7 @@ public class AccessibilityScreen : MonoBehaviour
         hapticsToggle.isOn = gameAPI.GetHapticsPreference() == 1 ? true : false;
         activateOnPressToggle.isOn = gameAPI.GetActivateOnPressInPreference() == 1 ? true : false;
         voiceGreetingToggle.isOn = gameAPI.GetVoiceGreetingPreference() == 1 ? true : false;
+        tutorialToggle.isOn = gameAPI.GetTutorialPreference() == 1 ? true : false;
     }
 
     private void Update() 
@@ -40,17 +42,6 @@ public class AccessibilityScreen : MonoBehaviour
         isHapticsActive = gameAPI.GetHapticsPreference() == 1 ? true : false;
         isPressInActive = gameAPI.GetActivateOnPressInPreference() == 1 ? true : false;
         isVoiceGreetingActive = gameAPI.GetVoiceGreetingPreference() == 1 ? true : false;
-    }
-
-    public void TutorialActivate()
-    {
-        if(tutorialToggle.isOn)
-        {
-            tutorial.SetActive(true);
-        }
-        else if(!tutorialToggle.isOn)
-        {
-            tutorial.SetActive(false);
-        }
+        isTutorialActive = gameAPI.GetTutorialPreference() == 1 ? true : false;
     }
 }

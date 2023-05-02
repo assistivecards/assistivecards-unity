@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UIControllerCardChain : MonoBehaviour
 {
+    GameAPI gameAPI;
     [SerializeField] private Tutorial tutorial;
     [SerializeField] private AccessibilityScreen accessibilityScreen;
 
@@ -20,9 +21,14 @@ public class UIControllerCardChain : MonoBehaviour
 
     public bool firstTime = true;
 
+    private void Awake() 
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
+
     public void TutorialActive()
     {
-        if(firstTime || accessibilityScreen.tutorialToggle.isOn)
+        if(firstTime || gameAPI.GetTutorialPreference() == 1)
         {
             tutorial.tutorialPosition = cardPosition.transform;
             tutorialGameObject.SetActive(true);

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UIControllerComplete : MonoBehaviour
 {
+    GameAPI gameAPI;
     [SerializeField] private BoardCreatorComplete boardCreatorComplete;
 
     [Header("Screens")]
@@ -15,7 +16,21 @@ public class UIControllerComplete : MonoBehaviour
     [Header("UI Elements")]
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject helloText;
+    public bool firstTime = true;
 
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
+
+    public void TutorialSetActive(GameObject _tutorial)
+    {
+        if(firstTime || gameAPI.GetTutorialPreference() == 1)
+        {
+            _tutorial.SetActive(true);
+        }
+        firstTime = false;
+    }
 
     private void Update() 
     {
@@ -39,4 +54,5 @@ public class UIControllerComplete : MonoBehaviour
             helloText.SetActive(false);
         }
     }
+
 }

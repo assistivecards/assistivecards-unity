@@ -2463,6 +2463,7 @@ GameObject:
   - component: {fileID: 1899970078}
   - component: {fileID: 1899970080}
   - component: {fileID: 1899970079}
+  - component: {fileID: 1899970081}
   m_Layer: 5
   m_Name: CardParent
   m_TagString: Untagged
@@ -2529,6 +2530,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1899970077}
   m_CullTransparentMesh: 1
+--- !u!114 &1899970081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899970077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 142e9c9c3add084449f02b10428a8a00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints:
+  - {fileID: 1245971927}
+  - {fileID: 1587859409}
+  - {fileID: 1040718007}
+  - {fileID: 46731702}
+  - {fileID: 1157681850}
+  - {fileID: 1652524269}
+  counter: {fileID: 1625525768381551665, guid: 83c08982d4c72fd489214bb62de0b414, type: 3}
 --- !u!1 &1964994737
 GameObject:
   m_ObjectHideFlags: 0

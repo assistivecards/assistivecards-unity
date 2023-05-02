@@ -40,11 +40,13 @@ public class PressCardsCounterSpawner : MonoBehaviour, IPointerClickHandler
                 var counterObject = Instantiate(counterPrefab, availableSpawnPointsRight[randomIndex].position, Quaternion.identity);
                 counterObject.transform.SetParent(availableSpawnPointsRight[randomIndex]);
                 counterObject.transform.rotation = counterObject.transform.parent.rotation;
-                counterObject.transform.localScale = Vector3.one;
+                // counterObject.transform.localScale = Vector3.one;
                 counterObject.transform.GetChild(0).GetComponent<Image>().sprite = countingNumbersImages[counter];
+                LeanTween.scale(counterObject, Vector3.one, .25f);
+                StartCoroutine(FadeCounter(counterObject));
 
                 counter++;
-                Destroy(counterObject, .25f);
+                // Destroy(counterObject, .5f);
             }
 
             else if (counter % 2 == 1)
@@ -54,15 +56,23 @@ public class PressCardsCounterSpawner : MonoBehaviour, IPointerClickHandler
                 var counterObject = Instantiate(counterPrefab, availableSpawnPointsLeft[randomIndex].position, Quaternion.identity);
                 counterObject.transform.SetParent(availableSpawnPointsLeft[randomIndex]);
                 counterObject.transform.rotation = counterObject.transform.parent.rotation;
-                counterObject.transform.localScale = Vector3.one;
+                // counterObject.transform.localScale = Vector3.one;
                 counterObject.transform.GetChild(0).GetComponent<Image>().sprite = countingNumbersImages[counter];
+                LeanTween.scale(counterObject, Vector3.one, .25f);
+                StartCoroutine(FadeCounter(counterObject));
 
                 counter++;
-                Destroy(counterObject, .25f);
+                // Destroy(counterObject, .5f);
             }
 
 
         }
 
+    }
+
+    public IEnumerator FadeCounter(GameObject counter)
+    {
+        yield return new WaitForSeconds(.25f);
+        LeanTween.alpha(counter.GetComponent<RectTransform>(), 0, .25f).setDestroyOnComplete(true);
     }
 }

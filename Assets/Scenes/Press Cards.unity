@@ -2563,6 +2563,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 46bc283cc38e24e49acaa42a57b82343, type: 3}
   - {fileID: 21300000, guid: f118c7c21acc5e24bb4d4933f9608b59, type: 3}
   counterPrefab: {fileID: 1625525768381551665, guid: 83c08982d4c72fd489214bb62de0b414, type: 3}
+  counter: 0
 --- !u!1 &1964994737
 GameObject:
   m_ObjectHideFlags: 0
@@ -4900,6 +4901,18 @@ PrefabInstance:
       propertyPath: speakable
       value: 
       objectReference: {fileID: 252539108}
+    - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
+      propertyPath: sfxClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
+      propertyPath: sfxClips.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
+    - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
+      propertyPath: sfxClips.Array.data[0].soundName
+      value: Count
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}

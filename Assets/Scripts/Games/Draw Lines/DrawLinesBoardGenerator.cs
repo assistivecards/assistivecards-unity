@@ -35,6 +35,8 @@ public class DrawLinesBoardGenerator : MonoBehaviour
     [SerializeField] Canvas gameCanvas;
     private bool isScreenSmall = false;
 
+    public TutorialDrawLines tutorialDrawLines;
+
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
@@ -86,6 +88,7 @@ public class DrawLinesBoardGenerator : MonoBehaviour
         Invoke("PlaceHandles", .25f);
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);
+        UIController.TutorialActivate();
     }
 
     public void ClearBoard()
@@ -259,6 +262,8 @@ public class DrawLinesBoardGenerator : MonoBehaviour
             if (options[i].sprite == cardToBeMatched.sprite)
             {
                 correctMatchIndex = i;
+                tutorialDrawLines.targetPosition = options[i].transform;
+
             }
         }
     }

@@ -14,6 +14,8 @@ public class DrawLinesUIController : MonoBehaviour
     [SerializeField] GameObject checkPointPanel;
     private GameAPI gameAPI;
     public int checkpointFrequency = 5;
+    [SerializeField] private GameObject tutorial;
+    private bool firstTime = true;
 
     private void Awake()
     {
@@ -116,6 +118,15 @@ public class DrawLinesUIController : MonoBehaviour
     public void EnableContinuePlayingButton()
     {
         checkPointPanel.transform.GetChild(1).GetComponent<Button>().interactable = true;
+    }
+
+    public void TutorialActivate()
+    {
+        if(firstTime || gameAPI.GetTutorialPreference() == 1)
+        {
+            tutorial.SetActive(true);
+        }
+        firstTime = false;
     }
 
 }

@@ -16,6 +16,7 @@ public class PressCardsCounterSpawner : MonoBehaviour, IPointerClickHandler
     public int counter;
     PressCardsBoardGenerator board;
     private GameAPI gameAPI;
+    private PressCardsMatchDetection matchDetector;
 
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class PressCardsCounterSpawner : MonoBehaviour, IPointerClickHandler
     private void Start()
     {
         board = GameObject.Find("GamePanel").GetComponent<PressCardsBoardGenerator>();
+        matchDetector = GameObject.Find("GamePanel").GetComponent<PressCardsMatchDetection>();
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -73,7 +75,7 @@ public class PressCardsCounterSpawner : MonoBehaviour, IPointerClickHandler
                 // Destroy(counterObject, .5f);
             }
 
-
+            matchDetector.CheckCount();
         }
 
     }

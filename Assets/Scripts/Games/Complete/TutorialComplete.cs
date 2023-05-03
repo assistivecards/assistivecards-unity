@@ -17,19 +17,10 @@ public class TutorialComplete : MonoBehaviour
                 position2 = card.transform;
             }
         }
-        TutorialLoopPosition1();
     }
 
-    public void TutorialLoopPosition()
+    void Update()
     {
-        LeanTween.move(this.gameObject, position1.position, 0f);
-        TutorialLoopPosition1();
+        transform.position = Vector3.Lerp(position1.position, position2.position, Mathf.PingPong(Time.time / 2, 1));
     }
-
-    public void TutorialLoopPosition1()
-    {
-        LeanTween.move(this.gameObject, position2.position ,2f);
-        Invoke("TutorialLoopPosition", 2f);
-    }
-
 }

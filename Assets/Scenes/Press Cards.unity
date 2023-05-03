@@ -5496,6 +5496,7 @@ MonoBehaviour:
   uniqueCards: []
   pressText: {fileID: 52526654}
   pressCount: 0
+  matchDetector: {fileID: 8383894889009589327}
 --- !u!114 &8383894889009589327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5510,6 +5511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   board: {fileID: 8383894889009589326}
   spawner: {fileID: 1899970081}
+  correctMatches: 0
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

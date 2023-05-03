@@ -15,10 +15,18 @@ public class PressCardsCounterSpawner : MonoBehaviour, IPointerClickHandler
     [SerializeField] GameObject counterPrefab;
     public int counter;
     PressCardsBoardGenerator board;
+    private GameAPI gameAPI;
+    private PressCardsMatchDetection matchDetector;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void Start()
     {
         board = GameObject.Find("GamePanel").GetComponent<PressCardsBoardGenerator>();
+        matchDetector = GameObject.Find("GamePanel").GetComponent<PressCardsMatchDetection>();
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -30,6 +38,8 @@ public class PressCardsCounterSpawner : MonoBehaviour, IPointerClickHandler
     {
         if (counter < board.pressCount)
         {
+            gameAPI.PlaySFX("Count");
+
             availableSpawnPointsLeft = spawnPointsLeft.Where(spawnPoint => spawnPoint.childCount == 0).ToList();
             availableSpawnPointsRight = spawnPointsRight.Where(spawnPoint => spawnPoint.childCount == 0).ToList();
 
@@ -65,7 +75,7 @@ public class PressCardsCounterSpawner : MonoBehaviour, IPointerClickHandler
                 // Destroy(counterObject, .5f);
             }
 
-
+            matchDetector.CheckCount();
         }
 
     }

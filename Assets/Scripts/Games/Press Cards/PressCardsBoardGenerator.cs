@@ -22,6 +22,7 @@ public class PressCardsBoardGenerator : MonoBehaviour
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> uniqueCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     [SerializeField] TMP_Text pressText;
     public int pressCount;
+    [SerializeField] PressCardsMatchDetection matchDetector;
 
 
     private void Awake()
@@ -73,6 +74,7 @@ public class PressCardsBoardGenerator : MonoBehaviour
         randomImage = null;
         randomSprite = null;
         cardTexture.sprite = null;
+        cardParent.GetComponent<PressCardsCounterSpawner>().counter = 0;
 
     }
 
@@ -80,6 +82,7 @@ public class PressCardsBoardGenerator : MonoBehaviour
     {
         LeanTween.scale(cardParent, Vector3.one, 0.2f);
         LeanTween.scale(pressText.gameObject, Vector3.one, 0.2f);
+        cardParent.GetComponent<PressCardsCounterSpawner>().enabled = true;
 
     }
 
@@ -125,14 +128,14 @@ public class PressCardsBoardGenerator : MonoBehaviour
 
     public void TranslatePressCardText()
     {
-        pressText.text = gameAPI.Translate(pressText.gameObject.name, gameAPI.ToSentenceCase(uniqueCards[0].title).Replace("-", " "), selectedLangCode);
+        pressText.text = gameAPI.Translate(pressText.gameObject.name, gameAPI.ToSentenceCase(uniqueCards[matchDetector.correctMatches].title).Replace("-", " "), selectedLangCode);
         pressText.text = pressText.text.Replace("$2", pressCount.ToString());
     }
 
     public async Task PopulateRandomTextures()
     {
 
-        var texture = await gameAPI.GetCardImage(packSlug, uniqueCards[0].slug);
+        var texture = await gameAPI.GetCardImage(packSlug, uniqueCards[matchDetector.correctMatches].slug);
         texture.wrapMode = TextureWrapMode.Clamp;
         texture.filterMode = FilterMode.Bilinear;
         randomImage = texture;

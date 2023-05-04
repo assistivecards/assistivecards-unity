@@ -10,6 +10,12 @@ public class PressCardsMatchDetection : MonoBehaviour
     public int correctMatches;
     [SerializeField] GameObject cardParent;
     private PressCardsUIController UIController;
+    private GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void Start()
     {
@@ -23,14 +29,15 @@ public class PressCardsMatchDetection : MonoBehaviour
             // Debug.Log("LEVEL COMPLETED!");
             correctMatches++;
             UIController.backButton.GetComponent<Button>().interactable = false;
+            gameAPI.PlaySFX("Success");
             spawner.enabled = false;
+            board.Invoke("ReadCard", 0.25f);
             Invoke("PlayCorrectMatchAnimation", 0.25f);
             board.Invoke("ScaleImagesDown", 1f);
             board.Invoke("ClearBoard", 1.3f);
 
             if (correctMatches == 5)
             {
-                board.Invoke("ScaleBoxDown", 1f);
                 UIController.Invoke("OpenCheckPointPanel", 1.3f);
             }
             else

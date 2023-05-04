@@ -160,4 +160,9 @@ public class PressCardsBoardGenerator : MonoBehaviour
         pressCount = Random.Range(1, 9);
     }
 
+    public void ReadCard()
+    {
+        gameAPI.Speak(uniqueCards[matchDetector.correctMatches - 1].title);
+    }
+
 }

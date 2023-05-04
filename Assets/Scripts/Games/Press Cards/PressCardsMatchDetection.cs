@@ -24,6 +24,7 @@ public class PressCardsMatchDetection : MonoBehaviour
             correctMatches++;
             UIController.backButton.GetComponent<Button>().interactable = false;
             spawner.enabled = false;
+            Invoke("PlayCorrectMatchAnimation", 0.25f);
             board.Invoke("ScaleImagesDown", 1f);
             board.Invoke("ClearBoard", 1.3f);
 
@@ -35,6 +36,11 @@ public class PressCardsMatchDetection : MonoBehaviour
             else
                 board.Invoke("GenerateRandomBoardAsync", 1.3f);
         }
+    }
+
+    public void PlayCorrectMatchAnimation()
+    {
+        LeanTween.scale(cardParent, Vector3.one * 1.15f, .25f);
     }
 
 }

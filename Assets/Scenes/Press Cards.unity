@@ -5675,7 +5675,7 @@ MonoBehaviour:
   board: {fileID: 8383894889009589326}
   spawner: {fileID: 1899970081}
   correctMatches: 0
-  cardParent: {fileID: 0}
+  cardParent: {fileID: 1899970077}
 --- !u!114 &8383894889009589328
 MonoBehaviour:
   m_ObjectHideFlags: 0

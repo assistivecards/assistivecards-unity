@@ -66,6 +66,7 @@ public class FingerPaintBoardGenerator : MonoBehaviour
         AssignTags();
         PlaceSprites();
         ScaleImagesUp();
+        UIController.TutorialSetActive();
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.30f);
     }

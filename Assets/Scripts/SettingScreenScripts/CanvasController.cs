@@ -335,6 +335,7 @@ public class CanvasController : MonoBehaviour
         RopeCutBoardGenerator.isBackAfterSignOut = true;
         SlingBoardGenerator.isBackAfterSignOut = true;
         DragInsideBoardGenerator.isBackAfterSignOut = true;
+        PressCardsBoardGenerator.isBackAfterSignOut = true;
 
         if (notificationPreferences.reminderPreference == "Daily")
         {

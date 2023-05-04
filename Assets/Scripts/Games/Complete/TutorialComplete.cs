@@ -12,9 +12,12 @@ public class TutorialComplete : MonoBehaviour
     {
         foreach(GameObject card in boardCreatorComplete.cards)
         {
-            if(card.GetComponent<CardElementComplete>().cardType == position1.gameObject.GetComponentInChildren<CardElementComplete>().cardType)
+            if(card.GetComponent<CardElementComplete>() != null)
             {
-                position2 = card.transform;
+                if(card.GetComponent<CardElementComplete>().cardType == position1.gameObject.GetComponentInChildren<CardElementComplete>().cardType)
+                {
+                    position2 = card.transform;
+                }
             }
         }
     }

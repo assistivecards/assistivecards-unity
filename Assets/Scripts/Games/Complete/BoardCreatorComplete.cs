@@ -44,6 +44,7 @@ public class BoardCreatorComplete : MonoBehaviour
     public int matchCount;
 
     [SerializeField] private Color dark;
+    private bool oneTime;
 
 
     private void OnEnable()
@@ -125,6 +126,7 @@ public class BoardCreatorComplete : MonoBehaviour
         }
         Invoke("FillCardSlot", 0.5f);
         isBoardCreated = true;
+        oneTime = true;
     }
 
     public void FillCardSlot()
@@ -190,8 +192,12 @@ public class BoardCreatorComplete : MonoBehaviour
             }
         }
 
-        uıControllerComplete.TutorialSetActive(tutorial);
-        tutorialComplete.DetectDestination();
+        if(oneTime)
+        {
+            uıControllerComplete.TutorialSetActive(tutorial);
+            tutorialComplete.DetectDestination();
+            oneTime = false;
+        }
     }
 
     public void ResetLevel()

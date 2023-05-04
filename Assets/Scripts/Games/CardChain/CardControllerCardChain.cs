@@ -159,14 +159,14 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
     {
         leftCardLocalName = doubleCardParent.GetComponent<CardControllerCardChain>().rightCardLocalName;
 
-        rt.sizeDelta = new Vector2(rt.sizeDelta.x + 300, rt.sizeDelta.y);
+        rt.sizeDelta = new Vector2(rt.sizeDelta.x + 350, rt.sizeDelta.y);
         foreach(Transform child in transform)
         {
-            LeanTween.moveLocal(child.gameObject, new Vector3(child.localPosition.x + 141, child.localPosition.y, child.localPosition.z), 0.25f);
+            LeanTween.moveLocal(child.gameObject, new Vector3(child.localPosition.x + 120, child.localPosition.y, child.localPosition.z), 0.25f);
         }
         leftCard = doubleCardParent.GetComponent<CardControllerCardChain>().leftCard;
         doubleCardParent.GetComponent<CardControllerCardChain>().leftCard.transform.SetParent(this.transform);
-        LeanTween.move(leftCard, new Vector3(preLeftCard.transform.position.x - 141, preLeftCard.transform.position.y, preLeftCard.transform.position.z), 0.15f);
+        LeanTween.move(leftCard, new Vector3(preLeftCard.transform.position.x - 120, preLeftCard.transform.position.y, preLeftCard.transform.position.z), 0.15f);
         GetChildList();
         gameAPI.PlaySFX("Success");
         Invoke("ReadLeftCard", 0.25f);
@@ -206,14 +206,14 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
     {
         rightCardLocalName = doubleCardParent.GetComponent<CardControllerCardChain>().leftCardLocalName;
 
-        rt.sizeDelta = new Vector2(rt.sizeDelta.x + 300, rt.sizeDelta.y);
+        rt.sizeDelta = new Vector2(rt.sizeDelta.x + 350, rt.sizeDelta.y);
         foreach(Transform child in transform)
         {
-            LeanTween.moveLocal(child.gameObject, new Vector3(child.localPosition.x - 141, child.localPosition.y, child.localPosition.z), 0.25f);
+            LeanTween.moveLocal(child.gameObject, new Vector3(child.localPosition.x - 120, child.localPosition.y, child.localPosition.z), 0.25f);
         }
         rightCard = doubleCardParent.GetComponent<CardControllerCardChain>().rightCard;
         doubleCardParent.GetComponent<CardControllerCardChain>().rightCard.transform.SetParent(this.transform);
-        LeanTween.move(rightCard, new Vector3(preRightCard.transform.position.x + 141, preRightCard.transform.position.y, preRightCard.transform.position.z), 0.15f);
+        LeanTween.move(rightCard, new Vector3(preRightCard.transform.position.x + 120, preRightCard.transform.position.y, preRightCard.transform.position.z), 0.15f);
         GetChildList();
         
         gameAPI.PlaySFX("Success");

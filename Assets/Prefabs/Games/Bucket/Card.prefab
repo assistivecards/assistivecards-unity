@@ -30,7 +30,7 @@ RectTransform:
   m_GameObject: {fileID: 1572616208917296617}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3188569986244754360}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardLocalName: 
-  move: 0
+  speed: 700
 --- !u!50 &-8093227477347870033
 Rigidbody2D:
   serializedVersion: 4

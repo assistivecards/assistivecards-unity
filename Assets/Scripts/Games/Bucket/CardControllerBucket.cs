@@ -8,6 +8,7 @@ public class CardControllerBucket : MonoBehaviour
     GameAPI gameAPI;
     public string cardLocalName;
     private bool dropped = false;
+    [SerializeField] private int speed;
 
 
     private void Awake() 
@@ -31,7 +32,7 @@ public class CardControllerBucket : MonoBehaviour
 
     public void Move() 
     {
-        transform.position += Vector3.down * Time.deltaTime * 950;
+        transform.position += Vector3.down * Time.deltaTime * speed;
         transform.GetChild(0).position += Vector3.down * Time.deltaTime * 5;
     }
 
@@ -73,8 +74,11 @@ public class CardControllerBucket : MonoBehaviour
             else if(other.gameObject.tag == "Finish" && GetComponentInParent<DropControllerBucket>().isBoardCreated)
             {
                 gameAPI.PlaySFX("NotMatched");
-                GetComponentInParent<DropControllerBucket>().cards.Remove(this.gameObject);
-                GetComponentInParent<DropControllerBucket>().SelectMoveCard();
+                if(GetComponentInParent<DropControllerBucket>() != null)
+                {
+                    GetComponentInParent<DropControllerBucket>().cards.Remove(this.gameObject);
+                    GetComponentInParent<DropControllerBucket>().SelectMoveCard();
+                }
                 this.transform.SetParent(other.transform);
                 dropped = true;
                 this.GetComponent<Collider2D>().isTrigger = false;

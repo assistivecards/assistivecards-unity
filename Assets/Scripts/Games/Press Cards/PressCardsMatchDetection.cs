@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PressCardsMatchDetection : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class PressCardsMatchDetection : MonoBehaviour
         {
             // Debug.Log("LEVEL COMPLETED!");
             correctMatches++;
+            UIController.backButton.GetComponent<Button>().interactable = false;
             spawner.enabled = false;
             board.Invoke("ScaleImagesDown", 1f);
             board.Invoke("ClearBoard", 1.3f);

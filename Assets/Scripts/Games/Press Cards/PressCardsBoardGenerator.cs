@@ -23,7 +23,7 @@ public class PressCardsBoardGenerator : MonoBehaviour
     [SerializeField] TMP_Text pressText;
     public int pressCount;
     [SerializeField] PressCardsMatchDetection matchDetector;
-
+    private PressCardsUIController UIController;
 
     private void Awake()
     {
@@ -33,6 +33,7 @@ public class PressCardsBoardGenerator : MonoBehaviour
     private void Start()
     {
         gameAPI.PlayMusic();
+        UIController = gameObject.GetComponent<PressCardsUIController>();
     }
 
     private void OnEnable()
@@ -40,6 +41,7 @@ public class PressCardsBoardGenerator : MonoBehaviour
         if (isBackAfterSignOut)
         {
             gameAPI.PlayMusic();
+            UIController.OnBackButtonClick();
             isBackAfterSignOut = false;
         }
     }

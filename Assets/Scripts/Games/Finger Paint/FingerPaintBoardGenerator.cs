@@ -10,6 +10,7 @@ public class FingerPaintBoardGenerator : MonoBehaviour
 {
     private GameAPI gameAPI;
     [SerializeField] Image[] cardImagesInScene;
+    [SerializeField] private GameObject tutorial;
     [SerializeField] GameObject[] imageParents;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
@@ -172,6 +173,7 @@ public class FingerPaintBoardGenerator : MonoBehaviour
             {
                 cardImagesInScene[correctCardImageIndex].tag = "CorrectCard";
                 cardImagesInScene[correctCardImageIndex].transform.GetChild(0).tag = "CorrectCard";
+                tutorial.GetComponent<Tutorial>().tutorialPosition =  cardImagesInScene[correctCardImageIndex].transform;
             }
         }
     }

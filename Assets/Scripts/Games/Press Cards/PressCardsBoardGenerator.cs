@@ -131,7 +131,13 @@ public class PressCardsBoardGenerator : MonoBehaviour
     public void TranslatePressCardText()
     {
         pressText.text = gameAPI.Translate(pressText.gameObject.name, gameAPI.ToSentenceCase(uniqueCards[matchDetector.correctMatches].title).Replace("-", " "), selectedLangCode);
+        
         pressText.text = pressText.text.Replace("$2", pressCount.ToString());
+
+        if (pressCount == 1 && pressText.text.Contains("times"))
+        {
+            pressText.text = pressText.text.Replace("times", "time");
+        }
     }
 
     public async Task PopulateRandomTextures()

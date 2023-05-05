@@ -39,6 +39,7 @@ public class PressCardsCounterSpawner : MonoBehaviour, IPointerClickHandler
         if (counter < board.pressCount)
         {
             gameAPI.PlaySFX("Count");
+            gameAPI.VibrateWeak();
 
             availableSpawnPointsLeft = spawnPointsLeft.Where(spawnPoint => spawnPoint.childCount == 0).ToList();
             availableSpawnPointsRight = spawnPointsRight.Where(spawnPoint => spawnPoint.childCount == 0).ToList();

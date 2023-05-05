@@ -71,6 +71,7 @@ public class RopeCutBoardGenerator : MonoBehaviour
         PlaceSprites();
         ScaleImagesUp();
         backButton.SetActive(true);
+        UIController.TutorialSetActive();
         Invoke("EnableBackButton", 0.15f);
     }
 

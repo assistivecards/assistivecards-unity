@@ -25,6 +25,7 @@ public class RopeCutBoardGenerator : MonoBehaviour
     public static bool isBackAfterSignOut = false;
     [SerializeField] GameObject ropeCutManager;
     [SerializeField] GameObject trailManager;
+    [SerializeField] GameObject tutorial;
     private RopeCutUIController UIController;
 
 

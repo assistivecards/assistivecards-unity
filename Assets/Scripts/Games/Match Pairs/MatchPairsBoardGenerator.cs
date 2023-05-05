@@ -15,6 +15,7 @@ public class MatchPairsBoardGenerator : MonoBehaviour
     public string selectedLangCode;
     public string packSlug;
     [SerializeField] GameObject backButton;
+    [SerializeField] GameObject tutorial;
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
     [SerializeField] GameObject[] puzzlePieceParents;
@@ -77,7 +78,18 @@ public class MatchPairsBoardGenerator : MonoBehaviour
         }
 
         backButton.SetActive(true);
+        UIController.TutorialSetActive();
         Invoke("EnableBackButton", 0.15f);
+        tutorial.GetComponent<TutorialMatchPairs>().point1 = pieceImages[0].transform;
+
+        foreach(var card in pieceImages)
+        {
+            if(card.name.Substring(0, card.name.Length - 1) == pieceImages[0].name.Substring(0, pieceImages[0].name.Length - 1) && card != pieceImages[0])
+            {
+                tutorial.GetComponent<TutorialMatchPairs>().point2 = card.transform;
+            }
+        }
+        
     }
 
     public void ClearBoard()

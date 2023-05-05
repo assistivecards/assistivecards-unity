@@ -10,14 +10,26 @@ public class RopeCutUIController : MonoBehaviour
     [SerializeField] GameObject packSelectionPanel;
     [SerializeField] GameObject helloText;
     [SerializeField] GameObject speakerIcon;
+    [SerializeField] GameObject tutorial;
     private GameAPI gameAPI;
     [SerializeField] GameObject checkPointPanel;
     public int correctMatches;
     public int checkpointFrequency = 5;
+    private bool firstTime = true;
+
 
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
+
+    public void TutorialSetActive()
+    {
+        if(firstTime || gameAPI.GetTutorialPreference() == 1)
+        {
+            tutorial.SetActive(true);
+        }
+        firstTime = false;
     }
 
     public void OnBackButtonClick()

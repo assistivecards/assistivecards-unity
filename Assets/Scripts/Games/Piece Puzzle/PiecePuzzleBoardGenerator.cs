@@ -97,6 +97,7 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
 
         ScaleImagesUp();
         backButton.SetActive(true);
+        UIController.TutorialSetActive();
         Invoke("EnableBackButton", 0.15f);
     }
 

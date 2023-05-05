@@ -25,6 +25,7 @@ public class RopeCutBoardGenerator : MonoBehaviour
     public static bool isBackAfterSignOut = false;
     [SerializeField] GameObject ropeCutManager;
     [SerializeField] GameObject trailManager;
+    [SerializeField] GameObject tutorial;
     private RopeCutUIController UIController;
 
 
@@ -71,6 +72,7 @@ public class RopeCutBoardGenerator : MonoBehaviour
         PlaceSprites();
         ScaleImagesUp();
         backButton.SetActive(true);
+        UIController.TutorialSetActive();
         Invoke("EnableBackButton", 0.15f);
     }
 

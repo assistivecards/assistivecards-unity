@@ -77,6 +77,7 @@ public class MatchPairsBoardGenerator : MonoBehaviour
         }
 
         backButton.SetActive(true);
+        UIController.TutorialSetActive();
         Invoke("EnableBackButton", 0.15f);
     }
 

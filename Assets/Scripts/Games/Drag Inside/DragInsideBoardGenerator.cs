@@ -27,6 +27,7 @@ public class DragInsideBoardGenerator : MonoBehaviour
     public static bool isBackAfterSignOut = false;
     Color original;
     private DragInsideUIController UIController;
+    private GameObject loadingPanel;
 
     private void Awake()
     {
@@ -38,6 +39,7 @@ public class DragInsideBoardGenerator : MonoBehaviour
         ColorUtility.TryParseHtmlString("#3E455B", out original);
         UIController = gameObject.GetComponent<DragInsideUIController>();
         gameAPI.PlayMusic();
+        loadingPanel = GameObject.Find("LoadingPanel");
     }
 
     private void OnEnable()
@@ -70,6 +72,10 @@ public class DragInsideBoardGenerator : MonoBehaviour
         await PopulateRandomTextures();
         PlaceSprites();
         AssignTags();
+        if (loadingPanel.activeInHierarchy)
+        {
+            loadingPanel.SetActive(false);
+        }
         ScaleImagesUp();
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);

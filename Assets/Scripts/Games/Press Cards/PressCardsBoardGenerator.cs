@@ -68,6 +68,7 @@ public class PressCardsBoardGenerator : MonoBehaviour
         PopulateRandomCards();
         TranslatePressCardText();
         await PopulateRandomTextures();
+        AssignTags();
         PlaceSprites();
         ScaleImagesUp();
         backButton.SetActive(true);
@@ -183,7 +184,7 @@ public class PressCardsBoardGenerator : MonoBehaviour
 
             if (cardImagesInScene[i].sprite == null)
             {
-                var randomIndex = Random.Range(0, randomSprites.Count);
+                var randomIndex = Random.Range(1, randomSprites.Count);
                 var sprite = randomSprites[randomIndex];
                 randomSprites.RemoveAt(randomIndex);
                 cardImagesInScene[i].sprite = sprite;
@@ -210,6 +211,26 @@ public class PressCardsBoardGenerator : MonoBehaviour
         }
 
         correctCardSlug = randomCards[0].slug;
+    }
+
+    public void AssignTags()
+    {
+        var correctCardImageIndex = Random.Range(0, cardImagesInScene.Length);
+        cardImagesInScene[correctCardImageIndex].sprite = randomSprites[0];
+
+        for (int i = 0; i < cardImagesInScene.Length; i++)
+        {
+            if (i != correctCardImageIndex)
+            {
+                cardImagesInScene[i].tag = "WrongCard";
+                cardImagesInScene[i].transform.parent.tag = "WrongCard";
+            }
+            else
+            {
+                cardImagesInScene[correctCardImageIndex].tag = "CorrectCard";
+                cardImagesInScene[correctCardImageIndex].transform.parent.tag = "CorrectCard";
+            }
+        }
     }
 
 }

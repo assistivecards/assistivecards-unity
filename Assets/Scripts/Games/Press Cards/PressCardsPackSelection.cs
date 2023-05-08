@@ -31,7 +31,6 @@ public class PressCardsPackSelection : MonoBehaviour
             helloText.SetActive(false);
             speakerIcon.SetActive(false);
             await boardGenerator.CacheCards(boardGenerator.packSlug);
-            boardGenerator.PopulateUniqueCards();
             await boardGenerator.GenerateRandomBoardAsync();
         }
 

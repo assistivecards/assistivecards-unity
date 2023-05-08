@@ -12,8 +12,9 @@ public class PressCardsBoardGenerator : MonoBehaviour
     [SerializeField] Image cardTexture;
     [SerializeField] GameObject cardParent;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
-    [SerializeField] Texture2D randomImage;
-    [SerializeField] Sprite randomSprite;
+    [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
+    [SerializeField] List<Texture2D> randomImages = new List<Texture2D>();
+    [SerializeField] List<Sprite> randomSprites = new List<Sprite>();
     public string selectedLangCode;
     public string packSlug;
     [SerializeField] GameObject backButton;
@@ -24,6 +25,8 @@ public class PressCardsBoardGenerator : MonoBehaviour
     public int pressCount;
     [SerializeField] PressCardsMatchDetection matchDetector;
     private PressCardsUIController UIController;
+    [SerializeField] string correctCardSlug;
+    [SerializeField] Image[] cardImagesInScene;
 
     private void Awake()
     {
@@ -62,6 +65,7 @@ public class PressCardsBoardGenerator : MonoBehaviour
         }
 
         RandomizePressCount();
+        PopulateRandomCards();
         TranslatePressCardText();
         await PopulateRandomTextures();
         PlaceSprites();
@@ -72,33 +76,53 @@ public class PressCardsBoardGenerator : MonoBehaviour
 
     public void ClearBoard()
     {
-        var rb = cardParent.GetComponent<Rigidbody2D>();
-        randomImage = null;
-        randomSprite = null;
-        cardTexture.sprite = null;
-        cardParent.GetComponent<PressCardsCounterSpawner>().counter = 0;
+        randomCards.Clear();
+        randomImages.Clear();
+        randomSprites.Clear();
+
+        for (int i = 0; i < cardImagesInScene.Length; i++)
+        {
+            cardImagesInScene[i].sprite = null;
+        }
+
+        // cardParent.GetComponent<PressCardsCounterSpawner>().counter = 0;
+        for (int i = 0; i < cardImagesInScene.Length; i++)
+        {
+            cardImagesInScene[i].transform.parent.GetComponent<PressCardsCounterSpawner>().counter = 0;
+        }
 
     }
 
     public void ScaleImagesUp()
     {
-        LeanTween.scale(cardParent, Vector3.one, 0.2f);
+        // LeanTween.scale(cardParent, Vector3.one, 0.2f);
+        for (int i = 0; i < cardImagesInScene.Length; i++)
+        {
+            LeanTween.scale(cardImagesInScene[i].transform.parent.gameObject, Vector3.one, 0.2f);
+            cardImagesInScene[i].transform.parent.GetComponent<PressCardsCounterSpawner>().enabled = true;
+        }
+
         LeanTween.scale(pressText.gameObject, Vector3.one, 0.2f);
-        cardParent.GetComponent<PressCardsCounterSpawner>().enabled = true;
+        // cardParent.GetComponent<PressCardsCounterSpawner>().enabled = true;
+
 
     }
 
     public void ScaleImagesDown()
     {
-        LeanTween.scale(cardParent, Vector3.zero, 0.2f);
+        // LeanTween.scale(cardParent, Vector3.zero, 0.2f);
+        for (int i = 0; i < cardImagesInScene.Length; i++)
+        {
+            LeanTween.scale(cardImagesInScene[i].transform.parent.gameObject, Vector3.zero, 0.2f);
+        }
         LeanTween.scale(pressText.gameObject, Vector3.zero, 0.2f);
     }
 
     public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)
     {
-        if (!uniqueCards.Contains(cardToAdd))
+        if (!randomCards.Contains(cardToAdd) && cardToAdd.slug != correctCardSlug)
         {
-            uniqueCards.Add(cardToAdd);
+            randomCards.Add(cardToAdd);
         }
         else
         {
@@ -130,8 +154,8 @@ public class PressCardsBoardGenerator : MonoBehaviour
 
     public void TranslatePressCardText()
     {
-        pressText.text = gameAPI.Translate(pressText.gameObject.name, gameAPI.ToSentenceCase(uniqueCards[matchDetector.correctMatches].title).Replace("-", " "), selectedLangCode);
-        
+        pressText.text = gameAPI.Translate(pressText.gameObject.name, gameAPI.ToSentenceCase(randomCards[0].title).Replace("-", " "), selectedLangCode);
+
         pressText.text = pressText.text.Replace("$2", pressCount.ToString());
 
         if (pressCount == 1 && pressText.text.Contains("times"))
@@ -142,22 +166,28 @@ public class PressCardsBoardGenerator : MonoBehaviour
 
     public async Task PopulateRandomTextures()
     {
-
-        var texture = await gameAPI.GetCardImage(packSlug, uniqueCards[matchDetector.correctMatches].slug);
-        texture.wrapMode = TextureWrapMode.Clamp;
-        texture.filterMode = FilterMode.Bilinear;
-        randomImage = texture;
-        randomSprite = Sprite.Create(randomImage, new Rect(0.0f, 0.0f, randomImage.width, randomImage.height), new Vector2(0.5f, 0.5f), 100.0f);
-
+        for (int i = 0; i < cardImagesInScene.Length; i++)
+        {
+            var texture = await gameAPI.GetCardImage(packSlug, randomCards[i].slug);
+            texture.wrapMode = TextureWrapMode.Clamp;
+            texture.filterMode = FilterMode.Bilinear;
+            randomImages.Add(texture);
+            randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
+        }
     }
 
     public void PlaceSprites()
     {
-
-        if (cardTexture.sprite == null)
+        for (int i = 0; i < cardImagesInScene.Length; i++)
         {
-            var sprite = randomSprite;
-            cardTexture.sprite = sprite;
+
+            if (cardImagesInScene[i].sprite == null)
+            {
+                var randomIndex = Random.Range(0, randomSprites.Count);
+                var sprite = randomSprites[randomIndex];
+                randomSprites.RemoveAt(randomIndex);
+                cardImagesInScene[i].sprite = sprite;
+            }
         }
     }
 
@@ -168,7 +198,18 @@ public class PressCardsBoardGenerator : MonoBehaviour
 
     public void ReadCard()
     {
-        gameAPI.Speak(uniqueCards[matchDetector.correctMatches - 1].title);
+        gameAPI.Speak(randomCards[0].title);
+    }
+
+    public void PopulateRandomCards()
+    {
+        for (int i = 0; i < cardImagesInScene.Length; i++)
+        {
+            var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+            CheckIfCardExists(cardToAdd);
+        }
+
+        correctCardSlug = randomCards[0].slug;
     }
 
 }

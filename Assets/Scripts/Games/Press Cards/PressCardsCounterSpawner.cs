@@ -36,7 +36,7 @@ public class PressCardsCounterSpawner : MonoBehaviour, IPointerClickHandler
 
     public void SpawnCounter()
     {
-        if (counter < board.pressCount)
+        if (counter < board.pressCount && gameObject.tag == "CorrectCard")
         {
             gameAPI.PlaySFX("Count");
             gameAPI.VibrateWeak();

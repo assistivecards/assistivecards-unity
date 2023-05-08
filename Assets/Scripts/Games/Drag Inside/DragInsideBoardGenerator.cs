@@ -12,6 +12,7 @@ public class DragInsideBoardGenerator : MonoBehaviour
     [SerializeField] Image[] cardImagesInScene;
     [SerializeField] GameObject[] cardParents;
     [SerializeField] Transform[] cardSlots;
+    [SerializeField] Vector3[] originalCardSlots;
     [SerializeField] GameObject targetArea;
     [SerializeField] GameObject targetAreaGhost;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
@@ -40,6 +41,11 @@ public class DragInsideBoardGenerator : MonoBehaviour
         UIController = gameObject.GetComponent<DragInsideUIController>();
         gameAPI.PlayMusic();
         loadingPanel = GameObject.Find("LoadingPanel");
+
+        for (int i = 0; i < cardSlots.Length; i++)
+        {
+            originalCardSlots[i] = cardSlots[i].localPosition;
+        }
     }
 
     private void OnEnable()
@@ -76,6 +82,7 @@ public class DragInsideBoardGenerator : MonoBehaviour
         {
             loadingPanel.SetActive(false);
         }
+        RandomizeCardSlotPositions();
         ScaleImagesUp();
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);
@@ -236,6 +243,14 @@ public class DragInsideBoardGenerator : MonoBehaviour
     public void ReadCard()
     {
         gameAPI.Speak(randomCards[0].title);
+    }
+
+    public void RandomizeCardSlotPositions()
+    {
+        for (int i = 0; i < cardSlots.Length; i++)
+        {
+            cardSlots[i].localPosition = new Vector2(originalCardSlots[i].x + Random.Range(-50, 50), originalCardSlots[i].y + Random.Range(-20, 20));
+        }
     }
 
 }

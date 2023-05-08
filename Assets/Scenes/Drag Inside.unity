@@ -6818,6 +6818,13 @@ MonoBehaviour:
   - {fileID: 1683822830}
   - {fileID: 1165430428}
   - {fileID: 1872520419}
+  originalCardSlots:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   targetArea: {fileID: 1002252156}
   targetAreaGhost: {fileID: 2081548640}
   cachedCards:

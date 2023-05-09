@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PressCardsMatchDetection : MonoBehaviour
 {
     [SerializeField] PressCardsBoardGenerator board;
-    [SerializeField] PressCardsCounterSpawner spawner;
+    [SerializeField] PressCardsCounterSpawner[] spawners;
     public int correctMatches;
     [SerializeField] GameObject cardParent;
     private PressCardsUIController UIController;
@@ -22,15 +22,21 @@ public class PressCardsMatchDetection : MonoBehaviour
         UIController = GameObject.Find("GamePanel").GetComponent<PressCardsUIController>();
     }
 
-    public void CheckCount()
+    public void CheckCount(int counter, GameObject currentGameObject)
     {
-        if (board.pressCount == spawner.counter)
+        if (board.pressCount == counter)
         {
             // Debug.Log("LEVEL COMPLETED!");
+            cardParent = currentGameObject;
             correctMatches++;
             UIController.backButton.GetComponent<Button>().interactable = false;
             gameAPI.PlaySFX("Success");
-            spawner.enabled = false;
+
+            for (int i = 0; i < spawners.Length; i++)
+            {
+                spawners[i].enabled = false;
+            }
+
             board.Invoke("ReadCard", 0.25f);
             Invoke("PlayCorrectMatchAnimation", 0.25f);
             board.Invoke("ScaleImagesDown", 1f);

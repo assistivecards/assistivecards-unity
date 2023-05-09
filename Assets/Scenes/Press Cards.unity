@@ -3584,7 +3584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831488888625350, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1242831488888625350, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -5268,7 +5268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8855225860144473765, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8855225860144473765, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -6205,7 +6205,6 @@ MonoBehaviour:
   selectedLangCode: 
   packSlug: 
   backButton: {fileID: 1341216861}
-  uniqueCards: []
   pressText: {fileID: 52526654}
   pressCount: 0
   matchDetector: {fileID: 8383894889009589327}
@@ -6227,7 +6226,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   board: {fileID: 8383894889009589326}
-  spawner: {fileID: 1899970081}
+  spawners:
+  - {fileID: 1566464082}
+  - {fileID: 1899970081}
+  - {fileID: 1565109087}
   correctMatches: 0
   cardParent: {fileID: 1899970077}
 --- !u!114 &8383894889009589328

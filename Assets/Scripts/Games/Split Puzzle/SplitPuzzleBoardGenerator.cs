@@ -86,6 +86,7 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
         ScaleImagesUp();
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);
+        UIController.TutorialSetActive();
     }
 
     public void ClearBoard()

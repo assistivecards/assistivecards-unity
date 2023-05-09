@@ -27,6 +27,7 @@ public class RopeCutBoardGenerator : MonoBehaviour
     [SerializeField] GameObject trailManager;
     [SerializeField] GameObject tutorial;
     private RopeCutUIController UIController;
+    [SerializeField] GameObject loadingPanel;
 
 
     private void Awake()
@@ -70,6 +71,7 @@ public class RopeCutBoardGenerator : MonoBehaviour
         await PopulateRandomTextures();
         AssignTags();
         PlaceSprites();
+        DisableLoadingPanel();
         ScaleImagesUp();
         backButton.SetActive(true);
         UIController.TutorialSetActive();
@@ -217,6 +219,14 @@ public class RopeCutBoardGenerator : MonoBehaviour
                 cardImagesInScene[i].transform.parent.tag = "WrongCard";
             else
                 cardImagesInScene[correctCardImageIndex].transform.parent.tag = "CorrectCard";
+        }
+    }
+
+    private void DisableLoadingPanel()
+    {
+        if (loadingPanel.activeInHierarchy)
+        {
+            loadingPanel.SetActive(false);
         }
     }
 

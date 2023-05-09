@@ -27,6 +27,7 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> uniqueCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     private PuzzleProgressChecker puzzleProgressChecker;
     private PiecePuzzleUIController UIController;
+    [SerializeField] GameObject loadingPanel;
 
     private void Awake()
     {
@@ -94,6 +95,8 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
                 LeanTween.alpha(shadowGameObjects[i].GetComponent<RectTransform>(), .5f, .01f);
             }
         }
+
+        DisableLoadingPanel();
 
         ScaleImagesUp();
         backButton.SetActive(true);
@@ -183,6 +186,14 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
             cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
             // Debug.Log("Log before checkifcardexists " + cardToAdd.slug);
             CheckIfCardExists(cardToAdd);
+        }
+    }
+
+    private void DisableLoadingPanel()
+    {
+        if (loadingPanel.activeInHierarchy)
+        {
+            loadingPanel.SetActive(false);
         }
     }
 

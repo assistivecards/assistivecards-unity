@@ -25,6 +25,7 @@ public class SlingBoardGenerator : MonoBehaviour
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> uniqueCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     SlingProgressChecker progressChecker;
     [SerializeField] TMP_Text throwText;
+    [SerializeField] GameObject loadingPanel;
 
 
     private void Awake()
@@ -68,6 +69,7 @@ public class SlingBoardGenerator : MonoBehaviour
         TranslateThrowCardText();
         await PopulateRandomTextures();
         PlaceSprites();
+        DisableLoadingPanel();
         ScaleImagesUp();
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);
@@ -182,6 +184,14 @@ public class SlingBoardGenerator : MonoBehaviour
 
             var sprite = randomSprite;
             cardTexture.sprite = sprite;
+        }
+    }
+
+    private void DisableLoadingPanel()
+    {
+        if (loadingPanel.activeInHierarchy)
+        {
+            loadingPanel.SetActive(false);
         }
     }
 

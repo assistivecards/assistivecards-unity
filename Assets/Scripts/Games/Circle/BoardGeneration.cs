@@ -25,6 +25,7 @@ public class BoardGeneration : MonoBehaviour
     public static bool isBackAfterSignOut = false;
     [SerializeField] DrawManager drawManager;
     private CircleUIController UIController;
+    [SerializeField] GameObject loadingPanel;
 
     private void Awake()
     {
@@ -108,6 +109,8 @@ public class BoardGeneration : MonoBehaviour
             }
         }
 
+        DisableLoadingPanel();
+
         ScaleImagesUp();
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);
@@ -176,6 +179,13 @@ public class BoardGeneration : MonoBehaviour
         backButton.GetComponent<Button>().interactable = true;
     }
 
+    private void DisableLoadingPanel()
+    {
+        if (loadingPanel.activeInHierarchy)
+        {
+            loadingPanel.SetActive(false);
+        }
+    }
 
 
 }

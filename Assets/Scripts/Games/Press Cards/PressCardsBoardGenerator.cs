@@ -25,6 +25,7 @@ public class PressCardsBoardGenerator : MonoBehaviour
     private PressCardsUIController UIController;
     [SerializeField] string correctCardSlug;
     [SerializeField] Image[] cardImagesInScene;
+    [SerializeField] GameObject loadingPanel;
 
     private void Awake()
     {
@@ -68,6 +69,7 @@ public class PressCardsBoardGenerator : MonoBehaviour
         await PopulateRandomTextures();
         AssignTags();
         PlaceSprites();
+        DisableLoadingPanel();
         ScaleImagesUp();
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);
@@ -230,6 +232,14 @@ public class PressCardsBoardGenerator : MonoBehaviour
                 cardImagesInScene[correctCardImageIndex].tag = "CorrectCard";
                 cardImagesInScene[correctCardImageIndex].transform.parent.tag = "CorrectCard";
             }
+        }
+    }
+
+    private void DisableLoadingPanel()
+    {
+        if (loadingPanel.activeInHierarchy)
+        {
+            loadingPanel.SetActive(false);
         }
     }
 

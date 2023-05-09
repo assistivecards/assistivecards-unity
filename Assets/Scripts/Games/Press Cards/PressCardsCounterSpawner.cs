@@ -76,7 +76,13 @@ public class PressCardsCounterSpawner : MonoBehaviour, IPointerClickHandler
                 // Destroy(counterObject, .5f);
             }
 
-            matchDetector.CheckCount();
+            matchDetector.CheckCount(counter, gameObject);
+        }
+
+        else if (counter < board.pressCount && gameObject.tag == "WrongCard")
+        {
+            LeanTween.alpha(gameObject.GetComponent<RectTransform>(), .5f, .25f);
+            LeanTween.alpha(transform.GetChild(0).GetComponent<RectTransform>(), .5f, .25f);
         }
 
     }

@@ -24,6 +24,7 @@ public class FingerPaintBoardGenerator : MonoBehaviour
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
     private FingerPaintUIController UIController;
+    [SerializeField] GameObject loadingPanel;
 
     private void Awake()
     {
@@ -66,6 +67,7 @@ public class FingerPaintBoardGenerator : MonoBehaviour
         await PopulateRandomTextures();
         AssignTags();
         PlaceSprites();
+        DisableLoadingPanel();
         ScaleImagesUp();
         UIController.TutorialSetActive();
         backButton.SetActive(true);
@@ -173,7 +175,7 @@ public class FingerPaintBoardGenerator : MonoBehaviour
             {
                 cardImagesInScene[correctCardImageIndex].tag = "CorrectCard";
                 cardImagesInScene[correctCardImageIndex].transform.GetChild(0).tag = "CorrectCard";
-                tutorial.GetComponent<Tutorial>().tutorialPosition =  cardImagesInScene[correctCardImageIndex].transform;
+                tutorial.GetComponent<Tutorial>().tutorialPosition = cardImagesInScene[correctCardImageIndex].transform;
             }
         }
     }
@@ -220,6 +222,14 @@ public class FingerPaintBoardGenerator : MonoBehaviour
         newTexture.filterMode = FilterMode.Bilinear;
         Sprite sprite = Sprite.Create(newTexture, new Rect(0.0f, 0.0f, newTexture.width, newTexture.height), new Vector2(0.5f, 0.5f), 100f); ;
         return sprite;
+    }
+
+    private void DisableLoadingPanel()
+    {
+        if (loadingPanel.activeInHierarchy)
+        {
+            loadingPanel.SetActive(false);
+        }
     }
 
 }

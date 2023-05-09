@@ -9,8 +9,6 @@ using System.Linq;
 public class PressCardsBoardGenerator : MonoBehaviour
 {
     private GameAPI gameAPI;
-    [SerializeField] Image cardTexture;
-    [SerializeField] GameObject cardParent;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     [SerializeField] List<Texture2D> randomImages = new List<Texture2D>();
@@ -20,13 +18,14 @@ public class PressCardsBoardGenerator : MonoBehaviour
     [SerializeField] GameObject backButton;
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
-    [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> uniqueCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
+    // [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> uniqueCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     [SerializeField] TMP_Text pressText;
     public int pressCount;
     [SerializeField] PressCardsMatchDetection matchDetector;
     private PressCardsUIController UIController;
     [SerializeField] string correctCardSlug;
     [SerializeField] Image[] cardImagesInScene;
+    [SerializeField] GameObject loadingPanel;
 
     private void Awake()
     {
@@ -70,6 +69,7 @@ public class PressCardsBoardGenerator : MonoBehaviour
         await PopulateRandomTextures();
         AssignTags();
         PlaceSprites();
+        DisableLoadingPanel();
         ScaleImagesUp();
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);
@@ -90,6 +90,8 @@ public class PressCardsBoardGenerator : MonoBehaviour
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {
             cardImagesInScene[i].transform.parent.GetComponent<PressCardsCounterSpawner>().counter = 0;
+            LeanTween.alpha(cardImagesInScene[i].GetComponent<RectTransform>(), 1, 0.0001f);
+            LeanTween.alpha(cardImagesInScene[i].transform.parent.GetComponent<RectTransform>(), 1, 0.0001f);
         }
 
     }
@@ -137,21 +139,21 @@ public class PressCardsBoardGenerator : MonoBehaviour
         backButton.GetComponent<Button>().interactable = true;
     }
 
-    public void PopulateUniqueCards()
-    {
+    // public void PopulateUniqueCards()
+    // {
 
-        for (int i = 0; i < 5; i++)
-        {
-            var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
-            CheckIfCardExists(cardToAdd);
-        }
+    //     for (int i = 0; i < 5; i++)
+    //     {
+    //         var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+    //         CheckIfCardExists(cardToAdd);
+    //     }
 
-    }
+    // }
 
-    public void ClearUniqueCards()
-    {
-        uniqueCards.Clear();
-    }
+    // public void ClearUniqueCards()
+    // {
+    //     uniqueCards.Clear();
+    // }
 
     public void TranslatePressCardText()
     {
@@ -230,6 +232,14 @@ public class PressCardsBoardGenerator : MonoBehaviour
                 cardImagesInScene[correctCardImageIndex].tag = "CorrectCard";
                 cardImagesInScene[correctCardImageIndex].transform.parent.tag = "CorrectCard";
             }
+        }
+    }
+
+    private void DisableLoadingPanel()
+    {
+        if (loadingPanel.activeInHierarchy)
+        {
+            loadingPanel.SetActive(false);
         }
     }
 

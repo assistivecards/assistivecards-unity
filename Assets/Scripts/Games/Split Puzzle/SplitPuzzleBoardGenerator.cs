@@ -27,6 +27,7 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
     private List<Sprite> puzzlePieces = new List<Sprite>();
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> uniqueCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     private PuzzleProgressChecker puzzleProgressChecker;
+    [SerializeField] GameObject loadingPanel;
 
     private void Awake()
     {
@@ -82,7 +83,7 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
         randomImage.filterMode = FilterMode.Bilinear;
         Divide(randomImage);
 
-
+        DisableLoadingPanel();
         ScaleImagesUp();
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);
@@ -108,7 +109,7 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
             puzzlePieceParents[i].transform.position = puzzlePieceSlots[i].transform.position;
             puzzlePieceParents[i].GetComponent<DraggablePiece>().enabled = true;
             puzzlePieceParents[i].GetComponent<Rigidbody2D>().isKinematic = false;
-            puzzlePieceParents[i].GetComponent<BoxCollider2D>().size = new Vector2(150f,150f);
+            puzzlePieceParents[i].GetComponent<BoxCollider2D>().size = new Vector2(150f, 150f);
             puzzlePieceParents[i].GetComponent<BoxCollider2D>().isTrigger = false;
         }
         puzzleSlotsLightParent.transform.SetAsLastSibling();
@@ -206,6 +207,14 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
             cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
             // Debug.Log("Log before checkifcardexists " + cardToAdd.slug);
             CheckIfCardExists(cardToAdd);
+        }
+    }
+
+    private void DisableLoadingPanel()
+    {
+        if (loadingPanel.activeInHierarchy)
+        {
+            loadingPanel.SetActive(false);
         }
     }
 }

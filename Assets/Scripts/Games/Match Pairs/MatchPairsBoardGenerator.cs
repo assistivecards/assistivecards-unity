@@ -23,6 +23,7 @@ public class MatchPairsBoardGenerator : MonoBehaviour
     [SerializeField] List<Image> pieceImages = new List<Image>();
     private List<Sprite> pieceSprites = new List<Sprite>();
     private MatchPairsUIController UIController;
+    [SerializeField] GameObject loadingPanel;
 
     private void Awake()
     {
@@ -69,6 +70,7 @@ public class MatchPairsBoardGenerator : MonoBehaviour
         }
 
         PlaceIntoSlots();
+        DisableLoadingPanel();
         ScaleImagesUp();
 
         var tempParents = GameObject.FindGameObjectsWithTag("Temp");
@@ -82,14 +84,14 @@ public class MatchPairsBoardGenerator : MonoBehaviour
         Invoke("EnableBackButton", 0.15f);
         tutorial.GetComponent<TutorialMatchPairs>().point1 = pieceImages[0].transform;
 
-        foreach(var card in pieceImages)
+        foreach (var card in pieceImages)
         {
-            if(card.name.Substring(0, card.name.Length - 1) == pieceImages[0].name.Substring(0, pieceImages[0].name.Length - 1) && card != pieceImages[0])
+            if (card.name.Substring(0, card.name.Length - 1) == pieceImages[0].name.Substring(0, pieceImages[0].name.Length - 1) && card != pieceImages[0])
             {
                 tutorial.GetComponent<TutorialMatchPairs>().point2 = card.transform;
             }
         }
-        
+
     }
 
     public void ClearBoard()
@@ -227,6 +229,14 @@ public class MatchPairsBoardGenerator : MonoBehaviour
             texture.filterMode = FilterMode.Bilinear;
             texture.name = randomCards[i].title;
             randomTextures.Add(texture);
+        }
+    }
+
+    private void DisableLoadingPanel()
+    {
+        if (loadingPanel.activeInHierarchy)
+        {
+            loadingPanel.SetActive(false);
         }
     }
 }

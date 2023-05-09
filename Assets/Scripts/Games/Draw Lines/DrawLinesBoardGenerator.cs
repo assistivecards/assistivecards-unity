@@ -36,6 +36,7 @@ public class DrawLinesBoardGenerator : MonoBehaviour
     private bool isScreenSmall = false;
 
     public TutorialDrawLines tutorialDrawLines;
+    [SerializeField] GameObject loadingPanel;
 
     private void Awake()
     {
@@ -83,6 +84,7 @@ public class DrawLinesBoardGenerator : MonoBehaviour
         ChooseRandomPaths();
         PlaceSprites();
         FindCorrectMatchIndex();
+        DisableLoadingPanel();
         ScalePathsUp();
         Invoke("TriggerUpdatePaths", .15f);
         Invoke("PlaceHandles", .25f);
@@ -289,6 +291,14 @@ public class DrawLinesBoardGenerator : MonoBehaviour
             options[i].transform.localPosition = new Vector3(xPos, options[i].transform.localPosition.y, options[i].transform.localPosition.z);
             LeanTween.alpha(options[i].gameObject.GetComponent<RectTransform>(), 1f, .01f);
             LeanTween.scale(options[i].gameObject, Vector3.one, .15f);
+        }
+    }
+
+    private void DisableLoadingPanel()
+    {
+        if (loadingPanel.activeInHierarchy)
+        {
+            loadingPanel.SetActive(false);
         }
     }
 

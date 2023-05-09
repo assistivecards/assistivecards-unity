@@ -20,6 +20,7 @@ public class ScratcherBoardGenerator : MonoBehaviour
     [SerializeField] TMP_Text findText;
     public string packSlug;
     [SerializeField] GameObject backButton;
+    [SerializeField] GameObject tutorial;
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
     private ScratcherUIController UIController;
@@ -172,6 +173,7 @@ public class ScratcherBoardGenerator : MonoBehaviour
             {
                 cardImagesInScene[correctCardImageIndex].tag = "CorrectCard";
                 cardImagesInScene[correctCardImageIndex].transform.GetChild(0).tag = "CorrectCard";
+                tutorial.GetComponent<Tutorial>().tutorialPosition = cardImagesInScene[correctCardImageIndex].transform;
             }
         }
     }

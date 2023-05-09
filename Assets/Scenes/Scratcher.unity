@@ -6055,6 +6055,7 @@ MonoBehaviour:
   findText: {fileID: 143642026}
   packSlug: 
   backButton: {fileID: 405362508}
+  tutorial: {fileID: 801172973}
 --- !u!114 &8383894889009589327
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -27,6 +27,7 @@ public class Board : MonoBehaviour
     public static bool isBackAfterSignOut = false;
     [SerializeField] DetectMatch detectMatchScript;
     private bool firstTime = true;
+    public Image correctSilhoutte;
 
     private void Awake()
     {
@@ -96,12 +97,14 @@ public class Board : MonoBehaviour
             randomImages[i].wrapMode = TextureWrapMode.Clamp;
             randomImages[i].filterMode = FilterMode.Bilinear;
             randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
+
         }
 
         shownImageSlug = randomCards[0].slug;
         cardName.text = gameAPI.ToSentenceCase(randomCards[0].title);
         shown.sprite = randomSprites[0];
-        silhouettes[Random.Range(0, silhouettes.Length)].sprite = randomSprites[0];
+        correctSilhoutte = silhouettes[Random.Range(0, silhouettes.Length)];
+        correctSilhoutte.sprite = randomSprites[0];
 
         for (int i = 0; i < silhouettes.Length; i++)
         {
@@ -117,6 +120,7 @@ public class Board : MonoBehaviour
 
         ScaleImagesUp();
         backButton.SetActive(true);
+        tutorial.GetComponent<SilhouetteTutorial>().point2 = correctSilhoutte.transform;
         TutorialSetActive();
         // LeanTween.scale(backButton, Vector3.one, 0.25f);
     }

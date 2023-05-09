@@ -69,6 +69,7 @@ public class SlingBoardGenerator : MonoBehaviour
         await PopulateRandomTextures();
         PlaceSprites();
         ScaleImagesUp();
+        UIController.TutorialSetActive();
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);
     }

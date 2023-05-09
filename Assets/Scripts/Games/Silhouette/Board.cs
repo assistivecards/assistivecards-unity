@@ -22,13 +22,24 @@ public class Board : MonoBehaviour
     [SerializeField] string shownImageSlug;
     public string packSlug;
     [SerializeField] GameObject backButton;
+    [SerializeField] GameObject tutorial;
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
     [SerializeField] DetectMatch detectMatchScript;
+    private bool firstTime = true;
 
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
+
+    public void TutorialSetActive()
+    {
+        if(firstTime || gameAPI.GetTutorialPreference() == 1)
+        {
+            tutorial.SetActive(true);
+        }
+        firstTime = false;
     }
 
     private void Start()
@@ -106,6 +117,7 @@ public class Board : MonoBehaviour
 
         ScaleImagesUp();
         backButton.SetActive(true);
+        TutorialSetActive();
         // LeanTween.scale(backButton, Vector3.one, 0.25f);
     }
 

@@ -15,6 +15,7 @@ public class DragInsideBoardGenerator : MonoBehaviour
     [SerializeField] Vector3[] originalCardSlots;
     [SerializeField] GameObject targetArea;
     [SerializeField] GameObject targetAreaGhost;
+    [SerializeField] GameObject tutorial;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     [SerializeField] List<Texture2D> randomImages = new List<Texture2D>();
@@ -85,6 +86,7 @@ public class DragInsideBoardGenerator : MonoBehaviour
         RandomizeCardSlotPositions();
         ScaleImagesUp();
         backButton.SetActive(true);
+        UIController.TutorialSetActive();
         Invoke("EnableBackButton", 0.15f);
     }
 
@@ -220,6 +222,7 @@ public class DragInsideBoardGenerator : MonoBehaviour
             else
             {
                 cardImagesInScene[i].transform.parent.tag = "CorrectCard";
+                tutorial.GetComponent<DragInsideTutorial>().point2 = cardImagesInScene[i].transform;
             }
         }
     }

@@ -12,6 +12,7 @@ public class CardCrushFillGrid : MonoBehaviour
     public string selectedLangCode;
 
     [SerializeField] private GameObject cardPrefab;
+    [SerializeField] private CardCrushGameUIController UIController;
     [SerializeField] private PackSelectionPanel packSelectionPanel;
     [SerializeField] private CardCrushGrid cardCrushGrid;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
@@ -172,6 +173,7 @@ public class CardCrushFillGrid : MonoBehaviour
         SetLeft(rect, 3097);
         loadingScreen.SetActive(false);
         isBoardCreated = true;
+        UIController.TutorialSetActive();
     }
     private bool FindVerticalMatchesAtBeginning(int i)
     {

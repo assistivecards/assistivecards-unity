@@ -24,6 +24,7 @@ public class ScratcherBoardGenerator : MonoBehaviour
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
     private ScratcherUIController UIController;
+    [SerializeField] GameObject loadingPanel;
 
     private void Awake()
     {
@@ -66,6 +67,7 @@ public class ScratcherBoardGenerator : MonoBehaviour
         await PopulateRandomTextures();
         AssignTags();
         PlaceSprites();
+        DisableLoadingPanel();
         ScaleImagesUp();
         backButton.SetActive(true);
         UIController.TutorialSetActive();
@@ -190,6 +192,14 @@ public class ScratcherBoardGenerator : MonoBehaviour
                 randomSprites.RemoveAt(randomIndex);
                 cardImagesInScene[i].sprite = sprite;
             }
+        }
+    }
+
+    private void DisableLoadingPanel()
+    {
+        if (loadingPanel.activeInHierarchy)
+        {
+            loadingPanel.SetActive(false);
         }
     }
 

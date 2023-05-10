@@ -17,10 +17,21 @@ public class CardCrushGameUIController : MonoBehaviour
     [SerializeField] private GameObject board;
     [SerializeField] private GameObject levelChange;
     [SerializeField] private GameObject difficultSelectionPanel;
+    [SerializeField] GameObject tutorial;
+    private bool firstTime = true;
 
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
+
+    public void TutorialSetActive()
+    {
+        if(firstTime || gameAPI.GetTutorialPreference() == 1)
+        {
+            tutorial.SetActive(true);
+        }
+        firstTime = false;
     }
 
     private void Update() 

@@ -12,11 +12,22 @@ public class DragInsideUIController : MonoBehaviour
     [SerializeField] GameObject helloText;
     [SerializeField] GameObject speakerIcon;
     [SerializeField] GameObject checkPointPanel;
+    [SerializeField] GameObject tutorial;
     private GameAPI gameAPI;
+    private bool firstTime = true;
 
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
+
+    public void TutorialSetActive()
+    {
+        if(firstTime || gameAPI.GetTutorialPreference() == 1)
+        {
+            tutorial.SetActive(true);
+        }
+        firstTime = false;
     }
 
     public void EnableScrollRect()

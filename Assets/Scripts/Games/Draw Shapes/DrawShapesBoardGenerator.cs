@@ -6,25 +6,25 @@ using UnityEngine.UI;
 using TMPro;
 using System.Linq;
 
-public class ScratcherBoardGenerator : MonoBehaviour
+public class DrawShapesBoardGenerator : MonoBehaviour
 {
     private GameAPI gameAPI;
-    [SerializeField] Image[] cardImagesInScene;
-    [SerializeField] GameObject[] scratchParents;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     [SerializeField] List<Texture2D> randomImages = new List<Texture2D>();
     [SerializeField] List<Sprite> randomSprites = new List<Sprite>();
     public string selectedLangCode;
-    [SerializeField] string correctCardSlug;
-    [SerializeField] TMP_Text findText;
     public string packSlug;
     [SerializeField] GameObject backButton;
-    [SerializeField] GameObject tutorial;
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
-    private ScratcherUIController UIController;
-    [SerializeField] GameObject loadingPanel;
+    [SerializeField] TMP_Text drawText;
+    [SerializeField] string correctCardSlug;
+    [SerializeField] Image[] cardImagesInScene;
+    [SerializeField] List<string> shapes;
+    [SerializeField] List<GameObject> paths;
+    [SerializeField] List<GameObject> randomPaths;
+    [SerializeField] List<GameObject> pathsParents;
 
     private void Awake()
     {
@@ -34,7 +34,6 @@ public class ScratcherBoardGenerator : MonoBehaviour
     private void Start()
     {
         gameAPI.PlayMusic();
-        UIController = GameObject.Find("GamePanel").GetComponent<ScratcherUIController>();
     }
 
     private void OnEnable()
@@ -42,7 +41,6 @@ public class ScratcherBoardGenerator : MonoBehaviour
         if (isBackAfterSignOut)
         {
             gameAPI.PlayMusic();
-            UIController.OnBackButtonClick();
             isBackAfterSignOut = false;
         }
     }
@@ -63,50 +61,48 @@ public class ScratcherBoardGenerator : MonoBehaviour
         }
 
         PopulateRandomCards();
-        TranslateFindCardText();
         await PopulateRandomTextures();
-        AssignTags();
+        ChooseRandomPaths();
         PlaceSprites();
-        DisableLoadingPanel();
+        ScalePathsUp();
+        Invoke("TriggerUpdatePaths", .15f);
         ScaleImagesUp();
         backButton.SetActive(true);
-        UIController.TutorialSetActive();
         Invoke("EnableBackButton", 0.15f);
     }
 
     public void ClearBoard()
     {
-        findText.text = "";
         randomCards.Clear();
         randomImages.Clear();
         randomSprites.Clear();
+
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {
             cardImagesInScene[i].sprite = null;
-            cardImagesInScene[i].GetComponent<ScratchManager>().isFullyScratched = false;
         }
 
     }
 
     public void ScaleImagesUp()
     {
-        LeanTween.scale(findText.gameObject, Vector3.one, 0.15f);
-        for (int i = 0; i < scratchParents.Length; i++)
+        for (int i = 0; i < cardImagesInScene.Length; i++)
         {
-            cardImagesInScene[i].GetComponent<ScratchImage>().enabled = true;
-            LeanTween.alpha(scratchParents[i].transform.GetChild(0).GetComponent<RectTransform>(), 1f, .01f);
-            scratchParents[i].transform.GetChild(0).GetComponent<ScratchImage>().ResetMask();
-            LeanTween.scale(scratchParents[i].gameObject, Vector3.one, 0.15f);
+            LeanTween.scale(cardImagesInScene[i].gameObject, Vector3.one, 0.2f);
         }
+
+        LeanTween.scale(drawText.gameObject, Vector3.one, 0.2f);
+
     }
 
     public void ScaleImagesDown()
     {
-        LeanTween.scale(findText.gameObject, Vector3.zero, 0.25f);
-        for (int i = 0; i < scratchParents.Length; i++)
+        for (int i = 0; i < cardImagesInScene.Length; i++)
         {
-            LeanTween.scale(scratchParents[i].gameObject, Vector3.zero, 0.25f);
+            LeanTween.scale(cardImagesInScene[i].gameObject, Vector3.zero, 0.2f);
         }
+
+        LeanTween.scale(drawText.gameObject, Vector3.zero, 0.2f);
     }
 
     public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)
@@ -121,30 +117,10 @@ public class ScratcherBoardGenerator : MonoBehaviour
             CheckIfCardExists(cardToAdd);
         }
     }
-    public void ReadCard()
-    {
-        gameAPI.Speak(randomCards[0].title);
-    }
 
     public void EnableBackButton()
     {
         backButton.GetComponent<Button>().interactable = true;
-    }
-
-    public void PopulateRandomCards()
-    {
-        for (int i = 0; i < cardImagesInScene.Length; i++)
-        {
-            var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
-            CheckIfCardExists(cardToAdd);
-        }
-
-        correctCardSlug = randomCards[0].slug;
-    }
-
-    public void TranslateFindCardText()
-    {
-        findText.text = gameAPI.Translate(findText.gameObject.name, gameAPI.ToSentenceCase(randomCards[0].title).Replace("-", " "), selectedLangCode);
     }
 
     public async Task PopulateRandomTextures()
@@ -159,35 +135,14 @@ public class ScratcherBoardGenerator : MonoBehaviour
         }
     }
 
-    public void AssignTags()
-    {
-        var correctCardImageIndex = Random.Range(0, cardImagesInScene.Length);
-        cardImagesInScene[correctCardImageIndex].sprite = randomSprites[0];
-
-        for (int i = 0; i < cardImagesInScene.Length; i++)
-        {
-            if (i != correctCardImageIndex)
-            {
-                cardImagesInScene[i].tag = "WrongCard";
-                cardImagesInScene[i].transform.GetChild(0).tag = "WrongCard";
-            }
-            else
-            {
-                cardImagesInScene[correctCardImageIndex].tag = "CorrectCard";
-                cardImagesInScene[correctCardImageIndex].transform.GetChild(0).tag = "CorrectCard";
-                tutorial.GetComponent<Tutorial>().tutorialPosition = cardImagesInScene[correctCardImageIndex].transform;
-            }
-        }
-    }
-
     public void PlaceSprites()
     {
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {
-            cardImagesInScene[i].gameObject.SetActive(true);
+
             if (cardImagesInScene[i].sprite == null)
             {
-                var randomIndex = Random.Range(1, randomSprites.Count);
+                var randomIndex = Random.Range(0, randomSprites.Count);
                 var sprite = randomSprites[randomIndex];
                 randomSprites.RemoveAt(randomIndex);
                 cardImagesInScene[i].sprite = sprite;
@@ -195,14 +150,46 @@ public class ScratcherBoardGenerator : MonoBehaviour
         }
     }
 
-    private void DisableLoadingPanel()
+    public void PopulateRandomCards()
     {
-        if (loadingPanel.activeInHierarchy)
+        for (int i = 0; i < cardImagesInScene.Length; i++)
         {
-            loadingPanel.SetActive(false);
+            var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+            CheckIfCardExists(cardToAdd);
+        }
+
+        correctCardSlug = randomCards[0].slug;
+    }
+
+    private void ChooseRandomPaths()
+    {
+        var selectedShape = paths[Random.Range(0, paths.Count)].name;
+        Debug.Log("Selected Shape: " + selectedShape);
+
+        var selectedPaths = paths.Where(path => path.name == selectedShape).ToList();
+        randomPaths = selectedPaths;
+
+        for (int i = 0; i < randomPaths.Count; i++)
+        {
+            randomPaths[i].SetActive(true);
+        }
+
+    }
+
+    private void ScalePathsUp()
+    {
+        for (int i = 0; i < pathsParents.Count; i++)
+        {
+            LeanTween.scale(pathsParents[i], Vector3.one, .15f);
         }
     }
 
-
+    private void TriggerUpdatePaths()
+    {
+        for (int i = 0; i < randomPaths.Count; i++)
+        {
+            randomPaths[i].GetComponent<PathCreation.Examples.PathPlacer>().TriggerUpdate();
+        }
+    }
 
 }

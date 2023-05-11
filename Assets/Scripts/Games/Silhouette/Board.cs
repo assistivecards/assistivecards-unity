@@ -28,6 +28,7 @@ public class Board : MonoBehaviour
     [SerializeField] DetectMatch detectMatchScript;
     private bool firstTime = true;
     public Image correctSilhoutte;
+    [SerializeField] GameObject loadingPanel;
 
     private void Awake()
     {
@@ -36,7 +37,7 @@ public class Board : MonoBehaviour
 
     public void TutorialSetActive()
     {
-        if(firstTime || gameAPI.GetTutorialPreference() == 1)
+        if (firstTime || gameAPI.GetTutorialPreference() == 1)
         {
             tutorial.SetActive(true);
         }
@@ -118,6 +119,7 @@ public class Board : MonoBehaviour
             }
         }
 
+        DisableLoadingPanel();
         ScaleImagesUp();
         backButton.SetActive(true);
         tutorial.GetComponent<SilhouetteTutorial>().point2 = correctSilhoutte.transform;
@@ -166,6 +168,14 @@ public class Board : MonoBehaviour
     public void ReadCard()
     {
         gameAPI.Speak(randomCards[0].title);
+    }
+
+    private void DisableLoadingPanel()
+    {
+        if (loadingPanel.activeInHierarchy)
+        {
+            loadingPanel.SetActive(false);
+        }
     }
 
 

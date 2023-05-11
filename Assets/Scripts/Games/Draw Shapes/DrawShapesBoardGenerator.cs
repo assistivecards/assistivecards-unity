@@ -24,6 +24,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
     [SerializeField] List<string> shapes;
     [SerializeField] List<GameObject> paths;
     [SerializeField] List<GameObject> randomPaths;
+    [SerializeField] List<GameObject> pathsParents;
 
     private void Awake()
     {
@@ -61,8 +62,10 @@ public class DrawShapesBoardGenerator : MonoBehaviour
 
         PopulateRandomCards();
         await PopulateRandomTextures();
-        PlaceSprites();
         ChooseRandomPaths();
+        PlaceSprites();
+        ScalePathsUp();
+        Invoke("TriggerUpdatePaths", .15f);
         ScaleImagesUp();
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);
@@ -168,10 +171,25 @@ public class DrawShapesBoardGenerator : MonoBehaviour
 
         for (int i = 0; i < randomPaths.Count; i++)
         {
-            randomPaths[i].GetComponent<PathCreation.Examples.PathPlacer>().TriggerUpdate();
             randomPaths[i].SetActive(true);
         }
 
+    }
+
+    private void ScalePathsUp()
+    {
+        for (int i = 0; i < pathsParents.Count; i++)
+        {
+            LeanTween.scale(pathsParents[i], Vector3.one, .15f);
+        }
+    }
+
+    private void TriggerUpdatePaths()
+    {
+        for (int i = 0; i < randomPaths.Count; i++)
+        {
+            randomPaths[i].GetComponent<PathCreation.Examples.PathPlacer>().TriggerUpdate();
+        }
     }
 
 }

@@ -21,6 +21,9 @@ public class DrawShapesBoardGenerator : MonoBehaviour
     [SerializeField] TMP_Text drawText;
     [SerializeField] string correctCardSlug;
     [SerializeField] Image[] cardImagesInScene;
+    [SerializeField] List<string> shapes;
+    [SerializeField] List<GameObject> paths;
+    [SerializeField] List<GameObject> randomPaths;
 
     private void Awake()
     {
@@ -59,6 +62,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
         PopulateRandomCards();
         await PopulateRandomTextures();
         PlaceSprites();
+        ChooseRandomPaths();
         ScaleImagesUp();
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);
@@ -152,6 +156,22 @@ public class DrawShapesBoardGenerator : MonoBehaviour
         }
 
         correctCardSlug = randomCards[0].slug;
+    }
+
+    private void ChooseRandomPaths()
+    {
+        var selectedShape = paths[Random.Range(0, paths.Count)].name;
+        Debug.Log("Selected Shape: " + selectedShape);
+
+        var selectedPaths = paths.Where(path => path.name == selectedShape).ToList();
+        randomPaths = selectedPaths;
+
+        for (int i = 0; i < randomPaths.Count; i++)
+        {
+            randomPaths[i].GetComponent<PathCreation.Examples.PathPlacer>().TriggerUpdate();
+            randomPaths[i].SetActive(true);
+        }
+
     }
 
 }

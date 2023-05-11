@@ -4124,7 +4124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &472387186
 Transform:
   m_ObjectHideFlags: 0
@@ -10802,7 +10802,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1176661200
 Transform:
   m_ObjectHideFlags: 0
@@ -15037,7 +15037,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1555800782
 Transform:
   m_ObjectHideFlags: 0
@@ -23986,6 +23986,21 @@ MonoBehaviour:
   - {fileID: 1294490512}
   - {fileID: 1795103635}
   - {fileID: 2100418688}
+  shapes:
+  - Circle
+  - Triangle
+  - Square
+  paths:
+  - {fileID: 4534939795518682384}
+  - {fileID: 812374059}
+  - {fileID: 1555800781}
+  - {fileID: 263552644}
+  - {fileID: 2071287154}
+  - {fileID: 472387185}
+  - {fileID: 472675390}
+  - {fileID: 1295524443}
+  - {fileID: 1176661199}
+  randomPaths: []
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

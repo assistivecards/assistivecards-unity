@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
+using PathCreation;
 
 public class DrawShapesBoardGenerator : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
     [SerializeField] List<GameObject> randomPaths;
     [SerializeField] List<GameObject> pathsParents;
     private string selectedShape;
+    [SerializeField] List<Transform> handles;
 
     private void Awake()
     {
@@ -64,13 +66,13 @@ public class DrawShapesBoardGenerator : MonoBehaviour
         }
 
         PopulateRandomCards();
+        await PopulateRandomTextures();
         ChooseRandomPaths();
         TranslateDrawText();
-        await PopulateRandomTextures();
         PlaceSprites();
         ScalePathsUp();
-        Invoke("TriggerUpdatePaths", .15f);
-        ScaleImagesUp();
+        Invoke("TriggerUpdatePaths", .20f);
+        Invoke("PlaceHandles", .25f);
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);
     }
@@ -185,6 +187,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
         for (int i = 0; i < pathsParents.Count; i++)
         {
             LeanTween.scale(pathsParents[i], Vector3.one, .15f);
+            handles[i].SetParent(randomPaths[i].transform);
         }
     }
 
@@ -203,6 +206,18 @@ public class DrawShapesBoardGenerator : MonoBehaviour
 
         drawText.text = drawText.text.Replace("$2", shape.title);
 
+    }
+
+    private void PlaceHandles()
+    {
+        for (int i = 0; i < handles.Count; i++)
+        {
+            handles[i].position = randomPaths[i].GetComponent<PathCreator>().path.GetPoint(0);
+            handles[i].gameObject.SetActive(true);
+            LeanTween.scale(handles[i].gameObject, Vector3.one * 0.5f, .15f);
+        }
+
+        ScaleImagesUp();
     }
 
 }

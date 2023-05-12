@@ -130,6 +130,7 @@ public class SortCardBoardGenerator : MonoBehaviour
         {
             GameObject card = Instantiate(listedCards[i], slotableCardTransforms[randomCard[i]].transform.position, Quaternion.identity);
             card.transform.SetParent(slotableCardTransforms[randomCard[i]].transform);
+            card.GetComponent<SortCardDraggable>().draggable = true;
             LeanTween.scale(card, Vector3.one * 0.5f, 0.5f);
             card.transform.rotation = Quaternion.Euler(card.transform.rotation.x, card.transform.rotation.y, Random.Range(40, -40));
             LeanTween.moveLocal(card, new Vector3(card.transform.localPosition.x, card.transform.localPosition.y + Random.Range(-50, 50), card.transform.localPosition.z), 0f);

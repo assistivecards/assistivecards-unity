@@ -8589,7 +8589,7 @@ GameObject:
   - component: {fileID: 919556601}
   - component: {fileID: 919556600}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: draw_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23766,6 +23766,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cachedCards:
+    cards: []
+  cachedShapeCards:
     cards: []
   randomCards: []
   randomImages: []

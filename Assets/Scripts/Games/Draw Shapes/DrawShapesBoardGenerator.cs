@@ -65,6 +65,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
 
         PopulateRandomCards();
         ChooseRandomPaths();
+        TranslateDrawText();
         await PopulateRandomTextures();
         PlaceSprites();
         ScalePathsUp();

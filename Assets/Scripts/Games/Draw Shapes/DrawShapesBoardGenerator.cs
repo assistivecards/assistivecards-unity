@@ -10,6 +10,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
 {
     private GameAPI gameAPI;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
+    [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedShapeCards;
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     [SerializeField] List<Texture2D> randomImages = new List<Texture2D>();
     [SerializeField] List<Sprite> randomSprites = new List<Sprite>();
@@ -25,6 +26,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
     [SerializeField] List<GameObject> paths;
     [SerializeField] List<GameObject> randomPaths;
     [SerializeField] List<GameObject> pathsParents;
+    private string selectedShape;
 
     private void Awake()
     {
@@ -49,6 +51,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
     {
         selectedLangCode = await gameAPI.GetSystemLanguageCode();
         cachedCards = await gameAPI.GetCards(selectedLangCode, packName);
+        cachedShapeCards = await gameAPI.GetCards(selectedLangCode, "shapes");
     }
 
 
@@ -61,8 +64,8 @@ public class DrawShapesBoardGenerator : MonoBehaviour
         }
 
         PopulateRandomCards();
-        await PopulateRandomTextures();
         ChooseRandomPaths();
+        await PopulateRandomTextures();
         PlaceSprites();
         ScalePathsUp();
         Invoke("TriggerUpdatePaths", .15f);
@@ -163,7 +166,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
 
     private void ChooseRandomPaths()
     {
-        var selectedShape = paths[Random.Range(0, paths.Count)].name;
+        selectedShape = paths[Random.Range(0, paths.Count)].name;
         Debug.Log("Selected Shape: " + selectedShape);
 
         var selectedPaths = paths.Where(path => path.name == selectedShape).ToList();
@@ -190,6 +193,15 @@ public class DrawShapesBoardGenerator : MonoBehaviour
         {
             randomPaths[i].GetComponent<PathCreation.Examples.PathPlacer>().TriggerUpdate();
         }
+    }
+
+    private void TranslateDrawText()
+    {
+        drawText.text = gameAPI.Translate(drawText.gameObject.name, gameAPI.ToSentenceCase(randomCards[0].title).Replace("-", " "), selectedLangCode);
+        var shape = cachedShapeCards.cards.Where(card => card.slug == selectedShape.ToLower()).FirstOrDefault();
+
+        drawText.text = drawText.text.Replace("$2", shape.title);
+
     }
 
 }

@@ -1129,7 +1129,7 @@ GameObject:
   - component: {fileID: 724597729}
   - component: {fileID: 724597731}
   m_Layer: 5
-  m_Name: SortedCard3
+  m_Name: Card3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1562,7 +1562,7 @@ GameObject:
   - component: {fileID: 1180461335}
   - component: {fileID: 1180461337}
   m_Layer: 5
-  m_Name: SortedCard2
+  m_Name: Card2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1967,7 +1967,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1495660435}
   m_Layer: 5
-  m_Name: SortedCards
+  m_Name: CardList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2666,7 +2666,7 @@ GameObject:
   - component: {fileID: 2096570830}
   - component: {fileID: 2096570832}
   m_Layer: 5
-  m_Name: SortedCard1
+  m_Name: Card1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5539,13 +5539,21 @@ MonoBehaviour:
   cardTextures:
     cards: []
   packSelectionPanel: {fileID: 662493964}
+  cardLocalNames: []
+  cachedCards:
+    cards: []
+  usedRandoms: 
   cardNames: []
   cardDefinitionsLocale: []
+  cardListTransforms: []
+  slotableCardTransforms: []
+  listedCards: []
   slotableCards: []
+  randomCard: 
   packSlug: 
   cardPrefab: {fileID: 1572616208917296617, guid: f6deacab0f9f3425c8997c07b0accca7, type: 3}
-  slotedCardsParent: {fileID: 1362859074}
-  slotedCards: []
+  cardListParent: {fileID: 1495660434}
+  slotableCardsParent: {fileID: 1685910171}
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

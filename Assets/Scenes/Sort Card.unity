@@ -5539,12 +5539,16 @@ MonoBehaviour:
   cardTextures:
     cards: []
   packSelectionPanel: {fileID: 662493964}
+  cardLocalNames: []
+  cachedCards:
+    cards: []
+  usedRandoms: 
   cardNames: []
   cardDefinitionsLocale: []
   slotableCards: []
   packSlug: 
   cardPrefab: {fileID: 1572616208917296617, guid: f6deacab0f9f3425c8997c07b0accca7, type: 3}
-  slotedCardsParent: {fileID: 1362859074}
+  slotedCardsParent: {fileID: 1495660434}
   slotedCards: []
 --- !u!114 &8691574409270737102
 MonoBehaviour:

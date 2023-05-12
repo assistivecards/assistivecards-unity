@@ -17,6 +17,7 @@ public class SortCardBoardGenerator : MonoBehaviour
     AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
     public List<string> cardLocalNames = new List<string>();
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
+    public List<int> usedRandoms = new List<int>();
 
     public List<string> cardNames = new List<string>();
     public List<string> cardDefinitionsLocale = new List<string>();
@@ -61,24 +62,37 @@ public class SortCardBoardGenerator : MonoBehaviour
         GenerateRandomBoardAsync(packSlug);
     }
 
+    private void GenerateRandomValue()
+    {
+        int tempRandom = Random.Range(0, cardNames.Count);
+        if(usedRandoms.Contains(tempRandom))
+        {
+            GenerateRandomValue();
+        }
+        else if(!usedRandoms.Contains(tempRandom))
+        {
+            usedRandoms.Add(tempRandom);
+        }
+    }
+
     public async void GenerateRandomBoardAsync(string packSlug)
     {
         await CacheCards(packSlug);
         for(int i = 0; i < slotedCards.Count; i++)
         {
+            GenerateRandomValue();
 
             GameObject card = Instantiate(cardPrefab, slotedCards[i].transform.position, Quaternion.identity);
             card.transform.SetParent(slotedCards[i].transform);
-            Debug.Log(i);
             
-            // int cardImageRandom = Random.Range(0, 2);
-            // var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[cardImageRandom], 512);
+            int cardImageRandom = usedRandoms[i];
+            var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[cardImageRandom], 512);
 
-            // cardTexture.wrapMode = TextureWrapMode.Clamp;
-            // cardTexture.filterMode = FilterMode.Bilinear;
+            cardTexture.wrapMode = TextureWrapMode.Clamp;
+            cardTexture.filterMode = FilterMode.Bilinear;
 
-            // card.transform.name = cardNames[cardImageRandom];
-            // card.transform.GetComponentInChildren<RawImage>().texture = cardTexture;
+            card.transform.name = cardNames[cardImageRandom];
+            card.transform.GetComponentInChildren<RawImage>().texture = cardTexture;
         }
     }
 }

@@ -21,12 +21,16 @@ public class SortCardBoardGenerator : MonoBehaviour
 
     public List<string> cardNames = new List<string>();
     public List<string> cardDefinitionsLocale = new List<string>();
-    public List<GameObject> slotableCards  = new List<GameObject>();
+    public List<GameObject> cardListTransforms  = new List<GameObject>();
+    public List<GameObject> slotableCardTransforms  = new List<GameObject>();
+    public List<GameObject> listedCards = new List<GameObject>();
+    public List<GameObject> slotableCards = new List<GameObject>();
+    public List<int> randomCard = new List<int>();
     public string packSlug;
 
     [SerializeField] private GameObject cardPrefab;
-    [SerializeField] private GameObject slotedCardsParent;
-    public List<GameObject> slotedCards = new List<GameObject>();
+    [SerializeField] private GameObject cardListParent;
+    [SerializeField] private GameObject slotableCardsParent;
 
     private void Awake()
     {
@@ -49,9 +53,14 @@ public class SortCardBoardGenerator : MonoBehaviour
 
     private void GetSlotedList()
     {
-        foreach (Transform child in slotedCardsParent.transform)
+        foreach (Transform child in cardListParent.transform)
         {
-            slotedCards.Add(child.gameObject);
+            cardListTransforms.Add(child.gameObject);
+        }
+
+        foreach (Transform child in slotableCardsParent.transform)
+        {
+            slotableCardTransforms.Add(child.gameObject);
         }
     }
 
@@ -75,15 +84,16 @@ public class SortCardBoardGenerator : MonoBehaviour
         }
     }
 
-    public async void GenerateRandomBoardAsync(string packSlug)
+    private async void GenerateRandomBoardAsync(string packSlug)
     {
         await CacheCards(packSlug);
-        for(int i = 0; i < slotedCards.Count; i++)
+        for(int i = 0; i < cardListTransforms.Count; i++)
         {
             GenerateRandomValue();
 
-            GameObject card = Instantiate(cardPrefab, slotedCards[i].transform.position, Quaternion.identity);
-            card.transform.SetParent(slotedCards[i].transform);
+            GameObject card = Instantiate(cardPrefab, cardListTransforms[i].transform.position, Quaternion.identity);
+            card.transform.SetParent(cardListTransforms[i].transform);
+            listedCards.Add(card);
             
             int cardImageRandom = usedRandoms[i];
             var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[cardImageRandom], 512);
@@ -93,6 +103,34 @@ public class SortCardBoardGenerator : MonoBehaviour
 
             card.transform.name = cardNames[cardImageRandom];
             card.transform.GetComponentInChildren<RawImage>().texture = cardTexture;
+        }
+
+        GenerateSortableCards();
+    }
+
+    private void CreateRandomList()
+    {
+        int tempValue = Random.Range(0,3);
+        if(randomCard.Contains(tempValue))
+        {
+            CreateRandomList();
+        }
+        else
+        {
+            randomCard.Add(tempValue);
+        }
+    }
+
+    private void GenerateSortableCards()
+    {
+        CreateRandomList();
+        CreateRandomList();
+        CreateRandomList();
+        for(int i = 0; i < cardListTransforms.Count; i++)
+        {
+            GameObject card = Instantiate(listedCards[i], slotableCardTransforms[randomCard[i]].transform.position, Quaternion.identity);
+            card.transform.SetParent(slotableCardTransforms[randomCard[i]].transform);
+            LeanTween.scale(card, Vector3.one * 0.5f, 0.5f);
         }
     }
 }

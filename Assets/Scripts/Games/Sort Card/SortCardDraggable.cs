@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SortCardDraggable : MonoBehaviour, IDragHandler
+public class SortCardDraggable : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
     public bool draggable = false;
+    public bool isPointerUp = false;
 
     public void OnDrag(PointerEventData eventData)
     {
@@ -16,12 +17,22 @@ public class SortCardDraggable : MonoBehaviour, IDragHandler
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other) 
+    public void OnPointerUp(PointerEventData eventData)
     {
-        if(other.gameObject.tag == "Slot")
+        isPointerUp = true;
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        isPointerUp = false;
+    }
+
+    private void OnCollisionStay2D(Collision2D other) 
+    {
+        if(other.gameObject.tag == "Slot" && isPointerUp)
         {
-            this.transform.rotation = Quaternion.Euler(this.transform.rotation.x, this.transform.rotation.y, 0);
-            Debug.Log("!!!!!!!!!!!!!");
+            LeanTween.rotateZ(this.gameObject, 0, 0.7f);
+            LeanTween.move(this.gameObject, other.transform.position, 0.7f);
         }
     }
 

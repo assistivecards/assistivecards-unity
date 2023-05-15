@@ -13,6 +13,12 @@ public class DrawShapesDragHandle : MonoBehaviour, IPointerDownHandler, IDragHan
     public bool canDrag;
     public List<GameObject> waypoints;
     [SerializeField] GameObject correctPath;
+    private GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void OnEnable()
     {
@@ -64,6 +70,8 @@ public class DrawShapesDragHandle : MonoBehaviour, IPointerDownHandler, IDragHan
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        gameAPI.VibrateWeak();
+        gameAPI.PlaySFX("Pickup");
         canDrag = true;
         transform.position = eventData.position;
         Vector3 nearestWorldPositionOnPath = path.path.GetPointAtDistance(path.path.GetClosestDistanceAlongPath(transform.position));

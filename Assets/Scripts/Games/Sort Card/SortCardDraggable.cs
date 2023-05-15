@@ -16,4 +16,13 @@ public class SortCardDraggable : MonoBehaviour, IDragHandler
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D other) 
+    {
+        if(other.gameObject.tag == "Slot")
+        {
+            this.transform.rotation = Quaternion.Euler(this.transform.rotation.x, this.transform.rotation.y, 0);
+            Debug.Log("!!!!!!!!!!!!!");
+        }
+    }
+
 }

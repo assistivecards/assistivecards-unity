@@ -25,10 +25,11 @@ public class DrawShapesBoardGenerator : MonoBehaviour
     [SerializeField] Image[] cardImagesInScene;
     [SerializeField] List<string> shapes;
     [SerializeField] List<GameObject> paths;
-    [SerializeField] List<GameObject> randomPaths;
+    public List<GameObject> randomPaths;
     [SerializeField] List<GameObject> pathsParents;
     private string selectedShape;
     [SerializeField] List<Transform> handles;
+    public int correctCardIndex;
 
     private void Awake()
     {
@@ -70,6 +71,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
         ChooseRandomPaths();
         TranslateDrawText();
         PlaceSprites();
+        FindCorrectCardIndex();
         ScalePathsUp();
         Invoke("TriggerUpdatePaths", .20f);
         Invoke("PlaceHandles", .25f);
@@ -218,6 +220,18 @@ public class DrawShapesBoardGenerator : MonoBehaviour
         }
 
         ScaleImagesUp();
+    }
+
+    private void FindCorrectCardIndex()
+    {
+        for (int i = 0; i < cardImagesInScene.Length; i++)
+        {
+            if (cardImagesInScene[i].sprite.texture == randomImages[0])
+            {
+                correctCardIndex = i;
+
+            }
+        }
     }
 
 }

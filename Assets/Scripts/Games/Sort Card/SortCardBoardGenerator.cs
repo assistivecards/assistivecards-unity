@@ -103,6 +103,7 @@ public class SortCardBoardGenerator : MonoBehaviour
 
             card.transform.name = cardNames[cardImageRandom];
             card.transform.GetComponentInChildren<RawImage>().texture = cardTexture;
+            card.GetComponent<SortCardDraggable>().cardType = cardLocalNames[cardImageRandom];
         }
 
         GenerateSortableCards();

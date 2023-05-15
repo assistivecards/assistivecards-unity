@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class SortCardDraggable : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
+    public string cardType;
     public bool draggable = false;
     public bool isPointerUp = false;
 
@@ -33,6 +34,8 @@ public class SortCardDraggable : MonoBehaviour, IDragHandler, IPointerUpHandler,
         {
             LeanTween.rotateZ(this.gameObject, 0, 0.7f);
             LeanTween.move(this.gameObject, other.transform.position, 0.7f);
+            this.transform.SetParent(other.transform);
+            other.gameObject.GetComponentInParent<SortCardOrderDetection>().ListCards();
         }
     }
 

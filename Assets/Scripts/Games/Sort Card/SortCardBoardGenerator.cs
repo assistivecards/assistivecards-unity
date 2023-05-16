@@ -20,13 +20,14 @@ public class SortCardBoardGenerator : MonoBehaviour
     public List<int> usedRandoms = new List<int>();
 
     public List<string> cardNames = new List<string>();
-    public List<string> cardDefinitionsLocale = new List<string>();
     public List<GameObject> cardListTransforms  = new List<GameObject>();
     public List<GameObject> slotableCardTransforms  = new List<GameObject>();
     public List<GameObject> listedCards = new List<GameObject>();
     public List<GameObject> slotableCards = new List<GameObject>();
+    public List<string> cards = new List<string>();
     public List<int> randomCard = new List<int>();
     public string packSlug;
+    public string sortedCardsString;
 
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject cardListParent;
@@ -104,6 +105,12 @@ public class SortCardBoardGenerator : MonoBehaviour
             card.transform.name = cardNames[cardImageRandom];
             card.transform.GetComponentInChildren<RawImage>().texture = cardTexture;
             card.GetComponent<SortCardDraggable>().cardType = cardLocalNames[cardImageRandom];
+            cards.Add(cardLocalNames[cardImageRandom]);
+        }
+
+        foreach(string card in cards)
+        {
+            sortedCardsString = sortedCardsString + card;
         }
 
         GenerateSortableCards();

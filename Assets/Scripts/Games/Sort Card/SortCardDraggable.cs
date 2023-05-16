@@ -6,9 +6,15 @@ using UnityEngine.UI;
 
 public class SortCardDraggable : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
+    private SortCardsLevelEnding levelEnding;
     public string cardType;
     public bool draggable = false;
     public bool isPointerUp = false;
+
+    private void Awake() 
+    {
+        levelEnding = GameObject.Find("GamePanel").GetComponent<SortCardsLevelEnding>();
+    }
 
     public void OnDrag(PointerEventData eventData)
     {
@@ -36,6 +42,11 @@ public class SortCardDraggable : MonoBehaviour, IDragHandler, IPointerUpHandler,
             LeanTween.move(this.gameObject, other.transform.position, 0.7f);
             this.transform.SetParent(other.transform);
             other.gameObject.GetComponentInParent<SortCardOrderDetection>().ListCards();
+            levelEnding.count++;
+            if(levelEnding.count == 3)
+            {
+                levelEnding.CreateString();
+            }
         }
     }
 

@@ -2162,6 +2162,7 @@ GameObject:
   - component: {fileID: 211001379}
   - component: {fileID: 211001378}
   - component: {fileID: 211001380}
+  - component: {fileID: 211001381}
   m_Layer: 5
   m_Name: Handle1
   m_TagString: Untagged
@@ -2244,6 +2245,24 @@ MonoBehaviour:
   canDrag: 0
   waypoints: []
   correctPath: {fileID: 0}
+  waypointGrey: {r: 0.24313726, g: 0.27058825, b: 0.35686275, a: 0.6862745}
+  waypointGreen: {r: 0.105882354, g: 0.5921569, b: 0.21960784, a: 0.6862745}
+--- !u!58 &211001381
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211001376}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 50
 --- !u!1 &211395397
 GameObject:
   m_ObjectHideFlags: 0
@@ -4201,6 +4220,7 @@ GameObject:
   - component: {fileID: 370969050}
   - component: {fileID: 370969049}
   - component: {fileID: 370969051}
+  - component: {fileID: 370969052}
   m_Layer: 5
   m_Name: Handle2
   m_TagString: Untagged
@@ -4283,6 +4303,24 @@ MonoBehaviour:
   canDrag: 0
   waypoints: []
   correctPath: {fileID: 0}
+  waypointGrey: {r: 0.24313726, g: 0.27058825, b: 0.35686275, a: 0.6862745}
+  waypointGreen: {r: 0.105882354, g: 0.5921569, b: 0.21960784, a: 0.6862745}
+--- !u!58 &370969052
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370969047}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 50
 --- !u!1 &380043235
 GameObject:
   m_ObjectHideFlags: 0
@@ -17524,6 +17562,7 @@ GameObject:
   - component: {fileID: 1333128093}
   - component: {fileID: 1333128092}
   - component: {fileID: 1333128094}
+  - component: {fileID: 1333128095}
   m_Layer: 5
   m_Name: Handle3
   m_TagString: Untagged
@@ -17606,6 +17645,24 @@ MonoBehaviour:
   canDrag: 0
   waypoints: []
   correctPath: {fileID: 0}
+  waypointGrey: {r: 0.24313726, g: 0.27058825, b: 0.35686275, a: 0.6862745}
+  waypointGreen: {r: 0.105882354, g: 0.5921569, b: 0.21960784, a: 0.6862745}
+--- !u!58 &1333128095
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333128090}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 50
 --- !u!1 &1338730596
 GameObject:
   m_ObjectHideFlags: 0

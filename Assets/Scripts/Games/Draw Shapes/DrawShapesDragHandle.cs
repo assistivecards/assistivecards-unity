@@ -14,6 +14,8 @@ public class DrawShapesDragHandle : MonoBehaviour, IPointerDownHandler, IDragHan
     public List<GameObject> waypoints;
     [SerializeField] GameObject correctPath;
     private GameAPI gameAPI;
+    public Color waypointGrey;
+    public Color waypointGreen;
 
     private void Awake()
     {
@@ -62,6 +64,25 @@ public class DrawShapesDragHandle : MonoBehaviour, IPointerDownHandler, IDragHan
             {
                 canDrag = false;
                 LeanTween.move(gameObject, path.path.GetPoint(0), .25f);
+
+                for (int i = 0; i < waypoints.Count; i++)
+                {
+                    LeanTween.color(waypoints[i].GetComponent<RectTransform>(), waypointGrey, .25f);
+                }
+            }
+
+            for (int i = 0; i < waypoints.Count; i++)
+            {
+                if (Physics2D.OverlapPoint(waypoints[i].transform.position) == GetComponent<Collider2D>() && canDrag)
+                {
+                    for (int j = 0; j < i; j++)
+                    {
+                        waypoints[j].GetComponent<Image>().color = waypointGreen;
+                    }
+                }
+
+                else
+                    waypoints[i].GetComponent<Image>().color = waypointGrey;
             }
 
         }
@@ -83,6 +104,11 @@ public class DrawShapesDragHandle : MonoBehaviour, IPointerDownHandler, IDragHan
         if (path.gameObject != correctPath)
         {
             LeanTween.move(gameObject, path.path.GetPoint(0), .25f);
+
+            for (int i = 0; i < waypoints.Count; i++)
+            {
+                LeanTween.color(waypoints[i].GetComponent<RectTransform>(), waypointGrey, .25f);
+            }
         }
     }
 }

@@ -21,6 +21,7 @@ public class SortCardUIController : MonoBehaviour
     public void LevelEnd()
     {
         levelEndScreen.SetActive(true);
+        LeanTween.scale(levelEndScreen, Vector3.one * 0.5f, 0.25f);
         gameUI.SetActive(false);
         backButton.SetActive(false);
         settingButton.SetActive(false);

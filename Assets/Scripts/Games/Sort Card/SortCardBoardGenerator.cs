@@ -20,13 +20,17 @@ public class SortCardBoardGenerator : MonoBehaviour
     public List<int> usedRandoms = new List<int>();
 
     public List<string> cardNames = new List<string>();
-    public List<string> cardDefinitionsLocale = new List<string>();
     public List<GameObject> cardListTransforms  = new List<GameObject>();
     public List<GameObject> slotableCardTransforms  = new List<GameObject>();
     public List<GameObject> listedCards = new List<GameObject>();
     public List<GameObject> slotableCards = new List<GameObject>();
+    public List<string> cards = new List<string>();
     public List<int> randomCard = new List<int>();
     public string packSlug;
+
+    public string Card1;
+    public string Card2;
+    public string Card3;
 
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject cardListParent;
@@ -104,9 +108,17 @@ public class SortCardBoardGenerator : MonoBehaviour
             card.transform.name = cardNames[cardImageRandom];
             card.transform.GetComponentInChildren<RawImage>().texture = cardTexture;
             card.GetComponent<SortCardDraggable>().cardType = cardLocalNames[cardImageRandom];
+            cards.Add(cardLocalNames[cardImageRandom]);
         }
-
+        GetCardOrder();
         GenerateSortableCards();
+    }
+
+    private void GetCardOrder()
+    {
+        Card1 = cards[0];
+        Card2 = cards[1];
+        Card3 = cards[2];
     }
 
     private void CreateRandomList()
@@ -132,6 +144,7 @@ public class SortCardBoardGenerator : MonoBehaviour
             GameObject card = Instantiate(listedCards[i], slotableCardTransforms[randomCard[i]].transform.position, Quaternion.identity);
             card.transform.SetParent(slotableCardTransforms[randomCard[i]].transform);
             card.GetComponent<SortCardDraggable>().draggable = true;
+            card.GetComponent<SortCardDraggable>().startingParent = slotableCardTransforms[randomCard[i]];
             LeanTween.scale(card, Vector3.one * 0.5f, 0.5f);
             card.transform.rotation = Quaternion.Euler(card.transform.rotation.x, card.transform.rotation.y, Random.Range(40, -40));
             LeanTween.moveLocal(card, new Vector3(card.transform.localPosition.x, card.transform.localPosition.y + Random.Range(-50, 50), card.transform.localPosition.z), 0f);

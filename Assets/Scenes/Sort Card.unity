@@ -1272,6 +1272,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &781907399 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 804781094349168275, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
+  m_PrefabInstance: {fileID: 1275520832}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &849033361 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8438209764908285022, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
@@ -1958,7 +1963,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2219732562508632212, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
   m_PrefabInstance: {fileID: 1275520832}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 781907399}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aaba938bce50a3046becc00d14fc056d, type: 3}
@@ -1969,7 +1974,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 804781094349168274, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
   m_PrefabInstance: {fileID: 1275520832}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 781907399}
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02839d6f1617248e7b0670900cf816a4, type: 3}
@@ -5687,6 +5692,7 @@ MonoBehaviour:
   backButton: {fileID: 849033361}
   settingButton: {fileID: 472857506}
   helloText: {fileID: 1971265201}
+  levelEndScreen: {fileID: 781907399}
 --- !u!114 &8383894889009589327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5733,6 +5739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boardGenerator: {fileID: 8383894889009589327}
   orderDetection: {fileID: 1362859076}
+  UIController: {fileID: 8383894889009589326}
   orderedCards: 
   count: 0
 --- !u!114 &8691574409270737102

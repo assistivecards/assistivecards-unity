@@ -6,6 +6,7 @@ public class SortCardsLevelEnding : MonoBehaviour
 {
     [SerializeField] private SortCardBoardGenerator boardGenerator;
     [SerializeField] private SortCardOrderDetection orderDetection;
+    [SerializeField] private SortCardUIController UIController;
     public string orderedCards;
     public int count;
 
@@ -19,7 +20,7 @@ public class SortCardsLevelEnding : MonoBehaviour
 
         if(orderedCards == boardGenerator.sortedCardsString)
         {
-            Debug.Log("LEVEL END!");
+            UIController.LevelEnd();
         }
     }
 }

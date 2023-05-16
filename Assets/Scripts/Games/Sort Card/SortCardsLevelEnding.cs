@@ -11,6 +11,7 @@ public class SortCardsLevelEnding : MonoBehaviour
     public string Card1;
     public string Card2;
     public string Card3;
+
     public int count;
     public int correct;
 
@@ -24,13 +25,28 @@ public class SortCardsLevelEnding : MonoBehaviour
         {
             correct++;
         }
+        else if(Card1 != boardGenerator.Card1)
+        {
+            orderDetection.slotCards[0].GetComponent<SortCardDraggable>().MoveToStartPos();
+        }
+
         if(Card2 == boardGenerator.Card2)
         {
             correct++;
         }
-        if(Card2 == boardGenerator.Card2)
+        else if(Card2 != boardGenerator.Card2)
+        {
+            orderDetection.slotCards[1].GetComponent<SortCardDraggable>().MoveToStartPos();
+        }
+
+
+        if(Card3 == boardGenerator.Card3)
         {
             correct++;
+        }
+        else if(Card3 != boardGenerator.Card3)
+        {
+            orderDetection.slotCards[2].GetComponent<SortCardDraggable>().MoveToStartPos();
         }
 
         LevelEndDetect();

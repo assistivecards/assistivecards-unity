@@ -7,9 +7,12 @@ using UnityEngine.UI;
 public class SortCardDraggable : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
     private SortCardsLevelEnding levelEnding;
+    public Vector3 startingPos;
+    public GameObject startingParent;
     public string cardType;
     public bool draggable = false;
     public bool isPointerUp = false;
+    private bool landed = false;
 
     private void Awake() 
     {
@@ -36,7 +39,7 @@ public class SortCardDraggable : MonoBehaviour, IDragHandler, IPointerUpHandler,
 
     private void OnCollisionStay2D(Collision2D other) 
     {
-        if(other.gameObject.tag == "Slot" && isPointerUp)
+        if(other.gameObject.tag == "Slot" && isPointerUp && !landed)
         {
             LeanTween.rotateZ(this.gameObject, 0, 0.7f);
             LeanTween.move(this.gameObject, other.transform.position, 0.7f);
@@ -47,7 +50,15 @@ public class SortCardDraggable : MonoBehaviour, IDragHandler, IPointerUpHandler,
             {
                 levelEnding.CreateString();
             }
+            landed = true;
         }
+    }
+
+    public void MoveToStartPos()
+    {
+        LeanTween.move(this.gameObject, startingParent.transform.position, 0.75f);
+        this.transform.SetParent(startingParent.transform);
+        landed = false;
     }
 
 }

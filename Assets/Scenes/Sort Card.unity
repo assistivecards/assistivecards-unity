@@ -5236,6 +5236,7 @@ GameObject:
   - component: {fileID: 1995057600056102325}
   - component: {fileID: 8383894889009589326}
   - component: {fileID: 8383894889009589327}
+  - component: {fileID: 8383894889009589328}
   m_Layer: 5
   m_Name: GamePanel
   m_TagString: Untagged
@@ -5707,16 +5708,33 @@ MonoBehaviour:
     cards: []
   usedRandoms: 
   cardNames: []
-  cardDefinitionsLocale: []
   cardListTransforms: []
   slotableCardTransforms: []
   listedCards: []
   slotableCards: []
+  cards: []
   randomCard: 
   packSlug: 
+  sortedCardsString: 
   cardPrefab: {fileID: 1572616208917296617, guid: f6deacab0f9f3425c8997c07b0accca7, type: 3}
   cardListParent: {fileID: 1495660434}
   slotableCardsParent: {fileID: 1685910171}
+--- !u!114 &8383894889009589328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3720148778835819161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e649c26d26464400b9bf0dab965a778c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boardGenerator: {fileID: 8383894889009589327}
+  orderDetection: {fileID: 1362859076}
+  orderedCards: 
+  count: 0
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

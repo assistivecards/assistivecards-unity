@@ -30,6 +30,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
     private string selectedShape;
     [SerializeField] List<Transform> handles;
     public int correctCardIndex;
+    [SerializeField] GameObject loadingPanel;
 
     private void Awake()
     {
@@ -72,6 +73,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
         TranslateDrawText();
         PlaceSprites();
         FindCorrectCardIndex();
+        DisableLoadingPanel();
         ScalePathsUp();
         Invoke("TriggerUpdatePaths", .20f);
         Invoke("PlaceHandles", .25f);
@@ -231,6 +233,14 @@ public class DrawShapesBoardGenerator : MonoBehaviour
                 correctCardIndex = i;
 
             }
+        }
+    }
+
+    private void DisableLoadingPanel()
+    {
+        if (loadingPanel.activeInHierarchy)
+        {
+            loadingPanel.SetActive(false);
         }
     }
 

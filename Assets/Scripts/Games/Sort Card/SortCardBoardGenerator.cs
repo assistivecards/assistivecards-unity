@@ -11,8 +11,10 @@ public class SortCardBoardGenerator : MonoBehaviour
     GameAPI gameAPI;
     public string selectedLangCode;
 
-    AssistiveCardsSDK.AssistiveCardsSDK.Cards cardDefinitions;
     [SerializeField] private SortCardOrderDetection orderDetection;
+    [SerializeField] private SortCardsLevelEnding levelEnd;
+
+    AssistiveCardsSDK.AssistiveCardsSDK.Cards cardDefinitions;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cardTextures;
     [SerializeField] private PackSelectionPanel packSelectionPanel;
     AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
@@ -173,5 +175,8 @@ public class SortCardBoardGenerator : MonoBehaviour
         listedCards.Clear();
         slotableCards.Clear();
         orderDetection.ClearLists();
+
+        levelEnd.correct = 0;
+        levelEnd.count = 0;
     }
 }

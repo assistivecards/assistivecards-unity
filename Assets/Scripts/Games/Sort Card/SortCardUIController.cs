@@ -8,7 +8,7 @@ public class SortCardUIController : MonoBehaviour
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject settingButton;
     [SerializeField] private GameObject helloText;
-
+    [SerializeField] private GameObject packSelectionPanel;
     [SerializeField] private GameObject levelEndScreen;
     
     public void GameUIActivate()
@@ -18,6 +18,7 @@ public class SortCardUIController : MonoBehaviour
         settingButton.SetActive(true);
         helloText.SetActive(false);
     }
+
     public void LevelEnd()
     {
         levelEndScreen.SetActive(true);
@@ -26,6 +27,20 @@ public class SortCardUIController : MonoBehaviour
         backButton.SetActive(false);
         settingButton.SetActive(false);
         helloText.SetActive(false);
+    }
+
+    public void SelectNewPackClick()
+    {
+        backButton.SetActive(false);
+        settingButton.SetActive(true);
+        helloText.SetActive(true);
+        packSelectionPanel.SetActive(true);
+        gameUI.SetActive(false);
+    }
+
+    public void LevelScreenClose()
+    {
+        LeanTween.scale(levelEndScreen, Vector3.zero, 0.25f).setOnComplete(GameUIActivate);
     }
 
 }

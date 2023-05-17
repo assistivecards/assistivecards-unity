@@ -27,7 +27,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
     [SerializeField] List<GameObject> paths;
     public List<GameObject> randomPaths;
     [SerializeField] List<GameObject> pathsParents;
-    private string selectedShape;
+    public string selectedShape;
     [SerializeField] List<Transform> handles;
     public int correctCardIndex;
     [SerializeField] GameObject loadingPanel;
@@ -173,7 +173,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
 
     private void ChooseRandomPaths()
     {
-        selectedShape = paths[Random.Range(0, paths.Count)].name;
+        // selectedShape = paths[Random.Range(0, paths.Count)].name;
         Debug.Log("Selected Shape: " + selectedShape);
 
         var selectedPaths = paths.Where(path => path.name == selectedShape).ToList();

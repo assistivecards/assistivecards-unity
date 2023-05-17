@@ -35,4 +35,14 @@ public class SortCardOrderDetection : MonoBehaviour
     {
         slotCards.Remove(_object);
     }
+
+    public void ClearLists()
+    {
+        foreach(var card in slotCards)
+        {
+            Destroy(card);
+        }
+        slotCards.Clear();
+        cards.Clear();
+    }
 }

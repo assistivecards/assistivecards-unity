@@ -12,6 +12,7 @@ public class SortCardBoardGenerator : MonoBehaviour
     public string selectedLangCode;
 
     AssistiveCardsSDK.AssistiveCardsSDK.Cards cardDefinitions;
+    [SerializeField] private SortCardOrderDetection orderDetection;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cardTextures;
     [SerializeField] private PackSelectionPanel packSelectionPanel;
     AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
@@ -149,5 +150,28 @@ public class SortCardBoardGenerator : MonoBehaviour
             card.transform.rotation = Quaternion.Euler(card.transform.rotation.x, card.transform.rotation.y, Random.Range(40, -40));
             LeanTween.moveLocal(card, new Vector3(card.transform.localPosition.x, card.transform.localPosition.y + Random.Range(-50, 50), card.transform.localPosition.z), 0f);
         }
+    }
+
+    public void ClearBoard()
+    {
+        cardNames.Clear();
+        cardListTransforms.Clear();
+        slotableCardTransforms.Clear();
+        randomCard.Clear();
+        cards.Clear();
+        cardLocalNames.Clear();
+        usedRandoms.Clear();
+
+        foreach(var card in listedCards)
+        {
+            Destroy(card);
+        }
+        foreach(var card in slotableCards)
+        {
+            Destroy(card);
+        }
+        listedCards.Clear();
+        slotableCards.Clear();
+        orderDetection.ClearLists();
     }
 }

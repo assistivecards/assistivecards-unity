@@ -44,6 +44,7 @@ public class SortCardsLevelEnding : MonoBehaviour
         if(correct >= 3)
         {
             UIController.LevelEnd();
+            boardGenerator.ClearBoard();
         }
         else
         {

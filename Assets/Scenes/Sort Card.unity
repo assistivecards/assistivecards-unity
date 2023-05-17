@@ -2103,6 +2103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotParent: {fileID: 1362859074}
   slots: []
+  slotCards: []
   cards: []
 --- !u!224 &1371645660 stripped
 RectTransform:
@@ -5706,6 +5707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedLangCode: 
+  orderDetection: {fileID: 1362859076}
   cardTextures:
     cards: []
   packSelectionPanel: {fileID: 662493964}
@@ -5721,7 +5723,9 @@ MonoBehaviour:
   cards: []
   randomCard: 
   packSlug: 
-  sortedCardsString: 
+  Card1: 
+  Card2: 
+  Card3: 
   cardPrefab: {fileID: 1572616208917296617, guid: f6deacab0f9f3425c8997c07b0accca7, type: 3}
   cardListParent: {fileID: 1495660434}
   slotableCardsParent: {fileID: 1685910171}
@@ -5740,8 +5744,11 @@ MonoBehaviour:
   boardGenerator: {fileID: 8383894889009589327}
   orderDetection: {fileID: 1362859076}
   UIController: {fileID: 8383894889009589326}
-  orderedCards: 
+  Card1: 
+  Card2: 
+  Card3: 
   count: 0
+  correct: 0
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

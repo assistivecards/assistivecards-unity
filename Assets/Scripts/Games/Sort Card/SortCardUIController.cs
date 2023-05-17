@@ -38,9 +38,21 @@ public class SortCardUIController : MonoBehaviour
         gameUI.SetActive(false);
     }
 
-    public void LevelScreenClose()
+    public void LevelScreenContinue()
     {
         LeanTween.scale(levelEndScreen, Vector3.zero, 0.25f).setOnComplete(GameUIActivate);
+    }
+
+    public void LevelScreenPackSelect()
+    {
+        LeanTween.scale(levelEndScreen, Vector3.zero, 0.25f).setOnComplete(SelectNewPackClick);
+    }
+
+    private void LevelEndClose()
+    {
+        levelEndScreen.SetActive(false);
+        packSelectionPanel.SetActive(true);
+
     }
 
 }

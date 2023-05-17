@@ -95,7 +95,7 @@ public class SlingBoardGenerator : MonoBehaviour
 
         for (int i = 0; i < box.childCount - 1; i++)
         {
-            LeanTween.color(box.GetChild(i).gameObject, Color.black, .2f);
+            LeanTween.color(box.GetChild(i).gameObject, Color.white, .2f);
         }
 
     }

@@ -7,15 +7,16 @@ using UnityEngine.UI;
 
 public class DrawShapesDragHandle : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
-    [SerializeField] PathCreator path;
+    public PathCreator path;
     private DrawShapesBoardGenerator board;
     public float distanceThreshold;
     public bool canDrag;
     public List<GameObject> waypoints;
-    [SerializeField] GameObject correctPath;
+    public GameObject correctPath;
     private GameAPI gameAPI;
     public Color waypointGrey;
     public Color waypointGreen;
+    private GameObject lastWaypoint;
 
     private void Awake()
     {
@@ -51,6 +52,12 @@ public class DrawShapesDragHandle : MonoBehaviour, IPointerDownHandler, IDragHan
         {
             waypoints.Add(path.transform.GetChild(0).GetChild(i).gameObject);
         }
+
+        lastWaypoint = waypoints[waypoints.Count - 1];
+        lastWaypoint.AddComponent<CircleCollider2D>();
+        lastWaypoint.GetComponent<CircleCollider2D>().radius = 50;
+        lastWaypoint.GetComponent<CircleCollider2D>().isTrigger = true;
+        lastWaypoint.tag = "LastWaypoint";
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -75,7 +82,7 @@ public class DrawShapesDragHandle : MonoBehaviour, IPointerDownHandler, IDragHan
             {
                 if (Physics2D.OverlapPoint(waypoints[i].transform.position) == GetComponent<Collider2D>() && canDrag)
                 {
-                    for (int j = 0; j < i; j++)
+                    for (int j = 0; j <= i; j++)
                     {
                         waypoints[j].GetComponent<Image>().color = waypointGreen;
                     }

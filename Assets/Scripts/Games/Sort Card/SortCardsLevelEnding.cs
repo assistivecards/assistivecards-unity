@@ -25,28 +25,15 @@ public class SortCardsLevelEnding : MonoBehaviour
         {
             correct++;
         }
-        else if(Card1 != boardGenerator.Card1)
-        {
-            orderDetection.slotCards[0].GetComponent<SortCardDraggable>().MoveToStartPos();
-        }
 
         if(Card2 == boardGenerator.Card2)
         {
             correct++;
         }
-        else if(Card2 != boardGenerator.Card2)
-        {
-            orderDetection.slotCards[1].GetComponent<SortCardDraggable>().MoveToStartPos();
-        }
-
 
         if(Card3 == boardGenerator.Card3)
         {
             correct++;
-        }
-        else if(Card3 != boardGenerator.Card3)
-        {
-            orderDetection.slotCards[2].GetComponent<SortCardDraggable>().MoveToStartPos();
         }
 
         LevelEndDetect();
@@ -58,5 +45,27 @@ public class SortCardsLevelEnding : MonoBehaviour
         {
             UIController.LevelEnd();
         }
+        else
+        {
+            Invoke("RestartBoard", 0.8f);
+        }
+    }
+
+    private void RestartBoard()
+    {
+        orderDetection.slotCards[0].transform.SetParent(orderDetection.slotCards[0].GetComponent<SortCardDraggable>().startingParent.transform);
+        orderDetection.slotCards[1].transform.SetParent(orderDetection.slotCards[1].GetComponent<SortCardDraggable>().startingParent.transform);
+        orderDetection.slotCards[2].transform.SetParent(orderDetection.slotCards[2].GetComponent<SortCardDraggable>().startingParent.transform);
+
+        LeanTween.move(orderDetection.slotCards[0],orderDetection.slotCards[0].GetComponent<SortCardDraggable>().startingParent.transform, 0.75f);
+        LeanTween.move(orderDetection.slotCards[1],orderDetection.slotCards[1].GetComponent<SortCardDraggable>().startingParent.transform, 0.75f);
+        LeanTween.move(orderDetection.slotCards[2],orderDetection.slotCards[2].GetComponent<SortCardDraggable>().startingParent.transform, 0.75f);
+
+        orderDetection.slotCards[0].GetComponent<SortCardDraggable>().Invoke("SetLandedFalse", 0.8f);
+        orderDetection.slotCards[1].GetComponent<SortCardDraggable>().Invoke("SetLandedFalse", 0.8f);
+        orderDetection.slotCards[2].GetComponent<SortCardDraggable>().Invoke("SetLandedFalse", 0.8f);
+
+        correct = 0;
+        count = 0;
     }
 }

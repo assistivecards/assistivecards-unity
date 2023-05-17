@@ -30,4 +30,9 @@ public class SortCardOrderDetection : MonoBehaviour
             }
         }
     }
+
+    public void RemoveFromList(GameObject _object)
+    {
+        slotCards.Remove(_object);
+    }
 }

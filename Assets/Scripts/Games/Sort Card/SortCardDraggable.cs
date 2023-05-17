@@ -12,7 +12,7 @@ public class SortCardDraggable : MonoBehaviour, IDragHandler, IPointerUpHandler,
     public string cardType;
     public bool draggable = false;
     public bool isPointerUp = false;
-    private bool landed = false;
+    public bool landed = false;
 
     private void Awake() 
     {
@@ -50,14 +50,14 @@ public class SortCardDraggable : MonoBehaviour, IDragHandler, IPointerUpHandler,
             {
                 levelEnding.CreateString();
             }
+
             landed = true;
         }
     }
 
-    public void MoveToStartPos()
+    public void SetLandedFalse()
     {
-        LeanTween.move(this.gameObject, startingParent.transform.position, 0.75f);
-        this.transform.SetParent(startingParent.transform);
+        // this.transform.position = startingParent.transform.position;
         landed = false;
     }
 

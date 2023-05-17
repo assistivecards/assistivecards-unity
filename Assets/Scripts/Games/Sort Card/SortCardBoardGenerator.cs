@@ -68,6 +68,7 @@ public class SortCardBoardGenerator : MonoBehaviour
         foreach (Transform child in slotableCardsParent.transform)
         {
             slotableCardTransforms.Add(child.gameObject);
+
         }
     }
 
@@ -151,11 +152,18 @@ public class SortCardBoardGenerator : MonoBehaviour
             LeanTween.scale(card, Vector3.one * 0.5f, 0.5f);
             card.transform.rotation = Quaternion.Euler(card.transform.rotation.x, card.transform.rotation.y, Random.Range(40, -40));
             LeanTween.moveLocal(card, new Vector3(card.transform.localPosition.x, card.transform.localPosition.y + Random.Range(-50, 50), card.transform.localPosition.z), 0f);
+            slotableCards.Add(card);
         }
     }
 
     public void ClearBoard()
     {
+        foreach(var card in slotableCards)
+        {
+            Destroy(card);
+        }
+        slotableCards.Clear();
+        
         cardNames.Clear();
         cardListTransforms.Clear();
         slotableCardTransforms.Clear();

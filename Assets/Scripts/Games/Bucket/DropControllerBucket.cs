@@ -154,7 +154,10 @@ public class DropControllerBucket : MonoBehaviour
 
     public void GenerateDropable()
     {
-        GeneratedDropableAsync(packSelectionPanel.selectedPackElement.name);
+        if(uıControllerBucket.canGenerate)
+        {
+            GeneratedDropableAsync(packSelectionPanel.selectedPackElement.name);
+        }
     }
 
     public void ResetLevel()

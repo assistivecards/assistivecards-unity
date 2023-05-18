@@ -3530,7 +3530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedLangCode: 
-  cardPrefab: {fileID: 1572616208917296617, guid: f6deacab0f9f3425c8997c07b0accca7, type: 3}
+  cardPrefab: {fileID: 1572616208917296617, guid: 15d05846ce78d45f58301c045abe58c1, type: 3}
   soundController: {fileID: 1381051505}
   packSelectionPanel: {fileID: 1296297388}
   cardCrushGrid: {fileID: 1381051502}

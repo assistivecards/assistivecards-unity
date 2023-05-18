@@ -25,7 +25,8 @@ public class DropControllerBucket : MonoBehaviour
     public GameObject moveCard;
     [SerializeField] private GameObject parentalObject;
     [SerializeField] private GameObject cardPrefab;
-    [SerializeField] private GameObject bucket;
+    [SerializeField] private GameObject bucketBack;
+    [SerializeField] private GameObject bucketFront;
     [SerializeField] private GameObject end;
     [SerializeField] private TMP_Text collectText;
     [SerializeField] private TMP_Text collectedCountText;
@@ -113,8 +114,9 @@ public class DropControllerBucket : MonoBehaviour
         }
         uıControllerBucket.CloseTransitionScreen();
         uıControllerBucket.InGame();
-        bucket.transform.localPosition = new Vector3(-13, -230, 0);
-        bucket.SetActive(true);
+        bucketBack.transform.localPosition = new Vector3(-13, -230, 0);
+        bucketBack.SetActive(true);
+        bucketFront.SetActive(true);
         Invoke("SelectMoveCard", 1.25f);
         collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(collectableCard).Replace("-", " "), selectedLangCode);
         LeanTween.scale(collectText.gameObject, Vector3.one, 0.2f);
@@ -160,7 +162,8 @@ public class DropControllerBucket : MonoBehaviour
         preRandom = random;
         CloseCollectText();
         cards.Clear();
-        bucket.SetActive(false);
+        bucketBack.SetActive(false);
+        bucketFront.SetActive(false);
         uıControllerBucket.LevelChangeActive();
         isBoardCreated = false;
         cardsList.Clear();
@@ -193,7 +196,8 @@ public class DropControllerBucket : MonoBehaviour
         preRandom = random;
         CloseCollectText();
         cards.Clear();
-        bucket.SetActive(false);
+        bucketBack.SetActive(false);
+        bucketFront.SetActive(false);
         uıControllerBucket.PackSelectionActive();
         isBoardCreated = false;
         cardsList.Clear();
@@ -233,9 +237,9 @@ public class DropControllerBucket : MonoBehaviour
 
     private void GetBucketChildList()
     {
-        for(int i = 2; i < bucket.transform.childCount; i++)
+        for(int i = 2; i < bucketBack.transform.childCount; i++)
         {
-            collectedDrops.Add(bucket.transform.GetChild(i).gameObject);
+            collectedDrops.Add(bucketBack.transform.GetChild(i).gameObject);
         }
     }
 

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class SortCardUIController : MonoBehaviour
 {
+    GameAPI gameAPI;
+    [SerializeField] private PackSelectionPanel packSelectionPanelScript;
     [SerializeField] private GameObject gameUI;
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject settingButton;
@@ -12,6 +14,12 @@ public class SortCardUIController : MonoBehaviour
     [SerializeField] private GameObject packSelectionPanel;
     [SerializeField] private GameObject levelEndScreen;
     [SerializeField] private GameObject loadingScreen;
+    public bool canGenerate;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
     
     public void GameUIActivate()
     {
@@ -42,14 +50,45 @@ public class SortCardUIController : MonoBehaviour
         gameUI.SetActive(false);
         loadingScreen.SetActive(false);
     }
+    
+    public void DetectPremium()
+    {
+        if (gameAPI.GetPremium() == "A5515T1V3C4RD5")
+        {
+            canGenerate = true;
+        }
+        else
+        {
+            for (int i = 0; i < gameAPI.cachedPacks.packs.Length; i++)
+            {
+                if (gameAPI.cachedPacks.packs[i].slug == packSelectionPanelScript.selectedPackElement.name)
+                {
+                    if (gameAPI.cachedPacks.packs[i].premium == 1)
+                    {
+                        Debug.Log("Seçilen paket premium");
+                        canGenerate = false;
+                    }
+                    else
+                    {
+                        Debug.Log("Seçilen paket premium değil");
+                        canGenerate = true;
+                    }
+
+                }
+            }
+        }
+    }
 
     public void LoadingScreenActivate()
     {
-        backButton.SetActive(false);
-        settingButton.SetActive(false);
-        helloText.SetActive(false);
-        gameUI.SetActive(false);
-        loadingScreen.SetActive(true);
+        if(canGenerate)
+        {
+            backButton.SetActive(false);
+            settingButton.SetActive(false);
+            helloText.SetActive(false);
+            gameUI.SetActive(false);
+            loadingScreen.SetActive(true);
+        }
     }
 
     public void ResetScroll()

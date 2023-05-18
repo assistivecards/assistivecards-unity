@@ -75,9 +75,12 @@ public class SortCardBoardGenerator : MonoBehaviour
 
     public void GeneratStylized()
     {
-        GetSlotedList();
-        packSlug = packSelectionPanel.selectedPackElement.name;
-        GenerateRandomBoardAsync(packSlug);
+        if(UIController.canGenerate)
+        {
+            GetSlotedList();
+            packSlug = packSelectionPanel.selectedPackElement.name;
+            GenerateRandomBoardAsync(packSlug);
+        }
     }
 
     private void GenerateRandomValue()

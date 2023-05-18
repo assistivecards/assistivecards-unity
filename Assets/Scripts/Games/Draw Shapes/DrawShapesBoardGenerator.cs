@@ -31,6 +31,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
     [SerializeField] List<Transform> handles;
     public int correctCardIndex;
     [SerializeField] GameObject loadingPanel;
+    [SerializeField] DrawShapesDragHandle dragHandle;
 
     private void Awake()
     {
@@ -86,6 +87,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
         randomCards.Clear();
         randomImages.Clear();
         randomSprites.Clear();
+        randomPaths.Clear();
 
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {
@@ -107,12 +109,18 @@ public class DrawShapesBoardGenerator : MonoBehaviour
 
     public void ScaleImagesDown()
     {
+        LeanTween.scale(drawText.gameObject, Vector3.zero, 0.2f);
+
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {
             LeanTween.scale(cardImagesInScene[i].gameObject, Vector3.zero, 0.2f);
+            LeanTween.scale(pathsParents[i], Vector3.zero, .25f);
+            LeanTween.scale(handles[i].gameObject, Vector3.zero, 0.25f);
         }
 
-        LeanTween.scale(drawText.gameObject, Vector3.zero, 0.2f);
+        Invoke("ResetWaypointColors", .25f);
+        Invoke("DisablePathsAndHandles", .25f);
+
     }
 
     public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)
@@ -219,6 +227,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
             handles[i].position = randomPaths[i].GetComponent<PathCreator>().path.GetPoint(0);
             handles[i].gameObject.SetActive(true);
             LeanTween.scale(handles[i].gameObject, Vector3.one * 0.5f, .15f);
+            handles[i].gameObject.GetComponent<DrawShapesDragHandle>().enabled = true;
         }
 
         ScaleImagesUp();
@@ -241,6 +250,27 @@ public class DrawShapesBoardGenerator : MonoBehaviour
         if (loadingPanel.activeInHierarchy)
         {
             loadingPanel.SetActive(false);
+        }
+    }
+
+    public void ResetWaypointColors()
+    {
+        for (int i = 0; i < randomPaths.Count; i++)
+        {
+            for (int j = 0; j < randomPaths[i].transform.GetChild(0).childCount; j++)
+            {
+                randomPaths[i].transform.GetChild(0).GetChild(j).GetComponent<Image>().color = dragHandle.waypointGrey;
+            }
+        }
+    }
+
+    public void DisablePathsAndHandles()
+    {
+        for (int i = 0; i < randomPaths.Count; i++)
+        {
+            randomPaths[i].SetActive(false);
+            handles[i].gameObject.SetActive(false);
+            handles[i].SetParent(GameObject.Find("GamePanel").transform);
         }
     }
 

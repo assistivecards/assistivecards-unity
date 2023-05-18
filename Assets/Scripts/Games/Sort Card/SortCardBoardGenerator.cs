@@ -13,6 +13,7 @@ public class SortCardBoardGenerator : MonoBehaviour
 
     [SerializeField] private SortCardOrderDetection orderDetection;
     [SerializeField] private SortCardsLevelEnding levelEnd;
+    [SerializeField] private SortCardUIController UIController;
 
     AssistiveCardsSDK.AssistiveCardsSDK.Cards cardDefinitions;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cardTextures;
@@ -154,6 +155,7 @@ public class SortCardBoardGenerator : MonoBehaviour
             LeanTween.moveLocal(card, new Vector3(card.transform.localPosition.x, card.transform.localPosition.y + Random.Range(-50, 50), card.transform.localPosition.z), 0f);
             slotableCards.Add(card);
         }
+        UIController.GameUIActivate();
     }
 
     public void ClearBoard()

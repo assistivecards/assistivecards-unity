@@ -32,6 +32,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
     public int correctCardIndex;
     [SerializeField] GameObject loadingPanel;
     [SerializeField] DrawShapesDragHandle dragHandle;
+    private bool isScreenSmall = false;
 
     private void Awake()
     {
@@ -41,6 +42,10 @@ public class DrawShapesBoardGenerator : MonoBehaviour
     private void Start()
     {
         gameAPI.PlayMusic();
+        if (Screen.width < 1000 || Screen.height < 1000)
+            isScreenSmall = true;
+        else
+            isScreenSmall = false;
     }
 
     private void OnEnable()
@@ -199,7 +204,11 @@ public class DrawShapesBoardGenerator : MonoBehaviour
     {
         for (int i = 0; i < pathsParents.Count; i++)
         {
-            LeanTween.scale(pathsParents[i], Vector3.one, .15f);
+            // LeanTween.scale(pathsParents[i], Vector3.one, .15f);
+            if (isScreenSmall)
+                LeanTween.scale(pathsParents[i], Vector3.one * 1.3f, .15f);
+            else
+                LeanTween.scale(pathsParents[i], Vector3.one, .15f);
             handles[i].SetParent(randomPaths[i].transform);
         }
     }

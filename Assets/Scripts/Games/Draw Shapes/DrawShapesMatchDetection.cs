@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DrawShapesMatchDetection : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class DrawShapesMatchDetection : MonoBehaviour
             Debug.Log("Correct Match!");
             gameObject.GetComponent<DrawShapesDragHandle>().enabled = false;
             LeanTween.scale(gameObject, Vector3.zero, .25f);
+
             for (int i = 0; i < dragHandle.waypoints.Count; i++)
             {
                 LeanTween.color(dragHandle.waypoints[i].GetComponent<RectTransform>(), dragHandle.waypointGreen, .25f);
@@ -35,6 +37,16 @@ public class DrawShapesMatchDetection : MonoBehaviour
         else if (other.tag == "LastWaypoint" && dragHandle.path.gameObject != dragHandle.correctPath && dragHandle.canDrag)
         {
             Debug.Log("Wrong Match!");
+            gameObject.GetComponent<DrawShapesDragHandle>().enabled = false;
+            LeanTween.scale(gameObject, Vector3.zero, .25f);
+
+            for (int i = 0; i < dragHandle.waypoints.Count; i++)
+            {
+                LeanTween.color(dragHandle.waypoints[i].GetComponent<RectTransform>(), dragHandle.waypointGreen, .25f);
+            }
+
+            LeanTween.alpha(board.cardImagesInScene[dragHandle.pathIndex].GetComponent<RectTransform>(), .5f, .25f);
+            Invoke("DisableCurrentHandle", 0.25f);
         }
     }
 

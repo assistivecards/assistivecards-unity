@@ -22,7 +22,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
     public static bool isBackAfterSignOut = false;
     [SerializeField] TMP_Text drawText;
     [SerializeField] string correctCardSlug;
-    [SerializeField] Image[] cardImagesInScene;
+    public Image[] cardImagesInScene;
     [SerializeField] List<string> shapes;
     [SerializeField] List<GameObject> paths;
     public List<GameObject> randomPaths;
@@ -100,6 +100,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
     {
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {
+            LeanTween.alpha(cardImagesInScene[i].gameObject.GetComponent<RectTransform>(), 1f, .01f);
             LeanTween.scale(cardImagesInScene[i].gameObject, Vector3.one, 0.2f);
         }
 

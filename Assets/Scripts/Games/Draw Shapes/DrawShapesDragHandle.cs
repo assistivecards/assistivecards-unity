@@ -17,6 +17,7 @@ public class DrawShapesDragHandle : MonoBehaviour, IPointerDownHandler, IDragHan
     public Color waypointGrey;
     public Color waypointGreen;
     private GameObject lastWaypoint;
+    public int pathIndex;
 
     private void Awake()
     {
@@ -33,16 +34,21 @@ public class DrawShapesDragHandle : MonoBehaviour, IPointerDownHandler, IDragHan
     {
         if (gameObject.name == "Handle1")
         {
-            path = board.randomPaths[0].GetComponent<PathCreator>();
+            pathIndex = 0;
+            // path = board.randomPaths[0].GetComponent<PathCreator>();
         }
         else if (gameObject.name == "Handle2")
         {
-            path = board.randomPaths[1].GetComponent<PathCreator>();
+            pathIndex = 1;
+            // path = board.randomPaths[1].GetComponent<PathCreator>();
         }
         else if (gameObject.name == "Handle3")
         {
-            path = board.randomPaths[2].GetComponent<PathCreator>();
+            pathIndex = 2;
+            // path = board.randomPaths[2].GetComponent<PathCreator>();
         }
+
+        path = board.randomPaths[pathIndex].GetComponent<PathCreator>();
 
         correctPath = board.randomPaths[board.correctCardIndex];
 
@@ -55,7 +61,7 @@ public class DrawShapesDragHandle : MonoBehaviour, IPointerDownHandler, IDragHan
 
         lastWaypoint = waypoints[waypoints.Count - 1];
         lastWaypoint.AddComponent<CircleCollider2D>();
-        lastWaypoint.GetComponent<CircleCollider2D>().radius = 50;
+        lastWaypoint.GetComponent<CircleCollider2D>().radius = 30;
         lastWaypoint.GetComponent<CircleCollider2D>().isTrigger = true;
         lastWaypoint.tag = "LastWaypoint";
     }
@@ -101,8 +107,8 @@ public class DrawShapesDragHandle : MonoBehaviour, IPointerDownHandler, IDragHan
         gameAPI.VibrateWeak();
         gameAPI.PlaySFX("Pickup");
         canDrag = true;
-        transform.position = eventData.position;
-        Vector3 nearestWorldPositionOnPath = path.path.GetPointAtDistance(path.path.GetClosestDistanceAlongPath(transform.position));
+        // transform.position = eventData.position;
+        // Vector3 nearestWorldPositionOnPath = path.path.GetPointAtDistance(path.path.GetClosestDistanceAlongPath(transform.position));
         // transform.position = nearestWorldPositionOnPath;
     }
 

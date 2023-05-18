@@ -6,6 +6,7 @@ public class UIControllerBucket : MonoBehaviour
 {
     GameAPI gameAPI;
     [SerializeField] private AccessibilityScreen accessibilityScreen;
+    [SerializeField] private PackSelectionPanel packSelectionPanelScript;
 
     [Header ("UI Elements")]
     [SerializeField] private GameObject levelChangeScreen;
@@ -21,6 +22,7 @@ public class UIControllerBucket : MonoBehaviour
 
 
     private bool firstTime = true;
+    public bool canGenerate;
 
     private void Awake() 
     {
@@ -64,10 +66,13 @@ public class UIControllerBucket : MonoBehaviour
 
     public void TransitionScreen()
     {
-        backButton.SetActive(false);
-        helloText.SetActive(false);
-        transitionScreen.SetActive(true);
-        collectCount.SetActive(false);
+        if(canGenerate)
+        {
+            backButton.SetActive(false);
+            helloText.SetActive(false);
+            transitionScreen.SetActive(true);
+            collectCount.SetActive(false);
+        }
     }
 
     public void CloseTransitionScreen()
@@ -79,6 +84,34 @@ public class UIControllerBucket : MonoBehaviour
     {
         LeanTween.scale(levelChangeScreen, Vector3.zero, 0.25f);
         Invoke("ResetLevelChangeScreen", 0.15f);
+    }
+
+    public void DetectPremium()
+    {
+        if (gameAPI.GetPremium() == "A5515T1V3C4RD5")
+        {
+            canGenerate = true;
+        }
+        else
+        {
+            for (int i = 0; i < gameAPI.cachedPacks.packs.Length; i++)
+            {
+                if (gameAPI.cachedPacks.packs[i].slug == packSelectionPanelScript.selectedPackElement.name)
+                {
+                    if (gameAPI.cachedPacks.packs[i].premium == 1)
+                    {
+                        Debug.Log("Seçilen paket premium");
+                        canGenerate = false;
+                    }
+                    else
+                    {
+                        Debug.Log("Seçilen paket premium değil");
+                        canGenerate = true;
+                    }
+
+                }
+            }
+        }
     }
 
     private void ResetLevelChangeScreen()

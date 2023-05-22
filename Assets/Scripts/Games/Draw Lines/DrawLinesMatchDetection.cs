@@ -62,7 +62,7 @@ public class DrawLinesMatchDetection : MonoBehaviour
             LeanTween.scale(gameObject, Vector3.zero, .25f);
             for (int i = 0; i < dragHandle.waypoints.Count; i++)
             {
-                LeanTween.color(dragHandle.waypoints[i].GetComponent<RectTransform>(), dragHandle.waypointGreen, .25f);
+                LeanTween.color(dragHandle.waypoints[i].GetComponent<RectTransform>(), dragHandle.waypointGrey, .25f);
             }
             Invoke("DisableCurrentHandle", 0.25f);
             LeanTween.alpha(matchedOption.GetComponent<RectTransform>(), .5f, .25f);

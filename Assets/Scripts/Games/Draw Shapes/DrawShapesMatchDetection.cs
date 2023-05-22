@@ -8,11 +8,13 @@ public class DrawShapesMatchDetection : MonoBehaviour
 {
     private DrawShapesDragHandle dragHandle;
     private DrawShapesBoardGenerator board;
+    private DrawShapesUIController UIController;
 
     private void Start()
     {
         dragHandle = gameObject.GetComponent<DrawShapesDragHandle>();
         board = GameObject.Find("GamePanel").GetComponent<DrawShapesBoardGenerator>();
+        UIController = GameObject.Find("GamePanel").GetComponent<DrawShapesUIController>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -20,6 +22,7 @@ public class DrawShapesMatchDetection : MonoBehaviour
         if (other.tag == "LastWaypoint" && dragHandle.path.gameObject == dragHandle.correctPath && dragHandle.canDrag)
         {
             Debug.Log("Correct Match!");
+            UIController.correctMatches++;
             gameObject.GetComponent<DrawShapesDragHandle>().enabled = false;
             LeanTween.scale(gameObject, Vector3.zero, .25f);
 
@@ -33,7 +36,12 @@ public class DrawShapesMatchDetection : MonoBehaviour
             Invoke("PlayCorrectMatchAnimation", 0.25f);
             board.Invoke("ScaleImagesDown", 1f);
             board.Invoke("ClearBoard", 1.3f);
-            board.Invoke("GenerateRandomBoardAsync", 1.3f);
+            if (UIController.correctMatches == UIController.checkpointFrequency)
+            {
+                UIController.Invoke("OpenCheckPointPanel", 1.3f);
+            }
+            else
+                board.Invoke("GenerateRandomBoardAsync", 1.3f);
         }
 
         else if (other.tag == "LastWaypoint" && dragHandle.path.gameObject != dragHandle.correctPath && dragHandle.canDrag)

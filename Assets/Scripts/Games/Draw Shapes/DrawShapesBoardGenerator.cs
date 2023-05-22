@@ -284,4 +284,9 @@ public class DrawShapesBoardGenerator : MonoBehaviour
         }
     }
 
+    public void ReadCard()
+    {
+        gameAPI.Speak(randomCards[0].title);
+    }
+
 }

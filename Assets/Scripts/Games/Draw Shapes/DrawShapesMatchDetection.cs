@@ -29,9 +29,11 @@ public class DrawShapesMatchDetection : MonoBehaviour
             }
 
             Invoke("DisableCurrentHandle", 0.25f);
-            board.Invoke("ScaleImagesDown", .75f);
-            board.Invoke("ClearBoard", 1.05f);
-            board.Invoke("GenerateRandomBoardAsync", 1.05f);
+            board.Invoke("ReadCard", 0.25f);
+            Invoke("PlayCorrectMatchAnimation", 0.25f);
+            board.Invoke("ScaleImagesDown", 1f);
+            board.Invoke("ClearBoard", 1.3f);
+            board.Invoke("GenerateRandomBoardAsync", 1.3f);
         }
 
         else if (other.tag == "LastWaypoint" && dragHandle.path.gameObject != dragHandle.correctPath && dragHandle.canDrag)
@@ -53,6 +55,11 @@ public class DrawShapesMatchDetection : MonoBehaviour
     public void DisableCurrentHandle()
     {
         gameObject.SetActive(false);
+    }
+
+    public void PlayCorrectMatchAnimation()
+    {
+        LeanTween.scale(board.cardImagesInScene[dragHandle.pathIndex].gameObject, Vector3.one * 1.25f, .25f);
     }
 
 }

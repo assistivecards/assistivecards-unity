@@ -9,6 +9,12 @@ public class DrawShapesMatchDetection : MonoBehaviour
     private DrawShapesDragHandle dragHandle;
     private DrawShapesBoardGenerator board;
     private DrawShapesUIController UIController;
+    private GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void Start()
     {
@@ -24,6 +30,7 @@ public class DrawShapesMatchDetection : MonoBehaviour
             Debug.Log("Correct Match!");
             UIController.correctMatches++;
             UIController.backButton.GetComponent<Button>().interactable = false;
+            gameAPI.PlaySFX("Success");
             gameObject.GetComponent<DrawShapesDragHandle>().enabled = false;
             LeanTween.scale(gameObject, Vector3.zero, .25f);
 

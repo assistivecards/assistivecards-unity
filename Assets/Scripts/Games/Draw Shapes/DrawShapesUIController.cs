@@ -95,4 +95,30 @@ public class DrawShapesUIController : MonoBehaviour
         checkPointPanel.transform.GetChild(1).GetComponent<Button>().interactable = true;
     }
 
+    public void OnBackButtonClick()
+    {
+        StartCoroutine(BackButtonClickCoroutine());
+    }
+
+    IEnumerator BackButtonClickCoroutine()
+    {
+        ResetCounter();
+        for (int i = 0; i < board.handles.Count; i++)
+        {
+            board.handles[i].GetComponent<CircleCollider2D>().enabled = false;
+        }
+        board.ScaleImagesDown();
+        backButton.SetActive(false);
+        yield return new WaitForSeconds(0.25f);
+        board.ClearBoard();
+        packSelectionPanel.transform.localScale = new Vector3(0, 0, 0);
+        ResetScrollRect();
+        packSelectionPanel.SetActive(true);
+        LeanTween.scale(packSelectionPanel, Vector3.one, 0.25f);
+        Invoke("EnableScrollRect", 0.26f);
+        helloText.SetActive(true);
+        speakerIcon.SetActive(true);
+
+    }
+
 }

@@ -23,6 +23,7 @@ public class DrawShapesMatchDetection : MonoBehaviour
         {
             Debug.Log("Correct Match!");
             UIController.correctMatches++;
+            UIController.backButton.GetComponent<Button>().interactable = false;
             gameObject.GetComponent<DrawShapesDragHandle>().enabled = false;
             LeanTween.scale(gameObject, Vector3.zero, .25f);
 
@@ -36,6 +37,7 @@ public class DrawShapesMatchDetection : MonoBehaviour
             Invoke("PlayCorrectMatchAnimation", 0.25f);
             board.Invoke("ScaleImagesDown", 1f);
             board.Invoke("ClearBoard", 1.3f);
+
             if (UIController.correctMatches == UIController.checkpointFrequency)
             {
                 UIController.Invoke("OpenCheckPointPanel", 1.3f);

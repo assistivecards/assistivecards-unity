@@ -28,11 +28,12 @@ public class DrawShapesBoardGenerator : MonoBehaviour
     public List<GameObject> randomPaths;
     public List<GameObject> pathsParents;
     private string selectedShape;
-    [SerializeField] List<Transform> handles;
+    public List<Transform> handles;
     public int correctCardIndex;
     [SerializeField] GameObject loadingPanel;
     [SerializeField] DrawShapesDragHandle dragHandle;
     private bool isScreenSmall = false;
+    private DrawShapesUIController UIController;
 
     private void Awake()
     {
@@ -42,6 +43,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
     private void Start()
     {
         gameAPI.PlayMusic();
+        UIController = gameObject.GetComponent<DrawShapesUIController>();
         if (Screen.width < 1000 || Screen.height < 1000)
             isScreenSmall = true;
         else
@@ -53,6 +55,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
         if (isBackAfterSignOut)
         {
             gameAPI.PlayMusic();
+            UIController.OnBackButtonClick();
             isBackAfterSignOut = false;
         }
     }
@@ -238,6 +241,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
             handles[i].gameObject.SetActive(true);
             LeanTween.scale(handles[i].gameObject, Vector3.one * 0.5f, .15f);
             handles[i].gameObject.GetComponent<DrawShapesDragHandle>().enabled = true;
+            handles[i].GetComponent<CircleCollider2D>().enabled = true;
         }
 
         ScaleImagesUp();

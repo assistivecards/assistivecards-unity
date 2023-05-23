@@ -34,6 +34,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
     [SerializeField] DrawShapesDragHandle dragHandle;
     private bool isScreenSmall = false;
     private DrawShapesUIController UIController;
+    private bool isTablet = false;
 
     private void Awake()
     {
@@ -48,6 +49,11 @@ public class DrawShapesBoardGenerator : MonoBehaviour
             isScreenSmall = true;
         else
             isScreenSmall = false;
+
+        if ((Screen.width == 2360 && Screen.height == 1640) || (Screen.width == 2732 && Screen.height == 2048) || (Screen.width == 2388 && Screen.height == 1668) || (Screen.width == 2224 && Screen.height == 1668))
+        {
+            isTablet = true;
+        }
     }
 
     private void OnEnable()
@@ -210,6 +216,10 @@ public class DrawShapesBoardGenerator : MonoBehaviour
             // LeanTween.scale(pathsParents[i], Vector3.one, .15f);
             if (isScreenSmall)
                 LeanTween.scale(pathsParents[i], Vector3.one * 1.3f, .15f);
+            else if (isTablet)
+            {
+                LeanTween.scale(pathsParents[i], Vector3.one * 0.9f, .15f);
+            }
             else
                 LeanTween.scale(pathsParents[i], Vector3.one, .15f);
             handles[i].SetParent(randomPaths[i].transform);

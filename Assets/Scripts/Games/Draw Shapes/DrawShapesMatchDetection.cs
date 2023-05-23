@@ -77,7 +77,7 @@ public class DrawShapesMatchDetection : MonoBehaviour
     public void PlayCorrectMatchAnimation()
     {
         LeanTween.scale(board.cardImagesInScene[dragHandle.pathIndex].gameObject, Vector3.one * 1.10f, .25f);
-        LeanTween.scale(board.pathsParents[dragHandle.pathIndex].gameObject, Vector3.one * 1.10f, .25f);
+        LeanTween.scale(board.pathsParents[dragHandle.pathIndex].gameObject, board.pathsParents[dragHandle.pathIndex].transform.localScale * 1.10f, .25f);
     }
 
 }

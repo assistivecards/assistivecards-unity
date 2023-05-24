@@ -34,7 +34,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
     [SerializeField] DrawShapesDragHandle dragHandle;
     private bool isScreenSmall = false;
     private DrawShapesUIController UIController;
-    private bool isTablet = false;
+    private bool isScreenLarge = false;
 
     private void Awake()
     {
@@ -52,7 +52,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
 
         if ((Screen.width == 2360 && Screen.height == 1640) || (Screen.width == 2732 && Screen.height == 2048) || (Screen.width == 2388 && Screen.height == 1668) || (Screen.width == 2224 && Screen.height == 1668))
         {
-            isTablet = true;
+            isScreenLarge = true;
         }
     }
 
@@ -215,8 +215,8 @@ public class DrawShapesBoardGenerator : MonoBehaviour
         {
             // LeanTween.scale(pathsParents[i], Vector3.one, .15f);
             if (isScreenSmall)
-                LeanTween.scale(pathsParents[i], Vector3.one * 1.3f, .15f);
-            else if (isTablet)
+                LeanTween.scale(pathsParents[i], Vector3.one * 1.25f, .15f);
+            else if (isScreenLarge)
             {
                 LeanTween.scale(pathsParents[i], Vector3.one * 0.9f, .15f);
             }
@@ -249,7 +249,12 @@ public class DrawShapesBoardGenerator : MonoBehaviour
         {
             handles[i].position = randomPaths[i].GetComponent<PathCreator>().path.GetPoint(0);
             handles[i].gameObject.SetActive(true);
-            LeanTween.scale(handles[i].gameObject, Vector3.one * 0.5f, .15f);
+            if (isScreenSmall)
+            {
+                LeanTween.scale(handles[i].gameObject, Vector3.one * 0.45f, .15f);
+            }
+            else
+                LeanTween.scale(handles[i].gameObject, Vector3.one * 0.5f, .15f);
             handles[i].gameObject.GetComponent<DrawShapesDragHandle>().enabled = true;
             handles[i].GetComponent<CircleCollider2D>().enabled = true;
         }

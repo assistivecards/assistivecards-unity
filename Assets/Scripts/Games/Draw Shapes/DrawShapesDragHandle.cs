@@ -61,7 +61,7 @@ public class DrawShapesDragHandle : MonoBehaviour, IPointerDownHandler, IDragHan
 
         lastWaypoint = waypoints[waypoints.Count - 1];
         lastWaypoint.AddComponent<CircleCollider2D>();
-        lastWaypoint.GetComponent<CircleCollider2D>().radius = 30;
+        lastWaypoint.GetComponent<CircleCollider2D>().radius = 10;
         lastWaypoint.GetComponent<CircleCollider2D>().isTrigger = true;
         lastWaypoint.tag = "LastWaypoint";
     }
@@ -116,6 +116,7 @@ public class DrawShapesDragHandle : MonoBehaviour, IPointerDownHandler, IDragHan
     {
         if (path.gameObject != correctPath)
         {
+            canDrag = false;
             LeanTween.move(gameObject, path.path.GetPoint(0), .25f);
 
             for (int i = 0; i < waypoints.Count; i++)

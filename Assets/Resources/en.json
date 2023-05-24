@@ -231,5 +231,6 @@
 	"throw_the_card":"Throw the $1 into the bucket",
 	"drag_the_card":"Drag the $1 cards inside",
 	"press_on_the_card":"Press on the $1 $2 times",
-	"draw_text":"Draw a $2 around the $1"
+	"draw_text":"Draw a $2 around the $1",
+	"stack_the_cards":"Stack the same cards"
 }

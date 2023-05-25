@@ -87,6 +87,10 @@ public class StackCardsBoardGenerator : MonoBehaviour
 
     public void ScaleImagesUp()
     {
+        for (int i = 0; i < cardImagesInScene.Length; i++)
+        {
+            cardImagesInScene[i].transform.parent.rotation = Quaternion.Euler(0, 0, Random.Range(-30, -10));
+        }
         for (int i = 0; i < assistiveCardsPlaceholders.Length; i++)
         {
             LeanTween.scale(assistiveCardsPlaceholders[i], Vector3.one, 0.2f);
@@ -210,9 +214,15 @@ public class StackCardsBoardGenerator : MonoBehaviour
 
     private void ScaleCardsUp()
     {
+        StartCoroutine("ScaleCardsUpCoroutine");
+    }
+
+    private IEnumerator ScaleCardsUpCoroutine()
+    {
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {
             LeanTween.scale(cardImagesInScene[i].transform.parent.gameObject, Vector3.one, 0.2f);
+            yield return new WaitForSeconds(0.05f);
         }
     }
 

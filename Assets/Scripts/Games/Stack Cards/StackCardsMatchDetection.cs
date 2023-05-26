@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class StackCardsMatchDetection : MonoBehaviour
+public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
 {
     private GameAPI gameAPI;
     public bool isMatched = false;
+    private Transform matchedSlotTransform;
 
     private void Awake()
     {
@@ -18,6 +17,7 @@ public class StackCardsMatchDetection : MonoBehaviour
     {
         if (other.transform.GetChild(0).GetComponent<Image>().sprite == transform.GetChild(0).GetComponent<Image>().sprite && other.transform.childCount == 1)
         {
+            matchedSlotTransform = other.transform;
             isMatched = true;
             Debug.Log("Correct Match! ENTER");
         }
@@ -32,6 +32,17 @@ public class StackCardsMatchDetection : MonoBehaviour
             Debug.Log("Correct Match! EXIT");
         }
 
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        if (isMatched)
+        {
+            gameObject.GetComponent<StackCardsDraggableCards>().enabled = false;
+            transform.SetParent(matchedSlotTransform);
+            LeanTween.moveLocal(gameObject, new Vector3(-20, -20, 0), 0.25f);
+            LeanTween.rotate(gameObject, Vector3.zero, .25f);
+        }
     }
 
 }

@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 74177160}
   - component: {fileID: 74177159}
   - component: {fileID: 74177161}
+  - component: {fileID: 74177162}
   m_Layer: 5
   m_Name: Card5
   m_TagString: Untagged
@@ -353,6 +354,18 @@ MonoBehaviour:
   m_UseGraphicAlpha: 1
   iterations: 50
   shadowSpread: {x: 10, y: 10}
+--- !u!114 &74177162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74177157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0678d80007335694a82a94614e9fe031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &88731552
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,6 +513,7 @@ GameObject:
   - component: {fileID: 99986242}
   - component: {fileID: 99986241}
   - component: {fileID: 99986243}
+  - component: {fileID: 99986244}
   m_Layer: 5
   m_Name: Card4
   m_TagString: Untagged
@@ -583,6 +597,18 @@ MonoBehaviour:
   m_UseGraphicAlpha: 1
   iterations: 50
   shadowSpread: {x: 10, y: 10}
+--- !u!114 &99986244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99986239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0678d80007335694a82a94614e9fe031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &123467222
 GameObject:
   m_ObjectHideFlags: 0
@@ -1766,6 +1792,7 @@ GameObject:
   - component: {fileID: 654935804}
   - component: {fileID: 654935803}
   - component: {fileID: 654935805}
+  - component: {fileID: 654935806}
   m_Layer: 5
   m_Name: Card3
   m_TagString: Untagged
@@ -1849,6 +1876,18 @@ MonoBehaviour:
   m_UseGraphicAlpha: 1
   iterations: 50
   shadowSpread: {x: 10, y: 10}
+--- !u!114 &654935806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654935801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0678d80007335694a82a94614e9fe031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &671447373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2303,6 +2342,7 @@ GameObject:
   - component: {fileID: 1103528442}
   - component: {fileID: 1103528441}
   - component: {fileID: 1103528443}
+  - component: {fileID: 1103528444}
   m_Layer: 5
   m_Name: Card2
   m_TagString: Untagged
@@ -2386,6 +2426,18 @@ MonoBehaviour:
   m_UseGraphicAlpha: 1
   iterations: 50
   shadowSpread: {x: 10, y: 10}
+--- !u!114 &1103528444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103528439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0678d80007335694a82a94614e9fe031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1120028108
 GameObject:
   m_ObjectHideFlags: 0
@@ -4080,6 +4132,7 @@ GameObject:
   - component: {fileID: 1899362501}
   - component: {fileID: 1899362500}
   - component: {fileID: 1899362502}
+  - component: {fileID: 1899362503}
   m_Layer: 5
   m_Name: Card1
   m_TagString: Untagged
@@ -4163,6 +4216,18 @@ MonoBehaviour:
   m_UseGraphicAlpha: 1
   iterations: 50
   shadowSpread: {x: 10, y: 10}
+--- !u!114 &1899362503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899362498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0678d80007335694a82a94614e9fe031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1991379809
 GameObject:
   m_ObjectHideFlags: 0
@@ -4270,6 +4335,7 @@ GameObject:
   - component: {fileID: 2017894485}
   - component: {fileID: 2017894484}
   - component: {fileID: 2017894486}
+  - component: {fileID: 2017894487}
   m_Layer: 5
   m_Name: Card6
   m_TagString: Untagged
@@ -4353,6 +4419,18 @@ MonoBehaviour:
   m_UseGraphicAlpha: 1
   iterations: 50
   shadowSpread: {x: 10, y: 10}
+--- !u!114 &2017894487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017894482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0678d80007335694a82a94614e9fe031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2018903310 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1242831489334970560, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -6595,10 +6673,10 @@ RectTransform:
   - {fileID: 1727350123}
   - {fileID: 1275520833}
   - {fileID: 13835444}
-  - {fileID: 123467223}
   - {fileID: 1094559590}
   - {fileID: 1120028109}
   - {fileID: 1601952709}
+  - {fileID: 123467223}
   m_Father: {fileID: 1120600895}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

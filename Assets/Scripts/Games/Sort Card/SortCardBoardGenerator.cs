@@ -14,6 +14,7 @@ public class SortCardBoardGenerator : MonoBehaviour
     [SerializeField] private SortCardOrderDetection orderDetection;
     [SerializeField] private SortCardsLevelEnding levelEnd;
     [SerializeField] private SortCardUIController UIController;
+    [SerializeField] private TutorialSortCard tutorialSortCard;
 
     AssistiveCardsSDK.AssistiveCardsSDK.Cards cardDefinitions;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cardTextures;
@@ -104,6 +105,7 @@ public class SortCardBoardGenerator : MonoBehaviour
             GenerateRandomValue();
 
             GameObject card = Instantiate(cardPrefab, cardListTransforms[i].transform.position, Quaternion.identity);
+            tutorialSortCard.point1 = card.transform;
             card.transform.SetParent(cardListTransforms[i].transform);
             listedCards.Add(card);
             
@@ -151,6 +153,7 @@ public class SortCardBoardGenerator : MonoBehaviour
         for(int i = 0; i < cardListTransforms.Count; i++)
         {
             GameObject card = Instantiate(listedCards[i], slotableCardTransforms[randomCard[i]].transform.position, Quaternion.identity);
+            tutorialSortCard.point2 = card.transform;
             card.transform.SetParent(slotableCardTransforms[randomCard[i]].transform);
             card.GetComponent<SortCardDraggable>().draggable = true;
             card.GetComponent<SortCardDraggable>().startingParent = slotableCardTransforms[randomCard[i]];

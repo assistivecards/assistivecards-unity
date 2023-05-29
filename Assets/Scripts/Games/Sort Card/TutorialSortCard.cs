@@ -10,6 +10,6 @@ public class TutorialSortCard : MonoBehaviour
     void Update()
     {
         if(point1 != null && point2 != null)
-            transform.position = Vector3.Lerp(point1.position, point2.position, Mathf.PingPong(Time.time / 1.5f, 1));
+            transform.position = Vector3.Lerp(new Vector3(point1.position.x, 500f, 0), point2.position, Mathf.PingPong(Time.time / 1.5f, 1));
     }
 }

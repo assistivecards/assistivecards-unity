@@ -5863,6 +5863,7 @@ MonoBehaviour:
   orderDetection: {fileID: 1362859076}
   levelEnd: {fileID: 8383894889009589328}
   UIController: {fileID: 8383894889009589326}
+  tutorialSortCard: {fileID: 927069863}
   cardTextures:
     cards: []
   packSelectionPanel: {fileID: 662493964}

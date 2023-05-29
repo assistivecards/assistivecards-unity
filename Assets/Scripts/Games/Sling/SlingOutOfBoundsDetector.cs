@@ -46,7 +46,7 @@ public class SlingOutOfBoundsDetector : MonoBehaviour
             collidedCard.GetComponent<SwipeManager>().canThrow = true;
             collidedCard.GetComponent<SwipeManager>().isValid = false;
             collidedCard.GetComponent<SwipeManager>().isGrabbed = false;
-            LeanTween.scale(collidedCard.gameObject, Vector3.one * 10, .2f);
+            LeanTween.scale(collidedCard.gameObject, Vector3.one * 12, .2f);
             UIController.backButton.GetComponent<Button>().interactable = true;
         }
 

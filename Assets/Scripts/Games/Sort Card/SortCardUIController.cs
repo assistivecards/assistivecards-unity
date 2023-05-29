@@ -33,7 +33,7 @@ public class SortCardUIController : MonoBehaviour
     public void LevelEnd()
     {
         levelEndScreen.SetActive(true);
-        LeanTween.scale(levelEndScreen, Vector3.one * 0.5f, 0.25f);
+        LeanTween.scale(levelEndScreen, Vector3.one * 0.5f, 0.5f);
         gameUI.SetActive(false);
         backButton.SetActive(false);
         settingButton.SetActive(false);
@@ -49,6 +49,7 @@ public class SortCardUIController : MonoBehaviour
         packSelectionPanel.SetActive(true);
         gameUI.SetActive(false);
         loadingScreen.SetActive(false);
+        levelEndScreen.SetActive(false);
     }
     
     public void DetectPremium()
@@ -89,6 +90,7 @@ public class SortCardUIController : MonoBehaviour
             gameUI.SetActive(false);
             loadingScreen.SetActive(true);
         }
+        levelEndScreen.SetActive(false);
     }
 
     public void ResetScroll()

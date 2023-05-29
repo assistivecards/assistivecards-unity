@@ -44,6 +44,12 @@ public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
             LeanTween.rotate(gameObject, Vector3.zero, .25f);
             gameObject.tag = "FixedCard";
         }
+
+        else
+        {
+            transform.SetParent(GameObject.Find(gameObject.GetComponent<StackCardsDraggableCards>().parentName).transform);
+            LeanTween.move(gameObject, transform.parent.position, .5f);
+        }
     }
 
 }

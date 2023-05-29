@@ -96,8 +96,8 @@ public class StackCardsBoardGenerator : MonoBehaviour
             LeanTween.scale(assistiveCardsPlaceholders[i], Vector3.one, 0.2f);
         }
 
-        Invoke("ScaleFixedCardsUp", 0.25f);
-        Invoke("ScaleCardsUp", 0.50f);
+        Invoke("ScaleFixedCardsUp", 0.3f);
+        Invoke("ScaleCardsUp", 0.6f);
 
         LeanTween.scale(stackText.gameObject, Vector3.one, 0.2f);
 

@@ -103,7 +103,7 @@ public class SlingBoardGenerator : MonoBehaviour
     public void ScaleImagesUp()
     {
         LeanTween.alpha(cardParent, 1, .001f);
-        LeanTween.scale(cardParent, Vector3.one * 10, 0.2f);
+        LeanTween.scale(cardParent, Vector3.one * 12, 0.2f);
         LeanTween.scale(throwText.gameObject, Vector3.one, 0.2f);
         LeanTween.scale(box.gameObject, Vector3.one, 0.2f);
         cardParent.GetComponent<SwipeManager>().enabled = true;

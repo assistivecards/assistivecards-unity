@@ -4299,6 +4299,7 @@ MonoBehaviour:
   correctPath: {fileID: 0}
   waypointGrey: {r: 0.24313726, g: 0.27058825, b: 0.35686275, a: 0.6862745}
   waypointGreen: {r: 0.105882354, g: 0.5921569, b: 0.21960784, a: 0.6862745}
+  waypointGreyFade: {r: 0.24313726, g: 0.27058825, b: 0.35686275, a: 0.49019608}
   pathIndex: 0
 --- !u!58 &211001381
 CircleCollider2D:
@@ -6737,6 +6738,7 @@ MonoBehaviour:
   correctPath: {fileID: 0}
   waypointGrey: {r: 0.24313726, g: 0.27058825, b: 0.35686275, a: 0.6862745}
   waypointGreen: {r: 0.105882354, g: 0.5921569, b: 0.21960784, a: 0.6862745}
+  waypointGreyFade: {r: 0.24313726, g: 0.27058825, b: 0.35686275, a: 0.49019608}
   pathIndex: 0
 --- !u!58 &370969052
 CircleCollider2D:
@@ -23157,6 +23159,7 @@ MonoBehaviour:
   correctPath: {fileID: 0}
   waypointGrey: {r: 0.24313726, g: 0.27058825, b: 0.35686275, a: 0.6862745}
   waypointGreen: {r: 0.105882354, g: 0.5921569, b: 0.21960784, a: 0.6862745}
+  waypointGreyFade: {r: 0.24313726, g: 0.27058825, b: 0.35686275, a: 0.49019608}
   pathIndex: 0
 --- !u!58 &1333128095
 CircleCollider2D:

@@ -16,6 +16,7 @@ public class DrawShapesDragHandle : MonoBehaviour, IPointerDownHandler, IDragHan
     private GameAPI gameAPI;
     public Color waypointGrey;
     public Color waypointGreen;
+    public Color waypointGreyFade;
     private GameObject lastWaypoint;
     public int pathIndex;
 

@@ -61,7 +61,7 @@ public class DrawShapesMatchDetection : MonoBehaviour
 
             for (int i = 0; i < dragHandle.waypoints.Count; i++)
             {
-                LeanTween.color(dragHandle.waypoints[i].GetComponent<RectTransform>(), dragHandle.waypointGrey, .25f);
+                LeanTween.color(dragHandle.waypoints[i].GetComponent<RectTransform>(), dragHandle.waypointGreyFade, .25f);
             }
 
             Invoke("DisableCurrentHandle", 0.25f);

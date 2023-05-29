@@ -60,7 +60,7 @@ public class SortCardUIController : MonoBehaviour
         packSelectionPanel.SetActive(true);
         gameUI.SetActive(false);
         loadingScreen.SetActive(false);
-        levelEndScreen.SetActive(false);
+        Invoke("SetLevelChangeScreenFalse", 1f);
     }
     
     public void DetectPremium()
@@ -101,7 +101,7 @@ public class SortCardUIController : MonoBehaviour
             gameUI.SetActive(false);
             loadingScreen.SetActive(true);
         }
-        levelEndScreen.SetActive(false);
+        Invoke("SetLevelChangeScreenFalse", 1f);
     }
 
     public void ResetScroll()
@@ -127,4 +127,8 @@ public class SortCardUIController : MonoBehaviour
 
     }
 
+    private void SetLevelChangeScreenFalse()
+    {
+        levelEndScreen.SetActive(false);
+    }
 }

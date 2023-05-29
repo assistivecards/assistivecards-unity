@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class SortCardDraggable : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
+    GameAPI gameAPI;
     private SortCardsLevelEnding levelEnding;
+    private SortCardOrderDetection orderDetection;
     public Vector3 startingPos;
     public GameObject startingParent;
     public string cardType;
@@ -16,6 +18,8 @@ public class SortCardDraggable : MonoBehaviour, IDragHandler, IPointerUpHandler,
 
     private void Awake() 
     {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+
         levelEnding = GameObject.Find("GamePanel").GetComponent<SortCardsLevelEnding>();
     }
 
@@ -46,6 +50,8 @@ public class SortCardDraggable : MonoBehaviour, IDragHandler, IPointerUpHandler,
             this.transform.SetParent(other.transform);
             other.gameObject.GetComponentInParent<SortCardOrderDetection>().ListCards();
             levelEnding.count++;
+            orderDetection = GameObject.Find("Slots").GetComponent<SortCardOrderDetection>();
+            orderDetection.DetectMatch(other.gameObject, cardType);
             if(levelEnding.count == 3)
             {
                 levelEnding.CreateString();

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SortCardsLevelEnding : MonoBehaviour
 {
+    GameAPI gameAPI;
     [SerializeField] private SortCardBoardGenerator boardGenerator;
     [SerializeField] private SortCardOrderDetection orderDetection;
     [SerializeField] private SortCardUIController UIController;
@@ -14,6 +15,11 @@ public class SortCardsLevelEnding : MonoBehaviour
 
     public int count;
     public int correct;
+
+    private void Awake() 
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     public void CreateString()
     {
@@ -45,6 +51,7 @@ public class SortCardsLevelEnding : MonoBehaviour
         {
             UIController.Invoke("LevelEnd", 1f);
             boardGenerator.Invoke("ClearBoard", 1f);
+            gameAPI.PlaySFX("Finished");
         }
         else
         {

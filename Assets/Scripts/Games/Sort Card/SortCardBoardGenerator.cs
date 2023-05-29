@@ -120,6 +120,7 @@ public class SortCardBoardGenerator : MonoBehaviour
         }
         GetCardOrder();
         GenerateSortableCards();
+        UIController.TutorialSetActive();
     }
 
     private void GetCardOrder()

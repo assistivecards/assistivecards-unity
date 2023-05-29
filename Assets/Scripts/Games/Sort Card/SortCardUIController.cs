@@ -14,11 +14,22 @@ public class SortCardUIController : MonoBehaviour
     [SerializeField] private GameObject packSelectionPanel;
     [SerializeField] private GameObject levelEndScreen;
     [SerializeField] private GameObject loadingScreen;
+    [SerializeField] GameObject tutorial;
+    private bool firstTime = true;
     public bool canGenerate;
 
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
+
+    public void TutorialSetActive()
+    {
+        if(firstTime || gameAPI.GetTutorialPreference() == 1)
+        {
+            tutorial.SetActive(true);
+        }
+        firstTime = false;
     }
     
     public void GameUIActivate()

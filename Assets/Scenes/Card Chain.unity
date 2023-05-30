@@ -1231,6 +1231,7 @@ GameObject:
   - component: {fileID: 1021200295}
   - component: {fileID: 1021200299}
   - component: {fileID: 1021200300}
+  - component: {fileID: 1021200301}
   m_Layer: 5
   m_Name: GameCanvas
   m_TagString: Untagged
@@ -1356,6 +1357,21 @@ MonoBehaviour:
   languageInputField: {fileID: 0}
   localeInputField: {fileID: 0}
   canvas: {fileID: 1021200297}
+--- !u!114 &1021200301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021200294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f580022dbf3a4432bac832f86ec535eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorial: {fileID: 1978858820}
+  packSelectionPanel: {fileID: 1226813740}
+  levelChangeScreen: {fileID: 336342684}
 --- !u!1 &1112654011
 GameObject:
   m_ObjectHideFlags: 0
@@ -2835,6 +2851,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f9038fa8a18b4e3784a6ba213415dd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  point1: {fileID: 0}
+  point2: {fileID: 0}
   "u\u0131Controller": {fileID: 2134643255}
 --- !u!114 &2018903310 stripped
 MonoBehaviour:
@@ -2935,6 +2953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorial: {fileID: 1978858823}
   accessibilityScreen: {fileID: 840801144}
+  boardGenerateCardChain: {fileID: 2134643253}
   cardPosition: {fileID: 0}
   cardPosition1: {fileID: 0}
   levelChangeScreen: {fileID: 336342684}
@@ -2945,6 +2964,7 @@ MonoBehaviour:
   selectNewPackButton: {fileID: 378890270}
   continueButton: {fileID: 1208683981}
   tutorialGameObject: {fileID: 1978858820}
+  loopCount: 0
   firstTime: 1
 --- !u!1001 &300905862136274000
 PrefabInstance:

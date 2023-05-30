@@ -7,6 +7,7 @@ public class UIControllerCardChain : MonoBehaviour
     GameAPI gameAPI;
     [SerializeField] private Tutorial tutorial;
     [SerializeField] private AccessibilityScreen accessibilityScreen;
+    [SerializeField] private BoardGenerateCardChain boardGenerateCardChain;
 
     public GameObject cardPosition;
     public GameObject cardPosition1;
@@ -18,6 +19,7 @@ public class UIControllerCardChain : MonoBehaviour
     [SerializeField] private GameObject selectNewPackButton;
     [SerializeField] private GameObject continueButton;
     [SerializeField] private GameObject tutorialGameObject;
+    public int loopCount = 0;
 
     public bool firstTime = true;
 
@@ -32,21 +34,41 @@ public class UIControllerCardChain : MonoBehaviour
         {
             tutorial.tutorialPosition = cardPosition.transform;
             tutorialGameObject.SetActive(true);
-            TutorialLoopPosition1();
         }
         firstTime = false;
     }
 
     public void TutorialLoopPosition()
     {
-        if(tutorialGameObject.activeInHierarchy)
-            LeanTween.move(tutorialGameObject, cardPosition.transform.position, 0f).setOnComplete(TutorialLoopPosition1);
-    }
-
-    public void TutorialLoopPosition1()
-    {
-        if(tutorialGameObject.activeInHierarchy)
-            LeanTween.move(tutorialGameObject, cardPosition1.transform.position, 1.25f).setOnComplete(TutorialLoopPosition);
+        loopCount = 0;
+        if(cardPosition != null && cardPosition1 != null)
+        {
+            tutorial.GetComponent<TutorialCardChain>().point1 = cardPosition.transform;
+            tutorial.GetComponent<TutorialCardChain>().point2 = cardPosition1.transform;
+        }
+        else
+        {
+            foreach(var card in boardGenerateCardChain.cards)
+            {
+                if(card != null)
+                {
+                    if(loopCount == 0)
+                    {
+                        if(tutorial.GetComponent<TutorialCardChain>().point1 == null)
+                        {
+                            tutorial.GetComponent<TutorialCardChain>().point1 = card.transform;
+                        }
+                    }
+                    if(loopCount >= 1)
+                    {
+                        tutorial.GetComponent<TutorialCardChain>().point2 = card.transform;
+                        break;
+                    }
+                    loopCount ++;
+                }
+            }
+            Debug.Log("HERE");
+        }
     }
 
 

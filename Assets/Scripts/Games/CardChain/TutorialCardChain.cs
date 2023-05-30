@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class TutorialCardChain : MonoBehaviour
 {
-    [SerializeField] private UIControllerCardChain uıController;
-
+    [SerializeField] public Transform point1;
+    [SerializeField] public Transform point2;
+    [SerializeField] UIControllerCardChain uıController;
 
     private void OnEnable() 
     {
-        if(!uıController.firstTime)
-       {
-            this.GetComponent<Tutorial>().tutorialPosition = uıController.cardPosition.transform;
-            uıController.TutorialLoopPosition1();
-       } 
+        uıController.TutorialLoopPosition();
+    }
+
+    void Update()
+    {
+        if(point1 != null && point2 != null)
+        {
+            transform.position = Vector3.Lerp(point1.position, point2.position, Mathf.PingPong(Time.time, 1));
+        }
     }
 }

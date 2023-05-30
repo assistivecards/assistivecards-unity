@@ -19,8 +19,11 @@ public class GameCanvasInputDetect : MonoBehaviour
         }
         if(time == 800) 
         {
-            Debug.Log("800 frames passed with no input");
-            tutorial.SetActive(true);
+            if(tutorial != null)
+            {
+                tutorial.SetActive(true);
+            }
+
             time = 0;
         }
     }

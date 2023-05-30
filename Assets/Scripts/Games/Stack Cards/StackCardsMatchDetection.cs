@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -7,6 +8,7 @@ public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
     private GameAPI gameAPI;
     public bool isMatched = false;
     private Transform matchedSlotTransform;
+    public int numOfMatchedCards;
 
     private void Awake()
     {
@@ -43,6 +45,11 @@ public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
             LeanTween.moveLocal(gameObject, new Vector3(-20, -20, 0), 0.25f);
             LeanTween.rotate(gameObject, Vector3.zero, .25f);
             gameObject.tag = "FixedCard";
+
+            if (CheckIfLevelComplete())
+            {
+                LeanTween.color(gameObject.GetComponent<RectTransform>(), Color.green, 0.5f);
+            }
         }
 
         else
@@ -52,4 +59,26 @@ public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
         }
     }
 
+    private bool CheckIfLevelComplete()
+    {
+        var cards = GameObject.Find("Cards");
+
+        for (int i = 0; i < cards.transform.childCount; i++)
+        {
+            if (cards.transform.GetChild(i).childCount == 0)
+            {
+                numOfMatchedCards++;
+                Debug.Log(numOfMatchedCards);
+            }
+        }
+
+        if (numOfMatchedCards == 6)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

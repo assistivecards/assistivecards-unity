@@ -11,10 +11,12 @@ public class Tutorial : MonoBehaviour, IDragHandler
     {
         if(tutorialPosition == null)
         {
-            tutorialPosition.position = Vector3.zero;
+            LeanTween.move(this.gameObject, Vector3.zero, 0);
         }
-
-        LeanTween.move(this.gameObject, tutorialPosition.position, 0);
+        else
+        {
+            LeanTween.move(this.gameObject, tutorialPosition.position, 0);
+        }
     }
 
     public void OnDrag(PointerEventData eventData) 

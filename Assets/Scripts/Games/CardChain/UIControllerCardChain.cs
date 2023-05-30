@@ -67,7 +67,6 @@ public class UIControllerCardChain : MonoBehaviour
                     loopCount ++;
                 }
             }
-            Debug.Log("HERE");
         }
     }
 

@@ -430,6 +430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMatched: 0
+  numOfMatchedCards: 0
 --- !u!1 &88731552
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,6 +738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMatched: 0
+  numOfMatchedCards: 0
 --- !u!1 &123467222
 GameObject:
   m_ObjectHideFlags: 0
@@ -2218,6 +2220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMatched: 0
+  numOfMatchedCards: 0
 --- !u!1001 &671447373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2832,6 +2835,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMatched: 0
+  numOfMatchedCards: 0
 --- !u!1 &1120028108
 GameObject:
   m_ObjectHideFlags: 0
@@ -4851,6 +4855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMatched: 0
+  numOfMatchedCards: 0
 --- !u!1 &1901891906
 GameObject:
   m_ObjectHideFlags: 0
@@ -5157,6 +5162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMatched: 0
+  numOfMatchedCards: 0
 --- !u!114 &2018903310 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1242831489334970560, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -8108,6 +8114,17 @@ MonoBehaviour:
   - {fileID: 324566339}
   - {fileID: 1991379809}
   - {fileID: 254241903}
+  cardSlots:
+  - {fileID: 203711987}
+  - {fileID: 1748619884}
+  - {fileID: 277254213}
+  - {fileID: 1434474272}
+  - {fileID: 1478990811}
+  - {fileID: 192833326}
+  stackParents:
+  - {fileID: 1094559589}
+  - {fileID: 1120028108}
+  - {fileID: 1601952708}
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

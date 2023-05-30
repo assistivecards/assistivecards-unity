@@ -25,6 +25,8 @@ public class StackCardsBoardGenerator : MonoBehaviour
     [SerializeField] Image[] cardImagesInScene;
     [SerializeField] GameObject loadingPanel;
     [SerializeField] GameObject[] assistiveCardsPlaceholders;
+    [SerializeField] GameObject[] cardSlots;
+    [SerializeField] GameObject[] stackParents;
 
 
     private void Awake()
@@ -77,6 +79,7 @@ public class StackCardsBoardGenerator : MonoBehaviour
         randomCards.Clear();
         randomImages.Clear();
         randomSprites.Clear();
+        tempSprites.Clear();
 
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {
@@ -87,10 +90,21 @@ public class StackCardsBoardGenerator : MonoBehaviour
 
     public void ScaleImagesUp()
     {
+        for (int i = 0; i < stackParents.Length; i++)
+        {
+            LeanTween.scale(stackParents[i], Vector3.one, 0.001f);
+        }
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {
             cardImagesInScene[i].transform.parent.rotation = Quaternion.Euler(0, 0, Random.Range(-30, -10));
+            cardImagesInScene[i].transform.parent.SetParent(cardSlots[i].transform);
+            cardImagesInScene[i].transform.parent.position = cardSlots[i].transform.position;
+            cardImagesInScene[i].transform.parent.GetComponent<StackCardsDraggableCards>().enabled = true;
+            cardImagesInScene[i].transform.parent.GetComponent<StackCardsMatchDetection>().numOfMatchedCards = 0;
+            cardImagesInScene[i].transform.parent.GetComponent<StackCardsMatchDetection>().isMatched = false;
+            cardImagesInScene[i].transform.parent.tag = "Untagged";
         }
+
         for (int i = 0; i < assistiveCardsPlaceholders.Length; i++)
         {
             LeanTween.scale(assistiveCardsPlaceholders[i], Vector3.one, 0.2f);
@@ -107,8 +121,19 @@ public class StackCardsBoardGenerator : MonoBehaviour
     {
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {
-            LeanTween.scale(cardImagesInScene[i].transform.parent.gameObject, Vector3.zero, 0.2f);
+            if (cardImagesInScene[i].transform.parent.parent.name.StartsWith("CardSlot"))
+            {
+                LeanTween.scale(cardImagesInScene[i].transform.parent.gameObject, Vector3.zero, 0.2f);
+            }
         }
+
+        for (int i = 0; i < stackParents.Length; i++)
+        {
+            LeanTween.scale(stackParents[i], Vector3.zero, 0.2f);
+            LeanTween.scale(assistiveCardsPlaceholders[i], Vector3.zero, 0.2f);
+            LeanTween.scale(fixedCardImagesInScene[i].transform.parent.gameObject, Vector3.zero, 0.2f);
+        }
+
         LeanTween.scale(stackText.gameObject, Vector3.zero, 0.2f);
     }
 

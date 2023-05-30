@@ -9,10 +9,16 @@ public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
     public bool isMatched = false;
     private Transform matchedSlotTransform;
     public int numOfMatchedCards;
+    private StackCardsBoardGenerator board;
 
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
+
+    private void Start()
+    {
+        board = GameObject.Find("GamePanel").GetComponent<StackCardsBoardGenerator>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -48,7 +54,9 @@ public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
 
             if (CheckIfLevelComplete())
             {
-                LeanTween.color(gameObject.GetComponent<RectTransform>(), Color.green, 0.5f);
+                board.Invoke("ScaleImagesDown", 1f);
+                board.Invoke("ClearBoard", 1.3f);
+                board.Invoke("GenerateRandomBoardAsync", 1.3f);
             }
         }
 

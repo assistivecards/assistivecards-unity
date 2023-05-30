@@ -26,7 +26,7 @@ public class StackCardsBoardGenerator : MonoBehaviour
     [SerializeField] GameObject loadingPanel;
     [SerializeField] GameObject[] assistiveCardsPlaceholders;
     [SerializeField] GameObject[] cardSlots;
-    [SerializeField] GameObject[] stackParents;
+    public GameObject[] stackParents;
 
 
     private void Awake()
@@ -123,18 +123,27 @@ public class StackCardsBoardGenerator : MonoBehaviour
         {
             if (cardImagesInScene[i].transform.parent.parent.name.StartsWith("CardSlot"))
             {
-                LeanTween.scale(cardImagesInScene[i].transform.parent.gameObject, Vector3.zero, 0.2f);
+                LeanTween.scale(cardImagesInScene[i].transform.parent.gameObject, Vector3.zero, 0.25f);
             }
         }
 
         for (int i = 0; i < stackParents.Length; i++)
         {
-            LeanTween.scale(stackParents[i], Vector3.zero, 0.2f);
-            LeanTween.scale(assistiveCardsPlaceholders[i], Vector3.zero, 0.2f);
-            LeanTween.scale(fixedCardImagesInScene[i].transform.parent.gameObject, Vector3.zero, 0.2f);
+            LeanTween.scale(stackParents[i], Vector3.zero, 0.25f);
         }
 
-        LeanTween.scale(stackText.gameObject, Vector3.zero, 0.2f);
+        Invoke("ScalePlaceholdersAndFixedCardsDown", 0.25f);
+
+        LeanTween.scale(stackText.gameObject, Vector3.zero, 0.25f);
+    }
+
+    private void ScalePlaceholdersAndFixedCardsDown()
+    {
+        for (int i = 0; i < assistiveCardsPlaceholders.Length; i++)
+        {
+            LeanTween.scale(assistiveCardsPlaceholders[i], Vector3.zero, 0.001f);
+            LeanTween.scale(fixedCardImagesInScene[i].transform.parent.gameObject, Vector3.zero, 0.001f);
+        }
     }
 
     public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)

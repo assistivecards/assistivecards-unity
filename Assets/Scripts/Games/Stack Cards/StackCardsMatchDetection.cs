@@ -54,6 +54,7 @@ public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
 
             if (CheckIfLevelComplete())
             {
+                Invoke("PlayLevelCompletedAnimation", .25f);
                 board.Invoke("ScaleImagesDown", 1f);
                 board.Invoke("ClearBoard", 1.3f);
                 board.Invoke("GenerateRandomBoardAsync", 1.3f);
@@ -76,7 +77,6 @@ public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
             if (cards.transform.GetChild(i).childCount == 0)
             {
                 numOfMatchedCards++;
-                Debug.Log(numOfMatchedCards);
             }
         }
 
@@ -88,5 +88,14 @@ public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
         {
             return false;
         }
+    }
+
+    public void PlayLevelCompletedAnimation()
+    {
+        for (int i = 0; i < board.stackParents.Length; i++)
+        {
+            LeanTween.scale(board.stackParents[i], Vector3.one * 1.1f, .25f);
+        }
+
     }
 }

@@ -5,6 +5,12 @@ public class StackCardsDraggableCards : MonoBehaviour, IDragHandler, IPointerDow
 {
 
     public string parentName;
+    private GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     public void OnDrag(PointerEventData eventData)
     {
@@ -16,6 +22,8 @@ public class StackCardsDraggableCards : MonoBehaviour, IDragHandler, IPointerDow
     public void OnPointerDown(PointerEventData eventData)
     {
         Debug.Log("PointerDown");
+        gameAPI.VibrateWeak();
+        gameAPI.PlaySFX("Pickup");
         parentName = transform.parent.name;
     }
 

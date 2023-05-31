@@ -8,6 +8,12 @@ public class TutorialComplete : MonoBehaviour
     [SerializeField] private Transform position1;
     [SerializeField] private Transform position2;
 
+
+    private void OnEnable() 
+    {
+        DetectDestination();
+    }
+
     public void DetectDestination()
     {
         foreach(GameObject card in boardCreatorComplete.cards)

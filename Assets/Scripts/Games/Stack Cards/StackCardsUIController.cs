@@ -12,6 +12,12 @@ public class StackCardsUIController : MonoBehaviour
     [SerializeField] GameObject speakerIcon;
     [SerializeField] GameObject checkPointPanel;
     [SerializeField] StackCardsLevelProgressChecker progressChecker;
+    private GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     public void EnableScrollRect()
     {
@@ -24,6 +30,7 @@ public class StackCardsUIController : MonoBehaviour
         backButton.SetActive(false);
         checkPointPanel.transform.GetChild(1).GetComponent<Button>().interactable = false;
         LeanTween.scale(checkPointPanel, Vector3.one * 0.6f, 0.25f);
+        gameAPI.PlaySFX("Finished");
         Invoke("EnableContinuePlayingButton", .75f);
     }
 

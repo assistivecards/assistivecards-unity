@@ -1915,6 +1915,7 @@ GameObject:
   - component: {fileID: 1021200295}
   - component: {fileID: 1021200299}
   - component: {fileID: 1021200300}
+  - component: {fileID: 1021200301}
   m_Layer: 5
   m_Name: GameCanvas
   m_TagString: Untagged
@@ -2040,6 +2041,21 @@ MonoBehaviour:
   languageInputField: {fileID: 0}
   localeInputField: {fileID: 0}
   canvas: {fileID: 1021200297}
+--- !u!114 &1021200301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021200294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f580022dbf3a4432bac832f86ec535eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorial: {fileID: 737180074}
+  packSelectionPanel: {fileID: 1837497528}
+  levelChangeScreen: {fileID: 1275520836}
 --- !u!1 &1032355532
 GameObject:
   m_ObjectHideFlags: 0

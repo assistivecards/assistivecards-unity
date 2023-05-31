@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class TutorialMatchPairs : MonoBehaviour
 {
+    [SerializeField] public MatchPairsBoardGenerator matchPairsBoardGenerator;
     [SerializeField] public Transform point1;
     [SerializeField] public Transform point2;
+
+    private void OnEnable() 
+    {
+        matchPairsBoardGenerator.FindMatchForTutorial();
+    }
 
     void Update()
     {

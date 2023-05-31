@@ -82,16 +82,46 @@ public class MatchPairsBoardGenerator : MonoBehaviour
         backButton.SetActive(true);
         UIController.TutorialSetActive();
         Invoke("EnableBackButton", 0.15f);
-        tutorial.GetComponent<TutorialMatchPairs>().point1 = pieceImages[0].transform;
+    }
 
-        foreach (var card in pieceImages)
+    public void FindMatchForTutorial()
+    {
+        if(tutorial.GetComponent<TutorialMatchPairs>().point1 != null && tutorial.GetComponent<TutorialMatchPairs>().point1 == pieceImages[0].transform)
         {
-            if (card.name.Substring(0, card.name.Length - 1) == pieceImages[0].name.Substring(0, pieceImages[0].name.Length - 1) && card != pieceImages[0])
+            tutorial.GetComponent<TutorialMatchPairs>().point1 = pieceImages[1].transform;
+
+            foreach (var card in pieceImages)
             {
-                tutorial.GetComponent<TutorialMatchPairs>().point2 = card.transform;
+                if (card.name.Substring(0, card.name.Length - 1) == pieceImages[1].name.Substring(0, pieceImages[1].name.Length - 1) && card != pieceImages[0])
+                {
+                    tutorial.GetComponent<TutorialMatchPairs>().point2 = card.transform;
+                }
+            }
+        } 
+        else if(tutorial.GetComponent<TutorialMatchPairs>().point1 != null && tutorial.GetComponent<TutorialMatchPairs>().point1 == pieceImages[1].transform)
+        {
+            tutorial.GetComponent<TutorialMatchPairs>().point1 = pieceImages[2].transform;
+
+            foreach (var card in pieceImages)
+            {
+                if (card.name.Substring(0, card.name.Length - 1) == pieceImages[2].name.Substring(0, pieceImages[2].name.Length - 1) && card != pieceImages[0])
+                {
+                    tutorial.GetComponent<TutorialMatchPairs>().point2 = card.transform;
+                }
             }
         }
+        else
+        {
+            tutorial.GetComponent<TutorialMatchPairs>().point1 = pieceImages[0].transform;
 
+            foreach (var card in pieceImages)
+            {
+                if (card.name.Substring(0, card.name.Length - 1) == pieceImages[0].name.Substring(0, pieceImages[0].name.Length - 1) && card != pieceImages[0])
+                {
+                    tutorial.GetComponent<TutorialMatchPairs>().point2 = card.transform;
+                }
+            }
+        }
     }
 
     public void ClearBoard()

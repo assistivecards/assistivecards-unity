@@ -55,6 +55,7 @@ public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
             LeanTween.moveLocal(gameObject, new Vector3(-20, -20, 0), 0.25f);
             LeanTween.rotate(gameObject, Vector3.zero, .25f);
             gameObject.tag = "FixedCard";
+            ReadCard();
 
             if (CheckIfLevelComplete())
             {
@@ -110,5 +111,10 @@ public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
             LeanTween.scale(board.stackParents[i], Vector3.one * 1.1f, .25f);
         }
 
+    }
+
+    public void ReadCard()
+    {
+        gameAPI.Speak(transform.GetChild(0).GetComponent<Image>().sprite.name);
     }
 }

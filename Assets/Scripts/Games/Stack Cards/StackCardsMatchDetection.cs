@@ -10,6 +10,8 @@ public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
     private Transform matchedSlotTransform;
     public int numOfMatchedCards;
     private StackCardsBoardGenerator board;
+    private StackCardsUIController UIController;
+    private StackCardsLevelProgressChecker progressChecker;
 
     private void Awake()
     {
@@ -19,6 +21,8 @@ public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
     private void Start()
     {
         board = GameObject.Find("GamePanel").GetComponent<StackCardsBoardGenerator>();
+        UIController = GameObject.Find("GamePanel").GetComponent<StackCardsUIController>();
+        progressChecker = GameObject.Find("GamePanel").GetComponent<StackCardsLevelProgressChecker>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -54,10 +58,18 @@ public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
 
             if (CheckIfLevelComplete())
             {
+                progressChecker.levelsCompleted++;
                 Invoke("PlayLevelCompletedAnimation", .25f);
                 board.Invoke("ScaleImagesDown", 1f);
                 board.Invoke("ClearBoard", 1.3f);
-                board.Invoke("GenerateRandomBoardAsync", 1.3f);
+
+                if (progressChecker.levelsCompleted == 3)
+                {
+                    UIController.Invoke("OpenCheckPointPanel", 1.3f);
+                }
+                else
+                    board.Invoke("GenerateRandomBoardAsync", 1.3f);
+
             }
         }
 

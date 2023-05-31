@@ -10,6 +10,8 @@ public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
     private Transform matchedSlotTransform;
     public int numOfMatchedCards;
     private StackCardsBoardGenerator board;
+    private StackCardsUIController UIController;
+    private StackCardsLevelProgressChecker progressChecker;
 
     private void Awake()
     {
@@ -19,6 +21,8 @@ public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
     private void Start()
     {
         board = GameObject.Find("GamePanel").GetComponent<StackCardsBoardGenerator>();
+        UIController = GameObject.Find("GamePanel").GetComponent<StackCardsUIController>();
+        progressChecker = GameObject.Find("GamePanel").GetComponent<StackCardsLevelProgressChecker>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -51,13 +55,24 @@ public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
             LeanTween.moveLocal(gameObject, new Vector3(-20, -20, 0), 0.25f);
             LeanTween.rotate(gameObject, Vector3.zero, .25f);
             gameObject.tag = "FixedCard";
+            ReadCard();
 
             if (CheckIfLevelComplete())
             {
+                progressChecker.levelsCompleted++;
+                gameAPI.PlaySFX("Success");
+                UIController.backButton.GetComponent<Button>().interactable = false;
                 Invoke("PlayLevelCompletedAnimation", .25f);
                 board.Invoke("ScaleImagesDown", 1f);
                 board.Invoke("ClearBoard", 1.3f);
-                board.Invoke("GenerateRandomBoardAsync", 1.3f);
+
+                if (progressChecker.levelsCompleted == 3)
+                {
+                    UIController.Invoke("OpenCheckPointPanel", 1.3f);
+                }
+                else
+                    board.Invoke("GenerateRandomBoardAsync", 1.3f);
+
             }
         }
 
@@ -97,5 +112,10 @@ public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
             LeanTween.scale(board.stackParents[i], Vector3.one * 1.1f, .25f);
         }
 
+    }
+
+    public void ReadCard()
+    {
+        gameAPI.Speak(transform.GetChild(0).GetComponent<Image>().sprite.name);
     }
 }

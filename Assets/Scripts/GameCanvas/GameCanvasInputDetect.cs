@@ -8,12 +8,14 @@ public class GameCanvasInputDetect : MonoBehaviour
     [SerializeField] private GameObject packSelectionPanel;
     [SerializeField] private GameObject levelChangeScreen;
     private int time = 0; 
+
     void FixedUpdate () 
     {
         if(Input.touchCount <= 0 && !packSelectionPanel.activeInHierarchy && !levelChangeScreen.activeInHierarchy)
         {
             time = time + 1;
-        } else 
+        } 
+        else 
         {
             time = 0;
         }

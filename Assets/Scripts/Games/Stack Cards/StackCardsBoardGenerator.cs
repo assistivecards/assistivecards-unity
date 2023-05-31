@@ -27,6 +27,7 @@ public class StackCardsBoardGenerator : MonoBehaviour
     [SerializeField] GameObject[] assistiveCardsPlaceholders;
     [SerializeField] GameObject[] cardSlots;
     public GameObject[] stackParents;
+    private StackCardsUIController UIController;
 
 
     private void Awake()
@@ -37,6 +38,7 @@ public class StackCardsBoardGenerator : MonoBehaviour
     private void Start()
     {
         gameAPI.PlayMusic();
+        UIController = gameObject.GetComponent<StackCardsUIController>();
     }
 
     private void OnEnable()
@@ -44,6 +46,7 @@ public class StackCardsBoardGenerator : MonoBehaviour
         if (isBackAfterSignOut)
         {
             gameAPI.PlayMusic();
+            UIController.OnBackButtonClick();
             isBackAfterSignOut = false;
         }
     }
@@ -70,8 +73,8 @@ public class StackCardsBoardGenerator : MonoBehaviour
         PlaceSprites();
         DisableLoadingPanel();
         ScaleImagesUp();
-        backButton.SetActive(true);
-        Invoke("EnableBackButton", 0.15f);
+        // backButton.SetActive(true);
+        Invoke("EnableBackButton", 0.8f);
     }
 
     public void ClearBoard()
@@ -161,6 +164,7 @@ public class StackCardsBoardGenerator : MonoBehaviour
 
     public void EnableBackButton()
     {
+        backButton.SetActive(true);
         backButton.GetComponent<Button>().interactable = true;
     }
 

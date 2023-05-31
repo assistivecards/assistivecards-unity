@@ -213,6 +213,7 @@ public class TopAppBarController : MonoBehaviour
                 DragInsideBoardGenerator.didLanguageChange = true;
                 PressCardsBoardGenerator.didLanguageChange = true;
                 DrawShapesBoardGenerator.didLanguageChange = true;
+                StackCardsBoardGenerator.didLanguageChange = true;
 
                 if (languageController.selectedLanguage.name == "Arabic" || languageController.selectedLanguage.name == "Urdu")
                 {

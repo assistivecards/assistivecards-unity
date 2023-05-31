@@ -59,6 +59,7 @@ public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
             if (CheckIfLevelComplete())
             {
                 progressChecker.levelsCompleted++;
+                UIController.backButton.GetComponent<Button>().interactable = false;
                 Invoke("PlayLevelCompletedAnimation", .25f);
                 board.Invoke("ScaleImagesDown", 1f);
                 board.Invoke("ClearBoard", 1.3f);

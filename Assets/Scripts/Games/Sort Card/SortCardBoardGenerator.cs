@@ -100,12 +100,13 @@ public class SortCardBoardGenerator : MonoBehaviour
     private async void GenerateRandomBoardAsync(string packSlug)
     {
         await CacheCards(packSlug);
+        tutorialSortCard.ClearLists();
         for(int i = 0; i < cardListTransforms.Count; i++)
         {
             GenerateRandomValue();
 
             GameObject card = Instantiate(cardPrefab, cardListTransforms[i].transform.position, Quaternion.identity);
-            tutorialSortCard.point1 = card.transform;
+            tutorialSortCard.cards.Add(card.transform);
             card.transform.SetParent(cardListTransforms[i].transform);
             listedCards.Add(card);
             
@@ -153,7 +154,7 @@ public class SortCardBoardGenerator : MonoBehaviour
         for(int i = 0; i < cardListTransforms.Count; i++)
         {
             GameObject card = Instantiate(listedCards[i], slotableCardTransforms[randomCard[i]].transform.position, Quaternion.identity);
-            tutorialSortCard.point2 = card.transform;
+            tutorialSortCard.slots.Add(card.transform);
             card.transform.SetParent(slotableCardTransforms[randomCard[i]].transform);
             card.GetComponent<SortCardDraggable>().draggable = true;
             card.GetComponent<SortCardDraggable>().startingParent = slotableCardTransforms[randomCard[i]];

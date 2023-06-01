@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class SortCardDraggable : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
     GameAPI gameAPI;
+    public GameObject tutorial;
     private SortCardsLevelEnding levelEnding;
     private SortCardOrderDetection orderDetection;
     public Vector3 startingPos;
@@ -39,6 +40,7 @@ public class SortCardDraggable : MonoBehaviour, IDragHandler, IPointerUpHandler,
     public void OnPointerDown(PointerEventData eventData)
     {
         isPointerUp = false;
+        tutorial = GameObject.FindWithTag("Tutorial");
     }
 
     private void OnCollisionStay2D(Collision2D other) 
@@ -52,9 +54,20 @@ public class SortCardDraggable : MonoBehaviour, IDragHandler, IPointerUpHandler,
             levelEnding.count++;
             orderDetection = GameObject.Find("Slots").GetComponent<SortCardOrderDetection>();
             orderDetection.DetectMatch(other.gameObject, cardType);
+
+            if(tutorial != null)
+            {
+                tutorial.GetComponent<TutorialSortCard>().i++;
+            }
+
             if(levelEnding.count == 3)
             {
                 levelEnding.CreateString();
+
+                if(tutorial != null)
+                {
+                    tutorial.GetComponent<TutorialSortCard>().ClearLists();
+                }
             }
 
             landed = true;

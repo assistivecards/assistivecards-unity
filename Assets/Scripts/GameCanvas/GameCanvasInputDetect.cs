@@ -14,7 +14,7 @@ public class GameCanvasInputDetect : MonoBehaviour
         if(Input.touchCount <= 0 && !packSelectionPanel.activeInHierarchy && !levelChangeScreen.activeInHierarchy)
         {
             time = time + 1;
-        } 
+        }
         else 
         {
             time = 0;

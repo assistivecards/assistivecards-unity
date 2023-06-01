@@ -252,7 +252,12 @@ public class StackCardsBoardGenerator : MonoBehaviour
 
     private void ScaleCardsUp()
     {
-        StartCoroutine("ScaleCardsUpCoroutine");
+        // StartCoroutine("ScaleCardsUpCoroutine");
+
+        for (int i = 0; i < cardImagesInScene.Length; i++)
+        {
+            LeanTween.scale(cardImagesInScene[i].transform.parent.gameObject, Vector3.one, 0.2f);
+        }
     }
 
     private IEnumerator ScaleCardsUpCoroutine()

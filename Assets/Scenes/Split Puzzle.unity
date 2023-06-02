@@ -2329,6 +2329,7 @@ GameObject:
   - component: {fileID: 1021200295}
   - component: {fileID: 1021200299}
   - component: {fileID: 1021200300}
+  - component: {fileID: 1021200301}
   m_Layer: 5
   m_Name: GameCanvas
   m_TagString: Untagged
@@ -2455,6 +2456,21 @@ MonoBehaviour:
   languageInputField: {fileID: 0}
   localeInputField: {fileID: 0}
   canvas: {fileID: 1021200297}
+--- !u!114 &1021200301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021200294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f580022dbf3a4432bac832f86ec535eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorial: {fileID: 1362536862}
+  packSelectionPanel: {fileID: 320602506}
+  levelChangeScreen: {fileID: 1540513411}
 --- !u!1 &1045754298 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9084976097150636252, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -3249,6 +3265,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   point1: {fileID: 1799191031}
   point2: {fileID: 1720135674}
+  slots: []
+  slot1: {fileID: 1489299539}
+  slot2: {fileID: 900699451}
+  slot3: {fileID: 1475477400}
+  slot4: {fileID: 1720135674}
 --- !u!224 &1371645660 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4400661311191622549, guid: 2cdd28110cbe4d64f9715da037b76e83, type: 3}

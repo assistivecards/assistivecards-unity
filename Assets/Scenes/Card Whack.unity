@@ -5300,6 +5300,7 @@ GameObject:
   - component: {fileID: 8383894889009589325}
   - component: {fileID: 1995057600056102325}
   - component: {fileID: 8383894889009589326}
+  - component: {fileID: 8383894889009589327}
   m_Layer: 5
   m_Name: GamePanel
   m_TagString: Untagged
@@ -5768,6 +5769,30 @@ MonoBehaviour:
   - {fileID: 1901009119}
   - {fileID: 296521371}
   numOfCards: 5
+--- !u!114 &8383894889009589327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3720148778835819161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc1d3757bc52e514bb888264dcb4a2e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slots:
+  - {fileID: 340953503}
+  - {fileID: 467264249}
+  - {fileID: 231864262}
+  - {fileID: 1034357707}
+  - {fileID: 883389538}
+  - {fileID: 1099625118}
+  - {fileID: 1621757319}
+  - {fileID: 1901009120}
+  - {fileID: 296521372}
+  availableSlots: []
+  cardPrefab: {fileID: 2703625360594186459, guid: dafc788c871f02d4180e384730cc4d95, type: 3}
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using PathCreation;
 
 public class DrawShapesMatchDetection : MonoBehaviour
 {
+    [SerializeField] private DrawShapeTutorial tutorial;
     private DrawShapesDragHandle dragHandle;
     private DrawShapesBoardGenerator board;
     private DrawShapesUIController UIController;
@@ -22,6 +24,17 @@ public class DrawShapesMatchDetection : MonoBehaviour
         board = GameObject.Find("GamePanel").GetComponent<DrawShapesBoardGenerator>();
         UIController = GameObject.Find("GamePanel").GetComponent<DrawShapesUIController>();
     }
+
+    private void OnEnable() 
+    {
+        Invoke("SetTutorialPath", 0.5f);
+    }
+
+    private void SetTutorialPath()
+    {
+        tutorial.pathCreator = dragHandle.correctPath.GetComponent<PathCreator>();
+    }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {

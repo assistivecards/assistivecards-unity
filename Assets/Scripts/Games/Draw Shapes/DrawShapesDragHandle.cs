@@ -9,6 +9,7 @@ public class DrawShapesDragHandle : MonoBehaviour, IPointerDownHandler, IDragHan
 {
     public PathCreator path;
     private DrawShapesBoardGenerator board;
+    private DrawShapeTutorial tutorial;
     public float distanceThreshold;
     public bool canDrag;
     public List<GameObject> waypoints;

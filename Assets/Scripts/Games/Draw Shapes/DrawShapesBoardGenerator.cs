@@ -94,6 +94,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
         Invoke("PlaceHandles", .25f);
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);
+        UIController.Invoke("TutorialActivate", 1);
     }
 
     public void ClearBoard()

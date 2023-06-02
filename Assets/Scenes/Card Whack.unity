@@ -2184,7 +2184,7 @@ GameObject:
   - component: {fileID: 1405369217}
   - component: {fileID: 1405369216}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: whack_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

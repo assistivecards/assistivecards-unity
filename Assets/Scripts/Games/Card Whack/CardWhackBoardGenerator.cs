@@ -59,6 +59,7 @@ public class CardWhackBoardGenerator : MonoBehaviour
         }
 
         PopulateRandomCards();
+        TranslateWhackCardText();
         await PopulateRandomTextures();
         DisableLoadingPanel();
         ScaleImagesUp();
@@ -138,6 +139,11 @@ public class CardWhackBoardGenerator : MonoBehaviour
     private void DisableLoadingPanel()
     {
         loadingPanel.SetActive(false);
+    }
+
+    public void TranslateWhackCardText()
+    {
+        whackText.text = gameAPI.Translate(whackText.gameObject.name, gameAPI.ToTitleCase(randomCards[0].title).Replace("-", " "), selectedLangCode);
     }
 
 }

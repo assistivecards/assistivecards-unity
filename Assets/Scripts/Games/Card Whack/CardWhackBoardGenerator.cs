@@ -23,6 +23,7 @@ public class CardWhackBoardGenerator : MonoBehaviour
     [SerializeField] GameObject loadingPanel;
     [SerializeField] GameObject[] slots;
     public int numOfCards = 5;
+    [SerializeField] GameObject cardToWhack;
 
     private void Awake()
     {
@@ -65,6 +66,7 @@ public class CardWhackBoardGenerator : MonoBehaviour
         ScaleImagesUp();
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);
+        gameObject.GetComponent<CardWhackCardSpawner>().InvokeRepeating("SpawnCard", 1, Random.Range(0.75f, 1));
     }
 
     public void ClearBoard()
@@ -83,6 +85,9 @@ public class CardWhackBoardGenerator : MonoBehaviour
         }
 
         LeanTween.scale(whackText.gameObject, Vector3.one, 0.2f);
+        cardToWhack.transform.GetChild(0).GetComponent<Image>().sprite = randomSprites[0];
+        LeanTween.scale(cardToWhack, Vector3.one, 0.2f);
+
     }
 
     public void ScaleImagesDown()

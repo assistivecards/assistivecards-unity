@@ -191,10 +191,10 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
 
     private void DisableLoadingPanel()
     {
-        if (loadingPanel.activeInHierarchy)
-        {
-            loadingPanel.SetActive(false);
-        }
+        // if (loadingPanel.activeInHierarchy)
+        // {
+        loadingPanel.SetActive(false);
+        // }
     }
 
 }

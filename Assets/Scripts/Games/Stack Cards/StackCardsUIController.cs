@@ -12,11 +12,22 @@ public class StackCardsUIController : MonoBehaviour
     [SerializeField] GameObject speakerIcon;
     [SerializeField] GameObject checkPointPanel;
     [SerializeField] StackCardsLevelProgressChecker progressChecker;
+    [SerializeField] GameObject tutorial;
+    private bool firstTime = true;
     private GameAPI gameAPI;
 
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
+
+    public void TutorialSetActive()
+    {
+        if(firstTime || gameAPI.GetTutorialPreference() == 1)
+        {
+            tutorial.SetActive(true);
+        }
+        firstTime = false;
     }
 
     public void EnableScrollRect()

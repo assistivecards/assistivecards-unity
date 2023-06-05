@@ -2503,6 +2503,31 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3236149540598557725, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
   m_PrefabInstance: {fileID: 625883654}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &927069863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927069859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45dd32bde2c984667842ca4f4bb6f23a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stackCardsBoardGenerator: {fileID: 8383894889009589326}
+  point1: {fileID: 1200414044}
+  point2: {fileID: 442538810}
+  targetPositions: []
+  slotList: []
+  positions1: []
+  positions2: []
+  positions3: []
+  targetPositions1: {fileID: 1200414044}
+  targetPositions2: {fileID: 1438934429}
+  targetPositions3: {fileID: 357467929}
+  firstTime: 1
+  turn: 0
 --- !u!1 &938135338 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5968337514349200958, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -2538,6 +2563,7 @@ GameObject:
   - component: {fileID: 1021200295}
   - component: {fileID: 1021200299}
   - component: {fileID: 1021200300}
+  - component: {fileID: 1021200301}
   m_Layer: 5
   m_Name: GameCanvas
   m_TagString: Untagged
@@ -2664,6 +2690,21 @@ MonoBehaviour:
   languageInputField: {fileID: 0}
   localeInputField: {fileID: 0}
   canvas: {fileID: 1021200297}
+--- !u!114 &1021200301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021200294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f580022dbf3a4432bac832f86ec535eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorial: {fileID: 927069859}
+  packSelectionPanel: {fileID: 2133751775}
+  levelChangeScreen: {fileID: 452748638}
 --- !u!1 &1094559589
 GameObject:
   m_ObjectHideFlags: 0
@@ -8266,6 +8307,7 @@ MonoBehaviour:
   - {fileID: 1434474272}
   - {fileID: 1478990811}
   - {fileID: 192833326}
+  stackCardsTutorial: {fileID: 927069863}
   stackParents:
   - {fileID: 1094559589}
   - {fileID: 1120028108}
@@ -8289,6 +8331,7 @@ MonoBehaviour:
   speakerIcon: {fileID: 472857507}
   checkPointPanel: {fileID: 452748638}
   progressChecker: {fileID: 8383894889009589328}
+  tutorial: {fileID: 927069859}
 --- !u!114 &8383894889009589328
 MonoBehaviour:
   m_ObjectHideFlags: 0

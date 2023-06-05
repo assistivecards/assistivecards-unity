@@ -26,6 +26,7 @@ public class StackCardsBoardGenerator : MonoBehaviour
     [SerializeField] GameObject loadingPanel;
     [SerializeField] GameObject[] assistiveCardsPlaceholders;
     [SerializeField] GameObject[] cardSlots;
+    [SerializeField] StackCardsTutorial stackCardsTutorial;
     public GameObject[] stackParents;
     private StackCardsUIController UIController;
 
@@ -60,6 +61,7 @@ public class StackCardsBoardGenerator : MonoBehaviour
 
     public async Task GenerateRandomBoardAsync()
     {
+        stackCardsTutorial.ClearTutorial();
         if (didLanguageChange)
         {
             await CacheCards(packSlug);
@@ -73,6 +75,7 @@ public class StackCardsBoardGenerator : MonoBehaviour
         PlaceSprites();
         DisableLoadingPanel();
         ScaleImagesUp();
+        UIController.TutorialSetActive();
         // backButton.SetActive(true);
         Invoke("EnableBackButton", 0.8f);
     }
@@ -106,6 +109,7 @@ public class StackCardsBoardGenerator : MonoBehaviour
             cardImagesInScene[i].transform.parent.GetComponent<StackCardsMatchDetection>().numOfMatchedCards = 0;
             cardImagesInScene[i].transform.parent.GetComponent<StackCardsMatchDetection>().isMatched = false;
             cardImagesInScene[i].transform.parent.tag = "Untagged";
+            stackCardsTutorial.slotList.Add(cardSlots[i]);
         }
 
         for (int i = 0; i < assistiveCardsPlaceholders.Length; i++)

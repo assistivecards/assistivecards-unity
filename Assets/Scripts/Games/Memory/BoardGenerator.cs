@@ -97,7 +97,7 @@ public class BoardGenerator : MonoBehaviour
             cards[(cardNumber/2) + y].transform.name = "Card" + ((cardNumber/2) + y);
             cards[(cardNumber/2) + y].transform.parent = this.transform;
         }
-
+        gamePanelUIController.TutorialSetActive();
         EditBoard();
     }
 

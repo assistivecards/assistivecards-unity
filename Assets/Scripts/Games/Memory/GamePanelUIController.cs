@@ -12,6 +12,8 @@ public class GamePanelUIController : MonoBehaviour
     [SerializeField] private GameObject helloText;
     [SerializeField] private GameObject packSelectionScreen;
     [SerializeField] private GameObject transitionScreen;
+    [SerializeField] private GameObject tutorial;
+    public bool firstTime = true;
 
     private void Awake()
     {
@@ -26,6 +28,15 @@ public class GamePanelUIController : MonoBehaviour
     private void Update() 
     {
         GamePanelUIControl();
+    }
+
+    public void TutorialSetActive()
+    {
+        if(firstTime || gameAPI.GetTutorialPreference() == 1)
+        {
+            tutorial.SetActive(true);
+        }
+        firstTime = false;
     }
 
     public void GamePanelUIControl()

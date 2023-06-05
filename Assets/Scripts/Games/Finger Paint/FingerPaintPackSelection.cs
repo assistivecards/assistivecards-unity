@@ -14,6 +14,7 @@ public class FingerPaintPackSelection : MonoBehaviour
     [SerializeField] GameObject helloText;
     [SerializeField] GameObject speakerIcon;
     [SerializeField] PackSelectionScreenUIController packSelectionScreenUIController;
+    [SerializeField] GameObject loadingPanel;
 
     private void Awake()
     {
@@ -27,6 +28,7 @@ public class FingerPaintPackSelection : MonoBehaviour
             boardGenerator.packSlug = packSelectionPanelScript.selectedPackElement.name;
             packSelectionPanel.transform.GetChild(0).GetComponent<ScrollRect>().enabled = false;
             LeanTween.scale(packSelectionPanel, Vector3.zero, 0.25f);
+            loadingPanel.SetActive(true);
             Invoke("ClosePackSelectionPanel", 0.5f);
             helloText.SetActive(false);
             speakerIcon.SetActive(false);

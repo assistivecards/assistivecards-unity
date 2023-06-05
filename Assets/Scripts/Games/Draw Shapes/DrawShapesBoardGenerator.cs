@@ -277,10 +277,10 @@ public class DrawShapesBoardGenerator : MonoBehaviour
 
     private void DisableLoadingPanel()
     {
-        if (loadingPanel.activeInHierarchy)
-        {
-            loadingPanel.SetActive(false);
-        }
+        // if (loadingPanel.activeInHierarchy)
+        // {
+        loadingPanel.SetActive(false);
+        // }
     }
 
     public void ResetWaypointColors()

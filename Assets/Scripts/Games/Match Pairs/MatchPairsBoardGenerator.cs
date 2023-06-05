@@ -86,7 +86,7 @@ public class MatchPairsBoardGenerator : MonoBehaviour
 
     public void FindMatchForTutorial()
     {
-        if(tutorial.GetComponent<TutorialMatchPairs>().point1 != null && tutorial.GetComponent<TutorialMatchPairs>().point1 == pieceImages[0].transform)
+        if (tutorial.GetComponent<TutorialMatchPairs>().point1 != null && tutorial.GetComponent<TutorialMatchPairs>().point1 == pieceImages[0].transform)
         {
             tutorial.GetComponent<TutorialMatchPairs>().point1 = pieceImages[1].transform;
 
@@ -97,8 +97,8 @@ public class MatchPairsBoardGenerator : MonoBehaviour
                     tutorial.GetComponent<TutorialMatchPairs>().point2 = card.transform;
                 }
             }
-        } 
-        else if(tutorial.GetComponent<TutorialMatchPairs>().point1 != null && tutorial.GetComponent<TutorialMatchPairs>().point1 == pieceImages[1].transform)
+        }
+        else if (tutorial.GetComponent<TutorialMatchPairs>().point1 != null && tutorial.GetComponent<TutorialMatchPairs>().point1 == pieceImages[1].transform)
         {
             tutorial.GetComponent<TutorialMatchPairs>().point1 = pieceImages[2].transform;
 
@@ -264,9 +264,9 @@ public class MatchPairsBoardGenerator : MonoBehaviour
 
     private void DisableLoadingPanel()
     {
-        if (loadingPanel.activeInHierarchy)
-        {
-            loadingPanel.SetActive(false);
-        }
+        // if (loadingPanel.activeInHierarchy)
+        // {
+        loadingPanel.SetActive(false);
+        // }
     }
 }

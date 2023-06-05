@@ -79,10 +79,7 @@ public class DragInsideBoardGenerator : MonoBehaviour
         await PopulateRandomTextures();
         PlaceSprites();
         AssignTags();
-        if (loadingPanel.activeInHierarchy)
-        {
-            loadingPanel.SetActive(false);
-        }
+        DisableLoadingPanel();
         RandomizeCardSlotPositions();
         ScaleImagesUp();
         backButton.SetActive(true);
@@ -254,6 +251,14 @@ public class DragInsideBoardGenerator : MonoBehaviour
         {
             cardSlots[i].localPosition = new Vector2(originalCardSlots[i].x + Random.Range(-50, 50), originalCardSlots[i].y + Random.Range(-20, 20));
         }
+    }
+
+    private void DisableLoadingPanel()
+    {
+        // if (loadingPanel.activeInHierarchy)
+        // {
+        loadingPanel.SetActive(false);
+        // }
     }
 
 }

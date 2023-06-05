@@ -197,10 +197,10 @@ public class ScratcherBoardGenerator : MonoBehaviour
 
     private void DisableLoadingPanel()
     {
-        if (loadingPanel.activeInHierarchy)
-        {
-            loadingPanel.SetActive(false);
-        }
+        // if (loadingPanel.activeInHierarchy)
+        // {
+        loadingPanel.SetActive(false);
+        // }
     }
 
 

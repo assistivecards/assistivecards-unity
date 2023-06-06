@@ -24,6 +24,7 @@ public class CardWhackBoardGenerator : MonoBehaviour
     [SerializeField] GameObject[] slots;
     public int numOfCards = 5;
     [SerializeField] GameObject cardToWhack;
+    [SerializeField] GameObject scoreParent;
 
     private void Awake()
     {
@@ -85,6 +86,7 @@ public class CardWhackBoardGenerator : MonoBehaviour
         }
 
         LeanTween.scale(whackText.gameObject, Vector3.one, 0.2f);
+        LeanTween.scale(scoreParent, Vector3.one, 0.2f);
         cardToWhack.transform.GetChild(0).GetComponent<Image>().sprite = randomSprites[0];
         LeanTween.scale(cardToWhack, Vector3.one, 0.2f);
 
@@ -98,6 +100,7 @@ public class CardWhackBoardGenerator : MonoBehaviour
         }
 
         LeanTween.scale(whackText.gameObject, Vector3.zero, 0.2f);
+        LeanTween.scale(scoreParent, Vector3.zero, 0.2f);
     }
 
     public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)

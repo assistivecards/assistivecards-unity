@@ -18,6 +18,6 @@ public class TutorialMemory : MonoBehaviour
 
     private void Relocate()
     {
-        LeanTween.moveLocal(this.gameObject, new Vector3(-350, -180, 0), 0);
+        LeanTween.moveLocal(this.gameObject, new Vector3(-395, -190, 0), 0);
     }
 }

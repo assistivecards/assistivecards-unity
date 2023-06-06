@@ -142,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move: 0
   moveValue: 0
-  rotationRadius: 120
+  rotationRadius: 100
   speed: 2.5
 --- !u!1 &38099727
 GameObject:
@@ -205,6 +205,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1021200298}
     m_Modifications:
+    - target: {fileID: 3236149540159706466, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3236149540159706466, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3236149540598557714, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: tutorialPosition
       value: 
@@ -283,7 +291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3236149540598557725, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 355
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3236149540598557725, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_AnchoredPosition.y

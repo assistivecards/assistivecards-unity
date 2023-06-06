@@ -13,10 +13,22 @@ public class HatchMatchUIController : MonoBehaviour
     [SerializeField] private GameObject helloText;
     [SerializeField] private GameObject packSelectionPanel;
 
+    private bool firstTime = true;
+    [SerializeField] GameObject tutorial;
+
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
         levelChangeScreenHatchMatch = levelChange.GetComponent<LevelChangeScreenHatchMatch>();
+    }
+
+    public void TutorialSetActive()
+    {
+        if(firstTime || gameAPI.GetTutorialPreference() == 1)
+        {
+            tutorial.SetActive(true);
+        }
+        firstTime = false;
     }
 
     private void FixedUpdate() 

@@ -25,6 +25,7 @@ public class CardWhackBoardGenerator : MonoBehaviour
     public int numOfCards = 5;
     [SerializeField] GameObject cardToWhack;
     [SerializeField] GameObject scoreParent;
+    [SerializeField] GameObject cardSpawner;
 
     private void Awake()
     {
@@ -67,7 +68,7 @@ public class CardWhackBoardGenerator : MonoBehaviour
         ScaleImagesUp();
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);
-        gameObject.GetComponent<CardWhackCardSpawner>().InvokeRepeating("SpawnCard", 1, Random.Range(0.75f, 1));
+        cardSpawner.GetComponent<CardWhackCardSpawner>().InvokeRepeating("SpawnCard", 1, Random.Range(0.75f, 1));
     }
 
     public void ClearBoard()

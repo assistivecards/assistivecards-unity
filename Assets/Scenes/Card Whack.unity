@@ -5828,6 +5828,7 @@ GameObject:
   - component: {fileID: 1995057600056102325}
   - component: {fileID: 8383894889009589326}
   - component: {fileID: 8383894889009589327}
+  - component: {fileID: 8383894889009589328}
   m_Layer: 5
   m_Name: GamePanel
   m_TagString: Untagged
@@ -6322,6 +6323,20 @@ MonoBehaviour:
   - {fileID: 296521372}
   availableSlots: []
   cardPrefab: {fileID: 2703625360594186459, guid: dafc788c871f02d4180e384730cc4d95, type: 3}
+--- !u!114 &8383894889009589328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3720148778835819161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297501c8c6a93364d81d144914bd152c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  scoreText: {fileID: 1853891650}
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

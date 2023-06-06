@@ -22,6 +22,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
     [SerializeField] private Transform cardPosition;
     [SerializeField] private GameObject egg;
     [SerializeField] private PackSelectionScreenUIController packageSelectManager;
+    [SerializeField] private HatchMatchUIController UIController;
     public int cardTypeCount;
     public int levelCount;
 
@@ -144,6 +145,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
             GenerateCard(packSelectionPanel.selectedPackElement.name, card3Position, 3);
             egg.SetActive(true);
             LeanTween.scale(egg, Vector3.one * 1.25f, 1f);
+            UIController.TutorialSetActive();
             Invoke("GenerateStylizedCard", 0.5f);
         }
     }

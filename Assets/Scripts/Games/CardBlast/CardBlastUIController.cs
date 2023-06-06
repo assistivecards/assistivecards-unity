@@ -17,6 +17,8 @@ public class CardBlastUIController : MonoBehaviour
     [SerializeField] private GameObject board;
     [SerializeField] private GameObject levelChange;
     [SerializeField] private GameObject difficultSelectionPanel;
+    [SerializeField] GameObject tutorial;
+    private bool firstTime = true;
 
     private void Awake()
     {
@@ -26,6 +28,15 @@ public class CardBlastUIController : MonoBehaviour
     private void Update() 
     {
         GamePanelUIControl();
+    }
+
+    public void TutorialSetActive()
+    {
+        if(firstTime || gameAPI.GetTutorialPreference() == 1)
+        {
+            tutorial.SetActive(true);
+        }
+        firstTime = false;
     }
 
     public void GamePanelUIControl()

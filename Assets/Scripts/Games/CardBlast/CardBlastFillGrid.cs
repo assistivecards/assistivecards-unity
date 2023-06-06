@@ -18,6 +18,7 @@ public class CardBlastFillGrid : MonoBehaviour
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] private GameObject scoreObj;
     [SerializeField] private GameObject loadingScreen;
+    [SerializeField] private CardBlastUIController UIController;
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     private List<string> cardNames = new List<string>();
 
@@ -146,6 +147,7 @@ public class CardBlastFillGrid : MonoBehaviour
         }
         LeanTween.scale(this.gameObject, new Vector2(0.75f, 0.75f), 0.1f);
         SetLeft(rect, -127);
+        UIController.Invoke("TutorialSetActive", 2f);
         loadingScreen.SetActive(false);
         isBoardCreated = true;
 

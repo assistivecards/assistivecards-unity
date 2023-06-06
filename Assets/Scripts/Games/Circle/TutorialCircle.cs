@@ -14,6 +14,6 @@ public class TutorialCircle : MonoBehaviour
         moveValue += Time.deltaTime * speed;
         posX =  Mathf.Cos(moveValue) * rotationRadius;
         posY =  Mathf.Sin(moveValue) * rotationRadius;
-        this.transform.localPosition = new Vector3( posX, posY, 0);
+        this.transform.localPosition = new Vector3( posX + 40f, posY - 15f, 0);
     }
 }

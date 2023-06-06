@@ -1127,6 +1127,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6869474275132592025, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 60998bc7cf0e44489b8e84528804c215, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
@@ -1322,6 +1326,7 @@ GameObject:
   - component: {fileID: 1021200295}
   - component: {fileID: 1021200299}
   - component: {fileID: 1021200300}
+  - component: {fileID: 1021200301}
   m_Layer: 5
   m_Name: GameCanvas
   m_TagString: Untagged
@@ -1448,6 +1453,21 @@ MonoBehaviour:
   languageInputField: {fileID: 0}
   localeInputField: {fileID: 0}
   canvas: {fileID: 1021200297}
+--- !u!114 &1021200301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021200294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f580022dbf3a4432bac832f86ec535eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorial: {fileID: 927069859}
+  packSelectionPanel: {fileID: 1837497528}
+  levelChangeScreen: {fileID: 199831529}
 --- !u!1 &1040718006
 GameObject:
   m_ObjectHideFlags: 0
@@ -6217,6 +6237,7 @@ MonoBehaviour:
   - {fileID: 1409443619}
   - {fileID: 605837737}
   loadingPanel: {fileID: 671447375}
+  tutorial: {fileID: 927069859}
 --- !u!114 &8383894889009589327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6255,6 +6276,7 @@ MonoBehaviour:
   speakerIcon: {fileID: 472857507}
   checkPointPanel: {fileID: 199831529}
   matchDetector: {fileID: 8383894889009589327}
+  tutorial: {fileID: 927069859}
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

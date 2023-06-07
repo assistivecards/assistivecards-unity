@@ -9,7 +9,12 @@ public class CardWhackScoreManager : MonoBehaviour
     [SerializeField] TMP_Text scoreText;
     public bool isLevelComplete;
     [SerializeField] CardWhackCardSpawner cardSpawner;
+    private CardWhackBoardGenerator board;
 
+    private void Start()
+    {
+        board = GameObject.Find("GamePanel").GetComponent<CardWhackBoardGenerator>();
+    }
 
     void Update()
     {
@@ -22,6 +27,10 @@ public class CardWhackScoreManager : MonoBehaviour
                 isLevelComplete = true;
                 Debug.Log("LEVEL COMPLETED");
                 cardSpawner.CancelInvoke("SpawnCard");
+                cardSpawner.DestroyAllCards();
+                board.Invoke("ScaleImagesDown", 1f);
+                board.Invoke("ClearBoard", 1.3f);
+                board.Invoke("GenerateRandomBoardAsync", 1.3f);
             }
         }
 
@@ -50,4 +59,5 @@ public class CardWhackScoreManager : MonoBehaviour
     {
         LeanTween.scale(scoreText.transform.parent.parent.gameObject, Vector3.one, .25f);
     }
+
 }

@@ -26,6 +26,7 @@ public class CardWhackBoardGenerator : MonoBehaviour
     [SerializeField] GameObject cardToWhack;
     [SerializeField] GameObject scoreParent;
     [SerializeField] GameObject cardSpawner;
+    private CardWhackScoreManager scoreManager;
 
     private void Awake()
     {
@@ -35,6 +36,7 @@ public class CardWhackBoardGenerator : MonoBehaviour
     private void Start()
     {
         gameAPI.PlayMusic();
+        scoreManager = GameObject.Find("ScoreManager").GetComponent<CardWhackScoreManager>();
     }
 
     private void OnEnable()
@@ -76,6 +78,8 @@ public class CardWhackBoardGenerator : MonoBehaviour
         randomCards.Clear();
         randomImages.Clear();
         randomSprites.Clear();
+        scoreManager.score = 0;
+        scoreManager.isLevelComplete = false;
 
     }
 
@@ -102,6 +106,7 @@ public class CardWhackBoardGenerator : MonoBehaviour
 
         LeanTween.scale(whackText.gameObject, Vector3.zero, 0.2f);
         LeanTween.scale(scoreParent, Vector3.zero, 0.2f);
+        LeanTween.scale(cardToWhack, Vector3.zero, 0.2f);
     }
 
     public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)

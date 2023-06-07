@@ -13,7 +13,7 @@ public class CardWhackDetectWhack : MonoBehaviour, IPointerClickHandler
     private void Start()
     {
         board = GameObject.Find("GamePanel").GetComponent<CardWhackBoardGenerator>();
-        scoreManager = GameObject.Find("GamePanel").GetComponent<CardWhackScoreManager>();
+        scoreManager = GameObject.Find("ScoreManager").GetComponent<CardWhackScoreManager>();
     }
 
     public void OnPointerClick(PointerEventData eventData)

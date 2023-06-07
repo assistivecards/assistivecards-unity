@@ -37,10 +37,17 @@ public class CardWhackScoreManager : MonoBehaviour
     public void InreaseScore()
     {
         score = score + 10;
+        LeanTween.scale(scoreText.transform.parent.parent.gameObject, Vector3.one * 1.15f, .25f).setOnComplete(ScaleScoreTextDown);
     }
 
     public void DecreaseScore()
     {
         score = score - 5;
+        LeanTween.scale(scoreText.transform.parent.parent.gameObject, Vector3.one * 1.15f, .25f).setOnComplete(ScaleScoreTextDown);
+    }
+
+    private void ScaleScoreTextDown()
+    {
+        LeanTween.scale(scoreText.transform.parent.parent.gameObject, Vector3.one, .25f);
     }
 }

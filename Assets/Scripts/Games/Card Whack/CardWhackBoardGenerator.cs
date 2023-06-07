@@ -24,6 +24,9 @@ public class CardWhackBoardGenerator : MonoBehaviour
     [SerializeField] GameObject[] slots;
     public int numOfCards = 5;
     [SerializeField] GameObject cardToWhack;
+    [SerializeField] GameObject scoreParent;
+    [SerializeField] GameObject cardSpawner;
+    private CardWhackScoreManager scoreManager;
 
     private void Awake()
     {
@@ -33,6 +36,7 @@ public class CardWhackBoardGenerator : MonoBehaviour
     private void Start()
     {
         gameAPI.PlayMusic();
+        scoreManager = GameObject.Find("ScoreManager").GetComponent<CardWhackScoreManager>();
     }
 
     private void OnEnable()
@@ -66,7 +70,7 @@ public class CardWhackBoardGenerator : MonoBehaviour
         ScaleImagesUp();
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);
-        gameObject.GetComponent<CardWhackCardSpawner>().InvokeRepeating("SpawnCard", 1, Random.Range(0.75f, 1));
+        cardSpawner.GetComponent<CardWhackCardSpawner>().InvokeRepeating("SpawnCard", 1, Random.Range(0.75f, 1));
     }
 
     public void ClearBoard()
@@ -74,6 +78,8 @@ public class CardWhackBoardGenerator : MonoBehaviour
         randomCards.Clear();
         randomImages.Clear();
         randomSprites.Clear();
+        scoreManager.score = 0;
+        scoreManager.isLevelComplete = false;
 
     }
 
@@ -85,6 +91,7 @@ public class CardWhackBoardGenerator : MonoBehaviour
         }
 
         LeanTween.scale(whackText.gameObject, Vector3.one, 0.2f);
+        LeanTween.scale(scoreParent, Vector3.one, 0.2f);
         cardToWhack.transform.GetChild(0).GetComponent<Image>().sprite = randomSprites[0];
         LeanTween.scale(cardToWhack, Vector3.one, 0.2f);
 
@@ -98,6 +105,8 @@ public class CardWhackBoardGenerator : MonoBehaviour
         }
 
         LeanTween.scale(whackText.gameObject, Vector3.zero, 0.2f);
+        LeanTween.scale(scoreParent, Vector3.zero, 0.2f);
+        LeanTween.scale(cardToWhack, Vector3.zero, 0.2f);
     }
 
     public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)

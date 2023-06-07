@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class CardWhackCardSpawner : MonoBehaviour
 {
     [SerializeField] Transform[] slots;
+    [SerializeField] Transform slotsParent;
     [SerializeField] List<Transform> availableSlots = new List<Transform>();
     [SerializeField] GameObject cardPrefab;
     private CardWhackBoardGenerator board;
@@ -40,6 +41,32 @@ public class CardWhackCardSpawner : MonoBehaviour
     public IEnumerator FadeCard(GameObject card)
     {
         yield return new WaitForSeconds(1f);
-        LeanTween.alpha(card.GetComponent<RectTransform>(), 0, .25f).setDestroyOnComplete(true);
+
+        try
+        {
+            LeanTween.alpha(card.GetComponent<RectTransform>(), 0, .25f).setDestroyOnComplete(true);
+        }
+
+        catch (System.Exception ex)
+        {
+            Debug.Log("CARD IS ALREADY DESTROYED: " + ex);
+        }
+
     }
+
+    public void DestroyAllCards()
+    {
+        foreach (Transform child in slotsParent)
+        {
+            foreach (Transform card in child)
+            {
+                if (card.name.StartsWith("Card"))
+                {
+                    Debug.Log("CHILD FOUND");
+                    LeanTween.alpha(card.GetComponent<RectTransform>(), 0, .25f).setDestroyOnComplete(true);
+                }
+            }
+        }
+    }
+
 }

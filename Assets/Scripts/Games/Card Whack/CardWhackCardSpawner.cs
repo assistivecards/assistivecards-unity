@@ -41,7 +41,17 @@ public class CardWhackCardSpawner : MonoBehaviour
     public IEnumerator FadeCard(GameObject card)
     {
         yield return new WaitForSeconds(1f);
-        LeanTween.alpha(card.GetComponent<RectTransform>(), 0, .25f).setDestroyOnComplete(true);
+
+        try
+        {
+            LeanTween.alpha(card.GetComponent<RectTransform>(), 0, .25f).setDestroyOnComplete(true);
+        }
+
+        catch (System.Exception ex)
+        {
+            Debug.Log("CARD IS ALREADY DESTROYED: " + ex);
+        }
+
     }
 
     public void DestroyAllCards()

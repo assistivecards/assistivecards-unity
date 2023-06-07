@@ -31,5 +31,13 @@ public class CardWhackDetectWhack : MonoBehaviour, IPointerClickHandler
             isClicked = true;
             scoreManager.DecreaseScore();
         }
+
+        FadeCard();
     }
+
+    private void FadeCard()
+    {
+        LeanTween.alpha(gameObject.GetComponent<RectTransform>(), 0, .25f).setDestroyOnComplete(true);
+    }
+
 }

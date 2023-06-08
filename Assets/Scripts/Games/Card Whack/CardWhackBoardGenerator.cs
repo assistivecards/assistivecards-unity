@@ -137,8 +137,10 @@ public class CardWhackBoardGenerator : MonoBehaviour
             var texture = await gameAPI.GetCardImage(packSlug, randomCards[i].slug);
             texture.wrapMode = TextureWrapMode.Clamp;
             texture.filterMode = FilterMode.Bilinear;
+            texture.name = randomCards[i].title;
             randomImages.Add(texture);
             randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
+            randomSprites[i].name = randomImages[i].name;
         }
     }
 

@@ -9,6 +9,12 @@ public class CardWhackDetectWhack : MonoBehaviour, IPointerClickHandler
     private CardWhackBoardGenerator board;
     private CardWhackScoreManager scoreManager;
     private bool isClicked = false;
+    private GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void Start()
     {
@@ -23,6 +29,8 @@ public class CardWhackDetectWhack : MonoBehaviour, IPointerClickHandler
             Debug.Log("CORRECT CARD");
             isClicked = true;
             scoreManager.InreaseScore();
+            ReadCard();
+            gameAPI.PlaySFX("Success");
         }
 
         else if (transform.GetChild(0).GetComponent<Image>().sprite != board.randomSprites[0] && !isClicked)
@@ -30,6 +38,7 @@ public class CardWhackDetectWhack : MonoBehaviour, IPointerClickHandler
             Debug.Log("WRONG CARD");
             isClicked = true;
             scoreManager.DecreaseScore();
+            gameAPI.PlaySFX("Pickup");
         }
 
         FadeCard();
@@ -38,6 +47,11 @@ public class CardWhackDetectWhack : MonoBehaviour, IPointerClickHandler
     private void FadeCard()
     {
         LeanTween.alpha(gameObject.GetComponent<RectTransform>(), 0, .25f).setDestroyOnComplete(true);
+    }
+
+    public void ReadCard()
+    {
+        gameAPI.Speak(transform.GetChild(0).GetComponent<Image>().sprite.name);
     }
 
 }

@@ -10,10 +10,14 @@ public class CardWhackScoreManager : MonoBehaviour
     public bool isLevelComplete;
     [SerializeField] CardWhackCardSpawner cardSpawner;
     private CardWhackBoardGenerator board;
+    public int levelsCompleted;
+    private CardWhackUIController UIController;
+    public int checkpointFrequency;
 
     private void Start()
     {
         board = GameObject.Find("GamePanel").GetComponent<CardWhackBoardGenerator>();
+        UIController = GameObject.Find("GamePanel").GetComponent<CardWhackUIController>();
     }
 
     void Update()
@@ -25,12 +29,19 @@ public class CardWhackScoreManager : MonoBehaviour
             if (!isLevelComplete)
             {
                 isLevelComplete = true;
+                levelsCompleted++;
                 Debug.Log("LEVEL COMPLETED");
                 cardSpawner.CancelInvoke("SpawnCard");
                 cardSpawner.DestroyAllCards();
                 board.Invoke("ScaleImagesDown", 1f);
                 board.Invoke("ClearBoard", 1.3f);
-                board.Invoke("GenerateRandomBoardAsync", 1.3f);
+
+                if (levelsCompleted == checkpointFrequency)
+                {
+                    UIController.Invoke("OpenCheckPointPanel", 1.3f);
+                }
+                else
+                    board.Invoke("GenerateRandomBoardAsync", 1.3f);
             }
         }
 

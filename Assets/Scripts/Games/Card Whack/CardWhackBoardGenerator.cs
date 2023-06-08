@@ -72,7 +72,7 @@ public class CardWhackBoardGenerator : MonoBehaviour
         DisableLoadingPanel();
         ScaleImagesUp();
         backButton.SetActive(true);
-        Invoke("EnableBackButton", 0.15f);
+        Invoke("EnableBackButton", 0.2f);
         cardSpawner.GetComponent<CardWhackCardSpawner>().InvokeRepeating("SpawnCard", 1, Random.Range(0.75f, 1));
     }
 

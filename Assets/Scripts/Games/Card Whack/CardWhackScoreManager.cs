@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CardWhackScoreManager : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class CardWhackScoreManager : MonoBehaviour
                 Debug.Log("LEVEL COMPLETED");
                 cardSpawner.CancelInvoke("SpawnCard");
                 cardSpawner.DestroyAllCards();
+                UIController.backButton.GetComponent<Button>().interactable = false;
                 board.Invoke("ScaleImagesDown", 1f);
                 board.Invoke("ClearBoard", 1.3f);
 

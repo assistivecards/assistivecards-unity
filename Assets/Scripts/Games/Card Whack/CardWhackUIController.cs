@@ -13,6 +13,7 @@ public class CardWhackUIController : MonoBehaviour
     [SerializeField] GameObject checkPointPanel;
     private GameAPI gameAPI;
     [SerializeField] CardWhackScoreManager scoreManager;
+    [SerializeField] CardWhackCardSpawner cardSpawner;
 
     private void Awake()
     {
@@ -93,6 +94,30 @@ public class CardWhackUIController : MonoBehaviour
     {
         var rt = packSelectionPanel.transform.GetChild(0).GetChild(0).GetComponent<RectTransform>();
         rt.offsetMax = new Vector2(rt.offsetMax.x, 0);
+    }
+
+    public void OnBackButtonClick()
+    {
+        StartCoroutine(BackButtonClickCoroutine());
+    }
+
+    IEnumerator BackButtonClickCoroutine()
+    {
+        ResetCounter();
+        cardSpawner.CancelInvoke("SpawnCard");
+        cardSpawner.DestroyAllCards();
+        board.ScaleImagesDown();
+        backButton.SetActive(false);
+        yield return new WaitForSeconds(0.25f);
+        board.ClearBoard();
+        packSelectionPanel.transform.localScale = new Vector3(0, 0, 0);
+        ResetScrollRect();
+        packSelectionPanel.SetActive(true);
+        LeanTween.scale(packSelectionPanel, Vector3.one, 0.25f);
+        Invoke("EnableScrollRect", 0.26f);
+        helloText.SetActive(true);
+        speakerIcon.SetActive(true);
+
     }
 
 }

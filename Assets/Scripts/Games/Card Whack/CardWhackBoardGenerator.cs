@@ -27,6 +27,7 @@ public class CardWhackBoardGenerator : MonoBehaviour
     [SerializeField] GameObject scoreParent;
     [SerializeField] GameObject cardSpawner;
     private CardWhackScoreManager scoreManager;
+    private CardWhackUIController UIController;
 
     private void Awake()
     {
@@ -37,6 +38,7 @@ public class CardWhackBoardGenerator : MonoBehaviour
     {
         gameAPI.PlayMusic();
         scoreManager = GameObject.Find("ScoreManager").GetComponent<CardWhackScoreManager>();
+        UIController = gameObject.GetComponent<CardWhackUIController>();
     }
 
     private void OnEnable()
@@ -44,6 +46,7 @@ public class CardWhackBoardGenerator : MonoBehaviour
         if (isBackAfterSignOut)
         {
             gameAPI.PlayMusic();
+            UIController.OnBackButtonClick();
             isBackAfterSignOut = false;
         }
     }

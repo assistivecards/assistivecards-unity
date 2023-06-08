@@ -9,7 +9,7 @@ public class CardFishingRodController : MonoBehaviour, IPointerDownHandler, IPoi
     [SerializeField] private Transform point1;
     [SerializeField] private Transform point2;
     [SerializeField] private float speed;
-    private bool isPointerDown;
+    public bool isPointerDown;
 
 
     public void OnPointerDown(PointerEventData eventData)
@@ -27,11 +27,11 @@ public class CardFishingRodController : MonoBehaviour, IPointerDownHandler, IPoi
         if(point1 != null && point2 != null && !isPointerDown)
         {
             rod.transform.position = Vector3.Lerp(point1.position, point2.position, Mathf.PingPong(Time.time * speed, 1));
-            ResetSize();
+            Invoke("ResetSize", 0.5f);
         }
         else if(isPointerDown)
         {
-            Resize(Time.time * 0.025f);
+            Resize(Time.time * 0.0025f);
         }
     }
 

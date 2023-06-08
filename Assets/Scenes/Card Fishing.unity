@@ -1093,6 +1093,8 @@ GameObject:
   - component: {fileID: 925175347}
   - component: {fileID: 925175349}
   - component: {fileID: 925175348}
+  - component: {fileID: 925175351}
+  - component: {fileID: 925175350}
   m_Layer: 5
   m_Name: Rope
   m_TagString: Untagged
@@ -1158,6 +1160,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 925175346}
   m_CullTransparentMesh: 1
+--- !u!114 &925175350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925175346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfd15191744cd4bf9a96272ccc6b6242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardFishingRodController: {fileID: 8383894889009589327}
+--- !u!61 &925175351
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925175346}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 50, y: 15}
+  m_EdgeRadius: 0
 --- !u!1 &927069859 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3236149540598557724, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
@@ -5544,7 +5585,7 @@ MonoBehaviour:
   cards: []
   cardsList: []
   packSelectionPanel: {fileID: 1569921704}
-  UIController: {fileID: 0}
+  UIController: {fileID: 8383894889009589328}
   cardPrefab: {fileID: 1572616208917296617, guid: 2ee4e68144a1c414caeb1977910edf91, type: 3}
   cardPosition1: {fileID: 277536888}
   cardPosition2: {fileID: 1098641057}
@@ -5572,6 +5613,7 @@ MonoBehaviour:
   point1: {fileID: 284606636}
   point2: {fileID: 1173007167}
   speed: 0.5
+  isPointerDown: 0
 --- !u!114 &8383894889009589328
 MonoBehaviour:
   m_ObjectHideFlags: 0

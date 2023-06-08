@@ -20,6 +20,9 @@ public class CardFishingBoardGenerator : MonoBehaviour
     AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
     [SerializeField] private PackSelectionPanel packSelectionPanel;
 
+    [Header ("Card Fishing Classes")]
+    [SerializeField] private CardFishingUIController UIController;
+
     [Header ("Game UI")]
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject cardPosition1;

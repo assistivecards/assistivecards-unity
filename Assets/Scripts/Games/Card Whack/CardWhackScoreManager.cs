@@ -70,7 +70,11 @@ public class CardWhackScoreManager : MonoBehaviour
 
     private void ScaleScoreTextDown()
     {
-        LeanTween.scale(scoreText.transform.parent.parent.gameObject, Vector3.one, .25f);
+        if (!(scoreText.transform.parent.parent.localScale.x < 1))
+        {
+            LeanTween.scale(scoreText.transform.parent.parent.gameObject, Vector3.one, .25f);
+        }
+
     }
 
 }

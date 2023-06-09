@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CardFishingCatchMechanic : MonoBehaviour
 {
     [SerializeField] private CardFishingRodController cardFishingRodController;
     private bool catctedCard;
+    private GameObject card;
 
     private void OnTriggerStay2D(Collider2D other) 
     {
@@ -13,10 +15,21 @@ public class CardFishingCatchMechanic : MonoBehaviour
         {
             if(other.gameObject.tag == "card")
             {
-                Debug.Log(other.gameObject.name);
+                card = other.gameObject;
                 catctedCard = true;
-                other.transform.position = this.transform.GetChild(0).transform.position;
             }
         }
     }
+
+    void Update()
+    {
+        if(card != null)
+            MoveCard(card);
+    }
+
+    private void MoveCard(GameObject _card)
+    {
+        _card.transform.position = this.transform.GetChild(0).transform.position;
+    }
+
 }

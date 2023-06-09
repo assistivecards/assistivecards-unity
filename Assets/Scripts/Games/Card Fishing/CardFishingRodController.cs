@@ -10,6 +10,7 @@ public class CardFishingRodController : MonoBehaviour, IPointerDownHandler, IPoi
     [SerializeField] private Transform point2;
     [SerializeField] private float speed;
     public bool isPointerDown;
+    private int distance;
 
 
     public void OnPointerDown(PointerEventData eventData)
@@ -22,25 +23,35 @@ public class CardFishingRodController : MonoBehaviour, IPointerDownHandler, IPoi
         isPointerDown = false;
     }
 
-    void Update()
+    private void Update() 
     {
         if(point1 != null && point2 != null && !isPointerDown)
         {
-            rod.transform.position = Vector3.Lerp(point1.position, point2.position, Mathf.PingPong(Time.time * speed, 1));
-            Invoke("ResetSize", 0.5f);
+            rod.transform.position = Vector3.Lerp (point1.position, point2.position, (Mathf.Sin(speed * distance) + 1.0f) / 2.0f);
+            distance++;
+            ScaleDownRope(Time.time * 0.003f);
         }
         else if(isPointerDown)
         {
-            Resize(Time.time * 0.0025f);
+            ScaleUpRope(Time.time * 0.003f);
         }
     }
 
-    public void Resize(float resizeAmount)
+    public void ScaleUpRope(float resizeAmount)
     {
         if(rod.transform.GetChild(1).transform.localScale.y <= 20)
         {
             rod.transform.GetChild(1).transform.localScale += new Vector3(0, resizeAmount, 0);
             rod.transform.GetChild(1).transform.localPosition += new Vector3(0 , -resizeAmount * 10, 0); 
+        }
+    }
+
+    public void ScaleDownRope(float resizeAmount)
+    {
+        if(rod.transform.GetChild(1).transform.localScale.y >= 0)
+        {
+            rod.transform.GetChild(1).transform.localScale -= new Vector3(0, resizeAmount, 0);
+            rod.transform.GetChild(1).transform.localPosition -= new Vector3(0 , -resizeAmount * 10, 0); 
         }
     }
 

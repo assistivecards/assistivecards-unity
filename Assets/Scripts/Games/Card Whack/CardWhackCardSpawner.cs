@@ -12,6 +12,7 @@ public class CardWhackCardSpawner : MonoBehaviour
     [SerializeField] List<Transform> availableSlots = new List<Transform>();
     [SerializeField] GameObject cardPrefab;
     private CardWhackBoardGenerator board;
+    [MinTo(10)] public Vector2 fadeTime;
 
     private void Start()
     {
@@ -40,7 +41,7 @@ public class CardWhackCardSpawner : MonoBehaviour
 
     public IEnumerator FadeCard(GameObject card)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(Random.Range(fadeTime.x, fadeTime.y));
 
         try
         {

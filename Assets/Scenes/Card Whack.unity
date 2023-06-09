@@ -3652,6 +3652,7 @@ MonoBehaviour:
   slotsParent: {fileID: 1360917846}
   availableSlots: []
   cardPrefab: {fileID: 2703625360594186459, guid: dafc788c871f02d4180e384730cc4d95, type: 3}
+  fadeTime: {x: 2, y: 3}
 --- !u!4 &2074244729
 Transform:
   m_ObjectHideFlags: 0
@@ -6566,6 +6567,7 @@ MonoBehaviour:
   cardToWhack: {fileID: 399835756}
   scoreParent: {fileID: 1765851336}
   cardSpawner: {fileID: 2074244727}
+  spawnTime: {x: 0.85, y: 1.5}
 --- !u!114 &8383894889009589327
 MonoBehaviour:
   m_ObjectHideFlags: 0

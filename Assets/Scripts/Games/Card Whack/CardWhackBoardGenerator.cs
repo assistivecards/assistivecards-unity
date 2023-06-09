@@ -28,6 +28,7 @@ public class CardWhackBoardGenerator : MonoBehaviour
     [SerializeField] GameObject cardSpawner;
     private CardWhackScoreManager scoreManager;
     private CardWhackUIController UIController;
+    [MinTo(10)] public Vector2 spawnTime;
 
     private void Awake()
     {
@@ -73,7 +74,7 @@ public class CardWhackBoardGenerator : MonoBehaviour
         ScaleImagesUp();
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.2f);
-        cardSpawner.GetComponent<CardWhackCardSpawner>().InvokeRepeating("SpawnCard", 1, Random.Range(0.75f, 1));
+        cardSpawner.GetComponent<CardWhackCardSpawner>().InvokeRepeating("SpawnCard", 1, Random.Range(spawnTime.x, spawnTime.y));
     }
 
     public void ClearBoard()

@@ -114,4 +114,12 @@ public class CardFishingBoardGenerator : MonoBehaviour
             cards.Add(card);
         }
     }
+
+    public void ClearBoard()
+    {
+        cards.Clear();
+        cardNames.Clear();
+        cardsList.Clear();
+        cardLocalNames.Clear();
+    }
 }

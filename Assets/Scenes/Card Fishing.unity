@@ -1173,7 +1173,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd15191744cd4bf9a96272ccc6b6242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UIController: {fileID: 8383894889009589328}
   cardFishingRodController: {fileID: 8383894889009589327}
+  catctedCard: 0
+  card: {fileID: 0}
+  formerCard: {fileID: 0}
+  cachedCardCount: 0
 --- !u!61 &925175351
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5663,6 +5668,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e4becd14da274afca3d9e78ed589dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rodController: {fileID: 8383894889009589327}
+  boardGenerator: {fileID: 8383894889009589326}
+  levelChange: {fileID: 1275520836}
   rod: {fileID: 1106668708}
   backButton: {fileID: 1840862328}
   settingButton: {fileID: 472857506}

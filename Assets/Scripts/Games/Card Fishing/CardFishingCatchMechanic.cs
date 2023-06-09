@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class CardFishingCatchMechanic : MonoBehaviour
 {
+    [SerializeField] private CardFishingUIController UIController;
     [SerializeField] private CardFishingRodController cardFishingRodController;
     public bool catctedCard;
     public GameObject card;
     public GameObject formerCard;
+    public int cachedCardCount;
 
     private void OnTriggerStay2D(Collider2D other) 
     {
@@ -56,10 +58,15 @@ public class CardFishingCatchMechanic : MonoBehaviour
 
     private void DestroyCard()
     {
+        cachedCardCount++;
         Destroy(card);
         Destroy(formerCard);
         catctedCard = false;
         formerCard = null;
+        if(cachedCardCount >= 10)
+        {
+            UIController.LevelChangeScreenActivate();
+        }
     }
 
 }

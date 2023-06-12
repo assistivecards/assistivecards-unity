@@ -136,6 +136,7 @@ public class CardFishingBoardGenerator : MonoBehaviour
         collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(selectedCard).Replace("-", " "), selectedLangCode);
         LeanTween.scale(collectText.gameObject, Vector3.one, 0.2f);
         collectText.gameObject.SetActive(true);
+        UIController.GameUIActivate();
     }
 
     public void ClearBoard()

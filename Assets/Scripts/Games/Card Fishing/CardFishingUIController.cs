@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CardFishingUIController : MonoBehaviour
 {
+    GameAPI gameAPI;
+    
     [Header ("Scripts")]
     [SerializeField] private CardFishingRodController rodController;
     [SerializeField] private CardFishingBoardGenerator boardGenerator;
@@ -19,8 +21,20 @@ public class CardFishingUIController : MonoBehaviour
     [SerializeField] private GameObject loadingScreen;
     [SerializeField] private GameObject packSelectionScreen;
 
+    [SerializeField] private GameObject tutorial;
+    private bool firstTime = true;
+
+    private void Awake() 
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
+
     public void GameUIActivate()
     {
+        if(firstTime || gameAPI.GetTutorialPreference() == 1)
+        {
+            tutorial.SetActive(true);
+        }
         gameUI.SetActive(true);
         backButton.SetActive(true);
         settingButton.SetActive(true);

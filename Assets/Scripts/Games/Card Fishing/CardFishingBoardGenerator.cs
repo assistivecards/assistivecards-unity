@@ -114,6 +114,7 @@ public class CardFishingBoardGenerator : MonoBehaviour
 
             card.transform.name = cardNames[randomValueList[i]];
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+            card.GetComponent<CardFishingCardName>().cardName = cardLocalNames[randomValueList[i]];
             cards.Add(card);
         }
 
@@ -129,6 +130,7 @@ public class CardFishingBoardGenerator : MonoBehaviour
 
             card.transform.name = cardNames[randomValueList[j]];
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+            card.GetComponent<CardFishingCardName>().cardName = cardLocalNames[randomValueList[j]];
             cards.Add(card);
         }
         selectedCard = cards[Random.Range(0, cards.Count)].name;

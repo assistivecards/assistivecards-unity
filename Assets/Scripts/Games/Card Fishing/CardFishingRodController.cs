@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class CardFishingRodController : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
+    GameAPI gameAPI;
     [SerializeField] private GameObject rod;
     [SerializeField] private Transform point1;
     [SerializeField] private Transform point2;
@@ -12,6 +13,10 @@ public class CardFishingRodController : MonoBehaviour, IPointerDownHandler, IPoi
     public bool isPointerDown;
     private int distance;
 
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     public void OnPointerDown(PointerEventData eventData)
     {

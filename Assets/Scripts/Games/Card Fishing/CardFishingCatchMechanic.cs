@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CardFishingCatchMechanic : MonoBehaviour
 {
+    GameAPI gameAPI;
     [SerializeField] private CardFishingUIController UIController;
     [SerializeField] private CardFishingRodController cardFishingRodController;
     [SerializeField] private CardFishingBoardGenerator boardGenerator;
@@ -13,6 +14,11 @@ public class CardFishingCatchMechanic : MonoBehaviour
     public GameObject formerCard;
     public int cachedCardCount;
     public int score;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void OnTriggerStay2D(Collider2D other) 
     {
@@ -53,7 +59,18 @@ public class CardFishingCatchMechanic : MonoBehaviour
     {
         LeanTween.rotateZ(formerCard, 0, 0.2f);
         LeanTween.scale(formerCard, Vector3.one * 0.6f, 0.5f);
+        if(formerCard.name == boardGenerator.selectedCard)
+        {
+            gameAPI.PlaySFX("Success");
+        }
         Invoke("FadeOutCard", 1f);
+        Invoke("ReadCard", 0.25f);
+    }
+
+    private void ReadCard()
+    {
+        gameAPI.Speak(formerCard.GetComponent<CardFishingCardName>().cardName);
+        Debug.Log(formerCard.GetComponent<CardFishingCardName>().cardName);
     }
 
     private void FadeOutCard()
@@ -73,6 +90,7 @@ public class CardFishingCatchMechanic : MonoBehaviour
         if(cachedCardCount >= 10 || score >= 2)
         {
             UIController.LevelChangeScreenActivate();
+            gameAPI.PlaySFX("Finished");
         }
     }
 

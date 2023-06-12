@@ -29,6 +29,7 @@ public class CardFishingUIController : MonoBehaviour
     private void Awake() 
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+        gameAPI.PlayMusic();
     }
 
     public void GameUIActivate()

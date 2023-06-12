@@ -22,6 +22,7 @@ public class CardFishingBoardGenerator : MonoBehaviour
 
     [Header ("Card Fishing Classes")]
     [SerializeField] private CardFishingUIController UIController;
+    [SerializeField] private CardFishingCatchMechanic catchMechanics;
 
     [Header ("Game UI")]
     [SerializeField] private GameObject cardPrefab;
@@ -35,6 +36,7 @@ public class CardFishingBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject cardPosition8;
     [SerializeField] private GameObject cardPosition9;
     [SerializeField] private GameObject cardPosition10;
+    [SerializeField] private TMP_Text collectText;
 
     [Header ("Random")]
     private List<int> randomValueList = new List<int>();
@@ -43,6 +45,7 @@ public class CardFishingBoardGenerator : MonoBehaviour
 
 
     private List<GameObject> cardPositions = new List<GameObject>();
+    public string selectedCard;
 
 
     private void Awake()
@@ -99,7 +102,7 @@ public class CardFishingBoardGenerator : MonoBehaviour
     {
         GetPositionList();
         await CacheCards();
-        for(int i = 0; i < cardPositions.Count; i++)
+        for(int i = 0; i < cardPositions.Count / 2; i++)
         {
             CheckRandom();
             GameObject card = Instantiate(cardPrefab, cardPositions[i].transform.position, Quaternion.identity);
@@ -111,15 +114,47 @@ public class CardFishingBoardGenerator : MonoBehaviour
 
             card.transform.name = cardNames[randomValueList[i]];
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+            card.GetComponent<CardFishingCardName>().cardName = cardLocalNames[randomValueList[i]];
             cards.Add(card);
         }
+
+        for(int j = 0; j < cardPositions.Count / 2; j++)
+        {
+            CheckRandom();
+            GameObject card = Instantiate(cardPrefab, cardPositions[j + 5].transform.position, Quaternion.identity);
+            LeanTween.rotateZ(card, Random.Range(-25f, 25), 0);
+            card.transform.SetParent(cardPositions[j + 5].transform);
+            var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[j]], 512);
+            cardTexture.wrapMode = TextureWrapMode.Clamp;
+            cardTexture.filterMode = FilterMode.Bilinear;
+
+            card.transform.name = cardNames[randomValueList[j]];
+            card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+            card.GetComponent<CardFishingCardName>().cardName = cardLocalNames[randomValueList[j]];
+            cards.Add(card);
+        }
+        selectedCard = cards[Random.Range(0, cards.Count)].name;
+
+        collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(selectedCard).Replace("-", " "), selectedLangCode);
+        LeanTween.scale(collectText.gameObject, Vector3.one, 0.2f);
+        collectText.gameObject.SetActive(true);
+        UIController.GameUIActivate();
     }
 
     public void ClearBoard()
     {
-        cards.Clear();
         cardNames.Clear();
         cardsList.Clear();
         cardLocalNames.Clear();
+        cardPositions.Clear();
+        foreach (var card in cards)
+        {
+            Destroy(card);
+        }
+        cards.Clear();
+        catchMechanics.score = 0;
+        catchMechanics.cachedCardCount = 0;
+        randomValueList.Clear();
+        collectText.gameObject.SetActive(false);
     }
 }

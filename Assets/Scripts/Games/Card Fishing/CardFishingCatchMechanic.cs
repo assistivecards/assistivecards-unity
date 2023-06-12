@@ -7,10 +7,12 @@ public class CardFishingCatchMechanic : MonoBehaviour
 {
     [SerializeField] private CardFishingUIController UIController;
     [SerializeField] private CardFishingRodController cardFishingRodController;
+    [SerializeField] private CardFishingBoardGenerator boardGenerator;
     public bool catctedCard;
     public GameObject card;
     public GameObject formerCard;
     public int cachedCardCount;
+    public int score;
 
     private void OnTriggerStay2D(Collider2D other) 
     {
@@ -20,6 +22,11 @@ public class CardFishingCatchMechanic : MonoBehaviour
             {
                 card = other.gameObject;
                 catctedCard = true;
+
+                if(other.gameObject.name == boardGenerator.selectedCard)
+                {
+                    score ++;
+                }
             }
         }
     }
@@ -63,7 +70,7 @@ public class CardFishingCatchMechanic : MonoBehaviour
         Destroy(formerCard);
         catctedCard = false;
         formerCard = null;
-        if(cachedCardCount >= 10)
+        if(cachedCardCount >= 10 || score >= 2)
         {
             UIController.LevelChangeScreenActivate();
         }

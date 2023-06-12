@@ -29,11 +29,11 @@ public class CardFishingRodController : MonoBehaviour, IPointerDownHandler, IPoi
         {
             rod.transform.position = Vector3.Lerp (point1.position, point2.position, (Mathf.Sin(speed * distance) + 1.0f) / 2.0f);
             distance++;
-            ScaleDownRope(Time.time * 0.0035f);
+            ScaleDownRope(Time.time * 0.0025f);
         }
         else if(isPointerDown)
         {
-            ScaleUpRope(Time.time * 0.0035f);
+            ScaleUpRope(Time.time * 0.0025f);
         }
     }
 

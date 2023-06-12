@@ -43,6 +43,7 @@ public class CardFishingBoardGenerator : MonoBehaviour
 
 
     private List<GameObject> cardPositions = new List<GameObject>();
+    public string selectedCard;
 
 
     private void Awake()
@@ -99,7 +100,7 @@ public class CardFishingBoardGenerator : MonoBehaviour
     {
         GetPositionList();
         await CacheCards();
-        for(int i = 0; i < cardPositions.Count; i++)
+        for(int i = 0; i < cardPositions.Count / 2; i++)
         {
             CheckRandom();
             GameObject card = Instantiate(cardPrefab, cardPositions[i].transform.position, Quaternion.identity);
@@ -113,13 +114,33 @@ public class CardFishingBoardGenerator : MonoBehaviour
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             cards.Add(card);
         }
+
+        for(int j = 0; j < cardPositions.Count / 2; j++)
+        {
+            CheckRandom();
+            GameObject card = Instantiate(cardPrefab, cardPositions[j + 5].transform.position, Quaternion.identity);
+            LeanTween.rotateZ(card, Random.Range(-25f, 25), 0);
+            card.transform.SetParent(cardPositions[j + 4].transform);
+            var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[j]], 512);
+            cardTexture.wrapMode = TextureWrapMode.Clamp;
+            cardTexture.filterMode = FilterMode.Bilinear;
+
+            card.transform.name = cardNames[randomValueList[j]];
+            card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+            cards.Add(card);
+        }
+        selectedCard = cards[Random.Range(0, cards.Count)].name;
     }
 
     public void ClearBoard()
     {
-        cards.Clear();
         cardNames.Clear();
         cardsList.Clear();
         cardLocalNames.Clear();
+        foreach (var card in cards)
+        {
+            Destroy(card);
+        }
+        cards.Clear();
     }
 }

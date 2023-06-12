@@ -1175,10 +1175,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIController: {fileID: 8383894889009589328}
   cardFishingRodController: {fileID: 8383894889009589327}
+  boardGenerator: {fileID: 8383894889009589326}
   catctedCard: 0
   card: {fileID: 0}
   formerCard: {fileID: 0}
   cachedCardCount: 0
+  score: 0
 --- !u!61 &925175351
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5639,6 +5641,7 @@ MonoBehaviour:
   cardPosition8: {fileID: 1803811451}
   cardPosition9: {fileID: 1307151460}
   cardPosition10: {fileID: 136815381}
+  selectedCard: 
 --- !u!114 &8383894889009589327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5654,7 +5657,7 @@ MonoBehaviour:
   rod: {fileID: 1106668708}
   point1: {fileID: 284606636}
   point2: {fileID: 1173007167}
-  speed: 0.0055
+  speed: 0.0025
   isPointerDown: 0
 --- !u!114 &8383894889009589328
 MonoBehaviour:

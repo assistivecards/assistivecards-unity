@@ -39,7 +39,7 @@ public class CardFishingRodController : MonoBehaviour, IPointerDownHandler, IPoi
 
     public void ScaleUpRope(float resizeAmount)
     {
-        if(rod.transform.GetChild(1).transform.localScale.y <= 20)
+        if(rod.transform.GetChild(1).transform.localScale.y <= 25)
         {
             rod.transform.GetChild(1).transform.localScale += new Vector3(0, resizeAmount, 0);
             rod.transform.GetChild(1).transform.localPosition += new Vector3(0 , -resizeAmount * 10, 0); 

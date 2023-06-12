@@ -122,7 +122,7 @@ public class CardFishingBoardGenerator : MonoBehaviour
             CheckRandom();
             GameObject card = Instantiate(cardPrefab, cardPositions[j + 5].transform.position, Quaternion.identity);
             LeanTween.rotateZ(card, Random.Range(-25f, 25), 0);
-            card.transform.SetParent(cardPositions[j + 4].transform);
+            card.transform.SetParent(cardPositions[j + 5].transform);
             var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[j]], 512);
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear;

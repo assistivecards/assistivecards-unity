@@ -5,10 +5,11 @@ using UnityEngine;
 public class CardFishingUIController : MonoBehaviour
 {
     GameAPI gameAPI;
-    
+
     [Header ("Scripts")]
     [SerializeField] private CardFishingRodController rodController;
     [SerializeField] private CardFishingBoardGenerator boardGenerator;
+    [SerializeField] private PackSelectionPanel packSelectionPanelScript;
 
     [Header ("Panels")]
     [SerializeField] private GameObject levelChange;
@@ -23,6 +24,7 @@ public class CardFishingUIController : MonoBehaviour
 
     [SerializeField] private GameObject tutorial;
     private bool firstTime = true;
+    private bool canGenerate;
 
     private void Awake() 
     {
@@ -31,15 +33,18 @@ public class CardFishingUIController : MonoBehaviour
 
     public void GameUIActivate()
     {
-        if(firstTime || gameAPI.GetTutorialPreference() == 1)
+        if(canGenerate)
         {
-            tutorial.SetActive(true);
+            if(firstTime || gameAPI.GetTutorialPreference() == 1)
+            {
+                tutorial.SetActive(true);
+            }
+            gameUI.SetActive(true);
+            backButton.SetActive(true);
+            settingButton.SetActive(true);
+            helloText.SetActive(false);
+            loadingScreen.SetActive(false);
         }
-        gameUI.SetActive(true);
-        backButton.SetActive(true);
-        settingButton.SetActive(true);
-        helloText.SetActive(false);
-        loadingScreen.SetActive(false);
     }
 
     public void LevelChangeScreenActivate()
@@ -66,6 +71,34 @@ public class CardFishingUIController : MonoBehaviour
         helloText.SetActive(true);
     }
 
+    public void DetectPremium()
+    {
+        if (gameAPI.GetPremium() == "A5515T1V3C4RD5")
+        {
+            canGenerate = true;
+        }
+        else
+        {
+            for (int i = 0; i < gameAPI.cachedPacks.packs.Length; i++)
+            {
+                if (gameAPI.cachedPacks.packs[i].slug == packSelectionPanelScript.selectedPackElement.name)
+                {
+                    if (gameAPI.cachedPacks.packs[i].premium == 1)
+                    {
+                        Debug.Log("Seçilen paket premium");
+                        canGenerate = false;
+                    }
+                    else
+                    {
+                        Debug.Log("Seçilen paket premium değil");
+                        canGenerate = true;
+                    }
+
+                }
+            }
+        }
+    }
+
     public void LevelChangeDeactivate()
     {
         levelChange.SetActive(false);
@@ -74,6 +107,14 @@ public class CardFishingUIController : MonoBehaviour
     public void ResetScroll()
     {
         packSelectionScreen.transform.GetChild(0).GetChild(0).GetChild(0).transform.localPosition = Vector3.zero;
+    }
+
+    public void LoadingScreenActivation()
+    {
+        if(canGenerate)
+        {
+            loadingScreen.SetActive(true);
+        }
     }
     
 }

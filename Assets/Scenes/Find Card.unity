@@ -929,6 +929,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 506979786}
+  - component: {fileID: 506979787}
   m_Layer: 5
   m_Name: CardParent1
   m_TagString: Untagged
@@ -958,6 +959,18 @@ RectTransform:
   m_AnchoredPosition: {x: -240, y: 138.8736}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &506979787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506979785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fdc5b9164ed7f4f85e6949598a8dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &517973487
 GameObject:
   m_ObjectHideFlags: 0
@@ -1606,6 +1619,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 799388575}
+  - component: {fileID: 799388576}
   m_Layer: 5
   m_Name: CardParent3
   m_TagString: Untagged
@@ -1635,6 +1649,18 @@ RectTransform:
   m_AnchoredPosition: {x: 240, y: 138.8736}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &799388576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799388574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fdc5b9164ed7f4f85e6949598a8dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &841214861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1644,6 +1670,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 841214862}
+  - component: {fileID: 841214863}
   m_Layer: 5
   m_Name: CardParent5
   m_TagString: Untagged
@@ -1673,6 +1700,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -101.1264}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &841214863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841214861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fdc5b9164ed7f4f85e6949598a8dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &927069859 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3236149540598557724, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
@@ -3013,6 +3052,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1609035563}
+  - component: {fileID: 1609035564}
   m_Layer: 5
   m_Name: CardParent6
   m_TagString: Untagged
@@ -3042,6 +3082,18 @@ RectTransform:
   m_AnchoredPosition: {x: 240, y: -101.1264}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1609035564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609035562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fdc5b9164ed7f4f85e6949598a8dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1635629679
 GameObject:
   m_ObjectHideFlags: 0
@@ -3051,6 +3103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1635629680}
+  - component: {fileID: 1635629681}
   m_Layer: 5
   m_Name: CardParent4
   m_TagString: Untagged
@@ -3080,6 +3133,18 @@ RectTransform:
   m_AnchoredPosition: {x: -240, y: -101.1264}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1635629681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635629679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fdc5b9164ed7f4f85e6949598a8dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1695762228 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 468742012134701617, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -4187,6 +4252,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1988008158}
+  - component: {fileID: 1988008159}
   m_Layer: 5
   m_Name: CardParent2
   m_TagString: Untagged
@@ -4216,6 +4282,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 138.8736}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1988008159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988008157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fdc5b9164ed7f4f85e6949598a8dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2018903310 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1242831489334970560, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}

@@ -65,6 +65,7 @@ public class FindCardBoardGenerator : MonoBehaviour
         await PopulateRandomTextures();
         PopulateTempSprites();
         PlaceSprites();
+        AssignTags();
         DisableLoadingPanel();
         ScaleImagesUp();
         Invoke("FlipCardsBack", visibilityTime);
@@ -202,6 +203,21 @@ public class FindCardBoardGenerator : MonoBehaviour
         for (int i = 0; i < cardParents.Length; i++)
         {
             cardParents[i].GetComponent<FlipTest>().FlipBack();
+        }
+    }
+
+    private void AssignTags()
+    {
+        for (int i = 0; i < cardImagesInScene.Length; i++)
+        {
+            if (cardImagesInScene[i].GetComponent<Image>().sprite != randomSprites[0])
+            {
+                cardImagesInScene[i].transform.parent.parent.tag = "WrongCard";
+            }
+            else
+            {
+                cardImagesInScene[i].transform.parent.parent.tag = "CorrectCard";
+            }
         }
     }
 

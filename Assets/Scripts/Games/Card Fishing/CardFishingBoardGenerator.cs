@@ -35,6 +35,7 @@ public class CardFishingBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject cardPosition8;
     [SerializeField] private GameObject cardPosition9;
     [SerializeField] private GameObject cardPosition10;
+    [SerializeField] private TMP_Text collectText;
 
     [Header ("Random")]
     private List<int> randomValueList = new List<int>();
@@ -130,6 +131,10 @@ public class CardFishingBoardGenerator : MonoBehaviour
             cards.Add(card);
         }
         selectedCard = cards[Random.Range(0, cards.Count)].name;
+
+
+        collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(selectedCard).Replace("-", " "), selectedLangCode);
+        LeanTween.scale(collectText.gameObject, Vector3.one, 0.2f);
     }
 
     public void ClearBoard()

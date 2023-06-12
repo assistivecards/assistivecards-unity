@@ -13,6 +13,7 @@ public class CardFishingUIController : MonoBehaviour
 
     [Header ("UI Objects")]
     [SerializeField] private GameObject rod;
+    [SerializeField] private GameObject collectText;
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject settingButton;
     [SerializeField] private GameObject helloText;
@@ -21,6 +22,7 @@ public class CardFishingUIController : MonoBehaviour
     public void GameUIActivate()
     {
         rod.SetActive(true);
+        collectText.SetActive(true);
         backButton.SetActive(true);
         settingButton.SetActive(true);
         helloText.SetActive(false);
@@ -31,6 +33,7 @@ public class CardFishingUIController : MonoBehaviour
     {
         boardGenerator.ClearBoard();
         rod.SetActive(false);
+        collectText.SetActive(false);
         backButton.SetActive(false);
         settingButton.SetActive(false);
         levelChange.SetActive(true);

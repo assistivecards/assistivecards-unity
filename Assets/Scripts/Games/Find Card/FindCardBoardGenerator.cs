@@ -24,6 +24,7 @@ public class FindCardBoardGenerator : MonoBehaviour
     [SerializeField] GameObject loadingPanel;
     [SerializeField] Image[] cardImagesInScene;
     public GameObject[] cardParents;
+    public float visibilityTime;
 
     private void Awake()
     {
@@ -66,6 +67,7 @@ public class FindCardBoardGenerator : MonoBehaviour
         PlaceSprites();
         DisableLoadingPanel();
         ScaleImagesUp();
+        Invoke("FlipCardsBack", visibilityTime);
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.2f);
     }
@@ -88,6 +90,7 @@ public class FindCardBoardGenerator : MonoBehaviour
     {
         for (int i = 0; i < cardParents.Length; i++)
         {
+            cardParents[i].transform.rotation = Quaternion.Euler(0, -180, 0);
             LeanTween.scale(cardParents[i], Vector3.one, 0.2f);
         }
 
@@ -192,6 +195,14 @@ public class FindCardBoardGenerator : MonoBehaviour
     private void DisableLoadingPanel()
     {
         loadingPanel.SetActive(false);
+    }
+
+    private void FlipCardsBack()
+    {
+        for (int i = 0; i < cardParents.Length; i++)
+        {
+            cardParents[i].GetComponent<FlipTest>().FlipBack();
+        }
     }
 
 }

@@ -9,4 +9,10 @@ public class FlipTest : MonoBehaviour, IPointerClickHandler
     {
         LeanTween.rotateY(gameObject, -180, .75f);
     }
+
+    public void FlipBack()
+    {
+        LeanTween.rotateY(gameObject, 0, .75f);
+    }
+
 }

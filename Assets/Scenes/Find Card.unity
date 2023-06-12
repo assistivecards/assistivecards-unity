@@ -9374,7 +9374,6 @@ MonoBehaviour:
   findText: {fileID: 1787638123}
   correctCardSlug: 
   loadingPanel: {fileID: 671447375}
-  fixedCardImagesInScene: []
   cardImagesInScene:
   - {fileID: 1836382304}
   - {fileID: 226323648}
@@ -9401,6 +9400,7 @@ MonoBehaviour:
   - {fileID: 899473438}
   - {fileID: 427926058}
   - {fileID: 1849265849}
+  visibilityTime: 3
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

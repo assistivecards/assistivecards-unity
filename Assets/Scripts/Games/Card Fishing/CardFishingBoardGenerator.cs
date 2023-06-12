@@ -22,6 +22,7 @@ public class CardFishingBoardGenerator : MonoBehaviour
 
     [Header ("Card Fishing Classes")]
     [SerializeField] private CardFishingUIController UIController;
+    [SerializeField] private CardFishingCatchMechanic catchMechanics;
 
     [Header ("Game UI")]
     [SerializeField] private GameObject cardPrefab;
@@ -132,9 +133,9 @@ public class CardFishingBoardGenerator : MonoBehaviour
         }
         selectedCard = cards[Random.Range(0, cards.Count)].name;
 
-
         collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(selectedCard).Replace("-", " "), selectedLangCode);
         LeanTween.scale(collectText.gameObject, Vector3.one, 0.2f);
+        collectText.gameObject.SetActive(true);
     }
 
     public void ClearBoard()
@@ -142,10 +143,15 @@ public class CardFishingBoardGenerator : MonoBehaviour
         cardNames.Clear();
         cardsList.Clear();
         cardLocalNames.Clear();
+        cardPositions.Clear();
         foreach (var card in cards)
         {
             Destroy(card);
         }
         cards.Clear();
+        catchMechanics.score = 0;
+        catchMechanics.cachedCardCount = 0;
+        randomValueList.Clear();
+        collectText.gameObject.SetActive(false);
     }
 }

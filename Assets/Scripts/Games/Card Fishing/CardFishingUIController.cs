@@ -12,17 +12,16 @@ public class CardFishingUIController : MonoBehaviour
     [SerializeField] private GameObject levelChange;
 
     [Header ("UI Objects")]
-    [SerializeField] private GameObject rod;
-    [SerializeField] private GameObject collectText;
+    [SerializeField] private GameObject gameUI;
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject settingButton;
     [SerializeField] private GameObject helloText;
     [SerializeField] private GameObject loadingScreen;
+    [SerializeField] private GameObject packSelectionScreen;
 
     public void GameUIActivate()
     {
-        rod.SetActive(true);
-        collectText.SetActive(true);
+        gameUI.SetActive(true);
         backButton.SetActive(true);
         settingButton.SetActive(true);
         helloText.SetActive(false);
@@ -32,11 +31,35 @@ public class CardFishingUIController : MonoBehaviour
     public void LevelChangeScreenActivate()
     {
         boardGenerator.ClearBoard();
-        rod.SetActive(false);
-        collectText.SetActive(false);
+        gameUI.SetActive(false);
         backButton.SetActive(false);
         settingButton.SetActive(false);
         levelChange.SetActive(true);
         LeanTween.scale(levelChange, Vector3.one * 0.5f, 0.1f);
     }
+
+    public void CloseLevelChangePanel()
+    {
+        LeanTween.scale(levelChange, Vector3.zero, 0.5f);
+        Invoke("LevelChangeDeactivate", 1f);
+    }
+
+    public void PackSelectionPanelActive()
+    {
+        gameUI.SetActive(false);
+        backButton.SetActive(false);
+        settingButton.SetActive(true);
+        helloText.SetActive(true);
+    }
+
+    public void LevelChangeDeactivate()
+    {
+        levelChange.SetActive(false);
+    }
+
+    public void ResetScroll()
+    {
+        packSelectionScreen.transform.GetChild(0).GetChild(0).GetChild(0).transform.localPosition = Vector3.zero;
+    }
+    
 }

@@ -6,6 +6,13 @@ using UnityEngine.UI;
 public class FindCardMatchDetection : MonoBehaviour
 {
     private GameAPI gameAPI;
+    public List<GameObject> flippedCards = new List<GameObject>();
+    private FindCardBoardGenerator board;
+
+    private void Start()
+    {
+        board = gameObject.GetComponent<FindCardBoardGenerator>();
+    }
 
     private void Awake()
     {
@@ -17,6 +24,17 @@ public class FindCardMatchDetection : MonoBehaviour
         if (flippedCard.tag == "CorrectCard")
         {
             Debug.Log("CORRECT CARD");
+            flippedCards.Add(flippedCard.gameObject);
+
+            if (flippedCards.Count == GameObject.FindGameObjectsWithTag("CorrectCard").Length - 1)
+            {
+                Debug.Log("LEVEL COMPLETED");
+                PlayLevelCompletedAnimation();
+                board.Invoke("ScaleImagesDown", 1f);
+                board.Invoke("ClearBoard", 1.3f);
+                board.Invoke("GenerateRandomBoardAsync", 1.3f);
+            }
+
         }
 
         else if (flippedCard.tag == "WrongCard")
@@ -27,4 +45,13 @@ public class FindCardMatchDetection : MonoBehaviour
         }
 
     }
+
+    private void PlayLevelCompletedAnimation()
+    {
+        for (int i = 0; i < flippedCards.Count; i++)
+        {
+            LeanTween.scale(flippedCards[i], Vector3.one * 1.15f, .25f);
+        }
+    }
+
 }

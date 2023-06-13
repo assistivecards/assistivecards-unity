@@ -25,6 +25,7 @@ public class FindCardBoardGenerator : MonoBehaviour
     [SerializeField] Image[] cardImagesInScene;
     public GameObject[] cardParents;
     public float visibilityTime;
+    private FindCardMatchDetection matchDetector;
 
     private void Awake()
     {
@@ -34,6 +35,7 @@ public class FindCardBoardGenerator : MonoBehaviour
     private void Start()
     {
         gameAPI.PlayMusic();
+        matchDetector = gameObject.GetComponent<FindCardMatchDetection>();
     }
 
     private void OnEnable()
@@ -79,6 +81,7 @@ public class FindCardBoardGenerator : MonoBehaviour
         randomImages.Clear();
         randomSprites.Clear();
         tempSprites.Clear();
+        matchDetector.flippedCards.Clear();
 
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {

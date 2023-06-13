@@ -29,6 +29,7 @@ public class FindCardMatchDetection : MonoBehaviour
             if (flippedCards.Count == GameObject.FindGameObjectsWithTag("CorrectCard").Length - 1)
             {
                 Debug.Log("LEVEL COMPLETED");
+                DisableFlip();
                 PlayLevelCompletedAnimation();
                 board.Invoke("ScaleImagesDown", 1f);
                 board.Invoke("ClearBoard", 1.3f);
@@ -51,6 +52,14 @@ public class FindCardMatchDetection : MonoBehaviour
         for (int i = 0; i < flippedCards.Count; i++)
         {
             LeanTween.scale(flippedCards[i], Vector3.one * 1.15f, .25f);
+        }
+    }
+
+    public void DisableFlip()
+    {
+        for (int i = 0; i < board.cardParents.Length; i++)
+        {
+            board.cardParents[i].GetComponent<FindCardFlipCard>().enabled = false;
         }
     }
 

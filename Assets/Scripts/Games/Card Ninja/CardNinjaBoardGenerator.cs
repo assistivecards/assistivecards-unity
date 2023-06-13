@@ -88,5 +88,11 @@ public class CardNinjaBoardGenerator : MonoBehaviour
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             cards.Add(card);
         }
+        Invoke("ReleaseFromGrid", 0.15f);
+    }
+
+    private void ReleaseFromGrid()
+    {
+        GetComponent<GridLayoutGroup>().enabled = false;
     }
 }

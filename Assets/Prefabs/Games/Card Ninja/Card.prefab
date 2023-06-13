@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5270517298093753807}
   - component: {fileID: 6015160056906354179}
   - component: {fileID: -8093227477347870033}
+  - component: {fileID: 2800423012358874202}
   m_Layer: 5
   m_Name: Card
   m_TagString: cardBlast
@@ -126,6 +127,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2800423012358874202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572616208917296617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ba0586ff56be4f8f82d902c9f914873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardRB: {fileID: -8093227477347870033}
+  maxForce: 1000
+  minForce: 500
+  lifeTime: 50
+  cardGravityScale: 10
 --- !u!1 &3953419126043893981
 GameObject:
   m_ObjectHideFlags: 0

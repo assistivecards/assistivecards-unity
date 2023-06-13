@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class FlipTest : MonoBehaviour, IPointerClickHandler
+public class FindCardFlipCard : MonoBehaviour, IPointerClickHandler
 {
     private FindCardMatchDetection matchDetector;
 
@@ -14,7 +14,11 @@ public class FlipTest : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        LeanTween.rotateY(gameObject, -180, .75f).setOnComplete(() => matchDetector.CheckCard(transform));
+        if (transform.rotation.eulerAngles.y < 2)
+        {
+            LeanTween.rotateY(gameObject, -180, .75f).setOnComplete(() => matchDetector.CheckCard(transform));
+        }
+
     }
 
     public void FlipBack()

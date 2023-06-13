@@ -14,7 +14,7 @@ public class CardNinjaCardMovement : MonoBehaviour
 
     private void OnEnable() 
     {
-        Invoke("Burst", Random.Range(0, 60f));
+        Invoke("Burst", Random.Range(0f, 65f));
     }
 
     private void Burst() 

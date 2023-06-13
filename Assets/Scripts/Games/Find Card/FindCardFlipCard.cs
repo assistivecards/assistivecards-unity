@@ -6,6 +6,12 @@ using UnityEngine.EventSystems;
 public class FindCardFlipCard : MonoBehaviour, IPointerClickHandler
 {
     private FindCardMatchDetection matchDetector;
+    private GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void Start()
     {
@@ -17,6 +23,7 @@ public class FindCardFlipCard : MonoBehaviour, IPointerClickHandler
         if (transform.rotation.eulerAngles.y < 2)
         {
             LeanTween.rotateY(gameObject, -180, .75f).setOnComplete(() => matchDetector.CheckCard(transform));
+            gameAPI.PlaySFX("FlipCard");
         }
 
     }

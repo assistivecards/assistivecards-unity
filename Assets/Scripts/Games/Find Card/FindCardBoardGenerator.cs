@@ -204,6 +204,8 @@ public class FindCardBoardGenerator : MonoBehaviour
         {
             cardParents[i].GetComponent<FindCardFlipCard>().FlipBack();
         }
+
+        gameAPI.PlaySFX("FlipCardBack");
     }
 
     private void AssignTags()

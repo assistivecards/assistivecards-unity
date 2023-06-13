@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class FindCardMatchDetection : MonoBehaviour
 {
+    private GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     public void CheckCard(Transform flippedCard)
     {
@@ -17,6 +23,7 @@ public class FindCardMatchDetection : MonoBehaviour
         {
             Debug.Log("WRONG CARD");
             LeanTween.rotateY(flippedCard.gameObject, 0, .75f);
+            gameAPI.PlaySFX("FlipCardBack");
         }
 
     }

@@ -8,10 +8,12 @@ public class FindCardMatchDetection : MonoBehaviour
     private GameAPI gameAPI;
     public List<GameObject> flippedCards = new List<GameObject>();
     private FindCardBoardGenerator board;
+    private FindCardUIController UIController;
 
     private void Start()
     {
         board = gameObject.GetComponent<FindCardBoardGenerator>();
+        UIController = gameObject.GetComponent<FindCardUIController>();
     }
 
     private void Awake()
@@ -29,11 +31,19 @@ public class FindCardMatchDetection : MonoBehaviour
             if (flippedCards.Count == GameObject.FindGameObjectsWithTag("CorrectCard").Length - 1)
             {
                 Debug.Log("LEVEL COMPLETED");
+                UIController.levelsCompleted++;
                 DisableFlip();
                 PlayLevelCompletedAnimation();
                 board.Invoke("ScaleImagesDown", 1f);
                 board.Invoke("ClearBoard", 1.3f);
-                board.Invoke("GenerateRandomBoardAsync", 1.3f);
+
+                if (UIController.levelsCompleted == UIController.checkpointFrequency)
+                {
+                    UIController.Invoke("OpenCheckPointPanel", 1.3f);
+                }
+
+                else
+                    board.Invoke("GenerateRandomBoardAsync", 1.3f);
             }
 
         }

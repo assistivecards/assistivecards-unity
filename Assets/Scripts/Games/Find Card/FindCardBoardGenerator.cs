@@ -27,6 +27,7 @@ public class FindCardBoardGenerator : MonoBehaviour
     public float visibilityTime;
     private FindCardMatchDetection matchDetector;
     private FindCardUIController UIController;
+    public int cardsNeeded;
 
     private void Awake()
     {
@@ -228,6 +229,8 @@ public class FindCardBoardGenerator : MonoBehaviour
                 cardImagesInScene[i].transform.parent.parent.tag = "CorrectCard";
             }
         }
+
+        cardsNeeded = GameObject.FindGameObjectsWithTag("CorrectCard").Length - 1;
     }
 
     public void ReadCard()

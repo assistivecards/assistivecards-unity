@@ -30,7 +30,7 @@ public class FindCardMatchDetection : MonoBehaviour
             gameAPI.PlaySFX("Success");
             Debug.Log(GameObject.FindGameObjectsWithTag("CorrectCard").Length);
 
-            if (flippedCards.Count == GameObject.FindGameObjectsWithTag("CorrectCard").Length - 1)
+            if (flippedCards.Count == board.cardsNeeded)
             {
                 Debug.Log("LEVEL COMPLETED");
                 UIController.levelsCompleted++;

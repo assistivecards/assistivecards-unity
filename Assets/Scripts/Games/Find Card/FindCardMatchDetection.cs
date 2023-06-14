@@ -34,6 +34,7 @@ public class FindCardMatchDetection : MonoBehaviour
                 UIController.levelsCompleted++;
                 DisableFlip();
                 PlayLevelCompletedAnimation();
+                UIController.backButton.GetComponent<Button>().interactable = false;
                 board.Invoke("ScaleImagesDown", 1f);
                 board.Invoke("ClearBoard", 1.3f);
 

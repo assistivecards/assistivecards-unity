@@ -26,6 +26,7 @@ public class FindCardBoardGenerator : MonoBehaviour
     public GameObject[] cardParents;
     public float visibilityTime;
     private FindCardMatchDetection matchDetector;
+    private FindCardUIController UIController;
 
     private void Awake()
     {
@@ -36,6 +37,7 @@ public class FindCardBoardGenerator : MonoBehaviour
     {
         gameAPI.PlayMusic();
         matchDetector = gameObject.GetComponent<FindCardMatchDetection>();
+        UIController = gameObject.GetComponent<FindCardUIController>();
     }
 
     private void OnEnable()
@@ -43,6 +45,7 @@ public class FindCardBoardGenerator : MonoBehaviour
         if (isBackAfterSignOut)
         {
             gameAPI.PlayMusic();
+            UIController.OnBackButtonClick();
             isBackAfterSignOut = false;
         }
     }

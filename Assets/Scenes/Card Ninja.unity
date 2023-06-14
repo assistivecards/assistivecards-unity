@@ -991,6 +991,7 @@ MonoBehaviour:
   moveCard: {fileID: 0}
   grid: {fileID: 978741187}
   cardPrefab: {fileID: 1572616208917296617, guid: a546972319cf44c1ea23af981493b93d, type: 3}
+  cardPieces: []
 --- !u!114 &978741189
 MonoBehaviour:
   m_ObjectHideFlags: 0

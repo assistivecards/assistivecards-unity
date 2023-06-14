@@ -9647,6 +9647,19 @@ MonoBehaviour:
   checkPointPanel: {fileID: 1275520836}
   levelsCompleted: 0
   checkpointFrequency: 5
+  cardParents:
+  - {fileID: 506979785}
+  - {fileID: 1988008157}
+  - {fileID: 799388574}
+  - {fileID: 1635629679}
+  - {fileID: 841214861}
+  - {fileID: 1609035562}
+  - {fileID: 1730731700}
+  - {fileID: 1170687606}
+  - {fileID: 1983479942}
+  - {fileID: 899473438}
+  - {fileID: 427926058}
+  - {fileID: 1849265849}
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

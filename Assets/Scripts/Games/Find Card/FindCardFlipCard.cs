@@ -22,7 +22,9 @@ public class FindCardFlipCard : MonoBehaviour, IPointerClickHandler
     {
         if (transform.rotation.eulerAngles.y < 2)
         {
-            LeanTween.rotateY(gameObject, -180, .75f).setOnComplete(() => matchDetector.CheckCard(transform));
+            LeanTween.rotateY(gameObject, -180, .75f);
+            // .setOnComplete(() => matchDetector.CheckCard(transform))
+            Invoke("TriggerCheckCard", .75f);
             gameAPI.PlaySFX("FlipCard");
         }
 
@@ -31,6 +33,11 @@ public class FindCardFlipCard : MonoBehaviour, IPointerClickHandler
     public void FlipBack()
     {
         LeanTween.rotateY(gameObject, 0, .75f);
+    }
+
+    public void TriggerCheckCard()
+    {
+        matchDetector.CheckCard(transform);
     }
 
 }

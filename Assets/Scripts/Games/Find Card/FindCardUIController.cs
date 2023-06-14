@@ -14,6 +14,7 @@ public class FindCardUIController : MonoBehaviour
     private GameAPI gameAPI;
     public int levelsCompleted;
     public int checkpointFrequency;
+    [SerializeField] GameObject[] cardParents;
 
     private void Awake()
     {
@@ -105,6 +106,10 @@ public class FindCardUIController : MonoBehaviour
     {
         ResetCounter();
         board.CancelInvoke("FlipCardsBack");
+        for (int i = 0; i < cardParents.Length; i++)
+        {
+            cardParents[i].GetComponent<FindCardFlipCard>().CancelInvoke("TriggerCheckCard");
+        }
         board.ScaleImagesDown();
         backButton.SetActive(false);
         yield return new WaitForSeconds(0.25f);

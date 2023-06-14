@@ -27,6 +27,7 @@ public class FindCardMatchDetection : MonoBehaviour
         {
             Debug.Log("CORRECT CARD");
             flippedCards.Add(flippedCard.gameObject);
+            gameAPI.PlaySFX("Success");
 
             if (flippedCards.Count == GameObject.FindGameObjectsWithTag("CorrectCard").Length - 1)
             {
@@ -35,6 +36,7 @@ public class FindCardMatchDetection : MonoBehaviour
                 DisableFlip();
                 PlayLevelCompletedAnimation();
                 UIController.backButton.GetComponent<Button>().interactable = false;
+                board.Invoke("ReadCard", 0.25f);
                 board.Invoke("ScaleImagesDown", 1f);
                 board.Invoke("ClearBoard", 1.3f);
 

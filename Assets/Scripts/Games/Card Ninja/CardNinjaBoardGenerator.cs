@@ -33,6 +33,8 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     private int tempRandomValue;
     private int randomValue;
 
+    [SerializeField] private List<Sprite> cardPieces = new List<Sprite>();
+
     
     private void Awake()
     {
@@ -87,8 +89,38 @@ public class CardNinjaBoardGenerator : MonoBehaviour
             card.transform.SetParent(grid.transform);
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             cards.Add(card);
+            DivideHorizontal(cardTexture, card.transform.GetChild(1).GetComponent<Image>(), card.transform.GetChild(2).GetComponent<Image>(),
+             card.transform.GetChild(3).GetComponent<Image>(), card.transform.GetChild(4).GetComponent<Image>());
         }
         Invoke("ReleaseFromGrid", 0.15f);
+    }
+
+    public void DivideHorizontal(Texture2D texture, Image piece1, Image piece2, Image piece3, Image piece4)
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            for (int j = 0; j < 2; j++)
+            {
+                Sprite newSprite = Sprite.Create(texture, new Rect(i * 256, j * 256, 256, 256), new Vector2(0.5f, 0.5f));
+
+                if(j == 0 && i == 0)
+                {
+                    piece3.sprite = newSprite;
+                }
+                else if(j == 1 && i == 0)
+                {
+                    piece1.sprite = newSprite;
+                }
+                else if(j == 0 && i == 1)
+                {
+                    piece4.sprite = newSprite;
+                }
+                else if(j == 1 && i == 1)
+                {
+                    piece2.sprite = newSprite;
+                }
+            }
+        }
     }
 
     private void ReleaseFromGrid()

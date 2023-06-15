@@ -13,7 +13,6 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     [Header ("Cache Cards")]
     public string selectedLangCode;
     public List<string> cardLocalNames = new List<string>();
-    public List<GameObject> cards = new List<GameObject>();
     private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     private List<string> cardNames = new List<string>();
@@ -34,6 +33,8 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     private int randomValue;
 
     [SerializeField] private List<Sprite> cardPieces = new List<Sprite>();
+    public List<GameObject> cards = new List<GameObject>();
+    public List<GameObject> usedCards = new List<GameObject>();
 
     
     private void Awake()
@@ -95,6 +96,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
         }
         Invoke("ReleaseFromGrid", 0.15f);
         Invoke("EnableCutCollider", 0.2f);
+        Invoke("ThrowCards", 0.2f);
     }
 
     public void DivideHorizontal(Texture2D texture, Image piece1, Image piece2, Image piece3, Image piece4)
@@ -133,5 +135,28 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     private void EnableCutCollider()
     {
         cutPrefab.GetComponent<BoxCollider2D>().enabled = true;
+    }
+
+    public void ThrowCards()
+    {
+        GameObject randomCard = cards[Random.Range(0, cards.Count)];
+
+        if(randomCard != null && !usedCards.Contains(randomCard))
+        {
+            randomCard.GetComponent<CardNinjaCardMovement>().Throw();
+            usedCards.Add(randomCard);
+            cards.Remove(randomCard);
+        }
+        else
+        {
+            randomCard = cards[Random.Range(0, cards.Count)];
+
+            if(randomCard != null && !usedCards.Contains(randomCard))
+            {
+                randomCard.GetComponent<CardNinjaCardMovement>().Throw();
+                usedCards.Add(randomCard);
+                cards.Remove(randomCard);
+            }
+        }
     }
 }

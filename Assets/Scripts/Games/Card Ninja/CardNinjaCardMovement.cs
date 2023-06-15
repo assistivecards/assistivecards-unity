@@ -15,13 +15,14 @@ public class CardNinjaCardMovement : MonoBehaviour
     [SerializeField] private float cardGravityScale;
 
     private CardNinjaCutController cutController;
+    private CardNinjaBoardGenerator boardGenerator;
     private List<Transform> childs = new List<Transform>();
 
 
     private void OnEnable() 
     {
-        Invoke("Burst", Random.Range(0f, 65f));
         cutController = FindObjectOfType<CardNinjaCutController>();
+        boardGenerator = FindObjectOfType<CardNinjaBoardGenerator>();
 
         foreach (Transform child in transform)
         {
@@ -29,12 +30,14 @@ public class CardNinjaCardMovement : MonoBehaviour
         }
     }
 
-    private void Burst() 
+    public void Throw() 
     {
         float force = Random.Range(minForce, maxForce);
         cardRB.AddForce(this.transform.up * force, ForceMode2D.Impulse);
         cardRB.gravityScale = cardGravityScale;
         Destroy(this.gameObject, lifeTime);
+        boardGenerator.Invoke("ThrowCards", 2f);
+
     }
 
     private void OnTriggerStay2D(Collider2D other) 
@@ -86,8 +89,6 @@ public class CardNinjaCardMovement : MonoBehaviour
 
                 }
             }
-
-            
         }
     }
 }

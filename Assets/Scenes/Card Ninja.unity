@@ -985,13 +985,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedLangCode: 
   cardLocalNames: []
-  cards: []
   cardsList: []
   packSelectionPanel: {fileID: 1893988995}
   grid: {fileID: 978741187}
   cardPrefab: {fileID: 1572616208917296617, guid: a546972319cf44c1ea23af981493b93d, type: 3}
   cutPrefab: {fileID: 1744241444}
   cardPieces: []
+  cards: []
+  usedCards: []
 --- !u!114 &978741189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1345,6 +1346,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cd8f8c5131cb498da78bcb9d1db1ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  horizontalDrag: 0
+  verticalDrag: 0
   cutEffect: {fileID: 1744241444}
 --- !u!1 &1231408339 stripped
 GameObject:
@@ -2221,7 +2224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
       propertyPath: m_Parameters.widthMultiplier
-      value: 0.2
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
       propertyPath: m_Parameters.numCornerVertices

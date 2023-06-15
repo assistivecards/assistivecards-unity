@@ -13,7 +13,6 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     [Header ("Cache Cards")]
     public string selectedLangCode;
     public List<string> cardLocalNames = new List<string>();
-    public List<GameObject> cards = new List<GameObject>();
     private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     private List<string> cardNames = new List<string>();
@@ -24,9 +23,9 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     [SerializeField] private PackSelectionPanel packSelectionPanel;
 
     [Header ("Game Objects & UI")]
-    public GameObject moveCard;
     [SerializeField] private GameObject grid;
     [SerializeField] private GameObject cardPrefab;
+    [SerializeField] private GameObject cutPrefab;
 
     [Header ("Random")]
     private List<int> randomValueList = new List<int>();
@@ -34,6 +33,8 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     private int randomValue;
 
     [SerializeField] private List<Sprite> cardPieces = new List<Sprite>();
+    public List<GameObject> cards = new List<GameObject>();
+    public List<GameObject> usedCards = new List<GameObject>();
 
     
     private void Awake()
@@ -87,12 +88,15 @@ public class CardNinjaBoardGenerator : MonoBehaviour
 
             card.transform.name = cardNames[randomValueList[i]];
             card.transform.SetParent(grid.transform);
+            LeanTween.scale(card.gameObject, Vector3.one * 0.5f, 0f);
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             cards.Add(card);
             DivideHorizontal(cardTexture, card.transform.GetChild(1).GetComponent<Image>(), card.transform.GetChild(2).GetComponent<Image>(),
-             card.transform.GetChild(3).GetComponent<Image>(), card.transform.GetChild(4).GetComponent<Image>());
+            card.transform.GetChild(3).GetComponent<Image>(), card.transform.GetChild(4).GetComponent<Image>());
         }
         Invoke("ReleaseFromGrid", 0.15f);
+        Invoke("EnableCutCollider", 0.2f);
+        Invoke("ThrowCards", 0.2f);
     }
 
     public void DivideHorizontal(Texture2D texture, Image piece1, Image piece2, Image piece3, Image piece4)
@@ -126,5 +130,33 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     private void ReleaseFromGrid()
     {
         GetComponent<GridLayoutGroup>().enabled = false;
+    }
+
+    private void EnableCutCollider()
+    {
+        cutPrefab.GetComponent<BoxCollider2D>().enabled = true;
+    }
+
+    public void ThrowCards()
+    {
+        GameObject randomCard = cards[Random.Range(0, cards.Count)];
+
+        if(randomCard != null && !usedCards.Contains(randomCard))
+        {
+            randomCard.GetComponent<CardNinjaCardMovement>().Throw();
+            usedCards.Add(randomCard);
+            cards.Remove(randomCard);
+        }
+        else
+        {
+            randomCard = cards[Random.Range(0, cards.Count)];
+
+            if(randomCard != null && !usedCards.Contains(randomCard))
+            {
+                randomCard.GetComponent<CardNinjaCardMovement>().Throw();
+                usedCards.Add(randomCard);
+                cards.Remove(randomCard);
+            }
+        }
     }
 }

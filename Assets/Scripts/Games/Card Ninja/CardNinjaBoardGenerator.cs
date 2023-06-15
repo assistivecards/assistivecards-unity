@@ -24,7 +24,6 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     [SerializeField] private PackSelectionPanel packSelectionPanel;
 
     [Header ("Game Objects & UI")]
-    public GameObject moveCard;
     [SerializeField] private GameObject grid;
     [SerializeField] private GameObject cardPrefab;
 
@@ -87,6 +86,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
 
             card.transform.name = cardNames[randomValueList[i]];
             card.transform.SetParent(grid.transform);
+            LeanTween.scale(card.gameObject, Vector3.one * 0.5f, 0f);
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             cards.Add(card);
             DivideHorizontal(cardTexture, card.transform.GetChild(1).GetComponent<Image>(), card.transform.GetChild(2).GetComponent<Image>(),

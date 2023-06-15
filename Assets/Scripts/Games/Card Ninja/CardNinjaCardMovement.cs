@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class CardNinjaCardMovement : MonoBehaviour, IPointerDownHandler
+public class CardNinjaCardMovement : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D cardRB;
 
@@ -35,7 +35,15 @@ public class CardNinjaCardMovement : MonoBehaviour, IPointerDownHandler
         Destroy(this.gameObject, lifeTime);
     }
 
-    public void OnPointerDown(PointerEventData eventData) 
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+        if(other.gameObject.tag == "Blade")
+        {
+            Break();
+        }
+    }
+
+    public void Break() 
     {
         cardRB.simulated = false;
         for(int i=0; i <= childs.Count; i++)

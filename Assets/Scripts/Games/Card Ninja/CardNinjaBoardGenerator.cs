@@ -26,6 +26,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     [Header ("Game Objects & UI")]
     [SerializeField] private GameObject grid;
     [SerializeField] private GameObject cardPrefab;
+    [SerializeField] private GameObject cutPrefab;
 
     [Header ("Random")]
     private List<int> randomValueList = new List<int>();
@@ -126,5 +127,6 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     private void ReleaseFromGrid()
     {
         GetComponent<GridLayoutGroup>().enabled = false;
+        cutPrefab.GetComponent<BoxCollider2D>().enabled = true;
     }
 }

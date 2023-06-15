@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CardNinjaCutController : MonoBehaviour, IDragHandler
+public class CardNinjaCutController : MonoBehaviour, IDragHandler 
 {
     [SerializeField] private GameObject cutEffect;
     private Vector2 touchPosition;

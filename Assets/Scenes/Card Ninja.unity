@@ -990,6 +990,7 @@ MonoBehaviour:
   packSelectionPanel: {fileID: 1893988995}
   grid: {fileID: 978741187}
   cardPrefab: {fileID: 1572616208917296617, guid: a546972319cf44c1ea23af981493b93d, type: 3}
+  cutPrefab: {fileID: 1744241444}
   cardPieces: []
 --- !u!114 &978741189
 MonoBehaviour:
@@ -2168,11 +2169,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
       propertyPath: m_Time
-      value: 0.25
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
+      propertyPath: m_Autodestruct
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
       propertyPath: m_SortingOrder
@@ -2180,11 +2185,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
       propertyPath: m_SortingLayerID
-      value: -1133161251
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
       propertyPath: m_DynamicOccludee
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
+      propertyPath: m_MinVertexDistance
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
       propertyPath: m_Materials.Array.size
@@ -2223,12 +2232,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2770034590587150114, guid: dc892731265e848e19d77b417834c529, type: 3}
       propertyPath: m_RootOrder
@@ -2284,6 +2305,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2770034590587150114, guid: dc892731265e848e19d77b417834c529, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122195919070534889, guid: dc892731265e848e19d77b417834c529, type: 3}
+      propertyPath: m_Size.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122195919070534889, guid: dc892731265e848e19d77b417834c529, type: 3}
+      propertyPath: m_Size.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122195919070534889, guid: dc892731265e848e19d77b417834c529, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

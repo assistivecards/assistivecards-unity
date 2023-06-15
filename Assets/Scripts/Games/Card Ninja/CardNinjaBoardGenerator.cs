@@ -91,9 +91,10 @@ public class CardNinjaBoardGenerator : MonoBehaviour
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             cards.Add(card);
             DivideHorizontal(cardTexture, card.transform.GetChild(1).GetComponent<Image>(), card.transform.GetChild(2).GetComponent<Image>(),
-             card.transform.GetChild(3).GetComponent<Image>(), card.transform.GetChild(4).GetComponent<Image>());
+            card.transform.GetChild(3).GetComponent<Image>(), card.transform.GetChild(4).GetComponent<Image>());
         }
         Invoke("ReleaseFromGrid", 0.15f);
+        Invoke("EnableCutCollider", 0.2f);
     }
 
     public void DivideHorizontal(Texture2D texture, Image piece1, Image piece2, Image piece3, Image piece4)
@@ -127,6 +128,10 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     private void ReleaseFromGrid()
     {
         GetComponent<GridLayoutGroup>().enabled = false;
+    }
+
+    private void EnableCutCollider()
+    {
         cutPrefab.GetComponent<BoxCollider2D>().enabled = true;
     }
 }

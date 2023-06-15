@@ -14,12 +14,14 @@ public class CardNinjaCardMovement : MonoBehaviour
     [SerializeField] private float lifeTime;
     [SerializeField] private float cardGravityScale;
 
+    private CardNinjaCutController cutController;
     private List<Transform> childs = new List<Transform>();
 
 
     private void OnEnable() 
     {
         Invoke("Burst", Random.Range(0f, 65f));
+        cutController = FindObjectOfType<CardNinjaCutController>();
 
         foreach (Transform child in transform)
         {
@@ -35,54 +37,56 @@ public class CardNinjaCardMovement : MonoBehaviour
         Destroy(this.gameObject, lifeTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D other) 
+    private void OnTriggerStay2D(Collider2D other) 
     {
         if(other.gameObject.tag == "Blade")
         {
-            Break();
+            Break(cutController.horizontalDrag, cutController.verticalDrag);
         }
     }
 
-    public void Break() 
+    public void Break(bool horizontalDrag, bool verticalDrag) 
     {
         cardRB.simulated = false;
         for(int i=0; i <= childs.Count; i++)
         {
             float childforce = Random.Range(minForce, maxForce);
 
-            // if object cut verticaly
-
-            // if(i == 1 || i==3)
-            // {
-            //     childs[i].GetComponent<Rigidbody2D>().simulated = true;
-            //     childs[i].gameObject.GetComponent<Rigidbody2D>().AddForce(childforce * -transform.right, ForceMode2D.Impulse);
-            //     childs[i].gameObject.GetComponent<Rigidbody2D>().gravityScale = cardGravityScale * 15;
-
-            // }
-            // else if(i == 2 || i==4)
-            // {
-            //     childs[i].GetComponent<Rigidbody2D>().simulated = true;
-            //     childs[i].gameObject.GetComponent<Rigidbody2D>().AddForce(childforce * transform.right, ForceMode2D.Impulse);
-            //     childs[i].gameObject.GetComponent<Rigidbody2D>().gravityScale = cardGravityScale * 15;
-
-            // }
-
-            // if object cut horizontaly
-
-            if(i == 1 || i == 2)
+            if(verticalDrag && !horizontalDrag)
             {
-                childs[i].GetComponent<Rigidbody2D>().simulated = true;
-                childs[i].gameObject.GetComponent<Rigidbody2D>().AddForce(childforce * -transform.right, ForceMode2D.Impulse);
-                childs[i].gameObject.GetComponent<Rigidbody2D>().gravityScale = cardGravityScale * 10;
+                if(i == 1 || i==3)
+                {
+                    childs[i].GetComponent<Rigidbody2D>().simulated = true;
+                    childs[i].gameObject.GetComponent<Rigidbody2D>().AddForce(childforce * -transform.right, ForceMode2D.Impulse);
+                    childs[i].gameObject.GetComponent<Rigidbody2D>().gravityScale = cardGravityScale * 15;
+
+                }
+                else if(i == 2 || i==4)
+                {
+                    childs[i].GetComponent<Rigidbody2D>().simulated = true;
+                    childs[i].gameObject.GetComponent<Rigidbody2D>().AddForce(childforce * transform.right, ForceMode2D.Impulse);
+                    childs[i].gameObject.GetComponent<Rigidbody2D>().gravityScale = cardGravityScale * 15;
+                }
 
             }
-            else if(i == 3 || i==4)
+            else if(horizontalDrag && !verticalDrag)
             {
-                childs[i].GetComponent<Rigidbody2D>().simulated = true;
-                childs[i].gameObject.GetComponent<Rigidbody2D>().AddForce(childforce * transform.right, ForceMode2D.Impulse);
-                childs[i].gameObject.GetComponent<Rigidbody2D>().gravityScale = cardGravityScale * 10;
+                if(i == 1 || i == 2)
+                {
+                    childs[i].GetComponent<Rigidbody2D>().simulated = true;
+                    childs[i].gameObject.GetComponent<Rigidbody2D>().AddForce(childforce * -transform.right, ForceMode2D.Impulse);
+                    childs[i].gameObject.GetComponent<Rigidbody2D>().gravityScale = cardGravityScale * 10;
 
+                }
+                else if(i == 3 || i==4)
+                {
+                    childs[i].GetComponent<Rigidbody2D>().simulated = true;
+                    childs[i].gameObject.GetComponent<Rigidbody2D>().AddForce(childforce * transform.right, ForceMode2D.Impulse);
+                    childs[i].gameObject.GetComponent<Rigidbody2D>().gravityScale = cardGravityScale * 10;
+
+                }
             }
+
             
         }
     }

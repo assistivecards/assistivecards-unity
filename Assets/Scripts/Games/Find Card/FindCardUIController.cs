@@ -15,6 +15,8 @@ public class FindCardUIController : MonoBehaviour
     public int levelsCompleted;
     public int checkpointFrequency;
     [SerializeField] GameObject[] cardParents;
+    private bool firstTime = true;
+    [SerializeField] GameObject tutorial;
 
     private void Awake()
     {
@@ -121,6 +123,15 @@ public class FindCardUIController : MonoBehaviour
         Invoke("EnableScrollRect", 0.26f);
         helloText.SetActive(true);
         speakerIcon.SetActive(true);
+    }
+
+    public void TutorialSetActive()
+    {
+        if (firstTime || gameAPI.GetTutorialPreference() == 1)
+        {
+            tutorial.SetActive(true);
+        }
+        firstTime = false;
     }
 
 }

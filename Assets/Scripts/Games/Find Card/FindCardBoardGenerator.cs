@@ -30,6 +30,8 @@ public class FindCardBoardGenerator : MonoBehaviour
     public int cardsNeeded;
     [SerializeField] GameObject targetCard;
     [SerializeField] GameObject cardsParent;
+    [SerializeField] GameObject tutorial;
+    private Transform tutorialPosition;
 
     private void Awake()
     {
@@ -78,6 +80,7 @@ public class FindCardBoardGenerator : MonoBehaviour
         ScaleImagesUp();
         Invoke("FlipCardsBack", visibilityTime);
         backButton.SetActive(true);
+        UIController.Invoke("TutorialSetActive", visibilityTime + 0.75f);
         Invoke("EnableBackButton", 0.2f);
     }
 
@@ -244,8 +247,11 @@ public class FindCardBoardGenerator : MonoBehaviour
             if (cards[i].tag == "CorrectCard")
             {
                 cardsNeeded++;
+                tutorialPosition = cards[i].transform;
             }
         }
+
+        tutorial.GetComponent<Tutorial>().tutorialPosition = tutorialPosition;
 
         // cardsNeeded = GameObject.FindGameObjectsWithTag("CorrectCard").Length - 1;
     }

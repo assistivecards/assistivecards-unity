@@ -28,7 +28,7 @@ public class FindCardMatchDetection : MonoBehaviour
             Debug.Log("CORRECT CARD");
             flippedCards.Add(flippedCard.gameObject);
             gameAPI.PlaySFX("Success");
-            Debug.Log(GameObject.FindGameObjectsWithTag("CorrectCard").Length);
+            Debug.Log(board.cardsNeeded);
 
             if (flippedCards.Count == board.cardsNeeded)
             {

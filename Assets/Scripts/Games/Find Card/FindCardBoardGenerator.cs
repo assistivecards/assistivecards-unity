@@ -29,6 +29,7 @@ public class FindCardBoardGenerator : MonoBehaviour
     private FindCardUIController UIController;
     public int cardsNeeded;
     [SerializeField] GameObject targetCard;
+    [SerializeField] GameObject cardsParent;
 
     private void Awake()
     {
@@ -87,6 +88,7 @@ public class FindCardBoardGenerator : MonoBehaviour
         randomSprites.Clear();
         tempSprites.Clear();
         matchDetector.flippedCards.Clear();
+        cardsNeeded = 0;
 
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {
@@ -235,7 +237,17 @@ public class FindCardBoardGenerator : MonoBehaviour
             }
         }
 
-        cardsNeeded = GameObject.FindGameObjectsWithTag("CorrectCard").Length - 1;
+        var cards = cardsParent.GetComponentsInChildren<FindCardFlipCard>(true);
+
+        for (int i = 0; i < cards.Length; i++)
+        {
+            if (cards[i].tag == "CorrectCard")
+            {
+                cardsNeeded++;
+            }
+        }
+
+        // cardsNeeded = GameObject.FindGameObjectsWithTag("CorrectCard").Length - 1;
     }
 
     public void ReadCard()

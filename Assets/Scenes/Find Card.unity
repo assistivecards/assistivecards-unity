@@ -9804,6 +9804,7 @@ MonoBehaviour:
   visibilityTime: 3
   cardsNeeded: 0
   targetCard: {fileID: 661218251}
+  cardsParent: {fileID: 779858960}
 --- !u!114 &8383894889009589327
 MonoBehaviour:
   m_ObjectHideFlags: 0

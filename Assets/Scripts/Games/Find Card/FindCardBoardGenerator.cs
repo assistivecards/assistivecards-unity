@@ -28,6 +28,7 @@ public class FindCardBoardGenerator : MonoBehaviour
     private FindCardMatchDetection matchDetector;
     private FindCardUIController UIController;
     public int cardsNeeded;
+    [SerializeField] GameObject targetCard;
 
     private void Awake()
     {
@@ -104,6 +105,7 @@ public class FindCardBoardGenerator : MonoBehaviour
         }
 
         LeanTween.scale(findText.gameObject, Vector3.one, 0.2f);
+        LeanTween.scale(targetCard, Vector3.one, 0.2f);
 
     }
 
@@ -116,6 +118,7 @@ public class FindCardBoardGenerator : MonoBehaviour
         }
 
         LeanTween.scale(findText.gameObject, Vector3.zero, 0.25f);
+        LeanTween.scale(targetCard, Vector3.zero, 0.25f);
     }
 
     public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)
@@ -188,6 +191,8 @@ public class FindCardBoardGenerator : MonoBehaviour
                 cardImagesInScene[i].sprite = sprite;
             }
         }
+
+        targetCard.transform.GetChild(0).GetComponent<Image>().sprite = randomSprites[0];
     }
 
     public void PopulateRandomCards()

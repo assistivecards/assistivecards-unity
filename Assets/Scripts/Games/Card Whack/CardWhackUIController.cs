@@ -14,6 +14,8 @@ public class CardWhackUIController : MonoBehaviour
     private GameAPI gameAPI;
     [SerializeField] CardWhackScoreManager scoreManager;
     [SerializeField] CardWhackCardSpawner cardSpawner;
+    private bool firstTime = true;
+    [SerializeField] GameObject tutorial;
 
     private void Awake()
     {
@@ -118,6 +120,15 @@ public class CardWhackUIController : MonoBehaviour
         helloText.SetActive(true);
         speakerIcon.SetActive(true);
 
+    }
+
+    public void TutorialSetActive()
+    {
+        if (firstTime || gameAPI.GetTutorialPreference() == 1)
+        {
+            tutorial.SetActive(true);
+        }
+        firstTime = false;
     }
 
 }

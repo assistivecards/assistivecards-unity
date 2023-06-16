@@ -78,14 +78,14 @@ public class CardNinjaCardMovement : MonoBehaviour
                 {
                     childs[i].GetComponent<Rigidbody2D>().simulated = true;
                     childs[i].gameObject.GetComponent<Rigidbody2D>().AddForce(childforce * -transform.right, ForceMode2D.Impulse);
-                    childs[i].gameObject.GetComponent<Rigidbody2D>().gravityScale = cardGravityScale * 10;
+                    childs[i].gameObject.GetComponent<Rigidbody2D>().gravityScale = cardGravityScale * 5;
 
                 }
                 else if(i == 3 || i==4)
                 {
                     childs[i].GetComponent<Rigidbody2D>().simulated = true;
                     childs[i].gameObject.GetComponent<Rigidbody2D>().AddForce(childforce * transform.right, ForceMode2D.Impulse);
-                    childs[i].gameObject.GetComponent<Rigidbody2D>().gravityScale = cardGravityScale * 10;
+                    childs[i].gameObject.GetComponent<Rigidbody2D>().gravityScale = cardGravityScale * 5;
 
                 }
             }

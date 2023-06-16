@@ -36,15 +36,19 @@ public class CardNinjaCardMovement : MonoBehaviour
         cardRB.AddForce(this.transform.up * force, ForceMode2D.Impulse);
         cardRB.gravityScale = cardGravityScale;
         Destroy(this.gameObject, lifeTime);
-        boardGenerator.Invoke("ThrowCards", 2f);
+        cutController.throwedCount++;
+
+        if(cutController.throwedCount < 17)
+            boardGenerator.Invoke("ThrowCards", 2f);
 
     }
 
     private void OnTriggerStay2D(Collider2D other) 
     {
-        if(other.gameObject.tag == "Blade")
+        if(other.gameObject.tag == "Blade" && cutController.isDragging)
         {
             Break(cutController.horizontalDrag, cutController.verticalDrag);
+            cutController.cutCount++;
         }
     }
 
@@ -78,14 +82,14 @@ public class CardNinjaCardMovement : MonoBehaviour
                 {
                     childs[i].GetComponent<Rigidbody2D>().simulated = true;
                     childs[i].gameObject.GetComponent<Rigidbody2D>().AddForce(childforce * -transform.right, ForceMode2D.Impulse);
-                    childs[i].gameObject.GetComponent<Rigidbody2D>().gravityScale = cardGravityScale * 10;
+                    childs[i].gameObject.GetComponent<Rigidbody2D>().gravityScale = cardGravityScale * 5;
 
                 }
                 else if(i == 3 || i==4)
                 {
                     childs[i].GetComponent<Rigidbody2D>().simulated = true;
                     childs[i].gameObject.GetComponent<Rigidbody2D>().AddForce(childforce * transform.right, ForceMode2D.Impulse);
-                    childs[i].gameObject.GetComponent<Rigidbody2D>().gravityScale = cardGravityScale * 10;
+                    childs[i].gameObject.GetComponent<Rigidbody2D>().gravityScale = cardGravityScale * 5;
 
                 }
             }

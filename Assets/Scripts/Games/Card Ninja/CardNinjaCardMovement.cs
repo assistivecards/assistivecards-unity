@@ -42,7 +42,7 @@ public class CardNinjaCardMovement : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other) 
     {
-        if(other.gameObject.tag == "Blade")
+        if(other.gameObject.tag == "Blade" && cutController.isDragging)
         {
             Break(cutController.horizontalDrag, cutController.verticalDrag);
         }

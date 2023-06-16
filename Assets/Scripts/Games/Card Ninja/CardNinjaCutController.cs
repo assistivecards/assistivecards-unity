@@ -5,21 +5,24 @@ using UnityEngine.EventSystems;
 
 public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHandler, IPointerUpHandler
 {
-    public bool horizontalDrag;
-    public bool verticalDrag;
-    private Vector2 dragStartPosition;
     [SerializeField] private GameObject cutEffect;
+    private Vector2 dragStartPosition;
     private Vector2 touchPosition;
     private Vector2 dragDirection;
+    public bool isDragging;
+    public bool horizontalDrag;
+    public bool verticalDrag;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         dragStartPosition = eventData.position;
+        isDragging = true;
     }
-
 
     public void OnDrag(PointerEventData eventData)
     {
+        cutEffect.SetActive(true);
+        cutEffect.GetComponent<TrailRenderer>().enabled = true;
         Vector2 dragEndPosition = eventData.position;
         dragDirection = dragEndPosition - dragStartPosition;
 
@@ -34,14 +37,26 @@ public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHan
             horizontalDrag = false;
             verticalDrag = true;
         }
+        else if(Mathf.Abs(dragDirection.x) >= 1000)
+        {
+            cutEffect.GetComponent<TrailRenderer>().Clear();
+            dragDirection = Vector2.zero;
+        }
+        else if(Mathf.Abs(dragDirection.y) >= 1000)
+        {
+            cutEffect.GetComponent<TrailRenderer>().Clear();
+            dragDirection = Vector2.zero;
+        }
     }
-
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        cutEffect.SetActive(false);
+        cutEffect.GetComponent<TrailRenderer>().Clear();
         dragDirection = Vector2.zero;
         horizontalDrag = false;
         verticalDrag = false;
+        isDragging = false;
     }
 
     private void Update() 

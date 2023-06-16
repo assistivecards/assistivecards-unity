@@ -1346,9 +1346,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cd8f8c5131cb498da78bcb9d1db1ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cutEffect: {fileID: 1744241444}
+  isDragging: 0
   horizontalDrag: 0
   verticalDrag: 0
-  cutEffect: {fileID: 1744241444}
 --- !u!1 &1231408339 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4176269118155799894, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
@@ -2175,6 +2176,10 @@ PrefabInstance:
       value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
       propertyPath: m_Autodestruct
       value: 0
       objectReference: {fileID: 0}
@@ -2196,7 +2201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
       propertyPath: m_MinVertexDistance
-      value: 0.01
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
       propertyPath: m_Materials.Array.size
@@ -2224,7 +2229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
       propertyPath: m_Parameters.widthMultiplier
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
       propertyPath: m_Parameters.numCornerVertices
@@ -2236,7 +2241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
@@ -2244,6 +2249,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
+      value: 0.6309062
+      objectReference: {fileID: 0}
+    - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[2].time
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
@@ -2252,7 +2261,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
-      value: 0
+      value: 0.50526416
+      objectReference: {fileID: 0}
+    - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].inSlope
+      value: -1.4883691
+      objectReference: {fileID: 0}
+    - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].outSlope
+      value: -1.4883691
+      objectReference: {fileID: 0}
+    - target: {fileID: 812593017339339342, guid: dc892731265e848e19d77b417834c529, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
       objectReference: {fileID: 0}
     - target: {fileID: 2770034590587150114, guid: dc892731265e848e19d77b417834c529, type: 3}
       propertyPath: m_RootOrder

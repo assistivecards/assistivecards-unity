@@ -53,16 +53,24 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
     {
         if (Application.unityVersion.StartsWith("2022"))
         {
+            if (Application.productName != "Uniapp")
+            {
 
-            List<EditorBuildSettingsScene> editorBuildSettingsScenesList = new List<EditorBuildSettingsScene>();
-            var sceneToAdd = new EditorBuildSettingsScene("Assets/Scenes/" + ToTitleCase(PlayerSettings.productName.Replace("-", "_").Replace("_", " ")) + ".unity", true);
-            editorBuildSettingsScenesList.Add(sceneToAdd);
-            EditorBuildSettings.scenes = editorBuildSettingsScenesList.ToArray();
-            AssetDatabase.SaveAssets();
+                List<EditorBuildSettingsScene> editorBuildSettingsScenesList = new List<EditorBuildSettingsScene>();
+                var sceneToAdd = new EditorBuildSettingsScene("Assets/Scenes/" + ToTitleCase(PlayerSettings.productName.Replace("-", "_").Replace("_", " ")) + ".unity", true);
+                editorBuildSettingsScenesList.Add(sceneToAdd);
+                EditorBuildSettings.scenes = editorBuildSettingsScenesList.ToArray();
+                AssetDatabase.SaveAssets();
 
-            Array.Clear(options.scenes, 0, options.scenes.Length);
-            options.scenes = EditorBuildSettings.scenes.Select(ebss => ebss.path).ToArray();
-            BuildPlayerWindow.DefaultBuildMethods.BuildPlayer(options);
+                Array.Clear(options.scenes, 0, options.scenes.Length);
+                options.scenes = EditorBuildSettings.scenes.Select(ebss => ebss.path).ToArray();
+                BuildPlayerWindow.DefaultBuildMethods.BuildPlayer(options);
+            }
+
+            else
+            {
+                BuildPlayerWindow.DefaultBuildMethods.BuildPlayer(options);
+            }
 
 
         }

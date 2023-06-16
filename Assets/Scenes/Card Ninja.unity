@@ -258,6 +258,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88731552}
   m_CullTransparentMesh: 1
+--- !u!1 &106221049 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8438209764908285022, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &191490649 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1242831490340205118, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -695,6 +700,11 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 2053396223659386525, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
   m_PrefabInstance: {fileID: 2053396223108693368}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &608594312 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9035172431832795728, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
+  m_PrefabInstance: {fileID: 1837497523}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &625883654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -987,6 +997,7 @@ MonoBehaviour:
   cardLocalNames: []
   cardsList: []
   packSelectionPanel: {fileID: 1893988995}
+  cutController: {fileID: 1154749949}
   grid: {fileID: 978741187}
   cardPrefab: {fileID: 1572616208917296617, guid: a546972319cf44c1ea23af981493b93d, type: 3}
   cutPrefab: {fileID: 1744241444}
@@ -1266,6 +1277,7 @@ GameObject:
   - component: {fileID: 1154749948}
   - component: {fileID: 1154749947}
   - component: {fileID: 1154749949}
+  - component: {fileID: 1154749950}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -1346,10 +1358,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cd8f8c5131cb498da78bcb9d1db1ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  "u\u0131Controller": {fileID: 1154749950}
   cutEffect: {fileID: 1744241444}
   isDragging: 0
   horizontalDrag: 0
   verticalDrag: 0
+  cutCount: 0
+  throwedCount: 0
+--- !u!114 &1154749950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154749945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde79ebf67d6b4d6399120e296ff90c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  packSelectionPanelScript: {fileID: 1893988995}
+  boardGenerator: {fileID: 978741188}
+  levelChange: {fileID: 1275520836}
+  gameUI: {fileID: 978741187}
+  backButton: {fileID: 106221049}
+  settingButton: {fileID: 472857506}
+  helloText: {fileID: 1410394572}
+  loadingScreen: {fileID: 1456875732}
+  packSelectionScreen: {fileID: 608594312}
+  tutorial: {fileID: 927069859}
 --- !u!1 &1231408339 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4176269118155799894, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
@@ -1672,6 +1709,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1410394572 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3184117022417446875, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1456875732 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3699884338922838543, guid: 5bb4841276ee74ee38e00403db5fef74, type: 3}
+  m_PrefabInstance: {fileID: 1727350122}
+  m_PrefabAsset: {fileID: 0}
 --- !u!82 &1487501776 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 2053396222163338408, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
@@ -2110,7 +2157,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3312037730716697936, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
   m_PrefabInstance: {fileID: 1837497523}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 608594312}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f44cf049de1b446bf8e19644a138f40f, type: 3}

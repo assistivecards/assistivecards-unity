@@ -36,7 +36,10 @@ public class CardNinjaCardMovement : MonoBehaviour
         cardRB.AddForce(this.transform.up * force, ForceMode2D.Impulse);
         cardRB.gravityScale = cardGravityScale;
         Destroy(this.gameObject, lifeTime);
-        boardGenerator.Invoke("ThrowCards", 2f);
+        cutController.throwedCount++;
+
+        if(cutController.throwedCount < 17)
+            boardGenerator.Invoke("ThrowCards", 2f);
 
     }
 
@@ -45,6 +48,7 @@ public class CardNinjaCardMovement : MonoBehaviour
         if(other.gameObject.tag == "Blade" && cutController.isDragging)
         {
             Break(cutController.horizontalDrag, cutController.verticalDrag);
+            cutController.cutCount++;
         }
     }
 

@@ -21,6 +21,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
 
     [Header ("Card Ninja Classes")]
     [SerializeField] private PackSelectionPanel packSelectionPanel;
+    [SerializeField] private CardNinjaCutController cutController;
 
     [Header ("Game Objects & UI")]
     [SerializeField] private GameObject grid;
@@ -158,5 +159,24 @@ public class CardNinjaBoardGenerator : MonoBehaviour
                 cards.Remove(randomCard);
             }
         }
+    }
+
+    public void ClearBoard()
+    {
+        cutController.cutCount = 0;
+        cutController.throwedCount = 0;
+
+        foreach(var card in cards)
+        {
+            Destroy(card);
+        }
+
+        cards.Clear();
+        cardLocalNames.Clear();
+        cardsList.Clear();
+        cardNames.Clear();
+        usedCards.Clear();
+        cardPieces.Clear();
+        randomValueList.Clear();
     }
 }

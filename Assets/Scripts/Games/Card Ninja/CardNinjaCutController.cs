@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHandler, IPointerUpHandler
 {
+    [SerializeField] private CardNinjaUIController uıController;
     [SerializeField] private GameObject cutEffect;
     private Vector2 dragStartPosition;
     private Vector2 touchPosition;
@@ -12,6 +13,8 @@ public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHan
     public bool isDragging;
     public bool horizontalDrag;
     public bool verticalDrag;
+    public int cutCount;
+    public int throwedCount;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -63,5 +66,10 @@ public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHan
     {
         Vector2 trailPos = Camera.main.ScreenToWorldPoint(touchPosition);
         cutEffect.transform.position = trailPos;
+
+        if(cutCount >= 10 || throwedCount >= 17)
+        {
+            uıController.LevelEnd();
+        }
     }
 }

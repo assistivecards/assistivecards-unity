@@ -12,7 +12,6 @@ public class CardNinjaUIController : MonoBehaviour
 
     [Header ("Panels")]
     [SerializeField] private GameObject levelChange;
-    [SerializeField] private GameObject gameUI;
 
     [Header ("UI Objects")]
     [SerializeField] private GameObject backButton;
@@ -20,8 +19,10 @@ public class CardNinjaUIController : MonoBehaviour
     [SerializeField] private GameObject helloText;
     [SerializeField] private GameObject loadingScreen;
     [SerializeField] private GameObject packSelectionScreen;
+    [SerializeField] private GameObject cutPrefab;
 
     [SerializeField] private GameObject tutorial;
+    public bool levelEnd;
     private bool firstTime = true;
     private bool canGenerate;
 
@@ -46,22 +47,91 @@ public class CardNinjaUIController : MonoBehaviour
     {
         if(canGenerate)
         {
-            gameUI.SetActive(true);
+            levelEnd = false;
+            loadingScreen.SetActive(false);
             backButton.SetActive(true);
             settingButton.SetActive(true);
             helloText.SetActive(false);
-            loadingScreen.SetActive(false);
         }
+    }
+
+    public void BackButtonClick()
+    {
+        levelEnd = true;
+        boardGenerator.ClearBoard();
     }
 
     public void LevelEnd()
     {
-        gameUI.SetActive(false);
+        levelEnd = true;
         boardGenerator.ClearBoard();
         backButton.SetActive(false);
         settingButton.SetActive(false);
         helloText.SetActive(false);
         levelChange.SetActive(true);
         LeanTween.scale(levelChange, Vector3.one * 0.5f, 0.5f);
+    }
+
+    public void DetectPremium()
+    {
+        if (gameAPI.GetPremium() == "A5515T1V3C4RD5")
+        {
+            canGenerate = true;
+        }
+        else
+        {
+            for (int i = 0; i < gameAPI.cachedPacks.packs.Length; i++)
+            {
+                if (gameAPI.cachedPacks.packs[i].slug == packSelectionPanelScript.selectedPackElement.name)
+                {
+                    if (gameAPI.cachedPacks.packs[i].premium == 1)
+                    {
+                        Debug.Log("Seçilen paket premium");
+                        canGenerate = false;
+                    }
+                    else
+                    {
+                        Debug.Log("Seçilen paket premium değil");
+                        canGenerate = true;
+                    }
+
+                }
+            }
+        }
+    }
+
+    public void PackSelectionPanelActive()
+    {
+        backButton.SetActive(false);
+        settingButton.SetActive(true);
+        helloText.SetActive(true);
+        packSelectionScreen.SetActive(true);
+    }
+
+    public void CloseLevelChangePanel()
+    {
+        LeanTween.scale(levelChange, Vector3.zero, 0.5f);
+        Invoke("LevelChangeDeactivate", 1f);
+    }
+
+    public void LevelChangeDeactivate()
+    {
+        levelChange.SetActive(false);
+    }
+
+    public void ResetScroll()
+    {
+        packSelectionScreen.transform.GetChild(0).GetChild(0).GetChild(0).transform.localPosition = Vector3.zero;
+    }
+
+    public void LoadingScreenActivation()
+    {
+        if(canGenerate)
+        {
+            loadingScreen.SetActive(true);
+            backButton.SetActive(false);
+            helloText.SetActive(false);
+            settingButton.SetActive(false);
+        }
     }
 }

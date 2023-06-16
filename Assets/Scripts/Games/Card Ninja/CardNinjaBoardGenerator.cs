@@ -22,6 +22,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     [Header ("Card Ninja Classes")]
     [SerializeField] private PackSelectionPanel packSelectionPanel;
     [SerializeField] private CardNinjaCutController cutController;
+    [SerializeField] private CardNinjaUIController uıController;
 
     [Header ("Game Objects & UI")]
     [SerializeField] private GameObject grid;
@@ -76,6 +77,8 @@ public class CardNinjaBoardGenerator : MonoBehaviour
 
     public async void GeneratedBoardAsync()
     {
+        cutPrefab.SetActive(false);
+        GetComponent<GridLayoutGroup>().enabled = true;
         packSlug = packSelectionPanel.selectedPackElement.name;
         await CacheCards();
         for(int i=0; i < 18; i++)
@@ -95,7 +98,9 @@ public class CardNinjaBoardGenerator : MonoBehaviour
             DivideHorizontal(cardTexture, card.transform.GetChild(1).GetComponent<Image>(), card.transform.GetChild(2).GetComponent<Image>(),
             card.transform.GetChild(3).GetComponent<Image>(), card.transform.GetChild(4).GetComponent<Image>());
         }
-        Invoke("ReleaseFromGrid", 0.15f);
+        uıController.TutorialSetActive();
+        uıController.GameUIActivate();
+        Invoke("ReleaseFromGrid", 0.1f);
         Invoke("EnableCutCollider", 0.2f);
         Invoke("ThrowCards", 0.2f);
     }
@@ -135,28 +140,31 @@ public class CardNinjaBoardGenerator : MonoBehaviour
 
     private void EnableCutCollider()
     {
-        cutPrefab.GetComponent<BoxCollider2D>().enabled = true;
+        cutPrefab.SetActive(true);
     }
 
     public void ThrowCards()
     {
-        GameObject randomCard = cards[Random.Range(0, cards.Count)];
-
-        if(randomCard != null && !usedCards.Contains(randomCard))
+        if(!uıController.levelEnd)
         {
-            randomCard.GetComponent<CardNinjaCardMovement>().Throw();
-            usedCards.Add(randomCard);
-            cards.Remove(randomCard);
-        }
-        else
-        {
-            randomCard = cards[Random.Range(0, cards.Count)];
+            GameObject randomCard = cards[Random.Range(0, cards.Count)];
 
             if(randomCard != null && !usedCards.Contains(randomCard))
             {
                 randomCard.GetComponent<CardNinjaCardMovement>().Throw();
                 usedCards.Add(randomCard);
                 cards.Remove(randomCard);
+            }
+            else
+            {
+                randomCard = cards[Random.Range(0, cards.Count)];
+
+                if(randomCard != null && !usedCards.Contains(randomCard))
+                {
+                    randomCard.GetComponent<CardNinjaCardMovement>().Throw();
+                    usedCards.Add(randomCard);
+                    cards.Remove(randomCard);
+                }
             }
         }
     }
@@ -165,8 +173,14 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     {
         cutController.cutCount = 0;
         cutController.throwedCount = 0;
+        cutPrefab.SetActive(false);
 
         foreach(var card in cards)
+        {
+            Destroy(card);
+        }
+
+        foreach(var card in usedCards)
         {
             Destroy(card);
         }

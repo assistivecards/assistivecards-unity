@@ -154,6 +154,7 @@ class TrailRenderer; template <> void RegisterUnityClass<TrailRenderer>(const ch
 class Transform; template <> void RegisterUnityClass<Transform>(const char*);
 class AnchoredJoint2D; template <> void RegisterUnityClass<AnchoredJoint2D>(const char*);
 class BoxCollider2D; template <> void RegisterUnityClass<BoxCollider2D>(const char*);
+class CircleCollider2D; template <> void RegisterUnityClass<CircleCollider2D>(const char*);
 class Collider2D; template <> void RegisterUnityClass<Collider2D>(const char*);
 class HingeJoint2D; template <> void RegisterUnityClass<HingeJoint2D>(const char*);
 class Joint2D; template <> void RegisterUnityClass<Joint2D>(const char*);
@@ -170,7 +171,7 @@ void RegisterAllClasses()
 {
 void RegisterBuiltinTypes();
 RegisterBuiltinTypes();
-	//Total: 80 non stripped classes
+	//Total: 81 non stripped classes
 	//0. Animation
 	RegisterUnityClass<Animation>("Animation");
 	//1. AnimationClip
@@ -309,27 +310,29 @@ RegisterBuiltinTypes();
 	RegisterUnityClass<AnchoredJoint2D>("Physics2D");
 	//68. BoxCollider2D
 	RegisterUnityClass<BoxCollider2D>("Physics2D");
-	//69. Collider2D
+	//69. CircleCollider2D
+	RegisterUnityClass<CircleCollider2D>("Physics2D");
+	//70. Collider2D
 	RegisterUnityClass<Collider2D>("Physics2D");
-	//70. HingeJoint2D
+	//71. HingeJoint2D
 	RegisterUnityClass<HingeJoint2D>("Physics2D");
-	//71. Joint2D
+	//72. Joint2D
 	RegisterUnityClass<Joint2D>("Physics2D");
-	//72. Physics2DSettings
+	//73. Physics2DSettings
 	RegisterUnityClass<Physics2DSettings>("Physics2D");
-	//73. PolygonCollider2D
+	//74. PolygonCollider2D
 	RegisterUnityClass<PolygonCollider2D>("Physics2D");
-	//74. Rigidbody2D
+	//75. Rigidbody2D
 	RegisterUnityClass<Rigidbody2D>("Physics2D");
-	//75. Font
+	//76. Font
 	RegisterUnityClass<TextRendering::Font>("TextRendering");
-	//76. Canvas
+	//77. Canvas
 	RegisterUnityClass<UI::Canvas>("UI");
-	//77. CanvasGroup
+	//78. CanvasGroup
 	RegisterUnityClass<UI::CanvasGroup>("UI");
-	//78. CanvasRenderer
+	//79. CanvasRenderer
 	RegisterUnityClass<UI::CanvasRenderer>("UI");
-	//79. UnityConnectSettings
+	//80. UnityConnectSettings
 	RegisterUnityClass<UnityConnectSettings>("UnityConnect");
 
 }

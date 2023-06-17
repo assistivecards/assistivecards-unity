@@ -45,6 +45,7 @@ IL2CPP_EXTERN_C const RuntimeMethod* OSXStoreBindings_Purchase_m52F91E67C26D94AD
 IL2CPP_EXTERN_C const RuntimeMethod* OSXStoreBindings_RestoreTransactions_m4A3233324D2F151D8EBE1ECCF52A47C818306807_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* OSXStoreBindings_RetrieveProducts_mA0C95496441A2EF71BA05E0D5AC4089C9465F5F3_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* OSXStoreBindings_SetUnityPurchasingCallback_mBB8CB88EA7308F3B7B9C82E19DF22A1D33E2ABC5_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* OSXStoreBindings_get_appReceiptModificationDate_m0DBAA910000990A3F3EF43F04C783E7BC2B510F4_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* OSXStoreBindings_get_appReceipt_mECA7C48A499AA98C8EAFCFC0D420AAB157508DBE_RuntimeMethod_var;
 struct Delegate_t_marshaled_com;
 struct Delegate_t_marshaled_pinvoke;
@@ -98,6 +99,13 @@ struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F_marshaled_pinvoke
 // Native definition for COM marshalling of System.ValueType
 struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F_marshaled_com
 {
+};
+
+// System.Double
+struct Double_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F 
+{
+	// System.Double System.Double::m_value
+	double ___m_value_0;
 };
 
 // System.IntPtr
@@ -402,6 +410,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* OSXStoreBindings_get_appReceipt_mEC
 		NullCheck(L_0);
 		NotImplementedException__ctor_mDAB47BC6BD0E342E8F2171E5CABE3E67EA049F1C(L_0, NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&OSXStoreBindings_get_appReceipt_mECA7C48A499AA98C8EAFCFC0D420AAB157508DBE_RuntimeMethod_var)));
+	}
+}
+// System.Double UnityEngine.Purchasing.OSXStoreBindings::get_appReceiptModificationDate()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double OSXStoreBindings_get_appReceiptModificationDate_m0DBAA910000990A3F3EF43F04C783E7BC2B510F4 (OSXStoreBindings_t07AE7B9ED38F91E24390B891BF76B405FD3163CD* __this, const RuntimeMethod* method) 
+{
+	{
+		// public double appReceiptModificationDate => throw new NotImplementedException();
+		NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8* L_0 = (NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotImplementedException_t6366FE4DCF15094C51F4833B91A2AE68D4DA90E8_il2cpp_TypeInfo_var)));
+		NullCheck(L_0);
+		NotImplementedException__ctor_mDAB47BC6BD0E342E8F2171E5CABE3E67EA049F1C(L_0, NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&OSXStoreBindings_get_appReceiptModificationDate_m0DBAA910000990A3F3EF43F04C783E7BC2B510F4_RuntimeMethod_var)));
 	}
 }
 // System.Void UnityEngine.Purchasing.OSXStoreBindings::InterceptPromotionalPurchases()

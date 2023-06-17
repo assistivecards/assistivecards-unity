@@ -92,6 +92,7 @@
 		499C544A9402469D6FE458D5 /* Unity.Services.Core.Telemetry_CodeGen.c in Sources */ = {isa = PBXBuildFile; fileRef = 44DE1338140C30DE892F167E /* Unity.Services.Core.Telemetry_CodeGen.c */; };
 		4A5DB0A88B54EAE7C2F11AD3 /* UnityEngine.ImageConversionModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D52A80C4BDA021DEFDE8CDE0 /* UnityEngine.ImageConversionModule.cpp */; };
 		4BBB058CCB904BE5B9678AF4 /* UnityEngine.UIModule_CodeGen.c in Sources */ = {isa = PBXBuildFile; fileRef = 9C8669A7AE68819DD8B73A49 /* UnityEngine.UIModule_CodeGen.c */; };
+		4D20E9FD486E59058B93E667 /* Assembly-CSharp8.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C21D739874E07E8431AF1EBE /* Assembly-CSharp8.cpp */; };
 		4D4096A9F9DE7F8C90C4481B /* UnityEngine.SpriteShapeModule_CodeGen.c in Sources */ = {isa = PBXBuildFile; fileRef = 482577FDC6F6B7296411D20E /* UnityEngine.SpriteShapeModule_CodeGen.c */; };
 		4D62BC30850FE2F0A643099A /* Assembly-CSharp5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4427D06B6565C2A935B0067 /* Assembly-CSharp5.cpp */; };
 		4F28032C0DFF9FC1324CD0FC /* mscorlib19.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 972C3E8DBD6C72C473A559B2 /* mscorlib19.cpp */; };
@@ -155,6 +156,7 @@
 		830F481BAC946E4A3A8CA838 /* UnityEngine.UnityAnalyticsModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76B3FF71D0EB389B2E311258 /* UnityEngine.UnityAnalyticsModule.cpp */; };
 		83CC008D4F11B4BF83E46D81 /* UnityEngine.PhysicsModule_CodeGen.c in Sources */ = {isa = PBXBuildFile; fileRef = A2F075BE152E42040BD37085 /* UnityEngine.PhysicsModule_CodeGen.c */; };
 		8447E0FD95ACE9D0FA415512 /* UnityEngine.UIElementsModule6.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 264FCEEC313B44B9670121AC /* UnityEngine.UIElementsModule6.cpp */; };
+		856FD4E5C11590395AA3DBF2 /* Assembly-CSharp7.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 820A16CFD33E6160EC4FA84D /* Assembly-CSharp7.cpp */; };
 		857DE35C12A5C3BE30180C25 /* Unity.Services.Core.Threading_CodeGen.c in Sources */ = {isa = PBXBuildFile; fileRef = 917542136C6930AB80E590F1 /* Unity.Services.Core.Threading_CodeGen.c */; };
 		859404456D0905AB0F3618ED /* Il2CppCCalculateFieldValues2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 077BF634FF5AE1A765D46E11 /* Il2CppCCalculateFieldValues2.cpp */; };
 		862C245020AEC7AC006FB4AD /* UnityWebRequest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 862C244F20AEC7AC006FB4AD /* UnityWebRequest.mm */; };
@@ -601,6 +603,7 @@
 		7F36C10F13C5C673007FBDD9 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		7F36C11013C5C673007FBDD9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		7F51AFB55B276AE7D63624F0 /* Unity.Services.Core.Registration.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Unity.Services.Core.Registration.cpp; path = Classes/Native/Unity.Services.Core.Registration.cpp; sourceTree = SOURCE_ROOT; };
+		820A16CFD33E6160EC4FA84D /* Assembly-CSharp7.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Assembly-CSharp7.cpp"; path = "Classes/Native/Assembly-CSharp7.cpp"; sourceTree = SOURCE_ROOT; };
 		827AF15F69FD424F6DD2A0BE /* Assembly-CSharp-firstpass.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Assembly-CSharp-firstpass.cpp"; path = "Classes/Native/Assembly-CSharp-firstpass.cpp"; sourceTree = SOURCE_ROOT; };
 		82CBFE2E085B258ECC9F69DF /* Generics5.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Generics5.cpp; path = Classes/Native/Generics5.cpp; sourceTree = SOURCE_ROOT; };
 		830B5C100E5ED4C100C7819F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -774,6 +777,7 @@
 		BFFE418035E8B3424EDA806D /* UnityEngine.UIElementsModule2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = UnityEngine.UIElementsModule2.cpp; path = Classes/Native/UnityEngine.UIElementsModule2.cpp; sourceTree = SOURCE_ROOT; };
 		C1907265976CFFD9E543900E /* UnityEngine.Purchasing.WinRTStub.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = UnityEngine.Purchasing.WinRTStub.cpp; path = Classes/Native/UnityEngine.Purchasing.WinRTStub.cpp; sourceTree = SOURCE_ROOT; };
 		C1DA24B4DD90DEFC9DBE15AF /* System1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = System1.cpp; path = Classes/Native/System1.cpp; sourceTree = SOURCE_ROOT; };
+		C21D739874E07E8431AF1EBE /* Assembly-CSharp8.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Assembly-CSharp8.cpp"; path = "Classes/Native/Assembly-CSharp8.cpp"; sourceTree = SOURCE_ROOT; };
 		C3289002C61E481245339383 /* mscorlib.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = mscorlib.cpp; path = Classes/Native/mscorlib.cpp; sourceTree = SOURCE_ROOT; };
 		C374C4C8DDB1A58903089785 /* UnityEngine.Physics2DModule_CodeGen.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = UnityEngine.Physics2DModule_CodeGen.c; path = Classes/Native/UnityEngine.Physics2DModule_CodeGen.c; sourceTree = SOURCE_ROOT; };
 		C4D22B5FE86678F10C46060C /* Unity.Services.Core.Device_CodeGen.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = Unity.Services.Core.Device_CodeGen.c; path = Classes/Native/Unity.Services.Core.Device_CodeGen.c; sourceTree = SOURCE_ROOT; };
@@ -1244,6 +1248,8 @@
 				CFB645C2CF31E883E69E6BDB /* Assembly-CSharp4.cpp */,
 				B4427D06B6565C2A935B0067 /* Assembly-CSharp5.cpp */,
 				E2BFEB8DB2632A564E4F32F9 /* Assembly-CSharp6.cpp */,
+				820A16CFD33E6160EC4FA84D /* Assembly-CSharp7.cpp */,
+				C21D739874E07E8431AF1EBE /* Assembly-CSharp8.cpp */,
 				2ED10ABADB22CAA0FE9A3AB6 /* AssistiveCardsSDK_CodeGen.c */,
 				26B7A8850F1579ADCD9BBC45 /* AssistiveCardsSDK.cpp */,
 				D451FB3B845209F99E919024 /* Coffee.SoftMaskForUGUI_CodeGen.c */,
@@ -2131,6 +2137,8 @@
 				71CC1E9CE3720E7FDA2A0145 /* UnityICallRegistration.cpp in Sources */,
 				EDD44014886F809E0AB51884 /* lib_burst_generated.cpp in Sources */,
 				11DBD9994A3F96B0DB15F294 /* Assembly-CSharp6.cpp in Sources */,
+				4D20E9FD486E59058B93E667 /* Assembly-CSharp8.cpp in Sources */,
+				856FD4E5C11590395AA3DBF2 /* Assembly-CSharp7.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2190,7 +2198,7 @@
 					"$(inherited)",
 					"$(OTHER_CFLAGS)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.assistivecards.card-chain";
+				PRODUCT_BUNDLE_IDENTIFIER = com.assistivecards.memory;
 				PRODUCT_NAME = "$(PRODUCT_NAME_APP)";
 				PROVISIONING_PROFILE = "$(PROVISIONING_PROFILE_APP)";
 				PROVISIONING_PROFILE_APP = "";
@@ -2230,7 +2238,7 @@
 					"$(inherited)",
 					"$(OTHER_CFLAGS)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.assistivecards.card-chain";
+				PRODUCT_BUNDLE_IDENTIFIER = com.assistivecards.memory;
 				PRODUCT_NAME = "$(PRODUCT_NAME_APP)";
 				PROVISIONING_PROFILE = "$(PROVISIONING_PROFILE_APP)";
 				PROVISIONING_PROFILE_APP = "";
@@ -2378,7 +2386,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PRODUCT_NAME_APP = "Card Chain";
+				PRODUCT_NAME_APP = Memory;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 			};
@@ -2412,7 +2420,7 @@
 					"$(inherited)",
 					"$(OTHER_CFLAGS)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.assistivecards.card-chain";
+				PRODUCT_BUNDLE_IDENTIFIER = com.assistivecards.memory;
 				PRODUCT_NAME = "$(PRODUCT_NAME_APP)";
 				PROVISIONING_PROFILE = "$(PROVISIONING_PROFILE_APP)";
 				PROVISIONING_PROFILE_APP = "";
@@ -2506,7 +2514,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PRODUCT_NAME_APP = "Card Chain";
+				PRODUCT_NAME_APP = Memory;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 			};
@@ -2539,7 +2547,7 @@
 					"$(inherited)",
 					"$(OTHER_CFLAGS)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.assistivecards.card-chain";
+				PRODUCT_BUNDLE_IDENTIFIER = com.assistivecards.memory;
 				PRODUCT_NAME = "$(PRODUCT_NAME_APP)";
 				PROVISIONING_PROFILE = "$(PROVISIONING_PROFILE_APP)";
 				PROVISIONING_PROFILE_APP = "";
@@ -2961,7 +2969,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME_APP = "Card Chain";
+				PRODUCT_NAME_APP = Memory;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 			};
@@ -3000,7 +3008,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PRODUCT_NAME_APP = "Card Chain";
+				PRODUCT_NAME_APP = Memory;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 			};

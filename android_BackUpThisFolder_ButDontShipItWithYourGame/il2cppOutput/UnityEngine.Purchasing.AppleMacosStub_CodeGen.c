@@ -26,11 +26,13 @@ extern void OSXStoreBindings_Purchase_m52F91E67C26D94ADC5E10FBEC9B6E179A344C0A7 
 extern void OSXStoreBindings_FinishTransaction_mE289ADEEEA094E3D7EE0787C647BE977522B0C31 (void);
 // 0x00000007 System.String UnityEngine.Purchasing.OSXStoreBindings::get_appReceipt()
 extern void OSXStoreBindings_get_appReceipt_mECA7C48A499AA98C8EAFCFC0D420AAB157508DBE (void);
-// 0x00000008 System.Void UnityEngine.Purchasing.OSXStoreBindings::InterceptPromotionalPurchases()
+// 0x00000008 System.Double UnityEngine.Purchasing.OSXStoreBindings::get_appReceiptModificationDate()
+extern void OSXStoreBindings_get_appReceiptModificationDate_m0DBAA910000990A3F3EF43F04C783E7BC2B510F4 (void);
+// 0x00000009 System.Void UnityEngine.Purchasing.OSXStoreBindings::InterceptPromotionalPurchases()
 extern void OSXStoreBindings_InterceptPromotionalPurchases_m22307344F3DDE0F731A772C6A83D4ACF6063DF6C (void);
-// 0x00000009 System.Void UnityEngine.Purchasing.OSXStoreBindings::.ctor()
+// 0x0000000A System.Void UnityEngine.Purchasing.OSXStoreBindings::.ctor()
 extern void OSXStoreBindings__ctor_mF2730729E545708DDE64B8098F8814B56B1FD968 (void);
-static Il2CppMethodPointer s_methodPointers[9] = 
+static Il2CppMethodPointer s_methodPointers[10] = 
 {
 	OSXStoreBindings_SetUnityPurchasingCallback_mBB8CB88EA7308F3B7B9C82E19DF22A1D33E2ABC5,
 	OSXStoreBindings_RestoreTransactions_m4A3233324D2F151D8EBE1ECCF52A47C818306807,
@@ -39,26 +41,28 @@ static Il2CppMethodPointer s_methodPointers[9] =
 	OSXStoreBindings_Purchase_m52F91E67C26D94ADC5E10FBEC9B6E179A344C0A7,
 	OSXStoreBindings_FinishTransaction_mE289ADEEEA094E3D7EE0787C647BE977522B0C31,
 	OSXStoreBindings_get_appReceipt_mECA7C48A499AA98C8EAFCFC0D420AAB157508DBE,
+	OSXStoreBindings_get_appReceiptModificationDate_m0DBAA910000990A3F3EF43F04C783E7BC2B510F4,
 	OSXStoreBindings_InterceptPromotionalPurchases_m22307344F3DDE0F731A772C6A83D4ACF6063DF6C,
 	OSXStoreBindings__ctor_mF2730729E545708DDE64B8098F8814B56B1FD968,
 };
-static const int32_t s_InvokerIndices[9] = 
+static const int32_t s_InvokerIndices[10] = 
 {
-	4489,
-	5493,
-	5493,
-	4489,
-	2536,
-	2536,
-	5373,
-	5493,
-	5493,
+	4492,
+	5496,
+	5496,
+	4492,
+	2539,
+	2539,
+	5376,
+	5314,
+	5496,
+	5496,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_Purchasing_AppleMacosStub_CodeGenModule;
 const Il2CppCodeGenModule g_UnityEngine_Purchasing_AppleMacosStub_CodeGenModule = 
 {
 	"UnityEngine.Purchasing.AppleMacosStub.dll",
-	9,
+	10,
 	s_methodPointers,
 	0,
 	NULL,

@@ -104,6 +104,7 @@ public class FindCardBoardGenerator : MonoBehaviour
     {
         for (int i = 0; i < cardParents.Length; i++)
         {
+            LeanTween.alpha(cardParents[i].GetComponent<RectTransform>(), 1, .001f);
             cardParents[i].GetComponent<FindCardFlipCard>().enabled = true;
             cardParents[i].transform.rotation = Quaternion.Euler(0, -180, 0);
             LeanTween.scale(cardParents[i], Vector3.one, 0.2f);

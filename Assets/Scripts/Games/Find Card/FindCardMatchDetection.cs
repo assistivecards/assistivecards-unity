@@ -55,8 +55,9 @@ public class FindCardMatchDetection : MonoBehaviour
         else if (flippedCard.tag == "WrongCard")
         {
             Debug.Log("WRONG CARD");
-            LeanTween.rotateY(flippedCard.gameObject, 0, .75f);
-            gameAPI.PlaySFX("FlipCardBack");
+            LeanTween.alpha(flippedCard.GetComponent<RectTransform>(), .5f, .25f);
+            // LeanTween.rotateY(flippedCard.gameObject, 0, .75f);
+            // gameAPI.PlaySFX("FlipCardBack");
         }
 
     }

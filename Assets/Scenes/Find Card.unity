@@ -2033,6 +2033,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1021200298}
     m_Modifications:
+    - target: {fileID: 3236149540159706466, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 3236149540159706466, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -55
+      objectReference: {fileID: 0}
     - target: {fileID: 3236149540598557724, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_Name
       value: Tutorial
@@ -2219,7 +2227,6 @@ GameObject:
   - component: {fileID: 661218252}
   - component: {fileID: 661218255}
   - component: {fileID: 661218254}
-  - component: {fileID: 661218253}
   m_Layer: 5
   m_Name: TargetCard
   m_TagString: Untagged
@@ -2248,23 +2255,6 @@ RectTransform:
   m_AnchoredPosition: {x: -380, y: -40}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &661218253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661218251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3f2cb06ae4448c48a5965c5b526bfae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shadowColor: {r: 0, g: 0, b: 0, a: 0.29411766}
-  shadowDistance: {x: 0, y: 0}
-  m_UseGraphicAlpha: 1
-  iterations: 50
-  shadowSpread: {x: 10, y: 10}
 --- !u!114 &661218254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9810,7 +9800,6 @@ MonoBehaviour:
   targetCard: {fileID: 661218251}
   cardsParent: {fileID: 779858960}
   tutorial: {fileID: 927069859}
-  tutorialPositionCard: {fileID: 0}
 --- !u!114 &8383894889009589327
 MonoBehaviour:
   m_ObjectHideFlags: 0

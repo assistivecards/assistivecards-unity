@@ -1,0 +1,179 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+public class SizePuzzleBoardGenerator : MonoBehaviour
+{
+    private GameAPI gameAPI;
+    [SerializeField] Image[] cardTextures;
+    [SerializeField] GameObject[] cardParents;
+    [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
+    [SerializeField] Texture2D randomImage;
+    [SerializeField] Sprite randomSprite;
+    public string selectedLangCode;
+    public string packSlug;
+    [SerializeField] GameObject backButton;
+    public static bool didLanguageChange = true;
+    public static bool isBackAfterSignOut = false;
+    [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> uniqueCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
+    [SerializeField] TMP_Text chooseText;
+    [SerializeField] GameObject loadingPanel;
+    private List<float> randomScalers = new List<float>();
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
+
+    private void Start()
+    {
+        gameAPI.PlayMusic();
+    }
+
+    private void OnEnable()
+    {
+        if (isBackAfterSignOut)
+        {
+            gameAPI.PlayMusic();
+            isBackAfterSignOut = false;
+        }
+    }
+
+    public async Task CacheCards(string packName)
+    {
+        selectedLangCode = await gameAPI.GetSystemLanguageCode();
+        cachedCards = await gameAPI.GetCards(selectedLangCode, packName);
+    }
+
+
+    public async Task GenerateRandomBoardAsync()
+    {
+        if (didLanguageChange)
+        {
+            await CacheCards(packSlug);
+            didLanguageChange = false;
+        }
+
+        SetRandomScalers();
+        await PopulateRandomTextures();
+        PlaceSprites();
+        DisableLoadingPanel();
+        ScaleImagesUp();
+        backButton.SetActive(true);
+        Invoke("EnableBackButton", 0.15f);
+    }
+
+    private void SetRandomScalers()
+    {
+        randomScalers.Add(.8f);
+        randomScalers.Add(1);
+        randomScalers.Add(1.2f);
+    }
+
+    public void ClearBoard()
+    {
+        randomImage = null;
+        randomSprite = null;
+
+        for (int i = 0; i < cardTextures.Length; i++)
+        {
+            cardTextures[i].sprite = null;
+        }
+
+    }
+
+    public void ScaleImagesUp()
+    {
+        for (int i = 0; i < cardParents.Length; i++)
+        {
+            var randomScalerIndex = Random.Range(0, randomScalers.Count);
+            LeanTween.scale(cardParents[i], Vector3.one * randomScalers[randomScalerIndex], 0.2f);
+            randomScalers.RemoveAt(randomScalerIndex);
+        }
+
+        LeanTween.scale(chooseText.gameObject, Vector3.one, 0.2f);
+
+    }
+
+    public void ScaleImagesDown()
+    {
+        for (int i = 0; i < cardParents.Length; i++)
+        {
+            LeanTween.scale(cardParents[i], Vector3.zero, 0.2f);
+        }
+
+        LeanTween.scale(chooseText.gameObject, Vector3.zero, 0.2f);
+    }
+
+    public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)
+    {
+        if (!uniqueCards.Contains(cardToAdd))
+        {
+            uniqueCards.Add(cardToAdd);
+        }
+        else
+        {
+            cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+            CheckIfCardExists(cardToAdd);
+        }
+    }
+
+    public void ReadCard()
+    {
+        gameAPI.Speak(uniqueCards[0].title);
+    }
+
+    public void EnableBackButton()
+    {
+        backButton.GetComponent<Button>().interactable = true;
+    }
+
+    public void PopulateUniqueCards()
+    {
+
+        for (int i = 0; i < 5; i++)
+        {
+            var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+            CheckIfCardExists(cardToAdd);
+        }
+
+    }
+
+    public void ClearUniqueCards()
+    {
+        uniqueCards.Clear();
+    }
+
+    public async Task PopulateRandomTextures()
+    {
+
+        var texture = await gameAPI.GetCardImage(packSlug, uniqueCards[0].slug);
+        texture.wrapMode = TextureWrapMode.Clamp;
+        texture.filterMode = FilterMode.Bilinear;
+        randomImage = texture;
+        randomSprite = Sprite.Create(randomImage, new Rect(0.0f, 0.0f, randomImage.width, randomImage.height), new Vector2(0.5f, 0.5f), 100.0f);
+
+    }
+
+    public void PlaceSprites()
+    {
+        for (int i = 0; i < cardTextures.Length; i++)
+        {
+            if (cardTextures[i].sprite == null)
+            {
+
+                var sprite = randomSprite;
+                cardTextures[i].sprite = sprite;
+            }
+        }
+    }
+
+    private void DisableLoadingPanel()
+    {
+        loadingPanel.SetActive(false);
+    }
+
+}

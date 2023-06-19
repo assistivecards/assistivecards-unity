@@ -48,7 +48,13 @@ public class CardNinjaCardMovement : MonoBehaviour
         if(other.gameObject.tag == "Blade" && cutController.isDragging)
         {
             Break(cutController.horizontalDrag, cutController.verticalDrag);
-            cutController.cutCount++;
+            Debug.Log("selected card:" + boardGenerator.cards[0].name);
+            Debug.Log("cutted card:" + this.gameObject.name);
+
+            if(boardGenerator.cards[1].name == this.gameObject.name)
+            {
+                cutController.cutCount++;
+            }
         }
     }
 

@@ -30,7 +30,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject cutPrefab;
 
     [Header ("Random")]
-    private List<int> randomValueList = new List<int>();
+    public List<int> randomValueList = new List<int>();
     private int tempRandomValue;
     private int randomValue;
 
@@ -81,7 +81,8 @@ public class CardNinjaBoardGenerator : MonoBehaviour
         GetComponent<GridLayoutGroup>().enabled = true;
         packSlug = packSelectionPanel.selectedPackElement.name;
         await CacheCards();
-        for(int i=0; i < 18; i++)
+        CheckRandom();
+        for(int i=1; i <= 10; i++)
         {
             CheckRandom();
             GameObject card = Instantiate(cardPrefab, Vector3.zero, Quaternion.identity);
@@ -97,7 +98,22 @@ public class CardNinjaBoardGenerator : MonoBehaviour
             cards.Add(card);
             DivideHorizontal(cardTexture, card.transform.GetChild(1).GetComponent<Image>(), card.transform.GetChild(2).GetComponent<Image>(),
             card.transform.GetChild(3).GetComponent<Image>(), card.transform.GetChild(4).GetComponent<Image>());
+
+            GameObject selectedCard = Instantiate(cardPrefab, Vector3.zero, Quaternion.identity);
+
+            var selectedCardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[0]], 512);
+            selectedCardTexture.wrapMode = TextureWrapMode.Clamp;
+            selectedCardTexture.filterMode = FilterMode.Bilinear;
+
+            selectedCard.transform.name = cardNames[randomValueList[0]];
+            selectedCard.transform.SetParent(grid.transform);
+            LeanTween.scale(selectedCard.gameObject, Vector3.one * 0.5f, 0f);
+            selectedCard.transform.GetChild(0).GetComponent<RawImage>().texture = selectedCardTexture;
+            cards.Add(selectedCard);
+            DivideHorizontal(selectedCardTexture, selectedCard.transform.GetChild(1).GetComponent<Image>(), selectedCard.transform.GetChild(2).GetComponent<Image>(),
+            selectedCard.transform.GetChild(3).GetComponent<Image>(), selectedCard.transform.GetChild(4).GetComponent<Image>());
         }
+
         uıController.TutorialSetActive();
         uıController.GameUIActivate();
         Invoke("ReleaseFromGrid", 0.1f);

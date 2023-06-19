@@ -17,6 +17,7 @@ public class CardNinjaCardMovement : MonoBehaviour
     private CardNinjaCutController cutController;
     private CardNinjaBoardGenerator boardGenerator;
     private List<Transform> childs = new List<Transform>();
+    public List<Vector3> vectors = new List<Vector3>();
 
 
     private void OnEnable() 
@@ -28,12 +29,15 @@ public class CardNinjaCardMovement : MonoBehaviour
         {
             childs.Add(child);
         }
+
+        vectors.Add(new Vector3(-0.1f, 1, 0));
+        vectors.Add(new Vector3(0.1f, 1, 0));
     }
 
     public void Throw() 
     {
         float force = Random.Range(minForce, maxForce);
-        cardRB.AddForce(this.transform.up * force, ForceMode2D.Impulse);
+        cardRB.AddForce(vectors[Random.Range(0, 2)] * force, ForceMode2D.Impulse);
         cardRB.gravityScale = cardGravityScale;
         Destroy(this.gameObject, lifeTime);
         cutController.throwedCount++;
@@ -63,7 +67,7 @@ public class CardNinjaCardMovement : MonoBehaviour
         cardRB.simulated = false;
         for(int i=0; i <= childs.Count; i++)
         {
-            float childforce = Random.Range(minForce, maxForce);
+            float childforce = 2;
 
             if(verticalDrag && !horizontalDrag)
             {
@@ -71,14 +75,14 @@ public class CardNinjaCardMovement : MonoBehaviour
                 {
                     childs[i].GetComponent<Rigidbody2D>().simulated = true;
                     childs[i].gameObject.GetComponent<Rigidbody2D>().AddForce(childforce * -transform.right, ForceMode2D.Impulse);
-                    childs[i].gameObject.GetComponent<Rigidbody2D>().gravityScale = cardGravityScale * 15;
+                    childs[i].gameObject.GetComponent<Rigidbody2D>().gravityScale = cardGravityScale * 2.5f;
 
                 }
                 else if(i == 2 || i==4)
                 {
                     childs[i].GetComponent<Rigidbody2D>().simulated = true;
                     childs[i].gameObject.GetComponent<Rigidbody2D>().AddForce(childforce * transform.right, ForceMode2D.Impulse);
-                    childs[i].gameObject.GetComponent<Rigidbody2D>().gravityScale = cardGravityScale * 15;
+                    childs[i].gameObject.GetComponent<Rigidbody2D>().gravityScale = cardGravityScale * 2.5f;
                 }
 
             }
@@ -88,14 +92,14 @@ public class CardNinjaCardMovement : MonoBehaviour
                 {
                     childs[i].GetComponent<Rigidbody2D>().simulated = true;
                     childs[i].gameObject.GetComponent<Rigidbody2D>().AddForce(childforce * -transform.right, ForceMode2D.Impulse);
-                    childs[i].gameObject.GetComponent<Rigidbody2D>().gravityScale = cardGravityScale * 5;
+                    childs[i].gameObject.GetComponent<Rigidbody2D>().gravityScale = cardGravityScale * 2.5f;
 
                 }
                 else if(i == 3 || i==4)
                 {
                     childs[i].GetComponent<Rigidbody2D>().simulated = true;
                     childs[i].gameObject.GetComponent<Rigidbody2D>().AddForce(childforce * transform.right, ForceMode2D.Impulse);
-                    childs[i].gameObject.GetComponent<Rigidbody2D>().gravityScale = cardGravityScale * 5;
+                    childs[i].gameObject.GetComponent<Rigidbody2D>().gravityScale = cardGravityScale * 2.5f;
 
                 }
             }

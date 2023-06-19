@@ -1078,6 +1078,7 @@ MonoBehaviour:
   grid: {fileID: 978741187}
   cardPrefab: {fileID: 1572616208917296617, guid: a546972319cf44c1ea23af981493b93d, type: 3}
   cutPrefab: {fileID: 1744241444}
+  randomValueList: 
   cardPieces: []
   cards: []
   usedCards: []
@@ -1104,7 +1105,7 @@ MonoBehaviour:
   m_CellSize: {x: 115, y: 100}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 1
-  m_ConstraintCount: 9
+  m_ConstraintCount: 7
 --- !u!224 &978741190
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1122,7 +1123,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -456.00006, y: -680}
+  m_AnchoredPosition: {x: -437.4, y: -680}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1003392353 stripped

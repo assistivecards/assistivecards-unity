@@ -53,7 +53,7 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
     {
         if (Application.unityVersion.StartsWith("2022"))
         {
-            if (Application.productName != "Uniapp")
+            if (Application.productName != "Games")
             {
 
                 List<EditorBuildSettingsScene> editorBuildSettingsScenesList = new List<EditorBuildSettingsScene>();
@@ -69,6 +69,29 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
 
             else
             {
+
+                List<EditorBuildSettingsScene> editorBuildSettingsScenesList = new List<EditorBuildSettingsScene>();
+                var sceneToAdd = new EditorBuildSettingsScene("Assets/Scenes/" + ToTitleCase(PlayerSettings.productName.Replace("-", "_").Replace("_", " ")) + ".unity", true);
+                editorBuildSettingsScenesList.Add(sceneToAdd);
+
+                string folderName = "Assets/Scenes/";
+                var dirInfo = new DirectoryInfo(folderName);
+                var allFileInfos = dirInfo.GetFiles("*.unity", SearchOption.AllDirectories);
+
+                foreach (var fileInfo in allFileInfos)
+                {
+                    if (fileInfo.Name != "Games.unity" && fileInfo.Name != "Unity.unity")
+                    {
+                        var sceneFound = new EditorBuildSettingsScene("Assets/Scenes/" + fileInfo.Name, true);
+                        editorBuildSettingsScenesList.Add(sceneFound);
+                    }
+                }
+
+                EditorBuildSettings.scenes = editorBuildSettingsScenesList.ToArray();
+                AssetDatabase.SaveAssets();
+
+                Array.Clear(options.scenes, 0, options.scenes.Length);
+                options.scenes = EditorBuildSettings.scenes.Select(ebss => ebss.path).ToArray();
                 BuildPlayerWindow.DefaultBuildMethods.BuildPlayer(options);
             }
 

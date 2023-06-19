@@ -16,6 +16,6 @@ public class LoadDashboard : MonoBehaviour
 
     public void LoadDashboardScene()
     {
-        SceneManager.LoadScene("UniApp");
+        SceneManager.LoadScene("Games");
     }
 }

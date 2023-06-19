@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class CardNinjaUIController : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class CardNinjaUIController : MonoBehaviour
     [Header ("Scripts")]
     [SerializeField] private PackSelectionPanel packSelectionPanelScript;
     [SerializeField] private CardNinjaBoardGenerator boardGenerator;
+    [SerializeField] private CardNinjaCutController cutController;
 
     [Header ("Panels")]
     [SerializeField] private GameObject levelChange;
@@ -20,6 +23,7 @@ public class CardNinjaUIController : MonoBehaviour
     [SerializeField] private GameObject loadingScreen;
     [SerializeField] private GameObject packSelectionScreen;
     [SerializeField] private GameObject cutPrefab;
+    [SerializeField] private GameObject cutText;
 
     [SerializeField] private GameObject tutorial;
     public bool levelEnd;
@@ -29,6 +33,11 @@ public class CardNinjaUIController : MonoBehaviour
     private void Awake() 
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
+
+    private void Update() 
+    {
+        cutText.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = cutController.cutCount + " / 10";
     }
 
     public void TutorialSetActive()
@@ -47,6 +56,7 @@ public class CardNinjaUIController : MonoBehaviour
     {
         if(canGenerate)
         {
+            cutText.SetActive(true);
             levelEnd = false;
             loadingScreen.SetActive(false);
             backButton.SetActive(true);
@@ -59,10 +69,12 @@ public class CardNinjaUIController : MonoBehaviour
     {
         levelEnd = true;
         boardGenerator.ClearBoard();
+        cutText.SetActive(false);
     }
 
     public void LevelEnd()
     {
+        cutText.SetActive(false);
         levelEnd = true;
         boardGenerator.ClearBoard();
         backButton.SetActive(false);
@@ -102,6 +114,7 @@ public class CardNinjaUIController : MonoBehaviour
 
     public void PackSelectionPanelActive()
     {
+        cutText.SetActive(false);
         backButton.SetActive(false);
         settingButton.SetActive(true);
         helloText.SetActive(true);
@@ -128,6 +141,7 @@ public class CardNinjaUIController : MonoBehaviour
     {
         if(canGenerate)
         {
+            cutText.SetActive(false);
             loadingScreen.SetActive(true);
             backButton.SetActive(false);
             helloText.SetActive(false);

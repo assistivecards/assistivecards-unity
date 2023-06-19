@@ -28,6 +28,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject grid;
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject cutPrefab;
+    [SerializeField] private TMP_Text cutText;
 
     [Header ("Random")]
     public List<int> randomValueList = new List<int>();
@@ -112,6 +113,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
             cards.Add(selectedCard);
             DivideHorizontal(selectedCardTexture, selectedCard.transform.GetChild(1).GetComponent<Image>(), selectedCard.transform.GetChild(2).GetComponent<Image>(),
             selectedCard.transform.GetChild(3).GetComponent<Image>(), selectedCard.transform.GetChild(4).GetComponent<Image>());
+            cutText.text = gameAPI.Translate(cutText.gameObject.name, gameAPI.ToSentenceCase(selectedCard.name).Replace("-", " "), selectedLangCode);
         }
 
         uıController.TutorialSetActive();

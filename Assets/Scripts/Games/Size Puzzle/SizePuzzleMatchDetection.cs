@@ -9,12 +9,12 @@ public class SizePuzzleMatchDetection : MonoBehaviour, IPointerClickHandler
     public float[] cardScales;
     private SizePuzzleBoardGenerator board;
     public bool isClicked = false;
-    SizePuzzleProgressChecker progressChecker;
+    private SizePuzzleUIController UIController;
 
     private void Start()
     {
         board = GameObject.Find("GamePanel").GetComponent<SizePuzzleBoardGenerator>();
-        progressChecker = GameObject.Find("GamePanel").GetComponent<SizePuzzleProgressChecker>();
+        UIController = GameObject.Find("GamePanel").GetComponent<SizePuzzleUIController>();
     }
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -83,11 +83,17 @@ public class SizePuzzleMatchDetection : MonoBehaviour, IPointerClickHandler
             cardParents[i].GetComponent<SizePuzzleMatchDetection>().isClicked = true;
         }
 
-        progressChecker.correctMatches++;
+        UIController.correctMatches++;
         LeanTween.scale(gameObject, transform.localScale * 1.15f, .25f);
         board.Invoke("ScaleImagesDown", 1f);
         board.Invoke("ClearBoard", 1.30f);
-        board.Invoke("GenerateRandomBoardAsync", 1.30f);
+
+        if (UIController.correctMatches == 5)
+        {
+            UIController.Invoke("OpenCheckPointPanel", 1.3f);
+        }
+        else
+            board.Invoke("GenerateRandomBoardAsync", 1.3f);
     }
 
 }

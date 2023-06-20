@@ -5505,6 +5505,10 @@ MonoBehaviour:
   uniqueCards: []
   chooseText: {fileID: 604110357}
   loadingPanel: {fileID: 671447375}
+  sizes:
+  - small
+  - medium
+  - large
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

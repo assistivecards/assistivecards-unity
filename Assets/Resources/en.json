@@ -236,5 +236,8 @@
 	"draw_text":"Draw a $2 around the $1",
 	"stack_the_cards":"Stack the same cards",
 	"whack_text":"Whack the $1 cards",
-	"find_the_cards":"Find the $1 cards"
+	"find_the_cards":"Find the $1 cards",
+	"choose_text_small":"Choose the smallest $1 card",
+	"choose_text_medium":"Choose the medium $1 card",
+	"choose_text_large":"Choose the largest $1 card"
 }

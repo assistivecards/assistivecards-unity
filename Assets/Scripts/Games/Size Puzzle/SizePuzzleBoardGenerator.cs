@@ -22,6 +22,8 @@ public class SizePuzzleBoardGenerator : MonoBehaviour
     [SerializeField] TMP_Text chooseText;
     [SerializeField] GameObject loadingPanel;
     private List<float> randomScalers = new List<float>();
+    [SerializeField] List<string> sizes = new List<string>();
+    public string selectedSize;
 
     private void Awake()
     {
@@ -58,6 +60,7 @@ public class SizePuzzleBoardGenerator : MonoBehaviour
         }
 
         SetRandomScalers();
+        TranslateChooseText();
         await PopulateRandomTextures();
         PlaceSprites();
         DisableLoadingPanel();
@@ -174,6 +177,26 @@ public class SizePuzzleBoardGenerator : MonoBehaviour
     private void DisableLoadingPanel()
     {
         loadingPanel.SetActive(false);
+    }
+
+    public void TranslateChooseText()
+    {
+        selectedSize = sizes[Random.Range(0, sizes.Count)];
+
+        if (selectedSize == "small")
+        {
+            chooseText.name = "choose_text_small";
+        }
+        else if (selectedSize == "medium")
+        {
+            chooseText.name = "choose_text_medium";
+        }
+        else if (selectedSize == "large")
+        {
+            chooseText.name = "choose_text_large";
+        }
+
+        chooseText.text = gameAPI.Translate(chooseText.gameObject.name, gameAPI.ToSentenceCase(uniqueCards[0].title).Replace("-", " "), selectedLangCode);
     }
 
 }

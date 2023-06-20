@@ -23,7 +23,7 @@ public class CardNinjaUIController : MonoBehaviour
     [SerializeField] private GameObject loadingScreen;
     [SerializeField] private GameObject packSelectionScreen;
     [SerializeField] private GameObject cutPrefab;
-    [SerializeField] private GameObject cutText;
+    [SerializeField] public GameObject cutText;
 
     [SerializeField] private GameObject tutorial;
     public bool levelEnd;
@@ -33,11 +33,6 @@ public class CardNinjaUIController : MonoBehaviour
     private void Awake() 
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
-    }
-
-    private void Update() 
-    {
-        cutText.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = cutController.cutCount + " / 10";
     }
 
     public void TutorialSetActive()
@@ -70,6 +65,16 @@ public class CardNinjaUIController : MonoBehaviour
         levelEnd = true;
         boardGenerator.ClearBoard();
         cutText.SetActive(false);
+    }
+
+    public void ReloadLevel()
+    {
+        cutText.SetActive(false);
+        levelEnd = true;
+        boardGenerator.ClearBoard();
+        backButton.SetActive(false);
+        settingButton.SetActive(false);
+        helloText.SetActive(false);
     }
 
     public void LevelEnd()

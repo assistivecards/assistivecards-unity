@@ -4,9 +4,12 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
 
-public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHandler, IPointerUpHandler
+public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHandler, IPointerUpHandler, IEndDragHandler
 {
+    GameAPI gameAPI;
     [SerializeField] private CardNinjaUIController uıController;
+    [SerializeField] private CardNinjaBoardGenerator boardGenerator;
+    [SerializeField] private CardNinjaCutController cutController;
     [SerializeField] private GameObject cutEffect;
     private Vector2 dragStartPosition;
     private Vector2 touchPosition;
@@ -16,6 +19,12 @@ public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHan
     public bool verticalDrag;
     public int cutCount;
     public int throwedCount;
+    public int levelEndedCount;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -53,14 +62,25 @@ public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHan
         }
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    public void OnEndDrag(PointerEventData eventData)
     {
+        isDragging = false;
         cutEffect.SetActive(false);
         cutEffect.GetComponent<TrailRenderer>().Clear();
         dragDirection = Vector2.zero;
         horizontalDrag = false;
         verticalDrag = false;
+    }
+
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
         isDragging = false;
+        cutEffect.SetActive(false);
+        cutEffect.GetComponent<TrailRenderer>().Clear();
+        dragDirection = Vector2.zero;
+        horizontalDrag = false;
+        verticalDrag = false;
     }
 
     private void Update() 
@@ -68,9 +88,37 @@ public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHan
         Vector2 trailPos = Camera.main.ScreenToWorldPoint(touchPosition);
         cutEffect.transform.position = trailPos;
 
-        if(cutCount >= 10 || throwedCount >= 17)
+        if(cutCount >= 10 || throwedCount == 20)
         {
-            uıController.LevelEnd();
+            if(levelEndedCount < 3)
+            {
+                LevelRefresh();
+            }
+            else if(levelEndedCount >= 3)
+            {
+                CallNewLevel();
+            } 
         }
+    }
+
+    private void LevelRefresh()
+    {
+        cutEffect.SetActive(false);
+        cutCount = 0;
+        throwedCount = 0;
+        uıController.cutText.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = cutController.cutCount + " / 10";
+        uıController.ReloadLevel();
+        levelEndedCount++;
+        boardGenerator.GeneratedBoardAsync();
+    }
+
+    private void CallNewLevel()
+    {
+        levelEndedCount = 0;
+        cutCount = 0;
+        throwedCount = 0;
+        uıController.LevelEnd();
+        uıController.cutText.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = cutController.cutCount + " / 10";
+
     }
 }

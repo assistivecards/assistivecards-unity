@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class CardNinjaCardMovement : MonoBehaviour
 {
+    GameAPI gameAPI;
+    
+    public string cardType;
+    public string cardLocalName;
     [SerializeField] private Rigidbody2D cardRB;
 
     [SerializeField] private float maxForce;
@@ -16,14 +21,20 @@ public class CardNinjaCardMovement : MonoBehaviour
 
     private CardNinjaCutController cutController;
     private CardNinjaBoardGenerator boardGenerator;
+    private CardNinjaUIController uıController;
     private List<Transform> childs = new List<Transform>();
     public List<Vector3> vectors = new List<Vector3>();
 
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void OnEnable() 
     {
         cutController = FindObjectOfType<CardNinjaCutController>();
         boardGenerator = FindObjectOfType<CardNinjaBoardGenerator>();
+        uıController = FindObjectOfType<CardNinjaUIController>();
 
         foreach (Transform child in transform)
         {
@@ -42,8 +53,10 @@ public class CardNinjaCardMovement : MonoBehaviour
         Destroy(this.gameObject, lifeTime);
         cutController.throwedCount++;
 
-        if(cutController.throwedCount < 17)
-            boardGenerator.Invoke("ThrowCards", 2f);
+        if(cutController.throwedCount < 20)
+        {
+            boardGenerator.Invoke("ThrowCards", Random.Range(1.5f, 2f));
+        }
 
     }
 
@@ -52,14 +65,26 @@ public class CardNinjaCardMovement : MonoBehaviour
         if(other.gameObject.tag == "Blade" && cutController.isDragging)
         {
             Break(cutController.horizontalDrag, cutController.verticalDrag);
-            Debug.Log("selected card:" + boardGenerator.cards[0].name);
-            Debug.Log("cutted card:" + this.gameObject.name);
 
-            if(boardGenerator.cards[1].name == this.gameObject.name)
+            if(boardGenerator.selectedCardTag == this.gameObject.name)
             {
                 cutController.cutCount++;
+                uıController.cutText.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = cutController.cutCount + " / 10";
+                gameAPI.PlaySFX("Success");
+                Invoke("ReadCard", 0.17f);
+            }
+            else
+            {
+                gameAPI.PlaySFX("Cut");
+                Invoke("ReadCard", 0.17f);
             }
         }
+    }
+
+    private void ReadCard()
+    {
+        gameAPI.Speak(cardLocalName);
+        Debug.Log(cardLocalName);
     }
 
     public void Break(bool horizontalDrag, bool verticalDrag) 

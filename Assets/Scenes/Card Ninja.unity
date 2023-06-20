@@ -1375,6 +1375,7 @@ MonoBehaviour:
   cardPieces: []
   cards: []
   usedCards: []
+  selectedCardTag: 
 --- !u!114 &978741189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1730,12 +1731,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "u\u0131Controller": {fileID: 1154749950}
+  boardGenerator: {fileID: 978741188}
+  cutController: {fileID: 1154749949}
   cutEffect: {fileID: 1744241444}
   isDragging: 0
   horizontalDrag: 0
   verticalDrag: 0
   cutCount: 0
   throwedCount: 0
+  levelEndedCount: 0
 --- !u!114 &1154749950
 MonoBehaviour:
   m_ObjectHideFlags: 0

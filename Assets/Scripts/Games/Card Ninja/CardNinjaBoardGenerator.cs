@@ -38,6 +38,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     [SerializeField] private List<Sprite> cardPieces = new List<Sprite>();
     public List<GameObject> cards = new List<GameObject>();
     public List<GameObject> usedCards = new List<GameObject>();
+    public string selectedCardTag;
 
     
     private void Awake()
@@ -83,7 +84,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
         packSlug = packSelectionPanel.selectedPackElement.name;
         await CacheCards();
         CheckRandom();
-        for(int i=1; i <= 10; i++)
+        for(int i=0; i < 10; i++)
         {
             CheckRandom();
             GameObject card = Instantiate(cardPrefab, Vector3.zero, Quaternion.identity);
@@ -119,6 +120,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
             selectedCard.transform.GetChild(3).GetComponent<Image>(), selectedCard.transform.GetChild(4).GetComponent<Image>());
             selectedCard.GetComponent<CardNinjaCardMovement>().cardType = cardNames[randomValueList[0]];
             selectedCard.GetComponent<CardNinjaCardMovement>().cardLocalName = cardLocalNames[randomValueList[0]];
+            selectedCardTag = cardNames[randomValueList[0]];
 
             cutText.text = gameAPI.Translate(cutText.gameObject.name, gameAPI.ToSentenceCase(selectedCard.name).Replace("-", " "), selectedLangCode);
         }

@@ -47,7 +47,7 @@ public class CardNinjaCardMovement : MonoBehaviour
         Destroy(this.gameObject, lifeTime);
         cutController.throwedCount++;
 
-        if(boardGenerator.cards.Count >= 1)
+        if(cutController.throwedCount < 20)
         {
             boardGenerator.Invoke("ThrowCards", Random.Range(1.5f, 2f));
         }
@@ -62,7 +62,7 @@ public class CardNinjaCardMovement : MonoBehaviour
             Debug.Log("selected card:" + boardGenerator.cards[0].name);
             Debug.Log("cutted card:" + this.gameObject.name);
 
-            if(boardGenerator.cards[1].name == this.gameObject.name)
+            if(boardGenerator.selectedCardTag == this.gameObject.name)
             {
                 cutController.cutCount++;
                 uıController.cutText.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = cutController.cutCount + " / 10";

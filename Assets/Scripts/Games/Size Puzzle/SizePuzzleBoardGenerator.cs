@@ -24,6 +24,7 @@ public class SizePuzzleBoardGenerator : MonoBehaviour
     private List<float> randomScalers = new List<float>();
     [SerializeField] List<string> sizes = new List<string>();
     public string selectedSize;
+    SizePuzzleProgressChecker progressChecker;
 
     private void Awake()
     {
@@ -33,6 +34,7 @@ public class SizePuzzleBoardGenerator : MonoBehaviour
     private void Start()
     {
         gameAPI.PlayMusic();
+        progressChecker = gameObject.GetComponent<SizePuzzleProgressChecker>();
     }
 
     private void OnEnable()
@@ -92,6 +94,8 @@ public class SizePuzzleBoardGenerator : MonoBehaviour
     {
         for (int i = 0; i < cardParents.Length; i++)
         {
+            cardParents[i].GetComponent<SizePuzzleMatchDetection>().isClicked = false;
+            LeanTween.alpha(cardParents[i].GetComponent<RectTransform>(), 1, .001f);
             var randomScalerIndex = Random.Range(0, randomScalers.Count);
             LeanTween.scale(cardParents[i], Vector3.one * randomScalers[randomScalerIndex], 0.2f);
             randomScalers.RemoveAt(randomScalerIndex);
@@ -126,7 +130,7 @@ public class SizePuzzleBoardGenerator : MonoBehaviour
 
     public void ReadCard()
     {
-        gameAPI.Speak(uniqueCards[0].title);
+        gameAPI.Speak(uniqueCards[progressChecker.correctMatches - 1].title);
     }
 
     public void EnableBackButton()
@@ -153,7 +157,7 @@ public class SizePuzzleBoardGenerator : MonoBehaviour
     public async Task PopulateRandomTextures()
     {
 
-        var texture = await gameAPI.GetCardImage(packSlug, uniqueCards[0].slug);
+        var texture = await gameAPI.GetCardImage(packSlug, uniqueCards[progressChecker.correctMatches].slug);
         texture.wrapMode = TextureWrapMode.Clamp;
         texture.filterMode = FilterMode.Bilinear;
         randomImage = texture;
@@ -196,7 +200,7 @@ public class SizePuzzleBoardGenerator : MonoBehaviour
             chooseText.name = "choose_text_large";
         }
 
-        chooseText.text = gameAPI.Translate(chooseText.gameObject.name, gameAPI.ToSentenceCase(uniqueCards[0].title).Replace("-", " "), selectedLangCode);
+        chooseText.text = gameAPI.Translate(chooseText.gameObject.name, gameAPI.ToSentenceCase(uniqueCards[progressChecker.correctMatches].title).Replace("-", " "), selectedLangCode);
     }
 
 }

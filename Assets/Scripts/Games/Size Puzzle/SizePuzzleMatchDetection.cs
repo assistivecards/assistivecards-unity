@@ -8,11 +8,13 @@ public class SizePuzzleMatchDetection : MonoBehaviour, IPointerClickHandler
     [SerializeField] Transform[] cardParents;
     public float[] cardScales;
     private SizePuzzleBoardGenerator board;
-    private bool isClicked = false;
+    public bool isClicked = false;
+    SizePuzzleProgressChecker progressChecker;
 
     private void Start()
     {
         board = GameObject.Find("GamePanel").GetComponent<SizePuzzleBoardGenerator>();
+        progressChecker = GameObject.Find("GamePanel").GetComponent<SizePuzzleProgressChecker>();
     }
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -24,11 +26,11 @@ public class SizePuzzleMatchDetection : MonoBehaviour, IPointerClickHandler
             {
                 if (transform.localScale.x == Mathf.Min(cardScales))
                 {
-                    Debug.Log("CORRECT CARD");
+                    ExecuteCorrectMatchProcedure();
                 }
                 else
                 {
-                    Debug.Log("WRONG CARD");
+                    FadeCardParent();
                 }
             }
 
@@ -36,11 +38,11 @@ public class SizePuzzleMatchDetection : MonoBehaviour, IPointerClickHandler
             {
                 if (transform.localScale.x < Mathf.Max(cardScales) && transform.localScale.x > Mathf.Min(cardScales))
                 {
-                    Debug.Log("CORRECT CARD");
+                    ExecuteCorrectMatchProcedure();
                 }
                 else
                 {
-                    Debug.Log("WRONG CARD");
+                    FadeCardParent();
                 }
             }
 
@@ -48,11 +50,11 @@ public class SizePuzzleMatchDetection : MonoBehaviour, IPointerClickHandler
             {
                 if (transform.localScale.x == Mathf.Max(cardScales))
                 {
-                    Debug.Log("CORRECT CARD");
+                    ExecuteCorrectMatchProcedure();
                 }
                 else
                 {
-                    Debug.Log("WRONG CARD");
+                    FadeCardParent();
                 }
             }
 
@@ -67,6 +69,25 @@ public class SizePuzzleMatchDetection : MonoBehaviour, IPointerClickHandler
         {
             cardScales[i] = cardParents[i].transform.localScale.x;
         }
+    }
+
+    private void FadeCardParent()
+    {
+        LeanTween.alpha(gameObject.GetComponent<RectTransform>(), .5f, .25f);
+    }
+
+    private void ExecuteCorrectMatchProcedure()
+    {
+        for (int i = 0; i < cardParents.Length; i++)
+        {
+            cardParents[i].GetComponent<SizePuzzleMatchDetection>().isClicked = true;
+        }
+
+        progressChecker.correctMatches++;
+        LeanTween.scale(gameObject, transform.localScale * 1.15f, .25f);
+        board.Invoke("ScaleImagesDown", 1f);
+        board.Invoke("ClearBoard", 1.30f);
+        board.Invoke("GenerateRandomBoardAsync", 1.30f);
     }
 
 }

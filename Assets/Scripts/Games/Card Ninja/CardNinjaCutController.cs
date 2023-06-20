@@ -6,6 +6,7 @@ using TMPro;
 
 public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHandler, IPointerUpHandler, IEndDragHandler
 {
+    GameAPI gameAPI;
     [SerializeField] private CardNinjaUIController uıController;
     [SerializeField] private CardNinjaBoardGenerator boardGenerator;
     [SerializeField] private CardNinjaCutController cutController;
@@ -19,6 +20,11 @@ public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHan
     public int cutCount;
     public int throwedCount;
     public int levelEndedCount;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {

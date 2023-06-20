@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class CardNinjaCardMovement : MonoBehaviour
 {
+    public string cardType;
+    public string cardLocalName;
     [SerializeField] private Rigidbody2D cardRB;
 
     [SerializeField] private float maxForce;
@@ -16,6 +19,7 @@ public class CardNinjaCardMovement : MonoBehaviour
 
     private CardNinjaCutController cutController;
     private CardNinjaBoardGenerator boardGenerator;
+    private CardNinjaUIController uıController;
     private List<Transform> childs = new List<Transform>();
     public List<Vector3> vectors = new List<Vector3>();
 
@@ -24,6 +28,7 @@ public class CardNinjaCardMovement : MonoBehaviour
     {
         cutController = FindObjectOfType<CardNinjaCutController>();
         boardGenerator = FindObjectOfType<CardNinjaBoardGenerator>();
+        uıController = FindObjectOfType<CardNinjaUIController>();
 
         foreach (Transform child in transform)
         {
@@ -42,8 +47,10 @@ public class CardNinjaCardMovement : MonoBehaviour
         Destroy(this.gameObject, lifeTime);
         cutController.throwedCount++;
 
-        if(cutController.throwedCount < 17)
-            boardGenerator.Invoke("ThrowCards", 2f);
+        if(boardGenerator.cards.Count >= 1)
+        {
+            boardGenerator.Invoke("ThrowCards", Random.Range(1.5f, 2f));
+        }
 
     }
 
@@ -58,6 +65,7 @@ public class CardNinjaCardMovement : MonoBehaviour
             if(boardGenerator.cards[1].name == this.gameObject.name)
             {
                 cutController.cutCount++;
+                uıController.cutText.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = cutController.cutCount + " / 10";
             }
         }
     }

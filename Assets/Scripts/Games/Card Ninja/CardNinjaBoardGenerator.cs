@@ -99,6 +99,10 @@ public class CardNinjaBoardGenerator : MonoBehaviour
             cards.Add(card);
             DivideHorizontal(cardTexture, card.transform.GetChild(1).GetComponent<Image>(), card.transform.GetChild(2).GetComponent<Image>(),
             card.transform.GetChild(3).GetComponent<Image>(), card.transform.GetChild(4).GetComponent<Image>());
+            card.GetComponent<CardNinjaCardMovement>().cardType = cardNames[randomValueList[i]];
+            card.GetComponent<CardNinjaCardMovement>().cardLocalName = cardLocalNames[randomValueList[i]];
+
+            // selected card creation
 
             GameObject selectedCard = Instantiate(cardPrefab, Vector3.zero, Quaternion.identity);
 
@@ -113,6 +117,9 @@ public class CardNinjaBoardGenerator : MonoBehaviour
             cards.Add(selectedCard);
             DivideHorizontal(selectedCardTexture, selectedCard.transform.GetChild(1).GetComponent<Image>(), selectedCard.transform.GetChild(2).GetComponent<Image>(),
             selectedCard.transform.GetChild(3).GetComponent<Image>(), selectedCard.transform.GetChild(4).GetComponent<Image>());
+            selectedCard.GetComponent<CardNinjaCardMovement>().cardType = cardNames[randomValueList[0]];
+            selectedCard.GetComponent<CardNinjaCardMovement>().cardLocalName = cardLocalNames[randomValueList[0]];
+
             cutText.text = gameAPI.Translate(cutText.gameObject.name, gameAPI.ToSentenceCase(selectedCard.name).Replace("-", " "), selectedLangCode);
         }
 

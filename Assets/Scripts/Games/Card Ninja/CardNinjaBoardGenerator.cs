@@ -29,8 +29,10 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject cutPrefab;
     [SerializeField] private TMP_Text cutText;
+    [SerializeField] private GameObject tutorial;
 
     [Header ("Random")]
+    public GameObject randomCard;
     public List<int> randomValueList = new List<int>();
     private int tempRandomValue;
     private int randomValue;
@@ -125,7 +127,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
             cutText.text = gameAPI.Translate(cutText.gameObject.name, gameAPI.ToSentenceCase(selectedCard.name).Replace("-", " "), selectedLangCode);
         }
 
-        uıController.TutorialSetActive();
+        uıController.Invoke("TutorialSetActive", 0.25f);
         uıController.GameUIActivate();
         Invoke("ReleaseFromGrid", 0.1f);
         Invoke("EnableCutCollider", 0.2f);
@@ -174,7 +176,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     {
         if(!uıController.levelEnd)
         {
-            GameObject randomCard = cards[Random.Range(0, cards.Count)];
+            randomCard = cards[Random.Range(0, cards.Count)];
 
             if(randomCard != null && !usedCards.Contains(randomCard))
             {

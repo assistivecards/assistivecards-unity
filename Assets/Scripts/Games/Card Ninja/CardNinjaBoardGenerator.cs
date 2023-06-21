@@ -81,57 +81,61 @@ public class CardNinjaBoardGenerator : MonoBehaviour
 
     public async void GeneratedBoardAsync()
     {
-        cutPrefab.SetActive(false);
-        GetComponent<GridLayoutGroup>().enabled = true;
-        packSlug = packSelectionPanel.selectedPackElement.name;
-        await CacheCards();
-        CheckRandom();
-        for(int i=0; i < 10; i++)
+        if(uıController.canGenerate)
         {
+            cutPrefab.SetActive(false);
+            GetComponent<GridLayoutGroup>().enabled = true;
+            packSlug = packSelectionPanel.selectedPackElement.name;
+            await CacheCards();
             CheckRandom();
-            GameObject card = Instantiate(cardPrefab, Vector3.zero, Quaternion.identity);
+            for(int i=0; i < 10; i++)
+            {
+                CheckRandom();
+                GameObject card = Instantiate(cardPrefab, Vector3.zero, Quaternion.identity);
 
-            var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[i]], 512);
-            cardTexture.wrapMode = TextureWrapMode.Clamp;
-            cardTexture.filterMode = FilterMode.Bilinear;
+                var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[i]], 512);
+                cardTexture.wrapMode = TextureWrapMode.Clamp;
+                cardTexture.filterMode = FilterMode.Bilinear;
 
-            card.transform.name = cardNames[randomValueList[i]];
-            card.transform.SetParent(grid.transform);
-            LeanTween.scale(card.gameObject, Vector3.one * 0.5f, 0f);
-            card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-            cards.Add(card);
-            DivideHorizontal(cardTexture, card.transform.GetChild(1).GetComponent<Image>(), card.transform.GetChild(2).GetComponent<Image>(),
-            card.transform.GetChild(3).GetComponent<Image>(), card.transform.GetChild(4).GetComponent<Image>());
-            card.GetComponent<CardNinjaCardMovement>().cardType = cardNames[randomValueList[i]];
-            card.GetComponent<CardNinjaCardMovement>().cardLocalName = cardLocalNames[randomValueList[i]];
+                card.transform.name = cardNames[randomValueList[i]];
+                card.transform.SetParent(grid.transform);
+                LeanTween.scale(card.gameObject, Vector3.one * 0.5f, 0f);
+                card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+                cards.Add(card);
+                DivideHorizontal(cardTexture, card.transform.GetChild(1).GetComponent<Image>(), card.transform.GetChild(2).GetComponent<Image>(),
+                card.transform.GetChild(3).GetComponent<Image>(), card.transform.GetChild(4).GetComponent<Image>());
+                card.GetComponent<CardNinjaCardMovement>().cardType = cardNames[randomValueList[i]];
+                card.GetComponent<CardNinjaCardMovement>().cardLocalName = cardLocalNames[randomValueList[i]];
 
-            // selected card creation
+                // selected card creation
 
-            GameObject selectedCard = Instantiate(cardPrefab, Vector3.zero, Quaternion.identity);
+                GameObject selectedCard = Instantiate(cardPrefab, Vector3.zero, Quaternion.identity);
 
-            var selectedCardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[0]], 512);
-            selectedCardTexture.wrapMode = TextureWrapMode.Clamp;
-            selectedCardTexture.filterMode = FilterMode.Bilinear;
+                var selectedCardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[0]], 512);
+                selectedCardTexture.wrapMode = TextureWrapMode.Clamp;
+                selectedCardTexture.filterMode = FilterMode.Bilinear;
 
-            selectedCard.transform.name = cardNames[randomValueList[0]];
-            selectedCard.transform.SetParent(grid.transform);
-            LeanTween.scale(selectedCard.gameObject, Vector3.one * 0.5f, 0f);
-            selectedCard.transform.GetChild(0).GetComponent<RawImage>().texture = selectedCardTexture;
-            cards.Add(selectedCard);
-            DivideHorizontal(selectedCardTexture, selectedCard.transform.GetChild(1).GetComponent<Image>(), selectedCard.transform.GetChild(2).GetComponent<Image>(),
-            selectedCard.transform.GetChild(3).GetComponent<Image>(), selectedCard.transform.GetChild(4).GetComponent<Image>());
-            selectedCard.GetComponent<CardNinjaCardMovement>().cardType = cardNames[randomValueList[0]];
-            selectedCard.GetComponent<CardNinjaCardMovement>().cardLocalName = cardLocalNames[randomValueList[0]];
-            selectedCardTag = cardNames[randomValueList[0]];
+                selectedCard.transform.name = cardNames[randomValueList[0]];
+                selectedCard.transform.SetParent(grid.transform);
+                LeanTween.scale(selectedCard.gameObject, Vector3.one * 0.5f, 0f);
+                selectedCard.transform.GetChild(0).GetComponent<RawImage>().texture = selectedCardTexture;
+                cards.Add(selectedCard);
+                DivideHorizontal(selectedCardTexture, selectedCard.transform.GetChild(1).GetComponent<Image>(), selectedCard.transform.GetChild(2).GetComponent<Image>(),
+                selectedCard.transform.GetChild(3).GetComponent<Image>(), selectedCard.transform.GetChild(4).GetComponent<Image>());
+                selectedCard.GetComponent<CardNinjaCardMovement>().cardType = cardNames[randomValueList[0]];
+                selectedCard.GetComponent<CardNinjaCardMovement>().cardLocalName = cardLocalNames[randomValueList[0]];
+                selectedCardTag = cardNames[randomValueList[0]];
 
-            cutText.text = gameAPI.Translate(cutText.gameObject.name, gameAPI.ToSentenceCase(selectedCard.name).Replace("-", " "), selectedLangCode);
+                cutText.text = gameAPI.Translate(cutText.gameObject.name, gameAPI.ToSentenceCase(selectedCard.name).Replace("-", " "), selectedLangCode);
+            }
+
+            uıController.Invoke("TutorialSetActive", 0.25f);
+            uıController.GameUIActivate();
+            Invoke("ReleaseFromGrid", 0.1f);
+            Invoke("EnableCutCollider", 0.2f);
+            Invoke("ThrowCards", 0.2f);
+
         }
-
-        uıController.Invoke("TutorialSetActive", 0.25f);
-        uıController.GameUIActivate();
-        Invoke("ReleaseFromGrid", 0.1f);
-        Invoke("EnableCutCollider", 0.2f);
-        Invoke("ThrowCards", 0.2f);
     }
 
     public void DivideHorizontal(Texture2D texture, Image piece1, Image piece2, Image piece3, Image piece4)

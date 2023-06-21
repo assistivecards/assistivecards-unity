@@ -12,7 +12,10 @@ public class CardNinjaTutorial : MonoBehaviour
 
     private void OnEnable() 
     {
-        cardPosition = boardGenerator.randomCard.transform;
+        if(boardGenerator.randomCard != null)
+        {
+            cardPosition = boardGenerator.randomCard.transform;
+        }
     }
 
     void Update()

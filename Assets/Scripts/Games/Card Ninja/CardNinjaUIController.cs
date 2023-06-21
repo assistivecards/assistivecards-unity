@@ -28,11 +28,12 @@ public class CardNinjaUIController : MonoBehaviour
     [SerializeField] private GameObject tutorial;
     public bool levelEnd;
     private bool firstTime = true;
-    private bool canGenerate;
+    public bool canGenerate;
 
     private void Awake() 
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+        gameAPI.PlayMusic();
     }
 
     public void TutorialSetActive()

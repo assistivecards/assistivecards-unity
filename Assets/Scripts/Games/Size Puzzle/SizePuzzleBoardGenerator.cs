@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 public class SizePuzzleBoardGenerator : MonoBehaviour
 {
@@ -62,6 +63,12 @@ public class SizePuzzleBoardGenerator : MonoBehaviour
         if (didLanguageChange)
         {
             await CacheCards(packSlug);
+
+            for (int i = 0; i < uniqueCards.Count; i++)
+            {
+                uniqueCards[i] = cachedCards.cards.Where(card => card.slug == uniqueCards[i].slug).ToList()[0];
+            }
+
             didLanguageChange = false;
         }
 

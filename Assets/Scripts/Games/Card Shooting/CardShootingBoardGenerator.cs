@@ -115,6 +115,7 @@ public class CardShootingBoardGenerator : MonoBehaviour
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             card.GetComponent<CardFishingCardName>().cardName = cardLocalNames[randomValueList[i]];
             cards.Add(card);
+            LeanTween.scale(card.gameObject, Vector3.one * 0.3f, 0f);
         }
 
         for(int j = 0; j < cardPositions.Count / 2; j++)
@@ -131,6 +132,7 @@ public class CardShootingBoardGenerator : MonoBehaviour
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             card.GetComponent<CardFishingCardName>().cardName = cardLocalNames[randomValueList[j]];
             cards.Add(card);
+            LeanTween.scale(card.gameObject, Vector3.one * 0.3f, 0f);
         }
         selectedCard = cards[Random.Range(0, cards.Count)].name;
 

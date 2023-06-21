@@ -25,6 +25,9 @@ public class SizePuzzleBoardGenerator : MonoBehaviour
     [SerializeField] List<string> sizes = new List<string>();
     public string selectedSize;
     SizePuzzleUIController UIController;
+    public Vector2 small;
+    public Vector2 medium;
+    public Vector2 large;
 
     private void Awake()
     {
@@ -74,9 +77,9 @@ public class SizePuzzleBoardGenerator : MonoBehaviour
 
     private void SetRandomScalers()
     {
-        randomScalers.Add(.8f);
-        randomScalers.Add(1);
-        randomScalers.Add(1.2f);
+        randomScalers.Add(Random.Range(small.x, small.y)); //.8f
+        randomScalers.Add(Random.Range(medium.x, medium.y)); //1
+        randomScalers.Add(Random.Range(large.x, large.y)); //1.2f
     }
 
     public void ClearBoard()
@@ -96,6 +99,7 @@ public class SizePuzzleBoardGenerator : MonoBehaviour
         for (int i = 0; i < cardParents.Length; i++)
         {
             cardParents[i].GetComponent<SizePuzzleMatchDetection>().isClicked = false;
+            cardParents[i].transform.rotation = Quaternion.Euler(0, 0, Random.Range(-20, 20));
             LeanTween.alpha(cardParents[i].GetComponent<RectTransform>(), 1, .001f);
             var randomScalerIndex = Random.Range(0, randomScalers.Count);
             LeanTween.scale(cardParents[i], Vector3.one * randomScalers[randomScalerIndex], 0.2f);

@@ -216,6 +216,7 @@ public class TopAppBarController : MonoBehaviour
                 StackCardsBoardGenerator.didLanguageChange = true;
                 CardWhackBoardGenerator.didLanguageChange = true;
                 FindCardBoardGenerator.didLanguageChange = true;
+                SizePuzzleBoardGenerator.didLanguageChange = true;
 
                 if (languageController.selectedLanguage.name == "Arabic" || languageController.selectedLanguage.name == "Urdu")
                 {

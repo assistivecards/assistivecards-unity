@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class SizePuzzleMatchDetection : MonoBehaviour, IPointerClickHandler
 {
@@ -84,6 +85,7 @@ public class SizePuzzleMatchDetection : MonoBehaviour, IPointerClickHandler
         }
 
         UIController.correctMatches++;
+        UIController.backButton.GetComponent<Button>().interactable = false;
         LeanTween.scale(gameObject, transform.localScale * 1.15f, .25f);
         board.Invoke("ScaleImagesDown", 1f);
         board.Invoke("ClearBoard", 1.30f);

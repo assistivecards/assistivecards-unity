@@ -42,6 +42,7 @@ public class SizePuzzleBoardGenerator : MonoBehaviour
         if (isBackAfterSignOut)
         {
             gameAPI.PlayMusic();
+            UIController.OnBackButtonClick();
             isBackAfterSignOut = false;
         }
     }

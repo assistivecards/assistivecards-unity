@@ -21,7 +21,7 @@ public class CardShootingBoardGenerator : MonoBehaviour
     [SerializeField] private PackSelectionPanel packSelectionPanel;
 
     [Header ("Card Fishing Classes")]
-    [SerializeField] private CardFishingUIController UIController;
+    [SerializeField] private CardShootingUIController UIController;
 
     [Header ("Game UI")]
     [SerializeField] private GameObject cardPrefab;
@@ -137,7 +137,7 @@ public class CardShootingBoardGenerator : MonoBehaviour
         collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(selectedCard).Replace("-", " "), selectedLangCode);
         LeanTween.scale(collectText.gameObject, Vector3.one, 0.2f);
         collectText.gameObject.SetActive(true);
-        //UIController.GameUIActivate();
+        UIController.GameUIActivate();
     }
 
     public void ClearBoard()

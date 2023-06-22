@@ -29,6 +29,9 @@ public class SizePuzzleBoardGenerator : MonoBehaviour
     public Vector2 small;
     public Vector2 medium;
     public Vector2 large;
+    [SerializeField] GameObject tutorial;
+    public float[] cardScales;
+    private Transform correctCard;
 
     private void Awake()
     {
@@ -78,7 +81,9 @@ public class SizePuzzleBoardGenerator : MonoBehaviour
         PlaceSprites();
         DisableLoadingPanel();
         ScaleImagesUp();
+        Invoke("SetTutorialPosition", .3f);
         backButton.SetActive(true);
+        UIController.Invoke("TutorialSetActive", .3f);
         Invoke("EnableBackButton", 0.15f);
     }
 
@@ -213,6 +218,50 @@ public class SizePuzzleBoardGenerator : MonoBehaviour
         }
 
         chooseText.text = gameAPI.Translate(chooseText.gameObject.name, gameAPI.ToSentenceCase(uniqueCards[UIController.correctMatches].title).Replace("-", " "), selectedLangCode);
+    }
+
+    private void SetTutorialPosition()
+    {
+
+        for (int i = 0; i < cardParents.Length; i++)
+        {
+            cardScales[i] = cardParents[i].transform.localScale.x;
+        }
+
+        if (selectedSize == "small")
+        {
+            for (int i = 0; i < cardParents.Length; i++)
+            {
+                if (cardParents[i].transform.localScale.x == Mathf.Min(cardScales))
+                {
+                    correctCard = cardParents[i].transform;
+                }
+            }
+        }
+
+        else if (selectedSize == "medium")
+        {
+            for (int i = 0; i < cardParents.Length; i++)
+            {
+                if (cardParents[i].transform.localScale.x < Mathf.Max(cardScales) && cardParents[i].transform.localScale.x > Mathf.Min(cardScales))
+                {
+                    correctCard = cardParents[i].transform;
+                }
+            }
+        }
+
+        else if (selectedSize == "large")
+        {
+            for (int i = 0; i < cardParents.Length; i++)
+            {
+                if (cardParents[i].transform.localScale.x == Mathf.Max(cardScales))
+                {
+                    correctCard = cardParents[i].transform;
+                }
+            }
+        }
+
+        tutorial.GetComponent<Tutorial>().tutorialPosition = correctCard;
     }
 
 }

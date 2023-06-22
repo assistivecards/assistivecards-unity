@@ -6,15 +6,24 @@ using UnityEngine.EventSystems;
 
 public class CardShootingBallController : MonoBehaviour
 {
+    GameAPI gameAPI;
     public Vector3 throwVector;
     private Vector3 throwPoint;
     private Vector3 startPosition;
     [SerializeField] private Rigidbody2D ballRigidbody;
     [SerializeField] private LineRenderer ballLineRenderer;
+    private CardShootingBoardGenerator boardGenerator; 
+    private GameObject currentCard;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void OnEnable() 
     {
         startPosition = this.transform.position;
+        boardGenerator = FindObjectOfType<CardShootingBoardGenerator>();
     }
 
     public void OnMouseDown()
@@ -33,6 +42,24 @@ public class CardShootingBallController : MonoBehaviour
     {
         RemoveArrow();
         Throw();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+        if(other.gameObject.tag == "card")
+        {
+            gameAPI.Speak(other.GetComponent<CardShootingCardName>().cardName);
+            Debug.Log("TTS: " + other.GetComponent<CardShootingCardName>().cardName);
+
+            LeanTween.scale(other.gameObject, Vector3.one * 0.5f, 0.25f).setOnComplete(ScaleDown);
+            currentCard = other.gameObject;
+
+            if(other.gameObject.name == boardGenerator.selectedCard)
+            {
+                gameAPI.PlaySFX("Success");
+                Debug.Log("SUCCESS");
+            }
+        }
     }
 
     private void CalculateTheowVector()
@@ -65,5 +92,10 @@ public class CardShootingBallController : MonoBehaviour
     {
         this.transform.position = startPosition;
         ballRigidbody.velocity = Vector3.zero;
+    }
+
+    private void ScaleDown()
+    {
+        LeanTween.scale(currentCard.gameObject, Vector3.zero, 0.5f);
     }
 }

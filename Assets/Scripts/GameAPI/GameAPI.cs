@@ -33,12 +33,12 @@ public class GameAPI : MonoBehaviour
     {
         assistiveCardsSDK = Camera.main.GetComponent<AssistiveCardsSDK.AssistiveCardsSDK>();
         cachePacks = CachePacks();
+        cacheData = CacheData();
         await cachePacks;
         cacheFreePackImages = CacheFreePackImages();
         await cacheFreePackImages;
         cachePremiumPackImages = CachePremiumPackImages();
         await cachePremiumPackImages;
-        cacheData = CacheData();
         await cacheData;
     }
 

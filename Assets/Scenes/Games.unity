@@ -805,6 +805,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5301644170934348999, guid: 975c28d7b7e66b44ca441b59134a85d4, type: 3}
   m_PrefabInstance: {fileID: 671447373}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &671447375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5301644170934348992, guid: 975c28d7b7e66b44ca441b59134a85d4, type: 3}
+  m_PrefabInstance: {fileID: 671447373}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &692367062 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1242831489745571712, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -12203,7 +12208,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 40}
+  m_AnchoredPosition: {x: 0, y: 50}
   m_SizeDelta: {x: 200, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8441382996199166166
@@ -12236,7 +12241,7 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
@@ -12415,10 +12420,10 @@ RectTransform:
   m_Father: {fileID: 8441382996563942793}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -100}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 13}
+  m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8441382996545164799
 MonoBehaviour:
@@ -12593,6 +12598,7 @@ GameObject:
   - component: {fileID: 5293749727042885986}
   - component: {fileID: 169740909300341667}
   - component: {fileID: 8070045379731822942}
+  - component: {fileID: 8441382996593768783}
   m_Layer: 5
   m_Name: GameSelectionLayout
   m_TagString: Untagged
@@ -12659,6 +12665,30 @@ MonoBehaviour:
   m_Spacing: {x: 30, y: 40}
   m_Constraint: 1
   m_ConstraintCount: 3
+--- !u!114 &8441382996593768783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8441382996593768777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feacd9e135f526145bd3385f5aa932cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempGameElement: {fileID: 8441382996563942792}
+  games:
+    games: []
+  selectedGameElement: {fileID: 0}
+  gameElementGameObject: []
+  currentLanguageCode: 
+  loadingPanel: {fileID: 671447375}
+  gameSelectionPanel: {fileID: 8441382996618223636}
+  tempColor1: {r: 0, g: 0, b: 0, a: 0}
+  tempColor2: {r: 0, g: 0, b: 0, a: 0}
+  tempColor3: {r: 0, g: 0, b: 0, a: 0}
+  tempColor4: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8441382996618223636
 GameObject:
   m_ObjectHideFlags: 0

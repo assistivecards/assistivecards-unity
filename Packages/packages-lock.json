@@ -7,7 +7,7 @@
       "dependencies": {
         "com.unity.textmeshpro": "3.0.6"
       },
-      "hash": "0dee5bc91a101201ddfb5ece8a4d6705cf825dd5"
+      "hash": "aa7cf168151e5be8c6c61805ec8cc84ba4685d40"
     },
     "com.coffee.softmask-for-ugui": {
       "version": "https://github.com/mob-sakai/SoftMaskForUGUI.git",

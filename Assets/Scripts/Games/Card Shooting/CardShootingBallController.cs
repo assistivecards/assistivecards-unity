@@ -4,27 +4,32 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class CardShootingBallController : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
+public class CardShootingBallController : MonoBehaviour
 {
     public Vector3 throwVector;
     private Vector3 throwPoint;
+    private Vector3 startPosition;
     [SerializeField] private Rigidbody2D ballRigidbody;
     [SerializeField] private LineRenderer ballLineRenderer;
 
+    private void OnEnable() 
+    {
+        startPosition = this.transform.position;
+    }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public void OnMouseDown()
     {
         CalculateTheowVector();
         SetArrow();
     }
     
-    public void OnDrag(PointerEventData eventData)
+    public void OnMouseDrag()
     {
         CalculateTheowVector();
         SetArrow();
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    public void OnMouseUp()
     {
         RemoveArrow();
         Throw();
@@ -40,8 +45,8 @@ public class CardShootingBallController : MonoBehaviour, IDragHandler, IPointerD
     private void SetArrow()
     {
         ballLineRenderer.positionCount = 2;
-        ballLineRenderer.SetPosition(0, new Vector3(0, -3, 2));
-        ballLineRenderer.SetPosition(1, throwVector.normalized * 150);
+        ballLineRenderer.SetPosition(0, new Vector3(0, -2.65f, 2));
+        ballLineRenderer.SetPosition(1, throwPoint);
         ballLineRenderer.enabled = true;
     }
 
@@ -52,6 +57,13 @@ public class CardShootingBallController : MonoBehaviour, IDragHandler, IPointerD
 
     private void Throw()
     {
-        ballRigidbody.AddForce(throwVector * 150);
+        ballRigidbody.AddForce(throwVector * 140);
+        Invoke("ResetPosition", 1.8f);
+    }
+
+    private void ResetPosition()
+    {
+        this.transform.position = startPosition;
+        ballRigidbody.velocity = Vector3.zero;
     }
 }

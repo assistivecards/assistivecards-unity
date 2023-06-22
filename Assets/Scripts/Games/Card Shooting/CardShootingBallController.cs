@@ -11,9 +11,11 @@ public class CardShootingBallController : MonoBehaviour
     private Vector3 throwPoint;
     private Vector3 startPosition;
     [SerializeField] private Rigidbody2D ballRigidbody;
+    [SerializeField] private CardShootingUIController uıController;
+    [SerializeField] private CardShootingBoardGenerator boardGenerator; 
     [SerializeField] private LineRenderer ballLineRenderer;
-    private CardShootingBoardGenerator boardGenerator; 
     private GameObject currentCard;
+    public int hitCount;
 
     private void Awake()
     {
@@ -23,7 +25,6 @@ public class CardShootingBallController : MonoBehaviour
     private void OnEnable() 
     {
         startPosition = this.transform.position;
-        boardGenerator = FindObjectOfType<CardShootingBoardGenerator>();
     }
 
     public void OnMouseDown()
@@ -57,7 +58,13 @@ public class CardShootingBallController : MonoBehaviour
             if(other.gameObject.name == boardGenerator.selectedCard)
             {
                 gameAPI.PlaySFX("Success");
-                Debug.Log("SUCCESS");
+                hitCount++;
+
+                if(hitCount >= 2)
+                {
+                    uıController.Invoke("LevelChangeScreenActivate", 1f);
+                    hitCount = 0;
+                }
             }
         }
     }

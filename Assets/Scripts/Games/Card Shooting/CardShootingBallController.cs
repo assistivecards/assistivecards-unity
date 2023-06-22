@@ -11,11 +11,6 @@ public class CardShootingBallController : MonoBehaviour, IDragHandler, IPointerD
     [SerializeField] private LineRenderer ballLineRenderer;
     private Vector3 throwPoint;
 
-    public void OnDrag(PointerEventData eventData)
-    {
-        throwPoint = eventData.position;
-        SetArrow();
-    }
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -23,14 +18,21 @@ public class CardShootingBallController : MonoBehaviour, IDragHandler, IPointerD
         SetArrow();
     }
     
-    public void OnPointerUp(PointerEventData eventData)
+    public void OnDrag(PointerEventData eventData)
     {
         CalculateTheowVector();
         SetArrow();
     }
 
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        RemoveArrow();
+        Throw();
+    }
+
     private void CalculateTheowVector()
     {
+        throwPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 distance =  throwPoint - this.transform.position;
         throwVector = -distance.normalized * 100;
     }
@@ -50,6 +52,6 @@ public class CardShootingBallController : MonoBehaviour, IDragHandler, IPointerD
 
     private void Throw()
     {
-        ballRigidbody.AddForce(throwVector);
+        ballRigidbody.AddForce(throwVector * 150);
     }
 }

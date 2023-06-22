@@ -4,33 +4,74 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class CardShootingBallController : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
+public class CardShootingBallController : MonoBehaviour
 {
+    GameAPI gameAPI;
     public Vector3 throwVector;
-    [SerializeField] private Rigidbody2D ballRigidbody;
-    [SerializeField] private LineRenderer ballLineRenderer;
     private Vector3 throwPoint;
+    private Vector3 startPosition;
+    [SerializeField] private Rigidbody2D ballRigidbody;
+    [SerializeField] private CardShootingUIController uıController;
+    [SerializeField] private CardShootingBoardGenerator boardGenerator; 
+    [SerializeField] private LineRenderer ballLineRenderer;
+    private GameObject currentCard;
+    public int hitCount;
 
-    public void OnDrag(PointerEventData eventData)
+    private void Awake()
     {
-        throwPoint = eventData.position;
-        SetArrow();
+        gameAPI = Camera.main.GetComponent<GameAPI>();
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    private void OnEnable() 
+    {
+        startPosition = this.transform.position;
+    }
+
+    public void OnMouseDown()
     {
         CalculateTheowVector();
         SetArrow();
     }
     
-    public void OnPointerUp(PointerEventData eventData)
+    public void OnMouseDrag()
     {
         CalculateTheowVector();
         SetArrow();
     }
 
+    public void OnMouseUp()
+    {
+        RemoveArrow();
+        Throw();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+        if(other.gameObject.tag == "card")
+        {
+            gameAPI.Speak(other.GetComponent<CardShootingCardName>().cardName);
+            Debug.Log("TTS: " + other.GetComponent<CardShootingCardName>().cardName);
+
+            LeanTween.scale(other.gameObject, Vector3.one * 0.5f, 0.25f).setOnComplete(ScaleDown);
+            currentCard = other.gameObject;
+
+            if(other.gameObject.name == boardGenerator.selectedCard)
+            {
+                gameAPI.PlaySFX("Success");
+                hitCount++;
+
+                if(hitCount >= 2)
+                {
+                    uıController.Invoke("LevelChangeScreenActivate", 1f);
+                    hitCount = 0;
+                }
+            }
+        }
+    }
+
     private void CalculateTheowVector()
     {
+        throwPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 distance =  throwPoint - this.transform.position;
         throwVector = -distance.normalized * 100;
     }
@@ -38,8 +79,8 @@ public class CardShootingBallController : MonoBehaviour, IDragHandler, IPointerD
     private void SetArrow()
     {
         ballLineRenderer.positionCount = 2;
-        ballLineRenderer.SetPosition(0, Vector3.zero);
-        ballLineRenderer.SetPosition(1, throwVector.normalized/2);
+        ballLineRenderer.SetPosition(0, new Vector3(0, -2.65f, 2));
+        ballLineRenderer.SetPosition(1, throwPoint);
         ballLineRenderer.enabled = true;
     }
 
@@ -50,6 +91,18 @@ public class CardShootingBallController : MonoBehaviour, IDragHandler, IPointerD
 
     private void Throw()
     {
-        ballRigidbody.AddForce(throwVector);
+        ballRigidbody.AddForce(throwVector * 140);
+        Invoke("ResetPosition", 1.8f);
+    }
+
+    private void ResetPosition()
+    {
+        this.transform.position = startPosition;
+        ballRigidbody.velocity = Vector3.zero;
+    }
+
+    private void ScaleDown()
+    {
+        LeanTween.scale(currentCard.gameObject, Vector3.zero, 0.5f);
     }
 }

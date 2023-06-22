@@ -113,7 +113,7 @@ public class CardShootingBoardGenerator : MonoBehaviour
 
             card.transform.name = cardNames[randomValueList[i]];
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-            card.GetComponent<CardFishingCardName>().cardName = cardLocalNames[randomValueList[i]];
+            card.GetComponent<CardShootingCardName>().cardName = cardLocalNames[randomValueList[i]];
             cards.Add(card);
             LeanTween.scale(card.gameObject, Vector3.one * 0.3f, 0f);
         }
@@ -130,7 +130,7 @@ public class CardShootingBoardGenerator : MonoBehaviour
 
             card.transform.name = cardNames[randomValueList[j]];
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-            card.GetComponent<CardFishingCardName>().cardName = cardLocalNames[randomValueList[j]];
+            card.GetComponent<CardShootingCardName>().cardName = cardLocalNames[randomValueList[j]];
             cards.Add(card);
             LeanTween.scale(card.gameObject, Vector3.one * 0.3f, 0f);
         }

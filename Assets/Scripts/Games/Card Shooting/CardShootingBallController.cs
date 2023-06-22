@@ -7,9 +7,9 @@ using UnityEngine.EventSystems;
 public class CardShootingBallController : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
     public Vector3 throwVector;
+    private Vector3 throwPoint;
     [SerializeField] private Rigidbody2D ballRigidbody;
     [SerializeField] private LineRenderer ballLineRenderer;
-    private Vector3 throwPoint;
 
 
     public void OnPointerDown(PointerEventData eventData)
@@ -40,8 +40,8 @@ public class CardShootingBallController : MonoBehaviour, IDragHandler, IPointerD
     private void SetArrow()
     {
         ballLineRenderer.positionCount = 2;
-        ballLineRenderer.SetPosition(0, Vector3.zero);
-        ballLineRenderer.SetPosition(1, throwVector.normalized/2);
+        ballLineRenderer.SetPosition(0, new Vector3(0, -3, 2));
+        ballLineRenderer.SetPosition(1, throwVector.normalized * 150);
         ballLineRenderer.enabled = true;
     }
 

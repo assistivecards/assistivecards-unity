@@ -15,6 +15,9 @@ public class CardShootingBallController : MonoBehaviour
     [SerializeField] private CardShootingBoardGenerator boardGenerator; 
     [SerializeField] private LineRenderer ballLineRenderer;
     private GameObject currentCard;
+    private float dragDistance;
+    public bool onceAtThrow;
+    private bool canHit = true;
     public int hitCount;
 
     private void Awake()
@@ -29,31 +32,36 @@ public class CardShootingBallController : MonoBehaviour
 
     public void OnMouseDown()
     {
-        CalculateTheowVector();
+        ballLineRenderer.enabled = true;
+        CalculateThrowVector();
         SetArrow();
     }
     
     public void OnMouseDrag()
     {
-        CalculateTheowVector();
+        CalculateThrowVector();
         SetArrow();
     }
 
     public void OnMouseUp()
     {
         RemoveArrow();
-        Throw();
+        if(dragDistance >= 100.0155f)
+        {
+            Throw();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if(other.gameObject.tag == "card")
+        if(other.gameObject.tag == "card" && canHit)
         {
+            canHit = false;
+            other.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            currentCard = other.gameObject;
             gameAPI.Speak(other.GetComponent<CardShootingCardName>().cardName);
             Debug.Log("TTS: " + other.GetComponent<CardShootingCardName>().cardName);
-
-            LeanTween.scale(other.gameObject, Vector3.one * 0.5f, 0.25f).setOnComplete(ScaleDown);
-            currentCard = other.gameObject;
+            other.GetComponent<CardShootingCardName>().DestroyCard();
 
             if(other.gameObject.name == boardGenerator.selectedCard)
             {
@@ -63,23 +71,23 @@ public class CardShootingBallController : MonoBehaviour
                 if(hitCount >= 2)
                 {
                     uıController.Invoke("LevelChangeScreenActivate", 1f);
-                    hitCount = 0;
                 }
             }
         }
     }
 
-    private void CalculateTheowVector()
+    private void CalculateThrowVector()
     {
         throwPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 distance =  throwPoint - this.transform.position;
+        dragDistance = Vector3.Distance(throwPoint,this.transform.position);
         throwVector = -distance.normalized * 100;
     }
 
     private void SetArrow()
     {
         ballLineRenderer.positionCount = 2;
-        ballLineRenderer.SetPosition(0, new Vector3(0, -2.65f, 2));
+        ballLineRenderer.SetPosition(0, new Vector3(0, -1.9f, 2));
         ballLineRenderer.SetPosition(1, throwPoint);
         ballLineRenderer.enabled = true;
     }
@@ -92,17 +100,13 @@ public class CardShootingBallController : MonoBehaviour
     private void Throw()
     {
         ballRigidbody.AddForce(throwVector * 140);
-        Invoke("ResetPosition", 1.8f);
+        Invoke("ResetPosition", 1.7f);
     }
 
     private void ResetPosition()
     {
         this.transform.position = startPosition;
         ballRigidbody.velocity = Vector3.zero;
-    }
-
-    private void ScaleDown()
-    {
-        LeanTween.scale(currentCard.gameObject, Vector3.zero, 0.5f);
+        canHit = true;
     }
 }

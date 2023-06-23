@@ -23,7 +23,7 @@ GameAPI gameAPI;
 
     [SerializeField] private GameObject tutorial;
     private bool firstTime = true;
-    private bool canGenerate;
+    public bool canGenerate;
 
     private void Awake() 
     {
@@ -114,6 +114,9 @@ GameAPI gameAPI;
         if(canGenerate)
         {
             loadingScreen.SetActive(true);
+            helloText.SetActive(false);
+            settingButton.SetActive(false);
+            backButton.SetActive(false);
         }
     }
 }

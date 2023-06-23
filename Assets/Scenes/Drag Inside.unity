@@ -628,6 +628,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 125, y: 125}
   m_EdgeRadius: 0
+--- !u!1 &305969543 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8524809319700726626, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &429505576 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1982601096855616903, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -3798,6 +3803,7 @@ MonoBehaviour:
   packSelectionPanel: {fileID: 1837497528}
   helloText: {fileID: 1231408339}
   speakerIcon: {fileID: 472857507}
+  homeButton: {fileID: 305969543}
   packSelectionScreenUIController: {fileID: 1837497525}
   loadingPanel: {fileID: 671447375}
 --- !u!224 &1859327342 stripped
@@ -7014,6 +7020,7 @@ MonoBehaviour:
   packSelectionPanel: {fileID: 1837497528}
   helloText: {fileID: 1231408339}
   speakerIcon: {fileID: 472857507}
+  homeButton: {fileID: 305969543}
   checkPointPanel: {fileID: 1275520836}
   tutorial: {fileID: 737180074}
 --- !u!114 &8691574409270737102

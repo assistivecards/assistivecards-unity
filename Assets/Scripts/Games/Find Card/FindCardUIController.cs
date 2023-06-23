@@ -10,6 +10,7 @@ public class FindCardUIController : MonoBehaviour
     [SerializeField] GameObject packSelectionPanel;
     [SerializeField] GameObject helloText;
     [SerializeField] GameObject speakerIcon;
+    [SerializeField] GameObject homeButton;
     [SerializeField] GameObject checkPointPanel;
     private GameAPI gameAPI;
     public int levelsCompleted;
@@ -69,6 +70,7 @@ public class FindCardUIController : MonoBehaviour
         LeanTween.scale(packSelectionPanel, Vector3.one, 0.25f);
         helloText.SetActive(true);
         speakerIcon.SetActive(true);
+        homeButton.SetActive(true);
         Invoke("EnableScrollRect", 0.26f);
     }
 
@@ -123,6 +125,7 @@ public class FindCardUIController : MonoBehaviour
         Invoke("EnableScrollRect", 0.26f);
         helloText.SetActive(true);
         speakerIcon.SetActive(true);
+        homeButton.SetActive(true);
     }
 
     public void TutorialSetActive()

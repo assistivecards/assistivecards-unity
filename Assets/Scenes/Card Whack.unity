@@ -987,6 +987,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5305803331684122001, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
   m_PrefabInstance: {fileID: 472857503}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &472857508 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8524809319700726626, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &485153381 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8441382994790024698, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
@@ -1020,6 +1025,7 @@ MonoBehaviour:
   packSelectionPanel: {fileID: 334107906}
   helloText: {fileID: 1231408339}
   speakerIcon: {fileID: 472857507}
+  homeButton: {fileID: 472857508}
   packSelectionScreenUIController: {fileID: 1837497525}
   loadingPanel: {fileID: 671447375}
 --- !u!20 &519420031 stripped
@@ -6614,6 +6620,7 @@ MonoBehaviour:
   packSelectionPanel: {fileID: 334107906}
   helloText: {fileID: 1231408339}
   speakerIcon: {fileID: 472857507}
+  homeButton: {fileID: 472857508}
   checkPointPanel: {fileID: 1275520836}
   scoreManager: {fileID: 1136563127}
   cardSpawner: {fileID: 2074244728}

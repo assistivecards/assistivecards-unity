@@ -10,6 +10,7 @@ public class SizePuzzleUIController : MonoBehaviour
     [SerializeField] GameObject packSelectionPanel;
     [SerializeField] GameObject helloText;
     [SerializeField] GameObject speakerIcon;
+    [SerializeField] GameObject homeButton;
     [SerializeField] GameObject checkPointPanel;
     private GameAPI gameAPI;
     public int correctMatches;
@@ -67,6 +68,7 @@ public class SizePuzzleUIController : MonoBehaviour
         LeanTween.scale(packSelectionPanel, Vector3.one, 0.25f);
         helloText.SetActive(true);
         speakerIcon.SetActive(true);
+        homeButton.SetActive(true);
         Invoke("EnableScrollRect", 0.26f);
     }
 
@@ -117,6 +119,7 @@ public class SizePuzzleUIController : MonoBehaviour
         Invoke("EnableScrollRect", 0.26f);
         helloText.SetActive(true);
         speakerIcon.SetActive(true);
+        homeButton.SetActive(true);
 
     }
 

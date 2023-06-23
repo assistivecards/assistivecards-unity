@@ -2252,6 +2252,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1362600184 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8524809319700726626, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1371645660 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4400661311191622549, guid: 2cdd28110cbe4d64f9715da037b76e83, type: 3}
@@ -2858,6 +2863,7 @@ MonoBehaviour:
   canvasController: {fileID: 2018903310}
   helloText: {fileID: 1231408339}
   speakerIcon: {fileID: 472857507}
+  homeButton: {fileID: 1362600184}
   fadeInPanel: {fileID: 956408261191908917}
   packSelectionScreenUIController: {fileID: 1837497525}
   loadingPanel: {fileID: 671447375}
@@ -5704,6 +5710,7 @@ MonoBehaviour:
   packSelectionPanel: {fileID: 1837497528}
   helloText: {fileID: 1231408339}
   speakerIcon: {fileID: 472857507}
+  homeButton: {fileID: 1362600184}
   checkPointPanel: {fileID: 2113253922}
   accessibilityScreen: {fileID: 1235288819}
   correctMatches: 0

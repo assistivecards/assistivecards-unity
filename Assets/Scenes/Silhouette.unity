@@ -2166,6 +2166,7 @@ MonoBehaviour:
   backButton: {fileID: 1616952389}
   helloText: {fileID: 3312234165266482394}
   speakerIcon: {fileID: 6746530551200384029}
+  homeButton: {fileID: 745233585}
 --- !u!61 &1459567364
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7049,6 +7050,10 @@ PrefabInstance:
       propertyPath: helloText
       value: 
       objectReference: {fileID: 3312234165266482394}
+    - target: {fileID: 9209683489089641035, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
+      propertyPath: homeButton
+      value: 
+      objectReference: {fileID: 745233585}
     - target: {fileID: 9209683489089641035, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: fadeInPanel
       value: 

@@ -10,6 +10,7 @@ public class CardWhackUIController : MonoBehaviour
     [SerializeField] GameObject packSelectionPanel;
     [SerializeField] GameObject helloText;
     [SerializeField] GameObject speakerIcon;
+    [SerializeField] GameObject homeButton;
     [SerializeField] GameObject checkPointPanel;
     private GameAPI gameAPI;
     [SerializeField] CardWhackScoreManager scoreManager;
@@ -68,6 +69,7 @@ public class CardWhackUIController : MonoBehaviour
         LeanTween.scale(packSelectionPanel, Vector3.one, 0.25f);
         helloText.SetActive(true);
         speakerIcon.SetActive(true);
+        homeButton.SetActive(true);
         Invoke("EnableScrollRect", 0.26f);
     }
 
@@ -119,6 +121,7 @@ public class CardWhackUIController : MonoBehaviour
         Invoke("EnableScrollRect", 0.26f);
         helloText.SetActive(true);
         speakerIcon.SetActive(true);
+        homeButton.SetActive(true);
 
     }
 

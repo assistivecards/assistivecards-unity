@@ -10,6 +10,7 @@ public class ScratcherUIController : MonoBehaviour
     [SerializeField] GameObject packSelectionPanel;
     [SerializeField] GameObject helloText;
     [SerializeField] GameObject speakerIcon;
+    [SerializeField] GameObject homeButton;
     [SerializeField] GameObject tutorial;
     private GameAPI gameAPI;
     [SerializeField] GameObject checkPointPanel;
@@ -24,7 +25,7 @@ public class ScratcherUIController : MonoBehaviour
 
     public void TutorialSetActive()
     {
-        if(firstTime || gameAPI.GetTutorialPreference() == 1)
+        if (firstTime || gameAPI.GetTutorialPreference() == 1)
         {
             tutorial.SetActive(true);
         }
@@ -50,6 +51,7 @@ public class ScratcherUIController : MonoBehaviour
         Invoke("EnableScrollRect", 0.26f);
         helloText.SetActive(true);
         speakerIcon.SetActive(true);
+        homeButton.SetActive(true);
 
     }
 
@@ -109,6 +111,7 @@ public class ScratcherUIController : MonoBehaviour
         LeanTween.scale(packSelectionPanel, Vector3.one, 0.25f);
         helloText.SetActive(true);
         speakerIcon.SetActive(true);
+        homeButton.SetActive(true);
         Invoke("EnableScrollRect", 0.26f);
     }
 

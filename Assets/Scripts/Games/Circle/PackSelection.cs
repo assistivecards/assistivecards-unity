@@ -15,6 +15,7 @@ public class PackSelection : MonoBehaviour
     GameAPI gameAPI;
     [SerializeField] GameObject helloText;
     [SerializeField] GameObject speakerIcon;
+    [SerializeField] GameObject homeButton;
     [SerializeField] GameObject fadeInPanel;
     [SerializeField] PackSelectionScreenUIController packSelectionScreenUIController;
     [SerializeField] GameObject loadingPanel;
@@ -35,6 +36,7 @@ public class PackSelection : MonoBehaviour
             Invoke("ClosePackSelectionPanel", 0.5f);
             helloText.SetActive(false);
             speakerIcon.SetActive(false);
+            homeButton.SetActive(false);
             await boardGeneration.CacheCards(boardGeneration.packSlug);
             // board.Invoke("GenerateRandomBoardAsync", 0.3f);
             await boardGeneration.GenerateRandomBoardAsync();

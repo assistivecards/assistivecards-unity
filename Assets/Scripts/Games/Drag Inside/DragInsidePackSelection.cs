@@ -13,6 +13,7 @@ public class DragInsidePackSelection : MonoBehaviour
     GameAPI gameAPI;
     [SerializeField] GameObject helloText;
     [SerializeField] GameObject speakerIcon;
+    [SerializeField] GameObject homeButton;
     [SerializeField] PackSelectionScreenUIController packSelectionScreenUIController;
     [SerializeField] GameObject loadingPanel;
 
@@ -32,6 +33,7 @@ public class DragInsidePackSelection : MonoBehaviour
             Invoke("ClosePackSelectionPanel", 0.5f);
             helloText.SetActive(false);
             speakerIcon.SetActive(false);
+            homeButton.SetActive(false);
             await boardGenerator.CacheCards(boardGenerator.packSlug);
             await boardGenerator.GenerateRandomBoardAsync();
         }

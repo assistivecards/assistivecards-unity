@@ -21,7 +21,7 @@ public class CardShootingBoardGenerator : MonoBehaviour
     [SerializeField] private PackSelectionPanel packSelectionPanel;
 
     [Header ("Card Fishing Classes")]
-    [SerializeField] private CardShootingUIController UIController;
+    [SerializeField] private CardShootingUIController uıController;
     [SerializeField] private CardShootingBallController ballController;
 
     [Header ("Game UI")]
@@ -46,6 +46,7 @@ public class CardShootingBoardGenerator : MonoBehaviour
 
     private List<GameObject> cardPositions = new List<GameObject>();
     public string selectedCard;
+    public string formerSelected;
 
 
     private void Awake()
@@ -100,65 +101,75 @@ public class CardShootingBoardGenerator : MonoBehaviour
 
     public async void GeneratedBoardAsync()
     {
-        GetPositionList();
-        await CacheCards();
-        for(int i = 0; i < cardPositions.Count / 2; i++)
+        if(uıController.canGenerate)
         {
-            CheckRandom();
-            int parentIndex = Random.Range(0, cardPositions.Count / 2);
-
-            if(cardPositions[parentIndex].transform.childCount > 0)
+            GetPositionList();
+            await CacheCards();
+            for(int i = 0; i < cardPositions.Count / 2; i++)
             {
-                for(int j = 0; j < cardPositions.Count / 2; j++)
+                CheckRandom();
+                int parentIndex = Random.Range(0, cardPositions.Count / 2);
+
+                if(cardPositions[parentIndex].transform.childCount > 0)
                 {
-                    if(cardPositions[j].transform.childCount == 0)
+                    for(int j = 0; j < cardPositions.Count / 2; j++)
                     {
-                        parentIndex = j;
+                        if(cardPositions[j].transform.childCount == 0)
+                        {
+                            parentIndex = j;
+                        }
                     }
                 }
+                GameObject card = Instantiate(cardPrefab, cardPositions[parentIndex].transform.position, Quaternion.identity);
+                LeanTween.rotateZ(card, Random.Range(-30f, 30), 0);
+
+                card.transform.SetParent(cardPositions[parentIndex].transform);
+
+                var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[i]], 512);
+                cardTexture.wrapMode = TextureWrapMode.Clamp;
+                cardTexture.filterMode = FilterMode.Bilinear;
+
+                card.transform.name = cardNames[randomValueList[i]];
+                card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+                card.GetComponent<CardShootingCardName>().cardName = cardLocalNames[randomValueList[i]];
+                cards.Add(card);
+                LeanTween.scale(card.gameObject, Vector3.one * 0.3f, 0f);
             }
-            GameObject card = Instantiate(cardPrefab, cardPositions[parentIndex].transform.position, Quaternion.identity);
-            LeanTween.rotateZ(card, Random.Range(-30f, 30), 0);
 
-            card.transform.SetParent(cardPositions[parentIndex].transform);
+            for(int j = 0; j < cardPositions.Count / 2; j++)
+            {
+                CheckRandom();
+                GameObject card = Instantiate(cardPrefab, cardPositions[j + 5].transform.position, Quaternion.identity);
+                LeanTween.rotateZ(card, Random.Range(-25f, 25), 0);
+                card.transform.SetParent(cardPositions[j + 5].transform);
+                var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[j]], 512);
+                cardTexture.wrapMode = TextureWrapMode.Clamp;
+                cardTexture.filterMode = FilterMode.Bilinear;
 
-            var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[i]], 512);
-            cardTexture.wrapMode = TextureWrapMode.Clamp;
-            cardTexture.filterMode = FilterMode.Bilinear;
+                card.transform.name = cardNames[randomValueList[j]];
+                card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+                card.GetComponent<CardShootingCardName>().cardName = cardLocalNames[randomValueList[j]];
+                cards.Add(card);
+                LeanTween.scale(card.gameObject, Vector3.one * 0.3f, 0f);
+            }
 
-            card.transform.name = cardNames[randomValueList[i]];
-            card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-            card.GetComponent<CardShootingCardName>().cardName = cardLocalNames[randomValueList[i]];
-            cards.Add(card);
-            LeanTween.scale(card.gameObject, Vector3.one * 0.3f, 0f);
+            selectedCard = cards[Random.Range(0, cards.Count)].name;
+
+            if(selectedCard == formerSelected)
+            {
+                selectedCard = cards[Random.Range(0, cards.Count)].name;
+            }
+
+            collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(selectedCard).Replace("-", " "), selectedLangCode);
+            LeanTween.scale(collectText.gameObject, Vector3.one, 0.2f);
+            collectText.gameObject.SetActive(true);
+            uıController.GameUIActivate();
         }
-
-        for(int j = 0; j < cardPositions.Count / 2; j++)
-        {
-            CheckRandom();
-            GameObject card = Instantiate(cardPrefab, cardPositions[j + 5].transform.position, Quaternion.identity);
-            LeanTween.rotateZ(card, Random.Range(-25f, 25), 0);
-            card.transform.SetParent(cardPositions[j + 5].transform);
-            var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[j]], 512);
-            cardTexture.wrapMode = TextureWrapMode.Clamp;
-            cardTexture.filterMode = FilterMode.Bilinear;
-
-            card.transform.name = cardNames[randomValueList[j]];
-            card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-            card.GetComponent<CardShootingCardName>().cardName = cardLocalNames[randomValueList[j]];
-            cards.Add(card);
-            LeanTween.scale(card.gameObject, Vector3.one * 0.3f, 0f);
-        }
-        selectedCard = cards[Random.Range(0, cards.Count)].name;
-
-        collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(selectedCard).Replace("-", " "), selectedLangCode);
-        LeanTween.scale(collectText.gameObject, Vector3.one, 0.2f);
-        collectText.gameObject.SetActive(true);
-        UIController.GameUIActivate();
     }
 
     public void ClearBoard()
     {
+        formerSelected = selectedCard;
         ballController.hitCount = 0;
         cardNames.Clear();
         cardsList.Clear();

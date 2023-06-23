@@ -6078,7 +6078,7 @@ MonoBehaviour:
   cards: []
   cardsList: []
   packSelectionPanel: {fileID: 1878385121}
-  UIController: {fileID: 8383894889009589327}
+  "u\u0131Controller": {fileID: 8383894889009589327}
   ballController: {fileID: 1639913623}
   cardPrefab: {fileID: 1572616208917296617, guid: a3132a048e6eb48389b3b31fbac104a5, type: 3}
   cardPosition1: {fileID: 921242679}
@@ -6093,6 +6093,7 @@ MonoBehaviour:
   cardPosition10: {fileID: 1310146674}
   collectText: {fileID: 548620799}
   selectedCard: 
+  formerSelected: 
 --- !u!114 &8383894889009589327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6115,6 +6116,7 @@ MonoBehaviour:
   loadingScreen: {fileID: 671447375}
   packSelectionScreen: {fileID: 595580293}
   tutorial: {fileID: 927069859}
+  canGenerate: 0
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

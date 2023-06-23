@@ -51,11 +51,11 @@ public class CardNinjaCardMovement : MonoBehaviour
         cardRB.AddForce(vectors[Random.Range(0, 2)] * force, ForceMode2D.Impulse);
         cardRB.gravityScale = cardGravityScale;
         Destroy(this.gameObject, lifeTime);
-        cutController.throwedCount++;
+        Invoke("IncreaseThrowCount", 0.5f);
 
         if(cutController.throwedCount < 20)
         {
-            boardGenerator.Invoke("ThrowCards", Random.Range(1.5f, 2f));
+            boardGenerator.Invoke("ThrowCards", Random.Range(1.00f, 2.00f));
         }
 
     }
@@ -68,8 +68,7 @@ public class CardNinjaCardMovement : MonoBehaviour
 
             if(boardGenerator.selectedCardTag == this.gameObject.name)
             {
-                cutController.cutCount++;
-                uıController.cutText.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = cutController.cutCount + " / 10";
+                Invoke("IncreaseCutCount", 0.5f);
                 gameAPI.PlaySFX("Success");
                 Invoke("ReadCard", 0.17f);
             }
@@ -79,6 +78,17 @@ public class CardNinjaCardMovement : MonoBehaviour
                 Invoke("ReadCard", 0.17f);
             }
         }
+    }
+
+    private void IncreaseCutCount()
+    {
+        cutController.cutCount++;
+        uıController.cutText.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = cutController.cutCount + " / 10";
+    }
+
+    private void IncreaseThrowCount()
+    {
+        cutController.throwedCount++;
     }
 
     private void ReadCard()

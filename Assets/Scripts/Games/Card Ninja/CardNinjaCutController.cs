@@ -103,6 +103,7 @@ public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHan
 
     private void LevelRefresh()
     {
+        uıController.LoadingScreenActivation();
         cutEffect.SetActive(false);
         cutCount = 0;
         throwedCount = 0;

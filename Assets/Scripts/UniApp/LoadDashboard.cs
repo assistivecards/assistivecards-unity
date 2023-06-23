@@ -5,14 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class LoadDashboard : MonoBehaviour
 {
-    void Update()
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Application.productName == "Games")
         {
-            LoadDashboardScene();
+            gameObject.SetActive(true);
         }
-
+        else
+        {
+            gameObject.SetActive(false);
+        }
     }
+
+    // void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.Escape))
+    //     {
+    //         LoadDashboardScene();
+    //     }
+
+    // }
 
     public void LoadDashboardScene()
     {

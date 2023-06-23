@@ -30,13 +30,13 @@ public class CardShootingBallController : MonoBehaviour
     public void OnMouseDown()
     {
         ballLineRenderer.enabled = true;
-        CalculateTheowVector();
+        CalculateThrowVector();
         SetArrow();
     }
     
     public void OnMouseDrag()
     {
-        CalculateTheowVector();
+        CalculateThrowVector();
         SetArrow();
     }
 
@@ -69,7 +69,7 @@ public class CardShootingBallController : MonoBehaviour
         }
     }
 
-    private void CalculateTheowVector()
+    private void CalculateThrowVector()
     {
         throwPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 distance =  throwPoint - this.transform.position;

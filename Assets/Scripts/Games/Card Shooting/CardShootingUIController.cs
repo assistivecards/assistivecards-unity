@@ -114,6 +114,9 @@ GameAPI gameAPI;
         if(canGenerate)
         {
             loadingScreen.SetActive(true);
+            helloText.SetActive(false);
+            settingButton.SetActive(false);
+            backButton.SetActive(false);
         }
     }
 }

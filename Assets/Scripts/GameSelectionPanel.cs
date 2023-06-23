@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using Defective.JSON;
 using System;
+using UnityEngine.SceneManagement;
 
 public class GameSelectionPanel : MonoBehaviour
 {
@@ -173,8 +174,9 @@ public class GameSelectionPanel : MonoBehaviour
     public void GameSelected(GameObject _GameElement)
     {
         selectedGameElement = _GameElement;
+        Debug.Log(_GameElement.name);
+        SceneManager.LoadScene(gameAPI.ToTitleCase(_GameElement.name.Replace("_", " ")));
 
-        Debug.Log(_GameElement.ToString());
     }
 
     public void ScaleGameSelectionPanelUp()

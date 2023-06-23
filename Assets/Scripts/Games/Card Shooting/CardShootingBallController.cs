@@ -29,6 +29,7 @@ public class CardShootingBallController : MonoBehaviour
 
     public void OnMouseDown()
     {
+        ballLineRenderer.enabled = true;
         CalculateTheowVector();
         SetArrow();
     }
@@ -49,11 +50,11 @@ public class CardShootingBallController : MonoBehaviour
     {
         if(other.gameObject.tag == "card")
         {
+            other.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            currentCard = other.gameObject;
             gameAPI.Speak(other.GetComponent<CardShootingCardName>().cardName);
             Debug.Log("TTS: " + other.GetComponent<CardShootingCardName>().cardName);
-
-            LeanTween.scale(other.gameObject, Vector3.one * 0.5f, 0.25f).setOnComplete(ScaleDown);
-            currentCard = other.gameObject;
+            other.GetComponent<CardShootingCardName>().DestroyCard();
 
             if(other.gameObject.name == boardGenerator.selectedCard)
             {
@@ -63,7 +64,6 @@ public class CardShootingBallController : MonoBehaviour
                 if(hitCount >= 2)
                 {
                     uıController.Invoke("LevelChangeScreenActivate", 1f);
-                    hitCount = 0;
                 }
             }
         }
@@ -79,7 +79,7 @@ public class CardShootingBallController : MonoBehaviour
     private void SetArrow()
     {
         ballLineRenderer.positionCount = 2;
-        ballLineRenderer.SetPosition(0, new Vector3(0, -2.65f, 2));
+        ballLineRenderer.SetPosition(0, new Vector3(0, -1.9f, 2));
         ballLineRenderer.SetPosition(1, throwPoint);
         ballLineRenderer.enabled = true;
     }
@@ -99,10 +99,5 @@ public class CardShootingBallController : MonoBehaviour
     {
         this.transform.position = startPosition;
         ballRigidbody.velocity = Vector3.zero;
-    }
-
-    private void ScaleDown()
-    {
-        LeanTween.scale(currentCard.gameObject, Vector3.zero, 0.5f);
     }
 }

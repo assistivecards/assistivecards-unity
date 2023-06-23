@@ -15,6 +15,7 @@ public class CardShootingBallController : MonoBehaviour
     [SerializeField] private CardShootingBoardGenerator boardGenerator; 
     [SerializeField] private LineRenderer ballLineRenderer;
     private GameObject currentCard;
+    private float dragDistance;
     public bool onceAtThrow;
     private bool canHit = true;
     public int hitCount;
@@ -45,7 +46,10 @@ public class CardShootingBallController : MonoBehaviour
     public void OnMouseUp()
     {
         RemoveArrow();
-        Throw();
+        if(dragDistance >= 100.0155f)
+        {
+            Throw();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
@@ -76,6 +80,7 @@ public class CardShootingBallController : MonoBehaviour
     {
         throwPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 distance =  throwPoint - this.transform.position;
+        dragDistance = Vector3.Distance(throwPoint,this.transform.position);
         throwVector = -distance.normalized * 100;
     }
 
@@ -95,7 +100,7 @@ public class CardShootingBallController : MonoBehaviour
     private void Throw()
     {
         ballRigidbody.AddForce(throwVector * 140);
-        Invoke("ResetPosition", 1.8f);
+        Invoke("ResetPosition", 1.7f);
     }
 
     private void ResetPosition()

@@ -30,12 +30,18 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject cutPrefab;
     [SerializeField] private TMP_Text cutText;
     [SerializeField] private GameObject tutorial;
+    private GameObject selectedCard;
 
     [Header ("Random")]
     public GameObject randomCard;
     public List<int> randomValueList = new List<int>();
     private int tempRandomValue;
     private int randomValue;
+
+
+    [Header ("Level End")]
+    [SerializeField] private GameObject selectedCardObject;
+    [SerializeField] private GameObject selectedCardPosition;
 
     [SerializeField] private List<Sprite> cardPieces = new List<Sprite>();
     public List<GameObject> cards = new List<GameObject>();
@@ -109,7 +115,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
 
                 // selected card creation
 
-                GameObject selectedCard = Instantiate(cardPrefab, Vector3.zero, Quaternion.identity);
+                selectedCard = Instantiate(cardPrefab, Vector3.zero, Quaternion.identity);
 
                 var selectedCardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[0]], 512);
                 selectedCardTexture.wrapMode = TextureWrapMode.Clamp;
@@ -128,6 +134,13 @@ public class CardNinjaBoardGenerator : MonoBehaviour
 
                 cutText.text = gameAPI.Translate(cutText.gameObject.name, gameAPI.ToSentenceCase(selectedCard.name).Replace("-", " "), selectedLangCode);
             }
+
+
+            selectedCardObject = Instantiate(selectedCard, selectedCardPosition.transform.position, Quaternion.identity);
+            selectedCardObject.transform.SetParent(selectedCardPosition.transform);
+            selectedCardObject.GetComponent<BoxCollider2D>().enabled = false;
+            LeanTween.scale(selectedCardObject, Vector3.zero, 0);
+
 
             uıController.Invoke("TutorialSetActive", 0.25f);
             uıController.GameUIActivate();
@@ -200,6 +213,20 @@ public class CardNinjaBoardGenerator : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void LevelEndCardScale()
+    {
+        gameAPI.PlaySFX("Finished");
+        LeanTween.scale(selectedCardObject, Vector3.one, 0.5f);
+        Invoke("LevelEndDownScale", 1.5f);
+    }
+
+    private void LevelEndDownScale()
+    {
+        gameAPI.Speak(selectedCardObject.name);
+        Debug.Log(selectedCardObject.name);
+        LeanTween.scale(selectedCardObject, Vector3.zero, 0.5f);
     }
 
     public void ClearBoard()

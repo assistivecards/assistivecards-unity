@@ -16,6 +16,8 @@ public class SizePuzzleUIController : MonoBehaviour
     public int correctMatches;
     [SerializeField] GameObject tutorial;
     private bool firstTime = true;
+    public int checkpointFrequency;
+
 
     private void Awake()
     {

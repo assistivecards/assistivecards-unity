@@ -158,7 +158,7 @@ public class SizePuzzleBoardGenerator : MonoBehaviour
     public void PopulateUniqueCards()
     {
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < UIController.checkpointFrequency; i++)
         {
             var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
             CheckIfCardExists(cardToAdd);

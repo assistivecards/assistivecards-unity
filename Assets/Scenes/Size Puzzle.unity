@@ -5881,6 +5881,7 @@ MonoBehaviour:
   checkPointPanel: {fileID: 1275520836}
   correctMatches: 0
   tutorial: {fileID: 927069859}
+  checkpointFrequency: 10
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

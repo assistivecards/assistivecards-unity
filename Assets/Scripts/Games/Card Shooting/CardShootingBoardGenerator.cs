@@ -36,7 +36,9 @@ public class CardShootingBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject cardPosition8;
     [SerializeField] private GameObject cardPosition9;
     [SerializeField] private GameObject cardPosition10;
+    [SerializeField] private GameObject levelEndCard;
     [SerializeField] private TMP_Text collectText;
+    public GameObject selectedObjectAtEnd;
 
     [Header ("Random")]
     private List<int> randomValueList = new List<int>();
@@ -45,6 +47,7 @@ public class CardShootingBoardGenerator : MonoBehaviour
 
 
     private List<GameObject> cardPositions = new List<GameObject>();
+    public GameObject selectedCardObject;
     public string selectedCard;
     public string formerSelected;
 
@@ -153,18 +156,46 @@ public class CardShootingBoardGenerator : MonoBehaviour
                 LeanTween.scale(card.gameObject, Vector3.one * 0.3f, 0f);
             }
 
-            selectedCard = cards[Random.Range(0, cards.Count)].name;
+            if(selectedObjectAtEnd != null)
+            {
+                Destroy(selectedObjectAtEnd);
+            }
+
+            selectedCardObject = cards[Random.Range(0, cards.Count)];
+            selectedCard = selectedCardObject.name;
 
             if(selectedCard == formerSelected)
             {
                 selectedCard = cards[Random.Range(0, cards.Count)].name;
             }
+            selectedObjectAtEnd = Instantiate(selectedCardObject, levelEndCard.transform.position, Quaternion.identity);
+            LeanTween.scale(selectedObjectAtEnd, Vector3.zero, 0);
+            LeanTween.rotateZ(selectedObjectAtEnd, 0, 0);
+            selectedObjectAtEnd.transform.SetParent(levelEndCard.transform);
+
 
             collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(selectedCard).Replace("-", " "), selectedLangCode);
             LeanTween.scale(collectText.gameObject, Vector3.one, 0.2f);
             collectText.gameObject.SetActive(true);
             uıController.GameUIActivate();
         }
+    }
+
+    public void LevelEndCardScale()
+    {
+        LeanTween.scale(selectedObjectAtEnd, Vector3.one, 1f);
+        gameAPI.Speak(selectedCard);
+        Debug.Log(selectedCard);
+        Invoke("CreateNewLevel", 1.5f);
+    }
+
+    public void CreateNewLevel()
+    {
+        LeanTween.scale(selectedObjectAtEnd, Vector3.zero, 0.5f);;
+
+        if(ballController.levelCount < 3)
+            GeneratedBoardAsync();
+
     }
 
     public void ClearBoard()

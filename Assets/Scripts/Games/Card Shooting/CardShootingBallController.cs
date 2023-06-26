@@ -17,6 +17,7 @@ public class CardShootingBallController : MonoBehaviour
     private GameObject currentCard;
     private float dragDistance;
     public int hitCount;
+    public int levelCount;
 
     private void Awake()
     {
@@ -67,11 +68,21 @@ public class CardShootingBallController : MonoBehaviour
 
                 if(hitCount >= 2)
                 {
-                    uıController.Invoke("LevelChangeScreenActivate", 1f);
+                    levelCount++;
+                    uıController.Invoke("LevelEnding", 0.5f);
+                    Invoke("LevelEndCardScale", 0.5f);
+                    boardGenerator.Invoke("LevelEndCardScale", 0.5f);
+                    gameAPI.PlaySFX("Finished");
+
+                    if(levelCount >= 3)
+                    {
+                        uıController.Invoke("LevelChangeScreenActivate", 2.5f);
+                    }
                 }
             }
         }
     }
+
 
     private void CalculateThrowVector()
     {

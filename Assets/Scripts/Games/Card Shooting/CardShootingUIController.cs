@@ -20,8 +20,8 @@ GameAPI gameAPI;
     [SerializeField] private GameObject helloText;
     [SerializeField] private GameObject loadingScreen;
     [SerializeField] private GameObject packSelectionScreen;
-
     [SerializeField] private GameObject tutorial;
+
     private bool firstTime = true;
     public bool canGenerate;
 
@@ -47,12 +47,17 @@ GameAPI gameAPI;
         }
     }
 
-    public void LevelChangeScreenActivate()
+    public void LevelEnding()
     {
         boardGenerator.ClearBoard();
         gameUI.SetActive(false);
         backButton.SetActive(false);
         settingButton.SetActive(false);
+    }
+
+    public void LevelChangeScreenActivate()
+    {
+        LevelEnding();
         levelChange.SetActive(true);
         LeanTween.scale(levelChange, Vector3.one * 0.5f, 0.1f);
     }

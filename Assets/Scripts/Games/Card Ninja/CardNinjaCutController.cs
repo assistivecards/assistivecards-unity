@@ -88,17 +88,24 @@ public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHan
         Vector2 trailPos = Camera.main.ScreenToWorldPoint(touchPosition);
         cutEffect.transform.position = trailPos;
 
-        if(cutCount >= 10 || throwedCount == 20)
+        if(throwedCount == 20)
         {
             if(levelEndedCount < 3)
             {
                 LevelRefresh();
                 boardGenerator.LevelEndCardScale();
+                levelEndedCount++;
             }
             else if(levelEndedCount >= 3)
             {
-                CallNewLevel();
+                boardGenerator.LevelEndCardScale();
+                Invoke("CallNewLevel", 2f);
             } 
+        }
+        else if(cutCount >= 10)
+        {
+            boardGenerator.LevelEndCardScale();
+            Invoke("CallNewLevel", 2f);
         }
     }
 
@@ -108,7 +115,6 @@ public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHan
         throwedCount = 0;
         uıController.cutText.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = cutController.cutCount + " / 10";
         uıController.ReloadLevel();
-        levelEndedCount++;
         boardGenerator.GeneratedBoardAsync();
     }
 

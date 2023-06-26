@@ -105,7 +105,6 @@ public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHan
     private void LevelRefresh()
     {
         cutEffect.SetActive(false);
-        cutCount = 0;
         throwedCount = 0;
         uıController.cutText.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = cutController.cutCount + " / 10";
         uıController.ReloadLevel();

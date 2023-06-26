@@ -231,7 +231,9 @@ public class CardNinjaBoardGenerator : MonoBehaviour
 
     public void ClearBoard()
     {
-        cutController.cutCount = 0;
+        if(cutController.levelEndedCount >= 3)
+            cutController.cutCount = 0;
+
         cutController.throwedCount = 0;
         cutPrefab.SetActive(false);
 

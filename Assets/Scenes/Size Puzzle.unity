@@ -5852,9 +5852,9 @@ MonoBehaviour:
   - medium
   - large
   selectedSize: 
-  small: {x: 0.7, y: 0.9}
-  medium: {x: 0.9, y: 1.1}
-  large: {x: 1.1, y: 1.3}
+  small: {x: 0.6, y: 0.8}
+  medium: {x: 0.95, y: 1.05}
+  large: {x: 1.2, y: 1.4}
   tutorial: {fileID: 927069859}
   cardScales:
   - 0

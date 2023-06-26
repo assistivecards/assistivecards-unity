@@ -98,7 +98,7 @@ public class SizePuzzleMatchDetection : MonoBehaviour, IPointerClickHandler
         board.Invoke("ScaleImagesDown", 1f);
         board.Invoke("ClearBoard", 1.30f);
 
-        if (UIController.correctMatches == 5)
+        if (UIController.correctMatches == UIController.checkpointFrequency)
         {
             UIController.Invoke("OpenCheckPointPanel", 1.3f);
         }

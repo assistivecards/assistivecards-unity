@@ -16,8 +16,6 @@ public class CardShootingBallController : MonoBehaviour
     [SerializeField] private LineRenderer ballLineRenderer;
     private GameObject currentCard;
     private float dragDistance;
-    public bool onceAtThrow;
-    private bool canHit = true;
     public int hitCount;
 
     private void Awake()
@@ -54,9 +52,8 @@ public class CardShootingBallController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if(other.gameObject.tag == "card" && canHit)
+        if(other.gameObject.tag == "card")
         {
-            canHit = false;
             other.gameObject.GetComponent<BoxCollider2D>().enabled = false;
             currentCard = other.gameObject;
             gameAPI.Speak(other.GetComponent<CardShootingCardName>().cardName);
@@ -107,6 +104,5 @@ public class CardShootingBallController : MonoBehaviour
     {
         this.transform.position = startPosition;
         ballRigidbody.velocity = Vector3.zero;
-        canHit = true;
     }
 }

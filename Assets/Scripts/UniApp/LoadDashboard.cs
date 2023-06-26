@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadDashboard : MonoBehaviour
 {
-    private void Start()
+    private void OnEnable()
     {
         if (Application.productName == "Games")
         {

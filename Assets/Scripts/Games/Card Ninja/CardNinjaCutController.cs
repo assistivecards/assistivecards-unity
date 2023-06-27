@@ -83,20 +83,17 @@ public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHan
         verticalDrag = false;
     }
 
-    private void Update() 
+    public void LevelEndCheck()
     {
-        Vector2 trailPos = Camera.main.ScreenToWorldPoint(touchPosition);
-        cutEffect.transform.position = trailPos;
-
         if(throwedCount == 20)
         {
-            if(levelEndedCount < 3)
+            if(levelEndedCount < 2)
             {
                 LevelRefresh();
                 boardGenerator.LevelEndCardScale();
                 levelEndedCount++;
             }
-            else if(levelEndedCount >= 3)
+            else if(levelEndedCount >= 2)
             {
                 boardGenerator.LevelEndCardScale();
                 Invoke("CallNewLevel", 2f);
@@ -107,6 +104,12 @@ public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHan
             boardGenerator.LevelEndCardScale();
             Invoke("CallNewLevel", 2f);
         }
+    }
+
+    private void Update() 
+    {
+        Vector2 trailPos = Camera.main.ScreenToWorldPoint(touchPosition);
+        cutEffect.transform.position = trailPos;
     }
 
     private void LevelRefresh()

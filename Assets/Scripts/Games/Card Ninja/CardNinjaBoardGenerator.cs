@@ -209,7 +209,8 @@ public class CardNinjaBoardGenerator : MonoBehaviour
 
     public void ThrowCards()
     {
-        if(!uıController.levelEnd)
+        cutController.LevelEndCheck();
+        if(!uıController.levelEnd && cards.Count > 0)
         {
             randomCard = cards[Random.Range(0, cards.Count)];
 
@@ -249,7 +250,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
 
     public void ClearBoard()
     {
-        if(cutController.levelEndedCount >= 3)
+        if(cutController.levelEndedCount >= 2)
             cutController.cutCount = 0;
 
         cutController.throwedCount = 0;

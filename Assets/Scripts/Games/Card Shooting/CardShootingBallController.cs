@@ -59,7 +59,7 @@ public class CardShootingBallController : MonoBehaviour
             currentCard = other.gameObject;
             gameAPI.Speak(other.GetComponent<CardShootingCardName>().cardName);
             Debug.Log("TTS: " + other.GetComponent<CardShootingCardName>().cardName);
-            other.GetComponent<CardShootingCardName>().DestroyCard();
+            other.GetComponent<CardShootingCardName>().ScaleUp();
 
             if(other.gameObject.name == boardGenerator.selectedCard)
             {
@@ -70,9 +70,8 @@ public class CardShootingBallController : MonoBehaviour
                 {
                     levelCount++;
                     uıController.Invoke("LevelEnding", 0.5f);
-                    Invoke("LevelEndCardScale", 0.5f);
-                    boardGenerator.Invoke("LevelEndCardScale", 0.5f);
                     gameAPI.PlaySFX("Finished");
+                    boardGenerator.Invoke("LevelEndCardScale", 0.5f);
 
                     if(levelCount >= 3)
                     {

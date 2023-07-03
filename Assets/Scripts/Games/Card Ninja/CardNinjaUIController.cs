@@ -66,6 +66,7 @@ public class CardNinjaUIController : MonoBehaviour
         levelEnd = true;
         boardGenerator.ClearBoard();
         cutText.SetActive(false);
+        cutController.ResetLevel();
     }
 
     public void ReloadLevel()

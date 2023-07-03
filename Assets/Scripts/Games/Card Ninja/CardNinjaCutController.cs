@@ -85,7 +85,7 @@ public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHan
 
     public void LevelEndCheck()
     {
-        if(throwedCount == 20)
+        if(throwedCount == 20 && cutCount < 10)
         {
             if(levelEndedCount < 2)
             {
@@ -99,7 +99,7 @@ public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHan
                 Invoke("CallNewLevel", 2f);
             } 
         }
-        else if(cutCount >= 10)
+        if(cutCount >= 10)
         {
             boardGenerator.LevelEndCardScale();
             Invoke("CallNewLevel", 2f);
@@ -121,13 +121,17 @@ public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHan
         boardGenerator.GeneratedBoardAsync();
     }
 
-    private void CallNewLevel()
+    public void CallNewLevel()
+    {
+        ResetLevel();
+        uıController.LevelEnd();
+    }
+
+    public void ResetLevel()
     {
         levelEndedCount = 0;
         cutCount = 0;
         throwedCount = 0;
-        uıController.LevelEnd();
         uıController.cutText.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = cutController.cutCount + " / 10";
-
     }
 }

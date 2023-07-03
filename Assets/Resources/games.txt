@@ -3173,7 +3173,7 @@
       },
       "released": false,
       "premium": false,
-      "color": "#91FCF0"
+      "color": "#D6F394"
     },
     {
       "slug": "stack_cards",
@@ -3300,7 +3300,7 @@
       },
       "released": false,
       "premium": false,
-      "color": "#91F0FC"
+      "color": "#F3DD94"
     },
     {
       "slug": "size_puzzle",

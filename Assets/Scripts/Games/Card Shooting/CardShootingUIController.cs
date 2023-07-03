@@ -9,6 +9,7 @@ GameAPI gameAPI;
     [Header ("Scripts")]
     [SerializeField] private CardShootingBoardGenerator boardGenerator;
     [SerializeField] private PackSelectionPanel packSelectionPanelScript;
+    [SerializeField] private CardShootingBallController ballController;
 
     [Header ("Panels")]
     [SerializeField] private GameObject levelChange;
@@ -59,6 +60,7 @@ GameAPI gameAPI;
     {
         LevelEnding();
         levelChange.SetActive(true);
+        ballController.levelCount = 0;
         LeanTween.scale(levelChange, Vector3.one * 0.5f, 0.1f);
     }
 

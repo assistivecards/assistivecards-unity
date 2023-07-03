@@ -156,9 +156,10 @@ public class CardShootingBoardGenerator : MonoBehaviour
                 LeanTween.scale(card.gameObject, Vector3.one * 0.3f, 0f);
             }
 
+
             if(selectedObjectAtEnd != null)
             {
-                Destroy(selectedObjectAtEnd);
+                selectedObjectAtEnd.GetComponent<CardShootingCardName>().ScaleDown();
             }
 
             selectedCardObject = cards[Random.Range(0, cards.Count)];
@@ -180,7 +181,9 @@ public class CardShootingBoardGenerator : MonoBehaviour
             collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(selectedCard).Replace("-", " "), selectedLangCode);
             LeanTween.scale(collectText.gameObject, Vector3.one, 0.2f);
             collectText.gameObject.SetActive(true);
-            uıController.GameUIActivate();
+
+            uıController.Invoke("GameUIActivate", 0.5f);
+            
         }
     }
 
@@ -189,16 +192,16 @@ public class CardShootingBoardGenerator : MonoBehaviour
         LeanTween.scale(selectedObjectAtEnd, Vector3.one, 1f);
         gameAPI.Speak(selectedCard);
         Debug.Log(selectedCard);
-        Invoke("CreateNewLevel", 1.5f);
-    }
-
-    public void CreateNewLevel()
-    {
-        LeanTween.scale(selectedObjectAtEnd, Vector3.zero, 0.5f);;
+        Invoke("LevelEndCardDownScale", 1.5f);
 
         if(ballController.levelCount < 3)
+        {
             GeneratedBoardAsync();
-
+        }
+        else
+        {
+            selectedObjectAtEnd.GetComponent<CardShootingCardName>().Invoke("ScaleDown", 1f);
+        }
     }
 
     public void ClearBoard()

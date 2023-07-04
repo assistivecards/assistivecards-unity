@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class AllGamesSkeleton : MonoBehaviour
 {
+    private GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     void Start()
     {
@@ -22,5 +28,13 @@ public class AllGamesSkeleton : MonoBehaviour
     void Update()
     {
         transform.SetAsLastSibling();
+
+        if (transform.parent.GetComponent<AllGamesPage>().gameElementGameObject.Count == gameAPI.cachedGames.games.Count)
+        {
+            gameObject.SetActive(false);
+            Debug.Log("Skeleton disabled");
+            transform.parent.GetComponent<VerticalLayoutGroup>().padding.bottom = 50;
+        }
+
     }
 }

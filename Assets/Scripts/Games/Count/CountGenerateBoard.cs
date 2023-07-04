@@ -26,8 +26,11 @@ public class CountGenerateBoard : MonoBehaviour
     private int tempRandomValue;
     private int randomValue;
 
-    [Header ("Game UI")]
+    [Header ("Prefabs")]
     [SerializeField] private GameObject cardPrefab;
+    [SerializeField] private GameObject buttonPrefab;
+
+    [Header ("Positions")]
     [SerializeField] private GameObject cardPosition1;
     [SerializeField] private GameObject cardPosition2;
     [SerializeField] private GameObject cardPosition3;
@@ -39,9 +42,40 @@ public class CountGenerateBoard : MonoBehaviour
     [SerializeField] private GameObject cardPosition9;
     [SerializeField] private GameObject cardPosition10;
 
+    [SerializeField] private GameObject buttonPosition1;
+    [SerializeField] private GameObject buttonPosition2;
+    [SerializeField] private GameObject buttonPosition3;
+
+
+
+    [Header ("Buttons")]
+    [SerializeField] private Sprite image2;
+    [SerializeField] private Sprite image3;
+    [SerializeField] private Sprite image4;
+    [SerializeField] private Sprite image5;
+    [SerializeField] private Sprite image6;
+    [SerializeField] private Sprite image7;
+    [SerializeField] private Sprite image8;
+    [SerializeField] private Sprite image9;
+    [SerializeField] private Sprite image10;
+
 
     public List<GameObject> cardPositions = new List<GameObject>();
+    public List<NumberButtons> numberButtons = new List<NumberButtons>();
     public int countNum;
+    public int randomButton;
+
+    public class NumberButtons
+    {
+        public Sprite numberImage;
+        public int number;
+
+        public NumberButtons(Sprite _numberImage, int _number)
+        {
+            numberImage = _numberImage;
+            number = _number;
+        }
+    }
 
 
     private void Awake()
@@ -82,22 +116,37 @@ public class CountGenerateBoard : MonoBehaviour
 
     private void GetPositionList()
     {
+        cardPositions.Add(cardPosition8);
         cardPositions.Add(cardPosition1);
-        cardPositions.Add(cardPosition2);
         cardPositions.Add(cardPosition3);
-        cardPositions.Add(cardPosition4);
         cardPositions.Add(cardPosition5);
         cardPositions.Add(cardPosition6);
+        cardPositions.Add(cardPosition4);
         cardPositions.Add(cardPosition7);
-        cardPositions.Add(cardPosition8);
-        cardPositions.Add(cardPosition9);
         cardPositions.Add(cardPosition10);
+        cardPositions.Add(cardPosition2);
+        cardPositions.Add(cardPosition9);
+    }
+
+    private void GetSpriteList()
+    {
+        numberButtons.Add(new NumberButtons(image2, 2));
+        numberButtons.Add(new NumberButtons(image3, 3));
+        numberButtons.Add(new NumberButtons(image4, 4));
+        numberButtons.Add(new NumberButtons(image5, 5));
+        numberButtons.Add(new NumberButtons(image6, 6));
+        numberButtons.Add(new NumberButtons(image7, 7));
+        numberButtons.Add(new NumberButtons(image8, 8));
+        numberButtons.Add(new NumberButtons(image9, 9));
+        numberButtons.Add(new NumberButtons(image10, 10));
+        
     }
 
     public async void GeneratedBoardAsync()
     {
         //if(uıController.canGenerate)
         GetPositionList();
+        GetSpriteList();
         await CacheCards();
 
         countNum = Random.Range(1, 10);
@@ -159,5 +208,17 @@ public class CountGenerateBoard : MonoBehaviour
             cards.Add(card);
             LeanTween.scale(card.gameObject, Vector3.one * 0.3f, 0f);
         }
+
+        CreateButton();
+    }
+
+    private void CreateButton()
+    {
+        GameObject button = Instantiate(buttonPrefab, buttonPosition1.transform.position, Quaternion.identity);
+        button.transform.SetParent(buttonPosition1.transform);
+        LeanTween.scale(button, Vector3.one * 1.25f, 0);
+        randomButton = Random.Range(0, numberButtons.Count);
+        button.transform.GetChild(0).GetComponent<Image>().sprite = numberButtons[randomButton].numberImage;
+        button.GetComponent<CountButton>().value = numberButtons[randomButton].number;
     }
 }

@@ -72,6 +72,11 @@ public class GameSelectionPanel : MonoBehaviour
             ColorUtility.TryParseHtmlString(jsonGamess["games"][i]["color"].ToString().Replace("\"", ""), out bgColor);
             gameElement.transform.GetChild(0).GetComponent<Image>().color = bgColor;
 
+            for (int j = 0; j < gameElement.transform.GetChild(0).childCount; j++)
+            {
+                gameElement.transform.GetChild(0).GetChild(j).GetComponent<Image>().color = bgColor;
+            }
+
 
             gameElement.transform.GetChild(3).GetComponent<Text>().text = gameAPI.ToSentenceCase(jsonGamess["games"][i]["name"][currentLanguageCode].ToString().Replace("\"", ""));
             var gameTexture = gameAPI.sixGameIcons[i];
@@ -106,6 +111,11 @@ public class GameSelectionPanel : MonoBehaviour
             gameElement = Instantiate(tempGameElement, transform);
             ColorUtility.TryParseHtmlString(jsonGamess["games"][i + gameAPI.sixGameIcons.Count]["color"].ToString().Replace("\"", ""), out bgColor);
             gameElement.transform.GetChild(0).GetComponent<Image>().color = bgColor;
+
+            for (int j = 0; j < gameElement.transform.GetChild(0).childCount; j++)
+            {
+                gameElement.transform.GetChild(0).GetChild(j).GetComponent<Image>().color = bgColor;
+            }
 
 
             gameElement.transform.GetChild(3).GetComponent<Text>().text = gameAPI.ToSentenceCase(jsonGamess["games"][i + gameAPI.sixGameIcons.Count]["name"][currentLanguageCode].ToString().Replace("\"", ""));

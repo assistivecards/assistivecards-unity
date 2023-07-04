@@ -28,6 +28,7 @@ public class AllGamesPage : MonoBehaviour
     {
         if (didLanguageChange)
         {
+            await GameAPI.cacheSixGameIcons;
             Debug.Log("didLanguageChange: " + didLanguageChange);
             var currentLanguageCode = await gameAPI.GetSystemLanguageCode();
 
@@ -47,7 +48,7 @@ public class AllGamesPage : MonoBehaviour
             JSONObject jsonGamess = new JSONObject(jsonGames);
 
 
-            for (int i = 0; i < games.games.Count; i++)
+            for (int i = 0; i < gameAPI.sixGameIcons.Count; i++)
             {
                 gameElement = Instantiate(tempGameElement, transform);
 
@@ -61,14 +62,7 @@ public class AllGamesPage : MonoBehaviour
                     gameElement.transform.GetChild(4).GetComponent<Image>().color = new Color32(255, 255, 255, 75);
                 }
 
-                if (gameAPI.cachedGames.games.Count != gameAPI.cachedGameIcons.Count)
-                {
-                    gameIcon = await gameAPI.GetGameIcon(games.games[i].slug);
-                }
-                else if (gameAPI.cachedGames.games.Count == gameAPI.cachedGameIcons.Count)
-                {
-                    gameIcon = gameAPI.cachedGameIcons[i];
-                }
+                gameIcon = gameAPI.sixGameIcons[i];
 
                 // var gameIcon = await gameAPI.GetGameIcon(games.games[i].slug);
                 gameIcon.wrapMode = TextureWrapMode.Clamp;
@@ -80,6 +74,39 @@ public class AllGamesPage : MonoBehaviour
 
 
                 gameElement.name = games.games[i].slug;
+
+                gameElementGameObject.Add(gameElement);
+                didLanguageChange = false;
+            }
+
+            await GameAPI.cacheData;
+
+            for (int i = 0; i < gameAPI.cachedGames.games.Count - gameAPI.sixGameIcons.Count; i++)
+            {
+                gameElement = Instantiate(tempGameElement, transform);
+
+                gameElement.transform.GetChild(0).GetComponent<TMP_Text>().text = gameAPI.ToTitleCase(jsonGamess["games"][i + gameAPI.sixGameIcons.Count]["name"][currentLanguageCode].ToString().Replace("\"", ""));
+                gameElement.transform.GetChild(1).GetComponent<TMP_Text>().text = jsonGamess["games"][i + gameAPI.sixGameIcons.Count]["tagline"][currentLanguageCode].ToString().Replace("\"", "");
+                // gameElement.transform.GetChild(2).GetComponent<TMP_Text>().text = jsonGamess["games"][i]["description"][currentLanguageCode].ToString().Replace("\"", "");
+                // gameElement.transform.GetChild(2).GetComponent<TMP_Text>().text = jsonGamess["games"][i]["tagline"][currentLanguageCode].ToString().Replace("\"", "");
+
+                if (!games.games[i + gameAPI.sixGameIcons.Count].released)
+                {
+                    gameElement.transform.GetChild(4).GetComponent<Image>().color = new Color32(255, 255, 255, 75);
+                }
+
+                gameIcon = gameAPI.cachedGameIcons[i + gameAPI.sixGameIcons.Count];
+
+                // var gameIcon = await gameAPI.GetGameIcon(games.games[i].slug);
+                gameIcon.wrapMode = TextureWrapMode.Clamp;
+                gameIcon.filterMode = FilterMode.Bilinear;
+
+                gameElement.transform.GetChild(3).GetChild(0).GetComponent<Image>().sprite = Sprite.Create(gameIcon, new Rect(0.0f, 0.0f, gameIcon.width, gameIcon.height), new Vector2(0.5f, 0.5f), 100.0f);
+
+                gameElement.SetActive(true);
+
+
+                gameElement.name = games.games[i + gameAPI.sixGameIcons.Count].slug;
 
                 gameElementGameObject.Add(gameElement);
                 didLanguageChange = false;

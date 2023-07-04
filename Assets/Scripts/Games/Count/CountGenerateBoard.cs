@@ -33,6 +33,11 @@ public class CountGenerateBoard : MonoBehaviour
     [SerializeField] private GameObject cardPosition3;
     [SerializeField] private GameObject cardPosition4;
     [SerializeField] private GameObject cardPosition5;
+    [SerializeField] private GameObject cardPosition6;
+    [SerializeField] private GameObject cardPosition7;
+    [SerializeField] private GameObject cardPosition8;
+    [SerializeField] private GameObject cardPosition9;
+    [SerializeField] private GameObject cardPosition10;
 
 
     private List<GameObject> cardPositions = new List<GameObject>();
@@ -81,14 +86,21 @@ public class CountGenerateBoard : MonoBehaviour
         cardPositions.Add(cardPosition3);
         cardPositions.Add(cardPosition4);
         cardPositions.Add(cardPosition5);
+        cardPositions.Add(cardPosition6);
+        cardPositions.Add(cardPosition7);
+        cardPositions.Add(cardPosition8);
+        cardPositions.Add(cardPosition9);
+        cardPositions.Add(cardPosition10);
     }
 
-     public async void GeneratedBoardAsync()
+    public async void GeneratedBoardAsync()
     {
         //if(uıController.canGenerate)
         GetPositionList();
         await CacheCards();
-        for(int i = 0; i < cardPositions.Count; i++)
+
+        int countNum = Random.Range(1, 8);
+        for(int i = 0; i < cardPositions.Count - countNum; i++)
         {
             CheckRandom();
             int parentIndex = Random.Range(0, cardPositions.Count);
@@ -104,11 +116,39 @@ public class CountGenerateBoard : MonoBehaviour
                 }
             }
             GameObject card = Instantiate(cardPrefab, cardPositions[parentIndex].transform.position, Quaternion.identity);
-            LeanTween.rotateZ(card, Random.Range(-30f, 30), 0);
 
             card.transform.SetParent(cardPositions[parentIndex].transform);
 
             var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[i]], 512);
+            cardTexture.wrapMode = TextureWrapMode.Clamp;
+            cardTexture.filterMode = FilterMode.Bilinear;
+
+            card.transform.name = cardNames[randomValueList[i]];
+            card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+            card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+            cards.Add(card);
+            LeanTween.scale(card.gameObject, Vector3.one * 0.3f, 0f);
+        }
+
+        for(int i = 0; i < countNum; i++)
+        {
+            int parentIndex = Random.Range(0, cardPositions.Count);
+
+            if(cardPositions[parentIndex].transform.childCount > 0)
+            {
+                for(int j = 0; j < cardPositions.Count; j++)
+                {
+                    if(cardPositions[j].transform.childCount == 0)
+                    {
+                        parentIndex = j;
+                    }
+                }
+            }
+            GameObject card = Instantiate(cardPrefab, cardPositions[parentIndex].transform.position, Quaternion.identity);
+
+            card.transform.SetParent(cardPositions[parentIndex].transform);
+
+            var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[0]], 512);
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear;
 

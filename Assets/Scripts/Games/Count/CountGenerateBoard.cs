@@ -40,7 +40,8 @@ public class CountGenerateBoard : MonoBehaviour
     [SerializeField] private GameObject cardPosition10;
 
 
-    private List<GameObject> cardPositions = new List<GameObject>();
+    public List<GameObject> cardPositions = new List<GameObject>();
+    public int countNum;
 
 
     private void Awake()
@@ -99,7 +100,7 @@ public class CountGenerateBoard : MonoBehaviour
         GetPositionList();
         await CacheCards();
 
-        int countNum = Random.Range(1, 8);
+        countNum = Random.Range(1, 10);
         for(int i = 0; i < cardPositions.Count - countNum; i++)
         {
             CheckRandom();
@@ -152,7 +153,7 @@ public class CountGenerateBoard : MonoBehaviour
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear;
 
-            card.transform.name = cardNames[randomValueList[i]];
+            card.transform.name = cardNames[randomValueList[0]];
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
             cards.Add(card);

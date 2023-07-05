@@ -19,12 +19,12 @@ public class GameAPI : MonoBehaviour
     public List<Texture2D> cachedGameIcons = new List<Texture2D>();
     public List<Texture2D> freePackImages = new List<Texture2D>();
     public List<Texture2D> premiumPackImages = new List<Texture2D>();
-    public List<Texture2D> sixGameIcons = new List<Texture2D>();
+    public List<Texture2D> twelveGameIcons = new List<Texture2D>();
     public static Task cacheData;
     public static Task cachePacks;
     public static Task cacheFreePackImages;
     public static Task cachePremiumPackImages;
-    public static Task cacheSixGameIcons;
+    public static Task cacheTwelveGameIcons;
     AssistiveCardsSDK.AssistiveCardsSDK assistiveCardsSDK;
     [SerializeField] Speakable speakable;
     public Sound[] sfxClips;
@@ -36,7 +36,7 @@ public class GameAPI : MonoBehaviour
         assistiveCardsSDK = Camera.main.GetComponent<AssistiveCardsSDK.AssistiveCardsSDK>();
         cachePacks = CachePacks();
         cacheData = CacheData();
-        cacheSixGameIcons = CacheSixGameIcons();
+        cacheTwelveGameIcons = CacheTwelveGameIcons();
         await cachePacks;
         cacheFreePackImages = CacheFreePackImages();
         await cacheFreePackImages;
@@ -99,11 +99,11 @@ public class GameAPI : MonoBehaviour
         }
     }
 
-    public async Task CacheSixGameIcons()
+    public async Task CacheTwelveGameIcons()
     {
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 12; i++)
         {
-            sixGameIcons.Add(await GetGameIcon(cachedGames.games[i].slug));
+            twelveGameIcons.Add(await GetGameIcon(cachedGames.games[i].slug));
         }
     }
 

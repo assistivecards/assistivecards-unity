@@ -226,6 +226,7 @@ public class CountGenerateBoard : MonoBehaviour
                 positionRandom = Random.Range(0, 3);
                 GameObject correctButton = Instantiate(buttonPrefab, buttonPositions[positionRandom].transform.position, Quaternion.identity);
                 correctButton.transform.SetParent(buttonPositions[positionRandom].transform);
+                correctButton.name = "CorrectButton";
                 LeanTween.scale(correctButton, Vector3.one * 1.25f, 0);
                 randomButton = Random.Range(0, numberButtons.Count);
                 correctButton.transform.GetChild(0).GetComponent<Image>().sprite = numberButton.numberImage;
@@ -243,20 +244,23 @@ public class CountGenerateBoard : MonoBehaviour
 
     private void CreateDummyButton(int positionNum)
     {
-
         if(buttonPositions[positionNum] != null)
         {
-            int random = Random.Range(0, numberButtons.Count - 1);    
-            if(random == positionRandom)   
+            int random = Random.Range(0, numberButtons.Count - 2);    
+            if(random != positionRandom - 1 && random != positionRandom)   
             {
-                random = Random.Range(0, numberButtons.Count - 1);  
-            }          
-            GameObject correctButton = Instantiate(buttonPrefab, buttonPositions[positionNum].transform.position, Quaternion.identity);
-            correctButton.transform.SetParent(buttonPositions[positionNum].transform);
+                GameObject correctButton = Instantiate(buttonPrefab, buttonPositions[positionNum].transform.position, Quaternion.identity);
+                correctButton.transform.SetParent(buttonPositions[positionNum].transform);
 
-            LeanTween.scale(correctButton, Vector3.one * 1.25f, 0);
-            correctButton.transform.GetChild(0).GetComponent<Image>().sprite = numberButtons[random + positionNum].numberImage;
-            correctButton.GetComponent<CountButton>().value = numberButtons[random + positionNum].number;
+                LeanTween.scale(correctButton, Vector3.one * 1.25f, 0);
+                correctButton.transform.GetChild(0).GetComponent<Image>().sprite = numberButtons[random + positionNum].numberImage;
+                correctButton.GetComponent<CountButton>().value = numberButtons[random + positionNum].number;
+            }
+            else
+            {
+                Debug.Log("AGAIN : " + random);
+                CreateDummyButton(positionNum);
+            }       
         }
     }
 }

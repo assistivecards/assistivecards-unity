@@ -20,11 +20,13 @@ public class CountGenerateBoard : MonoBehaviour
     AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
     [SerializeField] private PackSelectionPanel packSelectionPanel;
 
-
     [Header ("Random")]
     private List<int> randomValueList = new List<int>();
     private int tempRandomValue;
     private int randomValue;
+
+    [Header ("Classes")]
+    [SerializeField] private CountUIController uıController;
 
     [Header ("Prefabs")]
     [SerializeField] private GameObject cardPrefab;
@@ -62,13 +64,15 @@ public class CountGenerateBoard : MonoBehaviour
     [SerializeField] private Sprite image9;
     [SerializeField] private Sprite image10;
 
-
+    [Header ("Lists")]
     public List<GameObject> cardPositions = new List<GameObject>();
     public List<NumberButtons> numberButtons = new List<NumberButtons>();
     public List<GameObject> buttonPositions = new List<GameObject>();
+    public List<GameObject> buttons = new List<GameObject>();
+
     public int countNum;
-    public int randomButton;
-    public int positionRandom;
+    private int randomButton;
+    private int positionRandom;
 
     public class NumberButtons
     {
@@ -152,75 +156,79 @@ public class CountGenerateBoard : MonoBehaviour
 
     public async void GeneratedBoardAsync()
     {
-        //if(uıController.canGenerate)
-        GetPositionList();
-        GetSpriteList();
-        await CacheCards();
-
-        countNum = Random.Range(1, 10);
-        for(int i = 0; i < cardPositions.Count - countNum; i++)
+        if(uıController.canGenerate)
         {
-            CheckRandom();
-            int parentIndex = Random.Range(0, cardPositions.Count);
+            GetPositionList();
+            GetSpriteList();
+            await CacheCards();
 
-            if(cardPositions[parentIndex].transform.childCount > 0)
+            countNum = Random.Range(1, 9);
+            for(int i = 0; i < cardPositions.Count - countNum; i++)
             {
-                for(int j = 0; j < cardPositions.Count; j++)
+                CheckRandom();
+                int parentIndex = Random.Range(0, cardPositions.Count);
+
+                if(cardPositions[parentIndex].transform.childCount > 0)
                 {
-                    if(cardPositions[j].transform.childCount == 0)
+                    for(int j = 0; j < cardPositions.Count; j++)
                     {
-                        parentIndex = j;
+                        if(cardPositions[j].transform.childCount == 0)
+                        {
+                            parentIndex = j;
+                        }
                     }
                 }
+
+                GameObject card = Instantiate(cardPrefab, cardPositions[parentIndex].transform.position, Quaternion.identity);
+                card.transform.SetParent(cardPositions[parentIndex].transform);
+
+                var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[i]], 512);
+                cardTexture.wrapMode = TextureWrapMode.Clamp;
+                cardTexture.filterMode = FilterMode.Bilinear;
+
+                card.transform.name = cardNames[randomValueList[i]];
+                card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+                card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                cards.Add(card);
+                LeanTween.rotateZ(card, Random.Range(-25f, 25), 0);
+                LeanTween.scale(card.gameObject, Vector3.one * 0.3f, 0f);
             }
-            GameObject card = Instantiate(cardPrefab, cardPositions[parentIndex].transform.position, Quaternion.identity);
 
-            card.transform.SetParent(cardPositions[parentIndex].transform);
-
-            var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[i]], 512);
-            cardTexture.wrapMode = TextureWrapMode.Clamp;
-            cardTexture.filterMode = FilterMode.Bilinear;
-
-            card.transform.name = cardNames[randomValueList[i]];
-            card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-            card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-            cards.Add(card);
-            LeanTween.scale(card.gameObject, Vector3.one * 0.3f, 0f);
-        }
-
-        for(int i = 0; i < countNum; i++)
-        {
-            int parentIndex = Random.Range(0, cardPositions.Count);
-
-            if(cardPositions[parentIndex].transform.childCount > 0)
+            for(int i = 0; i < countNum; i++)
             {
-                for(int j = 0; j < cardPositions.Count; j++)
+                int parentIndex = Random.Range(0, cardPositions.Count);
+
+                if(cardPositions[parentIndex].transform.childCount > 0)
                 {
-                    if(cardPositions[j].transform.childCount == 0)
+                    for(int j = 0; j < cardPositions.Count; j++)
                     {
-                        parentIndex = j;
+                        if(cardPositions[j].transform.childCount == 0)
+                        {
+                            parentIndex = j;
+                        }
                     }
                 }
+
+                GameObject card = Instantiate(cardPrefab, cardPositions[parentIndex].transform.position, Quaternion.identity);
+                card.transform.SetParent(cardPositions[parentIndex].transform);
+
+                var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[0]], 512);
+                cardTexture.wrapMode = TextureWrapMode.Clamp;
+                cardTexture.filterMode = FilterMode.Bilinear;
+
+                card.transform.name = cardNames[randomValueList[0]];
+                card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+                card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                cards.Add(card);
+                LeanTween.rotateZ(card, Random.Range(-25f, 25), 0);
+                LeanTween.scale(card.gameObject, Vector3.one * 0.3f, 0f);
             }
-            GameObject card = Instantiate(cardPrefab, cardPositions[parentIndex].transform.position, Quaternion.identity);
 
-            card.transform.SetParent(cardPositions[parentIndex].transform);
-
-            var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[0]], 512);
-            cardTexture.wrapMode = TextureWrapMode.Clamp;
-            cardTexture.filterMode = FilterMode.Bilinear;
-
-            card.transform.name = cardNames[randomValueList[0]];
-            card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-            card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-            cards.Add(card);
-            LeanTween.scale(card.gameObject, Vector3.one * 0.3f, 0f);
+            CreateButton();
+            countText.text = gameAPI.Translate(countText.gameObject.name, gameAPI.ToSentenceCase(cardLocalNames[randomValueList[0]]).Replace("-", " "), selectedLangCode);
         }
 
-        CreateButton();
-        countText.text = gameAPI.Translate(countText.gameObject.name, gameAPI.ToSentenceCase(cardNames[randomValueList[0]]).Replace("-", " "), selectedLangCode);
     }
-
     private void CreateButton()
     {
         foreach(var numberButton in numberButtons)
@@ -235,6 +243,7 @@ public class CountGenerateBoard : MonoBehaviour
                 randomButton = Random.Range(0, numberButtons.Count);
                 correctButton.transform.GetChild(0).GetComponent<Image>().sprite = numberButton.numberImage;
                 correctButton.GetComponent<CountButton>().value = numberButton.number;
+                buttons.Add(correctButton);
 
                 buttonPositions.RemoveAt(positionRandom);
             }
@@ -246,6 +255,7 @@ public class CountGenerateBoard : MonoBehaviour
         {
             CreateDummyButton(i, random);
         }
+
     }
 
     private void CreateDummyButton(int positionNum, int random)
@@ -261,6 +271,7 @@ public class CountGenerateBoard : MonoBehaviour
                 LeanTween.scale(correctButton, Vector3.one * 1.25f, 0);
                 correctButton.transform.GetChild(0).GetComponent<Image>().sprite = numberButtons[random + positionNum].numberImage;
                 correctButton.GetComponent<CountButton>().value = numberButtons[random + positionNum].number;
+                buttons.Add(correctButton);
             }
             else
             {
@@ -271,7 +282,35 @@ public class CountGenerateBoard : MonoBehaviour
                 LeanTween.scale(correctButton, Vector3.one * 1.25f, 0);
                 correctButton.transform.GetChild(0).GetComponent<Image>().sprite = numberButtons[random + positionNum].numberImage;
                 correctButton.GetComponent<CountButton>().value = numberButtons[random + positionNum].number;
+                buttons.Add(correctButton);
             }       
         }
+    }
+
+    public void ClearBoard()
+    {
+        foreach(var card in cards)
+        {
+            Destroy(card);
+        }
+
+        foreach(var button in buttons)
+        {
+            Destroy(button);
+        }
+
+        buttons.Clear();
+        cardPositions.Clear();
+        numberButtons.Clear();
+        buttonPositions.Clear();
+        randomValueList.Clear();
+
+        cards.Clear();
+        cardNames.Clear();
+        cardsList.Clear();
+
+        countNum = 0;
+        randomButton = 0;
+        positionRandom = 0;
     }
 }

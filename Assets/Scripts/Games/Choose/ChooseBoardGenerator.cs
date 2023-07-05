@@ -15,7 +15,7 @@ public class ChooseBoardGenerator : MonoBehaviour
     [SerializeField] List<Texture2D> randomImages = new List<Texture2D>();
     [SerializeField] List<Sprite> randomSprites = new List<Sprite>();
     public string selectedLangCode;
-    [SerializeField] string correctCardSlug;
+    public string correctCardSlug;
     [SerializeField] TMP_Text chooseText;
     public string packSlug;
     [SerializeField] GameObject backButton;
@@ -137,6 +137,7 @@ public class ChooseBoardGenerator : MonoBehaviour
             var texture = await gameAPI.GetCardImage(packSlug, randomCards[i].slug);
             texture.wrapMode = TextureWrapMode.Clamp;
             texture.filterMode = FilterMode.Bilinear;
+            texture.name = randomCards[i].slug;
             randomImages.Add(texture);
             randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
         }

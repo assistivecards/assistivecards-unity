@@ -20,15 +20,28 @@ public class ChooseMatchDetection : MonoBehaviour, IPointerClickHandler
         {
             if (transform.GetChild(0).GetComponent<Image>().sprite.texture.name == board.correctCardSlug)
             {
-                Debug.Log("CORRECT CARD");
+                for (int i = 0; i < board.cardParents.Length; i++)
+                {
+                    board.cardParents[i].GetComponent<ChooseMatchDetection>().isClicked = true;
+                }
+
+                LeanTween.scale(gameObject, Vector3.one * 1.15f, .25f);
+                board.Invoke("ScaleImagesDown", 1f);
+                board.Invoke("ClearBoard", 1.30f);
+                board.Invoke("GenerateRandomBoardAsync", 1.3f);
             }
             else
             {
-                Debug.Log("WRONG CARD");
+                FadeCardParent();
             }
 
             isClicked = true;
         }
+    }
+
+    private void FadeCardParent()
+    {
+        LeanTween.alpha(gameObject.GetComponent<RectTransform>(), .5f, .25f);
     }
 
 }

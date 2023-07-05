@@ -9,7 +9,7 @@ public class ChooseBoardGenerator : MonoBehaviour
 {
     private GameAPI gameAPI;
     [SerializeField] Image[] cardTextures;
-    [SerializeField] GameObject[] cardParents;
+    public GameObject[] cardParents;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     [SerializeField] List<Texture2D> randomImages = new List<Texture2D>();
@@ -84,6 +84,8 @@ public class ChooseBoardGenerator : MonoBehaviour
     {
         for (int i = 0; i < cardParents.Length; i++)
         {
+            cardParents[i].GetComponent<ChooseMatchDetection>().isClicked = false;
+            LeanTween.alpha(cardParents[i].GetComponent<RectTransform>(), 1, .001f);
             LeanTween.scale(cardParents[i], Vector3.one, 0.2f);
         }
 

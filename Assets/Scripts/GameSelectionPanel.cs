@@ -47,7 +47,7 @@ public class GameSelectionPanel : MonoBehaviour
 
     public async void ListGames()
     {
-        await GameAPI.cacheSixGameIcons;
+        await GameAPI.cacheTwelveGameIcons;
         loadingPanel.SetActive(false);
         currentLanguageCode = await gameAPI.GetSystemLanguageCode();
 
@@ -66,7 +66,7 @@ public class GameSelectionPanel : MonoBehaviour
 
         tempGameElement.SetActive(true);
 
-        for (int i = 0; i < gameAPI.sixGameIcons.Count; i++)
+        for (int i = 0; i < gameAPI.twelveGameIcons.Count; i++)
         {
             gameElement = Instantiate(tempGameElement, transform);
             ColorUtility.TryParseHtmlString(jsonGamess["games"][i]["color"].ToString().Replace("\"", ""), out bgColor);
@@ -79,11 +79,11 @@ public class GameSelectionPanel : MonoBehaviour
 
 
             gameElement.transform.GetChild(3).GetComponent<Text>().text = gameAPI.ToSentenceCase(jsonGamess["games"][i]["name"][currentLanguageCode].ToString().Replace("\"", ""));
-            var gameTexture = gameAPI.sixGameIcons[i];
+            var gameTexture = gameAPI.twelveGameIcons[i];
             gameTexture.wrapMode = TextureWrapMode.Clamp;
             gameTexture.filterMode = FilterMode.Bilinear;
 
-            gameElement.transform.GetChild(1).GetComponent<Image>().sprite = Sprite.Create(gameTexture, new Rect(0.0f, 0.0f, gameAPI.sixGameIcons[i].width, gameAPI.sixGameIcons[i].height), new Vector2(0.5f, 0.5f), 100.0f);
+            gameElement.transform.GetChild(1).GetComponent<Image>().sprite = Sprite.Create(gameTexture, new Rect(0.0f, 0.0f, gameAPI.twelveGameIcons[i].width, gameAPI.twelveGameIcons[i].height), new Vector2(0.5f, 0.5f), 100.0f);
 
             gameElement.name = games.games[i].slug;
 
@@ -106,10 +106,10 @@ public class GameSelectionPanel : MonoBehaviour
 
         tempGameElement.SetActive(true);
 
-        for (int i = 0; i < gameAPI.cachedGames.games.Count - gameAPI.sixGameIcons.Count; i++)
+        for (int i = 0; i < gameAPI.cachedGames.games.Count - gameAPI.twelveGameIcons.Count; i++)
         {
             gameElement = Instantiate(tempGameElement, transform);
-            ColorUtility.TryParseHtmlString(jsonGamess["games"][i + gameAPI.sixGameIcons.Count]["color"].ToString().Replace("\"", ""), out bgColor);
+            ColorUtility.TryParseHtmlString(jsonGamess["games"][i + gameAPI.twelveGameIcons.Count]["color"].ToString().Replace("\"", ""), out bgColor);
             gameElement.transform.GetChild(0).GetComponent<Image>().color = bgColor;
 
             for (int j = 0; j < gameElement.transform.GetChild(0).childCount; j++)
@@ -118,14 +118,14 @@ public class GameSelectionPanel : MonoBehaviour
             }
 
 
-            gameElement.transform.GetChild(3).GetComponent<Text>().text = gameAPI.ToSentenceCase(jsonGamess["games"][i + gameAPI.sixGameIcons.Count]["name"][currentLanguageCode].ToString().Replace("\"", ""));
-            var gameTexture = gameAPI.cachedGameIcons[i + gameAPI.sixGameIcons.Count];
+            gameElement.transform.GetChild(3).GetComponent<Text>().text = gameAPI.ToSentenceCase(jsonGamess["games"][i + gameAPI.twelveGameIcons.Count]["name"][currentLanguageCode].ToString().Replace("\"", ""));
+            var gameTexture = gameAPI.cachedGameIcons[i + gameAPI.twelveGameIcons.Count];
             gameTexture.wrapMode = TextureWrapMode.Clamp;
             gameTexture.filterMode = FilterMode.Bilinear;
 
-            gameElement.transform.GetChild(1).GetComponent<Image>().sprite = Sprite.Create(gameTexture, new Rect(0.0f, 0.0f, gameAPI.cachedGameIcons[i + gameAPI.sixGameIcons.Count].width, gameAPI.cachedGameIcons[i + gameAPI.sixGameIcons.Count].height), new Vector2(0.5f, 0.5f), 100.0f);
+            gameElement.transform.GetChild(1).GetComponent<Image>().sprite = Sprite.Create(gameTexture, new Rect(0.0f, 0.0f, gameAPI.cachedGameIcons[i + gameAPI.twelveGameIcons.Count].width, gameAPI.cachedGameIcons[i + gameAPI.twelveGameIcons.Count].height), new Vector2(0.5f, 0.5f), 100.0f);
 
-            gameElement.name = games.games[i + gameAPI.sixGameIcons.Count].slug;
+            gameElement.name = games.games[i + gameAPI.twelveGameIcons.Count].slug;
 
             gameElement.transform.GetChild(5).gameObject.SetActive(true);
 

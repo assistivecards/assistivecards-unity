@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 6619939}
   - component: {fileID: 6619941}
   - component: {fileID: 6619940}
+  - component: {fileID: 6619942}
   m_Layer: 5
   m_Name: Card3
   m_TagString: Untagged
@@ -150,7 +151,7 @@ RectTransform:
   m_GameObject: {fileID: 6619938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1101849059}
@@ -200,6 +201,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6619938}
   m_CullTransparentMesh: 1
+--- !u!114 &6619942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6619938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9341d737d844b6445948f6edd567c467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &44889268
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,6 +224,7 @@ GameObject:
   - component: {fileID: 44889269}
   - component: {fileID: 44889271}
   - component: {fileID: 44889270}
+  - component: {fileID: 44889272}
   m_Layer: 5
   m_Name: Card2
   m_TagString: Untagged
@@ -227,7 +241,7 @@ RectTransform:
   m_GameObject: {fileID: 44889268}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 371815703}
@@ -277,6 +291,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44889268}
   m_CullTransparentMesh: 1
+--- !u!114 &44889272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44889268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9341d737d844b6445948f6edd567c467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &88731552
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,14 +544,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a770777915dc63843929f4d1e7b3caaf, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -762,6 +788,11 @@ GameObject:
 --- !u!1 &472857507 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5305803331684122001, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &472857508 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8438209764908285022, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
   m_PrefabInstance: {fileID: 472857503}
   m_PrefabAsset: {fileID: 0}
 --- !u!20 &519420031 stripped
@@ -1082,15 +1113,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5301644170934348999, guid: 975c28d7b7e66b44ca441b59134a85d4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5301644170934348999, guid: 975c28d7b7e66b44ca441b59134a85d4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5301644170934348999, guid: 975c28d7b7e66b44ca441b59134a85d4, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5301644170934348999, guid: 975c28d7b7e66b44ca441b59134a85d4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1362,6 +1393,11 @@ MonoBehaviour:
   tutorial: {fileID: 927069859}
   packSelectionPanel: {fileID: 1837497526}
   levelChangeScreen: {fileID: 1275520836}
+--- !u!1 &1050175573 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8524809319700726626, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1099822488 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6097405948729005584, guid: f06c30e9a112643eebd0ef04df54ea64, type: 3}
@@ -1423,14 +1459,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a770777915dc63843929f4d1e7b3caaf, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2021,14 +2057,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a770777915dc63843929f4d1e7b3caaf, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2312,16 +2348,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1837497525}
+      objectReference: {fileID: 1837497529}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: ClosePackPanelTween
+      value: GenerateCorrespondingRandomBoard
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: PackSelectionScreenUIController, Assembly-CSharp
+      value: ChoosePackSelection, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 9035172431832795728, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_Name
@@ -2329,7 +2373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9035172431832795728, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9209683489089641035, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: helloText
@@ -2379,6 +2423,42 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8441382994831629479, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
   m_PrefabInstance: {fileID: 1837497523}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1837497527 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9209683490062830043, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
+  m_PrefabInstance: {fileID: 1837497523}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837497528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52dfdefcc32f6bd4e81faceead352ed9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1837497528 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8441382994790024698, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
+  m_PrefabInstance: {fileID: 1837497523}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1837497529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837497528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a20613a140776034fac721e5143c6726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boardGenerator: {fileID: 8383894889009589326}
+  packSelectionPanelScript: {fileID: 1837497527}
+  packSelectionPanel: {fileID: 1837497526}
+  helloText: {fileID: 1231408339}
+  speakerIcon: {fileID: 472857507}
+  homeButton: {fileID: 1050175573}
+  packSelectionScreenUIController: {fileID: 1837497525}
+  loadingPanel: {fileID: 671447375}
 --- !u!224 &1859327342 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1242831490776755392, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -2407,7 +2487,7 @@ GameObject:
   - component: {fileID: 1925653934}
   - component: {fileID: 1925653933}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: choose_card_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2422,7 +2502,7 @@ RectTransform:
   m_GameObject: {fileID: 1925653931}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1910463663942908501}
@@ -2552,6 +2632,7 @@ GameObject:
   - component: {fileID: 2020567210}
   - component: {fileID: 2020567212}
   - component: {fileID: 2020567211}
+  - component: {fileID: 2020567213}
   m_Layer: 5
   m_Name: Card1
   m_TagString: Untagged
@@ -2568,7 +2649,7 @@ RectTransform:
   m_GameObject: {fileID: 2020567209}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1576587239}
@@ -2618,6 +2699,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020567209}
   m_CullTransparentMesh: 1
+--- !u!114 &2020567213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020567209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9341d737d844b6445948f6edd567c467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &300905862136274000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4992,6 +5085,7 @@ GameObject:
   - component: {fileID: 1910463663942908501}
   - component: {fileID: 8383894889009589325}
   - component: {fileID: 1995057600056102325}
+  - component: {fileID: 8383894889009589326}
   m_Layer: 5
   m_Name: GamePanel
   m_TagString: Untagged
@@ -5426,6 +5520,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3720148778835819161}
   m_CullTransparentMesh: 1
+--- !u!114 &8383894889009589326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3720148778835819161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9813fa897141a0a41b06f14d294dec63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardTextures:
+  - {fileID: 1576587240}
+  - {fileID: 371815704}
+  - {fileID: 1101849060}
+  cardParents:
+  - {fileID: 2020567209}
+  - {fileID: 44889268}
+  - {fileID: 6619938}
+  cachedCards:
+    cards: []
+  randomCards: []
+  randomImages: []
+  randomSprites: []
+  selectedLangCode: 
+  correctCardSlug: 
+  chooseText: {fileID: 1925653933}
+  packSlug: 
+  backButton: {fileID: 472857508}
+  loadingPanel: {fileID: 671447375}
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

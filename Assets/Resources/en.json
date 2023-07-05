@@ -240,5 +240,6 @@
 	"find_the_cards":"Find the $1 cards",
 	"choose_text_small":"Choose the smallest $1 card",
 	"choose_text_medium":"Choose the medium $1 card",
-	"choose_text_large":"Choose the largest $1 card"
+	"choose_text_large":"Choose the largest $1 card",
+	"choose_card_text":"Choose the $1 card"
 }

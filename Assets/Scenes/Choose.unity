@@ -2461,7 +2461,7 @@ GameObject:
   - component: {fileID: 1925653934}
   - component: {fileID: 1925653933}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: choose_card_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5503,13 +5503,14 @@ MonoBehaviour:
   - {fileID: 6619938}
   cachedCards:
     cards: []
-  randomImage: {fileID: 0}
-  randomSprite: {fileID: 0}
+  randomCards: []
+  randomImages: []
+  randomSprites: []
   selectedLangCode: 
+  correctCardSlug: 
+  chooseText: {fileID: 1925653933}
   packSlug: 
   backButton: {fileID: 472857508}
-  uniqueCards: []
-  chooseText: {fileID: 1925653933}
   loadingPanel: {fileID: 671447375}
 --- !u!114 &8691574409270737102
 MonoBehaviour:

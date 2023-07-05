@@ -58,6 +58,7 @@ public class ChooseBoardGenerator : MonoBehaviour
         }
 
         PopulateRandomCards();
+        TranslateChooseCardText();
         await PopulateRandomTextures();
         PlaceSprites();
         DisableLoadingPanel();
@@ -158,6 +159,11 @@ public class ChooseBoardGenerator : MonoBehaviour
     private void DisableLoadingPanel()
     {
         loadingPanel.SetActive(false);
+    }
+
+    public void TranslateChooseCardText()
+    {
+        chooseText.text = gameAPI.Translate(chooseText.gameObject.name, gameAPI.ToSentenceCase(randomCards[0].title).Replace("-", " "), selectedLangCode);
     }
 
 }

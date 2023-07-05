@@ -46,6 +46,9 @@ public class CountGenerateBoard : MonoBehaviour
     [SerializeField] private GameObject buttonPosition2;
     [SerializeField] private GameObject buttonPosition3;
 
+    [Header ("Game UI")]
+    [SerializeField] private TMP_Text countText;
+
 
 
     [Header ("Buttons")]
@@ -215,6 +218,7 @@ public class CountGenerateBoard : MonoBehaviour
         }
 
         CreateButton();
+        countText.text = gameAPI.Translate(countText.gameObject.name, gameAPI.ToSentenceCase(cardNames[randomValueList[0]]).Replace("-", " "), selectedLangCode);
     }
 
     private void CreateButton()
@@ -237,7 +241,7 @@ public class CountGenerateBoard : MonoBehaviour
         }
 
         int random = Random.Range(0, numberButtons.Count - 3);    
-        
+
         for(int i=0; i < buttonPositions.Count; i++)
         {
             CreateDummyButton(i, random);
@@ -251,7 +255,6 @@ public class CountGenerateBoard : MonoBehaviour
 
             if(random != positionRandom && random + 1 != positionRandom)   
             {
-                Debug.Log("random + positionNum: " + random + positionNum);
                 GameObject correctButton = Instantiate(buttonPrefab, buttonPositions[positionNum].transform.position, Quaternion.identity);
                 correctButton.transform.SetParent(buttonPositions[positionNum].transform);
 
@@ -262,7 +265,6 @@ public class CountGenerateBoard : MonoBehaviour
             else
             {
                 random = random + 1;
-                Debug.Log("random + positionNum + again: " + random + positionNum);
                 GameObject correctButton = Instantiate(buttonPrefab, buttonPositions[positionNum].transform.position, Quaternion.identity);
                 correctButton.transform.SetParent(buttonPositions[positionNum].transform);
 

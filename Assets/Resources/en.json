@@ -223,6 +223,7 @@
 	"score":"Score: ",
 	"warning-nickname":"Nickname is too long!",
 	"circle_the_card":"Circle the $1",
+	"count_cards": "Count $1 Cards!",
 	"hit_cards":"Hit $1 Cards!",
 	"collect_5_cards":"Collect 5 $1",
 	"collect_cards":"Collect $1 Cards!",

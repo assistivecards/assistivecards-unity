@@ -172,4 +172,9 @@ public class ChooseBoardGenerator : MonoBehaviour
         chooseText.text = gameAPI.Translate(chooseText.gameObject.name, gameAPI.ToTitleCase(randomCards[0].title).Replace("-", " "), selectedLangCode);
     }
 
+    public void ReadCard()
+    {
+        gameAPI.Speak(randomCards[0].title);
+    }
+
 }

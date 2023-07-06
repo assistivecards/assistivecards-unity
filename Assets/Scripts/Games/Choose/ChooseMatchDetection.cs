@@ -9,6 +9,12 @@ public class ChooseMatchDetection : MonoBehaviour, IPointerClickHandler
     private ChooseBoardGenerator board;
     public bool isClicked = false;
     private ChooseUIController UIController;
+    private GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void Start()
     {
@@ -29,6 +35,8 @@ public class ChooseMatchDetection : MonoBehaviour, IPointerClickHandler
 
                 UIController.correctMatches++;
                 UIController.backButton.GetComponent<Button>().interactable = false;
+                gameAPI.PlaySFX("Success");
+                board.Invoke("ReadCard", 0.25f);
                 LeanTween.scale(gameObject, Vector3.one * 1.15f, .25f);
                 board.Invoke("ScaleImagesDown", 1f);
                 board.Invoke("ClearBoard", 1.30f);

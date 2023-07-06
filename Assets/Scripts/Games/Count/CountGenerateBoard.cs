@@ -73,6 +73,7 @@ public class CountGenerateBoard : MonoBehaviour
     public int countNum;
     private int randomButton;
     private int positionRandom;
+    private int randomButtonNumber;
 
     public class NumberButtons
     {
@@ -252,41 +253,40 @@ public class CountGenerateBoard : MonoBehaviour
             }
         }
 
-        int random = Random.Range(0, numberButtons.Count - 3);    
-
         for(int i=0; i < buttonPositions.Count; i++)
         {
-            CreateDummyButton(i, random);
+            CreateButtonRandomValue();
+            CreateDummyButton(i, randomButtonNumber);
         }
 
+    }
+
+    private void CreateButtonRandomValue()
+    {
+        int tempButtonNumber = Random.Range(0, numberButtons.Count - 3);  
+
+        if(numberButtons[tempButtonNumber].number == countNum + 1 || tempButtonNumber == randomButtonNumber)
+        {
+            Debug.Log("tempButtonNumber: " + tempButtonNumber);
+            CreateButtonRandomValue();
+        }
+        else
+        {
+            randomButtonNumber = tempButtonNumber;
+        }
     }
 
     private void CreateDummyButton(int positionNum, int random)
     {
         if(buttonPositions[positionNum] != null)
         {
+            GameObject button = Instantiate(buttonPrefab, buttonPositions[positionNum].transform.position, Quaternion.identity);
+            button.transform.SetParent(buttonPositions[positionNum].transform);
 
-            if(random != positionRandom && random + 1 != positionRandom)   
-            {
-                GameObject correctButton = Instantiate(buttonPrefab, buttonPositions[positionNum].transform.position, Quaternion.identity);
-                correctButton.transform.SetParent(buttonPositions[positionNum].transform);
-
-                LeanTween.scale(correctButton, Vector3.one * 1.25f, 0);
-                correctButton.transform.GetChild(0).GetComponent<Image>().sprite = numberButtons[random + positionNum].numberImage;
-                correctButton.GetComponent<CountButton>().value = numberButtons[random + positionNum].number;
-                buttons.Add(correctButton);
-            }
-            else
-            {
-                random = random + 1;
-                GameObject correctButton = Instantiate(buttonPrefab, buttonPositions[positionNum].transform.position, Quaternion.identity);
-                correctButton.transform.SetParent(buttonPositions[positionNum].transform);
-
-                LeanTween.scale(correctButton, Vector3.one * 1.25f, 0);
-                correctButton.transform.GetChild(0).GetComponent<Image>().sprite = numberButtons[random + positionNum].numberImage;
-                correctButton.GetComponent<CountButton>().value = numberButtons[random + positionNum].number;
-                buttons.Add(correctButton);
-            }       
+            LeanTween.scale(button, Vector3.one * 1.25f, 0);
+            button.transform.GetChild(0).GetComponent<Image>().sprite = numberButtons[random].numberImage;
+            button.GetComponent<CountButton>().value = numberButtons[random].number;
+            buttons.Add(button);      
         }
     }
 

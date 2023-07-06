@@ -22,6 +22,7 @@ public class ChooseBoardGenerator : MonoBehaviour
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
     [SerializeField] GameObject loadingPanel;
+    ChooseUIController UIController;
 
     private void Awake()
     {
@@ -31,6 +32,7 @@ public class ChooseBoardGenerator : MonoBehaviour
     private void Start()
     {
         gameAPI.PlayMusic();
+        UIController = gameObject.GetComponent<ChooseUIController>();
     }
 
     private void OnEnable()
@@ -38,6 +40,7 @@ public class ChooseBoardGenerator : MonoBehaviour
         if (isBackAfterSignOut)
         {
             gameAPI.PlayMusic();
+            UIController.OnBackButtonClick();
             isBackAfterSignOut = false;
         }
     }
@@ -166,7 +169,7 @@ public class ChooseBoardGenerator : MonoBehaviour
 
     public void TranslateChooseCardText()
     {
-        chooseText.text = gameAPI.Translate(chooseText.gameObject.name, gameAPI.ToSentenceCase(randomCards[0].title).Replace("-", " "), selectedLangCode);
+        chooseText.text = gameAPI.Translate(chooseText.gameObject.name, gameAPI.ToTitleCase(randomCards[0].title).Replace("-", " "), selectedLangCode);
     }
 
 }

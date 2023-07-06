@@ -28,6 +28,7 @@ public class ChooseMatchDetection : MonoBehaviour, IPointerClickHandler
                 }
 
                 UIController.correctMatches++;
+                UIController.backButton.GetComponent<Button>().interactable = false;
                 LeanTween.scale(gameObject, Vector3.one * 1.15f, .25f);
                 board.Invoke("ScaleImagesDown", 1f);
                 board.Invoke("ClearBoard", 1.30f);

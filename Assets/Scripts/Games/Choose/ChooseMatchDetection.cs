@@ -8,10 +8,12 @@ public class ChooseMatchDetection : MonoBehaviour, IPointerClickHandler
 {
     private ChooseBoardGenerator board;
     public bool isClicked = false;
+    private ChooseUIController UIController;
 
     private void Start()
     {
         board = GameObject.Find("GamePanel").GetComponent<ChooseBoardGenerator>();
+        UIController = GameObject.Find("GamePanel").GetComponent<ChooseUIController>();
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -25,10 +27,17 @@ public class ChooseMatchDetection : MonoBehaviour, IPointerClickHandler
                     board.cardParents[i].GetComponent<ChooseMatchDetection>().isClicked = true;
                 }
 
+                UIController.correctMatches++;
                 LeanTween.scale(gameObject, Vector3.one * 1.15f, .25f);
                 board.Invoke("ScaleImagesDown", 1f);
                 board.Invoke("ClearBoard", 1.30f);
-                board.Invoke("GenerateRandomBoardAsync", 1.3f);
+
+                if (UIController.correctMatches == UIController.checkpointFrequency)
+                {
+                    UIController.Invoke("OpenCheckPointPanel", 1.3f);
+                }
+                else
+                    board.Invoke("GenerateRandomBoardAsync", 1.3f);
             }
             else
             {

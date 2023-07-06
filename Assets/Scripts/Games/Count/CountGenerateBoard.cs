@@ -21,7 +21,7 @@ public class CountGenerateBoard : MonoBehaviour
     [SerializeField] private PackSelectionPanel packSelectionPanel;
 
     [Header ("Random")]
-    private List<int> randomValueList = new List<int>();
+    public List<int> randomValueList = new List<int>();
     private int tempRandomValue;
     private int randomValue;
 

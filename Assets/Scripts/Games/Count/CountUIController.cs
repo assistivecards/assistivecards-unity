@@ -59,7 +59,7 @@ public class CountUIController : MonoBehaviour
     {
         LevelEnding();
         levelChange.SetActive(true);
-        LeanTween.scale(levelChange, Vector3.one * 0.5f, 0.1f);
+        LeanTween.scale(levelChange, Vector3.one * 0.5f, 0.3f);
     }
 
     public void CloseLevelChangePanel()

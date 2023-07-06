@@ -158,6 +158,7 @@ public class CountGenerateBoard : MonoBehaviour
     {
         if(uıController.canGenerate)
         {
+            countText.gameObject.SetActive(false);
             GetPositionList();
             GetSpriteList();
             await CacheCards();
@@ -194,6 +195,7 @@ public class CountGenerateBoard : MonoBehaviour
                 LeanTween.scale(card.gameObject, Vector3.one * 0.3f, 0f);
             }
 
+            countText.text = gameAPI.Translate(countText.gameObject.name, gameAPI.ToSentenceCase(cardLocalNames[randomValueList[0]]).Replace("-", " "), selectedLangCode);
             for(int i = 0; i < countNum; i++)
             {
                 int parentIndex = Random.Range(0, cardPositions.Count);
@@ -225,7 +227,8 @@ public class CountGenerateBoard : MonoBehaviour
             }
 
             CreateButton();
-            countText.text = gameAPI.Translate(countText.gameObject.name, gameAPI.ToSentenceCase(cardLocalNames[randomValueList[0]]).Replace("-", " "), selectedLangCode);
+            countText.gameObject.SetActive(true);
+            uıController.GameUIActivate();
         }
 
     }
@@ -307,6 +310,7 @@ public class CountGenerateBoard : MonoBehaviour
 
         cards.Clear();
         cardNames.Clear();
+        cardLocalNames.Clear();
         cardsList.Clear();
 
         countNum = 0;

@@ -64,8 +64,8 @@ public class CountUIController : MonoBehaviour
 
     public void CloseLevelChangePanel()
     {
-        LeanTween.scale(levelChange, Vector3.zero, 0.5f);
-        Invoke("LevelChangeDeactivate", 1f);
+        LeanTween.scale(levelChange, Vector3.zero, 0.4f);
+        Invoke("LevelChangeDeactivate", 0.7f);
     }
 
     public void PackSelectionPanelActive()

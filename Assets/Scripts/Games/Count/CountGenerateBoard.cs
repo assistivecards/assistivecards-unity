@@ -21,7 +21,7 @@ public class CountGenerateBoard : MonoBehaviour
     [SerializeField] private PackSelectionPanel packSelectionPanel;
 
     [Header ("Random")]
-    private List<int> randomValueList = new List<int>();
+    public List<int> randomValueList = new List<int>();
     private int tempRandomValue;
     private int randomValue;
 
@@ -73,6 +73,7 @@ public class CountGenerateBoard : MonoBehaviour
     public int countNum;
     private int randomButton;
     private int positionRandom;
+    private int randomButtonNumber;
 
     public class NumberButtons
     {
@@ -158,6 +159,7 @@ public class CountGenerateBoard : MonoBehaviour
     {
         if(uıController.canGenerate)
         {
+            countText.gameObject.SetActive(false);
             GetPositionList();
             GetSpriteList();
             await CacheCards();
@@ -194,6 +196,7 @@ public class CountGenerateBoard : MonoBehaviour
                 LeanTween.scale(card.gameObject, Vector3.one * 0.3f, 0f);
             }
 
+            countText.text = gameAPI.Translate(countText.gameObject.name, gameAPI.ToSentenceCase(cardLocalNames[randomValueList[0]]).Replace("-", " "), selectedLangCode);
             for(int i = 0; i < countNum; i++)
             {
                 int parentIndex = Random.Range(0, cardPositions.Count);
@@ -225,7 +228,8 @@ public class CountGenerateBoard : MonoBehaviour
             }
 
             CreateButton();
-            countText.text = gameAPI.Translate(countText.gameObject.name, gameAPI.ToSentenceCase(cardLocalNames[randomValueList[0]]).Replace("-", " "), selectedLangCode);
+            countText.gameObject.SetActive(true);
+            uıController.GameUIActivate();
         }
 
     }
@@ -249,41 +253,40 @@ public class CountGenerateBoard : MonoBehaviour
             }
         }
 
-        int random = Random.Range(0, numberButtons.Count - 3);    
-
         for(int i=0; i < buttonPositions.Count; i++)
         {
-            CreateDummyButton(i, random);
+            CreateButtonRandomValue();
+            CreateDummyButton(i, randomButtonNumber);
         }
 
+    }
+
+    private void CreateButtonRandomValue()
+    {
+        int tempButtonNumber = Random.Range(0, numberButtons.Count - 3);  
+
+        if(numberButtons[tempButtonNumber].number == countNum + 1 || tempButtonNumber == randomButtonNumber)
+        {
+            Debug.Log("tempButtonNumber: " + tempButtonNumber);
+            CreateButtonRandomValue();
+        }
+        else
+        {
+            randomButtonNumber = tempButtonNumber;
+        }
     }
 
     private void CreateDummyButton(int positionNum, int random)
     {
         if(buttonPositions[positionNum] != null)
         {
+            GameObject button = Instantiate(buttonPrefab, buttonPositions[positionNum].transform.position, Quaternion.identity);
+            button.transform.SetParent(buttonPositions[positionNum].transform);
 
-            if(random != positionRandom && random + 1 != positionRandom)   
-            {
-                GameObject correctButton = Instantiate(buttonPrefab, buttonPositions[positionNum].transform.position, Quaternion.identity);
-                correctButton.transform.SetParent(buttonPositions[positionNum].transform);
-
-                LeanTween.scale(correctButton, Vector3.one * 1.25f, 0);
-                correctButton.transform.GetChild(0).GetComponent<Image>().sprite = numberButtons[random + positionNum].numberImage;
-                correctButton.GetComponent<CountButton>().value = numberButtons[random + positionNum].number;
-                buttons.Add(correctButton);
-            }
-            else
-            {
-                random = random + 1;
-                GameObject correctButton = Instantiate(buttonPrefab, buttonPositions[positionNum].transform.position, Quaternion.identity);
-                correctButton.transform.SetParent(buttonPositions[positionNum].transform);
-
-                LeanTween.scale(correctButton, Vector3.one * 1.25f, 0);
-                correctButton.transform.GetChild(0).GetComponent<Image>().sprite = numberButtons[random + positionNum].numberImage;
-                correctButton.GetComponent<CountButton>().value = numberButtons[random + positionNum].number;
-                buttons.Add(correctButton);
-            }       
+            LeanTween.scale(button, Vector3.one * 1.25f, 0);
+            button.transform.GetChild(0).GetComponent<Image>().sprite = numberButtons[random].numberImage;
+            button.GetComponent<CountButton>().value = numberButtons[random].number;
+            buttons.Add(button);      
         }
     }
 
@@ -307,6 +310,7 @@ public class CountGenerateBoard : MonoBehaviour
 
         cards.Clear();
         cardNames.Clear();
+        cardLocalNames.Clear();
         cardsList.Clear();
 
         countNum = 0;

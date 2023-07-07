@@ -27,6 +27,7 @@ public class CountGenerateBoard : MonoBehaviour
 
     [Header ("Classes")]
     [SerializeField] private CountUIController uıController;
+    [SerializeField] private CountTutorial countTutorial;
 
     [Header ("Prefabs")]
     [SerializeField] private GameObject cardPrefab;
@@ -51,8 +52,6 @@ public class CountGenerateBoard : MonoBehaviour
     [Header ("Game UI")]
     [SerializeField] private TMP_Text countText;
 
-
-
     [Header ("Buttons")]
     [SerializeField] private Sprite image2;
     [SerializeField] private Sprite image3;
@@ -63,6 +62,7 @@ public class CountGenerateBoard : MonoBehaviour
     [SerializeField] private Sprite image8;
     [SerializeField] private Sprite image9;
     [SerializeField] private Sprite image10;
+    public GameObject correctButton;
 
     [Header ("Lists")]
     public List<GameObject> cardPositions = new List<GameObject>();
@@ -72,7 +72,7 @@ public class CountGenerateBoard : MonoBehaviour
 
     public int countNum;
     private int randomButton;
-    private int positionRandom;
+    public int positionRandom;
     private int randomButtonNumber;
 
     public class NumberButtons
@@ -155,16 +155,29 @@ public class CountGenerateBoard : MonoBehaviour
         buttonPositions.Add(buttonPosition3);
     }
 
+    private void GenerateRandomCardNumber()
+    {
+        int tempCountNum = Random.Range(1, 8);
+        if(tempCountNum == countNum)
+        {
+            countNum = tempCountNum + 1;
+        }
+        else
+        {
+            countNum = tempCountNum;
+        }
+    }
+
     public async void GeneratedBoardAsync()
     {
         if(uıController.canGenerate)
         {
+            GenerateRandomCardNumber();
             countText.gameObject.SetActive(false);
             GetPositionList();
             GetSpriteList();
             await CacheCards();
 
-            countNum = Random.Range(1, 9);
             for(int i = 0; i < cardPositions.Count - countNum; i++)
             {
                 CheckRandom();
@@ -230,6 +243,7 @@ public class CountGenerateBoard : MonoBehaviour
             CreateButton();
             countText.gameObject.SetActive(true);
             uıController.GameUIActivate();
+            countTutorial.SetTutorialPosition();
         }
 
     }
@@ -240,7 +254,7 @@ public class CountGenerateBoard : MonoBehaviour
             if(numberButton.number == countNum + 1)
             {
                 positionRandom = Random.Range(0, 3);
-                GameObject correctButton = Instantiate(buttonPrefab, buttonPositions[positionRandom].transform.position, Quaternion.identity);
+                correctButton = Instantiate(buttonPrefab, buttonPositions[positionRandom].transform.position, Quaternion.identity);
                 correctButton.transform.SetParent(buttonPositions[positionRandom].transform);
                 correctButton.name = "CorrectButton";
                 LeanTween.scale(correctButton, Vector3.one * 1.25f, 0);

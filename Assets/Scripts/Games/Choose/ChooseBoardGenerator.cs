@@ -23,6 +23,7 @@ public class ChooseBoardGenerator : MonoBehaviour
     public static bool isBackAfterSignOut = false;
     [SerializeField] GameObject loadingPanel;
     ChooseUIController UIController;
+    [SerializeField] GameObject tutorial;
 
     private void Awake()
     {
@@ -66,7 +67,9 @@ public class ChooseBoardGenerator : MonoBehaviour
         PlaceSprites();
         DisableLoadingPanel();
         ScaleImagesUp();
+        Invoke("SetTutorialPosition", .3f);
         backButton.SetActive(true);
+        UIController.Invoke("TutorialSetActive", .3f);
         Invoke("EnableBackButton", 0.15f);
     }
 
@@ -175,6 +178,19 @@ public class ChooseBoardGenerator : MonoBehaviour
     public void ReadCard()
     {
         gameAPI.Speak(randomCards[0].title);
+    }
+
+    private void SetTutorialPosition()
+    {
+
+        for (int i = 0; i < cardParents.Length; i++)
+        {
+            if (cardParents[i].transform.GetChild(0).GetComponent<Image>().sprite.texture == randomImages[0])
+            {
+                tutorial.GetComponent<Tutorial>().tutorialPosition = cardParents[i].transform;
+            }
+        }
+
     }
 
 }

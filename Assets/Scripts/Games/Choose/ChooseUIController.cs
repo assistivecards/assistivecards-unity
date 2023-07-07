@@ -15,6 +15,8 @@ public class ChooseUIController : MonoBehaviour
     private GameAPI gameAPI;
     public int correctMatches;
     public int checkpointFrequency;
+    [SerializeField] GameObject tutorial;
+    private bool firstTime = true;
 
     private void Awake()
     {
@@ -119,6 +121,15 @@ public class ChooseUIController : MonoBehaviour
         speakerIcon.SetActive(true);
         homeButton.SetActive(true);
 
+    }
+
+    public void TutorialSetActive()
+    {
+        if (firstTime || gameAPI.GetTutorialPreference() == 1)
+        {
+            tutorial.SetActive(true);
+        }
+        firstTime = false;
     }
 
 }

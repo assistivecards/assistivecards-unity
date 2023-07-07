@@ -27,6 +27,7 @@ public class CountGenerateBoard : MonoBehaviour
 
     [Header ("Classes")]
     [SerializeField] private CountUIController uıController;
+    [SerializeField] private CountTutorial countTutorial;
 
     [Header ("Prefabs")]
     [SerializeField] private GameObject cardPrefab;
@@ -72,8 +73,9 @@ public class CountGenerateBoard : MonoBehaviour
 
     public int countNum;
     private int randomButton;
-    private int positionRandom;
+    public int positionRandom;
     private int randomButtonNumber;
+    public GameObject correctButton;
 
     public class NumberButtons
     {
@@ -230,6 +232,7 @@ public class CountGenerateBoard : MonoBehaviour
             CreateButton();
             countText.gameObject.SetActive(true);
             uıController.GameUIActivate();
+            countTutorial.SetTutorialPosition();
         }
 
     }
@@ -240,7 +243,7 @@ public class CountGenerateBoard : MonoBehaviour
             if(numberButton.number == countNum + 1)
             {
                 positionRandom = Random.Range(0, 3);
-                GameObject correctButton = Instantiate(buttonPrefab, buttonPositions[positionRandom].transform.position, Quaternion.identity);
+                correctButton = Instantiate(buttonPrefab, buttonPositions[positionRandom].transform.position, Quaternion.identity);
                 correctButton.transform.SetParent(buttonPositions[positionRandom].transform);
                 correctButton.name = "CorrectButton";
                 LeanTween.scale(correctButton, Vector3.one * 1.25f, 0);

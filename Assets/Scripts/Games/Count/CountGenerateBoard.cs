@@ -52,8 +52,6 @@ public class CountGenerateBoard : MonoBehaviour
     [Header ("Game UI")]
     [SerializeField] private TMP_Text countText;
 
-
-
     [Header ("Buttons")]
     [SerializeField] private Sprite image2;
     [SerializeField] private Sprite image3;
@@ -64,6 +62,7 @@ public class CountGenerateBoard : MonoBehaviour
     [SerializeField] private Sprite image8;
     [SerializeField] private Sprite image9;
     [SerializeField] private Sprite image10;
+    public GameObject correctButton;
 
     [Header ("Lists")]
     public List<GameObject> cardPositions = new List<GameObject>();
@@ -75,7 +74,6 @@ public class CountGenerateBoard : MonoBehaviour
     private int randomButton;
     public int positionRandom;
     private int randomButtonNumber;
-    public GameObject correctButton;
 
     public class NumberButtons
     {
@@ -157,16 +155,29 @@ public class CountGenerateBoard : MonoBehaviour
         buttonPositions.Add(buttonPosition3);
     }
 
+    private void GenerateRandomCardNumber()
+    {
+        int tempCountNum = Random.Range(1, 8);
+        if(tempCountNum == countNum)
+        {
+            countNum = tempCountNum + 1;
+        }
+        else
+        {
+            countNum = tempCountNum;
+        }
+    }
+
     public async void GeneratedBoardAsync()
     {
         if(uıController.canGenerate)
         {
+            GenerateRandomCardNumber();
             countText.gameObject.SetActive(false);
             GetPositionList();
             GetSpriteList();
             await CacheCards();
 
-            countNum = Random.Range(1, 9);
             for(int i = 0; i < cardPositions.Count - countNum; i++)
             {
                 CheckRandom();

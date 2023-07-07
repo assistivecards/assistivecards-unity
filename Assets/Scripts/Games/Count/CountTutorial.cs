@@ -8,6 +8,6 @@ public class CountTutorial : MonoBehaviour
 
     public void SetTutorialPosition() 
     {
-        LeanTween.move(this.gameObject, boardGenerator.correctButton.transform.position, 0.1f);
+        LeanTween.move(this.gameObject, boardGenerator.correctButton.transform.position, 0f);
     }
 }

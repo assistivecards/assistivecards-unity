@@ -5980,12 +5980,12 @@ MonoBehaviour:
   image8: {fileID: 21300000, guid: bc9f384a5be134085bbea442b1723ef0, type: 3}
   image9: {fileID: 21300000, guid: 7476c5f52d3da4f71a9087035d4e3e7c, type: 3}
   image10: {fileID: 21300000, guid: f48d73c342bc64707b86c210028277ad, type: 3}
+  correctButton: {fileID: 0}
   cardPositions: []
   buttonPositions: []
   buttons: []
   countNum: 0
   positionRandom: 0
-  correctButton: {fileID: 0}
 --- !u!114 &8383894889009589327
 MonoBehaviour:
   m_ObjectHideFlags: 0

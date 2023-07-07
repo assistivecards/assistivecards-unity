@@ -225,17 +225,19 @@ apps = await GetApps();
 
 ## GetAppIcon
 
-Takes in an app slug of type string and returns an object of type Texture2D corresponding to the specified app slug.
+Takes in an app slug of type string as the first parameter and an optional image size of type integer as the second parameter. Returns an object of type Texture2D corresponding to the specified app slug and image size.
+
+> Default image size is 1024x1024
 
 ```Csharp
-async Task<Texture2D> GetAppIcon(string appSlug)
+async Task<Texture2D> GetAppIcon(string appSlug, int imgSize)
 ```
 
 Example usage;
 
 ```Csharp
 Texture2D texture;
-texture = await GetAppIcon("leeloo");
+texture = await GetAppIcon("leeloo", 683);
 ```
 
 ## GetGames
@@ -255,17 +257,19 @@ games = GetGames();
 
 ## GetGameIcon
 
-Takes in a game slug of type string and returns an object of type Texture2D corresponding to the specified game slug.
+Takes in a game slug of type string as the first parameter and an optional image size of type integer as the second parameter. Returns an object of type Texture2D corresponding to the specified game slug and image size.
+
+> Default image size is 1024x1024
 
 ```Csharp
-public async Task<Texture2D> GetGameIcon(string gameSlug)
+public async Task<Texture2D> GetGameIcon(string gameSlug, int imgSize)
 ```
 
 Example usage;
 
 ```Csharp
 Texture2D texture;
-texture = await GetGameIcon("memory");
+texture = await GetGameIcon("memory", 256);
 ```
 
 ## GetCardImagesByPack

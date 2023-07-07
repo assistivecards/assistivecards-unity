@@ -106,10 +106,10 @@ public class GameSelectionPanel : MonoBehaviour
 
         tempGameElement.SetActive(true);
 
-        for (int i = 0; i < gameAPI.cachedGames.games.Count - gameAPI.twelveGameIcons.Count; i++)
+        for (int i = gameAPI.twelveGameIcons.Count; i < gameAPI.cachedGames.games.Count; i++)
         {
             gameElement = Instantiate(tempGameElement, transform);
-            ColorUtility.TryParseHtmlString(jsonGamess["games"][i + gameAPI.twelveGameIcons.Count]["color"].ToString().Replace("\"", ""), out bgColor);
+            ColorUtility.TryParseHtmlString(jsonGamess["games"][i]["color"].ToString().Replace("\"", ""), out bgColor);
             gameElement.transform.GetChild(0).GetComponent<Image>().color = bgColor;
 
             for (int j = 0; j < gameElement.transform.GetChild(0).childCount; j++)
@@ -118,14 +118,14 @@ public class GameSelectionPanel : MonoBehaviour
             }
 
 
-            gameElement.transform.GetChild(3).GetComponent<Text>().text = gameAPI.ToSentenceCase(jsonGamess["games"][i + gameAPI.twelveGameIcons.Count]["name"][currentLanguageCode].ToString().Replace("\"", ""));
-            var gameTexture = gameAPI.cachedGameIcons[i + gameAPI.twelveGameIcons.Count];
+            gameElement.transform.GetChild(3).GetComponent<Text>().text = gameAPI.ToSentenceCase(jsonGamess["games"][i]["name"][currentLanguageCode].ToString().Replace("\"", ""));
+            var gameTexture = gameAPI.cachedGameIcons[i - gameAPI.twelveGameIcons.Count];
             gameTexture.wrapMode = TextureWrapMode.Clamp;
             gameTexture.filterMode = FilterMode.Bilinear;
 
-            gameElement.transform.GetChild(1).GetComponent<Image>().sprite = Sprite.Create(gameTexture, new Rect(0.0f, 0.0f, gameAPI.cachedGameIcons[i + gameAPI.twelveGameIcons.Count].width, gameAPI.cachedGameIcons[i + gameAPI.twelveGameIcons.Count].height), new Vector2(0.5f, 0.5f), 100.0f);
+            gameElement.transform.GetChild(1).GetComponent<Image>().sprite = Sprite.Create(gameTexture, new Rect(0.0f, 0.0f, gameAPI.cachedGameIcons[i - gameAPI.twelveGameIcons.Count].width, gameAPI.cachedGameIcons[i - gameAPI.twelveGameIcons.Count].height), new Vector2(0.5f, 0.5f), 100.0f);
 
-            gameElement.name = games.games[i + gameAPI.twelveGameIcons.Count].slug;
+            gameElement.name = games.games[i].slug;
 
             gameElement.transform.GetChild(5).gameObject.SetActive(true);
 
@@ -134,7 +134,7 @@ public class GameSelectionPanel : MonoBehaviour
         }
         tempGameElement.SetActive(false);
 
-        for (int i = gameAPI.freePackImages.Count; i < gameElementGameObject.Count; i++)
+        for (int i = gameAPI.twelveGameIcons.Count; i < gameElementGameObject.Count; i++)
         {
             var backgroundImage = gameElementGameObject[i].GetComponent<Image>();
             tempColor1 = backgroundImage.color;
@@ -166,7 +166,7 @@ public class GameSelectionPanel : MonoBehaviour
 
         }
 
-        for (int i = gameAPI.freePackImages.Count; i < gameElementGameObject.Count; i++)
+        for (int i = gameAPI.twelveGameIcons.Count; i < gameElementGameObject.Count; i++)
         {
             ColorUtility.TryParseHtmlString(jsonGamess["games"][i]["color"].ToString().Replace("\"", ""), out bgColor);
             LeanTween.color(gameElementGameObject[i].transform.GetChild(0).GetComponent<Image>().rectTransform, new Color(bgColor.r, bgColor.g, bgColor.b, 1), .5f);

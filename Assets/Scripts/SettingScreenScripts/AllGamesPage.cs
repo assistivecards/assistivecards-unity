@@ -81,21 +81,21 @@ public class AllGamesPage : MonoBehaviour
 
             await GameAPI.cacheData;
 
-            for (int i = 0; i < gameAPI.cachedGames.games.Count - gameAPI.twelveGameIcons.Count; i++)
+            for (int i = gameAPI.twelveGameIcons.Count; i < gameAPI.cachedGames.games.Count; i++)
             {
                 gameElement = Instantiate(tempGameElement, transform);
 
-                gameElement.transform.GetChild(0).GetComponent<TMP_Text>().text = gameAPI.ToTitleCase(jsonGamess["games"][i + gameAPI.twelveGameIcons.Count]["name"][currentLanguageCode].ToString().Replace("\"", ""));
-                gameElement.transform.GetChild(1).GetComponent<TMP_Text>().text = jsonGamess["games"][i + gameAPI.twelveGameIcons.Count]["tagline"][currentLanguageCode].ToString().Replace("\"", "");
+                gameElement.transform.GetChild(0).GetComponent<TMP_Text>().text = gameAPI.ToTitleCase(jsonGamess["games"][i]["name"][currentLanguageCode].ToString().Replace("\"", ""));
+                gameElement.transform.GetChild(1).GetComponent<TMP_Text>().text = jsonGamess["games"][i]["tagline"][currentLanguageCode].ToString().Replace("\"", "");
                 // gameElement.transform.GetChild(2).GetComponent<TMP_Text>().text = jsonGamess["games"][i]["description"][currentLanguageCode].ToString().Replace("\"", "");
                 // gameElement.transform.GetChild(2).GetComponent<TMP_Text>().text = jsonGamess["games"][i]["tagline"][currentLanguageCode].ToString().Replace("\"", "");
 
-                if (!games.games[i + gameAPI.twelveGameIcons.Count].released)
+                if (!games.games[i].released)
                 {
                     gameElement.transform.GetChild(4).GetComponent<Image>().color = new Color32(255, 255, 255, 75);
                 }
 
-                gameIcon = gameAPI.cachedGameIcons[i + gameAPI.twelveGameIcons.Count];
+                gameIcon = gameAPI.cachedGameIcons[i - gameAPI.twelveGameIcons.Count];
 
                 // var gameIcon = await gameAPI.GetGameIcon(games.games[i].slug);
                 gameIcon.wrapMode = TextureWrapMode.Clamp;
@@ -106,7 +106,7 @@ public class AllGamesPage : MonoBehaviour
                 gameElement.SetActive(true);
 
 
-                gameElement.name = games.games[i + gameAPI.twelveGameIcons.Count].slug;
+                gameElement.name = games.games[i].slug;
 
                 gameElementGameObject.Add(gameElement);
                 didLanguageChange = false;

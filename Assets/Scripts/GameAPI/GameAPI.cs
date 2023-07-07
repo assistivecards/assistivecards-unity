@@ -70,9 +70,9 @@ public class GameAPI : MonoBehaviour
         {
             cachedAppIcons.Add(await GetAppIcon(cachedApps.apps[i].slug));
         }
-        for (int i = 0; i < cachedGames.games.Count; i++)
+        for (int i = 12; i < cachedGames.games.Count; i++)
         {
-            cachedGameIcons.Add(await GetGameIcon(cachedGames.games[i].slug));
+            cachedGameIcons.Add(await GetGameIcon(cachedGames.games[i].slug, 512));
         }
         cachedActivities = await GetActivities(selectedLangCode);
     }
@@ -103,7 +103,7 @@ public class GameAPI : MonoBehaviour
     {
         for (int i = 0; i < 12; i++)
         {
-            twelveGameIcons.Add(await GetGameIcon(cachedGames.games[i].slug));
+            twelveGameIcons.Add(await GetGameIcon(cachedGames.games[i].slug, 512));
         }
     }
 

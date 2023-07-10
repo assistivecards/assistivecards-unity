@@ -48,6 +48,7 @@ public class CountGenerateBoard : MonoBehaviour
     [SerializeField] private GameObject cardPosition12;
     [SerializeField] private GameObject cardPosition13;
     [SerializeField] private GameObject cardPosition14;
+    [SerializeField] private GameObject levelEndCardPosition;
 
     [SerializeField] private GameObject buttonPosition1;
     [SerializeField] private GameObject buttonPosition2;
@@ -78,6 +79,7 @@ public class CountGenerateBoard : MonoBehaviour
     private int randomButton;
     public int positionRandom;
     private int randomButtonNumber;
+    private GameObject levelEndCard;
 
     public class NumberButtons
     {
@@ -202,7 +204,7 @@ public class CountGenerateBoard : MonoBehaviour
                 }
 
                 GameObject card = Instantiate(cardPrefab, cardPositions[parentIndex].transform.position, Quaternion.identity);
-                card.transform.SetParent(cardPositions[parentIndex].transform);
+                card.transform.parent = cardPositions[parentIndex].transform;
 
                 var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[i]], 512);
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
@@ -233,7 +235,7 @@ public class CountGenerateBoard : MonoBehaviour
                 }
 
                 GameObject card = Instantiate(cardPrefab, cardPositions[parentIndex].transform.position, Quaternion.identity);
-                card.transform.SetParent(cardPositions[parentIndex].transform);
+                card.transform.parent = cardPositions[parentIndex].transform;
 
                 var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[0]], 512);
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
@@ -249,11 +251,53 @@ public class CountGenerateBoard : MonoBehaviour
 
             CreateButton();
             countText.gameObject.SetActive(true);
-            uıController.GameUIActivate();
-            countTutorial.SetTutorialPosition();
-        }
+            if(levelEndCard != null)
+            {
+                ScaleDownLevelEndCard();
+            }
+            else
+            {
+                LoadLevel();
+            }
 
+            CreateLevelEndCard();
+        }
     }
+
+    private async void CreateLevelEndCard()
+    {
+        if(levelEndCard != null)
+        {
+            Destroy(levelEndCard);
+        }
+        levelEndCard =  Instantiate(cardPrefab, levelEndCardPosition.transform.position, Quaternion.identity);
+        levelEndCard.transform.parent = levelEndCardPosition.transform;
+        LeanTween.scale(levelEndCard, Vector3.zero, 0f);
+        var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[0]], 512);
+        cardTexture.wrapMode = TextureWrapMode.Clamp;
+        cardTexture.filterMode = FilterMode.Bilinear;
+
+        levelEndCard.transform.name = cardNames[randomValueList[0]];
+        levelEndCard.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+        levelEndCard.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+    } 
+
+    public void ScaleUpLevelEndCard()
+    {
+        LeanTween.scale(levelEndCard, Vector3.one, 0.5f);
+    }
+
+    public void ScaleDownLevelEndCard()
+    {
+        LeanTween.scale(levelEndCard, Vector3.zero, 0.5f).setOnComplete(LoadLevel);
+    }
+
+    private void LoadLevel()
+    {
+        uıController.GameUIActivate();
+        countTutorial.SetTutorialPosition();
+    }
+
     private void CreateButton()
     {
         foreach(var numberButton in numberButtons)

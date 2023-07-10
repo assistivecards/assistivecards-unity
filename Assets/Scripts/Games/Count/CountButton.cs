@@ -27,14 +27,20 @@ public class CountButton : MonoBehaviour
         if(value == generateBoard.countNum + 1)
         {
             Invoke("CallLevelEnd", 0.35f);
-            gameAPI.Speak(generateBoard.cardLocalNames[generateBoard.randomValueList[0]]);
-            Debug.Log(generateBoard.cardLocalNames[generateBoard.randomValueList[0]]);
-            Invoke("FinishedSound", 0.25f);
+            Invoke("LevelEndAnimation", 0.25f);
+            FinishedSound();
         }
         else
         {
             LeanTween.scale(this.gameObject, Vector3.one * 1.5f, 0.25f).setOnComplete(ScaleDown);
         }
+    }
+
+    private void LevelEndAnimation()
+    {
+        generateBoard.ScaleUpLevelEndCard();
+        gameAPI.Speak(generateBoard.cardLocalNames[generateBoard.randomValueList[0]]);
+        Debug.Log(generateBoard.cardLocalNames[generateBoard.randomValueList[0]]);
     }
 
     private void FinishedSound()
@@ -45,7 +51,7 @@ public class CountButton : MonoBehaviour
     private void CallLevelEnd()
     {
         generateBoard.ClearBoard();
-        uıController.LevelChangeScreenActivate();
+        //uıController.LevelChangeScreenActivate();
     }
 
     private void ScaleDown()

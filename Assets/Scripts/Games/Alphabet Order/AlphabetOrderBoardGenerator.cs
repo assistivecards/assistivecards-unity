@@ -58,6 +58,7 @@ public class AlphabetOrderBoardGenerator : MonoBehaviour
         }
 
         PopulateRandomCards();
+        TranslateChooseCardText();
         await PopulateRandomTextures();
         PlaceSprites();
         DisableLoadingPanel();
@@ -160,6 +161,11 @@ public class AlphabetOrderBoardGenerator : MonoBehaviour
     private void DisableLoadingPanel()
     {
         loadingPanel.SetActive(false);
+    }
+
+    public void TranslateChooseCardText()
+    {
+        sortText.text = gameAPI.Translate(sortText.gameObject.name, selectedLangCode);
     }
 
 }

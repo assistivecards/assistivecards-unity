@@ -1341,7 +1341,7 @@ GameObject:
   - component: {fileID: 890424266}
   - component: {fileID: 890424265}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: sort_cards_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5927,7 +5927,6 @@ MonoBehaviour:
   randomImages: []
   randomSprites: []
   selectedLangCode: 
-  correctCardSlug: 
   sortText: {fileID: 890424265}
   packSlug: 
   backButton: {fileID: 1737138404}

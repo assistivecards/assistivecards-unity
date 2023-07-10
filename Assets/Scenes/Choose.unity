@@ -5717,7 +5717,7 @@ MonoBehaviour:
   homeButton: {fileID: 1050175573}
   checkPointPanel: {fileID: 1275520836}
   correctMatches: 0
-  checkpointFrequency: 5
+  checkpointFrequency: 7
   tutorial: {fileID: 927069859}
 --- !u!114 &8691574409270737102
 MonoBehaviour:

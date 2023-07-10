@@ -75,7 +75,9 @@ public class CountGenerateBoard : MonoBehaviour
     public List<GameObject> buttonPositions = new List<GameObject>();
     public List<GameObject> buttons = new List<GameObject>();
 
+    [Header ("Values")]
     public int countNum;
+    public int levelCount;
     private int randomButton;
     public int positionRandom;
     private int randomButtonNumber;
@@ -181,6 +183,7 @@ public class CountGenerateBoard : MonoBehaviour
     {
         if(uıController.canGenerate)
         {
+            uıController.GameUIDeactivate();
             GenerateRandomCardNumber();
             countText.gameObject.SetActive(false);
             GetPositionList();
@@ -218,7 +221,6 @@ public class CountGenerateBoard : MonoBehaviour
                 LeanTween.scale(card.gameObject, Vector3.one * 0.3f, 0f);
             }
 
-            countText.text = gameAPI.Translate(countText.gameObject.name, gameAPI.ToSentenceCase(cardLocalNames[randomValueList[0]]).Replace("-", " "), selectedLangCode);
             for(int i = 0; i < countNum; i++)
             {
                 int parentIndex = Random.Range(0, cardPositions.Count);
@@ -250,17 +252,19 @@ public class CountGenerateBoard : MonoBehaviour
             }
 
             CreateButton();
+            countText.text = gameAPI.Translate(countText.gameObject.name, gameAPI.ToSentenceCase(cardLocalNames[randomValueList[0]]).Replace("-", " "), selectedLangCode);
             countText.gameObject.SetActive(true);
             if(levelEndCard != null)
             {
                 ScaleDownLevelEndCard();
+                Invoke("LoadLevel",0.5f);
             }
             else
             {
                 LoadLevel();
             }
 
-            CreateLevelEndCard();
+            Invoke("CreateLevelEndCard", 1f);
         }
     }
 
@@ -270,6 +274,7 @@ public class CountGenerateBoard : MonoBehaviour
         {
             Destroy(levelEndCard);
         }
+
         levelEndCard =  Instantiate(cardPrefab, levelEndCardPosition.transform.position, Quaternion.identity);
         levelEndCard.transform.parent = levelEndCardPosition.transform;
         LeanTween.scale(levelEndCard, Vector3.zero, 0f);
@@ -284,12 +289,13 @@ public class CountGenerateBoard : MonoBehaviour
 
     public void ScaleUpLevelEndCard()
     {
-        LeanTween.scale(levelEndCard, Vector3.one, 0.5f);
+        uıController.GameUIDeactivate();
+        LeanTween.scale(levelEndCard, Vector3.one, 0.4f);
     }
 
     public void ScaleDownLevelEndCard()
     {
-        LeanTween.scale(levelEndCard, Vector3.zero, 0.5f).setOnComplete(LoadLevel);
+        LeanTween.scale(levelEndCard, Vector3.zero, 0.25f);
     }
 
     private void LoadLevel()
@@ -340,6 +346,7 @@ public class CountGenerateBoard : MonoBehaviour
             randomButtonNumber = tempButtonNumber;
         }
     }
+
 
     private void CreateDummyButton(int positionNum, int random)
     {

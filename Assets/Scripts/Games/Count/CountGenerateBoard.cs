@@ -44,6 +44,10 @@ public class CountGenerateBoard : MonoBehaviour
     [SerializeField] private GameObject cardPosition8;
     [SerializeField] private GameObject cardPosition9;
     [SerializeField] private GameObject cardPosition10;
+    [SerializeField] private GameObject cardPosition11;
+    [SerializeField] private GameObject cardPosition12;
+    [SerializeField] private GameObject cardPosition13;
+    [SerializeField] private GameObject cardPosition14;
 
     [SerializeField] private GameObject buttonPosition1;
     [SerializeField] private GameObject buttonPosition2;
@@ -133,9 +137,13 @@ public class CountGenerateBoard : MonoBehaviour
         cardPositions.Add(cardPosition6);
         cardPositions.Add(cardPosition4);
         cardPositions.Add(cardPosition7);
+        cardPositions.Add(cardPosition14);
         cardPositions.Add(cardPosition10);
         cardPositions.Add(cardPosition2);
+        cardPositions.Add(cardPosition12);
         cardPositions.Add(cardPosition9);
+        cardPositions.Add(cardPosition11);
+        cardPositions.Add(cardPosition13);
     }
 
     private void GetSpriteList()
@@ -148,7 +156,6 @@ public class CountGenerateBoard : MonoBehaviour
         numberButtons.Add(new NumberButtons(image7, 7));
         numberButtons.Add(new NumberButtons(image8, 8));
         numberButtons.Add(new NumberButtons(image9, 9));
-        numberButtons.Add(new NumberButtons(image10, 10));
 
         buttonPositions.Add(buttonPosition1);
         buttonPositions.Add(buttonPosition2);

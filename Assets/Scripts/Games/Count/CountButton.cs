@@ -26,15 +26,33 @@ public class CountButton : MonoBehaviour
     {
         if(value == generateBoard.countNum + 1)
         {
-            Invoke("CallLevelEnd", 0.35f);
-            gameAPI.Speak(generateBoard.cardLocalNames[generateBoard.randomValueList[0]]);
-            Debug.Log(generateBoard.cardLocalNames[generateBoard.randomValueList[0]]);
-            Invoke("FinishedSound", 0.25f);
+            if(generateBoard.levelCount >= 3)
+            {
+                FinishedSound();
+                generateBoard.ScaleUpLevelEndCard();
+                generateBoard.Invoke("ScaleDownLevelEndCard", 0.6f);
+                Invoke("CallLevelEnd", 1f);
+                generateBoard.levelCount = 0;
+            }
+            else if(generateBoard.levelCount < 3)
+            {
+                LevelEndAnimation();
+                generateBoard.GeneratedBoardAsync();
+                FinishedSound();
+                generateBoard.levelCount++;
+            }
         }
         else
         {
             LeanTween.scale(this.gameObject, Vector3.one * 1.5f, 0.25f).setOnComplete(ScaleDown);
         }
+    }
+
+    private void LevelEndAnimation()
+    {
+        generateBoard.ScaleUpLevelEndCard();
+        gameAPI.Speak(generateBoard.cardLocalNames[generateBoard.randomValueList[0]]);
+        generateBoard.ClearBoard();
     }
 
     private void FinishedSound()

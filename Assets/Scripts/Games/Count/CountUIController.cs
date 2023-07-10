@@ -47,6 +47,15 @@ public class CountUIController : MonoBehaviour
         }
     }
 
+    public void GameUIDeactivate()
+    {
+        gameUI.SetActive(false);
+        backButton.SetActive(false);
+        settingButton.SetActive(false);
+        helloText.SetActive(false);
+        loadingScreen.SetActive(false);
+    }
+
     public void LevelEnding()
     {
         boardGenerator.ClearBoard();

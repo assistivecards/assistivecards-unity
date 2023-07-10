@@ -41,6 +41,9 @@ public class MatchBoardGenerator : MonoBehaviour
     public List<int> cardPositionRandoms = new List<int>(); 
     private int randomCardPosition;
 
+    public string firstColumnCards;
+    public string secondColumnCards;
+
 
     private void Awake()
     {
@@ -133,7 +136,35 @@ public class MatchBoardGenerator : MonoBehaviour
                 card.GetComponent<MatchCardElement>().cardName = cardLocalNames[randomValueList[i]];
                 LeanTween.scale(card.gameObject, Vector3.one * 0.5f, 0f);
             }
+
+            for(int i = 0; i < cards.Count; i++)
+            {
+                if(i < 3)
+                {
+                    firstColumnCards = firstColumnCards + " - " + cardPositions[i].transform.GetChild(0).name;
+                }
+                else if(i >= 3)
+                {
+                    secondColumnCards = secondColumnCards + " - " + cardPositions[i].transform.GetChild(0).name;
+                }
+            }
             //uıController.GameUIActivate();
+            CheckColumnStrings();
+    }
+
+    private void CheckColumnStrings()
+    {
+        if(firstColumnCards == secondColumnCards)
+        {
+            Debug.Log("CheckColumnStrings");
+            ChangePositions();
+        }
+    }
+
+    private void ChangePositions()
+    {
+        cardPositions[0].transform.GetChild(0).transform.position = cardPositions[1].transform.position;
+        cardPositions[1].transform.GetChild(0).transform.position = cardPositions[0].transform.position;
     }
 
     private void CreateRandomCardPos()
@@ -148,5 +179,16 @@ public class MatchBoardGenerator : MonoBehaviour
         {
             CreateRandomCardPos();
         }
+    }
+
+    private void ClearBoard()
+    {
+        foreach (var card in cards)
+        {
+            Destroy(card);
+        }
+        cards.Clear();
+        firstColumnCards = null;
+        secondColumnCards = null;
     }
 }

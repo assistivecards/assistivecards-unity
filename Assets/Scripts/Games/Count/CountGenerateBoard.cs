@@ -44,6 +44,11 @@ public class CountGenerateBoard : MonoBehaviour
     [SerializeField] private GameObject cardPosition8;
     [SerializeField] private GameObject cardPosition9;
     [SerializeField] private GameObject cardPosition10;
+    [SerializeField] private GameObject cardPosition11;
+    [SerializeField] private GameObject cardPosition12;
+    [SerializeField] private GameObject cardPosition13;
+    [SerializeField] private GameObject cardPosition14;
+    [SerializeField] private GameObject levelEndCardPosition;
 
     [SerializeField] private GameObject buttonPosition1;
     [SerializeField] private GameObject buttonPosition2;
@@ -70,10 +75,13 @@ public class CountGenerateBoard : MonoBehaviour
     public List<GameObject> buttonPositions = new List<GameObject>();
     public List<GameObject> buttons = new List<GameObject>();
 
+    [Header ("Values")]
     public int countNum;
+    public int levelCount;
     private int randomButton;
     public int positionRandom;
     private int randomButtonNumber;
+    private GameObject levelEndCard;
 
     public class NumberButtons
     {
@@ -133,9 +141,13 @@ public class CountGenerateBoard : MonoBehaviour
         cardPositions.Add(cardPosition6);
         cardPositions.Add(cardPosition4);
         cardPositions.Add(cardPosition7);
+        cardPositions.Add(cardPosition14);
         cardPositions.Add(cardPosition10);
         cardPositions.Add(cardPosition2);
+        cardPositions.Add(cardPosition12);
         cardPositions.Add(cardPosition9);
+        cardPositions.Add(cardPosition11);
+        cardPositions.Add(cardPosition13);
     }
 
     private void GetSpriteList()
@@ -148,7 +160,6 @@ public class CountGenerateBoard : MonoBehaviour
         numberButtons.Add(new NumberButtons(image7, 7));
         numberButtons.Add(new NumberButtons(image8, 8));
         numberButtons.Add(new NumberButtons(image9, 9));
-        numberButtons.Add(new NumberButtons(image10, 10));
 
         buttonPositions.Add(buttonPosition1);
         buttonPositions.Add(buttonPosition2);
@@ -172,6 +183,7 @@ public class CountGenerateBoard : MonoBehaviour
     {
         if(uıController.canGenerate)
         {
+            uıController.GameUIDeactivate();
             GenerateRandomCardNumber();
             countText.gameObject.SetActive(false);
             GetPositionList();
@@ -195,7 +207,7 @@ public class CountGenerateBoard : MonoBehaviour
                 }
 
                 GameObject card = Instantiate(cardPrefab, cardPositions[parentIndex].transform.position, Quaternion.identity);
-                card.transform.SetParent(cardPositions[parentIndex].transform);
+                card.transform.parent = cardPositions[parentIndex].transform;
 
                 var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[i]], 512);
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
@@ -209,7 +221,6 @@ public class CountGenerateBoard : MonoBehaviour
                 LeanTween.scale(card.gameObject, Vector3.one * 0.3f, 0f);
             }
 
-            countText.text = gameAPI.Translate(countText.gameObject.name, gameAPI.ToSentenceCase(cardLocalNames[randomValueList[0]]).Replace("-", " "), selectedLangCode);
             for(int i = 0; i < countNum; i++)
             {
                 int parentIndex = Random.Range(0, cardPositions.Count);
@@ -226,7 +237,7 @@ public class CountGenerateBoard : MonoBehaviour
                 }
 
                 GameObject card = Instantiate(cardPrefab, cardPositions[parentIndex].transform.position, Quaternion.identity);
-                card.transform.SetParent(cardPositions[parentIndex].transform);
+                card.transform.parent = cardPositions[parentIndex].transform;
 
                 var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[0]], 512);
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
@@ -241,12 +252,58 @@ public class CountGenerateBoard : MonoBehaviour
             }
 
             CreateButton();
+            countText.text = gameAPI.Translate(countText.gameObject.name, gameAPI.ToSentenceCase(cardLocalNames[randomValueList[0]]).Replace("-", " "), selectedLangCode);
             countText.gameObject.SetActive(true);
-            uıController.GameUIActivate();
-            countTutorial.SetTutorialPosition();
+            if(levelEndCard != null)
+            {
+                ScaleDownLevelEndCard();
+                Invoke("LoadLevel",0.5f);
+            }
+            else
+            {
+                LoadLevel();
+            }
+
+            Invoke("CreateLevelEndCard", 1f);
+        }
+    }
+
+    private async void CreateLevelEndCard()
+    {
+        if(levelEndCard != null)
+        {
+            Destroy(levelEndCard);
         }
 
+        levelEndCard =  Instantiate(cardPrefab, levelEndCardPosition.transform.position, Quaternion.identity);
+        levelEndCard.transform.parent = levelEndCardPosition.transform;
+        LeanTween.scale(levelEndCard, Vector3.zero, 0f);
+        var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[0]], 512);
+        cardTexture.wrapMode = TextureWrapMode.Clamp;
+        cardTexture.filterMode = FilterMode.Bilinear;
+
+        levelEndCard.transform.name = cardNames[randomValueList[0]];
+        levelEndCard.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+        levelEndCard.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+    } 
+
+    public void ScaleUpLevelEndCard()
+    {
+        uıController.GameUIDeactivate();
+        LeanTween.scale(levelEndCard, Vector3.one, 0.4f);
     }
+
+    public void ScaleDownLevelEndCard()
+    {
+        LeanTween.scale(levelEndCard, Vector3.zero, 0.25f);
+    }
+
+    private void LoadLevel()
+    {
+        uıController.GameUIActivate();
+        countTutorial.SetTutorialPosition();
+    }
+
     private void CreateButton()
     {
         foreach(var numberButton in numberButtons)
@@ -289,6 +346,7 @@ public class CountGenerateBoard : MonoBehaviour
             randomButtonNumber = tempButtonNumber;
         }
     }
+
 
     private void CreateDummyButton(int positionNum, int random)
     {

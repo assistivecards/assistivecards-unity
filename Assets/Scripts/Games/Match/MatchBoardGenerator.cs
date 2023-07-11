@@ -43,6 +43,7 @@ public class MatchBoardGenerator : MonoBehaviour
 
     public string firstColumnCards;
     public string secondColumnCards;
+    public int matchCount;
 
 
     private void Awake()
@@ -190,5 +191,25 @@ public class MatchBoardGenerator : MonoBehaviour
         cards.Clear();
         firstColumnCards = null;
         secondColumnCards = null;
+    }
+
+    public void CheckMatches()
+    {
+        foreach(GameObject card in cards)
+        {
+            if(card.GetComponent<MatchCardElement>().match == true)
+            {
+                matchCount++;
+            }
+        }
+
+        if(matchCount != 6)
+        {
+            matchCount = 0;
+        }
+        else if(matchCount == 6)
+        {
+            // call level end function
+        }
     }
 }

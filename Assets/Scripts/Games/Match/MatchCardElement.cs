@@ -7,12 +7,11 @@ using UnityEngine.UI;
 public class MatchCardElement : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
     GameAPI gameAPI;
-
+    private MatchBoardGenerator boardGenerator;
+    public string cardName;
     public bool moveable;
     public bool match;
     private GameObject levelChange;
-    private LevelChangeScreenHatchMatch levelChangeScreenHatchMatch;
-    public string cardName;
     private Vector3 startPosition;
     private bool isPointerUp;
 
@@ -20,6 +19,11 @@ public class MatchCardElement : MonoBehaviour, IPointerDownHandler, IDragHandler
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
         startPosition = transform.position;
+    }
+
+    private void OnEnable() 
+    {
+        boardGenerator = FindObjectOfType<MatchBoardGenerator>();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -52,6 +56,7 @@ public class MatchCardElement : MonoBehaviour, IPointerDownHandler, IDragHandler
                 other.gameObject.GetComponent<MatchCardElement>().match = true;
                 match = true;
                 SpeakCardName();
+                boardGenerator.CheckMatches();
             }
             else if(!match 
             && other.gameObject.GetComponent<MatchCardElement>().moveable == false 

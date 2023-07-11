@@ -84,6 +84,7 @@ public class AlphabetOrderBoardGenerator : MonoBehaviour
     {
         for (int i = 0; i < cardParents.Length; i++)
         {
+            cardParents[i].transform.GetChild(1).GetComponent<TMP_Text>().text = gameAPI.ToTitleCase(cardParents[i].transform.GetChild(0).GetComponent<Image>().sprite.texture.name);
             LeanTween.scale(cardParents[i], Vector3.one, 0.2f);
             LeanTween.scale(slots[i], Vector3.one, 0.2f);
         }
@@ -138,7 +139,7 @@ public class AlphabetOrderBoardGenerator : MonoBehaviour
             var texture = await gameAPI.GetCardImage(packSlug, randomCards[i].slug);
             texture.wrapMode = TextureWrapMode.Clamp;
             texture.filterMode = FilterMode.Bilinear;
-            texture.name = randomCards[i].slug;
+            texture.name = randomCards[i].title;
             randomImages.Add(texture);
             randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
         }
@@ -163,7 +164,7 @@ public class AlphabetOrderBoardGenerator : MonoBehaviour
         loadingPanel.SetActive(false);
     }
 
-    public void TranslateChooseCardText()
+    private void TranslateChooseCardText()
     {
         sortText.text = gameAPI.Translate(sortText.gameObject.name, selectedLangCode);
     }

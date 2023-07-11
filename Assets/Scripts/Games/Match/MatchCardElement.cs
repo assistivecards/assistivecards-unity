@@ -42,6 +42,7 @@ public class MatchCardElement : MonoBehaviour, IPointerDownHandler, IDragHandler
     public void OnPointerUp(PointerEventData eventData)
     {
         isPointerUp = true;
+        Invoke("MoveCardOnEmptyPlace", 0.25f);
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -52,9 +53,9 @@ public class MatchCardElement : MonoBehaviour, IPointerDownHandler, IDragHandler
             && other.gameObject.GetComponent<MatchCardElement>().moveable == false  
             && other.gameObject.GetComponent<MatchCardElement>().cardName == cardName)
             {
+                match = true;
                 LeanTween.move(this.gameObject, other.transform.position, 0.25f);
                 other.gameObject.GetComponent<MatchCardElement>().match = true;
-                match = true;
                 SpeakCardName();
                 boardGenerator.CheckMatches();
                 gameAPI.PlaySFX("Success");
@@ -63,15 +64,15 @@ public class MatchCardElement : MonoBehaviour, IPointerDownHandler, IDragHandler
             && other.gameObject.GetComponent<MatchCardElement>().moveable == false 
             && other.gameObject.GetComponent<MatchCardElement>().cardName != cardName)
             {
-                moveable = false;
-                Invoke("MoveToBegging", 0.25f);
+                Invoke("MoveToBeginning", 0.25f);
             }
         }
 
     }
 
-    private void MoveToBegging()
+    private void MoveToBeginning()
     {
+        moveable = false;
         LeanTween.move(this.gameObject, startPosition, 1.25f).setOnComplete(SetMoveableTrue);
     }
 
@@ -84,5 +85,13 @@ public class MatchCardElement : MonoBehaviour, IPointerDownHandler, IDragHandler
     private void SetMoveableTrue()
     {
         moveable = true;
+    }
+
+    private void MoveCardOnEmptyPlace()
+    {
+        if(!match)
+        {
+            MoveToBeginning();
+        }
     }
 }

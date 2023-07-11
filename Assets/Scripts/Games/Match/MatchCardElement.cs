@@ -57,6 +57,7 @@ public class MatchCardElement : MonoBehaviour, IPointerDownHandler, IDragHandler
                 match = true;
                 SpeakCardName();
                 boardGenerator.CheckMatches();
+                gameAPI.PlaySFX("Success");
             }
             else if(!match 
             && other.gameObject.GetComponent<MatchCardElement>().moveable == false 
@@ -72,7 +73,6 @@ public class MatchCardElement : MonoBehaviour, IPointerDownHandler, IDragHandler
     private void MoveToBegging()
     {
         LeanTween.move(this.gameObject, startPosition, 1.25f).setOnComplete(SetMoveableTrue);
-        Debug.Log("MoveToBegging");
     }
 
     private void SpeakCardName()

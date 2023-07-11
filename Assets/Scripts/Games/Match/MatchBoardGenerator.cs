@@ -221,6 +221,7 @@ public class MatchBoardGenerator : MonoBehaviour
         {
             uıController.LevelChangeScreenActivate();
             uıController.GameUIDeactivate();
+            gameAPI.PlaySFX("Finished");
         }
     }
 }

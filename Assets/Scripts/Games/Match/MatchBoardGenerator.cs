@@ -10,6 +10,9 @@ public class MatchBoardGenerator : MonoBehaviour
 {
     GameAPI gameAPI;
 
+    [Header ("Classes")]
+    [SerializeField] private MatchUIController uıController;
+
     [Header ("Cache Cards")]
     public string selectedLangCode;
     public List<string> cardLocalNames = new List<string>();
@@ -94,7 +97,8 @@ public class MatchBoardGenerator : MonoBehaviour
 
     public async void GeneratedBoardAsync()
     {
-        //if(uıController.canGenerate)
+        if(uıController.canGenerate)
+        {
             GetPositionList();
             await CacheCards();
 
@@ -149,8 +153,9 @@ public class MatchBoardGenerator : MonoBehaviour
                     secondColumnCards = secondColumnCards + " - " + cardPositions[i].transform.GetChild(0).name;
                 }
             }
-            //uıController.GameUIActivate();
+            uıController.GameUIActivate();
             CheckColumnStrings();
+        }
     }
 
     private void CheckColumnStrings()
@@ -182,13 +187,18 @@ public class MatchBoardGenerator : MonoBehaviour
         }
     }
 
-    private void ClearBoard()
+    public void ClearBoard()
     {
         foreach (var card in cards)
         {
             Destroy(card);
         }
         cards.Clear();
+        cardNames.Clear();
+        cardLocalNames.Clear();
+        cardPositionRandoms.Clear();
+        cardPositions.Clear();
+        randomValueList.Clear();
         firstColumnCards = null;
         secondColumnCards = null;
     }
@@ -209,7 +219,8 @@ public class MatchBoardGenerator : MonoBehaviour
         }
         else if(matchCount == 6)
         {
-            // call level end function
+            uıController.LevelChangeScreenActivate();
+            uıController.GameUIDeactivate();
         }
     }
 }

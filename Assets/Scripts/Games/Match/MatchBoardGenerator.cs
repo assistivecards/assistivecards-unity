@@ -12,6 +12,7 @@ public class MatchBoardGenerator : MonoBehaviour
 
     [Header ("Classes")]
     [SerializeField] private MatchUIController uıController;
+    [SerializeField] private MatchTutorial tutorial;
 
     [Header ("Cache Cards")]
     public string selectedLangCode;
@@ -99,6 +100,7 @@ public class MatchBoardGenerator : MonoBehaviour
     {
         if(uıController.canGenerate)
         {
+            tutorial.tutorialEnabledCount = 0;
             GetPositionList();
             await CacheCards();
 

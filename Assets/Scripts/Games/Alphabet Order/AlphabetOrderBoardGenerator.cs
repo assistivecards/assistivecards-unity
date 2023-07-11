@@ -86,6 +86,7 @@ public class AlphabetOrderBoardGenerator : MonoBehaviour
     {
         for (int i = 0; i < cardParents.Length; i++)
         {
+            cardParents[i].transform.rotation = Quaternion.Euler(0, 0, Random.Range(-30, 30));
             cardParents[i].transform.GetChild(1).GetComponent<TMP_Text>().text = gameAPI.ToTitleCase(cardParents[i].transform.GetChild(0).GetComponent<Image>().sprite.texture.name);
             LeanTween.scale(cardParents[i], Vector3.one, 0.2f);
             LeanTween.scale(slots[i], Vector3.one, 0.2f);

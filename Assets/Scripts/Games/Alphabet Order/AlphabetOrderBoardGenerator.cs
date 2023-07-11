@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 public class AlphabetOrderBoardGenerator : MonoBehaviour
 {
@@ -60,6 +61,7 @@ public class AlphabetOrderBoardGenerator : MonoBehaviour
         PopulateRandomCards();
         TranslateChooseCardText();
         await PopulateRandomTextures();
+        AssignSlotNames();
         PlaceSprites();
         DisableLoadingPanel();
         ScaleImagesUp();
@@ -167,6 +169,17 @@ public class AlphabetOrderBoardGenerator : MonoBehaviour
     private void TranslateChooseCardText()
     {
         sortText.text = gameAPI.Translate(sortText.gameObject.name, selectedLangCode);
+    }
+
+    private void AssignSlotNames()
+    {
+        var orderedList = randomImages.OrderBy(x => x.name).ToList();
+
+        for (int i = 0; i < slots.Length; i++)
+        {
+            slots[i].name = orderedList[i].name;
+        }
+
     }
 
 }

@@ -3,6 +3,12 @@ using UnityEngine.EventSystems;
 
 public class AlphabetOrderDraggableCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
+    private GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     public void OnDrag(PointerEventData eventData)
     {
@@ -13,6 +19,9 @@ public class AlphabetOrderDraggableCard : MonoBehaviour, IDragHandler, IPointerD
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        Debug.Log("PointerDown");
+        gameAPI.VibrateWeak();
+        gameAPI.PlaySFX("Pickup");
         Debug.Log("PointerDown");
     }
 

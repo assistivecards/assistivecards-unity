@@ -33,11 +33,17 @@ public class AlphabetOrderMatchDetection : MonoBehaviour, IPointerUpHandler
     {
         if (isMatched)
         {
+            gameObject.GetComponent<AlphabetOrderDraggableCard>().enabled = false;
+            transform.SetParent(matchedSlotTransform);
+            LeanTween.move(gameObject, matchedSlotTransform, 0.25f);
+            LeanTween.rotate(gameObject, Vector3.zero, .25f);
             Debug.Log("CORRECT MATCH");
         }
 
         else
         {
+            transform.SetParent(GameObject.Find(gameObject.GetComponent<AlphabetOrderDraggableCard>().parentName).transform);
+            LeanTween.move(gameObject, transform.parent.position, .5f);
             Debug.Log("WRONG MATCH");
         }
     }

@@ -42,7 +42,7 @@ public class MatchCardElement : MonoBehaviour, IPointerDownHandler, IDragHandler
     public void OnPointerUp(PointerEventData eventData)
     {
         isPointerUp = true;
-        Invoke("MoveCardOnEmptyPlace", 0.25f);
+        Invoke("MoveToBeginning", 0.25f);
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -72,8 +72,11 @@ public class MatchCardElement : MonoBehaviour, IPointerDownHandler, IDragHandler
 
     private void MoveToBeginning()
     {
-        moveable = false;
-        LeanTween.move(this.gameObject, startPosition, 1.25f).setOnComplete(SetMoveableTrue);
+        if(!match)
+        {
+            moveable = false;
+            LeanTween.move(this.gameObject, startPosition, 1.25f).setOnComplete(SetMoveableTrue);
+        }
     }
 
     private void SpeakCardName()
@@ -85,13 +88,5 @@ public class MatchCardElement : MonoBehaviour, IPointerDownHandler, IDragHandler
     private void SetMoveableTrue()
     {
         moveable = true;
-    }
-
-    private void MoveCardOnEmptyPlace()
-    {
-        if(!match)
-        {
-            MoveToBeginning();
-        }
     }
 }

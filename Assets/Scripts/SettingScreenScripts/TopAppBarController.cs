@@ -218,6 +218,7 @@ public class TopAppBarController : MonoBehaviour
                 FindCardBoardGenerator.didLanguageChange = true;
                 SizePuzzleBoardGenerator.didLanguageChange = true;
                 ChooseBoardGenerator.didLanguageChange = true;
+                AlphabetOrderBoardGenerator.didLanguageChange = true;
                 GameSelectionPanel.didLanguageChange = true;
 
                 if (languageController.selectedLanguage.name == "Arabic" || languageController.selectedLanguage.name == "Urdu")

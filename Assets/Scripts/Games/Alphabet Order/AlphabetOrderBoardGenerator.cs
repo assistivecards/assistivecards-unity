@@ -24,6 +24,7 @@ public class AlphabetOrderBoardGenerator : MonoBehaviour
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
     [SerializeField] GameObject loadingPanel;
+    private AlphabetOrderUIController UIController;
 
     private void Awake()
     {
@@ -33,6 +34,7 @@ public class AlphabetOrderBoardGenerator : MonoBehaviour
     private void Start()
     {
         gameAPI.PlayMusic();
+        UIController = gameObject.GetComponent<AlphabetOrderUIController>();
     }
 
     private void OnEnable()
@@ -40,6 +42,7 @@ public class AlphabetOrderBoardGenerator : MonoBehaviour
         if (isBackAfterSignOut)
         {
             gameAPI.PlayMusic();
+            UIController.OnBackButtonClick();
             isBackAfterSignOut = false;
         }
     }

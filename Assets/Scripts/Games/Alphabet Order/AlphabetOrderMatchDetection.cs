@@ -10,10 +10,12 @@ public class AlphabetOrderMatchDetection : MonoBehaviour, IPointerUpHandler
     public bool isMatched = false;
     public int numOfMatchedCards;
     private AlphabetOrderBoardGenerator board;
+    private AlphabetOrderUIController UIController;
 
     private void Start()
     {
         board = GameObject.Find("GamePanel").GetComponent<AlphabetOrderBoardGenerator>();
+        UIController = GameObject.Find("GamePanel").GetComponent<AlphabetOrderUIController>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -47,10 +49,17 @@ public class AlphabetOrderMatchDetection : MonoBehaviour, IPointerUpHandler
             if (CheckIfLevelComplete())
             {
                 Debug.Log("LEVEL COMPLETED");
+                UIController.levelsCompleted++;
                 Invoke("PlayLevelCompletedAnimation", .25f);
                 board.Invoke("ScaleImagesDown", 1f);
                 board.Invoke("ClearBoard", 1.3f);
-                board.Invoke("GenerateRandomBoardAsync", 1.3f);
+
+                if (UIController.levelsCompleted == 5)
+                {
+                    UIController.Invoke("OpenCheckPointPanel", 1.3f);
+                }
+                else
+                    board.Invoke("GenerateRandomBoardAsync", 1.3f);
 
             }
         }

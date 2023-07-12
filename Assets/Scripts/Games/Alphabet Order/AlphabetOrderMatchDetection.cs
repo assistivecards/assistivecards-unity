@@ -11,6 +11,12 @@ public class AlphabetOrderMatchDetection : MonoBehaviour, IPointerUpHandler
     public int numOfMatchedCards;
     private AlphabetOrderBoardGenerator board;
     private AlphabetOrderUIController UIController;
+    private GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void Start()
     {
@@ -41,10 +47,12 @@ public class AlphabetOrderMatchDetection : MonoBehaviour, IPointerUpHandler
     {
         if (isMatched)
         {
+            gameAPI.PlaySFX("Success");
             gameObject.GetComponent<AlphabetOrderDraggableCard>().enabled = false;
             transform.SetParent(matchedSlotTransform);
             LeanTween.move(gameObject, matchedSlotTransform, 0.25f);
             LeanTween.rotate(gameObject, Vector3.zero, .25f);
+            ReadCard();
 
             if (CheckIfLevelComplete())
             {
@@ -100,6 +108,11 @@ public class AlphabetOrderMatchDetection : MonoBehaviour, IPointerUpHandler
         {
             LeanTween.scale(board.cardParents[i], Vector3.one * 1.1f, .25f);
         }
+    }
+
+    public void ReadCard()
+    {
+        gameAPI.Speak(transform.GetChild(0).GetComponent<Image>().sprite.texture.name);
     }
 
 }

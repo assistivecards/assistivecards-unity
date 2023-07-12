@@ -20,15 +20,34 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
     AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
     [SerializeField] private PackSelectionPanel packSelectionPanel;
 
+    [Header ("Letter Cards")]
+    private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLetterCards;
+    [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> letterList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
+    private List<string> letterCardsNames = new List<string>();
+
     [Header ("Random")]
     public List<int> randomValueList = new List<int>();
     private int tempRandomValue;
     private int randomValue;
 
+    [Header ("Random Letters")]
+    public List<int> randomLetterValueList = new List<int>();
+    private int tempRandomLetterValue;
+    private int randomLetterValue;
+
     [Header ("Prefabs")]
     [SerializeField] private GameObject cardPrefab;
 
+    [Header ("Game UI")]
+    public GameObject card;
     public GameObject cardPosition;
+    public GameObject button1;
+    public GameObject button2;
+    public GameObject button3;
+    private List<GameObject> buttons = new List<GameObject>();
+
+    private string cardName;
+    public string firstLetter;
 
     
     private void Awake()
@@ -52,6 +71,17 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
         }
     }
 
+    public async Task CreateLetters()
+    {
+        cachedLetterCards = await gameAPI.GetCards("en", "letters");
+        letterList = cachedLetterCards.cards.ToList();
+
+        for(int i = 0; i < cachedLetterCards.cards.Length; i++)
+        {
+            letterCardsNames.Add(cachedLetterCards.cards[i].title.ToLower().Replace(" ", "-"));
+        }
+    }
+
     private void CheckRandom()
     {
         tempRandomValue = Random.Range(0, cardsList.Count);
@@ -67,15 +97,38 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
         }
     }
 
+    
+    private void CheckRandomForLetters()
+    {
+        tempRandomLetterValue = Random.Range(0, letterList.Count);
+
+        if(!randomLetterValueList.Contains(tempRandomLetterValue))
+        {
+            randomLetterValue = tempRandomLetterValue;
+            randomLetterValueList.Add(randomLetterValue);
+        }
+        else
+        {
+            CheckRandomForLetters();
+        }
+    }
+
+    private void CreateButtonList()
+    {
+        buttons.Add(button1);
+        buttons.Add(button2);
+        buttons.Add(button3);
+    }
+
     public async void GeneratedBoardAsync()
     {
         //if(uıController.canGenerate)
 
                 await CacheCards();
-
+                CreateButtonList();
                 CheckRandom();
 
-                GameObject card = Instantiate(cardPrefab, cardPosition.transform.position, Quaternion.identity);
+                card = Instantiate(cardPrefab, cardPosition.transform.position, Quaternion.identity);
                 card.transform.SetParent(cardPosition.transform);
 
                 var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[0]], 512);
@@ -87,7 +140,49 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                 cards.Add(card);
                 LeanTween.scale(card.gameObject, Vector3.one * 0.5f, 0f);
+                GetFirstLetter();
+                FillButton();
 
-            //uıController.GameUIActivate();
+        //uıController.GameUIActivate();
+    }
+
+    private void GetFirstLetter()
+    {
+        cardName = card.name;
+        firstLetter = cardName.Substring(0, 1);
+    }
+
+    private async void FillButton()
+    {
+        await CreateLetters();
+
+        foreach(var letter in letterCardsNames)
+        {
+            if(firstLetter == letter.Substring(0, 1))
+            {
+                CheckRandomForLetters();
+                int random = Random.Range(0, 3);
+                var correctLetterTexture = await gameAPI.GetCardImage("letters", letter, 512);
+                correctLetterTexture.wrapMode = TextureWrapMode.Clamp;
+                correctLetterTexture.filterMode = FilterMode.Bilinear;
+
+                buttons[random].transform.GetChild(0).transform.GetComponent<RawImage>().texture = correctLetterTexture;   
+                buttons[random].name = "Correct";
+            }
+        }
+
+        for(int i = 0; i < buttons.Count; i++)
+        {
+            if(buttons[i].name != "Correct")
+            {
+                CheckRandomForLetters();
+                var letterTexture = await gameAPI.GetCardImage("letters", letterCardsNames[randomLetterValueList[i]], 512);
+                letterTexture.wrapMode = TextureWrapMode.Clamp;
+                letterTexture.filterMode = FilterMode.Bilinear;
+
+                buttons[i].transform.GetChild(0).transform.GetComponent<RawImage>().texture = letterTexture;
+            }
+        }
+
     }
 }

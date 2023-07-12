@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using System.Linq;
 
 public class AlphabetChooseBoardGenerator : MonoBehaviour
 {
@@ -24,7 +28,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
     [Header ("Prefabs")]
     [SerializeField] private GameObject cardPrefab;
 
-    public int cardCount;
+    public GameObject cardPosition;
 
     
     private void Awake()
@@ -66,29 +70,24 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
     public async void GeneratedBoardAsync()
     {
         //if(uıController.canGenerate)
-            tutorial.tutorialEnabledCount = 0;
-            GetPositionList();
-            await CacheCards();
 
-            for(int i = 0; i < cardCount; i++)
-            {
+                await CacheCards();
+
                 CheckRandom();
 
-                GameObject card = Instantiate(cardPrefab, cardPositions[i].transform.position, Quaternion.identity);
-                card.transform.SetParent(cardPositions[i].transform);
+                GameObject card = Instantiate(cardPrefab, cardPosition.transform.position, Quaternion.identity);
+                card.transform.SetParent(cardPosition.transform);
 
-                var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[i]], 512);
+                var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[0]], 512);
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
 
-                card.transform.name = cardNames[randomValueList[i]];
+                card.transform.name = cardNames[randomValueList[0]];
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                 cards.Add(card);
-                card.GetComponent<MatchCardElement>().moveable = false;
-                card.GetComponent<MatchCardElement>().cardName = cardLocalNames[randomValueList[i]];
                 LeanTween.scale(card.gameObject, Vector3.one * 0.5f, 0f);
-            }
+
             //uıController.GameUIActivate();
     }
 }

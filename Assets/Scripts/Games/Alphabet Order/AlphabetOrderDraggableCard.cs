@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class AlphabetOrderDraggableCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
+public class AlphabetOrderDraggableCard : MonoBehaviour, IDragHandler, IPointerDownHandler
 {
     private GameAPI gameAPI;
     public string parentName;
@@ -20,15 +20,9 @@ public class AlphabetOrderDraggableCard : MonoBehaviour, IDragHandler, IPointerD
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("PointerDown");
         gameAPI.VibrateWeak();
         gameAPI.PlaySFX("Pickup");
         parentName = transform.parent.name;
-    }
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        Debug.Log("PointerUp");
     }
 
 }

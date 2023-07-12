@@ -533,6 +533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459201fce7927b241a1e11d8fadf35fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentName: 
 --- !u!61 &250139401
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -593,6 +594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMatched: 0
+  numOfMatchedCards: 0
 --- !u!1 &252539107
 GameObject:
   m_ObjectHideFlags: 0
@@ -1579,6 +1581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459201fce7927b241a1e11d8fadf35fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentName: 
 --- !u!114 &784275279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1677,6 +1680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMatched: 0
+  numOfMatchedCards: 0
 --- !u!1 &890424263
 GameObject:
   m_ObjectHideFlags: 0
@@ -3101,6 +3105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459201fce7927b241a1e11d8fadf35fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentName: 
 --- !u!114 &1463489496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3199,6 +3204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMatched: 0
+  numOfMatchedCards: 0
 --- !u!82 &1487501776 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 2053396222163338408, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
@@ -6650,6 +6656,10 @@ MonoBehaviour:
   - {fileID: 1327852891}
   - {fileID: 1349625970}
   - {fileID: 916477817}
+  cardSlots:
+  - {fileID: 720452704}
+  - {fileID: 1273095942}
+  - {fileID: 636611462}
   cachedCards:
     cards: []
   randomCards: []

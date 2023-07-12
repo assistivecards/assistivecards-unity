@@ -12,6 +12,7 @@ public class AlphabetOrderBoardGenerator : MonoBehaviour
     [SerializeField] Image[] cardTextures;
     public GameObject[] cardParents;
     public GameObject[] slots;
+    public GameObject[] cardSlots;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     [SerializeField] List<Texture2D> randomImages = new List<Texture2D>();
@@ -87,6 +88,11 @@ public class AlphabetOrderBoardGenerator : MonoBehaviour
         for (int i = 0; i < cardParents.Length; i++)
         {
             cardParents[i].transform.rotation = Quaternion.Euler(0, 0, Random.Range(-30, 30));
+            cardParents[i].transform.SetParent(cardSlots[i].transform);
+            cardParents[i].transform.position = cardSlots[i].transform.position;
+            cardParents[i].transform.GetComponent<AlphabetOrderDraggableCard>().enabled = true;
+            cardParents[i].transform.GetComponent<AlphabetOrderMatchDetection>().numOfMatchedCards = 0;
+            cardParents[i].transform.GetComponent<AlphabetOrderMatchDetection>().isMatched = false;
             cardParents[i].transform.GetChild(1).GetComponent<TMP_Text>().text = gameAPI.ToTitleCase(cardParents[i].transform.GetChild(0).GetComponent<Image>().sprite.texture.name);
             LeanTween.scale(cardParents[i], Vector3.one, 0.2f);
             LeanTween.scale(slots[i], Vector3.one, 0.2f);

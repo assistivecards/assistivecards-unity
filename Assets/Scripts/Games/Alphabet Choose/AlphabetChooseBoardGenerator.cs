@@ -174,6 +174,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                     correctLetterTexture.filterMode = FilterMode.Bilinear;
 
                     buttons[random].transform.GetChild(0).transform.GetComponent<RawImage>().texture = correctLetterTexture;   
+                    buttons[random].GetComponent<AlphabetChooseButtonController>().letter = firstLetter;
                     buttons[random].name = "Correct";
 
                 }
@@ -185,6 +186,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
             buttons[random].transform.GetChild(1).gameObject.SetActive(true);
             buttons[random].transform.GetChild(1).GetComponent<TMP_Text>().text = firstLetter.ToUpper();
             buttons[random].transform.GetChild(1).GetComponent<TMP_Text>().color = colors[Random.Range(0, colors.Length)];
+            buttons[random].GetComponent<AlphabetChooseButtonController>().letter = firstLetter;
             buttons[random].name = "Correct";
         }
 
@@ -200,6 +202,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                     letterTexture.filterMode = FilterMode.Bilinear;
 
                     buttons[i].transform.GetChild(0).transform.GetComponent<RawImage>().texture = letterTexture;
+                    buttons[i].GetComponent<AlphabetChooseButtonController>().letter = letterCardsNames[randomLetterValueList[i]];
                 }
                 else if(!letterCardsNames.Contains(firstLetter))
                 {
@@ -212,6 +215,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                         letterTexture.wrapMode = TextureWrapMode.Clamp;
                         letterTexture.filterMode = FilterMode.Bilinear;
                         buttons[i].transform.GetChild(0).transform.GetComponent<RawImage>().texture = letterTexture;
+                        buttons[i].GetComponent<AlphabetChooseButtonController>().letter = letterCardsNames[randomLetterValueList[i]];
                     }
                     else if(card.name.Substring(i + 1, 1) !=null)
                     {
@@ -221,6 +225,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                             buttons[i].transform.GetChild(1).gameObject.SetActive(true);
                             buttons[i].transform.GetChild(1).GetComponent<TMP_Text>().text = card.name.Substring(i + 1, 1).ToUpper();
                             buttons[i].transform.GetChild(1).GetComponent<TMP_Text>().color = colors[Random.Range(0, colors.Length)];
+                            buttons[i].GetComponent<AlphabetChooseButtonController>().letter = card.name.Substring(i + 1, 1).ToUpper();
                         }
                     }
                 }

@@ -2,36 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class AlphabetOrderTutorial : MonoBehaviour
 {
     [SerializeField] AlphabetOrderBoardGenerator board;
-    public int count = 0;
     public Transform point1;
     public Transform point2;
 
     private void OnEnable()
     {
-        if (count < 3 && !board.cardParents[count].GetComponent<AlphabetOrderMatchDetection>().isMatched)
+        var unmatchedCards = board.cardParents.Where(card => !card.GetComponent<AlphabetOrderMatchDetection>().isMatched).ToList();
+        point1 = unmatchedCards[0].transform;
+        for (int i = 0; i < board.slots.Length; i++)
         {
-            point1 = board.cardParents[count].transform;
-            for (int i = 0; i < board.slots.Length; i++)
+            if (board.slots[i].name == unmatchedCards[0].transform.GetChild(0).GetComponent<Image>().sprite.texture.name)
             {
-                if (board.slots[i].name == board.cardParents[count].transform.GetChild(0).GetComponent<Image>().sprite.texture.name)
-                {
-                    point2 = board.slots[i].transform;
-                }
+                point2 = board.slots[i].transform;
             }
+        }
 
-        }
-        else if (count < 3)
-        {
-            count++;
-        }
-        else if (count >= 3)
-        {
-            count = 0;
-        }
     }
 
     void Update()
@@ -42,15 +32,4 @@ public class AlphabetOrderTutorial : MonoBehaviour
         }
     }
 
-    private void OnDisable()
-    {
-        if (count >= 3)
-        {
-            count = 0;
-        }
-        else
-        {
-            count++;
-        }
-    }
 }

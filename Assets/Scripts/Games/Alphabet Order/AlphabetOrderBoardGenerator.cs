@@ -70,6 +70,7 @@ public class AlphabetOrderBoardGenerator : MonoBehaviour
         DisableLoadingPanel();
         ScaleImagesUp();
         backButton.SetActive(true);
+        UIController.Invoke("TutorialSetActive", .3f);
         Invoke("EnableBackButton", 0.15f);
     }
 

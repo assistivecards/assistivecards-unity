@@ -14,6 +14,8 @@ public class AlphabetOrderUIController : MonoBehaviour
     [SerializeField] GameObject checkPointPanel;
     private GameAPI gameAPI;
     public int levelsCompleted;
+    [SerializeField] GameObject tutorial;
+    private bool firstTime = true;
 
     private void Awake()
     {
@@ -118,6 +120,15 @@ public class AlphabetOrderUIController : MonoBehaviour
         speakerIcon.SetActive(true);
         homeButton.SetActive(true);
 
+    }
+
+    public void TutorialSetActive()
+    {
+        if (firstTime || gameAPI.GetTutorialPreference() == 1)
+        {
+            tutorial.SetActive(true);
+        }
+        firstTime = false;
     }
 
 }

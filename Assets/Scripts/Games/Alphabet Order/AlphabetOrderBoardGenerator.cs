@@ -25,6 +25,7 @@ public class AlphabetOrderBoardGenerator : MonoBehaviour
     public static bool isBackAfterSignOut = false;
     [SerializeField] GameObject loadingPanel;
     private AlphabetOrderUIController UIController;
+    [SerializeField] AlphabetOrderTutorial tutorial;
 
     private void Awake()
     {
@@ -70,6 +71,8 @@ public class AlphabetOrderBoardGenerator : MonoBehaviour
         DisableLoadingPanel();
         ScaleImagesUp();
         backButton.SetActive(true);
+        UIController.Invoke("TutorialSetActive", .3f);
+        tutorial.count = 0;
         Invoke("EnableBackButton", 0.15f);
     }
 

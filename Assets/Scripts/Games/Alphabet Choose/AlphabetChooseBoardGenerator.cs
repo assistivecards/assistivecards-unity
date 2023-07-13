@@ -10,6 +10,8 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 {
     GameAPI gameAPI;
 
+
+    [SerializeField] private AlphabetChooseUIController uıController;
     [Header ("Cache Cards")]
     public string selectedLangCode;
     public List<string> cardLocalNames = new List<string>();
@@ -146,7 +148,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                 GetFirstLetter();
                 FillButton();
 
-        //uıController.GameUIActivate();
+        uıController.GameUIActivate();
     }
 
     private void GetFirstLetter()

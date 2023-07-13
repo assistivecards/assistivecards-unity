@@ -46,6 +46,9 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
     public GameObject button3;
     private List<GameObject> buttons = new List<GameObject>();
 
+    [Header ("Colors")]
+    public Color[] colors;
+
     private string cardName;
     public string firstLetter;
 
@@ -135,7 +138,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
 
-                card.transform.name = cardNames[randomValueList[0]];
+                card.transform.name = cardLocalNames[randomValueList[0]];
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                 cards.Add(card);
@@ -155,20 +158,28 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
     private async void FillButton()
     {
         await CreateLetters();
+        int random = Random.Range(0, 3);
 
         foreach(var letter in letterCardsNames)
         {
             if(firstLetter == letter.Substring(0, 1))
             {
                 CheckRandomForLetters();
-                int random = Random.Range(0, 3);
                 var correctLetterTexture = await gameAPI.GetCardImage("letters", letter, 512);
                 correctLetterTexture.wrapMode = TextureWrapMode.Clamp;
                 correctLetterTexture.filterMode = FilterMode.Bilinear;
 
                 buttons[random].transform.GetChild(0).transform.GetComponent<RawImage>().texture = correctLetterTexture;   
                 buttons[random].name = "Correct";
+
             }
+        }
+        if(!letterCardsNames.Contains(firstLetter))
+        {
+            buttons[random].transform.GetChild(0).gameObject.SetActive(false);
+            buttons[random].transform.GetChild(1).gameObject.SetActive(true);
+            buttons[random].transform.GetChild(1).GetComponent<TMP_Text>().text = firstLetter;
+            buttons[random].transform.GetChild(1).GetComponent<TMP_Text>().color = colors[Random.Range(0, colors.Length)];
         }
 
         for(int i = 0; i < buttons.Count; i++)

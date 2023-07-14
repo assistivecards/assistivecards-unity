@@ -316,6 +316,14 @@ PrefabInstance:
       value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 5829141130014444528, guid: 5d9a903667bde460ea154597ef6cc51b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829141130014444528, guid: 5d9a903667bde460ea154597ef6cc51b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829141130014444528, guid: 5d9a903667bde460ea154597ef6cc51b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -2570,6 +2578,14 @@ PrefabInstance:
       value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 5829141130014444528, guid: 5d9a903667bde460ea154597ef6cc51b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829141130014444528, guid: 5d9a903667bde460ea154597ef6cc51b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829141130014444528, guid: 5d9a903667bde460ea154597ef6cc51b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -2686,6 +2702,14 @@ PrefabInstance:
     - target: {fileID: 5829141130014444528, guid: 5d9a903667bde460ea154597ef6cc51b, type: 3}
       propertyPath: m_SizeDelta.y
       value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829141130014444528, guid: 5d9a903667bde460ea154597ef6cc51b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829141130014444528, guid: 5d9a903667bde460ea154597ef6cc51b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5829141130014444528, guid: 5d9a903667bde460ea154597ef6cc51b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5587,6 +5611,7 @@ MonoBehaviour:
   - {r: 0.77254903, g: 0.54901963, b: 0.98039216, a: 1}
   - {r: 0.98039216, g: 0.54901963, b: 0.9529412, a: 1}
   - {r: 0.98039216, g: 0.54901963, b: 0.7137255, a: 1}
+  levelCount: 0
   firstLetter: 
 --- !u!114 &8383894889009589327
 MonoBehaviour:

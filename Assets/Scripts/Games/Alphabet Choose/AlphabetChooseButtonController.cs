@@ -12,8 +12,17 @@ public class AlphabetChooseButtonController : MonoBehaviour
     {
         if(boardGenerator.firstLetter == letter)
         {
-            uıController.LevelChangeScreenActivate();
-            Debug.Log("HERE");
+            if(boardGenerator.levelCount < 3)
+            {
+                boardGenerator.levelCount++;
+                boardGenerator.LevelEnding();
+            }
+            else if(boardGenerator.levelCount == 3)
+            {
+                boardGenerator.LevelEnding();
+                boardGenerator.levelCount = 0;
+                uıController.Invoke("LevelChangeScreenActivate", 1.2f);
+            }
         }
         else
         {

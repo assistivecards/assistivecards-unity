@@ -51,8 +51,10 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
     [Header ("Colors")]
     public Color[] colors;
 
+    public int levelCount;
     private string cardName;
     public string firstLetter;
+    private GameObject tempCard;
 
     
     private void Awake()
@@ -133,7 +135,6 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
             await CreateLetters();
             CreateButtonList();
             CheckRandom();
-
             card = Instantiate(cardPrefab, cardPosition.transform.position, Quaternion.identity);
             card.transform.SetParent(cardPosition.transform);
 
@@ -237,7 +238,44 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                 }
             }
         }
+
+        Invoke("GameUIActivate", 0.25f);
+    }
+
+    public void GameUIActivate()
+    {
         uıController.GameUIActivate();
+        foreach(GameObject button in buttons)
+        {
+            //button.SetActive(true);
+            LeanTween.scale(button, Vector3.one, 0.1f);
+        }
+    }
+
+    public void LevelEnding()
+    {
+        //tts
+        LeanTween.moveLocal(card, new Vector3(0, -80, 0), 0.2f).setOnComplete(ScaleUpCard);
+        foreach(var button in buttons)
+        {
+            LeanTween.scale(button, Vector3.zero, 0.1f);
+        }
+    }
+
+    private void ScaleUpCard()
+    {
+        LeanTween.scale(card, Vector3.one, 0.5f).setOnComplete(ScaleDownCard);
+    }
+
+    private void ScaleDownCard()
+    {
+        LeanTween.scale(card, Vector3.zero, 0.5f).setOnComplete(CreateNewLevel);
+    }
+
+    private void CreateNewLevel()
+    {
+        ClearBoard();
+        GeneratedBoardAsync();
     }
 
     public void ClearBoard()
@@ -254,6 +292,8 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 
         foreach(GameObject button in buttons)
         {
+            LeanTween.scale(button, Vector3.zero, 0.1f);
+            //button.SetActive(false);
             button.name = "Button";
         }
         buttons.Clear();

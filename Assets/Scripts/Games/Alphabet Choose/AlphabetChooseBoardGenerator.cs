@@ -192,7 +192,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
         {
             buttons[random].transform.GetChild(0).gameObject.SetActive(false);
             buttons[random].transform.GetChild(1).gameObject.SetActive(true);
-            buttons[random].transform.GetChild(1).GetComponent<TMP_Text>().text = firstLetter.ToUpper();
+            buttons[random].transform.GetChild(1).GetComponent<TMP_Text>().text = firstLetter.ToLower();
             buttons[random].transform.GetChild(1).GetComponent<TMP_Text>().color = colors[Random.Range(0, colors.Length)];
             buttons[random].GetComponent<AlphabetChooseButtonController>().letter = firstLetter;
             buttons[random].name = "Correct";
@@ -209,36 +209,74 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                     buttons[i].transform.GetChild(0).gameObject.SetActive(true);
                     buttons[i].transform.GetChild(1).gameObject.SetActive(false);
 
-                    var letterTexture = await gameAPI.GetCardImage("letters", letterCardsNames[randomLetterValueList[i]], 512);
-                    letterTexture.wrapMode = TextureWrapMode.Clamp;
-                    letterTexture.filterMode = FilterMode.Bilinear;
+                    if(letterCardsNames[randomLetterValueList[i]] != firstLetter)
+                    {
+                        var letterTexture = await gameAPI.GetCardImage("letters", letterCardsNames[randomLetterValueList[i]], 512);
+                        letterTexture.wrapMode = TextureWrapMode.Clamp;
+                        letterTexture.filterMode = FilterMode.Bilinear;
 
-                    buttons[i].transform.GetChild(0).transform.GetComponent<RawImage>().texture = letterTexture;
-                    buttons[i].GetComponent<AlphabetChooseButtonController>().letter = letterCardsNames[randomLetterValueList[i]];
+                        buttons[i].transform.GetChild(0).transform.GetComponent<RawImage>().texture = letterTexture;
+                        buttons[i].GetComponent<AlphabetChooseButtonController>().letter = letterCardsNames[randomLetterValueList[i]];
+                    }
+                    else
+                    {
+                        CheckRandomForLetters();
+                        var letterTexture = await gameAPI.GetCardImage("letters", letterCardsNames[randomLetterValueList[i + 1]], 512);
+                        letterTexture.wrapMode = TextureWrapMode.Clamp;
+                        letterTexture.filterMode = FilterMode.Bilinear;
+
+                        buttons[i].transform.GetChild(0).transform.GetComponent<RawImage>().texture = letterTexture;
+                        buttons[i].GetComponent<AlphabetChooseButtonController>().letter = letterCardsNames[randomLetterValueList[i + 1]];
+                    }
                 }
                 else if(!letterCardsNames.Contains(firstLetter))
                 {
-                    if(cardNameLenght <= 4)
+                    if(cardNameLenght <= 2)
                     {                    
                         CheckRandomForLetters();
                         buttons[i].transform.GetChild(0).gameObject.SetActive(true);
                         buttons[i].transform.GetChild(1).gameObject.SetActive(false);
 
-                        var letterTexture = await gameAPI.GetCardImage("letters", letterCardsNames[randomLetterValueList[i]], 512);
-                        letterTexture.wrapMode = TextureWrapMode.Clamp;
-                        letterTexture.filterMode = FilterMode.Bilinear;
-                        buttons[i].transform.GetChild(0).transform.GetComponent<RawImage>().texture = letterTexture;
-                        buttons[i].GetComponent<AlphabetChooseButtonController>().letter = letterCardsNames[randomLetterValueList[i]];
+                        if(letterCardsNames[randomLetterValueList[i]] != firstLetter)
+                        {
+                            var letterTexture = await gameAPI.GetCardImage("letters", letterCardsNames[randomLetterValueList[i]], 512);
+                            letterTexture.wrapMode = TextureWrapMode.Clamp;
+                            letterTexture.filterMode = FilterMode.Bilinear;
+
+                            buttons[i].transform.GetChild(0).transform.GetComponent<RawImage>().texture = letterTexture;
+                            buttons[i].GetComponent<AlphabetChooseButtonController>().letter = letterCardsNames[randomLetterValueList[i]];
+                        }
+                        else
+                        {
+                            CheckRandomForLetters();
+                            var letterTexture = await gameAPI.GetCardImage("letters", letterCardsNames[randomLetterValueList[i + 1]], 512);
+                            letterTexture.wrapMode = TextureWrapMode.Clamp;
+                            letterTexture.filterMode = FilterMode.Bilinear;
+
+                            buttons[i].transform.GetChild(0).transform.GetComponent<RawImage>().texture = letterTexture;
+                            buttons[i].GetComponent<AlphabetChooseButtonController>().letter = letterCardsNames[randomLetterValueList[i + 1]];
+                        }
                     }
-                    else if(cardNameLenght > 4)
+                    else if(cardNameLenght > 2)
                     {
                         if(!letterCardsNames.Contains(card.name.Substring(i + 1, 1).ToLower()))
                         {
-                            buttons[i].transform.GetChild(0).gameObject.SetActive(false);
-                            buttons[i].transform.GetChild(1).gameObject.SetActive(true);
-                            buttons[i].transform.GetChild(1).GetComponent<TMP_Text>().text = card.name.Substring(i + 1, 1).ToUpper();
-                            buttons[i].transform.GetChild(1).GetComponent<TMP_Text>().color = colors[Random.Range(0, colors.Length)];
-                            buttons[i].GetComponent<AlphabetChooseButtonController>().letter = card.name.Substring(i + 1, 1).ToUpper();
+                            if(card.name.Substring(i + 1, 1) != firstLetter)
+                            {
+                                buttons[i].transform.GetChild(0).gameObject.SetActive(false);
+                                buttons[i].transform.GetChild(1).gameObject.SetActive(true);
+                                buttons[i].transform.GetChild(1).GetComponent<TMP_Text>().text = card.name.Substring(i + 1, 1).ToLower();
+                                buttons[i].transform.GetChild(1).GetComponent<TMP_Text>().color = colors[Random.Range(0, colors.Length)];
+                                buttons[i].GetComponent<AlphabetChooseButtonController>().letter = card.name.Substring(i + 1, 1).ToLower();
+                            }
+                            else 
+                            {
+                                buttons[i].transform.GetChild(0).gameObject.SetActive(false);
+                                buttons[i].transform.GetChild(1).gameObject.SetActive(true);
+                                buttons[i].transform.GetChild(1).GetComponent<TMP_Text>().text = card.name.Substring(i + 2, 1).ToLower();
+                                buttons[i].transform.GetChild(1).GetComponent<TMP_Text>().color = colors[Random.Range(0, colors.Length)];
+                                buttons[i].GetComponent<AlphabetChooseButtonController>().letter = card.name.Substring(i + 2, 1).ToLower();
+                            }
                         }
                     }
                 }

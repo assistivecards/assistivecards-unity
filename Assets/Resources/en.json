@@ -243,5 +243,6 @@
 	"choose_text_medium":"Choose the medium $1 card",
 	"choose_text_large":"Choose the largest $1 card",
 	"choose_card_text":"Choose the $1 card",
-	"sort_cards_text":"Sort the cards in alphabetical order"
+	"sort_cards_text":"Sort the cards in alphabetical order",
+	"tap_cards_text":"Tap on the $1 cards"
 }

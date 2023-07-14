@@ -144,12 +144,17 @@ public class CardRumbleBoardGenerator : MonoBehaviour
     private void PopulateTempSprites()
     {
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 2; i++)
         {
-            tempSprites.Add(randomSprites[i]);
+            tempSprites.Add(randomSprites[0]);
         }
 
-        for (int i = 3; i < cardImagesInScene.Length; i++)
+        for (int i = 2; i < 4; i++)
+        {
+            tempSprites.Add(randomSprites[i - 1]);
+        }
+
+        for (int i = 4; i < cardImagesInScene.Length; i++)
         {
             var randomSpriteToAdd = randomSprites[Random.Range(0, randomSprites.Count)];
             tempSprites.Add(randomSpriteToAdd);

@@ -38,6 +38,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 
     [Header ("Prefabs")]
     [SerializeField] private GameObject cardPrefab;
+    [SerializeField] private GameObject tutorial;
 
     [Header ("Game UI")]
     public GameObject card;
@@ -54,6 +55,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
     private string cardName;
     public string firstLetter;
     private GameObject tempCard;
+    private int random;
 
     
     private void Awake()
@@ -161,7 +163,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 
     private async void FillButton()
     {
-        int random = Random.Range(0, 3);
+        random = Random.Range(0, 3);
 
         if(letterCardsNames.Contains(firstLetter))
         {
@@ -239,7 +241,6 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                 }
             }
         }
-
         Invoke("GameUIActivate", 0.25f);
     }
 
@@ -254,6 +255,8 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 
         gameAPI.Speak(card.name);
         Debug.Log(card.name);
+
+        tutorial.GetComponent<AlphabetChooseTutorial>().SetPosition(buttons[random].transform);
     }
 
     public void LevelEnding()

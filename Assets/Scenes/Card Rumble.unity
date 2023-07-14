@@ -174,14 +174,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a770777915dc63843929f4d1e7b3caaf, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -407,7 +407,7 @@ RectTransform:
   m_GameObject: {fileID: 103723060}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1902663471}
@@ -466,6 +466,11 @@ GameObject:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1242831490808992306, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
   m_PrefabInstance: {fileID: 1242831489266657176}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &216244811 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8524809319700726626, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &252539107
 GameObject:
@@ -585,7 +590,7 @@ RectTransform:
   m_GameObject: {fileID: 351551926}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1238498040}
@@ -702,14 +707,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a770777915dc63843929f4d1e7b3caaf, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1293,14 +1298,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a770777915dc63843929f4d1e7b3caaf, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1418,15 +1423,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5301644170934348999, guid: 975c28d7b7e66b44ca441b59134a85d4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5301644170934348999, guid: 975c28d7b7e66b44ca441b59134a85d4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5301644170934348999, guid: 975c28d7b7e66b44ca441b59134a85d4, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5301644170934348999, guid: 975c28d7b7e66b44ca441b59134a85d4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1446,15 +1451,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5301644170934348999, guid: 975c28d7b7e66b44ca441b59134a85d4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5301644170934348999, guid: 975c28d7b7e66b44ca441b59134a85d4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5301644170934348999, guid: 975c28d7b7e66b44ca441b59134a85d4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5301644170934348999, guid: 975c28d7b7e66b44ca441b59134a85d4, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1584,7 +1589,7 @@ RectTransform:
   m_GameObject: {fileID: 908045135}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1170410708}
@@ -1872,14 +1877,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a770777915dc63843929f4d1e7b3caaf, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1934,7 +1939,7 @@ RectTransform:
   m_GameObject: {fileID: 1110876399}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1884464508}
@@ -2153,14 +2158,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a770777915dc63843929f4d1e7b3caaf, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2280,14 +2285,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a770777915dc63843929f4d1e7b3caaf, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2588,14 +2593,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a770777915dc63843929f4d1e7b3caaf, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2613,6 +2618,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1317439562}
   m_CullTransparentMesh: 1
+--- !u!1 &1334690317 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8438209764908285022, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1338730596
 GameObject:
   m_ObjectHideFlags: 0
@@ -2738,14 +2748,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a770777915dc63843929f4d1e7b3caaf, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2801,7 +2811,7 @@ RectTransform:
   m_GameObject: {fileID: 1459780816}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1317439563}
@@ -2939,7 +2949,7 @@ RectTransform:
   m_GameObject: {fileID: 1528298887}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 447886768}
@@ -3301,7 +3311,7 @@ RectTransform:
   m_GameObject: {fileID: 1755509056}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1385205553}
@@ -3491,16 +3501,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1837497525}
+      objectReference: {fileID: 2119310837}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: ClosePackPanelTween
+      value: GenerateCorrespondingRandomBoard
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: PackSelectionScreenUIController, Assembly-CSharp
+      value: CardRumblePackSelection, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 9035172431832795728, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_Name
@@ -3508,7 +3526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9035172431832795728, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9209683489089641035, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: helloText
@@ -3585,7 +3603,7 @@ RectTransform:
   m_GameObject: {fileID: 1852476510}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 627318383}
@@ -3662,7 +3680,7 @@ RectTransform:
   m_GameObject: {fileID: 1854930412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1910463663942908501}
@@ -3693,7 +3711,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Click on the XXX cards
+  m_text: Tap on the XXX cards
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7fff04f5987a23d4cae30a373aa09dd3, type: 2}
   m_sharedMaterial: {fileID: -3432494171301961357, guid: 7fff04f5987a23d4cae30a373aa09dd3, type: 2}
@@ -3837,14 +3855,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a770777915dc63843929f4d1e7b3caaf, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3913,14 +3931,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a770777915dc63843929f4d1e7b3caaf, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3965,7 +3983,7 @@ RectTransform:
   m_GameObject: {fileID: 1981932574}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1089401925}
@@ -4042,7 +4060,7 @@ RectTransform:
   m_GameObject: {fileID: 2015113258}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 31728925}
@@ -4195,6 +4213,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107872902}
   m_CullTransparentMesh: 1
+--- !u!1 &2119310828 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8441382994790024698, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
+  m_PrefabInstance: {fileID: 1837497523}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2119310830 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9209683490062830043, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
+  m_PrefabInstance: {fileID: 1837497523}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119310828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52dfdefcc32f6bd4e81faceead352ed9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2119310837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119310828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1efd0abadabd7fc4ebe6dcd142464f2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boardGenerator: {fileID: 8383894889009589326}
+  packSelectionPanelScript: {fileID: 2119310830}
+  packSelectionPanel: {fileID: 1837497526}
+  helloText: {fileID: 1231408339}
+  speakerIcon: {fileID: 472857507}
+  homeButton: {fileID: 216244811}
+  packSelectionScreenUIController: {fileID: 1837497525}
+  loadingPanel: {fileID: 671447375}
 --- !u!1001 &300905862136274000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7014,7 +7068,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 453f590e5a7f5d84b9ef93b29202bb96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameAPI: {fileID: 0}
   cachedCards:
     cards: []
   randomCards: []
@@ -7023,11 +7076,21 @@ MonoBehaviour:
   tempSprites: []
   selectedLangCode: 
   packSlug: 
-  backButton: {fileID: 0}
-  stackText: {fileID: 0}
+  backButton: {fileID: 1334690317}
+  tapText: {fileID: 1854930414}
   correctCardSlug: 
-  cardImagesInScene: []
-  loadingPanel: {fileID: 0}
+  cardImagesInScene:
+  - {fileID: 447886769}
+  - {fileID: 1385205554}
+  - {fileID: 1317439564}
+  - {fileID: 627318384}
+  - {fileID: 31728926}
+  - {fileID: 1170410709}
+  - {fileID: 1089401926}
+  - {fileID: 1902663472}
+  - {fileID: 1238498041}
+  - {fileID: 1884464509}
+  loadingPanel: {fileID: 671447375}
   spawnPoints:
   - {fileID: 2107872902}
   - {fileID: 500160081}
@@ -7039,7 +7102,17 @@ MonoBehaviour:
   - {fileID: 332315740}
   - {fileID: 634805660}
   - {fileID: 1689252402}
-  cardParents: []
+  cardParents:
+  - {fileID: 1528298887}
+  - {fileID: 1755509056}
+  - {fileID: 1459780816}
+  - {fileID: 1852476510}
+  - {fileID: 2015113258}
+  - {fileID: 908045135}
+  - {fileID: 1981932574}
+  - {fileID: 103723060}
+  - {fileID: 351551926}
+  - {fileID: 1110876399}
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

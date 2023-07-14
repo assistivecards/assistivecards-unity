@@ -23,7 +23,7 @@ public class CardRumbleBoardGenerator : MonoBehaviour
     [SerializeField] string correctCardSlug;
     [SerializeField] Image[] cardImagesInScene;
     [SerializeField] GameObject loadingPanel;
-    [SerializeField] GameObject[] spawnPoints;
+    public GameObject[] spawnPoints;
     public GameObject[] cardParents;
 
 
@@ -91,6 +91,7 @@ public class CardRumbleBoardGenerator : MonoBehaviour
         for (int i = 0; i < cardParents.Length; i++)
         {
             LeanTween.scale(cardParents[i], Vector3.one, 0.2f);
+            cardParents[i].GetComponent<CardRumbleCardMovement>().enabled = true;
         }
 
         LeanTween.scale(tapText.gameObject, Vector3.one, 0.2f);

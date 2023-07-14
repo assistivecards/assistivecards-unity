@@ -3665,7 +3665,7 @@ GameObject:
   - component: {fileID: 1854930415}
   - component: {fileID: 1854930414}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: tap_cards_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

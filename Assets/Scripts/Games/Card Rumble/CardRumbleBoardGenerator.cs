@@ -62,6 +62,7 @@ public class CardRumbleBoardGenerator : MonoBehaviour
         }
 
         PopulateRandomCards();
+        TranslateTapCardText();
         await PopulateRandomTextures();
         PopulateTempSprites();
         PlaceSprites();
@@ -186,6 +187,11 @@ public class CardRumbleBoardGenerator : MonoBehaviour
     {
         loadingPanel.SetActive(false);
 
+    }
+
+    public void TranslateTapCardText()
+    {
+        tapText.text = gameAPI.Translate(tapText.gameObject.name, gameAPI.ToTitleCase(randomCards[0].title).Replace("-", " "), selectedLangCode);
     }
 
 }

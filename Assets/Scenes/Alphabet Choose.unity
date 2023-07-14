@@ -995,11 +995,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3236149540159706466, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 80
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3236149540159706466, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -80
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 3236149540598557724, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_Name
@@ -5666,6 +5666,7 @@ MonoBehaviour:
   - {r: 0.98039216, g: 0.54901963, b: 0.7137255, a: 1}
   levelCount: 0
   firstLetter: 
+  cardNameLenght: 0
 --- !u!114 &8383894889009589327
 MonoBehaviour:
   m_ObjectHideFlags: 0

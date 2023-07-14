@@ -23,6 +23,7 @@ public class AlphabetChooseButtonController : MonoBehaviour
                 gameAPI.PlaySFX("Success");
                 boardGenerator.levelCount++;
                 boardGenerator.LevelEnding();
+                boardGenerator.Invoke("CreateNewLevel", 1f);
             }
             else if(boardGenerator.levelCount == 3)
             {

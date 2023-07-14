@@ -56,6 +56,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
     public string firstLetter;
     private GameObject tempCard;
     private int random;
+    public int cardNameLenght;
 
     
     private void Awake()
@@ -159,6 +160,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
     {
         cardName = card.name;
         firstLetter = cardName.Substring(0, 1).ToLower();
+        cardNameLenght = card.name.Length;
     }
 
     private async void FillButton()
@@ -198,6 +200,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 
         for(int i = 0; i < 3; i++)
         {
+            CheckRandomForLetters();
             if(buttons[i].name != "Correct")
             {
                 if(letterCardsNames.Contains(firstLetter))
@@ -215,7 +218,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                 }
                 else if(!letterCardsNames.Contains(firstLetter))
                 {
-                    if(card.name.Substring(i + 1, 1) == null)
+                    if(cardNameLenght <= 4)
                     {                    
                         CheckRandomForLetters();
                         buttons[i].transform.GetChild(0).gameObject.SetActive(true);
@@ -227,7 +230,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                         buttons[i].transform.GetChild(0).transform.GetComponent<RawImage>().texture = letterTexture;
                         buttons[i].GetComponent<AlphabetChooseButtonController>().letter = letterCardsNames[randomLetterValueList[i]];
                     }
-                    else if(card.name.Substring(i + 1, 1) !=null)
+                    else if(cardNameLenght > 4)
                     {
                         if(!letterCardsNames.Contains(card.name.Substring(i + 1, 1).ToLower()))
                         {
@@ -249,7 +252,6 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
         uıController.GameUIActivate();
         foreach(GameObject button in buttons)
         {
-            //button.SetActive(true);
             LeanTween.scale(button, Vector3.one, 0.1f);
         }
 
@@ -276,7 +278,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 
     private void ScaleDownCard()
     {
-        LeanTween.scale(card, Vector3.zero, 0.5f).setOnComplete(CreateNewLevel);
+        LeanTween.scale(card, Vector3.zero, 0.5f);
     }
 
     private void CreateNewLevel()
@@ -300,7 +302,6 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
         foreach(GameObject button in buttons)
         {
             LeanTween.scale(button, Vector3.zero, 0.1f);
-            //button.SetActive(false);
             button.name = "Button";
         }
         buttons.Clear();

@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class AlphabetChooseButtonController : MonoBehaviour
 {
+    GameAPI gameAPI;
     public string letter;
     [SerializeField] private AlphabetChooseBoardGenerator boardGenerator;
     [SerializeField] private AlphabetChooseUIController uıController;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     public void LetterButtonClick()
     {
@@ -14,11 +20,13 @@ public class AlphabetChooseButtonController : MonoBehaviour
         {
             if(boardGenerator.levelCount < 3)
             {
+                gameAPI.PlaySFX("Success");
                 boardGenerator.levelCount++;
                 boardGenerator.LevelEnding();
             }
             else if(boardGenerator.levelCount == 3)
             {
+                gameAPI.PlaySFX("Success");
                 boardGenerator.LevelEnding();
                 boardGenerator.levelCount = 0;
                 uıController.Invoke("LevelChangeScreenActivate", 1.2f);

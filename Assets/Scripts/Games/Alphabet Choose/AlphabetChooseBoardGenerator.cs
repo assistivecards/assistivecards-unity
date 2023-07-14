@@ -10,7 +10,6 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 {
     GameAPI gameAPI;
 
-
     [SerializeField] private AlphabetChooseUIController uıController;
     [Header ("Cache Cards")]
     public string selectedLangCode;
@@ -135,6 +134,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
             await CreateLetters();
             CreateButtonList();
             CheckRandom();
+
             card = Instantiate(cardPrefab, cardPosition.transform.position, Quaternion.identity);
             card.transform.SetParent(cardPosition.transform);
 
@@ -146,6 +146,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
             cards.Add(card);
+
             LeanTween.scale(card.gameObject, Vector3.one * 0.5f, 0f);
             GetFirstLetter();
             FillButton();
@@ -250,6 +251,9 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
             //button.SetActive(true);
             LeanTween.scale(button, Vector3.one, 0.1f);
         }
+
+        gameAPI.Speak(card.name);
+        Debug.Log(card.name);
     }
 
     public void LevelEnding()

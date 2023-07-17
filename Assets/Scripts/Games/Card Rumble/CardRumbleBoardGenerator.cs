@@ -21,10 +21,13 @@ public class CardRumbleBoardGenerator : MonoBehaviour
     public static bool isBackAfterSignOut = false;
     [SerializeField] TMP_Text tapText;
     [SerializeField] string correctCardSlug;
+    public string correctCardTitle;
     [SerializeField] Image[] cardImagesInScene;
     [SerializeField] GameObject loadingPanel;
     public GameObject[] spawnPoints;
     public GameObject[] cardParents;
+    public int numOfMatchedCards;
+    public int numOfCorrectCards;
 
 
     private void Awake()
@@ -90,11 +93,17 @@ public class CardRumbleBoardGenerator : MonoBehaviour
     {
         for (int i = 0; i < cardParents.Length; i++)
         {
+            cardParents[i].transform.rotation = Quaternion.Euler(0, 0, -20);
+            cardParents[i].transform.position = spawnPoints[i].transform.position;
             LeanTween.scale(cardParents[i], Vector3.one, 0.2f);
-            cardParents[i].GetComponent<CardRumbleCardMovement>().enabled = true;
+            cardParents[i].GetComponent<CardRumbleCardMovement>().InitiateCardMovement();
+            numOfMatchedCards = 0;
+            cardParents[i].transform.GetComponent<CardRumbleMatchDetection>().isClicked = false;
         }
 
         LeanTween.scale(tapText.gameObject, Vector3.one, 0.2f);
+
+        numOfCorrectCards = cardParents.Where(cardParent => cardParent.transform.GetChild(0).GetComponent<Image>().sprite.texture.name == correctCardTitle).ToList().Count;
 
     }
 
@@ -187,6 +196,7 @@ public class CardRumbleBoardGenerator : MonoBehaviour
         }
 
         correctCardSlug = randomCards[0].slug;
+        correctCardTitle = randomCards[0].title;
     }
 
     private void DisableLoadingPanel()

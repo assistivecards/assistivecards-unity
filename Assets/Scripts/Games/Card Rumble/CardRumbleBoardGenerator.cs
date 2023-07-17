@@ -93,8 +93,12 @@ public class CardRumbleBoardGenerator : MonoBehaviour
     {
         for (int i = 0; i < cardParents.Length; i++)
         {
+            cardParents[i].transform.rotation = Quaternion.Euler(0, 0, -20);
+            cardParents[i].transform.position = spawnPoints[i].transform.position;
             LeanTween.scale(cardParents[i], Vector3.one, 0.2f);
-            cardParents[i].GetComponent<CardRumbleCardMovement>().enabled = true;
+            cardParents[i].GetComponent<CardRumbleCardMovement>().InitiateCardMovement();
+            numOfMatchedCards = 0;
+            cardParents[i].transform.GetComponent<CardRumbleMatchDetection>().isClicked = false;
         }
 
         LeanTween.scale(tapText.gameObject, Vector3.one, 0.2f);

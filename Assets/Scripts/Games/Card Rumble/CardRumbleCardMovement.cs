@@ -9,6 +9,10 @@ public class CardRumbleCardMovement : MonoBehaviour
     void Start()
     {
         board = GameObject.Find("GamePanel").GetComponent<CardRumbleBoardGenerator>();
+    }
+
+    public void InitiateCardMovement()
+    {
         LeanTween.rotateZ(gameObject, 20, .5f).setLoopPingPong();
         ChooseRandomSpawnPoint();
     }

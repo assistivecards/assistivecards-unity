@@ -21,6 +21,7 @@ public class CardRumbleBoardGenerator : MonoBehaviour
     public static bool isBackAfterSignOut = false;
     [SerializeField] TMP_Text tapText;
     [SerializeField] string correctCardSlug;
+    public string correctCardTitle;
     [SerializeField] Image[] cardImagesInScene;
     [SerializeField] GameObject loadingPanel;
     public GameObject[] spawnPoints;
@@ -187,6 +188,7 @@ public class CardRumbleBoardGenerator : MonoBehaviour
         }
 
         correctCardSlug = randomCards[0].slug;
+        correctCardTitle = randomCards[0].title;
     }
 
     private void DisableLoadingPanel()

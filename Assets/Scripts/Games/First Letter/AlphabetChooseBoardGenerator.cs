@@ -43,6 +43,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
     [Header ("Game UI")]
     public GameObject card;
     public GameObject cardPosition;
+    public GameObject firstLetterText;
     public GameObject button1;
     public GameObject button2;
     public GameObject button3;
@@ -293,6 +294,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
             LeanTween.scale(button, Vector3.one, 0.1f);
         }
 
+        LeanTween.scale(firstLetterText, Vector3.one, 0.1f);
         gameAPI.Speak(card.name);
         Debug.Log(card.name);
 
@@ -301,12 +303,12 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 
     public void LevelEnding()
     {
-        //tts
         LeanTween.moveLocal(card, new Vector3(0, -80, 0), 0.2f).setOnComplete(ScaleUpCard);
         foreach(var button in buttons)
         {
             LeanTween.scale(button, Vector3.zero, 0.1f);
         }
+        LeanTween.scale(firstLetterText, Vector3.zero, 0.1f);
     }
 
     private void ScaleUpCard()

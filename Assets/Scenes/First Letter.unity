@@ -3082,6 +3082,18 @@ PrefabInstance:
       propertyPath: boardGenerator
       value: 
       objectReference: {fileID: 8383894889009589326}
+    - target: {fileID: 5829141129142718552, guid: 5d9a903667bde460ea154597ef6cc51b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829141129142718552, guid: 5d9a903667bde460ea154597ef6cc51b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829141129142718552, guid: 5d9a903667bde460ea154597ef6cc51b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.0000095367
+      objectReference: {fileID: 0}
     - target: {fileID: 5829141129142718555, guid: 5d9a903667bde460ea154597ef6cc51b, type: 3}
       propertyPath: m_fontSize
       value: 41

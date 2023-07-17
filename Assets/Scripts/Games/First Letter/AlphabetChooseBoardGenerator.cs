@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using UnityEngine.EventSystems;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -232,7 +233,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                 }
                 else if(!letterCardsNames.Contains(firstLetter))
                 {
-                    if(cardNameLenght <= 2)
+                    if(cardNameLenght <= 3)
                     {                    
                         CheckRandomForLetters();
                         buttons[i].transform.GetChild(0).gameObject.SetActive(true);
@@ -258,7 +259,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                             buttons[i].GetComponent<AlphabetChooseButtonController>().letter = letterCardsNames[randomLetterValueList[i + 1]];
                         }
                     }
-                    else if(cardNameLenght > 2)
+                    else if(cardNameLenght > 3)
                     {
                         if(!letterCardsNames.Contains(card.name.Substring(i + 1, 1).ToLower()))
                         {
@@ -343,6 +344,11 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
         {
             LeanTween.scale(button, Vector3.zero, 0.1f);
             button.name = "Button";
+
+            if (EventSystem.current.currentSelectedGameObject == button)
+            {
+                EventSystem.current.SetSelectedGameObject(null);
+            }
         }
         buttons.Clear();
 

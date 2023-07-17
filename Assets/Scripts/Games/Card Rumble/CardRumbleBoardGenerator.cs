@@ -26,6 +26,8 @@ public class CardRumbleBoardGenerator : MonoBehaviour
     [SerializeField] GameObject loadingPanel;
     public GameObject[] spawnPoints;
     public GameObject[] cardParents;
+    public int numOfMatchedCards;
+    public int numOfCorrectCards;
 
 
     private void Awake()
@@ -96,6 +98,8 @@ public class CardRumbleBoardGenerator : MonoBehaviour
         }
 
         LeanTween.scale(tapText.gameObject, Vector3.one, 0.2f);
+
+        numOfCorrectCards = cardParents.Where(cardParent => cardParent.transform.GetChild(0).GetComponent<Image>().sprite.texture.name == correctCardTitle).ToList().Count;
 
     }
 

@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class CardRumbleMatchDetection : MonoBehaviour, IPointerClickHandler
 {
     private CardRumbleBoardGenerator board;
+    public bool isClicked = false;
 
     void Start()
     {
@@ -16,18 +17,26 @@ public class CardRumbleMatchDetection : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (transform.GetChild(0).GetComponent<Image>().sprite.texture.name == board.correctCardTitle)
+        if (transform.GetChild(0).GetComponent<Image>().sprite.texture.name == board.correctCardTitle && !isClicked)
         {
             Debug.Log("CORRECT MATCH!");
+            isClicked = true;
             LeanTween.pause(gameObject);
             LeanTween.rotateZ(gameObject, 0, .25f);
             LeanTween.scale(gameObject, Vector3.one * 1.25f, .25f).setOnComplete(ScaleCardDown);
+            board.numOfMatchedCards++;
+
+            if (CheckIfLevelComplete())
+            {
+                Debug.Log("LEVEL COMPLETE!");
+            }
+
         }
-        else
+
+        else if (transform.GetChild(0).GetComponent<Image>().sprite.texture.name != board.correctCardTitle)
         {
             Debug.Log("WRONG MATCH!");
             LeanTween.scale(gameObject, Vector3.one * .85f, .15f).setOnComplete(ScaleBackToNormal);
-
         }
     }
 
@@ -41,4 +50,18 @@ public class CardRumbleMatchDetection : MonoBehaviour, IPointerClickHandler
         LeanTween.scale(gameObject, Vector3.zero, .25f);
 
     }
+
+    private bool CheckIfLevelComplete()
+    {
+
+        if (board.numOfMatchedCards == board.numOfCorrectCards)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
 }

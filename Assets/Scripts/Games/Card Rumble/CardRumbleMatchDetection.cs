@@ -29,6 +29,10 @@ public class CardRumbleMatchDetection : MonoBehaviour, IPointerClickHandler
             if (CheckIfLevelComplete())
             {
                 Debug.Log("LEVEL COMPLETE!");
+                Invoke("PlayLevelCompletedAnimation", .55f);
+                board.Invoke("ScaleImagesDown", 1f);
+                board.Invoke("ClearBoard", 1.3f);
+                board.Invoke("GenerateRandomBoardAsync", 1.3f);
             }
 
         }
@@ -61,6 +65,20 @@ public class CardRumbleMatchDetection : MonoBehaviour, IPointerClickHandler
         else
         {
             return false;
+        }
+    }
+
+    private void PlayLevelCompletedAnimation()
+    {
+        LeanTween.pauseAll();
+        for (int i = 0; i < board.cardParents.Length; i++)
+        {
+            if (!board.cardParents[i].GetComponent<CardRumbleMatchDetection>().isClicked)
+            {
+                LeanTween.rotateZ(board.cardParents[i], 0, .25f);
+                // LeanTween.scale(board.cardParents[i], Vector3.one * 1.25f, .25f);
+            }
+
         }
     }
 

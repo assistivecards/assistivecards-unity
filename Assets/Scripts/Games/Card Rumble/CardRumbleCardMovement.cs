@@ -13,7 +13,7 @@ public class CardRumbleCardMovement : MonoBehaviour
         ChooseRandomSpawnPoint();
     }
 
-    private void ChooseRandomSpawnPoint()
+    public void ChooseRandomSpawnPoint()
     {
         LeanTween.move(gameObject, board.spawnPoints[Random.Range(0, board.spawnPoints.Length)].transform, 1.25f).setOnComplete(ChooseRandomSpawnPoint);
     }

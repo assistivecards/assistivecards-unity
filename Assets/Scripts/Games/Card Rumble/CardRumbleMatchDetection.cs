@@ -32,6 +32,7 @@ public class CardRumbleMatchDetection : MonoBehaviour, IPointerClickHandler
             {
                 Debug.Log("LEVEL COMPLETE!");
                 UIController.levelsCompleted++;
+                DisableMatchDetection();
                 UIController.backButton.GetComponent<Button>().interactable = false;
                 Invoke("PlayLevelCompletedAnimation", .55f);
                 board.Invoke("ScaleImagesDown", 1f);
@@ -89,6 +90,14 @@ public class CardRumbleMatchDetection : MonoBehaviour, IPointerClickHandler
                 // LeanTween.scale(board.cardParents[i], Vector3.one * 1.25f, .25f);
             }
 
+        }
+    }
+
+    private void DisableMatchDetection()
+    {
+        for (int i = 0; i < board.cardParents.Length; i++)
+        {
+            board.cardParents[i].GetComponent<CardRumbleMatchDetection>().enabled = false;
         }
     }
 

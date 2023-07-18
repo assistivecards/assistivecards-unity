@@ -97,6 +97,7 @@ public class CardRumbleBoardGenerator : MonoBehaviour
         {
             cardParents[i].transform.rotation = Quaternion.Euler(0, 0, -20);
             cardParents[i].transform.position = spawnPoints[i].transform.position;
+            cardParents[i].GetComponent<CardRumbleMatchDetection>().enabled = true;
             LeanTween.scale(cardParents[i], Vector3.one, 0.2f);
             cardParents[i].GetComponent<CardRumbleCardMovement>().InitiateCardMovement();
             numOfMatchedCards = 0;

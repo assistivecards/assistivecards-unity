@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AlphabetChooseTutorial : MonoBehaviour
+public class FirstLetterTutorial : MonoBehaviour
 {
 
     public void SetPosition(Transform tutorialPosition) 

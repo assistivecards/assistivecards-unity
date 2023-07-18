@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AlphabetChooseButtonController : MonoBehaviour
+public class FirstLetterButtonController : MonoBehaviour
 {
     GameAPI gameAPI;
     public string letter;
-    [SerializeField] private AlphabetChooseBoardGenerator boardGenerator;
-    [SerializeField] private AlphabetChooseUIController uıController;
+    [SerializeField] private FirstLetterBoardGenerator boardGenerator;
+    [SerializeField] private FirstLetterUIController uıController;
 
     private void Awake()
     {

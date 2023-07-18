@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AlphabetChooseUIController : MonoBehaviour
+public class FirstLetterUIController : MonoBehaviour
 {
     GameAPI gameAPI;
 
     [Header ("Scripts")]
-    [SerializeField] private AlphabetChooseBoardGenerator boardGenerator;
+    [SerializeField] private FirstLetterBoardGenerator boardGenerator;
     [SerializeField] private PackSelectionPanel packSelectionPanelScript;
 
     [Header ("Panels")]

@@ -7,11 +7,11 @@ using UnityEngine.UI;
 using TMPro;
 using System.Linq;
 
-public class AlphabetChooseBoardGenerator : MonoBehaviour
+public class FirstLetterBoardGenerator : MonoBehaviour
 {
     GameAPI gameAPI;
 
-    [SerializeField] private AlphabetChooseUIController uıController;
+    [SerializeField] private FirstLetterUIController uıController;
     [Header ("Cache Cards")]
     public string selectedLangCode;
     public List<string> cardLocalNames = new List<string>();
@@ -184,7 +184,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                     correctLetterTexture.filterMode = FilterMode.Bilinear;
 
                     buttons[random].transform.GetChild(0).transform.GetComponent<RawImage>().texture = correctLetterTexture;   
-                    buttons[random].GetComponent<AlphabetChooseButtonController>().letter = firstLetter;
+                    buttons[random].GetComponent<FirstLetterButtonController>().letter = firstLetter;
                     buttons[random].name = "Correct";
 
                 }
@@ -196,7 +196,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
             buttons[random].transform.GetChild(1).gameObject.SetActive(true);
             buttons[random].transform.GetChild(1).GetComponent<TMP_Text>().text = firstLetter.ToLower();
             buttons[random].transform.GetChild(1).GetComponent<TMP_Text>().color = colors[Random.Range(0, colors.Length)];
-            buttons[random].GetComponent<AlphabetChooseButtonController>().letter = firstLetter;
+            buttons[random].GetComponent<FirstLetterButtonController>().letter = firstLetter;
             buttons[random].name = "Correct";
         }
 
@@ -218,7 +218,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                         letterTexture.filterMode = FilterMode.Bilinear;
 
                         buttons[i].transform.GetChild(0).transform.GetComponent<RawImage>().texture = letterTexture;
-                        buttons[i].GetComponent<AlphabetChooseButtonController>().letter = letterCardsNames[randomLetterValueList[i]];
+                        buttons[i].GetComponent<FirstLetterButtonController>().letter = letterCardsNames[randomLetterValueList[i]];
                     }
                     else
                     {
@@ -228,7 +228,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                         letterTexture.filterMode = FilterMode.Bilinear;
 
                         buttons[i].transform.GetChild(0).transform.GetComponent<RawImage>().texture = letterTexture;
-                        buttons[i].GetComponent<AlphabetChooseButtonController>().letter = letterCardsNames[randomLetterValueList[i + 1]];
+                        buttons[i].GetComponent<FirstLetterButtonController>().letter = letterCardsNames[randomLetterValueList[i + 1]];
                     }
                 }
                 else if(!letterCardsNames.Contains(firstLetter))
@@ -246,7 +246,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                             letterTexture.filterMode = FilterMode.Bilinear;
 
                             buttons[i].transform.GetChild(0).transform.GetComponent<RawImage>().texture = letterTexture;
-                            buttons[i].GetComponent<AlphabetChooseButtonController>().letter = letterCardsNames[randomLetterValueList[i]];
+                            buttons[i].GetComponent<FirstLetterButtonController>().letter = letterCardsNames[randomLetterValueList[i]];
                         }
                         else
                         {
@@ -256,7 +256,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                             letterTexture.filterMode = FilterMode.Bilinear;
 
                             buttons[i].transform.GetChild(0).transform.GetComponent<RawImage>().texture = letterTexture;
-                            buttons[i].GetComponent<AlphabetChooseButtonController>().letter = letterCardsNames[randomLetterValueList[i + 1]];
+                            buttons[i].GetComponent<FirstLetterButtonController>().letter = letterCardsNames[randomLetterValueList[i + 1]];
                         }
                     }
                     else if(cardNameLenght > 3)
@@ -269,7 +269,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                                 buttons[i].transform.GetChild(1).gameObject.SetActive(true);
                                 buttons[i].transform.GetChild(1).GetComponent<TMP_Text>().text = card.name.Substring(i + 1, 1).ToLower();
                                 buttons[i].transform.GetChild(1).GetComponent<TMP_Text>().color = colors[Random.Range(0, colors.Length)];
-                                buttons[i].GetComponent<AlphabetChooseButtonController>().letter = card.name.Substring(i + 1, 1).ToLower();
+                                buttons[i].GetComponent<FirstLetterButtonController>().letter = card.name.Substring(i + 1, 1).ToLower();
                             }
                             else 
                             {
@@ -277,7 +277,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                                 buttons[i].transform.GetChild(1).gameObject.SetActive(true);
                                 buttons[i].transform.GetChild(1).GetComponent<TMP_Text>().text = card.name.Substring(i + 2, 1).ToLower();
                                 buttons[i].transform.GetChild(1).GetComponent<TMP_Text>().color = colors[Random.Range(0, colors.Length)];
-                                buttons[i].GetComponent<AlphabetChooseButtonController>().letter = card.name.Substring(i + 2, 1).ToLower();
+                                buttons[i].GetComponent<FirstLetterButtonController>().letter = card.name.Substring(i + 2, 1).ToLower();
                             }
                         }
                     }
@@ -299,7 +299,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
         gameAPI.Speak(card.name);
         Debug.Log(card.name);
 
-        tutorial.GetComponent<AlphabetChooseTutorial>().SetPosition(buttons[random].transform);
+        tutorial.GetComponent<FirstLetterTutorial>().SetPosition(buttons[random].transform);
     }
 
     public void LevelEnding()

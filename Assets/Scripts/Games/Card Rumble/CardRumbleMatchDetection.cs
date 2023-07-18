@@ -9,10 +9,18 @@ public class CardRumbleMatchDetection : MonoBehaviour, IPointerClickHandler
 {
     private CardRumbleBoardGenerator board;
     public bool isClicked = false;
+    private CardRumbleUIController UIController;
+    private GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     void Start()
     {
         board = GameObject.Find("GamePanel").GetComponent<CardRumbleBoardGenerator>();
+        UIController = GameObject.Find("GamePanel").GetComponent<CardRumbleUIController>();
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -20,19 +28,30 @@ public class CardRumbleMatchDetection : MonoBehaviour, IPointerClickHandler
         if (transform.GetChild(0).GetComponent<Image>().sprite.texture.name == board.correctCardTitle && !isClicked)
         {
             Debug.Log("CORRECT MATCH!");
+            gameAPI.PlaySFX("Success");
             isClicked = true;
             LeanTween.pause(gameObject);
             LeanTween.rotateZ(gameObject, 0, .25f);
             LeanTween.scale(gameObject, Vector3.one * 1.25f, .25f).setOnComplete(ScaleCardDown);
+            ReadCard();
             board.numOfMatchedCards++;
 
             if (CheckIfLevelComplete())
             {
                 Debug.Log("LEVEL COMPLETE!");
+                UIController.levelsCompleted++;
+                DisableMatchDetection();
+                UIController.backButton.GetComponent<Button>().interactable = false;
                 Invoke("PlayLevelCompletedAnimation", .55f);
                 board.Invoke("ScaleImagesDown", 1f);
                 board.Invoke("ClearBoard", 1.3f);
-                board.Invoke("GenerateRandomBoardAsync", 1.3f);
+
+                if (UIController.levelsCompleted == UIController.checkpointFrequency)
+                {
+                    UIController.Invoke("OpenCheckPointPanel", 1.3f);
+                }
+                else
+                    board.Invoke("GenerateRandomBoardAsync", 1.3f);
             }
 
         }
@@ -40,6 +59,7 @@ public class CardRumbleMatchDetection : MonoBehaviour, IPointerClickHandler
         else if (transform.GetChild(0).GetComponent<Image>().sprite.texture.name != board.correctCardTitle)
         {
             Debug.Log("WRONG MATCH!");
+            gameAPI.PlaySFX("Pickup");
             LeanTween.scale(gameObject, Vector3.one * .85f, .15f).setOnComplete(ScaleBackToNormal);
         }
     }
@@ -80,6 +100,19 @@ public class CardRumbleMatchDetection : MonoBehaviour, IPointerClickHandler
             }
 
         }
+    }
+
+    private void DisableMatchDetection()
+    {
+        for (int i = 0; i < board.cardParents.Length; i++)
+        {
+            board.cardParents[i].GetComponent<CardRumbleMatchDetection>().enabled = false;
+        }
+    }
+
+    public void ReadCard()
+    {
+        gameAPI.Speak(transform.GetChild(0).GetComponent<Image>().sprite.texture.name);
     }
 
 }

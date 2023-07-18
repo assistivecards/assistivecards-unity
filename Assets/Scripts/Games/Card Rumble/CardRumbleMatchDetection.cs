@@ -9,10 +9,12 @@ public class CardRumbleMatchDetection : MonoBehaviour, IPointerClickHandler
 {
     private CardRumbleBoardGenerator board;
     public bool isClicked = false;
+    private CardRumbleUIController UIController;
 
     void Start()
     {
         board = GameObject.Find("GamePanel").GetComponent<CardRumbleBoardGenerator>();
+        UIController = GameObject.Find("GamePanel").GetComponent<CardRumbleUIController>();
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -29,10 +31,17 @@ public class CardRumbleMatchDetection : MonoBehaviour, IPointerClickHandler
             if (CheckIfLevelComplete())
             {
                 Debug.Log("LEVEL COMPLETE!");
+                UIController.levelsCompleted++;
                 Invoke("PlayLevelCompletedAnimation", .55f);
                 board.Invoke("ScaleImagesDown", 1f);
                 board.Invoke("ClearBoard", 1.3f);
-                board.Invoke("GenerateRandomBoardAsync", 1.3f);
+
+                if (UIController.levelsCompleted == UIController.checkpointFrequency)
+                {
+                    UIController.Invoke("OpenCheckPointPanel", 1.3f);
+                }
+                else
+                    board.Invoke("GenerateRandomBoardAsync", 1.3f);
             }
 
         }

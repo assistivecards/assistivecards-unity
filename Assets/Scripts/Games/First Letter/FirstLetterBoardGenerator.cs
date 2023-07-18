@@ -140,6 +140,7 @@ public class FirstLetterBoardGenerator : MonoBehaviour
             CreateButtonList();
             CheckRandom();
 
+            firstLetterText.GetComponent<TMP_Text>().text = gameAPI.Translate(firstLetterText.gameObject.name, selectedLangCode);
             card = Instantiate(cardPrefab, cardPosition.transform.position, Quaternion.identity);
             card.transform.SetParent(cardPosition.transform);
 

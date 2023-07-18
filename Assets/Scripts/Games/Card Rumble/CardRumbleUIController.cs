@@ -118,7 +118,16 @@ public class CardRumbleUIController : MonoBehaviour
         helloText.SetActive(true);
         speakerIcon.SetActive(true);
         homeButton.SetActive(true);
+        PauseCardTween();
 
+    }
+
+    private void PauseCardTween()
+    {
+        for (int i = 0; i < board.cardParents.Length; i++)
+        {
+            LeanTween.pause(board.cardParents[i]);
+        }
     }
 
 }

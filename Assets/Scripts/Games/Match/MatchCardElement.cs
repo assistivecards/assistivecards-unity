@@ -50,7 +50,6 @@ public class MatchCardElement : MonoBehaviour, IPointerDownHandler, IDragHandler
         if(isPointerUp)
         {
             if(!match 
-            && other.gameObject.GetComponent<MatchCardElement>().moveable == false  
             && other.gameObject.GetComponent<MatchCardElement>().cardName == cardName)
             {
                 match = true;
@@ -61,7 +60,6 @@ public class MatchCardElement : MonoBehaviour, IPointerDownHandler, IDragHandler
                 gameAPI.PlaySFX("Success");
             }
             else if(!match 
-            && other.gameObject.GetComponent<MatchCardElement>().moveable == false 
             && other.gameObject.GetComponent<MatchCardElement>().cardName != cardName)
             {
                 Invoke("MoveToBeginning", 0.25f);

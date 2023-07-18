@@ -120,7 +120,7 @@ public class MatchBoardGenerator : MonoBehaviour
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                 card.transform.GetChild(1).GetComponent<TMP_Text>().text = cardLocalNames[randomValueList[i]];
                 cards.Add(card);
-                card.GetComponent<MatchCardElement>().moveable = false;
+                card.GetComponent<MatchCardElement>().moveable = true;
                 card.GetComponent<MatchCardElement>().cardName = cardLocalNames[randomValueList[i]];
                 LeanTween.scale(card.gameObject, Vector3.one * 0.5f, 0f);
             }

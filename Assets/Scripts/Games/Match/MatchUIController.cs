@@ -14,7 +14,7 @@ public class MatchUIController : MonoBehaviour
     [SerializeField] private GameObject levelChange;
 
     [Header ("UI Objects")]
-    [SerializeField] private GameObject gameUI;
+    public GameObject gameUI;
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject settingButton;
     [SerializeField] private GameObject helloText;

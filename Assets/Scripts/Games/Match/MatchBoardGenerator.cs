@@ -48,6 +48,7 @@ public class MatchBoardGenerator : MonoBehaviour
     public string firstColumnCards;
     public string secondColumnCards;
     public int matchCount;
+    public int levelCount;
 
 
     private void Awake()
@@ -122,7 +123,7 @@ public class MatchBoardGenerator : MonoBehaviour
                 cards.Add(card);
                 card.GetComponent<MatchCardElement>().moveable = true;
                 card.GetComponent<MatchCardElement>().cardName = cardLocalNames[randomValueList[i]];
-                LeanTween.scale(card.gameObject, Vector3.one * 0.5f, 0f);
+                LeanTween.scale(card.gameObject, Vector3.zero, 0f);
             }
 
             for(int i = 0; i < cardPositions.Count / 2; i++)
@@ -143,7 +144,7 @@ public class MatchBoardGenerator : MonoBehaviour
                 cards.Add(card);
                 card.GetComponent<MatchCardElement>().moveable = true;
                 card.GetComponent<MatchCardElement>().cardName = cardLocalNames[randomValueList[i]];
-                LeanTween.scale(card.gameObject, Vector3.one * 0.5f, 0f);
+                LeanTween.scale(card.gameObject, Vector3.zero, 0f);
             }
 
             for(int i = 0; i < cards.Count; i++)
@@ -156,6 +157,11 @@ public class MatchBoardGenerator : MonoBehaviour
                 {
                     secondColumnCards = secondColumnCards + " - " + cardPositions[i].transform.GetChild(0).name;
                 }
+            }
+
+            foreach(var card in cards)
+            {
+                LeanTween.scale(card, Vector3.one * 0.5f, 0.25f);
             }
             uıController.GameUIActivate();
             CheckColumnStrings();
@@ -217,15 +223,31 @@ public class MatchBoardGenerator : MonoBehaviour
             }
         }
 
+
         if(matchCount != 6)
         {
             matchCount = 0;
         }
         else if(matchCount == 6)
         {
-            uıController.LevelChangeScreenActivate();
-            uıController.GameUIDeactivate();
-            gameAPI.PlaySFX("Finished");
+            if(levelCount >= 3)
+            {
+                uıController.LevelChangeScreenActivate();
+                uıController.GameUIDeactivate();
+                gameAPI.PlaySFX("Finished");
+                levelCount = 0;
+            }
+            else
+            {
+                levelCount ++;
+                foreach(var card in cards)
+                {
+                    LeanTween.scale(card, Vector3.zero, 0.25f);
+                }
+                gameAPI.PlaySFX("Finished");
+                Invoke("ClearBoard", 0.25f);
+                Invoke("GeneratedBoardAsync", 0.25f);
+            }
         }
     }
 }

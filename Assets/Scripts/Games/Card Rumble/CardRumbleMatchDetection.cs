@@ -32,6 +32,7 @@ public class CardRumbleMatchDetection : MonoBehaviour, IPointerClickHandler
             {
                 Debug.Log("LEVEL COMPLETE!");
                 UIController.levelsCompleted++;
+                UIController.backButton.GetComponent<Button>().interactable = false;
                 Invoke("PlayLevelCompletedAnimation", .55f);
                 board.Invoke("ScaleImagesDown", 1f);
                 board.Invoke("ClearBoard", 1.3f);

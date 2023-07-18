@@ -28,7 +28,7 @@ public class CardRumbleBoardGenerator : MonoBehaviour
     public GameObject[] cardParents;
     public int numOfMatchedCards;
     public int numOfCorrectCards;
-
+    private CardRumbleUIController UIController;
 
     private void Awake()
     {
@@ -38,6 +38,7 @@ public class CardRumbleBoardGenerator : MonoBehaviour
     private void Start()
     {
         gameAPI.PlayMusic();
+        UIController = gameObject.GetComponent<CardRumbleUIController>();
     }
 
     private void OnEnable()
@@ -45,6 +46,7 @@ public class CardRumbleBoardGenerator : MonoBehaviour
         if (isBackAfterSignOut)
         {
             gameAPI.PlayMusic();
+            UIController.OnBackButtonClick();
             isBackAfterSignOut = false;
         }
     }

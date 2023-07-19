@@ -15,6 +15,8 @@ public class CardRumbleUIController : MonoBehaviour
     private GameAPI gameAPI;
     public int levelsCompleted;
     public int checkpointFrequency;
+    [SerializeField] GameObject tutorial;
+    private bool firstTime = true;
 
     private void Awake()
     {
@@ -128,6 +130,15 @@ public class CardRumbleUIController : MonoBehaviour
         {
             LeanTween.pause(board.cardParents[i]);
         }
+    }
+
+    public void TutorialSetActive()
+    {
+        if (firstTime || gameAPI.GetTutorialPreference() == 1)
+        {
+            tutorial.SetActive(true);
+        }
+        firstTime = false;
     }
 
 }

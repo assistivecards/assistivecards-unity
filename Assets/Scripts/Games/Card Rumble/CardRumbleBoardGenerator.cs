@@ -29,6 +29,7 @@ public class CardRumbleBoardGenerator : MonoBehaviour
     public int numOfMatchedCards;
     public int numOfCorrectCards;
     private CardRumbleUIController UIController;
+    public int cardSpeed = 350;
 
     private void Awake()
     {

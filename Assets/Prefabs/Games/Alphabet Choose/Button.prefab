@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 5829141130014444533}
   - component: {fileID: 5829141130014444530}
   - component: {fileID: 5829141130014444531}
-  - component: {fileID: -2346501530631669579}
+  - component: {fileID: 7205151004147402840}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -196,9 +196,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -2346501530631669579}
+      - m_Target: {fileID: 7205151004147402840}
         m_TargetAssemblyTypeName: AlphabetChooseButtonController, Assembly-CSharp
-        m_MethodName: LetterButtonClick
+        m_MethodName: ButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -208,7 +208,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &-2346501530631669579
+--- !u!114 &7205151004147402840
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -217,9 +217,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5829141130014444529}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 566864e277fe14eaf9ff42597650ed48, type: 3}
+  m_Script: {fileID: 11500000, guid: b3c80e14058b845d5a59463ea4b2205d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  letter: 
   boardGenerator: {fileID: 0}
   "u\u0131Controller": {fileID: 0}

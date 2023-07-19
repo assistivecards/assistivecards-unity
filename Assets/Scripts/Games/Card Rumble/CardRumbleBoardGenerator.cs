@@ -29,6 +29,7 @@ public class CardRumbleBoardGenerator : MonoBehaviour
     public int numOfMatchedCards;
     public int numOfCorrectCards;
     private CardRumbleUIController UIController;
+    public int cardSpeed = 350;
 
     private void Awake()
     {
@@ -74,6 +75,7 @@ public class CardRumbleBoardGenerator : MonoBehaviour
         DisableLoadingPanel();
         ScaleImagesUp();
         backButton.SetActive(true);
+        UIController.Invoke("TutorialSetActive", .3f);
         Invoke("EnableBackButton", 0.15f);
     }
 

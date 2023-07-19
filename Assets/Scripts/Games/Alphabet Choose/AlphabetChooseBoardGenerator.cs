@@ -11,7 +11,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 {
     GameAPI gameAPI;
 
-    [SerializeField] private FirstLetterUIController uıController;
+    [SerializeField] private AlphabetChooseUIController uıController;
     [Header ("Cache Cards")]
     public string selectedLangCode;
     public List<string> cardLocalNames = new List<string>();
@@ -37,7 +37,6 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject tutorial;
 
     [Header ("Game UI")]
-    public GameObject card;
     public GameObject cardPosition;
     public GameObject firstLetterText;
     public GameObject button1;
@@ -51,7 +50,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
     public int levelCount;
     private string cardName;
     public string firstLetter;
-    private GameObject tempCard;
+    private GameObject letterCard;
     private int random;
     public int cardNameLenght;
 
@@ -103,8 +102,6 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
         }
     }
 
-
-
     private void CreateButtonList()
     {
         buttons.Add(button1);
@@ -132,17 +129,54 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                 buttons[i].transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                 cards.Add(buttons[i]);
 
-                LeanTween.scale(card.gameObject, Vector3.one * 0.5f, 0f);
+                LeanTween.scale(buttons[i].gameObject, Vector3.one * 0.5f, 0f);
             }
-            uıController.GameUIActivate();
         }
+        FillLetterCard();
+        GameUIActivate();
     }
 
-    private void GetFirstLetter()
+    private async void FillLetterCard()
     {
-        cardName = card.name;
+        random = Random.Range(0,3);
+        GetFirstLetter(cards[random]);
+        letterCard = Instantiate(cardPrefab, cardPosition.transform.position, Quaternion.identity);
+        letterCard.transform.SetParent(cardPosition.transform);
+
+        if(letterCardsNames.Contains(firstLetter))
+        {
+            foreach(var letter in letterCardsNames)
+            {
+                if(firstLetter == letter.Substring(0, 1))
+                {
+                    letterCard.transform.GetChild(0).gameObject.SetActive(true);
+                    letterCard.transform.GetChild(1).gameObject.SetActive(false);
+
+                    var correctLetterTexture = await gameAPI.GetCardImage("letters", letter, 512);
+                    correctLetterTexture.wrapMode = TextureWrapMode.Clamp;
+                    correctLetterTexture.filterMode = FilterMode.Bilinear;
+
+                    letterCard.transform.GetChild(0).transform.GetComponent<RawImage>().texture = correctLetterTexture;   
+                    LeanTween.scale(letterCard.gameObject, Vector3.one * 0.5f, 0f);
+                }
+            }
+        }
+        else
+        {
+            letterCard.transform.GetChild(0).gameObject.SetActive(false);
+            letterCard.transform.GetChild(1).gameObject.SetActive(true);
+            letterCard.transform.GetChild(1).GetComponent<TMP_Text>().text = firstLetter.ToLower();
+            letterCard.transform.GetChild(1).GetComponent<TMP_Text>().color = colors[Random.Range(0, colors.Length)];
+        }
+        tutorial.GetComponent<AlphabetChooseTutorial>().SetPosition(cards[random].transform);
+    }
+
+    private void GetFirstLetter(GameObject _card)
+    {
+        _card.GetComponent<AlphabetChooseButtonController>().firstLetter = _card.name.Substring(0, 1).ToLower();
+        cardName = _card.name;
         firstLetter = cardName.Substring(0, 1).ToLower();
-        cardNameLenght = card.name.Length;
+        cardNameLenght = _card.name.Length;
     }
 
     public void GameUIActivate()
@@ -155,12 +189,11 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 
         LeanTween.scale(firstLetterText, Vector3.one, 0.1f);
 
-        tutorial.GetComponent<FirstLetterTutorial>().SetPosition(buttons[random].transform);
     }
 
     public void LevelEnding()
     {
-        LeanTween.moveLocal(card, new Vector3(0, -80, 0), 0.2f).setOnComplete(ScaleUpCard);
+        LeanTween.moveLocal(letterCard, new Vector3(0, -80, 0), 0.2f).setOnComplete(ScaleUpCard);
         foreach(var button in buttons)
         {
             LeanTween.scale(button, Vector3.zero, 0.1f);
@@ -170,12 +203,12 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 
     private void ScaleUpCard()
     {
-        LeanTween.scale(card, Vector3.one, 0.5f).setOnComplete(ScaleDownCard);
+        LeanTween.scale(letterCard, Vector3.one, 0.5f).setOnComplete(ScaleDownCard);
     }
 
     private void ScaleDownCard()
     {
-        LeanTween.scale(card, Vector3.zero, 0.5f);
+        LeanTween.scale(letterCard, Vector3.zero, 0.5f);
     }
 
     private void CreateNewLevel()
@@ -207,7 +240,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
         }
         buttons.Clear();
 
-        Destroy(card);
+        Destroy(letterCard);
 
     }
 }

@@ -51,7 +51,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
     public int levelCount;
     private string cardName;
     public string firstLetter;
-    private GameObject tempCard;
+    private GameObject letterCard;
     private int random;
     public int cardNameLenght;
 
@@ -103,8 +103,6 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
         }
     }
 
-
-
     private void CreateButtonList()
     {
         buttons.Add(button1);
@@ -134,15 +132,46 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 
                 LeanTween.scale(card.gameObject, Vector3.one * 0.5f, 0f);
             }
-            uıController.GameUIActivate();
+        }
+        FillLetterCard();
+    }
+
+    private async void FillLetterCard()
+    {
+        GetFirstLetter(cards[Random.Range(0,3)]);
+        letterCard = Instantiate(cardPrefab, cardPosition.transform.position, Quaternion.identity);
+        letterCard.transform.SetParent(cardPosition.transform);
+
+        if(letterCardsNames.Contains(firstLetter))
+        {
+            foreach(var letter in letterCardsNames)
+            {
+                if(firstLetter == letter.Substring(0, 1))
+                {
+                    Debug.Log("!!!!!!!!!!!!");
+                    var correctLetterTexture = await gameAPI.GetCardImage("letters", letter, 512);
+                    correctLetterTexture.wrapMode = TextureWrapMode.Clamp;
+                    correctLetterTexture.filterMode = FilterMode.Bilinear;
+
+                    letterCard.transform.GetChild(0).transform.GetComponent<RawImage>().texture = correctLetterTexture;   
+                    LeanTween.scale(letterCard.gameObject, Vector3.one * 0.5f, 0f);
+                }
+            }
+        }
+        else
+        {
+            letterCard.transform.GetChild(0).gameObject.SetActive(false);
+            letterCard.transform.GetChild(1).gameObject.SetActive(true);
+            letterCard.transform.GetChild(1).GetComponent<TMP_Text>().text = firstLetter.ToLower();
+            letterCard.transform.GetChild(1).GetComponent<TMP_Text>().color = colors[Random.Range(0, colors.Length)];
         }
     }
 
-    private void GetFirstLetter()
+    private void GetFirstLetter(GameObject _card)
     {
-        cardName = card.name;
+        cardName = _card.name;
         firstLetter = cardName.Substring(0, 1).ToLower();
-        cardNameLenght = card.name.Length;
+        cardNameLenght = _card.name.Length;
     }
 
     public void GameUIActivate()

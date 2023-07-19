@@ -375,6 +375,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6664566243188496307, guid: 5d9a903667bde460ea154597ef6cc51b, type: 3}
+      propertyPath: "u\u0131Controller"
+      value: 
+      objectReference: {fileID: 8383894889009589329}
+    - target: {fileID: 6664566243188496307, guid: 5d9a903667bde460ea154597ef6cc51b, type: 3}
+      propertyPath: boardGenerator
+      value: 
+      objectReference: {fileID: 8383894889009589328}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d9a903667bde460ea154597ef6cc51b, type: 3}
@@ -2926,6 +2934,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6664566243188496307, guid: 5d9a903667bde460ea154597ef6cc51b, type: 3}
+      propertyPath: "u\u0131Controller"
+      value: 
+      objectReference: {fileID: 8383894889009589329}
+    - target: {fileID: 6664566243188496307, guid: 5d9a903667bde460ea154597ef6cc51b, type: 3}
+      propertyPath: boardGenerator
+      value: 
+      objectReference: {fileID: 8383894889009589328}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d9a903667bde460ea154597ef6cc51b, type: 3}
@@ -3202,6 +3218,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button
       objectReference: {fileID: 0}
+    - target: {fileID: 6664566243188496307, guid: 5d9a903667bde460ea154597ef6cc51b, type: 3}
+      propertyPath: "u\u0131Controller"
+      value: 
+      objectReference: {fileID: 8383894889009589329}
+    - target: {fileID: 6664566243188496307, guid: 5d9a903667bde460ea154597ef6cc51b, type: 3}
+      propertyPath: boardGenerator
+      value: 
+      objectReference: {fileID: 8383894889009589328}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d9a903667bde460ea154597ef6cc51b, type: 3}
@@ -6279,7 +6303,6 @@ MonoBehaviour:
   randomValueList: 
   cardPrefab: {fileID: 1572616208917296617, guid: 959a69d7146ab4230a7c3fe7f7ecdec7, type: 3}
   tutorial: {fileID: 927069859}
-  card: {fileID: 0}
   cardPosition: {fileID: 515784434}
   firstLetterText: {fileID: 1896439928}
   button1: {fileID: 271310750}

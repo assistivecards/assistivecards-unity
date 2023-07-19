@@ -37,7 +37,6 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject tutorial;
 
     [Header ("Game UI")]
-    public GameObject card;
     public GameObject cardPosition;
     public GameObject firstLetterText;
     public GameObject button1;
@@ -130,7 +129,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                 buttons[i].transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                 cards.Add(buttons[i]);
 
-                LeanTween.scale(card.gameObject, Vector3.one * 0.5f, 0f);
+                LeanTween.scale(buttons[i].gameObject, Vector3.one * 0.5f, 0f);
             }
         }
         FillLetterCard();
@@ -172,6 +171,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
         cardName = _card.name;
         firstLetter = cardName.Substring(0, 1).ToLower();
         cardNameLenght = _card.name.Length;
+        _card.GetComponent<AlphabetChooseButtonController>().firstLetter = _card.name.Substring(0, 1).ToLower();
     }
 
     public void GameUIActivate()
@@ -189,7 +189,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 
     public void LevelEnding()
     {
-        LeanTween.moveLocal(card, new Vector3(0, -80, 0), 0.2f).setOnComplete(ScaleUpCard);
+        LeanTween.moveLocal(letterCard, new Vector3(0, -80, 0), 0.2f).setOnComplete(ScaleUpCard);
         foreach(var button in buttons)
         {
             LeanTween.scale(button, Vector3.zero, 0.1f);
@@ -199,12 +199,12 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 
     private void ScaleUpCard()
     {
-        LeanTween.scale(card, Vector3.one, 0.5f).setOnComplete(ScaleDownCard);
+        LeanTween.scale(letterCard, Vector3.one, 0.5f).setOnComplete(ScaleDownCard);
     }
 
     private void ScaleDownCard()
     {
-        LeanTween.scale(card, Vector3.zero, 0.5f);
+        LeanTween.scale(letterCard, Vector3.zero, 0.5f);
     }
 
     private void CreateNewLevel()
@@ -236,7 +236,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
         }
         buttons.Clear();
 
-        Destroy(card);
+        Destroy(letterCard);
 
     }
 }

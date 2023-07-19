@@ -11,7 +11,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 {
     GameAPI gameAPI;
 
-    [SerializeField] private FirstLetterUIController uıController;
+    [SerializeField] private AlphabetChooseUIController uıController;
     [Header ("Cache Cards")]
     public string selectedLangCode;
     public List<string> cardLocalNames = new List<string>();
@@ -134,6 +134,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
             }
         }
         FillLetterCard();
+        GameUIActivate();
     }
 
     private async void FillLetterCard()
@@ -148,7 +149,6 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
             {
                 if(firstLetter == letter.Substring(0, 1))
                 {
-                    Debug.Log("!!!!!!!!!!!!");
                     var correctLetterTexture = await gameAPI.GetCardImage("letters", letter, 512);
                     correctLetterTexture.wrapMode = TextureWrapMode.Clamp;
                     correctLetterTexture.filterMode = FilterMode.Bilinear;

@@ -168,10 +168,10 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 
     private void GetFirstLetter(GameObject _card)
     {
+        _card.GetComponent<AlphabetChooseButtonController>().firstLetter = _card.name.Substring(0, 1).ToLower();
         cardName = _card.name;
         firstLetter = cardName.Substring(0, 1).ToLower();
         cardNameLenght = _card.name.Length;
-        _card.GetComponent<AlphabetChooseButtonController>().firstLetter = _card.name.Substring(0, 1).ToLower();
     }
 
     public void GameUIActivate()

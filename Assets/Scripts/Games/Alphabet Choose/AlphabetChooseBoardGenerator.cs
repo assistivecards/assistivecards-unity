@@ -138,7 +138,8 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 
     private async void FillLetterCard()
     {
-        GetFirstLetter(cards[Random.Range(0,3)]);
+        random = Random.Range(0,3);
+        GetFirstLetter(cards[random]);
         letterCard = Instantiate(cardPrefab, cardPosition.transform.position, Quaternion.identity);
         letterCard.transform.SetParent(cardPosition.transform);
 
@@ -148,6 +149,9 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
             {
                 if(firstLetter == letter.Substring(0, 1))
                 {
+                    letterCard.transform.GetChild(0).gameObject.SetActive(true);
+                    letterCard.transform.GetChild(1).gameObject.SetActive(false);
+
                     var correctLetterTexture = await gameAPI.GetCardImage("letters", letter, 512);
                     correctLetterTexture.wrapMode = TextureWrapMode.Clamp;
                     correctLetterTexture.filterMode = FilterMode.Bilinear;
@@ -164,6 +168,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
             letterCard.transform.GetChild(1).GetComponent<TMP_Text>().text = firstLetter.ToLower();
             letterCard.transform.GetChild(1).GetComponent<TMP_Text>().color = colors[Random.Range(0, colors.Length)];
         }
+        tutorial.GetComponent<AlphabetChooseTutorial>().SetPosition(cards[random].transform);
     }
 
     private void GetFirstLetter(GameObject _card)
@@ -184,7 +189,6 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 
         LeanTween.scale(firstLetterText, Vector3.one, 0.1f);
 
-        tutorial.GetComponent<FirstLetterTutorial>().SetPosition(buttons[random].transform);
     }
 
     public void LevelEnding()

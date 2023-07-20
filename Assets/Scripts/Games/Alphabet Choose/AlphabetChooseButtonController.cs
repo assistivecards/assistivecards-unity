@@ -21,6 +21,7 @@ public class AlphabetChooseButtonController : MonoBehaviour
             if(boardGenerator.levelCount < 3)
             {
                 gameAPI.PlaySFX("Success");
+                Invoke("ReadCard", 0.2f);
                 boardGenerator.levelCount++;
                 boardGenerator.LevelEnding();
                 boardGenerator.Invoke("CreateNewLevel", 1f);
@@ -28,6 +29,7 @@ public class AlphabetChooseButtonController : MonoBehaviour
             else if(boardGenerator.levelCount == 3)
             {
                 gameAPI.PlaySFX("Success");
+                Invoke("ReadCard", 0.2f);
                 boardGenerator.LevelEnding();
                 boardGenerator.levelCount = 0;
                 uıController.Invoke("LevelChangeScreenActivate", 1.2f);
@@ -37,5 +39,11 @@ public class AlphabetChooseButtonController : MonoBehaviour
         {
             LeanTween.scale(this.gameObject, Vector3.zero, 0.5f);
         }
+    }
+
+    private void ReadCard()
+    {
+        gameAPI.Speak(this.gameObject.name);
+        Debug.Log(this.gameObject.name);
     }
 }

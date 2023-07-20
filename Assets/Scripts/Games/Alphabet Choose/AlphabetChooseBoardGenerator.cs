@@ -51,6 +51,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
     private string cardName;
     public string firstLetter;
     private GameObject letterCard;
+    private GameObject correctButton;
     private int random;
     public int cardNameLenght;
 
@@ -139,6 +140,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
     {
         random = Random.Range(0,3);
         GetFirstLetter(cards[random]);
+        correctButton = cards[random];
         letterCard = Instantiate(cardPrefab, cardPosition.transform.position, Quaternion.identity);
         letterCard.transform.SetParent(cardPosition.transform);
 
@@ -180,10 +182,16 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
     public void GameUIActivate()
     {
         uıController.GameUIActivate();
+
+        buttons[0].transform.localPosition = new Vector3(-300, -190, 0);
+        buttons[1].transform.localPosition = new Vector3(0, -190, 0);
+        buttons[2].transform.localPosition = new Vector3(300, -190, 0);
+
         foreach(GameObject button in buttons)
         {
             LeanTween.scale(button, Vector3.one, 0.1f);
         }
+
 
         LeanTween.scale(firstLetterText, Vector3.one, 0.1f);
         tutorial.GetComponent<AlphabetChooseTutorial>().SetPosition(cards[random].transform);
@@ -192,22 +200,24 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 
     public void LevelEnding()
     {
-        LeanTween.moveLocal(letterCard, new Vector3(0, -80, 0), 0.2f).setOnComplete(ScaleUpCard);
+        LeanTween.moveLocal(correctButton, Vector3.zero, 0.2f).setOnComplete(ScaleUpCard);
         foreach(var button in buttons)
         {
-            LeanTween.scale(button, Vector3.zero, 0.1f);
+            if(button != correctButton)
+                LeanTween.scale(button, Vector3.zero, 0.1f);
         }
+        LeanTween.scale(letterCard, Vector3.zero, 0.1f);
         LeanTween.scale(firstLetterText, Vector3.zero, 0.1f);
     }
 
     private void ScaleUpCard()
     {
-        LeanTween.scale(letterCard, Vector3.one, 0.5f).setOnComplete(ScaleDownCard);
+        LeanTween.scale(correctButton, Vector3.one * 1.5f, 0.5f).setOnComplete(ScaleDownCard);
     }
 
     private void ScaleDownCard()
     {
-        LeanTween.scale(letterCard, Vector3.zero, 0.5f);
+        LeanTween.scale(correctButton, Vector3.zero, 0.4f);
     }
 
     private void CreateNewLevel()

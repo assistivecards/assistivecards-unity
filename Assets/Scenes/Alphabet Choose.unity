@@ -5597,7 +5597,7 @@ PrefabInstance:
     - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
       propertyPath: musicClip
       value: 
-      objectReference: {fileID: 8300000, guid: 9c16500d426c9344dba76b06f6cb8721, type: 3}
+      objectReference: {fileID: 8300000, guid: 980d9e7fa483808439c454075f22a3aa, type: 3}
     - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
       propertyPath: speakable
       value: 

@@ -90,6 +90,7 @@ public class ThrowCardsBoardGenerator : MonoBehaviour
 
         LeanTween.scale(throwText.gameObject, Vector3.one, 0.2f);
         LeanTween.scale(cardToThrow.gameObject, Vector3.one * 12.2f, 0.2f);
+        cardToThrow.GetComponent<ThrowCardsThrowManager>().enabled = true;
 
     }
 

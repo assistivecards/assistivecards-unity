@@ -89,7 +89,7 @@ public class ThrowCardsBoardGenerator : MonoBehaviour
         }
 
         LeanTween.scale(throwText.gameObject, Vector3.one, 0.2f);
-        LeanTween.scale(cardToThrow.gameObject, Vector3.one, 0.2f);
+        LeanTween.scale(cardToThrow.gameObject, Vector3.one * 12.2f, 0.2f);
 
     }
 
@@ -147,7 +147,7 @@ public class ThrowCardsBoardGenerator : MonoBehaviour
 
     public void PlaceSprites()
     {
-        cardToThrow.transform.GetChild(0).GetComponent<Image>().sprite = randomSprites[0];
+        cardToThrow.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = randomSprites[0];
 
         for (int i = 0; i < cardTextures.Length; i++)
         {

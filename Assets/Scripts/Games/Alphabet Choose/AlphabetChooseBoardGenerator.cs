@@ -128,8 +128,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                 buttons[i].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 buttons[i].transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                 cards.Add(buttons[i]);
-
-                LeanTween.scale(buttons[i].gameObject, Vector3.one * 0.5f, 0f);
+                firstLetterText.GetComponent<TMP_Text>().text = gameAPI.Translate(firstLetterText.gameObject.name, selectedLangCode);
             }
         }
         FillLetterCard();
@@ -168,7 +167,6 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
             letterCard.transform.GetChild(1).GetComponent<TMP_Text>().text = firstLetter.ToLower();
             letterCard.transform.GetChild(1).GetComponent<TMP_Text>().color = colors[Random.Range(0, colors.Length)];
         }
-        tutorial.GetComponent<AlphabetChooseTutorial>().SetPosition(cards[random].transform);
     }
 
     private void GetFirstLetter(GameObject _card)
@@ -188,6 +186,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
         }
 
         LeanTween.scale(firstLetterText, Vector3.one, 0.1f);
+        tutorial.GetComponent<AlphabetChooseTutorial>().SetPosition(cards[random].transform);
 
     }
 

@@ -328,6 +328,14 @@ PrefabInstance:
       value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 5829141130014444528, guid: d18790181ff3f481088e3cf35d194532, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829141130014444528, guid: d18790181ff3f481088e3cf35d194532, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829141130014444528, guid: d18790181ff3f481088e3cf35d194532, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -824,7 +832,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 80}
+  m_AnchoredPosition: {x: 0, y: 75}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!20 &519420031 stripped
@@ -1287,6 +1295,14 @@ PrefabInstance:
       value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 5829141130014444528, guid: d18790181ff3f481088e3cf35d194532, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829141130014444528, guid: d18790181ff3f481088e3cf35d194532, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829141130014444528, guid: d18790181ff3f481088e3cf35d194532, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1719,6 +1735,14 @@ PrefabInstance:
     - target: {fileID: 5829141130014444528, guid: d18790181ff3f481088e3cf35d194532, type: 3}
       propertyPath: m_SizeDelta.y
       value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829141130014444528, guid: d18790181ff3f481088e3cf35d194532, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829141130014444528, guid: d18790181ff3f481088e3cf35d194532, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5829141130014444528, guid: d18790181ff3f481088e3cf35d194532, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2836,7 +2860,7 @@ GameObject:
   - component: {fileID: 1896439931}
   - component: {fileID: 1896439930}
   m_Layer: 5
-  m_Name: choose_first_letter
+  m_Name: which_cards_first_letter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2851,7 +2875,7 @@ RectTransform:
   m_GameObject: {fileID: 1896439928}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1413764130}
@@ -2859,8 +2883,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0431, y: 247}
-  m_SizeDelta: {x: 1078.0237, y: 50}
+  m_AnchoredPosition: {x: 1.5048, y: 241}
+  m_SizeDelta: {x: 1089.5154, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1896439930
 MonoBehaviour:
@@ -2882,7 +2906,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Choose The First Letter
+  m_text: Which Card's First Letter?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7fff04f5987a23d4cae30a373aa09dd3, type: 2}
   m_sharedMaterial: {fileID: -3432494171301961357, guid: 7fff04f5987a23d4cae30a373aa09dd3, type: 2}

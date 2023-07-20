@@ -6221,8 +6221,9 @@ MonoBehaviour:
   - {r: 0.98039216, g: 0.54901963, b: 0.9529412, a: 1}
   - {r: 0.98039216, g: 0.54901963, b: 0.7137255, a: 1}
   levelCount: 0
-  firstLetter: 
   cardNameLenght: 0
+  firstLetter: 
+  formerLetter: a
 --- !u!114 &8383894889009589329
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -49,13 +49,13 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 
     public int levelCount;
     private string cardName;
-    public string firstLetter;
     private GameObject letterCard;
     private GameObject correctButton;
     private int random;
     public int cardNameLenght;
+    public string firstLetter;
+    public string formerLetter;
 
-    
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
@@ -132,6 +132,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                 firstLetterText.GetComponent<TMP_Text>().text = gameAPI.Translate(firstLetterText.gameObject.name, selectedLangCode);
             }
         }
+        formerLetter = firstLetter;
         FillLetterCard();
         GameUIActivate();
     }
@@ -140,6 +141,11 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
     {
         random = Random.Range(0,3);
         GetFirstLetter(cards[random]);
+        if(formerLetter == firstLetter)
+        {
+            random = Random.Range(0,3);
+            GetFirstLetter(cards[random]);
+        }
         correctButton = cards[random];
         letterCard = Instantiate(cardPrefab, cardPosition.transform.position, Quaternion.identity);
         letterCard.transform.SetParent(cardPosition.transform);

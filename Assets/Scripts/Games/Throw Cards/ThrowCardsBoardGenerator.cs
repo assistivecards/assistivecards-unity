@@ -59,11 +59,11 @@ public class ThrowCardsBoardGenerator : MonoBehaviour
         }
 
         PopulateRandomCards();
+        TranslateThrowCardText();
         await PopulateRandomTextures();
         PlaceSprites();
         DisableLoadingPanel();
         ScaleImagesUp();
-        Invoke("SetTutorialPosition", .3f);
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);
     }
@@ -164,6 +164,11 @@ public class ThrowCardsBoardGenerator : MonoBehaviour
     private void DisableLoadingPanel()
     {
         loadingPanel.SetActive(false);
+    }
+
+    public void TranslateThrowCardText()
+    {
+        throwText.text = gameAPI.Translate(throwText.gameObject.name, gameAPI.ToTitleCase(randomCards[0].title).Replace("-", " "), selectedLangCode);
     }
 
 }

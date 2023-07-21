@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class CardBalanceDraggable : MonoBehaviour,  IDragHandler, IPointerDownHandler
+public class CardBalanceDraggable : MonoBehaviour,  IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
     GameAPI gameAPI;
     public Rigidbody2D cardRB;
@@ -26,11 +26,22 @@ public class CardBalanceDraggable : MonoBehaviour,  IDragHandler, IPointerDownHa
     public void OnDrag(PointerEventData eventData)
     {
         this.transform.position = eventData.position;
+        cardRB.gravityScale = 0;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if(!draggable)
+        if(draggable)
+        {
             this.transform.position = eventData.position;
+        }
+    }
+        
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        if(draggable)
+        {
+            ActiavateGravityEffect();
+        }
     }
 }

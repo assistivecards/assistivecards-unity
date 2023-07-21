@@ -11,7 +11,7 @@ public class CardBalanceBoardGenerator : MonoBehaviour
 {
     GameAPI gameAPI;
 
-    [SerializeField] private AlphabetChooseUIController uıController;
+    [SerializeField] private CardBalanceUIController uıController;
     [Header ("Cache Cards")]
     public string selectedLangCode;
     public List<string> cardLocalNames = new List<string>();
@@ -96,8 +96,8 @@ public class CardBalanceBoardGenerator : MonoBehaviour
 
     public async void GeneratedBoardAsync()
     {
-        //if(uıController.canGenerate)
-        //{
+        if(uıController.canGenerate)
+        {
             await CacheCards();
 
             for(int i = 0; i < 3; i++)
@@ -132,8 +132,8 @@ public class CardBalanceBoardGenerator : MonoBehaviour
                 LeanTween.scale(cloneCard, Vector3.one * 0.5f, 0);
                 cards.Add(cloneCard);
             }
-        //}
-        //GameUIActivate();
+        }
+        GameUIActivate();
     }
 
     public void GameUIActivate()

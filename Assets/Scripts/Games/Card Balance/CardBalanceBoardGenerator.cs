@@ -139,7 +139,7 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     public void GameUIActivate()
     {
         uıController.GameUIActivate();
-        tutorial.GetComponent<AlphabetChooseTutorial>().SetPosition(cards[random].transform);
+        //tutorial.GetComponent<AlphabetChooseTutorial>().SetPosition(cards[random].transform);
     }
 
     private void CreateNewLevel()

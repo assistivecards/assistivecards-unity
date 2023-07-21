@@ -32,6 +32,11 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject tutorial;
 
     [Header ("Game UI")]
+    public GameObject referencePosition1;
+    public GameObject referencePosition2;
+    public GameObject referencePosition3;
+    private List<GameObject> referencePositions = new List<GameObject>();
+
     public GameObject cardPosition1;
     public GameObject cardPosition2;
     public GameObject cardPosition3;
@@ -80,6 +85,10 @@ public class CardBalanceBoardGenerator : MonoBehaviour
 
     private void CreateCardPositionList()
     {
+        referencePositions.Add(referencePosition1);
+        referencePositions.Add(referencePosition2);
+        referencePositions.Add(referencePosition3);
+
         cardPositions.Add(cardPosition1);
         cardPositions.Add(cardPosition2);
         cardPositions.Add(cardPosition3);
@@ -95,17 +104,33 @@ public class CardBalanceBoardGenerator : MonoBehaviour
             {
                 CheckRandom();
                 CreateCardPositionList();
-                GameObject card = Instantiate(cardPrefab, cardPositions[i].transform.position, Quaternion.identity);
+                GameObject card = Instantiate(cardPrefab, referencePositions[i].transform.position, Quaternion.identity);
 
                 var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[i]], 512);
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
 
-                card.transform.SetParent(cardPositions[i].transform);
+                card.transform.SetParent(referencePositions[i].transform);
                 card.transform.name = cardLocalNames[randomValueList[i]];
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                 cards.Add(card);
+
+
+                GameObject cloneCard = Instantiate(cardPrefab, cardPositions[i].transform.position, Quaternion.identity);
+
+                var cloneCardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[i]], 512);
+                cloneCardTexture.wrapMode = TextureWrapMode.Clamp;
+                cloneCardTexture.filterMode = FilterMode.Bilinear;
+
+                cloneCard.transform.SetParent(cardPositions[i].transform);
+                cloneCard.transform.name = cardLocalNames[randomValueList[i]];
+                cloneCard.transform.GetChild(0).GetComponent<RawImage>().texture = cloneCardTexture;
+                cloneCard.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                cloneCard.GetComponent<CardBalanceDraggable>().draggable = true;
+                cloneCard.GetComponent<CardBalanceDraggable>().ActiavateGravityEffect();
+                LeanTween.scale(cloneCard, Vector3.one * 0.5f, 0);
+                cards.Add(cloneCard);
             }
         //}
         //GameUIActivate();

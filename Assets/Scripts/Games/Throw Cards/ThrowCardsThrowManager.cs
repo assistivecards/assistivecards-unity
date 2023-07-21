@@ -13,6 +13,7 @@ public class ThrowCardsThrowManager : MonoBehaviour, IPointerDownHandler, IDragH
     public GameObject trajectoryDotPrefab;
     private GameObject[] trajectoryDots;
     public int numOfDots;
+    [SerializeField] GameObject clampBox;
 
     void Start()
     {
@@ -33,8 +34,11 @@ public class ThrowCardsThrowManager : MonoBehaviour, IPointerDownHandler, IDragH
 
     public void OnDrag(PointerEventData eventData)
     {
-        endPos = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 10);
-        gameObject.transform.position = endPos;
+        var bounds = clampBox.GetComponent<BoxCollider2D>().bounds;
+
+        endPos = new Vector3(Mathf.Clamp(Camera.main.ScreenToWorldPoint(eventData.position).x, bounds.min.x, bounds.max.x), Mathf.Clamp(Camera.main.ScreenToWorldPoint(eventData.position).y, bounds.min.y, bounds.max.y)) + new Vector3(0, 0, 10);
+
+        transform.position = endPos;
         forceAtCard = endPos - startPos;
 
         for (int i = 0; i < numOfDots; i++)

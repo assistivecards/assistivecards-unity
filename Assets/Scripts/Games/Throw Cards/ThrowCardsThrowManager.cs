@@ -24,6 +24,7 @@ public class ThrowCardsThrowManager : MonoBehaviour, IPointerDownHandler, IDragH
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        clampBox.SetActive(true);
         startPos = gameObject.transform.position;
 
         for (int i = 0; i < numOfDots; i++)
@@ -49,6 +50,7 @@ public class ThrowCardsThrowManager : MonoBehaviour, IPointerDownHandler, IDragH
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        clampBox.SetActive(false);
         rb.simulated = true;
         rb.gravityScale = 1;
         rb.velocity = new Vector2(-forceAtCard.x * forceFactor, -forceAtCard.y * forceFactor);

@@ -129,7 +129,7 @@ public class CardBalanceBoardGenerator : MonoBehaviour
                 cloneCard.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                 cloneCard.GetComponent<CardBalanceDraggable>().draggable = true;
                 cloneCard.GetComponent<CardBalanceDraggable>().ActiavateGravityEffect();
-                LeanTween.scale(cloneCard, Vector3.one * 0.5f, 0);
+                cloneCard.gameObject.tag = "Card";
                 cards.Add(cloneCard);
             }
         }

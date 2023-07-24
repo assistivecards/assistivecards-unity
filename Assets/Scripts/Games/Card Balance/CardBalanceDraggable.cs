@@ -9,6 +9,7 @@ public class CardBalanceDraggable : MonoBehaviour,  IDragHandler, IPointerDownHa
     GameAPI gameAPI;
     public Rigidbody2D cardRB;
     public bool draggable;
+    public bool isPointerUp;
     
     private void Awake() 
     {
@@ -35,6 +36,7 @@ public class CardBalanceDraggable : MonoBehaviour,  IDragHandler, IPointerDownHa
         {
             this.transform.position = eventData.position;
         }
+        isPointerUp = false;
     }
         
     public void OnPointerUp(PointerEventData eventData)
@@ -43,5 +45,11 @@ public class CardBalanceDraggable : MonoBehaviour,  IDragHandler, IPointerDownHa
         {
             ActiavateGravityEffect();
         }
+        Invoke("PointerUp", 0.1f);
     }
+
+    private void PointerUp()
+    {
+        isPointerUp = true;
+    } 
 }

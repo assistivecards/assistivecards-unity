@@ -41,12 +41,14 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     public GameObject cardPosition2;
     public GameObject cardPosition3;
     private List<GameObject> cardPositions = new List<GameObject>();
+    private List<GameObject> cloneCards = new List<GameObject>();
 
     public int levelCount;
     private string cardName;
     public int randomOrder;
     public List<int> usedRandomOrderCards = new List<int>();
     public int cardNameLenght;
+    public int matchedCardCount;
 
     private void Awake()
     {
@@ -143,12 +145,36 @@ public class CardBalanceBoardGenerator : MonoBehaviour
             cloneCard.GetComponent<CardBalanceDraggable>().ActiavateGravityEffect();
             cloneCard.gameObject.tag = "Card";
             cards.Add(cloneCard);
+            cloneCards.Add(cloneCard);
+            int index = cards.IndexOf(cloneCard);
+            if(index > 1)
+            {
+                cloneCard.transform.GetChild(1).transform.GetComponent<CardBalanceTopController>().requiredTopObject = cards[index - 2];
+            }
             usedRandomOrderCards.Add(randomOrder);
         }
         else if(usedRandomOrderCards.Contains(randomOrder))
         {
             CreateRandomOrderedCards(order);
         }
+    }
+
+    public void DetectMatches()
+    {
+        foreach (var cloneCard in cloneCards)
+        {
+            if(cloneCard.transform.GetChild(1).GetComponent<CardBalanceTopController>().matched)
+            {
+                matchedCardCount++;
+            }
+        }
+
+        if(matchedCardCount >= 2)
+        {
+            // end game 
+            Debug.Log("LEVEL END");
+        }
+        matchedCardCount = 0;
     }
 
     public void GameUIActivate()

@@ -344,6 +344,7 @@ public class CanvasController : MonoBehaviour
         ChooseBoardGenerator.isBackAfterSignOut = true;
         AlphabetOrderBoardGenerator.isBackAfterSignOut = true;
         CardRumbleBoardGenerator.isBackAfterSignOut = true;
+        ThrowCardsBoardGenerator.isBackAfterSignOut = true;
         GameSelectionPanel.didLanguageChange = true;
 
         if (notificationPreferences.reminderPreference == "Daily")

@@ -24,6 +24,7 @@ public class ThrowCardsBoardGenerator : MonoBehaviour
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
     [SerializeField] GameObject loadingPanel;
+    private ThrowCardsUIController UIController;
 
     private void Awake()
     {
@@ -33,6 +34,7 @@ public class ThrowCardsBoardGenerator : MonoBehaviour
     private void Start()
     {
         gameAPI.PlayMusic();
+        UIController = gameObject.GetComponent<ThrowCardsUIController>();
     }
 
     private void OnEnable()
@@ -40,6 +42,7 @@ public class ThrowCardsBoardGenerator : MonoBehaviour
         if (isBackAfterSignOut)
         {
             gameAPI.PlayMusic();
+            UIController.OnBackButtonClick();
             isBackAfterSignOut = false;
         }
     }

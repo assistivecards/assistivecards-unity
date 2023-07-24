@@ -21,6 +21,7 @@ public class ThrowCardsMatchDetection : MonoBehaviour
         {
             Debug.Log("CORRECT MATCH");
             UIController.correctMatches++;
+            UIController.backButton.GetComponent<Button>().interactable = false;
             rb.sharedMaterial.bounciness = 0;
             rb.velocity = Vector2.zero;
             rb.gravityScale = 0;

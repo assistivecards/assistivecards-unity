@@ -5443,8 +5443,8 @@ RectTransform:
   - {fileID: 1275520833}
   - {fileID: 1312709074}
   - {fileID: 451899892}
-  - {fileID: 2142621009}
   - {fileID: 1584446046}
+  - {fileID: 2142621009}
   m_Father: {fileID: 1120600895}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6122,6 +6122,7 @@ MonoBehaviour:
   - {fileID: 1000473207}
   - {fileID: 485775141}
   cardToThrow: {fileID: 792336669}
+  slot: {fileID: 2142621009}
   cachedCards:
     cards: []
   randomCards: []

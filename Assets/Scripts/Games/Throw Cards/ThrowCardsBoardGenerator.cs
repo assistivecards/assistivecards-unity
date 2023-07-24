@@ -11,6 +11,7 @@ public class ThrowCardsBoardGenerator : MonoBehaviour
     [SerializeField] Image[] cardTextures;
     [SerializeField] GameObject[] fixedCards;
     [SerializeField] GameObject cardToThrow;
+    [SerializeField] Transform slot;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     [SerializeField] List<Texture2D> randomImages = new List<Texture2D>();
@@ -83,9 +84,13 @@ public class ThrowCardsBoardGenerator : MonoBehaviour
 
     public void ScaleImagesUp()
     {
+        cardToThrow.transform.SetParent(slot);
+        cardToThrow.transform.position = slot.position;
+        cardToThrow.GetComponent<Rigidbody2D>().sharedMaterial.bounciness = 0.6f;
         for (int i = 0; i < fixedCards.Length; i++)
         {
             LeanTween.scale(fixedCards[i], Vector3.one, 0.2f);
+            fixedCards[i].GetComponent<BoxCollider2D>().isTrigger = false;
         }
 
         LeanTween.scale(throwText.gameObject, Vector3.one, 0.2f);
@@ -102,6 +107,7 @@ public class ThrowCardsBoardGenerator : MonoBehaviour
         }
 
         LeanTween.scale(throwText.gameObject, Vector3.zero, 0.2f);
+        LeanTween.scale(cardToThrow.gameObject, Vector3.zero, 0.2f);
     }
 
     public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)

@@ -80,12 +80,14 @@ public class ThrowCardsBoardGenerator : MonoBehaviour
             cardTextures[i].sprite = null;
         }
 
+        cardToThrow.transform.SetParent(slot);
+        cardToThrow.transform.position = slot.position;
+        cardToThrow.GetComponent<ThrowCardsThrowManager>().canThrow = true;
+
     }
 
     public void ScaleImagesUp()
     {
-        cardToThrow.transform.SetParent(slot);
-        cardToThrow.transform.position = slot.position;
         cardToThrow.GetComponent<Rigidbody2D>().sharedMaterial.bounciness = 0.6f;
         for (int i = 0; i < fixedCards.Length; i++)
         {

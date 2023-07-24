@@ -35,6 +35,7 @@ public class ThrowCardsOutOfBoundsDetector : MonoBehaviour
         collidedCard.transform.rotation = Quaternion.Euler(0, 0, 0);
         collidedCard.transform.position = cardSlot.position;
         LeanTween.scale(collidedCard.gameObject, Vector3.one * 12, .2f);
+        collidedCard.GetComponent<ThrowCardsThrowManager>().canThrow = true;
 
     }
 

@@ -83,6 +83,8 @@ public class ThrowCardsBoardGenerator : MonoBehaviour
             cardTextures[i].sprite = null;
         }
 
+        cardToThrow.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        cardToThrow.GetComponent<Rigidbody2D>().simulated = false;
         cardToThrow.transform.SetParent(slot);
         cardToThrow.transform.position = slot.position;
         cardToThrow.GetComponent<ThrowCardsThrowManager>().canThrow = true;

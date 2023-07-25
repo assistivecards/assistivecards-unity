@@ -185,4 +185,9 @@ public class ThrowCardsBoardGenerator : MonoBehaviour
         throwText.text = gameAPI.Translate(throwText.gameObject.name, gameAPI.ToTitleCase(randomCards[0].title).Replace("-", " "), selectedLangCode);
     }
 
+    public void ReadCard()
+    {
+        gameAPI.Speak(randomCards[0].title);
+    }
+
 }

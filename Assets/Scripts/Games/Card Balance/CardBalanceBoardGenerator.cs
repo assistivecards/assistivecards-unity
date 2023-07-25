@@ -41,7 +41,7 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     public GameObject cardPosition2;
     public GameObject cardPosition3;
     private List<GameObject> cardPositions = new List<GameObject>();
-    private List<GameObject> cloneCards = new List<GameObject>();
+    public List<GameObject> cloneCards = new List<GameObject>();
 
     public int levelCount;
     private string cardName;
@@ -146,10 +146,18 @@ public class CardBalanceBoardGenerator : MonoBehaviour
             cloneCard.gameObject.tag = "Card";
             cards.Add(cloneCard);
             cloneCards.Add(cloneCard);
-            int index = cards.IndexOf(cloneCard);
-            if(index > 1)
+            int index = cloneCards.IndexOf(cloneCard);
+            if(index == 0)
             {
-                cloneCard.transform.GetChild(1).transform.GetComponent<CardBalanceTopController>().requiredTopObject = cards[index - 2];
+                cloneCard.GetComponent<CardBalanceDetectFloor>().requiredFloor = "Floor3";
+            }
+            else if(index == 1)
+            {
+                cloneCard.GetComponent<CardBalanceDetectFloor>().requiredFloor = "Floor2";
+            }
+            else if(index == 2)
+            {
+                cloneCard.GetComponent<CardBalanceDetectFloor>().requiredFloor = "Floor1";
             }
             usedRandomOrderCards.Add(randomOrder);
         }
@@ -161,20 +169,12 @@ public class CardBalanceBoardGenerator : MonoBehaviour
 
     public void DetectMatches()
     {
-        foreach (var cloneCard in cloneCards)
-        {
-            if(cloneCard.transform.GetChild(1).GetComponent<CardBalanceTopController>().matched)
-            {
-                matchedCardCount++;
-            }
-        }
-
         if(matchedCardCount >= 2)
         {
-            // end game 
             Debug.Log("LEVEL END");
+            ClearBoard();
+            uıController.GameUIDeactivate();
         }
-        matchedCardCount = 0;
     }
 
     public void GameUIActivate()

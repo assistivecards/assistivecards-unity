@@ -220,4 +220,18 @@ public class CardBalanceBoardGenerator : MonoBehaviour
         randomValueList.Clear();
         uıController.LevelChangeScreenActivate();
     }
+
+    public void ClearLevel()
+    {
+        matchedCardCount = 0;
+        foreach(var card in cards)
+        {
+            Destroy(card);
+        }
+        cardLocalNames.Clear();
+        cards.Clear();
+        cloneCards.Clear();
+        cardNames.Clear();
+        randomValueList.Clear();
+    }
 }

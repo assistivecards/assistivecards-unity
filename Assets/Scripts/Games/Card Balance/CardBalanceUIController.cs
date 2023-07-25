@@ -14,7 +14,7 @@ GameAPI gameAPI;
     [SerializeField] private GameObject levelChange;
 
     [Header ("UI Objects")]
-    [SerializeField] private GameObject gameUI;
+    public GameObject gameUI;
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject settingButton;
     [SerializeField] private GameObject helloText;
@@ -66,7 +66,6 @@ GameAPI gameAPI;
 
     public void LevelChangeScreenActivate()
     {
-        LevelEnding();
         levelChange.SetActive(true);
         LeanTween.scale(levelChange, Vector3.one * 0.5f, 0.3f);
         gameAPI.PlaySFX("Finished");

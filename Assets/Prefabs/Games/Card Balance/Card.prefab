@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20338532c380a41aebe91f1677237ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  draggable: {fileID: 4693497222947191807}
   requiredFloor: 
 --- !u!1 &3316312366003641582
 GameObject:

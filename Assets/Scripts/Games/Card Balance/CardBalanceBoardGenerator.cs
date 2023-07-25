@@ -49,6 +49,7 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     public List<int> usedRandomOrderCards = new List<int>();
     public int cardNameLenght;
     public int matchedCardCount;
+    public bool isPointerUp;
 
     private void Awake()
     {
@@ -169,16 +170,27 @@ public class CardBalanceBoardGenerator : MonoBehaviour
 
     public void DetectMatches()
     {
-        if(matchedCardCount >= 2)
+        foreach (var card in cloneCards)
         {
-            Debug.Log("LEVEL END");
-            ClearBoard();
-            uıController.GameUIDeactivate();
+            if(card.GetComponent<CardBalanceDetectFloor>().matched)
+            {
+                matchedCardCount++;
+            }
+        }
+
+        if(matchedCardCount >= 3)
+        {
+            Invoke("GameUIScaleDown", 0.5f);
+        }
+        else
+        {
+            matchedCardCount = 0;
         }
     }
 
     public void GameUIActivate()
     {
+        LeanTween.scale(uıController.gameUI, Vector3.one, 0.3f);
         uıController.GameUIActivate();
         //tutorial.GetComponent<AlphabetChooseTutorial>().SetPosition(cards[random].transform);
     }
@@ -189,11 +201,23 @@ public class CardBalanceBoardGenerator : MonoBehaviour
         GeneratedBoardAsync();
     }
 
+    private void GameUIScaleDown()
+    {
+        LeanTween.scale(uıController.gameUI, Vector3.zero, 0.3f).setOnComplete(uıController.GameUIDeactivate).setOnComplete(ClearBoard);
+    }
+
     public void ClearBoard()
     {
+        matchedCardCount = 0;
+        foreach(var card in cards)
+        {
+            Destroy(card);
+        }
         cardLocalNames.Clear();
         cards.Clear();
+        cloneCards.Clear();
         cardNames.Clear();
         randomValueList.Clear();
+        uıController.LevelChangeScreenActivate();
     }
 }

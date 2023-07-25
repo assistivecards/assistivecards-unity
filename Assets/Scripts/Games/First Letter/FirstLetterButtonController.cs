@@ -18,14 +18,14 @@ public class FirstLetterButtonController : MonoBehaviour
     {
         if(boardGenerator.firstLetter == letter)
         {
-            if(boardGenerator.levelCount < 3)
+            if(boardGenerator.levelCount < 4)
             {
                 gameAPI.PlaySFX("Success");
                 boardGenerator.levelCount++;
                 boardGenerator.LevelEnding();
                 boardGenerator.Invoke("CreateNewLevel", 1f);
             }
-            else if(boardGenerator.levelCount == 3)
+            else if(boardGenerator.levelCount == 4)
             {
                 gameAPI.PlaySFX("Success");
                 boardGenerator.LevelEnding();

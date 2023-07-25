@@ -80,6 +80,7 @@ public class ThrowCardsThrowManager : MonoBehaviour, IPointerDownHandler, IDragH
             }
 
             canThrow = false;
+            forceAtCard = Vector3.zero;
         }
 
     }

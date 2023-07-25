@@ -129,7 +129,6 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                 buttons[i].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 buttons[i].transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                 cards.Add(buttons[i]);
-                firstLetterText.GetComponent<TMP_Text>().text = gameAPI.Translate(firstLetterText.gameObject.name, selectedLangCode);
             }
         }
         formerLetter = firstLetter;
@@ -175,6 +174,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
             letterCard.transform.GetChild(1).GetComponent<TMP_Text>().text = firstLetter.ToLower();
             letterCard.transform.GetChild(1).GetComponent<TMP_Text>().color = colors[Random.Range(0, colors.Length)];
         }
+        firstLetterText.GetComponent<TMP_Text>().text = gameAPI.Translate(firstLetterText.gameObject.name, gameAPI.ToSentenceCase(firstLetter).Replace("-", " "), selectedLangCode);
     }
 
     private void GetFirstLetter(GameObject _card)

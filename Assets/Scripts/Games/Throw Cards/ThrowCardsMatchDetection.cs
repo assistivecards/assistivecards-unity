@@ -8,6 +8,12 @@ public class ThrowCardsMatchDetection : MonoBehaviour
     private Rigidbody2D rb;
     private ThrowCardsBoardGenerator board;
     private ThrowCardsUIController UIController;
+    private GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void Start()
     {
@@ -22,6 +28,8 @@ public class ThrowCardsMatchDetection : MonoBehaviour
             Debug.Log("CORRECT MATCH");
             UIController.correctMatches++;
             UIController.backButton.GetComponent<Button>().interactable = false;
+            gameAPI.PlaySFX("Success");
+            board.Invoke("ReadCard", 0.25f);
             rb.sharedMaterial.bounciness = 0;
             rb.velocity = Vector2.zero;
             rb.gravityScale = 0;

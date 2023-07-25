@@ -15,6 +15,12 @@ public class ThrowCardsThrowManager : MonoBehaviour, IPointerDownHandler, IDragH
     public int numOfDots;
     [SerializeField] GameObject clampBox;
     public bool canThrow = true;
+    private GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     void Start()
     {
@@ -34,6 +40,8 @@ public class ThrowCardsThrowManager : MonoBehaviour, IPointerDownHandler, IDragH
             {
                 trajectoryDots[i] = Instantiate(trajectoryDotPrefab, gameObject.transform);
             }
+
+            gameAPI.PlaySFX("Pickup");
         }
 
     }
@@ -72,6 +80,7 @@ public class ThrowCardsThrowManager : MonoBehaviour, IPointerDownHandler, IDragH
             }
 
             canThrow = false;
+            forceAtCard = Vector3.zero;
         }
 
     }

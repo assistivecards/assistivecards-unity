@@ -69,6 +69,7 @@ public class ThrowCardsBoardGenerator : MonoBehaviour
         DisableLoadingPanel();
         ScaleImagesUp();
         backButton.SetActive(true);
+        UIController.Invoke("TutorialSetActive", .3f);
         Invoke("EnableBackButton", 0.15f);
     }
 
@@ -101,6 +102,7 @@ public class ThrowCardsBoardGenerator : MonoBehaviour
         }
 
         LeanTween.scale(throwText.gameObject, Vector3.one, 0.2f);
+        LeanTween.alpha(cardToThrow, 1, .001f);
         LeanTween.scale(cardToThrow.gameObject, Vector3.one * 12.2f, 0.2f);
         cardToThrow.GetComponent<ThrowCardsThrowManager>().enabled = true;
 
@@ -183,6 +185,11 @@ public class ThrowCardsBoardGenerator : MonoBehaviour
     public void TranslateThrowCardText()
     {
         throwText.text = gameAPI.Translate(throwText.gameObject.name, gameAPI.ToTitleCase(randomCards[0].title).Replace("-", " "), selectedLangCode);
+    }
+
+    public void ReadCard()
+    {
+        gameAPI.Speak(randomCards[0].title);
     }
 
 }

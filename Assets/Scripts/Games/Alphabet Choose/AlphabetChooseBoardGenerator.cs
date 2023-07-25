@@ -134,7 +134,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
         }
         formerLetter = firstLetter;
         FillLetterCard();
-        GameUIActivate();
+        Invoke("GameUIActivate", 0.3f);
     }
 
     private async void FillLetterCard()

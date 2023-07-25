@@ -18,7 +18,7 @@ public class AlphabetChooseButtonController : MonoBehaviour
     {
         if(boardGenerator.firstLetter == firstLetter)
         {
-            if(boardGenerator.levelCount < 3)
+            if(boardGenerator.levelCount < 4)
             {
                 gameAPI.PlaySFX("Success");
                 Invoke("ReadCard", 0.2f);
@@ -26,7 +26,7 @@ public class AlphabetChooseButtonController : MonoBehaviour
                 boardGenerator.LevelEnding();
                 boardGenerator.Invoke("CreateNewLevel", 1f);
             }
-            else if(boardGenerator.levelCount == 3)
+            else if(boardGenerator.levelCount == 4)
             {
                 gameAPI.PlaySFX("Success");
                 Invoke("ReadCard", 0.2f);

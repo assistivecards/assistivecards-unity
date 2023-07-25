@@ -118,9 +118,12 @@ public class CardBalanceBoardGenerator : MonoBehaviour
                 card.transform.name = cardLocalNames[randomValueList[i]];
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                card.GetComponent<CardBalanceDraggable>().draggable = false;
                 cards.Add(card);
 
                 CreateRandomOrderedCards(i);
+                card.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
+                card.transform.localPosition = Vector3.zero;
             }
         }
         GameUIActivate();
@@ -161,6 +164,8 @@ public class CardBalanceBoardGenerator : MonoBehaviour
                 cloneCard.GetComponent<CardBalanceDetectFloor>().requiredFloor = "Floor1";
             }
             usedRandomOrderCards.Add(randomOrder);
+            cloneCard.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
+            cloneCard.transform.localPosition = Vector3.zero;
         }
         else if(usedRandomOrderCards.Contains(randomOrder))
         {
@@ -192,7 +197,6 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     {
         LeanTween.scale(uıController.gameUI, Vector3.one, 0.3f);
         uıController.GameUIActivate();
-        //tutorial.GetComponent<AlphabetChooseTutorial>().SetPosition(cards[random].transform);
     }
 
     private void CreateNewLevel()
@@ -218,6 +222,7 @@ public class CardBalanceBoardGenerator : MonoBehaviour
         cloneCards.Clear();
         cardNames.Clear();
         randomValueList.Clear();
+        usedRandomOrderCards.Clear();
         uıController.LevelChangeScreenActivate();
     }
 
@@ -233,5 +238,6 @@ public class CardBalanceBoardGenerator : MonoBehaviour
         cloneCards.Clear();
         cardNames.Clear();
         randomValueList.Clear();
+        usedRandomOrderCards.Clear();
     }
 }

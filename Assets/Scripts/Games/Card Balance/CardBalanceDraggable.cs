@@ -25,8 +25,11 @@ public class CardBalanceDraggable : MonoBehaviour,  IDragHandler, IPointerDownHa
 
     public void OnDrag(PointerEventData eventData)
     {
-        this.transform.position = eventData.position;
-        cardRB.gravityScale = 0;
+        if(draggable)
+        {
+            this.transform.position = eventData.position;
+            cardRB.gravityScale = 0;
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)

@@ -6,16 +6,11 @@ using UnityEngine.UI;
 
 public class CardBalanceDraggable : MonoBehaviour,  IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
-    GameAPI gameAPI;
     public Rigidbody2D cardRB;
     public bool draggable;
     
-    private void Awake() 
-    {
-        gameAPI = Camera.main.GetComponent<GameAPI>();
-    }
 
-    public void ActiavateGravityEffect() 
+    public void ActivateGravityEffect() 
     {
         if(draggable)
         {
@@ -44,7 +39,7 @@ public class CardBalanceDraggable : MonoBehaviour,  IDragHandler, IPointerDownHa
     {
         if(draggable)
         {
-            ActiavateGravityEffect();
+            ActivateGravityEffect();
         }
     }
 }

@@ -50,10 +50,12 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     public int cardNameLenght;
     public int matchedCardCount;
     public bool isPointerUp;
+    private bool finished;
 
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+        gameAPI.PlayMusic();
     }
 
     public async Task CacheCards()
@@ -100,6 +102,7 @@ public class CardBalanceBoardGenerator : MonoBehaviour
 
     public async void GeneratedBoardAsync()
     {
+        finished = false;
         if(uıController.canGenerate)
         {
             await CacheCards();
@@ -132,7 +135,6 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     private async void CreateRandomOrderedCards(int order)
     {
         randomOrder = Random.Range(0, 3);
-
         if(!usedRandomOrderCards.Contains(randomOrder))
         {
             GameObject cloneCard = Instantiate(cardPrefab, cardPositions[randomOrder].transform.position, Quaternion.identity);
@@ -146,7 +148,9 @@ public class CardBalanceBoardGenerator : MonoBehaviour
             cloneCard.transform.GetChild(0).GetComponent<RawImage>().texture = cloneCardTexture;
             cloneCard.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
             cloneCard.GetComponent<CardBalanceDraggable>().draggable = true;
-            cloneCard.GetComponent<CardBalanceDraggable>().ActiavateGravityEffect();
+            cloneCard.GetComponent<CardBalanceDraggable>().ActivateGravityEffect();
+            cloneCard.GetComponent<CardBalanceDetectFloor>().cardLocalName = cardLocalNames[randomValueList[order]];
+            cloneCard.GetComponent<BoxCollider2D>().enabled = true;
             cloneCard.gameObject.tag = "Card";
             cards.Add(cloneCard);
             cloneCards.Add(cloneCard);
@@ -195,7 +199,11 @@ public class CardBalanceBoardGenerator : MonoBehaviour
 
     public void GameUIActivate()
     {
-        LeanTween.scale(uıController.gameUI, Vector3.one, 0.3f);
+        //LeanTween.scale(uıController.gameUI, Vector3.one, 0.3f);
+        foreach(var card in cards)
+        {
+            LeanTween.scale(card, Vector3.one * 0.45f, 0.3f);
+        }
         uıController.GameUIActivate();
     }
 
@@ -207,7 +215,12 @@ public class CardBalanceBoardGenerator : MonoBehaviour
 
     private void GameUIScaleDown()
     {
-        LeanTween.scale(uıController.gameUI, Vector3.zero, 0.3f).setOnComplete(uıController.GameUIDeactivate).setOnComplete(ClearBoard);
+        foreach(var card in cards)
+        {
+            LeanTween.scale(card, Vector3.zero, 0.3f);
+        }
+        uıController.Invoke("GameUIDeactivate", 0.3f);
+        Invoke("ClearBoard", 0.3f);
     }
 
     public void ClearBoard()
@@ -224,6 +237,12 @@ public class CardBalanceBoardGenerator : MonoBehaviour
         randomValueList.Clear();
         usedRandomOrderCards.Clear();
         uıController.LevelChangeScreenActivate();
+        if(!finished)
+        {
+            gameAPI.PlaySFX("Finished");
+            Debug.Log("Finished");
+            finished = true;
+        }
     }
 
     public void ClearLevel()

@@ -68,7 +68,6 @@ GameAPI gameAPI;
     {
         levelChange.SetActive(true);
         LeanTween.scale(levelChange, Vector3.one * 0.5f, 0.3f);
-        gameAPI.PlaySFX("Finished");
     }
 
     public void CloseLevelChangePanel()

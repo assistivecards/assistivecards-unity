@@ -5420,6 +5420,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2053396222163338408, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2053396222163338408, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f9e7306d36dc78943a2f4c28ab96cd3d, type: 3}
     - target: {fileID: 2053396223207933188, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -5469,9 +5477,41 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
+      propertyPath: musicClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f9e7306d36dc78943a2f4c28ab96cd3d, type: 3}
+    - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
       propertyPath: speakable
       value: 
       objectReference: {fileID: 252539108}
+    - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
+      propertyPath: sfxClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
+      propertyPath: sfxClips.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: dd699e0cf09cf3348be25ba4c5877c05, type: 3}
+    - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
+      propertyPath: sfxClips.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d81901bf2fb96724aa1d7d1de4ab930b, type: 3}
+    - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
+      propertyPath: sfxClips.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 280be73e6b3a84a41a7ac5f039bb5d59, type: 3}
+    - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
+      propertyPath: sfxClips.Array.data[0].soundName
+      value: Finished
+      objectReference: {fileID: 0}
+    - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
+      propertyPath: sfxClips.Array.data[1].soundName
+      value: Success
+      objectReference: {fileID: 0}
+    - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
+      propertyPath: sfxClips.Array.data[2].soundName
+      value: Pop
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}

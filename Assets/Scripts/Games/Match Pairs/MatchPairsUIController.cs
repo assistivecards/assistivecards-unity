@@ -11,6 +11,7 @@ public class MatchPairsUIController : MonoBehaviour
     [SerializeField] GameObject helloText;
     [SerializeField] GameObject speakerIcon;
     [SerializeField] GameObject homeButton;
+    [SerializeField] GameObject levelProgressContainer;
     [SerializeField] MatchPairsLevelProgressChecker levelProgressChecker;
     [SerializeField] GameObject checkPointPanel;
     [SerializeField] GameObject tutorial;
@@ -53,6 +54,7 @@ public class MatchPairsUIController : MonoBehaviour
         helloText.SetActive(true);
         speakerIcon.SetActive(true);
         homeButton.SetActive(true);
+        levelProgressContainer.SetActive(true);
 
     }
 
@@ -120,6 +122,7 @@ public class MatchPairsUIController : MonoBehaviour
         helloText.SetActive(true);
         speakerIcon.SetActive(true);
         homeButton.SetActive(true);
+        levelProgressContainer.SetActive(true);
         Invoke("EnableScrollRect", 0.26f);
     }
 

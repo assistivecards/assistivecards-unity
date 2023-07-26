@@ -4408,6 +4408,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1286770184}
   m_CullTransparentMesh: 1
+--- !u!1 &1311309931 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2249279855417450727, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1338730596
 GameObject:
   m_ObjectHideFlags: 0
@@ -6387,6 +6392,7 @@ MonoBehaviour:
   helloText: {fileID: 1231408339}
   speakerIcon: {fileID: 472857507}
   homeButton: {fileID: 2083081669}
+  levelProgressContainer: {fileID: 1311309931}
   packSelectionScreenUIController: {fileID: 1837497525}
   loadingPanel: {fileID: 671447375}
 --- !u!1 &1849265849
@@ -9837,6 +9843,7 @@ MonoBehaviour:
   helloText: {fileID: 1231408339}
   speakerIcon: {fileID: 472857507}
   homeButton: {fileID: 2083081669}
+  levelProgressContainer: {fileID: 1311309931}
   checkPointPanel: {fileID: 1275520836}
   levelsCompleted: 0
   checkpointFrequency: 5

@@ -1084,6 +1084,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &586259270 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2249279855417450727, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &596757793
 GameObject:
   m_ObjectHideFlags: 0
@@ -2864,6 +2869,7 @@ MonoBehaviour:
   helloText: {fileID: 1231408339}
   speakerIcon: {fileID: 472857507}
   homeButton: {fileID: 1362600184}
+  levelProgressContainer: {fileID: 586259270}
   fadeInPanel: {fileID: 956408261191908917}
   packSelectionScreenUIController: {fileID: 1837497525}
   loadingPanel: {fileID: 671447375}
@@ -5711,6 +5717,7 @@ MonoBehaviour:
   helloText: {fileID: 1231408339}
   speakerIcon: {fileID: 472857507}
   homeButton: {fileID: 1362600184}
+  levelProgressContainer: {fileID: 586259270}
   checkPointPanel: {fileID: 2113253922}
   accessibilityScreen: {fileID: 1235288819}
   correctMatches: 0

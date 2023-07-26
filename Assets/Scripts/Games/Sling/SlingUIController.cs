@@ -11,6 +11,7 @@ public class SlingUIController : MonoBehaviour
     [SerializeField] GameObject helloText;
     [SerializeField] GameObject speakerIcon;
     [SerializeField] GameObject homeButton;
+    [SerializeField] GameObject levelProgressContainer;
     [SerializeField] GameObject checkPointPanel;
     private GameAPI gameAPI;
     [SerializeField] SlingProgressChecker progressChecker;
@@ -53,6 +54,7 @@ public class SlingUIController : MonoBehaviour
         helloText.SetActive(true);
         speakerIcon.SetActive(true);
         homeButton.SetActive(true);
+        levelProgressContainer.SetActive(true);
 
     }
 
@@ -104,6 +106,7 @@ public class SlingUIController : MonoBehaviour
         helloText.SetActive(true);
         speakerIcon.SetActive(true);
         homeButton.SetActive(true);
+        levelProgressContainer.SetActive(true);
         Invoke("EnableScrollRect", 0.26f);
     }
 

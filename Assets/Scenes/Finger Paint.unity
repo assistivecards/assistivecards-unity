@@ -1938,6 +1938,11 @@ RectTransform:
   m_AnchoredPosition: {x: 360, y: 18.8736}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1270469961 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2249279855417450727, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1275520832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3274,6 +3279,7 @@ MonoBehaviour:
   helloText: {fileID: 1231408339}
   speakerIcon: {fileID: 472857507}
   homeButton: {fileID: 472857508}
+  levelProgressContainer: {fileID: 1270469961}
   packSelectionScreenUIController: {fileID: 1837497525}
   loadingPanel: {fileID: 671447375}
 --- !u!224 &1859327342 stripped
@@ -6110,6 +6116,7 @@ MonoBehaviour:
   helloText: {fileID: 1231408339}
   speakerIcon: {fileID: 472857507}
   homeButton: {fileID: 472857508}
+  levelProgressContainer: {fileID: 1270469961}
   checkPointPanel: {fileID: 798372664}
   tutorial: {fileID: 868299689}
   correctMatches: 0

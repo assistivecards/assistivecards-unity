@@ -1035,6 +1035,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5305803331684122001, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
   m_PrefabInstance: {fileID: 472857503}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &472857508 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2249279855417450727, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &500160081
 GameObject:
   m_ObjectHideFlags: 0
@@ -1800,6 +1805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   board: {fileID: 8383894889009589326}
   correctCards: []
+  activeCards: []
 --- !u!1 &938135338 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5968337514349200958, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -4628,6 +4634,7 @@ MonoBehaviour:
   helloText: {fileID: 1231408339}
   speakerIcon: {fileID: 472857507}
   homeButton: {fileID: 216244811}
+  levelProgressContainer: {fileID: 472857508}
   packSelectionScreenUIController: {fileID: 1837497525}
   loadingPanel: {fileID: 671447375}
 --- !u!1001 &300905862136274000
@@ -7550,7 +7557,7 @@ MonoBehaviour:
   - {fileID: 1110876399}
   numOfMatchedCards: 0
   numOfCorrectCards: 0
-  tutorial: {fileID: 927069859}
+  cardSpeed: 350
 --- !u!114 &8383894889009589327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7569,6 +7576,7 @@ MonoBehaviour:
   helloText: {fileID: 1231408339}
   speakerIcon: {fileID: 472857507}
   homeButton: {fileID: 216244811}
+  levelProgressContainer: {fileID: 472857508}
   checkPointPanel: {fileID: 1275520836}
   levelsCompleted: 0
   checkpointFrequency: 5

@@ -11,6 +11,7 @@ public class DrawShapesUIController : MonoBehaviour
     [SerializeField] GameObject helloText;
     [SerializeField] GameObject speakerIcon;
     [SerializeField] GameObject homeButton;
+    [SerializeField] GameObject levelProgressContainer;
     public int correctMatches;
     [SerializeField] GameObject checkPointPanel;
     private GameAPI gameAPI;
@@ -85,6 +86,7 @@ public class DrawShapesUIController : MonoBehaviour
         helloText.SetActive(true);
         speakerIcon.SetActive(true);
         homeButton.SetActive(true);
+        levelProgressContainer.SetActive(true);
         Invoke("EnableScrollRect", 0.26f);
     }
 
@@ -123,6 +125,7 @@ public class DrawShapesUIController : MonoBehaviour
         helloText.SetActive(true);
         speakerIcon.SetActive(true);
         homeButton.SetActive(true);
+        levelProgressContainer.SetActive(true);
 
     }
 

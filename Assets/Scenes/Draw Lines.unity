@@ -11094,6 +11094,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1563074349 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2249279855417450727, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1563614637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13068,6 +13073,7 @@ MonoBehaviour:
   helloText: {fileID: 1231408339}
   speakerIcon: {fileID: 472857507}
   homeButton: {fileID: 336128289}
+  levelProgressContainer: {fileID: 1563074349}
   packSelectionScreenUIController: {fileID: 1837497525}
   loadingPanel: {fileID: 671447375}
 --- !u!114 &1837497528 stripped
@@ -18474,6 +18480,7 @@ MonoBehaviour:
   helloText: {fileID: 1231408339}
   speakerIcon: {fileID: 472857507}
   homeButton: {fileID: 336128289}
+  levelProgressContainer: {fileID: 1563074349}
   correctMatches: 0
   checkPointPanel: {fileID: 1095398522}
   checkpointFrequency: 5

@@ -653,6 +653,7 @@ MonoBehaviour:
   helloText: {fileID: 1231408339}
   speakerIcon: {fileID: 472857507}
   homeButton: {fileID: 472857508}
+  levelProgressContainer: {fileID: 1497887082}
   packSelectionScreenUIController: {fileID: 1837497525}
   loadingPanel: {fileID: 671447375}
 --- !u!1 &429505576 stripped
@@ -2730,6 +2731,11 @@ RectTransform:
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 2053396222163338408, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
   m_PrefabInstance: {fileID: 2053396223108693368}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1497887082 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2249279855417450727, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1503427634
 GameObject:
@@ -7463,6 +7469,7 @@ MonoBehaviour:
   helloText: {fileID: 1231408339}
   speakerIcon: {fileID: 472857507}
   homeButton: {fileID: 472857508}
+  levelProgressContainer: {fileID: 1497887082}
   tutorial: {fileID: 1210620065}
   checkPointPanel: {fileID: 1078714826}
   correctMatches: 0

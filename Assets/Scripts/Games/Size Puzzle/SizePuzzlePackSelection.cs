@@ -14,6 +14,7 @@ public class SizePuzzlePackSelection : MonoBehaviour
     [SerializeField] GameObject helloText;
     [SerializeField] GameObject speakerIcon;
     [SerializeField] GameObject homeButton;
+    [SerializeField] GameObject levelProgressContainer;
     [SerializeField] PackSelectionScreenUIController packSelectionScreenUIController;
     [SerializeField] GameObject loadingPanel;
 
@@ -34,6 +35,7 @@ public class SizePuzzlePackSelection : MonoBehaviour
             helloText.SetActive(false);
             speakerIcon.SetActive(false);
             homeButton.SetActive(false);
+            levelProgressContainer.SetActive(false);
             await boardGenerator.CacheCards(boardGenerator.packSlug);
             boardGenerator.PopulateUniqueCards();
             await boardGenerator.GenerateRandomBoardAsync();

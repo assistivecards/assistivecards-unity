@@ -3908,6 +3908,7 @@ MonoBehaviour:
   helloText: {fileID: 1231408339}
   speakerIcon: {fileID: 472857507}
   homeButton: {fileID: 1917191764}
+  levelProgressContainer: {fileID: 1965342788}
   packSelectionScreenUIController: {fileID: 1837497525}
   loadingPanel: {fileID: 671447375}
 --- !u!1 &1857901023
@@ -4005,6 +4006,11 @@ MonoBehaviour:
 --- !u!1 &1917191764 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8524809319700726626, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1965342788 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2249279855417450727, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
   m_PrefabInstance: {fileID: 472857503}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &2018903310 stripped
@@ -7054,6 +7060,7 @@ MonoBehaviour:
   helloText: {fileID: 1231408339}
   speakerIcon: {fileID: 472857507}
   homeButton: {fileID: 1917191764}
+  levelProgressContainer: {fileID: 1965342788}
   checkPointPanel: {fileID: 1275520836}
   tutorial: {fileID: 2104696185}
   puzzleProgressChecker: {fileID: 8383894889009589327}

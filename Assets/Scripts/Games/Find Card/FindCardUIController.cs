@@ -11,6 +11,7 @@ public class FindCardUIController : MonoBehaviour
     [SerializeField] GameObject helloText;
     [SerializeField] GameObject speakerIcon;
     [SerializeField] GameObject homeButton;
+    [SerializeField] GameObject levelProgressContainer;
     [SerializeField] GameObject checkPointPanel;
     private GameAPI gameAPI;
     public int levelsCompleted;
@@ -71,6 +72,7 @@ public class FindCardUIController : MonoBehaviour
         helloText.SetActive(true);
         speakerIcon.SetActive(true);
         homeButton.SetActive(true);
+        levelProgressContainer.SetActive(true);
         Invoke("EnableScrollRect", 0.26f);
     }
 
@@ -126,6 +128,7 @@ public class FindCardUIController : MonoBehaviour
         helloText.SetActive(true);
         speakerIcon.SetActive(true);
         homeButton.SetActive(true);
+        levelProgressContainer.SetActive(true);
     }
 
     public void TutorialSetActive()

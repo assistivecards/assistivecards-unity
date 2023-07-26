@@ -11,6 +11,7 @@ public class FingerPaintUIController : MonoBehaviour
     [SerializeField] GameObject helloText;
     [SerializeField] GameObject speakerIcon;
     [SerializeField] GameObject homeButton;
+    [SerializeField] GameObject levelProgressContainer;
     [SerializeField] GameObject checkPointPanel;
     [SerializeField] GameObject tutorial;
     public int correctMatches;
@@ -52,6 +53,7 @@ public class FingerPaintUIController : MonoBehaviour
         helloText.SetActive(true);
         speakerIcon.SetActive(true);
         homeButton.SetActive(true);
+        levelProgressContainer.SetActive(true);
 
     }
 
@@ -112,6 +114,7 @@ public class FingerPaintUIController : MonoBehaviour
         helloText.SetActive(true);
         speakerIcon.SetActive(true);
         homeButton.SetActive(true);
+        levelProgressContainer.SetActive(true);
         Invoke("EnableScrollRect", 0.26f);
     }
 

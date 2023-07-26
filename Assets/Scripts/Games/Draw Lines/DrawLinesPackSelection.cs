@@ -14,6 +14,7 @@ public class DrawLinesPackSelection : MonoBehaviour
     [SerializeField] GameObject helloText;
     [SerializeField] GameObject speakerIcon;
     [SerializeField] GameObject homeButton;
+    [SerializeField] GameObject levelProgressContainer;
 
     [SerializeField] PackSelectionScreenUIController packSelectionScreenUIController;
     [SerializeField] GameObject loadingPanel;
@@ -35,6 +36,7 @@ public class DrawLinesPackSelection : MonoBehaviour
             helloText.SetActive(false);
             speakerIcon.SetActive(false);
             homeButton.SetActive(false);
+            levelProgressContainer.SetActive(false);
             await boardGenerator.CacheCards(boardGenerator.packSlug);
             await boardGenerator.GenerateRandomBoardAsync();
         }

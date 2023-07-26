@@ -147,6 +147,7 @@ public class CardBalanceBoardGenerator : MonoBehaviour
             cloneCard.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
             cloneCard.GetComponent<CardBalanceDraggable>().draggable = true;
             cloneCard.GetComponent<CardBalanceDraggable>().ActiavateGravityEffect();
+            cloneCard.GetComponent<BoxCollider2D>().enabled = true;
             cloneCard.gameObject.tag = "Card";
             cards.Add(cloneCard);
             cloneCards.Add(cloneCard);
@@ -195,7 +196,11 @@ public class CardBalanceBoardGenerator : MonoBehaviour
 
     public void GameUIActivate()
     {
-        LeanTween.scale(uıController.gameUI, Vector3.one, 0.3f);
+        //LeanTween.scale(uıController.gameUI, Vector3.one, 0.3f);
+        foreach(var card in cards)
+        {
+            LeanTween.scale(card, Vector3.one * 0.45f, 0.3f);
+        }
         uıController.GameUIActivate();
     }
 
@@ -207,7 +212,12 @@ public class CardBalanceBoardGenerator : MonoBehaviour
 
     private void GameUIScaleDown()
     {
-        LeanTween.scale(uıController.gameUI, Vector3.zero, 0.3f).setOnComplete(uıController.GameUIDeactivate).setOnComplete(ClearBoard);
+        foreach(var card in cards)
+        {
+            LeanTween.scale(card, Vector3.zero, 0.3f);
+        }
+        uıController.Invoke("GameUIDeactivate", 0.3f);
+        Invoke("ClearBoard", 0.3f);
     }
 
     public void ClearBoard()

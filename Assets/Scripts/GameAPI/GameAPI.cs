@@ -796,6 +796,16 @@ public class GameAPI : MonoBehaviour
         return PlayerPrefs.GetInt("isTTSOn", 1);
     }
 
+    public void SetExp(int totalExp)
+    {
+        PlayerPrefs.SetInt("totalExp", totalExp);
+    }
+
+    public int GetExp()
+    {
+        return PlayerPrefs.GetInt("totalExp", 0);
+    }
+
     ///<summary>
     ///Deletes all the data stored in PlayerPrefs on sign out.
     ///</summary>
@@ -1210,7 +1220,7 @@ public class GameAPI : MonoBehaviour
         return (int)Mathf.Ceil(Mathf.Pow(level - 1, (50f / 33f)) * 0.8f * 70);
     }
 
-    public float CalculateLevel(int exp)
+    public int CalculateLevel(int exp)
     {
         return (int)((Mathf.Pow((exp / 70f / 0.8f), 33f / 50f)) + 1);
     }

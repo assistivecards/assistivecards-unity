@@ -135,7 +135,7 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     private async void CreateRandomOrderedCards(int order)
     {
         randomOrder = Random.Range(0, 3);
-        if(!usedRandomOrderCards.Contains(randomOrder))
+        if(!usedRandomOrderCards.Contains(randomOrder) || cardPositions[randomOrder].transform.childCount == 0)
         {
             GameObject cloneCard = Instantiate(cardPrefab, cardPositions[randomOrder].transform.position, Quaternion.identity);
 
@@ -171,7 +171,7 @@ public class CardBalanceBoardGenerator : MonoBehaviour
             cloneCard.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
             cloneCard.transform.localPosition = Vector3.zero;
         }
-        else if(usedRandomOrderCards.Contains(randomOrder))
+        else if(usedRandomOrderCards.Contains(randomOrder) || cardPositions[randomOrder].transform.childCount > 0)
         {
             CreateRandomOrderedCards(order);
         }
@@ -199,7 +199,6 @@ public class CardBalanceBoardGenerator : MonoBehaviour
 
     public void GameUIActivate()
     {
-        //LeanTween.scale(uıController.gameUI, Vector3.one, 0.3f);
         foreach(var card in cards)
         {
             LeanTween.scale(card, Vector3.one * 0.45f, 0.3f);
@@ -240,7 +239,6 @@ public class CardBalanceBoardGenerator : MonoBehaviour
         if(!finished)
         {
             gameAPI.PlaySFX("Finished");
-            Debug.Log("Finished");
             finished = true;
         }
     }

@@ -1205,4 +1205,14 @@ public class GameAPI : MonoBehaviour
         return textinfo.ToTitleCase(text);
     }
 
+    public int CalculateExp(int level)
+    {
+        return (int)Mathf.Ceil(Mathf.Pow(level - 1, (50f / 33f)) * 0.8f * 70);
+    }
+
+    public float CalculateLevel(int exp)
+    {
+        return (int)((Mathf.Pow((exp / 70f / 0.8f), 33f / 50f)) + 1);
+    }
+
 }

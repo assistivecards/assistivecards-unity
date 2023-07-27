@@ -22,7 +22,7 @@ public class CardBalanceDraggable : MonoBehaviour,  IDragHandler, IPointerDownHa
     {
         if(draggable)
         {
-            this.transform.position = eventData.position;
+            transform.position = transform.position + new Vector3(eventData.delta.x, eventData.delta.y, 0);
             cardRB.gravityScale = 0;
         }
     }
@@ -31,7 +31,7 @@ public class CardBalanceDraggable : MonoBehaviour,  IDragHandler, IPointerDownHa
     {
         if(draggable)
         {
-            this.transform.position = eventData.position;
+            transform.position = eventData.position;
         }
     }
         

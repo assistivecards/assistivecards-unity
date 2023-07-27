@@ -9388,7 +9388,7 @@ MonoBehaviour:
   popUp: {fileID: 1242831489349203873}
   settingScreen: {fileID: 1242831489818517041}
   settingScreenFadePanel: {fileID: 1242831489759745152}
-  fadeOutPanel: {fileID: 0}
+  fadeOutPanel: {fileID: 8047663718913052466}
   versionText: {fileID: 798818619719120453}
   mainSettingsScreen: {fileID: 1242831489410636797}
   parentLockScreen: {fileID: 1242831490843936576}
@@ -13829,7 +13829,7 @@ MonoBehaviour:
   practiceReminderScreen: {fileID: 1242831489254992750}
   congratulationsScreen: {fileID: 1242831489977020967}
   loginPrefab: {fileID: 1242831489020382269}
-  fadeOutPanel: {fileID: 0}
+  fadeOutPanel: {fileID: 8047663718913052466}
   profileScreenNicknameInputField: {fileID: 1242831490310174670}
 --- !u!1 &1242831489631616396
 GameObject:
@@ -60312,6 +60312,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 25f889aa8f76f77459534eed334bba54, type: 3}
+--- !u!1 &8047663718913052466 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6171729912946599578, guid: 25f889aa8f76f77459534eed334bba54, type: 3}
+  m_PrefabInstance: {fileID: 4181988265085708712}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8047663718913052467 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6171729912946599579, guid: 25f889aa8f76f77459534eed334bba54, type: 3}

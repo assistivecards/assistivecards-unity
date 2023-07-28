@@ -4543,7 +4543,7 @@ PrefabInstance:
     - target: {fileID: 1242831489334970563, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: gamePanel
       value: 
-      objectReference: {fileID: 3720148778835819161}
+      objectReference: {fileID: 1154749945}
     - target: {fileID: 1242831489334970564, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: sfxSource
       value: 

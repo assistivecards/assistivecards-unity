@@ -112,6 +112,7 @@ public class UIControllerCardChain : MonoBehaviour
 
     public void ResetScroll()
     {
+        tutorialGameObject.SetActive(false);
         packSelectionScreen.transform.GetChild(0).GetChild(0).GetChild(0).transform.localPosition = Vector3.zero;
     }
 }

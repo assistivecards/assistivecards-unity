@@ -558,6 +558,56 @@ Retrieves the TTS status preference data stored in PlayerPrefs.
 public int GetTTSStatusPreference()
 ```
 
+## SetExp
+
+Takes in a single parameter of type integer named totalExp and stores it in PlayerPrefs.
+
+```Csharp
+public void SetExp(int totalExp)
+```
+
+## GetExp
+
+Retrieves the total experience point stored in PlayerPrefs.
+
+> Default value is 0.
+
+```Csharp
+public int GetExp()
+```
+
+## AddExp
+
+Takes in a single parameter of type integer named exp and adds it to the total experience point stored in PlayerPrefs.
+
+```Csharp
+public void AddExp(int exp)
+```
+
+## RemoveExp
+
+Takes in a single parameter of type integer named exp and removes it from the total experience point stored in PlayerPrefs.
+
+```Csharp
+public void RemoveExp(int exp)
+```
+
+## CalculateExp
+
+Takes in a single parameter of type integer named level and calculates the total experience point required.
+
+```Csharp
+public int CalculateExp(int level)
+```
+
+## CalculateLevel
+
+Takes in a single parameter of type integer named exp and calculates the corresponding level.
+
+```Csharp
+public int CalculateLevel(int exp)
+```
+
 ## ClearAllPrefs
 
 Deletes all the data stored in PlayerPrefs on sign out.

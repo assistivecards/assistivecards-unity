@@ -796,16 +796,25 @@ public class GameAPI : MonoBehaviour
         return PlayerPrefs.GetInt("isTTSOn", 1);
     }
 
+    ///<summary>
+    ///Takes in a single parameter of type integer named totalExp and stores it in PlayerPrefs.
+    ///</summary>
     public void SetExp(int totalExp)
     {
         PlayerPrefs.SetInt("totalExp", totalExp);
     }
 
+    ///<summary>
+    ///Retrieves the total experience point stored in PlayerPrefs. Default value is 0.
+    ///</summary>
     public int GetExp()
     {
         return PlayerPrefs.GetInt("totalExp", 0);
     }
 
+    ///<summary>
+    ///Takes in a single parameter of type integer named exp and adds it to the total experience point stored in PlayerPrefs.
+    ///</summary>
     public void AddExp(int exp)
     {
         var totalExp = GetExp();
@@ -813,6 +822,9 @@ public class GameAPI : MonoBehaviour
         SetExp(totalExp);
     }
 
+    ///<summary>
+    ///Takes in a single parameter of type integer named exp and removes it from the total experience point stored in PlayerPrefs.
+    ///</summary>
     public void RemoveExp(int exp)
     {
         var totalExp = GetExp();
@@ -1229,11 +1241,17 @@ public class GameAPI : MonoBehaviour
         return textinfo.ToTitleCase(text);
     }
 
+    ///<summary>
+    ///Takes in a single parameter of type integer named level and calculates the total experience point required.
+    ///</summary>
     public int CalculateExp(int level)
     {
         return (int)Mathf.Ceil(Mathf.Pow(level - 1, (50f / 33f)) * 0.8f * 70);
     }
 
+    ///<summary>
+    ///Takes in a single parameter of type integer named exp and calculates the corresponding level.
+    ///</summary>
     public int CalculateLevel(int exp)
     {
         return (int)((Mathf.Pow((exp / 70f / 0.8f), 33f / 50f)) + 1);

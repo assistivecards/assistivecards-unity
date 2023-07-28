@@ -806,6 +806,20 @@ public class GameAPI : MonoBehaviour
         return PlayerPrefs.GetInt("totalExp", 0);
     }
 
+    public void AddExp(int exp)
+    {
+        var totalExp = GetExp();
+        totalExp += exp;
+        SetExp(totalExp);
+    }
+
+    public void RemoveExp(int exp)
+    {
+        var totalExp = GetExp();
+        totalExp -= exp;
+        SetExp(totalExp);
+    }
+
     ///<summary>
     ///Deletes all the data stored in PlayerPrefs on sign out.
     ///</summary>

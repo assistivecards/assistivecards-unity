@@ -11,6 +11,7 @@ public class HatchMatchUIController : MonoBehaviour
 
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject helloText;
+    [SerializeField] private GameObject levelProgressContainer;
     [SerializeField] private GameObject packSelectionPanel;
 
     private bool firstTime = true;
@@ -37,15 +38,18 @@ public class HatchMatchUIController : MonoBehaviour
         {
             backButton.SetActive(false);
             helloText.SetActive(false);
+            levelProgressContainer.SetActive(false);
         }
         if(boardCreatorHatchMatch.boardCreated)
         {
             backButton.SetActive(true);
             helloText.SetActive(false);
-        }
+            levelProgressContainer.SetActive(false)
+;        }
         if(packSelectionPanel.activeInHierarchy)
         {
             helloText.SetActive(true);
+            levelProgressContainer.SetActive(true);
             backButton.SetActive(false);
         }
     }

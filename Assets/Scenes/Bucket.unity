@@ -737,6 +737,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &865769872 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2249279855417450727, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &887773751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3942,6 +3947,7 @@ MonoBehaviour:
   transitionScreen: {fileID: 671447375}
   packSelectionScreen: {fileID: 57532212}
   helloText: {fileID: 719934349}
+  levelProgressContainer: {fileID: 865769872}
   backButton: {fileID: 1341473260}
   settingButton: {fileID: 472857506}
   selectNewPackButton: {fileID: 1718755055}

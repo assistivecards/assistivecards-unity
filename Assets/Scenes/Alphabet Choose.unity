@@ -1112,6 +1112,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1006285490 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2249279855417450727, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1021200294
 GameObject:
   m_ObjectHideFlags: 0
@@ -4064,6 +4069,7 @@ MonoBehaviour:
   loadingScreen: {fileID: 671447375}
   packSelectionScreen: {fileID: 204884777}
   tutorial: {fileID: 927069859}
+  levelProgressContainer: {fileID: 1006285490}
   canGenerate: 0
 --- !u!114 &8691574409270737102
 MonoBehaviour:

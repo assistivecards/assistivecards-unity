@@ -7,7 +7,7 @@ public class LevelScreenControllerComplete : MonoBehaviour
     [SerializeField] private BoardCreatorComplete boardCreatorComplete;
     private void OnEnable() 
     {
-        LeanTween.scale(this.gameObject, Vector3.one * 0.5f, 0.5f);
+        LeanTween.scale(this.gameObject, Vector3.one * 0.6f, 0.5f);
     }
 
     public void LevelScreenClose()

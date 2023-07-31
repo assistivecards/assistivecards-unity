@@ -3421,6 +3421,7 @@ MonoBehaviour:
   fillGrid: {fileID: 1381051503}
   backButton: {fileID: 1388156677}
   helloText: {fileID: 936406979}
+  levelProgressContainer: {fileID: 1459688033}
   packSelectionScreen: {fileID: 2030526790}
   transitionScreen: {fileID: 169421534}
   score: {fileID: 121546898}
@@ -3567,6 +3568,11 @@ RectTransform:
   m_AnchoredPosition: {x: 607.18005, y: 674.9615}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1459688033 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2249279855417450727, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1483766225 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 804781094349168275, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}

@@ -16,6 +16,8 @@ public class UIControllerComplete : MonoBehaviour
     [Header("UI Elements")]
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject helloText;
+    [SerializeField] private GameObject settingsButton;
+    [SerializeField] private GameObject levelProgressContainer;
     public bool firstTime = true;
 
     private void Awake()
@@ -39,12 +41,16 @@ public class UIControllerComplete : MonoBehaviour
             boardCreatorComplete.ResetLevel();
             levelScreen.SetActive(true);
             helloText.SetActive(false);
+            levelProgressContainer.SetActive(false);
+            settingsButton.SetActive(false);
             gridBackground.SetActive(false);
             backButton.SetActive(false);
         }
         else if(packSelectionPanel.activeInHierarchy)
         {
             helloText.SetActive(true);
+            levelProgressContainer.SetActive(true);
+            settingsButton.SetActive(true);
             backButton.SetActive(false);
             gridBackground.SetActive(false);
         }
@@ -52,6 +58,8 @@ public class UIControllerComplete : MonoBehaviour
         {
             backButton.SetActive(true);
             helloText.SetActive(false);
+            levelProgressContainer.SetActive(false);
+            settingsButton.SetActive(true);
         }
     }
 

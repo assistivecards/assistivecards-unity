@@ -18,6 +18,7 @@ public class MatchUIController : MonoBehaviour
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject settingButton;
     [SerializeField] private GameObject helloText;
+    [SerializeField] private GameObject levelProgressContainer;
     [SerializeField] private GameObject loadingScreen;
     [SerializeField] private GameObject packSelectionScreen;
     [SerializeField] private GameObject tutorial;
@@ -43,6 +44,7 @@ public class MatchUIController : MonoBehaviour
             backButton.SetActive(true);
             settingButton.SetActive(true);
             helloText.SetActive(false);
+            levelProgressContainer.SetActive(false);
             loadingScreen.SetActive(false);
         }
     }
@@ -53,6 +55,7 @@ public class MatchUIController : MonoBehaviour
         backButton.SetActive(false);
         settingButton.SetActive(false);
         helloText.SetActive(false);
+        levelProgressContainer.SetActive(false);
         loadingScreen.SetActive(false);
     }
 
@@ -61,6 +64,7 @@ public class MatchUIController : MonoBehaviour
         boardGenerator.ClearBoard();
         gameUI.SetActive(false);
         backButton.SetActive(false);
+        levelProgressContainer.SetActive(false);
         settingButton.SetActive(false);
     }
 
@@ -68,7 +72,7 @@ public class MatchUIController : MonoBehaviour
     {
         LevelEnding();
         levelChange.SetActive(true);
-        LeanTween.scale(levelChange, Vector3.one * 0.5f, 0.3f);
+        LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.3f);
     }
 
     public void CloseLevelChangePanel()
@@ -83,6 +87,7 @@ public class MatchUIController : MonoBehaviour
         backButton.SetActive(false);
         settingButton.SetActive(true);
         helloText.SetActive(true);
+        levelProgressContainer.SetActive(true);
     }
 
     public void DetectPremium()
@@ -129,6 +134,7 @@ public class MatchUIController : MonoBehaviour
         {
             loadingScreen.SetActive(true);
             helloText.SetActive(false);
+            levelProgressContainer.SetActive(false);
             settingButton.SetActive(false);
             backButton.SetActive(false);
         }

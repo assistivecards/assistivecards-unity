@@ -19,6 +19,7 @@ public class CardFishingUIController : MonoBehaviour
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject settingButton;
     [SerializeField] private GameObject helloText;
+    [SerializeField] private GameObject levelProgressContainer;
     [SerializeField] private GameObject loadingScreen;
     [SerializeField] private GameObject packSelectionScreen;
 
@@ -44,6 +45,7 @@ public class CardFishingUIController : MonoBehaviour
             backButton.SetActive(true);
             settingButton.SetActive(true);
             helloText.SetActive(false);
+            levelProgressContainer.SetActive(false);
             loadingScreen.SetActive(false);
         }
     }
@@ -55,7 +57,7 @@ public class CardFishingUIController : MonoBehaviour
         backButton.SetActive(false);
         settingButton.SetActive(false);
         levelChange.SetActive(true);
-        LeanTween.scale(levelChange, Vector3.one * 0.5f, 0.1f);
+        LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.1f);
     }
 
     public void CloseLevelChangePanel()
@@ -70,6 +72,7 @@ public class CardFishingUIController : MonoBehaviour
         backButton.SetActive(false);
         settingButton.SetActive(true);
         helloText.SetActive(true);
+        levelProgressContainer.SetActive(true);
     }
 
     public void DetectPremium()

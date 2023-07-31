@@ -4104,6 +4104,7 @@ MonoBehaviour:
   fillGrid: {fileID: 1381051503}
   backButton: {fileID: 482736441}
   helloText: {fileID: 114000396}
+  levelProgressContainer: {fileID: 1479111872}
   packSelectionScreen: {fileID: 2030526790}
   transitionScreen: {fileID: 1610326563}
   score: {fileID: 891408010}
@@ -4241,6 +4242,11 @@ MonoBehaviour:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5444075738650717230, guid: a87fb146a4f8543f49a1b10a52fb1685, type: 3}
   m_PrefabInstance: {fileID: 1524065858}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1479111872 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2249279855417450727, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1483766225 stripped
 GameObject:

@@ -11,6 +11,7 @@ public class CardCrushGameUIController : MonoBehaviour
     [SerializeField] private CardCrushFillGrid fillGrid;
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject helloText;
+    [SerializeField] private GameObject levelProgressContainer;
     [SerializeField] private GameObject packSelectionScreen;
     [SerializeField] private GameObject transitionScreen;
     [SerializeField] private GameObject score;
@@ -46,6 +47,7 @@ public class CardCrushGameUIController : MonoBehaviour
             score.SetActive(true);
             backButton.SetActive(true);
             helloText.SetActive(false);
+            levelProgressContainer.SetActive(false);
         }
         else if(fillGrid.scoreInt >= 100)
         {
@@ -57,30 +59,35 @@ public class CardCrushGameUIController : MonoBehaviour
             score.SetActive(false);
             backButton.SetActive(false);
             helloText.SetActive(false);
+            levelProgressContainer.SetActive(false);
         }
         else if(difficultSelectionPanelTween.isOnDifficultyScene)
         {
             score.SetActive(false);
             backButton.SetActive(true);
             helloText.SetActive(false);
+            levelProgressContainer.SetActive(false);
         }
         else if(packSelectionScreen.activeInHierarchy)
         {
             score.SetActive(false);
             backButton.SetActive(false);
             helloText.SetActive(true);
+            levelProgressContainer.SetActive(true);
         }
         else if(transitionScreen.activeInHierarchy)
         {
             score.SetActive(false);
             backButton.SetActive(false);
             helloText.SetActive(false);
+            levelProgressContainer.SetActive(false);
         }
         else
         {
             score.SetActive(false);
             backButton.SetActive(false);
             helloText.SetActive(false);
+            levelProgressContainer.SetActive(false);
         }
     }
 

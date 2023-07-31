@@ -40,7 +40,7 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     public GameObject cardPosition1;
     public GameObject cardPosition2;
     public GameObject cardPosition3;
-    private List<GameObject> cardPositions = new List<GameObject>();
+    public List<GameObject> cardPositions = new List<GameObject>();
     public List<GameObject> cloneCards = new List<GameObject>();
 
     public int levelCount;
@@ -106,11 +106,10 @@ public class CardBalanceBoardGenerator : MonoBehaviour
         if(uıController.canGenerate)
         {
             await CacheCards();
-
+            CreateCardPositionList();
             for(int i = 0; i < 3; i++)
             {
                 CheckRandom();
-                CreateCardPositionList();
                 GameObject card = Instantiate(cardPrefab, referencePositions[i].transform.position, Quaternion.identity);
 
                 var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[i]], 512);
@@ -135,7 +134,7 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     private async void CreateRandomOrderedCards(int order)
     {
         randomOrder = Random.Range(0, 3);
-        if(!usedRandomOrderCards.Contains(randomOrder) || cardPositions[randomOrder].transform.childCount == 0)
+        if(!usedRandomOrderCards.Contains(randomOrder) || cardPositions[randomOrder].transform.childCount <= 0)
         {
             GameObject cloneCard = Instantiate(cardPrefab, cardPositions[randomOrder].transform.position, Quaternion.identity);
 

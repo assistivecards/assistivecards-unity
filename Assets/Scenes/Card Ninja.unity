@@ -1084,6 +1084,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &856555615 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2249279855417450727, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &927069859 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3236149540598557724, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
@@ -1544,6 +1549,7 @@ MonoBehaviour:
   backButton: {fileID: 106221049}
   settingButton: {fileID: 472857506}
   helloText: {fileID: 1410394572}
+  levelProgressContainer: {fileID: 856555615}
   loadingScreen: {fileID: 671447375}
   packSelectionScreen: {fileID: 608594312}
   cutPrefab: {fileID: 1744241444}

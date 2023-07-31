@@ -707,6 +707,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5305803331684122001, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
   m_PrefabInstance: {fileID: 472857503}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &524120355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2249279855417450727, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &584384117 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1242831489156330399, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -3391,6 +3396,8 @@ MonoBehaviour:
   packSelectionPanel: {fileID: 160914294}
   backButton: {fileID: 834737980}
   helloText: {fileID: 1587829476}
+  settingsButton: {fileID: 472857506}
+  levelProgressContainer: {fileID: 524120355}
   firstTime: 1
 --- !u!114 &8691574409270737102
 MonoBehaviour:

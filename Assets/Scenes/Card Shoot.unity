@@ -621,6 +621,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5305803331684122001, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
   m_PrefabInstance: {fileID: 472857503}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &472857508 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2249279855417450727, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!20 &519420031 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 2053396223207933191, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
@@ -4197,6 +4202,7 @@ MonoBehaviour:
   backButton: {fileID: 1405071765}
   settingButton: {fileID: 472857506}
   helloText: {fileID: 1467390169}
+  levelProgressContainer: {fileID: 472857508}
   loadingScreen: {fileID: 671447375}
   packSelectionScreen: {fileID: 595580293}
   tutorial: {fileID: 927069859}

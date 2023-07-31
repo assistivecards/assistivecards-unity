@@ -2903,11 +2903,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1486395992 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2650921870151468697, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
-  m_PrefabInstance: {fileID: 472857503}
-  m_PrefabAsset: {fileID: 0}
 --- !u!82 &1487501776 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 2053396222163338408, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
@@ -6726,7 +6721,7 @@ MonoBehaviour:
   backButton: {fileID: 562936003}
   packSelectionPanel: {fileID: 1837497526}
   helloText: {fileID: 1231408339}
-  speakerIcon: {fileID: 1486395992}
+  speakerIcon: {fileID: 472857507}
   homeButton: {fileID: 2110604922}
   levelProgressContainer: {fileID: 472857508}
   checkPointPanel: {fileID: 1275520836}

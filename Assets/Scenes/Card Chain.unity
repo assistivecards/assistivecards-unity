@@ -1076,6 +1076,11 @@ MonoBehaviour:
   tutorial: {fileID: 1978858820}
   packSelectionPanel: {fileID: 1226813740}
   levelChangeScreen: {fileID: 336342684}
+--- !u!1 &1036310985 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2249279855417450727, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1112654011
 GameObject:
   m_ObjectHideFlags: 0
@@ -2642,6 +2647,7 @@ MonoBehaviour:
   levelChangeScreen: {fileID: 336342684}
   packSelectionScreen: {fileID: 1226813740}
   helloText: {fileID: 178854002}
+  levelProgressContainer: {fileID: 1036310985}
   backButton: {fileID: 1300547355}
   settingButton: {fileID: 472857506}
   selectNewPackButton: {fileID: 378890270}

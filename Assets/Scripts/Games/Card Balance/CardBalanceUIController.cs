@@ -18,6 +18,7 @@ GameAPI gameAPI;
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject settingButton;
     [SerializeField] private GameObject helloText;
+    [SerializeField] private GameObject levelProgressContainer;
     [SerializeField] private GameObject loadingScreen;
     [SerializeField] private GameObject packSelectionScreen;
     [SerializeField] private GameObject tutorial;
@@ -43,6 +44,7 @@ GameAPI gameAPI;
             backButton.SetActive(true);
             settingButton.SetActive(true);
             helloText.SetActive(false);
+            levelProgressContainer.SetActive(false);
             loadingScreen.SetActive(false);
         }
     }
@@ -53,6 +55,7 @@ GameAPI gameAPI;
         backButton.SetActive(false);
         settingButton.SetActive(false);
         helloText.SetActive(false);
+        levelProgressContainer.SetActive(false);
         loadingScreen.SetActive(false);
     }
 
@@ -67,7 +70,7 @@ GameAPI gameAPI;
     public void LevelChangeScreenActivate()
     {
         levelChange.SetActive(true);
-        LeanTween.scale(levelChange, Vector3.one * 0.5f, 0.3f);
+        LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.3f);
     }
 
     public void CloseLevelChangePanel()
@@ -82,6 +85,7 @@ GameAPI gameAPI;
         backButton.SetActive(false);
         settingButton.SetActive(true);
         helloText.SetActive(true);
+        levelProgressContainer.SetActive(true);
     }
 
     public void DetectPremium()
@@ -128,6 +132,7 @@ GameAPI gameAPI;
         {
             loadingScreen.SetActive(true);
             helloText.SetActive(false);
+            levelProgressContainer.SetActive(false);
             settingButton.SetActive(false);
             backButton.SetActive(false);
         }

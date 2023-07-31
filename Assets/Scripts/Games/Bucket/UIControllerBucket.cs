@@ -13,6 +13,7 @@ public class UIControllerBucket : MonoBehaviour
     [SerializeField] private GameObject transitionScreen;
     [SerializeField] private GameObject packSelectionScreen;
     [SerializeField] private GameObject helloText;
+    [SerializeField] private GameObject levelProgressContainer;
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject settingButton;
     [SerializeField] private GameObject selectNewPackButton;
@@ -37,6 +38,7 @@ public class UIControllerBucket : MonoBehaviour
         }
         backButton.SetActive(true);
         helloText.SetActive(false);
+        levelProgressContainer.SetActive(false);
         settingButton.SetActive(true);
         levelChangeScreen.SetActive(false);
         collectCount.SetActive(true);
@@ -47,6 +49,7 @@ public class UIControllerBucket : MonoBehaviour
     {
         ResetScroll();
         helloText.SetActive(true);
+        levelProgressContainer.SetActive(true);
         settingButton.SetActive(true);
         backButton.SetActive(false);
         packSelectionScreen.SetActive(true);
@@ -59,6 +62,7 @@ public class UIControllerBucket : MonoBehaviour
         settingButton.SetActive(false);
         backButton.SetActive(false);
         helloText.SetActive(false);
+        levelProgressContainer.SetActive(false);
         levelChangeScreen.SetActive(true);
         LeanTween.scale(levelChangeScreen, Vector3.one * 0.6f, 0.5f);
         collectCount.SetActive(false);
@@ -70,6 +74,7 @@ public class UIControllerBucket : MonoBehaviour
         {
             backButton.SetActive(false);
             helloText.SetActive(false);
+            levelProgressContainer.SetActive(false);
             transitionScreen.SetActive(true);
             collectCount.SetActive(false);
         }

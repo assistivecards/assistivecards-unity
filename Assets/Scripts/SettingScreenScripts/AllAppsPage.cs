@@ -45,7 +45,7 @@ public class AllAppsPage : MonoBehaviour
         {
             var currentLanguageCode = await gameAPI.GetSystemLanguageCode();
 
-            tempAppElement.SetActive(true);
+            // tempAppElement.SetActive(true);
 
             if (appElementGameObject.Count != 0)
             {
@@ -75,11 +75,12 @@ public class AllAppsPage : MonoBehaviour
 
                 appElement.transform.GetChild(3).GetChild(0).GetComponent<Image>().sprite = Sprite.Create(appIcon, new Rect(0.0f, 0.0f, gameAPI.cachedAppIcons[i].width, gameAPI.cachedAppIcons[i].height), new Vector2(0.5f, 0.5f), 100.0f);
 
+                appElement.SetActive(true);
                 appElement.name = apps.apps[i].slug;
 
                 appElementGameObject.Add(appElement);
             }
-            tempAppElement.SetActive(false);
+            // tempAppElement.SetActive(false);
             didLanguageChange = false;
         }
 

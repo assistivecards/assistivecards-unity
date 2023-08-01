@@ -11,6 +11,7 @@ public class SortCardUIController : MonoBehaviour
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject settingButton;
     [SerializeField] private GameObject helloText;
+    [SerializeField] private GameObject levelProgressContainer;
     [SerializeField] private GameObject packSelectionPanel;
     [SerializeField] private GameObject levelEndScreen;
     [SerializeField] private GameObject loadingScreen;
@@ -38,6 +39,7 @@ public class SortCardUIController : MonoBehaviour
         backButton.SetActive(true);
         settingButton.SetActive(true);
         helloText.SetActive(false);
+        levelProgressContainer.SetActive(false);
         loadingScreen.SetActive(false);
     }
 
@@ -49,6 +51,7 @@ public class SortCardUIController : MonoBehaviour
         backButton.SetActive(false);
         settingButton.SetActive(false);
         helloText.SetActive(false);
+        levelProgressContainer.SetActive(false);
         loadingScreen.SetActive(false);
     }
 
@@ -57,6 +60,7 @@ public class SortCardUIController : MonoBehaviour
         backButton.SetActive(false);
         settingButton.SetActive(true);
         helloText.SetActive(true);
+        levelProgressContainer.SetActive(true);
         packSelectionPanel.SetActive(true);
         gameUI.SetActive(false);
         loadingScreen.SetActive(false);
@@ -98,6 +102,7 @@ public class SortCardUIController : MonoBehaviour
             backButton.SetActive(false);
             settingButton.SetActive(false);
             helloText.SetActive(false);
+            levelProgressContainer.SetActive(false);
             gameUI.SetActive(false);
             loadingScreen.SetActive(true);
         }

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Linq;
 
-public class PatternTrainBoardGenerator : MonoBehaviour
+public class PatternTrainBoardGenerator : MonoBehaviour 
 {
     GameAPI gameAPI;
 
@@ -101,8 +101,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
             CreatePositionsList();
             for(int j = 0; j < patternPositions.Count; j++)
             {
-                if(round == 0)
-                {
+                if(round == 0){
                     CheckRandom();
                     GameObject card = Instantiate(cardPrefab, patternPositions[j].transform.position, Quaternion.identity);
                     card.transform.SetParent( patternPositions[j].transform);
@@ -134,9 +133,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
                     LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-15, 15)), 0f);
                     cards.Add(card);
                     round ++;
-                }
-                else if(round == 2)
-                {
+                }else if(round == 2){
                     CheckRandom();
                     GameObject card = Instantiate(cardPrefab, patternPositions[j].transform.position, Quaternion.identity);
                     card.transform.SetParent( patternPositions[j].transform);
@@ -165,6 +162,8 @@ public class PatternTrainBoardGenerator : MonoBehaviour
                 cardTexture.filterMode = FilterMode.Bilinear;
 
                 card.transform.name = cardLocalNames[randomValueList[j]];
+                card.GetComponent<PatternTrainCardController>().draggable = true;
+                card.GetComponent<BoxCollider2D>().enabled = true;
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                 cards.Add(card);

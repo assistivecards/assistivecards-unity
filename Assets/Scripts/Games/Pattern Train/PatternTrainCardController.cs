@@ -4,9 +4,18 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerDownHandler
+public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
+    public string cardName;
+    public string trueCardName;
     public bool draggable = false;
+    private Vector3 startPosition;
+    private bool isPointerUp;
+
+    private void OnEnable() 
+    {
+        startPosition = this.transform.position;
+    }
 
     public void OnDrag(PointerEventData eventData)
     {
@@ -22,13 +31,28 @@ public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerD
         {
             transform.position = eventData.position;
         }
+        isPointerUp = false;
     }
 
-    private void OnCollisionEnter2D(Collision2D other) 
+    public void OnPointerUp(PointerEventData eventData) 
     {
-        if(other.collider.tag == "Card") 
+        isPointerUp = true;
+    }
+
+    private void OnCollisionStay2D(Collision2D other) 
+    {
+        if(other.collider.tag == "Card" && cardName == trueCardName && isPointerUp) 
         {
-            Debug.Log("Here");
+            LeanTween.move(this.gameObject, other.transform.position, 0.5f).setOnComplete(RotateCard);
         }
+        else if(cardName != trueCardName && isPointerUp)
+        {
+            LeanTween.move(this.gameObject, startPosition, 1f);
+        }
+    }
+
+    private void RotateCard()
+    {
+        LeanTween.rotate(this.gameObject, new Vector3(0, 0, 5f), 1f);
     }
 }

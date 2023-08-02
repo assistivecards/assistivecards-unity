@@ -44,6 +44,8 @@ public class PatternTrainBoardGenerator : MonoBehaviour
     [SerializeField] private Transform draggablePositionsParent;
     private List<GameObject> draggablePositions = new List<GameObject>();
 
+    public string trueCardName;
+
     private int round;
     private void Awake()
     {
@@ -150,7 +152,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
                     round = 0;
                 }
             }
-
+            GetTrueCard();
             for(int j = 0; j < draggablePositions.Count; j++)
             {
                 CheckRandom();
@@ -163,6 +165,8 @@ public class PatternTrainBoardGenerator : MonoBehaviour
 
                 card.transform.name = cardLocalNames[randomValueList[j]];
                 card.GetComponent<PatternTrainCardController>().draggable = true;
+                card.GetComponent<PatternTrainCardController>().cardName = cardNames[randomValueList[j]];
+                card.GetComponent<PatternTrainCardController>().trueCardName = trueCardName;
                 card.GetComponent<BoxCollider2D>().enabled = true;
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
@@ -175,6 +179,11 @@ public class PatternTrainBoardGenerator : MonoBehaviour
     public void GameUIActivate()
     {
         //uıController.GameUIActivate();
+    }
+
+    private void GetTrueCard()
+    {
+        trueCardName = cardLocalNames[randomValueList[1]].ToLower();
     }
 
     public void ClearBoard()

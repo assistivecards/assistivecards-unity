@@ -23,6 +23,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
     [SerializeField] GameObject helloText;
     [SerializeField] GameObject speakerIcon;
     [SerializeField] GameObject homeButton;
+    [SerializeField] GameObject levelProgressContainer;
     public static float onPointerUpTime;
     public static bool isPointerUp = false;
 
@@ -149,6 +150,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
         helloText.SetActive(true);
         speakerIcon.SetActive(true);
         homeButton.SetActive(true);
+        levelProgressContainer.SetActive(true);
         Invoke("EnableScrollRect", 0.26f);
     }
 
@@ -189,6 +191,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
             helloText.SetActive(true);
             speakerIcon.SetActive(true);
             homeButton.SetActive(true);
+            levelProgressContainer.SetActive(true);
         }
 
     }

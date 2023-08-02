@@ -114,6 +114,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
                     card.transform.name = cardLocalNames[randomValueList[0]];
                     card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                     card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                    LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-15, 15)), 0f);
                     cards.Add(card);
                     round ++;
                 }
@@ -130,6 +131,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
                     card.transform.name = cardLocalNames[randomValueList[1]];
                     card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                     card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                    LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-15, 15)), 0f);
                     cards.Add(card);
                     round ++;
                 }
@@ -146,6 +148,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
                     card.transform.name = cardLocalNames[randomValueList[2]];
                     card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                     card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                    LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-15, 15)), 0f);
                     cards.Add(card);
                     round = 0;
                 }

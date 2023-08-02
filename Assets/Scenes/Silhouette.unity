@@ -584,6 +584,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &334646183 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2249279855417450727, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 2071215980}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &511882043 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1242831489745571712, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -1252,6 +1257,7 @@ MonoBehaviour:
   helloText: {fileID: 2071215983}
   speakerIcon: {fileID: 1688367045}
   homeButton: {fileID: 1260879941}
+  levelProgressContainer: {fileID: 334646183}
 --- !u!61 &1459567364
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2354,7 +2360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorial: {fileID: 1171911730}
   packSelectionPanel: {fileID: 3692490791175725301}
-  levelChangeScreen: {fileID: 3692490791175725301}
+  levelChangeScreen: {fileID: 83695705}
 --- !u!114 &3312234165896495616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2841,7 +2847,7 @@ PrefabInstance:
     - target: {fileID: 3312037730716697936, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: settingButton
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2071215982}
     - target: {fileID: 3312037730716697936, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: canvasController
       value: 
@@ -3002,6 +3008,10 @@ PrefabInstance:
       propertyPath: canvasController
       value: 
       objectReference: {fileID: 1126817756}
+    - target: {fileID: 9209683489089641035, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
+      propertyPath: levelProgressContainer
+      value: 
+      objectReference: {fileID: 334646183}
     - target: {fileID: 9209683490062830043, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: loadingPanel
       value: 

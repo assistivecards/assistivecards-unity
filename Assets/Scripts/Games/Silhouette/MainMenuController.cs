@@ -16,6 +16,7 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] GameObject helloText;
     [SerializeField] GameObject speakerIcon;
     [SerializeField] GameObject homeButton;
+    [SerializeField] GameObject levelProgressContainer;
     [SerializeField] GameObject fadeInPanel;
     [SerializeField] PackSelectionScreenUIController packSelectionScreenUIController;
     [SerializeField] GameObject loadingPanel;
@@ -69,6 +70,7 @@ public class MainMenuController : MonoBehaviour
             helloText.SetActive(false);
             speakerIcon.SetActive(false);
             homeButton.SetActive(false);
+            levelProgressContainer.SetActive(false);
             await board.CacheCards(board.packSlug);
             // board.Invoke("GenerateRandomBoardAsync", 0.3f);
             await board.GenerateRandomBoardAsync();

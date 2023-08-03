@@ -13,7 +13,6 @@ public class LevelProgressTestScript : MonoBehaviour
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
-        gameAPI.SetExp(5);
     }
     private void OnEnable()
     {

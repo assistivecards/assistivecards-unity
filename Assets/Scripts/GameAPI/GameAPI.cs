@@ -30,6 +30,7 @@ public class GameAPI : MonoBehaviour
     public Sound[] sfxClips;
     public AudioSource musicSource, sfxSource;
     public AudioClip musicClip;
+    public int sessionExp;
 
     private async void Awake()
     {
@@ -1255,6 +1256,21 @@ public class GameAPI : MonoBehaviour
     public int CalculateLevel(int exp)
     {
         return (int)((Mathf.Pow((exp / 70f / 0.8f), 33f / 50f)) + 1);
+    }
+
+    public void AddSessionExp(int exp)
+    {
+        sessionExp += exp;
+    }
+
+    public void RemoveSessionExp(int exp)
+    {
+        sessionExp -= exp;
+    }
+
+    public void ResetSessionExp()
+    {
+        sessionExp = 0;
     }
 
 }

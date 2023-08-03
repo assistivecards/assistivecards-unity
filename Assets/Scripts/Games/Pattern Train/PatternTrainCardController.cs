@@ -6,15 +6,25 @@ using UnityEngine.UI;
 
 public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
+    GameAPI gameAPI;
+    [SerializeField] private PatternTrainBoardGenerator boardGenerator;
     public string cardName;
+    public string cardLocalName;
     public string trueCardName;
     public bool draggable = false;
     private Vector3 startPosition;
     private bool isPointerUp;
+    private bool match;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void OnEnable() 
     {
         startPosition = this.transform.position;
+        boardGenerator = FindObjectOfType<PatternTrainBoardGenerator>();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -37,22 +47,46 @@ public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerD
     public void OnPointerUp(PointerEventData eventData) 
     {
         isPointerUp = true;
+        if(!match)
+        {
+            MoveToStartPosition();
+        }
     }
 
     private void OnCollisionStay2D(Collision2D other) 
     {
-        if(other.collider.tag == "Card" && cardName == trueCardName && isPointerUp) 
+        if(isPointerUp && !match)
         {
-            LeanTween.move(this.gameObject, other.transform.position, 0.5f).setOnComplete(RotateCard);
-        }
-        else if(cardName != trueCardName && isPointerUp)
-        {
-            LeanTween.move(this.gameObject, startPosition, 1f);
+            if(other.collider.tag == "Card" && cardName == trueCardName) 
+            {
+                match = true;
+                LeanTween.move(this.gameObject, other.transform.position, 0.5f).setOnComplete(RotateCard);
+                gameAPI.Speak(cardLocalName);
+                Debug.Log(cardLocalName);
+                draggable = false;
+            }
+            else if(cardName != trueCardName)
+            {
+                MoveToStartPosition();
+            }
         }
     }
 
     private void RotateCard()
     {
         LeanTween.rotate(this.gameObject, new Vector3(0, 0, 5f), 1f);
+        boardGenerator.Invoke("LevelEnd", 0.5f);
+    }
+
+    private void MoveToStartPosition()
+    {
+        Debug.Log("HERE");
+        draggable = false;
+        LeanTween.move(this.gameObject, startPosition, 1f).setOnComplete(SetDragTrue);
+    }
+
+    private void SetDragTrue()
+    {
+        draggable = true;
     }
 }

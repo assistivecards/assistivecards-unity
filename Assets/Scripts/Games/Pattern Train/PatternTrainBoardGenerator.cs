@@ -11,7 +11,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
 {
     GameAPI gameAPI;
 
-    //[SerializeField] private uıController;
+    [SerializeField] private PatternTrainUIController uıController;
     [Header ("Cache Cards")]
     public string selectedLangCode;
     public List<string> cardLocalNames = new List<string>();
@@ -37,12 +37,21 @@ public class PatternTrainBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject tutorial;
 
     [Header ("Pattern Positions")]
-    [SerializeField] private Transform patternPositionsParent;
-    private List<GameObject> patternPositions = new List<GameObject>();
+    [SerializeField] private GameObject patternPosition1;
+    [SerializeField] private GameObject patternPosition2;
+    [SerializeField] private GameObject patternPosition3;
+    [SerializeField] private GameObject patternPosition4;
+    [SerializeField] private GameObject patternPosition5;
+    [SerializeField] private GameObject patternPosition6;
+    [SerializeField] private GameObject patternPosition7;
+    [SerializeField] private GameObject patternPosition8;
+    public List<GameObject> patternPositions = new List<GameObject>();
 
     [Header ("Draggable Positions")]
-    [SerializeField] private Transform draggablePositionsParent;
-    private List<GameObject> draggablePositions = new List<GameObject>();
+    [SerializeField] private GameObject draggablePosition1;
+    [SerializeField] private GameObject draggablePosition2;
+    [SerializeField] private GameObject draggablePosition3;
+    public List<GameObject> draggablePositions = new List<GameObject>();
 
     public string trueCardName;
 
@@ -85,20 +94,25 @@ public class PatternTrainBoardGenerator : MonoBehaviour
 
     private void CreatePositionsList()
     {
-        foreach(Transform child in patternPositionsParent)
-        {
-            patternPositions.Add(child.gameObject);
-        }
-        foreach(Transform child in draggablePositionsParent)
-        {
-            draggablePositions.Add(child.gameObject);
-        }
+        patternPositions.Add(patternPosition1);
+        patternPositions.Add(patternPosition2);
+        patternPositions.Add(patternPosition3);
+        patternPositions.Add(patternPosition4);
+        patternPositions.Add(patternPosition5);
+        patternPositions.Add(patternPosition6);
+        patternPositions.Add(patternPosition7);
+        patternPositions.Add(patternPosition8);
+
+        draggablePositions.Add(draggablePosition1);
+        draggablePositions.Add(draggablePosition2);
+        draggablePositions.Add(draggablePosition3);
+
     }
 
     public async void GeneratedBoardAsync()
     {
-        //if(uıController.canGenerate)
-        //{
+        if(uıController.canGenerate)
+        {
             await CacheCards();
             CreatePositionsList();
             for(int j = 0; j < patternPositions.Count; j++)
@@ -135,7 +149,9 @@ public class PatternTrainBoardGenerator : MonoBehaviour
                     LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-15, 15)), 0f);
                     cards.Add(card);
                     round ++;
-                }else if(round == 2){
+                }
+                else if(round == 2)
+                {
                     CheckRandom();
                     GameObject card = Instantiate(cardPrefab, patternPositions[j].transform.position, Quaternion.identity);
                     card.transform.SetParent( patternPositions[j].transform);
@@ -172,13 +188,13 @@ public class PatternTrainBoardGenerator : MonoBehaviour
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                 cards.Add(card);
             }
-        //}
-        Invoke("GameUIActivate", 0.3f);
+        }
+        Invoke("GameUIActivate", 0.1f);
     }
 
     public void GameUIActivate()
     {
-        //uıController.GameUIActivate();
+        uıController.GameUIActivate();
     }
 
     private void GetTrueCard()

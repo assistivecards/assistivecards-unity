@@ -183,6 +183,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
                 card.GetComponent<PatternTrainCardController>().draggable = true;
                 card.GetComponent<PatternTrainCardController>().cardName = cardNames[randomValueList[j]];
                 card.GetComponent<PatternTrainCardController>().trueCardName = trueCardName;
+                card.GetComponent<PatternTrainCardController>().cardLocalName = cardLocalNames[randomValueList[j]];
                 card.GetComponent<BoxCollider2D>().enabled = true;
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);

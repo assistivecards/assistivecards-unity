@@ -6,13 +6,20 @@ using UnityEngine.UI;
 
 public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
+    GameAPI gameAPI;
     [SerializeField] private PatternTrainBoardGenerator boardGenerator;
     public string cardName;
+    public string cardLocalName;
     public string trueCardName;
     public bool draggable = false;
     private Vector3 startPosition;
     private bool isPointerUp;
     private bool match;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void OnEnable() 
     {
@@ -48,15 +55,20 @@ public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerD
 
     private void OnCollisionStay2D(Collision2D other) 
     {
-        if(other.collider.tag == "Card" && cardName == trueCardName && isPointerUp) 
+        if(isPointerUp && !match)
         {
-            LeanTween.move(this.gameObject, other.transform.position, 0.5f).setOnComplete(RotateCard);
-            match = true;
-            draggable = false;
-        }
-        else if(cardName != trueCardName && isPointerUp)
-        {
-            MoveToStartPosition();
+            if(other.collider.tag == "Card" && cardName == trueCardName) 
+            {
+                match = true;
+                LeanTween.move(this.gameObject, other.transform.position, 0.5f).setOnComplete(RotateCard);
+                gameAPI.Speak(cardLocalName);
+                Debug.Log(cardLocalName);
+                draggable = false;
+            }
+            else if(cardName != trueCardName)
+            {
+                MoveToStartPosition();
+            }
         }
     }
 
@@ -68,6 +80,7 @@ public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerD
 
     private void MoveToStartPosition()
     {
+        Debug.Log("HERE");
         draggable = false;
         LeanTween.move(this.gameObject, startPosition, 1f).setOnComplete(SetDragTrue);
     }

@@ -11,6 +11,7 @@ public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerD
     public bool draggable = false;
     private Vector3 startPosition;
     private bool isPointerUp;
+    private bool match;
 
     private void OnEnable() 
     {
@@ -37,6 +38,10 @@ public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerD
     public void OnPointerUp(PointerEventData eventData) 
     {
         isPointerUp = true;
+        if(!match)
+        {
+            MoveToStartPosition();
+        }
     }
 
     private void OnCollisionStay2D(Collision2D other) 
@@ -44,15 +49,28 @@ public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerD
         if(other.collider.tag == "Card" && cardName == trueCardName && isPointerUp) 
         {
             LeanTween.move(this.gameObject, other.transform.position, 0.5f).setOnComplete(RotateCard);
+            match = true;
+            draggable = false;
         }
         else if(cardName != trueCardName && isPointerUp)
         {
-            LeanTween.move(this.gameObject, startPosition, 1f);
+            MoveToStartPosition();
         }
     }
 
     private void RotateCard()
     {
         LeanTween.rotate(this.gameObject, new Vector3(0, 0, 5f), 1f);
+    }
+
+    private void MoveToStartPosition()
+    {
+        draggable = false;
+        LeanTween.move(this.gameObject, startPosition, 1f).setOnComplete(SetDragTrue);
+    }
+
+    private void SetDragTrue()
+    {
+        draggable = true;
     }
 }

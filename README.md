@@ -586,7 +586,7 @@ public void AddExp(int exp)
 
 ## RemoveExp
 
-Takes in a single parameter of type integer named exp and removes it from the total experience point stored in PlayerPrefs.
+Takes in a single parameter of type integer named exp and subtracts it from the total experience point stored in PlayerPrefs.
 
 ```Csharp
 public void RemoveExp(int exp)
@@ -606,6 +606,30 @@ Takes in a single parameter of type integer named exp and calculates the corresp
 
 ```Csharp
 public int CalculateLevel(int exp)
+```
+
+## AddSessionExp
+
+Takes in a single parameter of type integer named exp and adds it to the total experience point of the current session.
+
+```Csharp
+public void AddSessionExp(int exp)
+```
+
+## RemoveSessionExp
+
+Takes in a single parameter of type integer named exp and subtracts it from the total experience point of the current session.
+
+```Csharp
+public void RemoveSessionExp(int exp)
+```
+
+## ResetSessionExp
+
+Resets the total experience point of the current session to 0.
+
+```Csharp
+public void ResetSessionExp()
 ```
 
 ## ClearAllPrefs

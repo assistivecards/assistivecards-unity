@@ -1258,16 +1258,25 @@ public class GameAPI : MonoBehaviour
         return (int)((Mathf.Pow((exp / 70f / 0.8f), 33f / 50f)) + 1);
     }
 
+    ///<summary>
+    ///Takes in a single parameter of type integer named exp and adds it to the total experience point of the current session.
+    ///</summary>
     public void AddSessionExp(int exp)
     {
         sessionExp += exp;
     }
 
+    ///<summary>
+    ///Takes in a single parameter of type integer named exp and subtracts it from the total experience point of the current session.
+    ///</summary>
     public void RemoveSessionExp(int exp)
     {
         sessionExp -= exp;
     }
 
+    ///<summary>
+    ///Resets the total experience point of the current session to 0.
+    ///</summary>
     public void ResetSessionExp()
     {
         sessionExp = 0;

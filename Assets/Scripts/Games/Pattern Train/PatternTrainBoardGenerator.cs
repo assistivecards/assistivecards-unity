@@ -54,8 +54,8 @@ public class PatternTrainBoardGenerator : MonoBehaviour
     public List<GameObject> draggablePositions = new List<GameObject>();
 
     public string trueCardName;
+    public int round;
 
-    private int round;
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
@@ -205,12 +205,21 @@ public class PatternTrainBoardGenerator : MonoBehaviour
     public void ClearBoard()
     {
         cardLocalNames.Clear();
-        cards.Clear();
         cardNames.Clear();
+        cardsList.Clear();
+        foreach (var card in cards)
+        {
+            Destroy(card);
+        }
+        cards.Clear();
 
         letterList.Clear();
         letterCardsNames.Clear();
 
         randomValueList.Clear();
+
+        patternPositions.Clear();
+        draggablePositions.Clear();
+        round = 0;
     }
 }

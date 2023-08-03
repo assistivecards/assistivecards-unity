@@ -26,6 +26,7 @@ public class ThrowCardsMatchDetection : MonoBehaviour
         if (other.transform.GetChild(0).GetComponent<Image>().sprite == transform.GetChild(0).GetComponent<SpriteRenderer>().sprite)
         {
             Debug.Log("CORRECT MATCH");
+            gameAPI.AddSessionExp(20);
             UIController.correctMatches++;
             UIController.backButton.GetComponent<Button>().interactable = false;
             gameAPI.PlaySFX("Success");
@@ -41,6 +42,22 @@ public class ThrowCardsMatchDetection : MonoBehaviour
 
             if (UIController.correctMatches == UIController.checkpointFrequency)
             {
+                if (gameAPI.sessionExp <= 50)
+                {
+                    gameAPI.sessionExp = 50;
+                }
+
+                else if (gameAPI.sessionExp >= 100)
+                {
+                    gameAPI.sessionExp = 100;
+                }
+
+                else
+                {
+                    gameAPI.sessionExp = 70;
+                }
+
+                gameAPI.AddExp(gameAPI.sessionExp);
                 UIController.Invoke("OpenCheckPointPanel", 1.3f);
             }
             else
@@ -51,6 +68,7 @@ public class ThrowCardsMatchDetection : MonoBehaviour
         else
         {
             Debug.Log("WRONG MATCH");
+            gameAPI.RemoveSessionExp(10);
             rb.sharedMaterial.bounciness = 0.6f;
         }
     }

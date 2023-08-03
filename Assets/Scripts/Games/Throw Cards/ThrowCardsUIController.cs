@@ -46,6 +46,7 @@ public class ThrowCardsUIController : MonoBehaviour
 
     IEnumerator CloseCheckPointPanelCoroutine()
     {
+        gameAPI.ResetSessionExp();
         LeanTween.scale(checkPointPanel, Vector3.zero, 0.25f);
         yield return new WaitForSeconds(0.5f);
         checkPointPanel.SetActive(false);
@@ -59,6 +60,7 @@ public class ThrowCardsUIController : MonoBehaviour
 
     IEnumerator ChooseNewPackButtonCoroutine()
     {
+        gameAPI.ResetSessionExp();
         board.ScaleImagesDown();
         backButton.SetActive(false);
         CloseCheckpointPanel();
@@ -110,6 +112,7 @@ public class ThrowCardsUIController : MonoBehaviour
     IEnumerator BackButtonClickCoroutine()
     {
         ResetCounter();
+        gameAPI.ResetSessionExp();
         board.ScaleImagesDown();
         backButton.SetActive(false);
         yield return new WaitForSeconds(0.25f);

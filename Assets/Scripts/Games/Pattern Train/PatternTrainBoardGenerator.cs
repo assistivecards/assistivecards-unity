@@ -202,6 +202,12 @@ public class PatternTrainBoardGenerator : MonoBehaviour
         trueCardName = cardLocalNames[randomValueList[1]].ToLower();
     }
 
+    public void LevelEnd()
+    {
+        ClearBoard();
+        uıController.LevelChangeScreenActivate();
+    }
+
     public void ClearBoard()
     {
         cardLocalNames.Clear();
@@ -220,6 +226,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
 
         patternPositions.Clear();
         draggablePositions.Clear();
+        trueCardName = null;
         round = 0;
     }
 }

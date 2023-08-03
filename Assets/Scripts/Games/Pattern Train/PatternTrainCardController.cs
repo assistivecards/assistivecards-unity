@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
+    [SerializeField] private PatternTrainBoardGenerator boardGenerator;
     public string cardName;
     public string trueCardName;
     public bool draggable = false;
@@ -16,6 +17,7 @@ public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerD
     private void OnEnable() 
     {
         startPosition = this.transform.position;
+        boardGenerator = FindObjectOfType<PatternTrainBoardGenerator>();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -61,6 +63,7 @@ public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerD
     private void RotateCard()
     {
         LeanTween.rotate(this.gameObject, new Vector3(0, 0, 5f), 1f);
+        boardGenerator.Invoke("LevelEnd", 0.5f);
     }
 
     private void MoveToStartPosition()

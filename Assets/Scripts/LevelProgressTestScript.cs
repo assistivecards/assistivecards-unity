@@ -8,6 +8,7 @@ public class LevelProgressTestScript : MonoBehaviour
 {
     private GameAPI gameAPI;
     [SerializeField] TMP_Text levelText;
+    [SerializeField] TMP_Text levelUpText;
     [SerializeField] Slider progressBar;
     [SerializeField] int levelOnDisable;
     [SerializeField] int levelOnEnable;
@@ -41,6 +42,7 @@ public class LevelProgressTestScript : MonoBehaviour
         if (levelOnEnable > levelOnDisable && transform.parent.name == "LevelChangeScreen")
         {
             Debug.Log("LEVEL UP!");
+            gameObject.GetComponent<Animation>().Play();
             confetti.Play();
         }
 
@@ -50,7 +52,10 @@ public class LevelProgressTestScript : MonoBehaviour
     private void OnDisable()
     {
         levelOnDisable = gameAPI.CalculateLevel(gameAPI.GetExp());
+        gameObject.GetComponent<Animation>().Stop();
         confetti.Stop();
+        LeanTween.value(levelText.alpha, 1, .0001f).setOnUpdate((float val) => { levelText.alpha = val; });
+        LeanTween.value(levelUpText.alpha, 0, .0001f).setOnUpdate((float val) => { levelUpText.alpha = val; });
     }
 
 }

@@ -9,17 +9,22 @@ public class LevelProgressTestScript : MonoBehaviour
     private GameAPI gameAPI;
     [SerializeField] TMP_Text levelText;
     [SerializeField] Slider progressBar;
+    [SerializeField] int levelOnDisable;
+    [SerializeField] int levelOnEnable;
+    [SerializeField] ParticleSystem confetti;
 
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+        levelOnDisable = gameAPI.levelOnStart;
     }
+
     private void OnEnable()
     {
-        var level = gameAPI.CalculateLevel(gameAPI.GetExp());
-        var minExp = gameAPI.CalculateExp(level);
-        var maxExp = gameAPI.CalculateExp(level + 1);
-        levelText.text = "Level " + level;
+        levelOnEnable = gameAPI.CalculateLevel(gameAPI.GetExp());
+        var minExp = gameAPI.CalculateExp(levelOnEnable);
+        var maxExp = gameAPI.CalculateExp(levelOnEnable + 1);
+        levelText.text = "Level " + levelOnEnable;
 
         progressBar.minValue = minExp;
         progressBar.maxValue = maxExp;
@@ -33,7 +38,19 @@ public class LevelProgressTestScript : MonoBehaviour
             progressBar.value = gameAPI.GetExp();
         }
 
+        if (levelOnEnable > levelOnDisable && transform.parent.name == "LevelChangeScreen")
+        {
+            Debug.Log("LEVEL UP!");
+            confetti.Play();
+        }
 
+
+    }
+
+    private void OnDisable()
+    {
+        levelOnDisable = gameAPI.CalculateLevel(gameAPI.GetExp());
+        confetti.Stop();
     }
 
 }

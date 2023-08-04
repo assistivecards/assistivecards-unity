@@ -5381,6 +5381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelText: {fileID: 1549455957565660094}
   progressBar: {fileID: 518415721925566766}
+  confetti: {fileID: 5124436505776147004}
 --- !u!1 &8192860024070186239
 GameObject:
   m_ObjectHideFlags: 0

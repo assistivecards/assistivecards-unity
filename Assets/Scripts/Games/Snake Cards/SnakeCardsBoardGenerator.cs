@@ -11,7 +11,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
 {
     GameAPI gameAPI;
 
-    [SerializeField] private PatternTrainUIController uıController;
+    [SerializeField] private SnakeCardsUIController uıController;
     [Header ("Cache Cards")]
     public string selectedLangCode;
     public List<string> cardLocalNames = new List<string>();
@@ -96,8 +96,8 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
 
     public async void GeneratedBoardAsync()
     {
-        // if(uıController.canGenerate)
-        // {
+        if(uıController.canGenerate)
+        {
             await CacheCards();
             CreatePositionsList();
             for(int j = 0; j < cardPositions.Count; j++)
@@ -116,13 +116,13 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
                 LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-15, 15)), 0f);
                 cards.Add(card);
             }
-        //}
+        }
         Invoke("GameUIActivate", 0.1f);
     }
 
     public void GameUIActivate()
     {
-        //uıController.GameUIActivate();
+        uıController.GameUIActivate();
     }
 
     public void LevelEnd()

@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PatternTrainUIController : MonoBehaviour
+public class SnakeCardsUIController : MonoBehaviour
 {
     GameAPI gameAPI;
 
     [Header ("Scripts")]
-    [SerializeField] private PatternTrainBoardGenerator boardGenerator;
+    [SerializeField] private SnakeCardsBoardGenerator boardGenerator;
     [SerializeField] private PackSelectionPanel packSelectionPanelScript;
 
     [Header ("Panels")]

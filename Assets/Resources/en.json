@@ -247,5 +247,6 @@
 	"choose_card_text":"Choose the $1 card",
 	"sort_cards_text":"Sort the cards in alphabetical order",
 	"tap_cards_text":"Tap on the $1 cards",
-	"throw_card_text":"Throw the $1 card to the matching card"
+	"throw_card_text":"Throw the $1 card to the matching card",
+	"level_up_text":"Level Up!"
 }

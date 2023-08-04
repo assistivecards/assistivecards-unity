@@ -31,10 +31,12 @@ public class GameAPI : MonoBehaviour
     public AudioSource musicSource, sfxSource;
     public AudioClip musicClip;
     public int sessionExp;
+    public int levelOnStart;
 
     private async void Awake()
     {
         assistiveCardsSDK = Camera.main.GetComponent<AssistiveCardsSDK.AssistiveCardsSDK>();
+        levelOnStart = CalculateLevel(GetExp());
         cachePacks = CachePacks();
         cacheData = CacheData();
         cacheTwelveGameIcons = CacheTwelveGameIcons();

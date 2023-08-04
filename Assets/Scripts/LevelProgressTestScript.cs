@@ -23,7 +23,16 @@ public class LevelProgressTestScript : MonoBehaviour
 
         progressBar.minValue = minExp;
         progressBar.maxValue = maxExp;
-        progressBar.value = gameAPI.GetExp();
+
+        if (transform.parent.name == "LevelChangeScreen")
+        {
+            LeanTween.value(gameObject, progressBar.value, gameAPI.GetExp(), .5f).setOnUpdate((float val) => { progressBar.value = val; });
+        }
+        else
+        {
+            progressBar.value = gameAPI.GetExp();
+        }
+
 
     }
 

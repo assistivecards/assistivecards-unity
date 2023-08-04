@@ -47,10 +47,7 @@ public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerD
     public void OnPointerUp(PointerEventData eventData) 
     {
         isPointerUp = true;
-        if(!match)
-        {
-            MoveToStartPosition();
-        }
+        Invoke("MoveToStartPosition", 1f);
     }
 
     private void OnCollisionStay2D(Collision2D other) 
@@ -65,7 +62,7 @@ public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerD
                 Debug.Log(cardLocalName);
                 draggable = false;
             }
-            else if(cardName != trueCardName)
+            else
             {
                 MoveToStartPosition();
             }
@@ -80,9 +77,11 @@ public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerD
 
     private void MoveToStartPosition()
     {
-        Debug.Log("HERE");
-        draggable = false;
-        LeanTween.move(this.gameObject, startPosition, 1f).setOnComplete(SetDragTrue);
+        if(!match)
+        {
+            draggable = false;
+            LeanTween.move(this.gameObject, startPosition, 1f).setOnComplete(SetDragTrue);
+        }
     }
 
     private void SetDragTrue()

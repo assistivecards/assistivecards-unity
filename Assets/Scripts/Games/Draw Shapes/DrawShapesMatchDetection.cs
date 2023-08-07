@@ -25,7 +25,7 @@ public class DrawShapesMatchDetection : MonoBehaviour
         UIController = GameObject.Find("GamePanel").GetComponent<DrawShapesUIController>();
     }
 
-    private void OnEnable() 
+    private void OnEnable()
     {
         Invoke("SetTutorialPath", 0.5f);
     }
@@ -41,6 +41,7 @@ public class DrawShapesMatchDetection : MonoBehaviour
         if (other.tag == "LastWaypoint" && dragHandle.path.gameObject == dragHandle.correctPath && dragHandle.canDrag)
         {
             Debug.Log("Correct Match!");
+            gameAPI.AddSessionExp();
             UIController.correctMatches++;
             UIController.backButton.GetComponent<Button>().interactable = false;
             gameAPI.PlaySFX("Success");
@@ -60,6 +61,7 @@ public class DrawShapesMatchDetection : MonoBehaviour
 
             if (UIController.correctMatches == UIController.checkpointFrequency)
             {
+                gameAPI.AddExp(gameAPI.sessionExp);
                 UIController.Invoke("OpenCheckPointPanel", 1.3f);
             }
             else
@@ -69,6 +71,7 @@ public class DrawShapesMatchDetection : MonoBehaviour
         else if (other.tag == "LastWaypoint" && dragHandle.path.gameObject != dragHandle.correctPath && dragHandle.canDrag)
         {
             Debug.Log("Wrong Match!");
+            gameAPI.RemoveSessionExp();
             gameObject.GetComponent<DrawShapesDragHandle>().enabled = false;
             LeanTween.scale(gameObject, Vector3.zero, .25f);
 

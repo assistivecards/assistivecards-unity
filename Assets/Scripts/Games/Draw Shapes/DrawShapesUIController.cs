@@ -62,6 +62,7 @@ public class DrawShapesUIController : MonoBehaviour
 
     IEnumerator CloseCheckPointPanelCoroutine()
     {
+        gameAPI.ResetSessionExp();
         LeanTween.scale(checkPointPanel, Vector3.zero, 0.25f);
         yield return new WaitForSeconds(0.5f);
         checkPointPanel.SetActive(false);
@@ -75,6 +76,7 @@ public class DrawShapesUIController : MonoBehaviour
 
     IEnumerator ChooseNewPackButtonCoroutine()
     {
+        gameAPI.ResetSessionExp();
         backButton.SetActive(false);
         CloseCheckpointPanel();
         yield return new WaitForSeconds(0.25f);
@@ -109,6 +111,7 @@ public class DrawShapesUIController : MonoBehaviour
     IEnumerator BackButtonClickCoroutine()
     {
         ResetCounter();
+        gameAPI.ResetSessionExp();
         for (int i = 0; i < board.handles.Count; i++)
         {
             board.handles[i].GetComponent<CircleCollider2D>().enabled = false;

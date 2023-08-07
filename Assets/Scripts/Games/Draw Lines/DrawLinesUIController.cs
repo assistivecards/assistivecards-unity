@@ -32,6 +32,7 @@ public class DrawLinesUIController : MonoBehaviour
     IEnumerator BackButtonClickCoroutine()
     {
         ResetCounter();
+        gameAPI.ResetSessionExp();
         board.ClearRandomCards();
         board.ScaleImagesDown();
         backButton.SetActive(false);
@@ -87,6 +88,7 @@ public class DrawLinesUIController : MonoBehaviour
 
     IEnumerator CloseCheckPointPanelCoroutine()
     {
+        gameAPI.ResetSessionExp();
         LeanTween.scale(checkPointPanel, Vector3.zero, 0.25f);
         yield return new WaitForSeconds(0.5f);
         checkPointPanel.SetActive(false);
@@ -100,6 +102,7 @@ public class DrawLinesUIController : MonoBehaviour
 
     IEnumerator ChooseNewPackButtonCoroutine()
     {
+        gameAPI.ResetSessionExp();
         backButton.SetActive(false);
         CloseCheckpointPanel();
         yield return new WaitForSeconds(0.25f);

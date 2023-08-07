@@ -35,6 +35,7 @@ public class DrawLinesMatchDetection : MonoBehaviour
             UIController.correctMatches++;
             UIController.backButton.GetComponent<Button>().interactable = false;
             Debug.Log("Correct Match!");
+            gameAPI.AddSessionExp();
             gameAPI.PlaySFX("Success");
             gameObject.GetComponent<DragHandle>().enabled = false;
             LeanTween.scale(gameObject, Vector3.zero, .25f);
@@ -49,6 +50,7 @@ public class DrawLinesMatchDetection : MonoBehaviour
             board.Invoke("ClearBoard", 1.05f);
             if (UIController.correctMatches == UIController.checkpointFrequency)
             {
+                gameAPI.AddExp(gameAPI.sessionExp);
                 UIController.Invoke("OpenCheckPointPanel", 1.05f);
             }
             else
@@ -58,6 +60,7 @@ public class DrawLinesMatchDetection : MonoBehaviour
         {
             isMatched = false;
             Debug.Log("Wrong Match!");
+            gameAPI.RemoveSessionExp();
             gameObject.GetComponent<DragHandle>().enabled = false;
             LeanTween.scale(gameObject, Vector3.zero, .25f);
             for (int i = 0; i < dragHandle.waypoints.Count; i++)

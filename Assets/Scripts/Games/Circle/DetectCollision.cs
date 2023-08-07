@@ -41,6 +41,7 @@ public class DetectCollision : MonoBehaviour
         else
         {
             //Wrong Match
+            gameAPI.RemoveSessionExp();
             FadeOutAndDestroyLine();
         }
 
@@ -58,6 +59,7 @@ public class DetectCollision : MonoBehaviour
         {
             //Correct Match!
             UIController.correctMatches++;
+            gameAPI.AddSessionExp();
             backButton.GetComponent<Button>().interactable = false;
             Debug.Log(UIController.correctMatches);
             drawManager.gameObject.SetActive(false);
@@ -71,6 +73,7 @@ public class DetectCollision : MonoBehaviour
             if (UIController.correctMatches == 10)
             {
                 // OpenCheckPointPanel();
+                gameAPI.AddExp(gameAPI.sessionExp);
                 UIController.Invoke("OpenCheckPointPanel", 1.25f);
             }
             else

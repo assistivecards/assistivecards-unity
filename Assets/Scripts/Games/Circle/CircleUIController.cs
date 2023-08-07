@@ -41,6 +41,7 @@ public class CircleUIController : MonoBehaviour
     IEnumerator BackButtonClickCoroutine()
     {
         ResetCounter();
+        gameAPI.ResetSessionExp();
         board.ScaleImagesDown();
         backButton.SetActive(false);
         yield return new WaitForSeconds(0.25f);
@@ -80,6 +81,7 @@ public class CircleUIController : MonoBehaviour
 
     IEnumerator CloseCheckPointPanelCoroutine()
     {
+        gameAPI.ResetSessionExp();
         LeanTween.scale(checkPointPanel, Vector3.zero, 0.25f);
         yield return new WaitForSeconds(0.5f);
         checkPointPanel.SetActive(false);
@@ -93,6 +95,7 @@ public class CircleUIController : MonoBehaviour
 
     IEnumerator ChooseNewPackButtonCoroutine()
     {
+        gameAPI.ResetSessionExp();
         board.ScaleImagesDown();
         // LeanTween.scale(backButton, Vector3.zero, 0.25f);
         backButton.SetActive(false);

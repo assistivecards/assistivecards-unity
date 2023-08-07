@@ -12,7 +12,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     GameAPI gameAPI;
     [Header ("Classes")]
     [SerializeField] private SnakeCardsUIController uıController;
-    [SerializeField] private SnakeCardSnakeController snakeController;
+    
     [Header ("Cache Cards")]
     public string selectedLangCode;
     public List<string> cardLocalNames = new List<string>();
@@ -118,7 +118,6 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
                 LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-15, 15)), 0f);
                 cards.Add(card);
             }
-            snakeController.GenerateSnake();
             Invoke("GameUIActivate", 0.1f);
         }
     }

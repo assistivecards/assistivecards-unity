@@ -62,6 +62,7 @@ public class DragInsideMatchDetection : MonoBehaviour
         if (correctCardsInside.Count == 2 && wrongCardsInside.Count == 0)
         {
             Debug.Log("LEVEL COMPLETED");
+            gameAPI.AddSessionExp();
             correctMatches++;
             UIController.backButton.GetComponent<Button>().interactable = false;
 
@@ -79,6 +80,7 @@ public class DragInsideMatchDetection : MonoBehaviour
             if (correctMatches == 5)
             {
                 board.Invoke("ScaleFrameDown", 1f);
+                gameAPI.AddExp(gameAPI.sessionExp);
                 UIController.Invoke("OpenCheckPointPanel", 1.3f);
             }
 
@@ -90,6 +92,7 @@ public class DragInsideMatchDetection : MonoBehaviour
         else if (cardsInside.Count >= 2 && wrongCardsInside.Count != 0)
         {
             Debug.Log("LEVEL NOT COMPLETED");
+            gameAPI.RemoveSessionExp();
             LeanTween.color(transform.GetChild(0).GetComponent<Image>().rectTransform, red, .2f);
         }
 

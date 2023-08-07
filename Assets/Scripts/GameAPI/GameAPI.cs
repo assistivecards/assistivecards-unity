@@ -822,6 +822,21 @@ public class GameAPI : MonoBehaviour
     ///</summary>
     public void AddExp(int exp)
     {
+        if (exp <= 50)
+        {
+            exp = 50;
+        }
+
+        else if (exp >= 100)
+        {
+            exp = 100;
+        }
+
+        else
+        {
+            exp = 70;
+        }
+
         var totalExp = GetExp();
         totalExp += exp;
         SetExp(totalExp);

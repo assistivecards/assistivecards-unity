@@ -42,20 +42,6 @@ public class ThrowCardsMatchDetection : MonoBehaviour
 
             if (UIController.correctMatches == UIController.checkpointFrequency)
             {
-                if (gameAPI.sessionExp <= 50)
-                {
-                    gameAPI.sessionExp = 50;
-                }
-
-                else if (gameAPI.sessionExp >= 100)
-                {
-                    gameAPI.sessionExp = 100;
-                }
-
-                else
-                {
-                    gameAPI.sessionExp = 70;
-                }
 
                 gameAPI.AddExp(gameAPI.sessionExp);
                 UIController.Invoke("OpenCheckPointPanel", 1.3f);

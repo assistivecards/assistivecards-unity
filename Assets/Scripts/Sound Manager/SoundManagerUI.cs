@@ -42,13 +42,13 @@ public class SoundManagerUI : MonoBehaviour
 
     private void Update() 
     {
-        if(Input.GetKeyDown(KeyCode.M) == true &&  musicSource.volume > 0f)
+        if(Input.GetKeyDown(KeyCode.M) == true)
         {
-            musicSource.volume = 0;
-        }
-        else if(Input.GetKeyDown(KeyCode.M) == true && musicSource.volume <= 0)
-        {
-            musicSource.volume = 0.6f;
+            if(musicSource.volume > 0f) { musicSource.volume = 0; }
+            else if(musicSource.volume <= 0) { musicSource.volume = 0.6f; }
+
+            if(sfxSource.volume > 0f) { sfxSource.volume = 0; }
+            else if(sfxSource.volume <= 0) { sfxSource.volume = 0.6f; }
         }
     }
 }

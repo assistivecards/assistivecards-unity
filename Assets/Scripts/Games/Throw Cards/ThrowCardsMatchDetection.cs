@@ -26,7 +26,7 @@ public class ThrowCardsMatchDetection : MonoBehaviour
         if (other.transform.GetChild(0).GetComponent<Image>().sprite == transform.GetChild(0).GetComponent<SpriteRenderer>().sprite)
         {
             Debug.Log("CORRECT MATCH");
-            gameAPI.AddSessionExp(20);
+            gameAPI.AddSessionExp();
             UIController.correctMatches++;
             UIController.backButton.GetComponent<Button>().interactable = false;
             gameAPI.PlaySFX("Success");
@@ -68,7 +68,7 @@ public class ThrowCardsMatchDetection : MonoBehaviour
         else
         {
             Debug.Log("WRONG MATCH");
-            gameAPI.RemoveSessionExp(10);
+            gameAPI.RemoveSessionExp();
             rb.sharedMaterial.bounciness = 0.6f;
         }
     }

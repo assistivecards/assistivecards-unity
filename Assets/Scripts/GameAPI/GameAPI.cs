@@ -31,6 +31,8 @@ public class GameAPI : MonoBehaviour
     public AudioSource musicSource, sfxSource;
     public AudioClip musicClip;
     public int sessionExp;
+    public int correctMatchExp;
+    public int wrongMatchExp;
     public int levelOnStart;
 
     private async void Awake()
@@ -1263,17 +1265,17 @@ public class GameAPI : MonoBehaviour
     ///<summary>
     ///Takes in a single parameter of type integer named exp and adds it to the total experience point of the current session.
     ///</summary>
-    public void AddSessionExp(int exp)
+    public void AddSessionExp()
     {
-        sessionExp += exp;
+        sessionExp += correctMatchExp;
     }
 
     ///<summary>
     ///Takes in a single parameter of type integer named exp and subtracts it from the total experience point of the current session.
     ///</summary>
-    public void RemoveSessionExp(int exp)
+    public void RemoveSessionExp()
     {
-        sessionExp -= exp;
+        sessionExp -= wrongMatchExp;
     }
 
     ///<summary>

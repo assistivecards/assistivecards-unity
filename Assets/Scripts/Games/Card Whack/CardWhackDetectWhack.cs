@@ -27,6 +27,7 @@ public class CardWhackDetectWhack : MonoBehaviour, IPointerClickHandler
         if (transform.GetChild(0).GetComponent<Image>().sprite == board.randomSprites[0] && !isClicked)
         {
             Debug.Log("CORRECT CARD");
+            gameAPI.AddSessionExp();
             isClicked = true;
             scoreManager.InreaseScore();
             ReadCard();
@@ -36,6 +37,7 @@ public class CardWhackDetectWhack : MonoBehaviour, IPointerClickHandler
         else if (transform.GetChild(0).GetComponent<Image>().sprite != board.randomSprites[0] && !isClicked)
         {
             Debug.Log("WRONG CARD");
+            gameAPI.RemoveSessionExp();
             isClicked = true;
             scoreManager.DecreaseScore();
             gameAPI.PlaySFX("Pickup");

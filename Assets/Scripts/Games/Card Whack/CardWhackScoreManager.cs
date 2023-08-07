@@ -14,6 +14,12 @@ public class CardWhackScoreManager : MonoBehaviour
     public int levelsCompleted;
     private CardWhackUIController UIController;
     public int checkpointFrequency;
+    private GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void Start()
     {
@@ -40,6 +46,7 @@ public class CardWhackScoreManager : MonoBehaviour
 
                 if (levelsCompleted == checkpointFrequency)
                 {
+                    gameAPI.AddExp(gameAPI.sessionExp);
                     UIController.Invoke("OpenCheckPointPanel", 1.3f);
                 }
                 else

@@ -88,8 +88,8 @@ GameObject:
   - component: {fileID: 4754636353170259157}
   - component: {fileID: 8713422125653079530}
   m_Layer: 5
-  m_Name: level_up_text
-  m_TagString: Plain Text
+  m_Name: LevelUpText
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 5981502
+    rgba: 794510654
   m_fontColor: {r: 0.24313726, g: 0.27058825, b: 0.35686275, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -286,7 +286,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4284171582
+    rgba: 5981502
   m_fontColor: {r: 0.24313726, g: 0.27058825, b: 0.35686275, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

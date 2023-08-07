@@ -48,6 +48,7 @@ public class AlphabetOrderMatchDetection : MonoBehaviour, IPointerUpHandler
         if (isMatched)
         {
             gameAPI.PlaySFX("Success");
+            gameAPI.AddSessionExp();
             gameObject.GetComponent<AlphabetOrderDraggableCard>().enabled = false;
             transform.SetParent(matchedSlotTransform);
             LeanTween.move(gameObject, matchedSlotTransform, 0.25f);
@@ -65,6 +66,7 @@ public class AlphabetOrderMatchDetection : MonoBehaviour, IPointerUpHandler
 
                 if (UIController.levelsCompleted == 5)
                 {
+                    gameAPI.AddExp(gameAPI.sessionExp);
                     UIController.Invoke("OpenCheckPointPanel", 1.3f);
                 }
                 else
@@ -75,6 +77,7 @@ public class AlphabetOrderMatchDetection : MonoBehaviour, IPointerUpHandler
 
         else
         {
+            gameAPI.RemoveSessionExp();
             transform.SetParent(GameObject.Find(gameObject.GetComponent<AlphabetOrderDraggableCard>().parentName).transform);
             LeanTween.move(gameObject, transform.parent.position, .5f);
         }

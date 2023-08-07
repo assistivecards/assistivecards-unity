@@ -10,8 +10,9 @@ using System.Linq;
 public class SnakeCardsBoardGenerator : MonoBehaviour
 {
     GameAPI gameAPI;
-
+    [Header ("Classes")]
     [SerializeField] private SnakeCardsUIController uıController;
+    [SerializeField] private SnakeCardSnakeController snakeController;
     [Header ("Cache Cards")]
     public string selectedLangCode;
     public List<string> cardLocalNames = new List<string>();
@@ -113,11 +114,13 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
                 card.transform.name = cardLocalNames[randomValueList[j]];
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                LeanTween.scale(card, Vector3.one * 0.75f, 0);
                 LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-15, 15)), 0f);
                 cards.Add(card);
             }
+            snakeController.GenerateSnake();
+            Invoke("GameUIActivate", 0.1f);
         }
-        Invoke("GameUIActivate", 0.1f);
     }
 
     public void GameUIActivate()

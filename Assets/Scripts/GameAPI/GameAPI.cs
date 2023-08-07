@@ -818,7 +818,7 @@ public class GameAPI : MonoBehaviour
     }
 
     ///<summary>
-    ///Takes in a single parameter of type integer named exp and adds it to the total experience point stored in PlayerPrefs.
+    ///Takes in a single parameter of type integer named exp,fits it into a range and adds it to the total experience point stored in PlayerPrefs.
     ///</summary>
     public void AddExp(int exp)
     {
@@ -1278,7 +1278,7 @@ public class GameAPI : MonoBehaviour
     }
 
     ///<summary>
-    ///Takes in a single parameter of type integer named exp and adds it to the total experience point of the current session.
+    ///Adds the amount of exp set via inspector to the total experience point of the current session.
     ///</summary>
     public void AddSessionExp()
     {
@@ -1286,7 +1286,7 @@ public class GameAPI : MonoBehaviour
     }
 
     ///<summary>
-    ///Takes in a single parameter of type integer named exp and subtracts it from the total experience point of the current session.
+    ///Subtracts the amount of exp set via inspector from the total experience point of the current session.
     ///</summary>
     public void RemoveSessionExp()
     {

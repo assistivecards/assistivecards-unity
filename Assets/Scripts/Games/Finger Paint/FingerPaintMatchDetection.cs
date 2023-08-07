@@ -28,6 +28,7 @@ public class FingerPaintMatchDetection : MonoBehaviour
         if (paintManager.isFullyColorized && gameObject.tag == "CorrectCard")
         {
             Debug.Log("Correct Match!");
+            gameAPI.AddSessionExp();
             UIController.correctMatches++;
             for (int i = 0; i < coloredImages.Length; i++)
             {
@@ -42,6 +43,7 @@ public class FingerPaintMatchDetection : MonoBehaviour
             board.Invoke("ClearBoard", 1.30f);
             if (UIController.correctMatches == UIController.checkpointFrequency)
             {
+                gameAPI.AddExp(gameAPI.sessionExp);
                 UIController.Invoke("OpenCheckPointPanel", 1.30f);
             }
             else
@@ -50,6 +52,7 @@ public class FingerPaintMatchDetection : MonoBehaviour
         else if (paintManager.isFullyColorized && gameObject.tag == "WrongCard")
         {
             Debug.Log("Wrong Match!");
+            gameAPI.RemoveSessionExp();
         }
     }
 

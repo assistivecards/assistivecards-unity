@@ -34,6 +34,7 @@ public class ChooseMatchDetection : MonoBehaviour, IPointerClickHandler
                 }
 
                 UIController.correctMatches++;
+                gameAPI.AddSessionExp();
                 UIController.backButton.GetComponent<Button>().interactable = false;
                 gameAPI.PlaySFX("Success");
                 board.Invoke("ReadCard", 0.25f);
@@ -43,6 +44,7 @@ public class ChooseMatchDetection : MonoBehaviour, IPointerClickHandler
 
                 if (UIController.correctMatches == UIController.checkpointFrequency)
                 {
+                    gameAPI.AddExp(gameAPI.sessionExp);
                     UIController.Invoke("OpenCheckPointPanel", 1.3f);
                 }
                 else
@@ -50,6 +52,7 @@ public class ChooseMatchDetection : MonoBehaviour, IPointerClickHandler
             }
             else
             {
+                gameAPI.RemoveSessionExp();
                 FadeCardParent();
             }
 

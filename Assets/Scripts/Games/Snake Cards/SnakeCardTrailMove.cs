@@ -36,6 +36,6 @@ public class SnakeCardTrailMove : MonoBehaviour, IDragHandler, IBeginDragHandler
     private void Update() 
     {
         Vector2 trailPos = Camera.main.ScreenToWorldPoint(touchPosition);
-        snake.transform.position = trailPos;
+        snake.transform.position += transform.right * Time.deltaTime * 0.5f;
     }
 }

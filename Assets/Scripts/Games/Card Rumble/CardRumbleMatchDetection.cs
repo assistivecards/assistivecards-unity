@@ -28,6 +28,7 @@ public class CardRumbleMatchDetection : MonoBehaviour, IPointerClickHandler
         if (transform.GetChild(0).GetComponent<Image>().sprite.texture.name == board.correctCardTitle && !isClicked)
         {
             Debug.Log("CORRECT MATCH!");
+            gameAPI.AddSessionExp();
             gameAPI.PlaySFX("Success");
             isClicked = true;
             LeanTween.pause(gameObject);
@@ -48,6 +49,7 @@ public class CardRumbleMatchDetection : MonoBehaviour, IPointerClickHandler
 
                 if (UIController.levelsCompleted == UIController.checkpointFrequency)
                 {
+                    gameAPI.AddExp(gameAPI.sessionExp);
                     UIController.Invoke("OpenCheckPointPanel", 1.3f);
                 }
                 else
@@ -59,6 +61,7 @@ public class CardRumbleMatchDetection : MonoBehaviour, IPointerClickHandler
         else if (transform.GetChild(0).GetComponent<Image>().sprite.texture.name != board.correctCardTitle)
         {
             Debug.Log("WRONG MATCH!");
+            gameAPI.RemoveSessionExp();
             gameAPI.PlaySFX("Pickup");
             LeanTween.scale(gameObject, Vector3.one * .85f, .15f).setOnComplete(ScaleBackToNormal);
         }

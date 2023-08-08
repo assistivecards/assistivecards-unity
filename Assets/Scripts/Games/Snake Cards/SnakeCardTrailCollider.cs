@@ -4,20 +4,6 @@ using UnityEngine;
 
 public class SnakeCardTrailCollider : MonoBehaviour
 {
-    // [SerializeField] private LineRenderer line;
-    // public void GenerateMeshCollider()
-    // {
-    //     MeshCollider collider = GetComponent<MeshCollider>();
-
-    //     if(collider == null)
-    //     {
-    //         collider = gameObject.AddComponent<MeshCollider>();
-    //     }
-
-    //     Mesh mesh = new Mesh();
-    //     line.BakeMesh(mesh, true);
-    //     collider.sharedMesh = mesh;
-    // }
     TrailRenderer snakeTrail;
     EdgeCollider2D snakeCollider;
 

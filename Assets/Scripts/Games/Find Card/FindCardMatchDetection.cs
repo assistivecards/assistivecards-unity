@@ -26,6 +26,7 @@ public class FindCardMatchDetection : MonoBehaviour
         if (flippedCard.tag == "CorrectCard")
         {
             Debug.Log("CORRECT CARD");
+            gameAPI.AddSessionExp();
             flippedCards.Add(flippedCard.gameObject);
             gameAPI.PlaySFX("Success");
             Debug.Log(board.cardsNeeded);
@@ -43,6 +44,7 @@ public class FindCardMatchDetection : MonoBehaviour
 
                 if (UIController.levelsCompleted == UIController.checkpointFrequency)
                 {
+                    gameAPI.AddExp(gameAPI.sessionExp);
                     UIController.Invoke("OpenCheckPointPanel", 1.3f);
                 }
 
@@ -55,6 +57,7 @@ public class FindCardMatchDetection : MonoBehaviour
         else if (flippedCard.tag == "WrongCard")
         {
             Debug.Log("WRONG CARD");
+            gameAPI.RemoveSessionExp();
             LeanTween.alpha(flippedCard.GetComponent<RectTransform>(), .5f, .25f);
             // LeanTween.rotateY(flippedCard.gameObject, 0, .75f);
             // gameAPI.PlaySFX("FlipCardBack");

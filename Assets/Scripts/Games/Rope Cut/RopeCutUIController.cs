@@ -42,6 +42,7 @@ public class RopeCutUIController : MonoBehaviour
     IEnumerator BackButtonClickCoroutine()
     {
         ResetCounter();
+        gameAPI.ResetSessionExp();
         board.ScaleImagesDown();
         backButton.SetActive(false);
         yield return new WaitForSeconds(0.25f);
@@ -91,6 +92,7 @@ public class RopeCutUIController : MonoBehaviour
 
     IEnumerator CloseCheckPointPanelCoroutine()
     {
+        gameAPI.ResetSessionExp();
         LeanTween.scale(checkPointPanel, Vector3.zero, 0.25f);
         yield return new WaitForSeconds(0.5f);
         checkPointPanel.SetActive(false);
@@ -104,6 +106,7 @@ public class RopeCutUIController : MonoBehaviour
 
     IEnumerator ChooseNewPackButtonCoroutine()
     {
+        gameAPI.ResetSessionExp();
         backButton.SetActive(false);
         CloseCheckpointPanel();
         yield return new WaitForSeconds(0.25f);

@@ -30,6 +30,7 @@ public class PiecePuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
         if (correctMatch)
         {
             Debug.Log("Correct Match!");
+            gameAPI.AddSessionExp();
             puzzleProgressChecker.correctMatches++;
             gameObject.GetComponent<PiecePuzzleDraggablePiece>().enabled = false;
             LeanTween.move(gameObject, transform.GetChild(0).GetComponent<PiecePuzzleAnchorPointDetection>().matchedTransform.parent.transform.position, .25f);
@@ -50,6 +51,7 @@ public class PiecePuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
 
                 if (puzzleProgressChecker.puzzlesCompleted == 5)
                 {
+                    gameAPI.AddExp(gameAPI.sessionExp);
                     UIController.Invoke("OpenCheckPointPanel", 1.3f);
                 }
                 else
@@ -59,6 +61,7 @@ public class PiecePuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
         else
         {
             Debug.Log("Wrong Match!");
+            gameAPI.RemoveSessionExp();
         }
 
     }

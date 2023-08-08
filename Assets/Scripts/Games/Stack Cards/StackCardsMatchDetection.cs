@@ -50,6 +50,7 @@ public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
     {
         if (isMatched)
         {
+            gameAPI.AddSessionExp();
             gameObject.GetComponent<StackCardsDraggableCards>().enabled = false;
             transform.SetParent(matchedSlotTransform);
             LeanTween.moveLocal(gameObject, new Vector3(-20, -20, 0), 0.25f);
@@ -68,6 +69,7 @@ public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
 
                 if (progressChecker.levelsCompleted == 3)
                 {
+                    gameAPI.AddExp(gameAPI.sessionExp);
                     UIController.Invoke("OpenCheckPointPanel", 1.3f);
                 }
                 else
@@ -78,6 +80,7 @@ public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
 
         else
         {
+            gameAPI.RemoveSessionExp();
             transform.SetParent(GameObject.Find(gameObject.GetComponent<StackCardsDraggableCards>().parentName).transform);
             LeanTween.move(gameObject, transform.parent.position, .5f);
         }

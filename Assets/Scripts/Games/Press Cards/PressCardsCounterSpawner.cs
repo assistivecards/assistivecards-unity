@@ -83,6 +83,7 @@ public class PressCardsCounterSpawner : MonoBehaviour, IPointerClickHandler
         {
             LeanTween.alpha(gameObject.GetComponent<RectTransform>(), .5f, .25f);
             LeanTween.alpha(transform.GetChild(0).GetComponent<RectTransform>(), .5f, .25f);
+            gameAPI.RemoveSessionExp();
         }
 
     }

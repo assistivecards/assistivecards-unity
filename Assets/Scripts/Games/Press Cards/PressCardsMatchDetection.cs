@@ -29,6 +29,7 @@ public class PressCardsMatchDetection : MonoBehaviour
             // Debug.Log("LEVEL COMPLETED!");
             cardParent = currentGameObject;
             correctMatches++;
+            gameAPI.AddSessionExp();
             UIController.backButton.GetComponent<Button>().interactable = false;
             gameAPI.PlaySFX("Success");
 
@@ -44,6 +45,7 @@ public class PressCardsMatchDetection : MonoBehaviour
 
             if (correctMatches == 5)
             {
+                gameAPI.AddExp(gameAPI.sessionExp);
                 UIController.Invoke("OpenCheckPointPanel", 1.3f);
             }
             else

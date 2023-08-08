@@ -55,6 +55,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
         if (isMatched)
         {
             //correct match
+            gameAPI.AddSessionExp();
             correctMatches++;
             gameObject.GetComponent<Draggable>().enabled = false;
             LeanTween.move(gameObject, matchedImageTransform.position, 0.25f);
@@ -68,6 +69,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
             if (correctMatches == 10)
             {
                 // OpenCheckPointPanel();
+                gameAPI.AddExp(gameAPI.sessionExp);
                 Invoke("OpenCheckPointPanel", 1f);
             }
             else
@@ -77,6 +79,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
         else
         {
             //wrong match
+            gameAPI.RemoveSessionExp();
             if (eventData.position.x < bounds.center.x && eventData.position.x > bounds.min.x + 75 && eventData.position.y < bounds.max.y - 100 && eventData.position.y > bounds.min.y + 100)
             {
                 gameAPI.VibrateWeak();
@@ -120,6 +123,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
 
     IEnumerator CloseCheckPointPanelCoroutine()
     {
+        gameAPI.ResetSessionExp();
         LeanTween.scale(checkPointPanel, Vector3.zero, 0.25f);
         yield return new WaitForSeconds(0.5f);
         checkPointPanel.SetActive(false);
@@ -138,6 +142,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
 
     IEnumerator ChooseNewPackButtonCoroutine()
     {
+        gameAPI.ResetSessionExp();
         ScaleImagesDown();
         // LeanTween.scale(backButton, Vector3.zero, 0.25f);
         backButton.SetActive(false);
@@ -177,6 +182,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
         if (transform.localScale == Vector3.one && gameObject.GetComponent<Image>().sprite != null)
         {
             ResetCounter();
+            gameAPI.ResetSessionExp();
             ScaleImagesDown();
             // LeanTween.scale(backButton, Vector3.zero, 0.25f);
             backButton.SetActive(false);

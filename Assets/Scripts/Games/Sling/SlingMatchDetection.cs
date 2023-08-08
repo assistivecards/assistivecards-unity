@@ -36,6 +36,7 @@ public class SlingMatchDetection : MonoBehaviour
         progressChecker.correctMatches++;
         UIController.backButton.GetComponent<Button>().interactable = false;
         gameAPI.PlaySFX("Success");
+        gameAPI.AddSessionExp();
         board.Invoke("ReadCard", 0.25f);
         board.Invoke("ScaleImagesDown", 1f);
         board.Invoke("ClearBoard", 1.3f);
@@ -43,6 +44,7 @@ public class SlingMatchDetection : MonoBehaviour
         if (progressChecker.correctMatches == 5)
         {
             board.Invoke("ScaleBoxDown", 1f);
+            gameAPI.AddExp(gameAPI.sessionExp);
             UIController.Invoke("OpenCheckPointPanel", 1.3f);
         }
         else

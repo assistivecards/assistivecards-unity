@@ -80,6 +80,7 @@ public class SizePuzzleMatchDetection : MonoBehaviour, IPointerClickHandler
 
     private void FadeCardParent()
     {
+        gameAPI.RemoveSessionExp();
         LeanTween.alpha(gameObject.GetComponent<RectTransform>(), .5f, .25f);
     }
 
@@ -91,6 +92,7 @@ public class SizePuzzleMatchDetection : MonoBehaviour, IPointerClickHandler
         }
 
         UIController.correctMatches++;
+        gameAPI.AddSessionExp();
         UIController.backButton.GetComponent<Button>().interactable = false;
         gameAPI.PlaySFX("Success");
         board.Invoke("ReadCard", 0.25f);
@@ -100,6 +102,7 @@ public class SizePuzzleMatchDetection : MonoBehaviour, IPointerClickHandler
 
         if (UIController.correctMatches == UIController.checkpointFrequency)
         {
+            gameAPI.AddExp(gameAPI.sessionExp);
             UIController.Invoke("OpenCheckPointPanel", 1.3f);
         }
         else

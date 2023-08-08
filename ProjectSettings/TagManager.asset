@@ -15,6 +15,8 @@ TagManager:
   - HintPiece
   - Piece
   - TopLeft
+  - Rope
+  - Border
   layers:
   - Default
   - TransparentFX

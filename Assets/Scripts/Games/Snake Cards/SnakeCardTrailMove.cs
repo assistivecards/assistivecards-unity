@@ -6,7 +6,7 @@ using TMPro;
 
 public class SnakeCardTrailMove : MonoBehaviour
 {
-    [SerializeField] private GameObject snake;
+    public GameObject snake;
     [SerializeField] private float speed;
     public Vector2 firstTouchPosition;
     public Vector2 secondTouchPosition;
@@ -83,7 +83,6 @@ public class SnakeCardTrailMove : MonoBehaviour
     private void DetectDirection()
     {
         direction = secondTouchPosition - firstTouchPosition;
-        Debug.Log(direction);
         if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y) && direction.x > 0)
         {
             Debug.Log("right");
@@ -106,10 +105,15 @@ public class SnakeCardTrailMove : MonoBehaviour
         }
     }
 
-    private void RotateSnake(int _degree)
+    public void RotateSnake(int _degree)
     {
         LeanTween.rotate(snake, new Vector3(0,0, _degree), 0.1f);
         degree = _degree;
         direction = Vector2.zero;
+    }
+
+    public void BounceSnake(float _x, float _y)
+    {
+        LeanTween.move(snake, new Vector3(_x, _y, 0), 0f);
     }
 }

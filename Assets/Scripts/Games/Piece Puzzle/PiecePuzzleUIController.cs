@@ -41,6 +41,7 @@ public class PiecePuzzleUIController : MonoBehaviour
     IEnumerator BackButtonClickCoroutine()
     {
         ResetCounter();
+        gameAPI.ResetSessionExp();
         board.ClearUniqueCards();
         board.ScaleImagesDown();
         backButton.SetActive(false);
@@ -79,6 +80,7 @@ public class PiecePuzzleUIController : MonoBehaviour
 
     IEnumerator CloseCheckPointPanelCoroutine()
     {
+        gameAPI.ResetSessionExp();
         LeanTween.scale(checkPointPanel, Vector3.zero, 0.25f);
         yield return new WaitForSeconds(0.5f);
         checkPointPanel.SetActive(false);
@@ -92,6 +94,7 @@ public class PiecePuzzleUIController : MonoBehaviour
 
     IEnumerator ChooseNewPackButtonCoroutine()
     {
+        gameAPI.ResetSessionExp();
         board.ScaleImagesDown();
         backButton.SetActive(false);
         CloseCheckpointPanel();

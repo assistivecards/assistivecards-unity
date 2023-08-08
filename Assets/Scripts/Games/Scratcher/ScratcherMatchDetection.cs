@@ -29,6 +29,7 @@ public class ScratcherMatchDetection : MonoBehaviour
         {
             UIController.correctMatches++;
             Debug.Log("Correct Match!");
+            gameAPI.AddSessionExp();
             for (int i = 0; i < scratchImages.Length; i++)
             {
                 scratchImages[i].enabled = false;
@@ -41,6 +42,7 @@ public class ScratcherMatchDetection : MonoBehaviour
             board.Invoke("ClearBoard", 1.30f);
             if (UIController.correctMatches == UIController.checkpointFrequency)
             {
+                gameAPI.AddExp(gameAPI.sessionExp);
                 UIController.Invoke("OpenCheckPointPanel", 1.30f);
             }
             else
@@ -49,6 +51,7 @@ public class ScratcherMatchDetection : MonoBehaviour
         else if (scratchManager.isFullyScratched && gameObject.tag == "WrongCard")
         {
             Debug.Log("Wrong Match!");
+            gameAPI.RemoveSessionExp();
         }
     }
 

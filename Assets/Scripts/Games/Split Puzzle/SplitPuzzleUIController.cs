@@ -41,6 +41,7 @@ public class SplitPuzzleUIController : MonoBehaviour
     IEnumerator BackButtonClickCoroutine()
     {
         ResetCounter();
+        gameAPI.ResetSessionExp();
         puzzleBoard.ClearUniqueCards();
         puzzleBoard.ScaleImagesDown();
         backButton.SetActive(false);
@@ -80,6 +81,7 @@ public class SplitPuzzleUIController : MonoBehaviour
 
     IEnumerator CloseCheckPointPanelCoroutine()
     {
+        gameAPI.ResetSessionExp();
         LeanTween.scale(checkPointPanel, Vector3.zero, 0.25f);
         yield return new WaitForSeconds(0.5f);
         checkPointPanel.SetActive(false);
@@ -93,6 +95,7 @@ public class SplitPuzzleUIController : MonoBehaviour
 
     IEnumerator ChooseNewPackButtonCoroutine()
     {
+        gameAPI.ResetSessionExp();
         puzzleBoard.ScaleImagesDown();
         backButton.SetActive(false);
         CloseCheckpointPanel();

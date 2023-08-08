@@ -56,6 +56,7 @@ public class SplitPuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
         if (isMatched)
         {
             puzzleProgressChecker.correctMatches++;
+            gameAPI.AddSessionExp();
             gameObject.GetComponent<DraggablePiece>().enabled = false;
             gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
             gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
@@ -83,6 +84,7 @@ public class SplitPuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
 
                 if (puzzleProgressChecker.puzzlesCompleted == 5)
                 {
+                    gameAPI.AddExp(gameAPI.sessionExp);
                     UIController.Invoke("OpenCheckPointPanel", 1.3f);
                 }
                 else
@@ -90,11 +92,12 @@ public class SplitPuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
 
             }
         }
-        // else
-        // {
-        //     transform.SetParent(GameObject.Find(gameObject.GetComponent<DraggablePiece>().parentName).transform);
-        //     LeanTween.move(gameObject, transform.parent.position, .5f);
-        // }
+        else
+        {
+            // transform.SetParent(GameObject.Find(gameObject.GetComponent<DraggablePiece>().parentName).transform);
+            // LeanTween.move(gameObject, transform.parent.position, .5f);
+            gameAPI.RemoveSessionExp();
+        }
     }
 
     public void ScaleHintImageUp()

@@ -66,6 +66,7 @@ public class MatchPairsMatchDetection : MonoBehaviour, IPointerUpHandler
         if (isMatched)
         {
             Debug.Log("Correct Match!");
+            gameAPI.AddSessionExp();
             levelProgressChecker.correctMatches++;
             var matchedBoxColliders = matchedTransform.gameObject.GetComponents<BoxCollider2D>();
             foreach (var collider in matchedBoxColliders)
@@ -101,6 +102,7 @@ public class MatchPairsMatchDetection : MonoBehaviour, IPointerUpHandler
 
                 if (levelProgressChecker.levelsCompleted == 5)
                 {
+                    gameAPI.AddExp(gameAPI.sessionExp);
                     UIController.Invoke("OpenCheckPointPanel", 1.75f);
                 }
                 else
@@ -112,6 +114,7 @@ public class MatchPairsMatchDetection : MonoBehaviour, IPointerUpHandler
         else
         {
             Debug.Log("Wrong Match!");
+            gameAPI.RemoveSessionExp();
             LeanTween.move(gameObject, transform.parent.position, .35f);
         }
     }

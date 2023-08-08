@@ -11,6 +11,12 @@ public class SlingOutOfBoundsDetector : MonoBehaviour
     SlingUIController UIController;
     [SerializeField]
     Transform box;
+    private GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     void Start()
     {
@@ -23,6 +29,7 @@ public class SlingOutOfBoundsDetector : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         Debug.Log("Out Of Bounds!!!");
+        gameAPI.RemoveSessionExp();
         collidedCard = other;
         UIController.backButton.GetComponent<Button>().interactable = false;
         LeanTween.alpha(collidedCard.gameObject, 0, .2f);

@@ -25,6 +25,7 @@ public class RopeCutMatchDetection : MonoBehaviour
         if (other.tag == "CorrectCard")
         {
             Debug.Log("Correct Match!");
+            gameAPI.AddSessionExp();
             UIController.correctMatches++;
             UIController.backButton.GetComponent<Button>().interactable = false;
             gameAPI.PlaySFX("Success");
@@ -35,6 +36,7 @@ public class RopeCutMatchDetection : MonoBehaviour
             board.Invoke("ClearBoard", 1.30f);
             if (UIController.correctMatches == UIController.checkpointFrequency)
             {
+                gameAPI.AddExp(gameAPI.sessionExp);
                 UIController.Invoke("OpenCheckPointPanel", 1.30f);
             }
             else
@@ -44,6 +46,7 @@ public class RopeCutMatchDetection : MonoBehaviour
         else if (other.tag == "WrongCard")
         {
             Debug.Log("Wrong Match!");
+            gameAPI.RemoveSessionExp();
             Destroy(other.GetComponent<HingeJoint2D>());
         }
 

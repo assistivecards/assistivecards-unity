@@ -59,6 +59,7 @@ public class CardGoalBoardGenerator : MonoBehaviour
         }
 
         PopulateRandomCards();
+        TranslateThrowCardText();
         await PopulateRandomTextures();
         PlaceSprites();
         DisableLoadingPanel();
@@ -167,6 +168,11 @@ public class CardGoalBoardGenerator : MonoBehaviour
     public void ReadCard()
     {
         gameAPI.Speak(randomCards[0].title);
+    }
+
+    public void TranslateThrowCardText()
+    {
+        throwText.text = gameAPI.Translate(throwText.gameObject.name, gameAPI.ToSentenceCase(randomCards[0].title).Replace("-", " "), selectedLangCode);
     }
 
 }

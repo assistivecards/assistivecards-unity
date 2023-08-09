@@ -16,7 +16,11 @@ TagManager:
   - Piece
   - TopLeft
   - Rope
-  - Border
+  - RightBorder
+  - LeftBorder
+  - BottomBorder
+  - TopBorder
+  - Snake
   layers:
   - Default
   - TransparentFX

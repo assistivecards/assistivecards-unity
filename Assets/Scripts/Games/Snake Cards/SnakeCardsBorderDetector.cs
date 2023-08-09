@@ -14,32 +14,15 @@ public class SnakeCardsBorderDetector : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) 
     {
-        if(other.gameObject.tag == "Border")
+        if(other.gameObject.tag == "TopBorder" || other.gameObject.tag == "BottomBorder")
         {
-            if(snakePosition.x < -6)
-            {
-                if(snakePosition.y > 0) { trailMove.RotateSnake(0);}
-                else if(snakePosition.y <= 0) { trailMove.RotateSnake(180);}
-                trailMove.BounceSnake(-500, trailMove.snake.transform.position.y);
-            }
-            if(snakePosition.x > 6)
-            {
-                if(snakePosition.y > 0) { trailMove.RotateSnake(0);}
-                else if(snakePosition.y <= 0) { trailMove.RotateSnake(180);}
-                trailMove.BounceSnake(500, trailMove.snake.transform.position.y);
-            }
-            if(snakePosition.y < -3)
-            {
-                if(snakePosition.x > 0) { trailMove.RotateSnake(-90);}
-                else if(snakePosition.x <= 0) { trailMove.RotateSnake(90);}
-                trailMove.BounceSnake(trailMove.snake.transform.position.x, -300);
-            }
-            if(snakePosition.y > 3)
-            {
-                if(snakePosition.x > 0) { trailMove.RotateSnake(-90);}
-                else if(snakePosition.x <= 0) { trailMove.RotateSnake(90);}
-                trailMove.BounceSnake(trailMove.snake.transform.position.x, 300);
-            }
+            if(snakePosition.x > 0) { trailMove.RotateSnake(-90);}
+            else if(snakePosition.x <= 0) { trailMove.RotateSnake(90);}
+        }
+        else if(other.gameObject.tag == "RightBorder" || other.gameObject.tag == "LeftBorder")
+        {
+            if(snakePosition.y > 0) { trailMove.RotateSnake(0);}
+            else if(snakePosition.y <= 0) { trailMove.RotateSnake(180);}
         }
     }
 }

@@ -48,6 +48,8 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject cardPosition8;
     public List<GameObject> cardPositions = new List<GameObject>();
 
+    public bool gameStarted;
+
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
@@ -125,6 +127,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     public void GameUIActivate()
     {
         uıController.GameUIActivate();
+        gameStarted = true;
     }
 
     public void LevelEnd()

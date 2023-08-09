@@ -7,76 +7,39 @@ using TMPro;
 public class SnakeCardTrailMove : MonoBehaviour
 {
     public GameObject snake;
+    [SerializeField] private SnakeCardsBoardGenerator boardGenerator;
     [SerializeField] private float speed;
     public Vector2 firstTouchPosition;
     public Vector2 secondTouchPosition;
     public Vector2 currentSwipe;
     public Vector2 direction;
     public bool move;
-    private int degree;
+    private int degree = 90;
 
     private void Update() 
     {
-        if(degree == 90) { snake.transform.position += transform.right * Time.deltaTime * speed;}
-        else if(degree == -90) { snake.transform.position += -transform.right * Time.deltaTime * speed;}
-        else if(degree == 180) { snake.transform.position += transform.up * Time.deltaTime * speed;}
-        else if(degree == 0) { snake.transform.position += -transform.up * Time.deltaTime * speed;}
-        if(Input.touchCount > 0)
+        if(boardGenerator.gameStarted)
         {
-            Touch touch = Input.GetTouch(0);
-            switch (touch.phase)
+            if(degree == 90) { snake.transform.position += transform.right * Time.deltaTime * speed;}
+            else if(degree == -90) { snake.transform.position += -transform.right * Time.deltaTime * speed;}
+            else if(degree == 180) { snake.transform.position += transform.up * Time.deltaTime * speed;}
+            else if(degree == 0) { snake.transform.position += -transform.up * Time.deltaTime * speed;}
+            if(Input.touchCount > 0)
             {
-                case TouchPhase.Began:
-                    firstTouchPosition = touch.position;
-                    break;
+                Touch touch = Input.GetTouch(0);
+                switch (touch.phase)
+                {
+                    case TouchPhase.Began:
+                        firstTouchPosition = touch.position;
+                        break;
 
-                case TouchPhase.Ended:
-                    secondTouchPosition = touch.position;
-                    DetectDirection();
-                    break;
+                    case TouchPhase.Ended:
+                        secondTouchPosition = touch.position;
+                        DetectDirection();
+                        break;
+                }
+
             }
-
-        }
-    }
-
-    private void CheckSnakeIfInScreen()
-    {
-        if(snake.transform.localPosition.x > -500 && snake.transform.localPosition.x < 500 
-        && snake.transform.localPosition.y < 300 && snake.transform.localPosition.y > -250)
-        {
-            move = true;
-        }
-        else if(snake.transform.position.x < -500)
-        {
-            move = false;
-            if(snake.transform.position.y > 0) { RotateSnake(0);}
-            if(snake.transform.position.y <= 0) { RotateSnake(180);}
-            snake.transform.position = new Vector3(-499, snake.transform.position.y, 0);
-            move = true;
-        }
-        else if(snake.transform.position.x > 500)
-        {
-            move = false;
-            if(snake.transform.position.y > 0) { RotateSnake(0);}
-            if(snake.transform.position.y <= 0) { RotateSnake(180);}
-            snake.transform.position = new Vector3(499, snake.transform.position.y, 0);
-            move = true;
-        }
-        else if(snake.transform.position.y > 300)
-        {
-            move = false;
-            if(snake.transform.position.x > 0) { RotateSnake(-90);}
-            if(snake.transform.position.x <= 0) { RotateSnake(90);}
-            snake.transform.position = new Vector3(299, snake.transform.position.y, 0);
-            move = true;
-        }
-        else if(snake.transform.position.y < -250)
-        {
-            move = false;
-            if(snake.transform.position.x > 0) { RotateSnake(-90);}
-            if(snake.transform.position.x <= 0) { RotateSnake(90);}
-            snake.transform.position = new Vector3(-249, snake.transform.position.y, 0);
-            move = true;
         }
     }
 

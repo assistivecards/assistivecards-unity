@@ -990,7 +990,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1019,7 +1019,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canThrow: 1
-  throwForse: 0.3
+  throwForce: 0.3
   isValid: 0
   allFlickManagers: []
 --- !u!1 &757723375 stripped
@@ -1975,7 +1975,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2004,7 +2004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canThrow: 1
-  throwForse: 0.3
+  throwForce: 0.3
   isValid: 0
   allFlickManagers: []
 --- !u!82 &1487501776 stripped
@@ -2678,7 +2678,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2707,7 +2707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canThrow: 1
-  throwForse: 0.3
+  throwForce: 0.3
   isValid: 0
   allFlickManagers: []
 --- !u!1 &1888524210
@@ -3057,7 +3057,7 @@ GameObject:
   - component: {fileID: 633364546727124787}
   m_Layer: 5
   m_Name: Square (1)
-  m_TagString: Untagged
+  m_TagString: GoalPost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3204,7 +3204,7 @@ GameObject:
   - component: {fileID: 633364547405144318}
   m_Layer: 5
   m_Name: Square (2)
-  m_TagString: Untagged
+  m_TagString: GoalPost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3487,7 +3487,7 @@ GameObject:
   - component: {fileID: 633364548496304076}
   m_Layer: 5
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: GoalPost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

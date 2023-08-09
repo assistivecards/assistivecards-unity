@@ -18,6 +18,11 @@ TagManager:
   - Rope
   - Border
   - GoalPost
+  - RightBorder
+  - LeftBorder
+  - BottomBorder
+  - TopBorder
+  - Snake
   layers:
   - Default
   - TransparentFX

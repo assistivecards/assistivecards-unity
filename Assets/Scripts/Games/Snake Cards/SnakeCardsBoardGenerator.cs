@@ -46,7 +46,10 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject cardPosition6;
     [SerializeField] private GameObject cardPosition7;
     [SerializeField] private GameObject cardPosition8;
+    [SerializeField] private GameObject cardPosition9;
     public List<GameObject> cardPositions = new List<GameObject>();
+
+    public bool gameStarted;
 
     private void Awake()
     {
@@ -93,6 +96,8 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
         cardPositions.Add(cardPosition5);
         cardPositions.Add(cardPosition6);
         cardPositions.Add(cardPosition7);
+        cardPositions.Add(cardPosition8);
+        cardPositions.Add(cardPosition9);
     }
 
     public async void GeneratedBoardAsync()
@@ -114,8 +119,10 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
                 card.transform.name = cardLocalNames[randomValueList[j]];
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                card.GetComponent<SnakeCardsCardController>().cardName = cardNames[randomValueList[j]];
+                card.GetComponent<SnakeCardsCardController>().cardLocalName = cardLocalNames[randomValueList[j]];
                 LeanTween.scale(card, Vector3.one * 0.75f, 0);
-                LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-15, 15)), 0f);
+                LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-30, 30)), 0f);
                 cards.Add(card);
             }
             Invoke("GameUIActivate", 0.1f);
@@ -125,6 +132,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     public void GameUIActivate()
     {
         uıController.GameUIActivate();
+        gameStarted = true;
     }
 
     public void LevelEnd()
@@ -143,12 +151,9 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
             Destroy(card);
         }
         cards.Clear();
-
         letterList.Clear();
         letterCardsNames.Clear();
-
         randomValueList.Clear();
-
         cardPositions.Clear();
     }
 }

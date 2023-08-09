@@ -38,6 +38,7 @@ public class SnakeCardsCollisionDetector : MonoBehaviour
         {
             snakeLenght = GetComponentInChildren<TrailRenderer>().time;
             GetComponentInChildren<TrailRenderer>().time = snakeLenght + 0.5f;
+            other.gameObject.GetComponent<SnakeCardsCardController>().Eaten();
         }
     }
 }

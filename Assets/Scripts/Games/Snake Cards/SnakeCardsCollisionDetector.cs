@@ -6,6 +6,7 @@ public class SnakeCardsCollisionDetector : MonoBehaviour
 {
     [SerializeField] private SnakeCardTrailMove trailMove;
     public Vector3 snakePosition;
+    public float snakeLenght;
 
     private void Update()
     {
@@ -30,7 +31,13 @@ public class SnakeCardsCollisionDetector : MonoBehaviour
     {
         if(other.gameObject.tag == "Snake" && !trailMove.isRotating)
         {
-            Debug.Log("Fail");
+            snakeLenght = GetComponentInChildren<TrailRenderer>().time;
+            GetComponentInChildren<TrailRenderer>().time = snakeLenght - 1f;
+        }
+        else if(other.gameObject.tag == "Card")
+        {
+            snakeLenght = GetComponentInChildren<TrailRenderer>().time;
+            GetComponentInChildren<TrailRenderer>().time = snakeLenght + 0.5f;
         }
     }
 }

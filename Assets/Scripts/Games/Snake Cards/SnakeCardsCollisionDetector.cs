@@ -25,4 +25,12 @@ public class SnakeCardsCollisionDetector : MonoBehaviour
             else if(snakePosition.y <= 0) { trailMove.RotateSnake(180);}
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+        if(other.gameObject.tag == "Snake" && !trailMove.isRotating)
+        {
+            Debug.Log("Fail");
+        }
+    }
 }

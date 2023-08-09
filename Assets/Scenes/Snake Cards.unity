@@ -857,7 +857,7 @@ TrailRenderer:
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.2
+  m_MinVertexDistance: 0.5
   m_MaskInteraction: 0
   m_Autodestruct: 0
   m_Emitting: 1
@@ -1552,6 +1552,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   isRotating: 0
   move: 0
+  directionStatus: 
 --- !u!1 &1167211902
 GameObject:
   m_ObjectHideFlags: 0

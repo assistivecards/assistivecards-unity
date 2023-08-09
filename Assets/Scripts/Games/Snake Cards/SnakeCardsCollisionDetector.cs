@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnakeCardsBorderDetector : MonoBehaviour
+public class SnakeCardsCollisionDetector : MonoBehaviour
 {
     [SerializeField] private SnakeCardTrailMove trailMove;
     public Vector3 snakePosition;

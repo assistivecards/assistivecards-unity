@@ -13,17 +13,35 @@ public class SnakeCardTrailMove : MonoBehaviour
     public Vector2 secondTouchPosition;
     public Vector2 currentSwipe;
     public Vector2 direction;
+    public bool isRotating;
     public bool move;
     private int degree = 90;
+    public string directionStatus;
 
     private void Update() 
     {
         if(boardGenerator.gameStarted)
         {
-            if(degree == 90) { snake.transform.position += transform.right * Time.deltaTime * speed;}
-            else if(degree == -90) { snake.transform.position += -transform.right * Time.deltaTime * speed;}
-            else if(degree == 180) { snake.transform.position += transform.up * Time.deltaTime * speed;}
-            else if(degree == 0) { snake.transform.position += -transform.up * Time.deltaTime * speed;}
+            if(degree == 90) 
+            { 
+                snake.transform.position += transform.right * Time.deltaTime * speed;
+                directionStatus = "right";    
+            }
+            else if(degree == -90) 
+            { 
+                snake.transform.position += -transform.right * Time.deltaTime * speed;
+                directionStatus = "left";
+            }
+            else if(degree == 180)
+            { 
+                snake.transform.position += transform.up * Time.deltaTime * speed;
+                directionStatus = "up";
+            }
+            else if(degree == 0) 
+            { 
+                snake.transform.position += -transform.up * Time.deltaTime * speed;
+                directionStatus = "down";
+            }
             if(Input.touchCount > 0)
             {
                 Touch touch = Input.GetTouch(0);
@@ -46,33 +64,23 @@ public class SnakeCardTrailMove : MonoBehaviour
     private void DetectDirection()
     {
         direction = secondTouchPosition - firstTouchPosition;
-        if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y) && direction.x > 0)
-        {
-            Debug.Log("right");
-            RotateSnake(90);
-        }
-        else if(Mathf.Abs(direction.x) < Mathf.Abs(direction.y) && direction.y > 0)
-        {
-            Debug.Log("up");
-            RotateSnake(180);
-        }
-        else if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y) && direction.x < 0)
-        {
-            Debug.Log("left");
-            RotateSnake(-90);
-        }
-        else if(Mathf.Abs(direction.x) < Mathf.Abs(direction.y) && direction.y < 0)
-        {
-            Debug.Log("down");
-            RotateSnake(0);
-        }
+        if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y) && direction.x > 0 && directionStatus != "left") { RotateSnake(90);}
+        else if(Mathf.Abs(direction.x) < Mathf.Abs(direction.y) && direction.y > 0 && directionStatus != "down") { RotateSnake(180);}
+        else if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y) && direction.x < 0 && directionStatus != "right") { RotateSnake(-90);}
+        else if(Mathf.Abs(direction.x) < Mathf.Abs(direction.y) && direction.y < 0 && directionStatus != "up") { RotateSnake(0);}
     }
 
     public void RotateSnake(int _degree)
     {
-        LeanTween.rotate(snake, new Vector3(0,0, _degree), 0.1f);
+        isRotating = true;
+        LeanTween.rotate(snake, new Vector3(0,0, _degree), 0.25f).setOnComplete(SetRotationComplete);
         degree = _degree;
         direction = Vector2.zero;
+    }
+
+    private void SetRotationComplete()
+    {
+        isRotating = false;
     }
 
     public void BounceSnake(float _x, float _y)

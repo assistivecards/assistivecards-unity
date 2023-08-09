@@ -146,12 +146,9 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
             Destroy(card);
         }
         cards.Clear();
-
         letterList.Clear();
         letterCardsNames.Clear();
-
         randomValueList.Clear();
-
         cardPositions.Clear();
     }
 }

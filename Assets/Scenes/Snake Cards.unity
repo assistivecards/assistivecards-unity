@@ -193,7 +193,6 @@ GameObject:
   m_Component:
   - component: {fileID: 275334285}
   - component: {fileID: 275334286}
-  - component: {fileID: 275334287}
   m_Layer: 5
   m_Name: TopBorder
   m_TagString: TopBorder
@@ -247,27 +246,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1452.2577, y: 931.8384}
   m_EdgeRadius: 0
---- !u!50 &275334287
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 275334284}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 7
 --- !u!1 &333552357
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,7 +256,6 @@ GameObject:
   m_Component:
   - component: {fileID: 333552358}
   - component: {fileID: 333552359}
-  - component: {fileID: 333552360}
   m_Layer: 5
   m_Name: BottomBorder
   m_TagString: BottomBorder
@@ -332,27 +309,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1797.6028, y: 503.0379}
   m_EdgeRadius: 0
---- !u!50 &333552360
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 333552357}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
 --- !u!1 &429505576 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1982601096855616903, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -740,8 +696,8 @@ GameObject:
   - component: {fileID: 560318981}
   - component: {fileID: 560318984}
   m_Layer: 5
-  m_Name: SnakeHead
-  m_TagString: Untagged
+  m_Name: SnakeBody
+  m_TagString: Snake
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -901,7 +857,7 @@ TrailRenderer:
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.005
+  m_MinVertexDistance: 0.2
   m_MaskInteraction: 0
   m_Autodestruct: 0
   m_Emitting: 1
@@ -1148,7 +1104,6 @@ GameObject:
   m_Component:
   - component: {fileID: 671929609}
   - component: {fileID: 671929610}
-  - component: {fileID: 671929611}
   m_Layer: 5
   m_Name: RightBorder
   m_TagString: RightBorder
@@ -1202,27 +1157,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1052.659, y: 582.1536}
   m_EdgeRadius: 0
---- !u!50 &671929611
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 671929608}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
 --- !u!114 &692367062 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1242831489745571712, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -1616,6 +1550,7 @@ MonoBehaviour:
   secondTouchPosition: {x: 0, y: 0}
   currentSwipe: {x: 0, y: 0}
   direction: {x: 0, y: 0}
+  isRotating: 0
   move: 0
 --- !u!1 &1167211902
 GameObject:
@@ -2184,7 +2119,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1421442021}
   - component: {fileID: 1421442022}
-  - component: {fileID: 1421442023}
   m_Layer: 5
   m_Name: LeftBorder
   m_TagString: LeftBorder
@@ -2238,27 +2172,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 861.40955, y: 582.1536}
   m_EdgeRadius: 0
---- !u!50 &1421442023
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1421442020}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
 --- !u!1 &1451560613 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2249279855417450727, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
@@ -2582,6 +2495,7 @@ GameObject:
   - component: {fileID: 1751061757}
   - component: {fileID: 1751061759}
   - component: {fileID: 1751061760}
+  - component: {fileID: 1751061761}
   m_Layer: 5
   m_Name: Head
   m_TagString: Untagged
@@ -2688,6 +2602,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 100, y: 71.73592}
   m_EdgeRadius: 0
+--- !u!50 &1751061761
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751061754}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &1756936391 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9209683490062830043, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}

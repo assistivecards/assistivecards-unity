@@ -11,6 +11,7 @@ public class SnakeCardTrailCollider : MonoBehaviour
     {
         snakeTrail = this.GetComponent<TrailRenderer>();
         GameObject colliderGameObject = new GameObject("TrailCollider", typeof(EdgeCollider2D));
+        colliderGameObject.tag = "Snake";
         snakeCollider = colliderGameObject.GetComponent<EdgeCollider2D>();
     }
 

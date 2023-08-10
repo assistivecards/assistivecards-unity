@@ -119,6 +119,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
                 card.GetComponent<SnakeCardsCardController>().cardLocalName = cardLocalNames[randomValueList[j]];
                 LeanTween.scale(card, Vector3.one * 0.75f, 0);
                 LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-30, 30)), 0f);
+                card.gameObject.tag = "Card";
                 cards.Add(card);
             }
             CheckRandom();
@@ -138,6 +139,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
                 card.GetComponent<SnakeCardsCardController>().cardLocalName = cardLocalNames[randomValueList[5]];
                 LeanTween.scale(card, Vector3.one * 0.75f, 0);
                 LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-30, 30)), 0f);
+                card.gameObject.tag = "Card";
                 cards.Add(card);
             }
             targetCard = cardNames[randomValueList[5]];

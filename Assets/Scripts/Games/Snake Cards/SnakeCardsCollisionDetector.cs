@@ -42,6 +42,7 @@ public class SnakeCardsCollisionDetector : MonoBehaviour
                 snakeLenght = GetComponentInChildren<TrailRenderer>().time;
                 GetComponentInChildren<TrailRenderer>().time = snakeLenght + 0.5f;
                 LeanTween.scale(other.gameObject, Vector3.one * 1.2f, 0.2f).setOnComplete(other.gameObject.GetComponent<SnakeCardsCardController>().Eaten);
+                Debug.Log("Here");
                 // success sound
             }
             else

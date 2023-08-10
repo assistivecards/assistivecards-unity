@@ -324,7 +324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 461203947}
   m_Layer: 5
-  m_Name: CardPosition3
+  m_Name: CardPosition4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -872,7 +872,7 @@ GameObject:
   m_Component:
   - component: {fileID: 577278456}
   m_Layer: 5
-  m_Name: CardPosition9
+  m_Name: CardPosition7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1256,13 +1256,13 @@ RectTransform:
   - {fileID: 1963256680}
   - {fileID: 2096413493}
   - {fileID: 1339088439}
+  - {fileID: 1582516528}
   - {fileID: 461203947}
   - {fileID: 1596147985}
-  - {fileID: 1821111188}
-  - {fileID: 1167211903}
-  - {fileID: 1582516528}
   - {fileID: 1702550591}
   - {fileID: 577278456}
+  - {fileID: 1821111188}
+  - {fileID: 1167211903}
   - {fileID: 1751061755}
   m_Father: {fileID: 1910463663942908501}
   m_RootOrder: -1
@@ -1600,7 +1600,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1167211903}
   m_Layer: 5
-  m_Name: CardPosition6
+  m_Name: CardPosition9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2307,7 +2307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1582516528}
   m_Layer: 5
-  m_Name: CardPosition7
+  m_Name: CardPosition3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2343,7 +2343,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1596147985}
   m_Layer: 5
-  m_Name: CardPosition4
+  m_Name: CardPosition5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2379,7 +2379,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1702550591}
   m_Layer: 5
-  m_Name: CardPosition8
+  m_Name: CardPosition6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2612,6 +2612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca6c36cebebc2467487239530009584b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boardGenerator: {fileID: 8383894889009589326}
   trailMove: {fileID: 1154749949}
   snakePosition: {x: 0, y: 0, z: 0}
   snakeLenght: 0
@@ -2683,7 +2684,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1821111188}
   m_Layer: 5
-  m_Name: CardPosition5
+  m_Name: CardPosition8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4068,22 +4069,21 @@ MonoBehaviour:
   cards: []
   cardsList: []
   packSelectionPanel: {fileID: 1756936391}
-  letterList: []
-  letterCardsNames: []
   randomValueList: 
   cardPrefab: {fileID: 1572616208917296617, guid: f042534cc027b41aba03c2544ab6a2ab, type: 3}
   tutorial: {fileID: 927069859}
   cardPosition1: {fileID: 2096413492}
   cardPosition2: {fileID: 1339088438}
-  cardPosition3: {fileID: 461203946}
-  cardPosition4: {fileID: 1596147984}
-  cardPosition5: {fileID: 1821111187}
-  cardPosition6: {fileID: 1167211902}
-  cardPosition7: {fileID: 1582516527}
-  cardPosition8: {fileID: 1702550590}
-  cardPosition9: {fileID: 577278455}
+  cardPosition3: {fileID: 1582516527}
+  cardPosition4: {fileID: 461203946}
+  cardPosition5: {fileID: 1596147984}
+  cardPosition6: {fileID: 1702550590}
+  cardPosition7: {fileID: 577278455}
+  cardPosition8: {fileID: 1821111187}
+  cardPosition9: {fileID: 1167211902}
   cardPositions: []
   gameStarted: 0
+  targetCard: 
 --- !u!114 &8383894889009589327
 MonoBehaviour:
   m_ObjectHideFlags: 0

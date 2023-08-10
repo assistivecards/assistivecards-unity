@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SnakeCardsCollisionDetector : MonoBehaviour
 {
+    [SerializeField] private SnakeCardsBoardGenerator boardGenerator;
     [SerializeField] private SnakeCardTrailMove trailMove;
     public Vector3 snakePosition;
     public float snakeLenght;
@@ -36,9 +37,17 @@ public class SnakeCardsCollisionDetector : MonoBehaviour
         }
         else if(other.gameObject.tag == "Card")
         {
-            snakeLenght = GetComponentInChildren<TrailRenderer>().time;
-            GetComponentInChildren<TrailRenderer>().time = snakeLenght + 0.5f;
-            other.gameObject.GetComponent<SnakeCardsCardController>().Eaten();
+            if(other.GetComponent<SnakeCardsCardController>().cardName == boardGenerator.targetCard)
+            {
+                snakeLenght = GetComponentInChildren<TrailRenderer>().time;
+                GetComponentInChildren<TrailRenderer>().time = snakeLenght + 0.5f;
+                LeanTween.scale(other.gameObject, Vector3.one * 1.2f, 0.2f).setOnComplete(other.gameObject.GetComponent<SnakeCardsCardController>().Eaten);
+                // success sound
+            }
+            else
+            {
+                other.gameObject.GetComponent<SnakeCardsCardController>().Eaten();
+            }
         }
     }
 }

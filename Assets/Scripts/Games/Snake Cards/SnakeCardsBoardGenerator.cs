@@ -23,11 +23,6 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
     [SerializeField] private PackSelectionPanel packSelectionPanel;
 
-    [Header ("Letter Cards")]
-    private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLetterCards;
-    [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> letterList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
-    public List<string> letterCardsNames = new List<string>();
-
     [Header ("Random")]
     public List<int> randomValueList = new List<int>();
     private int tempRandomValue;
@@ -50,6 +45,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     public List<GameObject> cardPositions = new List<GameObject>();
 
     public bool gameStarted;
+    public string targetCard;
 
     private void Awake()
     {
@@ -89,15 +85,15 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
 
     private void CreatePositionsList()
     {
-        cardPositions.Add(cardPosition1);
         cardPositions.Add(cardPosition2);
         cardPositions.Add(cardPosition3);
-        cardPositions.Add(cardPosition4);
         cardPositions.Add(cardPosition5);
         cardPositions.Add(cardPosition6);
         cardPositions.Add(cardPosition7);
         cardPositions.Add(cardPosition8);
         cardPositions.Add(cardPosition9);
+        cardPositions.Add(cardPosition1);
+        cardPositions.Add(cardPosition4);
     }
 
     public async void GeneratedBoardAsync()
@@ -106,7 +102,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
         {
             await CacheCards();
             CreatePositionsList();
-            for(int j = 0; j < cardPositions.Count; j++)
+            for(int j = 0; j < 5; j++)
             {
                 CheckRandom();
                 GameObject card = Instantiate(cardPrefab, cardPositions[j].transform.position, Quaternion.identity);
@@ -125,6 +121,26 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
                 LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-30, 30)), 0f);
                 cards.Add(card);
             }
+            CheckRandom();
+            for(int i = 5; i < 9; i++)
+            {
+                GameObject card = Instantiate(cardPrefab, cardPositions[i].transform.position, Quaternion.identity);
+                card.transform.SetParent(cardPositions[i].transform);
+
+                var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[5]], 512);
+                cardTexture.wrapMode = TextureWrapMode.Clamp;
+                cardTexture.filterMode = FilterMode.Bilinear;
+
+                card.transform.name = cardLocalNames[randomValueList[5]];
+                card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+                card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                card.GetComponent<SnakeCardsCardController>().cardName = cardNames[randomValueList[5]];
+                card.GetComponent<SnakeCardsCardController>().cardLocalName = cardLocalNames[randomValueList[5]];
+                LeanTween.scale(card, Vector3.one * 0.75f, 0);
+                LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-30, 30)), 0f);
+                cards.Add(card);
+            }
+            targetCard = cardNames[randomValueList[5]];
             Invoke("GameUIActivate", 0.1f);
         }
     }
@@ -151,8 +167,6 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
             Destroy(card);
         }
         cards.Clear();
-        letterList.Clear();
-        letterCardsNames.Clear();
         randomValueList.Clear();
         cardPositions.Clear();
     }

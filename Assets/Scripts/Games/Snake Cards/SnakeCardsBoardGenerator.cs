@@ -32,7 +32,8 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject tutorial;
 
-    [Header ("Pattern Positions")]
+    [Header ("Game Elements")]
+    [SerializeField] private GameObject snake;
     [SerializeField] private GameObject cardPosition1;
     [SerializeField] private GameObject cardPosition2;
     [SerializeField] private GameObject cardPosition3;
@@ -44,9 +45,11 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject cardPosition9;
     public List<GameObject> cardPositions = new List<GameObject>();
 
-    public int eatenCardCount;
+    [Header ("In Game Values")]
     public bool gameStarted;
+    public int eatenCardCount;
     public string targetCard;
+    public int reloadCount;
 
     private void Awake()
     {
@@ -167,16 +170,26 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     public void CardEaten()
     {
         eatenCardCount++;
-        if(eatenCardCount >= 4)
+        if(eatenCardCount >= 4 && reloadCount < 3)
         {
             GeneratedBoardAsync();
+            randomValueList.Clear();
             eatenCardCount = 0;
+            reloadCount++;
         }   
+        else if(reloadCount == 3)
+        {
+            uıController.LevelChangeScreenActivate();
+        }
     }
 
     public void GameUIActivate()
     {
         uıController.GameUIActivate();
+        if(reloadCount == 0)
+        {
+            LeanTween.move(snake, Vector3.zero, 0);
+        }
         gameStarted = true;
     }
 

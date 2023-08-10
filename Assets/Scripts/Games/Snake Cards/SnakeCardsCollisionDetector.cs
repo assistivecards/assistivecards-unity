@@ -33,14 +33,17 @@ public class SnakeCardsCollisionDetector : MonoBehaviour
         if(other.gameObject.tag == "Snake" && !trailMove.isRotating)
         {
             snakeLenght = GetComponentInChildren<TrailRenderer>().time;
-            GetComponentInChildren<TrailRenderer>().time = snakeLenght - 1f;
+            if(snakeLenght > 1.5f)
+            {
+                GetComponentInChildren<TrailRenderer>().time = snakeLenght - 2f;
+            }
         }
         else if(other.gameObject.tag == "Card")
         {
             if(other.GetComponent<SnakeCardsCardController>().cardName == boardGenerator.targetCard)
             {
                 snakeLenght = GetComponentInChildren<TrailRenderer>().time;
-                GetComponentInChildren<TrailRenderer>().time = snakeLenght + 0.5f;
+                GetComponentInChildren<TrailRenderer>().time = snakeLenght + 2f;
                 LeanTween.scale(other.gameObject, Vector3.one * 1.2f, 0.2f).setOnComplete(other.gameObject.GetComponent<SnakeCardsCardController>().Eaten);
                 boardGenerator.CardEaten();;
                 // success sound

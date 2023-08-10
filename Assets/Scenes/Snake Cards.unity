@@ -2572,7 +2572,7 @@ GameObject:
   - component: {fileID: 1751061760}
   - component: {fileID: 1751061761}
   m_Layer: 5
-  m_Name: Head
+  m_Name: SnakeHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2744,7 +2744,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 87.50002, y: 200}
+  m_AnchoredPosition: {x: 87.50002, y: 170}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1837497523
@@ -4109,6 +4109,7 @@ MonoBehaviour:
   randomValueList: 
   cardPrefab: {fileID: 1572616208917296617, guid: f042534cc027b41aba03c2544ab6a2ab, type: 3}
   tutorial: {fileID: 927069859}
+  snake: {fileID: 1751061754}
   cardPosition1: {fileID: 2096413492}
   cardPosition2: {fileID: 1339088438}
   cardPosition3: {fileID: 1582516527}
@@ -4119,9 +4120,10 @@ MonoBehaviour:
   cardPosition8: {fileID: 1821111187}
   cardPosition9: {fileID: 1167211902}
   cardPositions: []
-  eatenCardCount: 0
   gameStarted: 0
+  eatenCardCount: 0
   targetCard: 
+  reloadCount: 0
 --- !u!114 &8383894889009589327
 MonoBehaviour:
   m_ObjectHideFlags: 0

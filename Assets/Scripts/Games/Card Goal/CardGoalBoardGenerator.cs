@@ -10,6 +10,7 @@ public class CardGoalBoardGenerator : MonoBehaviour
     private GameAPI gameAPI;
     [SerializeField] SpriteRenderer[] cardTextures;
     public GameObject[] cardParents;
+    public Transform[] cardSlots;
     public GameObject goalPost;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
@@ -79,12 +80,22 @@ public class CardGoalBoardGenerator : MonoBehaviour
             cardTextures[i].sprite = null;
         }
 
+        for (int i = 0; i < cardParents.Length; i++)
+        {
+            cardParents[i].GetComponent<CardGoalFlickManager>().canThrow = true;
+            cardParents[i].GetComponent<CardGoalFlickManager>().isValid = false;
+            cardParents[i].GetComponent<BoxCollider2D>().isTrigger = true;
+        }
+
     }
 
     public void ScaleImagesUp()
     {
         for (int i = 0; i < cardParents.Length; i++)
         {
+            cardParents[i].transform.SetParent(cardSlots[i]);
+            cardParents[i].transform.position = cardSlots[i].position;
+            cardParents[i].transform.rotation = Quaternion.Euler(0, 0, 0);
             LeanTween.alpha(cardParents[i], 1, .001f);
             LeanTween.scale(cardParents[i], Vector3.one * 12, 0.2f);
         }

@@ -19,6 +19,18 @@ public class CardGoalMatchDetection : MonoBehaviour
         if (other.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite.texture.name == board.correctCardSlug)
         {
             Debug.Log("Correct Match!");
+
+            // other.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            other.GetComponent<Rigidbody2D>().isKinematic = true;
+            other.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            other.GetComponent<Rigidbody2D>().freezeRotation = true;
+            other.transform.SetParent(transform);
+
+            board.Invoke("ReadCard", 0.25f);
+            board.Invoke("ScaleImagesDown", 1f);
+            board.Invoke("ClearBoard", 1.3f);
+            board.Invoke("GenerateRandomBoardAsync", 1.3f);
+
         }
 
         else

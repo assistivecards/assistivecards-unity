@@ -4625,6 +4625,10 @@ MonoBehaviour:
   - {fileID: 1878921812}
   - {fileID: 1468598357}
   - {fileID: 723202101}
+  cardSlots:
+  - {fileID: 1081338686}
+  - {fileID: 288954223}
+  - {fileID: 1950805873}
   goalPost: {fileID: 633364546869788184}
   cachedCards:
     cards: []

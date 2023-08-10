@@ -47,8 +47,8 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
 
     [Header ("In Game Values")]
     public bool gameStarted;
-    public int eatenCardCount;
     public string targetCard;
+    public int eatenCardCount;
     public int reloadCount;
 
     private void Awake()
@@ -104,8 +104,11 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     {
         foreach(GameObject position in cardPositions)
         {
-            LeanTween.moveLocal(position, new Vector3(Random.Range(position.transform.localPosition.x - 30, position.transform.localPosition.x +30),
-            Random.Range(position.transform.localPosition.y - 20, position.transform.localPosition.y + 20), 0), 0);
+            if(position.transform.childCount <= 0)
+            {
+                LeanTween.moveLocal(position, new Vector3(Random.Range(position.transform.localPosition.x - 30, position.transform.localPosition.x +30),
+                Random.Range(position.transform.localPosition.y - 20, position.transform.localPosition.y + 20), 0), 0);
+            }
         }
     }
 
@@ -163,6 +166,8 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
                 }
             }
             targetCard = cardNames[randomValueList[5]];
+            eatenCardCount = 0;
+            reloadCount++;
             Invoke("GameUIActivate", 0.1f);
         }
     }
@@ -170,25 +175,24 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     public void CardEaten()
     {
         eatenCardCount++;
-        if(eatenCardCount >= 4 && reloadCount < 3)
+        if(eatenCardCount >= 4  && reloadCount < 3)
         {
             GeneratedBoardAsync();
             randomValueList.Clear();
-            eatenCardCount = 0;
-            reloadCount++;
-        }   
-        else if(reloadCount == 3)
+        }
+        else if(eatenCardCount >= 4  && reloadCount == 3)
         {
             uıController.LevelChangeScreenActivate();
-        }
+        }   
     }
 
     public void GameUIActivate()
     {
         uıController.GameUIActivate();
-        if(reloadCount == 0)
+        if(reloadCount == 1)
         {
-            LeanTween.move(snake, Vector3.zero, 0);
+            LeanTween.moveLocal(snake, Vector3.zero, 0);
+            snake.GetComponentInChildren<TrailRenderer>().time = 1.5f;
         }
         gameStarted = true;
     }
@@ -211,5 +215,6 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
         cards.Clear();
         randomValueList.Clear();
         cardPositions.Clear();
+        reloadCount = 0;
     }
 }

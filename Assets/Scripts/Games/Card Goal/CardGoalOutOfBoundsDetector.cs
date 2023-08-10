@@ -8,12 +8,14 @@ public class CardGoalOutOfBoundsDetector : MonoBehaviour
     Collider2D collidedCard;
     [SerializeField]
     Transform goalPost;
+    private CardGoalBoardGenerator board;
 
     void Start()
     {
         BoxCollider2D collider = GetComponent<BoxCollider2D>();
         RectTransform rect = GetComponent<RectTransform>();
         collider.size = new Vector2(rect.rect.width, rect.rect.height);
+        board = GameObject.Find("GamePanel").GetComponent<CardGoalBoardGenerator>();
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -38,7 +40,11 @@ public class CardGoalOutOfBoundsDetector : MonoBehaviour
             collidedCard.transform.rotation = Quaternion.Euler(0, 0, 0);
             collidedCard.transform.position = collidedCard.transform.parent.position;
             rb.freezeRotation = false;
-            collidedCard.GetComponent<CardGoalFlickManager>().canThrow = true;
+            for (int i = 0; i < board.cardParents.Length; i++)
+            {
+                board.cardParents[i].GetComponent<CardGoalFlickManager>().canThrow = true;
+                board.cardParents[i].GetComponent<BoxCollider2D>().isTrigger = true;
+            }
             collidedCard.GetComponent<CardGoalFlickManager>().isValid = false;
             LeanTween.scale(collidedCard.gameObject, Vector3.one * 12, .2f);
         }

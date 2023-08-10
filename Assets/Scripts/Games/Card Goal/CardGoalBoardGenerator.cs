@@ -85,7 +85,7 @@ public class CardGoalBoardGenerator : MonoBehaviour
     {
         for (int i = 0; i < cardParents.Length; i++)
         {
-            LeanTween.alpha(cardParents[i].GetComponent<RectTransform>(), 1, .001f);
+            LeanTween.alpha(cardParents[i], 1, .001f);
             LeanTween.scale(cardParents[i], Vector3.one * 12, 0.2f);
         }
 

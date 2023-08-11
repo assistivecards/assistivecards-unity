@@ -234,9 +234,9 @@ public class CardBalanceBoardGenerator : MonoBehaviour
         cardNames.Clear();
         randomValueList.Clear();
         usedRandomOrderCards.Clear();
-        uıController.LevelChangeScreenActivate();
         if(!finished)
         {
+            uıController.LevelChangeScreenActivate();
             gameAPI.PlaySFX("Finished");
             finished = true;
         }

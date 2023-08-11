@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 461203947}
   m_Layer: 5
   m_Name: CardPosition4
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -873,7 +873,7 @@ GameObject:
   - component: {fileID: 577278456}
   m_Layer: 5
   m_Name: CardPosition7
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1593,7 +1593,7 @@ GameObject:
   - component: {fileID: 1167211903}
   m_Layer: 5
   m_Name: CardPosition9
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2098,7 +2098,7 @@ GameObject:
   - component: {fileID: 1339088439}
   m_Layer: 5
   m_Name: CardPosition2
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2345,7 +2345,7 @@ GameObject:
   - component: {fileID: 1582516528}
   m_Layer: 5
   m_Name: CardPosition3
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2381,7 +2381,7 @@ GameObject:
   - component: {fileID: 1596147985}
   m_Layer: 5
   m_Name: CardPosition5
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2417,7 +2417,7 @@ GameObject:
   - component: {fileID: 1702550591}
   m_Layer: 5
   m_Name: CardPosition6
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2722,7 +2722,7 @@ GameObject:
   - component: {fileID: 1821111188}
   m_Layer: 5
   m_Name: CardPosition8
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4121,8 +4121,8 @@ MonoBehaviour:
   cardPosition9: {fileID: 1167211902}
   cardPositions: []
   gameStarted: 0
-  eatenCardCount: 0
   targetCard: 
+  eatenCardCount: 0
   reloadCount: 0
 --- !u!114 &8383894889009589327
 MonoBehaviour:

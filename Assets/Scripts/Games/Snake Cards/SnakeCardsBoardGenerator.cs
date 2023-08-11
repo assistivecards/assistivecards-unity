@@ -131,7 +131,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
                     cardTexture.wrapMode = TextureWrapMode.Clamp;
                     cardTexture.filterMode = FilterMode.Bilinear;
 
-                    card.transform.name = cardLocalNames[randomValueList[j]];
+                    card.transform.name = cardNames[randomValueList[j]];
                     card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                     card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                     card.GetComponent<SnakeCardsCardController>().cardName = cardNames[randomValueList[j]];
@@ -166,7 +166,6 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
                 }
             }
             targetCard = cardNames[randomValueList[5]];
-            eatenCardCount = 0;
             reloadCount++;
             Invoke("GameUIActivate", 0.1f);
         }
@@ -177,8 +176,8 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
         eatenCardCount++;
         if(eatenCardCount >= 4  && reloadCount < 3)
         {
+            ClearForRefill();
             GeneratedBoardAsync();
-            randomValueList.Clear();
         }
         else if(eatenCardCount >= 4  && reloadCount == 3)
         {
@@ -203,18 +202,30 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
         uıController.LevelChangeScreenActivate();
     }
 
-    public void ClearBoard()
+    public void ClearForRefill()
     {
-        cardLocalNames.Clear();
         cardNames.Clear();
         cardsList.Clear();
+        cardLocalNames.Clear();
+        cards.Clear();
+        randomValueList.Clear();
+        cardPositions.Clear();
+        eatenCardCount = 0;
+    }
+
+    public void ClearBoard()
+    {
         foreach (var card in cards)
         {
             Destroy(card);
         }
+        cardNames.Clear();
+        cardsList.Clear();
+        cardLocalNames.Clear();
         cards.Clear();
         randomValueList.Clear();
         cardPositions.Clear();
+        eatenCardCount = 0;
         reloadCount = 0;
     }
 }

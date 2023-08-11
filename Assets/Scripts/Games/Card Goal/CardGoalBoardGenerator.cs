@@ -95,6 +95,7 @@ public class CardGoalBoardGenerator : MonoBehaviour
         {
             cardParents[i].transform.SetParent(cardSlots[i]);
             cardParents[i].transform.position = cardSlots[i].position;
+            cardParents[i].GetComponent<Rigidbody2D>().freezeRotation = false;
             cardParents[i].transform.rotation = Quaternion.Euler(0, 0, 0);
             LeanTween.alpha(cardParents[i], 1, .001f);
             LeanTween.scale(cardParents[i], Vector3.one * 12, 0.2f);
@@ -113,6 +114,11 @@ public class CardGoalBoardGenerator : MonoBehaviour
         }
 
         LeanTween.scale(throwText.gameObject, Vector3.zero, 0.2f);
+    }
+
+    public void ScaleGoalPostDown()
+    {
+        LeanTween.scale(goalPost.gameObject, Vector3.zero, 0.2f);
     }
 
     public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)

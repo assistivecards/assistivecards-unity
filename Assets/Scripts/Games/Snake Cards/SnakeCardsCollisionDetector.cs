@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class SnakeCardsCollisionDetector : MonoBehaviour
 {
+    GameAPI gameAPI;
     [SerializeField] private SnakeCardsBoardGenerator boardGenerator;
     [SerializeField] private SnakeCardTrailMove trailMove;
     public Vector3 snakePosition;
     public float snakeLenght;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void Update()
     {
@@ -45,13 +51,21 @@ public class SnakeCardsCollisionDetector : MonoBehaviour
                 snakeLenght = GetComponentInChildren<TrailRenderer>().time;
                 GetComponentInChildren<TrailRenderer>().time = snakeLenght + 2f;
                 LeanTween.scale(other.gameObject, Vector3.one * 1.2f, 0.2f).setOnComplete(other.gameObject.GetComponent<SnakeCardsCardController>().Eaten);
-                boardGenerator.CardEaten();;
-                // success sound
+                boardGenerator.CardEaten();
+                gameAPI.Speak(other.GetComponent<SnakeCardsCardController>().cardName);
+                Debug.Log(other.GetComponent<SnakeCardsCardController>().cardName);
+                Invoke("SuccessSound", 0.25f);
+               
             }
             else
             {
                 other.gameObject.GetComponent<SnakeCardsCardController>().Eaten();
             }
         }
+    }
+
+    private void SuccessSound()
+    {
+        gameAPI.PlaySFX("Success");
     }
 }

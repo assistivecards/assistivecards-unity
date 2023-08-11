@@ -34,6 +34,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
 
     [Header ("Game Elements")]
     [SerializeField] private GameObject snake;
+    [SerializeField] private TMP_Text eatCardsText;
     [SerializeField] private GameObject cardPosition1;
     [SerializeField] private GameObject cardPosition2;
     [SerializeField] private GameObject cardPosition3;
@@ -43,6 +44,9 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject cardPosition7;
     [SerializeField] private GameObject cardPosition8;
     [SerializeField] private GameObject cardPosition9;
+    [SerializeField] private GameObject cardPosition10;
+    [SerializeField] private GameObject cardPosition11;
+    [SerializeField] private GameObject cardPosition12;
     public List<GameObject> cardPositions = new List<GameObject>();
 
     [Header ("In Game Values")]
@@ -54,6 +58,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+        gameAPI.PlayMusic();
     }
 
     public async Task CacheCards()
@@ -90,6 +95,9 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     private void CreatePositionsList()
     {
         cardPositions.Add(cardPosition2);
+        cardPositions.Add(cardPosition10);
+        cardPositions.Add(cardPosition11);
+        cardPositions.Add(cardPosition12);
         cardPositions.Add(cardPosition3);
         cardPositions.Add(cardPosition5);
         cardPositions.Add(cardPosition6);
@@ -119,7 +127,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
             await CacheCards();
             CreatePositionsList();
             RandomizePositions();
-            for(int j = 0; j < 5; j++)
+            for(int j = 0; j < 8; j++)
             {
                 CheckRandom();
                 if(cardPositions[j].transform.childCount <= 0)
@@ -131,7 +139,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
                     cardTexture.wrapMode = TextureWrapMode.Clamp;
                     cardTexture.filterMode = FilterMode.Bilinear;
 
-                    card.transform.name = cardLocalNames[randomValueList[j]];
+                    card.transform.name = cardNames[randomValueList[j]];
                     card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                     card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                     card.GetComponent<SnakeCardsCardController>().cardName = cardNames[randomValueList[j]];
@@ -143,7 +151,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
                 }
             }
             CheckRandom();
-            for(int i = 5; i < 9; i++)
+            for(int i = 8; i < 12; i++)
             {
                 if(cardPositions[i].transform.childCount <= 0)
                 {
@@ -166,7 +174,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
                 }
             }
             targetCard = cardNames[randomValueList[5]];
-            eatenCardCount = 0;
+            eatCardsText.text = gameAPI.Translate(eatCardsText.gameObject.name, gameAPI.ToSentenceCase(targetCard).Replace("-", " "), selectedLangCode);
             reloadCount++;
             Invoke("GameUIActivate", 0.1f);
         }
@@ -177,8 +185,8 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
         eatenCardCount++;
         if(eatenCardCount >= 4  && reloadCount < 3)
         {
+            ClearForRefill();
             GeneratedBoardAsync();
-            randomValueList.Clear();
         }
         else if(eatenCardCount >= 4  && reloadCount == 3)
         {
@@ -191,7 +199,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
         uıController.GameUIActivate();
         if(reloadCount == 1)
         {
-            LeanTween.moveLocal(snake, Vector3.zero, 0);
+            LeanTween.moveLocal(snake, new Vector3(-400, 0, 0), 0);
             snake.GetComponentInChildren<TrailRenderer>().time = 1.5f;
         }
         gameStarted = true;
@@ -203,18 +211,30 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
         uıController.LevelChangeScreenActivate();
     }
 
-    public void ClearBoard()
+    public void ClearForRefill()
     {
-        cardLocalNames.Clear();
         cardNames.Clear();
         cardsList.Clear();
+        cardLocalNames.Clear();
+        cards.Clear();
+        randomValueList.Clear();
+        cardPositions.Clear();
+        eatenCardCount = 0;
+    }
+
+    public void ClearBoard()
+    {
         foreach (var card in cards)
         {
             Destroy(card);
         }
+        cardNames.Clear();
+        cardsList.Clear();
+        cardLocalNames.Clear();
         cards.Clear();
         randomValueList.Clear();
         cardPositions.Clear();
+        eatenCardCount = 0;
         reloadCount = 0;
     }
 }

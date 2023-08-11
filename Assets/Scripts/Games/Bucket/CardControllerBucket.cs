@@ -52,6 +52,7 @@ public class CardControllerBucket : MonoBehaviour
                 if(this.gameObject.name == GetComponentInParent<DropControllerBucket>().collectableCard)
                 {
                     gameAPI.PlaySFX("Success");
+                    gameAPI.AddSessionExp();
                     GetComponentInParent<DropControllerBucket>().matchCount ++;
                     GetComponentInParent<DropControllerBucket>().SetCount();
                     
@@ -64,6 +65,7 @@ public class CardControllerBucket : MonoBehaviour
                 }
                 else if(this.gameObject.name != GetComponentInParent<DropControllerBucket>().collectableCard)
                 {
+                    gameAPI.RemoveSessionExp();
                     gameAPI.PlaySFX("NotMatched");
                     Invoke("FadeOutCard", 2f);
                 }

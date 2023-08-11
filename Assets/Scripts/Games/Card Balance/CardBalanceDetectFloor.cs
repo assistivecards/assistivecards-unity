@@ -8,6 +8,7 @@ public class CardBalanceDetectFloor : MonoBehaviour, IPointerDownHandler, IPoint
     GameAPI gameAPI;
     public string cardLocalName;
     public bool matched;
+    public bool notMatched;
     private CardBalanceBoardGenerator boardGenerator;
     public string requiredFloor;
     public bool touch;
@@ -32,7 +33,6 @@ public class CardBalanceDetectFloor : MonoBehaviour, IPointerDownHandler, IPoint
                 gameAPI.PlaySFX("Success");
                 Invoke("SpeakCard", 0.2f);
             }
-
             matched = true;
         }
     }

@@ -55,10 +55,12 @@ public class UIControllerBucket : MonoBehaviour
         packSelectionScreen.SetActive(true);
         levelChangeScreen.SetActive(false);
         collectCount.SetActive(false);
+        gameAPI.ResetSessionExp();
     }
 
     public void LevelChangeActive()
     {
+        gameAPI.AddExp(gameAPI.sessionExp);
         settingButton.SetActive(false);
         backButton.SetActive(false);
         helloText.SetActive(false);
@@ -87,6 +89,7 @@ public class UIControllerBucket : MonoBehaviour
 
     public void CloseLevelChange()
     {
+        gameAPI.ResetSessionExp();
         LeanTween.scale(levelChangeScreen, Vector3.zero, 0.25f);
         Invoke("ResetLevelChangeScreen", 0.15f);
     }

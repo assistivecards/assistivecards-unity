@@ -71,12 +71,14 @@ GameAPI gameAPI;
     {
         LevelEnding();
         levelChange.SetActive(true);
+        gameAPI.AddExp(gameAPI.sessionExp);
         LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.3f);
         gameAPI.PlaySFX("Finished");
     }
 
     public void CloseLevelChangePanel()
     {
+        gameAPI.ResetSessionExp();
         LeanTween.scale(levelChange, Vector3.zero, 0.4f);
         Invoke("LevelChangeDeactivate", 0.7f);
     }
@@ -88,6 +90,7 @@ GameAPI gameAPI;
         settingButton.SetActive(true);
         helloText.SetActive(true);
         levelProgressContainer.SetActive(true);
+        gameAPI.ResetSessionExp();
     }
 
     public void DetectPremium()

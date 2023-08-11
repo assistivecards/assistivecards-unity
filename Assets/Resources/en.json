@@ -230,6 +230,7 @@
 	"collect_5_cards":"Collect 5 $1",
 	"collect_cards":"Collect $1 Cards!",
 	"cut_cards": "Cut $1 Cards!",
+	"eat_cards": "Eat $1 Cards!",
 	"settings_tts":"Text-to-Speech",
 	"find_the_card":"Find the $1",
 	"paint_the_card":"Paint the $1",

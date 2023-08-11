@@ -143,6 +143,7 @@ public class DropControllerBucket : MonoBehaviour
             LeanTween.scale(collectText.gameObject, Vector3.zero, 0.15f).setOnComplete(ResetText);
             LeanTween.scale(collectedCountText.gameObject, Vector3.zero, 0.15f).setOnComplete(ResetText);
             Invoke("ResetLevel", 0.25f);
+            gameAPI.AddExp(gameAPI.sessionExp);
             gameAPI.PlaySFX("Finished");
         }
         else if(droppedCardCount > 30)

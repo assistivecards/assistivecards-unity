@@ -8,6 +8,12 @@ public class CardGoalMatchDetection : MonoBehaviour
     Color green;
     private CardGoalBoardGenerator board;
     private CardGoalUIController UIController;
+    private GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void Start()
     {
@@ -23,6 +29,8 @@ public class CardGoalMatchDetection : MonoBehaviour
             Debug.Log("Correct Match!");
             UIController.correctMatches++;
             UIController.backButton.GetComponent<Button>().interactable = false;
+            gameAPI.PlaySFX("Success");
+            board.Invoke("ReadCard", 0.25f);
 
             // other.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             other.GetComponent<Rigidbody2D>().isKinematic = true;
@@ -30,7 +38,6 @@ public class CardGoalMatchDetection : MonoBehaviour
             other.GetComponent<Rigidbody2D>().freezeRotation = true;
             other.transform.SetParent(transform);
 
-            board.Invoke("ReadCard", 0.25f);
             board.Invoke("ScaleImagesDown", 1f);
             board.Invoke("ClearBoard", 1.3f);
 

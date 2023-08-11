@@ -15,6 +15,12 @@ public class CardGoalFlickManager : MonoBehaviour, IPointerDownHandler, IPointer
     public float throwForce = 0.3f;
     public bool isValid;
     [SerializeField] CardGoalFlickManager[] allFlickManagers;
+    private GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     void Start()
     {
@@ -56,6 +62,7 @@ public class CardGoalFlickManager : MonoBehaviour, IPointerDownHandler, IPointer
             {
                 item.canThrow = false;
             }
+            gameAPI.PlaySFX("Pickup");
         }
     }
 }

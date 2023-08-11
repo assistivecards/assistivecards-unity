@@ -88,6 +88,10 @@ public class CardGoalBoardGenerator : MonoBehaviour
             cardParents[i].GetComponent<CardGoalFlickManager>().canThrow = true;
             cardParents[i].GetComponent<CardGoalFlickManager>().isValid = false;
             cardParents[i].GetComponent<BoxCollider2D>().isTrigger = true;
+            cardParents[i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            cardParents[i].GetComponent<Rigidbody2D>().isKinematic = true;
+            cardParents[i].GetComponent<Rigidbody2D>().freezeRotation = true;
+
         }
 
     }
@@ -98,8 +102,8 @@ public class CardGoalBoardGenerator : MonoBehaviour
         {
             cardParents[i].transform.SetParent(cardSlots[i]);
             cardParents[i].transform.position = cardSlots[i].position;
-            cardParents[i].GetComponent<Rigidbody2D>().freezeRotation = false;
             cardParents[i].transform.rotation = Quaternion.Euler(0, 0, 0);
+            cardParents[i].GetComponent<Rigidbody2D>().freezeRotation = false;
             LeanTween.alpha(cardParents[i], 1, .001f);
             LeanTween.scale(cardParents[i], Vector3.one * 12, 0.2f);
         }

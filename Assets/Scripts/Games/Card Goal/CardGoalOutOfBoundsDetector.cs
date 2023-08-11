@@ -9,6 +9,7 @@ public class CardGoalOutOfBoundsDetector : MonoBehaviour
     [SerializeField]
     Transform goalPost;
     private CardGoalBoardGenerator board;
+    private CardGoalUIController UIController;
 
     void Start()
     {
@@ -16,12 +17,14 @@ public class CardGoalOutOfBoundsDetector : MonoBehaviour
         RectTransform rect = GetComponent<RectTransform>();
         collider.size = new Vector2(rect.rect.width, rect.rect.height);
         board = GameObject.Find("GamePanel").GetComponent<CardGoalBoardGenerator>();
+        UIController = GameObject.Find("GamePanel").GetComponent<CardGoalUIController>();
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         Debug.Log("Out Of Bounds!!!");
         collidedCard = other;
+        UIController.backButton.GetComponent<Button>().interactable = false;
         LeanTween.alpha(collidedCard.gameObject, 0, .2f);
         Invoke("ResetCardPosition", .25f);
 
@@ -47,6 +50,7 @@ public class CardGoalOutOfBoundsDetector : MonoBehaviour
             }
             collidedCard.GetComponent<CardGoalFlickManager>().isValid = false;
             LeanTween.scale(collidedCard.gameObject, Vector3.one * 12, .2f);
+            UIController.backButton.GetComponent<Button>().interactable = true;
         }
 
     }

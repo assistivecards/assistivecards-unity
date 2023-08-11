@@ -25,6 +25,7 @@ public class CardGoalBoardGenerator : MonoBehaviour
     public static bool isBackAfterSignOut = false;
     [SerializeField] GameObject loadingPanel;
     private CardGoalUIController UIController;
+    [SerializeField] GameObject tutorial;
 
     private void Awake()
     {
@@ -68,7 +69,9 @@ public class CardGoalBoardGenerator : MonoBehaviour
         PlaceSprites();
         DisableLoadingPanel();
         ScaleImagesUp();
+        Invoke("SetTutorialPosition", .3f);
         backButton.SetActive(true);
+        UIController.Invoke("TutorialSetActive", .3f);
         Invoke("EnableBackButton", 0.15f);
     }
 
@@ -198,6 +201,20 @@ public class CardGoalBoardGenerator : MonoBehaviour
     public void TranslateThrowCardText()
     {
         throwText.text = gameAPI.Translate(throwText.gameObject.name, gameAPI.ToSentenceCase(randomCards[0].title).Replace("-", " "), selectedLangCode);
+    }
+
+    private void SetTutorialPosition()
+    {
+
+        for (int i = 0; i < cardParents.Length; i++)
+        {
+            if (cardParents[i].transform.GetChild(0).GetComponent<SpriteRenderer>().sprite.texture == randomImages[0])
+            {
+                tutorial.transform.SetParent(cardParents[i].transform.parent);
+                tutorial.GetComponent<Tutorial>().tutorialPosition = cardParents[i].transform.parent;
+            }
+        }
+
     }
 
 }

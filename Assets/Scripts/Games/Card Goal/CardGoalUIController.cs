@@ -16,6 +16,8 @@ public class CardGoalUIController : MonoBehaviour
     private GameAPI gameAPI;
     public int correctMatches;
     public int checkpointFrequency;
+    [SerializeField] GameObject tutorial;
+    private bool firstTime = true;
 
     private void Awake()
     {
@@ -127,4 +129,14 @@ public class CardGoalUIController : MonoBehaviour
         homeButton.SetActive(true);
         levelProgressContainer.SetActive(true);
     }
+
+    public void TutorialSetActive()
+    {
+        if (firstTime || gameAPI.GetTutorialPreference() == 1)
+        {
+            tutorial.SetActive(true);
+        }
+        firstTime = false;
+    }
+
 }

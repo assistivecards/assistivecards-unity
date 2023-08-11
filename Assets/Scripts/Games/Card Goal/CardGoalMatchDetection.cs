@@ -27,6 +27,7 @@ public class CardGoalMatchDetection : MonoBehaviour
         if (other.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite.texture.name == board.correctCardSlug)
         {
             Debug.Log("Correct Match!");
+            gameAPI.AddSessionExp();
             UIController.correctMatches++;
             UIController.backButton.GetComponent<Button>().interactable = false;
             gameAPI.PlaySFX("Success");
@@ -44,6 +45,7 @@ public class CardGoalMatchDetection : MonoBehaviour
             if (UIController.correctMatches == UIController.checkpointFrequency)
             {
                 board.Invoke("ScaleGoalPostDown", 1f);
+                gameAPI.AddExp(gameAPI.sessionExp);
                 UIController.Invoke("OpenCheckPointPanel", 1.3f);
             }
             else
@@ -54,6 +56,7 @@ public class CardGoalMatchDetection : MonoBehaviour
         else
         {
             Debug.Log("Wrong Match!");
+            gameAPI.RemoveSessionExp();
         }
     }
 

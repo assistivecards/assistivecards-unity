@@ -20,6 +20,7 @@ public class AlphabetChooseButtonController : MonoBehaviour
         {
             if(boardGenerator.levelCount < 4)
             {
+                gameAPI.AddSessionExp();
                 gameAPI.PlaySFX("Success");
                 Invoke("ReadCard", 0.2f);
                 boardGenerator.levelCount++;
@@ -28,6 +29,7 @@ public class AlphabetChooseButtonController : MonoBehaviour
             }
             else if(boardGenerator.levelCount == 4)
             {
+                gameAPI.AddSessionExp();
                 gameAPI.PlaySFX("Success");
                 Invoke("ReadCard", 0.2f);
                 boardGenerator.LevelEnding();
@@ -37,6 +39,7 @@ public class AlphabetChooseButtonController : MonoBehaviour
         }
         else
         {
+            gameAPI.RemoveSessionExp();
             LeanTween.scale(this.gameObject, Vector3.zero, 0.5f);
         }
     }

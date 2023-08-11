@@ -44,6 +44,9 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject cardPosition7;
     [SerializeField] private GameObject cardPosition8;
     [SerializeField] private GameObject cardPosition9;
+    [SerializeField] private GameObject cardPosition10;
+    [SerializeField] private GameObject cardPosition11;
+    [SerializeField] private GameObject cardPosition12;
     public List<GameObject> cardPositions = new List<GameObject>();
 
     [Header ("In Game Values")]
@@ -92,6 +95,9 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     private void CreatePositionsList()
     {
         cardPositions.Add(cardPosition2);
+        cardPositions.Add(cardPosition10);
+        cardPositions.Add(cardPosition11);
+        cardPositions.Add(cardPosition12);
         cardPositions.Add(cardPosition3);
         cardPositions.Add(cardPosition5);
         cardPositions.Add(cardPosition6);
@@ -121,7 +127,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
             await CacheCards();
             CreatePositionsList();
             RandomizePositions();
-            for(int j = 0; j < 5; j++)
+            for(int j = 0; j < 8; j++)
             {
                 CheckRandom();
                 if(cardPositions[j].transform.childCount <= 0)
@@ -145,7 +151,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
                 }
             }
             CheckRandom();
-            for(int i = 5; i < 9; i++)
+            for(int i = 8; i < 12; i++)
             {
                 if(cardPositions[i].transform.childCount <= 0)
                 {

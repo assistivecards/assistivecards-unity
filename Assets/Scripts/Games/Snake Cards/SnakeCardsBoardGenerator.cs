@@ -34,6 +34,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
 
     [Header ("Game Elements")]
     [SerializeField] private GameObject snake;
+    [SerializeField] private TMP_Text eatCardsText;
     [SerializeField] private GameObject cardPosition1;
     [SerializeField] private GameObject cardPosition2;
     [SerializeField] private GameObject cardPosition3;
@@ -166,6 +167,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
                 }
             }
             targetCard = cardNames[randomValueList[5]];
+            eatCardsText.text = gameAPI.Translate(eatCardsText.gameObject.name, gameAPI.ToSentenceCase(targetCard).Replace("-", " "), selectedLangCode);
             reloadCount++;
             Invoke("GameUIActivate", 0.1f);
         }

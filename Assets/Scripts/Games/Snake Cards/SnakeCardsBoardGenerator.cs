@@ -192,7 +192,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
         uıController.GameUIActivate();
         if(reloadCount == 1)
         {
-            LeanTween.moveLocal(snake, Vector3.zero, 0);
+            LeanTween.moveLocal(snake, new Vector3(-400, 0, 0), 0);
             snake.GetComponentInChildren<TrailRenderer>().time = 1.5f;
         }
         gameStarted = true;

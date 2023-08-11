@@ -22,6 +22,7 @@ public class CardGoalMatchDetection : MonoBehaviour
         {
             Debug.Log("Correct Match!");
             UIController.correctMatches++;
+            UIController.backButton.GetComponent<Button>().interactable = false;
 
             // other.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             other.GetComponent<Rigidbody2D>().isKinematic = true;

@@ -24,6 +24,7 @@ public class CardGoalBoardGenerator : MonoBehaviour
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
     [SerializeField] GameObject loadingPanel;
+    private CardGoalUIController UIController;
 
     private void Awake()
     {
@@ -33,6 +34,7 @@ public class CardGoalBoardGenerator : MonoBehaviour
     private void Start()
     {
         gameAPI.PlayMusic();
+        UIController = gameObject.GetComponent<CardGoalUIController>();
     }
 
     private void OnEnable()
@@ -40,6 +42,7 @@ public class CardGoalBoardGenerator : MonoBehaviour
         if (isBackAfterSignOut)
         {
             gameAPI.PlayMusic();
+            UIController.OnBackButtonClick();
             isBackAfterSignOut = false;
         }
     }

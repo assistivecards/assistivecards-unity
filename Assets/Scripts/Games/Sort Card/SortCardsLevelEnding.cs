@@ -51,6 +51,7 @@ public class SortCardsLevelEnding : MonoBehaviour
         {
             UIController.Invoke("LevelEnd", 1f);
             boardGenerator.Invoke("ClearBoard", 1f);
+            gameAPI.AddSessionExp();
             gameAPI.PlaySFX("Finished");
         }
         else
@@ -72,7 +73,8 @@ public class SortCardsLevelEnding : MonoBehaviour
         orderDetection.slotCards[0].GetComponent<SortCardDraggable>().Invoke("SetLandedFalse", 0.8f);
         orderDetection.slotCards[1].GetComponent<SortCardDraggable>().Invoke("SetLandedFalse", 0.8f);
         orderDetection.slotCards[2].GetComponent<SortCardDraggable>().Invoke("SetLandedFalse", 0.8f);
-
+        
+        gameAPI.RemoveSessionExp();
         correct = 0;
         count = 0;
     }

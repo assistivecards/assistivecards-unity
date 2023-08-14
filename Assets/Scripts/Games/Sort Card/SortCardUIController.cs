@@ -53,6 +53,7 @@ public class SortCardUIController : MonoBehaviour
         helloText.SetActive(false);
         levelProgressContainer.SetActive(false);
         loadingScreen.SetActive(false);
+        gameAPI.AddExp(gameAPI.sessionExp);
     }
 
     public void SelectNewPackClick()
@@ -111,16 +112,19 @@ public class SortCardUIController : MonoBehaviour
 
     public void ResetScroll()
     {
+        gameAPI.ResetSessionExp();
         packSelectionPanel.transform.GetChild(0).GetChild(0).GetChild(0).transform.localPosition = Vector3.zero;
     }
 
     public void LevelScreenContinue()
     {
+        gameAPI.ResetSessionExp();
         LeanTween.scale(levelEndScreen, Vector3.zero, 0.25f).setOnComplete(LoadingScreenActivate);
     }
 
     public void LevelScreenPackSelect()
     {
+        gameAPI.ResetSessionExp();
         LeanTween.scale(levelEndScreen, Vector3.zero, 0.25f).setOnComplete(SelectNewPackClick);
         ResetScroll();
     }

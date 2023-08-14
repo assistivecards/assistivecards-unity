@@ -84,6 +84,7 @@ public class UIControllerCardChain : MonoBehaviour
     public void PackSelectionActive()
     {
         ResetScroll();
+        gameAPI.ResetSessionExp();
         helloText.SetActive(true);
         levelProgressContainer.SetActive(true);
         settingButton.SetActive(true);
@@ -94,6 +95,7 @@ public class UIControllerCardChain : MonoBehaviour
 
     public void LevelChangeActive()
     {
+        gameAPI.AddExp(gameAPI.sessionExp);
         settingButton.SetActive(false);
         backButton.SetActive(false);
         helloText.SetActive(false);
@@ -104,6 +106,7 @@ public class UIControllerCardChain : MonoBehaviour
 
     public void CloseLevelChange()
     {
+        gameAPI.ResetSessionExp();
         LeanTween.scale(levelChangeScreen, Vector3.zero, 0.25f);
         Invoke("ResetLevelChangeScreen", 0.15f);
     }

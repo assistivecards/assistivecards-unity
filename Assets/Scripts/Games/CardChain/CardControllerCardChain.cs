@@ -120,6 +120,10 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
                     GameObject doubleCardParent = other.transform.parent.gameObject;
                     rightMatched = false;
                 }
+                else
+                {
+                    gameAPI.RemoveSessionExp();
+                }
             }
         }
     }
@@ -168,6 +172,7 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
         doubleCardParent.GetComponent<CardControllerCardChain>().leftCard.transform.SetParent(this.transform);
         LeanTween.move(leftCard, new Vector3(preLeftCard.transform.position.x - 120, preLeftCard.transform.position.y, preLeftCard.transform.position.z), 0.15f);
         GetChildList();
+        gameAPI.AddSessionExp();
         gameAPI.PlaySFX("Success");
         Invoke("ReadLeftCard", 0.25f);
         Destroy(doubleCardParent.gameObject);
@@ -215,9 +220,8 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
         doubleCardParent.GetComponent<CardControllerCardChain>().rightCard.transform.SetParent(this.transform);
         LeanTween.move(rightCard, new Vector3(preRightCard.transform.position.x + 120, preRightCard.transform.position.y, preRightCard.transform.position.z), 0.15f);
         GetChildList();
-        
+        gameAPI.AddSessionExp();
         gameAPI.PlaySFX("Success");
-        
         Invoke("ReadRightCard", 0.25f);
         Destroy(doubleCardParent.gameObject);
         boardGenerateCardChain.matchCount ++;

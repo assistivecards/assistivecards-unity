@@ -25,21 +25,25 @@ public class SnakeCardTrailMove : MonoBehaviour
             if(degree == 180) 
             { 
                 snake.transform.position += transform.right * Time.deltaTime * speed;
+                snake.transform.localScale = new Vector3(1, -1, 1);
                 directionStatus = "right";    
             }
             else if(degree == 0) 
             { 
                 snake.transform.position += -transform.right * Time.deltaTime * speed;
+                snake.transform.localScale = Vector3.one;
                 directionStatus = "left";
             }
             else if(degree == -90)
             { 
                 snake.transform.position += transform.up * Time.deltaTime * speed;
+                snake.transform.localScale = new Vector3(1, -1, 1);
                 directionStatus = "up";
             }
             else if(degree == 90) 
             { 
                 snake.transform.position += -transform.up * Time.deltaTime * speed;
+                snake.transform.localScale = new Vector3(1, -1, 1);
                 directionStatus = "down";
             }
             if(Input.touchCount > 0)

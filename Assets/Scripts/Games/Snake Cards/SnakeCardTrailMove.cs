@@ -15,29 +15,29 @@ public class SnakeCardTrailMove : MonoBehaviour
     public Vector2 direction;
     public bool isRotating;
     public bool move;
-    private int degree = 90;
+    private int degree = 180;
     public string directionStatus;
 
     private void Update() 
     {
         if(boardGenerator.gameStarted)
         {
-            if(degree == 90) 
+            if(degree == 180) 
             { 
                 snake.transform.position += transform.right * Time.deltaTime * speed;
                 directionStatus = "right";    
             }
-            else if(degree == -90) 
+            else if(degree == 0) 
             { 
                 snake.transform.position += -transform.right * Time.deltaTime * speed;
                 directionStatus = "left";
             }
-            else if(degree == 180)
+            else if(degree == -90)
             { 
                 snake.transform.position += transform.up * Time.deltaTime * speed;
                 directionStatus = "up";
             }
-            else if(degree == 0) 
+            else if(degree == 90) 
             { 
                 snake.transform.position += -transform.up * Time.deltaTime * speed;
                 directionStatus = "down";
@@ -64,10 +64,10 @@ public class SnakeCardTrailMove : MonoBehaviour
     private void DetectDirection()
     {
         direction = secondTouchPosition - firstTouchPosition;
-        if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y) && direction.x > 0 && directionStatus != "left") { RotateSnake(90);}
-        else if(Mathf.Abs(direction.x) < Mathf.Abs(direction.y) && direction.y > 0 && directionStatus != "down") { RotateSnake(180);}
-        else if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y) && direction.x < 0 && directionStatus != "right") { RotateSnake(-90);}
-        else if(Mathf.Abs(direction.x) < Mathf.Abs(direction.y) && direction.y < 0 && directionStatus != "up") { RotateSnake(0);}
+        if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y) && direction.x > 0 && directionStatus != "left") { RotateSnake(180);}
+        else if(Mathf.Abs(direction.x) < Mathf.Abs(direction.y) && direction.y > 0 && directionStatus != "down") { RotateSnake(-90);}
+        else if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y) && direction.x < 0 && directionStatus != "right") { RotateSnake(0);}
+        else if(Mathf.Abs(direction.x) < Mathf.Abs(direction.y) && direction.y < 0 && directionStatus != "up") { RotateSnake(90);}
     }
 
     public void RotateSnake(int _degree)

@@ -24,13 +24,13 @@ public class SnakeCardsCollisionDetector : MonoBehaviour
     {
         if(other.gameObject.tag == "TopBorder" || other.gameObject.tag == "BottomBorder")
         {
-            if(snakePosition.x > 0) { trailMove.RotateSnake(-90);}
-            else if(snakePosition.x <= 0) { trailMove.RotateSnake(90);}
+            if(snakePosition.x > 0) { trailMove.RotateSnake(0);}
+            else if(snakePosition.x <= 0) { trailMove.RotateSnake(180);}
         }
         else if(other.gameObject.tag == "RightBorder" || other.gameObject.tag == "LeftBorder")
         {
-            if(snakePosition.y > 0) { trailMove.RotateSnake(0);}
-            else if(snakePosition.y <= 0) { trailMove.RotateSnake(180);}
+            if(snakePosition.y > 0) { trailMove.RotateSnake(90);}
+            else if(snakePosition.y <= 0) { trailMove.RotateSnake(-90);}
         }
     }
 

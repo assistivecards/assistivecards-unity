@@ -70,11 +70,13 @@ public class CardNinjaCardMovement : MonoBehaviour
             {
                 Invoke("IncreaseCutCount", 0.5f);
                 gameAPI.PlaySFX("Success");
+                gameAPI.AddSessionExp();
                 Invoke("ReadCard", 0.17f);
             }
             else
             {
                 gameAPI.PlaySFX("Cut");
+                gameAPI.RemoveSessionExp();
                 Invoke("ReadCard", 0.17f);
             }
         }

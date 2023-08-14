@@ -81,6 +81,7 @@ public class CardNinjaUIController : MonoBehaviour
 
     public void LevelEnd()
     {
+        gameAPI.AddExp(gameAPI.sessionExp);
         cutText.SetActive(false);
         levelEnd = true;
         boardGenerator.ClearBoard();
@@ -114,7 +115,6 @@ public class CardNinjaUIController : MonoBehaviour
                         Debug.Log("Seçilen paket premium değil");
                         canGenerate = true;
                     }
-
                 }
             }
         }
@@ -122,6 +122,7 @@ public class CardNinjaUIController : MonoBehaviour
 
     public void PackSelectionPanelActive()
     {
+        gameAPI.ResetSessionExp();
         cutText.SetActive(false);
         backButton.SetActive(false);
         settingButton.SetActive(true);
@@ -132,6 +133,7 @@ public class CardNinjaUIController : MonoBehaviour
 
     public void CloseLevelChangePanel()
     {
+        gameAPI.ResetSessionExp();
         LeanTween.scale(levelChange, Vector3.zero, 0.5f);
         Invoke("LevelChangeDeactivate", 1f);
     }

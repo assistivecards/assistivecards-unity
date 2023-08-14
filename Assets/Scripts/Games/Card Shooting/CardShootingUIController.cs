@@ -61,6 +61,7 @@ GameAPI gameAPI;
     public void LevelChangeScreenActivate()
     {
         LevelEnding();
+        gameAPI.AddExp(gameAPI.sessionExp);
         levelChange.SetActive(true);
         ballController.levelCount = 0;
         LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.1f);
@@ -75,6 +76,7 @@ GameAPI gameAPI;
     public void PackSelectionPanelActive()
     {
         gameUI.SetActive(false);
+        gameAPI.ResetSessionExp();
         backButton.SetActive(false);
         settingButton.SetActive(true);
         helloText.SetActive(true);
@@ -111,6 +113,7 @@ GameAPI gameAPI;
 
     public void LevelChangeDeactivate()
     {
+        gameAPI.ResetSessionExp();
         levelChange.SetActive(false);
     }
 

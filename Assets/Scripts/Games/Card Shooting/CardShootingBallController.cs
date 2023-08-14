@@ -63,6 +63,7 @@ public class CardShootingBallController : MonoBehaviour
 
             if(other.gameObject.name == boardGenerator.selectedCard)
             {
+                gameAPI.AddSessionExp();
                 gameAPI.PlaySFX("Success");
                 hitCount++;
 
@@ -78,6 +79,10 @@ public class CardShootingBallController : MonoBehaviour
                         uıController.Invoke("LevelChangeScreenActivate", 2.5f);
                     }
                 }
+            }
+            else if(other.gameObject.name != boardGenerator.selectedCard)
+            {
+                gameAPI.RemoveSessionExp();
             }
         }
     }

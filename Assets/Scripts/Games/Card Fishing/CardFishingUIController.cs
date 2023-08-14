@@ -52,6 +52,7 @@ public class CardFishingUIController : MonoBehaviour
 
     public void LevelChangeScreenActivate()
     {
+        gameAPI.AddExp(gameAPI.sessionExp);
         boardGenerator.ClearBoard();
         gameUI.SetActive(false);
         backButton.SetActive(false);
@@ -69,6 +70,7 @@ public class CardFishingUIController : MonoBehaviour
     public void PackSelectionPanelActive()
     {
         gameUI.SetActive(false);
+        gameAPI.ResetSessionExp();
         backButton.SetActive(false);
         settingButton.SetActive(true);
         helloText.SetActive(true);
@@ -105,6 +107,7 @@ public class CardFishingUIController : MonoBehaviour
 
     public void LevelChangeDeactivate()
     {
+        gameAPI.ResetSessionExp();
         levelChange.SetActive(false);
     }
 

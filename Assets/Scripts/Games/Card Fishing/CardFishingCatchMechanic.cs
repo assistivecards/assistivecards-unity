@@ -32,6 +32,11 @@ public class CardFishingCatchMechanic : MonoBehaviour
                 if(other.gameObject.name == boardGenerator.selectedCard)
                 {
                     score ++;
+                    gameAPI.AddSessionExp();
+                }
+                else
+                {
+                    gameAPI.RemoveSessionExp();
                 }
             }
         }

@@ -70,6 +70,7 @@ public class SnakeCardsUIController : MonoBehaviour
     public void LevelChangeScreenActivate()
     {
         LevelEnding();
+        gameAPI.AddExp(gameAPI.sessionExp);
         levelChange.SetActive(true);
         LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.3f);
         gameAPI.PlaySFX("Finished");
@@ -79,10 +80,12 @@ public class SnakeCardsUIController : MonoBehaviour
     {
         LeanTween.scale(levelChange, Vector3.zero, 0.4f);
         Invoke("LevelChangeDeactivate", 0.7f);
+        gameAPI.ResetSessionExp();
     }
 
     public void PackSelectionPanelActive()
     {
+        gameAPI.ResetSessionExp();
         gameUI.SetActive(false);
         backButton.SetActive(false);
         settingButton.SetActive(true);

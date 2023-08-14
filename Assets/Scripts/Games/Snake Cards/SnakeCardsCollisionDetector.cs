@@ -38,6 +38,7 @@ public class SnakeCardsCollisionDetector : MonoBehaviour
     {
         if(other.gameObject.tag == "Snake" && !trailMove.isRotating)
         {
+            gameAPI.RemoveSessionExp();
             snakeLenght = GetComponentInChildren<TrailRenderer>().time;
             if(snakeLenght > 1.5f)
             {
@@ -48,6 +49,7 @@ public class SnakeCardsCollisionDetector : MonoBehaviour
         {
             if(other.GetComponent<SnakeCardsCardController>().cardName == boardGenerator.targetCard)
             {
+                gameAPI.AddSessionExp();
                 snakeLenght = GetComponentInChildren<TrailRenderer>().time;
                 GetComponentInChildren<TrailRenderer>().time = snakeLenght + 2f;
                 LeanTween.scale(other.gameObject, Vector3.one * 1.2f, 0.2f).setOnComplete(other.gameObject.GetComponent<SnakeCardsCardController>().Eaten);

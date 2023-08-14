@@ -28,6 +28,7 @@ public class CountButton : MonoBehaviour
         {
             if(generateBoard.levelCount >= 3)
             {
+                gameAPI.AddSessionExp();
                 FinishedSound();
                 generateBoard.ScaleUpLevelEndCard();
                 generateBoard.Invoke("ScaleDownLevelEndCard", 0.6f);
@@ -36,6 +37,7 @@ public class CountButton : MonoBehaviour
             }
             else if(generateBoard.levelCount < 3)
             {
+                gameAPI.AddSessionExp();
                 LevelEndAnimation();
                 generateBoard.GeneratedBoardAsync();
                 FinishedSound();
@@ -44,6 +46,7 @@ public class CountButton : MonoBehaviour
         }
         else
         {
+            gameAPI.RemoveSessionExp();
             LeanTween.scale(this.gameObject, Vector3.one * 1.5f, 0.25f).setOnComplete(ScaleDown);
         }
     }

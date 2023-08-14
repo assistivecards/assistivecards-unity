@@ -61,6 +61,7 @@ public class CountUIController : MonoBehaviour
 
     public void LevelEnding()
     {
+        gameAPI.AddExp(gameAPI.sessionExp);
         boardGenerator.ClearBoard();
         gameUI.SetActive(false);
         backButton.SetActive(false);
@@ -77,6 +78,7 @@ public class CountUIController : MonoBehaviour
 
     public void CloseLevelChangePanel()
     {
+        gameAPI.ResetSessionExp();
         LeanTween.scale(levelChange, Vector3.zero, 0.4f);
         Invoke("LevelChangeDeactivate", 0.7f);
     }
@@ -84,6 +86,7 @@ public class CountUIController : MonoBehaviour
     public void PackSelectionPanelActive()
     {
         gameUI.SetActive(false);
+        gameAPI.ResetSessionExp();
         backButton.SetActive(false);
         settingButton.SetActive(true);
         helloText.SetActive(true);

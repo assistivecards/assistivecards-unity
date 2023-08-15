@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CardBlastLevelControl1 : MonoBehaviour
 {
+    GameAPI gameAPI;
     [SerializeField] private CardBlastFillGrid fillGrid;
     [SerializeField] private GameObject board;
     [SerializeField] private GameObject packSelectionPanel;
@@ -15,6 +16,11 @@ public class CardBlastLevelControl1 : MonoBehaviour
     public bool isOnSelect = false;
     public bool isOnContinue = false;
     public bool isOnLevelChange = false;
+        
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void OnEnable() 
     {
@@ -30,7 +36,7 @@ public class CardBlastLevelControl1 : MonoBehaviour
     {
         isOnContinue = true;
         isOnLevelChange = false;
-
+        gameAPI.ResetSessionExp();
         LeanTween.scale(this.gameObject, Vector3.zero, 0.15f);
         Invoke("ClosePanel", 0.2f);
     }
@@ -39,7 +45,7 @@ public class CardBlastLevelControl1 : MonoBehaviour
     {
         isOnSelect = true;
         isOnLevelChange = false;
-
+        gameAPI.ResetSessionExp();
         LeanTween.scale(this.gameObject, Vector3.zero, 0.15f);
         Invoke("ClosePanel", 0.2f);
     }

@@ -72,7 +72,10 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         }
         DetectMatch();
         LockMatch();
+
+        Invoke("RemovePoints", 1f);
     }
+
     private void Update() 
     {
         if(cardBlastFillGrid.isBoardCreated)
@@ -101,6 +104,14 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
             matcheable = false;
             if(cardBlastFillGrid.matcheableCards.Contains(this.gameObject))
                 cardBlastFillGrid.matcheableCards.Remove(this.gameObject);
+        }
+    }
+
+    private void RemovePoints()
+    {
+        if(!isMatched)
+        {
+            gameAPI.RemoveSessionExp();           
         }
     }
 
@@ -392,6 +403,7 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     private void ScaleUpMatch()
     {
         cardBlastFillGrid.scoreInt += 1;
+        gameAPI.AddSessionExp();
         cardBlastFillGrid.isOnRefill = true;
         foreach(var card in matched)
         {

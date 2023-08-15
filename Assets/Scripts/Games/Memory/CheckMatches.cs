@@ -31,8 +31,12 @@ public class CheckMatches : MonoBehaviour
             if(flippedCards[0].transform.GetChild(1).name == flippedCards[1].transform.GetChild(1).name)
             {
                 Match();
-
                 Invoke("ReadCard", 0.25f);
+                gameAPI.AddSessionExp();
+            }
+            else
+            {
+                gameAPI.RemoveSessionExp();
             }
         }
     }

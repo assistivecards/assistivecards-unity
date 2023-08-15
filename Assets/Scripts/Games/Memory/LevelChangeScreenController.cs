@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LevelChangeScreenController : MonoBehaviour
 {
+    GameAPI gameAPI;
     [SerializeField] private PackageSelectManager packageSelectManager;
     [SerializeField] private GameObject transitionPanel;
     [SerializeField] private GameObject packSelectionPanel;
@@ -13,6 +14,11 @@ public class LevelChangeScreenController : MonoBehaviour
     public bool isOnSelect = false;
     public bool isOnContinue = false;
     public bool isOnLevelChange = false;
+
+    private void Awake() 
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void OnEnable() 
     {
@@ -45,8 +51,8 @@ public class LevelChangeScreenController : MonoBehaviour
 
     private void ClosePanel()
     {
+        gameAPI.ResetSessionExp();
         this.gameObject.SetActive(false);
-
         LeanTween.scale(contunieButton, Vector3.one, 0.01f);
         LeanTween.scale(selectNewButton, Vector3.one, 0.01f);
     }

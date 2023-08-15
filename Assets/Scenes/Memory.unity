@@ -398,6 +398,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 228072499}
     - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
+      propertyPath: wrongMatchExp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
+      propertyPath: correctMatchExp
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
       propertyPath: sfxClips.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -1136,6 +1144,14 @@ PrefabInstance:
       propertyPath: gameCanvas
       value: 
       objectReference: {fileID: 3312234165395231071}
+    - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

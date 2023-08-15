@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour
 {
     GameAPI gameAPI;
-    
     [SerializeField] private GameObject levelChangeScreen;
     [SerializeField] private GameObject packSelectionPanel;
     [SerializeField] private PackageSelectManager packageSelectManager;
@@ -81,7 +80,7 @@ public class LevelManager : MonoBehaviour
         gameAPI.PlaySFX("Finished");
         boardGenerator.ClearBoard();
         levelChangeScreen.SetActive(true);
-
+        gameAPI.AddExp(gameAPI.sessionExp);
         LeanTween.scale(this.gameObject, Vector3.one * 0.0001f, 0.1f);
         boardGenerator.isInGame = false;
         gamePanelUIController.GamePanelUIControl();

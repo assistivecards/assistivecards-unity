@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
+    GameAPI gameAPI;
     public float x;
     public float y;
     public Vector3 cardPosition;
@@ -32,6 +33,11 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public bool isMatched;
     public bool isMoved;
     public string localName;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void OnEnable() 
     {
@@ -111,6 +117,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         if(!isMatched)
         {
             cardCrushFillGrid.scoreInt -= 1;
+            gameAPI.RemoveSessionExp();
         }
     }
 

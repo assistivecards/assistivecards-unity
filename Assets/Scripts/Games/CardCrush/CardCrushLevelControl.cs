@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CardCrushLevelControl : MonoBehaviour
 {
+    GameAPI gameAPI;
     [SerializeField] private CardCrushFillGrid fillGrid;
     [SerializeField] private GameObject board;
     [SerializeField] private GameObject packSelectionPanel;
@@ -14,10 +15,16 @@ public class CardCrushLevelControl : MonoBehaviour
     public bool isOnContinue = false;
     public bool isOnLevelChange = false;
 
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
+
     private void OnEnable() 
     {
         isOnLevelChange = true;
         LeanTween.scale(this.gameObject, Vector3.one * 0.6f, 0.15f);
+        gameAPI.AddExp(gameAPI.sessionExp);
         fillGrid.scoreInt = 0;
         fillGrid.ResetGrid();
         fillGrid.isOnRefill = false;
@@ -28,7 +35,7 @@ public class CardCrushLevelControl : MonoBehaviour
     {
         isOnContinue = true;
         isOnLevelChange = false;
-
+        gameAPI.ResetSessionExp();
         LeanTween.scale(this.gameObject, Vector3.zero, 0.15f);
         Invoke("ClosePanel", 0.2f);
     }
@@ -37,7 +44,7 @@ public class CardCrushLevelControl : MonoBehaviour
     {
         isOnSelect = true;
         isOnLevelChange = false;
-
+        gameAPI.ResetSessionExp();
         LeanTween.scale(this.gameObject, Vector3.zero, 0.15f);
         Invoke("ClosePanel", 0.2f);
     }

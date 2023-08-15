@@ -209,6 +209,7 @@ public class CardCrushFillGrid : MonoBehaviour
     public async void RefillBoard()
     {
         scoreInt += 1;
+        gameAPI.AddSessionExp();
         Invoke("PlaySuccessSFX", 0.25f);
         foreach(var cell in cardCrushGrid.allCells)
         {

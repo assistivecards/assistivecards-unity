@@ -97,7 +97,7 @@ public class CardCrushGameUIController : MonoBehaviour
         fillGrid.isOnGame = false;
         LeanTween.scale(difficultSelectionPanelTween.gameObject, Vector3.one * 0.1f, 0.15f);
         LeanTween.scale(levelChangeScreenController.gameObject, Vector3.one * 0.1f, 0.15f);
-
+        gameAPI.ResetSessionExp();
 
         packSelectionScreen.SetActive(true);
         packSelectionScreenUIController.ResetScrollPosition();

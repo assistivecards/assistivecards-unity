@@ -53,6 +53,7 @@ public class UIControllerComplete : MonoBehaviour
             settingsButton.SetActive(true);
             backButton.SetActive(false);
             gridBackground.SetActive(false);
+            gameAPI.ResetSessionExp();
         }
         else
         {

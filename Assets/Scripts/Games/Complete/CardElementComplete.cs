@@ -65,6 +65,7 @@ public class CardElementComplete : MonoBehaviour, IPointerDownHandler, IDragHand
             {
                 moveable = false;
                 LeanTween.move(this.gameObject, other.transform.position, 0.25f).setOnComplete(MatchComplete);
+                gameAPI.AddSessionExp();
                 gameAPI.PlaySFX("Success");
                 Invoke("ReadCard", 0.2f);
                 matched = true;
@@ -85,6 +86,7 @@ public class CardElementComplete : MonoBehaviour, IPointerDownHandler, IDragHand
         if(!matched)
         {
             LeanTween.move(this.gameObject, startPosition, 1f);
+            gameAPI.RemoveSessionExp();
         }
     }
 

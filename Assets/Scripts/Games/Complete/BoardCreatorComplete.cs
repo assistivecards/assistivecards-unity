@@ -224,6 +224,7 @@ public class BoardCreatorComplete : MonoBehaviour
         if(matchCount >= 12)
         {
             gameAPI.PlaySFX("Finished");
+            gameAPI.AddExp(gameAPI.sessionExp);
             levelEnded = true;
         }
     }

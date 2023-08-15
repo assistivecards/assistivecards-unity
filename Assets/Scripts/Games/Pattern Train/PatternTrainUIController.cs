@@ -70,6 +70,7 @@ public class PatternTrainUIController : MonoBehaviour
     public void LevelChangeScreenActivate()
     {
         LevelEnding();
+        gameAPI.AddExp(gameAPI.sessionExp);
         levelChange.SetActive(true);
         LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.3f);
         gameAPI.PlaySFX("Finished");
@@ -78,12 +79,14 @@ public class PatternTrainUIController : MonoBehaviour
     public void CloseLevelChangePanel()
     {
         LeanTween.scale(levelChange, Vector3.zero, 0.4f);
+        gameAPI.ResetSessionExp();
         Invoke("LevelChangeDeactivate", 0.7f);
     }
 
     public void PackSelectionPanelActive()
     {
         gameUI.SetActive(false);
+        gameAPI.ResetSessionExp();
         backButton.SetActive(false);
         settingButton.SetActive(true);
         helloText.SetActive(true);

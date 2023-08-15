@@ -13,6 +13,7 @@ public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerD
     public string trueCardName;
     public bool draggable = false;
     private Vector3 startPosition;
+    private bool oneTime = true;
     private bool isPointerUp;
     private bool match;
 
@@ -58,13 +59,16 @@ public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerD
             {
                 match = true;
                 LeanTween.move(this.gameObject, other.transform.position, 0.5f).setOnComplete(RotateCard);
+                gameAPI.AddSessionExp();
                 gameAPI.Speak(cardLocalName);
                 Debug.Log(cardLocalName);
                 draggable = false;
             }
-            else
+            else if(oneTime)
             {
+                oneTime = false;
                 MoveToStartPosition();
+                gameAPI.RemoveSessionExp();
             }
         }
     }
@@ -87,5 +91,6 @@ public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerD
     private void SetDragTrue()
     {
         draggable = true;
+        oneTime = true;
     }
 }

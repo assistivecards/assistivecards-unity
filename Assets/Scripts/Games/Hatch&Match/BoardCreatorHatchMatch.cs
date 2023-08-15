@@ -208,6 +208,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
     {
         levelChangeScreenHatchMatch.gameObject.SetActive(true);
         levelChangeScreenHatchMatch.LevelScreenTween();
+        gameAPI.AddExp(gameAPI.sessionExp);
     }
 
     public void ResetLevelCount()

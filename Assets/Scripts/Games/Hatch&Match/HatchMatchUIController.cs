@@ -51,6 +51,7 @@ public class HatchMatchUIController : MonoBehaviour
             helloText.SetActive(true);
             levelProgressContainer.SetActive(true);
             backButton.SetActive(false);
+            gameAPI.ResetSessionExp();
         }
     }
 

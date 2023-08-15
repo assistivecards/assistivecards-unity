@@ -46,6 +46,7 @@ public class CardElementHatchMatch : MonoBehaviour, IPointerDownHandler, IDragHa
             gameAPI.PlaySFX("Success");
             Invoke("SpeakCardName", 0.5f);
             match = true;
+            gameAPI.AddSessionExp();
             LeanTween.move(this.gameObject, other.transform.position, 0.75f).setOnComplete(LevelEnd);
         }
         else if(other.gameObject.name != "Egg" && other.gameObject.name != this.gameObject.name)
@@ -55,6 +56,7 @@ public class CardElementHatchMatch : MonoBehaviour, IPointerDownHandler, IDragHa
             if(other.transform.childCount > 0)
             {
                 other.transform.GetChild(0).gameObject.GetComponent<RawImage>().CrossFadeAlpha(0, 1.3f, false);
+                gameAPI.RemoveSessionExp();
                 Invoke("MoveToBegging", 0.15f);
             }
         }

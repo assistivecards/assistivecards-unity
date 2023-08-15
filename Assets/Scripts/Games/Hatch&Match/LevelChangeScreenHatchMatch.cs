@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class LevelChangeScreenHatchMatch : MonoBehaviour
 {
+    GameAPI gameAPI;
     [SerializeField] private BoardCreatorHatchMatch boardCreatorHatchMatch;
     [SerializeField] private GameObject packageSelectScreen;
     public bool isOnpackSelect = false;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     public void LevelScreenTween()
     {
@@ -17,6 +23,7 @@ public class LevelChangeScreenHatchMatch : MonoBehaviour
     public void DestroySelf()
     {
         isOnpackSelect = false;
+        gameAPI.ResetSessionExp();
         this.gameObject.SetActive(false);
         boardCreatorHatchMatch.levelCount = 0;
     }

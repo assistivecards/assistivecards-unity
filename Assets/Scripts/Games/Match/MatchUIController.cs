@@ -70,6 +70,7 @@ public class MatchUIController : MonoBehaviour
 
     public void LevelChangeScreenActivate()
     {
+        gameAPI.AddExp(gameAPI.sessionExp);
         LevelEnding();
         levelChange.SetActive(true);
         LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.3f);
@@ -84,6 +85,7 @@ public class MatchUIController : MonoBehaviour
     public void PackSelectionPanelActive()
     {
         gameUI.SetActive(false);
+        gameAPI.ResetSessionExp();
         backButton.SetActive(false);
         settingButton.SetActive(true);
         helloText.SetActive(true);
@@ -121,6 +123,7 @@ public class MatchUIController : MonoBehaviour
     public void LevelChangeDeactivate()
     {
         levelChange.SetActive(false);
+        gameAPI.ResetSessionExp();
     }
 
     public void ResetScroll()

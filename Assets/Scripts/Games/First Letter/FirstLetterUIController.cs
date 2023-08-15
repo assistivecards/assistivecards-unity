@@ -70,6 +70,7 @@ public class FirstLetterUIController : MonoBehaviour
     public void LevelChangeScreenActivate()
     {
         LevelEnding();
+        gameAPI.AddExp(gameAPI.sessionExp);
         levelChange.SetActive(true);
         LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.3f);
         gameAPI.PlaySFX("Finished");
@@ -77,6 +78,7 @@ public class FirstLetterUIController : MonoBehaviour
 
     public void CloseLevelChangePanel()
     {
+        gameAPI.ResetSessionExp();
         LeanTween.scale(levelChange, Vector3.zero, 0.4f);
         Invoke("LevelChangeDeactivate", 0.7f);
     }
@@ -84,6 +86,7 @@ public class FirstLetterUIController : MonoBehaviour
     public void PackSelectionPanelActive()
     {
         gameUI.SetActive(false);
+        gameAPI.ResetSessionExp();
         backButton.SetActive(false);
         settingButton.SetActive(true);
         helloText.SetActive(true);

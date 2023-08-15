@@ -21,6 +21,7 @@ public class FirstLetterButtonController : MonoBehaviour
             if(boardGenerator.levelCount < 4)
             {
                 gameAPI.PlaySFX("Success");
+                gameAPI.AddSessionExp();
                 boardGenerator.levelCount++;
                 boardGenerator.LevelEnding();
                 boardGenerator.Invoke("CreateNewLevel", 1f);
@@ -28,6 +29,7 @@ public class FirstLetterButtonController : MonoBehaviour
             else if(boardGenerator.levelCount == 4)
             {
                 gameAPI.PlaySFX("Success");
+                gameAPI.AddSessionExp();
                 boardGenerator.LevelEnding();
                 boardGenerator.levelCount = 0;
                 uıController.Invoke("LevelChangeScreenActivate", 1.2f);
@@ -35,6 +37,7 @@ public class FirstLetterButtonController : MonoBehaviour
         }
         else
         {
+            gameAPI.RemoveSessionExp();
             LeanTween.scale(this.gameObject, Vector3.zero, 0.5f);
         }
     }

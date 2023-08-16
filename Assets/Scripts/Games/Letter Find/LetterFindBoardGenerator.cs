@@ -132,12 +132,13 @@ public class LetterFindBoardGenerator : MonoBehaviour
             await CreateLetters();
             CheckRandom();
 
-            targetCardName = cardNames[0];
+            targetCardName = cardNames[0].ToUpper();
 
             foreach(char c in targetCardName)
             {
                 GameObject letter = Instantiate(letterPrefab, tempCardPosition.transform.position, Quaternion.identity);
-                letter.GetComponentInChildren<TMP_Text>().text = "" + c;
+                letter.GetComponentInChildren<Text>().text = "" + c;
+                letter.transform.SetParent(tempCardPosition.transform);
             }
             for(int i = 0; i < cardPositions.Count; i++)
             {

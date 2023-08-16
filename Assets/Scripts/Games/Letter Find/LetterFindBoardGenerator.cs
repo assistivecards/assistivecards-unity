@@ -48,7 +48,7 @@ public class LetterFindBoardGenerator : MonoBehaviour
     public GameObject cardPosition1;
     public GameObject cardPosition2;
     public GameObject cardPosition3;
-    private List<GameObject> cardPositions = new List<GameObject>();
+    public List<GameObject> cardPositions = new List<GameObject>();
 
     [Header ("Colors")]
     public Color[] colors;
@@ -130,9 +130,10 @@ public class LetterFindBoardGenerator : MonoBehaviour
         // {
             await CacheCards();
             await CreateLetters();
+            CreateCardList();
             CheckRandom();
 
-            targetCardName = cardNames[0].ToUpper();
+            targetCardName = cardNames[7].ToUpper();
 
             foreach(char c in targetCardName)
             {

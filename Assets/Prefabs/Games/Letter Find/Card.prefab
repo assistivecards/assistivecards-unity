@@ -139,10 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65c3e4aa5e5a4756852618eff474cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardName: 
-  cardLocalName: 
-  trueCardName: 
-  draggable: 0
+  cardLetter: 
 --- !u!1 &3953419126043893981
 GameObject:
   m_ObjectHideFlags: 0

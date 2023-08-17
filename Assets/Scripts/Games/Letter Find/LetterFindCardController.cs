@@ -47,6 +47,7 @@ public class LetterFindCardController : MonoBehaviour, IDragHandler, IPointerDow
             if(other.tag == "EmptyLetter" && other.gameObject.GetComponent<LetterFindLetterController>().letter == cardLetter) 
             {
                 match = true;
+                LeanTween.move(this.gameObject, other.transform.position, 0.5f);
             }
             else if(oneTime)
             {

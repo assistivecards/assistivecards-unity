@@ -10,6 +10,8 @@ using System.Linq;
 public class LetterFindBoardGenerator : MonoBehaviour
 {
     GameAPI gameAPI;
+    [SerializeField] private LetterFindUIController uıController;
+
     [Header ("Cache Cards")]
     public string selectedLangCode;
     public List<string> cardLocalNames = new List<string>();
@@ -130,8 +132,8 @@ public class LetterFindBoardGenerator : MonoBehaviour
 
     public async void GeneratedBoardAsync()
     {
-        // if(uıController.canGenerate)
-        // {
+        if(uıController.canGenerate)
+        {
             await CacheCards();
             await CreateLetters();
             CreateCardList();
@@ -173,17 +175,18 @@ public class LetterFindBoardGenerator : MonoBehaviour
                 letterCardTexture.wrapMode = TextureWrapMode.Clamp;
                 letterCardTexture.filterMode = FilterMode.Bilinear;
                 card.GetComponent<LetterFindCardController>().cardLetter = letterCardsNames[i].ToUpper();
+                LeanTween.scale(card, Vector3.one * 0.45f, 0);
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = letterCardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
             }
-        //}
-        //Invoke("GameUIActivate", 0.25f);
+        }
+        Invoke("GameUIActivate", 0.25f);
     }
 
-    // public void GameUIActivate()
-    // {
-    //     uıController.GameUIActivate();
-    // }
+    public void GameUIActivate()
+    {
+        uıController.GameUIActivate();
+    }
 
     public void ClearBoard()
     {

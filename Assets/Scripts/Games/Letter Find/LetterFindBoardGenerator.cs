@@ -162,6 +162,7 @@ public class LetterFindBoardGenerator : MonoBehaviour
                     letter.GetComponentInChildren<Text>().text = "" + c;
                 }
                 letter.transform.GetChild(0).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
+                letter.GetComponent<LetterFindLetterController>().letter = "" + c;;
             }
             for(int i = 0; i < cardPositions.Count; i++)
             {
@@ -171,7 +172,7 @@ public class LetterFindBoardGenerator : MonoBehaviour
                 var letterCardTexture = await gameAPI.GetCardImage("letters", letterCardsNames[i], 512);
                 letterCardTexture.wrapMode = TextureWrapMode.Clamp;
                 letterCardTexture.filterMode = FilterMode.Bilinear;
-
+                card.GetComponent<LetterFindCardController>().cardLetter = letterCardsNames[i].ToUpper();
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = letterCardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
             }

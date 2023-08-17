@@ -24,6 +24,7 @@ public class LetterFindBoardGenerator : MonoBehaviour
     private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLetterCards;
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> letterList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     public List<string> letterCardsNames = new List<string>();
+    private List<GameObject> letters = new List<GameObject>();
 
     [Header ("Random")]
     public List<int> randomValueList = new List<int>();
@@ -52,6 +53,9 @@ public class LetterFindBoardGenerator : MonoBehaviour
 
     [Header ("Colors")]
     public Color[] colors;
+
+    public int emptyLetterIndex;
+    public bool emptySlotCreated = false;
 
     
     private void Awake()
@@ -134,12 +138,30 @@ public class LetterFindBoardGenerator : MonoBehaviour
             CheckRandom();
 
             targetCardName = cardNames[7].ToUpper();
-
+            emptyLetterIndex = Random.Range(0, targetCardName.Length);
             foreach(char c in targetCardName)
             {
                 GameObject letter = Instantiate(letterPrefab, tempCardPosition.transform.position, Quaternion.identity);
-                letter.GetComponentInChildren<Text>().text = "" + c;
                 letter.transform.SetParent(tempCardPosition.transform);
+                letters.Add(letter);
+                if(!emptySlotCreated)
+                {
+                    if(targetCardName[emptyLetterIndex] != c)
+                    {
+                        letter.GetComponentInChildren<Text>().text = "" + c;
+                    }
+                    else if(targetCardName[emptyLetterIndex] == c)
+                    {
+                        emptySlotCreated = true;
+                        letter.GetComponent<BoxCollider2D>().enabled = true;
+                        letter.transform.tag = "EmptyLetter";
+                    }
+                }
+                else
+                {
+                    letter.GetComponentInChildren<Text>().text = "" + c;
+                }
+                letter.transform.GetChild(0).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
             }
             for(int i = 0; i < cardPositions.Count; i++)
             {
@@ -167,7 +189,7 @@ public class LetterFindBoardGenerator : MonoBehaviour
         cardLocalNames.Clear();
         cards.Clear();
         cardNames.Clear();
-
+        letters.Clear();
         letterList.Clear();
         letterCardsNames.Clear();
 

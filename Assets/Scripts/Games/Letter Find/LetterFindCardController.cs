@@ -47,11 +47,13 @@ public class LetterFindCardController : MonoBehaviour, IDragHandler, IPointerDow
             if(other.tag == "EmptyLetter" && other.gameObject.GetComponent<LetterFindLetterController>().letter == cardLetter) 
             {
                 match = true;
+                gameAPI.AddSessionExp();
                 LeanTween.move(this.gameObject, other.transform.position, 0.5f);
             }
             else if(oneTime)
             {
                 oneTime = false;
+                gameAPI.RemoveSessionExp();
                 MoveToStartPosition();
             }
         }

@@ -68,10 +68,8 @@ public class LetterFindBoardGenerator : MonoBehaviour
     public async Task CacheCards()
     {
         selectedLangCode = await gameAPI.GetSystemLanguageCode();
-
         cachedCards = await gameAPI.GetCards("en", packSelectionPanel.selectedPackElement.name);
         cachedLocalCards = await gameAPI.GetCards(selectedLangCode, packSelectionPanel.selectedPackElement.name);
-
         cardsList = cachedCards.cards.ToList();
 
         for(int i = 0; i < cachedCards.cards.Length; i++)
@@ -107,7 +105,6 @@ public class LetterFindBoardGenerator : MonoBehaviour
         }
     }
 
-    
     private void CheckRandomForLetters()
     {
         tempRandomLetterValue = Random.Range(0, letterList.Count);
@@ -138,8 +135,7 @@ public class LetterFindBoardGenerator : MonoBehaviour
             await CreateLetters();
             CreateCardList();
             CheckRandom();
-
-            targetCardName = cardNames[7].ToUpper();
+            targetCardName = cardNames[Random.Range(0, cardNames.Count)].ToUpper();
             emptyLetterIndex = Random.Range(0, targetCardName.Length);
             foreach(char c in targetCardName)
             {
@@ -170,7 +166,6 @@ public class LetterFindBoardGenerator : MonoBehaviour
             {
                 card = Instantiate(cardPrefab, cardPositions[i].transform.position, Quaternion.identity);
                 card.transform.SetParent(cardPositions[i].transform);
-
                 var letterCardTexture = await gameAPI.GetCardImage("letters", letterCardsNames[i], 512);
                 letterCardTexture.wrapMode = TextureWrapMode.Clamp;
                 letterCardTexture.filterMode = FilterMode.Bilinear;
@@ -178,6 +173,7 @@ public class LetterFindBoardGenerator : MonoBehaviour
                 LeanTween.scale(card, Vector3.one * 0.45f, 0);
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = letterCardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                cards.Add(card);
             }
         }
         Invoke("GameUIActivate", 0.25f);
@@ -190,17 +186,25 @@ public class LetterFindBoardGenerator : MonoBehaviour
 
     public void ClearBoard()
     {
-        cardLocalNames.Clear();
+        foreach(var letter in letters)
+        {
+            Destroy(letter);
+        }
+        foreach(var card in cards)
+        {
+            Destroy(card);
+        }
         cards.Clear();
-        cardNames.Clear();
         letters.Clear();
         letterList.Clear();
         letterCardsNames.Clear();
-
         randomValueList.Clear();
         randomLetterValueList.Clear();
-
+        targetCardName = null;
+        cardLocalNames.Clear();
+        cardNames.Clear();
+        cardPositions.Clear();
         Destroy(card);
-
+        emptySlotCreated = false;
     }
 }

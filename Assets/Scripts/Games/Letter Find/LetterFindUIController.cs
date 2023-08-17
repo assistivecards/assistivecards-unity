@@ -70,6 +70,7 @@ public class LetterFindUIController : MonoBehaviour
     {
         LevelEnding();
         gameAPI.AddExp(gameAPI.sessionExp);
+        gameUI.SetActive(false);
         levelChange.SetActive(true);
         LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.3f);
         gameAPI.PlaySFX("Finished");

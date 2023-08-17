@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class LetterFindCardController : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
     GameAPI gameAPI;
+    private LetterFindUIController uıController;
     public string cardLetter;
     private Vector3 startPosition;
     private bool oneTime = true;
@@ -20,6 +21,7 @@ public class LetterFindCardController : MonoBehaviour, IDragHandler, IPointerDow
 
     private void OnEnable() 
     {
+        uıController = GetComponentInParent<LetterFindUIController>();
         startPosition = this.transform.position;
     }
 
@@ -48,6 +50,7 @@ public class LetterFindCardController : MonoBehaviour, IDragHandler, IPointerDow
             {
                 match = true;
                 gameAPI.AddSessionExp();
+                uıController.LevelChangeScreenActivate();
                 LeanTween.move(this.gameObject, other.transform.position, 0.5f);
             }
             else if(oneTime)

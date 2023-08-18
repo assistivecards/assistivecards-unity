@@ -49,7 +49,8 @@ public class LetterFindBoardGenerator : MonoBehaviour
     [Header ("Game Elements")]
     public GameObject card;
     public string targetCardName;
-    public GameObject tempCardPosition;
+    public GameObject cardNameHorizontalParent;
+    public GameObject cardNameHorizontalParentSecondLine;
     public GameObject selectedCard;
     public GameObject cardPosition1;
     public GameObject cardPosition2;
@@ -62,6 +63,7 @@ public class LetterFindBoardGenerator : MonoBehaviour
     public int emptyLetterIndex;
     public string emptyLetter;
     public bool emptySlotCreated = false;
+    public int secondWordCharIndex;
 
     
     private void Awake()
@@ -141,32 +143,100 @@ public class LetterFindBoardGenerator : MonoBehaviour
             CheckRandom();
             targetCardName = cardNames[Random.Range(0, cardNames.Count)].ToUpper();
             emptyLetterIndex = Random.Range(0, targetCardName.Length);
-            foreach(char c in targetCardName)
+            if(targetCardName.Contains("-"))
             {
-                GameObject letter = Instantiate(letterPrefab, tempCardPosition.transform.position, Quaternion.identity);
-                letter.transform.SetParent(tempCardPosition.transform);
-                letters.Add(letter);
-                if(!emptySlotCreated)
+                for(int i = 0; i < targetCardName.Count(); i++)
                 {
-                    if(targetCardName[emptyLetterIndex] != c)
+                    if("" + targetCardName[i] != "-")
+                    {
+                        GameObject letter = Instantiate(letterPrefab, cardNameHorizontalParent.transform.position, Quaternion.identity);
+                        letter.transform.SetParent(cardNameHorizontalParent.transform);
+                        letters.Add(letter);
+                        if(!emptySlotCreated)
+                        {
+                            if(emptyLetterIndex != i)
+                            {
+                                letter.GetComponentInChildren<Text>().text = "" + targetCardName[i];
+                            }
+                            else if(emptyLetterIndex == i)
+                            {
+                                emptySlotCreated = true;
+                                letter.GetComponent<BoxCollider2D>().enabled = true;
+                                letter.transform.tag = "EmptyLetter";
+                                tutorialScript.emptyLetter = letter;
+                                emptyLetter = "" + targetCardName[i];
+                            }
+                        }
+                        else
+                        {
+                            letter.GetComponentInChildren<Text>().text = "" + targetCardName[i];
+                        }
+                        letter.transform.GetChild(0).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
+                        letter.GetComponent<LetterFindLetterController>().letter = "" + targetCardName[i];
+                    }
+                    else if("" + targetCardName[i] == "-")
+                    {
+                        secondWordCharIndex = i + 1;
+                        break;
+                    }
+                }
+                for(int j = secondWordCharIndex; j < targetCardName.Count(); j++)
+                {
+                    GameObject letter = Instantiate(letterPrefab, cardNameHorizontalParentSecondLine.transform.position, Quaternion.identity);
+                    letter.transform.SetParent(cardNameHorizontalParentSecondLine.transform);
+                    letters.Add(letter);
+                    if(!emptySlotCreated)
+                    {
+                        if(emptyLetterIndex != j)
+                        {
+                            letter.GetComponentInChildren<Text>().text = "" + targetCardName[j];
+                        }
+                        else if(emptyLetterIndex == j)
+                        {
+                            emptySlotCreated = true;
+                            letter.GetComponent<BoxCollider2D>().enabled = true;
+                            letter.transform.tag = "EmptyLetter";
+                            tutorialScript.emptyLetter = letter;
+                            emptyLetter = "" + targetCardName[j];
+                        }
+                    }
+                    else
+                    {
+                        letter.GetComponentInChildren<Text>().text = "" + targetCardName[j];
+                    }
+                    letter.transform.GetChild(0).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
+                    letter.GetComponent<LetterFindLetterController>().letter = "" + targetCardName[j];
+                }
+            }
+            else
+            {
+                foreach(char c in targetCardName)
+                {
+                    GameObject letter = Instantiate(letterPrefab, cardNameHorizontalParent.transform.position, Quaternion.identity);
+                    letter.transform.SetParent(cardNameHorizontalParent.transform);
+                    letters.Add(letter);
+                    if(!emptySlotCreated)
+                    {
+                        if(targetCardName[emptyLetterIndex] != c)
+                        {
+                            letter.GetComponentInChildren<Text>().text = "" + c;
+                        }
+                        else if(targetCardName[emptyLetterIndex] == c)
+                        {
+                            emptySlotCreated = true;
+                            letter.GetComponent<BoxCollider2D>().enabled = true;
+                            letter.transform.tag = "EmptyLetter";
+                            tutorialScript.emptyLetter = letter;
+                            emptyLetter = "" + c;
+                        }
+                    }
+                    else
                     {
                         letter.GetComponentInChildren<Text>().text = "" + c;
                     }
-                    else if(targetCardName[emptyLetterIndex] == c)
-                    {
-                        emptySlotCreated = true;
-                        letter.GetComponent<BoxCollider2D>().enabled = true;
-                        letter.transform.tag = "EmptyLetter";
-                        tutorialScript.emptyLetter = letter;
-                        emptyLetter = "" + c;
-                    }
+                    letter.transform.GetChild(0).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
+                    letter.GetComponent<LetterFindLetterController>().letter = "" + c;;
                 }
-                else
-                {
-                    letter.GetComponentInChildren<Text>().text = "" + c;
-                }
-                letter.transform.GetChild(0).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
-                letter.GetComponent<LetterFindLetterController>().letter = "" + c;;
             }
             for(int i = 0; i < cardPositions.Count; i++)
             {
@@ -181,7 +251,7 @@ public class LetterFindBoardGenerator : MonoBehaviour
                 {
                     tutorialScript.trueLetterCard = card;
                 }
-                LeanTween.scale(card, Vector3.one * 0.45f, 0);
+                LeanTween.scale(card, Vector3.one * 0.35f, 0);
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = letterCardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                 cards.Add(card);

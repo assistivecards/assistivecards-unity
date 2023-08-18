@@ -3412,6 +3412,7 @@ MonoBehaviour:
   emptyLetterIndex: 0
   emptyLetter: 
   emptySlotCreated: 0
+  secondWordCharIndex: 0
 --- !u!114 &8383894889009589327
 MonoBehaviour:
   m_ObjectHideFlags: 0

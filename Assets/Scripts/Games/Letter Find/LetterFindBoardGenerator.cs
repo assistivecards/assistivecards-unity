@@ -10,7 +10,10 @@ using System.Linq;
 public class LetterFindBoardGenerator : MonoBehaviour
 {
     GameAPI gameAPI;
+
+    [Header ("Classes")]
     [SerializeField] private LetterFindUIController uıController;
+    [SerializeField] private LetterFindTutorial tutorialScript;
 
     [Header ("Cache Cards")]
     public string selectedLangCode;
@@ -57,6 +60,7 @@ public class LetterFindBoardGenerator : MonoBehaviour
     public Color[] colors;
 
     public int emptyLetterIndex;
+    public string emptyLetter;
     public bool emptySlotCreated = false;
 
     
@@ -153,6 +157,8 @@ public class LetterFindBoardGenerator : MonoBehaviour
                         emptySlotCreated = true;
                         letter.GetComponent<BoxCollider2D>().enabled = true;
                         letter.transform.tag = "EmptyLetter";
+                        tutorialScript.emptyLetter = letter;
+                        emptyLetter = "" + c;
                     }
                 }
                 else
@@ -171,6 +177,10 @@ public class LetterFindBoardGenerator : MonoBehaviour
                 letterCardTexture.filterMode = FilterMode.Bilinear;
                 card.GetComponent<LetterFindCardController>().cardLetter = letterCardsNames[i].ToUpper();
                 card.GetComponent<LetterFindCardController>().targetWord = targetCardName;
+                if(letterCardsNames[i].ToUpper() == emptyLetter)
+                {
+                    tutorialScript.trueLetterCard = card;
+                }
                 LeanTween.scale(card, Vector3.one * 0.45f, 0);
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = letterCardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);

@@ -25,7 +25,7 @@ public class LetterFindCardController : MonoBehaviour, IDragHandler, IPointerDow
         uıController = GetComponentInParent<LetterFindUIController>();
         startPosition = this.transform.position;
     }
-
+    
     public void OnDrag(PointerEventData eventData)
     {
         transform.position = transform.position + new Vector3(eventData.delta.x, eventData.delta.y, 0);

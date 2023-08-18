@@ -170,6 +170,7 @@ public class LetterFindBoardGenerator : MonoBehaviour
                 letterCardTexture.wrapMode = TextureWrapMode.Clamp;
                 letterCardTexture.filterMode = FilterMode.Bilinear;
                 card.GetComponent<LetterFindCardController>().cardLetter = letterCardsNames[i].ToUpper();
+                card.GetComponent<LetterFindCardController>().targetWord = targetCardName;
                 LeanTween.scale(card, Vector3.one * 0.45f, 0);
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = letterCardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);

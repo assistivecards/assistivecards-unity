@@ -9,6 +9,7 @@ public class LetterFindCardController : MonoBehaviour, IDragHandler, IPointerDow
     GameAPI gameAPI;
     private LetterFindUIController uıController;
     public string cardLetter;
+    public string targetWord;
     private Vector3 startPosition;
     private bool oneTime = true;
     private bool isPointerUp;
@@ -49,8 +50,10 @@ public class LetterFindCardController : MonoBehaviour, IDragHandler, IPointerDow
             if(other.tag == "EmptyLetter" && other.gameObject.GetComponent<LetterFindLetterController>().letter == cardLetter) 
             {
                 match = true;
+                gameAPI.PlaySFX("Success");
+                Invoke("ReadCard", 0.2f);
                 gameAPI.AddSessionExp();
-                uıController.LevelChangeScreenActivate();
+                uıController.Invoke("LevelChangeScreenActivate", 0.5f);
                 LeanTween.move(this.gameObject, other.transform.position, 0.5f);
             }
             else if(oneTime)
@@ -73,5 +76,11 @@ public class LetterFindCardController : MonoBehaviour, IDragHandler, IPointerDow
     private void SetDragTrue()
     {
         oneTime = true;
+    }
+
+    private void ReadCard()
+    {
+        gameAPI.Speak(targetWord);
+        Debug.Log(targetWord);
     }
 }

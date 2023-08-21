@@ -109,6 +109,8 @@ public class CardGoalBoardGenerator : MonoBehaviour
             cardParents[i].GetComponent<Rigidbody2D>().freezeRotation = false;
             LeanTween.alpha(cardParents[i], 1, .001f);
             LeanTween.scale(cardParents[i], Vector3.one * 12, 0.2f);
+            cardParents[i].GetComponent<SpriteRenderer>().sortingOrder = 2;
+            cardParents[i].transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 3;
         }
 
         LeanTween.scale(throwText.gameObject, Vector3.one, 0.2f);

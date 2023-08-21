@@ -63,6 +63,9 @@ public class CardGoalFlickManager : MonoBehaviour, IPointerDownHandler, IPointer
                 item.canThrow = false;
             }
             gameAPI.PlaySFX("Pickup");
+
+            GetComponent<SpriteRenderer>().sortingOrder = 4;
+            transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 5;
         }
     }
 }

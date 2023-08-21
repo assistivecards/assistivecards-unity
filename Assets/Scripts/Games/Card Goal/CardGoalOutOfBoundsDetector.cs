@@ -42,6 +42,8 @@ public class CardGoalOutOfBoundsDetector : MonoBehaviour
             // LeanTween.alpha(collidedCard.gameObject, 1, .001f);
             collidedCard.transform.rotation = Quaternion.Euler(0, 0, 0);
             collidedCard.transform.position = collidedCard.transform.parent.position;
+            collidedCard.GetComponent<SpriteRenderer>().sortingOrder = 2;
+            collidedCard.transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 3;
             rb.freezeRotation = false;
             for (int i = 0; i < board.cardParents.Length; i++)
             {

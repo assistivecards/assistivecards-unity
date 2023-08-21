@@ -39,7 +39,7 @@ public class CardGoalOutOfBoundsDetector : MonoBehaviour
             rb.velocity = Vector2.zero;
             rb.freezeRotation = true;
             collidedCard.transform.localScale = Vector3.zero;
-            LeanTween.alpha(collidedCard.gameObject, 1, .001f);
+            // LeanTween.alpha(collidedCard.gameObject, 1, .001f);
             collidedCard.transform.rotation = Quaternion.Euler(0, 0, 0);
             collidedCard.transform.position = collidedCard.transform.parent.position;
             rb.freezeRotation = false;
@@ -47,6 +47,7 @@ public class CardGoalOutOfBoundsDetector : MonoBehaviour
             {
                 board.cardParents[i].GetComponent<CardGoalFlickManager>().canThrow = true;
                 board.cardParents[i].GetComponent<BoxCollider2D>().isTrigger = true;
+                LeanTween.alpha(board.cardParents[i], 1, .001f);
             }
             collidedCard.GetComponent<CardGoalFlickManager>().isValid = false;
             LeanTween.scale(collidedCard.gameObject, Vector3.one * 12, .2f);

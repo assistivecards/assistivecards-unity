@@ -26,6 +26,7 @@ public class CardGoalBoardGenerator : MonoBehaviour
     [SerializeField] GameObject loadingPanel;
     private CardGoalUIController UIController;
     [SerializeField] GameObject tutorial;
+    [SerializeField] GameObject settingsButton;
 
     private void Awake()
     {
@@ -115,6 +116,7 @@ public class CardGoalBoardGenerator : MonoBehaviour
 
         LeanTween.scale(throwText.gameObject, Vector3.one, 0.2f);
         LeanTween.scale(goalPost.gameObject, Vector3.one * .75f, 0.2f);
+        settingsButton.GetComponent<Button>().interactable = true;
 
     }
 

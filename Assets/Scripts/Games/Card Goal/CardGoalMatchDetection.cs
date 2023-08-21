@@ -9,6 +9,7 @@ public class CardGoalMatchDetection : MonoBehaviour
     private CardGoalBoardGenerator board;
     private CardGoalUIController UIController;
     private GameAPI gameAPI;
+    [SerializeField] GameObject settingsButton;
 
     private void Awake()
     {
@@ -30,6 +31,7 @@ public class CardGoalMatchDetection : MonoBehaviour
             gameAPI.AddSessionExp();
             UIController.correctMatches++;
             UIController.backButton.GetComponent<Button>().interactable = false;
+            settingsButton.GetComponent<Button>().interactable = false;
             gameAPI.PlaySFX("Success");
             board.Invoke("ReadCard", 0.25f);
 

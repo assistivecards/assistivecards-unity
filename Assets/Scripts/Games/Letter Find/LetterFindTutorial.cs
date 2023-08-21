@@ -9,7 +9,8 @@ public class LetterFindTutorial : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector3.Lerp(trueLetterCard.transform.position, emptyLetter.transform.position, Mathf.PingPong(Time.time, 1));
+        if(trueLetterCard != null && emptyLetter != null)
+            transform.position = Vector3.Lerp(trueLetterCard.transform.position, emptyLetter.transform.position, Mathf.PingPong(Time.time, 1));
     }
 
 }

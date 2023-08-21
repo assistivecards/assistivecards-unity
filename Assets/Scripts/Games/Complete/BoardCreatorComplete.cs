@@ -129,6 +129,12 @@ public class BoardCreatorComplete : MonoBehaviour
         oneTime = true;
     }
 
+    public void CheckChilds()
+    {
+        card1Position.GetComponent<CardSpawnerComplete>().CheckChild();
+        card2Position.GetComponent<CardSpawnerComplete>().CheckChild();
+    }
+
     public void FillCardSlot()
     {
         if(usedRandomValues.Count < 12 && !levelEnded)
@@ -225,7 +231,8 @@ public class BoardCreatorComplete : MonoBehaviour
         {
             gameAPI.PlaySFX("Finished");
             gameAPI.AddExp(gameAPI.sessionExp);
-            levelEnded = true;
+            uıControllerComplete.LevelEnd();
+            ResetLevel();
         }
     }
 

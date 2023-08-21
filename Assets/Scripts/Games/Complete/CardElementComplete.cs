@@ -72,6 +72,7 @@ public class CardElementComplete : MonoBehaviour, IPointerDownHandler, IDragHand
                 this.transform.SetParent(other.transform);
                 boardCreatorComplete.matchCount += 1;
                 boardCreatorComplete.Invoke("EndLevel", 0.4f);
+                boardCreatorComplete.CheckChilds();
             }
         }
     }
@@ -90,19 +91,9 @@ public class CardElementComplete : MonoBehaviour, IPointerDownHandler, IDragHand
         }
     }
 
-    private void Update() 
-    {
-        CheckIsPositionTrue();
-    }
-
-    private void CheckIsPositionTrue()
-    {
-        if(matchComplete && transform.localPosition != Vector3.zero)
-            this.transform.localPosition = Vector3.zero;
-    }
-
     private void MatchComplete()
     {
         matchComplete = true;
+        GetComponent<Collider2D>().enabled = false;
     }
 }

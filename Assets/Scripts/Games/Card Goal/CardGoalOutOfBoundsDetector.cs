@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CardGoalOutOfBoundsDetector : MonoBehaviour
 {
-    Collider2D collidedCard;
+    [SerializeField] Collider2D collidedCard;
     [SerializeField]
     Transform goalPost;
     private CardGoalBoardGenerator board;
@@ -56,5 +56,38 @@ public class CardGoalOutOfBoundsDetector : MonoBehaviour
             UIController.backButton.GetComponent<Button>().interactable = true;
         }
 
+    }
+
+    public void InvokeResetAllCardPositions()
+    {
+        Invoke("ResetAllCardPositions", .25f);
+    }
+
+    void ResetAllCardPositions()
+    {
+        if (goalPost.localScale == Vector3.one * .75f)
+        {
+
+            for (int i = 0; i < board.cardParents.Length; i++)
+            {
+                board.cardParents[i].GetComponent<Rigidbody2D>().isKinematic = true;
+                board.cardParents[i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                board.cardParents[i].GetComponent<Rigidbody2D>().freezeRotation = true;
+                board.cardParents[i].transform.localScale = Vector3.zero;
+                // LeanTween.alpha(collidedCard.gameObject, 1, .001f);
+                board.cardParents[i].transform.rotation = Quaternion.Euler(0, 0, 0);
+                board.cardParents[i].transform.position = board.cardSlots[i].transform.position;
+                board.cardParents[i].GetComponent<SpriteRenderer>().sortingOrder = 2;
+                board.cardParents[i].transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 3;
+                board.cardParents[i].GetComponent<Rigidbody2D>().freezeRotation = false;
+                board.cardParents[i].GetComponent<CardGoalFlickManager>().canThrow = true;
+                board.cardParents[i].GetComponent<BoxCollider2D>().isTrigger = true;
+                LeanTween.alpha(board.cardParents[i], 1, .001f);
+                board.cardParents[i].GetComponent<CardGoalFlickManager>().isValid = false;
+                LeanTween.scale(board.cardParents[i].gameObject, Vector3.one * 12, .2f);
+            }
+
+            UIController.backButton.GetComponent<Button>().interactable = true;
+        }
     }
 }

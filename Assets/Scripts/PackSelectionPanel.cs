@@ -108,7 +108,8 @@ public class PackSelectionPanel : MonoBehaviour
             }
 
             if (Application.productName.Replace(" ", "_").ToLower() == "first_letter" && (packElement.name == "letters") 
-            || Application.productName.Replace(" ", "_").ToLower() == "alphabet_choose" && (packElement.name == "letters"))
+            || Application.productName.Replace(" ", "_").ToLower() == "alphabet_choose" && (packElement.name == "letters")
+            || Application.productName.Replace(" ", "_").ToLower() == "letter_find" && (packElement.name == "letters"))
             {
                 packElement.SetActive(false);
             }

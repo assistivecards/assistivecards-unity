@@ -34,34 +34,30 @@ public class UIControllerComplete : MonoBehaviour
         firstTime = false;
     }
 
-    private void Update() 
+    public void LevelEnd()
     {
-        if(boardCreatorComplete.levelEnded)
-        {
-            boardCreatorComplete.ResetLevel();
-            levelScreen.SetActive(true);
-            helloText.SetActive(false);
-            levelProgressContainer.SetActive(false);
-            settingsButton.SetActive(false);
-            gridBackground.SetActive(false);
-            backButton.SetActive(false);
-        }
-        else if(packSelectionPanel.activeInHierarchy)
-        {
-            helloText.SetActive(true);
-            levelProgressContainer.SetActive(true);
-            settingsButton.SetActive(true);
-            backButton.SetActive(false);
-            gridBackground.SetActive(false);
-            gameAPI.ResetSessionExp();
-        }
-        else
-        {
-            backButton.SetActive(true);
-            helloText.SetActive(false);
-            levelProgressContainer.SetActive(false);
-            settingsButton.SetActive(true);
-        }
+        levelScreen.SetActive(true);
+        helloText.SetActive(false);
+        levelProgressContainer.SetActive(false);
+        settingsButton.SetActive(false);
+        gridBackground.SetActive(false);
+        backButton.SetActive(false);
+    }
+    public void PackSelectionPanelActive()
+    {
+        helloText.SetActive(true);
+        levelProgressContainer.SetActive(true);
+        settingsButton.SetActive(true);
+        backButton.SetActive(false);
+        gridBackground.SetActive(false);
+        gameAPI.ResetSessionExp();
+    }
+    public void OnGameUI()
+    {
+        backButton.SetActive(true);
+        helloText.SetActive(false);
+        levelProgressContainer.SetActive(false);
+        settingsButton.SetActive(true);
     }
 
 }

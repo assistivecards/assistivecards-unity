@@ -133,6 +133,20 @@ public class LetterFindBoardGenerator : MonoBehaviour
         cardPositions.Add(cardPosition3);
     }
 
+    private void CreateTargetCard()
+    {
+        targetCardName = cardNames[Random.Range(0, cardNames.Count)].ToUpper();
+        if(targetCardName.Contains("-".ToUpper()) || targetCardName.Length > 10)
+        {
+            CreateTargetCard();
+        }
+        else
+        {
+            emptyLetterIndex = Random.Range(0, targetCardName.Length);
+        }
+
+    }
+
     public async void GeneratedBoardAsync()
     {
         if(uıController.canGenerate)
@@ -141,75 +155,10 @@ public class LetterFindBoardGenerator : MonoBehaviour
             await CreateLetters();
             CheckRandom();
             CreateCardList();
-            targetCardName = cardNames[Random.Range(0, cardNames.Count)].ToUpper();
-            emptyLetterIndex = Random.Range(0, targetCardName.Length);
-            if(targetCardName.Contains("-"))
+            CreateTargetCard();
+            if(targetCardName != null)
             {
-                for(int i = 0; i < targetCardName.Count(); i++)
-                {
-                    if("" + targetCardName[i] != "-")
-                    {
-                        GameObject letter = Instantiate(letterPrefab, cardNameHorizontalParent.transform.position, Quaternion.identity);
-                        letter.transform.SetParent(cardNameHorizontalParent.transform);
-                        letters.Add(letter);
-                        if(!emptySlotCreated)
-                        {
-                            if(emptyLetterIndex != i)
-                            {
-                                letter.GetComponentInChildren<Text>().text = "" + targetCardName[i];
-                            }
-                            else if(emptyLetterIndex == i)
-                            {
-                                emptySlotCreated = true;
-                                letter.GetComponent<BoxCollider2D>().enabled = true;
-                                letter.transform.tag = "EmptyLetter";
-                                tutorialScript.emptyLetter = letter;
-                                emptyLetter = "" + targetCardName[i];
-                            }
-                        }
-                        else
-                        {
-                            letter.GetComponentInChildren<Text>().text = "" + targetCardName[i];
-                        }
-                        letter.transform.GetChild(0).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
-                        letter.GetComponent<LetterFindLetterController>().letter = "" + targetCardName[i];
-                    }
-                    else if("" + targetCardName[i] == "-")
-                    {
-                        secondWordCharIndex = i + 1;
-                        break;
-                    }
-                }
-                for(int j = secondWordCharIndex; j < targetCardName.Count(); j++)
-                {
-                    GameObject letter = Instantiate(letterPrefab, cardNameHorizontalParentSecondLine.transform.position, Quaternion.identity);
-                    letter.transform.SetParent(cardNameHorizontalParentSecondLine.transform);
-                    letters.Add(letter);
-                    if(!emptySlotCreated)
-                    {
-                        if(emptyLetterIndex != j)
-                        {
-                            letter.GetComponentInChildren<Text>().text = "" + targetCardName[j];
-                        }
-                        else if(emptyLetterIndex == j)
-                        {
-                            emptySlotCreated = true;
-                            letter.GetComponent<BoxCollider2D>().enabled = true;
-                            letter.transform.tag = "EmptyLetter";
-                            tutorialScript.emptyLetter = letter;
-                            emptyLetter = "" + targetCardName[j];
-                        }
-                    }
-                    else
-                    {
-                        letter.GetComponentInChildren<Text>().text = "" + targetCardName[j];
-                    }
-                    letter.transform.GetChild(0).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
-                    letter.GetComponent<LetterFindLetterController>().letter = "" + targetCardName[j];
-                }
-            }
-            else
-            {
+
                 foreach(char c in targetCardName)
                 {
                     GameObject letter = Instantiate(letterPrefab, cardNameHorizontalParent.transform.position, Quaternion.identity);
@@ -236,61 +185,62 @@ public class LetterFindBoardGenerator : MonoBehaviour
                     }
                     letter.transform.GetChild(0).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
                     letter.GetComponent<LetterFindLetterController>().letter = "" + c;;
+                    LeanTween.scale(letter, Vector3.one, 0);
                 }
-            }
-            foreach(var letter in letterCardsNames)
-            {
-                CheckRandomForLetters();
-                if(letter.ToUpper() == emptyLetter)
+                foreach(var letter in letterCardsNames)
                 {
-                    Transform cardPosition = cardPositions[Random.Range(0, cardPositions.Count)].transform;
-                    card = Instantiate(cardPrefab, cardPosition.position, Quaternion.identity);
-                    card.transform.SetParent(cardPosition);
-                    var letterCardTexture = await gameAPI.GetCardImage("letters", letter, 512);
-                    letterCardTexture.wrapMode = TextureWrapMode.Clamp;
-                    letterCardTexture.filterMode = FilterMode.Bilinear;
-                    card.GetComponent<LetterFindCardController>().cardLetter = letter.ToUpper();
-                    card.GetComponent<LetterFindCardController>().targetWord = targetCardName;
-                    tutorialScript.trueLetterCard = card;
-                    LeanTween.scale(card, Vector3.one * 0.35f, 0);
-                    card.transform.GetChild(0).GetComponent<RawImage>().texture = letterCardTexture;
-                    card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-                    cards.Add(card);
-                }
-            }
-            for(int i = 0; i < cardPositions.Count; i++)
-            {
-                if(cardPositions[i].transform.childCount == 0)
-                {
-                    if(letterCardsNames[randomLetterValueList[i]].ToUpper() != emptyLetter)
+                    CheckRandomForLetters();
+                    if(letter.ToUpper() == emptyLetter)
                     {
-                        int randomLetter = randomLetterValueList[i]; 
-                        card = Instantiate(cardPrefab, cardPositions[i].transform.position, Quaternion.identity);
-                        card.transform.SetParent(cardPositions[i].transform);
-                        var letterCardTexture = await gameAPI.GetCardImage("letters", letterCardsNames[randomLetter], 512);
+                        Transform cardPosition = cardPositions[Random.Range(0, cardPositions.Count)].transform;
+                        card = Instantiate(cardPrefab, cardPosition.position, Quaternion.identity);
+                        card.transform.SetParent(cardPosition);
+                        var letterCardTexture = await gameAPI.GetCardImage("letters", letter, 512);
                         letterCardTexture.wrapMode = TextureWrapMode.Clamp;
                         letterCardTexture.filterMode = FilterMode.Bilinear;
-                        card.GetComponent<LetterFindCardController>().cardLetter = letterCardsNames[randomLetter].ToUpper();
+                        card.GetComponent<LetterFindCardController>().cardLetter = letter.ToUpper();
                         card.GetComponent<LetterFindCardController>().targetWord = targetCardName;
-                        LeanTween.scale(card, Vector3.one * 0.35f, 0);
+                        tutorialScript.trueLetterCard = card;
+                        LeanTween.scale(card, Vector3.one * 0.45f, 0);
                         card.transform.GetChild(0).GetComponent<RawImage>().texture = letterCardTexture;
                         card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                         cards.Add(card);
                     }
-                    else if(letterCardsNames[randomLetterValueList[i]].ToUpper() == emptyLetter)
+                }
+                for(int i = 0; i < cardPositions.Count; i++)
+                {
+                    if(cardPositions[i].transform.childCount == 0)
                     {
-                        int randomLetter = randomLetterValueList[i + 1]; 
-                        card = Instantiate(cardPrefab, cardPositions[i].transform.position, Quaternion.identity);
-                        card.transform.SetParent(cardPositions[i].transform);
-                        var letterCardTexture = await gameAPI.GetCardImage("letters", letterCardsNames[randomLetter], 512);
-                        letterCardTexture.wrapMode = TextureWrapMode.Clamp;
-                        letterCardTexture.filterMode = FilterMode.Bilinear;
-                        card.GetComponent<LetterFindCardController>().cardLetter = letterCardsNames[randomLetter].ToUpper();
-                        card.GetComponent<LetterFindCardController>().targetWord = targetCardName;
-                        LeanTween.scale(card, Vector3.one * 0.35f, 0);
-                        card.transform.GetChild(0).GetComponent<RawImage>().texture = letterCardTexture;
-                        card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-                        cards.Add(card);
+                        if(letterCardsNames[randomLetterValueList[i]].ToUpper() != emptyLetter)
+                        {
+                            int randomLetter = randomLetterValueList[i]; 
+                            card = Instantiate(cardPrefab, cardPositions[i].transform.position, Quaternion.identity);
+                            card.transform.SetParent(cardPositions[i].transform);
+                            var letterCardTexture = await gameAPI.GetCardImage("letters", letterCardsNames[randomLetter], 512);
+                            letterCardTexture.wrapMode = TextureWrapMode.Clamp;
+                            letterCardTexture.filterMode = FilterMode.Bilinear;
+                            card.GetComponent<LetterFindCardController>().cardLetter = letterCardsNames[randomLetter].ToUpper();
+                            card.GetComponent<LetterFindCardController>().targetWord = targetCardName;
+                            LeanTween.scale(card, Vector3.one * 0.45f, 0);
+                            card.transform.GetChild(0).GetComponent<RawImage>().texture = letterCardTexture;
+                            card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                            cards.Add(card);
+                        }
+                        else if(letterCardsNames[randomLetterValueList[i]].ToUpper() == emptyLetter)
+                        {
+                            int randomLetter = randomLetterValueList[i + 1]; 
+                            card = Instantiate(cardPrefab, cardPositions[i].transform.position, Quaternion.identity);
+                            card.transform.SetParent(cardPositions[i].transform);
+                            var letterCardTexture = await gameAPI.GetCardImage("letters", letterCardsNames[randomLetter], 512);
+                            letterCardTexture.wrapMode = TextureWrapMode.Clamp;
+                            letterCardTexture.filterMode = FilterMode.Bilinear;
+                            card.GetComponent<LetterFindCardController>().cardLetter = letterCardsNames[randomLetter].ToUpper();
+                            card.GetComponent<LetterFindCardController>().targetWord = targetCardName;
+                            LeanTween.scale(card, Vector3.one * 0.45f, 0);
+                            card.transform.GetChild(0).GetComponent<RawImage>().texture = letterCardTexture;
+                            card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                            cards.Add(card);
+                        }
                     }
                 }
             }

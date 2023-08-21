@@ -11,7 +11,8 @@ public class TutorialComplete : MonoBehaviour
 
     private void OnEnable() 
     {
-        DetectDestination();
+        if(position1 != null && position2 != null)
+            DetectDestination();
     }
 
     public void DetectDestination()
@@ -30,6 +31,7 @@ public class TutorialComplete : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector3.Lerp(position1.position, position2.position, Mathf.PingPong(Time.time / 2, 1));
+        if(position1 != null && position2 != null)
+            transform.position = Vector3.Lerp(position1.position, position2.position, Mathf.PingPong(Time.time / 2, 1));
     }
 }

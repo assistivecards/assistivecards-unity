@@ -249,5 +249,6 @@
 	"sort_cards_text":"Sort the cards in alphabetical order",
 	"tap_cards_text":"Tap on the $1 cards",
 	"throw_card_text":"Throw the $1 card to the matching card",
-	"throw_card_goal_text":"Throw the $1 into the goal post"
+	"throw_card_goal_text":"Throw the $1 into the goal post",
+	"maze_text":"Get the $1 out of the maze"
 }

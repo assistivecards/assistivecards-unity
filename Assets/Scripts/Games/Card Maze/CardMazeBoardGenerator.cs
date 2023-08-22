@@ -59,6 +59,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
             didLanguageChange = false;
         }
 
+        TranslateMazeText();
         await PopulateRandomTextures();
         PlaceSprites();
         DisableLoadingPanel();
@@ -153,6 +154,11 @@ public class CardMazeBoardGenerator : MonoBehaviour
     private void DisableLoadingPanel()
     {
         loadingPanel.SetActive(false);
+    }
+
+    public void TranslateMazeText()
+    {
+        throwText.text = gameAPI.Translate(throwText.gameObject.name, gameAPI.ToSentenceCase(uniqueCards[0].title).Replace("-", " "), selectedLangCode);
     }
 
 }

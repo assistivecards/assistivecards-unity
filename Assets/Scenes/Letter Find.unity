@@ -3026,11 +3026,11 @@ PrefabInstance:
       objectReference: {fileID: 252539108}
     - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
       propertyPath: wrongMatchExp
-      value: 25
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
       propertyPath: correctMatchExp
-      value: 100
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
       propertyPath: sfxClips.Array.size
@@ -3544,7 +3544,6 @@ MonoBehaviour:
   card: {fileID: 0}
   targetCardName: 
   cardNameHorizontalParent: {fileID: 1511281042}
-  cardNameHorizontalParentSecondLine: {fileID: 0}
   selectedCard: {fileID: 0}
   cardPosition1: {fileID: 1966132659}
   cardPosition2: {fileID: 2094989568}
@@ -3588,6 +3587,7 @@ MonoBehaviour:
   loadingScreen: {fileID: 671447375}
   packSelectionScreen: {fileID: 275728005}
   tutorial: {fileID: 927069859}
+  reloadCount: 0
   canGenerate: 0
 --- !u!114 &8691574409270737102
 MonoBehaviour:

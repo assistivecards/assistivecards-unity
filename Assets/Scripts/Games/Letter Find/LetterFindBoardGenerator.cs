@@ -50,7 +50,6 @@ public class LetterFindBoardGenerator : MonoBehaviour
     public GameObject card;
     public string targetCardName;
     public GameObject cardNameHorizontalParent;
-    public GameObject cardNameHorizontalParentSecondLine;
     public GameObject selectedCard;
     public GameObject cardPosition1;
     public GameObject cardPosition2;

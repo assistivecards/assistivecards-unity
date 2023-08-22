@@ -23,6 +23,7 @@ public class LetterFindUIController : MonoBehaviour
     [SerializeField] private GameObject tutorial;
 
     private bool firstTime = true;
+    public int reloadCount;
     public bool canGenerate;
 
     private void Awake() 
@@ -91,6 +92,7 @@ public class LetterFindUIController : MonoBehaviour
         settingButton.SetActive(true);
         helloText.SetActive(true);
         levelProgressContainer.SetActive(true);
+        reloadCount = 0;
     }
 
     public void DetectPremium()
@@ -118,6 +120,21 @@ public class LetterFindUIController : MonoBehaviour
 
                 }
             }
+        }
+    }
+
+    public void LevelEndCheck()
+    {
+        reloadCount ++;
+        if(reloadCount < 5)
+        {
+            boardGenerator.ClearBoard();
+            boardGenerator.GeneratedBoardAsync();
+        }
+        else
+        {
+            LevelChangeScreenActivate();
+            reloadCount = 0;
         }
     }
 

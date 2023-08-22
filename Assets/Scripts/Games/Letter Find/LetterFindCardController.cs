@@ -22,7 +22,6 @@ public class LetterFindCardController : MonoBehaviour, IDragHandler, IPointerDow
 
     private void OnEnable() 
     {
-        uıController = GetComponentInParent<LetterFindUIController>();
         startPosition = this.transform.position;
     }
     
@@ -53,7 +52,8 @@ public class LetterFindCardController : MonoBehaviour, IDragHandler, IPointerDow
                 gameAPI.PlaySFX("Success");
                 Invoke("ReadCard", 0.2f);
                 gameAPI.AddSessionExp();
-                uıController.Invoke("LevelChangeScreenActivate", 0.5f);
+                uıController = GetComponentInParent<LetterFindUIController>();
+                uıController.Invoke("LevelEndCheck", 0.5f);
                 LeanTween.move(this.gameObject, other.transform.position, 0.5f);
             }
             else if(oneTime)

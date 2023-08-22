@@ -55,6 +55,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
 
     [SerializeField] private GameObject questionMarkSlot;
     public string trueCardName;
+    public int randomPosition;
     public int round;
 
     private void Awake()
@@ -93,6 +94,15 @@ public class PatternTrainBoardGenerator : MonoBehaviour
         }
     }
 
+    private void RandomizePosition()
+    {
+        randomPosition = Random.Range(0, draggablePositions.Count);
+        if(draggablePositions[randomPosition].transform.childCount != 0)
+        {
+            RandomizePosition();
+        }
+    }
+
     private void CreatePositionsList()
     {
         patternPositions.Add(patternPosition1);
@@ -118,6 +128,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
             CreatePositionsList();
             for(int j = 0; j < patternPositions.Count; j++)
             {
+                CheckRandom();
                 if(round == 0){
                     CheckRandom();
                     GameObject card = Instantiate(cardPrefab, patternPositions[j].transform.position, Quaternion.identity);
@@ -173,8 +184,9 @@ public class PatternTrainBoardGenerator : MonoBehaviour
             for(int j = 0; j < draggablePositions.Count; j++)
             {
                 CheckRandom();
-                GameObject card = Instantiate(cardPrefab, draggablePositions[j].transform.position, Quaternion.identity);
-                card.transform.SetParent( draggablePositions[j].transform);
+                RandomizePosition();
+                GameObject card = Instantiate(cardPrefab, draggablePositions[randomPosition].transform.position, Quaternion.identity);
+                card.transform.SetParent( draggablePositions[randomPosition].transform);
 
                 var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[j]], 512);
                 cardTexture.wrapMode = TextureWrapMode.Clamp;

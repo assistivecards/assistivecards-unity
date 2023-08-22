@@ -53,6 +53,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject draggablePosition3;
     public List<GameObject> draggablePositions = new List<GameObject>();
 
+    [SerializeField] private GameObject questionMarkSlot;
     public string trueCardName;
     public int round;
 
@@ -189,8 +190,9 @@ public class PatternTrainBoardGenerator : MonoBehaviour
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                 cards.Add(card);
             }
+            questionMarkSlot.SetActive(true);
+            Invoke("GameUIActivate", 0.1f);
         }
-        Invoke("GameUIActivate", 0.1f);
     }
 
     public void GameUIActivate()
@@ -206,11 +208,12 @@ public class PatternTrainBoardGenerator : MonoBehaviour
     public void LevelEnd()
     {
         ClearBoard();
-        uıController.LevelChangeScreenActivate();
+        uıController.LevelEndCheck();
     }
 
     public void ClearBoard()
     {
+        questionMarkSlot.SetActive(false);
         cardLocalNames.Clear();
         cardNames.Clear();
         cardsList.Clear();

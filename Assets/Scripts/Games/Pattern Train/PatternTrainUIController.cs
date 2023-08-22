@@ -24,6 +24,7 @@ public class PatternTrainUIController : MonoBehaviour
     [SerializeField] private GameObject tutorial;
 
     private bool firstTime = true;
+    public int reloadCount;
     public bool canGenerate;
 
     private void Awake() 
@@ -140,6 +141,21 @@ public class PatternTrainUIController : MonoBehaviour
             levelProgressContainer.SetActive(false);
             settingButton.SetActive(false);
             backButton.SetActive(false);
+        }
+    }
+
+    public void LevelEndCheck()
+    {
+        reloadCount ++;
+        if(reloadCount < 5)
+        {
+            boardGenerator.ClearBoard();
+            boardGenerator.GeneratedBoardAsync();
+        }
+        else
+        {
+            LevelChangeScreenActivate();
+            reloadCount = 0;
         }
     }
 }

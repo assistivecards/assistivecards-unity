@@ -1141,8 +1141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52e82850e4fbb483d9c68adc4597bbfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  point1: {fileID: 785463460}
-  point2: {fileID: 336364767}
+  point1: {fileID: 549491623}
+  trueCard: {fileID: 0}
 --- !u!1 &933857655
 GameObject:
   m_ObjectHideFlags: 0

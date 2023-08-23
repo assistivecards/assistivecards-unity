@@ -200,6 +200,10 @@ public class PatternTrainBoardGenerator : MonoBehaviour
                 card.GetComponent<BoxCollider2D>().enabled = true;
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                if(cardLocalNames[randomValueList[j]].ToLower() == trueCardName)
+                {
+                    tutorial.GetComponent<PatternTrainTutorial>().trueCard = card.transform;
+                }
                 cards.Add(card);
             }
             questionMarkSlot.SetActive(true);

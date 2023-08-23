@@ -10,8 +10,6 @@ public class CardElementHatchMatch : MonoBehaviour, IPointerDownHandler, IDragHa
     private EggController eggController;
     private BoardCreatorHatchMatch boardCreatorHatchMatch;
     public bool match;
-    private GameObject levelChange;
-    private LevelChangeScreenHatchMatch levelChangeScreenHatchMatch;
 
     public string cardName;
     private Vector3 startPosition;

@@ -1,22 +1,48 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CardMazeDraggableCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
+public class CardMazeDraggableCard : MonoBehaviour
 {
 
-    public void OnDrag(PointerEventData eventData)
-    {
-        transform.position = transform.position + new Vector3(eventData.delta.x, eventData.delta.y, 0);
-    }
+    public bool isValid;
+    Vector3 newPosition;
 
-    public void OnPointerDown(PointerEventData eventData)
+    void Update()
     {
-        Debug.Log("OnPointerDown");
-    }
+        if (Input.touchCount > 0)
+        {
+            if (Input.GetTouch(0).phase == TouchPhase.Began)
+            {
 
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        Debug.Log("OnPointerUp");
-    }
+                var wp = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
+                var touchPosition = new Vector2(wp.x, wp.y);
 
+                if (GetComponent<Collider2D>() == Physics2D.OverlapPoint(touchPosition))
+                {
+                    isValid = true;
+                }
+
+                else
+                {
+                    Debug.Log("MISS");
+                }
+
+            }
+
+            if (Input.GetTouch(0).phase == TouchPhase.Moved && isValid)
+            {
+
+                var wp = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
+                newPosition = new Vector3(wp.x, wp.y, transform.position.z);
+
+                GetComponent<Rigidbody2D>().MovePosition(newPosition);
+            }
+
+            if (Input.GetTouch(0).phase == TouchPhase.Ended && isValid)
+            {
+                isValid = false;
+            }
+
+        }
+    }
 }

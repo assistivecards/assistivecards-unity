@@ -79,7 +79,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
 
     public void ScaleImagesUp()
     {
-        LeanTween.scale(cardParent, Vector3.one * 12, 0.2f);
+        LeanTween.scale(cardParent, Vector3.one * 10, 0.2f);
         LeanTween.scale(throwText.gameObject, Vector3.one, 0.2f);
         LeanTween.scale(maze, Vector3.one, 0.2f);
 

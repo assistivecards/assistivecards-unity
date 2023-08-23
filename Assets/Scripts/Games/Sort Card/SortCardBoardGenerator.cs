@@ -78,7 +78,6 @@ public class SortCardBoardGenerator : MonoBehaviour
     {
         if(UIController.canGenerate)
         {
-            GetSlotedList();
             packSlug = packSelectionPanel.selectedPackElement.name;
             GenerateRandomBoardAsync(packSlug);
         }
@@ -100,6 +99,7 @@ public class SortCardBoardGenerator : MonoBehaviour
     private async void GenerateRandomBoardAsync(string packSlug)
     {
         await CacheCards(packSlug);
+        GetSlotedList();
         tutorialSortCard.ClearLists();
         for(int i = 0; i < cardListTransforms.Count; i++)
         {
@@ -168,12 +168,6 @@ public class SortCardBoardGenerator : MonoBehaviour
 
     public void ClearBoard()
     {
-        foreach(var card in slotableCards)
-        {
-            Destroy(card);
-        }
-        slotableCards.Clear();
-        
         cardNames.Clear();
         cardListTransforms.Clear();
         slotableCardTransforms.Clear();
@@ -181,19 +175,17 @@ public class SortCardBoardGenerator : MonoBehaviour
         cards.Clear();
         cardLocalNames.Clear();
         usedRandoms.Clear();
-
-        foreach(var card in listedCards)
+        foreach(var card in slotableCards)
         {
             Destroy(card);
         }
-        foreach(var card in slotableCards)
+        foreach(var card in listedCards)
         {
             Destroy(card);
         }
         listedCards.Clear();
         slotableCards.Clear();
         orderDetection.ClearLists();
-
         levelEnd.correct = 0;
         levelEnd.count = 0;
     }

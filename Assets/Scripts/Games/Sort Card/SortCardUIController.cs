@@ -7,6 +7,7 @@ public class SortCardUIController : MonoBehaviour
 {
     GameAPI gameAPI;
     [SerializeField] private PackSelectionPanel packSelectionPanelScript;
+    [SerializeField] private SortCardBoardGenerator boardGenerator;
     [SerializeField] private GameObject gameUI;
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject settingButton;
@@ -17,6 +18,7 @@ public class SortCardUIController : MonoBehaviour
     [SerializeField] private GameObject loadingScreen;
     [SerializeField] GameObject tutorial;
     private bool firstTime = true;
+    public int reloadCount;
     public bool canGenerate;
 
     private void Awake()
@@ -45,15 +47,25 @@ public class SortCardUIController : MonoBehaviour
 
     public void LevelEnd()
     {
-        levelEndScreen.SetActive(true);
-        LeanTween.scale(levelEndScreen, Vector3.one * 0.5f, 0.5f);
-        gameUI.SetActive(false);
-        backButton.SetActive(false);
-        settingButton.SetActive(false);
-        helloText.SetActive(false);
-        levelProgressContainer.SetActive(false);
-        loadingScreen.SetActive(false);
-        gameAPI.AddExp(gameAPI.sessionExp);
+        if(reloadCount < 4)
+        {
+            reloadCount++;
+            LoadingScreenActivate();
+            boardGenerator.GeneratStylized();
+        }
+        else
+        {
+            levelEndScreen.SetActive(true);
+            LeanTween.scale(levelEndScreen, Vector3.one * 0.5f, 0.5f);
+            gameUI.SetActive(false);
+            backButton.SetActive(false);
+            settingButton.SetActive(false);
+            helloText.SetActive(false);
+            levelProgressContainer.SetActive(false);
+            loadingScreen.SetActive(false);
+            gameAPI.AddExp(gameAPI.sessionExp);
+            reloadCount = 0;
+        }
     }
 
     public void SelectNewPackClick()
@@ -112,6 +124,7 @@ public class SortCardUIController : MonoBehaviour
 
     public void ResetScroll()
     {
+        reloadCount = 0;
         gameAPI.ResetSessionExp();
         packSelectionPanel.transform.GetChild(0).GetChild(0).GetChild(0).transform.localPosition = Vector3.zero;
     }

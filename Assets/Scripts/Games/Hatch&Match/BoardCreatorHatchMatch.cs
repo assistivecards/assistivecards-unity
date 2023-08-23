@@ -12,7 +12,6 @@ public class BoardCreatorHatchMatch : MonoBehaviour
     public string selectedLangCode;
 
     [SerializeField] private PackSelectionPanel packSelectionPanel;
-    [SerializeField] private LevelChangeScreenHatchMatch levelChangeScreenHatchMatch;
 
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject actualCardPrefab;
@@ -22,7 +21,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
     [SerializeField] private Transform cardPosition;
     [SerializeField] private GameObject egg;
     [SerializeField] private PackSelectionScreenUIController packageSelectManager;
-    [SerializeField] private HatchMatchUIController UIController;
+    [SerializeField] private HatchMatchUIController uıController;
     public int cardTypeCount;
     public int levelCount;
 
@@ -145,25 +144,28 @@ public class BoardCreatorHatchMatch : MonoBehaviour
             GenerateCard(packSelectionPanel.selectedPackElement.name, card3Position, 3);
             egg.SetActive(true);
             LeanTween.scale(egg, Vector3.one * 1.25f, 1f);
-            UIController.TutorialSetActive();
             Invoke("GenerateStylizedCard", 0.5f);
+            uıController.GameUIActivate();
         }
     }
 
     private void GenerateStylizedCard()
     {
-        GenerateActualCard(packSelectionPanel.selectedPackElement.name, cardPosition, Random.Range(1,4));
-
-        if(actualCardType != previousCard)
-        {
-            previousCard = actualCardType;
-            boardCreated = true;
-        }
-        else if(actualCardType == previousCard)
+        if(uıController.canGenerate)
         {
             GenerateActualCard(packSelectionPanel.selectedPackElement.name, cardPosition, Random.Range(1,4));
-            boardCreated = true;
-            previousCard = actualCardType;
+
+            if(actualCardType != previousCard)
+            {
+                previousCard = actualCardType;
+                boardCreated = true;
+            }
+            else if(actualCardType == previousCard)
+            {
+                GenerateActualCard(packSelectionPanel.selectedPackElement.name, cardPosition, Random.Range(1,4));
+                boardCreated = true;
+                previousCard = actualCardType;
+            }
         }
     }
 
@@ -206,8 +208,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
 
     public void ActivateLevelChange()
     {
-        levelChangeScreenHatchMatch.gameObject.SetActive(true);
-        levelChangeScreenHatchMatch.LevelScreenTween();
+        uıController.LevelChangeScreenActivate();
         gameAPI.AddExp(gameAPI.sessionExp);
     }
 

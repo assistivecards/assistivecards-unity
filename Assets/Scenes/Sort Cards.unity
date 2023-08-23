@@ -3425,11 +3425,11 @@ PrefabInstance:
       objectReference: {fileID: 252539108}
     - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
       propertyPath: wrongMatchExp
-      value: 50
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
       propertyPath: correctMatchExp
-      value: 100
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
       propertyPath: sfxClips.Array.size
@@ -3916,6 +3916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   packSelectionPanelScript: {fileID: 662493964}
+  boardGenerator: {fileID: 8383894889009589327}
   gameUI: {fileID: 271688919}
   backButton: {fileID: 849033361}
   settingButton: {fileID: 472857506}
@@ -3925,6 +3926,7 @@ MonoBehaviour:
   levelEndScreen: {fileID: 781907399}
   loadingScreen: {fileID: 671447375}
   tutorial: {fileID: 927069859}
+  reloadCount: 0
   canGenerate: 0
 --- !u!114 &8383894889009589327
 MonoBehaviour:

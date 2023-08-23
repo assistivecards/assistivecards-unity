@@ -9,7 +9,7 @@ using System.Linq;
 public class CardMazeBoardGenerator : MonoBehaviour
 {
     private GameAPI gameAPI;
-    [SerializeField] Image cardTexture;
+    [SerializeField] SpriteRenderer cardTexture;
     [SerializeField] GameObject cardParent;
     [SerializeField] GameObject maze;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
@@ -79,7 +79,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
 
     public void ScaleImagesUp()
     {
-        LeanTween.scale(cardParent, Vector3.one, 0.2f);
+        LeanTween.scale(cardParent, Vector3.one * 12, 0.2f);
         LeanTween.scale(throwText.gameObject, Vector3.one, 0.2f);
         LeanTween.scale(maze, Vector3.one, 0.2f);
 

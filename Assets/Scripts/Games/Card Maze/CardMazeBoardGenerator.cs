@@ -9,6 +9,7 @@ using System.Linq;
 public class CardMazeBoardGenerator : MonoBehaviour
 {
     private GameAPI gameAPI;
+    [SerializeField] GameObject[] spawnPoints;
     [SerializeField] SpriteRenderer cardTexture;
     [SerializeField] GameObject cardParent;
     [SerializeField] GameObject maze;
@@ -79,9 +80,8 @@ public class CardMazeBoardGenerator : MonoBehaviour
 
     public void ScaleImagesUp()
     {
-        LeanTween.scale(cardParent, Vector3.one * 10, 0.2f);
         LeanTween.scale(throwText.gameObject, Vector3.one, 0.2f);
-        LeanTween.scale(maze, Vector3.one, 0.2f);
+        LeanTween.scale(maze, Vector3.one, 0.2f).setOnComplete(SelectRandomSpawnPoint);
 
     }
 
@@ -159,6 +159,13 @@ public class CardMazeBoardGenerator : MonoBehaviour
     public void TranslateMazeText()
     {
         throwText.text = gameAPI.Translate(throwText.gameObject.name, gameAPI.ToSentenceCase(uniqueCards[0].title).Replace("-", " "), selectedLangCode);
+    }
+
+    public void SelectRandomSpawnPoint()
+    {
+        var selectedSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        cardParent.transform.position = selectedSpawnPoint.transform.position;
+        LeanTween.scale(cardParent, Vector3.one * 10, 0.2f);
     }
 
 }

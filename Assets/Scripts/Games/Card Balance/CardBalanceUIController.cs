@@ -24,6 +24,7 @@ GameAPI gameAPI;
     [SerializeField] private GameObject tutorial;
 
     private bool firstTime = true;
+    public int reloadCount;
     public bool canGenerate;
 
     private void Awake() 
@@ -69,10 +70,26 @@ GameAPI gameAPI;
 
     public void LevelChangeScreenActivate()
     {
-        gameAPI.AddSessionExp();
-        gameAPI.AddExp(gameAPI.sessionExp);
-        levelChange.SetActive(true);
-        LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.3f);
+        if(reloadCount < 5)
+        {
+            reloadCount++;
+            boardGenerator.ClearLevel();
+            Invoke("RealoadLevel", 1f);
+        }
+        else
+        {
+            gameAPI.AddSessionExp();
+            gameAPI.AddExp(gameAPI.sessionExp);
+            levelChange.SetActive(true);
+            LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.3f);
+            reloadCount = 0;
+        }
+    }
+
+    private void RealoadLevel()
+    {
+        LoadingScreenActivation();
+        boardGenerator.GeneratedBoardAsync();
     }
 
     public void CloseLevelChangePanel()
@@ -84,6 +101,7 @@ GameAPI gameAPI;
 
     public void PackSelectionPanelActive()
     {
+        reloadCount = 0;
         gameUI.SetActive(false);
         gameAPI.ResetSessionExp();
         backButton.SetActive(false);

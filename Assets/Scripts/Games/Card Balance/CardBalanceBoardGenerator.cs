@@ -245,12 +245,13 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     public void ClearLevel()
     {
         matchedCardCount = 0;
+        randomOrder = 0;
         foreach(var card in cards)
         {
             Destroy(card);
         }
-        cardLocalNames.Clear();
         cards.Clear();
+        cardLocalNames.Clear();
         cloneCards.Clear();
         cardNames.Clear();
         randomValueList.Clear();

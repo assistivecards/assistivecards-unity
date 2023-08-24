@@ -89,6 +89,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
     {
         LeanTween.scale(cardParent, Vector3.zero, 0.2f);
         LeanTween.scale(throwText.gameObject, Vector3.zero, 0.2f);
+        LeanTween.scale(maze, Vector3.zero, 0.2f);
     }
 
     public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)
@@ -166,6 +167,8 @@ public class CardMazeBoardGenerator : MonoBehaviour
         var selectedSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
         cardParent.transform.position = selectedSpawnPoint.transform.position;
         LeanTween.scale(cardParent, Vector3.one * 10, 0.2f);
+        cardParent.GetComponent<CardMazeDraggableCard>().enabled = true;
+        cardParent.GetComponent<BoxCollider2D>().enabled = true;
     }
 
 }

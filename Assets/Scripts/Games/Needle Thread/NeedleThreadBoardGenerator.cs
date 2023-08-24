@@ -91,7 +91,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
         // {
             await CacheCards();
             CreatePositionsList();
-            for(int j = 0; j < 8; j++)
+            for(int j = 0; j < cardPositions.Count(); j++)
             {
                 CheckRandom();
                 if(cardPositions[j].transform.childCount <= 0)
@@ -113,26 +113,26 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
                 }
             }
             CheckRandom();
-            for(int i = 8; i < 12; i++)
-            {
-                if(cardPositions[i].transform.childCount <= 0)
-                {
-                    GameObject card = Instantiate(cardPrefab, cardPositions[i].transform.position, Quaternion.identity);
-                    card.transform.SetParent(cardPositions[i].transform);
+            // for(int i = 8; i < 12; i++)
+            // {
+            //     if(cardPositions[i].transform.childCount <= 0)
+            //     {
+            //         GameObject card = Instantiate(cardPrefab, cardPositions[i].transform.position, Quaternion.identity);
+            //         card.transform.SetParent(cardPositions[i].transform);
 
-                    var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[5]], 512);
-                    cardTexture.wrapMode = TextureWrapMode.Clamp;
-                    cardTexture.filterMode = FilterMode.Bilinear;
+            //         var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[5]], 512);
+            //         cardTexture.wrapMode = TextureWrapMode.Clamp;
+            //         cardTexture.filterMode = FilterMode.Bilinear;
 
-                    card.transform.name = cardLocalNames[randomValueList[5]];
-                    card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-                    card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-                    LeanTween.scale(card, Vector3.one * 0.75f, 0);
-                    LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-30, 30)), 0f);
-                    card.gameObject.tag = "Card";
-                    cards.Add(card);
-                }
-            }
+            //         card.transform.name = cardLocalNames[randomValueList[5]];
+            //         card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+            //         card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+            //         LeanTween.scale(card, Vector3.one * 0.75f, 0);
+            //         LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-30, 30)), 0f);
+            //         card.gameObject.tag = "Card";
+            //         cards.Add(card);
+            //     }
+            // }
             targetCard = cardNames[randomValueList[5]];
             reloadCount++;
             Invoke("GameUIActivate", 0.1f);

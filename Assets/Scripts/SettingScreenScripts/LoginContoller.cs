@@ -13,6 +13,7 @@ public class LoginContoller : MonoBehaviour
     [SerializeField] GameObject gameCanvas;
 
     [Header("LoginPage UI Assests")]
+    [SerializeField] private GameObject loginPage;
     [SerializeField] private GameObject loginUI;
     public TMP_InputField nicknameInputField;
     [SerializeField] private Button nextButton;
@@ -74,7 +75,7 @@ public class LoginContoller : MonoBehaviour
             practiceReminderScreen.SetActive(true);
             congratulationsScreen.SetActive(true);
 
-            LeanTween.scale(avatarSelectionScreen, Vector3.one, 0.2f);
+            LeanTween.scale(avatarSelectionScreen, Vector3.one * 0.9f, 0f);
         }
         else
         {
@@ -90,11 +91,12 @@ public class LoginContoller : MonoBehaviour
     }
     private void SetGamePanelActive()
     {
+        loginPage.SetActive(true);
+        LeanTween.scale(avatarSelectionScreen, Vector3.zero, 0);
+        LeanTween.scale(loginPrefab, Vector3.one * 0.9f, 0);
         avatarSelectionScreen.SetActive(false);
         practiceReminderScreen.SetActive(false);
         congratulationsScreen.SetActive(false);
-
-        this.gameObject.SetActive(true);
         fadeOutPanel.SetActive(true);
         canvasController.gamePrefab.SetActive(true);
         loginPrefab.SetActive(false);

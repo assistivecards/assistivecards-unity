@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CardMazeMatchDetection : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class CardMazeMatchDetection : MonoBehaviour
         {
             Debug.Log("LEVEL COMPLETED");
             UIController.correctMatches++;
+            UIController.backButton.GetComponent<Button>().interactable = false;
             card = other.gameObject;
             card.GetComponent<CardMazeDraggableCard>().enabled = false;
             card.GetComponent<BoxCollider2D>().enabled = false;

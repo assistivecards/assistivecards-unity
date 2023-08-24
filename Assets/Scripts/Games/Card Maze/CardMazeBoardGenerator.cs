@@ -43,6 +43,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
         if (isBackAfterSignOut)
         {
             gameAPI.PlayMusic();
+            UIController.OnBackButtonClick();
             isBackAfterSignOut = false;
         }
     }
@@ -89,9 +90,8 @@ public class CardMazeBoardGenerator : MonoBehaviour
 
     public void ScaleImagesDown()
     {
-        LeanTween.scale(cardParent, Vector3.zero, 0.2f);
+        LeanTween.scale(cardParent, Vector3.zero, 0.2f).setOnComplete(ScaleMazeDown);
         LeanTween.scale(throwText.gameObject, Vector3.zero, 0.2f);
-        LeanTween.scale(maze, Vector3.zero, 0.2f);
     }
 
     public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)
@@ -171,6 +171,11 @@ public class CardMazeBoardGenerator : MonoBehaviour
         LeanTween.scale(cardParent, Vector3.one * 10, 0.2f);
         cardParent.GetComponent<CardMazeDraggableCard>().enabled = true;
         cardParent.GetComponent<BoxCollider2D>().enabled = true;
+    }
+
+    public void ScaleMazeDown()
+    {
+        LeanTween.scale(maze, Vector3.zero, 0.2f);
     }
 
 }

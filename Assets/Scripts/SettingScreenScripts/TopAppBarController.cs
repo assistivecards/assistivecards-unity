@@ -222,6 +222,7 @@ public class TopAppBarController : MonoBehaviour
                 CardRumbleBoardGenerator.didLanguageChange = true;
                 ThrowCardsBoardGenerator.didLanguageChange = true;
                 CardGoalBoardGenerator.didLanguageChange = true;
+                CardMazeBoardGenerator.didLanguageChange = true;
                 GameSelectionPanel.didLanguageChange = true;
 
                 if (languageController.selectedLanguage.name == "Arabic" || languageController.selectedLanguage.name == "Urdu")

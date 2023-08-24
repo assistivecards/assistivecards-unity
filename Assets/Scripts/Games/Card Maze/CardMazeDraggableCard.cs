@@ -6,6 +6,12 @@ public class CardMazeDraggableCard : MonoBehaviour
 
     public bool isValid;
     Vector3 newPosition;
+    private GameAPI gameAPI;
+
+    void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     void Update()
     {
@@ -20,6 +26,7 @@ public class CardMazeDraggableCard : MonoBehaviour
                 if (GetComponent<Collider2D>() == Physics2D.OverlapPoint(touchPosition))
                 {
                     isValid = true;
+                    gameAPI.PlaySFX("Pickup");
                 }
 
                 else

@@ -8,6 +8,12 @@ public class CardMazeMatchDetection : MonoBehaviour
     private CardMazeBoardGenerator board;
     private GameObject card;
     private CardMazeUIController UIController;
+    private GameAPI gameAPI;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void Start()
     {
@@ -25,6 +31,8 @@ public class CardMazeMatchDetection : MonoBehaviour
             card = other.gameObject;
             card.GetComponent<CardMazeDraggableCard>().enabled = false;
             card.GetComponent<BoxCollider2D>().enabled = false;
+            gameAPI.PlaySFX("Success");
+            board.Invoke("ReadCard", 0.25f);
             Invoke("PlayCorrectMatchAnimation", 0.25f);
             board.Invoke("ScaleImagesDown", 1f);
             board.Invoke("ClearBoard", 1.3f);

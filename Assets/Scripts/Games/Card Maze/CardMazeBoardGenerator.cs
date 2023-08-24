@@ -69,7 +69,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
         DisableLoadingPanel();
         ScaleImagesUp();
         backButton.SetActive(true);
-        Invoke("EnableBackButton", 0.15f);
+        Invoke("EnableBackButton", 0.4f);
     }
 
     public void ClearBoard()

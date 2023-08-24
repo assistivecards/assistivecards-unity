@@ -24,6 +24,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> uniqueCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     [SerializeField] TMP_Text throwText;
     [SerializeField] GameObject loadingPanel;
+    private CardMazeUIController UIController;
 
 
     private void Awake()
@@ -34,6 +35,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
     private void Start()
     {
         gameAPI.PlayMusic();
+        UIController = gameObject.GetComponent<CardMazeUIController>();
     }
 
     private void OnEnable()
@@ -107,7 +109,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
 
     public void ReadCard()
     {
-        gameAPI.Speak(uniqueCards[0].title);
+        gameAPI.Speak(uniqueCards[UIController.correctMatches - 1].title);
     }
 
     public void EnableBackButton()
@@ -118,7 +120,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
     public void PopulateUniqueCards()
     {
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 3; i++)
         {
             var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
             // Debug.Log("Log before checkifcardexists " + cardToAdd.slug);
@@ -135,7 +137,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
     public async Task PopulateRandomTextures()
     {
 
-        var texture = await gameAPI.GetCardImage(packSlug, uniqueCards[0].slug);
+        var texture = await gameAPI.GetCardImage(packSlug, uniqueCards[UIController.correctMatches].slug);
         texture.wrapMode = TextureWrapMode.Clamp;
         texture.filterMode = FilterMode.Bilinear;
         randomImage = texture;
@@ -159,7 +161,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
 
     public void TranslateMazeText()
     {
-        throwText.text = gameAPI.Translate(throwText.gameObject.name, gameAPI.ToSentenceCase(uniqueCards[0].title).Replace("-", " "), selectedLangCode);
+        throwText.text = gameAPI.Translate(throwText.gameObject.name, gameAPI.ToSentenceCase(uniqueCards[UIController.correctMatches].title).Replace("-", " "), selectedLangCode);
     }
 
     public void SelectRandomSpawnPoint()

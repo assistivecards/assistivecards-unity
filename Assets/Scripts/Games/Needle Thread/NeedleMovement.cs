@@ -4,22 +4,79 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class NeedleMovement : MonoBehaviour, IPointerDownHandler, IDragHandler
+public class NeedleMovement : MonoBehaviour
 {
-    GameAPI gameAPI;
+    private bool dragging = false;
+    private Vector2 screenPosition;
+    private Vector3 worldPosition;
+    private NeedleDraggable lastDragged;
 
-    private void Awake() 
+    private void Awake()
     {
-        gameAPI = Camera.main.GetComponent<GameAPI>();
+        NeedleMovement[] controller = FindObjectsOfType<NeedleMovement>();
+        if(controller.Length > 1)
+        {
+            Destroy(gameObject);
+        }
     }
 
-    public void OnDrag(PointerEventData eventData)
+    private void Update()
     {
-        this.transform.position = eventData.position;
+        if(dragging)
+        {
+            if((Input.GetMouseButtonUp(0)) || Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Ended)
+            {
+                Drop();
+                return;
+            }
+        }
+        if(Input.GetMouseButton(0))
+        {
+            Vector3 mousePos = Input.mousePosition;
+            screenPosition = new Vector2(mousePos.x, mousePos.y);
+        }
+        else if(Input.touchCount > 0)
+        {
+            screenPosition = Input.GetTouch(0).position;
+        }
+        else
+        {
+            return;
+        }
+
+        worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
+
+        if(dragging)
+        {
+            Drag();
+        }
+        else
+        {
+            RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero);
+            if(hit.collider != null)
+            {
+                NeedleDraggable draggable = hit.transform.gameObject.GetComponent<NeedleDraggable>();
+                if(draggable != null)
+                {
+                    lastDragged = draggable;
+                    InitDrag();
+                }
+            }
+        }
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    private void InitDrag()
     {
-        this.transform.position = eventData.position;
+        dragging = true;
+    }
+
+    private void Drag()
+    {
+        lastDragged.transform.position = new Vector2(worldPosition.x, worldPosition.y);
+    }
+
+    private void Drop()
+    {
+        dragging =  false;
     }
 }

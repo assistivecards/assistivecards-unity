@@ -62,6 +62,10 @@ public class CardMazeBoardGenerator : MonoBehaviour
         if (didLanguageChange)
         {
             await CacheCards(packSlug);
+            for (int i = 0; i < uniqueCards.Count; i++)
+            {
+                uniqueCards[i] = cachedCards.cards.Where(card => card.slug == uniqueCards[i].slug).ToList()[0];
+            }
             didLanguageChange = false;
         }
 

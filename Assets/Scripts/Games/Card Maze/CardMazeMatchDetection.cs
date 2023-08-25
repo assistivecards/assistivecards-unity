@@ -27,6 +27,7 @@ public class CardMazeMatchDetection : MonoBehaviour
         {
             Debug.Log("LEVEL COMPLETED");
             UIController.correctMatches++;
+            gameAPI.AddSessionExp();
             UIController.backButton.GetComponent<Button>().interactable = false;
             card = other.gameObject;
             card.GetComponent<CardMazeDraggableCard>().enabled = false;
@@ -39,6 +40,7 @@ public class CardMazeMatchDetection : MonoBehaviour
 
             if (UIController.correctMatches == UIController.checkpointFrequency)
             {
+                gameAPI.AddExp(gameAPI.sessionExp);
                 UIController.Invoke("OpenCheckPointPanel", 1.3f);
             }
 

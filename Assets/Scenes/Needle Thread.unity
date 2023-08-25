@@ -1713,6 +1713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d38199352ea3245198fd418a64a70501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boardGenerator: {fileID: 0}
 --- !u!1 &1203637277
 GameObject:
   m_ObjectHideFlags: 0
@@ -2217,7 +2218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1367378529
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2280,7 +2281,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Time: 5
+  m_Time: 0
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -2289,30 +2290,30 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.29657668
-        inSlope: -0.18995088
-        outSlope: -0.18995088
+        value: 0.17658156
+        inSlope: -0.041013554
+        outSlope: -0.041013554
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.433079
+        outWeight: 0.23266575
       - serializedVersion: 3
-        time: 0.45283604
-        value: 0.27798808
-        inSlope: -0.42076495
-        outSlope: -0.42076495
+        time: 0.5400066
+        value: 0.16942386
+        inSlope: -0.028706582
+        outSlope: -0.028706582
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.39881378
+        inWeight: 0.4435359
+        outWeight: 0.30842727
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: -1.0555551
-        outSlope: -1.0555551
+        inSlope: -0.09098739
+        outSlope: -0.09098739
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.4580624
+        inWeight: 0.2998991
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -2353,7 +2354,7 @@ TrailRenderer:
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.1
+  m_MinVertexDistance: 0.0001
   m_MaskInteraction: 0
   m_Autodestruct: 0
   m_Emitting: 1
@@ -2656,7 +2657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2705,7 +2706,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 100}
+  m_Size: {x: 200, y: 200}
   m_EdgeRadius: 0
 --- !u!114 &1769396787
 MonoBehaviour:
@@ -3496,7 +3497,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 199303.89
+      value: 257831.95
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a
@@ -4134,8 +4135,8 @@ MonoBehaviour:
   tutorial: {fileID: 927069859}
   cardPositionParent: {fileID: 272971204}
   cardPositions: []
-  gameStarted: 0
   targetCard: 
+  gameStarted: 0
   reloadCount: 0
 --- !u!114 &8691574409270737102
 MonoBehaviour:

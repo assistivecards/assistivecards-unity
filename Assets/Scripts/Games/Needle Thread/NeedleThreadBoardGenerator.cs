@@ -36,8 +36,8 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     public List<GameObject> cardPositions = new List<GameObject>();
 
     [Header ("In Game Values")]
-    public bool gameStarted;
     public string targetCard;
+    public bool gameStarted;
     public int reloadCount;
 
     private void Awake()
@@ -122,6 +122,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
                     LeanTween.scale(card, Vector3.one * 0.75f, 0);
                     LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-30, 30)), 0f);
                     card.gameObject.tag = "Card";
+                    card.GetComponent<NeedleCardName>().cardName = cardNames[randomValueList[j]];
                     cards.Add(card);
                 }
             }
@@ -143,6 +144,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
                     LeanTween.scale(card, Vector3.one * 0.75f, 0);
                     LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-30, 30)), 0f);
                     card.gameObject.tag = "Card";
+                    card.GetComponent<NeedleCardName>().cardName = cardNames[randomValueList[5]];
                     cards.Add(card);
                 }
             }

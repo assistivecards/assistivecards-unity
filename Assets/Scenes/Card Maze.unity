@@ -8454,7 +8454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 130794.4
+      value: 135089.25
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a
@@ -9158,7 +9158,10 @@ MonoBehaviour:
   - {fileID: 1480286469}
   cardTexture: {fileID: 1878256217}
   cardParent: {fileID: 877320805}
-  maze: {fileID: 1392103779}
+  mazes:
+  - {fileID: 2073024516}
+  - {fileID: 1436021020}
+  - {fileID: 1392103779}
   cachedCards:
     cards: []
   randomImage: {fileID: 0}

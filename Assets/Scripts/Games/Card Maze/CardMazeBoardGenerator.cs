@@ -12,7 +12,8 @@ public class CardMazeBoardGenerator : MonoBehaviour
     [SerializeField] GameObject[] spawnPoints;
     [SerializeField] SpriteRenderer cardTexture;
     public GameObject cardParent;
-    [SerializeField] GameObject maze;
+    [SerializeField] GameObject[] mazes;
+    [SerializeField] GameObject selectedMaze;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] Texture2D randomImage;
     [SerializeField] Sprite randomSprite;
@@ -68,6 +69,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
         await PopulateRandomTextures();
         PlaceSprites();
         DisableLoadingPanel();
+        SelectRandomMaze();
         ScaleImagesUp();
         backButton.SetActive(true);
         UIController.Invoke("TutorialSetActive", .5f);
@@ -86,7 +88,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
     public void ScaleImagesUp()
     {
         LeanTween.scale(throwText.gameObject, Vector3.one, 0.2f);
-        LeanTween.scale(maze, Vector3.one, 0.2f).setOnComplete(SelectRandomSpawnPoint);
+        LeanTween.scale(selectedMaze, Vector3.one, 0.2f).setOnComplete(SelectRandomSpawnPoint);
 
     }
 
@@ -178,7 +180,14 @@ public class CardMazeBoardGenerator : MonoBehaviour
 
     public void ScaleMazeDown()
     {
-        LeanTween.scale(maze, Vector3.zero, 0.2f);
+        LeanTween.scale(selectedMaze, Vector3.zero, 0.2f).setOnComplete(() => selectedMaze.SetActive(false));
+
+    }
+
+    public void SelectRandomMaze()
+    {
+        selectedMaze = mazes[Random.Range(0, mazes.Length)];
+        selectedMaze.SetActive(true);
     }
 
 }

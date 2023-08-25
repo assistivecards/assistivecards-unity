@@ -36,16 +36,16 @@ public class CardMazeMatchDetection : MonoBehaviour
             board.Invoke("ReadCard", 0.25f);
             Invoke("PlayCorrectMatchAnimation", 0.25f);
             board.Invoke("ScaleImagesDown", 1f);
-            board.Invoke("ClearBoard", 1.3f);
+            board.Invoke("ClearBoard", 1.5f);
 
             if (UIController.correctMatches == UIController.checkpointFrequency)
             {
                 gameAPI.AddExp(gameAPI.sessionExp);
-                UIController.Invoke("OpenCheckPointPanel", 1.3f);
+                UIController.Invoke("OpenCheckPointPanel", 1.5f);
             }
 
             else
-                board.Invoke("GenerateRandomBoardAsync", 1.3f);
+                board.Invoke("GenerateRandomBoardAsync", 1.5f);
         }
     }
 

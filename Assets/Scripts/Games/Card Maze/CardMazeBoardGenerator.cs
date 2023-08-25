@@ -11,8 +11,9 @@ public class CardMazeBoardGenerator : MonoBehaviour
     private GameAPI gameAPI;
     [SerializeField] GameObject[] spawnPoints;
     [SerializeField] SpriteRenderer cardTexture;
-    [SerializeField] GameObject cardParent;
-    [SerializeField] GameObject maze;
+    public GameObject cardParent;
+    [SerializeField] GameObject[] mazes;
+    [SerializeField] GameObject selectedMaze;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] Texture2D randomImage;
     [SerializeField] Sprite randomSprite;
@@ -25,6 +26,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
     [SerializeField] TMP_Text throwText;
     [SerializeField] GameObject loadingPanel;
     private CardMazeUIController UIController;
+    [SerializeField] GameObject tutorial;
 
 
     private void Awake()
@@ -60,6 +62,10 @@ public class CardMazeBoardGenerator : MonoBehaviour
         if (didLanguageChange)
         {
             await CacheCards(packSlug);
+            for (int i = 0; i < uniqueCards.Count; i++)
+            {
+                uniqueCards[i] = cachedCards.cards.Where(card => card.slug == uniqueCards[i].slug).ToList()[0];
+            }
             didLanguageChange = false;
         }
 
@@ -67,8 +73,10 @@ public class CardMazeBoardGenerator : MonoBehaviour
         await PopulateRandomTextures();
         PlaceSprites();
         DisableLoadingPanel();
+        SelectRandomMaze();
         ScaleImagesUp();
         backButton.SetActive(true);
+        UIController.Invoke("TutorialSetActive", .5f);
         Invoke("EnableBackButton", 0.4f);
     }
 
@@ -84,7 +92,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
     public void ScaleImagesUp()
     {
         LeanTween.scale(throwText.gameObject, Vector3.one, 0.2f);
-        LeanTween.scale(maze, Vector3.one, 0.2f).setOnComplete(SelectRandomSpawnPoint);
+        LeanTween.scale(selectedMaze, Vector3.one, 0.2f).setOnComplete(SelectRandomSpawnPoint);
 
     }
 
@@ -168,6 +176,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
     {
         var selectedSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
         cardParent.transform.position = selectedSpawnPoint.transform.position;
+        tutorial.GetComponent<Tutorial>().tutorialPosition = cardParent.transform;
         LeanTween.scale(cardParent, Vector3.one * 10, 0.2f);
         cardParent.GetComponent<CardMazeDraggableCard>().enabled = true;
         cardParent.GetComponent<BoxCollider2D>().enabled = true;
@@ -175,7 +184,14 @@ public class CardMazeBoardGenerator : MonoBehaviour
 
     public void ScaleMazeDown()
     {
-        LeanTween.scale(maze, Vector3.zero, 0.2f);
+        LeanTween.scale(selectedMaze, Vector3.zero, 0.2f).setOnComplete(() => selectedMaze.SetActive(false));
+
+    }
+
+    public void SelectRandomMaze()
+    {
+        selectedMaze = mazes[Random.Range(0, mazes.Length)];
+        selectedMaze.SetActive(true);
     }
 
 }

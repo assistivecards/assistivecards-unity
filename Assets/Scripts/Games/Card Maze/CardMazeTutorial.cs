@@ -11,7 +11,7 @@ public class CardMazeTutorial : MonoBehaviour
     private void OnEnable()
     {
         startPos = board.cardParent.transform.localPosition;
-        endPos = GameObject.Find("Finish").transform.localPosition;
+        endPos = GameObject.Find("TutorialFinishTarget").transform.localPosition;
 
     }
 

@@ -1713,7 +1713,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d38199352ea3245198fd418a64a70501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boardGenerator: {fileID: 0}
 --- !u!1 &1203637277
 GameObject:
   m_ObjectHideFlags: 0
@@ -2720,6 +2719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99ced5138bc2749529065282d9fff750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boardGenerator: {fileID: 8383894889009589326}
 --- !u!1 &1779123927
 GameObject:
   m_ObjectHideFlags: 0
@@ -3497,7 +3497,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 257831.95
+      value: 267969.97
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a

@@ -10,7 +10,6 @@ public class NeedleMovement : MonoBehaviour
     private Vector2 screenPosition;
     private Vector3 worldPosition;
     private NeedleDraggable lastDragged;
-    [SerializeField] private NeedleThreadBoardGenerator boardGenerator;
 
     private void Awake()
     {
@@ -81,14 +80,5 @@ public class NeedleMovement : MonoBehaviour
     {
         dragging =  false;
         GetComponentInChildren<TrailRenderer>().time = 0;
-    }
-
-    private void OnCollisionEnter2D(Collider2D other) 
-    {
-        Debug.Log("!!!!!!!!!!!!");
-        if(other.GetComponent<NeedleCardName>().cardName == boardGenerator.targetCard)
-        {
-            Debug.Log("MATCH");
-        }
     }
 }

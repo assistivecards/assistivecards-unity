@@ -36,6 +36,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     public List<GameObject> cardPositions = new List<GameObject>();
 
     [Header ("In Game Values")]
+    public int match;
     public string targetCard;
     public bool gameStarted;
     public int reloadCount;

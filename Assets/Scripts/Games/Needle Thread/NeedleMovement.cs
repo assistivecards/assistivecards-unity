@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class NeedleMovement : MonoBehaviour
 {
-    private bool dragging = false;
+    public bool dragging = false;
     private Vector2 screenPosition;
     private Vector3 worldPosition;
     private NeedleDraggable lastDragged;

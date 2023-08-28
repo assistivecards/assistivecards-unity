@@ -3644,6 +3644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasController: {fileID: 1242831489334970560}
+  practiceReminder: {fileID: 0}
   canvas: {fileID: 1242831489334970574}
   tempAvatarElement: {fileID: 2983202009490611925, guid: 66a0bdcb147e7bf43aa11ab7b26faadd, type: 3}
 --- !u!114 &1242831488912020456
@@ -5019,6 +5020,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1242831489020382270}
   - component: {fileID: 6757240114764554426}
+  - component: {fileID: 8863623405472336265}
   m_Layer: 5
   m_Name: LoginScreens
   m_TagString: Untagged
@@ -5064,6 +5066,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPortrait: 1
+--- !u!114 &8863623405472336265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242831489020382269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c03ad1564f179487086a084ebe5c8b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundImage: {fileID: 5077729082142659573}
+  background1: {fileID: 21300000, guid: c6d14d26a0ca74e2b87f22a4b46a404f, type: 3}
+  background2: {fileID: 21300000, guid: 3758fc0d83e294fd099f0f43e8337713, type: 3}
+  background3: {fileID: 21300000, guid: 5ed127b41b82041d5b6676adde1a61b4, type: 3}
 --- !u!1 &1242831489021335374
 GameObject:
   m_ObjectHideFlags: 0
@@ -9367,7 +9385,7 @@ RectTransform:
   m_GameObject: {fileID: 1242831489254992750}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6110780557675806957}
@@ -9393,6 +9411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingScreenButton: {fileID: 0}
+  congratulationsScreen: {fileID: 1242831489977020967}
 --- !u!1 &1242831489272677606
 GameObject:
   m_ObjectHideFlags: 0
@@ -9889,6 +9908,9 @@ GameObject:
   - component: {fileID: 1242831489334970562}
   - component: {fileID: 1242831489334970563}
   - component: {fileID: 1242831489334970564}
+  - component: {fileID: 6883661161192506548}
+  - component: {fileID: 2916047196522031746}
+  - component: {fileID: 5077729082142659573}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -10023,6 +10045,7 @@ MonoBehaviour:
   settingPrefab: {fileID: 1242831489818517041}
   topAppBar: {fileID: 1982601096855616903}
   noInternetScreen: {fileID: 0}
+  onboardingBackgroundController: {fileID: 8863623405472336265}
   currentScreen: {fileID: 0}
   version: 
 --- !u!114 &1242831489334970562
@@ -10083,6 +10106,56 @@ MonoBehaviour:
   ttsStatusToggle: {fileID: 468742012134701617}
   musicSource: {fileID: 0}
   sfxSource: {fileID: 0}
+--- !u!114 &6883661161192506548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242831489334970571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e70317879cc0148998d734df4149ab69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!222 &2916047196522031746
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242831489334970571}
+  m_CullTransparentMesh: 1
+--- !u!114 &5077729082142659573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242831489334970571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 5ed127b41b82041d5b6676adde1a61b4, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &1242831489335931863
 GameObject:
   m_ObjectHideFlags: 0
@@ -14442,6 +14515,7 @@ MonoBehaviour:
   avatarSelectionScreen: {fileID: 1242831489963753481}
   practiceReminderScreen: {fileID: 1242831489254992750}
   congratulationsScreen: {fileID: 1242831489977020967}
+  onboardingBackgroundController: {fileID: 0}
   loginPrefab: {fileID: 1242831489020382269}
   fadeOutPanel: {fileID: 8047663718913052466}
   profileScreenNicknameInputField: {fileID: 1242831490310174670}
@@ -14705,6 +14779,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1242831489254992736}
         m_TargetAssemblyTypeName: PermissionNotificationScreen, Assembly-CSharp
         m_MethodName: OnOkButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8863623405472336265}
+        m_TargetAssemblyTypeName: OnboardingBackgroundController, Assembly-CSharp
+        m_MethodName: SetBackground3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20197,7 +20283,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 95, y: 67773.69}
+  m_AnchoredPosition: {x: 95, y: 203721.55}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &1242831489913853829
@@ -20275,6 +20361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasController: {fileID: 1242831489334970560}
+  practiceReminder: {fileID: 1242831489254992750}
   canvas: {fileID: 1242831489334970574}
   tempAvatarElement: {fileID: 2983202009490611925, guid: 66a0bdcb147e7bf43aa11ab7b26faadd, type: 3}
 --- !u!114 &1242831489913853830
@@ -20774,6 +20861,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1242831489627212145}
         m_TargetAssemblyTypeName: LoginContoller, Assembly-CSharp
         m_MethodName: StartButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8863623405472336265}
+        m_TargetAssemblyTypeName: OnboardingBackgroundController, Assembly-CSharp
+        m_MethodName: BackgroundDisable
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21864,7 +21963,7 @@ RectTransform:
   m_GameObject: {fileID: 1242831489977020967}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 0, y: 0, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6110780556503309496}
@@ -34356,7 +34455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -45975,7 +46074,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2819409479427601947
 RectTransform:
   m_ObjectHideFlags: 0
@@ -45985,7 +46084,7 @@ RectTransform:
   m_GameObject: {fileID: 4573154538110900193}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 124.29587, y: 124.29587, z: 124.29587}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1242831489020382270}
@@ -45994,7 +46093,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 909, y: 1612}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6235390323481310361
 CanvasRenderer:
@@ -51515,7 +51614,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6110780556647105806
 RectTransform:
   m_ObjectHideFlags: 0
@@ -51591,7 +51690,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6110780556670100066
 RectTransform:
   m_ObjectHideFlags: 0
@@ -54393,7 +54492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6110780557482387337
 RectTransform:
   m_ObjectHideFlags: 0
@@ -54469,7 +54568,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6110780557553015131
 RectTransform:
   m_ObjectHideFlags: 0

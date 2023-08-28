@@ -12,11 +12,14 @@ using UnityEngine;
 public class PermissionNotificationScreen : MonoBehaviour
 {
     [SerializeField] private SettingScreenButton settingScreenButton;
+    [SerializeField] private GameObject congratulationsScreen;
 
     public void OnOkButtonClick()
     {
         
         settingScreenButton.SetAvatarImageOnGamePanel();
+        LeanTween.scale(congratulationsScreen, Vector3.one * 0.9f, 0f);
+        LeanTween.scale(this.gameObject, Vector3.zero, 0f);
 
 #if UNITY_IOS
 

@@ -8,6 +8,7 @@ using System.Linq;
 public class AvatarListCreator : MonoBehaviour
 {
     [SerializeField] private CanvasController canvasController;
+    [SerializeField] private GameObject practiceReminder;
     private Image avatarButtonImage;
     private Texture2D avatarTexture;
     private Sprite sprite;
@@ -69,14 +70,11 @@ public class AvatarListCreator : MonoBehaviour
                     avatarTexture.wrapMode = TextureWrapMode.Clamp;
                     avatarTexture.filterMode = FilterMode.Bilinear;
                     avatarElement.name = _avatarID + "0" + i;
-
-
                     sprite = Sprite.Create(avatarTexture, new Rect(0.0f, 0.0f, avatarTexture.width, avatarTexture.height), new Vector2(0.5f, 0.5f), 100.0f);
                     avatarButtonImage = avatarElement.GetComponent<Image>();
                     avatarButtonImage.sprite = sprite;
-
-                    avatarElement.GetComponent<Button>().AddEventListener(_avatarID + "0" + i, SelectAvatar);    
-
+                    avatarElement.GetComponent<Button>().AddEventListener(_avatarID + "0" + i, SelectAvatar); 
+                    avatarElement.GetComponent<AvatarSelect>().practiceReminder = practiceReminder;   
                 }
                 if(i >= 10)
                 {
@@ -85,13 +83,11 @@ public class AvatarListCreator : MonoBehaviour
                     avatarTexture.wrapMode = TextureWrapMode.Clamp;
                     avatarTexture.filterMode = FilterMode.Bilinear;
                     avatarElement.name = _avatarID + i;
-
-
                     sprite = Sprite.Create(avatarTexture, new Rect(0.0f, 0.0f, avatarTexture.width, avatarTexture.height), new Vector2(0.5f, 0.5f), 100.0f);
                     avatarButtonImage = avatarElement.GetComponent<Image>();
                     avatarButtonImage.sprite = sprite;
-
                     avatarElement.GetComponent<Button>().AddEventListener(_avatarID + i, SelectAvatar);    
+                    avatarElement.GetComponent<AvatarSelect>().practiceReminder = practiceReminder;
                 }
             }
         }

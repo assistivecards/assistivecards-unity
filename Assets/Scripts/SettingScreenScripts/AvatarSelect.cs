@@ -5,6 +5,7 @@ using UnityEngine;
 public class AvatarSelect : MonoBehaviour
 {
     private GameObject canvas;
+    private OnboardingBackgroundController backgroundController;
     public GameObject practiceReminder;
     private CanvasController canvasController;
     private GameObject avatarSelection;
@@ -18,13 +19,11 @@ public class AvatarSelect : MonoBehaviour
     {
         canvas = GameObject.Find("Settings");
         canvasController = canvas.GetComponent<CanvasController>();
+        backgroundController = FindObjectOfType<OnboardingBackgroundController>().GetComponent<OnboardingBackgroundController>();
     }
     public void SelectAvatar()
-    {
-        if (avatarSelection != null)
-        {
-            LeanTween.scale(avatarSelection, Vector3.one * 0.9f, 0.15f);
-        }
+    { 
+        backgroundController.SetBackground2();
         LeanTween.scale(practiceReminder, Vector3.one * 0.9f, 0f);
         Invoke("SceneSetActiveFalse", 0.15f);
     }

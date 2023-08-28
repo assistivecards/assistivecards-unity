@@ -87,6 +87,7 @@ public class LoginContoller : MonoBehaviour
     {
         //Fade Out
         // backgroundFadePanel.CrossFadeAlpha(0, 0.25f, false);
+        LeanTween.scale(congratulationsScreen, Vector3.zero, 0f);
         Invoke("SetGamePanelActive", 0.25f);
     }
     private void SetGamePanelActive()

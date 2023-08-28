@@ -5,6 +5,7 @@ using UnityEngine;
 public class AvatarSelect : MonoBehaviour
 {
     private GameObject canvas;
+    public GameObject practiceReminder;
     private CanvasController canvasController;
     private GameObject avatarSelection;
 
@@ -12,7 +13,6 @@ public class AvatarSelect : MonoBehaviour
     private void Awake()
     {
         avatarSelection = GameObject.FindGameObjectWithTag("avatarSelection");
-
     }
     private void Start()
     {
@@ -25,7 +25,7 @@ public class AvatarSelect : MonoBehaviour
         {
             LeanTween.scale(avatarSelection, Vector3.one * 0.9f, 0.15f);
         }
-
+        LeanTween.scale(practiceReminder, Vector3.one * 0.9f, 0f);
         Invoke("SceneSetActiveFalse", 0.15f);
     }
 
@@ -34,7 +34,6 @@ public class AvatarSelect : MonoBehaviour
         if (avatarSelection != null)
         {
             avatarSelection.SetActive(false);
-
         }
     }
 }

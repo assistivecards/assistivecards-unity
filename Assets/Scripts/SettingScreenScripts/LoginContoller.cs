@@ -26,6 +26,7 @@ public class LoginContoller : MonoBehaviour
     [SerializeField] private GameObject congratulationsScreen;
 
     [Header("Screen Prefabs")]
+    [SerializeField] private OnboardingBackgroundController onboardingBackgroundController;
     [SerializeField] private GameObject loginPrefab;
     [SerializeField] GameObject fadeOutPanel;
     [SerializeField] private TMP_InputField profileScreenNicknameInputField;
@@ -35,9 +36,7 @@ public class LoginContoller : MonoBehaviour
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
-
         nicknameInputField.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
-
     }
     private void OnEnable() 
     {

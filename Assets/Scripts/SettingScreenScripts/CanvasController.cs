@@ -58,6 +58,7 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private GameObject noInternetScreen;
 
     [Header("Classes")]
+    [SerializeField] private OnboardingBackgroundController onboardingBackgroundController;
     private NotificationPreferences notificationPreferences;
     private AccessibilityScreen accessibilityScreenScript;
     private SoundManagerUI soundManagerUI;
@@ -84,6 +85,7 @@ public class CanvasController : MonoBehaviour
             loginPrefab.SetActive(false);
             loginPageScreen.SetActive(false);
             gamePrefab.SetActive(true);
+            onboardingBackgroundController.BackgroundDisable();
         }
         else
         {
@@ -314,7 +316,7 @@ public class CanvasController : MonoBehaviour
         loginPageScreen.GetComponent<LoginContoller>().nicknameInputField.text = "";
         loginPageScreen.SetActive(true);
         nicknameInputField.text = "";
-
+        onboardingBackgroundController.BackgroundAvailable();
         languageController = languageScreen.GetComponent<LanguageController>();
         PlayerPrefs.SetString("Language", Application.systemLanguage.ToString());
         this.GetComponent<LanguageTest>().OnLanguageChange();

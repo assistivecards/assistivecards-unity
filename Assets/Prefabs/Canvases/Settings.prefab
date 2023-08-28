@@ -9932,7 +9932,7 @@ RectTransform:
   m_Children:
   - {fileID: 1242831490776755392}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -10045,6 +10045,7 @@ MonoBehaviour:
   settingPrefab: {fileID: 1242831489818517041}
   topAppBar: {fileID: 1982601096855616903}
   noInternetScreen: {fileID: 0}
+  onboardingBackgroundController: {fileID: 8863623405472336265}
   currentScreen: {fileID: 0}
   version: 
 --- !u!114 &1242831489334970562
@@ -14514,6 +14515,7 @@ MonoBehaviour:
   avatarSelectionScreen: {fileID: 1242831489963753481}
   practiceReminderScreen: {fileID: 1242831489254992750}
   congratulationsScreen: {fileID: 1242831489977020967}
+  onboardingBackgroundController: {fileID: 0}
   loginPrefab: {fileID: 1242831489020382269}
   fadeOutPanel: {fileID: 8047663718913052466}
   profileScreenNicknameInputField: {fileID: 1242831490310174670}
@@ -20281,7 +20283,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 95, y: 179501.53}
+  m_AnchoredPosition: {x: 95, y: 203721.55}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &1242831489913853829
@@ -20859,6 +20861,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1242831489627212145}
         m_TargetAssemblyTypeName: LoginContoller, Assembly-CSharp
         m_MethodName: StartButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8863623405472336265}
+        m_TargetAssemblyTypeName: OnboardingBackgroundController, Assembly-CSharp
+        m_MethodName: BackgroundDisable
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

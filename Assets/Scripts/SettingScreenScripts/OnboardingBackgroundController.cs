@@ -9,6 +9,16 @@ public class OnboardingBackgroundController : MonoBehaviour
     [SerializeField] private Sprite background1;
     [SerializeField] private Sprite background2;
     [SerializeField] private Sprite background3;
+
+    public void BackgroundAvailable()
+    {
+        backgroundImage.enabled = true;
+    }
+
+    public void BackgroundDisable()
+    {
+        backgroundImage.enabled = false;
+    }
     
     public void SetBackground1()
     {

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NeedleThreadsUIController : MonoBehaviour
+public class NeedleThreadUIController : MonoBehaviour
 {
     GameAPI gameAPI;
 

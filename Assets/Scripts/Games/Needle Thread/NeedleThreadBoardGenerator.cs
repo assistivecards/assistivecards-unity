@@ -10,7 +10,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
 {
     GameAPI gameAPI;
     [Header ("Classes")]
-    //[SerializeField] private NeedleThreadUIController uıController;
+    [SerializeField] private NeedleThreadUIController uıController;
     
     [Header ("Cache Cards")]
     public string selectedLangCode;
@@ -101,8 +101,8 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
 
     public async void GeneratedBoardAsync()
     {
-        // if(uıController.canGenerate)
-        // {
+        if(uıController.canGenerate)
+        {
             await CacheCards();
             CreatePositionsList();
             for(int j = 0; j < 8; j++)
@@ -152,12 +152,12 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
             targetCard = cardNames[randomValueList[5]];
             reloadCount++;
             Invoke("GameUIActivate", 0.1f);
-        //}
+        }
     }
 
     public void GameUIActivate()
     {
-        //uıController.GameUIActivate();
+        uıController.GameUIActivate();
         gameStarted = true;
     }
 

@@ -179,7 +179,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
         tutorial.GetComponent<Tutorial>().tutorialPosition = cardParent.transform;
         LeanTween.scale(cardParent, Vector3.one * 10, 0.2f);
         cardParent.GetComponent<CardMazeDraggableCard>().enabled = true;
-        cardParent.GetComponent<BoxCollider2D>().enabled = true;
+        cardParent.GetComponent<CircleCollider2D>().enabled = true;
     }
 
     public void ScaleMazeDown()

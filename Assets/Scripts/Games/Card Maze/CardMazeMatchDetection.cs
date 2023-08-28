@@ -31,7 +31,7 @@ public class CardMazeMatchDetection : MonoBehaviour
             UIController.backButton.GetComponent<Button>().interactable = false;
             card = other.gameObject;
             card.GetComponent<CardMazeDraggableCard>().enabled = false;
-            card.GetComponent<BoxCollider2D>().enabled = false;
+            card.GetComponent<CircleCollider2D>().enabled = false;
             gameAPI.PlaySFX("Success");
             board.Invoke("ReadCard", 0.25f);
             Invoke("PlayCorrectMatchAnimation", 0.25f);

@@ -27,6 +27,9 @@ public class CardMazeBoardGenerator : MonoBehaviour
     [SerializeField] GameObject loadingPanel;
     private CardMazeUIController UIController;
     [SerializeField] GameObject tutorial;
+    public bool isFlipped;
+    [SerializeField] GameObject spawnPointsParent;
+    [SerializeField] GameObject keyspawnPointsParent;
 
 
     private void Awake()
@@ -184,7 +187,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
 
     public void ScaleMazeDown()
     {
-        LeanTween.scale(selectedMaze, Vector3.zero, 0.2f).setOnComplete(() => selectedMaze.SetActive(false));
+        LeanTween.scale(selectedMaze, Vector3.zero, 0.2f).setOnComplete(ResetFlip);
 
     }
 
@@ -192,6 +195,27 @@ public class CardMazeBoardGenerator : MonoBehaviour
     {
         selectedMaze = mazes[Random.Range(0, mazes.Length)];
         selectedMaze.SetActive(true);
+        isFlipped = Random.value > 0.5f;
+
+        if (isFlipped)
+        {
+            FlipMaze();
+        }
+    }
+
+    public void FlipMaze()
+    {
+        selectedMaze.transform.rotation = Quaternion.Euler(0, 180, 0);
+        spawnPointsParent.transform.rotation = Quaternion.Euler(0, 180, 0);
+        keyspawnPointsParent.transform.rotation = Quaternion.Euler(0, 180, 0);
+    }
+
+    public void ResetFlip()
+    {
+        selectedMaze.SetActive(false);
+        selectedMaze.transform.rotation = Quaternion.Euler(0, 0, 0);
+        spawnPointsParent.transform.rotation = Quaternion.Euler(0, 0, 0);
+        keyspawnPointsParent.transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
 }

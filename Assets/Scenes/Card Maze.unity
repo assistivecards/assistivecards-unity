@@ -12269,7 +12269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 163477.52
+      value: 166793.69
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a
@@ -13022,6 +13022,9 @@ MonoBehaviour:
   throwText: {fileID: 2141340863}
   loadingPanel: {fileID: 671447375}
   tutorial: {fileID: 927069859}
+  isFlipped: 0
+  spawnPointsParent: {fileID: 357559721}
+  keyspawnPointsParent: {fileID: 1829637944}
 --- !u!114 &8383894889009589327
 MonoBehaviour:
   m_ObjectHideFlags: 0

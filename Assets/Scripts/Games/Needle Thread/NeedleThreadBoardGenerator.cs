@@ -149,7 +149,6 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
                 targetCards.Add(card);
                 cards.Add(card);
             }
-            reloadCount++;
             Invoke("GameUIActivate", 0.1f);
         }
     }
@@ -184,7 +183,11 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
             needleMovement.Drop();
             needleDraggable.MoveToCenter();
             endLevel = true;
-            GeneratedBoardAsync();
+            if(reloadCount != 5)
+            {
+                reloadCount++;
+                GeneratedBoardAsync();
+            }
         }
     }
 
@@ -202,6 +205,10 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
         randomValueList.Clear();
         cardPositions.Clear();
         matchCounter = 0;
-        reloadCount = 0;
+        if(reloadCount == 5)
+        {
+            uıController.Invoke("LevelChangeScreenActivate", 0.7f);
+            reloadCount = 0;
+        }
     }
 }

@@ -39,6 +39,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     public List<GameObject> targetCards = new List<GameObject>();
 
     [Header ("In Game Values")]
+    public int matchCounter;
     public string targetCard;
     public bool gameStarted;
     public int reloadCount;
@@ -103,6 +104,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
 
     public async void GeneratedBoardAsync()
     {
+        Debug.Log("GENERATE BOARD");
         if(uıController.canGenerate)
         {
             await CacheCards();
@@ -176,12 +178,13 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
             }
         }
 
-        if(endLevel)
+        if(endLevel && matchCounter >= 10)
         {
             ClearBoard();
-            GeneratedBoardAsync();
             needleMovement.Drop();
             needleDraggable.MoveToCenter();
+            endLevel = true;
+            GeneratedBoardAsync();
         }
     }
 
@@ -198,6 +201,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
         cards.Clear();
         randomValueList.Clear();
         cardPositions.Clear();
+        matchCounter = 0;
         reloadCount = 0;
     }
 }

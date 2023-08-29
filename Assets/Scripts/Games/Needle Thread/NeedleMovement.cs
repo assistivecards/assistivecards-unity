@@ -49,6 +49,7 @@ public class NeedleMovement : MonoBehaviour
         if(dragging)
         {
             Drag();
+            GetComponentInChildren<TrailRenderer>().time = 100;
         }
         else
         {
@@ -68,7 +69,6 @@ public class NeedleMovement : MonoBehaviour
     public void InitDrag()
     {
         dragging = true;
-        GetComponentInChildren<TrailRenderer>().time = 100;
     }
 
     public void Drag()
@@ -79,6 +79,5 @@ public class NeedleMovement : MonoBehaviour
     public void Drop()
     {
         dragging =  false;
-        GetComponentInChildren<TrailRenderer>().time = 0;
     }
 }

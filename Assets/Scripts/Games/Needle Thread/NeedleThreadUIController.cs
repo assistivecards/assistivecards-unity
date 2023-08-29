@@ -61,7 +61,7 @@ public class NeedleThreadUIController : MonoBehaviour
 
     public void LevelEnding()
     {
-        //boardGenerator.ClearBoard();
+        boardGenerator.ClearBoard();
         gameUI.SetActive(false);
         backButton.SetActive(false);
         settingButton.SetActive(false);

@@ -37,6 +37,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject cardPositionParent;
     public List<GameObject> cardPositions = new List<GameObject>();
     public List<GameObject> targetCards = new List<GameObject>();
+    [SerializeField] private TMP_Text collectText;
 
     [Header ("In Game Values")]
     public int matchCounter;
@@ -150,6 +151,9 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
                 cards.Add(card);
             }
             Invoke("GameUIActivate", 0.1f);
+            collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(targetCard).Replace("-", " "), selectedLangCode);
+            LeanTween.scale(collectText.gameObject, Vector3.one, 0.2f);
+            collectText.gameObject.SetActive(true);
         }
     }
 
@@ -205,6 +209,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
         randomValueList.Clear();
         cardPositions.Clear();
         matchCounter = 0;
+        collectText.gameObject.SetActive(false);
         if(reloadCount == 5)
         {
             uıController.Invoke("LevelChangeScreenActivate", 0.7f);

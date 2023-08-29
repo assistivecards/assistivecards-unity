@@ -14,7 +14,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
     public GameObject cardParent;
     [SerializeField] GameObject[] mazes;
     [SerializeField] GameObject[] keyPositions;
-    [SerializeField] GameObject selectedMaze;
+    public GameObject selectedMaze;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] Texture2D randomImage;
     [SerializeField] Sprite randomSprite;
@@ -209,6 +209,8 @@ public class CardMazeBoardGenerator : MonoBehaviour
         {
             FlipMaze();
         }
+
+        key.GetComponent<CardMazeKey>().originalPosition = GameObject.Find("Door").transform.localPosition;
     }
 
     public void FlipMaze()
@@ -220,6 +222,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
 
     public void ResetFlip()
     {
+        GameObject.Find("Door").transform.localPosition = key.GetComponent<CardMazeKey>().originalPosition;
         selectedMaze.SetActive(false);
         selectedMaze.transform.rotation = Quaternion.Euler(0, 0, 0);
         spawnPointsParent.transform.rotation = Quaternion.Euler(0, 0, 0);

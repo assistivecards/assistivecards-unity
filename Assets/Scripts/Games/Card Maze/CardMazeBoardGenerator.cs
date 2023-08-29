@@ -13,6 +13,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
     [SerializeField] SpriteRenderer cardTexture;
     public GameObject cardParent;
     [SerializeField] GameObject[] mazes;
+    [SerializeField] GameObject[] keyPositions;
     [SerializeField] GameObject selectedMaze;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] Texture2D randomImage;
@@ -30,6 +31,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
     public bool isFlipped;
     [SerializeField] GameObject spawnPointsParent;
     [SerializeField] GameObject keyspawnPointsParent;
+    [SerializeField] GameObject key;
 
 
     private void Awake()
@@ -101,6 +103,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
 
     public void ScaleImagesDown()
     {
+        LeanTween.scale(key, Vector3.zero, 0.2f);
         LeanTween.scale(cardParent, Vector3.zero, 0.2f).setOnComplete(ScaleMazeDown);
         LeanTween.scale(throwText.gameObject, Vector3.zero, 0.2f);
     }
@@ -183,6 +186,11 @@ public class CardMazeBoardGenerator : MonoBehaviour
         LeanTween.scale(cardParent, Vector3.one * 10, 0.2f);
         cardParent.GetComponent<CardMazeDraggableCard>().enabled = true;
         cardParent.GetComponent<CircleCollider2D>().enabled = true;
+
+        var selectedKeySpawnPoint = keyPositions[Random.Range(0, keyPositions.Length)];
+        key.transform.position = selectedKeySpawnPoint.transform.position;
+        LeanTween.scale(key, Vector3.one * 15, 0.2f);
+
     }
 
     public void ScaleMazeDown()

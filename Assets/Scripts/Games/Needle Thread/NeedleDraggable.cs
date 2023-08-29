@@ -12,8 +12,9 @@ public class NeedleDraggable : MonoBehaviour
         if(other.GetComponent<NeedleCardName>().cardName == boardGenerator.targetCard && needleMovement.dragging)
         {
             LeanTween.scale(other.gameObject, Vector3.one, 0.4f);
+            other.GetComponent<NeedleCardName>().Invoke("ScaleDownCrad", 0.4f);
             other.GetComponent<NeedleCardName>().cardName = null;
-            boardGenerator.match++;
+            boardGenerator.matchCount++;
         }
     }
 }

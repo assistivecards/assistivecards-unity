@@ -34,9 +34,10 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     [Header ("Game Elements")]
     [SerializeField] private GameObject cardPositionParent;
     public List<GameObject> cardPositions = new List<GameObject>();
+    public List<GameObject> targetCards = new List<GameObject>();
 
     [Header ("In Game Values")]
-    public int match;
+    public int matchCount;
     public string targetCard;
     public bool gameStarted;
     public int reloadCount;
@@ -105,49 +106,44 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
         {
             await CacheCards();
             CreatePositionsList();
-            for(int j = 0; j < 8; j++)
+            for(int j = 0; j < 12; j++)
             {
                 CheckRandom();
-                if(cardPositions[j].transform.childCount <= 0)
-                {
-                    GameObject parent = CheckIsPositionEmpty();
-                    GameObject card = Instantiate(cardPrefab, parent.transform.position, Quaternion.identity, parent.transform);
+                GameObject parent = CheckIsPositionEmpty();
+                GameObject card = Instantiate(cardPrefab, parent.transform.position, Quaternion.identity, parent.transform);
 
-                    var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[j]], 512);
-                    cardTexture.wrapMode = TextureWrapMode.Clamp;
-                    cardTexture.filterMode = FilterMode.Bilinear;
+                var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[j]], 512);
+                cardTexture.wrapMode = TextureWrapMode.Clamp;
+                cardTexture.filterMode = FilterMode.Bilinear;
 
-                    card.transform.name = cardNames[randomValueList[j]];
-                    card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-                    card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-                    LeanTween.scale(card, Vector3.one * 0.75f, 0);
-                    LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-30, 30)), 0f);
-                    card.gameObject.tag = "Card";
-                    card.GetComponent<NeedleCardName>().cardName = cardNames[randomValueList[j]];
-                    cards.Add(card);
-                }
+                card.transform.name = cardNames[randomValueList[j]];
+                card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+                card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                LeanTween.scale(card, Vector3.one * 0.75f, 0);
+                LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-30, 30)), 0f);
+                card.gameObject.tag = "Card";
+                card.GetComponent<NeedleCardName>().cardName = cardNames[randomValueList[j]];
+                cards.Add(card);
             }
             CheckRandom();
-            for(int i = 8; i < 14; i++)
+            for(int i = 12; i < 22; i++)
             {
-                if(cardPositions[i].transform.childCount <= 0)
-                {
-                    GameObject parent = CheckIsPositionEmpty();
-                    GameObject card = Instantiate(cardPrefab, parent.transform.position, Quaternion.identity, parent.transform);
+                GameObject parent = CheckIsPositionEmpty();
+                GameObject card = Instantiate(cardPrefab, parent.transform.position, Quaternion.identity, parent.transform);
 
-                    var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[5]], 512);
-                    cardTexture.wrapMode = TextureWrapMode.Clamp;
-                    cardTexture.filterMode = FilterMode.Bilinear;
+                var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[5]], 512);
+                cardTexture.wrapMode = TextureWrapMode.Clamp;
+                cardTexture.filterMode = FilterMode.Bilinear;
 
-                    card.transform.name = cardLocalNames[randomValueList[5]];
-                    card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-                    card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-                    LeanTween.scale(card, Vector3.one * 0.75f, 0);
-                    LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-30, 30)), 0f);
-                    card.gameObject.tag = "Card";
-                    card.GetComponent<NeedleCardName>().cardName = cardNames[randomValueList[5]];
-                    cards.Add(card);
-                }
+                card.transform.name = cardLocalNames[randomValueList[5]];
+                card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+                card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                LeanTween.scale(card, Vector3.one * 0.75f, 0);
+                LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-30, 30)), 0f);
+                card.gameObject.tag = "Card";
+                card.GetComponent<NeedleCardName>().cardName = cardNames[randomValueList[5]];
+                targetCards.Add(card);
+                cards.Add(card);
             }
             targetCard = cardNames[randomValueList[5]];
             reloadCount++;

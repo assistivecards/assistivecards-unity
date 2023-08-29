@@ -13,7 +13,8 @@ public class CardMazeBoardGenerator : MonoBehaviour
     [SerializeField] SpriteRenderer cardTexture;
     public GameObject cardParent;
     [SerializeField] GameObject[] mazes;
-    [SerializeField] GameObject selectedMaze;
+    [SerializeField] GameObject[] keyPositions;
+    public GameObject selectedMaze;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] Texture2D randomImage;
     [SerializeField] Sprite randomSprite;
@@ -30,6 +31,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
     public bool isFlipped;
     [SerializeField] GameObject spawnPointsParent;
     [SerializeField] GameObject keyspawnPointsParent;
+    [SerializeField] GameObject key;
 
 
     private void Awake()
@@ -89,6 +91,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
         randomImage = null;
         randomSprite = null;
         cardTexture.sprite = null;
+        key.GetComponent<CardMazeKey>().isCollected = false;
 
     }
 
@@ -101,6 +104,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
 
     public void ScaleImagesDown()
     {
+        LeanTween.scale(key, Vector3.zero, 0.2f);
         LeanTween.scale(cardParent, Vector3.zero, 0.2f).setOnComplete(ScaleMazeDown);
         LeanTween.scale(throwText.gameObject, Vector3.zero, 0.2f);
     }
@@ -183,6 +187,11 @@ public class CardMazeBoardGenerator : MonoBehaviour
         LeanTween.scale(cardParent, Vector3.one * 10, 0.2f);
         cardParent.GetComponent<CardMazeDraggableCard>().enabled = true;
         cardParent.GetComponent<CircleCollider2D>().enabled = true;
+
+        var selectedKeySpawnPoint = keyPositions[Random.Range(0, keyPositions.Length)];
+        key.transform.position = selectedKeySpawnPoint.transform.position;
+        LeanTween.scale(key, Vector3.one * 15, 0.2f);
+
     }
 
     public void ScaleMazeDown()
@@ -201,6 +210,8 @@ public class CardMazeBoardGenerator : MonoBehaviour
         {
             FlipMaze();
         }
+
+        key.GetComponent<CardMazeKey>().originalPosition = GameObject.Find("Door").transform.localPosition;
     }
 
     public void FlipMaze()
@@ -212,6 +223,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
 
     public void ResetFlip()
     {
+        GameObject.Find("Door").transform.localPosition = key.GetComponent<CardMazeKey>().originalPosition;
         selectedMaze.SetActive(false);
         selectedMaze.transform.rotation = Quaternion.Euler(0, 0, 0);
         spawnPointsParent.transform.rotation = Quaternion.Euler(0, 0, 0);

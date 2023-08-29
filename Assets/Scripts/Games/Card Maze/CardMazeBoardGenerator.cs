@@ -91,6 +91,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
         randomImage = null;
         randomSprite = null;
         cardTexture.sprite = null;
+        key.GetComponent<CardMazeKey>().isCollected = false;
 
     }
 

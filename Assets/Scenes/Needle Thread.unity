@@ -2849,7 +2849,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 277.69983, y: 10.529968}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1769396784
@@ -3760,7 +3760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 312517.22
+      value: 315748.34
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a
@@ -4390,6 +4390,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "u\u0131Controller": {fileID: 8383894889009589327}
+  needleMovement: {fileID: 1154749949}
+  needleDraggable: {fileID: 1769396787}
   selectedLangCode: 
   cardLocalNames: []
   cards: []
@@ -4400,7 +4402,7 @@ MonoBehaviour:
   tutorial: {fileID: 927069859}
   cardPositionParent: {fileID: 272971204}
   cardPositions: []
-  match: 0
+  targetCards: []
   targetCard: 
   gameStarted: 0
   reloadCount: 0

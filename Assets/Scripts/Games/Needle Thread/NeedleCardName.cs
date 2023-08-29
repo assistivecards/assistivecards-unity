@@ -5,6 +5,7 @@ using UnityEngine;
 public class NeedleCardName : MonoBehaviour
 {
     public string cardName;
+    public bool matched = false;
 
     public void ScaleDownCrad()
     {

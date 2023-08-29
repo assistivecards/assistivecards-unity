@@ -11,6 +11,8 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     GameAPI gameAPI;
     [Header ("Classes")]
     [SerializeField] private NeedleThreadUIController uıController;
+    [SerializeField] private NeedleMovement needleMovement;
+    [SerializeField] private NeedleDraggable needleDraggable;
     
     [Header ("Cache Cards")]
     public string selectedLangCode;
@@ -37,7 +39,6 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     public List<GameObject> targetCards = new List<GameObject>();
 
     [Header ("In Game Values")]
-    public int matchCount;
     public string targetCard;
     public bool gameStarted;
     public int reloadCount;
@@ -106,7 +107,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
         {
             await CacheCards();
             CreatePositionsList();
-            for(int j = 0; j < 12; j++)
+            for(int j = 0; j < 10; j++)
             {
                 CheckRandom();
                 GameObject parent = CheckIsPositionEmpty();
@@ -126,26 +127,26 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
                 cards.Add(card);
             }
             CheckRandom();
-            for(int i = 12; i < 22; i++)
+            targetCard = cardNames[randomValueList[10]];
+            for(int i = 10; i < 20; i++)
             {
                 GameObject parent = CheckIsPositionEmpty();
                 GameObject card = Instantiate(cardPrefab, parent.transform.position, Quaternion.identity, parent.transform);
 
-                var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[5]], 512);
+                var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, targetCard, 512);
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
 
-                card.transform.name = cardLocalNames[randomValueList[5]];
+                card.transform.name = cardLocalNames[randomValueList[10]];
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                 LeanTween.scale(card, Vector3.one * 0.75f, 0);
                 LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-30, 30)), 0f);
                 card.gameObject.tag = "Card";
-                card.GetComponent<NeedleCardName>().cardName = cardNames[randomValueList[5]];
+                card.GetComponent<NeedleCardName>().cardName = targetCard;
                 targetCards.Add(card);
                 cards.Add(card);
             }
-            targetCard = cardNames[randomValueList[5]];
             reloadCount++;
             Invoke("GameUIActivate", 0.1f);
         }
@@ -163,12 +164,34 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
         //uıController.LevelChangeScreenActivate();
     }
 
+    public void CheckTargetCards()
+    {
+        bool endLevel = true;
+        foreach(var card in targetCards)
+        {
+            if(card.GetComponent<NeedleCardName>().matched == false)
+            {
+                endLevel = false;
+                break;
+            }
+        }
+
+        if(endLevel)
+        {
+            ClearBoard();
+            GeneratedBoardAsync();
+            needleMovement.Drop();
+            needleDraggable.MoveToCenter();
+        }
+    }
+
     public void ClearBoard()
     {
         foreach (var card in cards)
         {
             Destroy(card);
         }
+        targetCards.Clear();
         cardNames.Clear();
         cardsList.Clear();
         cardLocalNames.Clear();

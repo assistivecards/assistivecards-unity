@@ -65,18 +65,18 @@ public class NeedleMovement : MonoBehaviour
         }
     }
 
-    private void InitDrag()
+    public void InitDrag()
     {
         dragging = true;
         GetComponentInChildren<TrailRenderer>().time = 100;
     }
 
-    private void Drag()
+    public void Drag()
     {
         lastDragged.transform.position = new Vector2(worldPosition.x, worldPosition.y);
     }
 
-    private void Drop()
+    public void Drop()
     {
         dragging =  false;
         GetComponentInChildren<TrailRenderer>().time = 0;

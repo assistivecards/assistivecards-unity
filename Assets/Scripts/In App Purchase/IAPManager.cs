@@ -9,9 +9,13 @@ using TMPro;
 public class IAPManager : MonoBehaviour, IStoreListener
 {
     private string premium;
+    private string monthly;
+    private string yearly;
 
     GameAPI gameAPI;
     [SerializeField] TMP_Text subscriptionsScreenPrice;
+    [SerializeField] TMP_Text subscriptionsScreenMonthlyPrice;
+    [SerializeField] TMP_Text subscriptionsScreenYearlyPrice;
     [SerializeField] TMP_Text promoScreenPrice;
     [SerializeField] TMP_Text promoScreenPuchasePrice;
 
@@ -30,6 +34,8 @@ public class IAPManager : MonoBehaviour, IStoreListener
     private void Awake()
     {
         premium = Application.productName.Replace(" ", "_").ToLower() + "_iap";
+        monthly = "monthly";
+        yearly = "yearly";
         gameAPI = Camera.main.GetComponent<GameAPI>();
     }
 
@@ -69,6 +75,13 @@ public class IAPManager : MonoBehaviour, IStoreListener
 
         var builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance());
         builder.AddProduct(premium, ProductType.NonConsumable);
+
+        if (Application.productName == "Games")
+        {
+            builder.AddProduct(monthly, ProductType.Subscription);
+            builder.AddProduct(yearly, ProductType.Subscription);
+        }
+
         UnityPurchasing.Initialize(this, builder);
     }
 
@@ -80,6 +93,16 @@ public class IAPManager : MonoBehaviour, IStoreListener
     public void BuyNonConsumable()
     {
         BuyProductID(premium);
+    }
+
+    public void BuyMonthlySubscription()
+    {
+        BuyProductID(monthly);
+    }
+
+    public void BuyYearlySubscription()
+    {
+        BuyProductID(yearly);
     }
 
     void BuyProductID(string productId)
@@ -159,6 +182,8 @@ public class IAPManager : MonoBehaviour, IStoreListener
         m_StoreController = controller;
         m_StoreExtensionProvider = extensions;
         subscriptionsScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
+        subscriptionsScreenMonthlyPrice.text = IAPManager.m_StoreController.products.WithID(monthly).metadata.localizedPriceString;
+        subscriptionsScreenYearlyPrice.text = IAPManager.m_StoreController.products.WithID(yearly).metadata.localizedPriceString;
         promoScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
         promoScreenPuchasePrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
     }
@@ -178,6 +203,17 @@ public class IAPManager : MonoBehaviour, IStoreListener
             IAPUIManager.CheckIfPremiumButtonInteractable();
             IAPUIManager.ResetAvailablePacks();
         }
+
+        else if (String.Equals(args.purchasedProduct.definition.id, monthly, StringComparison.Ordinal))
+        {
+            Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
+        }
+
+        else if (String.Equals(args.purchasedProduct.definition.id, yearly, StringComparison.Ordinal))
+        {
+            Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
+        }
+
         else
         {
             Debug.Log(string.Format("ProcessPurchase: FAIL. Unrecognized product: '{0}'", args.purchasedProduct.definition.id));

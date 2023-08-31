@@ -9,6 +9,7 @@ public class NeedleThreadUIController : MonoBehaviour
     [Header ("Scripts")]
     [SerializeField] private NeedleThreadBoardGenerator boardGenerator;
     [SerializeField] private PackSelectionPanel packSelectionPanelScript;
+    [SerializeField] private NeedleMovement needleMovement;
 
     [Header ("Panels")]
     [SerializeField] private GameObject levelChange;
@@ -70,6 +71,7 @@ public class NeedleThreadUIController : MonoBehaviour
     public void LevelChangeScreenActivate()
     {
         LevelEnding();
+        boardGenerator.reloadCount = 0;
         gameAPI.AddExp(gameAPI.sessionExp);
         levelChange.SetActive(true);
         LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.3f);
@@ -141,5 +143,22 @@ public class NeedleThreadUIController : MonoBehaviour
             settingButton.SetActive(false);
             backButton.SetActive(false);
         }
+    }
+
+    public void BackButtonClickInvoke()
+    {
+        needleMovement.trailRenderer.time = 0;
+        boardGenerator.ClearBoard();
+        Invoke("BackButtonClick", 0.1f);
+    }
+
+    private void BackButtonClick()
+    {
+        gameAPI.ResetSessionExp();
+        boardGenerator.reloadCount = 0;
+        LevelEnding();
+        ResetScroll();
+        PackSelectionPanelActive();
+        packSelectionScreen.SetActive(true);
     }
 }

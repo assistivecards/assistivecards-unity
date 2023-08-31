@@ -151,7 +151,9 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
                 targetCards.Add(card);
                 cards.Add(card);
             }
+            LeanTween.scale(needle, Vector3.one, 0.2f);
             needleMovement.trailRenderer.time = 100;
+            needle.transform.position = Vector3.zero;
             Invoke("GameUIActivate", 0.1f);
             collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(targetCard).Replace("-", " "), selectedLangCode);
             LeanTween.scale(collectText.gameObject, Vector3.one, 0.2f);
@@ -189,7 +191,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
             needleMovement.Drop();
             needleDraggable.MoveToCenter();
             endLevel = true;
-            if(reloadCount != 5)
+            if(reloadCount < 4)
             {
                 reloadCount++;
                 GeneratedBoardAsync();
@@ -199,6 +201,9 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
 
     public void ClearBoard()
     {
+        collectText.gameObject.SetActive(false);
+        needleMovement.trailRenderer.time = 0;
+        LeanTween.scale(needle, Vector3.zero, 0f);
         foreach (var card in cards)
         {
             Destroy(card);
@@ -211,13 +216,9 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
         randomValueList.Clear();
         cardPositions.Clear();
         matchCounter = 0;
-        collectText.gameObject.SetActive(false);
-        needleMovement.trailRenderer.time = 0;
-        LeanTween.move(needle, Vector3.zero, 0f);
-        if(reloadCount == 5)
+        if(reloadCount >= 4)
         {
             uıController.Invoke("LevelChangeScreenActivate", 0.7f);
-            reloadCount = 0;
         }
     }
 }

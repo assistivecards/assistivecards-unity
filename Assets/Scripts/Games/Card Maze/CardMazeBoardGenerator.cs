@@ -33,6 +33,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
     [SerializeField] GameObject keyspawnPointsParent;
     [SerializeField] GameObject key;
     [SerializeField] GameObject settingsButton;
+    [SerializeField] GameObject[] finishPoints;
 
 
     private void Awake()
@@ -93,6 +94,11 @@ public class CardMazeBoardGenerator : MonoBehaviour
         randomSprite = null;
         cardTexture.sprite = null;
         key.GetComponent<CardMazeKey>().isCollected = false;
+
+        for (int i = 0; i < finishPoints.Length; i++)
+        {
+            finishPoints[i].GetComponent<BoxCollider2D>().enabled = false;
+        }
 
     }
 
@@ -193,6 +199,11 @@ public class CardMazeBoardGenerator : MonoBehaviour
         var selectedKeySpawnPoint = keyPositions[Random.Range(0, keyPositions.Length)];
         key.transform.position = selectedKeySpawnPoint.transform.position;
         LeanTween.scale(key, Vector3.one * 15, 0.2f);
+
+        for (int i = 0; i < finishPoints.Length; i++)
+        {
+            finishPoints[i].GetComponent<BoxCollider2D>().enabled = true;
+        }
 
     }
 

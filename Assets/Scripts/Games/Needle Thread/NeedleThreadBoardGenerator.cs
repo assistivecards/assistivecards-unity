@@ -35,6 +35,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
 
     [Header ("Game Elements")]
     [SerializeField] private GameObject cardPositionParent;
+    [SerializeField] private GameObject needle;
     public List<GameObject> cardPositions = new List<GameObject>();
     public List<GameObject> targetCards = new List<GameObject>();
     [SerializeField] private TMP_Text collectText;
@@ -150,6 +151,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
                 targetCards.Add(card);
                 cards.Add(card);
             }
+            needleMovement.trailRenderer.time = 100;
             Invoke("GameUIActivate", 0.1f);
             collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(targetCard).Replace("-", " "), selectedLangCode);
             LeanTween.scale(collectText.gameObject, Vector3.one, 0.2f);
@@ -210,6 +212,8 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
         cardPositions.Clear();
         matchCounter = 0;
         collectText.gameObject.SetActive(false);
+        needleMovement.trailRenderer.time = 0;
+        LeanTween.move(needle, Vector3.zero, 0f);
         if(reloadCount == 5)
         {
             uıController.Invoke("LevelChangeScreenActivate", 0.7f);

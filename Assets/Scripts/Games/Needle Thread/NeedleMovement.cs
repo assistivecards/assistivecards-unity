@@ -7,13 +7,16 @@ using UnityEngine.UI;
 public class NeedleMovement : MonoBehaviour
 {
     public bool dragging = false;
+    public TrailRenderer trailRenderer;
+    [SerializeField] private GameObject ropeGameobject;
     private Vector2 screenPosition;
     private Vector3 worldPosition;
-    private NeedleDraggable lastDragged;
+    private NeedleDraggable needleDraggable;
 
     private void Awake()
     {
         NeedleMovement[] controller = FindObjectsOfType<NeedleMovement>();
+        trailRenderer = ropeGameobject.GetComponent<TrailRenderer>();
         if(controller.Length > 1)
         {
             Destroy(gameObject);
@@ -59,7 +62,7 @@ public class NeedleMovement : MonoBehaviour
                 NeedleDraggable draggable = hit.transform.gameObject.GetComponent<NeedleDraggable>();
                 if(draggable != null)
                 {
-                    lastDragged = draggable;
+                    needleDraggable = draggable;
                     InitDrag();
                 }
             }
@@ -73,7 +76,7 @@ public class NeedleMovement : MonoBehaviour
 
     public void Drag()
     {
-        lastDragged.transform.position = new Vector2(worldPosition.x, worldPosition.y);
+        needleDraggable.transform.position = new Vector2(worldPosition.x, worldPosition.y);
     }
 
     public void Drop()

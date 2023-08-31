@@ -1856,6 +1856,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragging: 0
+  trailRenderer: {fileID: 0}
+  ropeGameobject: {fileID: 1367378528}
 --- !u!1 &1163493689 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8438209764908285022, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
@@ -4156,7 +4158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 339232.62
+      value: 347147.2
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a
@@ -4797,6 +4799,7 @@ MonoBehaviour:
   cardPrefab: {fileID: 1572616208917296617, guid: 668ba70434f2c49af8e3775600a7d004, type: 3}
   tutorial: {fileID: 927069859}
   cardPositionParent: {fileID: 272971204}
+  needle: {fileID: 1769396780}
   cardPositions: []
   targetCards: []
   collectText: {fileID: 2122920630}

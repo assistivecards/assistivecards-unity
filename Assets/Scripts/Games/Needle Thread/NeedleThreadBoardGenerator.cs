@@ -13,6 +13,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     [SerializeField] private NeedleThreadUIController uıController;
     [SerializeField] private NeedleMovement needleMovement;
     [SerializeField] private NeedleDraggable needleDraggable;
+    [SerializeField] private NeedleThreadTutorial tutorialScript;
     
     [Header ("Cache Cards")]
     public string selectedLangCode;
@@ -41,6 +42,8 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     [SerializeField] private TMP_Text collectText;
 
     [Header ("In Game Values")]
+    public bool reloaded = false;
+    public bool endLevel;
     public int matchCounter;
     public string targetCard;
     public string targetCardLocal;
@@ -94,10 +97,18 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
 
     private GameObject CheckIsPositionEmpty()
     {
-        int randomPositionIndex = Random.Range(0, cardPositions.Count);
+        int randomPositionIndex = Random.Range(0, cardPositions.Count - 1);
         if(cardPositions[randomPositionIndex].transform.childCount != 0)
         {
-            return CheckIsPositionEmpty();
+            randomPositionIndex += 1;
+            if(cardPositions[randomPositionIndex].transform.childCount != 0)
+            {
+                return CheckIsPositionEmpty();
+            }
+            else
+            {
+                return cardPositions[randomPositionIndex];
+            }
         }
         else
         {
@@ -107,7 +118,6 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
 
     public async void GeneratedBoardAsync()
     {
-        Debug.Log("GENERATE BOARD");
         if(uıController.canGenerate)
         {
             await CacheCards();
@@ -154,6 +164,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
                 targetCards.Add(card);
                 cards.Add(card);
             }
+            tutorialScript.card = targetCards[0].transform;
             LeanTween.scale(needle, Vector3.one, 0.2f);
             needleMovement.trailRenderer.time = 100;
             needle.transform.position = Vector3.zero;
@@ -161,6 +172,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
             collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(targetCardLocal).Replace("-", " "), selectedLangCode);
             LeanTween.scale(collectText.gameObject, Vector3.one, 0.2f);
             collectText.gameObject.SetActive(true);
+            reloaded = false;
         }
     }
 
@@ -170,15 +182,10 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
         gameStarted = true;
     }
 
-    public void LevelEnd()
-    {
-        ClearBoard();
-        //uıController.LevelChangeScreenActivate();
-    }
 
     public void CheckTargetCards()
     {
-        bool endLevel = true;
+        endLevel = true;
         foreach(var card in targetCards)
         {
             if(card.GetComponent<NeedleCardName>().matched == false)
@@ -188,14 +195,15 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
             }
         }
 
-        if(endLevel && matchCounter >= targetCards.Count)
+        if(endLevel && matchCounter >= targetCards.Count && !reloaded)
         {
+            endLevel = true;
             ClearBoard();
             needleMovement.Drop();
             needleDraggable.MoveToCenter();
-            endLevel = true;
             if(reloadCount < 4)
             {
+                reloaded = true;
                 reloadCount++;
                 GeneratedBoardAsync();
             }

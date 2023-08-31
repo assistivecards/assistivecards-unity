@@ -43,6 +43,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     [Header ("In Game Values")]
     public int matchCounter;
     public string targetCard;
+    public string targetCardLocal;
     public bool gameStarted;
     public int reloadCount;
 
@@ -132,6 +133,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
             }
             CheckRandom();
             targetCard = cardNames[randomValueList[10]];
+            targetCardLocal = cardLocalNames[randomValueList[10]];
             for(int i = 10; i < 20; i++)
             {
                 GameObject parent = CheckIsPositionEmpty();
@@ -148,6 +150,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
                 LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-30, 30)), 0f);
                 card.gameObject.tag = "Card";
                 card.GetComponent<NeedleCardName>().cardName = targetCard;
+                card.GetComponent<NeedleCardName>().cardLocalName = targetCardLocal;
                 targetCards.Add(card);
                 cards.Add(card);
             }
@@ -155,7 +158,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
             needleMovement.trailRenderer.time = 100;
             needle.transform.position = Vector3.zero;
             Invoke("GameUIActivate", 0.1f);
-            collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(targetCard).Replace("-", " "), selectedLangCode);
+            collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(targetCardLocal).Replace("-", " "), selectedLangCode);
             LeanTween.scale(collectText.gameObject, Vector3.one, 0.2f);
             collectText.gameObject.SetActive(true);
         }
@@ -185,7 +188,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
             }
         }
 
-        if(endLevel && matchCounter >= 10)
+        if(endLevel && matchCounter >= targetCards.Count)
         {
             ClearBoard();
             needleMovement.Drop();

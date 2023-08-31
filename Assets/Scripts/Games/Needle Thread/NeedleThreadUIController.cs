@@ -154,6 +154,7 @@ public class NeedleThreadUIController : MonoBehaviour
 
     private void BackButtonClick()
     {
+        gameAPI.ResetSessionExp();
         boardGenerator.reloadCount = 0;
         LevelEnding();
         ResetScroll();

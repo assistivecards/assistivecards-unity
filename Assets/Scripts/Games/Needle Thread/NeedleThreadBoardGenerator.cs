@@ -122,7 +122,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
         {
             await CacheCards();
             CreatePositionsList();
-            for(int j = 0; j < 10; j++)
+            for(int j = 0; j < 11; j++)
             {
                 CheckRandom();
                 GameObject parent = CheckIsPositionEmpty();
@@ -144,7 +144,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
             CheckRandom();
             targetCard = cardNames[randomValueList[10]];
             targetCardLocal = cardLocalNames[randomValueList[10]];
-            for(int i = 10; i < 20; i++)
+            for(int i = 11; i < 20; i++)
             {
                 GameObject parent = CheckIsPositionEmpty();
                 GameObject card = Instantiate(cardPrefab, parent.transform.position, Quaternion.identity, parent.transform);

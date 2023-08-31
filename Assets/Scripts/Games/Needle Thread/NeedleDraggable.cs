@@ -17,6 +17,7 @@ public class NeedleDraggable : MonoBehaviour
     {
         if(other.GetComponent<NeedleCardName>().cardName == boardGenerator.targetCard && needleMovement.dragging)
         {
+            gameAPI.AddSessionExp();
             gameAPI.Speak(other.GetComponent<NeedleCardName>().cardLocalName);
             Debug.Log(other.GetComponent<NeedleCardName>().cardLocalName);
             Invoke("PlaySuccess", 0.25f);

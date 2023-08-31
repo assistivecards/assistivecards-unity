@@ -32,7 +32,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
     [SerializeField] GameObject spawnPointsParent;
     [SerializeField] GameObject keyspawnPointsParent;
     [SerializeField] GameObject key;
-    [SerializeField] GameObject settingsButton;
+    public GameObject settingsButton;
     [SerializeField] GameObject[] finishPoints;
 
 

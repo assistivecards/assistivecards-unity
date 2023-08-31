@@ -34,6 +34,7 @@ public class CardMazeUIController : MonoBehaviour
         checkPointPanel.SetActive(true);
         backButton.SetActive(false);
         checkPointPanel.transform.GetChild(1).GetComponent<Button>().interactable = false;
+        board.settingsButton.GetComponent<Button>().interactable = true;
         LeanTween.scale(checkPointPanel, Vector3.one * 0.6f, 0.25f);
         gameAPI.PlaySFX("Finished");
         Invoke("EnableContinuePlayingButton", .75f);
@@ -61,11 +62,11 @@ public class CardMazeUIController : MonoBehaviour
     IEnumerator ChooseNewPackButtonCoroutine()
     {
         gameAPI.ResetSessionExp();
-        board.ScaleImagesDown();
+        // board.ScaleImagesDown();
         backButton.SetActive(false);
         CloseCheckpointPanel();
         yield return new WaitForSeconds(0.25f);
-        board.ClearBoard();
+        // board.ClearBoard();
         packSelectionPanel.transform.localScale = new Vector3(0, 0, 0);
         ResetScrollRect();
         packSelectionPanel.SetActive(true);
@@ -80,6 +81,7 @@ public class CardMazeUIController : MonoBehaviour
     public void CloseCheckpointPanelAndGenerateNewBoard()
     {
         StartCoroutine(CloseCheckPointPanelCoroutine());
+        board.settingsButton.GetComponent<Button>().interactable = false;
         board.Invoke("GenerateRandomBoardAsync", 0.25f);
     }
 

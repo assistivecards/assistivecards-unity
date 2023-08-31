@@ -9,6 +9,7 @@ public class CardMazeMatchDetection : MonoBehaviour
     private GameObject card;
     private CardMazeUIController UIController;
     private GameAPI gameAPI;
+    [SerializeField] GameObject settingsButton;
 
     private void Awake()
     {
@@ -29,6 +30,7 @@ public class CardMazeMatchDetection : MonoBehaviour
             UIController.correctMatches++;
             gameAPI.AddSessionExp();
             UIController.backButton.GetComponent<Button>().interactable = false;
+            settingsButton.GetComponent<Button>().interactable = false;
             card = other.gameObject;
             card.GetComponent<CardMazeDraggableCard>().enabled = false;
             card.GetComponent<CircleCollider2D>().enabled = false;

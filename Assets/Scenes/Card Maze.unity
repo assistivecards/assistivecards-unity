@@ -709,6 +709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 147a47cef056230489573109a21d7539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settingsButton: {fileID: 1166437508}
 --- !u!61 &145881843
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1603,6 +1604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 147a47cef056230489573109a21d7539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settingsButton: {fileID: 1166437508}
 --- !u!61 &413453988
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1795,6 +1797,22 @@ PrefabInstance:
       propertyPath: mainSettingScreen
       value: 
       objectReference: {fileID: 1241304286}
+    - target: {fileID: 543293291873109802, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 543293291873109802, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 543293291873109802, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 543293291873109802, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 543293291873109802, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3017,6 +3035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 147a47cef056230489573109a21d7539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settingsButton: {fileID: 1166437508}
 --- !u!114 &584384117 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1242831489156330399, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -7252,6 +7271,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1154749945}
   m_CullTransparentMesh: 1
+--- !u!1 &1166437508 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 543293291873109800, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1170460378
 GameObject:
   m_ObjectHideFlags: 0
@@ -9816,6 +9840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 147a47cef056230489573109a21d7539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settingsButton: {fileID: 1166437508}
 --- !u!61 &1571428426
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11844,6 +11869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 147a47cef056230489573109a21d7539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settingsButton: {fileID: 1166437508}
 --- !u!61 &2007758146
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13030,7 +13056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 287699.62
+      value: 299703.84
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a
@@ -13799,6 +13825,7 @@ MonoBehaviour:
   spawnPointsParent: {fileID: 357559721}
   keyspawnPointsParent: {fileID: 1829637944}
   key: {fileID: 535743172}
+  settingsButton: {fileID: 1166437508}
 --- !u!114 &8383894889009589327
 MonoBehaviour:
   m_ObjectHideFlags: 0

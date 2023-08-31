@@ -32,6 +32,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
     [SerializeField] GameObject spawnPointsParent;
     [SerializeField] GameObject keyspawnPointsParent;
     [SerializeField] GameObject key;
+    [SerializeField] GameObject settingsButton;
 
 
     private void Awake()
@@ -99,6 +100,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
     {
         LeanTween.scale(throwText.gameObject, Vector3.one, 0.2f);
         LeanTween.scale(selectedMaze, Vector3.one, 0.2f).setOnComplete(SelectRandomSpawnPoint);
+        settingsButton.GetComponent<Button>().interactable = true;
 
     }
 

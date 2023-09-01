@@ -25,7 +25,7 @@ public class NeedleDraggable : MonoBehaviour
             other.GetComponent<NeedleCardName>().matched = true;
             other.GetComponent<NeedleCardName>().Invoke("ScaleDownCrad", 0.4f);
             boardGenerator.matchCounter++;
-            boardGenerator.Invoke("CheckTargetCards", 0.5f);
+            boardGenerator.Invoke("CheckTargetCards", 0.75f);
         }
     }
 

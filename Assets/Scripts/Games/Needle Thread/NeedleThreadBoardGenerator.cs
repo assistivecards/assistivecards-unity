@@ -197,17 +197,37 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
 
         if(endLevel && matchCounter >= targetCards.Count && !reloaded)
         {
-            endLevel = true;
-            ClearBoard();
             needleMovement.Drop();
             needleDraggable.MoveToCenter();
-            if(reloadCount < 4)
+            ReloadLevel();
+        }
+    }
+
+    public void ScaleDownCards()
+    {
+        if(endLevel && matchCounter >= targetCards.Count && !reloaded)
+        {
+            foreach (var card in cards)
             {
-                reloaded = true;
-                reloadCount++;
-                GeneratedBoardAsync();
+                LeanTween.scale(card, Vector3.zero, 0.2f);
             }
         }
+    }
+
+    private void ReloadLevel()
+    {
+        if(reloadCount < 4)
+        {
+            reloaded = true;
+            reloadCount++;
+            GeneratedBoardAsync();
+        }
+        else
+        {
+            uıController.Invoke("LoadingScreenActivation", 0.5f);
+        }
+        ClearBoard();
+        endLevel = true;
     }
 
     public void ClearBoard()

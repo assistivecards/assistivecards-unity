@@ -147,15 +147,15 @@ public class NeedleThreadUIController : MonoBehaviour
 
     public void BackButtonClickInvoke()
     {
-        needleMovement.trailRenderer.time = 0;
+        boardGenerator.reloadCount = 0;
         boardGenerator.ClearBoard();
+        needleMovement.trailRenderer.time = 0;
         Invoke("BackButtonClick", 0.1f);
     }
 
     private void BackButtonClick()
     {
         gameAPI.ResetSessionExp();
-        boardGenerator.reloadCount = 0;
         LevelEnding();
         ResetScroll();
         PackSelectionPanelActive();

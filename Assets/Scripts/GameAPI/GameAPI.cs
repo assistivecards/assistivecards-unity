@@ -753,11 +753,17 @@ public class GameAPI : MonoBehaviour
         return PlayerPrefs.GetString("isPremium", "0");
     }
 
+    ///<summary>
+    ///Takes in a single parameter of type string named isSubscribed and stores it in PlayerPrefs.
+    ///</summary>
     public void SetSubscription(string isSubscribed)
     {
         PlayerPrefs.SetString("isSubscribed", isSubscribed);
     }
 
+    ///<summary>
+    ///Retrieves the subscription status data stored in PlayerPrefs. Default value is 0.
+    ///</summary>
     public string GetSubscription()
     {
         return PlayerPrefs.GetString("isSubscribed", "0");

@@ -9,6 +9,8 @@ public class IAPUIManager : MonoBehaviour
     [SerializeField] TMP_InputField availablePacksText;
     [SerializeField] private GameObject restoreButton;
     [SerializeField] Button subscriptionsScreenPremiumButton;
+    [SerializeField] Button subscriptionsScreenMonthlyButton;
+    [SerializeField] Button subscriptionsScreenYearlyButton;
     [SerializeField] Button promoScreenPremiumButton;
     [SerializeField] Button promoScreenPuchasePremiumButton;
 
@@ -62,15 +64,26 @@ public class IAPUIManager : MonoBehaviour
 
     public void CheckIfPremiumButtonInteractable()
     {
-        if (gameAPI.GetPremium() == "A5515T1V3C4RD5")
+        if (gameAPI.GetPremium() == "A5515T1V3C4RD5" || gameAPI.GetSubscription() == "A5515T1V3C4RD5")
         {
             subscriptionsScreenPremiumButton.interactable = false;
+            if (subscriptionsScreenMonthlyButton != null)
+            {
+                subscriptionsScreenMonthlyButton.interactable = false;
+                subscriptionsScreenYearlyButton.interactable = false;
+            }
+
             promoScreenPremiumButton.interactable = false;
             promoScreenPuchasePremiumButton.interactable = false;
         }
         else
         {
             subscriptionsScreenPremiumButton.interactable = true;
+            if (subscriptionsScreenMonthlyButton != null)
+            {
+                subscriptionsScreenMonthlyButton.interactable = true;
+                subscriptionsScreenYearlyButton.interactable = true;
+            }
             promoScreenPremiumButton.interactable = true;
             promoScreenPuchasePremiumButton.interactable = true;
         }

@@ -504,6 +504,24 @@ Retrieves the premium status data stored in PlayerPrefs.
 public string GetPremium()
 ```
 
+## SetSubscription
+
+Takes in a single parameter of type string named isSubscribed and stores it in PlayerPrefs.
+
+```Csharp
+public void SetSubscription(string isSubscribed)
+```
+
+## GetSubscription
+
+Retrieves the subscription status data stored in PlayerPrefs.
+
+> Default value is 0.
+
+```Csharp
+public string GetSubscription()
+```
+
 ## SetSFXPreference
 
 Takes in a single parameter of type integer named isSFXOn and stores it in PlayerPrefs.

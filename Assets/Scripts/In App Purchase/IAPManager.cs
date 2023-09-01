@@ -207,11 +207,13 @@ public class IAPManager : MonoBehaviour, IStoreListener
         else if (String.Equals(args.purchasedProduct.definition.id, monthly, StringComparison.Ordinal))
         {
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
+            gameAPI.SetSubscription("A5515T1V3C4RD5");
         }
 
         else if (String.Equals(args.purchasedProduct.definition.id, yearly, StringComparison.Ordinal))
         {
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
+            gameAPI.SetSubscription("A5515T1V3C4RD5");
         }
 
         else

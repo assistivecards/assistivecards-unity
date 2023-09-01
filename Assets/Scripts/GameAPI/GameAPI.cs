@@ -753,6 +753,16 @@ public class GameAPI : MonoBehaviour
         return PlayerPrefs.GetString("isPremium", "0");
     }
 
+    public void SetSubscription(string isSubscribed)
+    {
+        PlayerPrefs.SetString("isSubscribed", isSubscribed);
+    }
+
+    public string GetSubscription()
+    {
+        return PlayerPrefs.GetString("isSubscribed", "0");
+    }
+
     ///<summary>
     ///Takes in a single parameter of type integer named isSFXOn and stores it in PlayerPrefs.
     ///</summary>

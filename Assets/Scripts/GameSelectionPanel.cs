@@ -26,6 +26,10 @@ public class GameSelectionPanel : MonoBehaviour
     public Color tempColor3;
     public Color tempColor4;
 
+    [SerializeField] GameObject fadeInPanel;
+    [SerializeField] GameObject settingButton;
+    [SerializeField] CanvasController canvasController;
+
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
@@ -185,7 +189,38 @@ public class GameSelectionPanel : MonoBehaviour
     {
         selectedGameElement = _GameElement;
         Debug.Log(_GameElement.name);
-        SceneManager.LoadScene(gameAPI.ToTitleCase(_GameElement.name.Replace("_", " ")));
+
+        if (gameAPI.GetPremium() == "A5515T1V3C4RD5" || gameAPI.GetSubscription() == "A5515T1V3C4RD5")
+        {
+            SceneManager.LoadScene(gameAPI.ToTitleCase(_GameElement.name.Replace("_", " ")));
+        }
+
+        else
+        {
+            for (int i = 0; i < gameAPI.cachedGames.games.Count; i++)
+            {
+                if (gameAPI.cachedGames.games[i].slug == selectedGameElement.name)
+                {
+                    if (gameAPI.cachedGames.games[i].premium == true)
+                    {
+                        Debug.Log("Seçilen paket premium");
+                        // canvasController.GetComponent<CanvasController>().StartFadeAnim();
+                        fadeInPanel.SetActive(true);
+                        settingButton.GetComponent<SettingScreenButton>().SettingButtonClickFunc();
+                        canvasController.GetComponent<CanvasController>().PremiumPromoButtonClick();
+                        Invoke("ResetScrollPosition", 0.3f);
+
+                    }
+
+                    else
+                    {
+                        SceneManager.LoadScene(gameAPI.ToTitleCase(_GameElement.name.Replace("_", " ")));
+                    }
+
+                }
+            }
+        }
+
 
     }
 
@@ -201,6 +236,12 @@ public class GameSelectionPanel : MonoBehaviour
     public void EnableScrollRect()
     {
         gameSelectionPanel.transform.GetChild(0).GetComponent<ScrollRect>().enabled = true;
+    }
+
+    public void ResetScrollPosition()
+    {
+        var rt = gameSelectionPanel.transform.GetChild(0).GetChild(0).GetComponent<RectTransform>();
+        rt.offsetMax = new Vector2(rt.offsetMax.x, 0);
     }
 
 }

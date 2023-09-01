@@ -4204,7 +4204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 216422.84
+      value: 218172.53
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490675054805, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Name
@@ -13443,6 +13443,9 @@ MonoBehaviour:
   tempColor2: {r: 0, g: 0, b: 0, a: 0}
   tempColor3: {r: 0, g: 0, b: 0, a: 0}
   tempColor4: {r: 0, g: 0, b: 0, a: 0}
+  fadeInPanel: {fileID: 956408261191908917}
+  settingButton: {fileID: 543293291342249704}
+  canvasController: {fileID: 2018903310}
 --- !u!1 &8441382996618223636
 GameObject:
   m_ObjectHideFlags: 0

@@ -121,6 +121,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
         if(uıController.canGenerate)
         {
             await CacheCards();
+            CheckRandom();
             CreatePositionsList();
             for(int j = 0; j < 11; j++)
             {
@@ -142,8 +143,8 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
                 cards.Add(card);
             }
             CheckRandom();
-            targetCard = cardNames[randomValueList[10]];
-            targetCardLocal = cardLocalNames[randomValueList[10]];
+            targetCard = cardNames[randomValueList[12]];
+            targetCardLocal = cardLocalNames[randomValueList[12]];
             for(int i = 11; i < 20; i++)
             {
                 GameObject parent = CheckIsPositionEmpty();
@@ -153,11 +154,11 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
 
-                card.transform.name = cardLocalNames[randomValueList[10]];
+                card.transform.name = targetCardLocal;
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                 LeanTween.scale(card, Vector3.one * 0.75f, 0);
-                LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-30, 30)), 0f);
+                LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-50, 50)), 0f);
                 card.gameObject.tag = "Card";
                 card.GetComponent<NeedleCardName>().cardName = targetCard;
                 card.GetComponent<NeedleCardName>().cardLocalName = targetCardLocal;

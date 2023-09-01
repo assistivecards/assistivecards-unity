@@ -23,6 +23,7 @@ TagManager:
   - BottomBorder
   - TopBorder
   - Snake
+  - Card
   layers:
   - Default
   - TransparentFX
@@ -59,4 +60,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Trail
+    uniqueID: 895946113
     locked: 0

@@ -104,7 +104,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 150, y: 150}
+  m_Size: {x: 50, y: 50}
   m_EdgeRadius: 0
 --- !u!114 &5212006649913507359
 MonoBehaviour:
@@ -119,6 +119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: 
+  cardLocalName: 
+  matched: 0
 --- !u!50 &3485301476704171694
 Rigidbody2D:
   serializedVersion: 4

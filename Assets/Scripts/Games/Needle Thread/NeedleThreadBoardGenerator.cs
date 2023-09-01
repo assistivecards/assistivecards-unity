@@ -221,10 +221,11 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
             reloaded = true;
             reloadCount++;
             GeneratedBoardAsync();
+            uıController.LoadingScreenActivation();
         }
-        else
+        else if(reloadCount == 4)
         {
-            uıController.Invoke("LoadingScreenActivation", 0.5f);
+            uıController.Invoke("LevelChangeScreenActivate", 0.7f);
         }
         ClearBoard();
         endLevel = true;
@@ -247,9 +248,5 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
         randomValueList.Clear();
         cardPositions.Clear();
         matchCounter = 0;
-        if(reloadCount >= 4)
-        {
-            uıController.Invoke("LevelChangeScreenActivate", 0.7f);
-        }
     }
 }

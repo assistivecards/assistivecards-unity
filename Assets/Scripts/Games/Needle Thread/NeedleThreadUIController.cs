@@ -147,8 +147,8 @@ public class NeedleThreadUIController : MonoBehaviour
 
     public void BackButtonClickInvoke()
     {
-        boardGenerator.reloadCount = 0;
         boardGenerator.ClearBoard();
+        boardGenerator.reloadCount = 0;
         needleMovement.trailRenderer.time = 0;
         Invoke("BackButtonClick", 0.1f);
     }

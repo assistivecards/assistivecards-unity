@@ -127,23 +127,6 @@ public class IAPManager : MonoBehaviour, IStoreListener
         }
     }
 
-    // public void OnInitialized(IStoreController controller, IExtensionProvider extensions)
-    // {
-    //     m_StoreController = controller;
-    //     m_StoreExtensionProvider = extensions;
-
-    //     foreach (var product in controller.products.all)
-    //     {
-    //         Debug.Log(product.metadata.localizedPriceString);
-
-    //         Debug.Log(string.Format("string: {0}", product.metadata.localizedPriceString));
-
-    //         Debug.Log(string.Format("decimal: {0}", product.metadata.localizedPrice.ToString()));
-
-    //         currencySymbol.text = string.Format("decimal: {0}", product.metadata.localizedPrice.ToString());
-    //     }
-    // }
-
     public void RestorePurchases()
     {
         if (!IsInitialized())
@@ -181,6 +164,16 @@ public class IAPManager : MonoBehaviour, IStoreListener
 
         m_StoreController = controller;
         m_StoreExtensionProvider = extensions;
+
+        // if (CheckSubscription(monthly) || CheckSubscription(yearly))
+        // {
+        //     gameAPI.SetSubscription("A5515T1V3C4RD5");
+        // }
+        // else
+        // {
+        //     gameAPI.SetSubscription("0");
+        // }
+
         subscriptionsScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
         subscriptionsScreenMonthlyPrice.text = IAPManager.m_StoreController.products.WithID(monthly).metadata.localizedPriceString;
         subscriptionsScreenYearlyPrice.text = IAPManager.m_StoreController.products.WithID(yearly).metadata.localizedPriceString;
@@ -231,16 +224,53 @@ public class IAPManager : MonoBehaviour, IStoreListener
         Debug.Log(string.Format("OnPurchaseFailed: FAIL. Product: '{0}', PurchaseFailureReason: {1}", product.definition.storeSpecificId, failureReason));
     }
 
+    bool CheckSubscription(string id)
+    {
 
-    // public void OnPurchaseComplete(Product product)
-    // {
-    //     if (product.definition.id == premium)
-    //     {
-    //         gameAPI.SetPremium("A5515T1V3C4RD5");
-    //         IAPUIManager.CheckIfPremiumButtonInteractable();
-    //         IAPUIManager.ResetAvailablePacks();
-    //     }
-    // }
+        var subscriptionProduct = m_StoreController.products.WithID(id);
 
+        if (subscriptionProduct != null)
+        {
+
+            try
+            {
+                if (subscriptionProduct.hasReceipt)
+                {
+                    var subscriptionManager = new SubscriptionManager(subscriptionProduct, null);
+                    var info = subscriptionManager.getSubscriptionInfo();
+
+                    if (info.isSubscribed() == Result.True)
+                    {
+
+                        return true;
+                    }
+                    else
+                    {
+
+                        return false;
+                    }
+                }
+
+                else
+                {
+                    Debug.Log("Receipt not found.");
+                    return false;
+                }
+            }
+            catch (System.Exception)
+            {
+
+                Debug.Log("Platform not supported. Unity Fake Store");
+                return false;
+            }
+
+        }
+
+        else
+        {
+            Debug.Log("Product not found.");
+            return false;
+        }
+    }
 
 }

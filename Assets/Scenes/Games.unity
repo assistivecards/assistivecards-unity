@@ -2586,6 +2586,8 @@ MonoBehaviour:
   availablePacksText: {fileID: 770021530}
   restoreButton: {fileID: 200934778}
   subscriptionsScreenPremiumButton: {fileID: 1867278663}
+  subscriptionsScreenMonthlyButton: {fileID: 999637179}
+  subscriptionsScreenYearlyButton: {fileID: 1311752549}
   promoScreenPremiumButton: {fileID: 1003392353}
   promoScreenPuchasePremiumButton: {fileID: 1719089849}
   availablePacksArray: []
@@ -4204,11 +4206,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 218172.53
+      value: 242470.52
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490675054805, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Name
       value: premium_lifetime
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242831490808992307, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 259.8837
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

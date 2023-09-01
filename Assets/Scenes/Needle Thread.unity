@@ -1080,7 +1080,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2088726607444356941, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3236149540598557714, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: tutorialPosition
@@ -3224,8 +3224,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1367378529}
   - component: {fileID: 1367378532}
-  - component: {fileID: 1367378530}
   - component: {fileID: 1367378533}
+  - component: {fileID: 1367378530}
   m_Layer: 5
   m_Name: Rope
   m_TagString: Snake
@@ -3294,7 +3294,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Time: 0
   m_Parameters:
     serializedVersion: 3
@@ -5080,7 +5080,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 449394.84
+      value: 455799.1
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a
@@ -5500,7 +5500,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 946fe6d4715562e4484c920670df443b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 702833c8b021341848aa586e03a2a654, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -874,8 +874,10 @@ public class GameAPI : MonoBehaviour
     public void ClearAllPrefs()
     {
         var isPremium = GetPremium();
+        var isSubscribed = GetSubscription();
         PlayerPrefs.DeleteAll();
         SetPremium(isPremium);
+        SetSubscription(isSubscribed);
     }
 
 

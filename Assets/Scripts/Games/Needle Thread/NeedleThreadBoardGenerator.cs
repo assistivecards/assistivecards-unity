@@ -168,6 +168,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
             tutorialScript.card = targetCards[0].transform;
             LeanTween.scale(needle, Vector3.one, 0.2f);
             needleMovement.trailRenderer.time = 100;
+            needleMovement.trailRenderer.sortingOrder = 10;
             needle.transform.position = Vector3.zero;
             Invoke("GameUIActivate", 0.1f);
             collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(targetCardLocal).Replace("-", " "), selectedLangCode);

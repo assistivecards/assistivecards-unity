@@ -150,6 +150,7 @@ public class NeedleThreadUIController : MonoBehaviour
         boardGenerator.ClearBoard();
         boardGenerator.reloadCount = 0;
         needleMovement.trailRenderer.time = 0;
+        needleMovement.trailRenderer.sortingOrder = 0;
         Invoke("BackButtonClick", 0.1f);
     }
 

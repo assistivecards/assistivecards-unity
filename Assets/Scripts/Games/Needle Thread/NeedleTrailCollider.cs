@@ -18,6 +18,7 @@ public class NeedleTrailCollider : MonoBehaviour
     private void Update()
     {
         SetColliderTrail(needleTrail, needleCollider);
+        needleTrail.sortingOrder = 10;
     }
     
     private void SetColliderTrail(TrailRenderer trail, EdgeCollider2D collider)

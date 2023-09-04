@@ -37,9 +37,11 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     [Header ("Game Elements")]
     [SerializeField] private GameObject cardPositionParent;
     [SerializeField] private GameObject needle;
+    [SerializeField] private Transform levelEndCardPosition;
     public List<GameObject> cardPositions = new List<GameObject>();
     public List<GameObject> targetCards = new List<GameObject>();
     [SerializeField] private TMP_Text collectText;
+    private GameObject levelEndCard;
 
     [Header ("In Game Values")]
     public bool reloaded = false;
@@ -165,10 +167,19 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
                 targetCards.Add(card);
                 cards.Add(card);
             }
+            levelEndCard = Instantiate(cardPrefab, levelEndCardPosition.transform.position, Quaternion.identity, levelEndCardPosition.transform);
+            var levelEndCardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, targetCard, 512);
+            levelEndCardTexture.wrapMode = TextureWrapMode.Clamp;
+            levelEndCardTexture.filterMode = FilterMode.Bilinear;
+
+            levelEndCard.transform.name = targetCardLocal;
+            levelEndCard.transform.GetChild(0).GetComponent<RawImage>().texture = levelEndCardTexture;
+            levelEndCard.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+            LeanTween.scale(levelEndCard, Vector3.zero, 0);
+            
             tutorialScript.card = targetCards[0].transform;
             LeanTween.scale(needle, Vector3.one, 0.2f);
             needleMovement.trailRenderer.time = 100;
-            needleMovement.trailRenderer.sortingOrder = 10;
             needle.transform.position = Vector3.zero;
             Invoke("GameUIActivate", 0.1f);
             collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(targetCardLocal).Replace("-", " "), selectedLangCode);
@@ -222,15 +233,33 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
         {
             reloaded = true;
             reloadCount++;
-            GeneratedBoardAsync();
-            uıController.LoadingScreenActivation();
+            LeanTween.scale(levelEndCard, Vector3.one * 1.5f, 0.25f);
+            Invoke("LevelEndCardScaleDown", 0.5f);
         }
         else if(reloadCount == 4)
         {
-            uıController.Invoke("LevelChangeScreenActivate", 0.7f);
+            uıController.Invoke("LevelChangeScreenActivate", 1f);
         }
         ClearBoard();
         endLevel = true;
+    }
+
+    private void LevelEndCardScaleDown()
+    {
+        gameAPI.Speak(targetCard);
+        LeanTween.scale(levelEndCard, Vector3.zero, 0.25f).setOnComplete(LevelEndCardDestroy);
+    }
+
+    private void LevelEndCardDestroy()
+    {
+        GenerateBoardOnLevel();
+        Destroy(levelEndCard);
+    }
+
+    private void GenerateBoardOnLevel()
+    {
+        GeneratedBoardAsync();
+        uıController.LoadingScreenActivation();
     }
 
     public void ClearBoard()

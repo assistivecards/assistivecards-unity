@@ -76,6 +76,7 @@ public class NeedleMovement : MonoBehaviour
 
     public void Drag()
     {
+        //trailRenderer.sortingOrder = 10;
         needleDraggable.transform.position = new Vector2(worldPosition.x, worldPosition.y);
     }
 

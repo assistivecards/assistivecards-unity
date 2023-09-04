@@ -37,10 +37,11 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     [Header ("Game Elements")]
     [SerializeField] private GameObject cardPositionParent;
     [SerializeField] private GameObject needle;
+    [SerializeField] private GameObject rope;
     [SerializeField] private Transform levelEndCardPosition;
+    [SerializeField] private TMP_Text collectText;
     public List<GameObject> cardPositions = new List<GameObject>();
     public List<GameObject> targetCards = new List<GameObject>();
-    [SerializeField] private TMP_Text collectText;
     private GameObject levelEndCard;
 
     [Header ("In Game Values")]
@@ -56,6 +57,11 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
         gameAPI.PlayMusic();
+    }
+
+    private void Update()
+    {
+        //needleMovement.trailRenderer.sortingOrder = 10;
     }
 
     public async Task CacheCards()
@@ -198,6 +204,15 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
 
     public void CheckTargetCards()
     {
+        if(rope.GetComponent<TrailRenderer>().sortingOrder == 5)
+        {
+            rope.GetComponent<TrailRenderer>().sortingOrder = 10;
+        }
+        else if(rope.GetComponent<TrailRenderer>().sortingOrder == 10)
+        {
+            rope.GetComponent<TrailRenderer>().sortingOrder = 5;
+        }
+
         endLevel = true;
         foreach(var card in targetCards)
         {

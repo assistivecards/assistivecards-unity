@@ -3252,6 +3252,8 @@ MonoBehaviour:
   subscriptionsScreenMonthlyButton: {fileID: 0}
   subscriptionsScreenYearlyButton: {fileID: 0}
   promoScreenPremiumButton: {fileID: 1003392353}
+  promoScreenMonthlyButton: {fileID: 0}
+  promoScreenYearlyButton: {fileID: 0}
   promoScreenPuchasePremiumButton: {fileID: 1719089849}
   availablePacksArray: []
 --- !u!114 &1338730598
@@ -3270,6 +3272,8 @@ MonoBehaviour:
   subscriptionsScreenMonthlyPrice: {fileID: 0}
   subscriptionsScreenYearlyPrice: {fileID: 0}
   promoScreenPrice: {fileID: 1407491092}
+  promoScreenMonthlyPrice: {fileID: 0}
+  promoScreenYearlyPrice: {fileID: 0}
   promoScreenPuchasePrice: {fileID: 584384117}
   IAPUIManager: {fileID: 1338730597}
   environment: development
@@ -3301,7 +3305,7 @@ GameObject:
   - component: {fileID: 1367378532}
   - component: {fileID: 1367378533}
   - component: {fileID: 1367378530}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Rope
   m_TagString: Snake
   m_Icon: {fileID: 0}
@@ -3367,8 +3371,8 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 895946113
+  m_SortingLayer: 1
   m_SortingOrder: 10
   m_Time: 0
   m_Parameters:
@@ -3444,7 +3448,7 @@ TrailRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MinVertexDistance: 0.000001
-  m_MaskInteraction: 0
+  m_MaskInteraction: 2
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
@@ -5298,7 +5302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 535616.7
+      value: 567685.2
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a
@@ -5993,10 +5997,11 @@ MonoBehaviour:
   tutorial: {fileID: 927069859}
   cardPositionParent: {fileID: 272971204}
   needle: {fileID: 1769396780}
+  rope: {fileID: 1367378528}
   levelEndCardPosition: {fileID: 790757453}
+  collectText: {fileID: 2122920630}
   cardPositions: []
   targetCards: []
-  collectText: {fileID: 2122920630}
   reloaded: 0
   endLevel: 0
   matchCounter: 0

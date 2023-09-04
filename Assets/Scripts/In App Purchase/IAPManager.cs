@@ -17,6 +17,8 @@ public class IAPManager : MonoBehaviour, IStoreListener
     [SerializeField] TMP_Text subscriptionsScreenMonthlyPrice;
     [SerializeField] TMP_Text subscriptionsScreenYearlyPrice;
     [SerializeField] TMP_Text promoScreenPrice;
+    [SerializeField] TMP_Text promoScreenMonthlyPrice;
+    [SerializeField] TMP_Text promoScreenYearlyPrice;
     [SerializeField] TMP_Text promoScreenPuchasePrice;
 
 
@@ -184,6 +186,8 @@ public class IAPManager : MonoBehaviour, IStoreListener
         {
             subscriptionsScreenMonthlyPrice.text = IAPManager.m_StoreController.products.WithID(monthly).metadata.localizedPriceString;
             subscriptionsScreenYearlyPrice.text = IAPManager.m_StoreController.products.WithID(yearly).metadata.localizedPriceString;
+            promoScreenMonthlyPrice.text = IAPManager.m_StoreController.products.WithID(monthly).metadata.localizedPriceString;
+            promoScreenYearlyPrice.text = IAPManager.m_StoreController.products.WithID(yearly).metadata.localizedPriceString;
         }
 
         promoScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;

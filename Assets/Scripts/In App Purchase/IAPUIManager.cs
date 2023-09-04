@@ -12,6 +12,8 @@ public class IAPUIManager : MonoBehaviour
     [SerializeField] Button subscriptionsScreenMonthlyButton;
     [SerializeField] Button subscriptionsScreenYearlyButton;
     [SerializeField] Button promoScreenPremiumButton;
+    [SerializeField] Button promoScreenMonthlyButton;
+    [SerializeField] Button promoScreenYearlyButton;
     [SerializeField] Button promoScreenPuchasePremiumButton;
 
 
@@ -71,6 +73,8 @@ public class IAPUIManager : MonoBehaviour
             {
                 subscriptionsScreenMonthlyButton.interactable = false;
                 subscriptionsScreenYearlyButton.interactable = false;
+                promoScreenMonthlyButton.interactable = false;
+                promoScreenYearlyButton.interactable = false;
             }
 
             promoScreenPremiumButton.interactable = false;
@@ -83,6 +87,8 @@ public class IAPUIManager : MonoBehaviour
             {
                 subscriptionsScreenMonthlyButton.interactable = true;
                 subscriptionsScreenYearlyButton.interactable = true;
+                promoScreenMonthlyButton.interactable = true;
+                promoScreenYearlyButton.interactable = true;
             }
             promoScreenPremiumButton.interactable = true;
             promoScreenPuchasePremiumButton.interactable = true;

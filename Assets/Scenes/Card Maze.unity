@@ -2435,7 +2435,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.35686275, g: 0.2976268, b: 0.24313726, a: 1}
+  m_Color: {r: 0.20784314, g: 0.5568628, b: 0.74509805, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2658,7 +2658,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 74ad8254d21f8684b9a6572aabc081c4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ac662f5651307364a904557fa375c2cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3968,7 +3968,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.35686275, g: 0.2976268, b: 0.24313726, a: 1}
+  m_Color: {r: 0.20784314, g: 0.5568628, b: 0.74509805, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -8331,6 +8331,8 @@ MonoBehaviour:
   availablePacksText: {fileID: 770021530}
   restoreButton: {fileID: 200934778}
   subscriptionsScreenPremiumButton: {fileID: 1867278663}
+  subscriptionsScreenMonthlyButton: {fileID: 0}
+  subscriptionsScreenYearlyButton: {fileID: 0}
   promoScreenPremiumButton: {fileID: 1003392353}
   promoScreenPuchasePremiumButton: {fileID: 1719089849}
   availablePacksArray: []
@@ -8347,6 +8349,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subscriptionsScreenPrice: {fileID: 692367062}
+  subscriptionsScreenMonthlyPrice: {fileID: 0}
+  subscriptionsScreenYearlyPrice: {fileID: 0}
   promoScreenPrice: {fileID: 1407491092}
   promoScreenPuchasePrice: {fileID: 584384117}
   IAPUIManager: {fileID: 1338730597}
@@ -8988,7 +8992,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.35686275, g: 0.2976268, b: 0.24313726, a: 1}
+  m_Color: {r: 0.20784314, g: 0.5568628, b: 0.74509805, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -10286,7 +10290,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.35686275, g: 0.2976268, b: 0.24313726, a: 1}
+  m_Color: {r: 0.20784314, g: 0.5568628, b: 0.74509805, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -11711,7 +11715,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.35686275, g: 0.2976268, b: 0.24313726, a: 1}
+  m_Color: {r: 0.20784314, g: 0.5568628, b: 0.74509805, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -13091,7 +13095,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 304109.47
+      value: 316379.06
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a

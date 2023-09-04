@@ -17,6 +17,8 @@ public class IAPManager : MonoBehaviour, IStoreListener
     [SerializeField] TMP_Text subscriptionsScreenMonthlyPrice;
     [SerializeField] TMP_Text subscriptionsScreenYearlyPrice;
     [SerializeField] TMP_Text promoScreenPrice;
+    [SerializeField] TMP_Text promoScreenMonthlyPrice;
+    [SerializeField] TMP_Text promoScreenYearlyPrice;
     [SerializeField] TMP_Text promoScreenPuchasePrice;
 
 
@@ -165,18 +167,29 @@ public class IAPManager : MonoBehaviour, IStoreListener
         m_StoreController = controller;
         m_StoreExtensionProvider = extensions;
 
-        // if (CheckSubscription(monthly) || CheckSubscription(yearly))
-        // {
-        //     gameAPI.SetSubscription("A5515T1V3C4RD5");
-        // }
-        // else
-        // {
-        //     gameAPI.SetSubscription("0");
-        // }
+        if (gameAPI.GetPremium() == "0")
+        {
+            if (CheckSubscription(monthly) || CheckSubscription(yearly))
+            {
+                gameAPI.SetSubscription("A5515T1V3C4RD5");
+            }
+            else
+            {
+                gameAPI.SetSubscription("0");
+            }
+        }
+
 
         subscriptionsScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
-        subscriptionsScreenMonthlyPrice.text = IAPManager.m_StoreController.products.WithID(monthly).metadata.localizedPriceString;
-        subscriptionsScreenYearlyPrice.text = IAPManager.m_StoreController.products.WithID(yearly).metadata.localizedPriceString;
+
+        if (subscriptionsScreenMonthlyPrice != null)
+        {
+            subscriptionsScreenMonthlyPrice.text = IAPManager.m_StoreController.products.WithID(monthly).metadata.localizedPriceString;
+            subscriptionsScreenYearlyPrice.text = IAPManager.m_StoreController.products.WithID(yearly).metadata.localizedPriceString;
+            promoScreenMonthlyPrice.text = IAPManager.m_StoreController.products.WithID(monthly).metadata.localizedPriceString;
+            promoScreenYearlyPrice.text = IAPManager.m_StoreController.products.WithID(yearly).metadata.localizedPriceString;
+        }
+
         promoScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
         promoScreenPuchasePrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
     }

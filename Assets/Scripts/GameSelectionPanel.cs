@@ -91,13 +91,13 @@ public class GameSelectionPanel : MonoBehaviour
 
             gameElement.name = games.games[i].slug;
 
-            gameElement.transform.GetChild(5).gameObject.SetActive(false);
+            // gameElement.transform.GetChild(5).gameObject.SetActive(false);
 
 
-            // if (packs.packs[i].premium == 1)
-            // {
-            //     packElement.transform.GetChild(3).gameObject.SetActive(true);
-            // }
+            if (games.games[i].released == false)
+            {
+                gameElement.transform.GetChild(5).gameObject.SetActive(true);
+            }
 
             gameElementGameObject.Add(gameElement);
 
@@ -131,7 +131,12 @@ public class GameSelectionPanel : MonoBehaviour
 
             gameElement.name = games.games[i].slug;
 
-            gameElement.transform.GetChild(5).gameObject.SetActive(true);
+            // gameElement.transform.GetChild(5).gameObject.SetActive(true);
+
+            if (games.games[i].released == false)
+            {
+                gameElement.transform.GetChild(5).gameObject.SetActive(true);
+            }
 
             gameElementGameObject.Add(gameElement);
 
@@ -201,7 +206,7 @@ public class GameSelectionPanel : MonoBehaviour
             {
                 if (gameAPI.cachedGames.games[i].slug == selectedGameElement.name)
                 {
-                    if (gameAPI.cachedGames.games[i].premium == true)
+                    if (gameAPI.cachedGames.games[i].released == false)
                     {
                         Debug.Log("Seçilen paket premium");
                         // canvasController.GetComponent<CanvasController>().StartFadeAnim();

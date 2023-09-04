@@ -198,7 +198,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
 
         var selectedKeySpawnPoint = keyPositions[Random.Range(0, keyPositions.Length)];
         key.transform.position = selectedKeySpawnPoint.transform.position;
-        LeanTween.scale(key, Vector3.one * 15, 0.2f);
+        LeanTween.scale(key, Vector3.one * 17, 0.2f);
 
         for (int i = 0; i < finishPoints.Length; i++)
         {

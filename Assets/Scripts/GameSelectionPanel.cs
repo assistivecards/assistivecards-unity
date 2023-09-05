@@ -29,6 +29,7 @@ public class GameSelectionPanel : MonoBehaviour
     [SerializeField] GameObject fadeInPanel;
     [SerializeField] GameObject settingButton;
     [SerializeField] CanvasController canvasController;
+    bool firstTime = true;
 
     private void Awake()
     {
@@ -38,11 +39,12 @@ public class GameSelectionPanel : MonoBehaviour
     private void Start()
     {
         ListGames();
+        firstTime = false;
     }
 
     private void OnEnable()
     {
-        if (didLanguageChange)
+        if (didLanguageChange && !firstTime)
         {
             ListGames();
             didLanguageChange = false;

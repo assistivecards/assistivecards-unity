@@ -24,6 +24,7 @@ public class PackSelectionPanel : MonoBehaviour
     public Color tempColor2;
     public Color tempColor3;
     public Color tempColor4;
+    bool firstTime = true;
 
     private void Awake()
     {
@@ -33,11 +34,12 @@ public class PackSelectionPanel : MonoBehaviour
     private void Start()
     {
         ListPacks();
+        firstTime = false;
     }
 
     private void OnEnable()
     {
-        if (didLanguageChange)
+        if (didLanguageChange && !firstTime)
         {
             ListPacks();
             didLanguageChange = false;
@@ -107,7 +109,7 @@ public class PackSelectionPanel : MonoBehaviour
                 packElement.SetActive(false);
             }
 
-            if (Application.productName.Replace(" ", "_").ToLower() == "first_letter" && (packElement.name == "letters") 
+            if (Application.productName.Replace(" ", "_").ToLower() == "first_letter" && (packElement.name == "letters")
             || Application.productName.Replace(" ", "_").ToLower() == "alphabet_choose" && (packElement.name == "letters")
             || Application.productName.Replace(" ", "_").ToLower() == "letter_find" && (packElement.name == "letters"))
             {

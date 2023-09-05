@@ -65,8 +65,8 @@ public class PromoScreen : MonoBehaviour
             packElementGameObject.Clear();
         }
 
-        // packs = await gameAPI.GetPacks(currentLanguageCode);
-        var jsonPacks = JsonUtility.ToJson(gameAPI.cachedPacks);
+        packs = await gameAPI.GetPacks(currentLanguageCode);
+        var jsonPacks = JsonUtility.ToJson(packs);
         JSONObject jsonPackss = new JSONObject(jsonPacks);
 
 
@@ -79,7 +79,7 @@ public class PromoScreen : MonoBehaviour
             packElement.GetComponent<Image>().color = bgColor;
 
 
-            packElement.transform.GetChild(0).GetComponent<TMP_Text>().text = jsonPackss["packs"][i + gameAPI.freePackImages.Count]["locale"].ToString().Replace("\"", "");
+            packElement.transform.GetChild(0).GetComponent<TMP_Text>().text = gameAPI.ToTitleCase(jsonPackss["packs"][i + gameAPI.freePackImages.Count]["locale"].ToString().Replace("\"", ""));
 
             var cardCount = jsonPackss["packs"][i + gameAPI.freePackImages.Count]["count"].ToString().Replace("\"", "");
             cardCountsArray.Add(cardCount);

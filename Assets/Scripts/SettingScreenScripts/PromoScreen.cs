@@ -32,7 +32,7 @@ public class PromoScreen : MonoBehaviour
         firstTime = false;
     }
 
-    private async void OnEnable()
+    private void OnEnable()
     {
         if (didLanguageChange && !firstTime)
         {

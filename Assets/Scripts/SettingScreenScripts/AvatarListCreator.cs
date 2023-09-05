@@ -17,6 +17,7 @@ public class AvatarListCreator : MonoBehaviour
 
     [SerializeField] private GameObject tempAvatarElement;
     private GameObject avatarElement;
+    private GameObject dummyElement;
 
     private void Awake()
     {
@@ -90,7 +91,19 @@ public class AvatarListCreator : MonoBehaviour
                     avatarElement.GetComponent<AvatarSelect>().practiceReminder = practiceReminder;
                 }
             }
+            for(int j = 0; j < 31; j++)
+            {
+                dummyElement = Instantiate(tempAvatarElement, transform);
+                dummyElement.GetComponent<Button>().enabled = false;
+                dummyElement.GetComponent<Image>().enabled = false;
+            }
+            ResetScroll();
         }
+    }
+
+    private void ResetScroll()
+    {
+        this.GetComponent<RectTransform>().anchoredPosition = new Vector3(this.GetComponent<RectTransform>().anchoredPosition.x, 0, 0);
     }
 
     private async void SelectAvatar(string avatarID)

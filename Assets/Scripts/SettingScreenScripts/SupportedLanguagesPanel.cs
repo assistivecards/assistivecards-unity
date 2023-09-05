@@ -19,13 +19,14 @@ public static class SelectLanguage
 public class SupportedLanguagesPanel : MonoBehaviour
 {
     GameAPI gameAPI;
-    [SerializeField] private DeviceLanguagePanel deviceLanguagePanel;
     public GameObject deviceLanguageObject;
+    public List<GameObject> languageGameobjects = new List<GameObject>();
+    [SerializeField] private DeviceLanguagePanel deviceLanguagePanel;
     private LanguageController languageController;
     private AssistiveCardsSDK.AssistiveCardsSDK.Language[] languageArray;
     private GameObject languageTempElement;
     private GameObject languageElement;
-    public List<GameObject> languageGameobjects = new List<GameObject>();
+    private GameObject dummySpace;
 
     private void Awake()
     {
@@ -63,5 +64,10 @@ public class SupportedLanguagesPanel : MonoBehaviour
             }
         }
         Destroy(languageTempElement);
+        dummySpace =  Instantiate(languageTempElement, transform);
+        dummySpace.transform.SetParent(this.transform);
+        dummySpace.transform.localScale = new Vector3(1, 5, 0);
+        dummySpace.GetComponent<Toggle>().enabled = true;
+        dummySpace.GetComponent<Toggle>().interactable = false;
     }
 }

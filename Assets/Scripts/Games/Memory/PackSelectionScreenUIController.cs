@@ -34,7 +34,7 @@ public class PackSelectionScreenUIController : MonoBehaviour
 
     public void ClosePackPanelTween()
     {
-        if(canGenerate)
+        if (canGenerate)
         {
             LeanTween.scale(this.gameObject, Vector3.zero, 0.25f);
             Invoke("ClosePackPanel", 0.5f);
@@ -48,7 +48,7 @@ public class PackSelectionScreenUIController : MonoBehaviour
 
     public async void OnPackSelect()
     {
-        if (gameAPI.GetPremium() == "A5515T1V3C4RD5")
+        if (gameAPI.GetPremium() == "A5515T1V3C4RD5" || gameAPI.GetSubscription() == "A5515T1V3C4RD5")
         {
             canGenerate = true;
         }

@@ -128,6 +128,7 @@ GameAPI gameAPI;
 
     public void ResetScroll()
     {
+        boardGenerator.levelCount = 0;
         packSelectionScreen.transform.GetChild(0).GetChild(0).GetChild(0).transform.localPosition = Vector3.zero;
     }
 

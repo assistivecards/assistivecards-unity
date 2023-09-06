@@ -618,6 +618,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257599943}
   m_CullTransparentMesh: 1
+--- !u!1 &269163253 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4835331235499762741, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+  m_PrefabInstance: {fileID: 1242831489266657176}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &310037298
 GameObject:
   m_ObjectHideFlags: 0
@@ -2822,6 +2827,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1154749945}
   m_CullTransparentMesh: 1
+--- !u!1 &1195532403 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6355590029425657486, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+  m_PrefabInstance: {fileID: 1242831489266657176}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1195532407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195532403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa6b9e4930a0bd4cbe38ecc43811844, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempGameElement: {fileID: 269163253}
+  games:
+    games: []
+  gameElementGameObject: []
 --- !u!1 &1222742218
 GameObject:
   m_ObjectHideFlags: 0
@@ -5503,7 +5529,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 319919.53
+      value: 338958.6
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489920772739, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -5629,7 +5655,8 @@ PrefabInstance:
       propertyPath: profileEditorSettingScreenButton
       value: 
       objectReference: {fileID: 543293291342249492}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1242831490513924155, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1242831489705138827, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       insertIndex: 0

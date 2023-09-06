@@ -5347,11 +5347,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 604156254743830011, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -190
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489131758645, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 1010
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489254992736, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: settingScreenButton
@@ -5503,11 +5503,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 312066.03
+      value: 319919.53
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489920772739, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 10
+      value: 1020
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490675054805, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Name
@@ -5591,7 +5591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1279033054963498418, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -250
+      value: 720
       objectReference: {fileID: 0}
     - target: {fileID: 1357829323095568706, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -5611,15 +5611,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2951728316306509415, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -150
+      value: -380
       objectReference: {fileID: 0}
     - target: {fileID: 5291261367544498950, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -480
+      value: 510
       objectReference: {fileID: 0}
     - target: {fileID: 5437678228529046393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -635
+      value: 340
       objectReference: {fileID: 0}
     - target: {fileID: 7783552956820105087, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: gameCanvas

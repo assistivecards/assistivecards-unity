@@ -8,6 +8,6 @@ public class BucketMovement : MonoBehaviour, IDragHandler
 {
     public void OnDrag(PointerEventData eventData) 
     {
-        transform.position = new Vector3(eventData.position.x, eventData.position.y, 1);
+        transform.position = new Vector3(eventData.position.x, this.transform.position.y, 1);
     }
 }

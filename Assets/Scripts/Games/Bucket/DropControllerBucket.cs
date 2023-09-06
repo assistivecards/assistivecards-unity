@@ -51,6 +51,7 @@ public class DropControllerBucket : MonoBehaviour
     public int matchCount;
     public bool isLevelEnd;
     public string collectableCard;
+    public string collectableCardLocale;
     public int droppedCardCount;
 
     private void Awake()
@@ -83,10 +84,12 @@ public class DropControllerBucket : MonoBehaviour
         {
             random =  random - 1;
             collectableCard = cardNames[random + 2];
+            collectableCardLocale = cardLocalNames[random + 2];
         }
         else if(preRandom != random)
         {
             collectableCard = cardNames[random + 2];
+            collectableCardLocale = cardLocalNames[random + 2];
         }
     }
 
@@ -118,7 +121,7 @@ public class DropControllerBucket : MonoBehaviour
         bucketBack.SetActive(true);
         bucketFront.SetActive(true);
         Invoke("SelectMoveCard", 1.25f);
-        collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(collectableCard).Replace("-", " "), selectedLangCode);
+        collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(collectableCardLocale).Replace("-", " "), selectedLangCode);
         LeanTween.scale(collectText.gameObject, Vector3.one, 0.2f);
         SetCount();
         LeanTween.scale(collectedCountText.gameObject, Vector3.one, 0.2f);

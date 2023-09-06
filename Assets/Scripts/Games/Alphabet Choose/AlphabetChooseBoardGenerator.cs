@@ -237,7 +237,6 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
         cardLocalNames.Clear();
         cards.Clear();
         cardNames.Clear();
-
         letterList.Clear();
         letterCardsNames.Clear();
 

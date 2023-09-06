@@ -1871,7 +1871,11 @@ MonoBehaviour:
   availablePacksText: {fileID: 770021530}
   restoreButton: {fileID: 200934778}
   subscriptionsScreenPremiumButton: {fileID: 1867278663}
+  subscriptionsScreenMonthlyButton: {fileID: 0}
+  subscriptionsScreenYearlyButton: {fileID: 0}
   promoScreenPremiumButton: {fileID: 1003392353}
+  promoScreenMonthlyButton: {fileID: 0}
+  promoScreenYearlyButton: {fileID: 0}
   promoScreenPuchasePremiumButton: {fileID: 1719089849}
   availablePacksArray: []
 --- !u!114 &1338730598
@@ -1887,7 +1891,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subscriptionsScreenPrice: {fileID: 692367062}
+  subscriptionsScreenMonthlyPrice: {fileID: 0}
+  subscriptionsScreenYearlyPrice: {fileID: 0}
   promoScreenPrice: {fileID: 1407491092}
+  promoScreenMonthlyPrice: {fileID: 0}
+  promoScreenYearlyPrice: {fileID: 0}
   promoScreenPuchasePrice: {fileID: 584384117}
   IAPUIManager: {fileID: 1338730597}
   environment: development
@@ -3258,6 +3266,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2154.5723
+      objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3544,7 +3556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
       propertyPath: sfxClips.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
       propertyPath: sfxClips.Array.data[0].clip
@@ -3555,12 +3567,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: dd699e0cf09cf3348be25ba4c5877c05, type: 3}
     - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
+      propertyPath: sfxClips.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 280be73e6b3a84a41a7ac5f039bb5d59, type: 3}
+    - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
       propertyPath: sfxClips.Array.data[0].soundName
       value: Success
       objectReference: {fileID: 0}
     - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
       propertyPath: sfxClips.Array.data[1].soundName
       value: Finished
+      objectReference: {fileID: 0}
+    - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
+      propertyPath: sfxClips.Array.data[2].soundName
+      value: Pop
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

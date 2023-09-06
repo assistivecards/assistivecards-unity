@@ -70,7 +70,7 @@ GameAPI gameAPI;
 
     public void LevelChangeScreenActivate()
     {
-        if(reloadCount < 5)
+        if(reloadCount < 4)
         {
             reloadCount++;
             boardGenerator.ClearLevel();
@@ -78,11 +78,11 @@ GameAPI gameAPI;
         }
         else
         {
-            gameAPI.AddSessionExp();
-            gameAPI.AddExp(gameAPI.sessionExp);
             levelChange.SetActive(true);
             LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.3f);
             reloadCount = 0;
+            gameAPI.AddSessionExp();
+            gameAPI.AddExp(gameAPI.sessionExp);
         }
     }
 

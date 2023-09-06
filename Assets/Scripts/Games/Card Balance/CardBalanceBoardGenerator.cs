@@ -43,7 +43,6 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     public List<GameObject> cardPositions = new List<GameObject>();
     public List<GameObject> cloneCards = new List<GameObject>();
 
-    public int levelCount;
     private string cardName;
     public int randomOrder;
     public List<int> usedRandomOrderCards = new List<int>();

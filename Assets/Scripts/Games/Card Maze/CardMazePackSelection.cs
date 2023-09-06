@@ -17,6 +17,7 @@ public class CardMazePackSelection : MonoBehaviour
     [SerializeField] GameObject levelProgressContainer;
     [SerializeField] PackSelectionScreenUIController packSelectionScreenUIController;
     [SerializeField] GameObject loadingPanel;
+    [SerializeField] GameObject settingsButton;
 
     private void Awake()
     {
@@ -27,6 +28,7 @@ public class CardMazePackSelection : MonoBehaviour
     {
         if (packSelectionScreenUIController.canGenerate)
         {
+            settingsButton.GetComponent<Button>().interactable = false;
             boardGenerator.packSlug = packSelectionPanelScript.selectedPackElement.name;
             packSelectionPanel.transform.GetChild(0).GetComponent<ScrollRect>().enabled = false;
             LeanTween.scale(packSelectionPanel, Vector3.zero, 0.25f);

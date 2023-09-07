@@ -43,9 +43,9 @@ public class CardFishingBoardGenerator : MonoBehaviour
     private int tempRandomValue;
     private int randomValue;
 
-
     private List<GameObject> cardPositions = new List<GameObject>();
     public string selectedCard;
+    public string selectedCardLocal;
 
 
     private void Awake()
@@ -133,9 +133,11 @@ public class CardFishingBoardGenerator : MonoBehaviour
             card.GetComponent<CardFishingCardName>().cardName = cardLocalNames[randomValueList[j]];
             cards.Add(card);
         }
-        selectedCard = cards[Random.Range(0, cards.Count)].name;
+        int random = Random.Range(0, cards.Count);
+        selectedCard = cards[random].name;
+        selectedCardLocal = cards[random].GetComponent<CardFishingCardName>().cardName;
 
-        collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(selectedCard).Replace("-", " "), selectedLangCode);
+        collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(selectedCardLocal).Replace("-", " "), selectedLangCode);
         LeanTween.scale(collectText.gameObject, Vector3.one, 0.2f);
         collectText.gameObject.SetActive(true);
         UIController.GameUIActivate();

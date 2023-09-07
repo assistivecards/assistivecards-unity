@@ -250,5 +250,10 @@
 	"tap_cards_text":"Tap on the $1 cards",
 	"throw_card_text":"Throw the $1 card to the matching card",
 	"throw_card_goal_text":"Throw the $1 into the goal post",
-	"maze_text":"Get the $1 out of the maze"
+	"maze_text":"Get the $1 out of the maze",
+
+	"premium_description_uniapp": "Our game is a free to play game, but you can unlock +50 additional premium Assistive Card packs and +20 premium games to play with.",
+	"premium_see_title_uniapp": "See the games you will unlock",
+	"premium_see_description_uniapp": "Scroll the cards right to see all of the premium assistive cards games.",
+	"premium_promo_unlock_play_more_uniapp": "Unlock to Play More Games"
 }

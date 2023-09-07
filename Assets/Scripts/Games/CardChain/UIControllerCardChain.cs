@@ -11,9 +11,9 @@ public class UIControllerCardChain : MonoBehaviour
 
     public GameObject cardPosition;
     public GameObject cardPosition1;
+    public GameObject gameUI;
+    public GameObject loadingScreen;
     [SerializeField] private GameObject levelChangeScreen;
-    [SerializeField] private GameObject loadingScreen;
-    [SerializeField] private GameObject gameUI;
     [SerializeField] private GameObject packSelectionScreen;
     [SerializeField] private GameObject helloText;
     [SerializeField] private GameObject levelProgressContainer;
@@ -72,7 +72,6 @@ public class UIControllerCardChain : MonoBehaviour
             }
         }
     }
-
 
     public void InGameBar()
     {

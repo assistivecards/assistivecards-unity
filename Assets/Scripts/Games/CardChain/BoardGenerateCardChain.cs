@@ -148,10 +148,13 @@ public class BoardGenerateCardChain : MonoBehaviour
         uıController.cardPosition = cardPositions[0];
         uıController.cardPosition1 = cardPositions[1];
         uıController.TutorialActive();
+        uıController.loadingScreen.SetActive(false);
+        uıController.gameUI.SetActive(true);
     }
 
     public async void CreateBoard()
     {
+        uıController.loadingScreen.SetActive(true);
         uıController.InGameBar();
         await CacheCards(packSelectionPanel.selectedPackElement.name);
     }

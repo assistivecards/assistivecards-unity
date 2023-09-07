@@ -2439,7 +2439,7 @@ PrefabInstance:
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 2134643252}
+      objectReference: {fileID: 8383894889009589326}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
@@ -2457,6 +2457,10 @@ PrefabInstance:
       value: CreateBoard
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: LoadingScreenActivate
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: PackSelectionScreenUIController, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -2466,10 +2470,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
-      value: BoardGenerateCardChain, Assembly-CSharp
+      value: UIControllerCardChain, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 9035172431832795728, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
@@ -2592,7 +2600,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2134643254
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3045,7 +3053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 32663.264
+      value: 42889.758
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3708,9 +3716,9 @@ MonoBehaviour:
   boardGenerateCardChain: {fileID: 8383894889009589327}
   cardPosition: {fileID: 771140371}
   cardPosition1: {fileID: 1112654011}
-  levelChangeScreen: {fileID: 336342684}
-  loadingScreen: {fileID: 671447375}
   gameUI: {fileID: 2134643252}
+  loadingScreen: {fileID: 671447375}
+  levelChangeScreen: {fileID: 336342684}
   packSelectionScreen: {fileID: 1226813740}
   helloText: {fileID: 178854002}
   levelProgressContainer: {fileID: 1036310985}

@@ -2275,7 +2275,11 @@ MonoBehaviour:
   availablePacksText: {fileID: 770021530}
   restoreButton: {fileID: 200934778}
   subscriptionsScreenPremiumButton: {fileID: 1867278663}
+  subscriptionsScreenMonthlyButton: {fileID: 0}
+  subscriptionsScreenYearlyButton: {fileID: 0}
   promoScreenPremiumButton: {fileID: 1003392353}
+  promoScreenMonthlyButton: {fileID: 0}
+  promoScreenYearlyButton: {fileID: 0}
   promoScreenPuchasePremiumButton: {fileID: 1719089849}
   availablePacksArray: []
 --- !u!114 &1338730598
@@ -2291,7 +2295,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subscriptionsScreenPrice: {fileID: 692367062}
+  subscriptionsScreenMonthlyPrice: {fileID: 0}
+  subscriptionsScreenYearlyPrice: {fileID: 0}
   promoScreenPrice: {fileID: 1407491092}
+  promoScreenMonthlyPrice: {fileID: 0}
+  promoScreenYearlyPrice: {fileID: 0}
   promoScreenPuchasePrice: {fileID: 584384117}
   IAPUIManager: {fileID: 1338730597}
   environment: development
@@ -3450,6 +3458,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 14284.688
+      objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4257,6 +4269,7 @@ MonoBehaviour:
   cardPosition10: {fileID: 136815381}
   collectText: {fileID: 58418812}
   selectedCard: 
+  selectedCardLocal: 
 --- !u!114 &8383894889009589327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4272,7 +4285,7 @@ MonoBehaviour:
   rod: {fileID: 1106668708}
   point1: {fileID: 284606636}
   point2: {fileID: 1173007167}
-  speed: 0.0025
+  speed: 0.0045
   isPointerDown: 0
 --- !u!114 &8383894889009589328
 MonoBehaviour:

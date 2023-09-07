@@ -347,15 +347,15 @@ PrefabInstance:
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2134643255}
+      objectReference: {fileID: 8383894889009589326}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 2134643255}
+      objectReference: {fileID: 8383894889009589326}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 2134643253}
+      objectReference: {fileID: 8383894889009589327}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1315,11 +1315,11 @@ PrefabInstance:
     - target: {fileID: 804781093893846699, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 2134643253}
+      objectReference: {fileID: 8383894889009589327}
     - target: {fileID: 804781093893846699, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 2134643255}
+      objectReference: {fileID: 8383894889009589326}
     - target: {fileID: 804781093893846699, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DestroyBalloons
@@ -1458,7 +1458,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 804781094745460802, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 804781094745460802, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 804781094745460802, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1467,11 +1471,19 @@ PrefabInstance:
     - target: {fileID: 804781094745460802, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 2134643255}
+      objectReference: {fileID: 8383894889009589326}
     - target: {fileID: 804781094745460802, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 2134643255}
+      objectReference: {fileID: 8383894889009589326}
+    - target: {fileID: 804781094745460802, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 8383894889009589326}
+    - target: {fileID: 804781094745460802, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 804781094745460802, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DestroyBalloons
@@ -1482,6 +1494,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 804781094745460802, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ResetScroll
+      objectReference: {fileID: 0}
+    - target: {fileID: 804781094745460802, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
       value: CloseLevelChange
       objectReference: {fileID: 0}
     - target: {fileID: 804781094745460802, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
@@ -1497,11 +1513,19 @@ PrefabInstance:
       value: UIControllerCardChain, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 804781094745460802, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: UIControllerCardChain, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 804781094745460802, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 804781094745460802, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 804781094745460802, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 804781094745460803, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
@@ -1578,7 +1602,11 @@ MonoBehaviour:
   availablePacksText: {fileID: 770021530}
   restoreButton: {fileID: 200934778}
   subscriptionsScreenPremiumButton: {fileID: 1867278663}
+  subscriptionsScreenMonthlyButton: {fileID: 0}
+  subscriptionsScreenYearlyButton: {fileID: 0}
   promoScreenPremiumButton: {fileID: 1003392353}
+  promoScreenMonthlyButton: {fileID: 0}
+  promoScreenYearlyButton: {fileID: 0}
   promoScreenPuchasePremiumButton: {fileID: 1719089849}
   availablePacksArray: []
 --- !u!114 &1338730598
@@ -1594,7 +1622,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subscriptionsScreenPrice: {fileID: 692367062}
+  subscriptionsScreenMonthlyPrice: {fileID: 0}
+  subscriptionsScreenYearlyPrice: {fileID: 0}
   promoScreenPrice: {fileID: 1407491092}
+  promoScreenMonthlyPrice: {fileID: 0}
+  promoScreenYearlyPrice: {fileID: 0}
   promoScreenPuchasePrice: {fileID: 584384117}
   IAPUIManager: {fileID: 1338730597}
   environment: development
@@ -2417,15 +2449,27 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1837497525}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 2134643253}
+      objectReference: {fileID: 8383894889009589327}
+    - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 8383894889009589326}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
@@ -2437,6 +2481,10 @@ PrefabInstance:
       value: CreateBoard
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: LoadingScreenActivate
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: PackSelectionScreenUIController, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -2445,7 +2493,15 @@ PrefabInstance:
       value: BoardGenerateCardChain, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      value: UIControllerCardChain, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 9035172431832795728, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
@@ -2539,9 +2595,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f9038fa8a18b4e3784a6ba213415dd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  point1: {fileID: 0}
-  point2: {fileID: 0}
-  "u\u0131Controller": {fileID: 2134643255}
+  point1: {fileID: 771140372}
+  point2: {fileID: 1112654012}
+  "u\u0131Controller": {fileID: 8383894889009589326}
 --- !u!114 &2018903310 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1242831489334970560, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -2562,44 +2618,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2134643254}
-  - component: {fileID: 2134643253}
-  - component: {fileID: 2134643255}
   m_Layer: 5
   m_Name: BoardGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2134643253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2134643252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94f1ac98755564991bc2b712b530c758, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectedLangCode: 
-  "u\u0131Controller": {fileID: 2134643255}
-  cardTextures:
-    cards: []
-  packSelectionPanel: {fileID: 1414549224}
-  cardNames: []
-  cardDefinitionsLocale: []
-  cards: []
-  cardPositions: []
-  centerPosition: {fileID: 1700857568}
-  randomValueList: 
-  usedPositionList: 
-  doubleCard: {fileID: 1572616208917296617, guid: 568db8f982a184023b2959f423bd2574, type: 3}
-  cardCount: 5
-  packSlug: 
-  isBoardCreated: 0
-  matchCount: 0
+  m_IsActive: 0
 --- !u!224 &2134643254
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2627,34 +2652,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2134643255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2134643252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 302ad89c067f046a4bc21e96de742f94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tutorial: {fileID: 1978858823}
-  accessibilityScreen: {fileID: 840801144}
-  boardGenerateCardChain: {fileID: 2134643253}
-  cardPosition: {fileID: 0}
-  cardPosition1: {fileID: 0}
-  levelChangeScreen: {fileID: 336342684}
-  packSelectionScreen: {fileID: 1226813740}
-  helloText: {fileID: 178854002}
-  levelProgressContainer: {fileID: 1036310985}
-  backButton: {fileID: 1300547355}
-  settingButton: {fileID: 472857506}
-  selectNewPackButton: {fileID: 378890270}
-  continueButton: {fileID: 1208683981}
-  tutorialGameObject: {fileID: 1978858820}
-  loopCount: 0
-  firstTime: 1
 --- !u!1001 &300905862136274000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2885,15 +2882,15 @@ PrefabInstance:
     - target: {fileID: 1242831488888625350, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 2134643255}
+      objectReference: {fileID: 0}
     - target: {fileID: 1242831488888625350, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 2134643255}
+      objectReference: {fileID: 0}
     - target: {fileID: 1242831488888625350, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 2134643253}
+      objectReference: {fileID: 0}
     - target: {fileID: 1242831488888625350, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -3078,6 +3075,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 62316.434
+      objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3137,15 +3138,15 @@ PrefabInstance:
     - target: {fileID: 8855225860144473765, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 2134643255}
+      objectReference: {fileID: 0}
     - target: {fileID: 8855225860144473765, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 2134643255}
+      objectReference: {fileID: 0}
     - target: {fileID: 8855225860144473765, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 2134643253}
+      objectReference: {fileID: 0}
     - target: {fileID: 8855225860144473765, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -3389,6 +3390,8 @@ GameObject:
   - component: {fileID: 1910463663942908501}
   - component: {fileID: 8383894889009589325}
   - component: {fileID: 1995057600056102325}
+  - component: {fileID: 8383894889009589326}
+  - component: {fileID: 8383894889009589327}
   m_Layer: 5
   m_Name: GamePanel
   m_TagString: Untagged
@@ -3720,6 +3723,66 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3720148778835819161}
   m_CullTransparentMesh: 1
+--- !u!114 &8383894889009589326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3720148778835819161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 302ad89c067f046a4bc21e96de742f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorial: {fileID: 1978858823}
+  accessibilityScreen: {fileID: 840801144}
+  boardGenerateCardChain: {fileID: 8383894889009589327}
+  cardPosition: {fileID: 771140371}
+  cardPosition1: {fileID: 1112654011}
+  gameUI: {fileID: 2134643252}
+  loadingScreen: {fileID: 671447375}
+  levelChangeScreen: {fileID: 336342684}
+  packSelectionScreen: {fileID: 1226813740}
+  helloText: {fileID: 178854002}
+  levelProgressContainer: {fileID: 1036310985}
+  backButton: {fileID: 1300547355}
+  settingButton: {fileID: 472857506}
+  selectNewPackButton: {fileID: 378890270}
+  continueButton: {fileID: 1208683981}
+  tutorialGameObject: {fileID: 1978858820}
+  loopCount: 0
+  firstTime: 1
+--- !u!114 &8383894889009589327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3720148778835819161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94f1ac98755564991bc2b712b530c758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedLangCode: 
+  "u\u0131Controller": {fileID: 8383894889009589326}
+  cardTextures:
+    cards: []
+  packSelectionPanel: {fileID: 1414549224}
+  cardNames: []
+  cardDefinitionsLocale: []
+  cards: []
+  cardPositions: []
+  centerPosition: {fileID: 1700857568}
+  randomValueList: 
+  usedPositionList: 
+  boardGenerator: {fileID: 2134643252}
+  doubleCard: {fileID: 1572616208917296617, guid: 568db8f982a184023b2959f423bd2574, type: 3}
+  cardCount: 5
+  packSlug: 
+  isBoardCreated: 0
+  matchCount: 0
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

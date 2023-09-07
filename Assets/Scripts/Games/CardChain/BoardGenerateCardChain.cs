@@ -12,7 +12,6 @@ public class BoardGenerateCardChain : MonoBehaviour
     public string selectedLangCode;
 
     [SerializeField] private UIControllerCardChain uıController;
-
     AssistiveCardsSDK.AssistiveCardsSDK.Cards cardDefinitions;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cardTextures;
     [SerializeField] private PackSelectionPanel packSelectionPanel;
@@ -29,11 +28,11 @@ public class BoardGenerateCardChain : MonoBehaviour
     public List<int> randomValueList = new List<int>();
     public List<int> usedPositionList = new List<int>();
 
+    [SerializeField] private GameObject boardGenerator;
     [SerializeField] private GameObject doubleCard;
     public int cardCount;
     public string packSlug;
     public bool isBoardCreated = false;
-
     public int matchCount;
 
 
@@ -59,9 +58,9 @@ public class BoardGenerateCardChain : MonoBehaviour
 
     private void GetChildList()
     {
-        for(int i = 0; i < this.transform.childCount; i++)
+        for(int i = 0; i < boardGenerator.transform.childCount; i++)
         {
-            cardPositions.Add(transform.GetChild(i).gameObject);
+            cardPositions.Add(boardGenerator.transform.GetChild(i).gameObject);
         }
     }
 
@@ -96,7 +95,7 @@ public class BoardGenerateCardChain : MonoBehaviour
         for(int j = 0; j < cardCount; j++)
         {
             cards.Add(Instantiate(doubleCard, Vector3.zero, Quaternion.identity));
-            cards[j].transform.parent = this.transform;
+            cards[j].transform.parent = boardGenerator.transform;
 
             var cardName = cardNames[randomValueList[j]];
             var cardTexture = await gameAPI.GetCardImage(packSlug, cardName, 512);
@@ -125,7 +124,7 @@ public class BoardGenerateCardChain : MonoBehaviour
             cards[j].GetComponent<CardControllerCardChain>().GetChildNames();
             cards[j].GetComponent<CardControllerCardChain>().boardGenerateCardChain = this;
         }
-        Invoke("BoardCreatedBool", 1f);
+        Invoke("BoardCreatedBool", 0.5f);
     }
 
     private void CreateRandomPosition(GameObject _card)
@@ -145,14 +144,17 @@ public class BoardGenerateCardChain : MonoBehaviour
 
     private void BoardCreatedBool()
     {
+        uıController.loadingScreen.SetActive(false);
         isBoardCreated = true;
-        uıController.cardPosition = cards[0];
-        uıController.cardPosition1 = cards[1];
+        uıController.cardPosition = cardPositions[0];
+        uıController.cardPosition1 = cardPositions[1];
         uıController.TutorialActive();
+        uıController.gameUI.SetActive(true);
     }
 
     public async void CreateBoard()
     {
+        uıController.loadingScreen.SetActive(true);
         uıController.InGameBar();
         await CacheCards(packSelectionPanel.selectedPackElement.name);
     }

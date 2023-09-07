@@ -144,11 +144,11 @@ public class BoardGenerateCardChain : MonoBehaviour
 
     private void BoardCreatedBool()
     {
+        uıController.loadingScreen.SetActive(false);
         isBoardCreated = true;
         uıController.cardPosition = cardPositions[0];
         uıController.cardPosition1 = cardPositions[1];
         uıController.TutorialActive();
-        uıController.loadingScreen.SetActive(false);
         uıController.gameUI.SetActive(true);
     }
 

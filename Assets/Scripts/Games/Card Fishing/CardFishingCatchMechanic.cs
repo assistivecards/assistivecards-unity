@@ -20,7 +20,7 @@ public class CardFishingCatchMechanic : MonoBehaviour
         gameAPI = Camera.main.GetComponent<GameAPI>();
     }
 
-    private void OnTriggerStay2D(Collider2D other) 
+    private void OnTriggerEnter2D(Collider2D other) 
     {
         if(!catctedCard)
         {
@@ -63,13 +63,13 @@ public class CardFishingCatchMechanic : MonoBehaviour
     private void ScaleCard()
     {
         LeanTween.rotateZ(formerCard, 0, 0.2f);
-        LeanTween.scale(formerCard, Vector3.one * 0.6f, 0.5f);
+        LeanTween.scale(formerCard, Vector3.one * 0.6f, 0.5f).setOnComplete(FadeOutCard);
         if(formerCard.name == boardGenerator.selectedCard)
         {
             gameAPI.PlaySFX("Success");
         }
-        Invoke("FadeOutCard", 1f);
         Invoke("ReadCard", 0.25f);
+        catctedCard = false;
     }
 
     private void ReadCard()
@@ -82,15 +82,14 @@ public class CardFishingCatchMechanic : MonoBehaviour
     {
         formerCard.GetComponent<Image>().CrossFadeAlpha(0, 0.5f, true);
         formerCard.transform.GetChild(0).GetComponent<RawImage>().CrossFadeAlpha(0, 0.5f, true);
-        DestroyCard();
+        cachedCardCount++;
+        Invoke("DestroyCard", 0.5f);
     }
 
     private void DestroyCard()
     {
-        cachedCardCount++;
         Destroy(card);
         Destroy(formerCard);
-        catctedCard = false;
         formerCard = null;
         if(cachedCardCount >= 10 || score >= 2)
         {
@@ -98,5 +97,4 @@ public class CardFishingCatchMechanic : MonoBehaviour
             gameAPI.PlaySFX("Finished");
         }
     }
-
 }

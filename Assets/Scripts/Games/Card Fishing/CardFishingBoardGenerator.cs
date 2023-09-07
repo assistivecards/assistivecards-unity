@@ -154,6 +154,7 @@ public class CardFishingBoardGenerator : MonoBehaviour
             Destroy(card);
         }
         cards.Clear();
+        catchMechanics.catctedCard = false;
         catchMechanics.score = 0;
         catchMechanics.cachedCardCount = 0;
         randomValueList.Clear();

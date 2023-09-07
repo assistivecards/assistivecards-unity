@@ -120,6 +120,10 @@ public class CardFishingUIController : MonoBehaviour
     {
         if(canGenerate)
         {
+            settingButton.SetActive(false);
+            helloText.SetActive(false);
+            backButton.SetActive(false);
+            levelProgressContainer.SetActive(false);
             loadingScreen.SetActive(true);
         }
     }

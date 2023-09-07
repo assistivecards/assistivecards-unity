@@ -84,7 +84,7 @@ public class IAPManager : MonoBehaviour, IStoreListener
             builder.AddProduct(yearly, ProductType.Subscription);
         }
 
-        UnityPurchasing.Initialize(this, builder);
+        // UnityPurchasing.Initialize(this, builder);
     }
 
     private bool IsInitialized()
@@ -129,36 +129,36 @@ public class IAPManager : MonoBehaviour, IStoreListener
         }
     }
 
-    public void RestorePurchases()
-    {
-        if (!IsInitialized())
-        {
-            Debug.Log("RestorePurchases FAIL. Not initialized.");
-            return;
-        }
+    // public void RestorePurchases()
+    // {
+    //     if (!IsInitialized())
+    //     {
+    //         Debug.Log("RestorePurchases FAIL. Not initialized.");
+    //         return;
+    //     }
 
-        if (Application.platform == RuntimePlatform.IPhonePlayer ||
-            Application.platform == RuntimePlatform.OSXPlayer)
-        {
-            Debug.Log("RestorePurchases started ...");
+    //     if (Application.platform == RuntimePlatform.IPhonePlayer ||
+    //         Application.platform == RuntimePlatform.OSXPlayer)
+    //     {
+    //         Debug.Log("RestorePurchases started ...");
 
-            var apple = m_StoreExtensionProvider.GetExtension<IAppleExtensions>();
-            apple.RestoreTransactions((result) =>
-            {
-                Debug.Log("RestorePurchases continuing: " + result + ". If no further messages, no purchases available to restore.");
-                if (restored == false)
-                {
-                    purchaseRestoredPanel.SetActive(true);
-                    restored = true;
-                }
+    //         var apple = m_StoreExtensionProvider.GetExtension<IAppleExtensions>();
+    //         apple.RestoreTransactions((result) =>
+    //         {
+    //             Debug.Log("RestorePurchases continuing: " + result + ". If no further messages, no purchases available to restore.");
+    //             if (restored == false)
+    //             {
+    //                 purchaseRestoredPanel.SetActive(true);
+    //                 restored = true;
+    //             }
 
-            });
-        }
-        else
-        {
-            Debug.Log("RestorePurchases FAIL. Not supported on this platform. Current = " + Application.platform);
-        }
-    }
+    //         });
+    //     }
+    //     else
+    //     {
+    //         Debug.Log("RestorePurchases FAIL. Not supported on this platform. Current = " + Application.platform);
+    //     }
+    // }
 
     public void OnInitialized(IStoreController controller, IExtensionProvider extensions)
     {
@@ -292,4 +292,8 @@ public class IAPManager : MonoBehaviour, IStoreListener
         }
     }
 
+    public void OnInitializeFailed(InitializationFailureReason error, string message)
+    {
+        throw new NotImplementedException();
+    }
 }

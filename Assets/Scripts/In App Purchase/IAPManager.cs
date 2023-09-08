@@ -5,8 +5,9 @@ using Unity.Services.Core;
 using Unity.Services.Core.Environments;
 using System;
 using TMPro;
+using UnityEngine.Purchasing.Extension;
 
-public class IAPManager : MonoBehaviour, IStoreListener
+public class IAPManager : MonoBehaviour, IDetailedStoreListener
 {
     private string premium;
     private string monthly;
@@ -84,7 +85,7 @@ public class IAPManager : MonoBehaviour, IStoreListener
             builder.AddProduct(yearly, ProductType.Subscription);
         }
 
-        // UnityPurchasing.Initialize(this, builder);
+        UnityPurchasing.Initialize(this, builder);
     }
 
     private bool IsInitialized()
@@ -129,36 +130,45 @@ public class IAPManager : MonoBehaviour, IStoreListener
         }
     }
 
-    // public void RestorePurchases()
-    // {
-    //     if (!IsInitialized())
-    //     {
-    //         Debug.Log("RestorePurchases FAIL. Not initialized.");
-    //         return;
-    //     }
+    public void RestorePurchases()
+    {
+        if (!IsInitialized())
+        {
+            Debug.Log("RestorePurchases FAIL. Not initialized.");
+            return;
+        }
 
-    //     if (Application.platform == RuntimePlatform.IPhonePlayer ||
-    //         Application.platform == RuntimePlatform.OSXPlayer)
-    //     {
-    //         Debug.Log("RestorePurchases started ...");
+        if (Application.platform == RuntimePlatform.IPhonePlayer ||
+            Application.platform == RuntimePlatform.OSXPlayer)
+        {
+            Debug.Log("RestorePurchases started ...");
 
-    //         var apple = m_StoreExtensionProvider.GetExtension<IAppleExtensions>();
-    //         apple.RestoreTransactions((result) =>
-    //         {
-    //             Debug.Log("RestorePurchases continuing: " + result + ". If no further messages, no purchases available to restore.");
-    //             if (restored == false)
-    //             {
-    //                 purchaseRestoredPanel.SetActive(true);
-    //                 restored = true;
-    //             }
+            var apple = m_StoreExtensionProvider.GetExtension<IAppleExtensions>();
+            apple.RestoreTransactions((result, error) =>
+            {
+                Debug.Log("RestorePurchases continuing: " + result + ". If no further messages, no purchases available to restore.");
 
-    //         });
-    //     }
-    //     else
-    //     {
-    //         Debug.Log("RestorePurchases FAIL. Not supported on this platform. Current = " + Application.platform);
-    //     }
-    // }
+                if (result)
+                {
+                    if (restored == false)
+                    {
+                        purchaseRestoredPanel.SetActive(true);
+                        restored = true;
+                    }
+                }
+
+                else
+                {
+                    Debug.Log(error);
+                }
+
+            });
+        }
+        else
+        {
+            Debug.Log("RestorePurchases FAIL. Not supported on this platform. Current = " + Application.platform);
+        }
+    }
 
     public void OnInitialized(IStoreController controller, IExtensionProvider extensions)
     {
@@ -198,11 +208,6 @@ public class IAPManager : MonoBehaviour, IStoreListener
 
         promoScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
         promoScreenPuchasePrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
-    }
-
-    public void OnInitializeFailed(InitializationFailureReason error)
-    {
-        Debug.Log("OnInitializeFailed InitializationFailureReason:" + error);
     }
 
     public PurchaseProcessingResult ProcessPurchase(PurchaseEventArgs args)
@@ -292,8 +297,18 @@ public class IAPManager : MonoBehaviour, IStoreListener
         }
     }
 
+    public void OnPurchaseFailed(Product product, PurchaseFailureDescription failureDescription)
+    {
+        Debug.Log(string.Format("OnPurchaseFailed: FAIL. Product: '{0}', PurchaseFailureReason: {1}", product.definition.storeSpecificId, failureDescription));
+    }
+
+    public void OnInitializeFailed(InitializationFailureReason error)
+    {
+        Debug.Log("OnInitializeFailed InitializationFailureReason:" + error);
+    }
+
     public void OnInitializeFailed(InitializationFailureReason error, string message)
     {
-        throw new NotImplementedException();
+        Debug.Log("OnInitializeFailed InitializationFailureReason:" + error);
     }
 }

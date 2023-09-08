@@ -327,6 +327,7 @@ public class CanvasController : MonoBehaviour
         AllGamesPage.didLanguageChange = true;
         PackSelectionPanel.didLanguageChange = true;
         PromoScreen.didLanguageChange = true;
+        PromoScreenUniApp.didLanguageChange = true;
         Board.isBackAfterSignOut = true;
         BoardGeneration.isBackAfterSignOut = true;
         SplitPuzzleBoardGenerator.isBackAfterSignOut = true;

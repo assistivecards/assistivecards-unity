@@ -200,6 +200,7 @@ public class TopAppBarController : MonoBehaviour
                 AllGamesPage.didLanguageChange = true;
                 TTSPanel.didLanguageChange = true;
                 PromoScreen.didLanguageChange = true;
+                PromoScreenUniApp.didLanguageChange = true;
                 Board.didLanguageChange = true;
                 BoardGeneration.didLanguageChange = true;
                 SplitPuzzleBoardGenerator.didLanguageChange = true;

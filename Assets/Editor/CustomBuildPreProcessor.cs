@@ -23,6 +23,10 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
         productVersion = PlayerSettings.bundleVersion;
         Debug.Log("Current product name is: " + productName);
         Debug.Log("Current product version is: " + productVersion);
+        
+        PlayerSettings.keystorePass = "assistivecards";
+        PlayerSettings.keyaliasPass = "assistivecards";
+
         BuildPlayerWindow.RegisterBuildPlayerHandler(OnClickBuildPlayer);
     }
 

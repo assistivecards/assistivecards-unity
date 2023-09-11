@@ -49,6 +49,14 @@ public class GameSelectionPanel : MonoBehaviour
             ListGames();
             didLanguageChange = false;
         }
+
+        if (CanvasController.redirected)
+        {
+            settingButton.GetComponent<SettingScreenButton>().SettingButtonClickFunc();
+            canvasController.GetComponent<CanvasController>().PremiumPromoButtonClick();
+            Invoke("ResetScrollPosition", 0.3f);
+            CanvasController.redirected = false;
+        }
     }
 
     public async void ListGames()

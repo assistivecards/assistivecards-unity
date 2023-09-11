@@ -5,6 +5,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 
 
@@ -71,6 +72,8 @@ public class CanvasController : MonoBehaviour
     private TopAppBarController topAppBarController;
     public string version;
     private bool loadScene = false;
+
+    public static bool redirected = false;
 
 
     private void Awake()
@@ -220,10 +223,20 @@ public class CanvasController : MonoBehaviour
 
     public void PremiumPromoButtonClick()
     {
-        topAppBarController.ChangeTopAppBarType(2);
-        currentScreen = promoScreen;
-        LeanTween.scale(promoScreen, Vector3.one, 0.2f);
-        promoScreen.SetActive(true);
+        if (Application.productName == "Games" && SceneManager.GetActiveScene().name != "Games")
+        {
+            redirected = true;
+            SceneManager.LoadScene("Games");
+        }
+
+        else
+        {
+            topAppBarController.ChangeTopAppBarType(2);
+            currentScreen = promoScreen;
+            LeanTween.scale(promoScreen, Vector3.one, 0.2f);
+            promoScreen.SetActive(true);
+        }
+
     }
     public void SendFeedbacksButtonClick()
     {

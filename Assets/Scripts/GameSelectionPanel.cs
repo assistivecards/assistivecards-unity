@@ -50,12 +50,20 @@ public class GameSelectionPanel : MonoBehaviour
             didLanguageChange = false;
         }
 
-        if (CanvasController.redirected)
+        if (CanvasController.premiumPromoRedirected)
         {
             settingButton.GetComponent<SettingScreenButton>().SettingButtonClickFunc();
             canvasController.GetComponent<CanvasController>().PremiumPromoButtonClick();
             Invoke("ResetScrollPosition", 0.3f);
-            CanvasController.redirected = false;
+            CanvasController.premiumPromoRedirected = false;
+        }
+
+        if (CanvasController.subscriptionRedirected)
+        {
+            settingButton.GetComponent<SettingScreenButton>().SettingButtonClickFunc();
+            canvasController.GetComponent<CanvasController>().SubscriptionsButtonClick();
+            Invoke("ResetScrollPosition", 0.3f);
+            CanvasController.subscriptionRedirected = false;
         }
     }
 

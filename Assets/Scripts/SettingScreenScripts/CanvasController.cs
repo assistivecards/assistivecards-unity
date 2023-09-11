@@ -73,7 +73,8 @@ public class CanvasController : MonoBehaviour
     public string version;
     private bool loadScene = false;
 
-    public static bool redirected = false;
+    public static bool subscriptionRedirected = false;
+    public static bool premiumPromoRedirected = false;
 
 
     private void Awake()
@@ -192,10 +193,20 @@ public class CanvasController : MonoBehaviour
     }
     public void SubscriptionsButtonClick()
     {
-        topAppBarController.ChangeTopAppBarType(2);
-        currentScreen = subscriptionsScreen;
-        LeanTween.scale(subscriptionsScreen, Vector3.one, 0.2f);
-        subscriptionsScreen.SetActive(true);
+        if (Application.productName == "Games" && SceneManager.GetActiveScene().name != "Games")
+        {
+            subscriptionRedirected = true;
+            SceneManager.LoadScene("Games");
+        }
+
+        else
+        {
+            topAppBarController.ChangeTopAppBarType(2);
+            currentScreen = subscriptionsScreen;
+            LeanTween.scale(subscriptionsScreen, Vector3.one, 0.2f);
+            subscriptionsScreen.SetActive(true);
+        }
+
     }
     public void SoundButtonClick()
     {
@@ -225,7 +236,7 @@ public class CanvasController : MonoBehaviour
     {
         if (Application.productName == "Games" && SceneManager.GetActiveScene().name != "Games")
         {
-            redirected = true;
+            premiumPromoRedirected = true;
             SceneManager.LoadScene("Games");
         }
 

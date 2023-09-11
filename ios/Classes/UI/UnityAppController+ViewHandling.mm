@@ -9,7 +9,6 @@
 
 // TEMP: ?
 #include "UI/ActivityIndicator.h"
-#include "UI/SplashScreen.h"
 #include "UI/Keyboard.h"
 #include <utility>
 
@@ -89,7 +88,11 @@ extern bool _unityAppReady;
 
 - (void)willStartWithViewController:(UIViewController*)controller
 {
+#if !PLATFORM_VISIONOS
     _unityView.contentScaleFactor   = UnityScreenScaleFactor([UIScreen mainScreen]);
+#else
+    _unityView.contentScaleFactor   = 1.0f;
+#endif
     _unityView.autoresizingMask     = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
     _rootController.view = _rootView = _unityView;
@@ -101,14 +104,15 @@ extern bool _unityAppReady;
 
 - (void)didTransitionToViewController:(UIViewController*)toController fromViewController:(UIViewController*)fromController
 {
-#if UNITY_SUPPORT_ROTATION
+#if UNITY_SUPPORT_ROTATION && !PLATFORM_VISIONOS
     // when transitioning between view controllers ios will not send reorient events (because they are bound to controllers, not view)
     // so we imitate them here so unity view can update its size/orientation
-    [_unityView willRotateToOrientation: UIViewControllerInterfaceOrientation(toController) fromOrientation: ConvertToIosScreenOrientation(_unityView.contentOrientation)];
+    UIInterfaceOrientation newOrientation = UIViewControllerInterfaceOrientation(toController);
+    [_unityView willRotateToOrientation:newOrientation  fromOrientation: ConvertToIosScreenOrientation(_unityView.contentOrientation)];
     [_unityView didRotate];
 
     // NB: this is both important and insane at the same time (that we have several places to keep current orentation and we need to sync them)
-    _curOrientation = UIViewControllerInterfaceOrientation(toController);
+    _curOrientation = newOrientation;
 #endif
 }
 
@@ -136,8 +140,11 @@ extern bool _unityAppReady;
     // they will get default values if the view is not yet added to the window.
     [_window addSubview: _rootView];
 
+    // We should have rootViewController set always, otherwise UIKit might trow exception when doing anything with UI
+    _window.rootViewController = _rootController;
+
     [UIView setAnimationsEnabled: NO];
-    ShowSplashScreen(_window);
+
     // make window visible only after we have set up initial controller we want to show
     [_window makeKeyAndVisible];
 
@@ -149,7 +156,7 @@ extern bool _unityAppReady;
 #endif
 
     NSNumber* style = [[[NSBundle mainBundle] infoDictionary] objectForKey: @"Unity_LoadingActivityIndicatorStyle"];
-    ShowActivityIndicator([SplashScreen Instance], style ? [style intValue] : -1);
+    ShowActivityIndicator(_rootView, style ? [style intValue] : -1);
 
     NSNumber* vcControlled = [[[NSBundle mainBundle] infoDictionary] objectForKey: @"UIViewControllerBasedStatusBarAppearance"];
     if (vcControlled && ![vcControlled boolValue])
@@ -161,7 +168,6 @@ extern bool _unityAppReady;
 - (void)showGameUI
 {
     HideActivityIndicator();
-    HideSplashScreen();
 
     // make sure that we start up with correctly created/inited rendering surface
     // NB: recreateRenderingSurface won't go into rendering because _unityAppReady is false
@@ -203,6 +209,7 @@ extern bool _unityAppReady;
     [UIView setAnimationsEnabled: YES];
 }
 
+#if UNITY_SUPPORT_ROTATION
 - (void)transitionToViewController:(UIViewController*)vc
 {
     [self willTransitionToViewController: vc fromViewController: _rootController];
@@ -225,19 +232,30 @@ extern bool _unityAppReady;
     _window.rootViewController = _rootController = vc;
     _rootController.view = _rootView;
 
-    _window.bounds = [UIScreen mainScreen].bounds;
-    // required for iOS 8, otherwise view bounds will be incorrect
-    _rootView.bounds = _window.bounds;
-    _rootView.center = _window.center;
+    // CODE ARCHEOLOGY: in here we were tweaking window bounds to agree with screen bounds (and did some iOS8 specific workaround)
+    // This is no longer needed it seems, and is actually harmful for the "split view" supporting apps
+    // If you have fullscreen window, it will be automatically resized to take the whole screen
+    // and otherwise we must not touch it, as it will be controlled by multitasking
 
     // third: restore window as key and layout subviews to finalize size changes
     [_window makeKeyAndVisible];
     [_window layoutSubviews];
-
-    [self didTransitionToViewController: vc fromViewController: _rootController];
+    
+    // In iOS16+ after we setup a new contoller and when we have multiple windows visible, iOS not fully prepares
+    // view controller according it's orientation requirements. And then inside didTransitionToViewController:
+    // from UIViewControllerInterfaceOrientation we get bad orientation as it uses scree.coordinationSpace which is not
+    // yet changed. So we want to delay didTransitionToViewController call. And in this case we get a call to view
+    // controllers -viewWillTransitionToSize: method and at this time the orientation change is already happened and
+    // then we send didTransitionToViewController. If view controller changes are setup correctly from iOS, then iOS do
+    // not call -viewWillTransitionToSize:.
+    UIInterfaceOrientation newOrientation = UIViewControllerInterfaceOrientation(vc);
+    BOOL orientationChangedToSupported = vc.supportedInterfaceOrientations & (1 << newOrientation);
+    if ( !UnityiOS160orNewer() || orientationChangedToSupported )
+    {
+        [self didTransitionToViewController: vc fromViewController: _rootController];
+    }
 }
 
-#if UNITY_SUPPORT_ROTATION
 - (void)interfaceWillChangeOrientationTo:(UIInterfaceOrientation)toInterfaceOrientation
 {
     UIInterfaceOrientation fromInterfaceOrientation = _curOrientation;
@@ -255,7 +273,7 @@ extern bool _unityAppReady;
 
 - (void)notifyHideHomeButtonChange
 {
-#if PLATFORM_IOS
+#if PLATFORM_IOS || PLATFORM_VISIONOS
     // setNeedsUpdateOfHomeIndicatorAutoHidden is not implemented on iOS 11.0.
     // The bug has been fixed in iOS 11.0.1. See http://www.openradar.me/35127134
     if ([_rootController respondsToSelector: @selector(setNeedsUpdateOfHomeIndicatorAutoHidden)])
@@ -265,7 +283,7 @@ extern bool _unityAppReady;
 
 - (void)notifyDeferSystemGesturesChange
 {
-#if PLATFORM_IOS
+#if PLATFORM_IOS || PLATFORM_VISIONOS
     [_rootController setNeedsUpdateOfScreenEdgesDeferringSystemGestures];
 #endif
 }
@@ -380,7 +398,9 @@ extern bool _unityAppReady;
         [self transitionToViewController: [self createRootViewControllerForOrientation: newOrient]];
         [self interfaceDidChangeOrientationFrom: oldOrient];
 
+#if !PLATFORM_VISIONOS
         [UIApplication sharedApplication].statusBarOrientation = orient;
+#endif
     }
     [CATransaction commit];
 

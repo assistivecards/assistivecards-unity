@@ -11,8 +11,8 @@ else
 fi
 
 if [ "${SYNCHRONOUS_SYMBOL_PROCESSING}" = "TRUE" ]; then
-    "$PROJECT_DIR/$usymtool" -symbolPath "$DWARF_DSYM_FOLDER_PATH/$DWARF_DSYM_FILE_NAME" -il2cppOutputPath "$PROJECT_DIR/Classes/Native/"
+    "$PROJECT_DIR/$usymtool" -symbolPath "$DWARF_DSYM_FOLDER_PATH/$DWARF_DSYM_FILE_NAME" -il2cppOutputPath "$PROJECT_DIR/Il2CppOutputProject/Source/il2cppOutput/"
 else
-    nohup "$PROJECT_DIR/$usymtool" -symbolPath "$DWARF_DSYM_FOLDER_PATH/$DWARF_DSYM_FILE_NAME" -il2cppOutputPath "$PROJECT_DIR/Classes/Native/" > /dev/null 2>&1 &
+    nohup "$PROJECT_DIR/$usymtool" -symbolPath "$DWARF_DSYM_FOLDER_PATH/$DWARF_DSYM_FILE_NAME" -il2cppOutputPath "$PROJECT_DIR/Il2CppOutputProject/Source/il2cppOutput/" > /dev/null 2>&1 &
     disown
 fi

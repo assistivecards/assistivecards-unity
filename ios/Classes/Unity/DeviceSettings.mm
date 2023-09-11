@@ -52,7 +52,7 @@ extern "C" int UnityGetLowPowerModeEnabled()
 
 extern "C" int UnityGetWantsSoftwareDimming()
 {
-#if !PLATFORM_TVOS
+#if !PLATFORM_TVOS && !PLATFORM_VISIONOS
     UIScreen* mainScreen = [UIScreen mainScreen];
     return mainScreen.wantsSoftwareDimming ? 1 : 0;
 #else
@@ -62,7 +62,7 @@ extern "C" int UnityGetWantsSoftwareDimming()
 
 extern "C" void UnitySetWantsSoftwareDimming(int enabled)
 {
-#if !PLATFORM_TVOS
+#if !PLATFORM_TVOS && !PLATFORM_VISIONOS
     UIScreen* mainScreen = [UIScreen mainScreen];
     mainScreen.wantsSoftwareDimming = enabled;
 #endif
@@ -70,10 +70,8 @@ extern "C" void UnitySetWantsSoftwareDimming(int enabled)
 
 extern "C" int UnityGetIosAppOnMac()
 {
-#if (PLATFORM_IOS && defined(__IPHONE_14_0)) || (PLATFORM_TVOS && defined(__TVOS_14_0))
     if (@available(iOS 14, tvOS 14, *))
         return [[NSProcessInfo processInfo] isiOSAppOnMac] ? 1 : 0;
-#endif
     return 0;
 }
 
@@ -285,10 +283,15 @@ DeviceTableEntry DeviceTable[] =
     { iPad, 11, 6, 7, deviceiPad8Gen },
     { iPad, 13, 1, 2, deviceiPadAir4Gen },
     { iPad, 13, 16, 17, deviceiPadAir5Gen },
+    { iPad, 14, 5, 6, deviceiPadPro6Gen },
+    { iPad, 14, 3, 4, deviceiPadPro11Inch4Gen },
+    { iPad, 13, 18, 19, deviceiPad10Gen },
+
 
     { AppleTV, 5, 3, 3, deviceAppleTVHD },
     { AppleTV, 6, 2, 2, deviceAppleTV4K },
-    { AppleTV, 11, 1, 1, deviceAppleTV4K2Gen }
+    { AppleTV, 11, 1, 1, deviceAppleTV4K2Gen },
+    { AppleTV, 14, 1, 1, deviceAppleTV4K3Gen },
 };
 
 extern "C" int ParseDeviceGeneration(const char* model)
@@ -365,6 +368,7 @@ extern "C" int UnityDeviceHasCutout()
         case deviceiPhone11: case deviceiPhone11Pro: case deviceiPhone11ProMax:
         case deviceiPhone12: case deviceiPhone12Mini: case deviceiPhone12Pro: case deviceiPhone12ProMax:
         case deviceiPhone13: case deviceiPhone13Mini: case deviceiPhone13Pro: case deviceiPhone13ProMax:
+        case deviceiPhone14: case deviceiPhone14Plus: case deviceiPhone14Pro: case deviceiPhone14ProMax:
             return 1;
         default:
             return 0;
@@ -400,7 +404,11 @@ extern "C" int UnityDeviceIsStylusTouchSupported()
 
 extern "C" int UnityDeviceCanShowWideColor()
 {
+#if !PLATFORM_VISIONOS
     return [UIScreen mainScreen].traitCollection.displayGamut == UIDisplayGamutP3;
+#else
+    return YES;
+#endif
 }
 
 extern "C" float UnityDeviceDPI()
@@ -504,6 +512,9 @@ extern "C" float UnityDeviceDPI()
             case deviceiPhoneUnknown:
                 _DeviceDPI = 326.0f; break;
             case deviceiPadUnknown:
+            case deviceiPadPro6Gen:
+            case deviceiPadPro11Inch4Gen:
+            case deviceiPad10Gen:
                 _DeviceDPI = 264.0f; break;
             case deviceiPodTouchUnknown:
                 _DeviceDPI = 326.0f; break;

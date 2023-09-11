@@ -571,14 +571,13 @@ extern "C" void UnityEnumVideoCaptureDevices(void* udata, void(*callback)(void* 
         [captureDevices addObject: AVCaptureDeviceTypeBuiltInDualCamera];
         [captureDevices addObject: AVCaptureDeviceTypeBuiltInTrueDepthCamera];
 
-#if UNITY_HAS_IOSSDK_13_0
         if (UnityiOS130orNewer())
         {
             [captureDevices addObject: AVCaptureDeviceTypeBuiltInUltraWideCamera];
             [captureDevices addObject: AVCaptureDeviceTypeBuiltInDualWideCamera];
             [captureDevices addObject: AVCaptureDeviceTypeBuiltInTripleCamera];
         }
-#endif
+
         AVCaptureDeviceDiscoverySession *captureDeviceDiscoverySession = [AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes: captureDevices mediaType: AVMediaTypeVideo position: AVCaptureDevicePositionUnspecified];
         for (AVCaptureDevice* device in [captureDeviceDiscoverySession devices])
         {

@@ -39,6 +39,7 @@ static double GetTimeInSeconds()
     NSString* baseLayout = @"1234567890-=qwertyuiop[]asdfghjkl;'\\`zxcvbnm,./!@#$%^&*()_+{}:\"|<>?~ \t\r\b\\";
     NSString* numpadLayout = @"1234567890-=*+/.\r";
     NSString* upperCaseLetters = @"QWERTYUIOPASDFGHJKLZXCVBNM";
+    NSString* shortcutCharacters = @"axcv";
 
     size_t sizeOfKeyboardCommands = baseLayout.length + numpadLayout.length + upperCaseLetters.length + 11;
     NSMutableArray* commands = [NSMutableArray arrayWithCapacity: sizeOfKeyboardCommands];
@@ -46,10 +47,8 @@ static double GetTimeInSeconds()
     void (^addKey)(NSString *keyName, UIKeyModifierFlags modifierFlags) = ^(NSString *keyName, UIKeyModifierFlags modifierFlags)
     {
         UIKeyCommand* command = [UIKeyCommand keyCommandWithInput: keyName modifierFlags: modifierFlags action: @selector(handleCommand:)];
-#if UNITY_HAS_IOSSDK_15_0
-        if (@available(iOS 15.0, *))
+        if (@available(iOS 15.0, tvOS 15.0, *))
             command.wantsPriorityOverSystemBehavior = YES;
-#endif
         [commands addObject: command];
     };
 
@@ -57,6 +56,11 @@ static double GetTimeInSeconds()
     {
         NSString* input = [baseLayout substringWithRange: NSMakeRange(i, 1)];
         addKey(input, kNilOptions);
+    }
+    for (NSInteger i = 0; i < shortcutCharacters.length; ++i)
+    {
+        NSString* input = [shortcutCharacters substringWithRange: NSMakeRange(i, 1)];
+        [commands addObject: [UIKeyCommand keyCommandWithInput: input modifierFlags: UIKeyModifierCommand action: @selector(handleCommand:)]];
     }
     for (NSInteger i = 0; i < numpadLayout.length; ++i)
     {
@@ -127,9 +131,8 @@ static double GetTimeInSeconds()
     NSString* input = command.input;
     UIKeyModifierFlags modifierFlags = command.modifierFlags;
 
-    char inputChar = ([input length] > 0) ? [input characterAtIndex: 0] : 0;
+    char inputChar = ([input length] == 1) ? [input characterAtIndex: 0] : 0;
     int code = (int)inputChar; // ASCII code
-    UnitySendKeyboardCommand(command);
 
     if (![self isValidCodeForButton: code])
     {
@@ -221,6 +224,8 @@ static double GetTimeInSeconds()
         code = UnityStringToKey("page up");
     else if ([input isEqualToString: @"UIKeyInputPageDown"])
         code = UnityStringToKey("page down");
+
+    UnitySendKeyboardCommand(command, code);
 
     KeyMap::iterator item = GetKeyMap().find(code);
     if (item == GetKeyMap().end())

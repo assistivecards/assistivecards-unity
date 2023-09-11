@@ -12,17 +12,16 @@
 #error Please use clang compiler.
 #endif
 
-// NOT the best way but apple do not care about adding extensions properly
-#if __clang_major__ < 9
-#error Please use Xcode 9.0 or newer
+#if __clang_major__ < 13
+#error Please use Xcode 13.0 or newer
 #endif
 
-#if !defined(__IPHONE_12_0) || __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_12_0
-#error Please use iOS SDK 12.0 or newer
+#if !defined(__IPHONE_15_0) || __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_15_0
+#error Please use iOS SDK 15.0 or newer
 #endif
 
-#if defined(TARGET_OS_TV) && TARGET_OS_TV && !defined(__TVOS_12_0)
-#error Please use tvOS SDK 12.0 or newer
+#if defined(TARGET_OS_TV) && TARGET_OS_TV && !defined(__TVOS_15_0)
+#error Please use tvOS SDK 15.0 or newer
 #endif
 
 #if TARGET_OS_IOS && (!defined(__IPHONE_12_0) || __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_12_0)
@@ -36,24 +35,33 @@
 //------------------------------------------------------------------------------
 //
 // defines for target platform
+// Note: visionOS defines _OS_XR and _OS_IOS
 //
 
 #define UNITY_TRAMPOLINE_IN_USE 1
 
-#if defined(TARGET_OS_IOS) && TARGET_OS_IOS
+#if defined(TARGET_OS_XR) && TARGET_OS_XR
 #define PLATFORM_IOS 1
     #define PLATFORM_OSX    0
 #define PLATFORM_TVOS 0
+#define PLATFORM_VISIONOS 0
+#elif defined(TARGET_OS_IOS) && TARGET_OS_IOS
+#define PLATFORM_IOS 1
+    #define PLATFORM_OSX    0
+#define PLATFORM_TVOS 0
+#define PLATFORM_VISIONOS 0
 #elif defined(TARGET_OS_OSX) && TARGET_OS_OSX
 #define PLATFORM_IOS 1
     #define PLATFORM_OSX    1
 #define PLATFORM_TVOS 0
+#define PLATFORM_VISIONOS 0
 #elif defined(TARGET_OS_TV) && TARGET_OS_TV
 #define PLATFORM_IOS 1
     #define PLATFORM_OSX    0
 #define PLATFORM_TVOS 0
+#define PLATFORM_VISIONOS 0
 #else
-    #error one of TARGET_OS_IOS, TARGET_OS_OSX, TARGET_OS_TV should be defined
+    #error one of TARGET_OS_IOS, TARGET_OS_OSX, TARGET_OS_TV (add visionos code here) should be defined
 #endif
 
 
@@ -61,16 +69,6 @@
 //
 // defines for sdk/target version
 //
-
-#if !TARGET_IPHONE_SIMULATOR && !TARGET_TVOS_SIMULATOR
-    #define UNITY_CAN_USE_METAL     1
-#elif TARGET_IPHONE_SIMULATOR && defined(__IPHONE_13_0)
-    #define UNITY_CAN_USE_METAL     1
-#elif TARGET_TVOS_SIMULATOR && defined(__TVOS_13_0)
-    #define UNITY_CAN_USE_METAL     1
-#else
-    #define UNITY_CAN_USE_METAL     0
-#endif
 
 // It's hard to figure out which SDK we are using as the availability macros defined in the SDK
 // have various quirks.
@@ -169,6 +167,11 @@
     #define UNITY_HAS_TVOSSDK_15_0 0
 #endif
 
+//------------------------------------------------------------------------------
+//
+// defines for used unity features
+//
+
 // The following UNITY_USES_* flags disable functionality in the trampoline project whenever the user does not use it from his scripts.
 // We detect the API usage and adjust the value of these flags whenever the project is built (including "append")
 
@@ -181,20 +184,29 @@
 #define UNITY_USES_GLES 0
 #define UNITY_USES_IAD 0
 
-#define UNITY_SNAPSHOT_VIEW_ON_APPLICATION_PAUSE 0
+//------------------------------------------------------------------------------
+//
+// defines for used features
+//
+
 #define UNITY_DEVELOPER_BUILD 0
-
-
 #define USE_IL2CPP_PCH 0
+#define UNITY_SNAPSHOT_VIEW_ON_APPLICATION_PAUSE 0
+
+// we now support metal always everywhere, but we keep the define for native plugins using it
+#define UNITY_CAN_USE_METAL 1
+
 #define UNITY_SUPPORT_ROTATION PLATFORM_IOS
 #if PLATFORM_TVOS
     #define UNITY_TVOS_ORIENTATION landscapeLeft
 #endif
+#if PLATFORM_VISIONOS
+    #define UNITY_VISIONOS_ORIENTATION landscapeLeft
+#endif
 
-#if PLATFORM_IOS    // available in ios9 sdk which is min requirement
+
+#if PLATFORM_IOS || PLATFORM_TVOS || PLATFORM_VISIONOS
     #define UNITY_REPLAY_KIT_AVAILABLE UNITY_USES_REPLAY_KIT
-#elif PLATFORM_TVOS // available in tvos10 sdk which is min requirement
-    #define UNITY_REPLAY_KIT_AVAILABLE UNITY_USES_REPLAY_KIT && defined(__TVOS_10_0)
 #else
     #define UNITY_REPLAY_KIT_AVAILABLE 0
 #endif

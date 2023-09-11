@@ -17,6 +17,7 @@
 @class NSError;
 @class NSBundle;
 @class UIKeyCommand;
+@class UITouch;
 
 @class UnityViewControllerBase;
 #else
@@ -33,6 +34,7 @@ typedef struct objc_object NSError;
 typedef struct objc_object NSData;
 typedef struct objc_object NSBundle;
 typedef struct objc_object UIKeyCommand;
+typedef struct objc_object UITouch;
 
 typedef struct objc_object UnityViewControllerBase;
 #endif
@@ -134,5 +136,7 @@ extern "C" {
     bool UnityiOS112orNewer();
     bool UnityiOS130orNewer();
     bool UnityiOS140orNewer();
+    bool UnityiOS150orNewer();
+    bool UnityiOS160orNewer();
 }
 #endif

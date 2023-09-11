@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-               BuildableName = "Card Crash.app"
+               BuildableName = "Throw Cards.app"
                BlueprintName = "Unity-iPhone"
                ReferencedContainer = "container:Unity-iPhone.xcodeproj">
             </BuildableReference>
@@ -31,7 +31,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "Card Crash.app"
+            BuildableName = "Throw Cards.app"
             BlueprintName = "Unity-iPhone"
             ReferencedContainer = "container:Unity-iPhone.xcodeproj">
          </BuildableReference>
@@ -53,6 +53,7 @@
       buildConfiguration = "ReleaseForRunning"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      disablePerformanceAntipatternChecker = "YES"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -69,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "Card Crash.app"
+            BuildableName = "Throw Cards.app"
             BlueprintName = "Unity-iPhone"
             ReferencedContainer = "container:Unity-iPhone.xcodeproj">
          </BuildableReference>
@@ -86,7 +87,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "Card Crash.app"
+            BuildableName = "Throw Cards.app"
             BlueprintName = "Unity-iPhone"
             ReferencedContainer = "container:Unity-iPhone.xcodeproj">
          </BuildableReference>

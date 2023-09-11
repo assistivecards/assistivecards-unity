@@ -53,7 +53,7 @@ public class CardElementComplete : MonoBehaviour, IPointerDownHandler, IDragHand
         if(moveable)
         {
             isPointerUp = true;
-            Invoke("ChangePosition", 0.1f);
+            Invoke("ChangePosition", 0.5f);
         }
     }
 
@@ -72,9 +72,14 @@ public class CardElementComplete : MonoBehaviour, IPointerDownHandler, IDragHand
                 this.transform.SetParent(other.transform);
                 boardCreatorComplete.matchCount += 1;
                 boardCreatorComplete.Invoke("EndLevel", 0.4f);
-                boardCreatorComplete.CheckChilds();
             }
         }
+    }
+
+    private void Update() 
+    {
+        if(boardCreatorComplete.isBoardCreated)
+            boardCreatorComplete.CheckChilds();    
     }
 
     private void ReadCard()

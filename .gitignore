@@ -75,3 +75,4 @@ crashlytics-build.properties
 /ios/Libraries/
 
 **/*.DS_Store
+ios/Data/data.unity3d

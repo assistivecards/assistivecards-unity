@@ -49,6 +49,7 @@ public class CardShootingBoardGenerator : MonoBehaviour
     private List<GameObject> cardPositions = new List<GameObject>();
     public GameObject selectedCardObject;
     public string selectedCard;
+    public string selectedCardLocal;
     public string formerSelected;
 
 
@@ -164,6 +165,7 @@ public class CardShootingBoardGenerator : MonoBehaviour
 
             selectedCardObject = cards[Random.Range(0, cards.Count)];
             selectedCard = selectedCardObject.name;
+            selectedCardLocal = selectedCardObject.GetComponent<CardShootingCardName>().cardName;
 
             if(selectedCard == formerSelected)
             {
@@ -190,8 +192,8 @@ public class CardShootingBoardGenerator : MonoBehaviour
     public void LevelEndCardScale()
     {
         LeanTween.scale(selectedObjectAtEnd, Vector3.one, 1f);
-        gameAPI.Speak(selectedCard);
-        Debug.Log(selectedCard);
+        gameAPI.Speak(selectedCardLocal);
+        Debug.Log(selectedCardLocal);
         Invoke("LevelEndCardDownScale", 1.5f);
 
         if(ballController.levelCount < 3)

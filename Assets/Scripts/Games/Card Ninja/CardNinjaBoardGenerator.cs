@@ -31,6 +31,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     [SerializeField] private TMP_Text cutText;
     [SerializeField] private GameObject tutorial;
     private GameObject selectedCard;
+    private string selectedCardLocal;
 
     [Header ("Random")]
     public GameObject randomCard;
@@ -132,6 +133,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
                 selectedCardTexture.filterMode = FilterMode.Bilinear;
 
                 selectedCard.transform.name = cardNames[randomValueList[random]];
+                selectedCardLocal = cardLocalNames[randomValueList[random]];
                 selectedCard.transform.SetParent(grid.transform);
                 LeanTween.scale(selectedCard.gameObject, Vector3.one * 0.5f, 0f);
                 selectedCard.transform.GetChild(0).GetComponent<RawImage>().texture = selectedCardTexture;
@@ -236,15 +238,15 @@ public class CardNinjaBoardGenerator : MonoBehaviour
 
     public void LevelEndCardScale()
     {
-        gameAPI.PlaySFX("Finished");
         LeanTween.scale(selectedCardObject, Vector3.one, 0.5f);
+        gameAPI.Speak(selectedCardLocal);
+        Debug.Log(selectedCardLocal);
         Invoke("LevelEndDownScale", 1.5f);
     }
 
     private void LevelEndDownScale()
     {
-        gameAPI.Speak(selectedCardObject.name);
-        Debug.Log(selectedCardObject.name);
+        gameAPI.PlaySFX("Finished");
         LeanTween.scale(selectedCardObject, Vector3.zero, 0.5f);
     }
 

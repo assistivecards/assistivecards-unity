@@ -14,10 +14,12 @@ public class UIControllerComplete : MonoBehaviour
     [SerializeField] private GameObject packSelectionPanel;
 
     [Header("UI Elements")]
+    [SerializeField] private GameObject gameUI;
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject helloText;
     [SerializeField] private GameObject settingsButton;
     [SerializeField] private GameObject levelProgressContainer;
+    public GameObject loadingScreen;
     public bool firstTime = true;
 
     private void Awake()
@@ -58,6 +60,18 @@ public class UIControllerComplete : MonoBehaviour
         helloText.SetActive(false);
         levelProgressContainer.SetActive(false);
         settingsButton.SetActive(true);
+    }
+
+    public void LoadingScreenActivate()
+    {
+        loadingScreen.SetActive(true);
+        LeanTween.scale(gameUI, Vector3.zero, 0);
+    }
+
+    public void LoadingScreenDeactivate()
+    {
+        loadingScreen.SetActive(false);
+        LeanTween.scale(gameUI, Vector3.one, 0);
     }
 
 }

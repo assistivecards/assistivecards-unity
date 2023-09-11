@@ -914,11 +914,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: a41fd0d2-7437-4d39-8fdf-e739e0407426
+  cloudProjectId: a9ff7e83-e30c-450c-9365-60a81df41a92
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: unity
-  organizationId: buraktokak
+  projectName: Memory
+  organizationId: tokakburak
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PackSelectManagerComplete : MonoBehaviour
 {
+    [SerializeField] private UIControllerComplete uıController;
     [SerializeField] private PackSelectionScreenUIController packSelectionScreenUIController;
     [SerializeField] private PackSelectionPanel packSelectionPanel;
     [SerializeField] private BoardCreatorComplete boardCreatorComplete;

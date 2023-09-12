@@ -50,13 +50,6 @@ public class GameSelectionPanel : MonoBehaviour
             didLanguageChange = false;
         }
 
-        if (CanvasController.subscriptionRedirected)
-        {
-            settingButton.GetComponent<SettingScreenButton>().SettingButtonClickFunc();
-            canvasController.GetComponent<CanvasController>().SubscriptionsButtonClick();
-            Invoke("ResetScrollPosition", 0.3f);
-            CanvasController.subscriptionRedirected = false;
-        }
     }
 
     public async void ListGames()

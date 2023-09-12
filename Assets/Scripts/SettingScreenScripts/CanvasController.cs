@@ -43,6 +43,7 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private GameObject notificationScreen;
     [SerializeField] private GameObject accessibilityScreen;
     [SerializeField] private GameObject subscriptionsScreen;
+    [SerializeField] private GameObject subscriptionsScreenUniApp;
     [SerializeField] private GameObject allAppsScreen;
     [SerializeField] private GameObject allGamesScreen;
     [SerializeField] private GameObject promoScreen;
@@ -73,9 +74,6 @@ public class CanvasController : MonoBehaviour
     private TopAppBarController topAppBarController;
     public string version;
     private bool loadScene = false;
-
-    public static bool subscriptionRedirected = false;
-    public static bool premiumPromoRedirected = false;
 
 
     private void Awake()
@@ -194,10 +192,12 @@ public class CanvasController : MonoBehaviour
     }
     public void SubscriptionsButtonClick()
     {
-        if (Application.productName == "Games" && SceneManager.GetActiveScene().name != "Games")
+        if (Application.productName == "Games")
         {
-            subscriptionRedirected = true;
-            SceneManager.LoadScene("Games");
+            topAppBarController.ChangeTopAppBarType(2);
+            currentScreen = subscriptionsScreenUniApp;
+            LeanTween.scale(subscriptionsScreenUniApp, Vector3.one, 0.2f);
+            subscriptionsScreenUniApp.SetActive(true);
         }
 
         else

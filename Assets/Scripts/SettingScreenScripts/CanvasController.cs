@@ -46,6 +46,7 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private GameObject allAppsScreen;
     [SerializeField] private GameObject allGamesScreen;
     [SerializeField] private GameObject promoScreen;
+    [SerializeField] private GameObject promoScreenUniApp;
     [SerializeField] private GameObject sendFeedbacksScreen;
     [SerializeField] private GameObject aboutApplicationScreen;
     [SerializeField] private GameObject loginPageScreen;
@@ -234,10 +235,12 @@ public class CanvasController : MonoBehaviour
 
     public void PremiumPromoButtonClick()
     {
-        if (Application.productName == "Games" && SceneManager.GetActiveScene().name != "Games")
+        if (Application.productName == "Games")
         {
-            premiumPromoRedirected = true;
-            SceneManager.LoadScene("Games");
+            topAppBarController.ChangeTopAppBarType(2);
+            currentScreen = promoScreenUniApp;
+            LeanTween.scale(promoScreenUniApp, Vector3.one, 0.2f);
+            promoScreenUniApp.SetActive(true);
         }
 
         else

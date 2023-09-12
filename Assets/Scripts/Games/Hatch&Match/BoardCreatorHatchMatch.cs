@@ -32,6 +32,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
     public List<int> randomValues = new List<int>();
 
     public List<GameObject> cards = new List<GameObject>();
+    public List<GameObject> guessCards = new List<GameObject>();
     public bool levelEnd;
     public bool boardCreated = false;
 
@@ -110,6 +111,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         card1.transform.SetParent(this.transform);
         card1.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
 
+        guessCards.Add(card1);
         cards.Add(card1);
     }
 
@@ -146,6 +148,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
             LeanTween.scale(egg, Vector3.one * 1.25f, 1f);
             Invoke("GenerateStylizedCard", 0.5f);
             uıController.GameUIActivate();
+            Invoke("ScaleUpCards", 1f);
         }
     }
 
@@ -169,6 +172,14 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         }
     }
 
+    private void ScaleUpCards()
+    {
+        foreach(var card in guessCards)
+        {
+            card.transform.localScale = Vector3.one * 0.5f;
+        }
+    }
+
     public void NewLevel() 
     {
         ReloadBoard();
@@ -183,6 +194,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
             Destroy(card);
         }
         cards.Clear();
+        guessCards.Clear();
         egg.GetComponent<EggController>().clickCount = 0;
         randomValues.Clear();
         CreateRandomValue();
@@ -199,6 +211,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
             Destroy(card);
         }
         cards.Clear();
+        guessCards.Clear();
         egg.GetComponent<EggController>().clickCount = 0;
         LeanTween.scale(egg, Vector3.zero, 0.1f);
         randomValues.Clear();
@@ -221,6 +234,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         tempRandomValue = 0;
         randomValues.Clear();
         cards.Clear();
+        guessCards.Clear();
     }
 
     private void ClearLevel()

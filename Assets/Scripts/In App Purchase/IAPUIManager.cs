@@ -25,8 +25,18 @@ public class IAPUIManager : MonoBehaviour
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
 
-        subsRestoreButton = GameObject.FindObjectsOfType<GameObject>(true).Where(btn => btn.gameObject.name == "subsRestoreButton").FirstOrDefault();
-        promoUniAppRestoreButton = GameObject.FindObjectsOfType<GameObject>(true).Where(btn => btn.gameObject.name == "promoUniAppRestoreButton").FirstOrDefault();
+        if (Application.productName == "Games")
+        {
+            subsRestoreButton = GameObject.FindObjectsOfType<GameObject>(true).Where(btn => btn.gameObject.name == "subsRestoreButton").FirstOrDefault();
+            promoUniAppRestoreButton = GameObject.FindObjectsOfType<GameObject>(true).Where(btn => btn.gameObject.name == "promoUniAppRestoreButton").FirstOrDefault();
+        }
+
+        else
+        {
+            subsRestoreButton = GameObject.FindObjectsOfType<GameObject>(true).Where(btn => btn.gameObject.name == "standaloneSubsRestoreButton").FirstOrDefault();
+            promoUniAppRestoreButton = GameObject.FindObjectsOfType<GameObject>(true).Where(btn => btn.gameObject.name == "standalonePromoRestoreButton").FirstOrDefault();
+        }
+
 
         // if (Application.platform != RuntimePlatform.IPhonePlayer)
         // {
@@ -39,16 +49,24 @@ public class IAPUIManager : MonoBehaviour
     }
     private async void Start()
     {
-        subscriptionsScreenPremiumButton = GameObject.FindObjectsOfType<Button>(true).Where(btn => btn.gameObject.name == "subscriptionsScreenPremiumButton").FirstOrDefault();
-        promoScreenPremiumButton = GameObject.FindObjectsOfType<Button>(true).Where(btn => btn.gameObject.name == "promoScreenPremiumButton").FirstOrDefault();
-        promoScreenPuchasePremiumButton = GameObject.FindObjectsOfType<Button>(true).Where(btn => btn.gameObject.name == "promoScreenPuchasePremiumButton").FirstOrDefault();
 
         if (Application.productName == "Games")
         {
+            subscriptionsScreenPremiumButton = GameObject.FindObjectsOfType<Button>(true).Where(btn => btn.gameObject.name == "subscriptionsScreenPremiumButton").FirstOrDefault();
+            promoScreenPremiumButton = GameObject.FindObjectsOfType<Button>(true).Where(btn => btn.gameObject.name == "promoScreenPremiumButton").FirstOrDefault();
+            promoScreenPuchasePremiumButton = GameObject.FindObjectsOfType<Button>(true).Where(btn => btn.gameObject.name == "promoScreenPuchasePremiumButton").FirstOrDefault();
+
             subscriptionsScreenMonthlyButton = GameObject.FindObjectsOfType<Button>(true).Where(btn => btn.gameObject.name == "subscriptionsScreenMonthlyButton").FirstOrDefault();
             subscriptionsScreenYearlyButton = GameObject.FindObjectsOfType<Button>(true).Where(btn => btn.gameObject.name == "subscriptionsScreenYearlyButton").FirstOrDefault();
             promoScreenMonthlyButton = GameObject.FindObjectsOfType<Button>(true).Where(btn => btn.gameObject.name == "promoScreenMonthlyButton").FirstOrDefault();
             promoScreenYearlyButton = GameObject.FindObjectsOfType<Button>(true).Where(btn => btn.gameObject.name == "promoScreenYearlyButton").FirstOrDefault();
+        }
+
+        else
+        {
+            subscriptionsScreenPremiumButton = GameObject.FindObjectsOfType<Button>(true).Where(btn => btn.gameObject.name == "standaloneSubscriptionsScreenPremiumButton").FirstOrDefault();
+            promoScreenPremiumButton = GameObject.FindObjectsOfType<Button>(true).Where(btn => btn.gameObject.name == "standalonePromoScreenPremiumButton").FirstOrDefault();
+            promoScreenPuchasePremiumButton = GameObject.FindObjectsOfType<Button>(true).Where(btn => btn.gameObject.name == "standalonePromoScreenPuchasePremiumButton").FirstOrDefault();
         }
 
         CheckIfPremiumButtonInteractable();

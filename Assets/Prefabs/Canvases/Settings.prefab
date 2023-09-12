@@ -7714,7 +7714,7 @@ GameObject:
   - component: {fileID: 1242831489156330384}
   - component: {fileID: 1242831489156330399}
   m_Layer: 5
-  m_Name: Price
+  m_Name: standalonePromoScreenPuchasePrice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11517,7 +11517,7 @@ GameObject:
   - component: {fileID: 1242831489432585641}
   - component: {fileID: 1242831489432585643}
   m_Layer: 5
-  m_Name: Lifetime
+  m_Name: standaloneSubscriptionsScreenPremiumButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16850,7 +16850,7 @@ GameObject:
   - component: {fileID: 1242831489745571727}
   - component: {fileID: 1242831489745571712}
   m_Layer: 5
-  m_Name: Price
+  m_Name: standaloneSubscriptionsScreenPrice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20140,7 +20140,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -297, y: 22763.088}
+  m_AnchoredPosition: {x: -297, y: 34008.445}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &1242831489913853829
@@ -34655,7 +34655,7 @@ GameObject:
   - component: {fileID: 1242831490808992310}
   - component: {fileID: 1242831490808992309}
   m_Layer: 5
-  m_Name: Restore
+  m_Name: standaloneSubsRestoreButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35303,7 +35303,7 @@ GameObject:
   - component: {fileID: 1242831490836584049}
   - component: {fileID: 1242831490836584052}
   m_Layer: 5
-  m_Name: Lifetime
+  m_Name: standalonePromoScreenPremiumButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37725,7 +37725,7 @@ GameObject:
   - component: {fileID: 1242831490967550534}
   - component: {fileID: 1242831490967550533}
   m_Layer: 5
-  m_Name: Price
+  m_Name: standalonePromoScreenPrice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40950,7 +40950,7 @@ GameObject:
   - component: {fileID: 3920376152378409349}
   - component: {fileID: 1357829323095568706}
   m_Layer: 5
-  m_Name: PurchasePremiumButton
+  m_Name: standalonePromoScreenPuchasePremiumButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56249,7 +56249,7 @@ GameObject:
   - component: {fileID: 4855180979461752063}
   - component: {fileID: 1837309319845927174}
   m_Layer: 5
-  m_Name: Restore
+  m_Name: standalonePromoRestoreButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

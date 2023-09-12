@@ -68,29 +68,42 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
             Debug.Log(item.definition.id);
         }
 
-        subscriptionsScreenPrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "subscriptionsScreenPrice").FirstOrDefault();
-        promoScreenPrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "promoScreenPrice").FirstOrDefault();
-        promoScreenPuchasePrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "promoScreenPuchasePrice").FirstOrDefault();
-
         if (Application.productName == "Games")
         {
+            subscriptionsScreenPrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "subscriptionsScreenPrice").FirstOrDefault();
+            promoScreenPrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "promoScreenPrice").FirstOrDefault();
+            promoScreenPuchasePrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "promoScreenPuchasePrice").FirstOrDefault();
+
             subscriptionsScreenMonthlyPrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "subscriptionsScreenMonthlyPrice").FirstOrDefault();
             subscriptionsScreenYearlyPrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "subscriptionsScreenYearlyPrice").FirstOrDefault();
             promoScreenMonthlyPrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "promoScreenMonthlyPrice").FirstOrDefault();
             promoScreenYearlyPrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "promoScreenYearlyPrice").FirstOrDefault();
         }
 
-        subscriptionsScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
-
-        promoScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
-        promoScreenPuchasePrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
+        else
+        {
+            subscriptionsScreenPrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "standaloneSubscriptionsScreenPrice").FirstOrDefault();
+            promoScreenPrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "standalonePromoScreenPrice").FirstOrDefault();
+            promoScreenPuchasePrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "standalonePromoScreenPuchasePrice").FirstOrDefault();
+        }
 
         if (Application.productName == "Games")
         {
+            subscriptionsScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
+            promoScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
+            promoScreenPuchasePrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
+
             subscriptionsScreenMonthlyPrice.text = IAPManager.m_StoreController.products.WithID(monthly).metadata.localizedPriceString;
             subscriptionsScreenYearlyPrice.text = IAPManager.m_StoreController.products.WithID(yearly).metadata.localizedPriceString;
             promoScreenMonthlyPrice.text = IAPManager.m_StoreController.products.WithID(monthly).metadata.localizedPriceString;
             promoScreenYearlyPrice.text = IAPManager.m_StoreController.products.WithID(yearly).metadata.localizedPriceString;
+        }
+
+        else
+        {
+            subscriptionsScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
+            promoScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
+            promoScreenPuchasePrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
         }
 
     }
@@ -221,29 +234,42 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
 
         IAPUIManager.CheckIfPremiumButtonInteractable();
 
-        subscriptionsScreenPrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "subscriptionsScreenPrice").FirstOrDefault();
-        promoScreenPrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "promoScreenPrice").FirstOrDefault();
-        promoScreenPuchasePrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "promoScreenPuchasePrice").FirstOrDefault();
-
         if (Application.productName == "Games")
         {
+            subscriptionsScreenPrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "subscriptionsScreenPrice").FirstOrDefault();
+            promoScreenPrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "promoScreenPrice").FirstOrDefault();
+            promoScreenPuchasePrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "promoScreenPuchasePrice").FirstOrDefault();
+
             subscriptionsScreenMonthlyPrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "subscriptionsScreenMonthlyPrice").FirstOrDefault();
             subscriptionsScreenYearlyPrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "subscriptionsScreenYearlyPrice").FirstOrDefault();
             promoScreenMonthlyPrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "promoScreenMonthlyPrice").FirstOrDefault();
             promoScreenYearlyPrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "promoScreenYearlyPrice").FirstOrDefault();
         }
 
-        subscriptionsScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
-
-        promoScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
-        promoScreenPuchasePrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
+        else
+        {
+            subscriptionsScreenPrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "standaloneSubscriptionsScreenPrice").FirstOrDefault();
+            promoScreenPrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "standalonePromoScreenPrice").FirstOrDefault();
+            promoScreenPuchasePrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "standalonePromoScreenPuchasePrice").FirstOrDefault();
+        }
 
         if (Application.productName == "Games")
         {
+            subscriptionsScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
+            promoScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
+            promoScreenPuchasePrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
+
             subscriptionsScreenMonthlyPrice.text = IAPManager.m_StoreController.products.WithID(monthly).metadata.localizedPriceString;
             subscriptionsScreenYearlyPrice.text = IAPManager.m_StoreController.products.WithID(yearly).metadata.localizedPriceString;
             promoScreenMonthlyPrice.text = IAPManager.m_StoreController.products.WithID(monthly).metadata.localizedPriceString;
             promoScreenYearlyPrice.text = IAPManager.m_StoreController.products.WithID(yearly).metadata.localizedPriceString;
+        }
+
+        else
+        {
+            subscriptionsScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
+            promoScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
+            promoScreenPuchasePrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
         }
 
     }

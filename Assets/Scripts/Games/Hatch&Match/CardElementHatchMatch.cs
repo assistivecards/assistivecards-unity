@@ -75,7 +75,7 @@ public class CardElementHatchMatch : MonoBehaviour, IPointerDownHandler, IDragHa
     {
         boardCreatorHatchMatch.levelEnd = true;
 
-        if(boardCreatorHatchMatch.levelCount < 6)
+        if(boardCreatorHatchMatch.levelCount < 4)
         {
             boardCreatorHatchMatch.NewLevel();
         }

@@ -20140,7 +20140,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -297, y: 6612.257}
+  m_AnchoredPosition: {x: -297, y: 22763.088}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &1242831489913853829
@@ -64148,6 +64148,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PremiumPromoUniApp
       objectReference: {fileID: 0}
+    - target: {fileID: 2203021991204182506, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_Name
+      value: promoScreenMonthlyButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695518237756278748, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_Name
+      value: promoScreenYearlyButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234711499305693150, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_Name
+      value: promoScreenPremiumButton
+      objectReference: {fileID: 0}
     - target: {fileID: 5541653650286881110, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -64227,6 +64239,30 @@ PrefabInstance:
     - target: {fileID: 5541653650286881110, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5546803491206928849, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_Name
+      value: promoScreenPuchasePremiumButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632244258251658550, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_Name
+      value: promoScreenMonthlyPrice
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880117095266442256, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_Name
+      value: promoScreenPrice
+      objectReference: {fileID: 0}
+    - target: {fileID: 7106757455440512579, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_Name
+      value: promoScreenYearlyPrice
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656155019491385018, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_Name
+      value: promoScreenPuchasePrice
+      objectReference: {fileID: 0}
+    - target: {fileID: 7996999834615528060, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_Name
+      value: promoUniAppRestoreButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -64362,9 +64398,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1242831489818517042}
     m_Modifications:
+    - target: {fileID: 390191118674995395, guid: a786ca62a7969db40aa32c1974981a5e, type: 3}
+      propertyPath: m_Name
+      value: subscriptionsScreenPrice
+      objectReference: {fileID: 0}
     - target: {fileID: 1757031615392363922, guid: a786ca62a7969db40aa32c1974981a5e, type: 3}
       propertyPath: m_Name
       value: SubscriptionsUniApp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2227006886136827829, guid: a786ca62a7969db40aa32c1974981a5e, type: 3}
+      propertyPath: m_Name
+      value: subscriptionsScreenMonthlyPrice
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485142483984269497, guid: a786ca62a7969db40aa32c1974981a5e, type: 3}
+      propertyPath: m_Name
+      value: subsRestoreButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2551783517196316103, guid: a786ca62a7969db40aa32c1974981a5e, type: 3}
+      propertyPath: m_Name
+      value: subscriptionsScreenPremiumButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774204503552438381, guid: a786ca62a7969db40aa32c1974981a5e, type: 3}
+      propertyPath: m_Name
+      value: subscriptionsScreenYearlyButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774205959414201651, guid: a786ca62a7969db40aa32c1974981a5e, type: 3}
+      propertyPath: m_Name
+      value: subscriptionsScreenMonthlyButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7214295993086496252, guid: a786ca62a7969db40aa32c1974981a5e, type: 3}
+      propertyPath: m_Name
+      value: subscriptionsScreenYearlyPrice
       objectReference: {fileID: 0}
     - target: {fileID: 8993883354844398122, guid: a786ca62a7969db40aa32c1974981a5e, type: 3}
       propertyPath: m_Pivot.x

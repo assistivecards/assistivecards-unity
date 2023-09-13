@@ -168,11 +168,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1242831490340205118, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
   m_PrefabInstance: {fileID: 1242831489266657176}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &200934778 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1242831490808992306, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
-  m_PrefabInstance: {fileID: 1242831489266657176}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &246201206
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,6 +324,10 @@ PrefabInstance:
       propertyPath: mainSettingScreen
       value: 
       objectReference: {fileID: 1241304286}
+    - target: {fileID: 543293290755305770, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: promoScreenUniApp
+      value: 
+      objectReference: {fileID: 1242831489266657179}
     - target: {fileID: 543293291873109802, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1958,7 +1957,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availablePacksText: {fileID: 770021530}
-  restoreButton: {fileID: 200934778}
+  subsRestoreButton: {fileID: 0}
+  promoUniAppRestoreButton: {fileID: 0}
   subscriptionsScreenPremiumButton: {fileID: 1867278663}
   subscriptionsScreenMonthlyButton: {fileID: 0}
   subscriptionsScreenYearlyButton: {fileID: 0}
@@ -3394,7 +3394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 30236.465
+      value: 34426.16
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a
@@ -3561,6 +3561,11 @@ GameObject:
 --- !u!1 &1242831489266657178 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9084976097150636252, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+  m_PrefabInstance: {fileID: 1242831489266657176}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1242831489266657179 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2668869103275835175, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
   m_PrefabInstance: {fileID: 1242831489266657176}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &1910463663942908501

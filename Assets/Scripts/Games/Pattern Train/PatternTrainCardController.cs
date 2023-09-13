@@ -60,8 +60,8 @@ public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerD
                 match = true;
                 LeanTween.move(this.gameObject, other.transform.position, 0.5f).setOnComplete(RotateCard);
                 gameAPI.AddSessionExp();
-                gameAPI.Speak(cardLocalName);
-                Debug.Log(cardLocalName);
+                gameAPI.PlaySFX("Success");
+                Invoke("SuccessTTS", 0.25f);
                 draggable = false;
             }
             else if(oneTime)
@@ -71,6 +71,12 @@ public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerD
                 gameAPI.RemoveSessionExp();
             }
         }
+    }
+
+    private void SuccessTTS()
+    {
+        gameAPI.Speak(cardLocalName);
+        Debug.Log(cardLocalName);
     }
 
     private void RotateCard()

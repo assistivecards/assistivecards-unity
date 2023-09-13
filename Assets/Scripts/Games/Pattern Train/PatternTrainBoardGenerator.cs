@@ -124,6 +124,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
     {
         if(uıController.canGenerate)
         {
+            uıController.LoadingScreenActivation();
             await CacheCards();
             CreatePositionsList();
             for(int j = 0; j < patternPositions.Count; j++)
@@ -138,7 +139,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
                     cardTexture.wrapMode = TextureWrapMode.Clamp;
                     cardTexture.filterMode = FilterMode.Bilinear;
 
-                    card.transform.name = cardLocalNames[randomValueList[0]];
+                    card.transform.name = cardLocalNames[randomValueList[0]].ToLower();
                     card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                     card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                     LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-15, 15)), 0f);
@@ -155,7 +156,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
                     cardTexture.wrapMode = TextureWrapMode.Clamp;
                     cardTexture.filterMode = FilterMode.Bilinear;
 
-                    card.transform.name = cardLocalNames[randomValueList[1]];
+                    card.transform.name = cardLocalNames[randomValueList[1]].ToLower();
                     card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                     card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                     LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-15, 15)), 0f);
@@ -172,7 +173,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
                     cardTexture.wrapMode = TextureWrapMode.Clamp;
                     cardTexture.filterMode = FilterMode.Bilinear;
 
-                    card.transform.name = cardLocalNames[randomValueList[2]];
+                    card.transform.name = cardLocalNames[randomValueList[2]].ToLower();;
                     card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                     card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                     LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-15, 15)), 0f);
@@ -192,7 +193,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
 
-                card.transform.name = cardLocalNames[randomValueList[j]];
+                card.transform.name = cardLocalNames[randomValueList[j]].ToLower();;
                 card.GetComponent<PatternTrainCardController>().draggable = true;
                 card.GetComponent<PatternTrainCardController>().cardName = cardNames[randomValueList[j]];
                 card.GetComponent<PatternTrainCardController>().trueCardName = trueCardName;

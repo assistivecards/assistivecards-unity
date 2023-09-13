@@ -21,7 +21,7 @@
 #include "UI/OrientationSupport.h"
 #include "UI/UnityView.h"
 #include "UI/Keyboard.h"
-#include "UI/SplashScreen.h"
+#include "UI/UnityViewControllerBase.h"
 #include "Unity/InternalProfiler.h"
 #include "Unity/DisplayManager.h"
 #include "Unity/ObjCRuntime.h"
@@ -44,7 +44,7 @@ UnityAppController* GetAppController()
 bool _ios81orNewer = false, _ios82orNewer = false, _ios83orNewer = false, _ios90orNewer = false, _ios91orNewer = false;
 bool _ios100orNewer = false, _ios101orNewer = false, _ios102orNewer = false, _ios103orNewer = false;
 bool _ios110orNewer = false, _ios111orNewer = false, _ios112orNewer = false;
-bool _ios130orNewer = false, _ios140orNewer = false;
+bool _ios130orNewer = false, _ios140orNewer = false, _ios150orNewer = false, _ios160orNewer = false;
 
 // was unity rendering already inited: we should not touch rendering while this is false
 bool    _renderingInited        = false;
@@ -62,9 +62,6 @@ bool    _wasPausedExternal      = false;
 bool    _skipPresent            = false;
 // was app "resigned active": some operations do not make sense while app is in background
 bool    _didResignActive        = false;
-
-// was startUnity scheduled: used to make startup robust in case of locking device
-static bool _startUnityScheduled    = false;
 
 #if UNITY_SUPPORT_ROTATION
 // Required to enable specific orientation for some presentation controllers: see supportedInterfaceOrientationsForWindow below for details
@@ -120,8 +117,10 @@ NSInteger _forceInterfaceOrientationMask = 0;
 
     UnityInitApplicationGraphics();
 
+#if !PLATFORM_VISIONOS
     // we make sure that first level gets correct display list and orientation
     [[DisplayManager Instance] updateDisplayListCacheInUnity];
+#endif
 
     UnityLoadApplication();
     Profiler_InitProfiler();
@@ -279,7 +278,6 @@ extern "C" void UnityCleanupTrampoline()
     return YES;
 }
 
-#if (PLATFORM_IOS && defined(__IPHONE_13_0)) || (PLATFORM_TVOS && defined(__TVOS_13_0))
 - (UIWindowScene*)pickStartupWindowScene:(NSSet<UIScene*>*)scenes API_AVAILABLE(ios(13.0), tvos(13.0))
 {
     // if we have scene with UISceneActivationStateForegroundActive - pick it
@@ -304,14 +302,13 @@ extern "C" void UnityCleanupTrampoline()
 
     return foregroundScene ? foregroundScene : backgroundScene;
 }
-#endif
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     ::printf("-> applicationDidFinishLaunching()\n");
 
     // send notfications
-#if !PLATFORM_TVOS
+#if !PLATFORM_TVOS && !PLATFORM_VISIONOS
     if ([UIDevice currentDevice].generatesDeviceOrientationNotifications == NO)
         [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
 #endif
@@ -321,12 +318,14 @@ extern "C" void UnityCleanupTrampoline()
     [self selectRenderingAPI];
     [UnityRenderingView InitializeForAPI: self.renderingAPI];
 
-#if (PLATFORM_IOS && defined(__IPHONE_13_0)) || (PLATFORM_TVOS && defined(__TVOS_13_0))
+#if !PLATFORM_VISIONOS
     if (@available(iOS 13, tvOS 13, *))
         _window = [[UIWindow alloc] initWithWindowScene: [self pickStartupWindowScene: application.connectedScenes]];
     else
+        _window = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds];
+#else
+    _window = [[UIWindow alloc] init]; 
 #endif
-    _window = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds];
 
     _unityView = [self createUnityView];
 
@@ -341,6 +340,11 @@ extern "C" void UnityCleanupTrampoline()
     // if you wont use keyboard you may comment it out at save some memory
     [KeyboardDelegate Initialize];
 
+    // delay is needed so that the attach managed debugger window would be properly created when OS view is prepared to show it,
+    //  otherwise debug window will not appear and will cause application to be in frozen state. "startUnity" method after delay will be called on applicationDidBecomeActive
+    // also this might introduce one black frame between launch screen and unity splash screen, but in most scenarios it will be not visible since the splash screen has black background itself
+    [self performSelector: @selector(startUnity:) withObject: application afterDelay: 0];
+    
     return YES;
 }
 
@@ -390,11 +394,6 @@ extern "C" void UnityCleanupTrampoline()
         // need to do this with delay because FMOD restarts audio in AVAudioSessionInterruptionNotification handler
         [self performSelector: @selector(updateUnityAudioOutput) withObject: nil afterDelay: 0.1];
         UnitySetPlayerFocus(1);
-    }
-    else if (!_startUnityScheduled)
-    {
-        _startUnityScheduled = true;
-        [self performSelector: @selector(startUnity:) withObject: application afterDelay: 0];
     }
 
     _didResignActive = false;
@@ -482,12 +481,6 @@ extern "C" void UnityCleanupTrampoline()
     }
 
     _didResignActive = true;
-}
-
-- (void)applicationDidReceiveMemoryWarning:(UIApplication*)application
-{
-    ::printf("WARNING -> applicationDidReceiveMemoryWarning()\n");
-    UnityLowMemory();
 }
 
 - (void)applicationWillTerminate:(UIApplication*)application
@@ -597,7 +590,8 @@ void UnityInitTrampoline()
     _ios90orNewer  = CHECK_VER(@"9.0");  _ios91orNewer  = CHECK_VER(@"9.1");
     _ios100orNewer = CHECK_VER(@"10.0"); _ios101orNewer = CHECK_VER(@"10.1"); _ios102orNewer = CHECK_VER(@"10.2"); _ios103orNewer = CHECK_VER(@"10.3");
     _ios110orNewer = CHECK_VER(@"11.0"); _ios111orNewer = CHECK_VER(@"11.1"); _ios112orNewer = CHECK_VER(@"11.2");
-    _ios130orNewer  = CHECK_VER(@"13.0"); _ios140orNewer = CHECK_VER(@"14.0");
+    _ios130orNewer  = CHECK_VER(@"13.0"); _ios140orNewer = CHECK_VER(@"14.0"); _ios150orNewer = CHECK_VER(@"15.0");
+    _ios160orNewer = CHECK_VER(@"16.0");
 #undef CHECK_VER
 
     AddNewAPIImplIfNeeded();
@@ -622,11 +616,14 @@ extern "C" bool UnityiOS111orNewer() { return _ios111orNewer; }
 extern "C" bool UnityiOS112orNewer() { return _ios112orNewer; }
 extern "C" bool UnityiOS130orNewer() { return _ios130orNewer; }
 extern "C" bool UnityiOS140orNewer() { return _ios140orNewer; }
+extern "C" bool UnityiOS150orNewer() { return _ios150orNewer; }
+extern "C" bool UnityiOS160orNewer() { return _ios160orNewer; }
 
 // sometimes apple adds new api with obvious fallback on older ios.
 // in that case we simply add these functions ourselves to simplify code
 static void AddNewAPIImplIfNeeded()
 {
+#if !PLATFORM_VISIONOS
     if (![[UIScreen class] instancesRespondToSelector: @selector(maximumFramesPerSecond)])
     {
         IMP UIScreen_MaximumFramesPerSecond_IMP = imp_implementationWithBlock(^NSInteger(id _self) {
@@ -642,31 +639,5 @@ static void AddNewAPIImplIfNeeded()
         });
         class_replaceMethod([UIView class], @selector(safeAreaInsets), UIView_SafeAreaInsets_IMP, UIView_safeAreaInsets_Enc);
     }
-}
-
-// xcode11 uses new compiler-rt lib
-// if we build unity player lib with xcode11 and then user links final project with older xcode
-//   the link fails with Undefined Symbol ___isPlatformVersionAtLeast
-// hence we add this as a temporary hack until we start requiring xcode11
-
-#if __clang_major__ < 11
-extern "C" int32_t __isOSVersionAtLeast(int32_t Major, int32_t Minor, int32_t Subminor);
-extern "C" int32_t __isPlatformVersionAtLeast(uint32_t Platform, uint32_t Major, uint32_t Minor, uint32_t Subminor)
-{
-    return __isOSVersionAtLeast(Major, Minor, Subminor);
-}
-
 #endif
-
-// starting with xcode 11.4 apple changed FD_SET and related macro to use weakly imported __darwin_check_fd_set_overflow
-// alas if we build xcode project with OLDER xcode this function is missing
-//   and we build unity lib with xcode11+, thus producing linker error
-// we mimic the logic of apple sdk itself (this part is open sourced):
-//   if __darwin_check_fd_set_overflow is not present the caller returns 1, so do we
-#ifndef __IPHONE_13_4
-extern "C" int __darwin_check_fd_set_overflow(int, const void *, int)
-{
-    return 1;
 }
-
-#endif

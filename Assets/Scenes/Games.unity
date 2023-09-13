@@ -430,11 +430,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1242831490340205118, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
   m_PrefabInstance: {fileID: 1242831489266657176}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &200934778 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1242831490808992306, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
-  m_PrefabInstance: {fileID: 1242831489266657176}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &215702444
 GameObject:
   m_ObjectHideFlags: 0
@@ -3870,7 +3865,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availablePacksText: {fileID: 770021530}
-  restoreButton: {fileID: 200934778}
+  subsRestoreButton: {fileID: 0}
+  promoUniAppRestoreButton: {fileID: 0}
   subscriptionsScreenPremiumButton: {fileID: 1867278663}
   subscriptionsScreenMonthlyButton: {fileID: 999637179}
   subscriptionsScreenYearlyButton: {fileID: 1311752549}
@@ -5801,6 +5797,7 @@ MonoBehaviour:
   topAppBar: {fileID: 429505576}
   mainSettingScreen: {fileID: 1241304286}
   promoScreen: {fileID: 1242831489266657178}
+  promoScreenUniApp: {fileID: 1242831489266657181}
   gamePrefab: {fileID: 1021200294}
   settingButtonObject: {fileID: 543293291342249704}
   settingButton: {fileID: 543293292392941588}
@@ -6579,7 +6576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 461714.56
+      value: 462964.72
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489920772738, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Name
@@ -6833,6 +6830,11 @@ GameObject:
 --- !u!224 &1242831489266657180 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1242831489705138827, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+  m_PrefabInstance: {fileID: 1242831489266657176}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1242831489266657181 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2668869103275835175, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
   m_PrefabInstance: {fileID: 1242831489266657176}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1663866711190788324

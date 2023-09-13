@@ -43,6 +43,8 @@ extern bool _skipPresent;
 
 #if UNITY_TVOS
     _curOrientation = UNITY_TVOS_ORIENTATION;
+#elif UNITY_VISIONOS
+    _curOrientation = UNITY_VISIONOS_ORIENTATION;
 #endif
 
     [self onUpdateSurfaceSize: frame.size];
@@ -63,8 +65,13 @@ extern bool _skipPresent;
 
 - (id)initFromMainScreen
 {
+#if !PLATFORM_VISIONOS
     CGRect  frame   = [UIScreen mainScreen].bounds;
     CGFloat scale   = UnityScreenScaleFactor([UIScreen mainScreen]);
+#else
+    CGRect  frame   = CGRectMake(0.0f, 0.0f, 1920.0f, 1080.0f);
+    CGFloat scale   = 1.0f;
+#endif
     if ((self = [super initWithFrame: frame]))
         [self initImpl: frame scaleFactor: scale];
     return self;
@@ -92,7 +99,12 @@ extern bool _skipPresent;
 
 - (void)recreateRenderingSurfaceIfNeeded
 {
+#if !PLATFORM_VISIONOS
     float requestedContentScaleFactor = UnityScreenScaleFactor([UIScreen mainScreen]);
+#else
+    float requestedContentScaleFactor = 1.0f;
+#endif
+
     if (abs(requestedContentScaleFactor - self.contentScaleFactor) > FLT_EPSILON)
     {
         self.contentScaleFactor = requestedContentScaleFactor;
@@ -156,21 +168,27 @@ extern bool _skipPresent;
             // draw 2 times to fill "both" buffers (we assume double buffering)
             // present only once to make sure correct image goes to CA
             // if we are calling this from inside repaint, second draw and present will be done automatically
+            _skipPresent = true;
+
+            // we may be asked to recreate surface while paused (in the background)
+            //   like changing device orientation while showing some system dialog
+            // in this case we still want to redraw contents to avoid view stretching
+            const bool wasPaused = UnityIsPaused();
+
             // please note that we still need to pretend we did come from displaylink to make sure vsync magic works
             // NOTE: unity does handle "draw frame with exact same timestamp" just fine
-            _skipPresent = true;
-            if (!UnityIsPaused())
+            UnityDisplayLinkCallback(GetAppController().unityDisplayLink.timestamp);
+            UnityRepaint();
+
+            // if we are inside actual repaint: we are done (second draw and present will be done automatically)
+            // otherwise we need the second repaint, actualy doing present this time
+            _skipPresent = false;
+
+            if (_viewIsRotating || wasPaused)
             {
                 UnityDisplayLinkCallback(GetAppController().unityDisplayLink.timestamp);
                 UnityRepaint();
-                // we are not inside repaint so we need to draw second time ourselves
-                if (_viewIsRotating)
-                {
-                    UnityDisplayLinkCallback(GetAppController().unityDisplayLink.timestamp);
-                    UnityRepaint();
-                }
             }
-            _skipPresent = false;
         }
     }
 
@@ -214,6 +232,7 @@ void ReportSafeAreaChangeForView(UIView* view)
     UnityReportSafeAreaChange(safeArea.origin.x, safeArea.origin.y,
         safeArea.size.width, safeArea.size.height);
 
+#if !PLATFORM_VISIONOS
     if (UnityDeviceHasCutout())
     {
         CGSize cutoutSizeRatio = GetCutoutToScreenRatio();
@@ -230,6 +249,7 @@ void ReportSafeAreaChangeForView(UIView* view)
             return;
         }
     }
+#endif
 
     UnityReportDisplayCutouts(nullptr, nullptr, nullptr, nullptr, 0);
 }
@@ -240,13 +260,38 @@ CGRect ComputeSafeArea(UIView* view)
     CGRect screenRect = CGRectMake(0, 0, screenSize.width, screenSize.height);
 
     UIEdgeInsets insets = [view safeAreaInsets];
+    float insetLeft = insets.left, insetBottom = insets.bottom;
+    float insetWidth = insetLeft + insets.right, insetHeight = insetBottom + insets.top;
 
-    screenRect.origin.x += insets.left;
-    screenRect.origin.y += insets.bottom; // Unity uses bottom left as the origin
-    screenRect.size.width -= insets.left + insets.right;
-    screenRect.size.height -= insets.top + insets.bottom;
+#if PLATFORM_IOS && !PLATFORM_VISIONOS
+    // pre-iOS 15 there is a bug with safeAreaInsets when coupled with the way unity handles forced orientation
+    // when we create/show new ViewController with fixed orientation, safeAreaInsets include status bar always
+    // alas, we did not find a good way to work around that (this can be seen even in View Debugging: Safe Area would have status bar accounted for)
+    // we know for sure that status bar height is 20 (at least on ios16 or older), so we can check if the safe area
+    //   includes inset of this size while status bar should be hidden, resetting vertical insets in this case
+    if (@available(iOS 15, *))
+    {
+        // everything works as expected
+    }
+    else
+    {
+        bool isStatusBarHidden = false;
+        if (@available(iOS 13, *))
+            isStatusBarHidden = view.window.windowScene.statusBarManager.statusBarHidden;
+        else
+            isStatusBarHidden = [UIApplication sharedApplication].statusBarHidden;
 
-    float scale = view.contentScaleFactor;
+        if (isStatusBarHidden && fabsf(insetHeight - 20) < 1e-6f)
+            insetHeight = insetBottom = 0.0f;
+    }
+#endif
+
+    // Unity uses bottom left as the origin
+    screenRect = CGRectOffset(screenRect, insetLeft, insetBottom);
+    screenRect.size.width -= insetWidth;
+    screenRect.size.height -= insetHeight;
+
+    const float scale = view.contentScaleFactor;
 
     // Truncate safe area size because in some cases (for example when Display zoom is turned on)
     // it might become larger than Screen.width/height which are returned as ints.
@@ -254,6 +299,7 @@ CGRect ComputeSafeArea(UIView* view)
     screenRect.origin.y = (unsigned)(screenRect.origin.y * scale);
     screenRect.size.width = (unsigned)(screenRect.size.width * scale);
     screenRect.size.height = (unsigned)(screenRect.size.height * scale);
+
     return screenRect;
 }
 
@@ -264,6 +310,14 @@ CGSize GetCutoutToScreenRatio()
 {
     switch (UnityDeviceGeneration())
     {
+        case deviceiPhone14:
+            return CGSizeMake(0.415, 0.04);
+        case deviceiPhone14Plus:
+            return CGSizeMake(0.377, 0.036);
+        case deviceiPhone14Pro:
+            return CGSizeMake(0.318, 0.062);
+        case deviceiPhone14ProMax:
+            return CGSizeMake(0.292, 0.052);
         case deviceiPhone13ProMax:
             return CGSizeMake(0.373, 0.036);
         case deviceiPhone13Pro:

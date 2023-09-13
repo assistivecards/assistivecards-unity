@@ -10,6 +10,25 @@ public class OnboardingBackgroundController : MonoBehaviour
     [SerializeField] private Sprite background2;
     [SerializeField] private Sprite background3;
 
+    float deviceRatio;
+
+    void Start(){
+        float baseWidth = 1600f; // Max asset residue
+        float baseHeight = 900f; // Max asset residue
+
+        Debug.Log("Game is starting in : " + Screen.orientation);
+
+        deviceRatio = (float)Screen.height / (float)Screen.width;
+
+        float baseTippingPointWidth = 1212f; // ratioed ipad width
+        float baseTippingPointHeight = 726f; // ratioed iphone height
+
+        float SAFEAREA_RATIO = baseTippingPointWidth / baseTippingPointHeight;
+
+        //backgroundImage.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+
+    }
+
     public void BackgroundAvailable()
     {
         backgroundImage.enabled = true;
@@ -19,7 +38,7 @@ public class OnboardingBackgroundController : MonoBehaviour
     {
         backgroundImage.enabled = false;
     }
-    
+
     public void SetBackground1()
     {
         backgroundImage.sprite = background1;

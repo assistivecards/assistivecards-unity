@@ -32,7 +32,9 @@ void ShowActivityIndicator(UIView* parent, int style)
     if (style >= 0)
     {
         _activityIndicator = [[ActivityIndicator alloc] initWithActivityIndicatorStyle: (UIActivityIndicatorViewStyle)style];
+#if !PLATFORM_VISIONOS
         _activityIndicator.contentScaleFactor = [UIScreen mainScreen].scale;
+#endif
     }
 
     if (_activityIndicator != nil)

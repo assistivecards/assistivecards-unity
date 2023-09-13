@@ -13,6 +13,7 @@ public class SettingScreenButton : MonoBehaviour
     [SerializeField] private GameObject topAppBar;
     [SerializeField] private GameObject mainSettingScreen;
     [SerializeField] private GameObject promoScreen;
+    [SerializeField] private GameObject promoScreenUniApp;
 
     [Header("Screen Setting Variables")]
 
@@ -52,6 +53,7 @@ public class SettingScreenButton : MonoBehaviour
     public void SettingButtonClickFunc()
     {
         promoScreen.SetActive(false);
+        promoScreenUniApp.SetActive(false);
         Invoke("SettingButtonClick", 0.3f);
     }
 

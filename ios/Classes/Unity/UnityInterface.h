@@ -6,6 +6,10 @@
 #include "UnityForwardDecls.h"
 #include "UnityRendering.h"
 
+#ifdef __OBJC__
+#import "Foundation/Foundation.h"
+#endif
+
 // unity plugin functions
 
 // audio plugin api
@@ -112,7 +116,9 @@ void    UnityOrientationRequestWasCommitted(void);
 int     UnityReportResizeView(unsigned w, unsigned h, unsigned /*ScreenOrientation*/ contentOrientation);   // returns ScreenOrientation
 void    UnityReportSafeAreaChange(float x, float y, float w, float h);
 void    UnityReportBackbufferChange(UnityRenderBufferHandle colorBB, UnityRenderBufferHandle depthBB);
+#if !PLATFORM_VISIONOS
 float   UnityCalculateScalingFactorFromTargetDPI(UIScreen* screen);
+#endif
 void    UnityReportDisplayCutouts(const float* x, const float* y, const float* width, const float* height, int count);
 
 // player settings
@@ -163,7 +169,7 @@ void    UnitySetJoystickPosition(int joyNum, int axis, float pos);
 int     UnityStringToKey(const char *name);
 void    UnitySetKeyState(int key, int /*bool*/ state);
 void    UnitySetKeyboardKeyState(int key, int /*bool*/ state);
-void    UnitySendKeyboardCommand(UIKeyCommand* command);
+void    UnitySendKeyboardCommand(UIKeyCommand* command, int code);
 
 // UnityWebRequest handling
 
@@ -205,6 +211,7 @@ void    UnitySendTouchesBegin(NSSet* touches, UIEvent* event);
 void    UnitySendTouchesEnded(NSSet* touches, UIEvent* event);
 void    UnitySendTouchesCancelled(NSSet* touches, UIEvent* event);
 void    UnitySendTouchesMoved(NSSet* touches, UIEvent* event);
+void    UnitySendTouchesUnfiltered(NSSet* touches, NSSet* allTouches);
 
 void    UnityCancelTouches(void);
 
@@ -228,7 +235,9 @@ UIWindow*               UnityGetMainWindow(void);
 enum ScreenOrientation  UnityCurrentOrientation(void);
 
 // Unity/DisplayManager.mm
+#if !PLATFORM_VISIONOS
 float                   UnityScreenScaleFactor(UIScreen* screen);
+#endif
 
 // Unity/DeviceSettings.mm
 int                     UnityDeviceHasCutout(void);
@@ -266,12 +275,15 @@ void            UnityGfxInitedCallback(void);
 void            UnityPresentContextCallback(struct UnityFrameStats const* frameStats);
 void            UnityFramerateChangeCallback(int targetFPS);
 int             UnitySelectedRenderingAPI(void);
+int             UnityIsBatchmode(void);
 
 NSBundle*           UnityGetMetalBundle(void);
 MTLDeviceRef        UnityGetMetalDevice(void);
 MTLCommandQueueRef  UnityGetMetalCommandQueue(void);
-MTLCommandQueueRef  UnityGetMetalDrawableCommandQueue(void);
 int UnityCommandQueueMaxCommandBufferCountMTL(void);
+
+// deprecated, soon to be removed
+MTLCommandQueueRef  UnityGetMetalDrawableCommandQueue(void);
 
 UnityRenderBufferHandle UnityBackbufferColor(void);
 UnityRenderBufferHandle UnityBackbufferDepth(void);

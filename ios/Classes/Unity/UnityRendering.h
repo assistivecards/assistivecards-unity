@@ -3,14 +3,6 @@
 #include <stdint.h>
 
 #ifdef __OBJC__
-@class CAEAGLLayer;
-@class EAGLContext;
-#else
-typedef struct objc_object CAEAGLLayer;
-typedef struct objc_object EAGLContext;
-#endif
-
-#ifdef __OBJC__
 @class CAMetalLayer;
 @protocol CAMetalDrawable;
 @protocol MTLDrawable;
@@ -123,17 +115,16 @@ OBJC_OBJECT_PTR CAMetalLayer *       layer;
 OBJC_OBJECT_PTR MTLDeviceRef         device;
 
 OBJC_OBJECT_PTR MTLCommandQueueRef  commandQueue;
-OBJC_OBJECT_PTR MTLCommandQueueRef  drawableCommandQueue;
-OBJC_OBJECT_PTR MTLCommandBufferRef presentCB;
-
 OBJC_OBJECT_PTR CAMetalDrawableRef  drawable;
-
 OBJC_OBJECT_PTR MTLTextureRef       drawableProxyRT[kUnityNumOffscreenSurfaces];
+UnityRenderBufferHandle             drawableProxyRS[kUnityNumOffscreenSurfaces];
+int                                 drawableProxyNeedsClear[kUnityNumOffscreenSurfaces];    // [bool] Tracks whether the drawableProxy requires a clear after initial creation
 
 // This is used on a Mac with drawableProxyRT when off-screen rendering is used
 int                                 proxySwaps;         // Counts times proxy RTs have swapped since surface recreated
 int                                 proxyReady;         // [bool] Proxy RT has swapped since last present; frame ended
 
+OBJC_OBJECT_PTR MTLTextureRef       drawableTex;
 OBJC_OBJECT_PTR MTLTextureRef       systemColorRB;
 OBJC_OBJECT_PTR MTLTextureRef       targetColorRT;
 OBJC_OBJECT_PTR MTLTextureRef       targetAAColorRT;
@@ -256,6 +247,12 @@ UnityRenderBufferHandle UnityCreateExternalColorSurfaceMTL(UnityRenderBufferHand
 UnityRenderBufferHandle UnityCreateExternalDepthSurfaceMTL(UnityRenderBufferHandle surf, MTLTextureRef tex, MTLTextureRef stencilTex, const UnityRenderBufferDesc* desc);
 // creates "dummy" surface - will indicate "missing" buffer (e.g. depth-only RT will have color as dummy)
 UnityRenderBufferHandle UnityCreateDummySurface(UnityRenderBufferHandle surf, int isColor, const UnityRenderBufferDesc* desc);
+// external render surfaces and textures are "out of scope" for memory profiler, hence we add means to register them separately
+// the separate mechanism is needed because unity cannot know what manages the lifetime of textures in this case
+//   specifically since we allow external render surfaces and textures to share metal textures
+void UnityRegisterExternalRenderSurfaceTextureForMemoryProfiler(MTLTextureRef tex);
+void UnityRegisterExternalTextureForMemoryProfiler(MTLTextureRef tex);
+void UnityUnregisterMetalTextureForMemoryProfiler(MTLTextureRef tex);
 
 // disable rendering to render buffers (all Cameras that were rendering to one of buffers would be reset to use backbuffer)
 void    UnityDisableRenderBuffers(UnityRenderBufferHandle color, UnityRenderBufferHandle depth);

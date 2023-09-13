@@ -261,7 +261,8 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
 
     private void LevelEndCardScaleDown()
     {
-        gameAPI.Speak(targetCard);
+        gameAPI.Speak(targetCardLocal);
+        Debug.Log(targetCardLocal);
         LeanTween.scale(levelEndCard, Vector3.zero, 0.25f).setOnComplete(LevelEndCardDestroy);
     }
 

@@ -101,6 +101,7 @@ public class MatchBoardGenerator : MonoBehaviour
     {
         if(uıController.canGenerate)
         {
+            uıController.LoadingScreenActivation();
             tutorial.tutorialEnabledCount = 0;
             GetPositionList();
             await CacheCards();

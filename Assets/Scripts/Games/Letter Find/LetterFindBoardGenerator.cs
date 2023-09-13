@@ -221,6 +221,10 @@ public class LetterFindBoardGenerator : MonoBehaviour
                             if(letterCardsNames[randomLetterValueList[i]].ToUpper() != emptyLetter)
                             {
                                 int randomLetter = randomLetterValueList[i]; 
+                                if(guessCardLetters.Contains(letterCardsNames[randomLetter]))
+                                {
+                                    randomLetter = 0;
+                                }
                                 card = Instantiate(cardPrefab, cardPositions[i].transform.position, Quaternion.identity);
                                 card.transform.SetParent(cardPositions[i].transform);
                                 card.transform.GetChild(0).gameObject.SetActive(true);
@@ -235,11 +239,16 @@ public class LetterFindBoardGenerator : MonoBehaviour
                                 card.GetComponent<LetterFindCardController>().cardLetter = letterCardsNames[randomLetter].ToUpper();
                                 card.GetComponent<LetterFindCardController>().targetWord = targetCardName;
                                 LeanTween.scale(card, Vector3.one * 0.45f, 0);
+                                guessCardLetters.Add(card.GetComponent<LetterFindCardController>().cardLetter);
                                 cards.Add(card);
                             }
                             else if(letterCardsNames[randomLetterValueList[i]].ToUpper() == emptyLetter)
                             {
                                 int randomLetter = randomLetterValueList[i + 1]; 
+                                if(guessCardLetters.Contains(letterCardsNames[randomLetter]))
+                                {
+                                    randomLetter = 0;
+                                }
                                 card = Instantiate(cardPrefab, cardPositions[i].transform.position, Quaternion.identity);
                                 card.transform.SetParent(cardPositions[i].transform);
                                 card.transform.GetChild(0).gameObject.SetActive(true);
@@ -253,6 +262,7 @@ public class LetterFindBoardGenerator : MonoBehaviour
                                 card.GetComponent<LetterFindCardController>().cardLetter = letterCardsNames[randomLetter].ToUpper();
                                 card.GetComponent<LetterFindCardController>().targetWord = targetCardName;
                                 LeanTween.scale(card, Vector3.one * 0.45f, 0);
+                                guessCardLetters.Add(card.GetComponent<LetterFindCardController>().cardLetter);
                                 cards.Add(card);
                             }
                         }
@@ -266,9 +276,11 @@ public class LetterFindBoardGenerator : MonoBehaviour
                     card.transform.SetParent(cardPositions[correctCardRandom].transform);
                     card.transform.GetChild(1).gameObject.SetActive(true);
                     card.transform.GetChild(0).gameObject.SetActive(false);
+                    tutorialScript.trueLetterCard = card;
                     card.GetComponentInChildren<TMP_Text>().text = emptyLetter;
                     card.GetComponent<LetterFindCardController>().cardLetter = emptyLetter;
                     card.GetComponent<LetterFindCardController>().targetWord = targetCardName;
+                    card.GetComponentInChildren<TMP_Text>().color = colors[Random.Range(0, colors.Length)];
                     LeanTween.scale(card, Vector3.one * 0.45f, 0);
                     cards.Add(card);
 
@@ -288,6 +300,7 @@ public class LetterFindBoardGenerator : MonoBehaviour
                             card.GetComponentInChildren<TMP_Text>().text = wordletters[randomLetter];
                             card.GetComponent<LetterFindCardController>().cardLetter = wordletters[randomLetter];
                             card.GetComponent<LetterFindCardController>().targetWord = targetCardName;
+                            card.GetComponentInChildren<TMP_Text>().color = colors[Random.Range(0, colors.Length)];
                             LeanTween.scale(card, Vector3.one * 0.45f, 0);
                             guessCardLetters.Add(card.GetComponent<LetterFindCardController>().cardLetter);
                             cards.Add(card);

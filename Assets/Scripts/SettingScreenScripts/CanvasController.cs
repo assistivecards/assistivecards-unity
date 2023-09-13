@@ -5,6 +5,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 
 
@@ -42,9 +43,11 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private GameObject notificationScreen;
     [SerializeField] private GameObject accessibilityScreen;
     [SerializeField] private GameObject subscriptionsScreen;
+    [SerializeField] private GameObject subscriptionsScreenUniApp;
     [SerializeField] private GameObject allAppsScreen;
     [SerializeField] private GameObject allGamesScreen;
     [SerializeField] private GameObject promoScreen;
+    [SerializeField] private GameObject promoScreenUniApp;
     [SerializeField] private GameObject sendFeedbacksScreen;
     [SerializeField] private GameObject aboutApplicationScreen;
     [SerializeField] private GameObject loginPageScreen;
@@ -189,10 +192,22 @@ public class CanvasController : MonoBehaviour
     }
     public void SubscriptionsButtonClick()
     {
-        topAppBarController.ChangeTopAppBarType(2);
-        currentScreen = subscriptionsScreen;
-        LeanTween.scale(subscriptionsScreen, Vector3.one, 0.2f);
-        subscriptionsScreen.SetActive(true);
+        if (Application.productName == "Games")
+        {
+            topAppBarController.ChangeTopAppBarType(2);
+            currentScreen = subscriptionsScreenUniApp;
+            LeanTween.scale(subscriptionsScreenUniApp, Vector3.one, 0.2f);
+            subscriptionsScreenUniApp.SetActive(true);
+        }
+
+        else
+        {
+            topAppBarController.ChangeTopAppBarType(2);
+            currentScreen = subscriptionsScreen;
+            LeanTween.scale(subscriptionsScreen, Vector3.one, 0.2f);
+            subscriptionsScreen.SetActive(true);
+        }
+
     }
     public void SoundButtonClick()
     {
@@ -220,10 +235,22 @@ public class CanvasController : MonoBehaviour
 
     public void PremiumPromoButtonClick()
     {
-        topAppBarController.ChangeTopAppBarType(2);
-        currentScreen = promoScreen;
-        LeanTween.scale(promoScreen, Vector3.one, 0.2f);
-        promoScreen.SetActive(true);
+        if (Application.productName == "Games")
+        {
+            topAppBarController.ChangeTopAppBarType(2);
+            currentScreen = promoScreenUniApp;
+            LeanTween.scale(promoScreenUniApp, Vector3.one, 0.2f);
+            promoScreenUniApp.SetActive(true);
+        }
+
+        else
+        {
+            topAppBarController.ChangeTopAppBarType(2);
+            currentScreen = promoScreen;
+            LeanTween.scale(promoScreen, Vector3.one, 0.2f);
+            promoScreen.SetActive(true);
+        }
+
     }
     public void SendFeedbacksButtonClick()
     {

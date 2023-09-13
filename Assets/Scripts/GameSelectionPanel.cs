@@ -49,6 +49,7 @@ public class GameSelectionPanel : MonoBehaviour
             ListGames();
             didLanguageChange = false;
         }
+
     }
 
     public async void ListGames()

@@ -54,6 +54,7 @@ public class BoardCreatorComplete : MonoBehaviour
 
     public async Task CacheCards(string _packSlug)
     {
+        uıControllerComplete.LoadingScreenActivate();
         LeanTween.scale(gridBackground, Vector3.one, 0);
         selectedLangCode = await gameAPI.GetSystemLanguageCode();
         cardDefinitions = await gameAPI.GetCards(selectedLangCode, _packSlug);
@@ -127,6 +128,7 @@ public class BoardCreatorComplete : MonoBehaviour
         Invoke("FillCardSlot", 0.5f);
         isBoardCreated = true;
         oneTime = true;
+        uıControllerComplete.LoadingScreenDeactivate();
     }
 
     public void CheckChilds()

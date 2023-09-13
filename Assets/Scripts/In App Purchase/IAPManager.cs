@@ -23,17 +23,16 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
     [SerializeField] TMP_Text promoScreenYearlyPrice;
     [SerializeField] TMP_Text promoScreenPuchasePrice;
 
-
-
     [SerializeField] IAPUIManager IAPUIManager;
 
     public string environment = "development";
 
-    public static IStoreController m_StoreController;          // The Unity Purchasing system.
-    private static IExtensionProvider m_StoreExtensionProvider; // The store-specific Purchasing subsystems.
+    public IStoreController m_StoreController;          // The Unity Purchasing system.
+    private IExtensionProvider m_StoreExtensionProvider; // The store-specific Purchasing subsystems.
     [SerializeField] GameObject purchaseRestoredPanel;
 
     private bool restored = false;
+    private static bool isSubscriptionChecked = false;
 
     private void Awake()
     {
@@ -89,21 +88,21 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
 
         if (Application.productName == "Games")
         {
-            subscriptionsScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
-            promoScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
-            promoScreenPuchasePrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
+            subscriptionsScreenPrice.text = m_StoreController.products.WithID(premium).metadata.localizedPriceString;
+            promoScreenPrice.text = m_StoreController.products.WithID(premium).metadata.localizedPriceString;
+            promoScreenPuchasePrice.text = m_StoreController.products.WithID(premium).metadata.localizedPriceString;
 
-            subscriptionsScreenMonthlyPrice.text = IAPManager.m_StoreController.products.WithID(monthly).metadata.localizedPriceString;
-            subscriptionsScreenYearlyPrice.text = IAPManager.m_StoreController.products.WithID(yearly).metadata.localizedPriceString;
-            promoScreenMonthlyPrice.text = IAPManager.m_StoreController.products.WithID(monthly).metadata.localizedPriceString;
-            promoScreenYearlyPrice.text = IAPManager.m_StoreController.products.WithID(yearly).metadata.localizedPriceString;
+            subscriptionsScreenMonthlyPrice.text = m_StoreController.products.WithID(monthly).metadata.localizedPriceString;
+            subscriptionsScreenYearlyPrice.text = m_StoreController.products.WithID(yearly).metadata.localizedPriceString;
+            promoScreenMonthlyPrice.text = m_StoreController.products.WithID(monthly).metadata.localizedPriceString;
+            promoScreenYearlyPrice.text = m_StoreController.products.WithID(yearly).metadata.localizedPriceString;
         }
 
         else
         {
-            subscriptionsScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
-            promoScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
-            promoScreenPuchasePrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
+            subscriptionsScreenPrice.text = m_StoreController.products.WithID(premium).metadata.localizedPriceString;
+            promoScreenPrice.text = m_StoreController.products.WithID(premium).metadata.localizedPriceString;
+            promoScreenPuchasePrice.text = m_StoreController.products.WithID(premium).metadata.localizedPriceString;
         }
 
     }
@@ -219,17 +218,22 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
 
         if (Application.productName == "Games")
         {
-            if (gameAPI.GetPremium() == "0")
+            if (!isSubscriptionChecked)
             {
-                if (CheckSubscription(monthly) || CheckSubscription(yearly))
+                if (gameAPI.GetPremium() == "0")
                 {
-                    gameAPI.SetSubscription("A5515T1V3C4RD5");
-                }
-                else
-                {
-                    gameAPI.SetSubscription("0");
+                    if (CheckSubscription(monthly) || CheckSubscription(yearly))
+                    {
+                        gameAPI.SetSubscription("A5515T1V3C4RD5");
+                    }
+                    else
+                    {
+                        gameAPI.SetSubscription("0");
+                    }
+                    isSubscriptionChecked = true;
                 }
             }
+
         }
 
         IAPUIManager.CheckIfPremiumButtonInteractable();
@@ -255,21 +259,21 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
 
         if (Application.productName == "Games")
         {
-            subscriptionsScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
-            promoScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
-            promoScreenPuchasePrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
+            subscriptionsScreenPrice.text = m_StoreController.products.WithID(premium).metadata.localizedPriceString;
+            promoScreenPrice.text = m_StoreController.products.WithID(premium).metadata.localizedPriceString;
+            promoScreenPuchasePrice.text = m_StoreController.products.WithID(premium).metadata.localizedPriceString;
 
-            subscriptionsScreenMonthlyPrice.text = IAPManager.m_StoreController.products.WithID(monthly).metadata.localizedPriceString;
-            subscriptionsScreenYearlyPrice.text = IAPManager.m_StoreController.products.WithID(yearly).metadata.localizedPriceString;
-            promoScreenMonthlyPrice.text = IAPManager.m_StoreController.products.WithID(monthly).metadata.localizedPriceString;
-            promoScreenYearlyPrice.text = IAPManager.m_StoreController.products.WithID(yearly).metadata.localizedPriceString;
+            subscriptionsScreenMonthlyPrice.text = m_StoreController.products.WithID(monthly).metadata.localizedPriceString;
+            subscriptionsScreenYearlyPrice.text = m_StoreController.products.WithID(yearly).metadata.localizedPriceString;
+            promoScreenMonthlyPrice.text = m_StoreController.products.WithID(monthly).metadata.localizedPriceString;
+            promoScreenYearlyPrice.text = m_StoreController.products.WithID(yearly).metadata.localizedPriceString;
         }
 
         else
         {
-            subscriptionsScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
-            promoScreenPrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
-            promoScreenPuchasePrice.text = IAPManager.m_StoreController.products.WithID(premium).metadata.localizedPriceString;
+            subscriptionsScreenPrice.text = m_StoreController.products.WithID(premium).metadata.localizedPriceString;
+            promoScreenPrice.text = m_StoreController.products.WithID(premium).metadata.localizedPriceString;
+            promoScreenPuchasePrice.text = m_StoreController.products.WithID(premium).metadata.localizedPriceString;
         }
 
     }

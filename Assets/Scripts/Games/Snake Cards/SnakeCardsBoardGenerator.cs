@@ -54,8 +54,9 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
 
     [Header ("In Game Values")]
     private int targetCardRandomValue;
-    public bool gameStarted;
+    public string targetCardLocal;
     public string targetCard;
+    public bool gameStarted;
     public int eatenCardCount;
     public int reloadCount;
 
@@ -198,7 +199,8 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
             LeanTween.scale(levelEndCard, Vector3.zero, 0);
 
             targetCard = cardNames[randomValueList[targetCardRandomValue]];
-            eatCardsText.text = gameAPI.Translate(eatCardsText.gameObject.name, gameAPI.ToSentenceCase(targetCard).Replace("-", " "), selectedLangCode);
+            targetCardLocal = cardLocalNames[randomValueList[targetCardRandomValue]];
+            eatCardsText.text = gameAPI.Translate(eatCardsText.gameObject.name, gameAPI.ToSentenceCase(targetCardLocal).Replace("-", " "), selectedLangCode);
             reloadCount++;
             Invoke("GameUIActivate", 0.1f);
         }
@@ -220,6 +222,8 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
 
     public void ScaleUpLevelEndCard()
     {
+        gameAPI.Speak(targetCardLocal);
+        Debug.Log(targetCardLocal);
         LeanTween.scale(levelEndCard, Vector3.one, 0.5f).setOnComplete(GeneratedBoardAsync);
     }
 

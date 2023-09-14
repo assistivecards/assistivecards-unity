@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using Defective.JSON;
 using System;
+using System.Linq;
 
 public class PromoScreen : MonoBehaviour
 {
@@ -20,10 +21,14 @@ public class PromoScreen : MonoBehaviour
     [SerializeField] List<string> phraseCountsArray = new List<string>();
     public static bool didLanguageChange = false;
     bool firstTime = true;
+    private GameObject standalonePromoScreenPuchasePremiumButton;
+    private GameObject promoScreenPuchasePremiumButton;
 
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+        standalonePromoScreenPuchasePremiumButton = GameObject.FindObjectsOfType<GameObject>(true).Where(txt => txt.gameObject.name == "standalonePromoScreenPuchasePremiumButton").FirstOrDefault();
+        promoScreenPuchasePremiumButton = GameObject.FindObjectsOfType<GameObject>(true).Where(txt => txt.gameObject.name == "promoScreenPuchasePremiumButton").FirstOrDefault();
     }
 
     private void Start()
@@ -41,6 +46,27 @@ public class PromoScreen : MonoBehaviour
 
         }
 
+        if (Application.productName == "Games")
+        {
+            promoScreenPuchasePremiumButton.SetActive(true);
+        }
+        else
+        {
+            standalonePromoScreenPuchasePremiumButton.SetActive(true);
+        }
+
+    }
+
+    private void OnDisable()
+    {
+        if (Application.productName == "Games")
+        {
+            promoScreenPuchasePremiumButton.SetActive(false);
+        }
+        else
+        {
+            standalonePromoScreenPuchasePremiumButton.SetActive(false);
+        }
     }
 
 

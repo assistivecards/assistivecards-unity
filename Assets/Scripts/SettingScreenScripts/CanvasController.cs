@@ -75,8 +75,6 @@ public class CanvasController : MonoBehaviour
     public string version;
     private bool loadScene = false;
 
-    [SerializeField] private GameObject standalonePromoScreenPuchasePremiumButton;
-    [SerializeField] private GameObject promoScreenPuchasePremiumButton;
 
     private void Awake()
     {
@@ -243,7 +241,6 @@ public class CanvasController : MonoBehaviour
             currentScreen = promoScreenUniApp;
             LeanTween.scale(promoScreenUniApp, Vector3.one, 0.2f);
             promoScreenUniApp.SetActive(true);
-            promoScreenPuchasePremiumButton.SetActive(true);
         }
 
         else
@@ -252,7 +249,6 @@ public class CanvasController : MonoBehaviour
             currentScreen = promoScreen;
             LeanTween.scale(promoScreen, Vector3.one, 0.2f);
             promoScreen.SetActive(true);
-            standalonePromoScreenPuchasePremiumButton.SetActive(true);
         }
 
     }

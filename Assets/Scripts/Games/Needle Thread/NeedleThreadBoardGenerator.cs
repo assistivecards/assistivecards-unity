@@ -52,6 +52,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     public string targetCardLocal;
     public bool gameStarted;
     public int reloadCount;
+    public int ttsCount;
 
     private void Awake()
     {
@@ -295,5 +296,6 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
         randomValueList.Clear();
         cardPositions.Clear();
         matchCounter = 0;
+        ttsCount = 0;
     }
 }

@@ -154,6 +154,11 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
             CheckRandom();
             targetCard = cardNames[randomValueList[12]];
             targetCardLocal = cardLocalNames[randomValueList[12]];
+            if(targetCard == "Knitting")
+            {
+                targetCard = cardNames[randomValueList[13]];
+                targetCardLocal = cardLocalNames[randomValueList[13]];
+            }
             for(int i = 11; i < 20; i++)
             {
                 GameObject parent = CheckIsPositionEmpty();

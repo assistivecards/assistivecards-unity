@@ -5,7 +5,7 @@ using UnityEngine;
 public class VoiceGreeting : MonoBehaviour
 {
     GameAPI gameAPI;
-    private bool firstTime = true;
+    private static bool firstTime = true;
     [SerializeField] GameObject greetingText;
 
     private void Awake()
@@ -29,9 +29,9 @@ public class VoiceGreeting : MonoBehaviour
         firstTime = false;
     }
 
-    private void OnApplicationQuit()
-    {
-        firstTime = true;
-    }
+    // private void OnApplicationQuit()
+    // {
+    //     firstTime = true;
+    // }
 
 }

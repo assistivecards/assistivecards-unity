@@ -38,7 +38,7 @@ public class LoginContoller : MonoBehaviour
         gameAPI = Camera.main.GetComponent<GameAPI>();
         nicknameInputField.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
     }
-    private void OnEnable() 
+    private void OnEnable()
     {
         warningNickname.SetActive(false);
     }
@@ -61,7 +61,7 @@ public class LoginContoller : MonoBehaviour
     }
     public void NextButtonClicked()
     {
-        if(nicknameInputField.text.Length < 14)
+        if (nicknameInputField.text.Length < 14)
         {
             gameAPI.SetNickname(nicknameInputField.text);
             gameCanvas.GetComponent<LanguageTest>().OnNicknameChange();
@@ -86,6 +86,9 @@ public class LoginContoller : MonoBehaviour
     {
         //Fade Out
         // backgroundFadePanel.CrossFadeAlpha(0, 0.25f, false);
+        var settingsFillColor = canvasController.gameObject.GetComponent<Image>().color;
+        settingsFillColor.a = 0f;
+        canvasController.gameObject.GetComponent<Image>().color = settingsFillColor;
         LeanTween.scale(congratulationsScreen, Vector3.zero, 0f);
         Invoke("SetGamePanelActive", 0.25f);
     }

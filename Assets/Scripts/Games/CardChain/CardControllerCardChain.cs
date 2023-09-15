@@ -12,7 +12,6 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
     public GameObject preRightCard;
     public GameObject preLeftCard;
     private GameObject board;
-    public UIControllerCardChain uıController;
     public BoardGenerateCardChain boardGenerateCardChain;
     private RectTransform rt;
     public bool cantMove = false;
@@ -20,7 +19,7 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
     public string leftCardLocalName;
     public string rightCardLocalName;
     public List<GameObject> childList = new List<GameObject>();
-    private Collider2D otherCollider;
+    public Collider2D otherCollider;
     private bool isPointerUp;
     public bool rightMatched;
     public bool leftMatched;
@@ -108,20 +107,8 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
         {
             if(other.gameObject.GetComponent<ElementDetectorCardChain>() != null)
             {
-                if(other.gameObject.GetComponent<ElementDetectorCardChain>().cardType == leftCard.name)
-                {
-                    otherCollider = other;
-                    GameObject doubleCardParent = other.transform.parent.gameObject;
-                }
-                else if(other.gameObject.GetComponent<ElementDetectorCardChain>().cardType == rightCard.name)
-                {
-                    otherCollider = other;
-                    GameObject doubleCardParent = other.transform.parent.gameObject;
-                }
-                else
-                {
-                    gameAPI.RemoveSessionExp();
-                }
+                otherCollider = null;
+                gameAPI.RemoveSessionExp();
             }
         }
     }
@@ -151,29 +138,35 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
 
     private void MatchLeftCard()
     {
-        leftCardLocalName = doubleCardParent.GetComponent<CardControllerCardChain>().rightCardLocalName;
-
-        rt.sizeDelta = new Vector2(rt.sizeDelta.x + 350, rt.sizeDelta.y);
-        foreach(Transform child in transform)
+        if(otherCollider.transform.parent.childCount > 2)
         {
-            LeanTween.moveLocal(child.gameObject, new Vector3(child.localPosition.x + 120, child.localPosition.y, child.localPosition.z), 0.25f);
+            Debug.Log("CHILD COUNT 3");
         }
-        leftCard = doubleCardParent.GetComponent<CardControllerCardChain>().leftCard;
-        doubleCardParent.GetComponent<CardControllerCardChain>().leftCard.transform.SetParent(this.transform);
-        LeanTween.move(leftCard, new Vector3(preLeftCard.transform.position.x - 120, preLeftCard.transform.position.y, preLeftCard.transform.position.z), 0.15f);
-        GetChildList();
-        gameAPI.AddSessionExp();
-        gameAPI.PlaySFX("Success");
-        Invoke("ReadLeftCard", 0.25f);
-        Destroy(doubleCardParent.gameObject);
-
-        boardGenerateCardChain.matchCount ++;
-        if(boardGenerateCardChain.matchCount >= 4)
+        else
         {
-            Invoke("MoveToBottom", 0.2f);
+            leftCardLocalName = doubleCardParent.GetComponent<CardControllerCardChain>().rightCardLocalName;
+            rt.sizeDelta = new Vector2(rt.sizeDelta.x + 350, rt.sizeDelta.y);
+            foreach(Transform child in transform)
+            {
+                LeanTween.moveLocal(child.gameObject, new Vector3(child.localPosition.x + 120, child.localPosition.y, child.localPosition.z), 0.25f);
+            }
+            leftCard = doubleCardParent.GetComponent<CardControllerCardChain>().leftCard;
+            doubleCardParent.GetComponent<CardControllerCardChain>().leftCard.transform.SetParent(this.transform);
+            LeanTween.move(leftCard, new Vector3(preLeftCard.transform.position.x - 120, preLeftCard.transform.position.y, preLeftCard.transform.position.z), 0.15f);
+            GetChildList();
+            gameAPI.AddSessionExp();
+            gameAPI.PlaySFX("Success");
+            Invoke("ReadLeftCard", 0.25f);
+            Destroy(doubleCardParent.gameObject);
+
+            boardGenerateCardChain.matchCount ++;
+            if(boardGenerateCardChain.matchCount >= 4)
+            {
+                Invoke("MoveToBottom", 0.2f);
+            }
+            otherCollider = null;
+            doubleCardParent = null;
         }
-        otherCollider = null;
-        doubleCardParent = null;
     }
 
 
@@ -182,7 +175,7 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
         doubleCardParent = _other.transform.parent.gameObject;
         preRightCard = rightCard;
 
-        if(doubleCardParent != null)
+        if(doubleCardParent.GetComponent<CardControllerCardChain>().leftCardLocalName != null)
         {
             Invoke("MatchRightCard", 0f);
         }
@@ -190,27 +183,34 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
 
     private void MatchRightCard()
     {
-        rightCardLocalName = doubleCardParent.GetComponent<CardControllerCardChain>().leftCardLocalName;
-        rt.sizeDelta = new Vector2(rt.sizeDelta.x + 350, rt.sizeDelta.y);
-        foreach(Transform child in transform)
+        if(otherCollider.transform.parent.childCount > 2)
         {
-            LeanTween.moveLocal(child.gameObject, new Vector3(child.localPosition.x - 120, child.localPosition.y, child.localPosition.z), 0.25f);
+            Debug.Log("CHILD COUNT 3");
         }
-        rightCard = doubleCardParent.GetComponent<CardControllerCardChain>().rightCard;
-        doubleCardParent.GetComponent<CardControllerCardChain>().rightCard.transform.SetParent(this.transform);
-        LeanTween.move(rightCard, new Vector3(preRightCard.transform.position.x + 120, preRightCard.transform.position.y, preRightCard.transform.position.z), 0.15f);
-        GetChildList();
-        gameAPI.AddSessionExp();
-        gameAPI.PlaySFX("Success");
-        Invoke("ReadRightCard", 0.25f);
-        Destroy(doubleCardParent.gameObject);
-        boardGenerateCardChain.matchCount ++;
-        if(boardGenerateCardChain.matchCount >= 4)
+        else
         {
-            Invoke("MoveToBottom", 0.2f);
+            rightCardLocalName = doubleCardParent.GetComponent<CardControllerCardChain>().leftCardLocalName;
+            rt.sizeDelta = new Vector2(rt.sizeDelta.x + 350, rt.sizeDelta.y);
+            foreach(Transform child in transform)
+            {
+                LeanTween.moveLocal(child.gameObject, new Vector3(child.localPosition.x - 120, child.localPosition.y, child.localPosition.z), 0.25f);
+            }
+            rightCard = doubleCardParent.GetComponent<CardControllerCardChain>().rightCard;
+            doubleCardParent.GetComponent<CardControllerCardChain>().rightCard.transform.SetParent(this.transform);
+            LeanTween.move(rightCard, new Vector3(preRightCard.transform.position.x + 120, preRightCard.transform.position.y, preRightCard.transform.position.z), 0.15f);
+            GetChildList();
+            gameAPI.AddSessionExp();
+            gameAPI.PlaySFX("Success");
+            Invoke("ReadRightCard", 0.25f);
+            Destroy(doubleCardParent.gameObject);
+            boardGenerateCardChain.matchCount ++;
+            if(boardGenerateCardChain.matchCount >= 4)
+            {
+                Invoke("MoveToBottom", 0.2f);
+            }
+            otherCollider = null;
+            doubleCardParent = null;
         }
-        otherCollider = null;
-        doubleCardParent = null;
     }
 
     private void ScaleUp()
@@ -222,6 +222,8 @@ public class CardControllerCardChain : MonoBehaviour,IPointerDownHandler, IPoint
     {
         cantMove = true;
         LeanTween.move(this.gameObject, boardGenerateCardChain.centerPosition.transform.position, 0.25f).setOnComplete(ScaleUp);
+        leftMatched = false;
+        rightMatched = false;
     }
 
     private void CallResetBoard()

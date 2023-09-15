@@ -7978,7 +7978,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -10141,8 +10141,6 @@ MonoBehaviour:
   onboardingBackgroundController: {fileID: 8863623405472336265}
   currentScreen: {fileID: 0}
   version: 
-  standalonePromoScreenPuchasePremiumButton: {fileID: 2273160678804102227}
-  promoScreenPuchasePremiumButton: {fileID: 1101928135443437060}
 --- !u!114 &1242831489334970562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17103,7 +17101,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -20297,7 +20295,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -297, y: 309856.8}
+  m_AnchoredPosition: {x: -297, y: 319388.2}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &1242831489913853829
@@ -37980,7 +37978,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -43906,7 +43904,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -64839,6 +64837,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: promoScreenPremiumButton
       objectReference: {fileID: 0}
+    - target: {fileID: 5156345935096062201, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5541653650286881110, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -64939,6 +64941,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: promoScreenYearlyPrice
       objectReference: {fileID: 0}
+    - target: {fileID: 7336160901957101609, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7380488664587039512, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 0
@@ -64954,6 +64960,14 @@ PrefabInstance:
     - target: {fileID: 7996999834615528060, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
       propertyPath: m_Name
       value: promoUniAppRestoreButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624513713427423650, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8905446991159579207, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -65218,12 +65232,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: subscriptionsScreenYearlyButton
       objectReference: {fileID: 0}
+    - target: {fileID: 3022313728533262050, guid: a786ca62a7969db40aa32c1974981a5e, type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3093083085363555691, guid: a786ca62a7969db40aa32c1974981a5e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3336825744979905394, guid: a786ca62a7969db40aa32c1974981a5e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271146494549279678, guid: a786ca62a7969db40aa32c1974981a5e, type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411780273570174090, guid: a786ca62a7969db40aa32c1974981a5e, type: 3}
+      propertyPath: m_enableWordWrapping
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4774205959414201651, guid: a786ca62a7969db40aa32c1974981a5e, type: 3}

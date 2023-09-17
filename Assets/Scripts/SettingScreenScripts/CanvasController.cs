@@ -74,10 +74,12 @@ public class CanvasController : MonoBehaviour
     private TopAppBarController topAppBarController;
     public string version;
     private bool loadScene = false;
+    private Color settingsFillColor;
 
 
     private void Awake()
     {
+        settingsFillColor = gameObject.GetComponent<Image>().color;
         gameAPI = Camera.main.GetComponent<GameAPI>();
         CheckConnection();
         nickname = gameAPI.GetNickname();
@@ -85,6 +87,7 @@ public class CanvasController : MonoBehaviour
 
         if (PlayerPrefs.GetString("Nickname", "") != "")
         {
+            settingsFillColor.a = 0f;
             loginPrefab.SetActive(false);
             loginPageScreen.SetActive(false);
             gamePrefab.SetActive(true);
@@ -92,8 +95,11 @@ public class CanvasController : MonoBehaviour
         }
         else
         {
+            settingsFillColor.a = 1f;
             gamePrefab.SetActive(false);
         }
+
+        gameObject.GetComponent<Image>().color = settingsFillColor;
     }
 
     public async void CheckConnection()
@@ -335,6 +341,8 @@ public class CanvasController : MonoBehaviour
 
 
         loginPrefab.SetActive(true);
+        settingsFillColor.a = 1f;
+        gameObject.GetComponent<Image>().color = settingsFillColor;
         loginPrefab.transform.GetChild(3).gameObject.SetActive(true);
         settingPrefab.SetActive(false);
         Camera.main.transform.GetChild(0).GetComponent<AudioSource>().Pause();

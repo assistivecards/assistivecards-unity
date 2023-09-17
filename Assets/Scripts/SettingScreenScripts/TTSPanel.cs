@@ -14,6 +14,7 @@ public class TTSPanel : MonoBehaviour
     public List<GameObject> ttsElementGameObject = new List<GameObject>();
     private GameAPI gameAPI;
     public static bool didLanguageChange = true;
+    public bool loadingCompleted;
 
     private void Awake()
     {
@@ -63,6 +64,7 @@ public class TTSPanel : MonoBehaviour
 
             tempTtsElement.SetActive(false);
             didLanguageChange = false;
+            loadingCompleted = true;
         }
 
     }

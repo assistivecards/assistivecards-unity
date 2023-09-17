@@ -115,6 +115,7 @@ public class IAPUIManager : MonoBehaviour
 
             promoScreenPremiumButton.interactable = false;
             promoScreenPuchasePremiumButton.interactable = false;
+            LeanTween.alpha(promoScreenPuchasePremiumButton.transform.GetChild(0).GetComponent<RectTransform>(), 0.5f, 0.25f);
         }
         else
         {
@@ -128,6 +129,7 @@ public class IAPUIManager : MonoBehaviour
             }
             promoScreenPremiumButton.interactable = true;
             promoScreenPuchasePremiumButton.interactable = true;
+            LeanTween.alpha(promoScreenPuchasePremiumButton.transform.GetChild(0).GetComponent<RectTransform>(), 1f, 0.25f);
         }
     }
 

@@ -175,6 +175,21 @@ public class BoardGenerateCardChain : MonoBehaviour
         usedPositionList.Clear();
     }
 
+    public void ClearBoard()
+    {
+        isBoardCreated = false;
+        foreach(var card in cards)
+        {
+            Destroy(card);
+        }
+        cardNames.Clear();
+        randomValueList.Clear();
+        cardDefinitionsLocale.Clear();
+        cards.Clear();
+        matchCount = 0;
+        usedPositionList.Clear();
+    }
+
     private void DestroyCard()
     {
         GameObject _card = GameObject.Find("DoubleCard(Clone)");

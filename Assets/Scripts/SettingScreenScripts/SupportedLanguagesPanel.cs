@@ -27,6 +27,7 @@ public class SupportedLanguagesPanel : MonoBehaviour
     private GameObject languageTempElement;
     private GameObject languageElement;
     private GameObject dummySpace;
+    public bool loadingCompleted;
 
     private void Awake()
     {
@@ -69,5 +70,6 @@ public class SupportedLanguagesPanel : MonoBehaviour
         dummySpace.transform.localScale = new Vector3(1, 5, 0);
         dummySpace.GetComponent<Toggle>().enabled = true;
         dummySpace.GetComponent<Toggle>().interactable = false;
+        loadingCompleted = true;
     }
 }

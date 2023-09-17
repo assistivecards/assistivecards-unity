@@ -52,6 +52,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     public string targetCardLocal;
     public bool gameStarted;
     public int reloadCount;
+    public int ttsCount;
 
     private void Awake()
     {
@@ -153,6 +154,11 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
             CheckRandom();
             targetCard = cardNames[randomValueList[12]];
             targetCardLocal = cardLocalNames[randomValueList[12]];
+            if(targetCard == "Knitting")
+            {
+                targetCard = cardNames[randomValueList[13]];
+                targetCardLocal = cardLocalNames[randomValueList[13]];
+            }
             for(int i = 11; i < 20; i++)
             {
                 GameObject parent = CheckIsPositionEmpty();
@@ -295,5 +301,6 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
         randomValueList.Clear();
         cardPositions.Clear();
         matchCounter = 0;
+        ttsCount = 0;
     }
 }

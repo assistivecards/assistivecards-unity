@@ -7,7 +7,7 @@ public class LoadDashboard : MonoBehaviour
 {
     private void OnEnable()
     {
-        if (Application.productName == "Games")
+        if (Application.productName == "Zumo")
         {
             gameObject.SetActive(true);
         }
@@ -28,6 +28,6 @@ public class LoadDashboard : MonoBehaviour
 
     public void LoadDashboardScene()
     {
-        SceneManager.LoadScene("Games");
+        SceneManager.LoadScene("Zumo");
     }
 }

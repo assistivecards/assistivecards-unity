@@ -23,7 +23,7 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
         productVersion = PlayerSettings.bundleVersion;
         Debug.Log("Current product name is: " + productName);
         Debug.Log("Current product version is: " + productVersion);
-        
+
         PlayerSettings.keystorePass = "assistivecards";
         PlayerSettings.keyaliasPass = "assistivecards";
 
@@ -57,7 +57,7 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
     {
         if (Application.unityVersion.StartsWith("2022"))
         {
-            if (Application.productName != "Games")
+            if (Application.productName != "Zumo")
             {
 
                 List<EditorBuildSettingsScene> editorBuildSettingsScenesList = new List<EditorBuildSettingsScene>();

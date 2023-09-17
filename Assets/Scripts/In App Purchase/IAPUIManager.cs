@@ -25,7 +25,7 @@ public class IAPUIManager : MonoBehaviour
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
 
-        if (Application.productName == "Games")
+        if (Application.productName == "Zumo")
         {
             subsRestoreButton = GameObject.FindObjectsOfType<GameObject>(true).Where(btn => btn.gameObject.name == "subsRestoreButton").FirstOrDefault();
             promoUniAppRestoreButton = GameObject.FindObjectsOfType<GameObject>(true).Where(btn => btn.gameObject.name == "promoUniAppRestoreButton").FirstOrDefault();
@@ -50,7 +50,7 @@ public class IAPUIManager : MonoBehaviour
     private async void Start()
     {
 
-        if (Application.productName == "Games")
+        if (Application.productName == "Zumo")
         {
             subscriptionsScreenPremiumButton = GameObject.FindObjectsOfType<Button>(true).Where(btn => btn.gameObject.name == "subscriptionsScreenPremiumButton").FirstOrDefault();
             promoScreenPremiumButton = GameObject.FindObjectsOfType<Button>(true).Where(btn => btn.gameObject.name == "promoScreenPremiumButton").FirstOrDefault();

@@ -759,9 +759,9 @@
 				C801E7F3CBAB00070AC52BC6 /* StoreKit.framework */,
 				56BCBA380FCF049A0030C3B2 /* SystemConfiguration.framework */,
 				830B5C100E5ED4C100C7819F /* UIKit.framework */,
-				9D0A618A21BFE7F30094DC33 /* libiconv.2.tbd */,
 				F4334DBBB2CB2481B873A016 /* UserNotifications.framework */,
 				E03643CB95530201D35137E7 /* WebKit.framework */,
+				9D0A618A21BFE7F30094DC33 /* libiconv.2.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1746,7 +1746,7 @@
 					"$(inherited)",
 					"$(OTHER_CFLAGS)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.assistivecards.throw-cards";
+				PRODUCT_BUNDLE_IDENTIFIER = com.assistivecards.zumo;
 				PRODUCT_NAME = "$(PRODUCT_NAME_APP)";
 				PROVISIONING_PROFILE = "$(PROVISIONING_PROFILE_APP)";
 				PROVISIONING_PROFILE_APP = "";
@@ -1785,7 +1785,7 @@
 					"$(inherited)",
 					"$(OTHER_CFLAGS)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.assistivecards.throw-cards";
+				PRODUCT_BUNDLE_IDENTIFIER = com.assistivecards.zumo;
 				PRODUCT_NAME = "$(PRODUCT_NAME_APP)";
 				PROVISIONING_PROFILE = "$(PROVISIONING_PROFILE_APP)";
 				PROVISIONING_PROFILE_APP = "";
@@ -1933,7 +1933,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PRODUCT_NAME_APP = "Throw Cards";
+				PRODUCT_NAME_APP = Zumo;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 			};
@@ -1966,7 +1966,7 @@
 					"$(inherited)",
 					"$(OTHER_CFLAGS)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.assistivecards.throw-cards";
+				PRODUCT_BUNDLE_IDENTIFIER = com.assistivecards.zumo;
 				PRODUCT_NAME = "$(PRODUCT_NAME_APP)";
 				PROVISIONING_PROFILE = "$(PROVISIONING_PROFILE_APP)";
 				PROVISIONING_PROFILE_APP = "";
@@ -2060,7 +2060,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PRODUCT_NAME_APP = "Throw Cards";
+				PRODUCT_NAME_APP = Zumo;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 			};
@@ -2092,7 +2092,7 @@
 					"$(inherited)",
 					"$(OTHER_CFLAGS)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.assistivecards.throw-cards";
+				PRODUCT_BUNDLE_IDENTIFIER = com.assistivecards.zumo;
 				PRODUCT_NAME = "$(PRODUCT_NAME_APP)";
 				PROVISIONING_PROFILE = "$(PROVISIONING_PROFILE_APP)";
 				PROVISIONING_PROFILE_APP = "";
@@ -2646,7 +2646,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME_APP = "Throw Cards";
+				PRODUCT_NAME_APP = Zumo;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 			};
@@ -2685,7 +2685,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PRODUCT_NAME_APP = "Throw Cards";
+				PRODUCT_NAME_APP = Zumo;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 			};

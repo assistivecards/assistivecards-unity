@@ -3054,7 +3054,6 @@ struct ArtSafeContainer_t3A0D62B3F149F326BC811A515986088A4AF3F2DC  : public Mono
 };
 struct ArtSafeContainerHorizontal_t60D9D0D31AECF5C8DC17EA444D81697F990637C0  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
-	CanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B* ___loginCanvasScaler;
 	float ___deviceRatio;
 };
 struct AssistiveCardsSDK_t522ECCC538D77D03253C5366AA7756C480A37AF5  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
@@ -4784,7 +4783,6 @@ inline CanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B* Component_GetComp
 	return il2cppRetVal;
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void CanvasScaler_set_matchWidthOrHeight_m44635DC3E4424255C312814C325A48E37E6B6E30_inline (CanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B* __this, float ___0_value, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArtSafeContainerHorizontal_CheckCanvasSize_mB27DF8862BB746157F1833D119533D67B83D1022 (ArtSafeContainerHorizontal_t60D9D0D31AECF5C8DC17EA444D81697F990637C0* __this, const RuntimeMethod* method) ;
 inline Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* GameObject_GetComponent_TisImage_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_mA59EA7D5F9133B2593F4AB70B099928BA955EE7D (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method)
 {
 	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* il2cppRetVal;
@@ -7630,82 +7628,79 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArtSafeContainer__ctor_m95BF09F16B84BE51
 #endif
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArtSafeContainerHorizontal_Start_mA1D4D629360F48D502F1A6078BF80CFC70959D1F (ArtSafeContainerHorizontal_t60D9D0D31AECF5C8DC17EA444D81697F990637C0* __this, const RuntimeMethod* method) 
 {
-	{
-		ArtSafeContainerHorizontal_CheckCanvasSize_mB27DF8862BB746157F1833D119533D67B83D1022(__this, NULL);
-		return;
-	}
-}
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArtSafeContainerHorizontal_CheckCanvasSize_mB27DF8862BB746157F1833D119533D67B83D1022 (ArtSafeContainerHorizontal_t60D9D0D31AECF5C8DC17EA444D81697F990637C0* __this, const RuntimeMethod* method) 
-{
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Component_GetComponent_TisCanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B_m82FD65AA44C2243A4866779598E55571D3576DAE_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ScreenOrientation_t928A8AFB38625B9356E57BA75BBD90FA653DCFC2_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral3856F83A62E75AD188BBC1467A263EBC352ACD93);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral9E1E33957944F4529CDCBB3C79E1A034170B171B);
 		s_Il2CppMethodInitialized = true;
 	}
 	float V_0 = 0.0f;
+	float V_1 = 0.0f;
+	int32_t V_2 = 0;
 	{
 		int32_t L_0;
 		L_0 = Screen_get_orientation_mA6B22A441187D50831B2B18CA48A8F64BD1BD89E(NULL);
-		if ((((int32_t)L_0) == ((int32_t)3)))
-		{
-			goto IL_0010;
-		}
-	}
-	{
-		int32_t L_1;
-		L_1 = Screen_get_orientation_mA6B22A441187D50831B2B18CA48A8F64BD1BD89E(NULL);
-		if ((!(((uint32_t)L_1) == ((uint32_t)4))))
-		{
-			goto IL_0025;
-		}
-	}
-
-IL_0010:
-	{
-		int32_t L_2;
-		L_2 = Screen_get_width_mF608FF3252213E7EFA1F0D2F744C28110E9E5AC9(NULL);
-		int32_t L_3;
-		L_3 = Screen_get_height_m01A3102DE71EE1FBEA51D09D6B0261CF864FE8F9(NULL);
-		__this->___deviceRatio = ((float)(((float)L_2)/((float)L_3)));
-		goto IL_0038;
-	}
-
-IL_0025:
-	{
+		V_2 = L_0;
+		Il2CppFakeBox<int32_t> L_1(ScreenOrientation_t928A8AFB38625B9356E57BA75BBD90FA653DCFC2_il2cpp_TypeInfo_var, (&V_2));
+		String_t* L_2;
+		L_2 = Enum_ToString_m946B0B83C4470457D0FF555D862022C72BB55741((Enum_t2A1A94B24E3B776EEF4E5E485E290BB9D4D072E2*)(&L_1), NULL);
+		String_t* L_3;
+		L_3 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteral3856F83A62E75AD188BBC1467A263EBC352ACD93, L_2, NULL);
+		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_3, NULL);
 		int32_t L_4;
-		L_4 = Screen_get_height_m01A3102DE71EE1FBEA51D09D6B0261CF864FE8F9(NULL);
-		int32_t L_5;
-		L_5 = Screen_get_width_mF608FF3252213E7EFA1F0D2F744C28110E9E5AC9(NULL);
-		__this->___deviceRatio = ((float)(((float)L_4)/((float)L_5)));
-	}
-
-IL_0038:
-	{
-		V_0 = (1212.0f);
-		float L_6 = V_0;
-		CanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B* L_7;
-		L_7 = Component_GetComponent_TisCanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B_m82FD65AA44C2243A4866779598E55571D3576DAE(__this, Component_GetComponent_TisCanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B_m82FD65AA44C2243A4866779598E55571D3576DAE_RuntimeMethod_var);
-		__this->___loginCanvasScaler = L_7;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___loginCanvasScaler), (void*)L_7);
-		float L_8 = __this->___deviceRatio;
-		if ((!(((float)((float)((726.0f)/L_6))) > ((float)L_8))))
+		L_4 = Screen_get_orientation_mA6B22A441187D50831B2B18CA48A8F64BD1BD89E(NULL);
+		if ((((int32_t)L_4) == ((int32_t)3)))
 		{
-			goto IL_006a;
+			goto IL_0032;
 		}
 	}
 	{
-		CanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B* L_9 = __this->___loginCanvasScaler;
-		NullCheck(L_9);
-		CanvasScaler_set_matchWidthOrHeight_m44635DC3E4424255C312814C325A48E37E6B6E30_inline(L_9, (0.0f), NULL);
-		return;
+		int32_t L_5;
+		L_5 = Screen_get_orientation_mA6B22A441187D50831B2B18CA48A8F64BD1BD89E(NULL);
+		if ((!(((uint32_t)L_5) == ((uint32_t)4))))
+		{
+			goto IL_0047;
+		}
 	}
 
-IL_006a:
+IL_0032:
 	{
-		CanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B* L_10 = __this->___loginCanvasScaler;
-		NullCheck(L_10);
-		CanvasScaler_set_matchWidthOrHeight_m44635DC3E4424255C312814C325A48E37E6B6E30_inline(L_10, (1.0f), NULL);
+		int32_t L_6;
+		L_6 = Screen_get_width_mF608FF3252213E7EFA1F0D2F744C28110E9E5AC9(NULL);
+		int32_t L_7;
+		L_7 = Screen_get_height_m01A3102DE71EE1FBEA51D09D6B0261CF864FE8F9(NULL);
+		__this->___deviceRatio = ((float)(((float)L_6)/((float)L_7)));
+		goto IL_005a;
+	}
+
+IL_0047:
+	{
+		int32_t L_8;
+		L_8 = Screen_get_height_m01A3102DE71EE1FBEA51D09D6B0261CF864FE8F9(NULL);
+		int32_t L_9;
+		L_9 = Screen_get_width_mF608FF3252213E7EFA1F0D2F744C28110E9E5AC9(NULL);
+		__this->___deviceRatio = ((float)(((float)L_8)/((float)L_9)));
+	}
+
+IL_005a:
+	{
+		V_0 = (726.0f);
+		float L_10 = V_0;
+		V_1 = ((float)((1212.0f)/L_10));
+		String_t* L_11;
+		L_11 = Single_ToString_mE282EDA9CA4F7DF88432D807732837A629D04972((&V_1), NULL);
+		float* L_12 = (float*)(&__this->___deviceRatio);
+		String_t* L_13;
+		L_13 = Single_ToString_mE282EDA9CA4F7DF88432D807732837A629D04972(L_12, NULL);
+		String_t* L_14;
+		L_14 = String_Concat_m093934F71A9B351911EE46311674ED463B180006(_stringLiteral9E1E33957944F4529CDCBB3C79E1A034170B171B, L_11, _stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745, L_13, NULL);
+		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_14, NULL);
 		return;
 	}
 }

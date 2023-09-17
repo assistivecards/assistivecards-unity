@@ -11,7 +11,7 @@
     <key>CFBundleDevelopmentRegion</key>
     <string>en</string>
     <key>CFBundleDisplayName</key>
-    <string>Card Crash</string>
+    <string>Zumo</string>
     <key>CFBundleExecutable</key>
     <string>${EXECUTABLE_NAME}</string>
     <key>CFBundleIdentifier</key>
@@ -68,6 +68,8 @@
     <key>Unity_LoadingActivityIndicatorStyle</key>
     <integer>-1</integer>
     <key>UnityAddRemoteNotificationCapability</key>
+    <false />
+    <key>UnityAddTimeSensitiveEntitlement</key>
     <false />
     <key>UnityNotificationDefaultAuthorizationOptions</key>
     <integer>7</integer>

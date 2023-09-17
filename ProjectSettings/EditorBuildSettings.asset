@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Throw Cards.unity
-    guid: 57f8ad36c36b7dc4fa802c948a49803b
+    path: Assets/Scenes/Zumo.unity
+    guid: a8df47c45e3d3984e94af4da3e1e8935
   m_configObjects: {}

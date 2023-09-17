@@ -192,7 +192,7 @@ public class CanvasController : MonoBehaviour
     }
     public void SubscriptionsButtonClick()
     {
-        if (Application.productName == "Games")
+        if (Application.productName == "Zumo")
         {
             topAppBarController.ChangeTopAppBarType(2);
             currentScreen = subscriptionsScreenUniApp;
@@ -235,7 +235,7 @@ public class CanvasController : MonoBehaviour
 
     public void PremiumPromoButtonClick()
     {
-        if (Application.productName == "Games")
+        if (Application.productName == "Zumo")
         {
             topAppBarController.ChangeTopAppBarType(2);
             currentScreen = promoScreenUniApp;

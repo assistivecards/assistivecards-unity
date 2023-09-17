@@ -67,7 +67,7 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
             Debug.Log(item.definition.id);
         }
 
-        if (Application.productName == "Games")
+        if (Application.productName == "Zumo")
         {
             subscriptionsScreenPrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "subscriptionsScreenPrice").FirstOrDefault();
             promoScreenPrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "promoScreenPrice").FirstOrDefault();
@@ -86,7 +86,7 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
             promoScreenPuchasePrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "standalonePromoScreenPuchasePrice").FirstOrDefault();
         }
 
-        if (Application.productName == "Games")
+        if (Application.productName == "Zumo")
         {
             subscriptionsScreenPrice.text = m_StoreController.products.WithID(premium).metadata.localizedPriceString;
             promoScreenPrice.text = m_StoreController.products.WithID(premium).metadata.localizedPriceString;
@@ -117,7 +117,7 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
         var builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance());
         builder.AddProduct(premium, ProductType.NonConsumable);
 
-        if (Application.productName == "Games")
+        if (Application.productName == "Zumo")
         {
             builder.AddProduct(monthly, ProductType.Subscription);
             builder.AddProduct(yearly, ProductType.Subscription);
@@ -216,7 +216,7 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
         m_StoreExtensionProvider = extensions;
 
 
-        if (Application.productName == "Games")
+        if (Application.productName == "Zumo")
         {
             if (!isSubscriptionChecked)
             {
@@ -238,7 +238,7 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
 
         IAPUIManager.CheckIfPremiumButtonInteractable();
 
-        if (Application.productName == "Games")
+        if (Application.productName == "Zumo")
         {
             subscriptionsScreenPrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "subscriptionsScreenPrice").FirstOrDefault();
             promoScreenPrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "promoScreenPrice").FirstOrDefault();
@@ -257,7 +257,7 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
             promoScreenPuchasePrice = GameObject.FindObjectsOfType<TMP_Text>(true).Where(txt => txt.gameObject.name == "standalonePromoScreenPuchasePrice").FirstOrDefault();
         }
 
-        if (Application.productName == "Games")
+        if (Application.productName == "Zumo")
         {
             subscriptionsScreenPrice.text = m_StoreController.products.WithID(premium).metadata.localizedPriceString;
             promoScreenPrice.text = m_StoreController.products.WithID(premium).metadata.localizedPriceString;

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-               BuildableName = "Throw Cards.app"
+               BuildableName = "Zumo.app"
                BlueprintName = "Unity-iPhone"
                ReferencedContainer = "container:Unity-iPhone.xcodeproj">
             </BuildableReference>
@@ -31,7 +31,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "Throw Cards.app"
+            BuildableName = "Zumo.app"
             BlueprintName = "Unity-iPhone"
             ReferencedContainer = "container:Unity-iPhone.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "Throw Cards.app"
+            BuildableName = "Zumo.app"
             BlueprintName = "Unity-iPhone"
             ReferencedContainer = "container:Unity-iPhone.xcodeproj">
          </BuildableReference>
@@ -87,7 +87,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "Throw Cards.app"
+            BuildableName = "Zumo.app"
             BlueprintName = "Unity-iPhone"
             ReferencedContainer = "container:Unity-iPhone.xcodeproj">
          </BuildableReference>

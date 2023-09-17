@@ -8,4 +8,139 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Zumo.unity
     guid: a8df47c45e3d3984e94af4da3e1e8935
+  - enabled: 1
+    path: Assets/Scenes/Alphabet Choose.unity
+    guid: 10abd9b23607f49029973d578aa07753
+  - enabled: 1
+    path: Assets/Scenes/Alphabet Order.unity
+    guid: 13cf1678c67f9de40a7cd49eda0fe209
+  - enabled: 1
+    path: Assets/Scenes/Bucket.unity
+    guid: 3dcfe72364a034257998fc094d5181c1
+  - enabled: 1
+    path: Assets/Scenes/Card Balance.unity
+    guid: a80b8f2e8b3334b3394e95d83e5cec18
+  - enabled: 1
+    path: Assets/Scenes/Card Blast.unity
+    guid: 3a13e14cc1bfa4390ad30204e9f38331
+  - enabled: 1
+    path: Assets/Scenes/Card Chain.unity
+    guid: 0ecfb17e81bbd4c75ba890f73603f0e5
+  - enabled: 1
+    path: Assets/Scenes/Card Crash.unity
+    guid: 407689413c2234b0a8770a81e0b717d0
+  - enabled: 1
+    path: Assets/Scenes/Card Fishing.unity
+    guid: 0c75dac34cf984404801a93c6bca8031
+  - enabled: 1
+    path: Assets/Scenes/Card Goal.unity
+    guid: 0cad39fb17614ea48abd518daa6ca028
+  - enabled: 1
+    path: Assets/Scenes/Card Maze.unity
+    guid: 00c6b41d2d3e9f645856101cacbe615a
+  - enabled: 1
+    path: Assets/Scenes/Card Ninja.unity
+    guid: cfcf75cc34b7f400aa00ea5e0c3121dd
+  - enabled: 1
+    path: Assets/Scenes/Card Rumble.unity
+    guid: f0cf4a487960cfd40a4d5493a605f4c2
+  - enabled: 1
+    path: Assets/Scenes/Card Shoot.unity
+    guid: 4cc7a8b1f56c34119ba60c3be738d59c
+  - enabled: 1
+    path: Assets/Scenes/Card Whack.unity
+    guid: 9ffb2a6ac1e9ba04689e896d054ddb5c
+  - enabled: 1
+    path: Assets/Scenes/Choose.unity
+    guid: ded601b1d6604704c8c93ac290c03ea3
+  - enabled: 1
+    path: Assets/Scenes/Circle.unity
+    guid: c70f719c95e763e488630d067953aa67
+  - enabled: 1
+    path: Assets/Scenes/Complete.unity
+    guid: 3e394514813bd49359aaaaefd96e3841
+  - enabled: 1
+    path: Assets/Scenes/Count.unity
+    guid: 6c561855a8cb94110b961a601b0995be
+  - enabled: 1
+    path: Assets/Scenes/Drag Inside.unity
+    guid: d960dfa174ce7f8439d0e1f43b844736
+  - enabled: 1
+    path: Assets/Scenes/Draw Lines.unity
+    guid: 5b7399288e61c08459c9a625f55a9112
+  - enabled: 1
+    path: Assets/Scenes/Draw Shapes.unity
+    guid: 8271805ff78d11b4a97b98ef99e8cdf7
+  - enabled: 1
+    path: Assets/Scenes/Find Cards.unity
+    guid: 1c610cbf35f0715408f84eb463b5b8db
+  - enabled: 1
+    path: Assets/Scenes/Finger Paint.unity
+    guid: 7c5adb31e1dad3f44b106935969722dd
+  - enabled: 1
+    path: Assets/Scenes/First Letter.unity
+    guid: 517c69ce9ef954fe19184b5b7a57036a
+  - enabled: 1
+    path: Assets/Scenes/Hatch Match.unity
+    guid: 95c85cee1658c4a5eac634d096cd5f27
+  - enabled: 1
+    path: Assets/Scenes/Letter Find.unity
+    guid: 09dd248a0e0db45d5b49c3b0cf8a26f8
+  - enabled: 1
+    path: Assets/Scenes/Match Pairs.unity
+    guid: 3a4aeb277d58b5d44ac8355f801855ed
+  - enabled: 1
+    path: Assets/Scenes/Match.unity
+    guid: 03087a12ee2cb43c3b853043bf28ae8e
+  - enabled: 1
+    path: Assets/Scenes/Memory.unity
+    guid: e4065449ec1a69440b51a476366f1cf9
+  - enabled: 1
+    path: Assets/Scenes/Needle Thread.unity
+    guid: 74a322b8b5a564bf0bc7f1ca1cca8356
+  - enabled: 1
+    path: Assets/Scenes/Pattern Train.unity
+    guid: 31e157931e8b143e1a436f1cb494555b
+  - enabled: 1
+    path: Assets/Scenes/Piece Puzzle.unity
+    guid: ade9ea45e2aca6142af13684279fcb06
+  - enabled: 1
+    path: Assets/Scenes/Press Cards.unity
+    guid: 0e4349815b7c73044b3700a969110f2f
+  - enabled: 1
+    path: Assets/Scenes/Rope Cut.unity
+    guid: 20ed9a56e3f41a845836a994553844de
+  - enabled: 1
+    path: Assets/Scenes/Scratcher.unity
+    guid: 677bea9b0bfb2f0449faf1fe796dd265
+  - enabled: 1
+    path: Assets/Scenes/Silhouette.unity
+    guid: 8918327bea0f9ad4ab5ff72f9af3a59c
+  - enabled: 1
+    path: Assets/Scenes/Size Puzzle.unity
+    guid: 1533aacde7a685741bca28b5be67c429
+  - enabled: 1
+    path: Assets/Scenes/Sling.unity
+    guid: 529bb19142217864585c727f85f246d1
+  - enabled: 1
+    path: Assets/Scenes/Snake Cards.unity
+    guid: c0c1834b703ea42b4bd992a4c1682a97
+  - enabled: 1
+    path: Assets/Scenes/Sort Cards.unity
+    guid: 75f55255bd1344393b519abf1f4e2f43
+  - enabled: 1
+    path: Assets/Scenes/Split Puzzle.unity
+    guid: b98271b2041dc4c4594410ca08f257b1
+  - enabled: 1
+    path: Assets/Scenes/Stack Cards.unity
+    guid: 4af7ec12965dea8469e61642212eb70b
+  - enabled: 1
+    path: Assets/Scenes/Template.unity
+    guid: b0ed93d42f5a8d34ea0581811d64e243
+  - enabled: 1
+    path: Assets/Scenes/Throw Cards.unity
+    guid: 57f8ad36c36b7dc4fa802c948a49803b
+  - enabled: 1
+    path: Assets/Scenes/Zumo.unity
+    guid: a8df47c45e3d3984e94af4da3e1e8935
   m_configObjects: {}

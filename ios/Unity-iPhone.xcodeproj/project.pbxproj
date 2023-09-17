@@ -19,7 +19,7 @@
 		50AD259E5FFC8FFFE0904FB6 /* WebViewWithUIWebView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4E122BB7AEC596D94212A7C4 /* WebViewWithUIWebView.mm */; };
 		5623C57617FDCB0800090B9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		5623C57717FDCB0800090B9E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830B5C100E5ED4C100C7819F /* UIKit.framework */; };
-		5623C57D17FDCB0900090B9E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5623C57B17FDCB0900090B9E /* InfoPlist.strings */; };
+		5623C57D17FDCB0900090B9E = {isa = PBXBuildFile; fileRef = 5623C57B17FDCB0900090B9E /* InfoPlist.strings */; };
 		5623C57F17FDCB0900090B9E /* Unity_iPhone_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5623C57E17FDCB0900090B9E /* Unity_iPhone_Tests.m */; };
 		56C56C9817D6015200616839 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56C56C9717D6015100616839 /* Images.xcassets */; };
 		574A8D1BFDF4103B13A6538A /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21ECD27EDF8EB21168769097 /* GameController.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -188,6 +188,7 @@
 		03F528621B447098000F4FB8 /* Il2CppOptions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Il2CppOptions.cpp; sourceTree = "<group>"; };
 		043632D66EB0B7E5F3272285 /* System.Xml__4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = System.Xml__4.cpp; path = Il2CppOutputProject/Source/il2cppOutput/System.Xml__4.cpp; sourceTree = SOURCE_ROOT; };
 		0464E0DCE4A0FC27BFF43BB4 /* System.Xml.Linq.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = System.Xml.Linq.cpp; path = Il2CppOutputProject/Source/il2cppOutput/System.Xml.Linq.cpp; sourceTree = SOURCE_ROOT; };
+		04780C763AD6DFF46BDF7EB2 /* Nobi.UiRoundedCorners_CodeGen.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = Nobi.UiRoundedCorners_CodeGen.c; path = Il2CppOutputProject/Source/il2cppOutput/Nobi.UiRoundedCorners_CodeGen.c; sourceTree = SOURCE_ROOT; };
 		0518DF8545C83673F55A74DF /* UnityEngine.Purchasing.WinRTCore.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = UnityEngine.Purchasing.WinRTCore.cpp; path = Il2CppOutputProject/Source/il2cppOutput/UnityEngine.Purchasing.WinRTCore.cpp; sourceTree = SOURCE_ROOT; };
 		058D9CAFDB588D59044A2B25 /* System__4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = System__4.cpp; path = Il2CppOutputProject/Source/il2cppOutput/System__4.cpp; sourceTree = SOURCE_ROOT; };
 		0625BA89AA0F71807DF4285A /* Assembly-CSharp__2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "Assembly-CSharp__2.cpp"; path = "Il2CppOutputProject/Source/il2cppOutput/Assembly-CSharp__2.cpp"; sourceTree = SOURCE_ROOT; };
@@ -365,6 +366,7 @@
 		7BCD68DC79BE5C86BB4574CB /* Unity.Burst_CodeGen.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = Unity.Burst_CodeGen.c; path = Il2CppOutputProject/Source/il2cppOutput/Unity.Burst_CodeGen.c; sourceTree = SOURCE_ROOT; };
 		7C2E380E3D2F92B20313DD1D /* Il2CppGenericMethodTable.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = Il2CppGenericMethodTable.c; path = Il2CppOutputProject/Source/il2cppOutput/Il2CppGenericMethodTable.c; sourceTree = SOURCE_ROOT; };
 		7CD8D832DF5E49F3229DE515 /* baselib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = baselib.a; path = Libraries/baselib.a; sourceTree = SOURCE_ROOT; };
+		7EB2143D77C16D16C56216EA /* Nobi.UiRoundedCorners.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Nobi.UiRoundedCorners.cpp; path = Il2CppOutputProject/Source/il2cppOutput/Nobi.UiRoundedCorners.cpp; sourceTree = SOURCE_ROOT; };
 		7EEF5FB367689FB1ECEBB6A7 /* System.Xml__2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = System.Xml__2.cpp; path = Il2CppOutputProject/Source/il2cppOutput/System.Xml__2.cpp; sourceTree = SOURCE_ROOT; };
 		7F36C10E13C5C673007FBDD9 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		7F36C10F13C5C673007FBDD9 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -705,9 +707,9 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* Zumo.app */,
 				5623C57317FDCB0800090B9E /* Unity-iPhone Tests.xctest */,
 				9D25AB9D213FB47800354C27 /* UnityFramework.framework */,
+				1D6058910D05DD3D006BFB54 /* Zumo.app */,
 				7F4E05A02717216D00A2CBE4 /* libGameAssembly.a */,
 			);
 			name = Products;
@@ -716,7 +718,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				D3B3C4B72AB6E17000203FD5 /* Unity-iPhone.entitlements */,
 				D82DCFB50E8000A5005D6AD8 /* Classes */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				08E06EF576D79C4643098BCC /* Il2CppOutputProject */,
@@ -733,6 +734,7 @@
 				5A3A1B4C3FB1FC90023B942E /* LaunchScreen-iPhone.storyboard */,
 				1E24B93E9D27D99850693BAF /* LaunchScreen-iPhoneLandscape.png */,
 				681AA63C19788ACA381FB8C1 /* LaunchScreen-iPhonePortrait.png */,
+				D3B3C4B72AB6E17000203FD5 /* Unity-iPhone.entitlements */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -912,6 +914,8 @@
 				3E6AB690991E5D5C419B99F5 /* Newtonsoft.Json__2.cpp */,
 				C0D23F3F8BED210275372D69 /* Newtonsoft.Json__3.cpp */,
 				414991A97FF59CD6675FD9EB /* Newtonsoft.Json__4.cpp */,
+				7EB2143D77C16D16C56216EA /* Nobi.UiRoundedCorners.cpp */,
+				04780C763AD6DFF46BDF7EB2 /* Nobi.UiRoundedCorners_CodeGen.c */,
 				E694D35C41E4D06E27E56DE9 /* PathCreator.cpp */,
 				5EAD2519F7CEBB252E0E0B11 /* PathCreator_CodeGen.c */,
 				399925E21210457D7D5DDA97 /* Purchasing.Common.cpp */,
@@ -1581,7 +1585,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5623C57D17FDCB0900090B9E /* InfoPlist.strings in Resources */,
+				5623C57D17FDCB0900090B9E,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1929,7 +1933,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
@@ -1941,6 +1945,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-fembed-bitcode";
 				PRODUCT_NAME_APP = Zumo;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
@@ -2058,7 +2063,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
@@ -2070,6 +2075,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-fembed-bitcode";
 				PRODUCT_NAME_APP = Zumo;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
@@ -2370,6 +2376,7 @@
 					"-DUNITY_VERSION_VER=2022",
 					"-DUNITY_VERSION_MAJ=3",
 					"-DUNITY_VERSION_MIN=9",
+					"-fembed-bitcode",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -2446,6 +2453,7 @@
 					"-DUNITY_VERSION_VER=2022",
 					"-DUNITY_VERSION_MAJ=3",
 					"-DUNITY_VERSION_MIN=9",
+					"-fembed-bitcode",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -2523,6 +2531,7 @@
 					"-DUNITY_VERSION_VER=2022",
 					"-DUNITY_VERSION_MAJ=3",
 					"-DUNITY_VERSION_MIN=9",
+					"-fembed-bitcode",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -2601,6 +2610,7 @@
 					"-DUNITY_VERSION_VER=2022",
 					"-DUNITY_VERSION_MAJ=3",
 					"-DUNITY_VERSION_MIN=9",
+					"-fembed-bitcode",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -2645,7 +2655,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
@@ -2658,6 +2668,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "-fembed-bitcode";
 				PRODUCT_NAME_APP = Zumo;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
@@ -2685,7 +2696,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
@@ -2697,6 +2708,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-fembed-bitcode";
 				PRODUCT_NAME_APP = Zumo;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;

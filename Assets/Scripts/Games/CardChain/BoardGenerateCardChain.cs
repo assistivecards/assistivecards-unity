@@ -105,7 +105,7 @@ public class BoardGenerateCardChain : MonoBehaviour
             cardTexture.filterMode = FilterMode.Bilinear;
             cards[j].transform.GetChild(0).GetComponentInChildren<RawImage>().texture = cardTexture;
             cards[j].transform.GetChild(0).gameObject.name = cardName;
-            cards[j].GetComponent<CardControllerCardChain>().leftCardLocalName = localName;
+            cards[j].GetComponent<CardChainCardController>().leftCardLocalName = localName;
 
 
             var cardName1 = cardNames[randomValueList[j + 1]];
@@ -116,13 +116,13 @@ public class BoardGenerateCardChain : MonoBehaviour
             cardTexture.filterMode = FilterMode.Bilinear;
             cards[j].transform.GetChild(1).GetComponentInChildren<RawImage>().texture = cardTexture1;
             cards[j].transform.GetChild(1).gameObject.name = cardName1;
-            cards[j].GetComponent<CardControllerCardChain>().rightCardLocalName = localName1;
+            cards[j].GetComponent<CardChainCardController>().rightCardLocalName = localName1;
 
             LeanTween.scale(cards[j], Vector3.one * 0.5f, 0.5f);
             CreateRandomPosition(cards[j]);
 
-            cards[j].GetComponent<CardControllerCardChain>().GetChildNames();
-            cards[j].GetComponent<CardControllerCardChain>().boardGenerateCardChain = this;
+            //cards[j].GetComponent<CardChainCardController>().GetChildNames();
+            //cards[j].GetComponent<CardControllerCardChain>().boardGenerateCardChain = this;
         }
         Invoke("BoardCreatedBool", 0.5f);
     }

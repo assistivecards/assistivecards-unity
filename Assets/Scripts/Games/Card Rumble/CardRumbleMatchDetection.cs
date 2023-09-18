@@ -25,46 +25,50 @@ public class CardRumbleMatchDetection : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (transform.GetChild(0).GetComponent<Image>().sprite.texture.name == board.correctCardTitle && !isClicked)
+        if (Input.touchCount == 1)
         {
-            Debug.Log("CORRECT MATCH!");
-            gameAPI.AddSessionExp();
-            gameAPI.PlaySFX("Success");
-            isClicked = true;
-            LeanTween.pause(gameObject);
-            LeanTween.rotateZ(gameObject, 0, .25f);
-            LeanTween.scale(gameObject, Vector3.one * 1.25f, .25f).setOnComplete(ScaleCardDown);
-            ReadCard();
-            board.numOfMatchedCards++;
-
-            if (CheckIfLevelComplete())
+            if (transform.GetChild(0).GetComponent<Image>().sprite.texture.name == board.correctCardTitle && !isClicked)
             {
-                Debug.Log("LEVEL COMPLETE!");
-                UIController.levelsCompleted++;
-                DisableMatchDetection();
-                UIController.backButton.GetComponent<Button>().interactable = false;
-                Invoke("PlayLevelCompletedAnimation", .55f);
-                board.Invoke("ScaleImagesDown", 1f);
-                board.Invoke("ClearBoard", 1.3f);
+                Debug.Log("CORRECT MATCH!");
+                gameAPI.AddSessionExp();
+                gameAPI.PlaySFX("Success");
+                isClicked = true;
+                LeanTween.pause(gameObject);
+                LeanTween.rotateZ(gameObject, 0, .25f);
+                LeanTween.scale(gameObject, Vector3.one * 1.25f, .25f).setOnComplete(ScaleCardDown);
+                ReadCard();
+                board.numOfMatchedCards++;
 
-                if (UIController.levelsCompleted == UIController.checkpointFrequency)
+                if (CheckIfLevelComplete())
                 {
-                    gameAPI.AddExp(gameAPI.sessionExp);
-                    UIController.Invoke("OpenCheckPointPanel", 1.3f);
+                    Debug.Log("LEVEL COMPLETE!");
+                    UIController.levelsCompleted++;
+                    DisableMatchDetection();
+                    UIController.backButton.GetComponent<Button>().interactable = false;
+                    Invoke("PlayLevelCompletedAnimation", .55f);
+                    board.Invoke("ScaleImagesDown", 1f);
+                    board.Invoke("ClearBoard", 1.3f);
+
+                    if (UIController.levelsCompleted == UIController.checkpointFrequency)
+                    {
+                        gameAPI.AddExp(gameAPI.sessionExp);
+                        UIController.Invoke("OpenCheckPointPanel", 1.3f);
+                    }
+                    else
+                        board.Invoke("GenerateRandomBoardAsync", 1.3f);
                 }
-                else
-                    board.Invoke("GenerateRandomBoardAsync", 1.3f);
+
             }
 
+            else if (transform.GetChild(0).GetComponent<Image>().sprite.texture.name != board.correctCardTitle)
+            {
+                Debug.Log("WRONG MATCH!");
+                gameAPI.RemoveSessionExp();
+                gameAPI.PlaySFX("Pickup");
+                LeanTween.scale(gameObject, Vector3.one * .85f, .15f).setOnComplete(ScaleBackToNormal);
+            }
         }
 
-        else if (transform.GetChild(0).GetComponent<Image>().sprite.texture.name != board.correctCardTitle)
-        {
-            Debug.Log("WRONG MATCH!");
-            gameAPI.RemoveSessionExp();
-            gameAPI.PlaySFX("Pickup");
-            LeanTween.scale(gameObject, Vector3.one * .85f, .15f).setOnComplete(ScaleBackToNormal);
-        }
     }
 
     private void ScaleBackToNormal()

@@ -24,40 +24,44 @@ public class ChooseMatchDetection : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (!isClicked)
+        if (Input.touchCount == 1)
         {
-            if (transform.GetChild(0).GetComponent<Image>().sprite.texture.name == board.correctCardSlug)
+            if (!isClicked)
             {
-                for (int i = 0; i < board.cardParents.Length; i++)
+                if (transform.GetChild(0).GetComponent<Image>().sprite.texture.name == board.correctCardSlug)
                 {
-                    board.cardParents[i].GetComponent<ChooseMatchDetection>().isClicked = true;
-                }
+                    for (int i = 0; i < board.cardParents.Length; i++)
+                    {
+                        board.cardParents[i].GetComponent<ChooseMatchDetection>().isClicked = true;
+                    }
 
-                UIController.correctMatches++;
-                gameAPI.AddSessionExp();
-                UIController.backButton.GetComponent<Button>().interactable = false;
-                gameAPI.PlaySFX("Success");
-                board.Invoke("ReadCard", 0.25f);
-                LeanTween.scale(gameObject, Vector3.one * 1.15f, .25f);
-                board.Invoke("ScaleImagesDown", 1f);
-                board.Invoke("ClearBoard", 1.30f);
+                    UIController.correctMatches++;
+                    gameAPI.AddSessionExp();
+                    UIController.backButton.GetComponent<Button>().interactable = false;
+                    gameAPI.PlaySFX("Success");
+                    board.Invoke("ReadCard", 0.25f);
+                    LeanTween.scale(gameObject, Vector3.one * 1.15f, .25f);
+                    board.Invoke("ScaleImagesDown", 1f);
+                    board.Invoke("ClearBoard", 1.30f);
 
-                if (UIController.correctMatches == UIController.checkpointFrequency)
-                {
-                    gameAPI.AddExp(gameAPI.sessionExp);
-                    UIController.Invoke("OpenCheckPointPanel", 1.3f);
+                    if (UIController.correctMatches == UIController.checkpointFrequency)
+                    {
+                        gameAPI.AddExp(gameAPI.sessionExp);
+                        UIController.Invoke("OpenCheckPointPanel", 1.3f);
+                    }
+                    else
+                        board.Invoke("GenerateRandomBoardAsync", 1.3f);
                 }
                 else
-                    board.Invoke("GenerateRandomBoardAsync", 1.3f);
-            }
-            else
-            {
-                gameAPI.RemoveSessionExp();
-                FadeCardParent();
-            }
+                {
+                    gameAPI.RemoveSessionExp();
+                    FadeCardParent();
+                }
 
-            isClicked = true;
+                isClicked = true;
+            }
         }
+
     }
 
     private void FadeCardParent()

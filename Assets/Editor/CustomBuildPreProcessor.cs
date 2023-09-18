@@ -84,7 +84,7 @@ class CustomBuildPreProcessor : IPreprocessBuildWithReport
 
                 foreach (var fileInfo in allFileInfos)
                 {
-                    if (fileInfo.Name != "Games.unity" && fileInfo.Name != "Unity.unity")
+                    if (fileInfo.Name != "Zumo.unity" && fileInfo.Name != "Unity.unity")
                     {
                         var sceneFound = new EditorBuildSettingsScene("Assets/Scenes/" + fileInfo.Name, true);
                         editorBuildSettingsScenesList.Add(sceneFound);

@@ -46,7 +46,7 @@ public class PromoScreen : MonoBehaviour
 
         }
 
-        if (Application.productName == "Games")
+        if (Application.productName == "Zumo")
         {
             promoScreenPuchasePremiumButton.SetActive(true);
         }
@@ -59,7 +59,7 @@ public class PromoScreen : MonoBehaviour
 
     private void OnDisable()
     {
-        if (Application.productName == "Games")
+        if (Application.productName == "Zumo")
         {
             promoScreenPuchasePremiumButton.SetActive(false);
         }

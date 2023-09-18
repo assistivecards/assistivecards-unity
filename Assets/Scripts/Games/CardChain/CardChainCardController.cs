@@ -17,9 +17,6 @@ public class CardChainCardController : MonoBehaviour, IDragHandler, IPointerDown
     private void OnEnable()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
-
-        rightCard = this.transform.GetChild(1).gameObject;
-        leftCard = this.transform.GetChild(0).gameObject;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -47,10 +44,15 @@ public class CardChainCardController : MonoBehaviour, IDragHandler, IPointerDown
            if(other.GetComponent<CardChainCardController>().leftCardLocalName == rightCardLocalName)
            {
                 LeanTween.move(other.gameObject, rightCard.transform.position, 0.2f);
+                other.transform.SetParent(this.transform);
+                other.GetComponent<CardChainCardController>().cantMove = true;
+
            }
             else if(other.GetComponent<CardChainCardController>().rightCardLocalName == leftCardLocalName)
            {
                 LeanTween.move(other.gameObject, leftCard.transform.position, 0.2f);
+                other.transform.SetParent(this.transform);
+                other.GetComponent<CardChainCardController>().cantMove = true;
            }
         }
     }

@@ -4,55 +4,39 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class CardChainCardController : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
+public class CardChainCardController : MonoBehaviour
 {
     GameAPI gameAPI;
     public GameObject leftCard;
     public GameObject rightCard;
     public string leftCardLocalName;
     public string rightCardLocalName;
-    public bool touching;
-    public bool cantMove;
+    public Vector3 parentPos;
 
     private void OnEnable()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
     }
 
-    public void OnDrag(PointerEventData eventData)
-    {
-        if(!cantMove)
-        {
-            this.transform.position = eventData.position;
-        }
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        touching = true;
-    }
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        touching = false;
-    }
-
     void OnTriggerEnter2D(Collider2D other)
     { 
-        if(other.GetComponent<CardChainCardController>() != null && touching)
+        if(other.GetComponent<CardChainCardController>() != null && GetComponent<CardChainDraggable>().touching)
         {
            if(other.GetComponent<CardChainCardController>().leftCardLocalName == rightCardLocalName)
            {
-                LeanTween.move(other.gameObject, rightCard.transform.position, 0.2f);
                 other.transform.SetParent(this.transform);
-                other.GetComponent<CardChainCardController>().cantMove = true;
-
+                other.transform.position = rightCard.transform.position;
+                other.GetComponent<CardChainDraggable>().enabled = false;
+                rightCard = other.GetComponent<CardChainCardController>().rightCard;
+                rightCardLocalName = other.GetComponent<CardChainCardController>().rightCardLocalName;
            }
             else if(other.GetComponent<CardChainCardController>().rightCardLocalName == leftCardLocalName)
            {
-                LeanTween.move(other.gameObject, leftCard.transform.position, 0.2f);
                 other.transform.SetParent(this.transform);
-                other.GetComponent<CardChainCardController>().cantMove = true;
+                other.transform.position = leftCard.transform.position;
+                other.GetComponent<CardChainDraggable>().enabled = false;
+                leftCard = other.GetComponent<CardChainCardController>().leftCard;
+                leftCardLocalName = other.GetComponent<CardChainCardController>().leftCardLocalName;
            }
         }
     }

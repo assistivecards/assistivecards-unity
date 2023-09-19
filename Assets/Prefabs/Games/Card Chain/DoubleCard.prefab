@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6015160056906354179}
   - component: {fileID: 2196866624184662430}
   - component: {fileID: 2804483417217190062}
+  - component: {fileID: 5512928163183627535}
   m_Layer: 5
   m_Name: DoubleCard
   m_TagString: cardBlast
@@ -172,6 +173,19 @@ MonoBehaviour:
   rightCardLocalName: 
   touching: 0
   cantMove: 0
+  parentPos: {x: 0, y: 0, z: 0}
+--- !u!114 &5512928163183627535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572616208917296617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ecb8e2339a27428ab35c097a1505941, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3953419126043893981
 GameObject:
   m_ObjectHideFlags: 0

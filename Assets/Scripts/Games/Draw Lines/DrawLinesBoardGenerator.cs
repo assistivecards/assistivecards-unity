@@ -89,7 +89,7 @@ public class DrawLinesBoardGenerator : MonoBehaviour
         Invoke("TriggerUpdatePaths", .15f);
         Invoke("PlaceHandles", .25f);
         backButton.SetActive(true);
-        Invoke("EnableBackButton", 0.15f);
+        Invoke("EnableBackButton", 0.50f);
         UIController.TutorialActivate();
     }
 

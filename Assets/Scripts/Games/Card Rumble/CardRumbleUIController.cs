@@ -115,6 +115,7 @@ public class CardRumbleUIController : MonoBehaviour
         gameAPI.ResetSessionExp();
         board.ScaleImagesDown();
         backButton.SetActive(false);
+        backButton.GetComponent<Button>().interactable = false;
         yield return new WaitForSeconds(0.25f);
         board.ClearBoard();
         packSelectionPanel.transform.localScale = new Vector3(0, 0, 0);

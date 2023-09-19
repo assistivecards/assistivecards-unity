@@ -132,13 +132,17 @@ public class PaintImage : MonoBehaviour, IPointerEnterHandler
     {
 
         // Vector2 localPt;
-        Vector2 mPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(transform as RectTransform, mPos, uiCamera, out localPt);
-
-        if (gameObject.GetComponent<RectTransform>().rect.Contains((localPt)))
+        if (Input.touchCount == 1)
         {
-            CheckInput();
+            Vector2 mPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(transform as RectTransform, mPos, uiCamera, out localPt);
+
+            if (gameObject.GetComponent<RectTransform>().rect.Contains((localPt)))
+            {
+                CheckInput();
+            }
         }
+
 
     }
 

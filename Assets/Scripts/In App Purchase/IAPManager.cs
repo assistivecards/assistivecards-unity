@@ -7,6 +7,7 @@ using System;
 using TMPro;
 using UnityEngine.Purchasing.Extension;
 using System.Linq;
+using System.Globalization;
 
 public class IAPManager : MonoBehaviour, IDetailedStoreListener
 {
@@ -36,7 +37,7 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
 
     private void Awake()
     {
-        premium = Application.productName.Replace(" ", "_").ToLower() + "_iap";
+        premium = Application.productName.Replace(" ", "_").ToLower(new CultureInfo("en-US", false)) + "_iap";
         monthly = "monthly";
         yearly = "yearly";
         gameAPI = Camera.main.GetComponent<GameAPI>();

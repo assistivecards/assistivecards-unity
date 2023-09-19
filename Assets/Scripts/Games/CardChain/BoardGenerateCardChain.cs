@@ -106,7 +106,8 @@ public class BoardGenerateCardChain : MonoBehaviour
             cards[j].transform.GetChild(0).GetComponentInChildren<RawImage>().texture = cardTexture;
             cards[j].transform.GetChild(0).gameObject.name = cardName;
             cards[j].GetComponent<CardChainCardController>().leftCardLocalName = localName;
-
+            cards[j].GetComponent<CardChainCardController>().boardGenerateCardChain = this;
+            cards[j].GetComponent<CardChainCardController>().uıController = uıController;
 
             var cardName1 = cardNames[randomValueList[j + 1]];
             var cardTexture1 = await gameAPI.GetCardImage(packSlug, cardName1, 512);

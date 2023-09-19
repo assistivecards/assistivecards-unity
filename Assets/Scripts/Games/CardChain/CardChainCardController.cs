@@ -7,16 +7,22 @@ using UnityEngine.UI;
 public class CardChainCardController : MonoBehaviour
 {
     GameAPI gameAPI;
+    public BoardGenerateCardChain boardGenerateCardChain;
+    public UIControllerCardChain uıController;
     public GameObject leftCard;
     public GameObject rightCard;
     public string leftCardLocalName;
     public string rightCardLocalName;
+    public string preLeftCardLocalName;
+    public string preRightCardLocalName;
     public Vector3 parentPos;
     public GameObject otherGameObject;
 
     private void OnEnable()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+        boardGenerateCardChain = GetComponentInParent<BoardGenerateCardChain>();
+        uıController = GetComponentInParent<UIControllerCardChain>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -33,13 +39,17 @@ public class CardChainCardController : MonoBehaviour
                 {
                     otherGameObject = other.gameObject;
                 }
+                preRightCardLocalName = rightCardLocalName;
                 otherGameObject.transform.SetParent(this.transform);
                 otherGameObject.transform.tag = "Untagged";
                 otherGameObject.transform.position = rightCard.transform.position;
                 rightCard = otherGameObject.GetComponent<CardChainCardController>().rightCard;
-                //LeanTween.scale(this.gameObject, Vector3.one * 0.6f, 0.5f).setOnComplete(ScaleDown);
+                LeanTween.scale(this.gameObject, Vector3.one * 0.55f, 0.5f).setOnComplete(ScaleDown);
                 rightCardLocalName = otherGameObject.GetComponent<CardChainCardController>().rightCardLocalName;
                 otherGameObject.GetComponent<CardChainDraggable>().enabled = false;
+                Invoke("ReadRightCard", 0.1f);
+                boardGenerateCardChain.matchCount++;
+                Invoke("CallResetBoard", 0.2f);
            }
             else if(other.GetComponent<CardChainCardController>().rightCardLocalName == leftCardLocalName)
            {
@@ -51,19 +61,44 @@ public class CardChainCardController : MonoBehaviour
                 {
                     otherGameObject = other.gameObject;
                 }
+                preLeftCardLocalName = leftCardLocalName;
                 otherGameObject.transform.SetParent(this.transform);
                 otherGameObject.transform.tag = "Untagged";
                 otherGameObject.transform.position = leftCard.transform.position;
                 leftCard = otherGameObject.GetComponent<CardChainCardController>().leftCard;
-                //LeanTween.scale(this.gameObject, Vector3.one * 0.6f, 0.5f).setOnComplete(ScaleDown);
+                LeanTween.scale(this.gameObject, Vector3.one * 0.55f, 0.5f).setOnComplete(ScaleDown);
                 leftCardLocalName = otherGameObject.GetComponent<CardChainCardController>().leftCardLocalName;
                 otherGameObject.GetComponent<CardChainDraggable>().enabled = false;
+                Invoke("ReadLeftCard", 0.1f);
+                boardGenerateCardChain.matchCount++;
+                Invoke("CallResetBoard", 0.2f);
            }
         }
     }
 
+    private void ReadLeftCard()
+    {
+        gameAPI.Speak(preLeftCardLocalName);
+        Debug.Log(preLeftCardLocalName);
+    }
+
+    private void ReadRightCard()
+    {
+        gameAPI.Speak(preRightCardLocalName);
+        Debug.Log(preRightCardLocalName);
+    }
+
     private void ScaleDown()
     {
-        LeanTween.scale(this.gameObject, Vector3.one * 0.5f, 0.25f);
+        LeanTween.scale(this.gameObject, Vector3.one * 0.5f, 0.2f);
+    }
+
+    private void CallResetBoard()
+    {
+        if(boardGenerateCardChain.matchCount >= 4)
+        {
+            boardGenerateCardChain.ResetBoard();
+            GetComponentInParent<UIControllerCardChain>().Invoke("LevelChangeActive", 0.5f);
+        }
     }
 }

@@ -76,7 +76,7 @@ public class CardRumbleBoardGenerator : MonoBehaviour
         ScaleImagesUp();
         backButton.SetActive(true);
         UIController.Invoke("TutorialSetActive", .3f);
-        Invoke("EnableBackButton", 0.15f);
+        Invoke("EnableBackButton", 0.25f);
     }
 
     public void ClearBoard()

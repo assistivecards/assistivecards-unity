@@ -7,14 +7,10 @@ using UnityEngine.UI;
 public class CardChainDraggable : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
     public bool touching;
-    public bool cantMove;
 
     public void OnDrag(PointerEventData eventData)
     {
-        if(!cantMove)
-        {
-            this.transform.position = eventData.position;
-        }
+        this.transform.position = eventData.position;
     }
 
     public void OnPointerDown(PointerEventData eventData)

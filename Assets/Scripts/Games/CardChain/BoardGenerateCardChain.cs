@@ -121,9 +121,6 @@ public class BoardGenerateCardChain : MonoBehaviour
             cards[j].transform.tag = "Card";
             LeanTween.scale(cards[j], Vector3.one * 0.5f, 0.5f);
             CreateRandomPosition(cards[j]);
-
-            //cards[j].GetComponent<CardChainCardController>().GetChildNames();
-            //cards[j].GetComponent<CardControllerCardChain>().boardGenerateCardChain = this;
         }
         Invoke("BoardCreatedBool", 0.5f);
     }

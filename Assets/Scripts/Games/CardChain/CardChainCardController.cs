@@ -47,9 +47,9 @@ public class CardChainCardController : MonoBehaviour
                 LeanTween.scale(this.gameObject, Vector3.one * 0.55f, 0.5f).setOnComplete(ScaleDown);
                 rightCardLocalName = otherGameObject.GetComponent<CardChainCardController>().rightCardLocalName;
                 otherGameObject.GetComponent<CardChainDraggable>().enabled = false;
-                Invoke("ReadRightCard", 0.1f);
+                Invoke(nameof(ReadRightCard), 0.1f);
                 boardGenerateCardChain.matchCount++;
-                Invoke("CallResetBoard", 0.2f);
+                Invoke(nameof(CallResetBoard), 0.2f);
            }
             else if(other.GetComponent<CardChainCardController>().rightCardLocalName == leftCardLocalName)
            {
@@ -61,6 +61,7 @@ public class CardChainCardController : MonoBehaviour
                 {
                     otherGameObject = other.gameObject;
                 }
+                gameAPI.PlaySFX("Success");
                 preLeftCardLocalName = leftCardLocalName;
                 otherGameObject.transform.SetParent(this.transform);
                 otherGameObject.transform.tag = "Untagged";
@@ -69,9 +70,9 @@ public class CardChainCardController : MonoBehaviour
                 LeanTween.scale(this.gameObject, Vector3.one * 0.55f, 0.5f).setOnComplete(ScaleDown);
                 leftCardLocalName = otherGameObject.GetComponent<CardChainCardController>().leftCardLocalName;
                 otherGameObject.GetComponent<CardChainDraggable>().enabled = false;
-                Invoke("ReadLeftCard", 0.1f);
+                Invoke(nameof(ReadLeftCard), 0.1f);
                 boardGenerateCardChain.matchCount++;
-                Invoke("CallResetBoard", 0.2f);
+                Invoke(nameof(CallResetBoard), 0.2f);
            }
         }
     }

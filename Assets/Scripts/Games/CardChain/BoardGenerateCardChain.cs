@@ -117,7 +117,7 @@ public class BoardGenerateCardChain : MonoBehaviour
             cards[j].transform.GetChild(1).GetComponentInChildren<RawImage>().texture = cardTexture1;
             cards[j].transform.GetChild(1).gameObject.name = cardName1;
             cards[j].GetComponent<CardChainCardController>().rightCardLocalName = localName1;
-
+            cards[j].transform.tag = "Card";
             LeanTween.scale(cards[j], Vector3.one * 0.5f, 0.5f);
             CreateRandomPosition(cards[j]);
 

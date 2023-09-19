@@ -80,7 +80,11 @@ public class EggController : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     private void ActivateCard()
     {
         LeanTween.scale(this.gameObject, Vector3.zero, 0.5f).setOnComplete(ResetEgg);
-        LeanTween.scale(card, Vector3.one * 0.5f, 0.5f);
+        LeanTween.scale(card, Vector3.one * 0.7f, 0.6f).setOnComplete(ScaleDown);
+    }
+    private void ScaleDown()
+    {
+        LeanTween.scale(card, Vector3.one * 0.5f, 0.25f);
     }
 
     public void ResetEgg()

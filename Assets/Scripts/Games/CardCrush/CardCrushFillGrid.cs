@@ -297,7 +297,8 @@ public class CardCrushFillGrid : MonoBehaviour
 
     private void PlaySuccessSFX()
     {
-        smallSuccess.PlayOneShot(sfx.clip, 0.5f);
+        gameAPI.PlaySFX("SmallSuccess");
+        //smallSuccess.PlayOneShot(sfx.clip, 0.5f);
     }
 
     public void ResetGrid()

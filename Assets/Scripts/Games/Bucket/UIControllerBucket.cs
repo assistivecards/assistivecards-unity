@@ -19,6 +19,7 @@ public class UIControllerBucket : MonoBehaviour
     [SerializeField] private GameObject selectNewPackButton;
     [SerializeField] private GameObject continueButton;
     [SerializeField] private GameObject collectCount;
+    [SerializeField] private GameObject cardImage;
     [SerializeField] private GameObject tutorial;
 
 
@@ -42,6 +43,7 @@ public class UIControllerBucket : MonoBehaviour
         settingButton.SetActive(true);
         levelChangeScreen.SetActive(false);
         collectCount.SetActive(true);
+        cardImage.SetActive(true);
         firstTime = false;
     }
 
@@ -55,6 +57,7 @@ public class UIControllerBucket : MonoBehaviour
         packSelectionScreen.SetActive(true);
         levelChangeScreen.SetActive(false);
         collectCount.SetActive(false);
+        cardImage.SetActive(false);
         gameAPI.ResetSessionExp();
     }
 
@@ -68,6 +71,7 @@ public class UIControllerBucket : MonoBehaviour
         levelChangeScreen.SetActive(true);
         LeanTween.scale(levelChangeScreen, Vector3.one * 0.6f, 0.5f);
         collectCount.SetActive(false);
+        cardImage.SetActive(false);
     }
 
     public void TransitionScreen()
@@ -79,6 +83,7 @@ public class UIControllerBucket : MonoBehaviour
             levelProgressContainer.SetActive(false);
             transitionScreen.SetActive(true);
             collectCount.SetActive(false);
+            cardImage.SetActive(false);
         }
     }
 

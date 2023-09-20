@@ -27,6 +27,7 @@ public class DropControllerBucket : MonoBehaviour
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject bucketBack;
     [SerializeField] private GameObject bucketFront;
+    [SerializeField] private GameObject targetCardImage;
     [SerializeField] private GameObject end;
     [SerializeField] private TMP_Text collectText;
     [SerializeField] private TMP_Text collectedCountText;
@@ -115,6 +116,7 @@ public class DropControllerBucket : MonoBehaviour
                 cards.Add(card);
             }
         }
+        targetCardImage.GetComponent<RawImage>().texture = await gameAPI.GetCardImage(_packSlug, collectableCard, 512);
         uıControllerBucket.CloseTransitionScreen();
         uıControllerBucket.InGame();
         bucketBack.transform.localPosition = new Vector3(-13, -230, 0);

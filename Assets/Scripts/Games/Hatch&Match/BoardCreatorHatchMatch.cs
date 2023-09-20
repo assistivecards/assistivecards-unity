@@ -188,11 +188,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
 
     private void ReloadBoard()
     {
-        foreach (var card in cards)
-        {
-            LeanTween.scale(card, Vector3.zero, 0.15f);
-            Destroy(card);
-        }
+        LevelEndAnimationStart();
         cards.Clear();
         guessCards.Clear();
         egg.GetComponent<EggController>().clickCount = 0;
@@ -201,22 +197,19 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         boardCreated = false;
         Invoke("GeneratStylized", 1f);     
         levelCount++;
-        ClearLevel();
+        Invoke(nameof(ClearLevel), 0.25f);
     }
 
     public void ResetBoard()
     {
-        foreach (var card in cards)
-        {
-            Destroy(card);
-        }
+        LevelEndAnimationStart();
         cards.Clear();
         guessCards.Clear();
         egg.GetComponent<EggController>().clickCount = 0;
         LeanTween.scale(egg, Vector3.zero, 0.1f);
         randomValues.Clear();
         boardCreated = false;    
-        ClearLevel();
+        Invoke(nameof(ClearLevel), 0.25f);
     }
 
     public void ActivateLevelChange()
@@ -224,6 +217,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         uıController.LevelChangeScreenActivate();
         gameAPI.AddExp(gameAPI.sessionExp);
     }
+
 
     public void ResetLevelCount()
     {
@@ -245,5 +239,19 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         {
             Destroy(clone);
         }
+
+        foreach (var card in cards)
+        {
+            Destroy(card);
+        }
+    }
+
+    private void LevelEndAnimationStart()
+    {
+        foreach (var card in cards)
+        {
+            LeanTween.scale(card, Vector3.zero, 0.25f);
+        }
+        uıController.LoadingScreenActivation();
     }
 }

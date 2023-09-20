@@ -19,7 +19,7 @@ public class HatchMatchUIController : MonoBehaviour
     [SerializeField] private GameObject settingButton;
     [SerializeField] private GameObject helloText;
     [SerializeField] private GameObject levelProgressContainer;
-    [SerializeField] private GameObject loadingScreen;
+    [SerializeField] public GameObject loadingScreen;
     [SerializeField] private GameObject packSelectionScreen;
     [SerializeField] private GameObject tutorial;
 
@@ -72,7 +72,13 @@ public class HatchMatchUIController : MonoBehaviour
         gameAPI.AddExp(gameAPI.sessionExp);
         levelChange.SetActive(true);
         LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.3f);
+        Invoke("LevelChangeSetActiveFalse", 0.1f);
         gameAPI.PlaySFX("Finished");
+    }
+
+    private void LevelChangeSetActiveFalse()
+    {
+        loadingScreen.SetActive(false);
     }
 
     public void CloseLevelChangePanel()

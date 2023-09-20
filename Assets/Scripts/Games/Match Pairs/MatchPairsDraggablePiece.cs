@@ -14,18 +14,27 @@ public class MatchPairsDraggablePiece : MonoBehaviour, IPointerDownHandler, IPoi
 
     public void OnDrag(PointerEventData eventData)
     {
-        transform.position = transform.position + new Vector3(eventData.delta.x, eventData.delta.y, 0);
+        if (Input.touchCount == 1)
+        {
+            transform.position = transform.position + new Vector3(eventData.delta.x, eventData.delta.y, 0);
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        gameAPI.VibrateWeak();
-        gameAPI.PlaySFX("Pickup");
-        transform.GetComponent<Rigidbody2D>().isKinematic = true;
+        if (Input.touchCount == 1)
+        {
+            gameAPI.VibrateWeak();
+            gameAPI.PlaySFX("Pickup");
+            transform.GetComponent<Rigidbody2D>().isKinematic = true;
+        }
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        transform.GetComponent<Rigidbody2D>().isKinematic = false;
+        if (Input.touchCount == 1)
+        {
+            transform.GetComponent<Rigidbody2D>().isKinematic = false;
+        }
     }
 }

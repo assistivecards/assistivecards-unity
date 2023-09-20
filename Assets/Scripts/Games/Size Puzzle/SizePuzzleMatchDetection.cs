@@ -25,48 +25,52 @@ public class SizePuzzleMatchDetection : MonoBehaviour, IPointerClickHandler
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (!isClicked)
+        if (Input.touchCount == 1)
         {
-            GetCardScales();
-
-            if (board.selectedSize == "small")
+            if (!isClicked)
             {
-                if (transform.localScale.x == Mathf.Min(cardScales))
-                {
-                    ExecuteCorrectMatchProcedure();
-                }
-                else
-                {
-                    FadeCardParent();
-                }
-            }
+                GetCardScales();
 
-            else if (board.selectedSize == "medium")
-            {
-                if (transform.localScale.x < Mathf.Max(cardScales) && transform.localScale.x > Mathf.Min(cardScales))
+                if (board.selectedSize == "small")
                 {
-                    ExecuteCorrectMatchProcedure();
+                    if (transform.localScale.x == Mathf.Min(cardScales))
+                    {
+                        ExecuteCorrectMatchProcedure();
+                    }
+                    else
+                    {
+                        FadeCardParent();
+                    }
                 }
-                else
-                {
-                    FadeCardParent();
-                }
-            }
 
-            else if (board.selectedSize == "large")
-            {
-                if (transform.localScale.x == Mathf.Max(cardScales))
+                else if (board.selectedSize == "medium")
                 {
-                    ExecuteCorrectMatchProcedure();
+                    if (transform.localScale.x < Mathf.Max(cardScales) && transform.localScale.x > Mathf.Min(cardScales))
+                    {
+                        ExecuteCorrectMatchProcedure();
+                    }
+                    else
+                    {
+                        FadeCardParent();
+                    }
                 }
-                else
-                {
-                    FadeCardParent();
-                }
-            }
 
-            isClicked = true;
+                else if (board.selectedSize == "large")
+                {
+                    if (transform.localScale.x == Mathf.Max(cardScales))
+                    {
+                        ExecuteCorrectMatchProcedure();
+                    }
+                    else
+                    {
+                        FadeCardParent();
+                    }
+                }
+
+                isClicked = true;
+            }
         }
+
 
     }
 

@@ -10,7 +10,7 @@ public class SizePuzzleBoardGenerator : MonoBehaviour
 {
     private GameAPI gameAPI;
     [SerializeField] Image[] cardTextures;
-    [SerializeField] GameObject[] cardParents;
+    public GameObject[] cardParents;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] Texture2D randomImage;
     [SerializeField] Sprite randomSprite;
@@ -110,6 +110,7 @@ public class SizePuzzleBoardGenerator : MonoBehaviour
     {
         for (int i = 0; i < cardParents.Length; i++)
         {
+            cardParents[i].GetComponent<SizePuzzleMatchDetection>().enabled = true;
             cardParents[i].GetComponent<SizePuzzleMatchDetection>().isClicked = false;
             cardParents[i].transform.rotation = Quaternion.Euler(0, 0, Random.Range(-20, 20));
             LeanTween.alpha(cardParents[i].GetComponent<RectTransform>(), 1, .001f);

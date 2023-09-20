@@ -112,6 +112,10 @@ public class SizePuzzleUIController : MonoBehaviour
 
     IEnumerator BackButtonClickCoroutine()
     {
+        for (int i = 0; i < board.cardParents.Length; i++)
+        {
+            board.cardParents[i].GetComponent<SizePuzzleMatchDetection>().enabled = false;
+        }
         ResetCounter();
         gameAPI.ResetSessionExp();
         board.ClearUniqueCards();

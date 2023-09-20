@@ -28,6 +28,19 @@ public class RopeGenerator : MonoBehaviour
             }
 
         }
+
+        DestroyExcessRopes();
+    }
+
+    private void DestroyExcessRopes()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).name == "Rope(Clone)" && i < transform.childCount - ropes)
+            {
+                Destroy(transform.GetChild(i).gameObject);
+            }
+        }
     }
 
 }

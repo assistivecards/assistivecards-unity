@@ -168,8 +168,13 @@ public class CardBlastFillGrid : MonoBehaviour
         scoreObj.GetComponent<TMP_Text>().text = scoreInt.ToString() + "/100";
         if(scoreInt >= 100)
         {
-            isOnGame = false;
+            Invoke("SetIsOnGameFalse", 0.75f);
         }
+    }
+
+    private void SetIsOnGameFalse()
+    {
+        isOnGame = false;
     }
 
     public async void RefillBoardsTop()

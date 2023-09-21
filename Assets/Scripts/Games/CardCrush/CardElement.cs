@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerMoveHandler
 {
     GameAPI gameAPI;
     public float x;
@@ -19,7 +19,9 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private Vector2 firstTouchPosition;
     private Vector2 finalTouchPosition;
 
-    private float swipeAngle;
+    public float swipeDummy;
+    public float swipeAngle;
+    public float swipeChange;
 
     public GameObject rightNeighbour;
     public GameObject leftNeighbour;
@@ -33,6 +35,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public bool isMatched;
     public bool isMoved;
     public string localName;
+    public bool onMove;
 
     private void Awake()
     {
@@ -56,20 +59,37 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         isMoved = true;
         cardPosition = this.transform.position;
+        swipeDummy = swipeAngle;
+        CalculateAngle();
         if(cardCrushFillGrid.isBoardCreated && !cardCrushFillGrid.isOnRefill)
         {
             firstTouchPosition = pointerEventData.position;
         }
     }
 
-    public void OnPointerUp(PointerEventData pointerEventData)
+    public void OnPointerMove(PointerEventData pointerEventData)
     {
         if(cardCrushFillGrid.isBoardCreated && !cardCrushFillGrid.isOnRefill)
         {
             finalTouchPosition = pointerEventData.position;
-            MoveDrops();
+            swipeChange = swipeDummy - swipeAngle;
+            CalculateAngle();
+            if(swipeChange > Mathf.Abs(10))
+            {
+                MoveDrops();
+            }
         }
     }
+
+    public void OnPointerUp(PointerEventData pointerEventData)
+    {
+        // if(cardCrushFillGrid.isBoardCreated && !cardCrushFillGrid.isOnRefill)
+        // {
+            //finalTouchPosition = pointerEventData.position;
+            //MoveDrops();
+        //}
+    }
+
     private void Update() 
     {
         if(this.transform.localScale.x > 1)
@@ -128,8 +148,6 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void MoveDrops()
     {
-        CalculateAngle();
-
         if(swipeAngle != 0)
         {
             if(swipeAngle > -45 && swipeAngle <= 45 && x < cardCrushGrid.width -1) //right swipe
@@ -141,6 +159,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                         if(cell != null)
                         {
                             MoveToTarget(cell, cell.card, cell.transform.position, cell.card.GetComponent<CardElement>().x,cell.card.GetComponent<CardElement>().y);
+                            Invoke(nameof(SwipeReset), 0.5f);
                             break;
                         }
                     }
@@ -155,6 +174,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                         if(cell != null)
                         {
                             MoveToTarget(cell, cell.card, cell.transform.position, cell.card.GetComponent<CardElement>().x, cell.card.GetComponent<CardElement>().y);
+                            Invoke(nameof(SwipeReset), 0.5f);
                             break;
                         }
                     }
@@ -169,6 +189,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                         if(cell != null)
                         {
                             MoveToTarget(cell, cell.card, cell.transform.position, cell.card.GetComponent<CardElement>().x, cell.card.GetComponent<CardElement>().y);
+                            Invoke(nameof(SwipeReset), 0.5f);
                             break;
                         }
                     }
@@ -184,12 +205,20 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                         if(cell != null)
                         {
                             MoveToTarget(cell, cell.card, cell.transform.position, cell.card.GetComponent<CardElement>().x, cell.card.GetComponent<CardElement>().y);
+                            Invoke(nameof(SwipeReset), 0.5f);
                             break;
                         }
                     }
                 }
             }
         }
+    }
+
+    private void SwipeReset()
+    {
+        swipeAngle = 0;
+        swipeDummy = 0;
+        swipeChange = 0;
     }
 
 

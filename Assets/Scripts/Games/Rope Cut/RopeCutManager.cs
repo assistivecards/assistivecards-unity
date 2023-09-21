@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RopeCutManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class RopeCutManager : MonoBehaviour
     private Transform hitRope;
     public bool canCut = true;
     [SerializeField] GameObject trailManager;
+    [SerializeField] Button settingsButton;
 
     // Update is called once per frame
     void Update()
@@ -36,6 +38,7 @@ public class RopeCutManager : MonoBehaviour
                             Destroy(hitRope.GetChild(i).gameObject, .5f);
                         }
 
+                        settingsButton.interactable = false;
                     }
                 }
             }

@@ -610,6 +610,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1242831489266657180}
     - target: {fileID: 543293291873109802, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 543293291873109802, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 543293291873109802, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 543293291873109802, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 543293291873109802, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 956408261191908917}
@@ -834,17 +850,6 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 2053396223207933191, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
   m_PrefabInstance: {fileID: 2053396223108693368}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &584384117 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1242831489156330399, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
-  m_PrefabInstance: {fileID: 1242831489266657176}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &601693157 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 2053396223659386525, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
@@ -1458,6 +1463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5454712d0de44f74eb5c2aa7275e50ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settingsButton: {fileID: 1426404170}
 --- !u!1 &1072650207
 GameObject:
   m_ObjectHideFlags: 0
@@ -2109,7 +2115,7 @@ MonoBehaviour:
   promoScreenPremiumButton: {fileID: 1003392353}
   promoScreenMonthlyButton: {fileID: 0}
   promoScreenYearlyButton: {fileID: 0}
-  promoScreenPuchasePremiumButton: {fileID: 1719089849}
+  promoScreenPuchasePremiumButton: {fileID: 0}
   availablePacksArray: []
 --- !u!114 &1338730598
 MonoBehaviour:
@@ -2129,7 +2135,7 @@ MonoBehaviour:
   promoScreenPrice: {fileID: 1407491092}
   promoScreenMonthlyPrice: {fileID: 0}
   promoScreenYearlyPrice: {fileID: 0}
-  promoScreenPuchasePrice: {fileID: 584384117}
+  promoScreenPuchasePrice: {fileID: 0}
   IAPUIManager: {fileID: 1338730597}
   environment: development
   purchaseRestoredPanel: {fileID: 191490649}
@@ -2358,6 +2364,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canCut: 1
   trailManager: {fileID: 1915469689}
+  settingsButton: {fileID: 1426404170}
+--- !u!114 &1426404170 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 543293291873109802, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1433635852
 GameObject:
   m_ObjectHideFlags: 0
@@ -3282,17 +3300,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1719089849 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1357829323095568706, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
-  m_PrefabInstance: {fileID: 1242831489266657176}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1727350122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4145,6 +4152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ropeCutManager: {fileID: 1416613811}
+  settingsButton: {fileID: 1426404170}
 --- !u!68 &1915469693
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -4784,7 +4792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 177398.45
+      value: 194052.28
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a
@@ -5449,6 +5457,7 @@ MonoBehaviour:
   checkPointPanel: {fileID: 1078714826}
   correctMatches: 0
   checkpointFrequency: 5
+  settingsButton: {fileID: 1426404170}
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TrailManager : MonoBehaviour
 {
     private int ropeIndex;
     private Transform hitRope;
     [SerializeField] RopeCutManager ropeCutManager;
+    [SerializeField] Button settingsButton;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +59,7 @@ public class TrailManager : MonoBehaviour
                 Destroy(hitRope.GetChild(i).gameObject, .5f);
             }
 
+            settingsButton.interactable = false;
         }
     }
 }

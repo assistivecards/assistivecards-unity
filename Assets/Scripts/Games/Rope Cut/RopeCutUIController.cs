@@ -18,6 +18,7 @@ public class RopeCutUIController : MonoBehaviour
     public int correctMatches;
     public int checkpointFrequency = 5;
     private bool firstTime = true;
+    [SerializeField] Button settingsButton;
 
 
     private void Awake()
@@ -41,6 +42,7 @@ public class RopeCutUIController : MonoBehaviour
 
     IEnumerator BackButtonClickCoroutine()
     {
+        settingsButton.interactable = true;
         ResetCounter();
         gameAPI.ResetSessionExp();
         board.ScaleImagesDown();

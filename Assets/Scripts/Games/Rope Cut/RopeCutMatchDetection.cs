@@ -8,6 +8,7 @@ public class RopeCutMatchDetection : MonoBehaviour
     private RopeCutBoardGenerator board;
     private RopeCutUIController UIController;
     private GameAPI gameAPI;
+    [SerializeField] Button settingsButton;
 
     private void Awake()
     {
@@ -50,6 +51,7 @@ public class RopeCutMatchDetection : MonoBehaviour
             Destroy(other.GetComponent<HingeJoint2D>());
         }
 
+        settingsButton.interactable = true;
         // Destroy(other.GetComponent<HingeJoint2D>());
 
     }

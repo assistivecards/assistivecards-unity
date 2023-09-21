@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
+using System.Linq;
 
 
 
@@ -316,6 +317,11 @@ public class CanvasController : MonoBehaviour
     }
     public void SignOut()
     {
+        if (GameObject.FindObjectsOfType<GameObject>(true).Where(obj => obj.name == "LevelChangeScreen").FirstOrDefault().activeSelf)
+        {
+            GameObject.FindObjectsOfType<GameObject>(true).Where(obj => obj.name == "LevelChangeScreen").FirstOrDefault().SetActive(false);
+        }
+
         gameAPI.ClearAllPrefs();
 
         notificationPreferences = notificationScreen.GetComponent<NotificationPreferences>();

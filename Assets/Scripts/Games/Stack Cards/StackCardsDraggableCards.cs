@@ -14,17 +14,25 @@ public class StackCardsDraggableCards : MonoBehaviour, IDragHandler, IPointerDow
 
     public void OnDrag(PointerEventData eventData)
     {
-        transform.position = transform.position + new Vector3(eventData.delta.x, eventData.delta.y, 0);
-        transform.SetParent(GameObject.Find("GamePanel").transform);
-        transform.SetAsLastSibling();
+        if (Input.touchCount == 1)
+        {
+            transform.position = transform.position + new Vector3(eventData.delta.x, eventData.delta.y, 0);
+            transform.SetParent(GameObject.Find("GamePanel").transform);
+            transform.SetAsLastSibling();
+        }
+
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("PointerDown");
-        gameAPI.VibrateWeak();
-        gameAPI.PlaySFX("Pickup");
-        parentName = transform.parent.name;
+        if (Input.touchCount == 1)
+        {
+            Debug.Log("PointerDown");
+            gameAPI.VibrateWeak();
+            gameAPI.PlaySFX("Pickup");
+            parentName = transform.parent.name;
+        }
+
     }
 
     public void OnPointerUp(PointerEventData eventData)

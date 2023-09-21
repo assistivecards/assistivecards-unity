@@ -20598,7 +20598,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -297, y: 357832.53}
+  m_AnchoredPosition: {x: -297, y: 358699.53}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &1242831489913853829
@@ -68680,13 +68680,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: PremiumPromoUniApp
       objectReference: {fileID: 0}
+    - target: {fileID: 280145028074801550, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 317048155792175373, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1502
+      objectReference: {fileID: 0}
     - target: {fileID: 834716507477883241, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -860
+      value: -378
+      objectReference: {fileID: 0}
+    - target: {fileID: 852703535746186206, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2555.5837
+      objectReference: {fileID: 0}
+    - target: {fileID: 880266541487749662, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2197
+      objectReference: {fileID: 0}
+    - target: {fileID: 881573425189153926, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4284171582
       objectReference: {fileID: 0}
     - target: {fileID: 948960761878926377, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -150
+      value: 332
       objectReference: {fileID: 0}
     - target: {fileID: 1396366086333910772, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -68704,17 +68724,57 @@ PrefabInstance:
       propertyPath: m_Name
       value: promoScreenMonthlyButton
       objectReference: {fileID: 0}
+    - target: {fileID: 2618376848901873480, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4284171582
+      objectReference: {fileID: 0}
+    - target: {fileID: 2868850323091470867, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 992
+      objectReference: {fileID: 0}
     - target: {fileID: 2889389294927089765, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 240
+      value: 722
+      objectReference: {fileID: 0}
+    - target: {fileID: 2952327133757139536, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2593
       objectReference: {fileID: 0}
     - target: {fileID: 3695518237756278748, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
       propertyPath: m_Name
       value: promoScreenYearlyButton
       objectReference: {fileID: 0}
+    - target: {fileID: 3926257718874932085, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2652.3728
+      objectReference: {fileID: 0}
     - target: {fileID: 4234711499305693150, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
       propertyPath: m_Name
       value: promoScreenPremiumButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337478736577297975, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1282
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435042689193398873, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -497.65997
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435042689193398873, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -27.174591
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713015541667660373, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713015541667660373, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713015541667660373, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5156345935096062201, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
       propertyPath: m_enableWordWrapping
@@ -68808,9 +68868,29 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5571388814963416397, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4284171582
+      objectReference: {fileID: 0}
     - target: {fileID: 5632244258251658550, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
       propertyPath: m_Name
       value: promoScreenMonthlyPrice
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148992007213829845, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4284171582
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312957454389572321, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1492
+      objectReference: {fileID: 0}
+    - target: {fileID: 6341892676122607344, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 782
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637814002939885968, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 482
       objectReference: {fileID: 0}
     - target: {fileID: 6880117095266442256, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
       propertyPath: m_Name
@@ -68828,13 +68908,37 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7476669239548287742, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7476669239548287742, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7476669239548287742, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7477446255938530959, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7568872150467519261, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 982
+      objectReference: {fileID: 0}
     - target: {fileID: 7656155019491385018, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
       propertyPath: m_Name
       value: promoScreenPuchasePrice
+      objectReference: {fileID: 0}
+    - target: {fileID: 7994698398778190483, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -570.51776
+      objectReference: {fileID: 0}
+    - target: {fileID: 7994698398778190483, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -7.6345825
       objectReference: {fileID: 0}
     - target: {fileID: 7996999834615528060, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
       propertyPath: m_Name
@@ -68847,6 +68951,10 @@ PrefabInstance:
     - target: {fileID: 8905446991159579207, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
       propertyPath: m_enableWordWrapping
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9070086106675501396, guid: 0812f493c25ca0a4d90b5a416dd4b006, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 5370.873
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

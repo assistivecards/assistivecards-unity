@@ -41,38 +41,6 @@ public class UIControllerCardChain : MonoBehaviour
         firstTime = false;
     }
 
-    public void TutorialLoopPosition()
-    {
-        loopCount = 0;
-        if(cardPosition != null && cardPosition1 != null)
-        {
-            tutorial.GetComponent<TutorialCardChain>().point1 = cardPosition.transform;
-            tutorial.GetComponent<TutorialCardChain>().point2 = cardPosition1.transform;
-        }
-        else
-        {
-            foreach(var card in boardGenerateCardChain.cards)
-            {
-                if(card != null)
-                {
-                    if(loopCount == 0)
-                    {
-                        if(tutorial.GetComponent<TutorialCardChain>().point1 == null)
-                        {
-                            tutorial.GetComponent<TutorialCardChain>().point1 = card.transform;
-                        }
-                    }
-                    if(loopCount >= 1)
-                    {
-                        tutorial.GetComponent<TutorialCardChain>().point2 = card.transform;
-                        break;
-                    }
-                    loopCount ++;
-                }
-            }
-        }
-    }
-
     public void InGameBar()
     {
         backButton.SetActive(true);

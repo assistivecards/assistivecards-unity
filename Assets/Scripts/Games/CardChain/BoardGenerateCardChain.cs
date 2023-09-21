@@ -10,7 +10,7 @@ public class BoardGenerateCardChain : MonoBehaviour
 {
     GameAPI gameAPI;
     public string selectedLangCode;
-
+    [SerializeField] private GameObject tutorial;
     [SerializeField] private UIControllerCardChain uıController;
     AssistiveCardsSDK.AssistiveCardsSDK.Cards cardDefinitions;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cardTextures;
@@ -122,6 +122,8 @@ public class BoardGenerateCardChain : MonoBehaviour
             LeanTween.scale(cards[j], Vector3.one * 0.5f, 0.5f);
             CreateRandomPosition(cards[j]);
         }
+        tutorial.GetComponent<TutorialCardChain>().point1 = cards[0].transform;
+        tutorial.GetComponent<TutorialCardChain>().point1 = cards[1].transform;
         Invoke("BoardCreatedBool", 0.5f);
     }
 

@@ -6,12 +6,6 @@ public class TutorialCardChain : MonoBehaviour
 {
     [SerializeField] public Transform point1;
     [SerializeField] public Transform point2;
-    [SerializeField] UIControllerCardChain uıController;
-
-    private void OnEnable() 
-    {
-        uıController.TutorialLoopPosition();
-    }
 
     void Update()
     {

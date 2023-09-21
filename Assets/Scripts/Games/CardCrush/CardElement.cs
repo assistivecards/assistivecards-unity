@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerMoveHandler
 {
     GameAPI gameAPI;
     public float x;
@@ -19,7 +19,9 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private Vector2 firstTouchPosition;
     private Vector2 finalTouchPosition;
 
-    private float swipeAngle;
+    public float swipeDummy;
+    public float swipeAngle;
+    public float swipeChange;
 
     public GameObject rightNeighbour;
     public GameObject leftNeighbour;
@@ -33,6 +35,8 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public bool isMatched;
     public bool isMoved;
     public string localName;
+    public bool onMove;
+    public bool oneTime = false;
 
     private void Awake()
     {
@@ -50,26 +54,49 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         {
             this.transform.localScale = Vector3.one;
         }
+        Invoke(nameof(SwipeReset), 0.5f);
     }
 
     public void OnPointerDown(PointerEventData pointerEventData)
     {
+        onMove = true;
         isMoved = true;
         cardPosition = this.transform.position;
+        swipeDummy = swipeAngle;
+        CalculateAngle();
         if(cardCrushFillGrid.isBoardCreated && !cardCrushFillGrid.isOnRefill)
         {
             firstTouchPosition = pointerEventData.position;
         }
     }
 
-    public void OnPointerUp(PointerEventData pointerEventData)
+    public void OnPointerMove(PointerEventData pointerEventData)
     {
-        if(cardCrushFillGrid.isBoardCreated && !cardCrushFillGrid.isOnRefill)
+        if(cardCrushFillGrid.isBoardCreated && !cardCrushFillGrid.isOnRefill && onMove)
         {
             finalTouchPosition = pointerEventData.position;
-            MoveDrops();
+            swipeChange = swipeDummy - swipeAngle;
+            CalculateAngle();
+            if(!oneTime)
+            {
+                MoveDrops();
+                oneTime = true; 
+                Invoke(nameof(SetOneTimeFalse), 1f);
+            }
         }
     }
+
+    private void SetOneTimeFalse()
+    {
+        oneTime = false;
+    }
+
+    public void OnPointerUp(PointerEventData pointerEventData)
+    {
+        onMove = false;
+        Invoke(nameof(SwipeReset), 0.5f);
+    }
+
     private void Update() 
     {
         if(this.transform.localScale.x > 1)
@@ -128,8 +155,6 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void MoveDrops()
     {
-        CalculateAngle();
-
         if(swipeAngle != 0)
         {
             if(swipeAngle > -45 && swipeAngle <= 45 && x < cardCrushGrid.width -1) //right swipe
@@ -190,6 +215,15 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 }
             }
         }
+
+        Invoke(nameof(SwipeReset), 1f);
+    }
+
+    private void SwipeReset()
+    {
+        swipeAngle = 0;
+        swipeDummy = 0;
+        swipeChange = 0;
     }
 
 

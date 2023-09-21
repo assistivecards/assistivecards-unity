@@ -175,7 +175,7 @@ public class ScratcherBoardGenerator : MonoBehaviour
             {
                 cardImagesInScene[correctCardImageIndex].tag = "CorrectCard";
                 cardImagesInScene[correctCardImageIndex].transform.GetChild(0).tag = "CorrectCard";
-                tutorial.GetComponent<Tutorial>().tutorialPosition = cardImagesInScene[correctCardImageIndex].transform;
+                tutorial.GetComponent<Tutorial>().tutorialPosition = cardImagesInScene[correctCardImageIndex].transform.parent;
             }
         }
     }

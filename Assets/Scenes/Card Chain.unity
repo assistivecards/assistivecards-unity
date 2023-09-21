@@ -2584,7 +2584,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   point1: {fileID: 771140372}
   point2: {fileID: 1112654012}
-  "u\u0131Controller": {fileID: 8383894889009589326}
 --- !u!114 &2018903310 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1242831489334970560, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -3067,7 +3066,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 197420.14
+      value: 206565.34
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3760,6 +3759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedLangCode: 
+  tutorial: {fileID: 1978858820}
   "u\u0131Controller": {fileID: 8383894889009589326}
   cardTextures:
     cards: []

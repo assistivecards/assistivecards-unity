@@ -170,11 +170,17 @@ public class CardCrushFillGrid : MonoBehaviour
 
         LeanTween.scale(this.gameObject, new Vector2(0.75f, 0.75f), 0.1f);
         SetLeft(rect, 3097);
+        Invoke(nameof(SetBoardCreatedTrue), 1f);
         loadingScreen.SetActive(false);
-        isBoardCreated = true;
         UIController.TutorialSetActive();
         isOnGame = true;
     }
+
+    private void SetBoardCreatedTrue()
+    {
+        isBoardCreated = true;
+    }
+
     private bool FindVerticalMatchesAtBeginning(int i)
     {
         if(i > 1)

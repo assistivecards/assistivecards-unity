@@ -43,7 +43,8 @@ public class SwipeManager : MonoBehaviour
                 var wp = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
                 var touchPosition = new Vector2(wp.x, wp.y);
 
-                if (GetComponent<Collider2D>() == Physics2D.OverlapPoint(touchPosition))
+                // if (GetComponent<Collider2D>() == Physics2D.OverlapPoint(touchPosition))
+                if (GetComponent<Collider2D>().OverlapPoint(touchPosition))
                 {
                     isValid = true;
                     touchTimeStart = Time.time;

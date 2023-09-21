@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.IO;
 using Defective.JSON;
 using System.Globalization;
+using Coffee.UIExtensions;
+using System.Linq;
 
 public class GameAPI : MonoBehaviour
 {
@@ -34,10 +36,12 @@ public class GameAPI : MonoBehaviour
     public int correctMatchExp;
     public int wrongMatchExp;
     public int levelOnStart;
+    UIParticle confetti;
 
     private async void Awake()
     {
         assistiveCardsSDK = Camera.main.GetComponent<AssistiveCardsSDK.AssistiveCardsSDK>();
+        confetti = GameObject.FindObjectsOfType<UIParticle>(true).Where(particle => particle.gameObject.name == "UIParticle").FirstOrDefault();
         levelOnStart = CalculateLevel(GetExp());
         cachePacks = CachePacks();
         cacheData = CacheData();
@@ -1317,6 +1321,17 @@ public class GameAPI : MonoBehaviour
     public void ResetSessionExp()
     {
         sessionExp = 0;
+    }
+
+    public void PlayConfettiParticle(Vector3 position)
+    {
+        var main = confetti.transform.GetChild(0).GetComponent<ParticleSystem>().main;
+        main.loop = false;
+        main.stopAction = ParticleSystemStopAction.Destroy;
+        main.playOnAwake = true;
+
+        var particleInstance = Instantiate(confetti, position, Quaternion.identity);
+        particleInstance.transform.SetParent(GameObject.Find("GameCanvas").transform);
     }
 
 }

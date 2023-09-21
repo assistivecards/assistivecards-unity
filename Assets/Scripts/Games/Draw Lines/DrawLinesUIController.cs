@@ -15,7 +15,7 @@ public class DrawLinesUIController : MonoBehaviour
     public int correctMatches;
     [SerializeField] GameObject checkPointPanel;
     private GameAPI gameAPI;
-    public int checkpointFrequency = 5;
+    public int checkpointFrequency = 4;
     [SerializeField] private GameObject tutorial;
     private bool firstTime = true;
 

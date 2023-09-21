@@ -15007,7 +15007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 175068.39
+      value: 179030.77
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -15217,11 +15217,11 @@ PrefabInstance:
       objectReference: {fileID: 252539108}
     - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
       propertyPath: wrongMatchExp
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
       propertyPath: correctMatchExp
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
       propertyPath: sfxClips.Array.size
@@ -16368,7 +16368,7 @@ MonoBehaviour:
   levelProgressContainer: {fileID: 1563074349}
   correctMatches: 0
   checkPointPanel: {fileID: 1095398522}
-  checkpointFrequency: 5
+  checkpointFrequency: 4
   tutorial: {fileID: 1585971985}
 --- !u!114 &8691574409270737102
 MonoBehaviour:

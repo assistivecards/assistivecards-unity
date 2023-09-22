@@ -56,6 +56,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
         {
             //correct match
             gameAPI.AddSessionExp();
+            backButton.GetComponent<Button>().interactable = false;
             correctMatches++;
             gameObject.GetComponent<Draggable>().enabled = false;
             LeanTween.move(gameObject, matchedImageTransform.position, 0.25f);

@@ -584,17 +584,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93303116}
   m_CullTransparentMesh: 1
---- !u!114 &166156118 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1242831489156330399, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
-  m_PrefabInstance: {fileID: 4379759206372183549}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &334646183 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2249279855417450727, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
@@ -1183,17 +1172,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8524809319700726626, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
   m_PrefabInstance: {fileID: 2071215980}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1380102686 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1357829323095568706, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
-  m_PrefabInstance: {fileID: 4379759206372183549}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1432871236
 GameObject:
   m_ObjectHideFlags: 0
@@ -1899,6 +1877,22 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -2501,7 +2495,7 @@ MonoBehaviour:
   promoScreenPremiumButton: {fileID: 1695400849}
   promoScreenMonthlyButton: {fileID: 0}
   promoScreenYearlyButton: {fileID: 0}
-  promoScreenPuchasePremiumButton: {fileID: 1380102686}
+  promoScreenPuchasePremiumButton: {fileID: 0}
   availablePacksArray: []
 --- !u!1 &3312234165896495617
 GameObject:
@@ -2554,7 +2548,7 @@ MonoBehaviour:
   promoScreenPrice: {fileID: 1649788142}
   promoScreenMonthlyPrice: {fileID: 0}
   promoScreenYearlyPrice: {fileID: 0}
-  promoScreenPuchasePrice: {fileID: 166156118}
+  promoScreenPuchasePrice: {fileID: 0}
   IAPUIManager: {fileID: 3312234165896495616}
   environment: development
   purchaseRestoredPanel: {fileID: 1036676418}
@@ -2902,7 +2896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 173759.02
+      value: 175517.84
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

@@ -124,6 +124,7 @@ public class Board : MonoBehaviour
         backButton.SetActive(true);
         tutorial.GetComponent<SilhouetteTutorial>().point2 = correctSilhoutte.transform;
         TutorialSetActive();
+        Invoke("EnableBackButton", 0.2f);
         // LeanTween.scale(backButton, Vector3.one, 0.25f);
     }
 
@@ -176,6 +177,11 @@ public class Board : MonoBehaviour
         // {
         loadingPanel.SetActive(false);
         // }
+    }
+
+    public void EnableBackButton()
+    {
+        backButton.GetComponent<Button>().interactable = true;
     }
 
 

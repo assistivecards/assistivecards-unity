@@ -107,7 +107,10 @@ public class SizePuzzleUIController : MonoBehaviour
 
     public void OnBackButtonClick()
     {
-        StartCoroutine(BackButtonClickCoroutine());
+        if (Input.touchCount == 1)
+        {
+            StartCoroutine(BackButtonClickCoroutine());
+        }
     }
 
     IEnumerator BackButtonClickCoroutine()

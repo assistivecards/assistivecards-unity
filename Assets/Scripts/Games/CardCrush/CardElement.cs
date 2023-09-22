@@ -375,8 +375,8 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
        
         foreach(var card in matched)
         {
+            gameAPI.PlayConfettiParticle(card.transform.position);
             card.transform.GetComponentInParent<CardCrushCell>().isEmpty = true;
-            
             Destroy(card);
         }
     }

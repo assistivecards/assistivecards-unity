@@ -52,6 +52,7 @@ public class CardControllerBucket : MonoBehaviour
                 if(this.gameObject.name == GetComponentInParent<DropControllerBucket>().collectableCard)
                 {
                     gameAPI.PlaySFX("Success");
+                    gameAPI.PlayConfettiParticle(this.transform.position);
                     gameAPI.AddSessionExp();
                     GetComponentInParent<DropControllerBucket>().matchCount ++;
                     GetComponentInParent<DropControllerBucket>().SetCount();

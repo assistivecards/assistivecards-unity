@@ -67,6 +67,7 @@ public class CardElementComplete : MonoBehaviour, IPointerDownHandler, IDragHand
                 LeanTween.move(this.gameObject, other.transform.position, 0.25f).setOnComplete(MatchComplete);
                 gameAPI.AddSessionExp();
                 gameAPI.PlaySFX("Success");
+                gameAPI.PlayConfettiParticle(this.transform.position);
                 Invoke("ReadCard", 0.2f);
                 matched = true;
                 this.transform.SetParent(other.transform);

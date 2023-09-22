@@ -53,6 +53,7 @@ public class CheckMatches : MonoBehaviour
         {
             StartCoroutine(ScaleCardBigger(card));
             card.tag = "MatchedCard";
+            gameAPI.PlayConfettiParticle(card.transform.position);
             //score += 1;
             //PlayerPrefs.SetInt("MemoryGameScore", score);
         }

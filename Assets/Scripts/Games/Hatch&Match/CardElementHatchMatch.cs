@@ -42,6 +42,7 @@ public class CardElementHatchMatch : MonoBehaviour, IPointerDownHandler, IDragHa
         if(other.gameObject.name == this.gameObject.name)
         {
             gameAPI.PlaySFX("Success");
+            gameAPI.PlayConfettiParticle(this.transform.position);
             Invoke("SpeakCardName", 0.5f);
             match = true;
             gameAPI.AddSessionExp();

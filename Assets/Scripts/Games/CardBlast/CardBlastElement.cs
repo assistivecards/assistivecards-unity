@@ -412,6 +412,7 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
             soundController.Invoke("ReadMatch", 0.6f);
             soundController.Invoke("TriggerSuccessSFX", 0.25f);
             LeanTween.scale(card, new Vector3(0.5f, 0.5f, 0.5f), 0.1f);   
+            gameAPI.PlayConfettiParticle(card.transform.position);
         }
         Invoke("DestroyMatched", 0.1f);
     }

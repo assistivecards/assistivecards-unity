@@ -45,6 +45,7 @@ public class SwapCardsBoardGenerator : MonoBehaviour
     public GameObject cardPosition6;
     public List<GameObject> cardPositions = new List<GameObject>();
     public List<GameObject> cloneCards = new List<GameObject>();
+    public List<Texture> cardTextures = new List<Texture>();
 
     private string cardName;
     public int randomOrder;
@@ -120,50 +121,48 @@ public class SwapCardsBoardGenerator : MonoBehaviour
                 var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[i]], 512);
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
-
+                cardTextures.Add(cardTexture);
                 card.transform.SetParent(referencePositions[i].transform);
                 card.transform.name = cardLocalNames[randomValueList[i]];
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                 card.transform.GetChild(1).GetComponent<TMP_Text>().text = cardLocalNames[randomValueList[i]];
                 cards.Add(card);
-                CreateRandomOrderedCards(i, 0, 3);
                 card.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
                 card.transform.localPosition = Vector3.zero;
             }
+                CreateRandomOrderedCards(0, 0);
+                CreateRandomOrderedCards(1, 1);
+                CreateRandomOrderedCards(2, 2);
+                CreateRandomOrderedCards(0, 3);
+                CreateRandomOrderedCards(1, 4);
+                CreateRandomOrderedCards(2, 5);
+            
         //}
         GameUIActivate();
     }
 
-    private async void CreateRandomOrderedCards(int order, int randomMin, int randomMax)
+    private void CreateRandomOrderedCards(int order, int randomOrder)
     {
-        randomOrder = Random.Range(randomMin, randomMax);
-        if(!usedRandomOrderCards.Contains(randomOrder) || cardPositions[randomOrder].transform.childCount <= 0)
-        {
-            GameObject cloneCard = Instantiate(cardPrefab, cardPositions[randomOrder].transform.position, Quaternion.identity);
+        GameObject cloneCard = Instantiate(cardPrefab, cardPositions[randomOrder].transform.position, Quaternion.identity);
 
-            var cloneCardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[order]], 512);
-            cloneCardTexture.wrapMode = TextureWrapMode.Clamp;
-            cloneCardTexture.filterMode = FilterMode.Bilinear;
+        //var cloneCardTexture = ;
+        // cloneCardTexture.wrapMode = TextureWrapMode.Clamp;
+        // cloneCardTexture.filterMode = FilterMode.Bilinear;
 
-            cloneCard.transform.SetParent(cardPositions[randomOrder].transform);
-            cloneCard.transform.name = cardLocalNames[randomValueList[order]];
-            cloneCard.transform.GetChild(0).GetComponent<RawImage>().texture = cloneCardTexture;
-            cloneCard.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-            cloneCard.transform.GetChild(1).GetComponent<TMP_Text>().text = cardLocalNames[randomValueList[order]];
-            cloneCard.GetComponent<BoxCollider2D>().enabled = true;
-            cloneCard.gameObject.tag = "Card";
-            cards.Add(cloneCard);
-            cloneCards.Add(cloneCard);
-            int index = cloneCards.IndexOf(cloneCard);
-            usedRandomOrderCards.Add(order);
-            cloneCard.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
-            cloneCard.transform.localPosition = Vector3.zero;
-        }
-        else if(usedRandomOrderCards.Contains(randomOrder) || cardPositions[randomOrder].transform.childCount > 0)
-        {
-            CreateRandomOrderedCards(order, randomMin, randomMax);
-        }
+        cloneCard.transform.SetParent(cardPositions[randomOrder].transform);
+        cloneCard.transform.name = cardLocalNames[randomValueList[order]];
+        cloneCard.transform.GetChild(0).GetComponent<RawImage>().texture = cardTextures[order];
+        cloneCard.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+        cloneCard.transform.GetChild(1).GetComponent<TMP_Text>().text = cardLocalNames[randomValueList[order]];
+        cloneCard.GetComponent<BoxCollider2D>().enabled = true;
+        cloneCard.gameObject.tag = "Card";
+        cards.Add(cloneCard);
+        cloneCards.Add(cloneCard);
+        int index = cloneCards.IndexOf(cloneCard);
+        usedRandomOrderCards.Add(order);
+        cloneCard.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
+        cloneCard.transform.localPosition = Vector3.zero;
     }
 
     public void GameUIActivate()

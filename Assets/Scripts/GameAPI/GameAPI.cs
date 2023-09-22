@@ -1325,13 +1325,16 @@ public class GameAPI : MonoBehaviour
 
     public void PlayConfettiParticle(Vector3 position)
     {
-        var main = confetti.transform.GetChild(0).GetComponent<ParticleSystem>().main;
-        main.loop = false;
-        main.stopAction = ParticleSystemStopAction.Destroy;
-        main.playOnAwake = true;
 
         var particleInstance = Instantiate(confetti, position, Quaternion.identity);
         particleInstance.transform.SetParent(GameObject.Find("GameCanvas").transform);
+
+        var main = particleInstance.transform.GetChild(0).GetComponent<ParticleSystem>().main;
+        particleInstance.Play();
+        main.loop = false;
+        main.stopAction = ParticleSystemStopAction.Destroy;
+
+        Destroy(particleInstance.gameObject, 10);
     }
 
 }

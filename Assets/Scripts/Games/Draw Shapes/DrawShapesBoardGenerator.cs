@@ -93,7 +93,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
         Invoke("TriggerUpdatePaths", .20f);
         Invoke("PlaceHandles", .25f);
         backButton.SetActive(true);
-        Invoke("EnableBackButton", 0.15f);
+        Invoke("EnableBackButton", 0.5f);
         UIController.Invoke("TutorialActivate", 1);
     }
 

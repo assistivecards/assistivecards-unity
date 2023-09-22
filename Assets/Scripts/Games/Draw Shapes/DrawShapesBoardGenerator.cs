@@ -257,6 +257,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
             else
                 LeanTween.scale(handles[i].gameObject, Vector3.one * 0.5f, .15f);
             handles[i].gameObject.GetComponent<DrawShapesDragHandle>().enabled = true;
+            handles[i].gameObject.GetComponent<DrawShapesMatchDetection>().isMatched = false; ;
             handles[i].GetComponent<CircleCollider2D>().enabled = true;
         }
 
@@ -300,7 +301,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
         {
             randomPaths[i].SetActive(false);
             handles[i].gameObject.SetActive(false);
-            handles[i].SetParent(GameObject.Find("GamePanel").transform);
+            handles[i].SetParent(GameObject.FindObjectsOfType<Transform>(true).Where(transform => transform.gameObject.name == "GamePanel").FirstOrDefault());
         }
     }
 

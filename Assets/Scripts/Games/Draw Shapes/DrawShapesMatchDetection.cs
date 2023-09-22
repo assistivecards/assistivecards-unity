@@ -12,6 +12,7 @@ public class DrawShapesMatchDetection : MonoBehaviour
     private DrawShapesBoardGenerator board;
     private DrawShapesUIController UIController;
     private GameAPI gameAPI;
+    public bool isMatched;
 
     private void Awake()
     {
@@ -38,9 +39,10 @@ public class DrawShapesMatchDetection : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "LastWaypoint" && dragHandle.path.gameObject == dragHandle.correctPath && dragHandle.canDrag)
+        if (other.tag == "LastWaypoint" && dragHandle.path.gameObject == dragHandle.correctPath && dragHandle.canDrag && !isMatched)
         {
             Debug.Log("Correct Match!");
+            isMatched = true;
             gameAPI.AddSessionExp();
             UIController.correctMatches++;
             UIController.backButton.GetComponent<Button>().interactable = false;
@@ -68,9 +70,10 @@ public class DrawShapesMatchDetection : MonoBehaviour
                 board.Invoke("GenerateRandomBoardAsync", 1.3f);
         }
 
-        else if (other.tag == "LastWaypoint" && dragHandle.path.gameObject != dragHandle.correctPath && dragHandle.canDrag)
+        else if (other.tag == "LastWaypoint" && dragHandle.path.gameObject != dragHandle.correctPath && dragHandle.canDrag && !isMatched)
         {
             Debug.Log("Wrong Match!");
+            isMatched = true;
             gameAPI.RemoveSessionExp();
             gameObject.GetComponent<DrawShapesDragHandle>().enabled = false;
             LeanTween.scale(gameObject, Vector3.zero, .25f);

@@ -73,6 +73,11 @@ public class MatchPairsBoardGenerator : MonoBehaviour
         DisableLoadingPanel();
         ScaleImagesUp();
 
+        for (int i = 0; i < puzzlePieceParents.Length; i++)
+        {
+            puzzlePieceParents[i].GetComponent<MatchPairsRoundedBackground>().DetermineCornerRoundness();
+        }
+
         var tempParents = GameObject.FindGameObjectsWithTag("Temp");
         for (int i = 0; i < tempParents.Length; i++)
         {

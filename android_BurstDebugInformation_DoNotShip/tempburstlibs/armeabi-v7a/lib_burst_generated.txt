@@ -16,6 +16,7 @@ Library: /Users/buraktokak/Developer/assistivecards-unity/Temp/BurstOutput/tempb
 --assembly-defines=mscorlib;
 --assembly-defines=NativeShare.Runtime;
 --assembly-defines=Newtonsoft.Json;
+--assembly-defines=Nobi.UiRoundedCorners;
 --assembly-defines=PathCreator;
 --assembly-defines=Purchasing.Common;
 --assembly-defines=System.Configuration;

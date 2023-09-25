@@ -1138,6 +1138,10 @@ void RegisterAllStrippedInternalCalls()
 
 	//Start Registrations for type : UnityEngine.Collider2D
 
+		//System.Boolean UnityEngine.Collider2D::OverlapPoint_Injected(UnityEngine.Vector2&)
+		void Register_UnityEngine_Collider2D_OverlapPoint_Injected();
+		Register_UnityEngine_Collider2D_OverlapPoint_Injected();
+
 		//System.Void UnityEngine.Collider2D::get_bounds_Injected(UnityEngine.Bounds&)
 		void Register_UnityEngine_Collider2D_get_bounds_Injected();
 		Register_UnityEngine_Collider2D_get_bounds_Injected();
@@ -3017,6 +3021,14 @@ void RegisterAllStrippedInternalCalls()
 		//System.Single UnityEngine.ParticleSystem/MainModule::get_duration_Injected(UnityEngine.ParticleSystem/MainModule&)
 		void Register_UnityEngine_ParticleSystem_MainModule_get_duration_Injected();
 		Register_UnityEngine_ParticleSystem_MainModule_get_duration_Injected();
+
+		//System.Void UnityEngine.ParticleSystem/MainModule::set_loop_Injected(UnityEngine.ParticleSystem/MainModule&,System.Boolean)
+		void Register_UnityEngine_ParticleSystem_MainModule_set_loop_Injected();
+		Register_UnityEngine_ParticleSystem_MainModule_set_loop_Injected();
+
+		//System.Void UnityEngine.ParticleSystem/MainModule::set_stopAction_Injected(UnityEngine.ParticleSystem/MainModule&,UnityEngine.ParticleSystemStopAction)
+		void Register_UnityEngine_ParticleSystem_MainModule_set_stopAction_Injected();
+		Register_UnityEngine_ParticleSystem_MainModule_set_stopAction_Injected();
 
 		//UnityEngine.ParticleSystemSimulationSpace UnityEngine.ParticleSystem/MainModule::get_simulationSpace_Injected(UnityEngine.ParticleSystem/MainModule&)
 		void Register_UnityEngine_ParticleSystem_MainModule_get_simulationSpace_Injected();

@@ -434,6 +434,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float MainModule_get_duration_Injected_m9F3A5
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float MainModule_get_duration_mDCB80E6BD3B6B2DFB92E41FBCCA154D7E7150EB1 (MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MainModule_get_loop_Injected_mB2E11A7A29523C771FC0A9D2A4C061B25716E3F9 (MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9* ___0__unity_self, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MainModule_get_loop_m4F75CD377C0555635995F7C1F8D580517473EDF8 (MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainModule_set_loop_Injected_mF673B0C6B2194F3C5FD0DCAB438350685E5CE815 (MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9* ___0__unity_self, bool ___1_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainModule_set_loop_mB3FC83A6DA8D248D15C53388D6B9B7711ADD89BE (MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9* __this, bool ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MainModule_get_prewarm_Injected_m7B17EFC0A2D51E04E264EE33B4E5B93F45718C12 (MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9* ___0__unity_self, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MainModule_get_prewarm_m2B4B37F0B20CA2FDAB53315FC47E8FDCF3BBCD72 (MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t MainModule_get_simulationSpace_Injected_m8B2B083C34F9F7FE5C79D0CDF418ED588A10EE56 (MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9* ___0__unity_self, const RuntimeMethod* method) ;
@@ -442,6 +444,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Transform_tB27202C6F4E36D225EE28A13E4D662BF99
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* MainModule_get_customSimulationSpace_mCCB54D66ACBD9DFDC0A8DF80EB569658C1F6FAEF (MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MainModule_get_useUnscaledTime_Injected_mF2E79117C371F7D52FC51C2B14F4EA7FDBFF0BE5 (MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9* ___0__unity_self, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MainModule_get_useUnscaledTime_m06B0F3A0207D09044C0A1A0DE306EB82E6ADCD12 (MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainModule_set_stopAction_Injected_m333471752F12357817E8ECE5D431739B081743D3 (MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9* ___0__unity_self, int32_t ___1_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainModule_set_stopAction_m29CE04746112F2B1E289F1880DE2710233151DEF (MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9* __this, int32_t ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool EmissionModule_get_enabled_Injected_m7767AAF0CE0285FE1E83B4A971658B5BE7D548E1 (EmissionModule_t0F469FA4A08003F6D9C610D2F716A9DFDB9A3678* ___0__unity_self, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool EmissionModule_get_enabled_mD58661B08716E8841806F1C8E0D52AF7FCB39768 (EmissionModule_t0F469FA4A08003F6D9C610D2F716A9DFDB9A3678* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EmissionModule_get_rateOverDistance_Injected_mEEA5E61B89B865CD095B4587976E7DABA880726C (EmissionModule_t0F469FA4A08003F6D9C610D2F716A9DFDB9A3678* ___0__unity_self, MinMaxCurve_t812D571297EED6498776CC58949A42B172E60E23* ___1_ret, const RuntimeMethod* method) ;
@@ -899,6 +903,21 @@ IL2CPP_EXTERN_C  bool MainModule_get_loop_m4F75CD377C0555635995F7C1F8D580517473E
 	_returnValue = MainModule_get_loop_m4F75CD377C0555635995F7C1F8D580517473EDF8(_thisAdjusted, method);
 	return _returnValue;
 }
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainModule_set_loop_mB3FC83A6DA8D248D15C53388D6B9B7711ADD89BE (MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9* __this, bool ___0_value, const RuntimeMethod* method) 
+{
+	{
+		bool L_0 = ___0_value;
+		MainModule_set_loop_Injected_mF673B0C6B2194F3C5FD0DCAB438350685E5CE815(__this, L_0, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C  void MainModule_set_loop_mB3FC83A6DA8D248D15C53388D6B9B7711ADD89BE_AdjustorThunk (RuntimeObject* __this, bool ___0_value, const RuntimeMethod* method)
+{
+	MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9* _thisAdjusted;
+	int32_t _offset = 1;
+	_thisAdjusted = reinterpret_cast<MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9*>(__this + _offset);
+	MainModule_set_loop_mB3FC83A6DA8D248D15C53388D6B9B7711ADD89BE(_thisAdjusted, ___0_value, method);
+}
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MainModule_get_prewarm_m2B4B37F0B20CA2FDAB53315FC47E8FDCF3BBCD72 (MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9* __this, const RuntimeMethod* method) 
 {
 	{
@@ -967,6 +986,21 @@ IL2CPP_EXTERN_C  bool MainModule_get_useUnscaledTime_m06B0F3A0207D09044C0A1A0DE3
 	_returnValue = MainModule_get_useUnscaledTime_m06B0F3A0207D09044C0A1A0DE306EB82E6ADCD12(_thisAdjusted, method);
 	return _returnValue;
 }
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainModule_set_stopAction_m29CE04746112F2B1E289F1880DE2710233151DEF (MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9* __this, int32_t ___0_value, const RuntimeMethod* method) 
+{
+	{
+		int32_t L_0 = ___0_value;
+		MainModule_set_stopAction_Injected_m333471752F12357817E8ECE5D431739B081743D3(__this, L_0, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C  void MainModule_set_stopAction_m29CE04746112F2B1E289F1880DE2710233151DEF_AdjustorThunk (RuntimeObject* __this, int32_t ___0_value, const RuntimeMethod* method)
+{
+	MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9* _thisAdjusted;
+	int32_t _offset = 1;
+	_thisAdjusted = reinterpret_cast<MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9*>(__this + _offset);
+	MainModule_set_stopAction_m29CE04746112F2B1E289F1880DE2710233151DEF(_thisAdjusted, ___0_value, method);
+}
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float MainModule_get_duration_Injected_m9F3A5598AEAB180D2CA14AC34E8FDAE306DAE4BA (MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9* ___0__unity_self, const RuntimeMethod* method) 
 {
 	typedef float (*MainModule_get_duration_Injected_m9F3A5598AEAB180D2CA14AC34E8FDAE306DAE4BA_ftn) (MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9*);
@@ -984,6 +1018,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MainModule_get_loop_Injected_mB2E11A7A29
 	_il2cpp_icall_func = (MainModule_get_loop_Injected_mB2E11A7A29523C771FC0A9D2A4C061B25716E3F9_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.ParticleSystem/MainModule::get_loop_Injected(UnityEngine.ParticleSystem/MainModule&)");
 	bool icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainModule_set_loop_Injected_mF673B0C6B2194F3C5FD0DCAB438350685E5CE815 (MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9* ___0__unity_self, bool ___1_value, const RuntimeMethod* method) 
+{
+	typedef void (*MainModule_set_loop_Injected_mF673B0C6B2194F3C5FD0DCAB438350685E5CE815_ftn) (MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9*, bool);
+	static MainModule_set_loop_Injected_mF673B0C6B2194F3C5FD0DCAB438350685E5CE815_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (MainModule_set_loop_Injected_mF673B0C6B2194F3C5FD0DCAB438350685E5CE815_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.ParticleSystem/MainModule::set_loop_Injected(UnityEngine.ParticleSystem/MainModule&,System.Boolean)");
+	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MainModule_get_prewarm_Injected_m7B17EFC0A2D51E04E264EE33B4E5B93F45718C12 (MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9* ___0__unity_self, const RuntimeMethod* method) 
 {
@@ -1020,6 +1062,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MainModule_get_useUnscaledTime_Injected_
 	_il2cpp_icall_func = (MainModule_get_useUnscaledTime_Injected_mF2E79117C371F7D52FC51C2B14F4EA7FDBFF0BE5_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.ParticleSystem/MainModule::get_useUnscaledTime_Injected(UnityEngine.ParticleSystem/MainModule&)");
 	bool icallRetVal = _il2cpp_icall_func(___0__unity_self);
 	return icallRetVal;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainModule_set_stopAction_Injected_m333471752F12357817E8ECE5D431739B081743D3 (MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9* ___0__unity_self, int32_t ___1_value, const RuntimeMethod* method) 
+{
+	typedef void (*MainModule_set_stopAction_Injected_m333471752F12357817E8ECE5D431739B081743D3_ftn) (MainModule_tC7ECD8330C14B0808478A748048988A6085CE2A9*, int32_t);
+	static MainModule_set_stopAction_Injected_m333471752F12357817E8ECE5D431739B081743D3_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (MainModule_set_stopAction_Injected_m333471752F12357817E8ECE5D431739B081743D3_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.ParticleSystem/MainModule::set_stopAction_Injected(UnityEngine.ParticleSystem/MainModule&,UnityEngine.ParticleSystemStopAction)");
+	_il2cpp_icall_func(___0__unity_self, ___1_value);
 }
 #ifdef __clang__
 #pragma clang diagnostic pop

@@ -86,8 +86,10 @@ extern void Rigidbody2D_AddForce_Injected_mC5372C179362B25CA579A94DBB11C5719F164
 extern void Collider2D_set_isTrigger_m19D5227BAB5D41F212D515C1E2CA433C2FEF7A48 (void);
 extern void Collider2D_get_attachedRigidbody_m76D718444A94C258228DD98102DCF81C91CF9654 (void);
 extern void Collider2D_get_bounds_m74F65CE702BA9D9EED05B870325B4FE3B2401B5E (void);
+extern void Collider2D_OverlapPoint_mF04F862E1CDA270589C82BBD72E71F0B60B6B883 (void);
 extern void Collider2D__ctor_mC4E4C5F6A2093B4902A09B312D1E832F12DE0B4B (void);
 extern void Collider2D_get_bounds_Injected_mB3F24D39428D3C8E314CC6452878BD9A62C216E4 (void);
+extern void Collider2D_OverlapPoint_Injected_mCD54F37FD8E95A7EF693F7502435017DAD640188 (void);
 extern void CircleCollider2D_set_radius_m468ECCD06634C48E6837A55B9E8D056BBF15FC52 (void);
 extern void EdgeCollider2D_SetPoints_m214E8660F2539B7A50AFAD92206F359D1418BEA8 (void);
 extern void BoxCollider2D_get_size_mBB657ADFC58A79CDFDB7478956BBD9032E41D3D1 (void);
@@ -104,7 +106,7 @@ extern void AnchoredJoint2D_set_connectedAnchor_Injected_m14F1FCD64FE2008CEE1235
 extern void PhysicsMaterial2D__ctor_mFF418E70441EFCA8BBED3B95860CF60CB19E96FB (void);
 extern void PhysicsMaterial2D_Create_Internal_m3DB6A6CEEB4078BE664C982F61B5BA6A54FE6F81 (void);
 extern void PhysicsMaterial2D_set_bounciness_mBA08748E3304284A251E7B3E343EF548AB82DE91 (void);
-static Il2CppMethodPointer s_methodPointers[92] = 
+static Il2CppMethodPointer s_methodPointers[94] = 
 {
 	PhysicsScene2D_ToString_mACA22EF575F7544176360B16D431F2BB1DEBB307,
 	PhysicsScene2D_GetHashCode_mD45B3437D088C66A35AE20066AD632D1D0858B1E,
@@ -180,8 +182,10 @@ static Il2CppMethodPointer s_methodPointers[92] =
 	Collider2D_set_isTrigger_m19D5227BAB5D41F212D515C1E2CA433C2FEF7A48,
 	Collider2D_get_attachedRigidbody_m76D718444A94C258228DD98102DCF81C91CF9654,
 	Collider2D_get_bounds_m74F65CE702BA9D9EED05B870325B4FE3B2401B5E,
+	Collider2D_OverlapPoint_mF04F862E1CDA270589C82BBD72E71F0B60B6B883,
 	Collider2D__ctor_mC4E4C5F6A2093B4902A09B312D1E832F12DE0B4B,
 	Collider2D_get_bounds_Injected_mB3F24D39428D3C8E314CC6452878BD9A62C216E4,
+	Collider2D_OverlapPoint_Injected_mCD54F37FD8E95A7EF693F7502435017DAD640188,
 	CircleCollider2D_set_radius_m468ECCD06634C48E6837A55B9E8D056BBF15FC52,
 	EdgeCollider2D_SetPoints_m214E8660F2539B7A50AFAD92206F359D1418BEA8,
 	BoxCollider2D_get_size_mBB657ADFC58A79CDFDB7478956BBD9032E41D3D1,
@@ -240,7 +244,7 @@ static Il2CppTokenAdjustorThunkPair s_adjustorThunks[19] =
 	{ 0x06000038, RaycastHit2D_get_rigidbody_mA7C26ACF22912C14CC6C8B1D7C50F38BCF5096B8_AdjustorThunk },
 	{ 0x06000039, RaycastHit2D_get_transform_mA5E3F8DC9914E79D3C9F6F3F2515B49EEBB4564A_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[92] = 
+static const int32_t s_InvokerIndices[94] = 
 {
 	2103,
 	2090,
@@ -316,8 +320,10 @@ static const int32_t s_InvokerIndices[92] =
 	1887,
 	2103,
 	2056,
+	1608,
 	2170,
 	1880,
+	1491,
 	1945,
 	1555,
 	2162,
@@ -339,7 +345,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_Physics2DModule_CodeGenM
 const Il2CppCodeGenModule g_UnityEngine_Physics2DModule_CodeGenModule = 
 {
 	"UnityEngine.Physics2DModule.dll",
-	92,
+	94,
 	s_methodPointers,
 	19,
 	s_adjustorThunks,

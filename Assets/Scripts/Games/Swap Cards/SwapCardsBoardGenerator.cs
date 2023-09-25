@@ -11,7 +11,8 @@ public class SwapCardsBoardGenerator : MonoBehaviour
 {
     GameAPI gameAPI;
 
-    //[SerializeField] private SwapCardsUIController uıController;
+    [SerializeField] private SwapCardsUIController uıController;
+
     [Header ("Cache Cards")]
     public string selectedLangCode;
     public List<string> cardLocalNames = new List<string>();
@@ -109,8 +110,8 @@ public class SwapCardsBoardGenerator : MonoBehaviour
     public async void GeneratedBoardAsync()
     {
         finished = false;
-        // if(uıController.canGenerate)
-        // {
+        if(uıController.canGenerate)
+        {
             await CacheCards();
             CreateCardPositionList();
             for(int i = 0; i < 3; i++)
@@ -138,7 +139,7 @@ public class SwapCardsBoardGenerator : MonoBehaviour
             CreateRandomOrderedCards(3);
             CreateRandomOrderedCards(4);
             CreateRandomOrderedCards(5);
-        //}
+        }
         GameUIActivate();
     }
 
@@ -176,7 +177,7 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         {
             LeanTween.scale(card, Vector3.one * 0.45f, 0.3f);
         }
-        //uıController.GameUIActivate();
+        uıController.GameUIActivate();
     }
 
     private void CreateNewLevel()
@@ -191,7 +192,7 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         {
             LeanTween.scale(card, Vector3.zero, 0.3f);
         }
-        //uıController.Invoke("GameUIDeactivate", 0.3f);
+        uıController.Invoke("GameUIDeactivate", 0.3f);
         Invoke("ClearBoard", 0.3f);
     }
 
@@ -210,7 +211,7 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         usedRandomOrderCards.Clear();
         if(!finished)
         {
-            //uıController.LevelChangeScreenActivate();
+            uıController.LevelChangeScreenActivate();
             gameAPI.PlaySFX("Finished");
             finished = true;
         }

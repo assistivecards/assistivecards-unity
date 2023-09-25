@@ -38,8 +38,8 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
     private void Awake()
     {
         premium = Application.productName.Replace(" ", "_").ToLower(new CultureInfo("en-US", false)) + "_iap";
-        monthly = "monthly";
-        yearly = "yearly";
+        monthly = "zumo_monthly";
+        yearly = "zumo_yearly";
         gameAPI = Camera.main.GetComponent<GameAPI>();
     }
 

@@ -29,7 +29,6 @@ public class SwapCardsBoardGenerator : MonoBehaviour
 
     [Header ("Prefabs")]
     [SerializeField] private GameObject cardPrefab;
-    [SerializeField] private GameObject guidecardPrefab;
     [SerializeField] private GameObject tutorial;
 
     [Header ("Game UI")]
@@ -47,11 +46,6 @@ public class SwapCardsBoardGenerator : MonoBehaviour
     public List<GameObject> cardPositions = new List<GameObject>();
     public List<GameObject> cloneCards = new List<GameObject>();
     public List<Texture> cardTextures = new List<Texture>();
-
-    public GameObject guideCard1;
-    public GameObject guideCard2;
-    public GameObject guideCard3;
-    public List<GameObject> guideCards = new List<GameObject>();
 
     private string cardName;
     public int randomOrder;
@@ -110,10 +104,6 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         cardPositions.Add(cardPosition4);
         cardPositions.Add(cardPosition5);
         cardPositions.Add(cardPosition6);
-
-        guideCards.Add(guideCard1);
-        guideCards.Add(guideCard2);
-        guideCards.Add(guideCard3);
     }
 
     public async void GeneratedBoardAsync()
@@ -140,7 +130,6 @@ public class SwapCardsBoardGenerator : MonoBehaviour
                 cards.Add(card);
                 card.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
                 card.transform.localPosition = Vector3.zero;
-                CreateGuideCards(i, i);
             }
                 CreateRandomOrderedCards(0, 0);
                 CreateRandomOrderedCards(1, 1);
@@ -173,28 +162,6 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         int index = cloneCards.IndexOf(cloneCard);
         usedRandomOrderCards.Add(order);
         cloneCard.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
-        cloneCard.transform.localPosition = Vector3.zero;
-    }
-
-    private void CreateGuideCards(int order, int randomOrder)
-    {
-        GameObject cloneCard = Instantiate(guidecardPrefab, cardPositions[randomOrder].transform.position, Quaternion.identity);
-
-        //var cloneCardTexture = ;
-        // cloneCardTexture.wrapMode = TextureWrapMode.Clamp;
-        // cloneCardTexture.filterMode = FilterMode.Bilinear;
-
-        cloneCard.transform.SetParent(guideCards[randomOrder].transform);
-        cloneCard.transform.name = cardLocalNames[randomValueList[order]];
-        cloneCard.transform.GetChild(0).GetComponent<RawImage>().texture = cardTextures[order];
-        cloneCard.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-        cloneCard.GetComponent<BoxCollider2D>().enabled = true;
-        cloneCard.gameObject.tag = "Card";
-        cards.Add(cloneCard);
-        cloneCards.Add(cloneCard);
-        int index = cloneCards.IndexOf(cloneCard);
-        usedRandomOrderCards.Add(order);
-        cloneCard.transform.localScale = new Vector3(0.25f, 0.25f, 0f);
         cloneCard.transform.localPosition = Vector3.zero;
     }
 

@@ -3,10 +3,12 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Linq;
+using System.Collections;
 
 public class IAPUIManager : MonoBehaviour
 {
     GameAPI gameAPI;
+    [SerializeField] List<Vector3> particleSpawnPoints = new List<Vector3>();
     [SerializeField] TMP_InputField availablePacksText;
     [SerializeField] GameObject subsRestoreButton;
     [SerializeField] GameObject promoUniAppRestoreButton;
@@ -35,6 +37,11 @@ public class IAPUIManager : MonoBehaviour
         {
             subsRestoreButton = GameObject.FindObjectsOfType<GameObject>(true).Where(btn => btn.gameObject.name == "standaloneSubsRestoreButton").FirstOrDefault();
             promoUniAppRestoreButton = GameObject.FindObjectsOfType<GameObject>(true).Where(btn => btn.gameObject.name == "standalonePromoRestoreButton").FirstOrDefault();
+        }
+
+        for (int i = 1; i < 5; i++)
+        {
+            particleSpawnPoints.Add(GameObject.FindObjectsOfType<Transform>(true).Where(spawnPoint => spawnPoint.gameObject.name == "ConfettiSpawnPoint" + i).FirstOrDefault().position);
         }
 
 
@@ -138,5 +145,14 @@ public class IAPUIManager : MonoBehaviour
         availablePacksArray.Clear();
         availablePacksText.text = "";
         GetAvailablePacks();
+    }
+
+    public IEnumerator PlayParticles()
+    {
+        for (int i = 0; i < particleSpawnPoints.Count; i++)
+        {
+            gameAPI.PlayConfettiParticle(particleSpawnPoints[i]);
+            yield return new WaitForSeconds(.25f);
+        }
     }
 }

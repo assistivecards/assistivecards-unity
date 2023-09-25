@@ -287,6 +287,7 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
             gameAPI.SetPremium("A5515T1V3C4RD5");
             IAPUIManager.CheckIfPremiumButtonInteractable();
+            IAPUIManager.StartCoroutine("PlayParticles");
             IAPUIManager.ResetAvailablePacks();
         }
 
@@ -295,6 +296,7 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
             gameAPI.SetSubscription("A5515T1V3C4RD5");
             IAPUIManager.CheckIfPremiumButtonInteractable();
+            IAPUIManager.StartCoroutine("PlayParticles");
         }
 
         else if (String.Equals(args.purchasedProduct.definition.id, yearly, StringComparison.Ordinal))
@@ -302,6 +304,7 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
             gameAPI.SetSubscription("A5515T1V3C4RD5");
             IAPUIManager.CheckIfPremiumButtonInteractable();
+            IAPUIManager.StartCoroutine("PlayParticles");
         }
 
         else

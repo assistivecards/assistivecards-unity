@@ -1327,7 +1327,16 @@ public class GameAPI : MonoBehaviour
     {
 
         var particleInstance = Instantiate(confetti, position, Quaternion.identity);
-        particleInstance.transform.SetParent(GameObject.Find("GameCanvas").transform);
+
+        try
+        {
+            particleInstance.transform.SetParent(GameObject.Find("GameCanvas").transform);
+        }
+
+        catch (System.Exception)
+        {
+            particleInstance.transform.SetParent(GameObject.Find("Settings").transform);
+        }
 
         var main = particleInstance.transform.GetChild(0).GetComponent<ParticleSystem>().main;
         particleInstance.Play();

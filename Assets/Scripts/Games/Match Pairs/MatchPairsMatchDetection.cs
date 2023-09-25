@@ -89,6 +89,7 @@ public class MatchPairsMatchDetection : MonoBehaviour, IPointerUpHandler
             LeanTween.rotate(matchedTransform.gameObject, Vector3.zero, .25f);
             LeanTween.rotate(gameObject, Vector3.zero, .25f);
             gameAPI.PlaySFX("Success");
+            gameAPI.PlayConfettiParticle((transform.position + matchedTransform.position) / 2);
             Invoke("SnapIntoPlace", .3f);
             Invoke("PlayScaleAnimation", .6f);
 

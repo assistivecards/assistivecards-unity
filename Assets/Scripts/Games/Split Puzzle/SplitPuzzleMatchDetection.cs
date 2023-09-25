@@ -63,6 +63,7 @@ public class SplitPuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
             LeanTween.move(gameObject, matchedSlotTransform.position, 0.25f);
             transform.SetParent(hintImageParent.transform);
             gameAPI.PlaySFX("Success");
+            gameAPI.PlayConfettiParticle(matchedSlotTransform.position);
             if (puzzleProgressChecker.correctMatches == 4)
             {
                 Debug.Log("Puzzle completed!");

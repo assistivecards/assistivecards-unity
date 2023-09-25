@@ -36,6 +36,7 @@ public class ScratcherMatchDetection : MonoBehaviour
             }
             UIController.backButton.GetComponent<Button>().interactable = false;
             gameAPI.PlaySFX("Success");
+            gameAPI.PlayConfettiParticle(transform.parent.position);
             Invoke("ScaleCorrectCardUp", .25f);
             board.Invoke("ReadCard", 0.25f);
             board.Invoke("ScaleImagesDown", 1f);

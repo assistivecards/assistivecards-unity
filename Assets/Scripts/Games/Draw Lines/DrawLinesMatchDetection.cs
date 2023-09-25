@@ -37,6 +37,7 @@ public class DrawLinesMatchDetection : MonoBehaviour
             Debug.Log("Correct Match!");
             gameAPI.AddSessionExp();
             gameAPI.PlaySFX("Success");
+            gameAPI.PlayConfettiParticle(matchedOption.transform.position);
             gameObject.GetComponent<DragHandle>().enabled = false;
             LeanTween.scale(gameObject, Vector3.zero, .25f);
             for (int i = 0; i < dragHandle.waypoints.Count; i++)

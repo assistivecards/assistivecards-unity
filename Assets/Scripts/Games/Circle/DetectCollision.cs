@@ -64,6 +64,7 @@ public class DetectCollision : MonoBehaviour
             Debug.Log(UIController.correctMatches);
             drawManager.gameObject.SetActive(false);
             gameAPI.PlaySFX("Success");
+            gameAPI.PlayConfettiParticle(matchedCard.transform.position);
             LeanTween.color(transform.parent.GetComponent<LineRenderer>().gameObject, success, .25f);
             Invoke("FadeOutAndDestroyLine", 0.45f);
             board.Invoke("ReadCard", 0.5f);

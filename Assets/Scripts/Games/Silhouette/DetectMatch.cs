@@ -64,6 +64,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
             Invoke("PlayCorrectMatchAnimation", 0.25f);
             // gameAPI.VibrateStrong();
             gameAPI.PlaySFX("Success");
+            gameAPI.PlayConfettiParticle(matchedImageTransform.position);
             Invoke("ScaleImagesDown", 1f);
             board.Invoke("ClearBoard", 1.5f);
             isMatched = false;

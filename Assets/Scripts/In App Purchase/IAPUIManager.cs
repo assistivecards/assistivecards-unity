@@ -19,6 +19,7 @@ public class IAPUIManager : MonoBehaviour
     [SerializeField] Button promoScreenMonthlyButton;
     [SerializeField] Button promoScreenYearlyButton;
     [SerializeField] Button promoScreenPuchasePremiumButton;
+    [SerializeField] Button premiumPromoSettingsButton;
 
 
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Pack> availablePacksArray;
@@ -43,6 +44,8 @@ public class IAPUIManager : MonoBehaviour
         {
             particleSpawnPoints.Add(GameObject.FindObjectsOfType<Transform>(true).Where(spawnPoint => spawnPoint.gameObject.name == "ConfettiSpawnPoint" + i).FirstOrDefault().position);
         }
+
+        premiumPromoSettingsButton = GameObject.FindObjectsOfType<Button>(true).Where(btn => btn.gameObject.name == "PremiumPromoButton").FirstOrDefault();
 
 
         // if (Application.platform != RuntimePlatform.IPhonePlayer)
@@ -119,6 +122,7 @@ public class IAPUIManager : MonoBehaviour
                 promoScreenMonthlyButton.interactable = false;
                 promoScreenYearlyButton.interactable = false;
             }
+            premiumPromoSettingsButton.gameObject.SetActive(false);
 
             promoScreenPremiumButton.interactable = false;
             promoScreenPuchasePremiumButton.interactable = false;
@@ -134,6 +138,8 @@ public class IAPUIManager : MonoBehaviour
                 promoScreenMonthlyButton.interactable = true;
                 promoScreenYearlyButton.interactable = true;
             }
+
+            premiumPromoSettingsButton.gameObject.SetActive(true);
             promoScreenPremiumButton.interactable = true;
             promoScreenPuchasePremiumButton.interactable = true;
             LeanTween.alpha(promoScreenPuchasePremiumButton.transform.GetChild(0).GetComponent<RectTransform>(), 1f, 0.25f);

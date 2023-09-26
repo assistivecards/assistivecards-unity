@@ -195,36 +195,39 @@ public class GameSelectionPanel : MonoBehaviour
 
     public void GameSelected(GameObject _GameElement)
     {
-        selectedGameElement = _GameElement;
-        Debug.Log(_GameElement.name);
-
-        if (gameAPI.GetPremium() == "A5515T1V3C4RD5" || gameAPI.GetSubscription() == "A5515T1V3C4RD5")
+        if (Input.touchCount == 1)
         {
-            SceneManager.LoadScene(gameAPI.ToTitleCase(_GameElement.name.Replace("_", " ")));
-        }
+            selectedGameElement = _GameElement;
+            Debug.Log(_GameElement.name);
 
-        else
-        {
-            for (int i = 0; i < gameAPI.cachedGames.games.Count; i++)
+            if (gameAPI.GetPremium() == "A5515T1V3C4RD5" || gameAPI.GetSubscription() == "A5515T1V3C4RD5")
             {
-                if (gameAPI.cachedGames.games[i].slug == selectedGameElement.name)
+                SceneManager.LoadScene(gameAPI.ToTitleCase(_GameElement.name.Replace("_", " ")));
+            }
+
+            else
+            {
+                for (int i = 0; i < gameAPI.cachedGames.games.Count; i++)
                 {
-                    if (gameAPI.cachedGames.games[i].released == false)
+                    if (gameAPI.cachedGames.games[i].slug == selectedGameElement.name)
                     {
-                        Debug.Log("Seçilen paket premium");
-                        // canvasController.GetComponent<CanvasController>().StartFadeAnim();
-                        fadeInPanel.SetActive(true);
-                        settingButton.GetComponent<SettingScreenButton>().SettingButtonClickFunc();
-                        canvasController.GetComponent<CanvasController>().PremiumPromoButtonClick();
-                        Invoke("ResetScrollPosition", 0.3f);
+                        if (gameAPI.cachedGames.games[i].released == false)
+                        {
+                            Debug.Log("Seçilen paket premium");
+                            // canvasController.GetComponent<CanvasController>().StartFadeAnim();
+                            fadeInPanel.SetActive(true);
+                            settingButton.GetComponent<SettingScreenButton>().SettingButtonClickFunc();
+                            canvasController.GetComponent<CanvasController>().PremiumPromoButtonClick();
+                            Invoke("ResetScrollPosition", 0.3f);
+
+                        }
+
+                        else
+                        {
+                            SceneManager.LoadScene(gameAPI.ToTitleCase(_GameElement.name.Replace("_", " ")));
+                        }
 
                     }
-
-                    else
-                    {
-                        SceneManager.LoadScene(gameAPI.ToTitleCase(_GameElement.name.Replace("_", " ")));
-                    }
-
                 }
             }
         }

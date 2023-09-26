@@ -25,20 +25,23 @@ public class SlingPackSelection : MonoBehaviour
 
     public async void GenerateCorrespondingRandomBoard()
     {
-        if (packSelectionScreenUIController.canGenerate)
+        if (Input.touchCount == 1)
         {
-            boardGenerator.packSlug = packSelectionPanelScript.selectedPackElement.name;
-            packSelectionPanel.transform.GetChild(0).GetComponent<ScrollRect>().enabled = false;
-            LeanTween.scale(packSelectionPanel, Vector3.zero, 0.25f);
-            loadingPanel.SetActive(true);
-            Invoke("ClosePackSelectionPanel", 0.5f);
-            helloText.SetActive(false);
-            speakerIcon.SetActive(false);
-            homeButton.SetActive(false);
-            levelProgressContainer.SetActive(false);
-            await boardGenerator.CacheCards(boardGenerator.packSlug);
-            boardGenerator.PopulateUniqueCards();
-            await boardGenerator.GenerateRandomBoardAsync();
+            if (packSelectionScreenUIController.canGenerate)
+            {
+                boardGenerator.packSlug = packSelectionPanelScript.selectedPackElement.name;
+                packSelectionPanel.transform.GetChild(0).GetComponent<ScrollRect>().enabled = false;
+                LeanTween.scale(packSelectionPanel, Vector3.zero, 0.25f);
+                loadingPanel.SetActive(true);
+                Invoke("ClosePackSelectionPanel", 0.5f);
+                helloText.SetActive(false);
+                speakerIcon.SetActive(false);
+                homeButton.SetActive(false);
+                levelProgressContainer.SetActive(false);
+                await boardGenerator.CacheCards(boardGenerator.packSlug);
+                boardGenerator.PopulateUniqueCards();
+                await boardGenerator.GenerateRandomBoardAsync();
+            }
         }
 
     }

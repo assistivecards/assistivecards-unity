@@ -60,20 +60,23 @@ public class MainMenuController : MonoBehaviour
 
     public async void GenerateCorrespondingRandomBoard()
     {
-        if (packSelectionScreenUIController.canGenerate)
+        if (Input.touchCount == 1)
         {
-            board.packSlug = packSelectionPanelScript.selectedPackElement.name;
-            packSelectionPanel.transform.GetChild(0).GetComponent<ScrollRect>().enabled = false;
-            LeanTween.scale(packSelectionPanel, Vector3.zero, 0.25f);
-            loadingPanel.SetActive(true);
-            Invoke("ClosePackSelectionPanel", 0.5f);
-            helloText.SetActive(false);
-            speakerIcon.SetActive(false);
-            homeButton.SetActive(false);
-            levelProgressContainer.SetActive(false);
-            await board.CacheCards(board.packSlug);
-            // board.Invoke("GenerateRandomBoardAsync", 0.3f);
-            await board.GenerateRandomBoardAsync();
+            if (packSelectionScreenUIController.canGenerate)
+            {
+                board.packSlug = packSelectionPanelScript.selectedPackElement.name;
+                packSelectionPanel.transform.GetChild(0).GetComponent<ScrollRect>().enabled = false;
+                LeanTween.scale(packSelectionPanel, Vector3.zero, 0.25f);
+                loadingPanel.SetActive(true);
+                Invoke("ClosePackSelectionPanel", 0.5f);
+                helloText.SetActive(false);
+                speakerIcon.SetActive(false);
+                homeButton.SetActive(false);
+                levelProgressContainer.SetActive(false);
+                await board.CacheCards(board.packSlug);
+                // board.Invoke("GenerateRandomBoardAsync", 0.3f);
+                await board.GenerateRandomBoardAsync();
+            }
         }
 
     }

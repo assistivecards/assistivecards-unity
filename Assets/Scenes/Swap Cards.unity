@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 22261953}
   m_Layer: 5
   m_Name: CardPosition5
-  m_TagString: Border
+  m_TagString: CardPositions2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 128615827}
   m_Layer: 5
   m_Name: CardPosition3
-  m_TagString: Border
+  m_TagString: CardPositions1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 401626351}
   m_Layer: 5
   m_Name: CardPosition7
-  m_TagString: Border
+  m_TagString: CardPositions3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -449,7 +449,7 @@ GameObject:
   - component: {fileID: 403823722}
   m_Layer: 5
   m_Name: CardPosition8
-  m_TagString: Border
+  m_TagString: CardPositions3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -535,7 +535,7 @@ GameObject:
   - component: {fileID: 459278348}
   m_Layer: 5
   m_Name: CardPosition6
-  m_TagString: Border
+  m_TagString: CardPositions2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1212,7 +1212,7 @@ GameObject:
   - component: {fileID: 702372639}
   m_Layer: 5
   m_Name: CardPositions2
-  m_TagString: Untagged
+  m_TagString: CardPositions2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1262,7 +1262,7 @@ GameObject:
   - component: {fileID: 826428322}
   m_Layer: 5
   m_Name: CardPositions3
-  m_TagString: Untagged
+  m_TagString: CardPositions3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1287,7 +1287,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -300, y: 0}
+  m_AnchoredPosition: {x: 300, y: 0}
   m_SizeDelta: {x: 102.00006, y: 379}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &927069859 stripped
@@ -1478,7 +1478,7 @@ GameObject:
   - component: {fileID: 1069101266}
   m_Layer: 5
   m_Name: CardPositions1
-  m_TagString: Untagged
+  m_TagString: CardPositions1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1503,7 +1503,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 300, y: 0}
+  m_AnchoredPosition: {x: -300, y: 0}
   m_SizeDelta: {x: 100.000015, y: 379}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1072667094 stripped
@@ -1949,6 +1949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7551e31af85073640848a944c94a6ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleSpawnPoints: []
   availablePacksText: {fileID: 770021530}
   subsRestoreButton: {fileID: 0}
   promoUniAppRestoreButton: {fileID: 0}
@@ -1959,6 +1960,7 @@ MonoBehaviour:
   promoScreenMonthlyButton: {fileID: 0}
   promoScreenYearlyButton: {fileID: 0}
   promoScreenPuchasePremiumButton: {fileID: 0}
+  premiumPromoSettingsButton: {fileID: 0}
   availablePacksArray: []
 --- !u!114 &1338730598
 MonoBehaviour:
@@ -2009,7 +2011,7 @@ GameObject:
   - component: {fileID: 1345404624}
   m_Layer: 5
   m_Name: CardPosition4
-  m_TagString: Border
+  m_TagString: CardPositions2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2189,7 +2191,7 @@ GameObject:
   - component: {fileID: 1588862182}
   m_Layer: 5
   m_Name: CardPosition2
-  m_TagString: Border
+  m_TagString: CardPositions1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2345,7 +2347,7 @@ GameObject:
   - component: {fileID: 1703911688}
   m_Layer: 5
   m_Name: CardPosition9
-  m_TagString: Border
+  m_TagString: CardPositions3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2532,7 +2534,7 @@ GameObject:
   - component: {fileID: 1747728587}
   m_Layer: 5
   m_Name: CardPosition1
-  m_TagString: Border
+  m_TagString: CardPositions1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3250,7 +3252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 421365
+      value: 450322.4
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3898,6 +3900,9 @@ MonoBehaviour:
   cardPositions: []
   cloneCards: []
   cardTextures: []
+  cardPosition1Childs: []
+  cardPosition2Childs: []
+  cardPosition3Childs: []
   randomOrder: 0
   usedRandomOrderCards: 
   cardNameLenght: 0

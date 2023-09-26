@@ -24,6 +24,9 @@ TagManager:
   - TopBorder
   - Snake
   - Card
+  - CardPositions1
+  - CardPositions2
+  - CardPositions3
   layers:
   - Default
   - TransparentFX

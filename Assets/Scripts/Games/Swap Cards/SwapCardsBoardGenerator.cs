@@ -47,6 +47,9 @@ public class SwapCardsBoardGenerator : MonoBehaviour
     public List<GameObject> cardPositions = new List<GameObject>();
     public List<GameObject> cloneCards = new List<GameObject>();
     public List<Texture> cardTextures = new List<Texture>();
+    public List<GameObject> cardPosition1Childs = new List<GameObject>();
+    public List<GameObject> cardPosition2Childs = new List<GameObject>();
+    public List<GameObject> cardPosition3Childs = new List<GameObject>();
 
     private string cardName;
     public int randomOrder;
@@ -128,6 +131,8 @@ public class SwapCardsBoardGenerator : MonoBehaviour
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                 card.transform.GetChild(1).GetComponent<TMP_Text>().text = cardLocalNames[randomValueList[i]];
+                card.GetComponent<SwapCardsCardController>().cardType = cardLocalNames[randomValueList[i]];
+                card.GetComponent<SwapCardsCardController>().parentName = card.transform.parent.transform.tag;
                 cards.Add(card);
                 card.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
                 card.transform.localPosition = Vector3.zero;
@@ -159,6 +164,8 @@ public class SwapCardsBoardGenerator : MonoBehaviour
             cloneCard.transform.GetChild(0).GetComponent<RawImage>().texture = cardTextures[order];
             cloneCard.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
             cloneCard.transform.GetChild(1).GetComponent<TMP_Text>().text = cardLocalNames[randomValueList[order]];
+            cloneCard.GetComponent<SwapCardsCardController>().cardType = cardLocalNames[randomValueList[order]];
+            cloneCard.GetComponent<SwapCardsCardController>().parentName = cloneCard.transform.parent.transform.tag;
             cloneCard.GetComponent<BoxCollider2D>().enabled = true;
             cloneCard.gameObject.tag = "Card";
             cards.Add(cloneCard);
@@ -167,7 +174,6 @@ public class SwapCardsBoardGenerator : MonoBehaviour
             usedRandomOrderCards.Add(order);
             cloneCard.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
             cloneCard.transform.localPosition = Vector3.zero;
-
         }
     }
 
@@ -184,6 +190,58 @@ public class SwapCardsBoardGenerator : MonoBehaviour
     {
         ClearBoard();
         GeneratedBoardAsync();
+    }
+
+    public void CheckCardsStatus()
+    {
+        foreach(var card in cards)
+        {
+            if(card.GetComponent<SwapCardsCardController>().parentName == "CardPositions1")
+            {
+                if(!cardPosition1Childs.Contains(card))
+                {
+                    cardPosition1Childs.Add(card);
+                }
+                if(cardPosition2Childs.Contains(card))
+                {
+                    cardPosition2Childs.Remove(card);
+                }
+                if(cardPosition3Childs.Contains(card))
+                {
+                    cardPosition3Childs.Remove(card);
+                }
+            }
+            else if(card.GetComponent<SwapCardsCardController>().parentName == "CardPositions2")
+            {
+                if(!cardPosition2Childs.Contains(card))
+                {
+                    cardPosition2Childs.Add(card);
+                }
+                if(cardPosition1Childs.Contains(card))
+                {
+                    cardPosition1Childs.Remove(card);
+                }
+                if(cardPosition3Childs.Contains(card))
+                {
+                    cardPosition3Childs.Remove(card);
+                }
+            }
+            else if(card.GetComponent<SwapCardsCardController>().parentName == "CardPositions3")
+            {
+                if(!cardPosition3Childs.Contains(card))
+                {
+                    cardPosition3Childs.Add(card);
+                }
+                if(cardPosition1Childs.Contains(card))
+                {
+                    cardPosition1Childs.Remove(card);
+                }
+                if(cardPosition2Childs.Contains(card))
+                {
+                    cardPosition2Childs.Remove(card);
+                }
+            }
+        }
     }
 
     private void GameUIScaleDown()

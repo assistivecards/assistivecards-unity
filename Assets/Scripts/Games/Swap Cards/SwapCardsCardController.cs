@@ -6,16 +6,21 @@ using UnityEngine.EventSystems;
 public class SwapCardsCardController : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
     private GameAPI gameAPI;
+    private SwapCardsBoardGenerator boardGenerator;
     private bool isPointerUp;
+    public string parentName;
+    public string cardType;
 
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+        boardGenerator = FindObjectOfType<SwapCardsBoardGenerator>();
     }
     
     private void OnTriggerStay2D(Collider2D other) 
     {
-        if(other.transform.tag == "Border" && this.transform.parent.gameObject != other.gameObject)
+        if(other.transform.tag == "CardPositions1" || other.transform.tag == "CardPositions2" || other.transform.tag == "CardPositions3" 
+        && this.transform.parent.gameObject != other.gameObject)
         {
             if(isPointerUp)
             {
@@ -27,6 +32,7 @@ public class SwapCardsCardController : MonoBehaviour, IPointerDownHandler, IPoin
 
                 otherCard.transform.parent = thisCardParent;
                 this.transform.parent = other.transform;
+                parentName = other.transform.tag;
             }
         }
     }
@@ -44,6 +50,7 @@ public class SwapCardsCardController : MonoBehaviour, IPointerDownHandler, IPoin
         if(Input.touchCount == 1)
         {
             transform.GetComponent<Rigidbody2D>().isKinematic = true;
+            boardGenerator.CheckCardsStatus();
             isPointerUp = false;
         }
     }

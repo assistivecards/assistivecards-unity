@@ -7,6 +7,7 @@ public class SwapCardsCardController : MonoBehaviour, IPointerDownHandler, IPoin
 {
     private GameAPI gameAPI;
     private SwapCardsBoardGenerator boardGenerator;
+    private bool oneTime = true;
     private bool isPointerUp;
     public string parentName;
     public string cardType;
@@ -22,17 +23,22 @@ public class SwapCardsCardController : MonoBehaviour, IPointerDownHandler, IPoin
         if(other.transform.tag == "CardPositions1" || other.transform.tag == "CardPositions2" || other.transform.tag == "CardPositions3" 
         && this.transform.parent.gameObject != other.gameObject)
         {
-            if(isPointerUp)
+            if(isPointerUp && oneTime)
             {
                 GameObject otherCard = other.transform.GetChild(0).gameObject;
                 Transform thisCardParent = this.transform.parent.transform;
 
                 LeanTween.move(this.gameObject, other.transform.position, 0.25f);
                 LeanTween.move(otherCard, thisCardParent.position, 0.25f);
-
+                otherCard.GetComponent<SwapCardsCardController>().parentName = parentName;
+                parentName = other.transform.tag;
                 otherCard.transform.parent = thisCardParent;
                 this.transform.parent = other.transform;
-                parentName = other.transform.tag;
+                if(oneTime)
+                {
+                    boardGenerator.CheckCardChilds();
+                    oneTime = false;
+                }
             }
         }
     }

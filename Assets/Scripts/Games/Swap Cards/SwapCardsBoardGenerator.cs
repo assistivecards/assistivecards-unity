@@ -55,6 +55,7 @@ public class SwapCardsBoardGenerator : MonoBehaviour
     public string childNameSection2;
     public string childNameSection3;
 
+    public int match;
     private string cardName;
     public int randomOrder;
     public List<int> usedRandomOrderCards = new List<int>();
@@ -218,12 +219,7 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         Invoke("ClearBoard", 0.3f);
     }
 
-    private void Update() 
-    {
-        CheckCardChilds();
-    }
-
-    private void CheckCardChilds()
+    public void CheckCardChilds()
     {
         childNameSection1 = cardPosition1Positions[0].transform.GetChild(0).transform.GetComponent<SwapCardsCardController>().cardType;
         childNameSection2 = cardPosition2Positions[0].transform.GetChild(0).transform.GetComponent<SwapCardsCardController>().cardType;
@@ -231,25 +227,28 @@ public class SwapCardsBoardGenerator : MonoBehaviour
 
         foreach(Transform child in cardPosition1Positions)
         {
-            if(child.transform.GetChild(0).GetComponent<SwapCardsCardController>().cardType == childNameSection1)
+            if(child.transform.GetChild(0).GetComponent<SwapCardsCardController>().parentName == "CardPositions1")
             {
-                Debug.Log(child.transform.GetChild(0).name);
+                Debug.Log("child 1 " + child.transform.GetChild(0).name);
+                match++;
             }
         }
 
         foreach(Transform child in cardPosition2Positions)
         {
-            if(child.transform.GetChild(0).GetComponent<SwapCardsCardController>().cardType == childNameSection2)
+            if(child.transform.GetChild(0).GetComponent<SwapCardsCardController>().parentName == "CardPositions2")
             {
-                Debug.Log(child.transform.GetChild(0).name);
+                Debug.Log("child 2 " + child.transform.GetChild(0).name);
+                match++;
             }
         }
 
         foreach(Transform child in cardPosition3Positions)
         {
-            if(child.transform.GetChild(0).GetComponent<SwapCardsCardController>().cardType == childNameSection3)
+            if(child.transform.GetChild(0).GetComponent<SwapCardsCardController>().parentName == "CardPositions3")
             {
-                 Debug.Log(child.transform.GetChild(0).name);
+                Debug.Log("child 3 " + child.transform.GetChild(0).name);
+                match++;
             }
         }
 

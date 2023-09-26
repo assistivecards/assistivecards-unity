@@ -95,6 +95,7 @@ public class ScratcherBoardGenerator : MonoBehaviour
         {
             cardImagesInScene[i].GetComponent<ScratchImage>().enabled = true;
             LeanTween.alpha(scratchParents[i].transform.GetChild(0).GetComponent<RectTransform>(), 1f, .01f);
+            LeanTween.alpha(scratchParents[i].transform.GetChild(0).GetChild(1).GetComponent<RectTransform>(), .4f, .01f);
             scratchParents[i].transform.GetChild(0).GetComponent<ScratchImage>().ResetMask();
             LeanTween.scale(scratchParents[i].gameObject, Vector3.one, 0.15f);
         }
@@ -193,6 +194,12 @@ public class ScratcherBoardGenerator : MonoBehaviour
                 cardImagesInScene[i].sprite = sprite;
             }
         }
+
+        for (int i = 0; i < cardImagesInScene.Length; i++)
+        {
+            cardImagesInScene[i].transform.GetChild(1).GetComponent<Image>().sprite = cardImagesInScene[i].sprite;
+        }
+
     }
 
     private void DisableLoadingPanel()

@@ -15,6 +15,7 @@ public class ScratchManager : MonoBehaviour
             isFullyScratched = true;
             gameObject.GetComponent<ScratchImage>().enabled = false;
             LeanTween.alpha(transform.GetChild(0).GetComponent<RectTransform>(), 0, .25f);
+            LeanTween.alpha(transform.GetChild(1).GetComponent<RectTransform>(), 0, .25f);
             Debug.Log("Fully Scratched!");
         }
     }

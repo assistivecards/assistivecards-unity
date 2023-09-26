@@ -47,9 +47,13 @@ public class SwapCardsBoardGenerator : MonoBehaviour
     public List<GameObject> cardPositions = new List<GameObject>();
     public List<GameObject> cloneCards = new List<GameObject>();
     public List<Texture> cardTextures = new List<Texture>();
-    public List<GameObject> cardPosition1Childs = new List<GameObject>();
-    public List<GameObject> cardPosition2Childs = new List<GameObject>();
-    public List<GameObject> cardPosition3Childs = new List<GameObject>();
+    public List<Transform> cardPosition1Positions = new List<Transform>();
+    public List<Transform> cardPosition2Positions = new List<Transform>();
+    public List<Transform> cardPosition3Positions = new List<Transform>();
+
+    public string childNameSection1;
+    public string childNameSection2;
+    public string childNameSection3;
 
     private string cardName;
     public int randomOrder;
@@ -108,6 +112,18 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         cardPositions.Add(cardPosition4);
         cardPositions.Add(cardPosition5);
         cardPositions.Add(cardPosition6);
+
+        cardPosition1Positions.Add(referencePosition1.transform);
+        cardPosition1Positions.Add(referencePosition2.transform);
+        cardPosition1Positions.Add(referencePosition3.transform);
+
+        cardPosition2Positions.Add(cardPosition1.transform);
+        cardPosition2Positions.Add(cardPosition2.transform);
+        cardPosition2Positions.Add(cardPosition3.transform);
+
+        cardPosition3Positions.Add(cardPosition4.transform);
+        cardPosition3Positions.Add(cardPosition5.transform);
+        cardPosition3Positions.Add(cardPosition5.transform);
     }
 
     public async void GeneratedBoardAsync()
@@ -192,58 +208,6 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         GeneratedBoardAsync();
     }
 
-    public void CheckCardsStatus()
-    {
-        foreach(var card in cards)
-        {
-            if(card.GetComponent<SwapCardsCardController>().parentName == "CardPositions1")
-            {
-                if(!cardPosition1Childs.Contains(card))
-                {
-                    cardPosition1Childs.Add(card);
-                }
-                if(cardPosition2Childs.Contains(card))
-                {
-                    cardPosition2Childs.Remove(card);
-                }
-                if(cardPosition3Childs.Contains(card))
-                {
-                    cardPosition3Childs.Remove(card);
-                }
-            }
-            else if(card.GetComponent<SwapCardsCardController>().parentName == "CardPositions2")
-            {
-                if(!cardPosition2Childs.Contains(card))
-                {
-                    cardPosition2Childs.Add(card);
-                }
-                if(cardPosition1Childs.Contains(card))
-                {
-                    cardPosition1Childs.Remove(card);
-                }
-                if(cardPosition3Childs.Contains(card))
-                {
-                    cardPosition3Childs.Remove(card);
-                }
-            }
-            else if(card.GetComponent<SwapCardsCardController>().parentName == "CardPositions3")
-            {
-                if(!cardPosition3Childs.Contains(card))
-                {
-                    cardPosition3Childs.Add(card);
-                }
-                if(cardPosition1Childs.Contains(card))
-                {
-                    cardPosition1Childs.Remove(card);
-                }
-                if(cardPosition2Childs.Contains(card))
-                {
-                    cardPosition2Childs.Remove(card);
-                }
-            }
-        }
-    }
-
     private void GameUIScaleDown()
     {
         foreach(var card in cards)
@@ -252,6 +216,43 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         }
         uıController.Invoke("GameUIDeactivate", 0.3f);
         Invoke("ClearBoard", 0.3f);
+    }
+
+    private void Update() 
+    {
+        CheckCardChilds();
+    }
+
+    private void CheckCardChilds()
+    {
+        childNameSection1 = cardPosition1Positions[0].transform.GetChild(0).transform.GetComponent<SwapCardsCardController>().cardType;
+        childNameSection2 = cardPosition2Positions[0].transform.GetChild(0).transform.GetComponent<SwapCardsCardController>().cardType;
+        childNameSection3 = cardPosition3Positions[0].transform.GetChild(0).transform.GetComponent<SwapCardsCardController>().cardType;
+
+        foreach(Transform child in cardPosition1Positions)
+        {
+            if(child.transform.GetChild(0).GetComponent<SwapCardsCardController>().cardType == childNameSection1)
+            {
+                Debug.Log(child.transform.GetChild(0).name);
+            }
+        }
+
+        foreach(Transform child in cardPosition2Positions)
+        {
+            if(child.transform.GetChild(0).GetComponent<SwapCardsCardController>().cardType == childNameSection2)
+            {
+                Debug.Log(child.transform.GetChild(0).name);
+            }
+        }
+
+        foreach(Transform child in cardPosition3Positions)
+        {
+            if(child.transform.GetChild(0).GetComponent<SwapCardsCardController>().cardType == childNameSection3)
+            {
+                 Debug.Log(child.transform.GetChild(0).name);
+            }
+        }
+
     }
 
     public void ClearBoard()

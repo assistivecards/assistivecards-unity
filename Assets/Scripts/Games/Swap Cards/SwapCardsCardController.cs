@@ -50,7 +50,6 @@ public class SwapCardsCardController : MonoBehaviour, IPointerDownHandler, IPoin
         if(Input.touchCount == 1)
         {
             transform.GetComponent<Rigidbody2D>().isKinematic = true;
-            boardGenerator.CheckCardsStatus();
             isPointerUp = false;
         }
     }

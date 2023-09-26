@@ -37,6 +37,7 @@ public class SwapCardsCardController : MonoBehaviour, IPointerDownHandler, IPoin
                 if(oneTime)
                 {
                     boardGenerator.CheckCardChilds();
+                    boardGenerator.CheckLevelEnding();
                     oneTime = false;
                 }
             }

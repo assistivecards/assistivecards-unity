@@ -254,6 +254,15 @@ public class SwapCardsBoardGenerator : MonoBehaviour
 
     }
 
+    public void CheckLevelEnding()
+    {
+        if(match >= 27)
+        {
+            ClearLevel();
+            Debug.Log("Level Ended");
+        }
+    }
+
     public void ClearBoard()
     {
         matchedCardCount = 0;
@@ -267,6 +276,9 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         cardNames.Clear();
         randomValueList.Clear();
         usedRandomOrderCards.Clear();
+        cardPosition1Positions.Clear();
+        cardPosition2Positions.Clear();
+        cardPosition3Positions.Clear();
         if(!finished)
         {
             uıController.LevelChangeScreenActivate();
@@ -283,6 +295,9 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         {
             Destroy(card);
         }
+        cardPosition1Positions.Clear();
+        cardPosition2Positions.Clear();
+        cardPosition3Positions.Clear();
         cards.Clear();
         cardLocalNames.Clear();
         cloneCards.Clear();

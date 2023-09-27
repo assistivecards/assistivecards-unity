@@ -55,7 +55,9 @@ public class SwapCardsBoardGenerator : MonoBehaviour
     public string childNameSection2;
     public string childNameSection3;
 
-    public int match;
+    public int section1MatchCount;
+    public int section2MatchCount;
+    public int section3MatchCount;
     private string cardName;
     public int randomOrder;
     public List<int> usedRandomOrderCards = new List<int>();
@@ -230,7 +232,7 @@ public class SwapCardsBoardGenerator : MonoBehaviour
             if(child.transform.GetChild(0).GetComponent<SwapCardsCardController>().parentName == "CardPositions1")
             {
                 Debug.Log("child 1 " + child.transform.GetChild(0).name);
-                match++;
+                section1MatchCount++;
             }
         }
 
@@ -239,7 +241,7 @@ public class SwapCardsBoardGenerator : MonoBehaviour
             if(child.transform.GetChild(0).GetComponent<SwapCardsCardController>().parentName == "CardPositions2")
             {
                 Debug.Log("child 2 " + child.transform.GetChild(0).name);
-                match++;
+                section2MatchCount++;
             }
         }
 
@@ -248,7 +250,7 @@ public class SwapCardsBoardGenerator : MonoBehaviour
             if(child.transform.GetChild(0).GetComponent<SwapCardsCardController>().parentName == "CardPositions3")
             {
                 Debug.Log("child 3 " + child.transform.GetChild(0).name);
-                match++;
+                section3MatchCount++;
             }
         }
 
@@ -256,7 +258,7 @@ public class SwapCardsBoardGenerator : MonoBehaviour
 
     public void CheckLevelEnding()
     {
-        if(match >= 27)
+        if(section1MatchCount >= 27)
         {
             ClearLevel();
             Debug.Log("Level Ended");

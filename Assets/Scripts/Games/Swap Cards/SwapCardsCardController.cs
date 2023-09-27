@@ -8,6 +8,7 @@ public class SwapCardsCardController : MonoBehaviour, IPointerDownHandler, IPoin
     private GameAPI gameAPI;
     private SwapCardsBoardGenerator boardGenerator;
     private bool oneTime = true;
+    private bool moving = false;
     private bool isPointerUp;
     public string parentName;
     public string cardType;
@@ -23,7 +24,7 @@ public class SwapCardsCardController : MonoBehaviour, IPointerDownHandler, IPoin
         if(other.transform.tag == "CardPositions1" || other.transform.tag == "CardPositions2" || other.transform.tag == "CardPositions3" 
         && this.transform.parent.gameObject != other.gameObject)
         {
-            if(isPointerUp && oneTime)
+            if(isPointerUp && oneTime && !moving)
             {
                 GameObject otherCard = other.transform.GetChild(0).gameObject;
                 Transform thisCardParent = this.transform.parent.transform;
@@ -66,7 +67,19 @@ public class SwapCardsCardController : MonoBehaviour, IPointerDownHandler, IPoin
         if(Input.touchCount == 1)
         {
             transform.GetComponent<Rigidbody2D>().isKinematic = false;
+            Invoke("MoveToStart", 0.5f);
             isPointerUp = true;
         }
+    }
+
+    private void MoveToStart()
+    {
+        moving = true;
+        LeanTween.moveLocal(this.gameObject, Vector3.zero, 0.5f).setOnComplete(SetMovingFalse);
+    }
+
+    private void SetMovingFalse()
+    {
+        moving = false;
     }
 }

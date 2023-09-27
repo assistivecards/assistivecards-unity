@@ -273,6 +273,7 @@ public class SwapCardsBoardGenerator : MonoBehaviour
             {
                 LeanTween.scale(card, Vector3.zero, 0.5f);
             }
+            finished = true;
             Invoke("ClearBoard", 0.5f);
         }
     }
@@ -295,10 +296,9 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         cardPosition3Positions.Clear();
         cardTextures.Clear();
         cardPositions.Clear();
-        if(!finished)
+        if(finished)
         {
             uıController.LevelChangeScreenActivate();
-            finished = true;
         }
     }
 }

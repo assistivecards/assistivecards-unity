@@ -38,7 +38,6 @@ public class SwapCardsCardController : MonoBehaviour, IPointerDownHandler, IPoin
                 if(oneTime)
                 {
                     boardGenerator.CheckCardChilds();
-                    boardGenerator.CheckLevelEnding();
                     oneTime = false;
                 }
             }
@@ -69,6 +68,7 @@ public class SwapCardsCardController : MonoBehaviour, IPointerDownHandler, IPoin
             transform.GetComponent<Rigidbody2D>().isKinematic = false;
             Invoke("MoveToStart", 0.5f);
             isPointerUp = true;
+            oneTime = true;
         }
     }
 

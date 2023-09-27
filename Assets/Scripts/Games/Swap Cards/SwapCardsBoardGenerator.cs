@@ -226,13 +226,18 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         childNameSection1 = cardPosition1Positions[0].transform.GetChild(0).transform.GetComponent<SwapCardsCardController>().cardType;
         childNameSection2 = cardPosition2Positions[0].transform.GetChild(0).transform.GetComponent<SwapCardsCardController>().cardType;
         childNameSection3 = cardPosition3Positions[0].transform.GetChild(0).transform.GetComponent<SwapCardsCardController>().cardType;
+        section1MatchCount = 0;
+        section2MatchCount = 0;
+        section3MatchCount = 0;
 
         foreach(Transform child in cardPosition1Positions)
         {
             if(child.transform.GetChild(0).GetComponent<SwapCardsCardController>().parentName == "CardPositions1")
             {
-                Debug.Log("child 1 " + child.transform.GetChild(0).name);
-                section1MatchCount++;
+                if(child.transform.GetChild(0).GetComponent<SwapCardsCardController>().cardType == childNameSection1)
+                {
+                    section1MatchCount++;
+                }
             }
         }
 
@@ -240,8 +245,10 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         {
             if(child.transform.GetChild(0).GetComponent<SwapCardsCardController>().parentName == "CardPositions2")
             {
-                Debug.Log("child 2 " + child.transform.GetChild(0).name);
-                section2MatchCount++;
+                if(child.transform.GetChild(0).GetComponent<SwapCardsCardController>().cardType == childNameSection2)
+                {
+                    section2MatchCount++;
+                }
             }
         }
 
@@ -249,19 +256,24 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         {
             if(child.transform.GetChild(0).GetComponent<SwapCardsCardController>().parentName == "CardPositions3")
             {
-                Debug.Log("child 3 " + child.transform.GetChild(0).name);
-                section3MatchCount++;
+                if(child.transform.GetChild(0).GetComponent<SwapCardsCardController>().cardType == childNameSection3)
+                {
+                    section3MatchCount++;
+                }
             }
         }
-
+        CheckLevelEnding();
     }
 
     public void CheckLevelEnding()
     {
-        if(section1MatchCount >= 27)
+        if(section1MatchCount >= 3 && section2MatchCount >= 3 && section3MatchCount >= 3)
         {
-            ClearLevel();
-            Debug.Log("Level Ended");
+            foreach(var card in cards)
+            {
+                LeanTween.scale(card, Vector3.zero, 0.5f);
+            }
+            Invoke("ClearLevel", 0.5f);
         }
     }
 

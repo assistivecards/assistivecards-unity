@@ -64,7 +64,7 @@ public class SwapCardsBoardGenerator : MonoBehaviour
     public int cardNameLenght;
     public int matchedCardCount;
     public bool isPointerUp;
-    private bool finished;
+    public bool finished;
 
     private void Awake()
     {
@@ -262,7 +262,7 @@ public class SwapCardsBoardGenerator : MonoBehaviour
                 }
             }
         }
-        CheckLevelEnding();
+        Invoke("CheckLevelEnding", 0.25f);
     }
 
     public void CheckLevelEnding()
@@ -273,7 +273,7 @@ public class SwapCardsBoardGenerator : MonoBehaviour
             {
                 LeanTween.scale(card, Vector3.zero, 0.5f);
             }
-            Invoke("ClearLevel", 0.5f);
+            Invoke("ClearBoard", 0.5f);
         }
     }
 
@@ -296,27 +296,7 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         if(!finished)
         {
             uıController.LevelChangeScreenActivate();
-            gameAPI.PlaySFX("Finished");
             finished = true;
         }
-    }
-
-    public void ClearLevel()
-    {
-        matchedCardCount = 0;
-        randomOrder = 0;
-        foreach(var card in cards)
-        {
-            Destroy(card);
-        }
-        cardPosition1Positions.Clear();
-        cardPosition2Positions.Clear();
-        cardPosition3Positions.Clear();
-        cards.Clear();
-        cardLocalNames.Clear();
-        cloneCards.Clear();
-        cardNames.Clear();
-        randomValueList.Clear();
-        usedRandomOrderCards.Clear();
     }
 }

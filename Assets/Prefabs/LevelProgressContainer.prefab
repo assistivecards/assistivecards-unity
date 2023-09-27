@@ -1713,17 +1713,17 @@ ParticleSystem:
         key1: {r: 1, g: 0.97551024, b: 0, a: 1}
         key2: {r: 1, g: 0.07222224, b: 0, a: 1}
         key3: {r: 0, g: 0.7156651, b: 1, a: 0}
-        key4: {r: 0.8297208, g: 0.20060521, b: 0.8679245, a: 0}
-        key5: {r: 0.08317016, g: 0.8396226, b: 0.6709521, a: 0}
-        key6: {r: 1, g: 1, b: 1, a: 0}
+        key4: {r: 0, g: 0.7156651, b: 1, a: 0}
+        key5: {r: 0, g: 0.7156651, b: 1, a: 0}
+        key6: {r: 0, g: 0.7156651, b: 1, a: 0}
         key7: {r: 1, g: 1, b: 1, a: 0}
-        ctime0: 16384
-        ctime1: 32768
-        ctime2: 49151
-        ctime3: 65535
-        ctime4: 49922
-        ctime5: 65150
-        ctime6: 65535
+        ctime0: 13107
+        ctime1: 26214
+        ctime2: 39321
+        ctime3: 52428
+        ctime4: 52428
+        ctime5: 52428
+        ctime6: 52428
         ctime7: 65535
         atime0: 0
         atime1: 65535
@@ -1739,34 +1739,34 @@ ParticleSystem:
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
-        key0: {r: 0.13715893, g: 0.9622642, b: 0, a: 1}
-        key1: {r: 0.972549, g: 0.26386878, b: 0.23529412, a: 1}
-        key2: {r: 0.17443931, g: 0.20296189, b: 0.754717, a: 1}
-        key3: {r: 0.9811321, g: 0.96070224, b: 0.0509078, a: 0}
-        key4: {r: 0.8297208, g: 0.20060521, b: 0.8679245, a: 0}
+        key0: {r: 0, g: 0.7156651, b: 1, a: 1}
+        key1: {r: 1, g: 0.07222224, b: 0, a: 1}
+        key2: {r: 1, g: 0.97551024, b: 0, a: 1}
+        key3: {r: 0.114142045, g: 0.8962264, b: 0.32269788, a: 0}
+        key4: {r: 1, g: 0.97551024, b: 0, a: 0}
         key5: {r: 0.08317016, g: 0.8396226, b: 0.6709521, a: 0}
         key6: {r: 1, g: 1, b: 1, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 0
-        ctime1: 15420
-        ctime2: 26985
-        ctime3: 40092
-        ctime4: 49922
+        ctime0: 13107
+        ctime1: 26214
+        ctime2: 39321
+        ctime3: 52428
+        ctime4: 40959
         ctime5: 65150
         ctime6: 65535
         ctime7: 0
         atime0: 0
-        atime1: 43369
+        atime1: 65535
         atime2: 65535
         atime3: 0
         atime4: 0
         atime5: 0
         atime6: 0
         atime7: 0
-        m_Mode: 0
-        m_ColorSpace: -1
-        m_NumColorKeys: 7
-        m_NumAlphaKeys: 3
+        m_Mode: 2
+        m_ColorSpace: 0
+        m_NumColorKeys: 4
+        m_NumAlphaKeys: 2
   UVModule:
     serializedVersion: 2
     enabled: 0

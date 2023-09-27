@@ -8,7 +8,7 @@ using System.Collections;
 public class IAPUIManager : MonoBehaviour
 {
     GameAPI gameAPI;
-    [SerializeField] List<Vector3> particleSpawnPoints = new List<Vector3>();
+    [SerializeField] List<Transform> particleSpawnPoints = new List<Transform>();
     [SerializeField] TMP_InputField availablePacksText;
     [SerializeField] GameObject subsRestoreButton;
     [SerializeField] GameObject promoUniAppRestoreButton;
@@ -42,7 +42,7 @@ public class IAPUIManager : MonoBehaviour
 
         for (int i = 1; i < 5; i++)
         {
-            particleSpawnPoints.Add(GameObject.FindObjectsOfType<Transform>(true).Where(spawnPoint => spawnPoint.gameObject.name == "ConfettiSpawnPoint" + i).FirstOrDefault().position);
+            particleSpawnPoints.Add(GameObject.FindObjectsOfType<Transform>(true).Where(spawnPoint => spawnPoint.gameObject.name == "ConfettiSpawnPoint" + i).FirstOrDefault());
         }
 
         premiumPromoSettingsButton = GameObject.FindObjectsOfType<Button>(true).Where(btn => btn.gameObject.name == "PremiumPromoButton").FirstOrDefault();
@@ -157,7 +157,7 @@ public class IAPUIManager : MonoBehaviour
     {
         for (int i = 0; i < particleSpawnPoints.Count; i++)
         {
-            gameAPI.PlayConfettiParticle(particleSpawnPoints[i]);
+            gameAPI.PlayConfettiParticle(particleSpawnPoints[i].position);
             yield return new WaitForSeconds(.25f);
         }
     }

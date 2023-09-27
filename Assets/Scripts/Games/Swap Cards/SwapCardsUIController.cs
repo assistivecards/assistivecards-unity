@@ -59,21 +59,15 @@ GameAPI gameAPI;
         loadingScreen.SetActive(false);
     }
 
-    public void LevelEnding()
-    {
-        boardGenerator.ClearBoard();
-        gameUI.SetActive(false);
-        backButton.SetActive(false);
-        settingButton.SetActive(false);
-    }
-
     public void LevelChangeScreenActivate()
     {
-        LevelEnding();
         gameAPI.AddExp(gameAPI.sessionExp);
         levelChange.SetActive(true);
         LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.3f);
         gameAPI.PlaySFX("Finished");
+        gameUI.SetActive(false);
+        backButton.SetActive(false);
+        settingButton.SetActive(false);
     }
 
     public void CloseLevelChangePanel()

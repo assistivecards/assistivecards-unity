@@ -55,14 +55,16 @@ public class SwapCardsBoardGenerator : MonoBehaviour
     public string childNameSection2;
     public string childNameSection3;
 
-    public int match;
+    public int section1MatchCount;
+    public int section2MatchCount;
+    public int section3MatchCount;
     private string cardName;
     public int randomOrder;
     public List<int> usedRandomOrderCards = new List<int>();
     public int cardNameLenght;
     public int matchedCardCount;
     public bool isPointerUp;
-    private bool finished;
+    public bool finished;
 
     private void Awake()
     {
@@ -224,13 +226,18 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         childNameSection1 = cardPosition1Positions[0].transform.GetChild(0).transform.GetComponent<SwapCardsCardController>().cardType;
         childNameSection2 = cardPosition2Positions[0].transform.GetChild(0).transform.GetComponent<SwapCardsCardController>().cardType;
         childNameSection3 = cardPosition3Positions[0].transform.GetChild(0).transform.GetComponent<SwapCardsCardController>().cardType;
+        section1MatchCount = 0;
+        section2MatchCount = 0;
+        section3MatchCount = 0;
 
         foreach(Transform child in cardPosition1Positions)
         {
             if(child.transform.GetChild(0).GetComponent<SwapCardsCardController>().parentName == "CardPositions1")
             {
-                Debug.Log("child 1 " + child.transform.GetChild(0).name);
-                match++;
+                if(child.transform.GetChild(0).GetComponent<SwapCardsCardController>().cardType == childNameSection1)
+                {
+                    section1MatchCount++;
+                }
             }
         }
 
@@ -238,8 +245,10 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         {
             if(child.transform.GetChild(0).GetComponent<SwapCardsCardController>().parentName == "CardPositions2")
             {
-                Debug.Log("child 2 " + child.transform.GetChild(0).name);
-                match++;
+                if(child.transform.GetChild(0).GetComponent<SwapCardsCardController>().cardType == childNameSection2)
+                {
+                    section2MatchCount++;
+                }
             }
         }
 
@@ -247,19 +256,25 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         {
             if(child.transform.GetChild(0).GetComponent<SwapCardsCardController>().parentName == "CardPositions3")
             {
-                Debug.Log("child 3 " + child.transform.GetChild(0).name);
-                match++;
+                if(child.transform.GetChild(0).GetComponent<SwapCardsCardController>().cardType == childNameSection3)
+                {
+                    section3MatchCount++;
+                }
             }
         }
-
+        Invoke("CheckLevelEnding", 0.25f);
     }
 
     public void CheckLevelEnding()
     {
-        if(match >= 27)
+        if(section1MatchCount >= 3 && section2MatchCount >= 3 && section3MatchCount >= 3)
         {
-            ClearLevel();
-            Debug.Log("Level Ended");
+            foreach(var card in cards)
+            {
+                LeanTween.scale(card, Vector3.zero, 0.5f);
+            }
+            finished = true;
+            Invoke("ClearBoard", 0.5f);
         }
     }
 
@@ -279,30 +294,11 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         cardPosition1Positions.Clear();
         cardPosition2Positions.Clear();
         cardPosition3Positions.Clear();
-        if(!finished)
+        cardTextures.Clear();
+        cardPositions.Clear();
+        if(finished)
         {
             uıController.LevelChangeScreenActivate();
-            gameAPI.PlaySFX("Finished");
-            finished = true;
         }
-    }
-
-    public void ClearLevel()
-    {
-        matchedCardCount = 0;
-        randomOrder = 0;
-        foreach(var card in cards)
-        {
-            Destroy(card);
-        }
-        cardPosition1Positions.Clear();
-        cardPosition2Positions.Clear();
-        cardPosition3Positions.Clear();
-        cards.Clear();
-        cardLocalNames.Clear();
-        cloneCards.Clear();
-        cardNames.Clear();
-        randomValueList.Clear();
-        usedRandomOrderCards.Clear();
     }
 }

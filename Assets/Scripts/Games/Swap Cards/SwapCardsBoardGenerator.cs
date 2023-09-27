@@ -293,6 +293,8 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         cardPosition1Positions.Clear();
         cardPosition2Positions.Clear();
         cardPosition3Positions.Clear();
+        cardTextures.Clear();
+        cardPositions.Clear();
         if(!finished)
         {
             uıController.LevelChangeScreenActivate();

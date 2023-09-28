@@ -178,7 +178,7 @@ public class Board : MonoBehaviour
 
     public void ScaleImagesUp()
     {
-        cardName.text = DetectMatch.correctMatches == 0 ? gameAPI.ToSentenceCase(randomCards[0].title) : gameAPI.ToSentenceCase(prefetchedRandomCards[0].title);
+        cardName.text = DetectMatch.correctMatches == 0 ? gameAPI.ToTitleCase(randomCards[0].title) : gameAPI.ToTitleCase(prefetchedRandomCards[0].title);
         shown.transform.position = shownImageSlot.position;
         shown.GetComponent<Draggable>().enabled = true;
 

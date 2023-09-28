@@ -1011,6 +1011,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1021200298}
     m_Modifications:
+    - target: {fileID: 3236149540598557714, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
+      propertyPath: tutorialPosition
+      value: 
+      objectReference: {fileID: 702372639}
     - target: {fileID: 3236149540598557724, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_Name
       value: Tutorial
@@ -1106,7 +1110,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3236149540598557724, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 927069864}
   m_SourcePrefab: {fileID: 100100000, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
 --- !u!1001 &671447373
 PrefabInstance:
@@ -1408,6 +1415,20 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3236149540598557725, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
   m_PrefabInstance: {fileID: 625883654}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &927069864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927069859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929d1fb7f71cc4a38be18cdaf1fce93f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point1: {fileID: 1747728586}
+  point2: {fileID: 22261952}
 --- !u!114 &1003392353 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1242831490836584049, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -3445,7 +3466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 508603.16
+      value: 520985.88
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

@@ -296,6 +296,7 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         }
         if(section1MatchCount >= 3 && section2MatchCount >= 3 && section3MatchCount >= 3)
         {
+            gameAPI.AddSessionExp();
             Invoke(nameof(LevelEndAnimation), 0.75f);
         }
     }

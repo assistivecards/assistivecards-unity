@@ -132,7 +132,7 @@ public class SwapCardsBoardGenerator : MonoBehaviour
 
         cardPosition3Positions.Add(cardPosition4.transform);
         cardPosition3Positions.Add(cardPosition5.transform);
-        cardPosition3Positions.Add(cardPosition5.transform);
+        cardPosition3Positions.Add(cardPosition6.transform);
     }
 
     public async void GeneratedBoardAsync()
@@ -279,6 +279,10 @@ public class SwapCardsBoardGenerator : MonoBehaviour
             gameAPI.PlayConfettiParticle(referencePosition2.transform.position);
             Invoke("PlaySuccess", 0.25f);
             section1MatchedSFX = false;
+            foreach(var position in cardPosition1Positions)
+            {
+                position.transform.GetChild(0).GetComponent<SwapCardsCardController>().draggable = false;
+            }
         }
         if(section2MatchedSFX && section2MatchCount >=3)
         {
@@ -286,13 +290,21 @@ public class SwapCardsBoardGenerator : MonoBehaviour
             gameAPI.PlayConfettiParticle(cardPosition2.transform.position);
             Invoke("PlaySuccess", 0.25f);
             section2MatchedSFX = false;
+            foreach(var position in cardPosition2Positions)
+            {
+                position.transform.GetChild(0).GetComponent<SwapCardsCardController>().draggable = false;
+            }
         }
-        if(section2MatchedSFX && section2MatchCount >=3)
+        if(section3MatchedSFX && section3MatchCount >=3)
         {
             gameAPI.Speak(childNameSection3);
             gameAPI.PlayConfettiParticle(cardPosition5.transform.position);
             Invoke("PlaySuccess", 0.25f);
-            section2MatchedSFX = false;
+            section3MatchedSFX = false;
+            foreach(var position in cardPosition3Positions)
+            {
+                position.transform.GetChild(0).GetComponent<SwapCardsCardController>().draggable = false;
+            }
         }
         if(section1MatchCount >= 3 && section2MatchCount >= 3 && section3MatchCount >= 3)
         {
@@ -335,6 +347,9 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         section1MatchedSFX = true;
         section2MatchedSFX = true;
         section3MatchedSFX = true;
+        section1MatchCount = 0;
+        section2MatchCount = 0;
+        section3MatchCount = 0;
         cardTextures.Clear();
         cardPositions.Clear();
         if(finished)

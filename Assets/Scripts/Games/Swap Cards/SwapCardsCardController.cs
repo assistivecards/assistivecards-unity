@@ -7,6 +7,7 @@ public class SwapCardsCardController : MonoBehaviour, IPointerDownHandler, IPoin
 {
     private GameAPI gameAPI;
     private SwapCardsBoardGenerator boardGenerator;
+    public bool draggable = true;
     private bool oneTime = true;
     private bool moving = false;
     private bool isPointerUp;
@@ -46,7 +47,7 @@ public class SwapCardsCardController : MonoBehaviour, IPointerDownHandler, IPoin
 
     public void OnDrag(PointerEventData eventData)
     {
-        if(Input.touchCount == 1)
+        if(Input.touchCount == 1 && draggable)
         {
             transform.position = transform.position + new Vector3(eventData.delta.x, eventData.delta.y, 0);
         }
@@ -54,7 +55,7 @@ public class SwapCardsCardController : MonoBehaviour, IPointerDownHandler, IPoin
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if(Input.touchCount == 1)
+        if(Input.touchCount == 1 && draggable)
         {
             transform.GetComponent<Rigidbody2D>().isKinematic = true;
             isPointerUp = false;
@@ -63,7 +64,7 @@ public class SwapCardsCardController : MonoBehaviour, IPointerDownHandler, IPoin
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if(Input.touchCount == 1)
+        if(Input.touchCount == 1 && draggable)
         {
             transform.GetComponent<Rigidbody2D>().isKinematic = false;
             Invoke("MoveToStart", 0.5f);

@@ -12,9 +12,11 @@ public class Board : MonoBehaviour
     [SerializeField] Image shown;
     [SerializeField] Image[] silhouettes;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
-    [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
-    [SerializeField] List<Texture2D> randomImages = new List<Texture2D>();
-    [SerializeField] List<Sprite> randomSprites = new List<Sprite>();
+    List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
+    List<AssistiveCardsSDK.AssistiveCardsSDK.Card> prefetchedRandomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
+    List<Texture2D> randomImages = new List<Texture2D>();
+    List<Texture2D> prefetchedRandomImages = new List<Texture2D>();
+    List<Sprite> randomSprites = new List<Sprite>();
     [SerializeField] TMP_Text cardName;
     public string selectedLangCode;
     [SerializeField] Transform shownImageSlot;
@@ -91,32 +93,49 @@ public class Board : MonoBehaviour
         tutorial.GetComponent<SilhouetteTutorial>().point2 = correctSilhoutte.transform;
         TutorialSetActive();
         Invoke("EnableBackButton", 0.2f);
+        await PrefetchNextLevelsTexturesAsync();
     }
 
     private async Task PopulateRandomTextures()
     {
-        for (int i = 0; i < silhouettes.Length; i++)
+        if (DetectMatch.correctMatches == 0)
         {
-            randomImages.Add(await gameAPI.GetCardImage(packSlug, randomCards[i].slug));
-            randomImages[i].wrapMode = TextureWrapMode.Clamp;
-            randomImages[i].filterMode = FilterMode.Bilinear;
-            randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
+            for (int i = 0; i < silhouettes.Length; i++)
+            {
+                randomImages.Add(await gameAPI.GetCardImage(packSlug, randomCards[i].slug));
+                randomImages[i].wrapMode = TextureWrapMode.Clamp;
+                randomImages[i].filterMode = FilterMode.Bilinear;
+                randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
+            }
         }
+
     }
 
     private void PopulateRandomCards()
     {
-        for (int i = 0; i < silhouettes.Length; i++)
+        if (DetectMatch.correctMatches == 0)
         {
-            var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
-            CheckIfCardExists(cardToAdd);
+            for (int i = 0; i < silhouettes.Length; i++)
+            {
+                var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+                CheckIfCardExists(cardToAdd);
+            }
+
+            shownImageSlug = randomCards[0].slug;
         }
 
-        shownImageSlug = randomCards[0].slug;
     }
 
     private void PlaceSprites()
     {
+        if (DetectMatch.correctMatches != 0)
+        {
+            for (int i = 0; i < silhouettes.Length; i++)
+            {
+                randomSprites.Add(Sprite.Create(prefetchedRandomImages[i], new Rect(0.0f, 0.0f, prefetchedRandomImages[i].width, prefetchedRandomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
+            }
+        }
+
         shown.sprite = randomSprites[0];
         correctSilhoutte = silhouettes[Random.Range(0, silhouettes.Length)];
         correctSilhoutte.sprite = randomSprites[0];
@@ -139,8 +158,11 @@ public class Board : MonoBehaviour
         cardName.text = "";
         shown.sprite = null;
         randomCards.Clear();
+        // prefetchedRandomCards.Clear();
         randomImages.Clear();
+        // prefetchedRandomImages.Clear();
         randomSprites.Clear();
+
         for (int i = 0; i < silhouettes.Length; i++)
         {
             silhouettes[i].sprite = null;
@@ -151,7 +173,7 @@ public class Board : MonoBehaviour
 
     public void ScaleImagesUp()
     {
-        cardName.text = gameAPI.ToSentenceCase(randomCards[0].title);
+        cardName.text = DetectMatch.correctMatches == 0 ? gameAPI.ToSentenceCase(randomCards[0].title) : gameAPI.ToSentenceCase(prefetchedRandomCards[0].title);
         shown.transform.position = shownImageSlot.position;
         shown.GetComponent<Draggable>().enabled = true;
 
@@ -176,9 +198,31 @@ public class Board : MonoBehaviour
             CheckIfCardExists(cardToAdd);
         }
     }
+
+    public void CheckIfCardExistsPrefetch(AssistiveCardsSDK.AssistiveCardsSDK.Card prefetchedCardToAdd)
+    {
+        if (!prefetchedRandomCards.Contains(prefetchedCardToAdd) && prefetchedCardToAdd.slug != shownImageSlug)
+        {
+            prefetchedRandomCards.Add(prefetchedCardToAdd);
+        }
+        else
+        {
+            prefetchedCardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+            CheckIfCardExistsPrefetch(prefetchedCardToAdd);
+        }
+    }
+
     public void ReadCard()
     {
-        gameAPI.Speak(randomCards[0].title);
+        if (DetectMatch.correctMatches == 0)
+        {
+            gameAPI.Speak(randomCards[0].title);
+        }
+
+        else
+        {
+            gameAPI.Speak(prefetchedRandomCards[0].title);
+        }
     }
 
     private void DisableLoadingPanel()
@@ -192,6 +236,26 @@ public class Board : MonoBehaviour
     public void EnableBackButton()
     {
         backButton.GetComponent<Button>().interactable = true;
+    }
+
+    private async Task PrefetchNextLevelsTexturesAsync()
+    {
+        prefetchedRandomCards.Clear();
+        prefetchedRandomImages.Clear();
+
+        for (int i = 0; i < silhouettes.Length; i++)
+        {
+            var prefetchedCardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+            CheckIfCardExistsPrefetch(prefetchedCardToAdd);
+
+            prefetchedRandomImages.Add(await gameAPI.GetCardImage(packSlug, prefetchedRandomCards[i].slug));
+            prefetchedRandomImages[i].wrapMode = TextureWrapMode.Clamp;
+            prefetchedRandomImages[i].filterMode = FilterMode.Bilinear;
+
+        }
+
+        shownImageSlug = prefetchedRandomCards[0].slug;
+
     }
 
 

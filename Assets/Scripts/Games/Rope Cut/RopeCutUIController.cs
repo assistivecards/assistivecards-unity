@@ -37,7 +37,7 @@ public class RopeCutUIController : MonoBehaviour
 
     public void OnBackButtonClick()
     {
-        if (Input.touchCount == 1)
+        if (Input.touchCount == 1 || RopeCutBoardGenerator.isBackAfterSignOut)
         {
             StartCoroutine(BackButtonClickCoroutine());
         }

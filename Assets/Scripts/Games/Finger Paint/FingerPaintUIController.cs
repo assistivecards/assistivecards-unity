@@ -35,7 +35,7 @@ public class FingerPaintUIController : MonoBehaviour
 
     public void OnBackButtonClick()
     {
-        if (Input.touchCount == 1)
+        if (Input.touchCount == 1 || FingerPaintBoardGenerator.isBackAfterSignOut)
         {
             StartCoroutine(BackButtonClickCoroutine());
         }

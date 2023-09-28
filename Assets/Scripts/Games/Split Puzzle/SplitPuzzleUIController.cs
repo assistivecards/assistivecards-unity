@@ -35,7 +35,7 @@ public class SplitPuzzleUIController : MonoBehaviour
 
     public void OnBackButtonClick()
     {
-        if (Input.touchCount == 1)
+        if (Input.touchCount == 1 || SplitPuzzleBoardGenerator.isBackAfterSignOut)
         {
             StartCoroutine(BackButtonClickCoroutine());
         }

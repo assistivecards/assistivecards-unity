@@ -107,7 +107,7 @@ public class CardGoalUIController : MonoBehaviour
 
     public void OnBackButtonClick()
     {
-        if (Input.touchCount == 1)
+        if (Input.touchCount == 1 || CardGoalBoardGenerator.isBackAfterSignOut)
         {
             StartCoroutine(BackButtonClickCoroutine());
         }

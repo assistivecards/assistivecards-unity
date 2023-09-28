@@ -115,7 +115,7 @@ public class DragInsideUIController : MonoBehaviour
 
     public void OnBackButtonClick()
     {
-        if (Input.touchCount == 1)
+        if (Input.touchCount == 1 || DragInsideBoardGenerator.isBackAfterSignOut)
         {
             StartCoroutine(BackButtonClickCoroutine());
         }

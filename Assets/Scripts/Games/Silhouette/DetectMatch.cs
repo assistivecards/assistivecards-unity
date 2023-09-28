@@ -176,7 +176,7 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
 
     public void OnBackButtonClick()
     {
-        if (Input.touchCount == 1)
+        if (Input.touchCount == 1 || Board.isBackAfterSignOut)
         {
             StartCoroutine(BackButtonClickCoroutine());
         }

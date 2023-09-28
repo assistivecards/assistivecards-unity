@@ -12,7 +12,6 @@ public class Board : MonoBehaviour
     [SerializeField] Image shown;
     [SerializeField] Image[] silhouettes;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
-    [SerializeField] List<Texture2D> cachedCardImages;
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     [SerializeField] List<Texture2D> randomImages = new List<Texture2D>();
     [SerializeField] List<Sprite> randomSprites = new List<Sprite>();
@@ -71,38 +70,53 @@ public class Board : MonoBehaviour
             cardsList.Remove(ring);
             cachedCards.cards = cardsList.ToArray();
         }
-        // for (int i = 0; i < cachedCards.cards.Length; i++)
-        // {
-        //     var cardImage = await gameAPI.GetCardImage(packSlug, cachedCards.cards[i].slug);
-        //     cachedCardImages.Add(cardImage);
-        // }
     }
 
 
     public async Task GenerateRandomBoardAsync()
     {
-        shown.transform.position = shownImageSlot.position;
-        shown.GetComponent<Draggable>().enabled = true;
+
         if (didLanguageChange)
         {
             await CacheCards(packSlug);
             didLanguageChange = false;
         }
 
+        PopulateRandomCards();
+        await PopulateRandomTextures();
+        PlaceSprites();
+        DisableLoadingPanel();
+        ScaleImagesUp();
+        backButton.SetActive(true);
+        tutorial.GetComponent<SilhouetteTutorial>().point2 = correctSilhoutte.transform;
+        TutorialSetActive();
+        Invoke("EnableBackButton", 0.2f);
+    }
+
+    private async Task PopulateRandomTextures()
+    {
         for (int i = 0; i < silhouettes.Length; i++)
         {
-            var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
-            CheckIfCardExists(cardToAdd);
-
             randomImages.Add(await gameAPI.GetCardImage(packSlug, randomCards[i].slug));
             randomImages[i].wrapMode = TextureWrapMode.Clamp;
             randomImages[i].filterMode = FilterMode.Bilinear;
             randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
+        }
+    }
 
+    private void PopulateRandomCards()
+    {
+        for (int i = 0; i < silhouettes.Length; i++)
+        {
+            var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+            CheckIfCardExists(cardToAdd);
         }
 
         shownImageSlug = randomCards[0].slug;
-        cardName.text = gameAPI.ToSentenceCase(randomCards[0].title);
+    }
+
+    private void PlaceSprites()
+    {
         shown.sprite = randomSprites[0];
         correctSilhoutte = silhouettes[Random.Range(0, silhouettes.Length)];
         correctSilhoutte.sprite = randomSprites[0];
@@ -118,14 +132,6 @@ public class Board : MonoBehaviour
                 silhouettes[i].sprite = sprite;
             }
         }
-
-        DisableLoadingPanel();
-        ScaleImagesUp();
-        backButton.SetActive(true);
-        tutorial.GetComponent<SilhouetteTutorial>().point2 = correctSilhoutte.transform;
-        TutorialSetActive();
-        Invoke("EnableBackButton", 0.2f);
-        // LeanTween.scale(backButton, Vector3.one, 0.25f);
     }
 
     public void ClearBoard()
@@ -145,6 +151,10 @@ public class Board : MonoBehaviour
 
     public void ScaleImagesUp()
     {
+        cardName.text = gameAPI.ToSentenceCase(randomCards[0].title);
+        shown.transform.position = shownImageSlot.position;
+        shown.GetComponent<Draggable>().enabled = true;
+
         LeanTween.scale(cardName.gameObject, Vector3.one, 0.15f);
         LeanTween.scale(shown.gameObject, Vector3.one, 0.15f);
         for (int i = 0; i < silhouettes.Length; i++)

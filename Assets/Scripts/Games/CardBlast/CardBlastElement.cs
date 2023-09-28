@@ -29,6 +29,8 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
     public List<GameObject> matched = new List<GameObject>();
     public List<GameObject> canMatch = new List<GameObject>();
+    private Vector3 totalPos; 
+    private Vector3 avaragePos; 
     public bool isMatched;
     public bool isMoved;
     public bool matcheable;
@@ -409,11 +411,19 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         {
             soundController.matchedList.Add(localName);
             soundController.match = true;
-            soundController.Invoke("ReadMatch", 0.6f);
-            soundController.Invoke("TriggerSuccessSFX", 0.25f);
-            LeanTween.scale(card, new Vector3(0.5f, 0.5f, 0.5f), 0.1f);   
-            gameAPI.PlayConfettiParticle(card.transform.position);
+            LeanTween.scale(card, new Vector3(0.5f, 0.5f, 0.5f), 0.1f);  
+            totalPos.x = totalPos.x + card.transform.position.x;
+            totalPos.y = totalPos.y + card.transform.position.y;
+            Debug.Log(totalPos);
         }
+        avaragePos.x = totalPos.x / matched.Count;
+        avaragePos.y = totalPos.y / matched.Count;
+        soundController.Invoke("ReadMatch", 0.6f);
+        soundController.Invoke("TriggerSuccessSFX", 0.25f);
+
+        if(isMoved)
+            gameAPI.PlayConfettiParticle(avaragePos);
+
         Invoke("DestroyMatched", 0.1f);
     }
 

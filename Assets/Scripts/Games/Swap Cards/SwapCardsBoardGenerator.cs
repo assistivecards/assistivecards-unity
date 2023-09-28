@@ -44,6 +44,7 @@ public class SwapCardsBoardGenerator : MonoBehaviour
     public GameObject cardPosition4;
     public GameObject cardPosition5;
     public GameObject cardPosition6;
+
     public List<GameObject> cardPositions = new List<GameObject>();
     public List<GameObject> cloneCards = new List<GameObject>();
     public List<Texture> cardTextures = new List<Texture>();
@@ -275,30 +276,38 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         if(section1MatchedSFX && section1MatchCount >=3)
         {
             gameAPI.Speak(childNameSection1);
+            gameAPI.PlayConfettiParticle(referencePosition2.transform.position);
             Invoke("PlaySuccess", 0.25f);
             section1MatchedSFX = false;
         }
         if(section2MatchedSFX && section2MatchCount >=3)
         {
             gameAPI.Speak(childNameSection2);
+            gameAPI.PlayConfettiParticle(cardPosition2.transform.position);
             Invoke("PlaySuccess", 0.25f);
             section2MatchedSFX = false;
         }
         if(section2MatchedSFX && section2MatchCount >=3)
         {
             gameAPI.Speak(childNameSection3);
+            gameAPI.PlayConfettiParticle(cardPosition5.transform.position);
             Invoke("PlaySuccess", 0.25f);
             section2MatchedSFX = false;
         }
         if(section1MatchCount >= 3 && section2MatchCount >= 3 && section3MatchCount >= 3)
         {
-            foreach(var card in cards)
-            {
-                LeanTween.scale(card, Vector3.zero, 0.5f);
-            }
-            finished = true;
-            Invoke("ClearBoard", 0.5f);
+            Invoke(nameof(LevelEndAnimation), 0.75f);
         }
+    }
+
+    private void LevelEndAnimation()
+    {
+        foreach(var card in cards)
+        {
+            LeanTween.scale(card, Vector3.zero, 0.5f);
+        }
+        finished = true;
+        Invoke("ClearBoard", 0.5f);
     }
 
     private void PlaySuccess()

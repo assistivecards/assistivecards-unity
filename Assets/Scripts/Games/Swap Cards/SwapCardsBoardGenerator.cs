@@ -58,6 +58,11 @@ public class SwapCardsBoardGenerator : MonoBehaviour
     public int section1MatchCount;
     public int section2MatchCount;
     public int section3MatchCount;
+
+    public bool section1MatchedSFX = true;
+    public bool section2MatchedSFX = true;
+    public bool section3MatchedSFX = true;
+
     private string cardName;
     public int randomOrder;
     public List<int> usedRandomOrderCards = new List<int>();
@@ -267,6 +272,24 @@ public class SwapCardsBoardGenerator : MonoBehaviour
 
     public void CheckLevelEnding()
     {
+        if(section1MatchedSFX && section1MatchCount >=3)
+        {
+            gameAPI.Speak(childNameSection1);
+            Invoke("PlaySuccess", 0.25f);
+            section1MatchedSFX = false;
+        }
+        if(section2MatchedSFX && section2MatchCount >=3)
+        {
+            gameAPI.Speak(childNameSection2);
+            Invoke("PlaySuccess", 0.25f);
+            section2MatchedSFX = false;
+        }
+        if(section2MatchedSFX && section2MatchCount >=3)
+        {
+            gameAPI.Speak(childNameSection3);
+            Invoke("PlaySuccess", 0.25f);
+            section2MatchedSFX = false;
+        }
         if(section1MatchCount >= 3 && section2MatchCount >= 3 && section3MatchCount >= 3)
         {
             foreach(var card in cards)
@@ -276,6 +299,11 @@ public class SwapCardsBoardGenerator : MonoBehaviour
             finished = true;
             Invoke("ClearBoard", 0.5f);
         }
+    }
+
+    private void PlaySuccess()
+    {
+        gameAPI.PlaySFX("Success");
     }
 
     public void ClearBoard()
@@ -294,6 +322,9 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         cardPosition1Positions.Clear();
         cardPosition2Positions.Clear();
         cardPosition3Positions.Clear();
+        section1MatchedSFX = true;
+        section2MatchedSFX = true;
+        section3MatchedSFX = true;
         cardTextures.Clear();
         cardPositions.Clear();
         if(finished)

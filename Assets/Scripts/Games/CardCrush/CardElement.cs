@@ -61,6 +61,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         onMove = true;
         isMoved = true;
+        Invoke(nameof(IsMovedFalse), 1f);
         cardPosition = this.transform.position;
         swipeDummy = swipeAngle;
         CalculateAngle();
@@ -375,8 +376,13 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
        
         foreach(var card in matched)
         {
-            gameAPI.PlayConfettiParticle(card.transform.position);
             card.transform.GetComponentInParent<CardCrushCell>().isEmpty = true;
+
+            if(card.GetComponent<CardElement>().isMoved)
+            {
+                gameAPI.PlayConfettiParticle(card.transform.position);
+            }
+
             Destroy(card);
         }
     }
@@ -387,9 +393,9 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         {
             soundController.matchedList.Add(localName);
             soundController.match = true;
-            soundController.Invoke("ReadMatch", 0.6f);
-            LeanTween.scale(card, new Vector3(0.5f, 0.5f, 0.5f), 0.1f);   
+            LeanTween.scale(card, new Vector3(0.5f, 0.5f, 0.5f), 0.1f);
         }
+        soundController.Invoke("ReadMatch", 0.6f);
         Invoke("DestroyMatched", 0.1f);
     }
 }

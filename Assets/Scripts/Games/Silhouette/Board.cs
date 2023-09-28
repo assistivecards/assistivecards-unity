@@ -102,10 +102,13 @@ public class Board : MonoBehaviour
         {
             for (int i = 0; i < silhouettes.Length; i++)
             {
-                randomImages.Add(await gameAPI.GetCardImage(packSlug, randomCards[i].slug));
-                randomImages[i].wrapMode = TextureWrapMode.Clamp;
-                randomImages[i].filterMode = FilterMode.Bilinear;
+                var texture = await gameAPI.GetCardImage(packSlug, randomCards[i].slug);
+                texture.wrapMode = TextureWrapMode.Clamp;
+                texture.filterMode = FilterMode.Bilinear;
+                texture.name = randomCards[i].title;
+                randomImages.Add(texture);
                 randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
+                randomSprites[i].name = randomImages[i].name;
             }
         }
 
@@ -133,10 +136,12 @@ public class Board : MonoBehaviour
             for (int i = 0; i < silhouettes.Length; i++)
             {
                 randomSprites.Add(Sprite.Create(prefetchedRandomImages[i], new Rect(0.0f, 0.0f, prefetchedRandomImages[i].width, prefetchedRandomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
+                randomSprites[i].name = prefetchedRandomImages[i].name;
             }
         }
 
         shown.sprite = randomSprites[0];
+        shown.sprite.name = randomSprites[0].name;
         correctSilhoutte = silhouettes[Random.Range(0, silhouettes.Length)];
         correctSilhoutte.sprite = randomSprites[0];
 
@@ -214,15 +219,7 @@ public class Board : MonoBehaviour
 
     public void ReadCard()
     {
-        if (DetectMatch.correctMatches == 0)
-        {
-            gameAPI.Speak(randomCards[0].title);
-        }
-
-        else
-        {
-            gameAPI.Speak(prefetchedRandomCards[0].title);
-        }
+        gameAPI.Speak(shown.sprite.name);
     }
 
     private void DisableLoadingPanel()
@@ -248,9 +245,11 @@ public class Board : MonoBehaviour
             var prefetchedCardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
             CheckIfCardExistsPrefetch(prefetchedCardToAdd);
 
-            prefetchedRandomImages.Add(await gameAPI.GetCardImage(packSlug, prefetchedRandomCards[i].slug));
-            prefetchedRandomImages[i].wrapMode = TextureWrapMode.Clamp;
-            prefetchedRandomImages[i].filterMode = FilterMode.Bilinear;
+            var texture = await gameAPI.GetCardImage(packSlug, prefetchedRandomCards[i].slug);
+            texture.wrapMode = TextureWrapMode.Clamp;
+            texture.filterMode = FilterMode.Bilinear;
+            texture.name = prefetchedRandomCards[i].title;
+            prefetchedRandomImages.Add(texture);
 
         }
 

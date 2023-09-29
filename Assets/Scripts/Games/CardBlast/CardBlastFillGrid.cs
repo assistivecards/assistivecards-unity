@@ -116,6 +116,7 @@ public class CardBlastFillGrid : MonoBehaviour
 
     private async void  GenerateBoard(string _packSlug)
     {
+        UIController.LoadingScreenActivation();
         isOnGame = true;
         await CacheCards(_packSlug);
         CreateRandomValue();
@@ -162,6 +163,8 @@ public class CardBlastFillGrid : MonoBehaviour
         isBoardCreated = true;
 
         Invoke("SetCardPositions", 0.25f);
+        UIController.LoadingScreenDeactivation();
+        UIController.GameUIActivate();
     }
 
     private void FixedUpdate() 

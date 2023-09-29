@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardBlastLevelControl1 : MonoBehaviour
+public class CardBlastLevelControl : MonoBehaviour
 {
     GameAPI gameAPI;
     [SerializeField] private CardBlastFillGrid fillGrid;

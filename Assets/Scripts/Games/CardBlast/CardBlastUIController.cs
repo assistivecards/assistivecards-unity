@@ -5,18 +5,22 @@ using UnityEngine;
 public class CardBlastUIController : MonoBehaviour
 {
     GameAPI gameAPI;
-    [SerializeField] private CardBlastLevelControl1 levelChangeScreenController;
+    [Header("Classes")]
+    [SerializeField] private CardBlastLevelControl levelChangeScreenController;
     [SerializeField] private DifficultSelectionPanelTween difficultSelectionPanelTween;
     [SerializeField] private PackSelectionScreenUIController packSelectionScreenUIController;
     [SerializeField] private CardBlastFillGrid fillGrid;
+    [Header("Top App Bar Elements")]
+    [SerializeField] private GameObject levelProgressContainer;
+    [SerializeField] private GameObject settingsButton;
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject helloText;
-    [SerializeField] private GameObject levelProgressContainer;
-    [SerializeField] private GameObject packSelectionScreen;
-    [SerializeField] private GameObject transitionScreen;
     [SerializeField] private GameObject score;
-    [SerializeField] private GameObject board;
+    [Header("Screens")]
+    [SerializeField] private GameObject packSelectionScreen;
+    [SerializeField] private GameObject loadingScreen;
     [SerializeField] private GameObject levelChange;
+    [SerializeField] private GameObject board;
     [SerializeField] private GameObject difficultSelectionPanel;
     [SerializeField] GameObject tutorial;
     private bool firstTime = true;
@@ -26,10 +30,6 @@ public class CardBlastUIController : MonoBehaviour
         gameAPI = Camera.main.GetComponent<GameAPI>();
     }
 
-    private void Update() 
-    {
-        GamePanelUIControl();
-    }
 
     public void TutorialSetActive()
     {
@@ -40,16 +40,51 @@ public class CardBlastUIController : MonoBehaviour
         firstTime = false;
     }
 
+    public void LoadingScreenActivation()
+    {
+        loadingScreen.SetActive(true);
+        backButton.SetActive(false);
+        settingsButton.SetActive(false);
+        levelProgressContainer.SetActive(false);
+        helloText.SetActive(false);
+    }
+
+    public void LoadingScreenDeactivation()
+    {
+        loadingScreen.SetActive(false);
+        backButton.SetActive(true);
+        settingsButton.SetActive(true);
+        levelProgressContainer.SetActive(false);
+        helloText.SetActive(true);
+    }
+
+    public void DifficultSelectionPanelActivation()
+    {
+        score.SetActive(false);
+        backButton.SetActive(true);
+        helloText.SetActive(false);
+        levelProgressContainer.SetActive(false);
+    }
+
+    public void GameUIActivate()
+    {
+        score.SetActive(true);
+        backButton.SetActive(true);
+        helloText.SetActive(false);
+        levelProgressContainer.SetActive(false);
+    }
+
+    public void PackSelectionPanelActivation()
+    {
+        score.SetActive(false);
+        backButton.SetActive(false);
+        helloText.SetActive(true);
+        levelProgressContainer.SetActive(true);
+    }
+
     public void GamePanelUIControl()
     {
-        if(fillGrid.isOnGame && fillGrid.isBoardCreated)
-        {
-            score.SetActive(true);
-            backButton.SetActive(true);
-            helloText.SetActive(false);
-            levelProgressContainer.SetActive(false);
-        }
-        else if(fillGrid.scoreInt >= 100)
+        if(fillGrid.scoreInt >= 100)
         {
             levelChange.SetActive(true);
             gameAPI.PlaySFX("Finish");
@@ -58,38 +93,16 @@ public class CardBlastUIController : MonoBehaviour
         {
             score.SetActive(false);
             backButton.SetActive(false);
-            helloText.SetActive(false);
-            levelProgressContainer.SetActive(false);
-        }
-        else if(difficultSelectionPanelTween.isOnDifficultyScene)
-        {
-            score.SetActive(false);
-            backButton.SetActive(true);
-            helloText.SetActive(false);
-            levelProgressContainer.SetActive(false);
-        }
-        else if(packSelectionScreen.activeInHierarchy)
-        {
-            score.SetActive(false);
-            backButton.SetActive(false);
-            helloText.SetActive(true);
-            levelProgressContainer.SetActive(true);
-        }
-        else if(transitionScreen.activeInHierarchy)
-        {
-            score.SetActive(false);
-            backButton.SetActive(false);
-            helloText.SetActive(false);
-            levelProgressContainer.SetActive(false);
-        }
-        else
-        {
-            score.SetActive(false);
-            backButton.SetActive(false);
+            settingsButton.SetActive(false);
             helloText.SetActive(false);
             levelProgressContainer.SetActive(false);
         }
     }
+
+    private void FixedUpdate()
+    {
+        GamePanelUIControl();
+    } 
 
     public void GameBackButtonClick()
     {
@@ -101,10 +114,8 @@ public class CardBlastUIController : MonoBehaviour
         packSelectionScreen.SetActive(true);
         packSelectionScreenUIController.ResetScrollPosition();
         difficultSelectionPanelTween.gameObject.SetActive(false);
-
         difficultSelectionPanelTween.isOnDifficultyScene = false;
-
-        transitionScreen.SetActive(false);
+        loadingScreen.SetActive(false);
 
         fillGrid.ResetGrid();
         fillGrid.ResetPosition();

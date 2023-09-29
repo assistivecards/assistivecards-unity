@@ -85,6 +85,7 @@ public class CardCrushGameUIController : MonoBehaviour
             backButton.SetActive(false);
             helloText.SetActive(false);
             levelProgressContainer.SetActive(false);
+            settingsButton.SetActive(false);
         }
         else if(difficultSelectionPanelTween.isOnDifficultyScene)
         {

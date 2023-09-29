@@ -19,9 +19,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private Vector2 firstTouchPosition;
     private Vector2 finalTouchPosition;
 
-    public float swipeDummy;
     public float swipeAngle;
-    public float swipeChange;
 
     public GameObject rightNeighbour;
     public GameObject leftNeighbour;
@@ -54,7 +52,6 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         {
             this.transform.localScale = Vector3.one;
         }
-        Invoke(nameof(SwipeReset), 0.5f);
     }
 
     public void OnPointerDown(PointerEventData pointerEventData)
@@ -75,8 +72,13 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         if(cardCrushFillGrid.isBoardCreated && !cardCrushFillGrid.isOnRefill && onMove)
         {
             finalTouchPosition = pointerEventData.position;
-            Debug.Log(swipeChange);
             CalculateAngle();
+            if(!oneTime)
+            {
+                MoveDrops();
+                oneTime = true; 
+                Invoke(nameof(SetOneTimeFalse), 1f);
+            }
         }
     }
 
@@ -88,8 +90,6 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void OnPointerUp(PointerEventData pointerEventData)
     {
         onMove = false;
-        Invoke(nameof(SwipeReset), 0.5f);
-        MoveDrops();
     }
 
     private void Update() 
@@ -131,7 +131,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         _card.GetComponent<CardElement>().y = y;
         x = _targetX;
         y = _targetY;
-        Invoke("CheckIsMatched", 0.1f);
+        Invoke("CheckIsMatched", 0.5f);
     }
 
     private void CheckIsMatched()
@@ -150,75 +150,63 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void MoveDrops()
     {
-        if(swipeAngle != 0)
+        if(swipeAngle > -45 && swipeAngle <= 45 && x < cardCrushGrid.width -1) //right swipe
         {
-            if(swipeAngle > -45 && swipeAngle <= 45 && x < cardCrushGrid.width -1) //right swipe
+            foreach (var cell in cardCrushGrid.allCells)
             {
-                foreach (var cell in cardCrushGrid.allCells)
+                if(cell.x == x + 1 && cell.y == y)
                 {
-                    if(cell.x == x + 1 && cell.y == y)
+                    if(cell != null)
                     {
-                        if(cell != null)
-                        {
-                            MoveToTarget(cell, cell.card, cell.transform.position, cell.card.GetComponent<CardElement>().x,cell.card.GetComponent<CardElement>().y);
-                            break;
-                        }
-                    }
-                }
-            }
-            else if(swipeAngle > 45 && swipeAngle <= 135 && y < cardCrushGrid.height -1) //up swipe
-            {
-                foreach (var cell in cardCrushGrid.allCells)
-                {
-                    if(cell.x == x && cell.y == y + 1)
-                    {
-                        if(cell != null)
-                        {
-                            MoveToTarget(cell, cell.card, cell.transform.position, cell.card.GetComponent<CardElement>().x, cell.card.GetComponent<CardElement>().y);
-                            break;
-                        }
-                    }
-                }
-            } 
-            else if(swipeAngle > 135 || swipeAngle <= -135 && x > 0) //left swipe
-            {
-                foreach (var cell in cardCrushGrid.allCells)
-                {
-                    if(cell.x == x - 1 && cell.y == y)
-                    {
-                        if(cell != null)
-                        {
-                            MoveToTarget(cell, cell.card, cell.transform.position, cell.card.GetComponent<CardElement>().x, cell.card.GetComponent<CardElement>().y);
-                            break;
-                        }
-                    }
-                }
-            }
-            else if(swipeAngle < -45 && swipeAngle >= -135) //down swipe
-            {
-
-                foreach (var cell in cardCrushGrid.allCells)
-                {
-                    if(cell.x == x && cell.y == y - 1) 
-                    {
-                        if(cell != null)
-                        {
-                            MoveToTarget(cell, cell.card, cell.transform.position, cell.card.GetComponent<CardElement>().x, cell.card.GetComponent<CardElement>().y);
-                            break;
-                        }
+                        MoveToTarget(cell, cell.card, cell.transform.position, cell.card.GetComponent<CardElement>().x,cell.card.GetComponent<CardElement>().y);
+                        break;
                     }
                 }
             }
         }
+        else if(swipeAngle > 45 && swipeAngle <= 135 && y < cardCrushGrid.height -1) //up swipe
+        {
+            foreach (var cell in cardCrushGrid.allCells)
+            {
+                if(cell.x == x && cell.y == y + 1)
+                {
+                    if(cell != null)
+                    {
+                        MoveToTarget(cell, cell.card, cell.transform.position, cell.card.GetComponent<CardElement>().x, cell.card.GetComponent<CardElement>().y);
+                        break;
+                    }
+                }
+            }
+        } 
+        else if(swipeAngle > 135 || swipeAngle <= -135 && x > 0) //left swipe
+        {
+            foreach (var cell in cardCrushGrid.allCells)
+            {
+                if(cell.x == x - 1 && cell.y == y)
+                {
+                    if(cell != null)
+                    {
+                        MoveToTarget(cell, cell.card, cell.transform.position, cell.card.GetComponent<CardElement>().x, cell.card.GetComponent<CardElement>().y);
+                        break;
+                    }
+                }
+            }
+        }
+        else if(swipeAngle < -45 && swipeAngle >= -135) //down swipe
+        {
 
-        Invoke(nameof(SwipeReset), 1f);
-    }
-
-    private void SwipeReset()
-    {
-        swipeAngle = 0;
-        swipeDummy = 0;
-        //swipeChange = 0;
+            foreach (var cell in cardCrushGrid.allCells)
+            {
+                if(cell.x == x && cell.y == y - 1) 
+                {
+                    if(cell != null)
+                    {
+                        MoveToTarget(cell, cell.card, cell.transform.position, cell.card.GetComponent<CardElement>().x, cell.card.GetComponent<CardElement>().y);
+                        break;
+                    }
+                }
+            }
+        }
     }
 
 

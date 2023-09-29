@@ -710,7 +710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -1967,6 +1967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7551e31af85073640848a944c94a6ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleSpawnPoints: []
   availablePacksText: {fileID: 770021530}
   subsRestoreButton: {fileID: 0}
   promoUniAppRestoreButton: {fileID: 0}
@@ -1977,6 +1978,7 @@ MonoBehaviour:
   promoScreenMonthlyButton: {fileID: 0}
   promoScreenYearlyButton: {fileID: 0}
   promoScreenPuchasePremiumButton: {fileID: 0}
+  premiumPromoSettingsButton: {fileID: 0}
   availablePacksArray: []
 --- !u!114 &1338730598
 MonoBehaviour:
@@ -3098,7 +3100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 179805.64
+      value: 193581.5
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a
@@ -3712,9 +3714,6 @@ MonoBehaviour:
   - {fileID: 631553137}
   cachedCards:
     cards: []
-  randomCards: []
-  randomImages: []
-  randomSprites: []
   selectedLangCode: 
   correctCardSlug: 
   circleText: {fileID: 797235070}
@@ -3722,6 +3721,7 @@ MonoBehaviour:
   backButton: {fileID: 472857508}
   drawManager: {fileID: 38099728}
   loadingPanel: {fileID: 671447375}
+  correctCardImageIndex: 0
 --- !u!114 &8383894889009589327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3742,6 +3742,7 @@ MonoBehaviour:
   homeButton: {fileID: 1362600184}
   levelProgressContainer: {fileID: 586259270}
   checkPointPanel: {fileID: 2113253922}
+  drawManager: {fileID: 38099728}
   accessibilityScreen: {fileID: 1235288819}
   correctMatches: 0
   firstTime: 1

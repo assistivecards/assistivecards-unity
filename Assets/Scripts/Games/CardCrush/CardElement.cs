@@ -63,7 +63,6 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         isMoved = true;
         Invoke(nameof(IsMovedFalse), 1f);
         cardPosition = this.transform.position;
-        swipeDummy = swipeAngle;
         CalculateAngle();
         if(cardCrushFillGrid.isBoardCreated && !cardCrushFillGrid.isOnRefill)
         {
@@ -76,14 +75,8 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         if(cardCrushFillGrid.isBoardCreated && !cardCrushFillGrid.isOnRefill && onMove)
         {
             finalTouchPosition = pointerEventData.position;
-            swipeChange = swipeDummy - swipeAngle;
+            Debug.Log(swipeChange);
             CalculateAngle();
-            if(!oneTime)
-            {
-                MoveDrops();
-                oneTime = true; 
-                Invoke(nameof(SetOneTimeFalse), 1f);
-            }
         }
     }
 
@@ -96,6 +89,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         onMove = false;
         Invoke(nameof(SwipeReset), 0.5f);
+        MoveDrops();
     }
 
     private void Update() 
@@ -144,7 +138,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         if(!isMatched)
         {
-            cardCrushFillGrid.scoreInt -= 1;
+            //cardCrushFillGrid.scoreInt -= 1;
             gameAPI.RemoveSessionExp();
         }
     }
@@ -224,7 +218,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         swipeAngle = 0;
         swipeDummy = 0;
-        swipeChange = 0;
+        //swipeChange = 0;
     }
 
 

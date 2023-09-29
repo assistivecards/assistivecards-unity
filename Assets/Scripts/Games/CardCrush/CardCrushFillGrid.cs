@@ -19,6 +19,8 @@ public class CardCrushFillGrid : MonoBehaviour
     [SerializeField] private GameObject scoreObj;
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     public List<string> cardNames = new List<string>();
+    public List<Texture> cardTextures = new List<Texture>();
+    public List<string> cardTextureNames = new List<string>();
 
     public int cardTypeCount;
     public bool isBoardCreated = false;
@@ -108,7 +110,11 @@ public class CardCrushFillGrid : MonoBehaviour
             
             int cardImageRandom = randomValues[Random.Range(0, cardTypeCount)];
             var cardTexture = await gameAPI.GetCardImage(_packSlug, cardNames[cardImageRandom], 512);
-
+            if(!cardTextureNames.Contains(cardNames[cardImageRandom]))
+            {
+                cardTextures.Add(cardTexture);
+                cardTextureNames.Add(cardNames[cardImageRandom].ToLower());
+            }
             card.transform.name = cardNames[cardImageRandom];
             card.transform.SetParent(cardCrushGrid.allCells[i].transform);
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
@@ -119,7 +125,6 @@ public class CardCrushFillGrid : MonoBehaviour
             card.GetComponent<CardElement>().y = cardCrushGrid.allCells[i].y;
             card.GetComponent<CardElement>().type = cardNames[cardImageRandom];
             card.GetComponent<CardElement>().localName = cardLocalNames[cardImageRandom];
-
             int maxIterations = 0;
             while(FindVerticalMatchesAtBeginning(i) && maxIterations < 100)
             {   
@@ -214,23 +219,23 @@ public class CardCrushFillGrid : MonoBehaviour
 
     public async void RefillBoard()
     {
-        scoreInt += 1;
-        gameAPI.AddSessionExp();
         Invoke("PlaySuccessSFX", 0.25f);
         foreach(var cell in cardCrushGrid.allCells)
         {
             if(cell.isEmpty == true)
             {
+                scoreInt += 1;
+                gameAPI.AddSessionExp();
                 cell.isEmpty = false;
                 GameObject card = Instantiate(cardPrefab, cell.transform.position, Quaternion.identity);
                 
-                int cardImageRandom = randomValues[Random.Range(0, cardTypeCount)];
-                var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[cardImageRandom], 512);
+                int cardImageRandom = Random.Range(0, cardTypeCount);
+                var cardTexture = cardTextures[cardImageRandom];
 
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
 
-                card.transform.name = cardNames[cardImageRandom];
+                card.transform.name = cardTextureNames[cardImageRandom];
                 card.transform.SetParent(cell.transform);
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
 
@@ -238,7 +243,7 @@ public class CardCrushFillGrid : MonoBehaviour
 
                 card.GetComponent<CardElement>().x = cell.x;
                 card.GetComponent<CardElement>().y = cell.y;
-                card.GetComponent<CardElement>().type = cardNames[cardImageRandom];
+                card.GetComponent<CardElement>().type = cardTextureNames[cardImageRandom];
                 //Debug.Log("Refill is done");
             }
         }
@@ -291,7 +296,7 @@ public class CardCrushFillGrid : MonoBehaviour
         cardTexture.wrapMode = TextureWrapMode.Clamp;
         cardTexture.filterMode = FilterMode.Bilinear;
 
-        card.transform.name = cardNames[cardImageRandom];
+        card.transform.name = cardTextureNames[cardImageRandom];
         card.transform.SetParent(cell.transform);
         card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
 
@@ -317,13 +322,16 @@ public class CardCrushFillGrid : MonoBehaviour
             cell.horizontalNeighboursRight.Clear();
             cell.verticalNeightboursBottom.Clear();
             cell.verticalNeightboursTop.Clear();
-            cardLocalNames.Clear();
-
-            cardNames.Clear();
-            randomValues.Clear();
-            matchedCards.Clear();
-            scoreInt = 0;
         }
+        cardLocalNames.Clear();
+        cardTextures.Clear();
+        cardTextureNames.Clear();
+
+        cardNames.Clear();
+        randomValues.Clear();
+        matchedCards.Clear();
+        cardsList.Clear();
+        scoreInt = 0;
     }
 
     public static void SetLeft(RectTransform _rect, float left)

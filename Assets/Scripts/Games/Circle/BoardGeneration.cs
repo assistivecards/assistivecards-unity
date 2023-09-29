@@ -12,7 +12,6 @@ public class BoardGeneration : MonoBehaviour
     [SerializeField] private GameObject tutorial;
     [SerializeField] Image[] cardImagesInScene;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
-    // [SerializeField] List<Texture2D> cachedCardImages;
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     [SerializeField] List<Texture2D> randomImages = new List<Texture2D>();
     [SerializeField] List<Sprite> randomSprites = new List<Sprite>();
@@ -26,6 +25,7 @@ public class BoardGeneration : MonoBehaviour
     [SerializeField] DrawManager drawManager;
     private CircleUIController UIController;
     [SerializeField] GameObject loadingPanel;
+    private int correctCardImageIndex;
 
     private void Awake()
     {
@@ -52,12 +52,6 @@ public class BoardGeneration : MonoBehaviour
     {
         selectedLangCode = await gameAPI.GetSystemLanguageCode();
         cachedCards = await gameAPI.GetCards(selectedLangCode, packName);
-
-        // for (int i = 0; i < cachedCards.cards.Length; i++)
-        // {
-        //     var cardImage = await gameAPI.GetCardImage(packSlug, cachedCards.cards[i].slug);
-        //     cachedCardImages.Add(cardImage);
-        // }
     }
 
 
@@ -69,20 +63,54 @@ public class BoardGeneration : MonoBehaviour
             didLanguageChange = false;
         }
 
+        PopulateRandomCards();
+        TranslateCircleText();
+        await PopulateRandomTextures();
+        AssignTags();
+        PlaceSprites();
+        DisableLoadingPanel();
+        ScaleImagesUp();
+        backButton.SetActive(true);
+        Invoke("EnableBackButton", 0.15f);
+        Invoke("EnableDrawManager", 0.15f);
+
+        tutorial.GetComponent<Tutorial>().tutorialPosition = cardImagesInScene[correctCardImageIndex].transform;
+        UIController.TutorialSetActive(tutorial);
+    }
+
+    private void PopulateRandomCards()
+    {
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {
             var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
             CheckIfCardExists(cardToAdd);
-
-            randomImages.Add(await gameAPI.GetCardImage(packSlug, randomCards[i].slug));
-            randomImages[i].wrapMode = TextureWrapMode.Clamp;
-            randomImages[i].filterMode = FilterMode.Bilinear;
-            randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
         }
 
         correctCardSlug = randomCards[0].slug;
+    }
+
+    private async Task PopulateRandomTextures()
+    {
+        for (int i = 0; i < cardImagesInScene.Length; i++)
+        {
+            var texture = await gameAPI.GetCardImage(packSlug, randomCards[i].slug);
+            texture.wrapMode = TextureWrapMode.Clamp;
+            texture.filterMode = FilterMode.Bilinear;
+            texture.name = randomCards[i].title;
+            randomImages.Add(texture);
+            randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
+            randomSprites[i].name = randomImages[i].name;
+        }
+    }
+
+    private void TranslateCircleText()
+    {
         circleText.text = gameAPI.Translate(circleText.gameObject.name, gameAPI.ToSentenceCase(randomCards[0].title).Replace("-", " "), selectedLangCode);
-        var correctCardImageIndex = Random.Range(0, cardImagesInScene.Length);
+    }
+
+    private void AssignTags()
+    {
+        correctCardImageIndex = Random.Range(0, cardImagesInScene.Length);
         cardImagesInScene[correctCardImageIndex].sprite = randomSprites[0];
 
         for (int i = 0; i < cardImagesInScene.Length; i++)
@@ -96,7 +124,10 @@ public class BoardGeneration : MonoBehaviour
                 cardImagesInScene[correctCardImageIndex].tag = "CorrectCard";
             }
         }
+    }
 
+    private void PlaceSprites()
+    {
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {
             cardImagesInScene[i].gameObject.SetActive(true);
@@ -109,16 +140,6 @@ public class BoardGeneration : MonoBehaviour
             }
         }
 
-        DisableLoadingPanel();
-
-        ScaleImagesUp();
-        backButton.SetActive(true);
-        Invoke("EnableBackButton", 0.15f);
-        Invoke("EnableDrawManager", 0.15f);
-
-
-        tutorial.GetComponent<Tutorial>().tutorialPosition = cardImagesInScene[correctCardImageIndex].transform;
-        UIController.TutorialSetActive(tutorial);
     }
 
     public void ClearBoard()

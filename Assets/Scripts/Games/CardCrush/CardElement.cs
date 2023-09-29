@@ -72,9 +72,9 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         if(cardCrushFillGrid.isBoardCreated && !cardCrushFillGrid.isOnRefill && onMove)
         {
             finalTouchPosition = pointerEventData.position;
-            CalculateAngle();
             if(!oneTime)
             {
+                CalculateAngle();
                 MoveDrops();
                 oneTime = true; 
                 Invoke(nameof(SetOneTimeFalse), 1f);
@@ -116,8 +116,8 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         soundController.movedTargetList.Add(_card.name);
         soundController.movedList.Add(this.gameObject.name);
         _card.GetComponent<CardElement>().cardPosition = this.transform.position;
-        LeanTween.move(_card, cardPosition, 0.2f);
-        LeanTween.move(this.gameObject, _transform, 0.2f);
+        LeanTween.move(_card, cardPosition, 0.35f);
+        LeanTween.move(this.gameObject, _transform, 0.35f);
         cardPosition = this.transform.position;
         _card.GetComponent<CardElement>().isMoved = true;
 

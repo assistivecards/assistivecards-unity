@@ -13,6 +13,7 @@ public class CircleUIController : MonoBehaviour
     [SerializeField] GameObject homeButton;
     [SerializeField] GameObject levelProgressContainer;
     [SerializeField] GameObject checkPointPanel;
+    [SerializeField] DrawManager drawManager;
     [SerializeField] private AccessibilityScreen accessibilityScreen;
     public int correctMatches;
     public bool firstTime = true;
@@ -44,6 +45,8 @@ public class CircleUIController : MonoBehaviour
     IEnumerator BackButtonClickCoroutine()
     {
         ResetCounter();
+        drawManager.DisableDrawManager();
+        drawManager.ClearLineClone();
         gameAPI.ResetSessionExp();
         board.ScaleImagesDown();
         backButton.SetActive(false);

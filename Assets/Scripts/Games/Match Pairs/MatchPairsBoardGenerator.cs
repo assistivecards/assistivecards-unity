@@ -63,30 +63,40 @@ public class MatchPairsBoardGenerator : MonoBehaviour
 
         PopulateRandomCards();
         await PopulateRandomTextures();
-
-        for (int i = 0; i < randomTextures.Count; i++)
-        {
-            Divide(randomTextures[i], randomTextures[i].name);
-        }
-
+        DivideTextures();
         PlaceIntoSlots();
         DisableLoadingPanel();
         ScaleImagesUp();
+        RoundCardCorners();
+        DestroyTempParents();
+        backButton.SetActive(true);
+        UIController.TutorialSetActive();
+        Invoke("EnableBackButton", 0.15f);
+    }
 
-        for (int i = 0; i < puzzlePieceParents.Length; i++)
-        {
-            puzzlePieceParents[i].GetComponent<MatchPairsRoundedBackground>().DetermineCornerRoundness();
-        }
-
+    private static void DestroyTempParents()
+    {
         var tempParents = GameObject.FindGameObjectsWithTag("Temp");
         for (int i = 0; i < tempParents.Length; i++)
         {
             Destroy(tempParents[i]);
         }
+    }
 
-        backButton.SetActive(true);
-        UIController.TutorialSetActive();
-        Invoke("EnableBackButton", 0.15f);
+    private void RoundCardCorners()
+    {
+        for (int i = 0; i < puzzlePieceParents.Length; i++)
+        {
+            puzzlePieceParents[i].GetComponent<MatchPairsRoundedBackground>().DetermineCornerRoundness();
+        }
+    }
+
+    private void DivideTextures()
+    {
+        for (int i = 0; i < randomTextures.Count; i++)
+        {
+            Divide(randomTextures[i], randomTextures[i].name);
+        }
     }
 
     public void FindMatchForTutorial()

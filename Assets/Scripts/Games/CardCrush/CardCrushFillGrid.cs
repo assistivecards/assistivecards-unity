@@ -34,7 +34,7 @@ public class CardCrushFillGrid : MonoBehaviour
     public bool isOnRefill = false;
     public int scoreInt = 0;
     public bool isOnGame = false;
-    [SerializeField] private GameObject loadingScreen;
+    
     private RectTransform rect;
     [SerializeField] private AudioSource smallSuccess;
     [SerializeField] private Sound sfx;
@@ -100,10 +100,9 @@ public class CardCrushFillGrid : MonoBehaviour
 
     private async void  GenerateBoard(string _packSlug)
     {
-        loadingScreen.SetActive(true);
+        UIController.LoadingScreenActivate();
         await CacheCards(_packSlug);
         CreateRandomValue();
-
         for(int i = 0; i < cardCrushGrid.allCells.Count; i++)
         {
             GameObject card = Instantiate(cardPrefab, cardCrushGrid.allCells[i].transform.position, Quaternion.identity);
@@ -176,7 +175,7 @@ public class CardCrushFillGrid : MonoBehaviour
         LeanTween.scale(this.gameObject, new Vector2(0.75f, 0.75f), 0.1f);
         SetLeft(rect, 3097);
         Invoke(nameof(SetBoardCreatedTrue), 1f);
-        loadingScreen.SetActive(false);
+        UIController.LoadingScreenDeactive();
         UIController.TutorialSetActive();
         isOnGame = true;
     }

@@ -1669,17 +1669,6 @@ RectTransform:
   m_AnchoredPosition: {x: -3729.8167, y: 710.48584}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &584384117 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1242831489156330399, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
-  m_PrefabInstance: {fileID: 1242831489266657176}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &601693157 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 2053396223659386525, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
@@ -3698,6 +3687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7551e31af85073640848a944c94a6ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleSpawnPoints: []
   availablePacksText: {fileID: 770021530}
   subsRestoreButton: {fileID: 0}
   promoUniAppRestoreButton: {fileID: 0}
@@ -3707,7 +3697,8 @@ MonoBehaviour:
   promoScreenPremiumButton: {fileID: 1003392353}
   promoScreenMonthlyButton: {fileID: 0}
   promoScreenYearlyButton: {fileID: 0}
-  promoScreenPuchasePremiumButton: {fileID: 1719089849}
+  promoScreenPuchasePremiumButton: {fileID: 0}
+  premiumPromoSettingsButton: {fileID: 0}
   availablePacksArray: []
 --- !u!114 &1338730598
 MonoBehaviour:
@@ -3727,7 +3718,7 @@ MonoBehaviour:
   promoScreenPrice: {fileID: 1407491092}
   promoScreenMonthlyPrice: {fileID: 0}
   promoScreenYearlyPrice: {fileID: 0}
-  promoScreenPuchasePrice: {fileID: 584384117}
+  promoScreenPuchasePrice: {fileID: 0}
   IAPUIManager: {fileID: 1338730597}
   environment: development
   purchaseRestoredPanel: {fileID: 191490649}
@@ -4068,6 +4059,8 @@ MonoBehaviour:
   scoreObj: {fileID: 479087078}
   cardsList: []
   cardNames: []
+  cardTextures: []
+  cardTextureNames: []
   cardTypeCount: 4
   isBoardCreated: 0
   matchedCards: []
@@ -4075,7 +4068,6 @@ MonoBehaviour:
   isOnRefill: 0
   scoreInt: 0
   isOnGame: 0
-  loadingScreen: {fileID: 671447375}
   smallSuccess: {fileID: 1381051506}
   sfx:
     soundName: SmallSuccess
@@ -4097,15 +4089,16 @@ MonoBehaviour:
   difficultSelectionPanelTween: {fileID: 1732710648}
   packSelectionScreenUIController: {fileID: 1837497525}
   fillGrid: {fileID: 1381051503}
-  backButton: {fileID: 482736441}
-  helloText: {fileID: 114000396}
-  levelProgressContainer: {fileID: 1479111872}
-  packSelectionScreen: {fileID: 2030526790}
-  transitionScreen: {fileID: 1610326563}
-  score: {fileID: 891408010}
-  board: {fileID: 1381051500}
-  levelChange: {fileID: 1483766225}
   difficultSelectionPanel: {fileID: 1438874517}
+  packSelectionScreen: {fileID: 2030526790}
+  loadingScreen: {fileID: 671447375}
+  levelChange: {fileID: 1483766225}
+  board: {fileID: 1381051500}
+  settingsButton: {fileID: 472857506}
+  helloText: {fileID: 114000396}
+  backButton: {fileID: 482736441}
+  score: {fileID: 891408010}
+  levelProgressContainer: {fileID: 1479111872}
   tutorial: {fileID: 85717328}
 --- !u!114 &1381051505
 MonoBehaviour:
@@ -4964,11 +4957,6 @@ RectTransform:
   m_AnchoredPosition: {x: -3159.331, y: 710.48584}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1610326563 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3699884338922838543, guid: 5bb4841276ee74ee38e00403db5fef74, type: 3}
-  m_PrefabInstance: {fileID: 1727350122}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1703991932
 GameObject:
   m_ObjectHideFlags: 0
@@ -5072,17 +5060,6 @@ RectTransform:
   m_AnchoredPosition: {x: -3539.655, y: 710.48584}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1719089849 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1357829323095568706, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
-  m_PrefabInstance: {fileID: 1242831489266657176}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1727350122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6619,7 +6596,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 174077.02
+      value: 202560.66
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

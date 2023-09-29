@@ -9,15 +9,20 @@ public class CardCrushGameUIController : MonoBehaviour
     [SerializeField] private DifficultSelectionPanelTween difficultSelectionPanelTween;
     [SerializeField] private PackSelectionScreenUIController packSelectionScreenUIController;
     [SerializeField] private CardCrushFillGrid fillGrid;
-    [SerializeField] private GameObject backButton;
-    [SerializeField] private GameObject helloText;
-    [SerializeField] private GameObject levelProgressContainer;
-    [SerializeField] private GameObject packSelectionScreen;
-    [SerializeField] private GameObject transitionScreen;
-    [SerializeField] private GameObject score;
-    [SerializeField] private GameObject board;
-    [SerializeField] private GameObject levelChange;
+
+    [Header("Screens")]
     [SerializeField] private GameObject difficultSelectionPanel;
+    [SerializeField] private GameObject packSelectionScreen;
+    [SerializeField] private GameObject loadingScreen;
+    [SerializeField] private GameObject levelChange;
+    [SerializeField] private GameObject board;
+
+    [Header("Top App Bar")]
+    [SerializeField] private GameObject settingsButton;
+    [SerializeField] private GameObject helloText;
+    [SerializeField] private GameObject backButton;
+    [SerializeField] private GameObject score;
+    [SerializeField] private GameObject levelProgressContainer;
     [SerializeField] GameObject tutorial;
     private bool firstTime = true;
 
@@ -38,6 +43,26 @@ public class CardCrushGameUIController : MonoBehaviour
     private void Update() 
     {
         GamePanelUIControl();
+    }
+
+    public void LoadingScreenActivate()
+    {
+        loadingScreen.SetActive(true);
+        settingsButton.SetActive(false);
+        backButton.SetActive(false);
+        levelProgressContainer.SetActive(false);
+        score.SetActive(false);
+        helloText.SetActive(false);
+    }
+
+    public void LoadingScreenDeactive()
+    {
+        loadingScreen.SetActive(false);
+        settingsButton.SetActive(true);
+        backButton.SetActive(true);
+        levelProgressContainer.SetActive(false);
+        score.SetActive(true);
+        helloText.SetActive(false);
     }
 
     public void GamePanelUIControl()
@@ -75,13 +100,6 @@ public class CardCrushGameUIController : MonoBehaviour
             helloText.SetActive(true);
             levelProgressContainer.SetActive(true);
         }
-        else if(transitionScreen.activeInHierarchy)
-        {
-            score.SetActive(false);
-            backButton.SetActive(false);
-            helloText.SetActive(false);
-            levelProgressContainer.SetActive(false);
-        }
         else
         {
             score.SetActive(false);
@@ -107,7 +125,7 @@ public class CardCrushGameUIController : MonoBehaviour
         levelChangeScreenController.gameObject.SetActive(false);
 
         levelChangeScreenController.isOnLevelChange = false;
-        transitionScreen.SetActive(false);
+        loadingScreen.SetActive(false);
 
         fillGrid.ResetGrid();
         //fillGrid.isBoardCreated = false;

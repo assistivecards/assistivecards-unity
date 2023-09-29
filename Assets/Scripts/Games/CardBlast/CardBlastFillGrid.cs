@@ -32,6 +32,9 @@ public class CardBlastFillGrid : MonoBehaviour
     private string packSlug;
     public List<GameObject> matchedCards = new List<GameObject>();
     public List<string> matchedCardName = new List<string>();
+    public List<Texture> cardTextures = new List<Texture>();
+    public List<string> cardTextureNames = new List<string>();
+    public List<string> cardTextureLocalNames = new List<string>();
 
     public bool isOnRefill = false;
     public int scoreInt = 0;
@@ -126,6 +129,13 @@ public class CardBlastFillGrid : MonoBehaviour
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear;
 
+            if(!cardTextureNames.Contains(cardNames[cardImageRandom]))
+            {
+                cardTextures.Add(cardTexture);
+                cardTextureNames.Add(cardNames[cardImageRandom]);
+                cardTextureLocalNames.Add(cardLocalNames[cardImageRandom]);
+            }
+
             card.transform.name = cardNames[cardImageRandom];
             card.transform.SetParent(cardCrushGrid.allCells[i].transform);
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
@@ -186,8 +196,8 @@ public class CardBlastFillGrid : MonoBehaviour
                 cell.isEmpty = false;
                 GameObject card = Instantiate(cardPrefab, cell.transform.position, Quaternion.identity);
                 
-                int cardImageRandom = randomValues[Random.Range(0, cardTypeCount)];
-                var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[cardImageRandom], 512);
+                int cardImageRandom = Random.Range(0, cardTypeCount);
+                var cardTexture = cardTextures[cardImageRandom];
                 
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
@@ -201,8 +211,8 @@ public class CardBlastFillGrid : MonoBehaviour
                     cell.card = card;
                     card.GetComponent<CardBlastElement>().x = cell.x;
                     card.GetComponent<CardBlastElement>().y = cell.y;
-                    card.GetComponent<CardBlastElement>().type = cardNames[cardImageRandom];
-                    card.GetComponent<CardBlastElement>().localName = cardLocalNames[cardImageRandom];
+                    card.GetComponent<CardBlastElement>().type = cardTextureNames[cardImageRandom];
+                    card.GetComponent<CardBlastElement>().localName = cardTextureLocalNames[cardImageRandom];
                     LeanTween.scale(card, Vector3.one, 0.5f);
                 }
             }
@@ -299,6 +309,9 @@ public class CardBlastFillGrid : MonoBehaviour
             cell.horizontalNeighboursRight.Clear();
             cell.verticalNeightboursBottom.Clear();
             cell.verticalNeightboursTop.Clear();
+            cardTextures.Clear();
+            cardTextureNames.Clear();
+            cardTextureLocalNames.Clear();
             matcheableCards.Clear();
 
             cardNames.Clear();

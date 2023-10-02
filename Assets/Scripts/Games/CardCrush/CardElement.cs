@@ -377,6 +377,7 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             soundController.match = true;
             LeanTween.scale(card, new Vector3(0.5f, 0.5f, 0.5f), 0.1f);
         }
+        soundController.matched = localName;
         soundController.Invoke("ReadMatch", 0.6f);
         Invoke("DestroyMatched", 0.1f);
     }

@@ -416,6 +416,7 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
             totalPos.y = totalPos.y + card.transform.position.y;
             Debug.Log(totalPos);
         }
+        soundController.matched = localName;
         avaragePos.x = totalPos.x / matched.Count;
         avaragePos.y = totalPos.y / matched.Count;
         soundController.Invoke("ReadMatch", 0.6f);

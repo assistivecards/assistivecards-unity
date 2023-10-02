@@ -64,7 +64,7 @@ GameAPI gameAPI;
         boardGenerator.ClearBoard();
         gameUI.SetActive(false);
         backButton.SetActive(false);
-        settingButton.SetActive(false);
+        settingButton.SetActive(true);
     }
 
     public void LevelChangeScreenActivate()

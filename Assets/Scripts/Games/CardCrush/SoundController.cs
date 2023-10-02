@@ -46,8 +46,8 @@ public class SoundController : MonoBehaviour
         if(matchedList.Count > 0)
         {
             gameAPI.PlaySFX("Success");
-            gameAPI.Speak(matchedList.Last());
-            Debug.Log(matchedList.Last());
+            gameAPI.Speak(matched);
+            Debug.Log(matched);
         }
     }
 
@@ -80,9 +80,9 @@ public class SoundController : MonoBehaviour
 
     public void TTSCardName()
     {
-        Debug.Log(matchedList.Last());
-        gameAPI.Speak(matchedList.Last());
-        Invoke("ResetLists", 0.5f);
+        Debug.Log(matched);
+        gameAPI.Speak(matched);
+        Invoke("ResetLists", 1f);
     }
 
     public void TriggerSuccessSFX()

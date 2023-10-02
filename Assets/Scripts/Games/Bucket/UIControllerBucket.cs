@@ -10,7 +10,7 @@ public class UIControllerBucket : MonoBehaviour
 
     [Header ("UI Elements")]
     [SerializeField] private GameObject levelChangeScreen;
-    [SerializeField] private GameObject transitionScreen;
+    [SerializeField] private GameObject loadingScreen;
     [SerializeField] private GameObject packSelectionScreen;
     [SerializeField] private GameObject helloText;
     [SerializeField] private GameObject levelProgressContainer;
@@ -64,7 +64,7 @@ public class UIControllerBucket : MonoBehaviour
     public void LevelChangeActive()
     {
         gameAPI.AddExp(gameAPI.sessionExp);
-        settingButton.SetActive(false);
+        settingButton.SetActive(true);
         backButton.SetActive(false);
         helloText.SetActive(false);
         levelProgressContainer.SetActive(false);
@@ -74,22 +74,23 @@ public class UIControllerBucket : MonoBehaviour
         cardImage.SetActive(false);
     }
 
-    public void TransitionScreen()
+    public void LoadingScreenSetActive()
     {
         if(canGenerate)
         {
             backButton.SetActive(false);
             helloText.SetActive(false);
             levelProgressContainer.SetActive(false);
-            transitionScreen.SetActive(true);
+            loadingScreen.SetActive(true);
             collectCount.SetActive(false);
             cardImage.SetActive(false);
+            settingButton.SetActive(false);
         }
     }
 
     public void CloseTransitionScreen()
     {
-        transitionScreen.SetActive(false);
+        loadingScreen.SetActive(false);
     }
 
     public void CloseLevelChange()

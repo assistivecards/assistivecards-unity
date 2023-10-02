@@ -26,6 +26,7 @@ public class SlingBoardGenerator : MonoBehaviour
     SlingProgressChecker progressChecker;
     [SerializeField] TMP_Text throwText;
     [SerializeField] GameObject loadingPanel;
+    [SerializeField] GameObject separator;
 
 
     private void Awake()
@@ -112,6 +113,7 @@ public class SlingBoardGenerator : MonoBehaviour
         LeanTween.scale(cardParent, Vector3.one * 12, 0.2f);
         LeanTween.scale(throwText.gameObject, Vector3.one, 0.2f);
         LeanTween.scale(box.gameObject, Vector3.one, 0.2f);
+        LeanTween.scale(separator, Vector3.one, 0.2f);
         cardParent.GetComponent<SwipeManager>().enabled = true;
 
     }
@@ -125,6 +127,7 @@ public class SlingBoardGenerator : MonoBehaviour
     public void ScaleBoxDown()
     {
         LeanTween.scale(box.gameObject, Vector3.zero, 0.2f);
+        LeanTween.scale(separator, Vector3.zero, 0.2f);
     }
 
     public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)

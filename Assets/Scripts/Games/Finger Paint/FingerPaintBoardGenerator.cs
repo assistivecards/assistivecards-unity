@@ -13,9 +13,11 @@ public class FingerPaintBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject tutorial;
     [SerializeField] GameObject[] imageParents;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
-    [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
-    [SerializeField] List<Texture2D> randomImages = new List<Texture2D>();
-    [SerializeField] List<Sprite> randomSprites = new List<Sprite>();
+    List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
+    List<AssistiveCardsSDK.AssistiveCardsSDK.Card> prefetchedRandomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
+    List<Texture2D> randomImages = new List<Texture2D>();
+    List<Texture2D> prefetchedRandomImages = new List<Texture2D>();
+    List<Sprite> randomSprites = new List<Sprite>();
     public string selectedLangCode;
     [SerializeField] string correctCardSlug;
     [SerializeField] TMP_Text paintText;
@@ -25,6 +27,7 @@ public class FingerPaintBoardGenerator : MonoBehaviour
     public static bool isBackAfterSignOut = false;
     private FingerPaintUIController UIController;
     [SerializeField] GameObject loadingPanel;
+    public int correctCardImageIndex;
 
     private void Awake()
     {
@@ -72,6 +75,7 @@ public class FingerPaintBoardGenerator : MonoBehaviour
         UIController.TutorialSetActive();
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.30f);
+        await PrefetchNextLevelsTexturesAsync();
     }
 
     public void ClearBoard()
@@ -121,9 +125,23 @@ public class FingerPaintBoardGenerator : MonoBehaviour
             CheckIfCardExists(cardToAdd);
         }
     }
+
+    public void CheckIfCardExistsPrefetch(AssistiveCardsSDK.AssistiveCardsSDK.Card prefetchedCardToAdd)
+    {
+        if (!prefetchedRandomCards.Contains(prefetchedCardToAdd) && prefetchedCardToAdd.slug != correctCardSlug)
+        {
+            prefetchedRandomCards.Add(prefetchedCardToAdd);
+        }
+        else
+        {
+            prefetchedCardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+            CheckIfCardExistsPrefetch(prefetchedCardToAdd);
+        }
+    }
+
     public void ReadCard()
     {
-        gameAPI.Speak(randomCards[0].title);
+        gameAPI.Speak(cardImagesInScene[correctCardImageIndex].sprite.name);
     }
 
     public void EnableBackButton()
@@ -133,36 +151,43 @@ public class FingerPaintBoardGenerator : MonoBehaviour
 
     public void PopulateRandomCards()
     {
-        for (int i = 0; i < cardImagesInScene.Length; i++)
+        if (UIController.correctMatches == 0)
         {
-            var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
-            CheckIfCardExists(cardToAdd);
-        }
+            for (int i = 0; i < cardImagesInScene.Length; i++)
+            {
+                var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+                CheckIfCardExists(cardToAdd);
+            }
 
-        correctCardSlug = randomCards[0].slug;
+            correctCardSlug = randomCards[0].slug;
+        }
     }
 
     public void TranslateFindCardText()
     {
-        paintText.text = gameAPI.Translate(paintText.gameObject.name, gameAPI.ToSentenceCase(randomCards[0].title).Replace("-", " "), selectedLangCode);
+        paintText.text = gameAPI.Translate(paintText.gameObject.name, gameAPI.ToSentenceCase(UIController.correctMatches == 0 ? gameAPI.ToTitleCase(randomCards[0].title) : gameAPI.ToTitleCase(prefetchedRandomCards[0].title)).Replace("-", " "), selectedLangCode);
     }
 
     public async Task PopulateRandomTextures()
     {
-        for (int i = 0; i < cardImagesInScene.Length; i++)
+        if (UIController.correctMatches == 0)
         {
-            var texture = await gameAPI.GetCardImage(packSlug, randomCards[i].slug);
-            texture.wrapMode = TextureWrapMode.Clamp;
-            texture.filterMode = FilterMode.Bilinear;
-            randomImages.Add(texture);
-            randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
+            for (int i = 0; i < cardImagesInScene.Length; i++)
+            {
+                var texture = await gameAPI.GetCardImage(packSlug, randomCards[i].slug);
+                texture.wrapMode = TextureWrapMode.Clamp;
+                texture.filterMode = FilterMode.Bilinear;
+                texture.name = randomCards[i].title;
+                randomImages.Add(texture);
+                randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
+                randomSprites[i].name = randomImages[i].name;
+            }
         }
     }
 
     public void AssignTags()
     {
-        var correctCardImageIndex = Random.Range(0, cardImagesInScene.Length);
-        cardImagesInScene[correctCardImageIndex].sprite = randomSprites[0];
+        correctCardImageIndex = Random.Range(0, cardImagesInScene.Length);
 
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {
@@ -182,6 +207,17 @@ public class FingerPaintBoardGenerator : MonoBehaviour
 
     public void PlaceSprites()
     {
+        if (UIController.correctMatches != 0)
+        {
+            for (int i = 0; i < cardImagesInScene.Length; i++)
+            {
+                randomSprites.Add(Sprite.Create(prefetchedRandomImages[i], new Rect(0.0f, 0.0f, prefetchedRandomImages[i].width, prefetchedRandomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
+                randomSprites[i].name = prefetchedRandomImages[i].name;
+            }
+        }
+
+        cardImagesInScene[correctCardImageIndex].sprite = randomSprites[0];
+
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {
             cardImagesInScene[i].gameObject.SetActive(true);
@@ -230,6 +266,28 @@ public class FingerPaintBoardGenerator : MonoBehaviour
         // {
         loadingPanel.SetActive(false);
         // }
+    }
+
+    private async Task PrefetchNextLevelsTexturesAsync()
+    {
+        prefetchedRandomCards.Clear();
+        prefetchedRandomImages.Clear();
+
+        for (int i = 0; i < cardImagesInScene.Length; i++)
+        {
+            var prefetchedCardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+            CheckIfCardExistsPrefetch(prefetchedCardToAdd);
+
+            var texture = await gameAPI.GetCardImage(packSlug, prefetchedRandomCards[i].slug);
+            texture.wrapMode = TextureWrapMode.Clamp;
+            texture.filterMode = FilterMode.Bilinear;
+            texture.name = prefetchedRandomCards[i].title;
+            prefetchedRandomImages.Add(texture);
+
+        }
+
+        correctCardSlug = prefetchedRandomCards[0].slug;
+
     }
 
 }

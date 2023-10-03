@@ -85,7 +85,7 @@ public class CardNinjaCardMovement : MonoBehaviour
     private void IncreaseCutCount()
     {
         cutController.cutCount++;
-        uıController.cutText.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = cutController.cutCount + " / 10";
+        uıController.cutText.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = cutController.cutCount + " / 10";
     }
 
     private void IncreaseThrowCount()

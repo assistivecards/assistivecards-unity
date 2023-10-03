@@ -116,7 +116,7 @@ public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHan
     {
         cutEffect.SetActive(false);
         throwedCount = 0;
-        uıController.cutText.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = cutController.cutCount + " / 10";
+        uıController.cutText.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = cutController.cutCount + " / 10";
         uıController.ReloadLevel();
         boardGenerator.GeneratedBoardAsync();
     }
@@ -132,6 +132,6 @@ public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHan
         levelEndedCount = 0;
         cutCount = 0;
         throwedCount = 0;
-        uıController.cutText.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = cutController.cutCount + " / 10";
+        uıController.cutText.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = cutController.cutCount + " / 10";
     }
 }

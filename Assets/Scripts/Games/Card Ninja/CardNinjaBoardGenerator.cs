@@ -28,8 +28,9 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject grid;
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject cutPrefab;
-    [SerializeField] private TMP_Text cutText;
     [SerializeField] private GameObject tutorial;
+    [SerializeField] private Texture2D selectedCardTexture;
+    [SerializeField] private GameObject countCard;
     private GameObject selectedCard;
     private string selectedCardLocal;
 
@@ -128,7 +129,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
 
                 selectedCard = Instantiate(cardPrefab, Vector3.zero, Quaternion.identity);
 
-                var selectedCardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[random]], 512);
+                selectedCardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[random]], 512);
                 selectedCardTexture.wrapMode = TextureWrapMode.Clamp;
                 selectedCardTexture.filterMode = FilterMode.Bilinear;
 
@@ -144,9 +145,9 @@ public class CardNinjaBoardGenerator : MonoBehaviour
                 selectedCard.GetComponent<CardNinjaCardMovement>().cardLocalName = cardLocalNames[randomValueList[random]];
                 selectedCardTag = cardNames[randomValueList[random]];
                 formerCardInt = random;
-
-                cutText.text = gameAPI.Translate(cutText.gameObject.name, gameAPI.ToSentenceCase(selectedCard.name).Replace("-", " "), selectedLangCode);
             }
+            countCard.transform.GetComponent<RawImage>().texture = selectedCardTexture;
+
 
             if(selectedCardPosition.transform.childCount > 0)
             {
@@ -239,8 +240,8 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     public void LevelEndCardScale()
     {
         LeanTween.scale(selectedCardObject, Vector3.one, 0.5f);
+        uıController.cutText.SetActive(false);
         gameAPI.Speak(selectedCardLocal);
-        Debug.Log(selectedCardLocal);
         Invoke("LevelEndDownScale", 1.5f);
     }
 

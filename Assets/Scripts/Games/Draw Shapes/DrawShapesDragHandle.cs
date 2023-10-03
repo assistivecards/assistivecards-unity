@@ -29,6 +29,15 @@ public class DrawShapesDragHandle : MonoBehaviour, IPointerDownHandler, IDragHan
     private void OnEnable()
     {
         board = GameObject.Find("GamePanel").GetComponent<DrawShapesBoardGenerator>();
+        if (board.selectedShape == "Circle")
+        {
+            distanceThreshold = 32;
+        }
+        else
+        {
+            distanceThreshold = 30;
+        }
+
         MatchHandlesWithPaths();
     }
 

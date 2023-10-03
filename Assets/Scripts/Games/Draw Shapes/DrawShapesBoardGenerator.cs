@@ -27,7 +27,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
     [SerializeField] List<GameObject> paths;
     public List<GameObject> randomPaths;
     public List<GameObject> pathsParents;
-    private string selectedShape;
+    public string selectedShape;
     public List<Transform> handles;
     public int correctCardIndex;
     [SerializeField] GameObject loadingPanel;

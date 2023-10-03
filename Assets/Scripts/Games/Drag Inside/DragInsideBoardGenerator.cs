@@ -18,7 +18,9 @@ public class DragInsideBoardGenerator : MonoBehaviour
     [SerializeField] GameObject tutorial;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
+    [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> prefetchedRandomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     [SerializeField] List<Texture2D> randomImages = new List<Texture2D>();
+    [SerializeField] List<Texture2D> prefetchedRandomImages = new List<Texture2D>();
     [SerializeField] List<Sprite> randomSprites = new List<Sprite>();
     [SerializeField] List<Sprite> tempSprites = new List<Sprite>();
     public string selectedLangCode;
@@ -32,6 +34,7 @@ public class DragInsideBoardGenerator : MonoBehaviour
     private DragInsideUIController UIController;
     private GameObject loadingPanel;
     public int numOfCorrectCards;
+    [SerializeField] DragInsideMatchDetection matchDetector;
 
     private void Awake()
     {
@@ -88,6 +91,7 @@ public class DragInsideBoardGenerator : MonoBehaviour
         backButton.SetActive(true);
         UIController.TutorialSetActive();
         Invoke("EnableBackButton", 0.15f);
+        await PrefetchNextLevelsTexturesAsync();
     }
 
     public void ClearBoard()
@@ -163,6 +167,19 @@ public class DragInsideBoardGenerator : MonoBehaviour
         }
     }
 
+    public void CheckIfCardExistsPrefetch(AssistiveCardsSDK.AssistiveCardsSDK.Card prefetchedCardToAdd)
+    {
+        if (!prefetchedRandomCards.Contains(prefetchedCardToAdd) && prefetchedCardToAdd.slug != correctCardSlug)
+        {
+            prefetchedRandomCards.Add(prefetchedCardToAdd);
+        }
+        else
+        {
+            prefetchedCardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+            CheckIfCardExistsPrefetch(prefetchedCardToAdd);
+        }
+    }
+
     public void EnableBackButton()
     {
         backButton.GetComponent<Button>().interactable = true;
@@ -170,58 +187,74 @@ public class DragInsideBoardGenerator : MonoBehaviour
 
     public void PopulateRandomCards()
     {
-        for (int i = 0; i < cardImagesInScene.Length / 2; i++)
+        if (matchDetector.correctMatches == 0)
         {
-            var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
-            CheckIfCardExists(cardToAdd);
+            for (int i = 0; i < cardImagesInScene.Length / 2; i++)
+            {
+                var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+                CheckIfCardExists(cardToAdd);
+            }
+
+            correctCardSlug = randomCards[0].slug;
         }
 
-        correctCardSlug = randomCards[0].slug;
     }
 
     public void TranslateDragCardText()
     {
-        dragText.text = gameAPI.Translate(dragText.gameObject.name, gameAPI.ToSentenceCase(randomCards[0].title).Replace("-", " "), selectedLangCode);
+        dragText.text = gameAPI.Translate(dragText.gameObject.name, gameAPI.ToSentenceCase(matchDetector.correctMatches == 0 ? gameAPI.ToTitleCase(randomCards[0].title) : gameAPI.ToTitleCase(prefetchedRandomCards[0].title)).Replace("-", " "), selectedLangCode);
     }
 
     public async Task PopulateRandomTextures()
     {
-        for (int i = 0; i < cardImagesInScene.Length / 2; i++)
+        if (matchDetector.correctMatches == 0)
         {
-            var texture = await gameAPI.GetCardImage(packSlug, randomCards[i].slug);
-            texture.wrapMode = TextureWrapMode.Clamp;
-            texture.filterMode = FilterMode.Bilinear;
-            randomImages.Add(texture);
-            randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
+            for (int i = 0; i < cardImagesInScene.Length / 2; i++)
+            {
+                var texture = await gameAPI.GetCardImage(packSlug, randomCards[i].slug);
+                texture.wrapMode = TextureWrapMode.Clamp;
+                texture.filterMode = FilterMode.Bilinear;
+                texture.name = randomCards[i].title;
+                randomImages.Add(texture);
+                randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
+                randomSprites[i].name = randomImages[i].name;
+            }
         }
+
     }
 
     public void AssignTags()
     {
-        // var correctCardImageIndex = Random.Range(0, cardImagesInScene.Length);
-        // cardImagesInScene[correctCardImageIndex].sprite = randomSprites[0];
-
-        for (int i = 0; i < cardImagesInScene.Length; i++)
+        if (matchDetector.correctMatches == 0)
         {
-            // if (i != correctCardImageIndex)
-            // {
-            //     cardImagesInScene[i].tag = "WrongCard";
-            //     // cardImagesInScene[i].transform.GetChild(0).tag = "WrongCard";
-            // }
-            // else
-            // {
-            //     cardImagesInScene[correctCardImageIndex].tag = "CorrectCard";
-            //     // cardImagesInScene[correctCardImageIndex].transform.GetChild(0).tag = "CorrectCard";
-            // }
-            if (cardImagesInScene[i].sprite.texture != randomImages[0])
+            for (int i = 0; i < cardImagesInScene.Length; i++)
             {
-                cardImagesInScene[i].transform.parent.tag = "WrongCard";
-            }
+                if (cardImagesInScene[i].sprite.texture != randomImages[0])
+                {
+                    cardImagesInScene[i].transform.parent.tag = "WrongCard";
+                }
 
-            else
+                else
+                {
+                    cardImagesInScene[i].transform.parent.tag = "CorrectCard";
+                    tutorial.GetComponent<DragInsideTutorial>().point2 = cardImagesInScene[i].transform;
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < cardImagesInScene.Length; i++)
             {
-                cardImagesInScene[i].transform.parent.tag = "CorrectCard";
-                tutorial.GetComponent<DragInsideTutorial>().point2 = cardImagesInScene[i].transform;
+                if (cardImagesInScene[i].sprite.texture != prefetchedRandomImages[0])
+                {
+                    cardImagesInScene[i].transform.parent.tag = "WrongCard";
+                }
+
+                else
+                {
+                    cardImagesInScene[i].transform.parent.tag = "CorrectCard";
+                    tutorial.GetComponent<DragInsideTutorial>().point2 = cardImagesInScene[i].transform;
+                }
             }
         }
 
@@ -246,7 +279,7 @@ public class DragInsideBoardGenerator : MonoBehaviour
 
     public void ReadCard()
     {
-        gameAPI.Speak(randomCards[0].title);
+        gameAPI.Speak(randomSprites[0].name);
     }
 
     public void RandomizeCardSlotPositions()
@@ -267,6 +300,15 @@ public class DragInsideBoardGenerator : MonoBehaviour
 
     private void PopulateTempSprites()
     {
+        if (matchDetector.correctMatches != 0)
+        {
+            for (int i = 0; i < cardImagesInScene.Length / 2; i++)
+            {
+                randomSprites.Add(Sprite.Create(prefetchedRandomImages[i], new Rect(0.0f, 0.0f, prefetchedRandomImages[i].width, prefetchedRandomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
+                randomSprites[i].name = prefetchedRandomImages[i].name;
+            }
+        }
+
         for (int i = 0; i < 2; i++)
         {
             tempSprites.Add(randomSprites[0]);
@@ -282,6 +324,28 @@ public class DragInsideBoardGenerator : MonoBehaviour
             var randomSpriteToAdd = randomSprites[Random.Range(0, randomSprites.Count)];
             tempSprites.Add(randomSpriteToAdd);
         }
+
+    }
+
+    private async Task PrefetchNextLevelsTexturesAsync()
+    {
+        prefetchedRandomCards.Clear();
+        prefetchedRandomImages.Clear();
+
+        for (int i = 0; i < cardImagesInScene.Length / 2; i++)
+        {
+            var prefetchedCardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+            CheckIfCardExistsPrefetch(prefetchedCardToAdd);
+
+            var texture = await gameAPI.GetCardImage(packSlug, prefetchedRandomCards[i].slug);
+            texture.wrapMode = TextureWrapMode.Clamp;
+            texture.filterMode = FilterMode.Bilinear;
+            texture.name = prefetchedRandomCards[i].title;
+            prefetchedRandomImages.Add(texture);
+
+        }
+
+        correctCardSlug = prefetchedRandomCards[0].slug;
 
     }
 

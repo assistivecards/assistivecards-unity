@@ -70,6 +70,7 @@ public class CardNinjaCardMovement : MonoBehaviour
             {
                 Invoke("IncreaseCutCount", 0.5f);
                 gameAPI.PlaySFX("Success");
+                gameAPI.PlayConfettiParticle(this.transform.position);
                 gameAPI.AddSessionExp();
                 Invoke("ReadCard", 0.17f);
             }

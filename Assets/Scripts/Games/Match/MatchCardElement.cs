@@ -58,6 +58,7 @@ public class MatchCardElement : MonoBehaviour, IPointerDownHandler, IDragHandler
                 SpeakCardName();
                 boardGenerator.CheckMatches();
                 gameAPI.AddSessionExp();
+                gameAPI.PlayConfettiParticle(this.transform.position);
                 gameAPI.PlaySFX("Success");
             }
             else if(!match 

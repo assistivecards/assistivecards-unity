@@ -20,6 +20,7 @@ public class DragInsideBoardGenerator : MonoBehaviour
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     [SerializeField] List<Texture2D> randomImages = new List<Texture2D>();
     [SerializeField] List<Sprite> randomSprites = new List<Sprite>();
+    [SerializeField] List<Sprite> tempSprites = new List<Sprite>();
     public string selectedLangCode;
     [SerializeField] string correctCardSlug;
     [SerializeField] TMP_Text dragText;
@@ -30,6 +31,7 @@ public class DragInsideBoardGenerator : MonoBehaviour
     Color original;
     private DragInsideUIController UIController;
     private GameObject loadingPanel;
+    public int numOfCorrectCards;
 
     private void Awake()
     {
@@ -77,6 +79,7 @@ public class DragInsideBoardGenerator : MonoBehaviour
         PopulateRandomCards();
         TranslateDragCardText();
         await PopulateRandomTextures();
+        PopulateTempSprites();
         PlaceSprites();
         AssignTags();
         DisableLoadingPanel();
@@ -190,7 +193,6 @@ public class DragInsideBoardGenerator : MonoBehaviour
             texture.filterMode = FilterMode.Bilinear;
             randomImages.Add(texture);
             randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
-            randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
         }
     }
 
@@ -222,6 +224,8 @@ public class DragInsideBoardGenerator : MonoBehaviour
                 tutorial.GetComponent<DragInsideTutorial>().point2 = cardImagesInScene[i].transform;
             }
         }
+
+        numOfCorrectCards = cardParents.Where(card => card.tag == "CorrectCard").ToList().Count;
     }
 
     public void PlaceSprites()
@@ -232,9 +236,9 @@ public class DragInsideBoardGenerator : MonoBehaviour
             cardImagesInScene[i].gameObject.SetActive(true);
             if (cardImagesInScene[i].sprite == null)
             {
-                var randomIndex = Random.Range(0, randomSprites.Count);
-                var sprite = randomSprites[randomIndex];
-                randomSprites.RemoveAt(randomIndex);
+                var randomIndex = Random.Range(0, tempSprites.Count);
+                var sprite = tempSprites[randomIndex];
+                tempSprites.RemoveAt(randomIndex);
                 cardImagesInScene[i].sprite = sprite;
             }
         }
@@ -259,6 +263,26 @@ public class DragInsideBoardGenerator : MonoBehaviour
         // {
         loadingPanel.SetActive(false);
         // }
+    }
+
+    private void PopulateTempSprites()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            tempSprites.Add(randomSprites[0]);
+        }
+
+        for (int i = 1; i < 3; i++)
+        {
+            tempSprites.Add(randomSprites[i]);
+        }
+
+        for (int i = 4; i < cardImagesInScene.Length; i++)
+        {
+            var randomSpriteToAdd = randomSprites[Random.Range(0, randomSprites.Count)];
+            tempSprites.Add(randomSpriteToAdd);
+        }
+
     }
 
 }

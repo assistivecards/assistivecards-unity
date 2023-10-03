@@ -59,7 +59,7 @@ public class DragInsideMatchDetection : MonoBehaviour
         wrongCardsInside = cardsInside.Where(card => card.tag == "WrongCard").ToList();
         correctCardsInside = cardsInside.Where(card => card.tag == "CorrectCard").ToList();
 
-        if (correctCardsInside.Count == 2 && wrongCardsInside.Count == 0)
+        if (correctCardsInside.Count == board.numOfCorrectCards && wrongCardsInside.Count == 0)
         {
             Debug.Log("LEVEL COMPLETED");
             gameAPI.AddSessionExp();

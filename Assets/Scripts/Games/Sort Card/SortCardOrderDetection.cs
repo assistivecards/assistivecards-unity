@@ -47,6 +47,7 @@ public class SortCardOrderDetection : MonoBehaviour
                 if(cardType == boardGenerator.listedCards[i].GetComponentInChildren<SortCardDraggable>().cardType)
                 {
                     gameAPI.Speak(cardType);
+                    gameAPI.PlayConfettiParticle(slots[i].transform.position);
                     gameAPI.PlaySFX("Success");
                     Debug.Log(cardType);
                 }

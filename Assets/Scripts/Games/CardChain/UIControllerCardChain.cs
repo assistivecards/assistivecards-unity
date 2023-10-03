@@ -41,15 +41,6 @@ public class UIControllerCardChain : MonoBehaviour
         firstTime = false;
     }
 
-    public void InGameBar()
-    {
-        backButton.SetActive(true);
-        helloText.SetActive(false);
-        levelProgressContainer.SetActive(false);
-        settingButton.SetActive(true);
-        levelChangeScreen.SetActive(false);
-    }
-
     public void PackSelectionActive()
     {
         ResetScroll();
@@ -65,7 +56,7 @@ public class UIControllerCardChain : MonoBehaviour
     public void LevelChangeActive()
     {
         gameAPI.AddExp(gameAPI.sessionExp);
-        settingButton.SetActive(false);
+        settingButton.SetActive(true);
         backButton.SetActive(false);
         helloText.SetActive(false);
         levelProgressContainer.SetActive(false);
@@ -78,6 +69,24 @@ public class UIControllerCardChain : MonoBehaviour
         gameAPI.ResetSessionExp();
         LeanTween.scale(levelChangeScreen, Vector3.zero, 0.25f);
         Invoke("ResetLevelChangeScreen", 0.15f);
+    }
+
+    public void LoadingScreenActivation()
+    {
+        loadingScreen.SetActive(true);
+        settingButton.SetActive(false);
+        backButton.SetActive(false);
+        helloText.SetActive(false);
+        levelProgressContainer.SetActive(false);
+        gameUI.SetActive(false);
+    }
+
+    public void LoadingScreenDeactivation()
+    {
+        loadingScreen.SetActive(false);
+        settingButton.SetActive(true);
+        backButton.SetActive(true);
+        gameUI.SetActive(true);
     }
 
     private void ResetLevelChangeScreen()

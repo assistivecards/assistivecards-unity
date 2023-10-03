@@ -13,7 +13,9 @@ public class DrawShapesBoardGenerator : MonoBehaviour
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedShapeCards;
     [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
+    [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> prefetchedRandomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     [SerializeField] List<Texture2D> randomImages = new List<Texture2D>();
+    [SerializeField] List<Texture2D> prefetchedRandomImages = new List<Texture2D>();
     [SerializeField] List<Sprite> randomSprites = new List<Sprite>();
     public string selectedLangCode;
     public string packSlug;
@@ -95,6 +97,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.5f);
         UIController.Invoke("TutorialActivate", 1);
+        await PrefetchNextLevelsTexturesAsync();
     }
 
     public void ClearBoard()
@@ -152,6 +155,19 @@ public class DrawShapesBoardGenerator : MonoBehaviour
         }
     }
 
+    public void CheckIfCardExistsPrefetch(AssistiveCardsSDK.AssistiveCardsSDK.Card prefetchedCardToAdd)
+    {
+        if (!prefetchedRandomCards.Contains(prefetchedCardToAdd) && prefetchedCardToAdd.slug != correctCardSlug)
+        {
+            prefetchedRandomCards.Add(prefetchedCardToAdd);
+        }
+        else
+        {
+            prefetchedCardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+            CheckIfCardExistsPrefetch(prefetchedCardToAdd);
+        }
+    }
+
     public void EnableBackButton()
     {
         backButton.GetComponent<Button>().interactable = true;
@@ -159,18 +175,33 @@ public class DrawShapesBoardGenerator : MonoBehaviour
 
     public async Task PopulateRandomTextures()
     {
-        for (int i = 0; i < cardImagesInScene.Length; i++)
+        if (UIController.correctMatches == 0)
         {
-            var texture = await gameAPI.GetCardImage(packSlug, randomCards[i].slug);
-            texture.wrapMode = TextureWrapMode.Clamp;
-            texture.filterMode = FilterMode.Bilinear;
-            randomImages.Add(texture);
-            randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
+            for (int i = 0; i < cardImagesInScene.Length; i++)
+            {
+                var texture = await gameAPI.GetCardImage(packSlug, randomCards[i].slug);
+                texture.wrapMode = TextureWrapMode.Clamp;
+                texture.filterMode = FilterMode.Bilinear;
+                texture.name = randomCards[i].title;
+                randomImages.Add(texture);
+                randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
+                randomSprites[i].name = randomImages[i].name;
+            }
         }
+
     }
 
     public void PlaceSprites()
     {
+        if (UIController.correctMatches != 0)
+        {
+            for (int i = 0; i < cardImagesInScene.Length; i++)
+            {
+                randomSprites.Add(Sprite.Create(prefetchedRandomImages[i], new Rect(0.0f, 0.0f, prefetchedRandomImages[i].width, prefetchedRandomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
+                randomSprites[i].name = prefetchedRandomImages[i].name;
+            }
+        }
+
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {
 
@@ -186,13 +217,17 @@ public class DrawShapesBoardGenerator : MonoBehaviour
 
     public void PopulateRandomCards()
     {
-        for (int i = 0; i < cardImagesInScene.Length; i++)
+        if (UIController.correctMatches == 0)
         {
-            var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
-            CheckIfCardExists(cardToAdd);
+            for (int i = 0; i < cardImagesInScene.Length; i++)
+            {
+                var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+                CheckIfCardExists(cardToAdd);
+            }
+
+            correctCardSlug = randomCards[0].slug;
         }
 
-        correctCardSlug = randomCards[0].slug;
     }
 
     private void ChooseRandomPaths()
@@ -237,7 +272,7 @@ public class DrawShapesBoardGenerator : MonoBehaviour
 
     private void TranslateDrawText()
     {
-        drawText.text = gameAPI.Translate(drawText.gameObject.name, gameAPI.ToSentenceCase(randomCards[0].title).Replace("-", " "), selectedLangCode);
+        drawText.text = gameAPI.Translate(drawText.gameObject.name, gameAPI.ToSentenceCase(UIController.correctMatches == 0 ? gameAPI.ToTitleCase(randomCards[0].title) : gameAPI.ToTitleCase(prefetchedRandomCards[0].title)).Replace("-", " "), selectedLangCode);
         var shape = cachedShapeCards.cards.Where(card => card.slug == selectedShape.ToLower()).FirstOrDefault();
 
         drawText.text = drawText.text.Replace("$2", shape.title);
@@ -268,11 +303,22 @@ public class DrawShapesBoardGenerator : MonoBehaviour
     {
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {
-            if (cardImagesInScene[i].sprite.texture == randomImages[0])
+            if (UIController.correctMatches == 0)
             {
-                correctCardIndex = i;
-
+                if (cardImagesInScene[i].sprite.texture == randomImages[0])
+                {
+                    correctCardIndex = i;
+                }
             }
+
+            else
+            {
+                if (cardImagesInScene[i].sprite.texture == prefetchedRandomImages[0])
+                {
+                    correctCardIndex = i;
+                }
+            }
+
         }
     }
 
@@ -307,7 +353,29 @@ public class DrawShapesBoardGenerator : MonoBehaviour
 
     public void ReadCard()
     {
-        gameAPI.Speak(randomCards[0].title);
+        gameAPI.Speak(cardImagesInScene[correctCardIndex].sprite.name);
+    }
+
+    private async Task PrefetchNextLevelsTexturesAsync()
+    {
+        prefetchedRandomCards.Clear();
+        prefetchedRandomImages.Clear();
+
+        for (int i = 0; i < cardImagesInScene.Length; i++)
+        {
+            var prefetchedCardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+            CheckIfCardExistsPrefetch(prefetchedCardToAdd);
+
+            var texture = await gameAPI.GetCardImage(packSlug, prefetchedRandomCards[i].slug);
+            texture.wrapMode = TextureWrapMode.Clamp;
+            texture.filterMode = FilterMode.Bilinear;
+            texture.name = prefetchedRandomCards[i].title;
+            prefetchedRandomImages.Add(texture);
+
+        }
+
+        correctCardSlug = prefetchedRandomCards[0].slug;
+
     }
 
 }

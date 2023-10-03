@@ -290,6 +290,7 @@ public class CountGenerateBoard : MonoBehaviour
     public void ScaleUpLevelEndCard()
     {
         uıController.GameUIDeactivate();
+        gameAPI.PlayConfettiParticle(this.transform.position);
         LeanTween.scale(levelEndCard, Vector3.one, 0.4f);
     }
 

@@ -119,6 +119,7 @@ public class SortCardBoardGenerator : MonoBehaviour
             card.transform.name = cardNames[cardImageRandom];
             card.transform.GetComponentInChildren<RawImage>().texture = cardTexture;
             card.GetComponent<SortCardDraggable>().cardType = cardLocalNames[cardImageRandom];
+            LeanTween.scale(card, Vector3.one * 0.5f, 0.5f);
             cards.Add(cardLocalNames[cardImageRandom]);
         }
         GetCardOrder();

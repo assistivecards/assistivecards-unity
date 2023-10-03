@@ -70,6 +70,7 @@ public class CardNinjaCardMovement : MonoBehaviour
             {
                 Invoke("IncreaseCutCount", 0.5f);
                 gameAPI.PlaySFX("Success");
+                gameAPI.PlayConfettiParticle(this.transform.position);
                 gameAPI.AddSessionExp();
                 Invoke("ReadCard", 0.17f);
             }
@@ -85,7 +86,7 @@ public class CardNinjaCardMovement : MonoBehaviour
     private void IncreaseCutCount()
     {
         cutController.cutCount++;
-        uıController.cutText.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = cutController.cutCount + " / 10";
+        uıController.cutText.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = cutController.cutCount + " / 10";
     }
 
     private void IncreaseThrowCount()

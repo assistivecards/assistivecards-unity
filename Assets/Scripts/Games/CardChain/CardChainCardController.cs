@@ -48,6 +48,7 @@ public class CardChainCardController : MonoBehaviour
                 rightCardLocalName = otherGameObject.GetComponent<CardChainCardController>().rightCardLocalName;
                 otherGameObject.GetComponent<CardChainDraggable>().enabled = false;
                 Invoke(nameof(ReadRightCard), 0.1f);
+                gameAPI.PlayConfettiParticle(rightCard.transform.position);
                 boardGenerateCardChain.matchCount++;
                 Invoke(nameof(CallResetBoard), 0.2f);
            }
@@ -71,6 +72,7 @@ public class CardChainCardController : MonoBehaviour
                 leftCardLocalName = otherGameObject.GetComponent<CardChainCardController>().leftCardLocalName;
                 otherGameObject.GetComponent<CardChainDraggable>().enabled = false;
                 Invoke(nameof(ReadLeftCard), 0.1f);
+                gameAPI.PlayConfettiParticle(leftCard.transform.position);
                 boardGenerateCardChain.matchCount++;
                 Invoke(nameof(CallResetBoard), 0.2f);
            }
@@ -98,8 +100,8 @@ public class CardChainCardController : MonoBehaviour
     {
         if(boardGenerateCardChain.matchCount >= 4)
         {
-            boardGenerateCardChain.ResetBoard();
-            GetComponentInParent<UIControllerCardChain>().Invoke("LevelChangeActive", 0.5f);
+            boardGenerateCardChain.Invoke("ResetBoard", 1f);
+            GetComponentInParent<UIControllerCardChain>().Invoke("LevelChangeActive", 1.5f);
         }
     }
 }

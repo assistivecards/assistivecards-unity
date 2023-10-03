@@ -65,7 +65,7 @@ public class CountUIController : MonoBehaviour
         boardGenerator.ClearBoard();
         gameUI.SetActive(false);
         backButton.SetActive(false);
-        settingButton.SetActive(false);
+        settingButton.SetActive(true);
         levelProgressContainer.SetActive(false);
     }
 

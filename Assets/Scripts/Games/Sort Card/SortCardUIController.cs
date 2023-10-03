@@ -56,10 +56,10 @@ public class SortCardUIController : MonoBehaviour
         else
         {
             levelEndScreen.SetActive(true);
-            LeanTween.scale(levelEndScreen, Vector3.one * 0.5f, 0.5f);
+            LeanTween.scale(levelEndScreen, Vector3.one * 0.6f, 0.5f);
             gameUI.SetActive(false);
             backButton.SetActive(false);
-            settingButton.SetActive(false);
+            settingButton.SetActive(true);
             helloText.SetActive(false);
             levelProgressContainer.SetActive(false);
             loadingScreen.SetActive(false);

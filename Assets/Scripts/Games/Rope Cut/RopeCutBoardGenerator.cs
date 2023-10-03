@@ -123,6 +123,8 @@ public class RopeCutBoardGenerator : MonoBehaviour
             // cardParents[i].GetComponent<Rigidbody2D>().isKinematic = false;
             anchorPoints[i].GetComponent<RopeGenerator>().GenerateRope();
             cardParents[i].GetComponent<BoxCollider2D>().enabled = true;
+            ropeCutManager.GetComponent<RopeCutManager>().particlePlayed = false;
+            trailManager.GetComponent<TrailManager>().particlePlayed = false;
 
         }
 

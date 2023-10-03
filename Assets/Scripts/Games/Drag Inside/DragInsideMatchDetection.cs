@@ -73,6 +73,7 @@ public class DragInsideMatchDetection : MonoBehaviour
 
             LeanTween.color(transform.GetChild(0).GetComponent<Image>().rectTransform, green, .2f);
             gameAPI.PlaySFX("Success");
+            gameAPI.PlayConfettiParticle(transform.position);
             board.Invoke("ReadCard", 0.25f);
             board.Invoke("ScaleImagesDown", 1f);
             board.Invoke("ClearBoard", 1.3f);

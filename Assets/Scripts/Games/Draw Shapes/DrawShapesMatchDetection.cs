@@ -47,6 +47,7 @@ public class DrawShapesMatchDetection : MonoBehaviour
             UIController.correctMatches++;
             UIController.backButton.GetComponent<Button>().interactable = false;
             gameAPI.PlaySFX("Success");
+            gameAPI.PlayConfettiParticle(gameObject.GetComponent<DrawShapesDragHandle>().correctPath.transform.position);
             gameObject.GetComponent<DrawShapesDragHandle>().enabled = false;
             LeanTween.scale(gameObject, Vector3.zero, .25f);
 

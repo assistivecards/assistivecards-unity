@@ -26,7 +26,7 @@ public class PressCardsBoardGenerator : MonoBehaviour
     [SerializeField] PressCardsMatchDetection matchDetector;
     private PressCardsUIController UIController;
     [SerializeField] string correctCardSlug;
-    [SerializeField] Image[] cardImagesInScene;
+    public Image[] cardImagesInScene;
     [SerializeField] GameObject loadingPanel;
     [SerializeField] private GameObject tutorial;
     public int correctCardImageIndex;

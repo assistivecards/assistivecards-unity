@@ -32,6 +32,7 @@ public class PressCardsMatchDetection : MonoBehaviour
             gameAPI.AddSessionExp();
             UIController.backButton.GetComponent<Button>().interactable = false;
             gameAPI.PlaySFX("Success");
+            gameAPI.PlayConfettiParticle(board.cardImagesInScene[board.correctCardImageIndex].transform.position);
 
             for (int i = 0; i < spawners.Length; i++)
             {

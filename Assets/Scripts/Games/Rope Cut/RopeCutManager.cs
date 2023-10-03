@@ -6,10 +6,17 @@ using UnityEngine.UI;
 public class RopeCutManager : MonoBehaviour
 {
     private int ropeIndex;
-    private Transform hitRope;
+    public Transform hitRope;
     public bool canCut = true;
     [SerializeField] GameObject trailManager;
     [SerializeField] Button settingsButton;
+    private GameAPI gameAPI;
+    public bool particlePlayed = false;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -27,6 +34,11 @@ public class RopeCutManager : MonoBehaviour
                         // LeanTween.alpha(trailManager, 0, .25f);
                         // trailManager.SetActive(false);
                         hitRope = hit.collider.transform.parent;
+                        if (hitRope.GetComponent<RopeGenerator>().cardAttacher.tag == "CorrectCard" && !particlePlayed)
+                        {
+                            gameAPI.PlayConfettiParticle(hit.transform.position);
+                            particlePlayed = true;
+                        }
                         LeanTween.alpha(hit.collider.gameObject, 0, .15f);
                         Destroy(hit.collider.gameObject, .15f);
 

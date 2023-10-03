@@ -15,7 +15,7 @@ public class DragHandle : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoi
     public List<GameObject> waypoints;
     public Color waypointGrey;
     public Color waypointGreen;
-    [SerializeField] GameObject correctPath;
+    public GameObject correctPath;
 
     private void Awake()
     {

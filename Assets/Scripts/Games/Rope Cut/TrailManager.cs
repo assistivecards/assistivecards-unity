@@ -9,6 +9,13 @@ public class TrailManager : MonoBehaviour
     private Transform hitRope;
     [SerializeField] RopeCutManager ropeCutManager;
     [SerializeField] Button settingsButton;
+    private GameAPI gameAPI;
+    public bool particlePlayed = false;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +55,11 @@ public class TrailManager : MonoBehaviour
             // LeanTween.alpha(gameObject, 0, .25f);
             // gameObject.SetActive(false);
             hitRope = other.transform.parent;
+            if (hitRope.GetComponent<RopeGenerator>().cardAttacher.tag == "CorrectCard" && !particlePlayed)
+            {
+                gameAPI.PlayConfettiParticle(other.transform.position);
+                particlePlayed = true;
+            }
             LeanTween.alpha(other.gameObject, 0, .15f);
             Destroy(other.gameObject, .15f);
 

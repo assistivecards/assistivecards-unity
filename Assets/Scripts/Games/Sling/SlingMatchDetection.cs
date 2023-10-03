@@ -36,6 +36,7 @@ public class SlingMatchDetection : MonoBehaviour
         progressChecker.correctMatches++;
         UIController.backButton.GetComponent<Button>().interactable = false;
         gameAPI.PlaySFX("Success");
+        gameAPI.PlayConfettiParticle(transform.position);
         gameAPI.AddSessionExp();
         board.Invoke("ReadCard", 0.25f);
         board.Invoke("ScaleImagesDown", 1f);

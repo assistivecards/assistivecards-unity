@@ -24,7 +24,7 @@ public class StackCardsBoardGenerator : MonoBehaviour
     [SerializeField] TMP_Text stackText;
     [SerializeField] string correctCardSlug;
     [SerializeField] Image[] fixedCardImagesInScene;
-    [SerializeField] Image[] cardImagesInScene;
+    public Image[] cardImagesInScene;
     [SerializeField] GameObject loadingPanel;
     [SerializeField] GameObject[] assistiveCardsPlaceholders;
     [SerializeField] GameObject[] cardSlots;

@@ -66,6 +66,7 @@ public class CardShootingBallController : MonoBehaviour
             {
                 gameAPI.AddSessionExp();
                 gameAPI.PlaySFX("Success");
+                boardGenerator.IncreaseScore(1);
                 hitCount++;
 
                 if(hitCount >= 2)

@@ -25,6 +25,8 @@ public class CardShootingBoardGenerator : MonoBehaviour
     [SerializeField] private CardShootingBallController ballController;
 
     [Header ("Game UI")]
+    [SerializeField] private GameObject scoreText;
+    [SerializeField] private GameObject selectedCardImage;
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject cardPosition1;
     [SerializeField] private GameObject cardPosition2;
@@ -37,8 +39,9 @@ public class CardShootingBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject cardPosition9;
     [SerializeField] private GameObject cardPosition10;
     [SerializeField] private GameObject levelEndCard;
-    [SerializeField] private TMP_Text collectText;
+    public Texture2D selectedCardTexture;
     public GameObject selectedObjectAtEnd;
+    public int score;
 
     [Header ("Random")]
     private List<int> randomValueList = new List<int>();
@@ -157,7 +160,6 @@ public class CardShootingBoardGenerator : MonoBehaviour
                 LeanTween.scale(card.gameObject, Vector3.one * 0.3f, 0f);
             }
 
-
             if(selectedObjectAtEnd != null)
             {
                 selectedObjectAtEnd.GetComponent<CardShootingCardName>().ScaleDown();
@@ -175,15 +177,11 @@ public class CardShootingBoardGenerator : MonoBehaviour
             selectedObjectAtEnd.transform.GetChild(1).GetComponent<TMP_Text>().text = selectedCardObject.GetComponent<CardShootingCardName>().cardName;
             selectedObjectAtEnd.transform.GetChild(1).gameObject.SetActive(true);
             selectedObjectAtEnd.transform.GetChild(0).transform.localPosition = new Vector3(0, 26, 0);
+            selectedCardTexture = (Texture2D)selectedObjectAtEnd.transform.GetChild(0).GetComponent<RawImage>().texture;
+            selectedCardImage.GetComponent<RawImage>().texture = selectedCardTexture;
             LeanTween.scale(selectedObjectAtEnd, Vector3.zero, 0);
             LeanTween.rotateZ(selectedObjectAtEnd, 0, 0);
             selectedObjectAtEnd.transform.SetParent(levelEndCard.transform);
-
-
-            collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(selectedCard).Replace("-", " "), selectedLangCode);
-            LeanTween.scale(collectText.gameObject, Vector3.one, 0.2f);
-            collectText.gameObject.SetActive(true);
-
             uıController.Invoke("GameUIActivate", 0.5f);
             
         }
@@ -206,6 +204,12 @@ public class CardShootingBoardGenerator : MonoBehaviour
         }
     }
 
+    public void IncreaseScore(int _score)
+    {
+        score = score + _score;
+        scoreText.GetComponent<TMP_Text>().text = score.ToString() + " / 2";
+    }
+
     public void ClearBoard()
     {
         formerSelected = selectedCard;
@@ -220,6 +224,7 @@ public class CardShootingBoardGenerator : MonoBehaviour
         }
         cards.Clear();
         randomValueList.Clear();
-        collectText.gameObject.SetActive(false);
+        score = 0;
+        IncreaseScore(0);
     }
 }

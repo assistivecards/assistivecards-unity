@@ -32,6 +32,7 @@ public class CardWhackDetectWhack : MonoBehaviour, IPointerClickHandler
             scoreManager.InreaseScore();
             ReadCard();
             gameAPI.PlaySFX("Success");
+            gameAPI.PlayConfettiParticle(transform.position);
         }
 
         else if (transform.GetChild(0).GetComponent<Image>().sprite != board.randomSprites[0] && !isClicked)

@@ -16,6 +16,7 @@ public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
     private StackCardsLevelProgressChecker progressChecker;
     public List<Image> cards = new List<Image>();
     public List<Image> fixedCards = new List<Image>();
+    public bool particlePlayed = false;
 
     private void Awake()
     {
@@ -67,9 +68,10 @@ public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
 
             for (int i = 0; i < cards.Count; i++)
             {
-                if (cards.Count == fixedCards.Count)
+                if (cards.Count == fixedCards.Count && !particlePlayed)
                 {
-                    Debug.Log("STACK COMPLETED");
+                    gameAPI.PlayConfettiParticle(transform.position);
+                    particlePlayed = true;
                 }
             }
 

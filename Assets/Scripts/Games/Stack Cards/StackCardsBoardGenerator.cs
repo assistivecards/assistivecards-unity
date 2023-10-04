@@ -113,6 +113,7 @@ public class StackCardsBoardGenerator : MonoBehaviour
             cardImagesInScene[i].transform.parent.GetComponent<StackCardsDraggableCards>().enabled = true;
             cardImagesInScene[i].transform.parent.GetComponent<StackCardsMatchDetection>().numOfMatchedCards = 0;
             cardImagesInScene[i].transform.parent.GetComponent<StackCardsMatchDetection>().isMatched = false;
+            cardImagesInScene[i].transform.parent.GetComponent<StackCardsMatchDetection>().particlePlayed = false;
             cardImagesInScene[i].transform.parent.tag = "Untagged";
             stackCardsTutorial.slotList.Add(cardSlots[i]);
         }

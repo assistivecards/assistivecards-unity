@@ -25,6 +25,7 @@ public class CardFishingBoardGenerator : MonoBehaviour
     [SerializeField] private CardFishingCatchMechanic catchMechanics;
 
     [Header ("Game UI")]
+    public int score;
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject cardPosition1;
     [SerializeField] private GameObject cardPosition2;
@@ -36,7 +37,9 @@ public class CardFishingBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject cardPosition8;
     [SerializeField] private GameObject cardPosition9;
     [SerializeField] private GameObject cardPosition10;
-    [SerializeField] private TMP_Text collectText;
+    [SerializeField] private GameObject selectedCardImage;
+    [SerializeField] private GameObject scoreText;
+    private Texture2D selectedCardTexture;
 
     [Header ("Random")]
     private List<int> randomValueList = new List<int>();
@@ -135,12 +138,15 @@ public class CardFishingBoardGenerator : MonoBehaviour
         }
         int random = Random.Range(0, cards.Count);
         selectedCard = cards[random].name;
+        selectedCardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cards[random].name, 512);
         selectedCardLocal = cards[random].GetComponent<CardFishingCardName>().cardName;
-
-        collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(selectedCardLocal).Replace("-", " "), selectedLangCode);
-        LeanTween.scale(collectText.gameObject, Vector3.one, 0.2f);
-        collectText.gameObject.SetActive(true);
+        selectedCardImage.GetComponent<RawImage>().texture = selectedCardTexture;
         UIController.GameUIActivate();
+    }
+
+    public void IncreaseScore(int score)
+    {
+        scoreText.GetComponent<TMP_Text>().text = score.ToString() + " / 2";
     }
 
     public void ClearBoard()
@@ -158,6 +164,7 @@ public class CardFishingBoardGenerator : MonoBehaviour
         catchMechanics.score = 0;
         catchMechanics.cachedCardCount = 0;
         randomValueList.Clear();
-        collectText.gameObject.SetActive(false);
+        catchMechanics.score = 0;
+        IncreaseScore(0);
     }
 }

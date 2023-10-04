@@ -29,6 +29,7 @@ public class FindCardMatchDetection : MonoBehaviour
             gameAPI.AddSessionExp();
             flippedCards.Add(flippedCard.gameObject);
             gameAPI.PlaySFX("Success");
+            gameAPI.PlayConfettiParticle(flippedCard.position);
             Debug.Log(board.cardsNeeded);
 
             if (flippedCards.Count == board.cardsNeeded)

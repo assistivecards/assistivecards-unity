@@ -59,7 +59,7 @@ public class CardWhackScoreManager : MonoBehaviour
             score = 0;
         }
 
-        scoreText.text = score.ToString();
+        scoreText.text = score.ToString() + "/100";
 
     }
 

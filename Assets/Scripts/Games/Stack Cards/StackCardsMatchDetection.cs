@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -7,11 +9,14 @@ public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
 {
     private GameAPI gameAPI;
     public bool isMatched = false;
-    private Transform matchedSlotTransform;
+    public Transform matchedSlotTransform;
     public int numOfMatchedCards;
     private StackCardsBoardGenerator board;
     private StackCardsUIController UIController;
     private StackCardsLevelProgressChecker progressChecker;
+    public List<Image> cards = new List<Image>();
+    public List<Image> fixedCards = new List<Image>();
+    public bool particlePlayed = false;
 
     private void Awake()
     {
@@ -53,10 +58,22 @@ public class StackCardsMatchDetection : MonoBehaviour, IPointerUpHandler
             gameAPI.AddSessionExp();
             gameObject.GetComponent<StackCardsDraggableCards>().enabled = false;
             transform.SetParent(matchedSlotTransform);
+            var matchedCardName = matchedSlotTransform.GetChild(0).GetComponent<Image>().sprite.name;
+            cards = board.cardImagesInScene.Where(img => img.sprite.name == matchedCardName).ToList();
             LeanTween.moveLocal(gameObject, new Vector3(-20, -20, 0), 0.25f);
             LeanTween.rotate(gameObject, Vector3.zero, .25f);
             gameObject.tag = "FixedCard";
+            fixedCards = cards.Where(card => card.transform.parent.tag == "FixedCard").ToList();
             ReadCard();
+
+            for (int i = 0; i < cards.Count; i++)
+            {
+                if (cards.Count == fixedCards.Count && !particlePlayed)
+                {
+                    gameAPI.PlayConfettiParticle(transform.position);
+                    particlePlayed = true;
+                }
+            }
 
             if (CheckIfLevelComplete())
             {

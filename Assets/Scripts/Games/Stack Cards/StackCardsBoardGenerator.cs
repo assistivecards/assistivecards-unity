@@ -10,10 +10,12 @@ public class StackCardsBoardGenerator : MonoBehaviour
 {
     private GameAPI gameAPI;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
-    [SerializeField] List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
-    [SerializeField] List<Texture2D> randomImages = new List<Texture2D>();
-    [SerializeField] List<Sprite> randomSprites = new List<Sprite>();
-    [SerializeField] List<Sprite> tempSprites = new List<Sprite>();
+    List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
+    List<AssistiveCardsSDK.AssistiveCardsSDK.Card> prefetchedRandomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
+    List<Texture2D> randomImages = new List<Texture2D>();
+    List<Texture2D> prefetchedRandomImages = new List<Texture2D>();
+    List<Sprite> randomSprites = new List<Sprite>();
+    List<Sprite> tempSprites = new List<Sprite>();
     public string selectedLangCode;
     public string packSlug;
     [SerializeField] GameObject backButton;
@@ -22,13 +24,14 @@ public class StackCardsBoardGenerator : MonoBehaviour
     [SerializeField] TMP_Text stackText;
     [SerializeField] string correctCardSlug;
     [SerializeField] Image[] fixedCardImagesInScene;
-    [SerializeField] Image[] cardImagesInScene;
+    public Image[] cardImagesInScene;
     [SerializeField] GameObject loadingPanel;
     [SerializeField] GameObject[] assistiveCardsPlaceholders;
     [SerializeField] GameObject[] cardSlots;
     [SerializeField] StackCardsTutorial stackCardsTutorial;
     public GameObject[] stackParents;
     private StackCardsUIController UIController;
+    private StackCardsLevelProgressChecker progressChecker;
 
 
     private void Awake()
@@ -40,6 +43,7 @@ public class StackCardsBoardGenerator : MonoBehaviour
     {
         gameAPI.PlayMusic();
         UIController = gameObject.GetComponent<StackCardsUIController>();
+        progressChecker = gameObject.GetComponent<StackCardsLevelProgressChecker>();
     }
 
     private void OnEnable()
@@ -78,6 +82,7 @@ public class StackCardsBoardGenerator : MonoBehaviour
         UIController.TutorialSetActive();
         // backButton.SetActive(true);
         Invoke("EnableBackButton", 0.8f);
+        await PrefetchNextLevelsTexturesAsync();
     }
 
     public void ClearBoard()
@@ -108,6 +113,7 @@ public class StackCardsBoardGenerator : MonoBehaviour
             cardImagesInScene[i].transform.parent.GetComponent<StackCardsDraggableCards>().enabled = true;
             cardImagesInScene[i].transform.parent.GetComponent<StackCardsMatchDetection>().numOfMatchedCards = 0;
             cardImagesInScene[i].transform.parent.GetComponent<StackCardsMatchDetection>().isMatched = false;
+            cardImagesInScene[i].transform.parent.GetComponent<StackCardsMatchDetection>().particlePlayed = false;
             cardImagesInScene[i].transform.parent.tag = "Untagged";
             stackCardsTutorial.slotList.Add(cardSlots[i]);
         }
@@ -166,6 +172,19 @@ public class StackCardsBoardGenerator : MonoBehaviour
         }
     }
 
+    public void CheckIfCardExistsPrefetch(AssistiveCardsSDK.AssistiveCardsSDK.Card prefetchedCardToAdd)
+    {
+        if (!prefetchedRandomCards.Contains(prefetchedCardToAdd) && prefetchedCardToAdd.slug != correctCardSlug)
+        {
+            prefetchedRandomCards.Add(prefetchedCardToAdd);
+        }
+        else
+        {
+            prefetchedCardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+            CheckIfCardExistsPrefetch(prefetchedCardToAdd);
+        }
+    }
+
     public void EnableBackButton()
     {
         backButton.SetActive(true);
@@ -179,20 +198,32 @@ public class StackCardsBoardGenerator : MonoBehaviour
 
     public async Task PopulateRandomTextures()
     {
-        for (int i = 0; i < 3; i++)
+        if (progressChecker.levelsCompleted == 0)
         {
-            var texture = await gameAPI.GetCardImage(packSlug, randomCards[i].slug);
-            texture.wrapMode = TextureWrapMode.Clamp;
-            texture.filterMode = FilterMode.Bilinear;
-            texture.name = randomCards[i].title;
-            randomImages.Add(texture);
-            randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
-            randomSprites[i].name = randomImages[i].name;
+            for (int i = 0; i < 3; i++)
+            {
+                var texture = await gameAPI.GetCardImage(packSlug, randomCards[i].slug);
+                texture.wrapMode = TextureWrapMode.Clamp;
+                texture.filterMode = FilterMode.Bilinear;
+                texture.name = randomCards[i].title;
+                randomImages.Add(texture);
+                randomSprites.Add(Sprite.Create(randomImages[i], new Rect(0.0f, 0.0f, randomImages[i].width, randomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
+                randomSprites[i].name = randomImages[i].name;
+            }
         }
+
     }
 
     private void PopulateTempSprites()
     {
+        if (progressChecker.levelsCompleted != 0)
+        {
+            for (int i = 0; i < cardImagesInScene.Length / 2; i++)
+            {
+                randomSprites.Add(Sprite.Create(prefetchedRandomImages[i], new Rect(0.0f, 0.0f, prefetchedRandomImages[i].width, prefetchedRandomImages[i].height), new Vector2(0.5f, 0.5f), 100.0f));
+                randomSprites[i].name = prefetchedRandomImages[i].name;
+            }
+        }
 
         for (int i = 0; i < 3; i++)
         {
@@ -229,13 +260,17 @@ public class StackCardsBoardGenerator : MonoBehaviour
 
     public void PopulateRandomCards()
     {
-        for (int i = 0; i < cardImagesInScene.Length; i++)
+        if (progressChecker.levelsCompleted == 0)
         {
-            var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
-            CheckIfCardExists(cardToAdd);
+            for (int i = 0; i < cardImagesInScene.Length / 2; i++)
+            {
+                var cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+                CheckIfCardExists(cardToAdd);
+            }
+
+            correctCardSlug = randomCards[0].slug;
         }
 
-        correctCardSlug = randomCards[0].slug;
     }
 
     private void DisableLoadingPanel()
@@ -271,6 +306,28 @@ public class StackCardsBoardGenerator : MonoBehaviour
             LeanTween.scale(cardImagesInScene[i].transform.parent.gameObject, Vector3.one, 0.2f);
             yield return new WaitForSeconds(0.05f);
         }
+    }
+
+    private async Task PrefetchNextLevelsTexturesAsync()
+    {
+        prefetchedRandomCards.Clear();
+        prefetchedRandomImages.Clear();
+
+        for (int i = 0; i < cardImagesInScene.Length / 2; i++)
+        {
+            var prefetchedCardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
+            CheckIfCardExistsPrefetch(prefetchedCardToAdd);
+
+            var texture = await gameAPI.GetCardImage(packSlug, prefetchedRandomCards[i].slug);
+            texture.wrapMode = TextureWrapMode.Clamp;
+            texture.filterMode = FilterMode.Bilinear;
+            texture.name = prefetchedRandomCards[i].title;
+            prefetchedRandomImages.Add(texture);
+
+        }
+
+        correctCardSlug = prefetchedRandomCards[0].slug;
+
     }
 
 }

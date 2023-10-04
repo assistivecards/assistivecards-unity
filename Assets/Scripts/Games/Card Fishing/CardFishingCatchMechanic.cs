@@ -32,6 +32,7 @@ public class CardFishingCatchMechanic : MonoBehaviour
                 if(other.gameObject.name == boardGenerator.selectedCard)
                 {
                     score ++;
+                    boardGenerator.IncreaseScore(score);
                     gameAPI.AddSessionExp();
                 }
                 else
@@ -67,6 +68,7 @@ public class CardFishingCatchMechanic : MonoBehaviour
         if(formerCard.name == boardGenerator.selectedCard)
         {
             gameAPI.PlaySFX("Success");
+            gameAPI.PlayConfettiParticle(this.transform.position); 
         }
         Invoke("ReadCard", 0.25f);
         catctedCard = false;

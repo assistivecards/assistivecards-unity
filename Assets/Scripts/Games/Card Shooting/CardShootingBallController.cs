@@ -10,6 +10,7 @@ public class CardShootingBallController : MonoBehaviour
     public Vector3 throwVector;
     private Vector3 throwPoint;
     private Vector3 startPosition;
+    [SerializeField] private GameObject ball;
     [SerializeField] private Rigidbody2D ballRigidbody;
     [SerializeField] private CardShootingUIController uıController;
     [SerializeField] private CardShootingBoardGenerator boardGenerator; 
@@ -98,8 +99,7 @@ public class CardShootingBallController : MonoBehaviour
 
     private void SetArrow()
     {
-        ballLineRenderer.positionCount = 2;
-        ballLineRenderer.SetPosition(0, new Vector3(0, -1.9f, 2));
+        ballLineRenderer.SetPosition(0, ball.transform.position);
         ballLineRenderer.SetPosition(1, throwPoint);
         ballLineRenderer.enabled = true;
     }

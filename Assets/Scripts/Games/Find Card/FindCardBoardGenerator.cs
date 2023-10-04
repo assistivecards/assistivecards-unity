@@ -34,6 +34,7 @@ public class FindCardBoardGenerator : MonoBehaviour
     [SerializeField] GameObject cardsParent;
     [SerializeField] GameObject tutorial;
     private Transform tutorialPosition;
+    [SerializeField] TMP_Text targetCardName;
 
     private void Awake()
     {
@@ -115,6 +116,7 @@ public class FindCardBoardGenerator : MonoBehaviour
 
         LeanTween.scale(findText.gameObject, Vector3.one, 0.2f);
         LeanTween.scale(targetCard, Vector3.one, 0.2f);
+        LeanTween.scale(targetCardName.gameObject, Vector3.one, 0.2f);
 
     }
 
@@ -128,6 +130,8 @@ public class FindCardBoardGenerator : MonoBehaviour
 
         LeanTween.scale(findText.gameObject, Vector3.zero, 0.25f);
         LeanTween.scale(targetCard, Vector3.zero, 0.25f);
+        LeanTween.scale(targetCardName.gameObject, Vector3.zero, 0.2f);
+
     }
 
     public void CheckIfCardExists(AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd)
@@ -164,6 +168,7 @@ public class FindCardBoardGenerator : MonoBehaviour
     public void TranslateFindCardsText()
     {
         findText.text = gameAPI.Translate(findText.gameObject.name, gameAPI.ToTitleCase(UIController.levelsCompleted == 0 ? gameAPI.ToTitleCase(randomCards[0].title) : gameAPI.ToTitleCase(prefetchedRandomCards[0].title)).Replace("-", " "), selectedLangCode);
+        targetCardName.text = UIController.levelsCompleted == 0 ? gameAPI.ToTitleCase(randomCards[0].title) : gameAPI.ToTitleCase(prefetchedRandomCards[0].title);
     }
 
     public async Task PopulateRandomTextures()

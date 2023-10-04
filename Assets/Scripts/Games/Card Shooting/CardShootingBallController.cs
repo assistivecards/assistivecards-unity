@@ -66,6 +66,7 @@ public class CardShootingBallController : MonoBehaviour
             {
                 gameAPI.AddSessionExp();
                 gameAPI.PlaySFX("Success");
+                gameAPI.PlayConfettiParticle(this.transform.position); 
                 boardGenerator.IncreaseScore(1);
                 hitCount++;
 

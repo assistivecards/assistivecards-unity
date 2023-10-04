@@ -500,7 +500,7 @@ MonoBehaviour:
   shadowColor: {r: 0, g: 0, b: 0, a: 0.29411766}
   shadowDistance: {x: 0, y: 0}
   m_UseGraphicAlpha: 1
-  iterations: 50
+  iterations: 40
   shadowSpread: {x: 10, y: 10}
 --- !u!1 &429505576 stripped
 GameObject:
@@ -3716,7 +3716,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 181197.8
+      value: 184033.11
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

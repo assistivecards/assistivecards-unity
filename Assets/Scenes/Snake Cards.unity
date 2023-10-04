@@ -864,7 +864,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.7859375
+        value: 0.6534111
         inSlope: -0.18995088
         outSlope: -0.18995088
         tangentMode: 0
@@ -873,7 +873,7 @@ TrailRenderer:
         outWeight: 0.433079
       - serializedVersion: 3
         time: 0.5888071
-        value: 0.5120274
+        value: 0.31925547
         inSlope: -0.86300266
         outSlope: -0.86300266
         tangentMode: 0
@@ -2195,6 +2195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7551e31af85073640848a944c94a6ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleSpawnPoints: []
   availablePacksText: {fileID: 770021530}
   subsRestoreButton: {fileID: 0}
   promoUniAppRestoreButton: {fileID: 0}
@@ -2205,6 +2206,7 @@ MonoBehaviour:
   promoScreenMonthlyButton: {fileID: 0}
   promoScreenYearlyButton: {fileID: 0}
   promoScreenPuchasePremiumButton: {fileID: 0}
+  premiumPromoSettingsButton: {fileID: 0}
   availablePacksArray: []
 --- !u!114 &1338730598
 MonoBehaviour:
@@ -2829,8 +2831,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 277.69992, y: 10.53}
-  m_SizeDelta: {x: 128.32, y: 78.95}
+  m_AnchoredPosition: {x: 33.12, y: 6.68}
+  m_SizeDelta: {x: 105.6, y: 57.56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1751061757
 MonoBehaviour:
@@ -3892,7 +3894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 217857.81
+      value: 243306.05
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a

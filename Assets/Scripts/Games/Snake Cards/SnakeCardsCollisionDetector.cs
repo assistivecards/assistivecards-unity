@@ -59,6 +59,7 @@ public class SnakeCardsCollisionDetector : MonoBehaviour
                 boardGenerator.CardEaten();
                 gameAPI.Speak(other.GetComponent<SnakeCardsCardController>().cardLocalName);
                 Debug.Log(other.GetComponent<SnakeCardsCardController>().cardLocalName);
+                gameAPI.PlayConfettiParticle(other.transform.position); 
                 Invoke("SuccessSound", 0.25f);
                
             }

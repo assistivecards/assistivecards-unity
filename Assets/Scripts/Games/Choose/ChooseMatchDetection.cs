@@ -28,7 +28,7 @@ public class ChooseMatchDetection : MonoBehaviour, IPointerClickHandler
         {
             if (!isClicked)
             {
-                if (transform.GetChild(0).GetComponent<Image>().sprite.texture.name == board.correctCardSlug)
+                if (gameObject.CompareTag("CorrectCard"))
                 {
                     for (int i = 0; i < board.cardParents.Length; i++)
                     {

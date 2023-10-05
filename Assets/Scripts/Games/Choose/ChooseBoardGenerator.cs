@@ -24,6 +24,7 @@ public class ChooseBoardGenerator : MonoBehaviour
     [SerializeField] GameObject loadingPanel;
     ChooseUIController UIController;
     [SerializeField] GameObject tutorial;
+    public int correctCardImageIndex;
 
     private void Awake()
     {
@@ -64,6 +65,7 @@ public class ChooseBoardGenerator : MonoBehaviour
         PopulateRandomCards();
         TranslateChooseCardText();
         await PopulateRandomTextures();
+        AssignTags();
         PlaceSprites();
         DisableLoadingPanel();
         ScaleImagesUp();
@@ -151,13 +153,32 @@ public class ChooseBoardGenerator : MonoBehaviour
         }
     }
 
+    private void AssignTags()
+    {
+        correctCardImageIndex = Random.Range(0, cardTextures.Length);
+
+        for (int i = 0; i < cardTextures.Length; i++)
+        {
+            if (i != correctCardImageIndex)
+            {
+                cardTextures[i].transform.parent.tag = "WrongCard";
+            }
+            else
+            {
+                cardTextures[correctCardImageIndex].transform.parent.tag = "CorrectCard";
+            }
+        }
+    }
+
     public void PlaceSprites()
     {
+        cardTextures[correctCardImageIndex].sprite = randomSprites[0];
+
         for (int i = 0; i < cardTextures.Length; i++)
         {
             if (cardTextures[i].sprite == null)
             {
-                var randomIndex = Random.Range(0, randomSprites.Count);
+                var randomIndex = Random.Range(1, randomSprites.Count);
                 var sprite = randomSprites[randomIndex];
                 randomSprites.RemoveAt(randomIndex);
                 cardTextures[i].sprite = sprite;

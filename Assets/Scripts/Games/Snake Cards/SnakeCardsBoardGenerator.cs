@@ -133,7 +133,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
             CreatePositionsList();
             RandomizePositions();
             CheckRandom();
-
+            snake.SetActive(true);
             if(levelEndCard != null)
             {
                 LeanTween.scale(levelEndCard, Vector3.zero, 0.2f);
@@ -244,8 +244,15 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
         uıController.LevelChangeScreenActivate();
     }
 
+    private void ResetSnake()
+    {
+        snake.SetActive(false);
+        snake.GetComponentInChildren<TrailRenderer>().time = 1.5f;
+    }
+
     public void ClearForRefill()
     {
+        Debug.Log("ClearForRefill");
         cardNames.Clear();
         cardsList.Clear();
         cardLocalNames.Clear();
@@ -258,10 +265,12 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
         cardPositions.Clear();
         targetCards.Clear();
         eatenCardCount = 0;
+        ResetSnake();
     }
 
     public void ClearBoard()
     {
+        Debug.Log("ClearBoard");
         foreach (var card in cards)
         {
             Destroy(card);

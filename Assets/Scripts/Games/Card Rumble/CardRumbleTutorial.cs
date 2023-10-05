@@ -12,7 +12,7 @@ public class CardRumbleTutorial : MonoBehaviour
 
     private void OnEnable()
     {
-        correctCards = board.cardParents.Where(cardParent => cardParent.transform.GetChild(0).GetComponent<Image>().sprite.texture.name == board.correctCardTitle).ToList();
+        correctCards = board.cardParents.Where(card => card.tag == "CorrectCard").ToList();
         activeCards = correctCards.Where(card => card.GetComponent<CardRumbleMatchDetection>().isClicked == false).ToList();
     }
 

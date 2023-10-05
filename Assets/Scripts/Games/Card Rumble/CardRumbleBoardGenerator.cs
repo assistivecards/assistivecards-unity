@@ -108,9 +108,6 @@ public class CardRumbleBoardGenerator : MonoBehaviour
         }
 
         LeanTween.scale(tapText.gameObject, Vector3.one, 0.2f);
-
-        // numOfCorrectCards = cardParents.Where(cardParent => cardParent.transform.GetChild(0).GetComponent<Image>().sprite.texture.name == correctCardTitle).ToList().Count;
-
     }
 
     public void ScaleImagesDown()

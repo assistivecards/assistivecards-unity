@@ -237,15 +237,7 @@ public class ChooseBoardGenerator : MonoBehaviour
 
     private void SetTutorialPosition()
     {
-
-        for (int i = 0; i < cardParents.Length; i++)
-        {
-            if (cardParents[i].transform.GetChild(0).GetComponent<Image>().sprite.texture == randomImages[0])
-            {
-                tutorial.GetComponent<Tutorial>().tutorialPosition = cardParents[i].transform;
-            }
-        }
-
+        tutorial.GetComponent<Tutorial>().tutorialPosition = cardTextures[correctCardImageIndex].transform;
     }
 
     private async Task PrefetchNextLevelsTexturesAsync()

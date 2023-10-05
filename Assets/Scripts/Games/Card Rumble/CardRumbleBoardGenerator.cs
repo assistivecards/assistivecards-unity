@@ -72,6 +72,7 @@ public class CardRumbleBoardGenerator : MonoBehaviour
         await PopulateRandomTextures();
         PopulateTempSprites();
         PlaceSprites();
+        AssignTags();
         DisableLoadingPanel();
         ScaleImagesUp();
         backButton.SetActive(true);
@@ -108,7 +109,7 @@ public class CardRumbleBoardGenerator : MonoBehaviour
 
         LeanTween.scale(tapText.gameObject, Vector3.one, 0.2f);
 
-        numOfCorrectCards = cardParents.Where(cardParent => cardParent.transform.GetChild(0).GetComponent<Image>().sprite.texture.name == correctCardTitle).ToList().Count;
+        // numOfCorrectCards = cardParents.Where(cardParent => cardParent.transform.GetChild(0).GetComponent<Image>().sprite.texture.name == correctCardTitle).ToList().Count;
 
     }
 
@@ -213,6 +214,25 @@ public class CardRumbleBoardGenerator : MonoBehaviour
     public void TranslateTapCardText()
     {
         tapText.text = gameAPI.Translate(tapText.gameObject.name, gameAPI.ToTitleCase(randomCards[0].title).Replace("-", " "), selectedLangCode);
+    }
+
+    public void AssignTags()
+    {
+
+        for (int i = 0; i < cardImagesInScene.Length; i++)
+        {
+            if (cardImagesInScene[i].sprite.texture != randomImages[0])
+            {
+                cardImagesInScene[i].transform.parent.tag = "WrongCard";
+            }
+
+            else
+            {
+                cardImagesInScene[i].transform.parent.tag = "CorrectCard";
+            }
+        }
+
+        numOfCorrectCards = cardParents.Where(card => card.tag == "CorrectCard").ToList().Count;
     }
 
 }

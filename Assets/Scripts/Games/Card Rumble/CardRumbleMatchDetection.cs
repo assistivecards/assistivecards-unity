@@ -42,6 +42,7 @@ public class CardRumbleMatchDetection : MonoBehaviour, IPointerClickHandler
                 if (CheckIfLevelComplete())
                 {
                     Debug.Log("LEVEL COMPLETE!");
+                    gameAPI.PlayConfettiParticle(board.transform.position);
                     UIController.levelsCompleted++;
                     DisableMatchDetection();
                     UIController.backButton.GetComponent<Button>().interactable = false;

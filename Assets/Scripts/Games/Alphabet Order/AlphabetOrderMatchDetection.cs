@@ -48,6 +48,7 @@ public class AlphabetOrderMatchDetection : MonoBehaviour, IPointerUpHandler
         if (isMatched)
         {
             gameAPI.PlaySFX("Success");
+            gameAPI.PlayConfettiParticle(matchedSlotTransform.position);
             gameAPI.AddSessionExp();
             gameObject.GetComponent<AlphabetOrderDraggableCard>().enabled = false;
             transform.SetParent(matchedSlotTransform);

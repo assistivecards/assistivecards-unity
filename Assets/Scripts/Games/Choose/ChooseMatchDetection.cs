@@ -28,7 +28,7 @@ public class ChooseMatchDetection : MonoBehaviour, IPointerClickHandler
         {
             if (!isClicked)
             {
-                if (transform.GetChild(0).GetComponent<Image>().sprite.texture.name == board.correctCardSlug)
+                if (gameObject.CompareTag("CorrectCard"))
                 {
                     for (int i = 0; i < board.cardParents.Length; i++)
                     {
@@ -39,6 +39,7 @@ public class ChooseMatchDetection : MonoBehaviour, IPointerClickHandler
                     gameAPI.AddSessionExp();
                     UIController.backButton.GetComponent<Button>().interactable = false;
                     gameAPI.PlaySFX("Success");
+                    gameAPI.PlayConfettiParticle(transform.position);
                     board.Invoke("ReadCard", 0.25f);
                     LeanTween.scale(gameObject, Vector3.one * 1.15f, .25f);
                     board.Invoke("ScaleImagesDown", 1f);

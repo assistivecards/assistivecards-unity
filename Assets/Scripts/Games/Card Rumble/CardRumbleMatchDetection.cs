@@ -27,7 +27,7 @@ public class CardRumbleMatchDetection : MonoBehaviour, IPointerClickHandler
     {
         if (Input.touchCount == 1)
         {
-            if (transform.GetChild(0).GetComponent<Image>().sprite.texture.name == board.correctCardTitle && !isClicked)
+            if (gameObject.CompareTag("CorrectCard") && !isClicked)
             {
                 Debug.Log("CORRECT MATCH!");
                 gameAPI.AddSessionExp();
@@ -42,6 +42,7 @@ public class CardRumbleMatchDetection : MonoBehaviour, IPointerClickHandler
                 if (CheckIfLevelComplete())
                 {
                     Debug.Log("LEVEL COMPLETE!");
+                    gameAPI.PlayConfettiParticle(board.transform.position);
                     UIController.levelsCompleted++;
                     DisableMatchDetection();
                     UIController.backButton.GetComponent<Button>().interactable = false;

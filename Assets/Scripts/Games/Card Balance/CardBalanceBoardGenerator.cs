@@ -54,6 +54,7 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     public int matchedCardCount;
     public bool isPointerUp;
     private bool finished;
+    private int order;
 
     private void Awake()
     {
@@ -158,7 +159,7 @@ public class CardBalanceBoardGenerator : MonoBehaviour
             cloneCard.gameObject.tag = "Card";
             cards.Add(cloneCard);
             cloneCards.Add(cloneCard);
-            int index = cloneCards.IndexOf(cloneCard);
+            int index = randomOrder;
             if(index == 0)
             {
                 cloneCard.GetComponent<CardBalanceDetectFloor>().requiredFloor = "Floor3";
@@ -186,23 +187,24 @@ public class CardBalanceBoardGenerator : MonoBehaviour
                     if(!usedCardTextures.Contains(cardTextures[j]))
                     {
                         cloneCardTexture = cardTextures[j];
+                        order = j;
                     }
                 }
                 usedCardTextures.Add(cloneCardTexture);
                 cloneCardTexture.wrapMode = TextureWrapMode.Clamp;
                 cloneCardTexture.filterMode = FilterMode.Bilinear;
                 cloneCard.transform.SetParent(position.transform);
-                cloneCard.transform.name = cardLocalNames[randomValueList[randomOrder]];
+                cloneCard.transform.name = cardLocalNames[randomValueList[order]];
                 cloneCard.transform.GetChild(0).GetComponent<RawImage>().texture = cloneCardTexture;
                 cloneCard.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                 cloneCard.GetComponent<CardBalanceDraggable>().draggable = true;
                 cloneCard.GetComponent<CardBalanceDraggable>().ActivateGravityEffect();
-                cloneCard.GetComponent<CardBalanceDetectFloor>().cardLocalName = cardLocalNames[randomValueList[randomOrder]];
+                cloneCard.GetComponent<CardBalanceDetectFloor>().cardLocalName = cardLocalNames[randomValueList[order]];
                 cloneCard.GetComponent<BoxCollider2D>().enabled = true;
                 cloneCard.gameObject.tag = "Card";
                 cards.Add(cloneCard);
                 cloneCards.Add(cloneCard);
-                int index = cloneCards.IndexOf(cloneCard);
+                int index = order;
                 if(index == 0)
                 {
                     cloneCard.GetComponent<CardBalanceDetectFloor>().requiredFloor = "Floor3";

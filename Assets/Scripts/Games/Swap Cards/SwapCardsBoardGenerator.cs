@@ -70,6 +70,7 @@ public class SwapCardsBoardGenerator : MonoBehaviour
     public int cardNameLenght;
     public int matchedCardCount;
     public bool isPointerUp;
+    public int reloadCount;
     public bool finished;
 
     private void Awake()
@@ -319,7 +320,6 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         {
             LeanTween.scale(card, Vector3.zero, 0.5f);
         }
-        finished = true;
         Invoke("ClearBoard", 0.5f);
     }
 
@@ -352,9 +352,17 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         section3MatchCount = 0;
         cardTextures.Clear();
         cardPositions.Clear();
-        if(finished)
+        reloadCount++;
+        if(reloadCount >= 3)
         {
             uıController.LevelChangeScreenActivate();
+            reloadCount = 0;
+        }
+        else
+        {
+            uıController.GameUIDeactivate();
+            uıController.LoadingScreenActivation();
+            GeneratedBoardAsync();
         }
     }
 }

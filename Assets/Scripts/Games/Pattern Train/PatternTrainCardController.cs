@@ -62,6 +62,7 @@ public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerD
                 gameAPI.AddSessionExp();
                 gameAPI.PlaySFX("Success");
                 Invoke("SuccessTTS", 0.25f);
+                gameAPI.PlayConfettiParticle(this.transform.position); 
                 draggable = false;
             }
             else if(oneTime)

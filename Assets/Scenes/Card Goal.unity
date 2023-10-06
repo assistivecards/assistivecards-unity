@@ -1175,7 +1175,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 2
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 5c504e7d5bf9fd74a8c85cdc6115a969, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2377,7 +2377,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 2
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 5c504e7d5bf9fd74a8c85cdc6115a969, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -3183,7 +3183,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 2
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 5c504e7d5bf9fd74a8c85cdc6115a969, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -4591,7 +4591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 231286.5
+      value: 236323.61
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a
@@ -5311,11 +5311,6 @@ MonoBehaviour:
   goalPost: {fileID: 633364546869788184}
   cachedCards:
     cards: []
-  randomCards: []
-  prefetchedRandomCards: []
-  randomImages: []
-  prefetchedRandomImages: []
-  randomSprites: []
   selectedLangCode: 
   correctCardSlug: 
   throwText: {fileID: 1386752503}

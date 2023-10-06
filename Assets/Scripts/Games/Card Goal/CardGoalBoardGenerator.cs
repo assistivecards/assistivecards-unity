@@ -246,7 +246,8 @@ public class CardGoalBoardGenerator : MonoBehaviour
 
     private void SetTutorialPosition()
     {
-        tutorial.GetComponent<Tutorial>().tutorialPosition = cardTextures[correctCardImageIndex].transform.parent.parent;
+        tutorial.GetComponent<Tutorial>().tutorialPosition = cardSlots[correctCardImageIndex];
+        tutorial.transform.SetParent(cardSlots[correctCardImageIndex]);
     }
 
     public void AssignTags()

@@ -124,7 +124,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
 
     private void CreateQuestionMarkSlot()
     {
-        questionMarkSlotIndex = Random.Range(0, patternPositions.Count);
+        questionMarkSlotIndex = Random.Range(1, patternPositions.Count - 1);
     }
 
     public async void GeneratedBoardAsync()
@@ -135,7 +135,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
             await CacheCards();
             CreatePositionsList();
             CreateQuestionMarkSlot();
-            patternCardCount = Random.Range(2, 5);
+            patternCardCount = Random.Range(2, 4);
             for(int j = 0; j < patternPositions.Count; j++)
             {
                 if(j != questionMarkSlotIndex)
@@ -145,14 +145,15 @@ public class PatternTrainBoardGenerator : MonoBehaviour
                 }
                 else if(j == questionMarkSlotIndex)
                 {
-                    GameObject card = Instantiate(cardPrefab, patternPositions[j].transform.position, Quaternion.identity);
-                    card.transform.SetParent( patternPositions[j].transform);
-                    card.transform.GetChild(0).gameObject.SetActive(false);
-                    card.transform.GetChild(1).gameObject.SetActive(true);
+                    questionMarkSlot = Instantiate(cardPrefab, patternPositions[j].transform.position, Quaternion.identity);
+                    questionMarkSlot.transform.SetParent( patternPositions[j].transform);
+                    questionMarkSlot.transform.GetChild(0).gameObject.SetActive(false);
+                    questionMarkSlot.transform.GetChild(1).gameObject.SetActive(true);
+                    trueCardName = cardLocalNames[randomValueList[j % patternCardCount]].ToLower();
+                    questionMarkSlot.GetComponent<BoxCollider2D>().enabled = true;
                 }
 
             }
-            GetTrueCard();
             for(int j = 0; j < draggablePositions.Count; j++)
             {
                 CheckRandom();
@@ -191,7 +192,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
         cardTexture.wrapMode = TextureWrapMode.Clamp;
         cardTexture.filterMode = FilterMode.Bilinear;
 
-        card.transform.name = cardLocalNames[randomValueList[0]].ToLower();
+        card.transform.name = cardLocalNames[randomValueList[_cardIndex]].ToLower();
         card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
         card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
         LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-15, 15)), 0f);
@@ -202,11 +203,6 @@ public class PatternTrainBoardGenerator : MonoBehaviour
     public void GameUIActivate()
     {
         uıController.GameUIActivate();
-    }
-
-    private void GetTrueCard()
-    {
-        trueCardName = cardLocalNames[randomValueList[1]].ToLower();
     }
 
     public void LevelEnd()
@@ -228,7 +224,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
 
         letterList.Clear();
         letterCardsNames.Clear();
-
+        Destroy(questionMarkSlot);
         randomValueList.Clear();
         patternPositions.Clear();
         draggablePositions.Clear();

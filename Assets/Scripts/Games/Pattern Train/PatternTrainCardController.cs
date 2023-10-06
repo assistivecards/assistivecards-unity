@@ -48,14 +48,14 @@ public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerD
     public void OnPointerUp(PointerEventData eventData) 
     {
         isPointerUp = true;
-        //Invoke("MoveToStartPosition", 1f);
+        Invoke("MoveToStartPosition", 1f);
     }
 
     private void OnCollisionStay2D(Collision2D other) 
     {
         if(isPointerUp && !match)
         {
-            if(other.collider.tag == "Card" && cardName == trueCardName) 
+            if(other.collider.tag == "Card" && cardLocalName.ToLower() == trueCardName) 
             {
                 match = true;
                 LeanTween.move(this.gameObject, other.transform.position, 0.5f).setOnComplete(RotateCard);

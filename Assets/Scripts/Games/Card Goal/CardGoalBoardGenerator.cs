@@ -68,6 +68,7 @@ public class CardGoalBoardGenerator : MonoBehaviour
         TranslateThrowCardText();
         await PopulateRandomTextures();
         PlaceSprites();
+        AssignTags();
         DisableLoadingPanel();
         ScaleImagesUp();
         Invoke("SetTutorialPosition", .3f);
@@ -216,6 +217,24 @@ public class CardGoalBoardGenerator : MonoBehaviour
             {
                 tutorial.transform.SetParent(cardParents[i].transform.parent);
                 tutorial.GetComponent<Tutorial>().tutorialPosition = cardParents[i].transform.parent;
+            }
+        }
+
+    }
+
+    public void AssignTags()
+    {
+
+        for (int i = 0; i < cardTextures.Length; i++)
+        {
+            if (cardTextures[i].sprite.texture != randomImages[0])
+            {
+                cardTextures[i].transform.parent.tag = "WrongCard";
+            }
+
+            else
+            {
+                cardTextures[i].transform.parent.tag = "CorrectCard";
             }
         }
 

@@ -25,7 +25,7 @@ public class CardGoalMatchDetection : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite.texture.name == board.correctCardSlug)
+        if (other.CompareTag("CorrectCard"))
         {
             Debug.Log("Correct Match!");
             gameAPI.AddSessionExp();

@@ -9,7 +9,7 @@ public class CardGoalTutorial : MonoBehaviour
 
     private void OnEnable()
     {
-        startPos = Vector3.zero;
+        startPos = transform.localPosition;
         endPos = new Vector3(transform.position.x - 200, 0, 0);
 
     }

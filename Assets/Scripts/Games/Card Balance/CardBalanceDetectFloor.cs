@@ -30,6 +30,7 @@ public class CardBalanceDetectFloor : MonoBehaviour, IPointerDownHandler, IPoint
             boardGenerator.DetectMatches();
             if(!matched && touch)
             {
+                gameAPI.PlayConfettiParticle(this.transform.position); 
                 gameAPI.PlaySFX("Success");
                 Invoke("SpeakCard", 0.2f);
             }

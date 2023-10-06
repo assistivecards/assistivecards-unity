@@ -136,6 +136,7 @@ public class SnakeCardsUIController : MonoBehaviour
         if(canGenerate)
         {
             loadingScreen.SetActive(true);
+            gameUI.SetActive(false);
             helloText.SetActive(false);
             levelProgressContainer.SetActive(false);
             settingButton.SetActive(false);

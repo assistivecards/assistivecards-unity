@@ -26,6 +26,8 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     public List<int> randomValueList = new List<int>();
     private int tempRandomValue;
     private int randomValue;
+    public List<Texture2D> cardTextures = new List<Texture2D>();
+    public List<Texture2D> usedCardTextures = new List<Texture2D>();
 
     [Header ("Prefabs")]
     [SerializeField] private GameObject cardPrefab;
@@ -36,6 +38,7 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     public GameObject referencePosition2;
     public GameObject referencePosition3;
     private List<GameObject> referencePositions = new List<GameObject>();
+    [SerializeField] private GameObject floors; 
 
     public GameObject cardPosition1;
     public GameObject cardPosition2;
@@ -44,12 +47,14 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     public List<GameObject> cloneCards = new List<GameObject>();
 
     private string cardName;
+    public int usedRandom;
     public int randomOrder;
     public List<int> usedRandomOrderCards = new List<int>();
     public int cardNameLenght;
     public int matchedCardCount;
     public bool isPointerUp;
     private bool finished;
+    private int order;
 
     private void Awake()
     {
@@ -114,6 +119,7 @@ public class CardBalanceBoardGenerator : MonoBehaviour
                 var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[i]], 512);
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
+                cardTextures.Add(cardTexture);
 
                 card.transform.SetParent(referencePositions[i].transform);
                 card.transform.name = cardLocalNames[randomValueList[i]];
@@ -122,37 +128,38 @@ public class CardBalanceBoardGenerator : MonoBehaviour
                 card.GetComponent<CardBalanceDraggable>().draggable = false;
                 cards.Add(card);
 
-                CreateRandomOrderedCards(i);
                 card.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
                 card.transform.localPosition = Vector3.zero;
             }
+            CreateRandomOrderedCards();
+            floors.SetActive(true);
+            GameUIActivate();
         }
-        GameUIActivate();
     }
 
-    private async void CreateRandomOrderedCards(int order)
+    private async void CreateRandomOrderedCards()
     {
-        randomOrder = Random.Range(0, 3);
-        if(!usedRandomOrderCards.Contains(randomOrder) || cardPositions[randomOrder].transform.childCount <= 0)
+        if(!usedRandomOrderCards.Contains(randomOrder) || cardPositions[randomOrder].transform.childCount == 0)
         {
+            CreateRandomOrderNum();
             GameObject cloneCard = Instantiate(cardPrefab, cardPositions[randomOrder].transform.position, Quaternion.identity);
 
-            var cloneCardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[order]], 512);
+            var cloneCardTexture = cardTextures[randomOrder];
             cloneCardTexture.wrapMode = TextureWrapMode.Clamp;
             cloneCardTexture.filterMode = FilterMode.Bilinear;
-
+            usedCardTextures.Add(cardTextures[randomOrder]);
             cloneCard.transform.SetParent(cardPositions[randomOrder].transform);
-            cloneCard.transform.name = cardLocalNames[randomValueList[order]];
+            cloneCard.transform.name = cardLocalNames[randomValueList[randomOrder]];
             cloneCard.transform.GetChild(0).GetComponent<RawImage>().texture = cloneCardTexture;
             cloneCard.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
             cloneCard.GetComponent<CardBalanceDraggable>().draggable = true;
             cloneCard.GetComponent<CardBalanceDraggable>().ActivateGravityEffect();
-            cloneCard.GetComponent<CardBalanceDetectFloor>().cardLocalName = cardLocalNames[randomValueList[order]];
+            cloneCard.GetComponent<CardBalanceDetectFloor>().cardLocalName = cardLocalNames[randomValueList[randomOrder]];
             cloneCard.GetComponent<BoxCollider2D>().enabled = true;
             cloneCard.gameObject.tag = "Card";
             cards.Add(cloneCard);
             cloneCards.Add(cloneCard);
-            int index = cloneCards.IndexOf(cloneCard);
+            int index = randomOrder;
             if(index == 0)
             {
                 cloneCard.GetComponent<CardBalanceDetectFloor>().requiredFloor = "Floor3";
@@ -165,14 +172,63 @@ public class CardBalanceBoardGenerator : MonoBehaviour
             {
                 cloneCard.GetComponent<CardBalanceDetectFloor>().requiredFloor = "Floor1";
             }
-            usedRandomOrderCards.Add(randomOrder);
+            usedRandom = randomOrder;
             cloneCard.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
-            cloneCard.transform.localPosition = Vector3.zero;
+            LeanTween.moveLocal(cloneCard, Vector3.zero, 0.75f);
         }
-        else if(usedRandomOrderCards.Contains(randomOrder) || cardPositions[randomOrder].transform.childCount > 0)
+        foreach(var position in cardPositions)
         {
-            CreateRandomOrderedCards(order);
+            if(position.transform.childCount <= 0)
+            {
+                GameObject cloneCard = Instantiate(cardPrefab, position.transform.position, Quaternion.identity);
+                var cloneCardTexture = cardTextures[0];
+                for(int j = 0; j < cardTextures.Count; j++)
+                {
+                    if(!usedCardTextures.Contains(cardTextures[j]))
+                    {
+                        cloneCardTexture = cardTextures[j];
+                        order = j;
+                    }
+                }
+                usedCardTextures.Add(cloneCardTexture);
+                cloneCardTexture.wrapMode = TextureWrapMode.Clamp;
+                cloneCardTexture.filterMode = FilterMode.Bilinear;
+                cloneCard.transform.SetParent(position.transform);
+                cloneCard.transform.name = cardLocalNames[randomValueList[order]];
+                cloneCard.transform.GetChild(0).GetComponent<RawImage>().texture = cloneCardTexture;
+                cloneCard.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                cloneCard.GetComponent<CardBalanceDraggable>().draggable = true;
+                cloneCard.GetComponent<CardBalanceDraggable>().ActivateGravityEffect();
+                cloneCard.GetComponent<CardBalanceDetectFloor>().cardLocalName = cardLocalNames[randomValueList[order]];
+                cloneCard.GetComponent<BoxCollider2D>().enabled = true;
+                cloneCard.gameObject.tag = "Card";
+                cards.Add(cloneCard);
+                cloneCards.Add(cloneCard);
+                int index = order;
+                if(index == 0)
+                {
+                    cloneCard.GetComponent<CardBalanceDetectFloor>().requiredFloor = "Floor3";
+                }
+                else if(index == 1)
+                {
+                    cloneCard.GetComponent<CardBalanceDetectFloor>().requiredFloor = "Floor2";
+                }
+                else if(index == 2)
+                {
+                    cloneCard.GetComponent<CardBalanceDetectFloor>().requiredFloor = "Floor1";
+                }
+                usedRandomOrderCards.Add(randomOrder);
+                usedRandom = randomOrder;
+                cloneCard.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
+                LeanTween.moveLocal(cloneCard, Vector3.zero, 0.75f);
+            }
         }
+    }
+
+    private void CreateRandomOrderNum()
+    {
+        randomOrder = Random.Range(0, 3);
+        usedRandomOrderCards.Add(randomOrder);
     }
 
     public void DetectMatches()
@@ -233,6 +289,9 @@ public class CardBalanceBoardGenerator : MonoBehaviour
         cardNames.Clear();
         randomValueList.Clear();
         usedRandomOrderCards.Clear();
+        floors.SetActive(false);
+        cardTextures.Clear();
+        usedCardTextures.Clear();
         if(!finished)
         {
             uıController.LevelChangeScreenActivate();
@@ -255,5 +314,8 @@ public class CardBalanceBoardGenerator : MonoBehaviour
         cardNames.Clear();
         randomValueList.Clear();
         usedRandomOrderCards.Clear();
+        cardTextures.Clear();
+        usedCardTextures.Clear();
+        floors.SetActive(false);
     }
 }

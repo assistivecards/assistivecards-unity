@@ -3354,7 +3354,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -6.8, y: -60.3}
   m_SizeDelta: {x: 188.21, y: 49.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!96 &1367378530
@@ -3370,7 +3370,7 @@ TrailRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
-  m_MotionVectors: 0
+  m_MotionVectors: 2
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
@@ -3396,8 +3396,8 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 895946113
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 10
   m_Time: 0
   m_PreviewTimeScale: 1
@@ -5408,7 +5408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 240260.61
+      value: 265017.84
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a
@@ -5660,6 +5660,7 @@ GameObject:
   - component: {fileID: 8383894889009589326}
   - component: {fileID: 8383894889009589327}
   - component: {fileID: 8383894889009589328}
+  - component: {fileID: 8383894889009589329}
   m_Layer: 5
   m_Name: GamePanel
   m_TagString: Untagged
@@ -6171,6 +6172,24 @@ MonoBehaviour:
   dragging: 0
   trailRenderer: {fileID: 1367378530}
   ropeGameobject: {fileID: 1367378528}
+--- !u!114 &8383894889009589329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3720148778835819161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abfa6fdebacce43fdbfa56df243f145b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  needle: {fileID: 1769396780}
+  firstTouchPosition: {x: 0, y: 0}
+  secondTouchPosition: {x: 0, y: 0}
+  currentSwipe: {x: 0, y: 0}
+  direction: {x: 0, y: 0}
+  directionStatus: 
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

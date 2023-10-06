@@ -30,6 +30,7 @@ public class ThrowCardsMatchDetection : MonoBehaviour
             UIController.correctMatches++;
             UIController.backButton.GetComponent<Button>().interactable = false;
             gameAPI.PlaySFX("Success");
+            gameAPI.PlayConfettiParticle(transform.position);
             board.Invoke("ReadCard", 0.25f);
             rb.sharedMaterial.bounciness = 0;
             rb.velocity = Vector2.zero;

@@ -63,7 +63,7 @@ public class ThrowCardsBoardGenerator : MonoBehaviour
         }
 
         PopulateRandomCards();
-        TranslateThrowCardText();
+        // TranslateThrowCardText();
         await PopulateRandomTextures();
         PlaceSprites();
         DisableLoadingPanel();
@@ -101,7 +101,7 @@ public class ThrowCardsBoardGenerator : MonoBehaviour
             fixedCards[i].GetComponent<BoxCollider2D>().isTrigger = false;
         }
 
-        LeanTween.scale(throwText.gameObject, Vector3.one, 0.2f);
+        // LeanTween.scale(throwText.gameObject, Vector3.one, 0.2f);
         LeanTween.alpha(cardToThrow, 1, .001f);
         LeanTween.scale(cardToThrow.gameObject, Vector3.one * 12.2f, 0.2f);
         cardToThrow.GetComponent<ThrowCardsThrowManager>().enabled = true;
@@ -115,7 +115,7 @@ public class ThrowCardsBoardGenerator : MonoBehaviour
             LeanTween.scale(fixedCards[i], Vector3.zero, 0.2f);
         }
 
-        LeanTween.scale(throwText.gameObject, Vector3.zero, 0.2f);
+        // LeanTween.scale(throwText.gameObject, Vector3.zero, 0.2f);
         LeanTween.scale(cardToThrow.gameObject, Vector3.zero, 0.2f);
     }
 

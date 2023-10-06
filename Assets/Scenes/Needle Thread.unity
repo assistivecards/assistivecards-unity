@@ -3269,6 +3269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7551e31af85073640848a944c94a6ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleSpawnPoints: []
   availablePacksText: {fileID: 770021530}
   subsRestoreButton: {fileID: 0}
   promoUniAppRestoreButton: {fileID: 0}
@@ -3279,6 +3280,7 @@ MonoBehaviour:
   promoScreenMonthlyButton: {fileID: 0}
   promoScreenYearlyButton: {fileID: 0}
   promoScreenPuchasePremiumButton: {fileID: 0}
+  premiumPromoSettingsButton: {fileID: 0}
   availablePacksArray: []
 --- !u!114 &1338730598
 MonoBehaviour:
@@ -4343,7 +4345,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b74e8d0ac7b7f4ab0885c0eeec82f301, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 521afa1b1ede84f1d975fd41ac66fcaa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5406,7 +5408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 234494.36
+      value: 240260.61
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a

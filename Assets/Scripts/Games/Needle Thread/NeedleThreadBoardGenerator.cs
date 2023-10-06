@@ -207,7 +207,6 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
         gameStarted = true;
     }
 
-
     public void CheckTargetCards()
     {
         if(rope.GetComponent<TrailRenderer>().sortingOrder == 5)

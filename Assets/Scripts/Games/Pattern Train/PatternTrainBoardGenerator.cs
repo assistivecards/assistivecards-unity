@@ -52,8 +52,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject draggablePosition2;
     [SerializeField] private GameObject draggablePosition3;
     public List<GameObject> draggablePositions = new List<GameObject>();
-
-    [SerializeField] private GameObject questionMarkSlot;
+    private GameObject questionMarkSlot;
     public string trueCardName;
     public int randomPosition;
     public int round;
@@ -127,7 +126,8 @@ public class PatternTrainBoardGenerator : MonoBehaviour
             uıController.LoadingScreenActivation();
             await CacheCards();
             CreatePositionsList();
-            for(int j = 0; j < patternPositions.Count; j++)
+            int patternCardCount = Random.Range(2, 5);
+            for(int j = 0; j < patternCardCount; j++)
             {
                 CheckRandom();
                 if(round == 0){
@@ -180,6 +180,40 @@ public class PatternTrainBoardGenerator : MonoBehaviour
                     cards.Add(card);
                     round = 0;
                 }
+                else if(round == 3)
+                {
+                    CheckRandom();
+                    GameObject card = Instantiate(cardPrefab, patternPositions[j].transform.position, Quaternion.identity);
+                    card.transform.SetParent( patternPositions[j].transform);
+
+                    var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[3]], 512);
+                    cardTexture.wrapMode = TextureWrapMode.Clamp;
+                    cardTexture.filterMode = FilterMode.Bilinear;
+
+                    card.transform.name = cardLocalNames[randomValueList[3]].ToLower();;
+                    card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+                    card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                    LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-15, 15)), 0f);
+                    cards.Add(card);
+                    round = 0;
+                }
+                else if(round == 4)
+                {
+                    CheckRandom();
+                    GameObject card = Instantiate(cardPrefab, patternPositions[j].transform.position, Quaternion.identity);
+                    card.transform.SetParent( patternPositions[j].transform);
+
+                    var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[4]], 512);
+                    cardTexture.wrapMode = TextureWrapMode.Clamp;
+                    cardTexture.filterMode = FilterMode.Bilinear;
+
+                    card.transform.name = cardLocalNames[randomValueList[4]].ToLower();;
+                    card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+                    card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                    LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-15, 15)), 0f);
+                    cards.Add(card);
+                    round = 0;
+                }
             }
             GetTrueCard();
             for(int j = 0; j < draggablePositions.Count; j++)
@@ -207,7 +241,6 @@ public class PatternTrainBoardGenerator : MonoBehaviour
                 }
                 cards.Add(card);
             }
-            questionMarkSlot.SetActive(true);
             Invoke("GameUIActivate", 0.1f);
         }
     }
@@ -230,7 +263,6 @@ public class PatternTrainBoardGenerator : MonoBehaviour
 
     public void ClearBoard()
     {
-        questionMarkSlot.SetActive(false);
         cardLocalNames.Clear();
         cardNames.Clear();
         cardsList.Clear();

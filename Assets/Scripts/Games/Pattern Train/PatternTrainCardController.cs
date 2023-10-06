@@ -48,7 +48,7 @@ public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerD
     public void OnPointerUp(PointerEventData eventData) 
     {
         isPointerUp = true;
-        Invoke("MoveToStartPosition", 1f);
+        //Invoke("MoveToStartPosition", 1f);
     }
 
     private void OnCollisionStay2D(Collision2D other) 

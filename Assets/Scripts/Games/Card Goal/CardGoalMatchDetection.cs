@@ -25,7 +25,7 @@ public class CardGoalMatchDetection : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite.texture.name == board.correctCardSlug)
+        if (other.CompareTag("CorrectCard"))
         {
             Debug.Log("Correct Match!");
             gameAPI.AddSessionExp();
@@ -33,6 +33,7 @@ public class CardGoalMatchDetection : MonoBehaviour
             UIController.backButton.GetComponent<Button>().interactable = false;
             settingsButton.GetComponent<Button>().interactable = false;
             gameAPI.PlaySFX("Success");
+            gameAPI.PlayConfettiParticle(transform.position);
             board.Invoke("ReadCard", 0.25f);
 
             // other.GetComponent<Rigidbody2D>().velocity = Vector2.zero;

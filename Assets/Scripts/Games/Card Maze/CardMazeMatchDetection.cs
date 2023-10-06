@@ -36,6 +36,7 @@ public class CardMazeMatchDetection : MonoBehaviour
             card.GetComponent<CardMazeDraggableCard>().enabled = false;
             card.GetComponent<CircleCollider2D>().enabled = false;
             gameAPI.PlaySFX("Success");
+            gameAPI.PlayConfettiParticle(other.transform.position);
             board.Invoke("ReadCard", 0.25f);
             Invoke("PlayCorrectMatchAnimation", 0.25f);
             board.Invoke("ScaleImagesDown", 1f);

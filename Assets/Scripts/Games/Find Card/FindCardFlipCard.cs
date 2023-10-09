@@ -7,6 +7,7 @@ public class FindCardFlipCard : MonoBehaviour, IPointerClickHandler
 {
     private FindCardMatchDetection matchDetector;
     private GameAPI gameAPI;
+    public bool isFlipped = false;
 
     private void Awake()
     {
@@ -28,6 +29,7 @@ public class FindCardFlipCard : MonoBehaviour, IPointerClickHandler
                 // .setOnComplete(() => matchDetector.CheckCard(transform))
                 Invoke("TriggerCheckCard", .75f);
                 gameAPI.PlaySFX("FlipCard");
+                isFlipped = true;
             }
         }
 

@@ -32,8 +32,6 @@ public class FindCardBoardGenerator : MonoBehaviour
     public int cardsNeeded;
     [SerializeField] GameObject targetCard;
     [SerializeField] GameObject cardsParent;
-    [SerializeField] GameObject tutorial;
-    private Transform tutorialPosition;
     [SerializeField] TMP_Text targetCardName;
 
     private void Awake()
@@ -111,6 +109,7 @@ public class FindCardBoardGenerator : MonoBehaviour
             LeanTween.alpha(cardParents[i].GetComponent<RectTransform>(), 1, .001f);
             LeanTween.alpha(cardParents[i].transform.GetChild(0).GetChild(0).GetComponent<RectTransform>(), .6f, .001f);
             cardParents[i].GetComponent<FindCardFlipCard>().enabled = true;
+            cardParents[i].GetComponent<FindCardFlipCard>().isFlipped = false;
             cardParents[i].transform.rotation = Quaternion.Euler(0, -180, 0);
             LeanTween.scale(cardParents[i], Vector3.one, 0.2f);
         }
@@ -286,11 +285,8 @@ public class FindCardBoardGenerator : MonoBehaviour
             if (cards[i].tag == "CorrectCard")
             {
                 cardsNeeded++;
-                tutorialPosition = cards[i].transform;
             }
         }
-
-        tutorial.GetComponent<Tutorial>().tutorialPosition = tutorialPosition;
 
         // cardsNeeded = GameObject.FindGameObjectsWithTag("CorrectCard").Length - 1;
     }

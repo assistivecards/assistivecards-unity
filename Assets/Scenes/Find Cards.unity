@@ -1842,7 +1842,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3236149540598557724, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 927069864}
   m_SourcePrefab: {fileID: 100100000, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
 --- !u!1 &636717924
 GameObject:
@@ -2969,6 +2972,22 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3236149540598557725, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
   m_PrefabInstance: {fileID: 625883654}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &927069864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927069859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4a41045772a9e345a572fb3aed5925b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 8383894889009589326}
+  correctCards: []
+  point1: {fileID: 0}
+  point2: {fileID: 0}
 --- !u!1 &942402669
 GameObject:
   m_ObjectHideFlags: 0
@@ -7012,7 +7031,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 230821.58
+      value: 243872.8
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -7766,7 +7785,6 @@ MonoBehaviour:
   cardsNeeded: 0
   targetCard: {fileID: 661218251}
   cardsParent: {fileID: 779858960}
-  tutorial: {fileID: 927069859}
   targetCardName: {fileID: 866984092}
 --- !u!114 &8383894889009589327
 MonoBehaviour:

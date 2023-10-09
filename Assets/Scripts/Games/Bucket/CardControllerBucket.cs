@@ -59,7 +59,6 @@ public class CardControllerBucket : MonoBehaviour
                     
                     if(GetComponentInParent<DropControllerBucket>().matchCount >= 5)
                     {
-                        GetComponentInParent<DropControllerBucket>().CloseCollectText();
                         GetComponentInParent<DropControllerBucket>().isLevelEnd = true;
                         GetComponentInParent<DropControllerBucket>().ResetLevel();
                     }

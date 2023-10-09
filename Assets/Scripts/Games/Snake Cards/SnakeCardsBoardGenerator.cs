@@ -52,6 +52,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject levelEndCard;
     [SerializeField] private GameObject selectedCardImage;
     [SerializeField] private TMP_Text score;
+    [SerializeField] private GameObject collect;
     public List<GameObject> cardPositions = new List<GameObject>();
     public List<GameObject> targetCards = new List<GameObject>();
 
@@ -202,6 +203,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
             selectedCardImage.GetComponent<RawImage>().texture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[targetCardRandomValue]], 512);
             targetCard = cardNames[randomValueList[targetCardRandomValue]];
             targetCardLocal = cardLocalNames[randomValueList[targetCardRandomValue]];
+            collect.SetActive(true);
             reloadCount++;
             Invoke("GameUIActivate", 0.1f);
         }
@@ -267,6 +269,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
         cardPositions.Clear();
         targetCards.Clear();
         eatenCardCount = 0;
+        collect.SetActive(false);
         score.text = eatenCardCount.ToString() + " / 5";
         ResetSnake();
     }
@@ -287,6 +290,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
         eatenCardCount = 0;
         targetCards.Clear();
         reloadCount = 0;
+        collect.SetActive(false);
         score.text = eatenCardCount.ToString() + " / 5";
     }
 }

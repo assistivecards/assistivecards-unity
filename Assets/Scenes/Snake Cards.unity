@@ -4039,7 +4039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 311136.53
+      value: 319766.4
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a
@@ -4754,6 +4754,7 @@ MonoBehaviour:
   levelEndCard: {fileID: 0}
   selectedCardImage: {fileID: 1787325879}
   score: {fileID: 3972324}
+  collect: {fileID: 673861999}
   cardPositions: []
   targetCards: []
   targetCardLocal: 

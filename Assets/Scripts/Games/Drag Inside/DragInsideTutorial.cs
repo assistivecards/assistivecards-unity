@@ -8,7 +8,7 @@ public class DragInsideTutorial : MonoBehaviour
 {
     [SerializeField] DragInsideBoardGenerator board;
     [SerializeField] List<GameObject> correctCards = new List<GameObject>();
-    [SerializeField] List<GameObject> activeCards = new List<GameObject>();
+    List<GameObject> activeCards = new List<GameObject>();
     public Transform point1;
     public Transform point2;
 

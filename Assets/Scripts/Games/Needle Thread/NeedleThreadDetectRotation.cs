@@ -22,8 +22,12 @@ public class NeedleThreadDetectRotation : MonoBehaviour
                     firstTouchPosition = touch.position;
                     break;
 
-                case TouchPhase.Ended:
+                case TouchPhase.Moved:
                     secondTouchPosition = touch.position;
+                    break;
+
+                case TouchPhase.Ended:
+                    direction = Vector3.zero;
                     break;
             }
         }
@@ -33,22 +37,21 @@ public class NeedleThreadDetectRotation : MonoBehaviour
     private void DetectDirection()
     {
         direction = secondTouchPosition - firstTouchPosition;
-        if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y) && direction.x > 0 && directionStatus != "left") 
-        {
-            LeanTween.rotate(needle, new Vector3(0, 0, 180), 0.1f);
-            Debug.Log("right");
-        }
-        else if(Mathf.Abs(direction.x) < Mathf.Abs(direction.y) && direction.y > 0 && directionStatus != "down") 
+        if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y) && direction.x > 0 && directionStatus != "down") 
         {
             LeanTween.rotate(needle, new Vector3(0, 0, -90), 0.1f);
         }
-        else if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y) && direction.x < 0 && directionStatus != "right") 
+        else if(Mathf.Abs(direction.x) < Mathf.Abs(direction.y) && direction.y > 0 && directionStatus != "left") 
         {
             LeanTween.rotate(needle, new Vector3(0, 0, 0), 0.1f);
         }
-        else if(Mathf.Abs(direction.x) < Mathf.Abs(direction.y) && direction.y < 0 && directionStatus != "up") 
+        else if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y) && direction.x < 0 && directionStatus != "up") 
         {
             LeanTween.rotate(needle, new Vector3(0, 0, 90), 0.1f);
+        }
+        else if(Mathf.Abs(direction.x) < Mathf.Abs(direction.y) && direction.y < 0 && directionStatus != "right") 
+        {
+            LeanTween.rotate(needle, new Vector3(0, 0, 180), 0.1f);
         }
     }
 }

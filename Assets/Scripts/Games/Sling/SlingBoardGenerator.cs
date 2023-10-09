@@ -13,6 +13,7 @@ public class SlingBoardGenerator : MonoBehaviour
     [SerializeField] GameObject cardParent;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] Texture2D randomImage;
+    [SerializeField] Texture2D prefetchedRandomImage;
     [SerializeField] Sprite randomSprite;
     public string selectedLangCode;
     public string packSlug;
@@ -81,6 +82,7 @@ public class SlingBoardGenerator : MonoBehaviour
         UIController.TutorialSetActive();
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);
+        await PrefetchNextLevelsTexturesAsync();
     }
 
     public void ClearBoard()
@@ -177,17 +179,28 @@ public class SlingBoardGenerator : MonoBehaviour
 
     public async Task PopulateRandomTextures()
     {
-
-        var texture = await gameAPI.GetCardImage(packSlug, uniqueCards[progressChecker.correctMatches].slug);
-        texture.wrapMode = TextureWrapMode.Clamp;
-        texture.filterMode = FilterMode.Bilinear;
-        randomImage = texture;
-        randomSprite = Sprite.Create(randomImage, new Rect(0.0f, 0.0f, randomImage.width, randomImage.height), new Vector2(0.5f, 0.5f), 100.0f);
+        if (progressChecker.correctMatches == 0)
+        {
+            var texture = await gameAPI.GetCardImage(packSlug, uniqueCards[progressChecker.correctMatches].slug);
+            texture.wrapMode = TextureWrapMode.Clamp;
+            texture.filterMode = FilterMode.Bilinear;
+            texture.name = uniqueCards[progressChecker.correctMatches].title;
+            randomImage = texture;
+            randomSprite = Sprite.Create(randomImage, new Rect(0.0f, 0.0f, randomImage.width, randomImage.height), new Vector2(0.5f, 0.5f), 100.0f);
+            randomSprite.name = randomImage.name;
+        }
 
     }
 
     public void PlaceSprites()
     {
+        if (progressChecker.correctMatches != 0)
+        {
+
+            randomSprite = Sprite.Create(prefetchedRandomImage, new Rect(0.0f, 0.0f, prefetchedRandomImage.width, prefetchedRandomImage.height), new Vector2(0.5f, 0.5f), 100.0f);
+            randomSprite.name = prefetchedRandomImage.name;
+
+        }
 
         if (cardTexture.sprite == null)
         {
@@ -203,6 +216,18 @@ public class SlingBoardGenerator : MonoBehaviour
         // {
         loadingPanel.SetActive(false);
         // }
+    }
+
+    private async Task PrefetchNextLevelsTexturesAsync()
+    {
+        prefetchedRandomImage = null;
+
+        var texture = await gameAPI.GetCardImage(packSlug, uniqueCards[progressChecker.correctMatches + 1].slug);
+        texture.wrapMode = TextureWrapMode.Clamp;
+        texture.filterMode = FilterMode.Bilinear;
+        texture.name = uniqueCards[progressChecker.correctMatches + 1].title;
+        prefetchedRandomImage = texture;
+
     }
 
 }

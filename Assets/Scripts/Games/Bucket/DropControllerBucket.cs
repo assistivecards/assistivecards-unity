@@ -124,9 +124,7 @@ public class DropControllerBucket : MonoBehaviour
         bucketFront.SetActive(true);
         Invoke("SelectMoveCard", 1.25f);
         collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(collectableCardLocale).Replace("-", " "), selectedLangCode);
-        LeanTween.scale(collectText.gameObject, Vector3.one, 0.2f);
         SetCount();
-        LeanTween.scale(collectedCountText.gameObject, Vector3.one, 0.2f);
     }
 
     public void SelectMoveCard()
@@ -145,8 +143,6 @@ public class DropControllerBucket : MonoBehaviour
         {
             isBoardCreated = true;
             droppedCardCount ++;
-            LeanTween.scale(collectText.gameObject, Vector3.zero, 0.15f).setOnComplete(ResetText);
-            LeanTween.scale(collectedCountText.gameObject, Vector3.zero, 0.15f).setOnComplete(ResetText);
             Invoke("ResetLevel", 0.25f);
             gameAPI.AddExp(gameAPI.sessionExp);
             gameAPI.PlaySFX("Finished");
@@ -169,7 +165,6 @@ public class DropControllerBucket : MonoBehaviour
     public void ResetLevel()
     {
         preRandom = random;
-        CloseCollectText();
         cards.Clear();
         bucketBack.SetActive(false);
         bucketFront.SetActive(false);
@@ -203,7 +198,6 @@ public class DropControllerBucket : MonoBehaviour
     public void ResetLevelBackButtonClick()
     {
         preRandom = random;
-        CloseCollectText();
         cards.Clear();
         bucketBack.SetActive(false);
         bucketFront.SetActive(false);
@@ -231,12 +225,6 @@ public class DropControllerBucket : MonoBehaviour
         {
             Destroy(end);
         }
-    }
-
-    public void CloseCollectText()
-    {
-        LeanTween.scale(collectedCountText.gameObject, Vector3.zero, 0);
-        LeanTween.scale(collectText.gameObject, Vector3.zero, 0).setOnComplete(ResetText);
     }
 
     private void ResetText()
@@ -271,14 +259,5 @@ public class DropControllerBucket : MonoBehaviour
     public void SetCount()
     {
         collectedCountText.text = matchCount.ToString();
-        if(collectedCountText.transform.localScale.x > 0.5f)
-        {
-            LeanTween.scale(collectedCountText.gameObject, Vector3.one * 1.75f ,0.5f).setOnComplete(ScaleDownCollectText);
-        }
-    }
-
-    private void ScaleDownCollectText()
-    {
-        LeanTween.scale(collectedCountText.gameObject, Vector3.one ,0.5f);
     }
 }

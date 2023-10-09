@@ -17,6 +17,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
     public GameObject selectedMaze;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] Texture2D randomImage;
+    [SerializeField] Texture2D prefetchedRandomImage;
     [SerializeField] Sprite randomSprite;
     public string selectedLangCode;
     public string packSlug;
@@ -85,6 +86,7 @@ public class CardMazeBoardGenerator : MonoBehaviour
         backButton.SetActive(true);
         UIController.Invoke("TutorialSetActive", .5f);
         Invoke("EnableBackButton", 0.4f);
+        await PrefetchNextLevelsTexturesAsync();
     }
 
     public void ClearBoard()
@@ -159,17 +161,30 @@ public class CardMazeBoardGenerator : MonoBehaviour
 
     public async Task PopulateRandomTextures()
     {
+        if (UIController.correctMatches == 0)
+        {
+            var texture = await gameAPI.GetCardImage(packSlug, uniqueCards[UIController.correctMatches].slug);
+            texture.wrapMode = TextureWrapMode.Clamp;
+            texture.filterMode = FilterMode.Bilinear;
+            texture.name = uniqueCards[UIController.correctMatches].title;
+            randomImage = texture;
+            randomSprite = Sprite.Create(randomImage, new Rect(0.0f, 0.0f, randomImage.width, randomImage.height), new Vector2(0.5f, 0.5f), 100.0f);
+            randomSprite.name = randomImage.name;
+        }
 
-        var texture = await gameAPI.GetCardImage(packSlug, uniqueCards[UIController.correctMatches].slug);
-        texture.wrapMode = TextureWrapMode.Clamp;
-        texture.filterMode = FilterMode.Bilinear;
-        randomImage = texture;
-        randomSprite = Sprite.Create(randomImage, new Rect(0.0f, 0.0f, randomImage.width, randomImage.height), new Vector2(0.5f, 0.5f), 100.0f);
 
     }
 
     public void PlaceSprites()
     {
+        if (UIController.correctMatches != 0)
+        {
+
+            randomSprite = Sprite.Create(prefetchedRandomImage, new Rect(0.0f, 0.0f, prefetchedRandomImage.width, prefetchedRandomImage.height), new Vector2(0.5f, 0.5f), 100.0f);
+            randomSprite.name = prefetchedRandomImage.name;
+
+        }
+
         if (cardTexture.sprite == null)
         {
             var sprite = randomSprite;
@@ -241,6 +256,18 @@ public class CardMazeBoardGenerator : MonoBehaviour
         selectedMaze.transform.rotation = Quaternion.Euler(0, 0, 0);
         spawnPointsParent.transform.rotation = Quaternion.Euler(0, 0, 0);
         keyspawnPointsParent.transform.rotation = Quaternion.Euler(0, 0, 0);
+    }
+
+    private async Task PrefetchNextLevelsTexturesAsync()
+    {
+        prefetchedRandomImage = null;
+
+        var texture = await gameAPI.GetCardImage(packSlug, uniqueCards[UIController.correctMatches + 1].slug);
+        texture.wrapMode = TextureWrapMode.Clamp;
+        texture.filterMode = FilterMode.Bilinear;
+        texture.name = uniqueCards[UIController.correctMatches + 1].title;
+        prefetchedRandomImage = texture;
+
     }
 
 }

@@ -10,12 +10,11 @@ public class DragInsideBoardGenerator : MonoBehaviour
 {
     private GameAPI gameAPI;
     [SerializeField] Image[] cardImagesInScene;
-    [SerializeField] GameObject[] cardParents;
+    public GameObject[] cardParents;
     [SerializeField] Transform[] cardSlots;
     [SerializeField] Vector3[] originalCardSlots;
     [SerializeField] GameObject targetArea;
     [SerializeField] GameObject targetAreaGhost;
-    [SerializeField] GameObject tutorial;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     List<AssistiveCardsSDK.AssistiveCardsSDK.Card> randomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     List<AssistiveCardsSDK.AssistiveCardsSDK.Card> prefetchedRandomCards = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
@@ -237,7 +236,6 @@ public class DragInsideBoardGenerator : MonoBehaviour
                 else
                 {
                     cardImagesInScene[i].transform.parent.tag = "CorrectCard";
-                    tutorial.GetComponent<DragInsideTutorial>().point2 = cardImagesInScene[i].transform;
                 }
             }
         }
@@ -253,7 +251,6 @@ public class DragInsideBoardGenerator : MonoBehaviour
                 else
                 {
                     cardImagesInScene[i].transform.parent.tag = "CorrectCard";
-                    tutorial.GetComponent<DragInsideTutorial>().point2 = cardImagesInScene[i].transform;
                 }
             }
         }

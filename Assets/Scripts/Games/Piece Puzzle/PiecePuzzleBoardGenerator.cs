@@ -72,38 +72,10 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
             didLanguageChange = false;
         }
 
-        if (puzzlePieces.Count == 0)
-        {
-            for (int i = 0; i < puzzlePiecesRef.Count; i++)
-            {
-                puzzlePieces.Add(puzzlePiecesRef[i]);
-                shadows.Add(shadowsRef[i]);
-            }
-        }
-
-        randomImage = await gameAPI.GetCardImage(packSlug, uniqueCards[puzzleProgressChecker.puzzlesCompleted].slug);
-        randomImage.wrapMode = TextureWrapMode.Clamp;
-        randomImage.filterMode = FilterMode.Bilinear;
-
-        for (int i = 0; i < puzzlePieceParents.Length; i++)
-        {
-            if (puzzlePieceParents[i].GetComponent<Image>().sprite == null)
-            {
-                var randomIndex = Random.Range(0, puzzlePieces.Count);
-                var sprite = puzzlePieces[randomIndex];
-                var shadow = shadows[randomIndex];
-                puzzlePieces.RemoveAt(randomIndex);
-                shadows.RemoveAt(randomIndex);
-                puzzlePieceParents[i].GetComponent<Image>().sprite = sprite;
-                puzzlePieceParents[i].SetActive(true);
-                puzzlePieceParents[i].GetComponent<PiecePuzzleDraggablePiece>().enabled = true;
-                shadowGameObjects[i].GetComponent<Image>().sprite = shadow;
-                LeanTween.alpha(shadowGameObjects[i].GetComponent<RectTransform>(), .5f, .01f);
-            }
-        }
-
+        AddPuzzlePieceAndShadowRefs();
+        await PopulateRandomTextures();
+        PlaceSprites();
         DisableLoadingPanel();
-
         ScaleImagesUp();
         backButton.SetActive(true);
         UIController.TutorialSetActive();
@@ -201,6 +173,45 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
         // {
         loadingPanel.SetActive(false);
         // }
+    }
+
+    public void PlaceSprites()
+    {
+        for (int i = 0; i < puzzlePieceParents.Length; i++)
+        {
+            if (puzzlePieceParents[i].GetComponent<Image>().sprite == null)
+            {
+                var randomIndex = Random.Range(0, puzzlePieces.Count);
+                var sprite = puzzlePieces[randomIndex];
+                var shadow = shadows[randomIndex];
+                puzzlePieces.RemoveAt(randomIndex);
+                shadows.RemoveAt(randomIndex);
+                puzzlePieceParents[i].GetComponent<Image>().sprite = sprite;
+                puzzlePieceParents[i].SetActive(true);
+                puzzlePieceParents[i].GetComponent<PiecePuzzleDraggablePiece>().enabled = true;
+                shadowGameObjects[i].GetComponent<Image>().sprite = shadow;
+                LeanTween.alpha(shadowGameObjects[i].GetComponent<RectTransform>(), .5f, .01f);
+            }
+        }
+    }
+
+    public async Task PopulateRandomTextures()
+    {
+        randomImage = await gameAPI.GetCardImage(packSlug, uniqueCards[puzzleProgressChecker.puzzlesCompleted].slug);
+        randomImage.wrapMode = TextureWrapMode.Clamp;
+        randomImage.filterMode = FilterMode.Bilinear;
+    }
+
+    public void AddPuzzlePieceAndShadowRefs()
+    {
+        if (puzzlePieces.Count == 0)
+        {
+            for (int i = 0; i < puzzlePiecesRef.Count; i++)
+            {
+                puzzlePieces.Add(puzzlePiecesRef[i]);
+                shadows.Add(shadowsRef[i]);
+            }
+        }
     }
 
 }

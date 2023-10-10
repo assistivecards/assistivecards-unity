@@ -72,23 +72,8 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
             didLanguageChange = false;
         }
 
-        // for (int i = 0; i < 5; i++)
-        // {
-        //     cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
-        //     Debug.Log("Log before checkifcardexists " + cardToAdd.slug);
-        //     CheckIfCardExists(cardToAdd);
-        // }
-
-        // cardToAdd = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
-        // Debug.Log("Log before checkifcardexists " + cardToAdd.slug);
-        // await CheckIfCardExists(cardToAdd);
-        // randomCard = cachedCards.cards[Random.Range(0, cachedCards.cards.Length)];
-
-        randomImage = await gameAPI.GetCardImage(packSlug, uniqueCards[puzzleProgressChecker.puzzlesCompleted].slug);
-        randomImage.wrapMode = TextureWrapMode.Clamp;
-        randomImage.filterMode = FilterMode.Bilinear;
+        await PopulateRandomTextures();
         Divide(randomImage);
-
         DisableLoadingPanel();
         ScaleImagesUp();
         backButton.SetActive(true);
@@ -222,5 +207,12 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
         // {
         loadingPanel.SetActive(false);
         // }
+    }
+
+    public async Task PopulateRandomTextures()
+    {
+        randomImage = await gameAPI.GetCardImage(packSlug, uniqueCards[puzzleProgressChecker.puzzlesCompleted].slug);
+        randomImage.wrapMode = TextureWrapMode.Clamp;
+        randomImage.filterMode = FilterMode.Bilinear;
     }
 }

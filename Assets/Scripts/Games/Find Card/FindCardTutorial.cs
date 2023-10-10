@@ -14,7 +14,12 @@ public class FindCardTutorial : MonoBehaviour
     {
         correctCards = board.cardParents.Where(card => card.tag == "CorrectCard").ToList();
         activeCards = correctCards.Where(card => card.GetComponent<FindCardFlipCard>().isFlipped == false).ToList();
-        gameObject.GetComponent<Tutorial>().tutorialPosition = activeCards[0].transform;
+        // gameObject.GetComponent<Tutorial>().tutorialPosition = activeCards[0].transform;
+    }
+
+    private void Update()
+    {
+        transform.position = activeCards[0].transform.position;
     }
 
 }

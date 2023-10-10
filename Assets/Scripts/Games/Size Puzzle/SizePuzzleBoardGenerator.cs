@@ -13,6 +13,7 @@ public class SizePuzzleBoardGenerator : MonoBehaviour
     public GameObject[] cardParents;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] Texture2D randomImage;
+    [SerializeField] Texture2D prefetchedRandomImage;
     [SerializeField] Sprite randomSprite;
     public string selectedLangCode;
     public string packSlug;
@@ -85,6 +86,7 @@ public class SizePuzzleBoardGenerator : MonoBehaviour
         backButton.SetActive(true);
         UIController.Invoke("TutorialSetActive", .3f);
         Invoke("EnableBackButton", 0.15f);
+        await PrefetchNextLevelsTexturesAsync();
     }
 
     private void SetRandomScalers()
@@ -174,17 +176,31 @@ public class SizePuzzleBoardGenerator : MonoBehaviour
 
     public async Task PopulateRandomTextures()
     {
+        if (UIController.correctMatches == 0)
+        {
+            var texture = await gameAPI.GetCardImage(packSlug, uniqueCards[UIController.correctMatches].slug);
+            texture.wrapMode = TextureWrapMode.Clamp;
+            texture.filterMode = FilterMode.Bilinear;
+            texture.name = uniqueCards[UIController.correctMatches].title;
+            randomImage = texture;
+            randomSprite = Sprite.Create(randomImage, new Rect(0.0f, 0.0f, randomImage.width, randomImage.height), new Vector2(0.5f, 0.5f), 100.0f);
+            randomSprite.name = randomImage.name;
+        }
 
-        var texture = await gameAPI.GetCardImage(packSlug, uniqueCards[UIController.correctMatches].slug);
-        texture.wrapMode = TextureWrapMode.Clamp;
-        texture.filterMode = FilterMode.Bilinear;
-        randomImage = texture;
-        randomSprite = Sprite.Create(randomImage, new Rect(0.0f, 0.0f, randomImage.width, randomImage.height), new Vector2(0.5f, 0.5f), 100.0f);
+
 
     }
 
     public void PlaceSprites()
     {
+        if (UIController.correctMatches != 0)
+        {
+
+            randomSprite = Sprite.Create(prefetchedRandomImage, new Rect(0.0f, 0.0f, prefetchedRandomImage.width, prefetchedRandomImage.height), new Vector2(0.5f, 0.5f), 100.0f);
+            randomSprite.name = prefetchedRandomImage.name;
+
+        }
+
         for (int i = 0; i < cardTextures.Length; i++)
         {
             if (cardTextures[i].sprite == null)
@@ -263,6 +279,18 @@ public class SizePuzzleBoardGenerator : MonoBehaviour
         }
 
         tutorial.GetComponent<Tutorial>().tutorialPosition = correctCard;
+    }
+
+    private async Task PrefetchNextLevelsTexturesAsync()
+    {
+        prefetchedRandomImage = null;
+
+        var texture = await gameAPI.GetCardImage(packSlug, uniqueCards[UIController.correctMatches + 1].slug);
+        texture.wrapMode = TextureWrapMode.Clamp;
+        texture.filterMode = FilterMode.Bilinear;
+        texture.name = uniqueCards[UIController.correctMatches + 1].title;
+        prefetchedRandomImage = texture;
+
     }
 
 }

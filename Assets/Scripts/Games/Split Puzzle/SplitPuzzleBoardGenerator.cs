@@ -11,6 +11,7 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Card cardToAdd;
     [SerializeField] Texture2D randomImage;
+    [SerializeField] Texture2D prefetchedRandomImage;
     public string selectedLangCode;
     public string packSlug;
     [SerializeField] GameObject backButton;
@@ -79,6 +80,7 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
         backButton.SetActive(true);
         Invoke("EnableBackButton", 0.15f);
         UIController.TutorialSetActive();
+        await PrefetchNextLevelsTexturesAsync();
     }
 
     public void ClearBoard()
@@ -211,8 +213,28 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
 
     public async Task PopulateRandomTextures()
     {
-        randomImage = await gameAPI.GetCardImage(packSlug, uniqueCards[puzzleProgressChecker.puzzlesCompleted].slug);
-        randomImage.wrapMode = TextureWrapMode.Clamp;
-        randomImage.filterMode = FilterMode.Bilinear;
+        if (puzzleProgressChecker.puzzlesCompleted == 0)
+        {
+            randomImage = await gameAPI.GetCardImage(packSlug, uniqueCards[puzzleProgressChecker.puzzlesCompleted].slug);
+            randomImage.wrapMode = TextureWrapMode.Clamp;
+            randomImage.filterMode = FilterMode.Bilinear;
+            randomImage.name = uniqueCards[puzzleProgressChecker.puzzlesCompleted].title;
+        }
+        else
+        {
+            randomImage = prefetchedRandomImage;
+        }
+    }
+
+    private async Task PrefetchNextLevelsTexturesAsync()
+    {
+        prefetchedRandomImage = null;
+
+        var texture = await gameAPI.GetCardImage(packSlug, uniqueCards[puzzleProgressChecker.puzzlesCompleted + 1].slug);
+        texture.wrapMode = TextureWrapMode.Clamp;
+        texture.filterMode = FilterMode.Bilinear;
+        texture.name = uniqueCards[puzzleProgressChecker.puzzlesCompleted + 1].title;
+        prefetchedRandomImage = texture;
+
     }
 }

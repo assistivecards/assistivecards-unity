@@ -43,6 +43,8 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     public List<GameObject> cardPositions = new List<GameObject>();
     public List<GameObject> targetCards = new List<GameObject>();
     private GameObject levelEndCard;
+    private Texture2D selectedCardTexture;
+
 
     [Header ("In Game Values")]
     public bool reloaded = false;
@@ -157,7 +159,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
                 var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, targetCard, 512);
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
-
+                selectedCardTexture = cardTexture;
                 card.transform.name = targetCardLocal;
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
@@ -178,6 +180,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
             levelEndCard.transform.GetChild(0).GetComponent<RawImage>().texture = levelEndCardTexture;
             levelEndCard.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
             LeanTween.scale(levelEndCard, Vector3.zero, 0);
+            collect.GetComponentInChildren<RawImage>().texture = selectedCardTexture;
             collect.SetActive(true);
             tutorialScript.card = targetCards[0].transform;
             needleMovement.trailRenderer.time = 100;

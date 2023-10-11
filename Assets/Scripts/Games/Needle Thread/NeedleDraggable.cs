@@ -16,7 +16,7 @@ public class NeedleDraggable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if(other.GetComponent<NeedleCardName>().cardName == boardGenerator.targetCard && needleMovement.dragging)
+        if(other.GetComponent<NeedleCardName>().cardName == boardGenerator.targetCard && needleMovement.dragging && other.GetComponent<NeedleCardName>().matched == false)
         {
             gameAPI.AddSessionExp();
             LeanTween.scale(other.gameObject, Vector3.one, 0.4f);
@@ -24,7 +24,7 @@ public class NeedleDraggable : MonoBehaviour
             other.GetComponent<NeedleCardName>().Invoke("ScaleDownCrad", 0.4f);
             boardGenerator.IncreaseMatch();
             gameAPI.PlayConfettiParticle(this.transform.position);
-            boardGenerator.CheckTargetCards();
+            boardGenerator.Invoke("CheckTargetCards", 0.75f);
             onTts = true;
             if(boardGenerator.ttsCount <= 0)
             {

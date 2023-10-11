@@ -2903,7 +2903,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 500, y: 500}
+  m_Size: {x: 600, y: 600}
   m_EdgeRadius: 0
 --- !u!114 &1769396787
 MonoBehaviour:
@@ -3871,7 +3871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 444504.44
+      value: 460023.06
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a
@@ -4586,6 +4586,7 @@ MonoBehaviour:
   levelEndCardPosition: {fileID: 790757453}
   cardPositions: []
   targetCards: []
+  targetCardIndex: 11
   reloaded: 0
   endLevel: 0
   matchCounter: 0

@@ -46,6 +46,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
 
 
     [Header ("In Game Values")]
+    public int targetCardIndex = 11;
     public bool reloaded = false;
     public bool endLevel;
     public int matchCounter;
@@ -81,7 +82,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     {
         tempRandomValue = Random.Range(0, cardsList.Count);
 
-        if(!randomValueList.Contains(tempRandomValue))
+        if(!randomValueList.Contains(tempRandomValue) && tempRandomValue != targetCardIndex)
         {
             randomValue = tempRandomValue;
             randomValueList.Add(randomValue);
@@ -148,8 +149,8 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
                 cards.Add(card);
             }
             CheckRandom();
-            targetCard = cardNames[randomValueList[11]];
-            targetCardLocal = cardLocalNames[randomValueList[11]];
+            targetCard = cardNames[randomValueList[targetCardIndex]];
+            targetCardLocal = cardLocalNames[randomValueList[targetCardIndex]];
             for(int i = 10; i < 20; i++)
             {
                 GameObject parent = CheckIsPositionEmpty();

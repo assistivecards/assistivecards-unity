@@ -23,6 +23,7 @@ public class NeedleDraggable : MonoBehaviour
             other.GetComponent<NeedleCardName>().matched = true;
             other.GetComponent<NeedleCardName>().Invoke("ScaleDownCrad", 0.4f);
             boardGenerator.IncreaseMatch();
+            gameAPI.PlayConfettiParticle(this.transform.position);
             boardGenerator.CheckTargetCards();
             onTts = true;
             if(boardGenerator.ttsCount <= 0)

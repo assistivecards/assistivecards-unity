@@ -38,7 +38,6 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject collect;
     [SerializeField] private GameObject cardPositionParent;
     [SerializeField] private GameObject needle;
-    [SerializeField] private GameObject rope;
     [SerializeField] private Transform levelEndCardPosition;
     public List<GameObject> cardPositions = new List<GameObject>();
     public List<GameObject> targetCards = new List<GameObject>();
@@ -183,7 +182,6 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
             collect.GetComponentInChildren<RawImage>().texture = selectedCardTexture;
             collect.SetActive(true);
             tutorialScript.card = targetCards[0].transform;
-            needleMovement.trailRenderer.time = 100;
             needle.transform.position = Vector3.zero;
             UpdateScoreText();
             Invoke("GameUIActivate", 0.1f);
@@ -245,20 +243,16 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
         {
             reloaded = true;
             reloadCount++;
-            needle.SetActive(false);
-            needleMovement.trailRenderer.time = 0;
-            needle.GetComponent<TrailRenderer>().enabled = false;
             LeanTween.scale(levelEndCard, Vector3.one * 1.5f, 0.25f);
             Invoke("LevelEndCardScaleDown", 0.5f);
         }
         else if(reloadCount == 4)
         {
-            needle.SetActive(false);
-            needleMovement.trailRenderer.time = 0;
-            needle.GetComponent<TrailRenderer>().enabled = false;
             uıController.Invoke("LevelChangeScreenActivate", 1f);
         }
         ClearBoard();
+        needleMovement.trailRenderer.time = 0;
+        needle.SetActive(false);
         endLevel = true;
     }
 
@@ -283,6 +277,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
 
     public void ClearBoard()
     {
+        gameStarted = false;
         collect.SetActive(false);
         foreach (var card in cards)
         {

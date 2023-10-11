@@ -7,6 +7,7 @@ using TMPro;
 public class NeedleThreadNeedleController : MonoBehaviour, IDragHandler, IBeginDragHandler
 {
     GameAPI gameAPI;
+    [SerializeField] private NeedleThreadBoardGenerator boardGenerator;
     [SerializeField] private GameObject needle;
     private Vector2 dragStartPosition;
     private Vector2 touchPosition;
@@ -20,18 +21,24 @@ public class NeedleThreadNeedleController : MonoBehaviour, IDragHandler, IBeginD
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        dragStartPosition = eventData.position;
-        isDragging = true;
+        if(boardGenerator.gameStarted)
+        {
+            dragStartPosition = eventData.position;
+            isDragging = true;
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        needle.SetActive(true);
-        needle.GetComponent<TrailRenderer>().enabled = true;
-        Vector2 dragEndPosition = eventData.position;
-        dragDirection = dragEndPosition - dragStartPosition;
+        if(boardGenerator.gameStarted)
+        {
+            needle.SetActive(true);
+            needle.GetComponent<TrailRenderer>().enabled = true;
+            Vector2 dragEndPosition = eventData.position;
+            dragDirection = dragEndPosition - dragStartPosition;
 
-        touchPosition = new Vector3(eventData.position.x, eventData.position.y, 0);
+            touchPosition = new Vector3(eventData.position.x, eventData.position.y, 0);
+        }
     }
 
     private void Update() 

@@ -190,7 +190,6 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
             LeanTween.scale(levelEndCard, Vector3.zero, 0);
             
             tutorialScript.card = targetCards[0].transform;
-            LeanTween.scale(needle, Vector3.one, 0.2f);
             needleMovement.trailRenderer.time = 100;
             needle.transform.position = Vector3.zero;
             Invoke("GameUIActivate", 0.1f);
@@ -253,11 +252,17 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
         {
             reloaded = true;
             reloadCount++;
+            needle.SetActive(false);
+            needleMovement.trailRenderer.time = 0;
+            needle.GetComponent<TrailRenderer>().enabled = false;
             LeanTween.scale(levelEndCard, Vector3.one * 1.5f, 0.25f);
             Invoke("LevelEndCardScaleDown", 0.5f);
         }
         else if(reloadCount == 4)
         {
+            needle.SetActive(false);
+            needleMovement.trailRenderer.time = 0;
+            needle.GetComponent<TrailRenderer>().enabled = false;
             uıController.Invoke("LevelChangeScreenActivate", 1f);
         }
         ClearBoard();
@@ -286,8 +291,6 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     public void ClearBoard()
     {
         collectText.gameObject.SetActive(false);
-        needleMovement.trailRenderer.time = 0;
-        LeanTween.scale(needle, Vector3.zero, 0f);
         foreach (var card in cards)
         {
             Destroy(card);

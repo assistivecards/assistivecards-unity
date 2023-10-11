@@ -52,7 +52,7 @@ public class NeedleMovement : MonoBehaviour
         if(dragging)
         {
             Drag();
-            GetComponentInChildren<TrailRenderer>().time = 100;
+            trailRenderer.time = 100;
         }
         else
         {

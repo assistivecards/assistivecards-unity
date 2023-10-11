@@ -12,6 +12,7 @@ public class PiecePuzzleMatchDetection : MonoBehaviour, IPointerUpHandler
     [SerializeField] GameObject hintImage;
     private PiecePuzzleUIController UIController;
     private GameAPI gameAPI;
+    public bool isMatched = false;
 
     private void Awake()
     {

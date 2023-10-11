@@ -18,7 +18,7 @@ public class PiecePuzzleBoardGenerator : MonoBehaviour
     public static bool didLanguageChange = true;
     public static bool isBackAfterSignOut = false;
     [SerializeField] GameObject hintImage;
-    [SerializeField] GameObject[] puzzlePieceParents;
+    public GameObject[] puzzlePieceParents;
     [SerializeField] GameObject[] shadowGameObjects;
     [SerializeField] GameObject[] puzzlePieceSlots;
     [SerializeField] List<Sprite> puzzlePiecesRef = new List<Sprite>();

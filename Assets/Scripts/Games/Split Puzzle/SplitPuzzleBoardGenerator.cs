@@ -19,8 +19,8 @@ public class SplitPuzzleBoardGenerator : MonoBehaviour
     public static bool isBackAfterSignOut = false;
     private SplitPuzzleUIController UIController;
     [SerializeField] GameObject hintImageParent;
-    [SerializeField] List<Image> hintImagePieces = new List<Image>();
-    [SerializeField] GameObject[] puzzlePieceParents;
+    public List<Image> hintImagePieces = new List<Image>();
+    public GameObject[] puzzlePieceParents;
     [SerializeField] GameObject[] puzzlePieceSlots;
     [SerializeField] List<Image> puzzlePieceImages = new List<Image>();
     [SerializeField] GameObject puzzleSlotsDarkParent;

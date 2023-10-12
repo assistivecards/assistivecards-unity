@@ -14,12 +14,13 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
     [SerializeField] private AlphabetChooseUIController uıController;
     [Header ("Cache Cards")]
     public string selectedLangCode;
-    public List<string> cardLocalNames = new List<string>();
     public List<GameObject> cards = new List<GameObject>();
-    private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
-    [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     private List<string> cardNames = new List<string>();
-    AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
+    public List<Texture2D> prefetchedCardTextures = new List<Texture2D>();
+    public List<string> prefetchedCardNames = new List<string>();
+    private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
+    public string packSlug;
+    [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     [SerializeField] private PackSelectionPanel packSelectionPanel;
 
     [Header ("Letter Cards")]
@@ -46,8 +47,9 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 
     [Header ("Colors")]
     public Color[] colors;
-
     public int levelCount;
+    public int maxLevelCount = 4;
+    public int buttonCount = 3;
     private string cardName;
     private GameObject letterCard;
     private GameObject correctButton;
@@ -61,19 +63,14 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
         gameAPI = Camera.main.GetComponent<GameAPI>();
     }
 
-    public async Task CacheCards()
+    public async Task CacheCards(string packName)
     {
         selectedLangCode = await gameAPI.GetSystemLanguageCode();
-
-        cachedCards = await gameAPI.GetCards("en", packSelectionPanel.selectedPackElement.name);
-        cachedLocalCards = await gameAPI.GetCards(selectedLangCode, packSelectionPanel.selectedPackElement.name);
-
-        cardsList = cachedCards.cards.ToList();
-
+        cachedCards = await gameAPI.GetCards(selectedLangCode, packName);
+    
         for(int i = 0; i < cachedCards.cards.Length; i++)
         {
             cardNames.Add(cachedCards.cards[i].title.ToLower().Replace(" ", "-"));
-            cardLocalNames.Add(cachedLocalCards.cards[i].title);
         }
     }
 
@@ -90,7 +87,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 
     private void CheckRandom()
     {
-        tempRandomValue = Random.Range(0, cardsList.Count);
+        tempRandomValue = Random.Range(0, cardNames.Count);
 
         if(!randomValueList.Contains(tempRandomValue))
         {
@@ -110,22 +107,28 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
         buttons.Add(button3);
     }
 
+    public async void PrefetchCardTextures()
+    {
+        packSlug = packSelectionPanel.selectedPackElement.name;
+        await CacheCards(packSlug);
+        for(int i = 0; i < (maxLevelCount * buttonCount); i++)
+        {
+            CheckRandom();
+        }
+        PrefetchNextLevelsTexturesAsync();
+        GeneratedBoardAsync();
+    }
+
     public async void GeneratedBoardAsync()
     {
         if(uıController.canGenerate)
         {
-            await CacheCards();
             await CreateLetters();
             CreateButtonList();
-
-            for(int i = 0; i < 3; i++)
+            for(int i = 0; i < buttonCount; i++)
             {
-                CheckRandom();
-                var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[i]], 512);
-                cardTexture.wrapMode = TextureWrapMode.Clamp;
-                cardTexture.filterMode = FilterMode.Bilinear;
-
-                buttons[i].transform.name = cardLocalNames[randomValueList[i]];
+                var cardTexture = prefetchedCardTextures[i];
+                buttons[i].transform.name = prefetchedCardNames[i];
                 buttons[i].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 buttons[i].transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                 cards.Add(buttons[i]);
@@ -234,12 +237,10 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 
     public void ClearBoard()
     {
-        cardLocalNames.Clear();
         cards.Clear();
         cardNames.Clear();
         letterList.Clear();
         letterCardsNames.Clear();
-
         randomValueList.Clear();
 
         foreach(GameObject button in buttons)
@@ -253,8 +254,21 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
             }
         }
         buttons.Clear();
-
         Destroy(letterCard);
 
+    }
+
+    private async Task PrefetchNextLevelsTexturesAsync()
+    {
+        prefetchedCardTextures.Clear();
+        prefetchedCardNames.Clear();
+        for(int i = 0; i < (maxLevelCount * buttonCount) ; i++)
+        {
+            var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[i]], 512);
+            cardTexture.wrapMode = TextureWrapMode.Clamp;
+            cardTexture.filterMode = FilterMode.Bilinear; 
+            prefetchedCardNames.Add(cardNames[randomValueList[i]]);
+            prefetchedCardTextures.Add(cardTexture);
+        }
     }
 }

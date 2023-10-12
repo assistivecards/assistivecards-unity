@@ -3304,7 +3304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 35710.69
+      value: 56499.566
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -4104,6 +4104,9 @@ MonoBehaviour:
   button1: {fileID: 124028904}
   button2: {fileID: 26894907}
   button3: {fileID: 2098902787}
+  maxLevelCount: 4
+  levelCount: 0
+  buttonCount: 3
   colors:
   - {r: 0.9764706, g: 0.54901963, b: 0.54901963, a: 1}
   - {r: 0.98039216, g: 0.73333335, b: 0.54901963, a: 1}
@@ -4115,9 +4118,6 @@ MonoBehaviour:
   - {r: 0.77254903, g: 0.54901963, b: 0.98039216, a: 1}
   - {r: 0.98039216, g: 0.54901963, b: 0.9529412, a: 1}
   - {r: 0.98039216, g: 0.54901963, b: 0.7137255, a: 1}
-  levelCount: 0
-  maxLevelCount: 4
-  buttonCount: 3
   cardNameLenght: 0
   firstLetter: 
   formerLetter: a

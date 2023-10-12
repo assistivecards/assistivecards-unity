@@ -18,7 +18,7 @@ public class AlphabetChooseButtonController : MonoBehaviour
     {
         if(boardGenerator.firstLetter == firstLetter)
         {
-            if(boardGenerator.levelCount < boardGenerator.maxLevelCount)
+            if(boardGenerator.levelCount < boardGenerator.maxLevelCount - 1)
             {
                 gameAPI.AddSessionExp();
                 gameAPI.PlaySFX("Success");
@@ -27,13 +27,14 @@ public class AlphabetChooseButtonController : MonoBehaviour
                 boardGenerator.LevelEnding();
                 boardGenerator.Invoke("CreateNewLevel", 1f);
             }
-            else if(boardGenerator.levelCount == boardGenerator.maxLevelCount)
+            else if(boardGenerator.levelCount == boardGenerator.maxLevelCount - 1)
             {
                 gameAPI.AddSessionExp();
                 gameAPI.PlaySFX("Success");
                 Invoke("ReadCard", 0.2f);
                 boardGenerator.LevelEnding();
                 boardGenerator.levelCount = 0;
+                Debug.Log(("HERE"));
                 uıController.Invoke("LevelChangeScreenActivate", 1.2f);
             }
         }

@@ -46,10 +46,10 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
     private List<GameObject> buttons = new List<GameObject>();
 
     [Header ("Colors")]
-    public Color[] colors;
+    public int maxLevelCount;
     public int levelCount;
-    public int maxLevelCount = 4;
     public int buttonCount = 3;
+    public Color[] colors;
     private string cardName;
     private GameObject letterCard;
     private GameObject correctButton;
@@ -109,30 +109,31 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 
     public async void PrefetchCardTextures()
     {
-        packSlug = packSelectionPanel.selectedPackElement.name;
-        await CacheCards(packSlug);
-        for(int i = 0; i < (maxLevelCount * buttonCount); i++)
+        if(uıController.canGenerate)
         {
-            CheckRandom();
+            randomValueList.Clear();
+            packSlug = packSelectionPanel.selectedPackElement.name;
+            await CacheCards(packSlug);
+            for(int i = 0; i < (maxLevelCount * buttonCount); i++)
+            {
+                CheckRandom();
+            }
+            PrefetchNextLevelsTexturesAsync();
+            GeneratedBoardAsync();
         }
-        PrefetchNextLevelsTexturesAsync();
-        GeneratedBoardAsync();
     }
 
     public async void GeneratedBoardAsync()
     {
-        if(uıController.canGenerate)
+        CreateButtonList();
+        await CreateLetters();
+        for(int i = 0; i < buttonCount; i++)
         {
-            await CreateLetters();
-            CreateButtonList();
-            for(int i = 0; i < buttonCount; i++)
-            {
-                var cardTexture = prefetchedCardTextures[i];
-                buttons[i].transform.name = prefetchedCardNames[i];
-                buttons[i].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-                buttons[i].transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-                cards.Add(buttons[i]);
-            }
+            var cardTexture = prefetchedCardTextures[i + (buttonCount * levelCount)];
+            buttons[i].transform.name = prefetchedCardNames[i + (buttonCount * levelCount)];
+            buttons[i].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+            buttons[i].transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+            cards.Add(buttons[i]);
         }
         formerLetter = firstLetter;
         FillLetterCard();
@@ -241,7 +242,6 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
         cardNames.Clear();
         letterList.Clear();
         letterCardsNames.Clear();
-        randomValueList.Clear();
 
         foreach(GameObject button in buttons)
         {

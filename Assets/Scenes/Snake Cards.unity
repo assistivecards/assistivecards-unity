@@ -875,30 +875,30 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.49678344
-        inSlope: -0.18995088
-        outSlope: -0.18995088
+        value: 0.685672
+        inSlope: -0.69663185
+        outSlope: -0.69663185
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.433079
+        outWeight: 0.49874035
       - serializedVersion: 3
-        time: 0.5888071
-        value: 0.31925547
-        inSlope: -0.86300266
-        outSlope: -0.86300266
+        time: 0.43846226
+        value: 0.3525871
+        inSlope: -0.8201679
+        outSlope: -0.8201679
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.47068352
+        inWeight: 0.4700884
+        outWeight: 0.4036876
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: -1.0555551
-        outSlope: -1.0555551
+        inSlope: -0.4434344
+        outSlope: -0.4434344
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.4580624
+        inWeight: 0.40159813
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -940,7 +940,7 @@ TrailRenderer:
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.1
+  m_MinVertexDistance: 0.0001
   m_MaskInteraction: 0
   m_Autodestruct: 0
   m_Emitting: 1
@@ -3800,7 +3800,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 335738.88
+      value: 366009.3
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a

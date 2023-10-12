@@ -138,7 +138,6 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
             CreatePositionsList();
             RandomizePositions();
             CheckRandom();
-            snake.SetActive(true);
             if(levelEndCard != null)
             {
                 LeanTween.scale(levelEndCard, Vector3.zero, 0.2f);
@@ -191,7 +190,6 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
                     cards.Add(card);
                 }
             }
-
             levelEndCard = Instantiate(cardPrefab, levelEndCardPosition.transform.position, Quaternion.identity);
             levelEndCard.transform.SetParent(levelEndCardPosition.transform);
             var targetCardCardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[targetCardRandomValue]], 512);
@@ -204,6 +202,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
             targetCard = cardNames[randomValueList[targetCardRandomValue]];
             targetCardLocal = cardLocalNames[randomValueList[targetCardRandomValue]];
             collect.SetActive(true);
+            snake.SetActive(true);
             reloadCount++;
             Invoke("GameUIActivate", 0.1f);
         }
@@ -215,13 +214,12 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
         score.text = eatenCardCount.ToString() + " / 5";
         if(eatenCardCount >= targetCards.Count  && reloadCount < 4)
         {
-            ClearForRefill();
-            ScaleUpLevelEndCard();
+            Invoke("ClearForRefill", 0.75f);
         }
-        else if(eatenCardCount >= 4  && reloadCount == 4)
+        else if(eatenCardCount >= 5  && reloadCount == 4)
         {
-            uıController.LevelChangeScreenActivate();
-        }   
+            uıController.Invoke("LevelChangeScreenActivate", 0.75f);
+        }
     }
 
     public void ScaleUpLevelEndCard()
@@ -272,6 +270,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
         collect.SetActive(false);
         score.text = eatenCardCount.ToString() + " / 5";
         ResetSnake();
+        ScaleUpLevelEndCard();
     }
 
     public void ClearBoard()

@@ -213,12 +213,12 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     {
         eatenCardCount++;
         score.text = eatenCardCount.ToString() + " / 5";
-        if(eatenCardCount >= targetCards.Count  && reloadCount < 3)
+        if(eatenCardCount >= targetCards.Count  && reloadCount < 4)
         {
             ClearForRefill();
             ScaleUpLevelEndCard();
         }
-        else if(eatenCardCount >= 4  && reloadCount == 3)
+        else if(eatenCardCount >= 4  && reloadCount == 4)
         {
             uıController.LevelChangeScreenActivate();
         }   

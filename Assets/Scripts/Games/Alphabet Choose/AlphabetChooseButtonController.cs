@@ -34,7 +34,6 @@ public class AlphabetChooseButtonController : MonoBehaviour
                 Invoke("ReadCard", 0.2f);
                 boardGenerator.LevelEnding();
                 boardGenerator.levelCount = 0;
-                Debug.Log(("HERE"));
                 uıController.Invoke("LevelChangeScreenActivate", 1.2f);
             }
         }

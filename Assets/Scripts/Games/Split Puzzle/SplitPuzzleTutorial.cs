@@ -16,6 +16,14 @@ public class SplitPuzzleTutorial : MonoBehaviour
         activePieces = board.puzzlePieceParents.Where(card => card.GetComponent<SplitPuzzleMatchDetection>().isMatched == false).ToList();
         point1 = activePieces[0].transform;
 
+        for (int i = 0; i < board.hintImagePieces.Count; i++)
+        {
+            if (activePieces[0].transform.GetChild(1).GetComponent<Image>().sprite == board.hintImagePieces[i].sprite)
+            {
+                point2 = board.hintImagePieces[i].transform;
+            }
+        }
+
     }
 
     void Update()

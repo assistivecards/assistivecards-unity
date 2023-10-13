@@ -15,10 +15,10 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     [Header ("Cache Cards")]
     public string selectedLangCode;
     public List<GameObject> cards = new List<GameObject>();
-    private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
+    public AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
     private List<string> cardNames = new List<string>();
-    private List<string> cardLocalNames = new List<string>();
+    public List<string> cardLocalNames = new List<string>();
     public List<Texture2D> prefetchedCardTextures = new List<Texture2D>();
     public List<string> prefetchedCardNames = new List<string>();
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
@@ -89,10 +89,10 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     {
         if(uıController.canGenerate)
         {
-            packSlug = packSelectionPanel.selectedPackElement.name;
             randomValueList.Clear();
             prefetchedCardTextures.Clear();
             prefetchedCardNames.Clear();
+            packSlug = packSelectionPanel.selectedPackElement.name;
             await CacheCards(packSlug);
             for(int i = 0; i < (maxLevelCount * cardCount); i++)
             {
@@ -289,7 +289,6 @@ public class CardBalanceBoardGenerator : MonoBehaviour
 
     public void ClearLevel()
     {
-        Debug.Log("ClearLevel");
         matchedCardCount = 0;
         randomOrder = 0;
         cloneCardsTextures.Clear();
@@ -308,6 +307,7 @@ public class CardBalanceBoardGenerator : MonoBehaviour
         {
             uıController.LevelChangeScreenActivate();
             gameAPI.PlaySFX("Finished");
+            levelCount = 0;
         }
         else if(levelCount < maxLevelCount)
         {
@@ -315,16 +315,35 @@ public class CardBalanceBoardGenerator : MonoBehaviour
         }
     }
 
-        private async Task PrefetchNextLevelsTexturesAsync()
+    public void BackButtonExit()
     {
-        for(int i = 0; i < (maxLevelCount * cardCount) ; i++)
+        levelCount = 0;
+        matchedCardCount = 0;
+        randomOrder = 0;
+        cloneCardsTextures.Clear();
+        foreach(var card in cards)
         {
+            Destroy(card);
+        }
+        cards.Clear();
+        cardLocalNames.Clear();
+        cloneCards.Clear();
+        usedRandomOrderCards.Clear();
+        usedCardTextures.Clear();
+        floors.SetActive(false);
+    }
+
+    private async Task PrefetchNextLevelsTexturesAsync()
+    {
+        for(int i = 0; i < (maxLevelCount * cardCount); i++)
+        {
+            Debug.Log("PREFECT");
             var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[i]], 512);
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear; 
             prefetchedCardNames.Add(cardLocalNames[randomValueList[i]]);
             prefetchedCardTextures.Add(cardTexture);
         }
-        Invoke("GeneratedBoardAsync", 0.5f);
+        Invoke("GeneratedBoardAsync", 1.5f);
     }
 }

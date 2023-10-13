@@ -268,7 +268,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 
     private async Task PrefetchNextLevelsTexturesAsync()
     {
-        for(int i = 0; i < (maxLevelCount * buttonCount) ; i++)
+        for(int i = 0; i < (maxLevelCount * buttonCount); i++)
         {
             var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[i]], 512);
             cardTexture.wrapMode = TextureWrapMode.Clamp;

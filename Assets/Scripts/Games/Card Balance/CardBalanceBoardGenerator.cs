@@ -60,7 +60,6 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     public int cardNameLenght;
     public int matchedCardCount;
     public bool isPointerUp;
-    private bool finished;
     private int order;
     public bool oneTime = true;
 
@@ -135,7 +134,6 @@ public class CardBalanceBoardGenerator : MonoBehaviour
         {
             Debug.Log("GeneratedBoardAsync");
             oneTime = true;
-            finished = false;
             CreateCardPositionList();
             for(int i = 0; i < 3; i++)
             {
@@ -289,16 +287,6 @@ public class CardBalanceBoardGenerator : MonoBehaviour
         uıController.GameUIActivate();
     }
 
-    // private void GameUIScaleDown()
-    // {
-    //     foreach(var card in cards)
-    //     {
-    //         LeanTween.scale(card, Vector3.zero, 0.2f);
-    //     }
-    //     uıController.Invoke("GameUIDeactivate", 0.2f);
-    //     Invoke("ClearLevel", 0.25f);
-    // }
-
     public void ClearLevel()
     {
         Debug.Log("ClearLevel");
@@ -316,13 +304,15 @@ public class CardBalanceBoardGenerator : MonoBehaviour
         usedCardTextures.Clear();
         floors.SetActive(false);
         levelCount++;
-        Invoke("GeneratedBoardAsync", 0.5f);
-        // if(!finished)
-        // {
-        //     uıController.LevelChangeScreenActivate();
-        //     gameAPI.PlaySFX("Finished");
-        //     finished = true;
-        // }
+        if(levelCount == maxLevelCount)
+        {
+            uıController.LevelChangeScreenActivate();
+            gameAPI.PlaySFX("Finished");
+        }
+        else if(levelCount < maxLevelCount)
+        {
+            Invoke("GeneratedBoardAsync", 0.5f);
+        }
     }
 
         private async Task PrefetchNextLevelsTexturesAsync()

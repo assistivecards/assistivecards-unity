@@ -62,6 +62,7 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     public bool isPointerUp;
     private bool finished;
     private int order;
+    public bool oneTime = true;
 
     private void Awake()
     {
@@ -130,20 +131,22 @@ public class CardBalanceBoardGenerator : MonoBehaviour
 
     public async void GeneratedBoardAsync()
     {
-        finished = false;
         if(uıController.canGenerate)
         {
+            Debug.Log("GeneratedBoardAsync");
+            oneTime = true;
+            finished = false;
             CreateCardPositionList();
-            for(int i = 0; i < cardCount; i++)
+            for(int i = 0; i < 3; i++)
             {
                 GameObject card = Instantiate(cardPrefab, referencePositions[i].transform.position, Quaternion.identity);
 
-                var cardTexture =  prefetchedCardTextures[i];
+                var cardTexture =  prefetchedCardTextures[i + (levelCount * cardCount)];
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
                 cloneCardsTextures.Add(cardTexture);
                 card.transform.SetParent(referencePositions[i].transform);
-                card.transform.name = prefetchedCardNames[i];
+                card.transform.name = prefetchedCardNames[i + (levelCount * cardCount)];
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                 card.GetComponent<CardBalanceDraggable>().draggable = false;
@@ -248,7 +251,7 @@ public class CardBalanceBoardGenerator : MonoBehaviour
 
     private void CreateRandomOrderNum()
     {
-        randomOrder = Random.Range(0,  cardCount);
+        randomOrder = Random.Range(0,  3);
         usedRandomOrderCards.Add(randomOrder);
     }
 
@@ -264,7 +267,12 @@ public class CardBalanceBoardGenerator : MonoBehaviour
 
         if(matchedCardCount >= cardCount)
         {
-            Invoke("GameUIScaleDown", 0.5f);
+            if(oneTime)
+            {
+                uıController.GameUIDeactivate();
+                ClearLevel();
+                oneTime = false;
+            }
         }
         else
         {
@@ -281,47 +289,19 @@ public class CardBalanceBoardGenerator : MonoBehaviour
         uıController.GameUIActivate();
     }
 
-    private void CreateNewLevel()
-    {
-        ClearBoard();
-        GeneratedBoardAsync();
-    }
-
-    private void GameUIScaleDown()
-    {
-        foreach(var card in cards)
-        {
-            LeanTween.scale(card, Vector3.zero, 0.3f);
-        }
-        uıController.Invoke("GameUIDeactivate", 0.3f);
-        Invoke("ClearBoard", 0.3f);
-    }
-
-    public void ClearBoard()
-    {
-        matchedCardCount = 0;
-        foreach(var card in cards)
-        {
-            Destroy(card);
-        }
-        cardLocalNames.Clear();
-        cloneCardsTextures.Clear();
-        cards.Clear();
-        cloneCards.Clear();
-        cardNames.Clear();
-        usedRandomOrderCards.Clear();
-        floors.SetActive(false);
-        usedCardTextures.Clear();
-        if(!finished)
-        {
-            uıController.LevelChangeScreenActivate();
-            gameAPI.PlaySFX("Finished");
-            finished = true;
-        }
-    }
+    // private void GameUIScaleDown()
+    // {
+    //     foreach(var card in cards)
+    //     {
+    //         LeanTween.scale(card, Vector3.zero, 0.2f);
+    //     }
+    //     uıController.Invoke("GameUIDeactivate", 0.2f);
+    //     Invoke("ClearLevel", 0.25f);
+    // }
 
     public void ClearLevel()
     {
+        Debug.Log("ClearLevel");
         matchedCardCount = 0;
         randomOrder = 0;
         cloneCardsTextures.Clear();
@@ -332,10 +312,17 @@ public class CardBalanceBoardGenerator : MonoBehaviour
         cards.Clear();
         cardLocalNames.Clear();
         cloneCards.Clear();
-        cardNames.Clear();
         usedRandomOrderCards.Clear();
         usedCardTextures.Clear();
         floors.SetActive(false);
+        levelCount++;
+        Invoke("GeneratedBoardAsync", 0.5f);
+        // if(!finished)
+        // {
+        //     uıController.LevelChangeScreenActivate();
+        //     gameAPI.PlaySFX("Finished");
+        //     finished = true;
+        // }
     }
 
         private async Task PrefetchNextLevelsTexturesAsync()

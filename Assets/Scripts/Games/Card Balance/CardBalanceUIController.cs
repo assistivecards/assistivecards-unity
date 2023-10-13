@@ -60,9 +60,14 @@ GameAPI gameAPI;
         loadingScreen.SetActive(false);
     }
 
+    private void GameUISetFalse()
+    {
+        gameUI.SetActive(false);
+    }
+
     public void LevelEnding()
     {
-        boardGenerator.ClearBoard();
+        boardGenerator.ClearLevel();
         gameUI.SetActive(false);
         backButton.SetActive(false);
         settingButton.SetActive(false);
@@ -70,12 +75,10 @@ GameAPI gameAPI;
 
     public void LevelChangeScreenActivate()
     {
-        if(reloadCount < boardGenerator.maxLevelCount -1 )
+        if(reloadCount < boardGenerator.maxLevelCount -1)
         {
             reloadCount++;
-            reloadCount = boardGenerator.levelCount;
             boardGenerator.ClearLevel();
-            Invoke("RealoadLevel", 1f);
         }
         else if(reloadCount == boardGenerator.maxLevelCount - 1)
         {
@@ -85,12 +88,6 @@ GameAPI gameAPI;
             gameAPI.AddSessionExp();
             gameAPI.AddExp(gameAPI.sessionExp);
         }
-    }
-
-    private void RealoadLevel()
-    {
-        LoadingScreenActivation();
-        boardGenerator.GeneratedBoardAsync();
     }
 
     public void CloseLevelChangePanel()

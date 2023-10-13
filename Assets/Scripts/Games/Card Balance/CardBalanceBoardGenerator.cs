@@ -14,19 +14,21 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     [SerializeField] private CardBalanceUIController uıController;
     [Header ("Cache Cards")]
     public string selectedLangCode;
-    public List<string> cardLocalNames = new List<string>();
     public List<GameObject> cards = new List<GameObject>();
-    private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
-    [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
+    public AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
+    private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
     private List<string> cardNames = new List<string>();
-    AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
+    public List<string> cardLocalNames = new List<string>();
+    public List<Texture2D> prefetchedCardTextures = new List<Texture2D>();
+    public List<string> prefetchedCardNames = new List<string>();
+    [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     [SerializeField] private PackSelectionPanel packSelectionPanel;
+    public string packSlug;
 
     [Header ("Random")]
     public List<int> randomValueList = new List<int>();
     private int tempRandomValue;
     private int randomValue;
-    public List<Texture2D> cardTextures = new List<Texture2D>();
     public List<Texture2D> usedCardTextures = new List<Texture2D>();
 
     [Header ("Prefabs")]
@@ -45,7 +47,12 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     public GameObject cardPosition3;
     public List<GameObject> cardPositions = new List<GameObject>();
     public List<GameObject> cloneCards = new List<GameObject>();
+    public List<Texture2D> cloneCardsTextures = new List<Texture2D>();
 
+    [Header ("Game Values")]
+    public int cardCount;
+    public int maxLevelCount;
+    public int levelCount;
     private string cardName;
     public int usedRandom;
     public int randomOrder;
@@ -53,8 +60,8 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     public int cardNameLenght;
     public int matchedCardCount;
     public bool isPointerUp;
-    private bool finished;
     private int order;
+    public bool oneTime = true;
 
     private void Awake()
     {
@@ -62,12 +69,12 @@ public class CardBalanceBoardGenerator : MonoBehaviour
         gameAPI.PlayMusic();
     }
 
-    public async Task CacheCards()
+    public async Task CacheCards(string _packSlug)
     {
         selectedLangCode = await gameAPI.GetSystemLanguageCode();
 
-        cachedCards = await gameAPI.GetCards("en", packSelectionPanel.selectedPackElement.name);
-        cachedLocalCards = await gameAPI.GetCards(selectedLangCode, packSelectionPanel.selectedPackElement.name);
+        cachedCards = await gameAPI.GetCards("en", _packSlug);
+        cachedLocalCards = await gameAPI.GetCards(selectedLangCode, _packSlug);
 
         cardsList = cachedCards.cards.ToList();
 
@@ -75,6 +82,23 @@ public class CardBalanceBoardGenerator : MonoBehaviour
         {
             cardNames.Add(cachedCards.cards[i].title.ToLower().Replace(" ", "-"));
             cardLocalNames.Add(cachedLocalCards.cards[i].title);
+        }
+    }
+
+    public async void PrefetchCardTextures()
+    {
+        if(uıController.canGenerate)
+        {
+            randomValueList.Clear();
+            prefetchedCardTextures.Clear();
+            prefetchedCardNames.Clear();
+            packSlug = packSelectionPanel.selectedPackElement.name;
+            await CacheCards(packSlug);
+            for(int i = 0; i < (maxLevelCount * cardCount); i++)
+            {
+                CheckRandom();
+            }
+            PrefetchNextLevelsTexturesAsync();
         }
     }
 
@@ -106,23 +130,21 @@ public class CardBalanceBoardGenerator : MonoBehaviour
 
     public async void GeneratedBoardAsync()
     {
-        finished = false;
         if(uıController.canGenerate)
         {
-            await CacheCards();
+            Debug.Log("GeneratedBoardAsync");
+            oneTime = true;
             CreateCardPositionList();
             for(int i = 0; i < 3; i++)
             {
-                CheckRandom();
                 GameObject card = Instantiate(cardPrefab, referencePositions[i].transform.position, Quaternion.identity);
 
-                var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[i]], 512);
+                var cardTexture =  prefetchedCardTextures[i + (levelCount * cardCount)];
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
-                cardTextures.Add(cardTexture);
-
+                cloneCardsTextures.Add(cardTexture);
                 card.transform.SetParent(referencePositions[i].transform);
-                card.transform.name = cardLocalNames[randomValueList[i]];
+                card.transform.name = prefetchedCardNames[i + (levelCount * cardCount)];
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                 card.GetComponent<CardBalanceDraggable>().draggable = false;
@@ -144,17 +166,17 @@ public class CardBalanceBoardGenerator : MonoBehaviour
             CreateRandomOrderNum();
             GameObject cloneCard = Instantiate(cardPrefab, cardPositions[randomOrder].transform.position, Quaternion.identity);
 
-            var cloneCardTexture = cardTextures[randomOrder];
+            var cloneCardTexture = cloneCardsTextures[randomOrder];
             cloneCardTexture.wrapMode = TextureWrapMode.Clamp;
             cloneCardTexture.filterMode = FilterMode.Bilinear;
-            usedCardTextures.Add(cardTextures[randomOrder]);
+            usedCardTextures.Add(cloneCardsTextures[randomOrder]);
             cloneCard.transform.SetParent(cardPositions[randomOrder].transform);
-            cloneCard.transform.name = cardLocalNames[randomValueList[randomOrder]];
+            cloneCard.transform.name = cardNames[randomValueList[randomOrder]];
             cloneCard.transform.GetChild(0).GetComponent<RawImage>().texture = cloneCardTexture;
             cloneCard.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
             cloneCard.GetComponent<CardBalanceDraggable>().draggable = true;
             cloneCard.GetComponent<CardBalanceDraggable>().ActivateGravityEffect();
-            cloneCard.GetComponent<CardBalanceDetectFloor>().cardLocalName = cardLocalNames[randomValueList[randomOrder]];
+            cloneCard.GetComponent<CardBalanceDetectFloor>().cardLocalName = cardNames[randomValueList[randomOrder]];
             cloneCard.GetComponent<BoxCollider2D>().enabled = true;
             cloneCard.gameObject.tag = "Card";
             cards.Add(cloneCard);
@@ -181,12 +203,12 @@ public class CardBalanceBoardGenerator : MonoBehaviour
             if(position.transform.childCount <= 0)
             {
                 GameObject cloneCard = Instantiate(cardPrefab, position.transform.position, Quaternion.identity);
-                var cloneCardTexture = cardTextures[0];
-                for(int j = 0; j < cardTextures.Count; j++)
+                var cloneCardTexture = cloneCardsTextures[0];
+                for(int j = 0; j < cardCount; j++)
                 {
-                    if(!usedCardTextures.Contains(cardTextures[j]))
+                    if(!usedCardTextures.Contains(cloneCardsTextures[j]))
                     {
-                        cloneCardTexture = cardTextures[j];
+                        cloneCardTexture = cloneCardsTextures[j];
                         order = j;
                     }
                 }
@@ -194,12 +216,12 @@ public class CardBalanceBoardGenerator : MonoBehaviour
                 cloneCardTexture.wrapMode = TextureWrapMode.Clamp;
                 cloneCardTexture.filterMode = FilterMode.Bilinear;
                 cloneCard.transform.SetParent(position.transform);
-                cloneCard.transform.name = cardLocalNames[randomValueList[order]];
+                cloneCard.transform.name = cardNames[randomValueList[order]];
                 cloneCard.transform.GetChild(0).GetComponent<RawImage>().texture = cloneCardTexture;
                 cloneCard.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                 cloneCard.GetComponent<CardBalanceDraggable>().draggable = true;
                 cloneCard.GetComponent<CardBalanceDraggable>().ActivateGravityEffect();
-                cloneCard.GetComponent<CardBalanceDetectFloor>().cardLocalName = cardLocalNames[randomValueList[order]];
+                cloneCard.GetComponent<CardBalanceDetectFloor>().cardLocalName = cardNames[randomValueList[order]];
                 cloneCard.GetComponent<BoxCollider2D>().enabled = true;
                 cloneCard.gameObject.tag = "Card";
                 cards.Add(cloneCard);
@@ -227,7 +249,7 @@ public class CardBalanceBoardGenerator : MonoBehaviour
 
     private void CreateRandomOrderNum()
     {
-        randomOrder = Random.Range(0, 3);
+        randomOrder = Random.Range(0,  3);
         usedRandomOrderCards.Add(randomOrder);
     }
 
@@ -241,9 +263,14 @@ public class CardBalanceBoardGenerator : MonoBehaviour
             }
         }
 
-        if(matchedCardCount >= 3)
+        if(matchedCardCount >= cardCount)
         {
-            Invoke("GameUIScaleDown", 0.5f);
+            if(oneTime)
+            {
+                uıController.GameUIDeactivate();
+                ClearLevel();
+                oneTime = false;
+            }
         }
         else
         {
@@ -260,50 +287,11 @@ public class CardBalanceBoardGenerator : MonoBehaviour
         uıController.GameUIActivate();
     }
 
-    private void CreateNewLevel()
-    {
-        ClearBoard();
-        GeneratedBoardAsync();
-    }
-
-    private void GameUIScaleDown()
-    {
-        foreach(var card in cards)
-        {
-            LeanTween.scale(card, Vector3.zero, 0.3f);
-        }
-        uıController.Invoke("GameUIDeactivate", 0.3f);
-        Invoke("ClearBoard", 0.3f);
-    }
-
-    public void ClearBoard()
-    {
-        matchedCardCount = 0;
-        foreach(var card in cards)
-        {
-            Destroy(card);
-        }
-        cardLocalNames.Clear();
-        cards.Clear();
-        cloneCards.Clear();
-        cardNames.Clear();
-        randomValueList.Clear();
-        usedRandomOrderCards.Clear();
-        floors.SetActive(false);
-        cardTextures.Clear();
-        usedCardTextures.Clear();
-        if(!finished)
-        {
-            uıController.LevelChangeScreenActivate();
-            gameAPI.PlaySFX("Finished");
-            finished = true;
-        }
-    }
-
     public void ClearLevel()
     {
         matchedCardCount = 0;
         randomOrder = 0;
+        cloneCardsTextures.Clear();
         foreach(var card in cards)
         {
             Destroy(card);
@@ -311,11 +299,51 @@ public class CardBalanceBoardGenerator : MonoBehaviour
         cards.Clear();
         cardLocalNames.Clear();
         cloneCards.Clear();
-        cardNames.Clear();
-        randomValueList.Clear();
         usedRandomOrderCards.Clear();
-        cardTextures.Clear();
         usedCardTextures.Clear();
         floors.SetActive(false);
+        levelCount++;
+        if(levelCount == maxLevelCount)
+        {
+            uıController.LevelChangeScreenActivate();
+            gameAPI.PlaySFX("Finished");
+            levelCount = 0;
+        }
+        else if(levelCount < maxLevelCount)
+        {
+            Invoke("GeneratedBoardAsync", 0.5f);
+        }
+    }
+
+    public void BackButtonExit()
+    {
+        levelCount = 0;
+        matchedCardCount = 0;
+        randomOrder = 0;
+        cloneCardsTextures.Clear();
+        foreach(var card in cards)
+        {
+            Destroy(card);
+        }
+        cards.Clear();
+        cardLocalNames.Clear();
+        cloneCards.Clear();
+        usedRandomOrderCards.Clear();
+        usedCardTextures.Clear();
+        floors.SetActive(false);
+    }
+
+    private async Task PrefetchNextLevelsTexturesAsync()
+    {
+        for(int i = 0; i < (maxLevelCount * cardCount); i++)
+        {
+            Debug.Log("PREFECT");
+            var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[i]], 512);
+            cardTexture.wrapMode = TextureWrapMode.Clamp;
+            cardTexture.filterMode = FilterMode.Bilinear; 
+            prefetchedCardNames.Add(cardLocalNames[randomValueList[i]]);
+            prefetchedCardTextures.Add(cardTexture);
+        }
+        Invoke("GeneratedBoardAsync", 1.5f);
     }
 }

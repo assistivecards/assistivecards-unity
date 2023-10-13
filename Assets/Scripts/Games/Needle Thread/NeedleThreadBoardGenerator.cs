@@ -35,16 +35,18 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject tutorial;
 
     [Header ("Game Elements")]
+    [SerializeField] private GameObject collect;
     [SerializeField] private GameObject cardPositionParent;
     [SerializeField] private GameObject needle;
-    [SerializeField] private GameObject rope;
     [SerializeField] private Transform levelEndCardPosition;
-    [SerializeField] private TMP_Text collectText;
     public List<GameObject> cardPositions = new List<GameObject>();
     public List<GameObject> targetCards = new List<GameObject>();
     private GameObject levelEndCard;
+    private Texture2D selectedCardTexture;
+
 
     [Header ("In Game Values")]
+    public int targetCardIndex = 11;
     public bool reloaded = false;
     public bool endLevel;
     public int matchCounter;
@@ -58,11 +60,6 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
         gameAPI.PlayMusic();
-    }
-
-    private void Update()
-    {
-        //needleMovement.trailRenderer.sortingOrder = 10;
     }
 
     public async Task CacheCards()
@@ -85,7 +82,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     {
         tempRandomValue = Random.Range(0, cardsList.Count);
 
-        if(!randomValueList.Contains(tempRandomValue))
+        if(!randomValueList.Contains(tempRandomValue) && tempRandomValue != targetCardIndex)
         {
             randomValue = tempRandomValue;
             randomValueList.Add(randomValue);
@@ -132,7 +129,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
             await CacheCards();
             CheckRandom();
             CreatePositionsList();
-            for(int j = 0; j < 11; j++)
+            for(int j = 0; j < 10; j++)
             {
                 CheckRandom();
                 GameObject parent = CheckIsPositionEmpty();
@@ -152,14 +149,9 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
                 cards.Add(card);
             }
             CheckRandom();
-            targetCard = cardNames[randomValueList[12]];
-            targetCardLocal = cardLocalNames[randomValueList[12]];
-            if(targetCard == "Knitting")
-            {
-                targetCard = cardNames[randomValueList[13]];
-                targetCardLocal = cardLocalNames[randomValueList[13]];
-            }
-            for(int i = 11; i < 20; i++)
+            targetCard = cardNames[randomValueList[targetCardIndex]];
+            targetCardLocal = cardLocalNames[randomValueList[targetCardIndex]];
+            for(int i = 10; i < 20; i++)
             {
                 GameObject parent = CheckIsPositionEmpty();
                 GameObject card = Instantiate(cardPrefab, parent.transform.position, Quaternion.identity, parent.transform);
@@ -167,7 +159,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
                 var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, targetCard, 512);
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
-
+                selectedCardTexture = cardTexture;
                 card.transform.name = targetCardLocal;
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
@@ -188,17 +180,25 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
             levelEndCard.transform.GetChild(0).GetComponent<RawImage>().texture = levelEndCardTexture;
             levelEndCard.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
             LeanTween.scale(levelEndCard, Vector3.zero, 0);
-            
+            collect.GetComponentInChildren<RawImage>().texture = selectedCardTexture;
+            collect.SetActive(true);
             tutorialScript.card = targetCards[0].transform;
-            LeanTween.scale(needle, Vector3.one, 0.2f);
-            needleMovement.trailRenderer.time = 100;
             needle.transform.position = Vector3.zero;
+            UpdateScoreText();
             Invoke("GameUIActivate", 0.1f);
-            collectText.text = gameAPI.Translate(collectText.gameObject.name, gameAPI.ToSentenceCase(targetCardLocal).Replace("-", " "), selectedLangCode);
-            LeanTween.scale(collectText.gameObject, Vector3.one, 0.2f);
-            collectText.gameObject.SetActive(true);
             reloaded = false;
         }
+    }
+
+    public void IncreaseMatch()
+    {
+        matchCounter++;
+        UpdateScoreText();
+    }
+
+    public void UpdateScoreText()
+    {
+        collect.GetComponentInChildren<TMP_Text>().text = matchCounter + " / " + targetCards.Count;
     }
 
     public void GameUIActivate()
@@ -209,15 +209,6 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
 
     public void CheckTargetCards()
     {
-        if(rope.GetComponent<TrailRenderer>().sortingOrder == 5)
-        {
-            rope.GetComponent<TrailRenderer>().sortingOrder = 10;
-        }
-        else if(rope.GetComponent<TrailRenderer>().sortingOrder == 10)
-        {
-            rope.GetComponent<TrailRenderer>().sortingOrder = 5;
-        }
-
         endLevel = true;
         foreach(var card in targetCards)
         {
@@ -261,6 +252,8 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
             uıController.Invoke("LevelChangeScreenActivate", 1f);
         }
         ClearBoard();
+        needleMovement.trailRenderer.time = 0;
+        needle.SetActive(false);
         endLevel = true;
     }
 
@@ -285,9 +278,8 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
 
     public void ClearBoard()
     {
-        collectText.gameObject.SetActive(false);
-        needleMovement.trailRenderer.time = 0;
-        LeanTween.scale(needle, Vector3.zero, 0f);
+        gameStarted = false;
+        collect.SetActive(false);
         foreach (var card in cards)
         {
             Destroy(card);
@@ -300,6 +292,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
         randomValueList.Clear();
         cardPositions.Clear();
         matchCounter = 0;
+        UpdateScoreText();
         ttsCount = 0;
     }
 }

@@ -24,7 +24,6 @@ GameAPI gameAPI;
     [SerializeField] private GameObject tutorial;
 
     private bool firstTime = true;
-    public int reloadCount;
     public bool canGenerate;
 
     private void Awake() 
@@ -60,9 +59,14 @@ GameAPI gameAPI;
         loadingScreen.SetActive(false);
     }
 
+    private void GameUISetFalse()
+    {
+        gameUI.SetActive(false);
+    }
+
     public void LevelEnding()
     {
-        boardGenerator.ClearBoard();
+        boardGenerator.ClearLevel();
         gameUI.SetActive(false);
         backButton.SetActive(false);
         settingButton.SetActive(false);
@@ -70,26 +74,10 @@ GameAPI gameAPI;
 
     public void LevelChangeScreenActivate()
     {
-        if(reloadCount < 4)
-        {
-            reloadCount++;
-            boardGenerator.ClearLevel();
-            Invoke("RealoadLevel", 1f);
-        }
-        else
-        {
-            levelChange.SetActive(true);
-            LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.3f);
-            reloadCount = 0;
-            gameAPI.AddSessionExp();
-            gameAPI.AddExp(gameAPI.sessionExp);
-        }
-    }
-
-    private void RealoadLevel()
-    {
-        LoadingScreenActivation();
-        boardGenerator.GeneratedBoardAsync();
+        levelChange.SetActive(true);
+        LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.3f);
+        gameAPI.AddSessionExp();
+        gameAPI.AddExp(gameAPI.sessionExp);
     }
 
     public void CloseLevelChangePanel()
@@ -101,7 +89,6 @@ GameAPI gameAPI;
 
     public void PackSelectionPanelActive()
     {
-        reloadCount = 0;
         gameUI.SetActive(false);
         gameAPI.ResetSessionExp();
         backButton.SetActive(false);

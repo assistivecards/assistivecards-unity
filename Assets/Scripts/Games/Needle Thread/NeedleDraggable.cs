@@ -16,14 +16,15 @@ public class NeedleDraggable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if(other.GetComponent<NeedleCardName>().cardName == boardGenerator.targetCard && needleMovement.dragging)
+        if(other.GetComponent<NeedleCardName>().cardName == boardGenerator.targetCard && needleMovement.dragging && other.GetComponent<NeedleCardName>().matched == false)
         {
             gameAPI.AddSessionExp();
             LeanTween.scale(other.gameObject, Vector3.one, 0.4f);
             other.GetComponent<NeedleCardName>().matched = true;
             other.GetComponent<NeedleCardName>().Invoke("ScaleDownCrad", 0.4f);
-            boardGenerator.matchCounter++;
-            boardGenerator.CheckTargetCards();
+            boardGenerator.IncreaseMatch();
+            gameAPI.PlayConfettiParticle(this.transform.position);
+            boardGenerator.Invoke("CheckTargetCards", 0.75f);
             onTts = true;
             if(boardGenerator.ttsCount <= 0)
             {

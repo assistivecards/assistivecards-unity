@@ -52,7 +52,7 @@ public class NeedleMovement : MonoBehaviour
         if(dragging)
         {
             Drag();
-            GetComponentInChildren<TrailRenderer>().time = 100;
+            trailRenderer.time = 100;
         }
         else
         {
@@ -76,18 +76,6 @@ public class NeedleMovement : MonoBehaviour
 
     public void Drag()
     {
-        if(trailRenderer.sortingOrder == 10)
-        {
-            trailRenderer.sortingOrder = 11;
-        }
-        else if(trailRenderer.sortingOrder == 11)
-        {
-            trailRenderer.sortingOrder = 10;
-        }
-        else 
-        {
-            trailRenderer.sortingOrder = 10;
-        }
         needleDraggable.transform.position = new Vector2(worldPosition.x, worldPosition.y);
     }
 

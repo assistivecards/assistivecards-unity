@@ -70,13 +70,14 @@ GameAPI gameAPI;
 
     public void LevelChangeScreenActivate()
     {
-        if(reloadCount < 4)
+        if(reloadCount < boardGenerator.maxLevelCount -1 )
         {
             reloadCount++;
+            reloadCount = boardGenerator.levelCount;
             boardGenerator.ClearLevel();
             Invoke("RealoadLevel", 1f);
         }
-        else
+        else if(reloadCount == boardGenerator.maxLevelCount - 1)
         {
             levelChange.SetActive(true);
             LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.3f);

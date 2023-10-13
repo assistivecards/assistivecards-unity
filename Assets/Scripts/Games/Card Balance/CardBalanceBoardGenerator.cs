@@ -14,13 +14,16 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     [SerializeField] private CardBalanceUIController uıController;
     [Header ("Cache Cards")]
     public string selectedLangCode;
-    public List<string> cardLocalNames = new List<string>();
     public List<GameObject> cards = new List<GameObject>();
     private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
-    [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
+    private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
     private List<string> cardNames = new List<string>();
-    AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
+    private List<string> cardLocalNames = new List<string>();
+    public List<Texture2D> prefetchedCardTextures = new List<Texture2D>();
+    public List<string> prefetchedCardNames = new List<string>();
+    [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     [SerializeField] private PackSelectionPanel packSelectionPanel;
+    public string packSlug;
 
     [Header ("Random")]
     public List<int> randomValueList = new List<int>();
@@ -46,6 +49,10 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     public List<GameObject> cardPositions = new List<GameObject>();
     public List<GameObject> cloneCards = new List<GameObject>();
 
+    [Header ("Game Values")]
+    public int cardCount;
+    public int maxLevelCount;
+    public int levelCount;
     private string cardName;
     public int usedRandom;
     public int randomOrder;
@@ -62,12 +69,12 @@ public class CardBalanceBoardGenerator : MonoBehaviour
         gameAPI.PlayMusic();
     }
 
-    public async Task CacheCards()
+    public async Task CacheCards(string _packSlug)
     {
         selectedLangCode = await gameAPI.GetSystemLanguageCode();
 
-        cachedCards = await gameAPI.GetCards("en", packSelectionPanel.selectedPackElement.name);
-        cachedLocalCards = await gameAPI.GetCards(selectedLangCode, packSelectionPanel.selectedPackElement.name);
+        cachedCards = await gameAPI.GetCards("en", _packSlug);
+        cachedLocalCards = await gameAPI.GetCards(selectedLangCode, _packSlug);
 
         cardsList = cachedCards.cards.ToList();
 
@@ -75,6 +82,23 @@ public class CardBalanceBoardGenerator : MonoBehaviour
         {
             cardNames.Add(cachedCards.cards[i].title.ToLower().Replace(" ", "-"));
             cardLocalNames.Add(cachedLocalCards.cards[i].title);
+        }
+    }
+
+    public async void PrefetchCardTextures()
+    {
+        if(uıController.canGenerate)
+        {
+            packSlug = packSelectionPanel.selectedPackElement.name;
+            randomValueList.Clear();
+            prefetchedCardTextures.Clear();
+            prefetchedCardNames.Clear();
+            await CacheCards(packSlug);
+            for(int i = 0; i < (maxLevelCount * cardCount); i++)
+            {
+                CheckRandom();
+            }
+            PrefetchNextLevelsTexturesAsync();
         }
     }
 
@@ -109,20 +133,18 @@ public class CardBalanceBoardGenerator : MonoBehaviour
         finished = false;
         if(uıController.canGenerate)
         {
-            await CacheCards();
             CreateCardPositionList();
-            for(int i = 0; i < 3; i++)
+            for(int i = 0; i < cardCount; i++)
             {
-                CheckRandom();
                 GameObject card = Instantiate(cardPrefab, referencePositions[i].transform.position, Quaternion.identity);
 
-                var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[i]], 512);
+                var cardTexture =  prefetchedCardTextures[i];
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
                 cardTextures.Add(cardTexture);
 
                 card.transform.SetParent(referencePositions[i].transform);
-                card.transform.name = cardLocalNames[randomValueList[i]];
+                card.transform.name = prefetchedCardNames[i];
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                 card.GetComponent<CardBalanceDraggable>().draggable = false;
@@ -241,7 +263,7 @@ public class CardBalanceBoardGenerator : MonoBehaviour
             }
         }
 
-        if(matchedCardCount >= 3)
+        if(matchedCardCount >= cardCount)
         {
             Invoke("GameUIScaleDown", 0.5f);
         }
@@ -317,5 +339,18 @@ public class CardBalanceBoardGenerator : MonoBehaviour
         cardTextures.Clear();
         usedCardTextures.Clear();
         floors.SetActive(false);
+    }
+
+        private async Task PrefetchNextLevelsTexturesAsync()
+    {
+        for(int i = 0; i < (maxLevelCount * cardCount) ; i++)
+        {
+            var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[i]], 512);
+            cardTexture.wrapMode = TextureWrapMode.Clamp;
+            cardTexture.filterMode = FilterMode.Bilinear; 
+            prefetchedCardNames.Add(cardLocalNames[randomValueList[i]]);
+            prefetchedCardTextures.Add(cardTexture);
+        }
+        Invoke("GeneratedBoardAsync", 0.5f);
     }
 }

@@ -276,6 +276,6 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
             prefetchedCardNames.Add(cardLocalNames[randomValueList[i]]);
             prefetchedCardTextures.Add(cardTexture);
         }
-        GeneratedBoardAsync();
+        Invoke("GeneratedBoardAsync", 0.5f);
     }
 }

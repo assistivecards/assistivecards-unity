@@ -17,7 +17,7 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     public List<GameObject> cards = new List<GameObject>();
     public AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
-    private List<string> cardNames = new List<string>();
+    public List<string> cardNames = new List<string>();
     public List<string> cardLocalNames = new List<string>();
     public List<Texture2D> prefetchedCardTextures = new List<Texture2D>();
     public List<string> prefetchedCardNames = new List<string>();
@@ -89,10 +89,10 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     {
         if(uıController.canGenerate)
         {
+            packSlug = packSelectionPanel.selectedPackElement.name;
             randomValueList.Clear();
             prefetchedCardTextures.Clear();
             prefetchedCardNames.Clear();
-            packSlug = packSelectionPanel.selectedPackElement.name;
             await CacheCards(packSlug);
             for(int i = 0; i < (maxLevelCount * cardCount); i++)
             {
@@ -297,6 +297,7 @@ public class CardBalanceBoardGenerator : MonoBehaviour
             Destroy(card);
         }
         cards.Clear();
+        cardNames.Clear();
         cardLocalNames.Clear();
         cloneCards.Clear();
         usedRandomOrderCards.Clear();
@@ -326,6 +327,7 @@ public class CardBalanceBoardGenerator : MonoBehaviour
             Destroy(card);
         }
         cards.Clear();
+        cardNames.Clear();
         cardLocalNames.Clear();
         cloneCards.Clear();
         usedRandomOrderCards.Clear();
@@ -337,13 +339,13 @@ public class CardBalanceBoardGenerator : MonoBehaviour
     {
         for(int i = 0; i < (maxLevelCount * cardCount); i++)
         {
-            Debug.Log("PREFECT");
+            prefetchedCardNames.Add(cardLocalNames[randomValueList[i]]);
             var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[i]], 512);
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear; 
-            prefetchedCardNames.Add(cardLocalNames[randomValueList[i]]);
             prefetchedCardTextures.Add(cardTexture);
+            Debug.Log(cardNames[randomValueList[i]]);
         }
-        Invoke("GeneratedBoardAsync", 1.5f);
+        Invoke("GeneratedBoardAsync", 0.5f);
     }
 }

@@ -135,6 +135,11 @@ GameAPI gameAPI;
         packSelectionScreen.transform.GetChild(0).GetChild(0).GetChild(0).transform.localPosition = Vector3.zero;
     }
 
+    public void LoadingScreenDeactivation()
+    {
+        loadingScreen.SetActive(true);
+    }
+
     public void LoadingScreenActivation()
     {
         if(canGenerate)

@@ -267,8 +267,13 @@ public class CardBalanceBoardGenerator : MonoBehaviour
         {
             if(oneTime)
             {
-                uıController.GameUIDeactivate();
-                ClearLevel();
+                foreach(var card in cards)
+                {
+                    LeanTween.scale(card.gameObject, Vector3.zero, 0.5f);
+                }
+                uıController.LoadingScreenActivation();
+                uıController.Invoke("GameUIDeactivate", 0.75f);
+                Invoke("ClearLevel", 1f);
                 oneTime = false;
             }
         }
@@ -297,7 +302,6 @@ public class CardBalanceBoardGenerator : MonoBehaviour
             Destroy(card);
         }
         cards.Clear();
-        cardNames.Clear();
         cardLocalNames.Clear();
         cloneCards.Clear();
         usedRandomOrderCards.Clear();
@@ -309,6 +313,7 @@ public class CardBalanceBoardGenerator : MonoBehaviour
             uıController.LevelChangeScreenActivate();
             gameAPI.PlaySFX("Finished");
             levelCount = 0;
+            cardNames.Clear();
         }
         else if(levelCount < maxLevelCount)
         {
@@ -327,12 +332,12 @@ public class CardBalanceBoardGenerator : MonoBehaviour
             Destroy(card);
         }
         cards.Clear();
-        cardNames.Clear();
         cardLocalNames.Clear();
         cloneCards.Clear();
         usedRandomOrderCards.Clear();
         usedCardTextures.Clear();
         floors.SetActive(false);
+        cardNames.Clear();
     }
 
     private async Task PrefetchNextLevelsTexturesAsync()

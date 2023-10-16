@@ -12,12 +12,15 @@ public class CardNinjaBoardGenerator : MonoBehaviour
 
     [Header ("Cache Cards")]
     public string selectedLangCode;
+    public List<GameObject> cards = new List<GameObject>();
+    public AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
+    private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
+    public List<string> cardNames = new List<string>();
     public List<string> cardLocalNames = new List<string>();
-    private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
+    public List<Texture2D> prefetchedCardTextures = new List<Texture2D>();
+    public List<string> prefetchedCardNames = new List<string>();
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
-    private List<string> cardNames = new List<string>();
-    AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
-    private string packSlug;
+    public string packSlug;
 
     [Header ("Card Ninja Classes")]
     [SerializeField] private PackSelectionPanel packSelectionPanel;
@@ -45,8 +48,11 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject selectedCardObject;
     [SerializeField] private GameObject selectedCardPosition;
 
+    [Header ("Game Values")]
+    public int cardCount;
+    public int maxLevelCount;
+    public int levelCount;
     [SerializeField] private List<Sprite> cardPieces = new List<Sprite>();
-    public List<GameObject> cards = new List<GameObject>();
     public List<GameObject> usedCards = new List<GameObject>();
     public int formerCardInt;
     public string selectedCardTag;
@@ -57,12 +63,12 @@ public class CardNinjaBoardGenerator : MonoBehaviour
         gameAPI = Camera.main.GetComponent<GameAPI>();
     }
 
-    public async Task CacheCards()
+    public async Task CacheCards(string _packSlug)
     {
         selectedLangCode = await gameAPI.GetSystemLanguageCode();
 
-        cachedCards = await gameAPI.GetCards("en", packSlug);
-        cachedLocalCards = await gameAPI.GetCards(selectedLangCode, packSlug);
+        cachedCards = await gameAPI.GetCards("en", _packSlug);
+        cachedLocalCards = await gameAPI.GetCards(selectedLangCode, _packSlug);
 
         cardsList = cachedCards.cards.ToList();
 
@@ -70,6 +76,23 @@ public class CardNinjaBoardGenerator : MonoBehaviour
         {
             cardNames.Add(cachedCards.cards[i].title.ToLower().Replace(" ", "-"));
             cardLocalNames.Add(cachedLocalCards.cards[i].title);
+        }
+    }
+
+    public async void PrefetchCardTextures()
+    {
+        if(uıController.canGenerate)
+        {
+            packSlug = packSelectionPanel.selectedPackElement.name;
+            randomValueList.Clear();
+            prefetchedCardTextures.Clear();
+            prefetchedCardNames.Clear();
+            await CacheCards(packSlug);
+            for(int i = 0; i < (maxLevelCount * cardCount); i++)
+            {
+                CheckRandom();
+            }
+            PrefetchNextLevelsTexturesAsync();
         }
     }
 
@@ -93,10 +116,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
         if(uıController.canGenerate)
         {
             cutPrefab.SetActive(false);
-            GetComponent<GridLayoutGroup>().enabled = true;
-            packSlug = packSelectionPanel.selectedPackElement.name;
-            await CacheCards();
-            CheckRandom();
+            grid.GetComponent<GridLayoutGroup>().enabled = true;
             var random = Random.Range(0, randomValueList.Count);
 
             if(random == formerCardInt)
@@ -109,7 +129,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
                 CheckRandom();
                 GameObject card = Instantiate(cardPrefab, Vector3.zero, Quaternion.identity);
 
-                var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[i]], 512);
+                var cardTexture = prefetchedCardTextures[i + (levelCount * cardCount)];
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
 
@@ -129,7 +149,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
 
                 selectedCard = Instantiate(cardPrefab, Vector3.zero, Quaternion.identity);
 
-                selectedCardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[random]], 512);
+                selectedCardTexture = prefetchedCardTextures[i + (levelCount * cardCount)];
                 selectedCardTexture.wrapMode = TextureWrapMode.Clamp;
                 selectedCardTexture.filterMode = FilterMode.Bilinear;
 
@@ -276,5 +296,20 @@ public class CardNinjaBoardGenerator : MonoBehaviour
         usedCards.Clear();
         cardPieces.Clear();
         randomValueList.Clear();
+    }
+
+    private async Task PrefetchNextLevelsTexturesAsync()
+    {
+        Debug.Log("PREFETCH");
+        for(int i = 0; i < (maxLevelCount * cardCount); i++)
+        {
+            prefetchedCardNames.Add(cardLocalNames[randomValueList[i]]);
+            var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[i]], 512);
+            cardTexture.wrapMode = TextureWrapMode.Clamp;
+            cardTexture.filterMode = FilterMode.Bilinear; 
+            prefetchedCardTextures.Add(cardTexture);
+            Debug.Log(cardNames[randomValueList[i]]);
+        }
+        Invoke("GeneratedBoardAsync", 0.5f);
     }
 }

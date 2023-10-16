@@ -1760,7 +1760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7134752715756178324, guid: b53871c75983f4e4fab782118ce28c0f, type: 3}
       propertyPath: m_text
-      value: 0 / 10
+      value: 0 / 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2482,7 +2482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   packSelectionPanelScript: {fileID: 1893988995}
-  boardGenerator: {fileID: 0}
+  boardGenerator: {fileID: 8383894889009589326}
   cutController: {fileID: 1154749949}
   levelChange: {fileID: 1275520836}
   backButton: {fileID: 106221049}
@@ -4774,7 +4774,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 99643.63
+      value: 108999.49
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a

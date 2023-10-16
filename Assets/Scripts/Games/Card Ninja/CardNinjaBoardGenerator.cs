@@ -117,31 +117,31 @@ public class CardNinjaBoardGenerator : MonoBehaviour
         {
             cutPrefab.SetActive(false);
             grid.GetComponent<GridLayoutGroup>().enabled = true;
-            var random = Random.Range(0, randomValueList.Count);
+            var random = Random.Range(0, prefetchedCardTextures.Count);
 
-            if(random == formerCardInt)
-            {
-                random = Random.Range(0, randomValueList.Count);
-            }
+            // if(random == formerCardInt)
+            // {
+            //     random = Random.Range(0, randomValueList.Count);
+            // }
 
-            for(int i=0; i < 10; i++)
+            for(int i=0; i < 5; i++)
             {
                 CheckRandom();
                 GameObject card = Instantiate(cardPrefab, Vector3.zero, Quaternion.identity);
 
-                var cardTexture = prefetchedCardTextures[i + (levelCount * cardCount)];
+                var cardTexture = prefetchedCardTextures[i];
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
 
-                card.transform.name = cardNames[randomValueList[i]];
+                card.transform.name = prefetchedCardNames[i];
                 card.transform.SetParent(grid.transform);
                 LeanTween.scale(card.gameObject, Vector3.one * 0.5f, 0f);
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 cards.Add(card);
                 DivideHorizontal(cardTexture, card.transform.GetChild(1).GetComponent<Image>(), card.transform.GetChild(2).GetComponent<Image>(),
                 card.transform.GetChild(3).GetComponent<Image>(), card.transform.GetChild(4).GetComponent<Image>());
-                card.GetComponent<CardNinjaCardMovement>().cardType = cardNames[randomValueList[i]];
-                card.GetComponent<CardNinjaCardMovement>().cardLocalName = cardLocalNames[randomValueList[i]];
+                card.GetComponent<CardNinjaCardMovement>().cardType = prefetchedCardNames[i];
+                //card.GetComponent<CardNinjaCardMovement>().cardLocalName = cardLocalNames[randomValueList[i]];
 
                 // selected card creation
 
@@ -149,21 +149,21 @@ public class CardNinjaBoardGenerator : MonoBehaviour
 
                 selectedCard = Instantiate(cardPrefab, Vector3.zero, Quaternion.identity);
 
-                selectedCardTexture = prefetchedCardTextures[i + (levelCount * cardCount)];
+                selectedCardTexture = prefetchedCardTextures[random];
                 selectedCardTexture.wrapMode = TextureWrapMode.Clamp;
                 selectedCardTexture.filterMode = FilterMode.Bilinear;
 
-                selectedCard.transform.name = cardNames[randomValueList[random]];
-                selectedCardLocal = cardLocalNames[randomValueList[random]];
+                selectedCard.transform.name = prefetchedCardNames[random];
+                //selectedCardLocal = [randomValueList[random]];
                 selectedCard.transform.SetParent(grid.transform);
                 LeanTween.scale(selectedCard.gameObject, Vector3.one * 0.5f, 0f);
                 selectedCard.transform.GetChild(0).GetComponent<RawImage>().texture = selectedCardTexture;
                 cards.Add(selectedCard);
                 DivideHorizontal(selectedCardTexture, selectedCard.transform.GetChild(1).GetComponent<Image>(), selectedCard.transform.GetChild(2).GetComponent<Image>(),
                 selectedCard.transform.GetChild(3).GetComponent<Image>(), selectedCard.transform.GetChild(4).GetComponent<Image>());
-                selectedCard.GetComponent<CardNinjaCardMovement>().cardType = cardNames[randomValueList[random]];
-                selectedCard.GetComponent<CardNinjaCardMovement>().cardLocalName = cardLocalNames[randomValueList[random]];
-                selectedCardTag = cardNames[randomValueList[random]];
+                selectedCard.GetComponent<CardNinjaCardMovement>().cardType = prefetchedCardNames[randomValueList[random]];
+                //selectedCard.GetComponent<CardNinjaCardMovement>().cardLocalName = cardLocalNames[randomValueList[random]];
+                selectedCardTag = cardNames[random];
                 formerCardInt = random;
             }
             countCard.transform.GetComponent<RawImage>().texture = selectedCardTexture;
@@ -222,7 +222,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
 
     private void ReleaseFromGrid()
     {
-        GetComponent<GridLayoutGroup>().enabled = false;
+        grid.GetComponent<GridLayoutGroup>().enabled = false;
     }
 
     private void EnableCutCollider()
@@ -310,6 +310,6 @@ public class CardNinjaBoardGenerator : MonoBehaviour
             prefetchedCardTextures.Add(cardTexture);
             Debug.Log(cardNames[randomValueList[i]]);
         }
-        Invoke("GeneratedBoardAsync", 0.5f);
+        Invoke("GeneratedBoardAsync", 2f);
     }
 }

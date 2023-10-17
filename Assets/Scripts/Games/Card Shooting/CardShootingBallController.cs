@@ -10,6 +10,7 @@ public class CardShootingBallController : MonoBehaviour
     public Vector3 throwVector;
     private Vector3 throwPoint;
     private Vector3 startPosition;
+    [SerializeField] private GameObject sling;
     [SerializeField] private GameObject ball;
     [SerializeField] private Rigidbody2D ballRigidbody;
     [SerializeField] private CardShootingUIController uıController;
@@ -27,7 +28,7 @@ public class CardShootingBallController : MonoBehaviour
 
     private void OnEnable() 
     {
-        startPosition = this.transform.position;
+        startPosition = sling.transform.position;
     }
 
     public void OnMouseDown()
@@ -115,7 +116,7 @@ public class CardShootingBallController : MonoBehaviour
     private void Throw()
     {
         ballRigidbody.AddForce(throwVector * 140);
-        Invoke("ResetPosition", 1.7f);
+        Invoke("ResetPosition", 1.5f);
     }
 
     private void ResetPosition()

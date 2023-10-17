@@ -189,18 +189,18 @@ public class CardShootingBoardGenerator : MonoBehaviour
                 LeanTween.scale(card.gameObject, Vector3.one * 0.3f, 0f);
             }
 
-            if(selectedObjectAtEnd != null)
-            {
-                selectedObjectAtEnd.GetComponent<CardShootingCardName>().ScaleDown();
-            }
-
             selectedCardObject = cards[Random.Range(0, cards.Count)];
             selectedCard = selectedCardObject.name;
             selectedCardLocal = selectedCardObject.GetComponent<CardShootingCardName>().cardName;
-
             if(selectedCard == formerSelected)
             {
-                selectedCard = cards[Random.Range(0, cards.Count)].name;
+                selectedCardObject = cards[Random.Range(0, cards.Count)];
+                selectedCard = selectedCardObject.name;
+                selectedCardLocal = selectedCardObject.GetComponent<CardShootingCardName>().cardName;
+            }
+            if(selectedObjectAtEnd != null)
+            {
+                selectedObjectAtEnd.GetComponent<CardShootingCardName>().ScaleDown();
             }
             selectedObjectAtEnd = Instantiate(selectedCardObject, levelEndCard.transform.position, Quaternion.identity);
             selectedObjectAtEnd.transform.GetChild(1).GetComponent<TMP_Text>().text = selectedCardObject.GetComponent<CardShootingCardName>().cardName;

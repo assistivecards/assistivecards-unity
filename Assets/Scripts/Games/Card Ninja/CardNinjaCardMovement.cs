@@ -86,7 +86,7 @@ public class CardNinjaCardMovement : MonoBehaviour
     private void IncreaseCutCount()
     {
         cutController.cutCount++;
-        uıController.cutText.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = cutController.cutCount + " / 10";
+        uıController.cutText.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = cutController.cutCount + " / 5";
     }
 
     private void IncreaseThrowCount()
@@ -96,8 +96,7 @@ public class CardNinjaCardMovement : MonoBehaviour
 
     private void ReadCard()
     {
-        gameAPI.Speak(cardLocalName);
-        Debug.Log(cardLocalName);
+        //gameAPI.Speak(cardLocalName);
     }
 
     public void Break(bool horizontalDrag, bool verticalDrag) 

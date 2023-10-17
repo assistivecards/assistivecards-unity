@@ -43,7 +43,7 @@ public class CardNinjaUIController : MonoBehaviour
         {
             if(firstTime || gameAPI.GetTutorialPreference() == 1)
             {
-                tutorial.SetActive(true);
+                //tutorial.SetActive(true);
             }
             firstTime = false;
         }

@@ -161,9 +161,9 @@ public class CardNinjaBoardGenerator : MonoBehaviour
                 cards.Add(selectedCard);
                 DivideHorizontal(selectedCardTexture, selectedCard.transform.GetChild(1).GetComponent<Image>(), selectedCard.transform.GetChild(2).GetComponent<Image>(),
                 selectedCard.transform.GetChild(3).GetComponent<Image>(), selectedCard.transform.GetChild(4).GetComponent<Image>());
-                selectedCard.GetComponent<CardNinjaCardMovement>().cardType = prefetchedCardNames[randomValueList[random]];
+                selectedCard.GetComponent<CardNinjaCardMovement>().cardType = prefetchedCardNames[random];
                 //selectedCard.GetComponent<CardNinjaCardMovement>().cardLocalName = cardLocalNames[randomValueList[random]];
-                selectedCardTag = cardNames[random];
+                selectedCardTag = prefetchedCardNames[random];
                 formerCardInt = random;
             }
             countCard.transform.GetComponent<RawImage>().texture = selectedCardTexture;
@@ -233,7 +233,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     public void ThrowCards()
     {
         cutController.LevelEndCheck();
-        if(!uıController.levelEnd && cards.Count > 0 && cutController.cutCount < 10)
+        if(!uıController.levelEnd && cards.Count > 0 && cutController.cutCount < 5)
         {
             randomCard = cards[Random.Range(0, cards.Count)];
 

@@ -2852,7 +2852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: GeneratedBoardAsync
+      value: PrefetchCardTextures
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
@@ -3513,7 +3513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 216390.1
+      value: 224094.92
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a
@@ -4317,10 +4317,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedLangCode: 
-  cardLocalNames: []
   cards: []
+  cachedCards:
+    cards: []
+  cardNames: []
+  cardLocalNames: []
+  prefetchedCardTextures: []
+  prefetchedCardNames: []
   cardsList: []
   packSelectionPanel: {fileID: 1878385121}
+  packSlug: 
   "u\u0131Controller": {fileID: 8383894889009589327}
   ballController: {fileID: 1639913623}
   scoreText: {fileID: 1160782970}
@@ -4340,6 +4346,10 @@ MonoBehaviour:
   selectedCardTexture: {fileID: 0}
   selectedObjectAtEnd: {fileID: 0}
   score: 0
+  cardCount: 5
+  maxLevelCount: 5
+  levelCount: 0
+  prefetchedCardsCount: 0
   selectedCardObject: {fileID: 0}
   selectedCard: 
   selectedCardLocal: 

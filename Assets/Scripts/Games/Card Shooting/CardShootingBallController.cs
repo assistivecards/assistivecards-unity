@@ -72,14 +72,15 @@ public class CardShootingBallController : MonoBehaviour
 
                 if(hitCount >= 2)
                 {
-                    levelCount++;
+                    boardGenerator.levelCount++;
                     uıController.Invoke("LevelEnding", 0.5f);
                     gameAPI.PlaySFX("Finished");
                     boardGenerator.Invoke("LevelEndCardScale", 0.5f);
 
-                    if(levelCount >= 3)
+                    if(boardGenerator.levelCount >= boardGenerator.maxLevelCount)
                     {
                         uıController.Invoke("LevelChangeScreenActivate", 2.5f);
+                        boardGenerator.levelCount = 0;
                     }
                 }
             }

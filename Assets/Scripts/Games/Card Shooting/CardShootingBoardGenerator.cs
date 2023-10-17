@@ -12,13 +12,16 @@ public class CardShootingBoardGenerator : MonoBehaviour
 
     [Header ("Cache Cards")]
     public string selectedLangCode;
-    public List<string> cardLocalNames = new List<string>();
     public List<GameObject> cards = new List<GameObject>();
-    private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
+    public AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
+    private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
+    public List<string> cardNames = new List<string>();
+    public List<string> cardLocalNames = new List<string>();
+    public List<Texture2D> prefetchedCardTextures = new List<Texture2D>();
+    public List<string> prefetchedCardNames = new List<string>();
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
-    private List<string> cardNames = new List<string>();
-    AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
     [SerializeField] private PackSelectionPanel packSelectionPanel;
+    public string packSlug;
 
     [Header ("Card Fishing Classes")]
     [SerializeField] private CardShootingUIController uıController;
@@ -48,7 +51,11 @@ public class CardShootingBoardGenerator : MonoBehaviour
     private int tempRandomValue;
     private int randomValue;
 
-
+    [Header ("Game Values")]
+    public int cardCount;
+    public int maxLevelCount;
+    public int levelCount;
+    public int prefetchedCardsCount;
     private List<GameObject> cardPositions = new List<GameObject>();
     public GameObject selectedCardObject;
     public string selectedCard;
@@ -61,12 +68,12 @@ public class CardShootingBoardGenerator : MonoBehaviour
         gameAPI = Camera.main.GetComponent<GameAPI>();
     }
 
-    public async Task CacheCards()
+    public async Task CacheCards(string _packSlug)
     {
         selectedLangCode = await gameAPI.GetSystemLanguageCode();
 
-        cachedCards = await gameAPI.GetCards("en", packSelectionPanel.selectedPackElement.name);
-        cachedLocalCards = await gameAPI.GetCards(selectedLangCode, packSelectionPanel.selectedPackElement.name);
+        cachedCards = await gameAPI.GetCards("en", _packSlug);
+        cachedLocalCards = await gameAPI.GetCards(selectedLangCode, _packSlug);
 
         cardsList = cachedCards.cards.ToList();
 
@@ -74,6 +81,31 @@ public class CardShootingBoardGenerator : MonoBehaviour
         {
             cardNames.Add(cachedCards.cards[i].title.ToLower().Replace(" ", "-"));
             cardLocalNames.Add(cachedLocalCards.cards[i].title);
+        }
+    }
+
+    public async void PrefetchCardTextures()
+    {
+        if(uıController.canGenerate)
+        {
+            packSlug = packSelectionPanel.selectedPackElement.name;
+            randomValueList.Clear();
+            prefetchedCardTextures.Clear();
+            prefetchedCardNames.Clear();
+            await CacheCards(packSlug);
+            if(cardNames.Count >= (cardCount * maxLevelCount))
+            {
+                prefetchedCardsCount = (cardCount * maxLevelCount);
+            }
+            else
+            {
+                prefetchedCardsCount = cardNames.Count;
+            }
+            for(int i = 0; i < prefetchedCardsCount; i++)
+            {
+                CheckRandom();
+            }
+            PrefetchNextLevelsTexturesAsync();
         }
     }
 
@@ -111,10 +143,8 @@ public class CardShootingBoardGenerator : MonoBehaviour
         if(uıController.canGenerate)
         {
             GetPositionList();
-            await CacheCards();
             for(int i = 0; i < cardPositions.Count / 2; i++)
             {
-                CheckRandom();
                 int parentIndex = Random.Range(0, cardPositions.Count / 2);
 
                 if(cardPositions[parentIndex].transform.childCount > 0)
@@ -132,30 +162,29 @@ public class CardShootingBoardGenerator : MonoBehaviour
 
                 card.transform.SetParent(cardPositions[parentIndex].transform);
 
-                var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[i]], 512);
+                var cardTexture = prefetchedCardTextures[i + (levelCount * (cardCount / 2))];
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
 
-                card.transform.name = cardNames[randomValueList[i]];
+                card.transform.name = prefetchedCardNames[i + (levelCount * (cardCount / 2))];
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-                card.GetComponent<CardShootingCardName>().cardName = cardLocalNames[randomValueList[i]];
+                card.GetComponent<CardShootingCardName>().cardName = prefetchedCardNames[i + (levelCount * (cardCount / 2))];
                 cards.Add(card);
                 LeanTween.scale(card.gameObject, Vector3.one * 0.3f, 0f);
             }
 
             for(int j = 0; j < cardPositions.Count / 2; j++)
             {
-                CheckRandom();
                 GameObject card = Instantiate(cardPrefab, cardPositions[j + 5].transform.position, Quaternion.identity);
                 LeanTween.rotateZ(card, Random.Range(-25f, 25), 0);
                 card.transform.SetParent(cardPositions[j + 5].transform);
-                var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[j]], 512);
+                var cardTexture = prefetchedCardTextures[j + (levelCount * (cardCount / 2))];
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
 
-                card.transform.name = cardNames[randomValueList[j]];
+                card.transform.name = prefetchedCardNames[j + (levelCount * (cardCount / 2))];
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-                card.GetComponent<CardShootingCardName>().cardName = cardLocalNames[randomValueList[j]];
+                card.GetComponent<CardShootingCardName>().cardName = prefetchedCardNames[j + (levelCount * cardCount / 2)];
                 cards.Add(card);
                 LeanTween.scale(card.gameObject, Vector3.one * 0.3f, 0f);
             }
@@ -194,9 +223,9 @@ public class CardShootingBoardGenerator : MonoBehaviour
         Debug.Log(selectedCardLocal);
         Invoke("LevelEndCardDownScale", 1.5f);
 
-        if(ballController.levelCount < 3)
+        if(levelCount < maxLevelCount)
         {
-            GeneratedBoardAsync();
+            Invoke("GeneratedBoardAsync", 1.5f);
         }
         else
         {
@@ -226,5 +255,19 @@ public class CardShootingBoardGenerator : MonoBehaviour
         randomValueList.Clear();
         score = 0;
         IncreaseScore(0);
+    }
+
+    private async Task PrefetchNextLevelsTexturesAsync()
+    {
+        for(int i = 0; i < prefetchedCardsCount; i++)
+        {
+            prefetchedCardNames.Add(cardLocalNames[randomValueList[i]]);
+            var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[i]], 512);
+            cardTexture.wrapMode = TextureWrapMode.Clamp;
+            cardTexture.filterMode = FilterMode.Bilinear; 
+            prefetchedCardTextures.Add(cardTexture);
+            Debug.Log(cardNames[randomValueList[i]]);
+        }
+        Invoke("GeneratedBoardAsync", 2f);
     }
 }

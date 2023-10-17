@@ -43,7 +43,7 @@ public class CardNinjaUIController : MonoBehaviour
         {
             if(firstTime || gameAPI.GetTutorialPreference() == 1)
             {
-                //tutorial.SetActive(true);
+                tutorial.SetActive(true);
             }
             firstTime = false;
         }
@@ -67,6 +67,7 @@ public class CardNinjaUIController : MonoBehaviour
     {
         levelEnd = true;
         boardGenerator.ClearBoard();
+        boardGenerator.levelCount = 0;
         cutText.SetActive(false);
         cutController.ResetLevel();
     }

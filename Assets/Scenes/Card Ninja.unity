@@ -830,7 +830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e4f179afae54527a00828909226125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boardGenerator: {fileID: 0}
+  boardGenerator: {fileID: 8383894889009589326}
   hand: {fileID: 1736738553}
   cardPosition: {fileID: 0}
   point1: {fileID: 1653279891}
@@ -1317,7 +1317,6 @@ MonoBehaviour:
   verticalDrag: 0
   cutCount: 0
   throwedCount: 0
-  levelEndedCount: 0
 --- !u!114 &1154749950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1382,7 +1381,7 @@ PrefabInstance:
     - target: {fileID: 804781093893846699, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8383894889009589326}
     - target: {fileID: 804781093893846699, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DestroyBalloons
@@ -2968,7 +2967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 127508.35
+      value: 169945.94
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a
@@ -3252,11 +3251,11 @@ PrefabInstance:
       objectReference: {fileID: 252539108}
     - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
       propertyPath: wrongMatchExp
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
       propertyPath: correctMatchExp
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2053396223207933433, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
       propertyPath: sfxClips.Array.size
@@ -3790,7 +3789,7 @@ MonoBehaviour:
   randomValueList: 
   selectedCardObject: {fileID: 0}
   selectedCardPosition: {fileID: 1377258113}
-  cardCount: 5
+  cardCount: 6
   maxLevelCount: 5
   levelCount: 0
   cardPieces: []

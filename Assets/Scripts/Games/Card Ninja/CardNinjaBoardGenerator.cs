@@ -88,7 +88,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
             prefetchedCardTextures.Clear();
             prefetchedCardNames.Clear();
             await CacheCards(packSlug);
-            for(int i = 0; i < (maxLevelCount * cardCount); i++)
+            for(int i = 0; i < cardNames.Count; i++)
             {
                 CheckRandom();
             }
@@ -98,7 +98,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
 
     private void CheckRandom()
     {
-        tempRandomValue = Random.Range(0, cardsList.Count);
+        tempRandomValue = Random.Range(0, cardNames.Count);
 
         if(!randomValueList.Contains(tempRandomValue))
         {
@@ -117,7 +117,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
         {
             cutPrefab.SetActive(false);
             grid.GetComponent<GridLayoutGroup>().enabled = true;
-            var random = Random.Range(0, prefetchedCardTextures.Count);
+            var random = Random.Range(5, prefetchedCardTextures.Count);
 
             // if(random == formerCardInt)
             // {
@@ -126,7 +126,6 @@ public class CardNinjaBoardGenerator : MonoBehaviour
 
             for(int i=0; i < 5; i++)
             {
-                CheckRandom();
                 GameObject card = Instantiate(cardPrefab, Vector3.zero, Quaternion.identity);
 
                 var cardTexture = prefetchedCardTextures[i];
@@ -188,7 +187,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
             Invoke("ReleaseFromGrid", 0.1f);
             Invoke("EnableCutCollider", 0.2f);
             Invoke("ThrowCards", 0.5f);
-
+            countCard.SetActive(true);
         }
     }
 
@@ -273,8 +272,10 @@ public class CardNinjaBoardGenerator : MonoBehaviour
 
     public void ClearBoard()
     {
-        if(cutController.levelEndedCount >= 2)
+        if(levelCount == maxLevelCount - 1)
+        {
             cutController.cutCount = 0;
+        }
 
         cutController.throwedCount = 0;
         cutPrefab.SetActive(false);
@@ -300,8 +301,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
 
     private async Task PrefetchNextLevelsTexturesAsync()
     {
-        Debug.Log("PREFETCH");
-        for(int i = 0; i < (maxLevelCount * cardCount); i++)
+        for(int i = 0; i < cardNames.Count; i++)
         {
             prefetchedCardNames.Add(cardLocalNames[randomValueList[i]]);
             var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[i]], 512);

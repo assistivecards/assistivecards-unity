@@ -96,7 +96,8 @@ public class CardNinjaCardMovement : MonoBehaviour
 
     private void ReadCard()
     {
-        //gameAPI.Speak(cardLocalName);
+        Debug.Log("Speak: " + cardType);
+        gameAPI.Speak(cardType);
     }
 
     public void Break(bool horizontalDrag, bool verticalDrag) 

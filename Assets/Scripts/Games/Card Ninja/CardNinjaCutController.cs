@@ -19,7 +19,6 @@ public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHan
     public bool verticalDrag;
     public int cutCount;
     public int throwedCount;
-    public int levelEndedCount;
 
     private void Awake()
     {
@@ -85,24 +84,35 @@ public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHan
 
     public void LevelEndCheck()
     {
-        if(cutCount < 5)
+        if(throwedCount >= 10 && cutCount < 5)
         {
-            if(throwedCount > 9 && levelEndedCount < 2)
+            if(boardGenerator.levelCount < boardGenerator.maxLevelCount - 1)
             {
-                LevelRefresh();
                 boardGenerator.LevelEndCardScale();
-                levelEndedCount++;
+                boardGenerator.levelCount++;
+                ResetLevel();
+                Invoke("LevelRefresh", 0.5f);
             }
-            else if(levelEndedCount >= 2)
+            else if(boardGenerator.levelCount >= boardGenerator.maxLevelCount - 1)
             {
                 boardGenerator.LevelEndCardScale();
                 Invoke("CallNewLevel", 2f);
             } 
         }
-        if(cutCount >= 5)
+        else if(throwedCount <= 10 && cutCount >= 5)
         {
-            boardGenerator.LevelEndCardScale();
-            Invoke("CallNewLevel", 2f);
+            if(boardGenerator.levelCount < boardGenerator.maxLevelCount - 1)
+            {
+                boardGenerator.LevelEndCardScale();
+                boardGenerator.levelCount++;
+                ResetLevel();
+                Invoke("LevelRefresh", 0.5f);
+            }
+            else if(boardGenerator.levelCount >= boardGenerator.maxLevelCount - 1)
+            {
+                boardGenerator.LevelEndCardScale();
+                Invoke("CallNewLevel", 2f);
+            } 
         }
     }
 
@@ -114,22 +124,23 @@ public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHan
 
     private void LevelRefresh()
     {
-        cutEffect.SetActive(false);
         throwedCount = 0;
-        uıController.cutText.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = cutController.cutCount + " / 5";
+        cutEffect.SetActive(false);
         uıController.ReloadLevel();
         boardGenerator.GeneratedBoardAsync();
+        uıController.cutText.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = cutController.cutCount + " / 5";
     }
 
     public void CallNewLevel()
     {
         ResetLevel();
         uıController.LevelEnd();
+        boardGenerator.levelCount = 0;
+        boardGenerator.ClearBoard();
     }
 
     public void ResetLevel()
     {
-        levelEndedCount = 0;
         cutCount = 0;
         throwedCount = 0;
         uıController.cutText.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = cutController.cutCount + " / 5";

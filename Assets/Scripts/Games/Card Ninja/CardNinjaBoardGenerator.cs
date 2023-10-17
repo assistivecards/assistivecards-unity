@@ -31,7 +31,6 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject grid;
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject cutPrefab;
-    [SerializeField] private GameObject tutorial;
     [SerializeField] private Texture2D selectedCardTexture;
     [SerializeField] private GameObject countCard;
     private GameObject selectedCard;
@@ -54,6 +53,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
     public int levelCount;
     [SerializeField] private List<Sprite> cardPieces = new List<Sprite>();
     public List<GameObject> usedCards = new List<GameObject>();
+    public int prefetchedCardsCount;
     public int formerCardInt;
     public string selectedCardTag;
 
@@ -88,7 +88,15 @@ public class CardNinjaBoardGenerator : MonoBehaviour
             prefetchedCardTextures.Clear();
             prefetchedCardNames.Clear();
             await CacheCards(packSlug);
-            for(int i = 0; i < cardNames.Count; i++)
+            if(cardNames.Count >= (cardCount * maxLevelCount))
+            {
+                prefetchedCardsCount = (cardCount * maxLevelCount);
+            }
+            else
+            {
+                prefetchedCardsCount = cardNames.Count;
+            }
+            for(int i = 0; i < prefetchedCardsCount; i++)
             {
                 CheckRandom();
             }
@@ -98,7 +106,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
 
     private void CheckRandom()
     {
-        tempRandomValue = Random.Range(0, cardNames.Count);
+        tempRandomValue = Random.Range(0, prefetchedCardsCount);
 
         if(!randomValueList.Contains(tempRandomValue))
         {
@@ -301,7 +309,7 @@ public class CardNinjaBoardGenerator : MonoBehaviour
 
     private async Task PrefetchNextLevelsTexturesAsync()
     {
-        for(int i = 0; i < cardNames.Count; i++)
+        for(int i = 0; i < prefetchedCardsCount; i++)
         {
             prefetchedCardNames.Add(cardLocalNames[randomValueList[i]]);
             var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[i]], 512);

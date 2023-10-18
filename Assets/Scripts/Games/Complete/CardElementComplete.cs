@@ -26,7 +26,7 @@ public class CardElementComplete : MonoBehaviour, IPointerDownHandler, IDragHand
     private void Start() 
     {
         detectMatchComplete = GetComponentInParent<DetectMatchComplete>();
-        board = GameObject.Find("Grid");
+        board = GameObject.Find("GamePanel");
         boardGenerator = board.GetComponent<BoardGeneratorComplete>();
     }
 
@@ -77,11 +77,11 @@ public class CardElementComplete : MonoBehaviour, IPointerDownHandler, IDragHand
         }
     }
 
-    // private void Update() 
-    // {
-    //     if(boardGenerator.isBoardCreated)
-    //         boardGenerator.CheckChilds();    
-    // }
+    private void Update() 
+    {
+        if(boardGenerator.isBoardCreated)
+            boardGenerator.CheckChilds();    
+    }
 
     private void ReadCard()
     {

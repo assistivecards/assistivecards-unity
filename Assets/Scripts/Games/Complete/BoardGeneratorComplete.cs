@@ -81,8 +81,8 @@ public class BoardGeneratorComplete : MonoBehaviour
 
     public async void PrefetchCardTextures()
     {
-        // if(uıController.canGenerate)
-        // {
+        if(uıController.canGenerate)
+        {
             packSlug = packSelectionPanel.selectedPackElement.name;
             randomValueList.Clear();
             prefetchedCardTextures.Clear();
@@ -101,7 +101,7 @@ public class BoardGeneratorComplete : MonoBehaviour
                 CheckRandom();
             }
             PrefetchNextLevelsTexturesAsync();
-        //}
+        }
     }
 
     private void CheckRandom()
@@ -140,15 +140,9 @@ public class BoardGeneratorComplete : MonoBehaviour
             cards[j].transform.GetChild(0).GetComponent<RawImage>().color = dark;
             cards[j].GetComponent<CardElementComplete>().cardType = cardName;
 
-
             actualCards.Add(Instantiate(actualCardPrefab, Vector3.zero, Quaternion.identity));
             actualCards[j].transform.parent = cardPool.transform;
-
             actualCards[j].transform.name = "ActualCard" + j;
-
-            cardTexture.wrapMode = TextureWrapMode.Clamp;
-            cardTexture.filterMode = FilterMode.Bilinear;
-
             actualCards[j].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             actualCards[j].GetComponent<CardElementComplete>().cardType = cardName;
             actualCards[j].GetComponent<CardElementComplete>().moveable = true;
@@ -156,6 +150,7 @@ public class BoardGeneratorComplete : MonoBehaviour
             actualCards[j].SetActive(false);
         }
         Invoke("FillCardSlot", 0.5f);
+        LeanTween.scale(gridBackground, Vector3.one, 0.25f);
         isBoardCreated = true;
         oneTime = true;
     }
@@ -168,7 +163,7 @@ public class BoardGeneratorComplete : MonoBehaviour
 
     public void FillCardSlot()
     {
-        if(usedRandomValues.Count < 12 && !levelEnded)
+        if(usedRandomValues.Count < cardCount && !levelEnded)
         {
             if(card1Position.GetComponent<CardSpawnerComplete>().hasChild == false)
             {
@@ -189,7 +184,7 @@ public class BoardGeneratorComplete : MonoBehaviour
                     LeanTween.scale(actualCard, Vector3.one * 5, 0.8f);
                     actualCard.transform.SetParent(card1Position);
                 }
-                else
+                else if(actualCard != null)
                 {
                     actualCard.SetActive(true);
                     actualCard.transform.position = card1Position.position;
@@ -201,24 +196,24 @@ public class BoardGeneratorComplete : MonoBehaviour
             }
             if(card2Position.GetComponent<CardSpawnerComplete>().hasChild == false)
             {
-                var random = UnityEngine.Random.Range(0, 12);
+                var random = UnityEngine.Random.Range(0, cardCount);
                 while(usedRandomValues.Contains(random))
                 {
-                    random = UnityEngine.Random.Range(0, 12);
+                    random = UnityEngine.Random.Range(0, cardCount);
                 }
                 usedRandomValues.Add(random);
                 var actualCard = actualCards[random];
 
                 if(actualCard == null)
                 {
-                    random = UnityEngine.Random.Range(0, 12);
+                    random = UnityEngine.Random.Range(0, cardCount);
 
                     actualCard.SetActive(true);
                     actualCard.transform.position = card2Position.position;
                     LeanTween.scale(actualCard, Vector3.one * 5, 0.8f);
                     actualCard.transform.SetParent(card2Position);
                 }
-                else
+                else if(actualCard != null)
                 {
                     actualCard.SetActive(true);
                     actualCard.transform.position = card2Position.position;
@@ -250,11 +245,12 @@ public class BoardGeneratorComplete : MonoBehaviour
 
     public void  EndLevel()
     {
-        if(matchCount >= 12)
+        if(matchCount >= cardCount)
         {
             gameAPI.PlaySFX("Finished");
-            gameAPI.AddExp(gameAPI.sessionExp);
+            LeanTween.scale(gridBackground, Vector3.zero, 0.25f);
             ResetLevel();
+            uıController.Invoke("LevelChangeScreenActivate", 0.5f);
         }
     }
 

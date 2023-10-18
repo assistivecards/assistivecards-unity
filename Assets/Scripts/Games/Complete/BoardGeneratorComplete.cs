@@ -150,7 +150,7 @@ public class BoardGeneratorComplete : MonoBehaviour
             actualCards[j].SetActive(false);
         }
         Invoke("FillCardSlot", 0.5f);
-        LeanTween.scale(gridBackground, Vector3.one, 0.25f);
+        LeanTween.scale(gridBackground, Vector3.one, 0.1f);
         isBoardCreated = true;
         oneTime = true;
     }
@@ -248,7 +248,7 @@ public class BoardGeneratorComplete : MonoBehaviour
         if(matchCount >= cardCount)
         {
             gameAPI.PlaySFX("Finished");
-            LeanTween.scale(gridBackground, Vector3.zero, 0.25f);
+            LeanTween.scale(gridBackground, Vector3.zero, 0.1f);
             ResetLevel();
             uıController.Invoke("LevelChangeScreenActivate", 0.5f);
         }

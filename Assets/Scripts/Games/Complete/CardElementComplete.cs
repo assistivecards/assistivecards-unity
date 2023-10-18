@@ -50,7 +50,7 @@ public class CardElementComplete : MonoBehaviour, IPointerDownHandler, IDragHand
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if(moveable)
+        if(moveable && !matched)
         {
             isPointerUp = true;
             Invoke("ChangePosition", 0.5f);
@@ -92,7 +92,7 @@ public class CardElementComplete : MonoBehaviour, IPointerDownHandler, IDragHand
     {
         if(!matched)
         {
-            LeanTween.move(this.gameObject, startPosition, 1f);
+            LeanTween.move(this.gameObject, startPosition, 0.5f);
             gameAPI.RemoveSessionExp();
         }
     }

@@ -12,15 +12,19 @@ public class FirstLetterBoardGenerator : MonoBehaviour
     GameAPI gameAPI;
 
     [SerializeField] private FirstLetterUIController uıController;
+
     [Header ("Cache Cards")]
     public string selectedLangCode;
-    public List<string> cardLocalNames = new List<string>();
     public List<GameObject> cards = new List<GameObject>();
-    private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
+    public AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
+    private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
+    public List<string> cardNames = new List<string>();
+    public List<string> cardLocalNames = new List<string>();
+    public List<Texture2D> prefetchedCardTextures = new List<Texture2D>();
+    public List<string> prefetchedCardNames = new List<string>();
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
-    private List<string> cardNames = new List<string>();
-    AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
     [SerializeField] private PackSelectionPanel packSelectionPanel;
+    public string packSlug;
 
     [Header ("Letter Cards")]
     private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLetterCards;
@@ -33,6 +37,7 @@ public class FirstLetterBoardGenerator : MonoBehaviour
     private int randomValue;
 
     [Header ("Random Letters")]
+    public List<Texture2D> letterCardTextures = new List<Texture2D>();
     public List<int> randomLetterValueList = new List<int>();
     private int tempRandomLetterValue;
     private int randomLetterValue;
@@ -53,7 +58,11 @@ public class FirstLetterBoardGenerator : MonoBehaviour
     [Header ("Colors")]
     public Color[] colors;
 
+    [Header ("Game Values")]
+    public int cardCount;
+    public int maxLevelCount;
     public int levelCount;
+    public int prefetchedCardsCount;
     private string cardName;
     public string firstLetter;
     private GameObject tempCard;
@@ -66,12 +75,12 @@ public class FirstLetterBoardGenerator : MonoBehaviour
         gameAPI = Camera.main.GetComponent<GameAPI>();
     }
 
-    public async Task CacheCards()
+    public async Task CacheCards(string _packSlug)
     {
         selectedLangCode = await gameAPI.GetSystemLanguageCode();
 
-        cachedCards = await gameAPI.GetCards("en", packSelectionPanel.selectedPackElement.name);
-        cachedLocalCards = await gameAPI.GetCards(selectedLangCode, packSelectionPanel.selectedPackElement.name);
+        cachedCards = await gameAPI.GetCards("en", _packSlug);
+        cachedLocalCards = await gameAPI.GetCards(selectedLangCode, _packSlug);
 
         cardsList = cachedCards.cards.ToList();
 
@@ -79,6 +88,35 @@ public class FirstLetterBoardGenerator : MonoBehaviour
         {
             cardNames.Add(cachedCards.cards[i].title.ToLower().Replace(" ", "-"));
             cardLocalNames.Add(cachedLocalCards.cards[i].title);
+        }
+    }
+
+    public async void PrefetchCardTextures()
+    {
+        if(uıController.canGenerate)
+        {
+            packSlug = packSelectionPanel.selectedPackElement.name;
+            randomValueList.Clear();
+            prefetchedCardTextures.Clear();
+            prefetchedCardNames.Clear();
+            letterCardTextures.Clear();
+            letterList.Clear();
+            letterCardsNames.Clear();
+            await CacheCards(packSlug);
+            await CreateLetters();
+            if(cardNames.Count >= (cardCount * maxLevelCount))
+            {
+                prefetchedCardsCount = (cardCount * maxLevelCount);
+            }
+            else
+            {
+                prefetchedCardsCount = cardNames.Count;
+            }
+            for(int i = 0; i < prefetchedCardsCount; i++)
+            {
+                CheckRandom();
+            }
+            PrefetchNextLevelsTexturesAsync();
         }
     }
 
@@ -90,14 +128,19 @@ public class FirstLetterBoardGenerator : MonoBehaviour
         for(int i = 0; i < cachedLetterCards.cards.Length; i++)
         {
             letterCardsNames.Add(cachedLetterCards.cards[i].title.ToLower().Replace(" ", "-"));
+            var letterTexture = await gameAPI.GetCardImage("letters", letterCardsNames[i], 512);
+            letterTexture.wrapMode = TextureWrapMode.Clamp;
+            letterTexture.filterMode = FilterMode.Bilinear;
+            letterCardTextures.Add(letterTexture);
+
         }
     }
 
     private void CheckRandom()
     {
-        tempRandomValue = Random.Range(0, cardsList.Count);
+        tempRandomValue = Random.Range(0, cardNames.Count);
 
-        if(!randomValueList.Contains(tempRandomValue))
+        if(randomValueList.IndexOf(tempRandomValue) < 0)
         {
             randomValue = tempRandomValue;
             randomValueList.Add(randomValue);
@@ -111,7 +154,7 @@ public class FirstLetterBoardGenerator : MonoBehaviour
     
     private void CheckRandomForLetters()
     {
-        tempRandomLetterValue = Random.Range(0, letterList.Count);
+        tempRandomLetterValue = Random.Range(0, cachedLetterCards.cards.Length);
 
         if(!randomLetterValueList.Contains(tempRandomLetterValue))
         {
@@ -135,20 +178,12 @@ public class FirstLetterBoardGenerator : MonoBehaviour
     {
         if(uıController.canGenerate)
         {
-            await CacheCards();
-            await CreateLetters();
             CreateButtonList();
-            CheckRandom();
-
             firstLetterText.GetComponent<TMP_Text>().text = gameAPI.Translate(firstLetterText.gameObject.name, selectedLangCode);
             card = Instantiate(cardPrefab, cardPosition.transform.position, Quaternion.identity);
             card.transform.SetParent(cardPosition.transform);
-
-            var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[0]], 512);
-            cardTexture.wrapMode = TextureWrapMode.Clamp;
-            cardTexture.filterMode = FilterMode.Bilinear;
-
-            card.transform.name = cardLocalNames[randomValueList[0]];
+            var cardTexture = prefetchedCardTextures[levelCount];
+            card.transform.name = prefetchedCardNames[levelCount];
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
             cards.Add(card);
@@ -172,20 +207,20 @@ public class FirstLetterBoardGenerator : MonoBehaviour
 
         if(letterCardsNames.Contains(firstLetter))
         {
-            foreach(var letter in letterCardsNames)
+            for(int i = 0; i < letterCardsNames.Count; i++)
             {
-                if(firstLetter == letter.Substring(0, 1))
+                if(firstLetter == letterCardsNames[i].Substring(0, 1))
                 {
                     CheckRandomForLetters();
                     buttons[random].transform.GetChild(0).gameObject.SetActive(true);
                     buttons[random].transform.GetChild(1).gameObject.SetActive(false);
-
-                    var correctLetterTexture = await gameAPI.GetCardImage("letters", letter, 512);
+                    
+                    var correctLetterTexture = letterCardTextures[i];
                     correctLetterTexture.wrapMode = TextureWrapMode.Clamp;
                     correctLetterTexture.filterMode = FilterMode.Bilinear;
 
                     buttons[random].transform.GetChild(0).transform.GetComponent<RawImage>().texture = correctLetterTexture;   
-                    buttons[random].GetComponent<FirstLetterButtonController>().letter = firstLetter;
+                    buttons[random].GetComponent<FirstLetterButtonController>().letter = letterCardsNames[i];
                     buttons[random].name = "Correct";
 
                 }
@@ -214,7 +249,7 @@ public class FirstLetterBoardGenerator : MonoBehaviour
 
                     if(letterCardsNames[randomLetterValueList[i]] != firstLetter)
                     {
-                        var letterTexture = await gameAPI.GetCardImage("letters", letterCardsNames[randomLetterValueList[i]], 512);
+                        var letterTexture = letterCardTextures[randomLetterValueList[i]];
                         letterTexture.wrapMode = TextureWrapMode.Clamp;
                         letterTexture.filterMode = FilterMode.Bilinear;
 
@@ -224,7 +259,7 @@ public class FirstLetterBoardGenerator : MonoBehaviour
                     else
                     {
                         CheckRandomForLetters();
-                        var letterTexture = await gameAPI.GetCardImage("letters", letterCardsNames[randomLetterValueList[i + 1]], 512);
+                        var letterTexture = letterCardTextures[randomLetterValueList[i + 1]];
                         letterTexture.wrapMode = TextureWrapMode.Clamp;
                         letterTexture.filterMode = FilterMode.Bilinear;
 
@@ -242,7 +277,7 @@ public class FirstLetterBoardGenerator : MonoBehaviour
 
                         if(letterCardsNames[randomLetterValueList[i]] != firstLetter)
                         {
-                            var letterTexture = await gameAPI.GetCardImage("letters", letterCardsNames[randomLetterValueList[i]], 512);
+                            var letterTexture = letterCardTextures[randomLetterValueList[i]];
                             letterTexture.wrapMode = TextureWrapMode.Clamp;
                             letterTexture.filterMode = FilterMode.Bilinear;
 
@@ -252,7 +287,7 @@ public class FirstLetterBoardGenerator : MonoBehaviour
                         else
                         {
                             CheckRandomForLetters();
-                            var letterTexture = await gameAPI.GetCardImage("letters", letterCardsNames[randomLetterValueList[i + 1]], 512);
+                            var letterTexture = letterCardTextures[randomLetterValueList[i+1]];
                             letterTexture.wrapMode = TextureWrapMode.Clamp;
                             letterTexture.filterMode = FilterMode.Bilinear;
 
@@ -334,10 +369,6 @@ public class FirstLetterBoardGenerator : MonoBehaviour
         cardLocalNames.Clear();
         cards.Clear();
         cardNames.Clear();
-
-        letterList.Clear();
-        letterCardsNames.Clear();
-
         randomValueList.Clear();
         randomLetterValueList.Clear();
 
@@ -354,6 +385,19 @@ public class FirstLetterBoardGenerator : MonoBehaviour
         buttons.Clear();
 
         Destroy(card);
+    }
 
+    private async Task PrefetchNextLevelsTexturesAsync()
+    {
+        for(int i = 0; i < prefetchedCardsCount; i++)
+        {
+            prefetchedCardNames.Add(cardLocalNames[randomValueList[i]]);
+            var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[i]], 512);
+            cardTexture.wrapMode = TextureWrapMode.Clamp;
+            cardTexture.filterMode = FilterMode.Bilinear; 
+            prefetchedCardTextures.Add(cardTexture);
+            Debug.Log(cardNames[randomValueList[i]]);
+        }
+        Invoke("GeneratedBoardAsync", 2f);
     }
 }

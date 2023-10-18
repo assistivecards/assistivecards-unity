@@ -681,17 +681,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 80}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &584384117 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1242831489156330399, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
-  m_PrefabInstance: {fileID: 1242831489266657176}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &601693157 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 2053396223659386525, guid: ede77e0fd5dd7a24f8bcd7cb30c7e5b7, type: 3}
@@ -1374,7 +1363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 804781093893846699, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: GeneratedBoardAsync
+      value: PrefetchCardTextures
       objectReference: {fileID: 0}
     - target: {fileID: 804781093893846699, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1390,7 +1379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 804781093893846699, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: AlphabetChooseBoardGenerator, Assembly-CSharp
+      value: FirstLetterBoardGenerator, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 804781093893846699, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1681,6 +1670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7551e31af85073640848a944c94a6ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleSpawnPoints: []
   availablePacksText: {fileID: 770021530}
   subsRestoreButton: {fileID: 0}
   promoUniAppRestoreButton: {fileID: 0}
@@ -1690,7 +1680,8 @@ MonoBehaviour:
   promoScreenPremiumButton: {fileID: 1003392353}
   promoScreenMonthlyButton: {fileID: 0}
   promoScreenYearlyButton: {fileID: 0}
-  promoScreenPuchasePremiumButton: {fileID: 1719089849}
+  promoScreenPuchasePremiumButton: {fileID: 0}
+  premiumPromoSettingsButton: {fileID: 0}
   availablePacksArray: []
 --- !u!114 &1338730598
 MonoBehaviour:
@@ -1710,7 +1701,7 @@ MonoBehaviour:
   promoScreenPrice: {fileID: 1407491092}
   promoScreenMonthlyPrice: {fileID: 0}
   promoScreenYearlyPrice: {fileID: 0}
-  promoScreenPuchasePrice: {fileID: 584384117}
+  promoScreenPuchasePrice: {fileID: 0}
   IAPUIManager: {fileID: 1338730597}
   environment: development
   purchaseRestoredPanel: {fileID: 191490649}
@@ -1950,17 +1941,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5829141130014444528, guid: 5d9a903667bde460ea154597ef6cc51b, type: 3}
   m_PrefabInstance: {fileID: 192837308}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1719089849 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1357829323095568706, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
-  m_PrefabInstance: {fileID: 1242831489266657176}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1727350122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2257,7 +2237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: GeneratedBoardAsync
+      value: PrefetchCardTextures
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
@@ -2273,7 +2253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
-      value: AlphabetChooseBoardGenerator, Assembly-CSharp
+      value: FirstLetterBoardGenerator, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
@@ -3388,7 +3368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 4119.288
+      value: 18670.191
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -4176,13 +4156,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "u\u0131Controller": {fileID: 8383894889009589327}
   selectedLangCode: 
-  cardLocalNames: []
   cards: []
+  cachedCards:
+    cards: []
+  cardNames: []
+  cardLocalNames: []
+  prefetchedCardTextures: []
+  prefetchedCardNames: []
   cardsList: []
   packSelectionPanel: {fileID: 488075495}
+  packSlug: 
   letterList: []
   letterCardsNames: []
   randomValueList: 
+  letterCardTextures: []
   randomLetterValueList: 
   cardPrefab: {fileID: 1572616208917296617, guid: d3d5f9125867442979815c2ba18db414, type: 3}
   tutorial: {fileID: 927069859}
@@ -4202,7 +4189,10 @@ MonoBehaviour:
   - {r: 0.77254903, g: 0.54901963, b: 0.98039216, a: 1}
   - {r: 0.98039216, g: 0.54901963, b: 0.9529412, a: 1}
   - {r: 0.98039216, g: 0.54901963, b: 0.7137255, a: 1}
+  cardCount: 3
+  maxLevelCount: 5
   levelCount: 0
+  prefetchedCardsCount: 0
   firstLetter: 
   cardNameLenght: 0
 --- !u!114 &8383894889009589327

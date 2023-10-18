@@ -121,7 +121,6 @@ public class BoardGeneratorComplete : MonoBehaviour
 
     public async Task GeneratedBoardAsync()
     {
-        uıController.GameUIActivate();
         for(int j = 0; j < cardCount; j++)
         {
             var cardName = prefetchedCardNames[j];
@@ -222,6 +221,7 @@ public class BoardGeneratorComplete : MonoBehaviour
                     actualCard.transform.SetParent(card2Position);
                 }
             }
+            uıController.GameUIActivate();
         }
     }
 

@@ -9,7 +9,20 @@ using System.Linq;
 public class BoardCreatorComplete : MonoBehaviour
 {
     GameAPI gameAPI;
+
+    [SerializeField] private UIControllerComplete uıController;
+    [Header ("Cache Cards")]
     public string selectedLangCode;
+    public List<GameObject> cards = new List<GameObject>();
+    public AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
+    private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
+    public List<string> cardNames = new List<string>();
+    public List<string> cardLocalNames = new List<string>();
+    public List<Texture2D> prefetchedCardTextures = new List<Texture2D>();
+    public List<string> prefetchedCardNames = new List<string>();
+    [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
+    [SerializeField] private PackSelectionPanel packSelectionPanel;
+    public string packSlug;
 
     AssistiveCardsSDK.AssistiveCardsSDK.Cards cardDefinitions;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cardTextures;
@@ -20,14 +33,9 @@ public class BoardCreatorComplete : MonoBehaviour
     private int tempRandomValue;
     private int randomValue;
 
-    private List<string> cardNames = new List<string>();
-    private List<string> cardDefinitionsLocale = new List<string>();
-
     public List<int> randomValueList = new List<int>();
     public List<int> usedRandomValues = new List<int>();
 
-
-    public List<GameObject> cards  = new List<GameObject>();
     public List<GameObject> actualCards  = new List<GameObject>();
 
     [SerializeField] private GameObject cardPrefab;
@@ -37,12 +45,14 @@ public class BoardCreatorComplete : MonoBehaviour
     [SerializeField] private Transform card1Position;
     [SerializeField] private Transform card2Position;
 
+    [Header ("Game Values")]
     public int cardCount;
-    public string packSlug;
+    public int maxLevelCount;
+    public int levelCount;
+    public int prefetchedCardsCount;
     public bool isBoardCreated = false;
     public bool levelEnded;
     public int matchCount;
-
     [SerializeField] private Color dark;
     private bool oneTime;
 
@@ -54,14 +64,43 @@ public class BoardCreatorComplete : MonoBehaviour
 
     public async Task CacheCards(string _packSlug)
     {
-        uıControllerComplete.LoadingScreenActivate();
-        LeanTween.scale(gridBackground, Vector3.one, 0);
         selectedLangCode = await gameAPI.GetSystemLanguageCode();
-        cardDefinitions = await gameAPI.GetCards(selectedLangCode, _packSlug);
-        cardTextures = await gameAPI.GetCards("en", _packSlug);
-        gridBackground.SetActive(true);
-        await GenerateRandomBoardAsync(_packSlug);
-        packSlug = _packSlug;
+
+        cachedCards = await gameAPI.GetCards("en", _packSlug);
+        cachedLocalCards = await gameAPI.GetCards(selectedLangCode, _packSlug);
+
+        cardsList = cachedCards.cards.ToList();
+
+        for(int i = 0; i < cachedCards.cards.Length; i++)
+        {
+            cardNames.Add(cachedCards.cards[i].title.ToLower().Replace(" ", "-"));
+            cardLocalNames.Add(cachedLocalCards.cards[i].title);
+        }
+    }
+
+    public async void PrefetchCardTextures()
+    {
+        // if(uıController.canGenerate)
+        // {
+            packSlug = packSelectionPanel.selectedPackElement.name;
+            randomValueList.Clear();
+            prefetchedCardTextures.Clear();
+            prefetchedCardNames.Clear();
+            await CacheCards(packSlug);
+            if(cardNames.Count >= (cardCount * maxLevelCount))
+            {
+                prefetchedCardsCount = (cardCount * maxLevelCount);
+            }
+            else
+            {
+                prefetchedCardsCount = cardNames.Count;
+            }
+            for(int i = 0; i < prefetchedCardsCount; i++)
+            {
+                CheckRandom();
+            }
+            PrefetchNextLevelsTexturesAsync();
+        //}
     }
 
     private void CheckRandom()
@@ -81,21 +120,10 @@ public class BoardCreatorComplete : MonoBehaviour
 
     public async Task GenerateRandomBoardAsync(string packSlug)
     {
-        for(int x = 0; x < cardCount; x++)
-        {
-            CheckRandom();
-        }
-
-        for(int i = 0; i< cardTextures.cards.Length; i++)
-        {
-            cardNames.Add(cardTextures.cards[i].title.ToLower().Replace(" ", "-"));
-            cardDefinitionsLocale.Add(cardDefinitions.cards[i].title);
-        }
-
         for(int j = 0; j < cardCount; j++)
         {
-            var cardName = cardNames[randomValueList[j]];
-            var cardTexture = await gameAPI.GetCardImage(packSlug, cardName, 512);
+            var cardName = prefetchedCardNames[j];
+            var cardTexture = prefetchedCardTextures[j];
 
             cards.Add(Instantiate(cardPrefab, Vector3.zero, Quaternion.identity));
             cards[j].transform.parent = this.transform;
@@ -122,7 +150,7 @@ public class BoardCreatorComplete : MonoBehaviour
             actualCards[j].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             actualCards[j].GetComponent<CardElementComplete>().cardType = cardName;
             actualCards[j].GetComponent<CardElementComplete>().moveable = true;
-            actualCards[j].GetComponent<CardElementComplete>().localName = cardDefinitionsLocale[randomValueList[j]];
+            actualCards[j].GetComponent<CardElementComplete>().localName = prefetchedCardNames[randomValueList[j]];
             actualCards[j].SetActive(false);
         }
         Invoke("FillCardSlot", 0.5f);
@@ -221,7 +249,6 @@ public class BoardCreatorComplete : MonoBehaviour
         cardNames.Clear();
         randomValueList.Clear();
         usedRandomValues.Clear();
-        cardDefinitionsLocale.Clear();
         cards.Clear();
         actualCards.Clear();
         matchCount = 0;
@@ -241,5 +268,20 @@ public class BoardCreatorComplete : MonoBehaviour
     public void BoardCreatedFalse()
     {
         isBoardCreated = false;
+    }
+
+        
+    private async Task PrefetchNextLevelsTexturesAsync()
+    {
+        for(int i = 0; i < prefetchedCardsCount; i++)
+        {
+            prefetchedCardNames.Add(cardLocalNames[randomValueList[i]]);
+            var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[i]], 512);
+            cardTexture.wrapMode = TextureWrapMode.Clamp;
+            cardTexture.filterMode = FilterMode.Bilinear; 
+            prefetchedCardTextures.Add(cardTexture);
+            Debug.Log(cardNames[randomValueList[i]]);
+        }
+        Invoke("GeneratedBoardAsync", 2f);
     }
 }

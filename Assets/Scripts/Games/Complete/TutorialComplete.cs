@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TutorialComplete : MonoBehaviour
 {
-    [SerializeField] private BoardCreatorComplete boardCreatorComplete;
+    [SerializeField] private BoardGeneratorComplete boardGenerator;
     [SerializeField] private Transform position1;
     [SerializeField] private Transform position2;
 
@@ -17,7 +17,7 @@ public class TutorialComplete : MonoBehaviour
 
     public void DetectDestination()
     {
-        foreach(GameObject card in boardCreatorComplete.cards)
+        foreach(GameObject card in boardGenerator.cards)
         {
             if(card.GetComponent<CardElementComplete>() != null)
             {

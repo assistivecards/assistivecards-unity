@@ -12,7 +12,7 @@ public class CardElementComplete : MonoBehaviour, IPointerDownHandler, IDragHand
     public bool matched;
     private GameObject board;
     private DetectMatchComplete detectMatchComplete;
-    private BoardCreatorComplete boardCreatorComplete;
+    private BoardGeneratorComplete boardGenerator;
     public string localName;
     public Vector3 startPosition;
     public bool matchComplete;
@@ -27,7 +27,7 @@ public class CardElementComplete : MonoBehaviour, IPointerDownHandler, IDragHand
     {
         detectMatchComplete = GetComponentInParent<DetectMatchComplete>();
         board = GameObject.Find("Grid");
-        boardCreatorComplete = board.GetComponent<BoardCreatorComplete>();
+        boardGenerator = board.GetComponent<BoardGeneratorComplete>();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -71,17 +71,17 @@ public class CardElementComplete : MonoBehaviour, IPointerDownHandler, IDragHand
                 Invoke("ReadCard", 0.2f);
                 matched = true;
                 this.transform.SetParent(other.transform);
-                boardCreatorComplete.matchCount += 1;
-                boardCreatorComplete.Invoke("EndLevel", 0.4f);
+                boardGenerator.matchCount += 1;
+                boardGenerator.Invoke("EndLevel", 0.4f);
             }
         }
     }
 
-    private void Update() 
-    {
-        if(boardCreatorComplete.isBoardCreated)
-            boardCreatorComplete.CheckChilds();    
-    }
+    // private void Update() 
+    // {
+    //     if(boardGenerator.isBoardCreated)
+    //         boardGenerator.CheckChilds();    
+    // }
 
     private void ReadCard()
     {

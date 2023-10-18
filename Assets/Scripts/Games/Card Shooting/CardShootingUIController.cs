@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CardShootingUIController : MonoBehaviour
 {
-GameAPI gameAPI;
+    GameAPI gameAPI;
 
     [Header ("Scripts")]
     [SerializeField] private CardShootingBoardGenerator boardGenerator;

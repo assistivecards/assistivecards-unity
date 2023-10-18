@@ -8,7 +8,7 @@ public class PackSelectManagerComplete : MonoBehaviour
     [SerializeField] private UIControllerComplete uıController;
     [SerializeField] private PackSelectionScreenUIController packSelectionScreenUIController;
     [SerializeField] private PackSelectionPanel packSelectionPanel;
-    [SerializeField] private BoardCreatorComplete boardCreatorComplete;
+    [SerializeField] private BoardGeneratorComplete boardCreatorComplete;
     private string selectedPack;
 
     public void OnPackSelect()

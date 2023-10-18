@@ -5,7 +5,7 @@ using UnityEngine;
 public class LevelScreenControllerComplete : MonoBehaviour
 {
     GameAPI gameAPI;
-    [SerializeField] private BoardCreatorComplete boardCreatorComplete;
+    [SerializeField] private BoardGeneratorComplete boardGenerator;
 
     private void Awake()
     {
@@ -26,8 +26,8 @@ public class LevelScreenControllerComplete : MonoBehaviour
     private void Close()
     {
         Invoke("SetActiveFalse", 0.75f);
-        boardCreatorComplete.levelEnded = false;
-        boardCreatorComplete.isBoardCreated = false;
+        boardGenerator.levelEnded = false;
+        boardGenerator.isBoardCreated = false;
     }
 
     private void SetActiveFalse()

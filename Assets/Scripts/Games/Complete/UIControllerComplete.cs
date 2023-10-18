@@ -5,73 +5,131 @@ using UnityEngine;
 public class UIControllerComplete : MonoBehaviour
 {
     GameAPI gameAPI;
-    [SerializeField] private BoardCreatorComplete boardCreatorComplete;
 
-    [Header("Screens")]
-    [SerializeField] private GameObject levelScreen;
-    [SerializeField] private GameObject grid;
-    [SerializeField] private GameObject gridBackground;
-    [SerializeField] private GameObject packSelectionPanel;
+    [Header ("Scripts")]
+    [SerializeField] private BoardGeneratorComplete boardGenerator;
+    [SerializeField] private PackSelectionPanel packSelectionPanelScript;
 
-    [Header("UI Elements")]
+    [Header ("Panels")]
+    [SerializeField] private GameObject levelChange;
+
+    [Header ("UI Objects")]
     [SerializeField] private GameObject gameUI;
     [SerializeField] private GameObject backButton;
+    [SerializeField] private GameObject settingButton;
     [SerializeField] private GameObject helloText;
-    [SerializeField] private GameObject settingsButton;
     [SerializeField] private GameObject levelProgressContainer;
-    public GameObject loadingScreen;
-    public bool firstTime = true;
+    [SerializeField] private GameObject loadingScreen;
+    [SerializeField] private GameObject packSelectionScreen;
+    [SerializeField] private GameObject tutorial;
 
-    private void Awake()
+    private bool firstTime = true;
+    public bool canGenerate;
+
+    private void Awake() 
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
+        gameAPI.PlayMusic();
     }
 
-    public void TutorialSetActive(GameObject _tutorial)
+    public void GameUIActivate()
     {
-        if(firstTime || gameAPI.GetTutorialPreference() == 1)
+        if(canGenerate)
         {
-            _tutorial.SetActive(true);
+            if(firstTime || gameAPI.GetTutorialPreference() == 1)
+            {
+                tutorial.SetActive(true);
+            }
+            gameUI.SetActive(true);
+            backButton.SetActive(true);
+            settingButton.SetActive(true);
+            helloText.SetActive(false);
+            levelProgressContainer.SetActive(false);
+            loadingScreen.SetActive(false);
         }
-        firstTime = false;
     }
 
-    public void LevelEnd()
+    public void LevelEnding()
     {
-        levelScreen.SetActive(true);
-        helloText.SetActive(false);
-        levelProgressContainer.SetActive(false);
-        settingsButton.SetActive(false);
-        gridBackground.SetActive(false);
+        gameUI.SetActive(false);
         backButton.SetActive(false);
+        settingButton.SetActive(false);
     }
+
+    public void LevelChangeScreenActivate()
+    {
+        LevelEnding();
+        gameAPI.AddExp(gameAPI.sessionExp);
+        levelChange.SetActive(true);
+        boardGenerator.levelCount = 0;
+        LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.1f);
+    }
+
+    public void CloseLevelChangePanel()
+    {
+        LeanTween.scale(levelChange, Vector3.zero, 0.5f);
+        Invoke("LevelChangeDeactivate", 1f);
+    }
+
     public void PackSelectionPanelActive()
     {
-        helloText.SetActive(true);
-        levelProgressContainer.SetActive(true);
-        settingsButton.SetActive(true);
-        backButton.SetActive(false);
-        gridBackground.SetActive(false);
+        gameUI.SetActive(false);
         gameAPI.ResetSessionExp();
-    }
-    public void OnGameUI()
-    {
-        backButton.SetActive(true);
-        helloText.SetActive(false);
+        backButton.SetActive(false);
+        settingButton.SetActive(true);
+        helloText.SetActive(true);
         levelProgressContainer.SetActive(false);
-        settingsButton.SetActive(true);
     }
 
-    public void LoadingScreenActivate()
+    public void DetectPremium()
     {
-        loadingScreen.SetActive(true);
-        LeanTween.scale(gameUI, Vector3.zero, 0);
+        if (gameAPI.GetPremium() == "A5515T1V3C4RD5")
+        {
+            canGenerate = true;
+        }
+        else
+        {
+            for (int i = 0; i < gameAPI.cachedPacks.packs.Length; i++)
+            {
+                if (gameAPI.cachedPacks.packs[i].slug == packSelectionPanelScript.selectedPackElement.name)
+                {
+                    if (gameAPI.cachedPacks.packs[i].premium == 1)
+                    {
+                        Debug.Log("Seçilen paket premium");
+                        canGenerate = false;
+                    }
+                    else
+                    {
+                        Debug.Log("Seçilen paket premium değil");
+                        canGenerate = true;
+                    }
+
+                }
+            }
+        }
     }
 
-    public void LoadingScreenDeactivate()
+    public void LevelChangeDeactivate()
     {
-        loadingScreen.SetActive(false);
-        LeanTween.scale(gameUI, Vector3.one, 0);
+        gameAPI.ResetSessionExp();
+        levelChange.SetActive(false);
+    }
+
+    public void ResetScroll()
+    {
+        packSelectionScreen.transform.GetChild(0).GetChild(0).GetChild(0).transform.localPosition = Vector3.zero;
+    }
+
+    public void LoadingScreenActivation()
+    {
+        if(canGenerate)
+        {
+            loadingScreen.SetActive(true);
+            helloText.SetActive(false);
+            levelProgressContainer.SetActive(false);
+            settingButton.SetActive(false);
+            backButton.SetActive(false);
+        }
     }
 
 }

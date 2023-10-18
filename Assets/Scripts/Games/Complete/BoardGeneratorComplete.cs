@@ -6,11 +6,14 @@ using UnityEngine.UI;
 using TMPro;
 using System.Linq;
 
-public class BoardCreatorComplete : MonoBehaviour
+public class BoardGeneratorComplete : MonoBehaviour
 {
     GameAPI gameAPI;
 
+    [Header ("Classes")]
     [SerializeField] private UIControllerComplete uıController;
+    [SerializeField] private TutorialComplete tutorialComplete;
+
     [Header ("Cache Cards")]
     public string selectedLangCode;
     public List<GameObject> cards = new List<GameObject>();
@@ -26,18 +29,16 @@ public class BoardCreatorComplete : MonoBehaviour
 
     AssistiveCardsSDK.AssistiveCardsSDK.Cards cardDefinitions;
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cardTextures;
-    [SerializeField] private UIControllerComplete uıControllerComplete;
-    [SerializeField] private TutorialComplete tutorialComplete;
     [SerializeField] private GameObject cardPool;
+    public List<GameObject> actualCards  = new List<GameObject>();
 
     private int tempRandomValue;
     private int randomValue;
-
     public List<int> randomValueList = new List<int>();
     public List<int> usedRandomValues = new List<int>();
 
-    public List<GameObject> actualCards  = new List<GameObject>();
-
+    [Header ("Game Objects")]
+    [SerializeField] private GameObject grid;
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject gridBackground;
     [SerializeField] private GameObject actualCardPrefab;
@@ -105,7 +106,7 @@ public class BoardCreatorComplete : MonoBehaviour
 
     private void CheckRandom()
     {
-        tempRandomValue = Random.Range(0, cardTextures.cards.Length);
+        tempRandomValue = Random.Range(0, cardNames.Count);
 
         if(randomValueList.IndexOf(tempRandomValue) < 0)
         {
@@ -118,15 +119,16 @@ public class BoardCreatorComplete : MonoBehaviour
         }
     }
 
-    public async Task GenerateRandomBoardAsync(string packSlug)
+    public async Task GeneratedBoardAsync()
     {
+        uıController.GameUIActivate();
         for(int j = 0; j < cardCount; j++)
         {
             var cardName = prefetchedCardNames[j];
             var cardTexture = prefetchedCardTextures[j];
 
             cards.Add(Instantiate(cardPrefab, Vector3.zero, Quaternion.identity));
-            cards[j].transform.parent = this.transform;
+            cards[j].transform.parent = grid.transform;
             LeanTween.scale(cards[j], Vector3.one * 1.18f, 0);
 
             cards[j].transform.name = "Card" + j;
@@ -150,13 +152,12 @@ public class BoardCreatorComplete : MonoBehaviour
             actualCards[j].transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             actualCards[j].GetComponent<CardElementComplete>().cardType = cardName;
             actualCards[j].GetComponent<CardElementComplete>().moveable = true;
-            actualCards[j].GetComponent<CardElementComplete>().localName = prefetchedCardNames[randomValueList[j]];
+            actualCards[j].GetComponent<CardElementComplete>().localName = prefetchedCardNames[j];
             actualCards[j].SetActive(false);
         }
         Invoke("FillCardSlot", 0.5f);
         isBoardCreated = true;
         oneTime = true;
-        uıControllerComplete.LoadingScreenDeactivate();
     }
 
     public void CheckChilds()
@@ -227,13 +228,6 @@ public class BoardCreatorComplete : MonoBehaviour
                 }
             }
         }
-
-        if(oneTime)
-        {
-            uıControllerComplete.TutorialSetActive(tutorial);
-            tutorialComplete.DetectDestination();
-            oneTime = false;
-        }
     }
 
     public void ResetLevel()
@@ -260,7 +254,6 @@ public class BoardCreatorComplete : MonoBehaviour
         {
             gameAPI.PlaySFX("Finished");
             gameAPI.AddExp(gameAPI.sessionExp);
-            uıControllerComplete.LevelEnd();
             ResetLevel();
         }
     }

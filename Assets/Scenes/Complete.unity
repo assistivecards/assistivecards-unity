@@ -210,7 +210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &255349953
 RectTransform:
   m_ObjectHideFlags: 0
@@ -457,7 +457,7 @@ PrefabInstance:
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 832729303}
+      objectReference: {fileID: 8383894889009589326}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -465,11 +465,11 @@ PrefabInstance:
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 832729303}
+      objectReference: {fileID: 8383894889009589327}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 1837497526}
+      objectReference: {fileID: 8383894889009589326}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
@@ -496,7 +496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ResetLevel
+      value: LevelEnding
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -504,7 +504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: BoardCreatedFalse
+      value: EndLevel
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
@@ -516,7 +516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BoardCreatorComplete, Assembly-CSharp
+      value: UIControllerComplete, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -524,11 +524,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: BoardCreatorComplete, Assembly-CSharp
+      value: BoardGeneratorComplete, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: PackSelectManagerComplete, Assembly-CSharp
+      value: UIControllerComplete, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
@@ -757,7 +757,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &586425336
 RectTransform:
   m_ObjectHideFlags: 0
@@ -961,7 +961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e08f8e3b2984565927f39df7bc59f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boardCreatorComplete: {fileID: 832729303}
+  boardGenerator: {fileID: 8383894889009589327}
   hasChild: 0
 --- !u!1 &750851286 stripped
 GameObject:
@@ -985,7 +985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e65305f7d07a4045b1890bcdaf8c988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boardCreatorComplete: {fileID: 832729303}
+  boardGenerator: {fileID: 0}
   position1: {fileID: 701864988}
   position2: {fileID: 0}
 --- !u!114 &754856831 stripped
@@ -1025,7 +1025,6 @@ GameObject:
   m_Component:
   - component: {fileID: 832729302}
   - component: {fileID: 832729304}
-  - component: {fileID: 832729303}
   m_Layer: 5
   m_Name: Grid
   m_TagString: Untagged
@@ -1052,52 +1051,6 @@ RectTransform:
   m_AnchoredPosition: {x: 921.0948, y: 144.29611}
   m_SizeDelta: {x: 120, y: 115}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &832729303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832729301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0711e29dbd0d649d7a0073316a024b62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  "u\u0131Controller": {fileID: 0}
-  selectedLangCode: 
-  cards: []
-  cachedCards:
-    cards: []
-  cardNames: []
-  cardLocalNames: []
-  prefetchedCardTextures: []
-  prefetchedCardNames: []
-  cardsList: []
-  packSelectionPanel: {fileID: 0}
-  packSlug: 
-  cardTextures:
-    cards: []
-  "u\u0131ControllerComplete": {fileID: 8383894889009589326}
-  tutorialComplete: {fileID: 750851290}
-  cardPool: {fileID: 2010438672}
-  randomValueList: 
-  usedRandomValues: 
-  actualCards: []
-  cardPrefab: {fileID: 1572616208917296617, guid: d714c55cd102842399318dcd12c8b39c, type: 3}
-  gridBackground: {fileID: 255349952}
-  actualCardPrefab: {fileID: 1572616208917296617, guid: eebce8392d01246b68fd9447d746efe7, type: 3}
-  tutorial: {fileID: 750851286}
-  card1Position: {fileID: 701864988}
-  card2Position: {fileID: 2146932904}
-  cardCount: 12
-  maxLevelCount: 0
-  levelCount: 0
-  prefetchedCardsCount: 0
-  isBoardCreated: 0
-  levelEnded: 0
-  matchCount: 0
-  dark: {r: 0, g: 0, b: 0, a: 0.78431374}
 --- !u!114 &832729304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1576,7 +1529,7 @@ PrefabInstance:
     - target: {fileID: 804781093893846699, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1837497526}
+      objectReference: {fileID: 0}
     - target: {fileID: 804781093893846699, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
@@ -1756,7 +1709,7 @@ PrefabInstance:
     - target: {fileID: 804781094745460802, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 1837497526}
+      objectReference: {fileID: 0}
     - target: {fileID: 804781094745460802, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
@@ -1890,7 +1843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55bff403edb2445ffb4431fa46036506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boardCreatorComplete: {fileID: 832729303}
+  boardGenerator: {fileID: 0}
 --- !u!1 &1338730596
 GameObject:
   m_ObjectHideFlags: 0
@@ -2306,7 +2259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
@@ -2335,11 +2288,11 @@ PrefabInstance:
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 1837497526}
+      objectReference: {fileID: 8383894889009589326}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 1837497526}
+      objectReference: {fileID: 8383894889009589327}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
@@ -2378,11 +2331,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: OnPackSelect
+      value: DetectPremium
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: GenerateStylizedBoard
+      value: PrefetchCardTextures
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
@@ -2398,11 +2351,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: PackSelectManagerComplete, Assembly-CSharp
+      value: UIControllerComplete, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
-      value: PackSelectManagerComplete, Assembly-CSharp
+      value: BoardGeneratorComplete, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
@@ -2463,10 +2416,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9035172431832795728, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1837497526}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
 --- !u!224 &1837497524 stripped
 RectTransform:
@@ -2484,22 +2434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f44cf049de1b446bf8e19644a138f40f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1837497526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 160914294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d23442390be14f94b2dc47d47c70365, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  "u\u0131Controller": {fileID: 8383894889009589326}
-  packSelectionScreenUIController: {fileID: 1837497525}
-  packSelectionPanel: {fileID: 754856831}
-  boardCreatorComplete: {fileID: 832729303}
 --- !u!114 &1867278663 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1242831489432585643, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -2605,7 +2539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e08f8e3b2984565927f39df7bc59f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boardCreatorComplete: {fileID: 832729303}
+  boardGenerator: {fileID: 8383894889009589327}
   hasChild: 0
 --- !u!1001 &300905862136274000
 PrefabInstance:
@@ -2960,7 +2894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 42582.035
+      value: 126625.42
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3197,6 +3131,7 @@ GameObject:
   - component: {fileID: 8383894889009589325}
   - component: {fileID: 1995057600056102325}
   - component: {fileID: 8383894889009589326}
+  - component: {fileID: 8383894889009589327}
   m_Layer: 5
   m_Name: GamePanel
   m_TagString: Untagged
@@ -3548,18 +3483,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efe7416688a4048ada91c32db9355aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boardCreatorComplete: {fileID: 832729303}
-  levelScreen: {fileID: 21395704}
-  grid: {fileID: 832729301}
-  gridBackground: {fileID: 255349952}
-  packSelectionPanel: {fileID: 160914294}
+  boardGenerator: {fileID: 8383894889009589327}
+  packSelectionPanelScript: {fileID: 754856831}
+  levelChange: {fileID: 21395704}
   gameUI: {fileID: 586425335}
   backButton: {fileID: 834737980}
+  settingButton: {fileID: 472857506}
   helloText: {fileID: 1587829476}
-  settingsButton: {fileID: 472857506}
   levelProgressContainer: {fileID: 524120355}
   loadingScreen: {fileID: 671447375}
-  firstTime: 1
+  packSelectionScreen: {fileID: 160914294}
+  tutorial: {fileID: 750851286}
+  canGenerate: 0
+--- !u!114 &8383894889009589327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3720148778835819161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0711e29dbd0d649d7a0073316a024b62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "u\u0131Controller": {fileID: 8383894889009589326}
+  tutorialComplete: {fileID: 750851290}
+  selectedLangCode: 
+  cards: []
+  cachedCards:
+    cards: []
+  cardNames: []
+  cardLocalNames: []
+  prefetchedCardTextures: []
+  prefetchedCardNames: []
+  cardsList: []
+  packSelectionPanel: {fileID: 754856831}
+  packSlug: 
+  cardTextures:
+    cards: []
+  cardPool: {fileID: 2010438672}
+  actualCards: []
+  randomValueList: 
+  usedRandomValues: 
+  grid: {fileID: 832729301}
+  cardPrefab: {fileID: 1572616208917296617, guid: d714c55cd102842399318dcd12c8b39c, type: 3}
+  gridBackground: {fileID: 255349952}
+  actualCardPrefab: {fileID: 1572616208917296617, guid: eebce8392d01246b68fd9447d746efe7, type: 3}
+  tutorial: {fileID: 750851286}
+  card1Position: {fileID: 701864988}
+  card2Position: {fileID: 2146932904}
+  cardCount: 12
+  maxLevelCount: 1
+  levelCount: 0
+  prefetchedCardsCount: 0
+  isBoardCreated: 0
+  levelEnded: 0
+  matchCount: 0
+  dark: {r: 0, g: 0, b: 0, a: 0.78431374}
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

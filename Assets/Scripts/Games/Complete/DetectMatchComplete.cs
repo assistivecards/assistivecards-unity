@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class DetectMatchComplete : MonoBehaviour
 {
-    [SerializeField] private BoardCreatorComplete boardCreatorComplete;
+    [SerializeField] private BoardGeneratorComplete boardGenerator;
     public int matches;
 }

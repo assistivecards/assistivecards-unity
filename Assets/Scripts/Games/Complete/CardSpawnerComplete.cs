@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CardSpawnerComplete : MonoBehaviour
 {
-    [SerializeField] private BoardCreatorComplete boardCreatorComplete;
+    [SerializeField] private BoardGeneratorComplete boardGenerator;
     public bool hasChild;
 
     public void CheckChild()
@@ -12,7 +12,7 @@ public class CardSpawnerComplete : MonoBehaviour
         if(transform.childCount == 0)
         {
             hasChild = false;
-            boardCreatorComplete.FillCardSlot();
+            boardGenerator.FillCardSlot();
         }
         else if(transform.childCount > 0)
         {

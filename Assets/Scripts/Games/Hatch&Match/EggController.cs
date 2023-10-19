@@ -7,13 +7,10 @@ using UnityEngine.UI;
 public class EggController : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] private BoardCreatorHatchMatch boardCreatorHatchMatch;
-
+    [SerializeField] private Sprite eggIdaleSprite;
     private AnimationPhase1Events animationPhase1Events;
-    private Sprite eggPhaseImage;
     private GameObject card;
-
     private Animator animator;
-
     public int clickCount;
     public Color[] colors;
     public bool isCracked;
@@ -47,7 +44,7 @@ public class EggController : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         clickCount ++;
     }
 
-    private void ChangeAnim()
+    public void ChangeAnim()
     {
         if(clickCount == 0)
         {
@@ -89,9 +86,10 @@ public class EggController : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 
     public void ResetEgg()
     {
+        clickCount = 0;
         gameObject.GetComponent<Animator>().Play("Idle", -1, 0f);
         this.GetComponent<Image>().color = colors[Random.Range(0, colors.Length)];
-        clickCount = 0;
+        this.GetComponent<Image>().sprite = eggIdaleSprite;
         isCracked = false;
     }
 }

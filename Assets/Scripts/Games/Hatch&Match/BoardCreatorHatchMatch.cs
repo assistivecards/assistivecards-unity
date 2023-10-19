@@ -24,6 +24,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
     public string packSlug;
 
     [Header ("Game Objects")]
+    [SerializeField] private GameObject board;
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject actualCardPrefab;
     [SerializeField] private Transform card1Position;
@@ -125,7 +126,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         cardTexture.filterMode = FilterMode.Bilinear;
 
         card1.transform.name = prefetchedCardNames[_randomValue];
-        card1.transform.SetParent(this.transform);
+        card1.transform.SetParent(board.transform);
         card1.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
 
         guessCards.Add(card1);
@@ -144,7 +145,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         card1.transform.name = prefetchedCardNames[_randomValue];
         card1.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
         card = card1;
-        card1.transform.SetParent(this.transform);
+        card1.transform.SetParent(board.transform);
         card1.GetComponent<CardElementHatchMatch>().cardName = prefetchedCardNames[_randomValue];
         cards.Add(card1);
 
@@ -155,9 +156,9 @@ public class BoardCreatorHatchMatch : MonoBehaviour
     {
         if(packageSelectManager.canGenerate)
         {
-            GenerateCard(packSelectionPanel.selectedPackElement.name, card1Position, 1);
-            GenerateCard(packSelectionPanel.selectedPackElement.name, card2Position, 2);
-            GenerateCard(packSelectionPanel.selectedPackElement.name, card3Position, 3);
+            GenerateCard(packSelectionPanel.selectedPackElement.name, card1Position, (1 + levelCount));
+            GenerateCard(packSelectionPanel.selectedPackElement.name, card2Position, (2 + levelCount));
+            GenerateCard(packSelectionPanel.selectedPackElement.name, card3Position, (3 + levelCount));
             egg.SetActive(true);
             LeanTween.scale(egg, Vector3.one * 1.25f, 1f);
             Invoke("GenerateStylizedCard", 0.5f);
@@ -170,7 +171,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
     {
         if(uıController.canGenerate)
         {
-            GenerateActualCard(packSelectionPanel.selectedPackElement.name, cardPosition, Random.Range(1,4));
+            GenerateActualCard(packSelectionPanel.selectedPackElement.name, cardPosition, (Random.Range(1,4) + levelCount));
 
             if(actualCardType != previousCard)
             {
@@ -179,7 +180,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
             }
             else if(actualCardType == previousCard)
             {
-                GenerateActualCard(packSelectionPanel.selectedPackElement.name, cardPosition, Random.Range(1,4));
+                GenerateActualCard(packSelectionPanel.selectedPackElement.name, cardPosition, (Random.Range(1,4) + levelCount));
                 boardCreated = true;
                 previousCard = actualCardType;
             }
@@ -275,6 +276,6 @@ public class BoardCreatorHatchMatch : MonoBehaviour
             prefetchedCardTextures.Add(cardTexture);
             Debug.Log(cardNames[randomValueList[i]]);
         }
-        Invoke("GeneratedBoardAsync", 2f);
+        Invoke("GeneratStylized", 2f);
     }
 }

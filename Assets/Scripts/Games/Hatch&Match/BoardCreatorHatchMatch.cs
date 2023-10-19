@@ -83,6 +83,7 @@ public class BoardCreatorHatchMatch : MonoBehaviour
             randomValueList.Clear();
             prefetchedCardTextures.Clear();
             prefetchedCardNames.Clear();
+            levelCount = 0;
             await CacheCards(packSlug);
             if(cardNames.Count >= (cardCount * maxLevelCount))
             {
@@ -117,7 +118,6 @@ public class BoardCreatorHatchMatch : MonoBehaviour
 
     private async void  GenerateCard(string _packSlug, Transform _cardPosition, int _randomValue)
     {
-        egg.GetComponent<EggController>().ResetEgg();
         var cardTexture = prefetchedCardTextures[_randomValue];
         
         GameObject card1 = Instantiate(cardPrefab, _cardPosition.position, Quaternion.identity);
@@ -154,36 +154,30 @@ public class BoardCreatorHatchMatch : MonoBehaviour
 
     public async void GeneratStylized()
     {
-        if(packageSelectManager.canGenerate)
-        {
-            GenerateCard(packSelectionPanel.selectedPackElement.name, card1Position, (1 + levelCount));
-            GenerateCard(packSelectionPanel.selectedPackElement.name, card2Position, (2 + levelCount));
-            GenerateCard(packSelectionPanel.selectedPackElement.name, card3Position, (3 + levelCount));
-            egg.SetActive(true);
-            LeanTween.scale(egg, Vector3.one * 1.25f, 1f);
-            Invoke("GenerateStylizedCard", 0.5f);
-            uıController.GameUIActivate();
-            Invoke("ScaleUpCards", 1f);
-        }
+        GenerateCard(packSelectionPanel.selectedPackElement.name, card1Position, (1 + levelCount));
+        GenerateCard(packSelectionPanel.selectedPackElement.name, card2Position, (2 + levelCount));
+        GenerateCard(packSelectionPanel.selectedPackElement.name, card3Position, (3 + levelCount));
+        egg.SetActive(true);
+        LeanTween.scale(egg, Vector3.one * 1.25f, 1f);
+        Invoke("GenerateStylizedCard", 0.5f);
+        uıController.GameUIActivate();
+        Invoke("ScaleUpCards", 1f);
     }
 
     private void GenerateStylizedCard()
     {
-        if(uıController.canGenerate)
+        GenerateActualCard(packSelectionPanel.selectedPackElement.name, cardPosition, (Random.Range(1,4) + levelCount));
+
+        if(actualCardType != previousCard)
+        {
+            previousCard = actualCardType;
+            boardCreated = true;
+        }
+        else if(actualCardType == previousCard)
         {
             GenerateActualCard(packSelectionPanel.selectedPackElement.name, cardPosition, (Random.Range(1,4) + levelCount));
-
-            if(actualCardType != previousCard)
-            {
-                previousCard = actualCardType;
-                boardCreated = true;
-            }
-            else if(actualCardType == previousCard)
-            {
-                GenerateActualCard(packSelectionPanel.selectedPackElement.name, cardPosition, (Random.Range(1,4) + levelCount));
-                boardCreated = true;
-                previousCard = actualCardType;
-            }
+            boardCreated = true;
+            previousCard = actualCardType;
         }
     }
 
@@ -230,18 +224,18 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         gameAPI.AddExp(gameAPI.sessionExp);
     }
 
-
     public void ResetLevelCount()
     {
-        levelCount = 0;
         cardsList.Clear();
         cardNames.Clear();
+        cardLocalNames.Clear();
         tempRandomValue = 0;
         cards.Clear();
         guessCards.Clear();
+        egg.GetComponent<EggController>().ResetEgg();
     }
 
-    private void ClearLevel()
+    public void ClearLevel()
     {
         clones = GameObject.FindGameObjectsWithTag("cardBlast");
 

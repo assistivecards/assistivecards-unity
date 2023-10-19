@@ -18,7 +18,7 @@ public class FirstLetterButtonController : MonoBehaviour
     {
         if(boardGenerator.firstLetter == letter)
         {
-            if(boardGenerator.levelCount < boardGenerator.maxLevelCount)
+            if(boardGenerator.levelCount < boardGenerator.maxLevelCount - 1)
             {
                 gameAPI.PlaySFX("Success");
                 gameAPI.AddSessionExp();
@@ -26,7 +26,7 @@ public class FirstLetterButtonController : MonoBehaviour
                 boardGenerator.LevelEnding();
                 boardGenerator.Invoke("CreateNewLevel", 1f);
             }
-            else if(boardGenerator.levelCount == boardGenerator.maxLevelCount)
+            else if(boardGenerator.levelCount == boardGenerator.maxLevelCount - 1)
             {
                 gameAPI.PlaySFX("Success");
                 gameAPI.AddSessionExp();

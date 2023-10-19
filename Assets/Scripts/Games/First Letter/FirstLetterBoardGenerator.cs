@@ -102,6 +102,7 @@ public class FirstLetterBoardGenerator : MonoBehaviour
             letterCardTextures.Clear();
             letterList.Clear();
             letterCardsNames.Clear();
+            levelCount = 0;
             await CacheCards(packSlug);
             await CreateLetters();
             if(cardNames.Count >= (cardCount * maxLevelCount))

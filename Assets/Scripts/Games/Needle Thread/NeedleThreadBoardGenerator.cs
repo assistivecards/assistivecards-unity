@@ -17,13 +17,16 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     
     [Header ("Cache Cards")]
     public string selectedLangCode;
-    public List<string> cardLocalNames = new List<string>();
     public List<GameObject> cards = new List<GameObject>();
-    private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
+    public AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
+    private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
+    public List<string> cardNames = new List<string>();
+    public List<string> cardLocalNames = new List<string>();
+    public List<Texture2D> prefetchedCardTextures = new List<Texture2D>();
+    public List<string> prefetchedCardNames = new List<string>();
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
-    private List<string> cardNames = new List<string>();
-    AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
     [SerializeField] private PackSelectionPanel packSelectionPanel;
+    public string packSlug;
 
     [Header ("Random")]
     public List<int> randomValueList = new List<int>();
@@ -45,7 +48,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     private Texture2D selectedCardTexture;
 
 
-    [Header ("In Game Values")]
+    [Header ("Game Values")]
     public int targetCardIndex = 11;
     public bool reloaded = false;
     public bool endLevel;
@@ -55,6 +58,10 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     public bool gameStarted;
     public int reloadCount;
     public int ttsCount;
+    public int cardCount;
+    public int maxLevelCount;
+    public int levelCount;
+    public int prefetchedCardsCount;
 
     private void Awake()
     {
@@ -62,12 +69,12 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
         gameAPI.PlayMusic();
     }
 
-    public async Task CacheCards()
+    public async Task CacheCards(string _packSlug)
     {
         selectedLangCode = await gameAPI.GetSystemLanguageCode();
 
-        cachedCards = await gameAPI.GetCards("en", packSelectionPanel.selectedPackElement.name);
-        cachedLocalCards = await gameAPI.GetCards(selectedLangCode, packSelectionPanel.selectedPackElement.name);
+        cachedCards = await gameAPI.GetCards("en", _packSlug);
+        cachedLocalCards = await gameAPI.GetCards(selectedLangCode, _packSlug);
 
         cardsList = cachedCards.cards.ToList();
 
@@ -78,11 +85,37 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
         }
     }
 
+    public async void PrefetchCardTextures()
+    {
+        if(uıController.canGenerate)
+        {
+            packSlug = packSelectionPanel.selectedPackElement.name;
+            randomValueList.Clear();
+            prefetchedCardTextures.Clear();
+            prefetchedCardNames.Clear();
+            levelCount = 0;
+            await CacheCards(packSlug);
+            if(cardNames.Count >= (cardCount * maxLevelCount))
+            {
+                prefetchedCardsCount = (cardCount * maxLevelCount);
+            }
+            else
+            {
+                prefetchedCardsCount = cardNames.Count;
+            }
+            for(int i = 0; i < prefetchedCardsCount; i++)
+            {
+                CheckRandom();
+            }
+            PrefetchNextLevelsTexturesAsync();
+        }
+    }
+
     private void CheckRandom()
     {
         tempRandomValue = Random.Range(0, cardsList.Count);
 
-        if(!randomValueList.Contains(tempRandomValue) && tempRandomValue != targetCardIndex)
+        if(!randomValueList.Contains(tempRandomValue))
         {
             randomValue = tempRandomValue;
             randomValueList.Add(randomValue);
@@ -126,12 +159,9 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     {
         if(uıController.canGenerate)
         {
-            await CacheCards();
-            CheckRandom();
             CreatePositionsList();
             for(int j = 0; j < 10; j++)
             {
-                CheckRandom();
                 GameObject parent = CheckIsPositionEmpty();
                 GameObject card = Instantiate(cardPrefab, parent.transform.position, Quaternion.identity, parent.transform);
 
@@ -148,7 +178,6 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
                 card.GetComponent<NeedleCardName>().cardName = cardNames[randomValueList[j]];
                 cards.Add(card);
             }
-            CheckRandom();
             targetCard = cardNames[randomValueList[targetCardIndex]];
             targetCardLocal = cardLocalNames[randomValueList[targetCardIndex]];
             for(int i = 10; i < 20; i++)
@@ -294,5 +323,19 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
         matchCounter = 0;
         UpdateScoreText();
         ttsCount = 0;
+    }
+
+    private async Task PrefetchNextLevelsTexturesAsync()
+    {
+        for(int i = 0; i < prefetchedCardsCount; i++)
+        {
+            prefetchedCardNames.Add(cardLocalNames[randomValueList[i]]);
+            var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[i]], 512);
+            cardTexture.wrapMode = TextureWrapMode.Clamp;
+            cardTexture.filterMode = FilterMode.Bilinear; 
+            prefetchedCardTextures.Add(cardTexture);
+            Debug.Log(cardNames[randomValueList[i]]);
+        }
+        Invoke("GeneratedBoardAsync", 2f);
     }
 }

@@ -139,22 +139,20 @@ public class MatchBoardGenerator : MonoBehaviour
             GetPositionList();
             for(int i = 0; i < cardPositions.Count / 2; i++)
             {
-                CheckRandom();
-
                 GameObject card = Instantiate(cardPrefab, cardPositions[i].transform.position, Quaternion.identity);
                 card.transform.SetParent(cardPositions[i].transform);
 
-                var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[i]], 512);
+                var cardTexture = prefetchedCardTextures[i + (levelCount * cardCount)];
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
 
-                card.transform.name = cardNames[randomValueList[i]];
+                card.transform.name = prefetchedCardNames[i];
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-                card.transform.GetChild(1).GetComponent<TMP_Text>().text = cardLocalNames[randomValueList[i]];
+                card.transform.GetChild(1).GetComponent<TMP_Text>().text = prefetchedCardNames[i + (levelCount * cardCount)];
                 cards.Add(card);
                 card.GetComponent<MatchCardElement>().moveable = true;
-                card.GetComponent<MatchCardElement>().cardName = cardLocalNames[randomValueList[i]];
+                card.GetComponent<MatchCardElement>().cardName = prefetchedCardNames[i + (levelCount * cardCount)];
                 LeanTween.scale(card.gameObject, Vector3.zero, 0f);
             }
 
@@ -165,17 +163,17 @@ public class MatchBoardGenerator : MonoBehaviour
                 GameObject card = Instantiate(cardPrefab, cardPositions[cardPositionRandoms[i]].transform.position, Quaternion.identity);
                 card.transform.SetParent(cardPositions[cardPositionRandoms[i]].transform);
 
-                var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[i]], 512);
+                var cardTexture = prefetchedCardTextures[i + (levelCount * cardCount)];
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
 
-                card.transform.name = cardNames[randomValueList[i]];
+                card.transform.name = prefetchedCardNames[i];
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-                card.transform.GetChild(1).GetComponent<TMP_Text>().text = cardLocalNames[randomValueList[i]];
+                card.transform.GetChild(1).GetComponent<TMP_Text>().text = prefetchedCardNames[i + (levelCount * cardCount)];
                 cards.Add(card);
                 card.GetComponent<MatchCardElement>().moveable = true;
-                card.GetComponent<MatchCardElement>().cardName = cardLocalNames[randomValueList[i]];
+                card.GetComponent<MatchCardElement>().cardName = prefetchedCardNames[i + (levelCount * cardCount)];
                 LeanTween.scale(card.gameObject, Vector3.zero, 0f);
             }
 
@@ -294,6 +292,6 @@ public class MatchBoardGenerator : MonoBehaviour
             prefetchedCardTextures.Add(cardTexture);
             Debug.Log(cardNames[randomValueList[i]]);
         }
-        Invoke("GeneratStylized", 2f);
+        Invoke("GeneratedBoardAsync", 2f);
     }
 }

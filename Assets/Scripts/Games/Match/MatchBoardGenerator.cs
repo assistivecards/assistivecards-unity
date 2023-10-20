@@ -254,11 +254,11 @@ public class MatchBoardGenerator : MonoBehaviour
         }
 
 
-        if(matchCount != 6)
+        if(matchCount != maxLevelCount + 1)
         {
             matchCount = 0;
         }
-        else if(matchCount == 6)
+        else if(matchCount == maxLevelCount + 1)
         {
             if(levelCount >= 3)
             {

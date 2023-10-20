@@ -165,7 +165,6 @@ public class LetterFindBoardGenerator : MonoBehaviour
             letterCardTextures.Clear();
             letterCardsNames.Clear();
             await CreateLetters();
-            uıController.LoadingScreenActivation();
             GeneratedBoardAsync();
         }
 

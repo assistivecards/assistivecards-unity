@@ -128,6 +128,8 @@ public class LetterFindUIController : MonoBehaviour
         reloadCount ++;
         if(reloadCount < 5)
         {
+            LoadingScreenActivation();
+            gameUI.SetActive(false);
             boardGenerator.ClearBoard();
             boardGenerator.GeneratedBoardAsync();
         }

@@ -162,7 +162,10 @@ public class LetterFindBoardGenerator : MonoBehaviour
     {
         if(uıController.canGenerate)
         {
+            letterCardTextures.Clear();
+            letterCardsNames.Clear();
             await CreateLetters();
+            uıController.LoadingScreenActivation();
             GeneratedBoardAsync();
         }
 
@@ -205,18 +208,18 @@ public class LetterFindBoardGenerator : MonoBehaviour
                 wordletters.Add(letter.GetComponentInChildren<Text>().text);
                 LeanTween.scale(letter, Vector3.one, 0);
             }
-            foreach(var letter in letterCardsNames)
+            for(int j = 0; j < letterCardsNames.Count; j++)
             {
                 CheckRandomForLetters();
-                if(letter.ToUpper() == emptyLetter)
+                if(letterCardsNames[j].ToUpper() == emptyLetter)
                 {
                     Transform cardPosition = cardPositions[Random.Range(0, cardPositions.Count)].transform;
                     card = Instantiate(cardPrefab, cardPosition.position, Quaternion.identity);
                     card.transform.SetParent(cardPosition);
-                    var letterCardTexture = await gameAPI.GetCardImage("letters", letter, 512);
+                    var letterCardTexture = letterCardTextures[j];
                     letterCardTexture.wrapMode = TextureWrapMode.Clamp;
                     letterCardTexture.filterMode = FilterMode.Bilinear;
-                    card.GetComponent<LetterFindCardController>().cardLetter = letter.ToUpper();
+                    card.GetComponent<LetterFindCardController>().cardLetter = letterCardsNames[j].ToUpper();
                     card.GetComponent<LetterFindCardController>().targetWord = targetCardName;
                     tutorialScript.trueLetterCard = card;
                     LeanTween.scale(card, Vector3.one * 0.45f, 0);
@@ -243,7 +246,7 @@ public class LetterFindBoardGenerator : MonoBehaviour
                             card.transform.GetChild(0).gameObject.SetActive(true);
                             card.transform.GetChild(1).gameObject.SetActive(false);
 
-                            var letterCardTexture = await gameAPI.GetCardImage("letters", letterCardsNames[randomLetter], 512);
+                            var letterCardTexture = letterCardTextures[randomLetter];
                             letterCardTexture.wrapMode = TextureWrapMode.Clamp;
                             letterCardTexture.filterMode = FilterMode.Bilinear;
                             card.transform.GetChild(0).GetComponent<RawImage>().texture = letterCardTexture;
@@ -267,7 +270,7 @@ public class LetterFindBoardGenerator : MonoBehaviour
                             card.transform.GetChild(0).gameObject.SetActive(true);
                             card.transform.GetChild(1).gameObject.SetActive(false);
 
-                            var letterCardTexture = await gameAPI.GetCardImage("letters", letterCardsNames[randomLetter], 512);
+                            var letterCardTexture = letterCardTextures[randomLetter];
                             letterCardTexture.wrapMode = TextureWrapMode.Clamp;
                             letterCardTexture.filterMode = FilterMode.Bilinear;
                             card.transform.GetChild(0).GetComponent<RawImage>().texture = letterCardTexture;

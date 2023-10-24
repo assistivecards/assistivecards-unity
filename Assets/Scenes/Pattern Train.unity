@@ -2292,7 +2292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: GeneratedBoardAsync
+      value: PrefetchCardTextures
       objectReference: {fileID: 0}
     - target: {fileID: 8441382994877522239, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
@@ -2864,7 +2864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 189626.25
+      value: 191787.05
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3537,10 +3537,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "u\u0131Controller": {fileID: 8383894889009589327}
   selectedLangCode: 
-  cardLocalNames: []
   cards: []
+  cachedCards:
+    cards: []
+  cardNames: []
+  cardLocalNames: []
+  prefetchedCardTextures: []
+  prefetchedCardNames: []
   cardsList: []
   packSelectionPanel: {fileID: 185037515}
+  packSlug: 
   letterList: []
   letterCardsNames: []
   randomValueList: 
@@ -3559,10 +3565,15 @@ MonoBehaviour:
   draggablePosition2: {fileID: 785463459}
   draggablePosition3: {fileID: 1891569366}
   draggablePositions: []
-  questionMarkSlot: {fileID: 0}
   trueCardName: 
   randomPosition: 0
+  questionMarkSlotIndex: 0
   round: 0
+  patternCardCount: 0
+  cardCount: 5
+  maxLevelCount: 5
+  levelCount: 0
+  prefetchedCardsCount: 0
 --- !u!114 &8383894889009589327
 MonoBehaviour:
   m_ObjectHideFlags: 0

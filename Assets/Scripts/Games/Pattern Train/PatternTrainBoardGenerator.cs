@@ -12,16 +12,19 @@ public class PatternTrainBoardGenerator : MonoBehaviour
     GameAPI gameAPI;
 
     [SerializeField] private PatternTrainUIController uıController;
+
     [Header ("Cache Cards")]
     public string selectedLangCode;
-    public List<string> cardLocalNames = new List<string>();
     public List<GameObject> cards = new List<GameObject>();
-    private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
+    public AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
+    private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
+    public List<string> cardNames = new List<string>();
+    public List<string> cardLocalNames = new List<string>();
+    public List<Texture2D> prefetchedCardTextures = new List<Texture2D>();
+    public List<string> prefetchedCardNames = new List<string>();
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
-    private List<string> cardNames = new List<string>();
-    AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
     [SerializeField] private PackSelectionPanel packSelectionPanel;
-
+    public string packSlug;
     [Header ("Letter Cards")]
     private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLetterCards;
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> letterList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
@@ -60,17 +63,23 @@ public class PatternTrainBoardGenerator : MonoBehaviour
     public int round;
     public int patternCardCount;
 
+    [Header ("Game Values")]
+    public int cardCount;
+    public int maxLevelCount;
+    public int levelCount;
+    public int prefetchedCardsCount;
+
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
     }
 
-    public async Task CacheCards()
+    public async Task CacheCards(string _packSlug)
     {
         selectedLangCode = await gameAPI.GetSystemLanguageCode();
 
-        cachedCards = await gameAPI.GetCards("en", packSelectionPanel.selectedPackElement.name);
-        cachedLocalCards = await gameAPI.GetCards(selectedLangCode, packSelectionPanel.selectedPackElement.name);
+        cachedCards = await gameAPI.GetCards("en", _packSlug);
+        cachedLocalCards = await gameAPI.GetCards(selectedLangCode, _packSlug);
 
         cardsList = cachedCards.cards.ToList();
 
@@ -78,6 +87,32 @@ public class PatternTrainBoardGenerator : MonoBehaviour
         {
             cardNames.Add(cachedCards.cards[i].title.ToLower().Replace(" ", "-"));
             cardLocalNames.Add(cachedLocalCards.cards[i].title);
+        }
+    }
+
+    public async void PrefetchCardTextures()
+    {
+        if(uıController.canGenerate)
+        {
+            packSlug = packSelectionPanel.selectedPackElement.name;
+            randomValueList.Clear();
+            prefetchedCardTextures.Clear();
+            prefetchedCardNames.Clear();
+            levelCount = 0;
+            await CacheCards(packSlug);
+            if(cardNames.Count >= (cardCount * maxLevelCount))
+            {
+                prefetchedCardsCount = (cardCount * maxLevelCount);
+            }
+            else
+            {
+                prefetchedCardsCount = cardNames.Count;
+            }
+            for(int i = 0; i < prefetchedCardsCount; i++)
+            {
+                CheckRandom();
+            }
+            PrefetchNextLevelsTexturesAsync();
         }
     }
 
@@ -132,7 +167,6 @@ public class PatternTrainBoardGenerator : MonoBehaviour
         if(uıController.canGenerate)
         {
             uıController.LoadingScreenActivation();
-            await CacheCards();
             CreatePositionsList();
             CreateQuestionMarkSlot();
             patternCardCount = Random.Range(2, 4);
@@ -140,7 +174,6 @@ public class PatternTrainBoardGenerator : MonoBehaviour
             {
                 if(j != questionMarkSlotIndex)
                 {
-                    CheckRandom();
                     FillSlot(j, j % patternCardCount);
                 }
                 else if(j == questionMarkSlotIndex)
@@ -156,7 +189,6 @@ public class PatternTrainBoardGenerator : MonoBehaviour
             }
             for(int j = 0; j < draggablePositions.Count; j++)
             {
-                CheckRandom();
                 RandomizePosition();
                 GameObject card = Instantiate(cardPrefab, draggablePositions[randomPosition].transform.position, Quaternion.identity);
                 card.transform.SetParent( draggablePositions[randomPosition].transform);
@@ -185,7 +217,6 @@ public class PatternTrainBoardGenerator : MonoBehaviour
 
     private async void FillSlot(int _positionIndex, int _cardIndex)
     {
-        CheckRandom();
         GameObject card = Instantiate(cardPrefab, patternPositions[_positionIndex].transform.position, Quaternion.identity);
         card.transform.SetParent( patternPositions[_positionIndex].transform);
         var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[_cardIndex]], 512);
@@ -230,5 +261,19 @@ public class PatternTrainBoardGenerator : MonoBehaviour
         draggablePositions.Clear();
         trueCardName = null;
         round = 0;
+    }
+
+    private async Task PrefetchNextLevelsTexturesAsync()
+    {
+        for(int i = 0; i < prefetchedCardsCount; i++)
+        {
+            prefetchedCardNames.Add(cardLocalNames[randomValueList[i]]);
+            var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[i]], 512);
+            cardTexture.wrapMode = TextureWrapMode.Clamp;
+            cardTexture.filterMode = FilterMode.Bilinear; 
+            prefetchedCardTextures.Add(cardTexture);
+            Debug.Log(cardNames[randomValueList[i]]);
+        }
+        Invoke("GeneratedBoardAsync", 2f);
     }
 }

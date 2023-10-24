@@ -49,7 +49,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
 
 
     [Header ("Game Values")]
-    public int targetCardIndex = 11;
+    public int targetCardIndex;
     public bool reloaded = false;
     public bool endLevel;
     public int matchCounter;
@@ -160,12 +160,13 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
         if(uıController.canGenerate)
         {
             CreatePositionsList();
+            targetCardIndex = Random.Range(0,prefetchedCardsCount);
             for(int j = 0; j < 10; j++)
             {
                 GameObject parent = CheckIsPositionEmpty();
                 GameObject card = Instantiate(cardPrefab, parent.transform.position, Quaternion.identity, parent.transform);
 
-                var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[j]], 512);
+                var cardTexture = prefetchedCardTextures[j];
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
 
@@ -175,17 +176,17 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
                 LeanTween.scale(card, Vector3.one * 0.75f, 0);
                 LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-30, 30)), 0f);
                 card.gameObject.tag = "Card";
-                card.GetComponent<NeedleCardName>().cardName = cardNames[randomValueList[j]];
+                card.GetComponent<NeedleCardName>().cardName = prefetchedCardNames[j];
                 cards.Add(card);
             }
-            targetCard = cardNames[randomValueList[targetCardIndex]];
-            targetCardLocal = cardLocalNames[randomValueList[targetCardIndex]];
+            targetCard = prefetchedCardNames[targetCardIndex];
+            targetCardLocal = prefetchedCardNames[targetCardIndex];
             for(int i = 10; i < 20; i++)
             {
                 GameObject parent = CheckIsPositionEmpty();
                 GameObject card = Instantiate(cardPrefab, parent.transform.position, Quaternion.identity, parent.transform);
 
-                var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, targetCard, 512);
+                var cardTexture = prefetchedCardTextures[targetCardIndex];
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
                 selectedCardTexture = cardTexture;
@@ -201,7 +202,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
                 cards.Add(card);
             }
             levelEndCard = Instantiate(cardPrefab, levelEndCardPosition.transform.position, Quaternion.identity, levelEndCardPosition.transform);
-            var levelEndCardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, targetCard, 512);
+            var levelEndCardTexture = prefetchedCardTextures[targetCardIndex];
             levelEndCardTexture.wrapMode = TextureWrapMode.Clamp;
             levelEndCardTexture.filterMode = FilterMode.Bilinear;
 

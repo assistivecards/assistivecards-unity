@@ -7,7 +7,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Linq;
 
-public class PatternTrainBoardGenerator : MonoBehaviour 
+public class PatternTrainBoardGenerator : MonoBehaviour
 {
     GameAPI gameAPI;
 
@@ -174,7 +174,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
             {
                 if(j != questionMarkSlotIndex)
                 {
-                    FillSlot(j, j % patternCardCount);
+                    FillSlot(j, (j % patternCardCount) + levelCount);
                 }
                 else if(j == questionMarkSlotIndex)
                 {
@@ -197,15 +197,15 @@ public class PatternTrainBoardGenerator : MonoBehaviour
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
 
-                card.transform.name = cardLocalNames[randomValueList[j]].ToLower();;
+                card.transform.name = prefetchedCardNames[j + levelCount].ToLower();
                 card.GetComponent<PatternTrainCardController>().draggable = true;
                 card.GetComponent<PatternTrainCardController>().cardName = prefetchedCardNames[j + levelCount];
                 card.GetComponent<PatternTrainCardController>().trueCardName = trueCardName;
-                card.GetComponent<PatternTrainCardController>().cardLocalName = cardLocalNames[randomValueList[j + levelCount]];
+                card.GetComponent<PatternTrainCardController>().cardLocalName = prefetchedCardNames[j + levelCount];
                 card.GetComponent<BoxCollider2D>().enabled = true;
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-                if(cardLocalNames[randomValueList[j]].ToLower() == trueCardName)
+                if(prefetchedCardNames[j + levelCount].ToLower() == trueCardName)
                 {
                     tutorial.GetComponent<PatternTrainTutorial>().trueCard = card.transform;
                 }
@@ -252,7 +252,6 @@ public class PatternTrainBoardGenerator : MonoBehaviour
             Destroy(card);
         }
         cards.Clear();
-
         letterList.Clear();
         letterCardsNames.Clear();
         Destroy(questionMarkSlot);
@@ -260,6 +259,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
         patternPositions.Clear();
         draggablePositions.Clear();
         trueCardName = null;
+        levelCount++;
         round = 0;
     }
 
@@ -270,7 +270,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
             prefetchedCardNames.Add(cardLocalNames[randomValueList[i]]);
             var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[i]], 512);
             cardTexture.wrapMode = TextureWrapMode.Clamp;
-            cardTexture.filterMode = FilterMode.Bilinear; 
+            cardTexture.filterMode = FilterMode.Bilinear;
             prefetchedCardTextures.Add(cardTexture);
             Debug.Log(cardNames[randomValueList[i]]);
         }

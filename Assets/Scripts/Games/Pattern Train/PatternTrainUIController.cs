@@ -146,8 +146,7 @@ public class PatternTrainUIController : MonoBehaviour
 
     public void LevelEndCheck()
     {
-        reloadCount ++;
-        if(reloadCount < 5)
+        if(boardGenerator.levelCount < boardGenerator.maxLevelCount)
         {
             boardGenerator.ClearBoard();
             boardGenerator.GeneratedBoardAsync();
@@ -155,7 +154,7 @@ public class PatternTrainUIController : MonoBehaviour
         else
         {
             LevelChangeScreenActivate();
-            reloadCount = 0;
+            boardGenerator.levelCount = 0;
         }
     }
 }

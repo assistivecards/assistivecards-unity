@@ -182,7 +182,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
                     questionMarkSlot.transform.SetParent( patternPositions[j].transform);
                     questionMarkSlot.transform.GetChild(0).gameObject.SetActive(false);
                     questionMarkSlot.transform.GetChild(1).gameObject.SetActive(true);
-                    trueCardName = cardLocalNames[randomValueList[j % patternCardCount]].ToLower();
+                    trueCardName = prefetchedCardNames[j % patternCardCount].ToLower();
                     questionMarkSlot.GetComponent<BoxCollider2D>().enabled = true;
                 }
 
@@ -193,15 +193,15 @@ public class PatternTrainBoardGenerator : MonoBehaviour
                 GameObject card = Instantiate(cardPrefab, draggablePositions[randomPosition].transform.position, Quaternion.identity);
                 card.transform.SetParent( draggablePositions[randomPosition].transform);
 
-                var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[j]], 512);
+                var cardTexture = prefetchedCardTextures[j + levelCount];
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
 
                 card.transform.name = cardLocalNames[randomValueList[j]].ToLower();;
                 card.GetComponent<PatternTrainCardController>().draggable = true;
-                card.GetComponent<PatternTrainCardController>().cardName = cardNames[randomValueList[j]];
+                card.GetComponent<PatternTrainCardController>().cardName = prefetchedCardNames[j + levelCount];
                 card.GetComponent<PatternTrainCardController>().trueCardName = trueCardName;
-                card.GetComponent<PatternTrainCardController>().cardLocalName = cardLocalNames[randomValueList[j]];
+                card.GetComponent<PatternTrainCardController>().cardLocalName = cardLocalNames[randomValueList[j + levelCount]];
                 card.GetComponent<BoxCollider2D>().enabled = true;
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
@@ -219,11 +219,11 @@ public class PatternTrainBoardGenerator : MonoBehaviour
     {
         GameObject card = Instantiate(cardPrefab, patternPositions[_positionIndex].transform.position, Quaternion.identity);
         card.transform.SetParent( patternPositions[_positionIndex].transform);
-        var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[_cardIndex]], 512);
+        var cardTexture = prefetchedCardTextures[_cardIndex];
         cardTexture.wrapMode = TextureWrapMode.Clamp;
         cardTexture.filterMode = FilterMode.Bilinear;
 
-        card.transform.name = cardLocalNames[randomValueList[_cardIndex]].ToLower();
+        card.transform.name = prefetchedCardNames[_cardIndex];
         card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
         card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
         LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-15, 15)), 0f);

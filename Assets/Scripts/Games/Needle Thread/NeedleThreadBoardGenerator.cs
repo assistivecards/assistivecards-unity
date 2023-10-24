@@ -44,7 +44,7 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
     [SerializeField] private Transform levelEndCardPosition;
     public List<GameObject> cardPositions = new List<GameObject>();
     public List<GameObject> targetCards = new List<GameObject>();
-    private GameObject levelEndCard;
+    public GameObject levelEndCard;
     private Texture2D selectedCardTexture;
 
 
@@ -160,25 +160,25 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
         if(uıController.canGenerate)
         {
             CreatePositionsList();
-            targetCardIndex = Random.Range(0,prefetchedCardsCount);
             for(int j = 0; j < 10; j++)
             {
                 GameObject parent = CheckIsPositionEmpty();
                 GameObject card = Instantiate(cardPrefab, parent.transform.position, Quaternion.identity, parent.transform);
 
-                var cardTexture = prefetchedCardTextures[j];
+                var cardTexture = prefetchedCardTextures[j + levelCount];
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
 
-                card.transform.name = cardNames[randomValueList[j]];
+                card.transform.name = prefetchedCardNames[j + levelCount];
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                 LeanTween.scale(card, Vector3.one * 0.75f, 0);
                 LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-30, 30)), 0f);
                 card.gameObject.tag = "Card";
-                card.GetComponent<NeedleCardName>().cardName = prefetchedCardNames[j];
+                card.GetComponent<NeedleCardName>().cardName = prefetchedCardNames[j + levelCount];
                 cards.Add(card);
             }
+            targetCardIndex = Random.Range(0,prefetchedCardsCount);
             targetCard = prefetchedCardNames[targetCardIndex];
             targetCardLocal = prefetchedCardNames[targetCardIndex];
             for(int i = 10; i < 20; i++)
@@ -296,15 +296,15 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
 
     private void LevelEndCardDestroy()
     {
-        GenerateBoardOnLevel();
         Destroy(levelEndCard);
+        GeneratedBoardAsync();
     }
 
-    private void GenerateBoardOnLevel()
-    {
-        GeneratedBoardAsync();
-        uıController.LoadingScreenActivation();
-    }
+    // private void GenerateBoardOnLevel()
+    // {
+    //     GeneratedBoardAsync();
+    //     uıController.LoadingScreenActivation();
+    // }
 
     public void ClearBoard()
     {

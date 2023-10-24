@@ -160,5 +160,6 @@ public class NeedleThreadUIController : MonoBehaviour
         ResetScroll();
         PackSelectionPanelActive();
         packSelectionScreen.SetActive(true);
+        Destroy(boardGenerator.levelEndCard);
     }
 }

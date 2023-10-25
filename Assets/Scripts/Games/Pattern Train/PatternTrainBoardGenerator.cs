@@ -175,6 +175,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
                     questionMarkSlot.transform.GetChild(1).gameObject.SetActive(true);
                     trueCardName = prefetchedCardNames[(j % patternCardCount) + levelCount].ToLower();
                     questionMarkSlot.GetComponent<BoxCollider2D>().enabled = true;
+                    tutorial.GetComponent<PatternTrainTutorial>().point1 = questionMarkSlot.transform;
                 }
 
             }

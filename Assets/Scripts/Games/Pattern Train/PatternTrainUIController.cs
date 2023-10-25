@@ -146,7 +146,7 @@ public class PatternTrainUIController : MonoBehaviour
 
     public void LevelEndCheck()
     {
-        if(boardGenerator.levelCount < boardGenerator.maxLevelCount)
+        if(boardGenerator.levelCount <= boardGenerator.maxLevelCount)
         {
             boardGenerator.ClearBoard();
             boardGenerator.GeneratedBoardAsync();

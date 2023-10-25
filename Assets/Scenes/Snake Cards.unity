@@ -499,6 +499,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8383894889009589327}
@@ -519,6 +523,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1267433107}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 8383894889009589326}
+    - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -536,6 +544,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
@@ -559,6 +571,10 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: ClearForRefill
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SnakeCardsUIController, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -579,7 +595,15 @@ PrefabInstance:
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
+      value: SnakeCardsBoardGenerator, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
@@ -600,6 +624,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4157986844284454155, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
@@ -3800,7 +3828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 408399.66
+      value: 439961.88
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a

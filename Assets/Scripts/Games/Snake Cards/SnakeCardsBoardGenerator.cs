@@ -228,8 +228,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
         targetCard = prefetchedCardNames[targetCardRandomValue];
         targetCardLocal = prefetchedCardNames[targetCardRandomValue];
         collect.SetActive(true);
-        snake.SetActive(true);
-        Invoke("GameUIActivate", 0.1f);
+        Invoke("GameUIActivate", 0.5f);
     }
 
     public void CardEaten()
@@ -260,12 +259,10 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
 
     public void GameUIActivate()
     {
+        LeanTween.moveLocal(snake, new Vector3(-400, 0, 0), 0);
+        snake.GetComponentInChildren<TrailRenderer>().time = 1.5f;
         uıController.GameUIActivate();
-        if(levelCount == 1)
-        {
-            LeanTween.moveLocal(snake, new Vector3(-400, 0, 0), 0);
-            snake.GetComponentInChildren<TrailRenderer>().time = 1.5f;
-        }
+        snake.SetActive(true);
         gameStarted = true;
     }
 
@@ -283,7 +280,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
 
     public void ClearForRefill()
     {
-        Debug.Log("ClearForRefill");
+        gameStarted = false;
         cardNames.Clear();
         cardsList.Clear();
         cardLocalNames.Clear();
@@ -303,7 +300,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
 
     public void ClearBoard()
     {
-        Debug.Log("ClearBoard");
+        gameStarted = false;
         foreach (var card in cards)
         {
             Destroy(card);

@@ -48,7 +48,7 @@ public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerD
     public void OnPointerUp(PointerEventData eventData) 
     {
         isPointerUp = true;
-        Invoke("MoveToStartPosition", 1f);
+        Invoke("MoveToStartPosition", 0.5f);
     }
 
     private void OnCollisionStay2D(Collision2D other) 
@@ -91,7 +91,7 @@ public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerD
         if(!match)
         {
             draggable = false;
-            LeanTween.move(this.gameObject, startPosition, 1f).setOnComplete(SetDragTrue);
+            LeanTween.move(this.gameObject, startPosition, 0.5f).setOnComplete(SetDragTrue);
         }
     }
 

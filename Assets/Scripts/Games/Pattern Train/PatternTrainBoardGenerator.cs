@@ -131,15 +131,6 @@ public class PatternTrainBoardGenerator : MonoBehaviour
         }
     }
 
-    private void RandomizePosition()
-    {
-        randomPosition = Random.Range(0, draggablePositions.Count);
-        if(draggablePositions[randomPosition].transform.childCount != 0)
-        {
-            RandomizePosition();
-        }
-    }
-
     private void CreatePositionsList()
     {
         patternPositions.Add(patternPosition1);
@@ -182,21 +173,21 @@ public class PatternTrainBoardGenerator : MonoBehaviour
                     questionMarkSlot.transform.SetParent( patternPositions[j].transform);
                     questionMarkSlot.transform.GetChild(0).gameObject.SetActive(false);
                     questionMarkSlot.transform.GetChild(1).gameObject.SetActive(true);
-                    trueCardName = prefetchedCardNames[j % patternCardCount].ToLower();
+                    trueCardName = prefetchedCardNames[(j % patternCardCount) + levelCount].ToLower();
                     questionMarkSlot.GetComponent<BoxCollider2D>().enabled = true;
                 }
 
             }
             for(int j = 0; j < draggablePositions.Count; j++)
             {
-                RandomizePosition();
-                GameObject card = Instantiate(cardPrefab, draggablePositions[randomPosition].transform.position, Quaternion.identity);
-                card.transform.SetParent( draggablePositions[randomPosition].transform);
+                randomPosition = Random.Range(0, draggablePositions.Count);
+                GameObject card = Instantiate(cardPrefab, draggablePositions[j].transform.position, Quaternion.identity);
+                card.transform.SetParent( draggablePositions[j].transform);
 
                 var cardTexture = prefetchedCardTextures[j + levelCount];
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
-
+                card.transform.tag = "Untagged";
                 card.transform.name = prefetchedCardNames[j + levelCount].ToLower();
                 card.GetComponent<PatternTrainCardController>().draggable = true;
                 card.GetComponent<PatternTrainCardController>().cardName = prefetchedCardNames[j + levelCount];

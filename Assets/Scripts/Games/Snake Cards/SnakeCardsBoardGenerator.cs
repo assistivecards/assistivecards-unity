@@ -65,7 +65,6 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     public string targetCard;
     public bool gameStarted;
     public int eatenCardCount;
-    public int reloadCount;
     public int cardCount;
     public int maxLevelCount;
     public int levelCount;
@@ -167,33 +166,33 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     {
         CreatePositionsList();
         RandomizePositions();
+        targetCardRandomValue = Random.Range(0, 9);
         if(levelEndCard != null)
         {
             LeanTween.scale(levelEndCard, Vector3.zero, 0.2f);
         }
         for(int j = 0; j < 8; j++)
         {
-            if(cardPositions[j].transform.childCount <= 0)
+            if(cardPositions[j].transform.childCount <= 0 && j != targetCardRandomValue)
             {
                 GameObject card = Instantiate(cardPrefab, cardPositions[j].transform.position, Quaternion.identity);
                 card.transform.SetParent(cardPositions[j].transform);
 
-                var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[j]], 512);
+                var cardTexture = prefetchedCardTextures[j];
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
 
-                card.transform.name = cardNames[randomValueList[j]];
+                card.transform.name = prefetchedCardNames[j];
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-                card.GetComponent<SnakeCardsCardController>().cardName = cardNames[randomValueList[j]];
-                card.GetComponent<SnakeCardsCardController>().cardLocalName = cardLocalNames[randomValueList[j]];
+                card.GetComponent<SnakeCardsCardController>().cardName = prefetchedCardNames[j];
+                card.GetComponent<SnakeCardsCardController>().cardLocalName = prefetchedCardNames[j];
                 LeanTween.scale(card, Vector3.one * 0.75f, 0);
                 LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-30, 30)), 0f);
                 card.gameObject.tag = "Card";
                 cards.Add(card);
             }
         }
-        targetCardRandomValue = 9;
         for(int i = 8; i < 13; i++)
         {
             if(cardPositions[i].transform.childCount <= 0)
@@ -201,15 +200,15 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
                 GameObject card = Instantiate(cardPrefab, cardPositions[i].transform.position, Quaternion.identity);
                 card.transform.SetParent(cardPositions[i].transform);
 
-                var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[targetCardRandomValue]], 512);
+                var cardTexture = prefetchedCardTextures[targetCardRandomValue];
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
 
-                card.transform.name = cardNames[randomValueList[targetCardRandomValue]];
+                card.transform.name = prefetchedCardNames[targetCardRandomValue];
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-                card.GetComponent<SnakeCardsCardController>().cardName = cardNames[randomValueList[targetCardRandomValue]];
-                card.GetComponent<SnakeCardsCardController>().cardLocalName = cardLocalNames[randomValueList[targetCardRandomValue]];
+                card.GetComponent<SnakeCardsCardController>().cardName = prefetchedCardNames[targetCardRandomValue];
+                card.GetComponent<SnakeCardsCardController>().cardLocalName = prefetchedCardNames[targetCardRandomValue];
                 LeanTween.scale(card, Vector3.one * 0.75f, 0);
                 LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-30, 30)), 0f);
                 card.gameObject.tag = "Card";
@@ -219,18 +218,17 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
         }
         levelEndCard = Instantiate(cardPrefab, levelEndCardPosition.transform.position, Quaternion.identity);
         levelEndCard.transform.SetParent(levelEndCardPosition.transform);
-        var targetCardCardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[targetCardRandomValue]], 512);
+        var targetCardCardTexture = prefetchedCardTextures[targetCardRandomValue];
         targetCardCardTexture.wrapMode = TextureWrapMode.Clamp;
         targetCardCardTexture.filterMode = FilterMode.Bilinear;
         levelEndCard.transform.GetChild(0).GetComponent<RawImage>().texture = targetCardCardTexture;
         levelEndCard.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
         LeanTween.scale(levelEndCard, Vector3.zero, 0);
-        selectedCardImage.GetComponent<RawImage>().texture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[targetCardRandomValue]], 512);
-        targetCard = cardNames[randomValueList[targetCardRandomValue]];
-        targetCardLocal = cardLocalNames[randomValueList[targetCardRandomValue]];
+        selectedCardImage.GetComponent<RawImage>().texture = prefetchedCardTextures[targetCardRandomValue];
+        targetCard = prefetchedCardNames[targetCardRandomValue];
+        targetCardLocal = prefetchedCardNames[targetCardRandomValue];
         collect.SetActive(true);
         snake.SetActive(true);
-        reloadCount++;
         Invoke("GameUIActivate", 0.1f);
     }
 
@@ -238,12 +236,16 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     {
         eatenCardCount++;
         score.text = eatenCardCount.ToString() + " / 5";
-        if(eatenCardCount >= targetCards.Count  && reloadCount < 4)
+        if(eatenCardCount >= targetCards.Count  && levelCount < maxLevelCount)
         {
+            eatenCardCount = 0;
+            levelCount++;
             Invoke("ClearForRefill", 0.75f);
         }
-        else if(eatenCardCount >= 5  && reloadCount == 4)
+        else if(eatenCardCount >= 5  && levelCount == maxLevelCount)
         {
+            eatenCardCount = 0;
+            levelCount = 0;
             uıController.Invoke("LevelChangeScreenActivate", 0.75f);
         }
     }
@@ -252,13 +254,14 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     {
         gameAPI.Speak(targetCardLocal);
         Debug.Log(targetCardLocal);
-        LeanTween.scale(levelEndCard, Vector3.one, 0.5f).setOnComplete(GeneratedBoardAsync);
+        LeanTween.scale(levelEndCard, Vector3.one, 0.5f);
+        Invoke("GeneratedBoardAsync", 1f);
     }
 
     public void GameUIActivate()
     {
         uıController.GameUIActivate();
-        if(reloadCount == 1)
+        if(levelCount == 1)
         {
             LeanTween.moveLocal(snake, new Vector3(-400, 0, 0), 0);
             snake.GetComponentInChildren<TrailRenderer>().time = 1.5f;
@@ -292,7 +295,6 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
         randomValueList.Clear();
         cardPositions.Clear();
         targetCards.Clear();
-        eatenCardCount = 0;
         collect.SetActive(false);
         score.text = eatenCardCount.ToString() + " / 5";
         ResetSnake();
@@ -312,9 +314,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
         cards.Clear();
         randomValueList.Clear();
         cardPositions.Clear();
-        eatenCardCount = 0;
         targetCards.Clear();
-        reloadCount = 0;
         collect.SetActive(false);
         score.text = eatenCardCount.ToString() + " / 5";
     }

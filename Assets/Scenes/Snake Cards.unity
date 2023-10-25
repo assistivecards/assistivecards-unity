@@ -875,30 +875,30 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.685672
-        inSlope: -0.69663185
-        outSlope: -0.69663185
+        value: 0.5
+        inSlope: -0.14701691
+        outSlope: -0.14701691
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.49874035
+        outWeight: 0.30332997
       - serializedVersion: 3
-        time: 0.43846226
-        value: 0.3525871
-        inSlope: -0.8201679
-        outSlope: -0.8201679
+        time: 0.5112352
+        value: 0.30230778
+        inSlope: -0.5897829
+        outSlope: -0.5897829
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.4700884
-        outWeight: 0.4036876
+        outWeight: 0.23806639
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: -0.4434344
-        outSlope: -0.4434344
+        inSlope: -0.6850021
+        outSlope: -0.6850021
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.40159813
+        inWeight: 0.23360556
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -3800,7 +3800,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 366009.3
+      value: 377846.47
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a

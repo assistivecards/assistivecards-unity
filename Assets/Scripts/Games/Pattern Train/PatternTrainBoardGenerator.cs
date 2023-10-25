@@ -25,6 +25,7 @@ public class PatternTrainBoardGenerator : MonoBehaviour
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     [SerializeField] private PackSelectionPanel packSelectionPanel;
     public string packSlug;
+    
     [Header ("Letter Cards")]
     private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLetterCards;
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> letterList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();

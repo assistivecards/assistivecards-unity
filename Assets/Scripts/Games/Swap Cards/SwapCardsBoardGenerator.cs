@@ -78,7 +78,6 @@ public class SwapCardsBoardGenerator : MonoBehaviour
     public int cardNameLenght;
     public int matchedCardCount;
     public bool isPointerUp;
-    public int reloadCount;
     public bool finished;
 
     private void Awake()
@@ -218,11 +217,11 @@ public class SwapCardsBoardGenerator : MonoBehaviour
             GameObject cloneCard = Instantiate(cardPrefab, cardPositions[randomOrder].transform.position, Quaternion.identity);
 
             cloneCard.transform.SetParent(cardPositions[randomOrder].transform);
-            cloneCard.transform.name = prefetchedCardNames[order];
+            cloneCard.transform.name = prefetchedCardNames[order + (levelCount * cardCount)];
             cloneCard.transform.GetChild(0).GetComponent<RawImage>().texture = cardTextures[order];
             cloneCard.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-            cloneCard.transform.GetChild(1).GetComponent<TMP_Text>().text = prefetchedCardNames[order];
-            cloneCard.GetComponent<SwapCardsCardController>().cardType = prefetchedCardNames[order];
+            cloneCard.transform.GetChild(1).GetComponent<TMP_Text>().text = prefetchedCardNames[order + (levelCount * cardCount)];
+            cloneCard.GetComponent<SwapCardsCardController>().cardType = prefetchedCardNames[order + (levelCount * cardCount)];
             cloneCard.GetComponent<SwapCardsCardController>().parentName = cloneCard.transform.parent.transform.tag;
             cloneCard.GetComponent<BoxCollider2D>().enabled = true;
             cloneCard.gameObject.tag = "Card";
@@ -384,11 +383,11 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         section3MatchCount = 0;
         cardTextures.Clear();
         cardPositions.Clear();
-        reloadCount++;
-        if(reloadCount >= 3)
+        levelCount++;
+        if(levelCount >= maxLevelCount)
         {
             uıController.LevelChangeScreenActivate();
-            reloadCount = 0;
+            levelCount = 0;
         }
         else
         {

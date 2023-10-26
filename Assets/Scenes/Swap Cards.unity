@@ -3466,7 +3466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 556157.6
+      value: 563256.44
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -4168,8 +4168,8 @@ MonoBehaviour:
   section1MatchedSFX: 1
   section2MatchedSFX: 1
   section3MatchedSFX: 1
-  cardCount: 0
-  maxLevelCount: 0
+  cardCount: 3
+  maxLevelCount: 5
   levelCount: 0
   prefetchedCardsCount: 0
   randomOrder: 0

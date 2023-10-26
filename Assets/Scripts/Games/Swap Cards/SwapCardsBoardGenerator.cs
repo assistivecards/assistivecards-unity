@@ -180,16 +180,16 @@ public class SwapCardsBoardGenerator : MonoBehaviour
             {
                 GameObject card = Instantiate(cardPrefab, referencePositions[i].transform.position, Quaternion.identity);
 
-                var cardTexture = await gameAPI.GetCardImage(packSelectionPanel.selectedPackElement.name, cardNames[randomValueList[i]], 512);
+                var cardTexture = prefetchedCardTextures[i + (levelCount * cardCount)];
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
                 cardTextures.Add(cardTexture);
                 card.transform.SetParent(referencePositions[i].transform);
-                card.transform.name = cardLocalNames[randomValueList[i]];
+                card.transform.name = prefetchedCardNames[i + (levelCount * cardCount)];
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                 card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-                card.transform.GetChild(1).GetComponent<TMP_Text>().text = cardLocalNames[randomValueList[i]];
-                card.GetComponent<SwapCardsCardController>().cardType = cardLocalNames[randomValueList[i]];
+                card.transform.GetChild(1).GetComponent<TMP_Text>().text = prefetchedCardNames[i + (levelCount * cardCount)];
+                card.GetComponent<SwapCardsCardController>().cardType = prefetchedCardNames[i + (levelCount * cardCount)];
                 card.GetComponent<SwapCardsCardController>().parentName = card.transform.parent.transform.tag;
                 cards.Add(card);
                 card.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
@@ -218,11 +218,11 @@ public class SwapCardsBoardGenerator : MonoBehaviour
             GameObject cloneCard = Instantiate(cardPrefab, cardPositions[randomOrder].transform.position, Quaternion.identity);
 
             cloneCard.transform.SetParent(cardPositions[randomOrder].transform);
-            cloneCard.transform.name = cardLocalNames[randomValueList[order]];
+            cloneCard.transform.name = prefetchedCardNames[order];
             cloneCard.transform.GetChild(0).GetComponent<RawImage>().texture = cardTextures[order];
             cloneCard.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-            cloneCard.transform.GetChild(1).GetComponent<TMP_Text>().text = cardLocalNames[randomValueList[order]];
-            cloneCard.GetComponent<SwapCardsCardController>().cardType = cardLocalNames[randomValueList[order]];
+            cloneCard.transform.GetChild(1).GetComponent<TMP_Text>().text = prefetchedCardNames[order];
+            cloneCard.GetComponent<SwapCardsCardController>().cardType = prefetchedCardNames[order];
             cloneCard.GetComponent<SwapCardsCardController>().parentName = cloneCard.transform.parent.transform.tag;
             cloneCard.GetComponent<BoxCollider2D>().enabled = true;
             cloneCard.gameObject.tag = "Card";

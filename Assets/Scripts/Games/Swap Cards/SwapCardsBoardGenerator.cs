@@ -397,6 +397,33 @@ public class SwapCardsBoardGenerator : MonoBehaviour
         }
     }
 
+    public void BackButtonClear()
+    {
+        matchedCardCount = 0;
+        foreach(var card in cards)
+        {
+            Destroy(card);
+        }
+        cardLocalNames.Clear();
+        cards.Clear();
+        cloneCards.Clear();
+        cardNames.Clear();
+        randomValueList.Clear();
+        usedRandomOrderCards.Clear();
+        cardPosition1Positions.Clear();
+        cardPosition2Positions.Clear();
+        cardPosition3Positions.Clear();
+        section1MatchedSFX = true;
+        section2MatchedSFX = true;
+        section3MatchedSFX = true;
+        section1MatchCount = 0;
+        section2MatchCount = 0;
+        section3MatchCount = 0;
+        cardTextures.Clear();
+        cardPositions.Clear();
+        uıController.PackSelectionPanelActive();
+    }
+
     private async Task PrefetchNextLevelsTexturesAsync()
     {
         for(int i = 0; i < prefetchedCardsCount; i++)

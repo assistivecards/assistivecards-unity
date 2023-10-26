@@ -338,5 +338,6 @@ public class NeedleThreadBoardGenerator : MonoBehaviour
             Debug.Log(cardNames[randomValueList[i]]);
         }
         Invoke("GeneratedBoardAsync", 2f);
+        uıController.Invoke("SetTutorialActive", 2.1f);
     }
 }

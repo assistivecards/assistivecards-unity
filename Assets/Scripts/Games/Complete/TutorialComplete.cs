@@ -8,22 +8,18 @@ public class TutorialComplete : MonoBehaviour
     [SerializeField] private Transform position1;
     [SerializeField] private Transform position2;
 
-
-    private void OnEnable() 
-    {
-        if(position1 != null && position2 != null)
-            DetectDestination();
-    }
-
     public void DetectDestination()
     {
-        foreach(GameObject card in boardGenerator.cards)
+        if(position1 != null)
         {
-            if(card.GetComponent<CardElementComplete>() != null)
+            foreach(GameObject card in boardGenerator.cards)
             {
-                if(card.GetComponent<CardElementComplete>().cardType == position1.gameObject.GetComponentInChildren<CardElementComplete>().cardType)
+                if(card.GetComponent<CardElementComplete>() != null)
                 {
-                    position2 = card.transform;
+                    if(card.GetComponent<CardElementComplete>().cardType == position1.gameObject.GetComponentInChildren<CardElementComplete>().cardType)
+                    {
+                        position2 = card.transform;
+                    }
                 }
             }
         }
@@ -32,6 +28,8 @@ public class TutorialComplete : MonoBehaviour
     void Update()
     {
         if(position1 != null && position2 != null)
+        {
             transform.position = Vector3.Lerp(position1.position, position2.position, Mathf.PingPong(Time.time / 2, 1));
+        }
     }
 }

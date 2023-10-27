@@ -166,6 +166,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
         }
         correctButton = cards[random];
         tutorial.GetComponent<AlphabetChooseTutorial>().SetPosition(correctButton.transform);
+        tutorial.GetComponent<Tutorial>().tutorialPosition = correctButton.transform;
         letterCard = Instantiate(cardPrefab, cardPosition.transform.position, Quaternion.identity);
         letterCard.transform.SetParent(cardPosition.transform);
 

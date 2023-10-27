@@ -166,6 +166,7 @@ public class LetterFindBoardGenerator : MonoBehaviour
             letterCardsNames.Clear();
             await CreateLetters();
             GeneratedBoardAsync();
+            uıController.Invoke("SetTutorialActive", 0.5f);
         }
 
     }

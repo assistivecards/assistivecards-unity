@@ -159,9 +159,9 @@ public class BoardCreatorHatchMatch : MonoBehaviour
         GenerateCard(packSelectionPanel.selectedPackElement.name, card3Position, (3 + levelCount));
         egg.SetActive(true);
         LeanTween.scale(egg, Vector3.one * 1.25f, 1f);
-        Invoke("GenerateStylizedCard", 0.5f);
+        Invoke("GenerateStylizedCard", 0.1f);
         uıController.GameUIActivate();
-        Invoke("ScaleUpCards", 1f);
+        Invoke("ScaleUpCards", 0.5f);
     }
 
     private void GenerateStylizedCard()
@@ -271,5 +271,6 @@ public class BoardCreatorHatchMatch : MonoBehaviour
             Debug.Log(cardNames[randomValueList[i]]);
         }
         Invoke("GeneratStylized", 2f);
+        uıController.Invoke("SetTutorialActive", 2.1f);
     }
 }

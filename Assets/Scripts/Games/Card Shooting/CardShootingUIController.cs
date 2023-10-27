@@ -37,16 +37,20 @@ public class CardShootingUIController : MonoBehaviour
     {
         if(canGenerate)
         {
-            if(firstTime || gameAPI.GetTutorialPreference() == 1)
-            {
-                tutorial.SetActive(true);
-            }
             gameUI.SetActive(true);
             backButton.SetActive(true);
             settingButton.SetActive(true);
             helloText.SetActive(false);
             levelProgressContainer.SetActive(false);
             loadingScreen.SetActive(false);
+        }
+    }
+
+    public void SetTutorialActive()
+    {
+        if(firstTime || gameAPI.GetTutorialPreference() == 1)
+        {
+            tutorial.SetActive(true);
         }
     }
 

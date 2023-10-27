@@ -352,5 +352,6 @@ public class CardBalanceBoardGenerator : MonoBehaviour
             Debug.Log(cardNames[randomValueList[i]]);
         }
         Invoke("GeneratedBoardAsync", 0.5f);
+        uıController.Invoke("SetTutorialActive", 1.5f);
     }
 }

@@ -37,18 +37,6 @@ public class CardNinjaUIController : MonoBehaviour
         gameAPI.PlayMusic();
     }
 
-    public void TutorialSetActive()
-    {
-        if(canGenerate)
-        {
-            if(firstTime || gameAPI.GetTutorialPreference() == 1)
-            {
-                tutorial.SetActive(true);
-            }
-            firstTime = false;
-        }
-    }
-
     public void GameUIActivate()
     {
         if(canGenerate)
@@ -60,6 +48,14 @@ public class CardNinjaUIController : MonoBehaviour
             settingButton.SetActive(true);
             helloText.SetActive(false);
             levelProgressContainer.SetActive(false);
+        }
+    }
+
+    public void SetTutorialActive()
+    {
+        if(firstTime || gameAPI.GetTutorialPreference() == 1)
+        {
+            tutorial.SetActive(true);
         }
     }
 

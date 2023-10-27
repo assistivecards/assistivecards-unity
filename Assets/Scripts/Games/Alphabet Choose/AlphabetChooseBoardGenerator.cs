@@ -18,7 +18,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
     private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedCards;
     private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
     private List<string> cardNames = new List<string>();
-    private List<string> cardLocalNames = new List<string>();
+    public List<string> cardLocalNames = new List<string>();
     public List<Texture2D> prefetchedCardTextures = new List<Texture2D>();
     public List<string> prefetchedCardNames = new List<string>();
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
@@ -29,6 +29,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
     private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLetterCards;
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> letterList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     public List<string> letterCardsNames = new List<string>();
+    public List<Texture2D> letterCardTextures = new List<Texture2D>();
 
     [Header ("Random")]
     public List<int> randomValueList = new List<int>();
@@ -53,8 +54,8 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
     public int buttonCount = 3;
     public Color[] colors;
     private string cardName;
-    private GameObject letterCard;
-    private GameObject correctButton;
+    public GameObject letterCard;
+    public GameObject correctButton;
     private int random;
     public int cardNameLenght;
     public string firstLetter;
@@ -89,6 +90,11 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
         for(int i = 0; i < cachedLetterCards.cards.Length; i++)
         {
             letterCardsNames.Add(cachedLetterCards.cards[i].title.ToLower().Replace(" ", "-"));
+            var letterTexture = await gameAPI.GetCardImage("letters", letterCardsNames[i], 512);
+            letterTexture.wrapMode = TextureWrapMode.Clamp;
+            letterTexture.filterMode = FilterMode.Bilinear;
+            letterCardTextures.Add(letterTexture);
+
         }
     }
 
@@ -122,7 +128,9 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
             randomValueList.Clear();
             prefetchedCardTextures.Clear();
             prefetchedCardNames.Clear();
+            letterCardTextures.Clear();
             await CacheCards(packSlug);
+            await CreateLetters();
             for(int i = 0; i < (maxLevelCount * buttonCount); i++)
             {
                 CheckRandom();
@@ -134,7 +142,6 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
     public async void GeneratedBoardAsync()
     {
         CreateButtonList();
-        await CreateLetters();
         for(int i = 0; i < buttonCount; i++)
         {
             var cardTexture = prefetchedCardTextures[i + (buttonCount * levelCount)];
@@ -145,7 +152,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
         }
         formerLetter = firstLetter;
         FillLetterCard();
-        Invoke("GameUIActivate", 0.3f);
+        Invoke("GameUIActivate", 0.5f);
     }
 
     private async void FillLetterCard()
@@ -158,19 +165,20 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
             GetFirstLetter(cards[random]);
         }
         correctButton = cards[random];
+        tutorial.GetComponent<AlphabetChooseTutorial>().SetPosition(correctButton.transform);
         letterCard = Instantiate(cardPrefab, cardPosition.transform.position, Quaternion.identity);
         letterCard.transform.SetParent(cardPosition.transform);
 
         if(letterCardsNames.Contains(firstLetter))
         {
-            foreach(var letter in letterCardsNames)
+            for(int i = 0; i < letterCardsNames.Count; i++)
             {
-                if(firstLetter == letter.Substring(0, 1))
+                if(firstLetter == letterCardsNames[i].Substring(0, 1))
                 {
                     letterCard.transform.GetChild(0).gameObject.SetActive(true);
                     letterCard.transform.GetChild(1).gameObject.SetActive(false);
 
-                    var correctLetterTexture = await gameAPI.GetCardImage("letters", letter, 512);
+                    var correctLetterTexture = letterCardTextures[i];
                     correctLetterTexture.wrapMode = TextureWrapMode.Clamp;
                     correctLetterTexture.filterMode = FilterMode.Bilinear;
 
@@ -210,21 +218,18 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
             LeanTween.scale(button, Vector3.one, 0.1f);
         }
 
-
         LeanTween.scale(firstLetterText, Vector3.one, 0.1f);
-        tutorial.GetComponent<AlphabetChooseTutorial>().SetPosition(cards[random].transform);
-
     }
 
     public void LevelEnding()
     {
         LeanTween.moveLocal(correctButton, Vector3.zero, 0.2f).setOnComplete(ScaleUpCard);
+        LeanTween.scale(letterCard, Vector3.zero, 0.1f);
         foreach(var button in buttons)
         {
             if(button != correctButton)
                 LeanTween.scale(button, Vector3.zero, 0.1f);
         }
-        LeanTween.scale(letterCard, Vector3.zero, 0.1f);
         LeanTween.scale(firstLetterText, Vector3.zero, 0.1f);
     }
 
@@ -248,9 +253,10 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
     {
         cards.Clear();
         cardNames.Clear();
+        cardLocalNames.Clear();
         letterList.Clear();
         letterCardsNames.Clear();
-
+        Destroy(letterCard);
         foreach(GameObject button in buttons)
         {
             LeanTween.scale(button, Vector3.zero, 0.1f);
@@ -262,7 +268,6 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
             }
         }
         buttons.Clear();
-        Destroy(letterCard);
 
     }
 
@@ -277,5 +282,6 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
             prefetchedCardTextures.Add(cardTexture);
         }
         Invoke("GeneratedBoardAsync", 0.5f);
+        uıController.Invoke("SetTutorialActive", 1.5f);
     }
 }

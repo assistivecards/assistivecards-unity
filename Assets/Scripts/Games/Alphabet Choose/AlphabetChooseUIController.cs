@@ -1,6 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using UnityEngine.EventSystems;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using System.Linq;
 
 public class AlphabetChooseUIController : MonoBehaviour
 {
@@ -36,16 +41,20 @@ GameAPI gameAPI;
     {
         if(canGenerate)
         {
-            if(firstTime || gameAPI.GetTutorialPreference() == 1)
-            {
-                tutorial.SetActive(true);
-            }
             gameUI.SetActive(true);
             backButton.SetActive(true);
             settingButton.SetActive(true);
             helloText.SetActive(false);
             levelProgressContainer.SetActive(false);
             loadingScreen.SetActive(false);
+        }
+    }
+
+    public void SetTutorialActive()
+    {
+        if(firstTime || gameAPI.GetTutorialPreference() == 1)
+        {
+            tutorial.SetActive(true);
         }
     }
 

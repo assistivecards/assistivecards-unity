@@ -129,6 +129,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
             prefetchedCardTextures.Clear();
             prefetchedCardNames.Clear();
             letterCardTextures.Clear();
+            letterCardsNames.Clear();
             await CacheCards(packSlug);
             await CreateLetters();
             for(int i = 0; i < (maxLevelCount * buttonCount); i++)
@@ -188,11 +189,11 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
                 }
             }
         }
-        else
+        else if(!letterCardsNames.Contains(firstLetter))
         {
             letterCard.transform.GetChild(0).gameObject.SetActive(false);
             letterCard.transform.GetChild(1).gameObject.SetActive(true);
-            letterCard.transform.GetChild(1).GetComponent<TMP_Text>().text = firstLetter.ToLower();
+            letterCard.transform.GetChild(1).GetComponent<TMP_Text>().text = firstLetter.ToUpper();
             letterCard.transform.GetChild(1).GetComponent<TMP_Text>().color = colors[Random.Range(0, colors.Length)];
         }
         firstLetterText.GetComponent<TMP_Text>().text = gameAPI.Translate(firstLetterText.gameObject.name, gameAPI.ToSentenceCase(firstLetter).Replace("-", " "), selectedLangCode);
@@ -256,7 +257,6 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
         cardNames.Clear();
         cardLocalNames.Clear();
         letterList.Clear();
-        letterCardsNames.Clear();
         Destroy(letterCard);
         foreach(GameObject button in buttons)
         {

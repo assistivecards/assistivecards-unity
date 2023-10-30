@@ -169,6 +169,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     {
         CreatePositionsList();
         RandomizePositions();
+        eatenCardCount = 0;
         previousTargetCard = prefetchedCardNames[targetCardRandomValue];
         targetCardRandomValue = Random.Range(0, 8);
         targetCardName = prefetchedCardNames[targetCardRandomValue];

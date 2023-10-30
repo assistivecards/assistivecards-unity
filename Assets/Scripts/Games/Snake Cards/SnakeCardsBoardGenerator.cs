@@ -36,6 +36,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     [SerializeField] private GameObject tutorial;
 
     [Header ("Game Elements")]
+    [SerializeField] private GameObject snakeParent;
     [SerializeField] private GameObject snake;
     [SerializeField] private TMP_Text eatCardsText;
     [SerializeField] private GameObject cardPosition1;
@@ -262,7 +263,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
         LeanTween.moveLocal(snake, new Vector3(-400, 0, 0), 0);
         snake.GetComponentInChildren<TrailRenderer>().time = 1.5f;
         uıController.GameUIActivate();
-        snake.SetActive(true);
+        snakeParent.transform.localScale = new Vector3(1, 1, 1);
         gameStarted = true;
     }
 
@@ -274,8 +275,8 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
 
     private void ResetSnake()
     {
-        snake.SetActive(false);
-        snake.GetComponentInChildren<TrailRenderer>().time = 1.5f;
+        snakeParent.transform.localScale = new Vector3(0, 0, 0);
+        snake.GetComponentInChildren<TrailRenderer>().time = 0f;
     }
 
     public void ClearForRefill()

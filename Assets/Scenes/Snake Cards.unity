@@ -803,8 +803,8 @@ GameObject:
   m_Component:
   - component: {fileID: 560318977}
   - component: {fileID: 560318980}
-  - component: {fileID: 560318981}
   - component: {fileID: 560318984}
+  - component: {fileID: 560318985}
   m_Layer: 5
   m_Name: SnakeBody
   m_TagString: Snake
@@ -839,18 +839,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 560318976}
   m_CullTransparentMesh: 1
---- !u!114 &560318981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 560318976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f37cdd58d81be45c39933a8c5220742b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!96 &560318984
 TrailRenderer:
   serializedVersion: 3
@@ -973,6 +961,18 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &560318985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560318976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37cdd58d81be45c39933a8c5220742b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &577278455
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,7 +1452,6 @@ RectTransform:
   - {fileID: 1963256680}
   - {fileID: 673862000}
   - {fileID: 1542807522}
-  - {fileID: 1751061755}
   - {fileID: 1625334063}
   m_Father: {fileID: 1910463663942908501}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1628,6 +1627,42 @@ MonoBehaviour:
   tutorial: {fileID: 927069859}
   packSelectionPanel: {fileID: 1837497526}
   levelChangeScreen: {fileID: 1275520836}
+--- !u!1 &1073231968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1073231969}
+  m_Layer: 5
+  m_Name: Snake
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1073231969
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073231968}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1751061755}
+  m_Father: {fileID: 1910463663942908501}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 33.12, y: 6.6799994}
+  m_SizeDelta: {x: 105.6, y: -57.559998}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1099822488 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6097405948729005584, guid: f06c30e9a112643eebd0ef04df54ea64, type: 3}
@@ -2912,11 +2947,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 560318977}
-  m_Father: {fileID: 970589812}
+  m_Father: {fileID: 1073231969}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 33.12, y: 6.68}
+  m_AnchoredPosition: {x: 0.000034332275, y: -0}
   m_SizeDelta: {x: 105.6, y: 57.56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1751061757
@@ -3828,7 +3863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 439961.88
+      value: 501751.62
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a
@@ -3903,6 +3938,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 970589812}
+  - {fileID: 1073231969}
   - {fileID: 1837497524}
   - {fileID: 472857504}
   - {fileID: 1727350123}
@@ -4627,6 +4663,7 @@ MonoBehaviour:
   randomValueList: 
   cardPrefab: {fileID: 1572616208917296617, guid: f042534cc027b41aba03c2544ab6a2ab, type: 3}
   tutorial: {fileID: 927069859}
+  snakeParent: {fileID: 1073231968}
   snake: {fileID: 1751061754}
   eatCardsText: {fileID: 0}
   cardPosition1: {fileID: 2096413492}

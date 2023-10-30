@@ -70,6 +70,8 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     public int maxLevelCount;
     public int levelCount;
     public int prefetchedCardsCount;
+    public string previousTargetCard;
+    public string targetCardName;
 
     private void Awake()
     {
@@ -167,7 +169,14 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
     {
         CreatePositionsList();
         RandomizePositions();
-        targetCardRandomValue = Random.Range(0, 9);
+        previousTargetCard = prefetchedCardNames[targetCardRandomValue];
+        targetCardRandomValue = Random.Range(0, 8);
+        targetCardName = prefetchedCardNames[targetCardRandomValue];
+        if(previousTargetCard == targetCardName)
+        {
+            targetCardRandomValue += targetCardRandomValue;
+            targetCardName = prefetchedCardNames[targetCardRandomValue];
+        }
         if(levelEndCard != null)
         {
             LeanTween.scale(levelEndCard, Vector3.zero, 0.2f);

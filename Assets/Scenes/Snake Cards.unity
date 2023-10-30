@@ -1570,6 +1570,7 @@ RectTransform:
   m_Children:
   - {fileID: 1154749946}
   - {fileID: 927069860}
+  - {fileID: 1073231969}
   - {fileID: 1513138206}
   - {fileID: 1371645660}
   - {fileID: 1099822491}
@@ -1656,11 +1657,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1751061755}
-  m_Father: {fileID: 1910463663942908501}
+  m_Father: {fileID: 1021200298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 33.12, y: 6.6799994}
+  m_AnchoredPosition: {x: 34.944946, y: -20.749989}
   m_SizeDelta: {x: 105.6, y: -57.559998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1099822488 stripped
@@ -3863,7 +3864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 501751.62
+      value: 511350.9
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a
@@ -3938,7 +3939,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 970589812}
-  - {fileID: 1073231969}
   - {fileID: 1837497524}
   - {fileID: 472857504}
   - {fileID: 1727350123}
@@ -4694,6 +4694,8 @@ MonoBehaviour:
   maxLevelCount: 5
   levelCount: 0
   prefetchedCardsCount: 0
+  previousTargetCard: 
+  targetCardName: 
 --- !u!114 &8383894889009589327
 MonoBehaviour:
   m_ObjectHideFlags: 0

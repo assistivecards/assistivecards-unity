@@ -256,6 +256,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
             eatenCardCount = 0;
             levelCount = 0;
             uıController.Invoke("LevelChangeScreenActivate", 0.75f);
+            Invoke("ResetSnake", 0.75f);
         }
     }
 
@@ -282,7 +283,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
         uıController.LevelChangeScreenActivate();
     }
 
-    private void ResetSnake()
+    public void ResetSnake()
     {
         snakeParent.transform.localScale = new Vector3(0, 0, 0);
         snake.GetComponentInChildren<TrailRenderer>().time = 0f;

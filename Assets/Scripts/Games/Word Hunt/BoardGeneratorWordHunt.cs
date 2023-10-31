@@ -74,28 +74,22 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     private void CheckRandom()
     {
         tempRandomValue = Random.Range(0, cardsList.Count);
-
-        if(!randomValueList.Contains(tempRandomValue))
-        {
-            randomValue = tempRandomValue;
-            randomValueList.Add(randomValue);
-        }
-        else
-        {
-            CheckRandom();
-        }
+        randomValue = tempRandomValue;
+        randomValueList.Add(randomValue);
     }
 
     public async void GeneratedBoardAsync()
     {
         finished = false;
+        packSlug = packSelectionPanel.selectedPackElement.name;
+        await CacheCards("letters");
         CheckRandom();
-        for(int i = 0; i < 10; i++)
+        for(int i = 0; i < 40; i++)
         {
             CheckRandom();
             GameObject card = Instantiate(cardPrefab, grid.transform.position, Quaternion.identity);
             var cardName = cardNames[randomValueList[i]];
-            var cardTexture = await gameAPI.GetCardImage(packSlug, cardName, 512);
+            var cardTexture = await gameAPI.GetCardImage("letters", cardName, 512);
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear;
             card.transform.SetParent(grid.transform);
@@ -104,7 +98,6 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
             card.transform.GetChild(1).GetComponent<TMP_Text>().text = cardName;
             cards.Add(card);
-            card.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
             card.transform.localPosition = Vector3.zero;
         }
         GameUIActivate();
@@ -114,7 +107,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     {
         foreach(var card in cards)
         {
-            LeanTween.scale(card, Vector3.one * 0.45f, 0.3f);
+            LeanTween.scale(card, Vector3.one, 0.3f);
         }
         //uıController.GameUIActivate();
     }

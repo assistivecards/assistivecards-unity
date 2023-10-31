@@ -11,7 +11,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
 {
     GameAPI gameAPI;
 
-    //[SerializeField] private uıcontroller uıController;
+    [SerializeField] private UIControllerWordHunt uıController;
 
     [Header ("Cache Cards")]
     public string selectedLangCode;
@@ -127,7 +127,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         {
             LeanTween.scale(card, Vector3.one, 0.3f);
         }
-        //uıController.GameUIActivate();
+        uıController.GameUIActivate();
     }
 
     private void CreateNewLevel()
@@ -142,8 +142,8 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         {
             LeanTween.scale(card, Vector3.zero, 0.3f);
         }
-        //uıController.Invoke("GameUIDeactivate", 0.3f);
-        //Invoke("ClearBoard", 0.3f);
+        uıController.Invoke("GameUIDeactivate", 0.3f);
+        Invoke("ClearBoard", 0.3f);
     }
 
     public void CheckLevelEnding()
@@ -171,24 +171,21 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         {
             Destroy(card);
         }
-        // cardLocalNames.Clear();
-        // cards.Clear();
-        // cloneCards.Clear();
-        // cardNames.Clear();
-        // randomValueList.Clear();
-        // usedRandomOrderCards.Clear();
-        // cardTextures.Clear();
-        // cardPositions.Clear();
-        // levelCount++;
+        cardLocalNames.Clear();
+        cards.Clear();
+        cardNames.Clear();
+        randomValueList.Clear();
+        usedRandomOrderCards.Clear();
+        levelCount++;
         if(levelCount >= maxLevelCount)
         {
-            //uıController.LevelChangeScreenActivate();
+            uıController.LevelChangeScreenActivate();
             levelCount = 0;
         }
         else
         {
-            // uıController.GameUIDeactivate();
-            // uıController.LoadingScreenActivation();
+            uıController.GameUIDeactivate();
+            uıController.LoadingScreenActivation();
             GeneratedBoardAsync();
         }
     }
@@ -205,6 +202,6 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         cardNames.Clear();
         randomValueList.Clear();
         usedRandomOrderCards.Clear();
-        //uıController.PackSelectionPanelActive();
+        uıController.PackSelectionPanelActive();
     }
 }

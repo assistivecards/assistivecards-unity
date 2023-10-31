@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwapCardsUIController : MonoBehaviour
+public class UIControllerWordHunt : MonoBehaviour
 {
     GameAPI gameAPI;
 
     [Header ("Scripts")]
-    [SerializeField] private SwapCardsBoardGenerator boardGenerator;
+    [SerializeField] private BoardGeneratorWordHunt boardGenerator;
     [SerializeField] private PackSelectionPanel packSelectionPanelScript;
 
     [Header ("Panels")]

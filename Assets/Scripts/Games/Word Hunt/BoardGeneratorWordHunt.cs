@@ -24,6 +24,12 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     [SerializeField] private PackSelectionPanel packSelectionPanel;
     public string packSlug;
 
+    [Header ("Cache Letter Cards")]
+    public AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLetterCards;
+    public List<string> letterCardNames = new List<string>();
+    [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> letterCardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
+
+
     [Header ("Random")]
     public List<int> randomValueList = new List<int>();
     private int tempRandomValue;
@@ -55,7 +61,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         gameAPI.PlayMusic();
     }
 
-     public async Task CacheCards(string _packSlug)
+    public async Task CacheCards(string _packSlug)
     {
         selectedLangCode = await gameAPI.GetSystemLanguageCode();
 
@@ -71,9 +77,20 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         }
     }
 
+    public async Task CacheLetterCards()
+    {
+        cachedLetterCards = await gameAPI.GetCards("en", "letters");
+        letterCardsList = cachedLetterCards.cards.ToList();
+
+        for(int i = 0; i < cachedLetterCards.cards.Length; i++)
+        {
+            letterCardNames.Add(cachedLetterCards.cards[i].title.ToLower().Replace(" ", "-"));
+        }
+    }
+
     private void CheckRandom()
     {
-        tempRandomValue = Random.Range(0, cardsList.Count);
+        tempRandomValue = Random.Range(0, letterCardsList.Count);
         randomValue = tempRandomValue;
         randomValueList.Add(randomValue);
     }
@@ -82,13 +99,14 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     {
         finished = false;
         packSlug = packSelectionPanel.selectedPackElement.name;
-        await CacheCards("letters");
+        await CacheLetterCards();
+        await CacheCards(packSlug);
         CheckRandom();
         for(int i = 0; i < 40; i++)
         {
             CheckRandom();
             GameObject card = Instantiate(cardPrefab, grid.transform.position, Quaternion.identity);
-            var cardName = cardNames[randomValueList[i]];
+            var cardName = letterCardNames[randomValueList[i]];
             var cardTexture = await gameAPI.GetCardImage("letters", cardName, 512);
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear;

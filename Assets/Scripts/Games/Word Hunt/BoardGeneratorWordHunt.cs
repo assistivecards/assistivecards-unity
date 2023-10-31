@@ -20,8 +20,6 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     private AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLocalCards;
     public List<string> cardNames = new List<string>();
     public List<string> cardLocalNames = new List<string>();
-    public List<Texture2D> prefetchedCardTextures = new List<Texture2D>();
-    public List<string> prefetchedCardNames = new List<string>();
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> cardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
     [SerializeField] private PackSelectionPanel packSelectionPanel;
     public string packSlug;
@@ -73,32 +71,6 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         }
     }
 
-    public async void PrefetchCardTextures()
-    {
-        // if(uıController.canGenerate)
-        // {
-            packSlug = packSelectionPanel.selectedPackElement.name;
-            randomValueList.Clear();
-            prefetchedCardTextures.Clear();
-            prefetchedCardNames.Clear();
-            levelCount = 0;
-            await CacheCards(packSlug);
-            if(cardNames.Count >= (cardCount * maxLevelCount))
-            {
-                prefetchedCardsCount = (cardCount * maxLevelCount);
-            }
-            else
-            {
-                prefetchedCardsCount = cardNames.Count;
-            }
-            for(int i = 0; i < prefetchedCardsCount; i++)
-            {
-                CheckRandom();
-            }
-            PrefetchNextLevelsTexturesAsync();
-        //}
-    }
-
     private void CheckRandom()
     {
         tempRandomValue = Random.Range(0, cardsList.Count);
@@ -117,20 +89,20 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     public async void GeneratedBoardAsync()
     {
         finished = false;
+        CheckRandom();
         for(int i = 0; i < 10; i++)
         {
+            CheckRandom();
             GameObject card = Instantiate(cardPrefab, grid.transform.position, Quaternion.identity);
-
-            var cardTexture = prefetchedCardTextures[i + (levelCount * cardCount)];
+            var cardName = cardNames[randomValueList[i]];
+            var cardTexture = await gameAPI.GetCardImage(packSlug, cardName, 512);
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear;
             card.transform.SetParent(grid.transform);
-            card.transform.name = prefetchedCardNames[i + (levelCount * cardCount)];
+            card.transform.name = cardName;
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-            card.transform.GetChild(1).GetComponent<TMP_Text>().text = prefetchedCardNames[i + (levelCount * cardCount)];
-            card.GetComponent<SwapCardsCardController>().cardType = prefetchedCardNames[i + (levelCount * cardCount)];
-            card.GetComponent<SwapCardsCardController>().parentName = card.transform.parent.transform.tag;
+            card.transform.GetChild(1).GetComponent<TMP_Text>().text = cardName;
             cards.Add(card);
             card.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
             card.transform.localPosition = Vector3.zero;
@@ -223,20 +195,5 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         randomValueList.Clear();
         usedRandomOrderCards.Clear();
         //uıController.PackSelectionPanelActive();
-    }
-
-    private async Task PrefetchNextLevelsTexturesAsync()
-    {
-        for(int i = 0; i < prefetchedCardsCount; i++)
-        {
-            prefetchedCardNames.Add(cardLocalNames[randomValueList[i]]);
-            var cardTexture = await gameAPI.GetCardImage(packSlug, cardNames[randomValueList[i]], 512);
-            cardTexture.wrapMode = TextureWrapMode.Clamp;
-            cardTexture.filterMode = FilterMode.Bilinear;
-            prefetchedCardTextures.Add(cardTexture);
-            Debug.Log(cardNames[randomValueList[i]]);
-        }
-        Invoke("GeneratedBoardAsync", 2f);
-        //uıController.Invoke("SetTutorialActive", 2.1f);
     }
 }

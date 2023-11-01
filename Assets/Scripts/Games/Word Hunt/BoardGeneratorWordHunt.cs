@@ -28,6 +28,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     public AssistiveCardsSDK.AssistiveCardsSDK.Cards cachedLetterCards;
     public List<string> letterCardNames = new List<string>();
     [SerializeField] private List<AssistiveCardsSDK.AssistiveCardsSDK.Card> letterCardsList = new List<AssistiveCardsSDK.AssistiveCardsSDK.Card>();
+    public List<string> localAlphabet = new List<string>();
 
 
     [Header ("Random")]
@@ -95,6 +96,22 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         randomValueList.Add(randomValue);
     }
 
+    private void CreateAlphabet()
+    {
+        foreach(string cardName in cardLocalNames)
+        {
+            foreach(var letter in cardName)
+            {
+                string letterString = "" + letter;
+                letterString = letterString.ToUpper();
+                if(!localAlphabet.Contains(letterString))
+                {
+                    localAlphabet.Add(letterString);
+                }
+            }
+        }
+    }
+
     public async void GeneratedBoardAsync()
     {
         uıController.LoadingScreenActivation();
@@ -102,6 +119,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         packSlug = packSelectionPanel.selectedPackElement.name;
         await CacheLetterCards();
         await CacheCards(packSlug);
+        CreateAlphabet();
         CheckRandom();
         for(int i = 0; i < 40; i++)
         {

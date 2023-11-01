@@ -47,11 +47,9 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     public Color[] colors;
 
     [Header ("Game Values")]
-    public int cardCount;
-    public int maxLevelCount;
-    public int levelCount;
-    public int prefetchedCardsCount;
+    public List<string> selectedWords = new List<string>();
     private string cardName;
+    public int selectedWordCount;
     public int randomOrder;
     public List<int> usedRandomOrderCards = new List<int>();
     public int cardNameLenght;
@@ -124,6 +122,11 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         await CacheCards(packSlug);
         CreateAlphabet();
         CheckRandom();
+        for(int j = 0; j < selectedWordCount; j++)
+        {
+            CheckRandom();
+            selectedWords.Add(cardNames[randomValueList[j]]);
+        }
         for(int i = 0; i < 40; i++)
         {
             CheckRandom();
@@ -213,18 +216,8 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         cardNames.Clear();
         randomValueList.Clear();
         usedRandomOrderCards.Clear();
-        levelCount++;
-        if(levelCount >= maxLevelCount)
-        {
-            uıController.LevelChangeScreenActivate();
-            levelCount = 0;
-        }
-        else
-        {
-            uıController.GameUIDeactivate();
-            uıController.LoadingScreenActivation();
-            GeneratedBoardAsync();
-        }
+        selectedWords.Clear();
+        uıController.LevelChangeScreenActivate();
     }
 
     public void BackButtonClear()
@@ -239,6 +232,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         cardNames.Clear();
         randomValueList.Clear();
         usedRandomOrderCards.Clear();
+        selectedWords.Clear();
         uıController.PackSelectionPanelActive();
     }
 }

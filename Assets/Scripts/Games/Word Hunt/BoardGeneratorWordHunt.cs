@@ -127,6 +127,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             CheckRandom();
             selectedWords.Add(cardNames[randomValueList[j]]);
         }
+        CreateWord(1);
         for(int i = 0; i < 40; i++)
         {
             CheckRandom();
@@ -159,6 +160,41 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             }
         }
         Invoke("GameUIActivate", 0.5f);
+    }
+
+    private async void CreateWord(int wordIndex)
+    {
+        string selectedWordName =( "" + selectedWords[wordIndex]).ToUpper();
+        for(int j = 0; j < selectedWordName.Length; j++)
+        {
+            GameObject card = Instantiate(cardPrefab, grid.transform.position, Quaternion.identity);
+            string cardLetter = "" + selectedWordName[j];
+            if(cardNames.Contains(cardLetter))
+            {
+                var cardTexture = await gameAPI.GetCardImage("letters", cardLetter, 512);
+                cardTexture.wrapMode = TextureWrapMode.Clamp;
+                cardTexture.filterMode = FilterMode.Bilinear;
+                card.transform.SetParent(grid.transform);
+                card.transform.name = cardLetter;
+                card.transform.GetChild(0).gameObject.SetActive(true);
+                card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+                card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                card.transform.GetChild(1).gameObject.SetActive(false);
+                cards.Add(card);
+                card.transform.localPosition = Vector3.zero;
+            }
+            else
+            {
+                card.transform.SetParent(grid.transform);
+                card.transform.name = cardName;
+                card.transform.GetChild(0).gameObject.SetActive(false);
+                card.transform.GetChild(1).gameObject.SetActive(true);
+                card.transform.GetChild(1).GetComponent<Text>().text = cardLetter;
+                card.transform.GetChild(1).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
+                cards.Add(card);
+                card.transform.localPosition = Vector3.zero;
+            }
+        }
     }
 
     public void GameUIActivate()

@@ -97,6 +97,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
 
     public async void GeneratedBoardAsync()
     {
+        uıController.LoadingScreenActivation();
         finished = false;
         packSlug = packSelectionPanel.selectedPackElement.name;
         await CacheLetterCards();
@@ -118,7 +119,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             cards.Add(card);
             card.transform.localPosition = Vector3.zero;
         }
-        GameUIActivate();
+        Invoke("GameUIActivate", 0.5f);
     }
 
     public void GameUIActivate()

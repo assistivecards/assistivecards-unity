@@ -34,15 +34,12 @@ public class UIControllerWordHunt : MonoBehaviour
 
     public void GameUIActivate()
     {
-        if(canGenerate)
-        {
-            gameUI.SetActive(true);
-            backButton.SetActive(true);
-            settingButton.SetActive(true);
-            helloText.SetActive(false);
-            levelProgressContainer.SetActive(false);
-            loadingScreen.SetActive(false);
-        }
+        gameUI.SetActive(true);
+        backButton.SetActive(true);
+        settingButton.SetActive(true);
+        helloText.SetActive(false);
+        levelProgressContainer.SetActive(false);
+        loadingScreen.SetActive(false);
     }
 
     public void SetTutorialActive()
@@ -131,13 +128,10 @@ public class UIControllerWordHunt : MonoBehaviour
 
     public void LoadingScreenActivation()
     {
-        if(canGenerate)
-        {
-            loadingScreen.SetActive(true);
-            helloText.SetActive(false);
-            levelProgressContainer.SetActive(false);
-            settingButton.SetActive(false);
-            backButton.SetActive(false);
-        }
+        loadingScreen.SetActive(true);
+        helloText.SetActive(false);
+        levelProgressContainer.SetActive(false);
+        settingButton.SetActive(false);
+        backButton.SetActive(false);
     }
 }

@@ -253,12 +253,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     public void ClearBoard()
     {
         matchedCardCount = 0;
-        foreach(var card in cards)
-        {
-            Destroy(card);
-        }
         cardLocalNames.Clear();
-        cards.Clear();
         cardNames.Clear();
         randomValueList.Clear();
         usedRandomOrderCards.Clear();
@@ -269,12 +264,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     public void BackButtonClear()
     {
         matchedCardCount = 0;
-        foreach(var card in cards)
-        {
-            Destroy(card);
-        }
         cardLocalNames.Clear();
-        cards.Clear();
         cardNames.Clear();
         randomValueList.Clear();
         usedRandomOrderCards.Clear();

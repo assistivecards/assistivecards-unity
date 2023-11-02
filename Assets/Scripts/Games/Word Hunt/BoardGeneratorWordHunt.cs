@@ -125,40 +125,40 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         for(int j = 0; j < selectedWordCount; j++)
         {
             CheckRandom();
-            selectedWords.Add(cardNames[randomValueList[j]]);
+            selectedWords.Add(cardLocalNames[randomValueList[j]]);
         }
-        CreateWord(1);
-        for(int i = 0; i < 40; i++)
-        {
-            CheckRandom();
-            GameObject card = Instantiate(cardPrefab, grid.transform.position, Quaternion.identity);
-            var cardName = localAlphabet[randomValueList[i]];
-            if(cardNames.Contains(localAlphabet[randomValueList[i]]))
-            {
-                var cardTexture = await gameAPI.GetCardImage("letters", cardName, 512);
-                cardTexture.wrapMode = TextureWrapMode.Clamp;
-                cardTexture.filterMode = FilterMode.Bilinear;
-                card.transform.SetParent(grid.transform);
-                card.transform.name = cardName;
-                card.transform.GetChild(0).gameObject.SetActive(true);
-                card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-                card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-                card.transform.GetChild(1).gameObject.SetActive(false);
-                cards.Add(card);
-                card.transform.localPosition = Vector3.zero;
-            }
-            else
-            {
-                card.transform.SetParent(grid.transform);
-                card.transform.name = cardName;
-                card.transform.GetChild(0).gameObject.SetActive(false);
-                card.transform.GetChild(1).gameObject.SetActive(true);
-                card.transform.GetChild(1).GetComponent<Text>().text = cardName;
-                card.transform.GetChild(1).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
-                cards.Add(card);
-                card.transform.localPosition = Vector3.zero;
-            }
-        }
+        //CreateWord(1);
+        // for(int i = 0; i < 40; i++)
+        // {
+        //     CheckRandom();
+        //     GameObject card = Instantiate(cardPrefab, grid.transform.position, Quaternion.identity);
+        //     var cardName = localAlphabet[randomValueList[i]];
+        //     if(cardNames.Contains(localAlphabet[randomValueList[i]]))
+        //     {
+        //         var cardTexture = await gameAPI.GetCardImage("letters", cardName, 512);
+        //         cardTexture.wrapMode = TextureWrapMode.Clamp;
+        //         cardTexture.filterMode = FilterMode.Bilinear;
+        //         card.transform.SetParent(grid.transform);
+        //         card.transform.name = cardName;
+        //         card.transform.GetChild(0).gameObject.SetActive(true);
+        //         card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+        //         card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+        //         card.transform.GetChild(1).gameObject.SetActive(false);
+        //         cards.Add(card);
+        //         card.transform.localPosition = Vector3.zero;
+        //     }
+        //     else
+        //     {
+        //         card.transform.SetParent(grid.transform);
+        //         card.transform.name = cardName;
+        //         card.transform.GetChild(0).gameObject.SetActive(false);
+        //         card.transform.GetChild(1).gameObject.SetActive(true);
+        //         card.transform.GetChild(1).GetComponent<Text>().text = cardName;
+        //         card.transform.GetChild(1).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
+        //         cards.Add(card);
+        //         card.transform.localPosition = Vector3.zero;
+        //     }
+        // }
         Invoke("GameUIActivate", 0.5f);
     }
 

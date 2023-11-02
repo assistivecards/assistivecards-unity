@@ -129,7 +129,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             CheckRandom();
             selectedWords.Add(cardLocalNames[randomValueList[j]]);
         }
-        CreateWord(1, 1);
+        CreateWordHorizontal(1);
         for(int i = 0; i < 40; i++)
         {
             CheckRandom();
@@ -173,12 +173,17 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         }
     }
 
-    private async void CreateWord(int wordIndex, int startIndex)
+    private async void CreateWordHorizontal(int wordIndex)
     {
         string selectedWordName =( "" + selectedWords[wordIndex]).ToUpper();
+        int startIndexColumn = Random.Range(0, 4);
+        if((startIndexColumn + selectedWordName.Length) > 7)
+        {
+            startIndexColumn = (7 - selectedWordName.Length);
+        }
         for(int j = 0; j < selectedWordName.Length; j++)
         {
-            var card = gridChilds[startIndex + j];
+            var card = gridChilds[startIndexColumn + j];
             card.GetComponent<CardElementWordHunt>().filled = true;
             string cardLetter = "" + selectedWordName[j];
             if(cardNames.Contains(cardLetter))

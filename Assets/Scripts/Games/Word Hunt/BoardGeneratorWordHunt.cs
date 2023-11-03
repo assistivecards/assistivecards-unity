@@ -51,6 +51,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     public int horizontalValue;
     public List<string> selectedWords = new List<string>();
     public List<string> accurateWords = new List<string>();
+    public List<GameObject> tempLetterPositions = new List<GameObject>();
     private string cardName;
     public int selectedWordCount;
     public int randomOrder;
@@ -143,25 +144,25 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             {
                 if(cardNames.Contains(localAlphabet[randomValueList[i]]))
                 {
-                    // var cardTexture = await gameAPI.GetCardImage("letters", cardName, 512);
-                    // cardTexture.wrapMode = TextureWrapMode.Clamp;
-                    // cardTexture.filterMode = FilterMode.Bilinear;
-                    // card.transform.name = cardName;
-                    // card.transform.GetChild(0).gameObject.SetActive(true);
-                    // card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-                    // card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-                    // card.transform.GetChild(1).gameObject.SetActive(false);
-                    // cards.Add(card);
+                    var cardTexture = await gameAPI.GetCardImage("letters", cardName, 512);
+                    cardTexture.wrapMode = TextureWrapMode.Clamp;
+                    cardTexture.filterMode = FilterMode.Bilinear;
+                    card.transform.name = cardName;
+                    card.transform.GetChild(0).gameObject.SetActive(true);
+                    card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+                    card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                    card.transform.GetChild(1).gameObject.SetActive(false);
+                    cards.Add(card);
                 }
                 else
                 {
-                    // card.transform.SetParent(grid.transform);
-                    // card.transform.name = cardName;
-                    // card.transform.GetChild(0).gameObject.SetActive(false);
-                    // card.transform.GetChild(1).gameObject.SetActive(true);
-                    // card.transform.GetChild(1).GetComponent<Text>().text = cardName;
-                    // card.transform.GetChild(1).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
-                    // cards.Add(card);
+                    card.transform.SetParent(grid.transform);
+                    card.transform.name = cardName;
+                    card.transform.GetChild(0).gameObject.SetActive(false);
+                    card.transform.GetChild(1).gameObject.SetActive(true);
+                    card.transform.GetChild(1).GetComponent<Text>().text = cardName;
+                    card.transform.GetChild(1).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
+                    cards.Add(card);
                 }
                 card.GetComponent<CardElementWordHunt>().filled = true;
             }
@@ -201,8 +202,9 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         }
     }
 
-    private async void CreateWordHorizontal(int wordIndex)
+    private void CreateWordHorizontal(int wordIndex)
     {
+        tempLetterPositions.Clear();
         string selectedWordName =( "" + selectedWords[wordIndex]).ToUpper();
         int column = Random.Range(0, 5);
         int row = Random.Range(0, 7);
@@ -221,36 +223,26 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         for(int j = 0; j < selectedWordName.Length; j++)
         {
             var card = gridChilds[startIndex + j];
-            card.GetComponent<CardElementWordHunt>().filled = true;
-            string cardLetter = "" + selectedWordName[j];
-            if(cardNames.Contains(cardLetter))
-            {
-                var cardTexture = await gameAPI.GetCardImage("letters", cardLetter, 512);
-                cardTexture.wrapMode = TextureWrapMode.Clamp;
-                cardTexture.filterMode = FilterMode.Bilinear;
-                card.transform.SetParent(grid.transform);
-                card.transform.name = cardLetter;
-                card.transform.GetChild(0).gameObject.SetActive(true);
-                card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-                card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-                card.transform.GetChild(1).gameObject.SetActive(false);
-                cards.Add(card);
-            }
-            else
-            {
-                card.transform.SetParent(grid.transform);
-                card.transform.name = cardName;
-                card.transform.GetChild(0).gameObject.SetActive(false);
-                card.transform.GetChild(1).gameObject.SetActive(true);
-                card.transform.GetChild(1).GetComponent<Text>().text = cardLetter;
-                card.transform.GetChild(1).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
-                cards.Add(card);
-            }
+            // if(card.GetComponent<CardElementWordHunt>().filled == false)
+            // {
+                tempLetterPositions.Add(card);
+            // }
+            // else if(card.GetComponent<CardElementWordHunt>().filled == true)
+            // {
+            //     CreateWordHorizontal(wordIndex);
+            // }
+        }
+        for(int i = 0; i < selectedWordName.Length; i++)
+        {
+            string cardLetter = "" + selectedWordName[i];
+            FillCard(cardLetter, tempLetterPositions[i]);
         }
     }
 
-    private async void CreateWordVertical(int wordIndex)
+
+    private void CreateWordVertical(int wordIndex)
     {
+        tempLetterPositions.Clear();
         string selectedWordName =( "" + selectedWords[wordIndex]).ToUpper();
         int startIndex = Random.Range(0, 10);
         int column = Random.Range(0, 5);
@@ -263,32 +255,48 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         for(int j = 0; j < selectedWordName.Length; j++)
         {
             var card = gridChilds[startIndex + (j * 8)];
-            card.GetComponent<CardElementWordHunt>().filled = true;
-            string cardLetter = "" + selectedWordName[j];
-            if(cardNames.Contains(cardLetter))
-            {
-                var cardTexture = await gameAPI.GetCardImage("letters", cardLetter, 512);
-                cardTexture.wrapMode = TextureWrapMode.Clamp;
-                cardTexture.filterMode = FilterMode.Bilinear;
-                card.transform.SetParent(grid.transform);
-                card.transform.name = cardLetter;
-                card.transform.GetChild(0).gameObject.SetActive(true);
-                card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-                card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-                card.transform.GetChild(1).gameObject.SetActive(false);
-                cards.Add(card);
-            }
-            else
-            {
-                card.transform.SetParent(grid.transform);
-                card.transform.name = cardName;
-                card.transform.GetChild(0).gameObject.SetActive(false);
-                card.transform.GetChild(1).gameObject.SetActive(true);
-                card.transform.GetChild(1).GetComponent<Text>().text = cardLetter;
-                card.transform.GetChild(1).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
-                cards.Add(card);
-            }
+            // if(card.GetComponent<CardElementWordHunt>().filled == false)
+            // {
+                    tempLetterPositions.Add(card);
+            // }
+            // else if(card.GetComponent<CardElementWordHunt>().filled == true)
+            // {
+            //     CreateWordHorizontal(wordIndex);
+            // }
         }
+        for(int i = 0; i < selectedWordName.Length; i++)
+        {
+            string cardLetter = "" + selectedWordName[i];
+            FillCard(cardLetter, tempLetterPositions[i]);
+        }
+    }
+
+    private async void FillCard(string cardLetter, GameObject card)
+    {
+        if(cardNames.Contains(cardLetter))
+        {
+            var cardTexture = await gameAPI.GetCardImage("letters", cardLetter, 512);
+            cardTexture.wrapMode = TextureWrapMode.Clamp;
+            cardTexture.filterMode = FilterMode.Bilinear;
+            card.transform.SetParent(grid.transform);
+            card.transform.name = cardLetter;
+            card.transform.GetChild(0).gameObject.SetActive(true);
+            card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+            card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+            card.transform.GetChild(1).gameObject.SetActive(false);
+            cards.Add(card);
+        }
+        else
+        {
+            card.transform.SetParent(grid.transform);
+            card.transform.name = cardName;
+            card.transform.GetChild(0).gameObject.SetActive(false);
+            card.transform.GetChild(1).gameObject.SetActive(true);
+            card.transform.GetChild(1).GetComponent<Text>().text = cardLetter;
+            card.transform.GetChild(1).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
+            cards.Add(card);
+        }
+        card.GetComponent<CardElementWordHunt>().filled = true;
     }
 
     public void GameUIActivate()

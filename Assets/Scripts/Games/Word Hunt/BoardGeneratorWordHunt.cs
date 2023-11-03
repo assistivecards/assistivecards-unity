@@ -130,6 +130,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             selectedWords.Add(cardLocalNames[randomValueList[j]]);
         }
         CreateWordHorizontal(1);
+        CreateWordHorizontal(2);
         for(int i = 0; i < 40; i++)
         {
             CheckRandom();
@@ -184,6 +185,45 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         for(int j = 0; j < selectedWordName.Length; j++)
         {
             var card = gridChilds[startIndexColumn + j];
+            card.GetComponent<CardElementWordHunt>().filled = true;
+            string cardLetter = "" + selectedWordName[j];
+            if(cardNames.Contains(cardLetter))
+            {
+                var cardTexture = await gameAPI.GetCardImage("letters", cardLetter, 512);
+                cardTexture.wrapMode = TextureWrapMode.Clamp;
+                cardTexture.filterMode = FilterMode.Bilinear;
+                card.transform.SetParent(grid.transform);
+                card.transform.name = cardLetter;
+                card.transform.GetChild(0).gameObject.SetActive(true);
+                card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+                card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                card.transform.GetChild(1).gameObject.SetActive(false);
+                cards.Add(card);
+            }
+            else
+            {
+                card.transform.SetParent(grid.transform);
+                card.transform.name = cardName;
+                card.transform.GetChild(0).gameObject.SetActive(false);
+                card.transform.GetChild(1).gameObject.SetActive(true);
+                card.transform.GetChild(1).GetComponent<Text>().text = cardLetter;
+                card.transform.GetChild(1).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
+                cards.Add(card);
+            }
+        }
+    }
+
+    private async void CreateWordVertical(int wordIndex)
+    {
+        string selectedWordName =( "" + selectedWords[wordIndex]).ToUpper();
+        int startIndexRow = Random.Range(0, 3);
+        if((startIndexRow + selectedWordName.Length) > 5)
+        {
+            startIndexRow = (5 - selectedWordName.Length);
+        }
+        for(int j = 0; j < selectedWordName.Length; j++)
+        {
+            var card = gridChilds[startIndexRow + j];
             card.GetComponent<CardElementWordHunt>().filled = true;
             string cardLetter = "" + selectedWordName[j];
             if(cardNames.Contains(cardLetter))

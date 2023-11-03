@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3395615947317002354, guid: a813ea87b51ec49d88558acfb4f897f1, type: 3}
       propertyPath: m_Name
-      value: LetterPrefab (6)
+      value: (0,6)
       objectReference: {fileID: 0}
     - target: {fileID: 3395615947317002355, guid: a813ea87b51ec49d88558acfb4f897f1, type: 3}
       propertyPath: m_Pivot.x
@@ -716,7 +716,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3395615947317002354, guid: a813ea87b51ec49d88558acfb4f897f1, type: 3}
       propertyPath: m_Name
-      value: LetterPrefab (7)
+      value: (0,7)
       objectReference: {fileID: 0}
     - target: {fileID: 3395615947317002355, guid: a813ea87b51ec49d88558acfb4f897f1, type: 3}
       propertyPath: m_Pivot.x
@@ -2035,7 +2035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3395615947317002354, guid: a813ea87b51ec49d88558acfb4f897f1, type: 3}
       propertyPath: m_Name
-      value: LetterPrefab (3)
+      value: (0,3)
       objectReference: {fileID: 0}
     - target: {fileID: 3395615947317002355, guid: a813ea87b51ec49d88558acfb4f897f1, type: 3}
       propertyPath: m_Pivot.x
@@ -2515,7 +2515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3395615947317002354, guid: a813ea87b51ec49d88558acfb4f897f1, type: 3}
       propertyPath: m_Name
-      value: LetterPrefab (2)
+      value: (0,2)
       objectReference: {fileID: 0}
     - target: {fileID: 3395615947317002355, guid: a813ea87b51ec49d88558acfb4f897f1, type: 3}
       propertyPath: m_Pivot.x
@@ -4942,7 +4942,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3395615947317002354, guid: a813ea87b51ec49d88558acfb4f897f1, type: 3}
       propertyPath: m_Name
-      value: LetterPrefab (4)
+      value: (0,4)
       objectReference: {fileID: 0}
     - target: {fileID: 3395615947317002355, guid: a813ea87b51ec49d88558acfb4f897f1, type: 3}
       propertyPath: m_Pivot.x
@@ -6386,7 +6386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3395615947317002354, guid: a813ea87b51ec49d88558acfb4f897f1, type: 3}
       propertyPath: m_Name
-      value: LetterPrefab (5)
+      value: (0,5)
       objectReference: {fileID: 0}
     - target: {fileID: 3395615947317002355, guid: a813ea87b51ec49d88558acfb4f897f1, type: 3}
       propertyPath: m_Pivot.x
@@ -7119,7 +7119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 535777.44
+      value: 543136.94
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

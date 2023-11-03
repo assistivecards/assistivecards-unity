@@ -50,6 +50,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     [Header ("Game Values")]
     public int horizontalValue;
     public List<string> selectedWords = new List<string>();
+    public List<string> accurateWords = new List<string>();
     private string cardName;
     public int selectedWordCount;
     public int randomOrder;
@@ -58,6 +59,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     public int matchedCardCount;
     public bool isPointerUp;
     public bool finished;
+    int startIndex;
 
     private void Awake()
     {
@@ -125,13 +127,13 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         CreateAlphabet();
         CheckRandom();
         GetGridList();
-        for(int j = 0; j < selectedWordCount; j++)
-        {
-            CheckRandom();
-            selectedWords.Add(cardLocalNames[randomValueList[j]]);
-        }
         CreateWordHorizontal(1);
         //CreateWordVertical(2);
+        CreateWordList();
+        for(int j = 0; j < selectedWordCount; j++)
+        {
+            CreateSelectedWords();
+        }
         for(int i = 0; i < 40; i++)
         {
             CheckRandom();
@@ -167,6 +169,30 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         Invoke("GameUIActivate", 0.5f);
     }
 
+    private void CreateSelectedWords()
+    {
+        int random = Random.Range(0, accurateWords.Count);
+        if(!selectedWords.Contains(accurateWords[random]))
+        {
+            selectedWords.Add(accurateWords[random]);
+        }
+        else
+        {
+            CreateSelectedWords();
+        }
+    }
+
+    private void CreateWordList()
+    {
+        foreach(var cardName in cardLocalNames)
+        {
+            if(cardName.Length <= 5 && !cardName.Contains(" "))
+            {
+                accurateWords.Add(cardName);
+            }
+        }
+    }
+
     private void GetGridList()
     {
         foreach(Transform child in grid.transform)
@@ -180,7 +206,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         string selectedWordName =( "" + selectedWords[wordIndex]).ToUpper();
         int column = Random.Range(0, 5);
         int row = Random.Range(0, 7);
-        int startIndex = 0;
+        //if((column + selectedWordName.Length) > )
         foreach(var card in gridChilds)
         {
             if((card.GetComponent<CardElementWordHunt>().column == column)  && card.GetComponent<CardElementWordHunt>().row == row)

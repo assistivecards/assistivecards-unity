@@ -127,13 +127,13 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         CreateAlphabet();
         CheckRandom();
         GetGridList();
-        CreateWordHorizontal(1);
-        //CreateWordVertical(2);
         CreateWordList();
         for(int j = 0; j < selectedWordCount; j++)
         {
             CreateSelectedWords();
         }
+        CreateWordHorizontal(0);
+        CreateWordVertical(1);
         for(int i = 0; i < 40; i++)
         {
             CheckRandom();
@@ -206,7 +206,11 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         string selectedWordName =( "" + selectedWords[wordIndex]).ToUpper();
         int column = Random.Range(0, 5);
         int row = Random.Range(0, 7);
-        //if((column + selectedWordName.Length) > )
+        if((column + selectedWordName.Length) > 7)
+        {
+            column = 7 - selectedWordName.Length;
+            Debug.Log("Column Changed To: " + (7 - selectedWordName.Length));
+        }
         foreach(var card in gridChilds)
         {
             if((card.GetComponent<CardElementWordHunt>().column == column)  && card.GetComponent<CardElementWordHunt>().row == row)
@@ -249,13 +253,16 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     {
         string selectedWordName =( "" + selectedWords[wordIndex]).ToUpper();
         int startIndex = Random.Range(0, 10);
-        if((startIndex + selectedWordName.Length) > 5)
+        int column = Random.Range(0, 5);
+        int row = Random.Range(0, 7);
+        if((column + selectedWordName.Length) > 5)
         {
-            startIndex = (5 - selectedWordName.Length);
+            row = 5 - selectedWordName.Length;
+            Debug.Log("Row Changed To: " + (7 - selectedWordName.Length));
         }
         for(int j = 0; j < selectedWordName.Length; j++)
         {
-            var card = gridChilds[startIndex + 7];
+            var card = gridChilds[startIndex + (j * 8)];
             card.GetComponent<CardElementWordHunt>().filled = true;
             string cardLetter = "" + selectedWordName[j];
             if(cardNames.Contains(cardLetter))

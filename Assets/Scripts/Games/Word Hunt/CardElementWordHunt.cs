@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CardElementWordHunt : MonoBehaviour
 {
-    public bool filled;
     public int row;
     public int column;
+    public int index;
+    public bool filled;
 }

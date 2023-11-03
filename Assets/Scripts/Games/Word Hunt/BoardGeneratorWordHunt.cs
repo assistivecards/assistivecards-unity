@@ -48,6 +48,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     public Color[] colors;
 
     [Header ("Game Values")]
+    public int horizontalValue;
     public List<string> selectedWords = new List<string>();
     private string cardName;
     public int selectedWordCount;
@@ -130,7 +131,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             selectedWords.Add(cardLocalNames[randomValueList[j]]);
         }
         CreateWordHorizontal(1);
-        CreateWordHorizontal(2);
+        //CreateWordVertical(2);
         for(int i = 0; i < 40; i++)
         {
             CheckRandom();
@@ -140,25 +141,25 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             {
                 if(cardNames.Contains(localAlphabet[randomValueList[i]]))
                 {
-                    var cardTexture = await gameAPI.GetCardImage("letters", cardName, 512);
-                    cardTexture.wrapMode = TextureWrapMode.Clamp;
-                    cardTexture.filterMode = FilterMode.Bilinear;
-                    card.transform.name = cardName;
-                    card.transform.GetChild(0).gameObject.SetActive(true);
-                    card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-                    card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-                    card.transform.GetChild(1).gameObject.SetActive(false);
-                    cards.Add(card);
+                    // var cardTexture = await gameAPI.GetCardImage("letters", cardName, 512);
+                    // cardTexture.wrapMode = TextureWrapMode.Clamp;
+                    // cardTexture.filterMode = FilterMode.Bilinear;
+                    // card.transform.name = cardName;
+                    // card.transform.GetChild(0).gameObject.SetActive(true);
+                    // card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+                    // card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                    // card.transform.GetChild(1).gameObject.SetActive(false);
+                    // cards.Add(card);
                 }
                 else
                 {
-                    card.transform.SetParent(grid.transform);
-                    card.transform.name = cardName;
-                    card.transform.GetChild(0).gameObject.SetActive(false);
-                    card.transform.GetChild(1).gameObject.SetActive(true);
-                    card.transform.GetChild(1).GetComponent<Text>().text = cardName;
-                    card.transform.GetChild(1).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
-                    cards.Add(card);
+                    // card.transform.SetParent(grid.transform);
+                    // card.transform.name = cardName;
+                    // card.transform.GetChild(0).gameObject.SetActive(false);
+                    // card.transform.GetChild(1).gameObject.SetActive(true);
+                    // card.transform.GetChild(1).GetComponent<Text>().text = cardName;
+                    // card.transform.GetChild(1).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
+                    // cards.Add(card);
                 }
                 card.GetComponent<CardElementWordHunt>().filled = true;
             }
@@ -177,14 +178,19 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     private async void CreateWordHorizontal(int wordIndex)
     {
         string selectedWordName =( "" + selectedWords[wordIndex]).ToUpper();
-        int startIndexColumn = Random.Range(0, 4);
-        if((startIndexColumn + selectedWordName.Length) > 7)
+        int column = Random.Range(0, 5);
+        int row = Random.Range(0, 7);
+        int startIndex = 0;
+        foreach(var card in gridChilds)
         {
-            startIndexColumn = (7 - selectedWordName.Length);
+            if((card.GetComponent<CardElementWordHunt>().column == column)  && card.GetComponent<CardElementWordHunt>().row == row)
+            {
+                startIndex = card.GetComponent<CardElementWordHunt>().index;
+            }
         }
         for(int j = 0; j < selectedWordName.Length; j++)
         {
-            var card = gridChilds[startIndexColumn + j];
+            var card = gridChilds[startIndex + j];
             card.GetComponent<CardElementWordHunt>().filled = true;
             string cardLetter = "" + selectedWordName[j];
             if(cardNames.Contains(cardLetter))
@@ -216,14 +222,14 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     private async void CreateWordVertical(int wordIndex)
     {
         string selectedWordName =( "" + selectedWords[wordIndex]).ToUpper();
-        int startIndexRow = Random.Range(0, 3);
-        if((startIndexRow + selectedWordName.Length) > 5)
+        int startIndex = Random.Range(0, 10);
+        if((startIndex + selectedWordName.Length) > 5)
         {
-            startIndexRow = (5 - selectedWordName.Length);
+            startIndex = (5 - selectedWordName.Length);
         }
         for(int j = 0; j < selectedWordName.Length; j++)
         {
-            var card = gridChilds[startIndexRow + j];
+            var card = gridChilds[startIndex + 7];
             card.GetComponent<CardElementWordHunt>().filled = true;
             string cardLetter = "" + selectedWordName[j];
             if(cardNames.Contains(cardLetter))

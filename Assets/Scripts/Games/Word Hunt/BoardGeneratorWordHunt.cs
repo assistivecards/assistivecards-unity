@@ -52,6 +52,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     public List<string> selectedWords = new List<string>();
     public List<string> accurateWords = new List<string>();
     public List<GameObject> tempLetterPositions = new List<GameObject>();
+    public bool elementsEmpty = true;
     private string cardName;
     public int selectedWordCount;
     public int randomOrder;
@@ -205,6 +206,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     private void CreateWordHorizontal(int wordIndex)
     {
         tempLetterPositions.Clear();
+        elementsEmpty = true;
         string selectedWordName =( "" + selectedWords[wordIndex]).ToUpper();
         int column = Random.Range(0, 5);
         int row = Random.Range(0, 7);
@@ -223,19 +225,20 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         for(int j = 0; j < selectedWordName.Length; j++)
         {
             var card = gridChilds[startIndex + j];
-            // if(card.GetComponent<CardElementWordHunt>().filled == false)
-            // {
-                tempLetterPositions.Add(card);
-            // }
-            // else if(card.GetComponent<CardElementWordHunt>().filled == true)
-            // {
-            //     CreateWordHorizontal(wordIndex);
-            // }
+            tempLetterPositions.Add(card);
         }
-        for(int i = 0; i < selectedWordName.Length; i++)
+        CheckFilledElementOnBoard();
+        if(elementsEmpty == true)
         {
-            string cardLetter = "" + selectedWordName[i];
-            FillCard(cardLetter, tempLetterPositions[i]);
+            for(int i = 0; i < selectedWordName.Length; i++)
+            {
+                string cardLetter = "" + selectedWordName[i];
+                FillCard(cardLetter, tempLetterPositions[i]);
+            }
+        }
+        else
+        {
+            Debug.Log("overlapse");
         }
     }
 
@@ -243,6 +246,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     private void CreateWordVertical(int wordIndex)
     {
         tempLetterPositions.Clear();
+        elementsEmpty = true;
         string selectedWordName =( "" + selectedWords[wordIndex]).ToUpper();
         int startIndex = Random.Range(0, 8);
         int column = Random.Range(0, 5);
@@ -255,19 +259,20 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         for(int j = 0; j < selectedWordName.Length; j++)
         {
             var card = gridChilds[startIndex + (j * 8)];
-            // if(card.GetComponent<CardElementWordHunt>().filled == false)
-            // {
-                    tempLetterPositions.Add(card);
-            // }
-            // else if(card.GetComponent<CardElementWordHunt>().filled == true)
-            // {
-            //     CreateWordHorizontal(wordIndex);
-            // }
+            tempLetterPositions.Add(card);
         }
-        for(int i = 0; i < selectedWordName.Length; i++)
+        CheckFilledElementOnBoard();
+        if(elementsEmpty == true)
         {
-            string cardLetter = "" + selectedWordName[i];
-            FillCard(cardLetter, tempLetterPositions[i]);
+            for(int i = 0; i < selectedWordName.Length; i++)
+            {
+                string cardLetter = "" + selectedWordName[i];
+                FillCard(cardLetter, tempLetterPositions[i]);
+            }
+        }
+        else
+        {
+            Debug.Log("overlapse");
         }
     }
 
@@ -297,6 +302,17 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             cards.Add(card);
         }
         card.GetComponent<CardElementWordHunt>().filled = true;
+    }
+
+    private void CheckFilledElementOnBoard()
+    {
+        foreach(var position in tempLetterPositions)
+        {
+            if(position.GetComponent<CardElementWordHunt>().filled == true)
+            {
+                elementsEmpty = false;
+            }
+        }
     }
 
     public void GameUIActivate()

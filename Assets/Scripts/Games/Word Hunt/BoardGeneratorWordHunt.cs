@@ -187,7 +187,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     {
         foreach(var cardName in cardLocalNames)
         {
-            if(cardName.Length <= 5 && !cardName.Contains(" "))
+            if(cardName.Length <= 5 && !cardName.Contains(" ") && cardName.Length >= 2)
             {
                 accurateWords.Add(cardName);
             }
@@ -244,7 +244,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     {
         tempLetterPositions.Clear();
         string selectedWordName =( "" + selectedWords[wordIndex]).ToUpper();
-        int startIndex = Random.Range(0, 10);
+        int startIndex = Random.Range(0, 8);
         int column = Random.Range(0, 5);
         int row = Random.Range(0, 7);
         if((column + selectedWordName.Length) > 5)
@@ -303,7 +303,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     {
         foreach(var card in cards)
         {
-            LeanTween.scale(card, Vector3.one, 0.3f);
+            LeanTween.scale(card, Vector3.one * 0.9f, 0.3f);
         }
         uıController.GameUIActivate();
     }

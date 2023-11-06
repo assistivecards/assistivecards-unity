@@ -134,8 +134,9 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         {
             CreateSelectedWords();
         }
-        CreateWordHorizontal(0);
-        CreateWordVertical(1);
+        CreateWordVertical(0);
+        CreateWordHorizontal(1);
+        CreateWordHorizontal(2);
         for(int i = 0; i < 40; i++)
         {
             CheckRandom();
@@ -238,7 +239,8 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         }
         else
         {
-            Debug.Log("overlapse");
+            CreateWordHorizontal(wordIndex);
+            Debug.Log("Horizontal recall: " +  selectedWords[wordIndex].ToUpper());
         }
     }
 
@@ -248,7 +250,6 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         tempLetterPositions.Clear();
         elementsEmpty = true;
         string selectedWordName =( "" + selectedWords[wordIndex]).ToUpper();
-        int startIndex = Random.Range(0, 8);
         int column = Random.Range(0, 5);
         int row = Random.Range(0, 7);
         if((column + selectedWordName.Length) > 5)
@@ -270,9 +271,10 @@ public class BoardGeneratorWordHunt : MonoBehaviour
                 FillCard(cardLetter, tempLetterPositions[i]);
             }
         }
-        else
+        else if(elementsEmpty == false)
         {
-            Debug.Log("overlapse");
+            CreateWordVertical(wordIndex);
+            Debug.Log("Vertical recall for: " +  selectedWords[wordIndex].ToUpper());
         }
     }
 

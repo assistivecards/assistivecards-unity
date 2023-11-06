@@ -62,6 +62,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     public bool isPointerUp;
     public bool finished;
     int startIndex;
+    public int iterationCount;
 
     private void Awake()
     {
@@ -136,7 +137,8 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         }
         CreateWordVertical(0);
         CreateWordHorizontal(1);
-        CreateWordHorizontal(2);
+        // CreateWordHorizontal(2);
+        // CreateWordVertical(3);
         for(int i = 0; i < 40; i++)
         {
             CheckRandom();
@@ -236,11 +238,16 @@ public class BoardGeneratorWordHunt : MonoBehaviour
                 string cardLetter = "" + selectedWordName[i];
                 FillCard(cardLetter, tempLetterPositions[i]);
             }
+            iterationCount = 0;
         }
         else
         {
-            CreateWordHorizontal(wordIndex);
-            Debug.Log("Horizontal recall: " +  selectedWords[wordIndex].ToUpper());
+            if(iterationCount < 4)
+            {
+                CreateWordHorizontal(wordIndex);
+                iterationCount++;
+                Debug.Log("Horizontal recall: " +  selectedWords[wordIndex].ToUpper());
+            }
         }
     }
 
@@ -270,11 +277,16 @@ public class BoardGeneratorWordHunt : MonoBehaviour
                 string cardLetter = "" + selectedWordName[i];
                 FillCard(cardLetter, tempLetterPositions[i]);
             }
+            iterationCount = 0;
         }
         else if(elementsEmpty == false)
         {
-            CreateWordVertical(wordIndex);
-            Debug.Log("Vertical recall for: " +  selectedWords[wordIndex].ToUpper());
+            if(iterationCount < 4)
+            {
+                CreateWordHorizontal(wordIndex);
+                iterationCount++;
+                Debug.Log("Horizontal recall: " +  selectedWords[wordIndex].ToUpper());
+            }
         }
     }
 

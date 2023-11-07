@@ -191,6 +191,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             card.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
             card.transform.localPosition = Vector3.zero;
+            card.GetComponent<ExampleCardWordHunt>().cardName = selectedWords[i];
             LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-30, 30)), 0f);
         }
         CreateWordVertical(0);

@@ -40,17 +40,15 @@ public class CardElementWordHunt : MonoBehaviour, IPointerEnterHandler
 
     void Update()
     {
-        // if (GetComponent<Button>().IsHighlighted() == true)
-        // {
-        //     Debug.Log( this.name + " is Highlighted");
-        // }
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint((Input.GetTouch(0).position)), Vector2.zero);
+            if (hit.collider != null )
+            {
+                Debug.Log("touch" + this.name);
+            }
+        }
+ 
+ 
     }
-
-    // private void Update() 
-    // {
-    //     if (EventSystem.current.IsPointerOverGameObject())
-    //         {
-    //             Debug.Log("Clicked on the UI" + this.name);
-    //         }
-    // }
 }

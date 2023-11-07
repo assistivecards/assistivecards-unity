@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
-public class CardElementWordHunt : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
+public class CardElementWordHunt : MonoBehaviour, IPointerEnterHandler
 {
     [SerializeField] private BoardGeneratorWordHunt boardGenerator;
     public string cardLetter;
@@ -22,7 +24,7 @@ public class CardElementWordHunt : MonoBehaviour, IPointerDownHandler, IPointerU
         }
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public void OnPointerEnter(PointerEventData eventData)
     {
         if(oneTime)
         {
@@ -31,8 +33,24 @@ public class CardElementWordHunt : MonoBehaviour, IPointerDownHandler, IPointerU
         }
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    public void OnSelect(BaseEventData eventData)
     {
-        oneTime = true;
+        Debug.Log(this.name);
     }
+
+    void Update()
+    {
+        // if (GetComponent<Button>().IsHighlighted() == true)
+        // {
+        //     Debug.Log( this.name + " is Highlighted");
+        // }
+    }
+
+    // private void Update() 
+    // {
+    //     if (EventSystem.current.IsPointerOverGameObject())
+    //         {
+    //             Debug.Log("Clicked on the UI" + this.name);
+    //         }
+    // }
 }

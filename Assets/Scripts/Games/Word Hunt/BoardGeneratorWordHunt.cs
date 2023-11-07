@@ -61,6 +61,8 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     public List<string> accurateWords = new List<string>();
     public List<string> accurateWordsEn = new List<string>();
     public List<GameObject> tempLetterPositions = new List<GameObject>();
+    public List<string> currentWordLetters = new List<string>();
+
     public bool elementsEmpty = true;
     private string cardName;
     public int selectedWordCount;
@@ -212,6 +214,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
                     cardTexture.filterMode = FilterMode.Bilinear;
                     card.transform.name = cardName;
                     card.transform.GetChild(0).gameObject.SetActive(true);
+                    card.GetComponent<CardElementWordHunt>().cardLetter = cardName;
                     card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
                     card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                     card.transform.GetChild(1).gameObject.SetActive(false);
@@ -223,6 +226,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
                     card.transform.name = cardName;
                     card.transform.GetChild(0).gameObject.SetActive(false);
                     card.transform.GetChild(1).gameObject.SetActive(true);
+                    card.GetComponent<CardElementWordHunt>().cardLetter = cardName;
                     card.transform.GetChild(1).GetComponent<Text>().text = cardName;
                     card.transform.GetChild(1).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
                     cards.Add(card);
@@ -335,6 +339,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             card.transform.SetParent(grid.transform);
             card.transform.name = cardLetter;
             card.transform.GetChild(0).gameObject.SetActive(true);
+            card.GetComponent<CardElementWordHunt>().cardLetter = cardLetter;
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
             card.transform.GetChild(1).gameObject.SetActive(false);
@@ -343,9 +348,10 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         else
         {
             card.transform.SetParent(grid.transform);
-            card.transform.name = cardName;
+            card.transform.name = cardLetter;
             card.transform.GetChild(0).gameObject.SetActive(false);
             card.transform.GetChild(1).gameObject.SetActive(true);
+            card.GetComponent<CardElementWordHunt>().cardLetter = cardLetter;
             card.transform.GetChild(1).GetComponent<Text>().text = cardLetter;
             card.transform.GetChild(1).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
             cards.Add(card);

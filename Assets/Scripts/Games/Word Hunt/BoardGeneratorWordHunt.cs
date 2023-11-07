@@ -37,12 +37,19 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     private int randomValue;
 
     [Header ("Prefabs")]
+    [SerializeField] private GameObject letterPrefab;
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject tutorial;
 
-    [Header ("Game UI")]
+    [Header ("Game Elements")]
     [SerializeField] private GameObject grid;
     public List<GameObject> gridChilds = new List<GameObject>();
+    public List<GameObject> exampleCardPositions = new List<GameObject>();
+    [SerializeField] private GameObject exampleCard1;
+    [SerializeField] private GameObject exampleCard2;
+    [SerializeField] private GameObject exampleCard3;
+    [SerializeField] private GameObject exampleCard4;
+    [SerializeField] private GameObject exampleCard5;
 
     [Header ("Colors")]
     public Color[] colors;
@@ -50,7 +57,9 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     [Header ("Game Values")]
     public int horizontalValue;
     public List<string> selectedWords = new List<string>();
+    public List<string> selectedWordsEn = new List<string>();
     public List<string> accurateWords = new List<string>();
+    public List<string> accurateWordsEn = new List<string>();
     public List<GameObject> tempLetterPositions = new List<GameObject>();
     public bool elementsEmpty = true;
     private string cardName;
@@ -120,6 +129,41 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         }
     }
 
+    private void CreateExampleCardsPositionList()
+    {
+        exampleCardPositions.Add(exampleCard1);
+        exampleCardPositions.Add(exampleCard2);
+        exampleCardPositions.Add(exampleCard3);
+        exampleCardPositions.Add(exampleCard4);
+        exampleCardPositions.Add(exampleCard5);
+    }
+
+    private async void CreateSelectedWords()
+    {
+        int random = Random.Range(0, accurateWords.Count);
+        if(!selectedWords.Contains(accurateWords[random]))
+        {
+            selectedWords.Add(accurateWords[random]);
+            selectedWordsEn.Add(accurateWordsEn[random]);
+        }
+        else
+        {
+            CreateSelectedWords();
+        }
+    }
+
+    private void CreateWordList()
+    {
+        for(int i = 0; i < cardLocalNames.Count; i++)
+        {
+            if(cardLocalNames[i].Length <= 5 && !cardLocalNames[i].Contains(" ") && cardLocalNames[i].Length >= 2)
+            {
+                accurateWordsEn.Add(cardNames[i]);
+                accurateWords.Add(cardLocalNames[i]);
+            }
+        }
+    }
+
     public async void GeneratedBoardAsync()
     {
         uıController.LoadingScreenActivation();
@@ -127,6 +171,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         packSlug = packSelectionPanel.selectedPackElement.name;
         await CacheLetterCards();
         await CacheCards(packSlug);
+        CreateExampleCardsPositionList();
         CreateAlphabet();
         CheckRandom();
         GetGridList();
@@ -134,6 +179,19 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         for(int j = 0; j < selectedWordCount; j++)
         {
             CreateSelectedWords();
+        }
+
+        for(int i= 0; i < exampleCardPositions.Count; i++)
+        {
+            GameObject card = Instantiate(cardPrefab, exampleCardPositions[i].transform.position, Quaternion.identity);
+            card.transform.SetParent(exampleCardPositions[i].transform);
+            var cardTexture = await gameAPI.GetCardImage(packSlug, selectedWordsEn[i], 512);
+            cardTexture.wrapMode = TextureWrapMode.Clamp;
+            cardTexture.filterMode = FilterMode.Bilinear;
+            card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+            card.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
+            card.transform.localPosition = Vector3.zero;
+            LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-30, 30)), 0f);
         }
         CreateWordVertical(0);
         CreateWordHorizontal(1);
@@ -172,30 +230,6 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             }
         }
         Invoke("GameUIActivate", 0.5f);
-    }
-
-    private void CreateSelectedWords()
-    {
-        int random = Random.Range(0, accurateWords.Count);
-        if(!selectedWords.Contains(accurateWords[random]))
-        {
-            selectedWords.Add(accurateWords[random]);
-        }
-        else
-        {
-            CreateSelectedWords();
-        }
-    }
-
-    private void CreateWordList()
-    {
-        foreach(var cardName in cardLocalNames)
-        {
-            if(cardName.Length <= 5 && !cardName.Contains(" ") && cardName.Length >= 2)
-            {
-                accurateWords.Add(cardName);
-            }
-        }
     }
 
     private void GetGridList()

@@ -159,7 +159,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     {
         for(int i = 0; i < cardLocalNames.Count; i++)
         {
-            if(cardLocalNames[i].Length <= 5 && !cardLocalNames[i].Contains(" ") && cardLocalNames[i].Length >= 2)
+            if(cardLocalNames[i].Length <= 6 && !cardLocalNames[i].Contains(" ") && cardLocalNames[i].Length >= 2)
             {
                 accurateWordsEn.Add(cardNames[i]);
                 accurateWords.Add(cardLocalNames[i]);
@@ -197,10 +197,18 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             card.GetComponent<ExampleCardWordHunt>().cardName = selectedWords[i];
             LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-30, 30)), 0f);
         }
-        CreateWordVertical(0);
-        CreateWordHorizontal(1);
-        // CreateWordHorizontal(2);
-        // CreateWordVertical(3);
+        for(int i = 0; i < 4; i++)
+        {
+            if(selectedWords[i].Length <= 4)
+            {
+                CreateWordVertical(i);
+            }
+            else
+            {
+                CreateWordHorizontal(i);
+            }
+
+        }
         for(int i = 0; i < 40; i++)
         {
             CheckRandom();
@@ -251,12 +259,11 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         tempLetterPositions.Clear();
         elementsEmpty = true;
         string selectedWordName =( "" + selectedWords[wordIndex]).ToUpper();
-        int column = Random.Range(0, 5);
-        int row = Random.Range(0, 7);
+        int column = Random.Range(0, 7);
+        int row = Random.Range(0, 4);
         if((column + selectedWordName.Length) > 7)
         {
             column = 7 - selectedWordName.Length;
-            Debug.Log("Column Changed To: " + (7 - selectedWordName.Length));
         }
         foreach(var card in gridChilds)
         {
@@ -297,12 +304,11 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         tempLetterPositions.Clear();
         elementsEmpty = true;
         string selectedWordName =( "" + selectedWords[wordIndex]).ToUpper();
-        int column = Random.Range(0, 5);
-        int row = Random.Range(0, 7);
-        if((column + selectedWordName.Length) > 5)
+        int column = Random.Range(0, 4);
+        int row = Random.Range(0, 2);
+        if((row + selectedWordName.Length) >= 4)
         {
-            row = 5 - selectedWordName.Length;
-            Debug.Log("Row Changed To: " + (7 - selectedWordName.Length));
+            row = 4 - (selectedWordName.Length);
         }
         for(int j = 0; j < selectedWordName.Length; j++)
         {
@@ -455,6 +461,5 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         cardNames.Clear();
         randomValueList.Clear();
         usedRandomOrderCards.Clear();
-        selectedWords.Clear();
     }
 }

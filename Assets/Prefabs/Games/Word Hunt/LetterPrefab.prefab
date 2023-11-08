@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6473196203728302824}
   m_Layer: 5
   m_Name: LetterPrefab
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

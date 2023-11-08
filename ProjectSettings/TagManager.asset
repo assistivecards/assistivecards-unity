@@ -27,6 +27,7 @@ TagManager:
   - CardPositions1
   - CardPositions2
   - CardPositions3
+  - Touch
   layers:
   - Default
   - TransparentFX

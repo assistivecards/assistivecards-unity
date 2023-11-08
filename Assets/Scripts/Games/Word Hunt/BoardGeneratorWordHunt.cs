@@ -62,6 +62,8 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     public List<string> accurateWordsEn = new List<string>();
     public List<GameObject> tempLetterPositions = new List<GameObject>();
     public List<string> currentWordLetters = new List<string>();
+    public List<GameObject> currentWordLetterObjects = new List<GameObject>();
+    public string currentWord;
 
     public bool elementsEmpty = true;
     private string cardName;
@@ -144,8 +146,8 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         int random = Random.Range(0, accurateWords.Count);
         if(!selectedWords.Contains(accurateWords[random]))
         {
-            selectedWords.Add(accurateWords[random]);
-            selectedWordsEn.Add(accurateWordsEn[random]);
+            selectedWords.Add(accurateWords[random].ToLower());
+            selectedWordsEn.Add(accurateWordsEn[random].ToLower());
         }
         else
         {
@@ -382,6 +384,26 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     {
         ClearBoard();
         GeneratedBoardAsync();
+    }
+
+    public void CheckWord()
+    {
+        foreach(var letter in currentWordLetters)
+        {
+            currentWord += letter;
+        }
+
+        if(!selectedWords.Contains(currentWord))
+        {
+            foreach(var letterObject in currentWordLetterObjects)
+            {
+                letterObject.GetComponent<Image>().color = Color.white;
+                letterObject.GetComponent<CardElementWordHunt>().oneTime = true;
+            }
+            currentWordLetterObjects.Clear();
+            currentWordLetters.Clear();
+            currentWord = "";
+        }
     }
 
     private void GameUIScaleDown()

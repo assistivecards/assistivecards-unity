@@ -5,7 +5,10 @@ using UnityEngine.EventSystems;
 
 public class DetectTouchWordHunt : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
 {
+    [SerializeField] private BoardGeneratorWordHunt boardGenerator;
     [SerializeField] private GameObject touchDetectionObject;
+    public Color[] colors;
+    public Color currentColor;
     public bool isDragging;
     private Vector2 dragStartPosition;
     private Vector2 touchPosition;
@@ -28,5 +31,6 @@ public class DetectTouchWordHunt : MonoBehaviour, IDragHandler, IEndDragHandler,
     {
         isDragging = false;
         touchDetectionObject.SetActive(false);
+        boardGenerator.Invoke("CheckWord", 0.5f);
     }
 }

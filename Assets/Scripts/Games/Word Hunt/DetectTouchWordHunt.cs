@@ -18,6 +18,7 @@ public class DetectTouchWordHunt : MonoBehaviour, IDragHandler, IEndDragHandler,
         dragStartPosition = eventData.position;
         isDragging = true;
         touchDetectionObject.SetActive(true);
+        currentColor = colors[Random.Range(0, colors.Length)];
     }
 
     public void OnDrag(PointerEventData eventData)

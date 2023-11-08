@@ -400,10 +400,15 @@ public class BoardGeneratorWordHunt : MonoBehaviour
                 letterObject.GetComponent<Image>().color = Color.white;
                 letterObject.GetComponent<CardElementWordHunt>().oneTime = true;
             }
-            currentWordLetterObjects.Clear();
-            currentWordLetters.Clear();
-            currentWord = "";
         }
+        Invoke("ResetWord", 0.5f);
+    }
+
+    private void ResetWord()
+    {
+        currentWordLetterObjects.Clear();
+        currentWordLetters.Clear();
+        currentWord = "";
     }
 
     private void GameUIScaleDown()

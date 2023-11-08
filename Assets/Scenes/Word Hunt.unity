@@ -7808,7 +7808,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1032337
+      value: 1034736.56
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -8593,7 +8593,9 @@ MonoBehaviour:
   - {r: 0.84581906, g: 0.7104397, b: 0.9716981, a: 1}
   - {r: 1, g: 0.7216981, b: 0.9822898, a: 1}
   - {r: 0.9528302, g: 0.6786668, b: 0.78334737, a: 1}
+  usedColors: []
   currentColor: {r: 0.74038804, g: 0.8578611, b: 0.8867924, a: 1}
+  tempCurrentColor: {r: 1, g: 1, b: 1, a: 0}
   isDragging: 0
 --- !u!114 &8691574409270737102
 MonoBehaviour:

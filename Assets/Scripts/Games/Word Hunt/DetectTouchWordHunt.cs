@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System.Linq;
 
 public class DetectTouchWordHunt : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
 {
     [SerializeField] private BoardGeneratorWordHunt boardGenerator;
     [SerializeField] private GameObject touchDetectionObject;
-    public Color[] colors;
+    public List<Color> colors = new List<Color>();
+    public List<Color> usedColors = new List<Color>();
     public Color currentColor;
+    public Color tempCurrentColor;
     public bool isDragging;
     private Vector2 dragStartPosition;
     private Vector2 touchPosition;
@@ -18,7 +21,21 @@ public class DetectTouchWordHunt : MonoBehaviour, IDragHandler, IEndDragHandler,
         dragStartPosition = eventData.position;
         isDragging = true;
         touchDetectionObject.SetActive(true);
-        currentColor = colors[Random.Range(0, colors.Length)];
+        ColorPicker();
+    }
+
+    private void ColorPicker()
+    {
+        tempCurrentColor = colors[Random.Range(0, colors.Count)];
+        if(!usedColors.Contains(tempCurrentColor))
+        {
+            currentColor = tempCurrentColor;
+            usedColors.Add(currentColor);
+        }
+        else
+        {
+            ColorPicker();
+        }
     }
 
     public void OnDrag(PointerEventData eventData)

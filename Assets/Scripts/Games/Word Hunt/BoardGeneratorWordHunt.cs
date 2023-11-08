@@ -69,7 +69,6 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     public int randomOrder;
     public List<int> usedRandomOrderCards = new List<int>();
     public int cardNameLenght;
-    public int matchedCardCount;
     public bool isPointerUp;
     public bool finished;
     int startIndex;
@@ -415,23 +414,20 @@ public class BoardGeneratorWordHunt : MonoBehaviour
 
     public void ClearBoard()
     {
-        matchedCardCount = 0;
+        selectedWords.Clear();
+        selectedWordsEn.Clear();
+        accurateWords.Clear();
+        accurateWords.Clear();
+        usedRandomOrderCards.Clear();
+        tempLetterPositions.Clear();
+        currentWordLetters.Clear();
+        localAlphabet.Clear();
+        letterCardNames.Clear();
+        letterCardsList.Clear();
         cardLocalNames.Clear();
         cardNames.Clear();
         randomValueList.Clear();
         usedRandomOrderCards.Clear();
         selectedWords.Clear();
-        uıController.LevelChangeScreenActivate();
-    }
-
-    public void BackButtonClear()
-    {
-        matchedCardCount = 0;
-        cardLocalNames.Clear();
-        cardNames.Clear();
-        randomValueList.Clear();
-        usedRandomOrderCards.Clear();
-        selectedWords.Clear();
-        uıController.PackSelectionPanelActive();
     }
 }

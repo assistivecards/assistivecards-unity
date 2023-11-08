@@ -1614,7 +1614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: BackButtonClear
+      value: ClearBoard
       objectReference: {fileID: 0}
     - target: {fileID: 2160814036966437260, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -7154,7 +7154,15 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1242831488888625350, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242831488888625350, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 8383894889009589326}
+    - target: {fileID: 1242831488888625350, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 8383894889009589326}
     - target: {fileID: 1242831488888625350, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -7162,15 +7170,31 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1242831488888625350, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242831488888625350, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: GameUIActivate
+      value: ClearBoard
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242831488888625350, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ClearBoard
       objectReference: {fileID: 0}
     - target: {fileID: 1242831488888625350, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: BoardGeneratorWordHunt, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1242831488888625350, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: BoardGeneratorWordHunt, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242831488888625350, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242831488888625350, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489179679987, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -7315,7 +7339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 868312.25
+      value: 875052.3
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -7350,7 +7374,15 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8855225860144473765, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855225860144473765, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 8383894889009589326}
+    - target: {fileID: 8855225860144473765, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 8383894889009589326}
     - target: {fileID: 8855225860144473765, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -7358,15 +7390,31 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8855225860144473765, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855225860144473765, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: GameUIActivate
+      value: ClearBoard
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855225860144473765, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ClearBoard
       objectReference: {fileID: 0}
     - target: {fileID: 8855225860144473765, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: BoardGeneratorWordHunt, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8855225860144473765, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: BoardGeneratorWordHunt, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855225860144473765, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855225860144473765, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -8021,7 +8069,6 @@ MonoBehaviour:
   randomOrder: 0
   usedRandomOrderCards: 
   cardNameLenght: 0
-  matchedCardCount: 0
   isPointerUp: 0
   finished: 0
   iterationCount: 0

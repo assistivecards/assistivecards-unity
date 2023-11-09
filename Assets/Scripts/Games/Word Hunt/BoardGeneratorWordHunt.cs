@@ -78,6 +78,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     public bool finished;
     public int iterationCount;
     public int activeWordCount;
+    public int score;
 
     private void Awake()
     {
@@ -429,6 +430,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             }
         }
         ExampleCardDestroyAnimation();
+        Invoke("CheckLevelEnding", 1f);
         Invoke("ResetWord", 0.75f);
     }
 
@@ -438,6 +440,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         {
             if(card.name == currentWord)
             {
+                score++;
                 card.GetComponent<ExampleCardWordHunt>().ScaleUp();
             }
         }
@@ -450,6 +453,15 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         currentWord = "";
     }
 
+    public void CheckLevelEnding()
+    {
+        if(score == activeWordCount)
+        {
+            ClearBoard();
+            uıController.LevelChangeScreenActivate();
+        }
+    }
+
     private void GameUIScaleDown()
     {
         foreach(var card in cards)
@@ -460,10 +472,6 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         Invoke("ClearBoard", 0.3f);
     }
 
-    public void CheckLevelEnding()
-    {
-    }
-
     private void PlaySuccess()
     {
         gameAPI.PlaySFX("Success");
@@ -471,10 +479,30 @@ public class BoardGeneratorWordHunt : MonoBehaviour
 
     public void ClearBoard()
     {
+        foreach(var card in exampleCards)
+        {
+            Destroy(card);
+        }
+        foreach(var child in gridChilds)
+        {
+            child.GetComponent<CardElementWordHunt>().filled = false;
+            child.GetComponent<CardElementWordHunt>().oneTime = true;
+            child.GetComponent<Image>().color = Color.white;
+        }
+        exampleCards.Clear();
+        cards.Clear();
+        cardsList.Clear();
+        gridChilds.Clear();
+        exampleCardPositions.Clear();
         selectedWords.Clear();
         selectedWordsEn.Clear();
+        usedWords.Clear();
+        usedWordsEn.Clear();
+        score = 0;
+        iterationCount = 0;
+        activeWordCount = 0;
         accurateWords.Clear();
-        accurateWords.Clear();
+        accurateWordsEn.Clear();
         usedRandomOrderCards.Clear();
         tempLetterPositions.Clear();
         currentWordLetters.Clear();

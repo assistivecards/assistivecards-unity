@@ -124,7 +124,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             foreach(var letter in cardName)
             {
                 string letterString = "" + letter;
-                letterString = letterString.ToUpper();
+                letterString = letterString.ToLower();
                 if(!localAlphabet.Contains(letterString) && letterString != " ")
                 {
                     localAlphabet.Add(letterString);
@@ -160,10 +160,13 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     {
         for(int i = 0; i < cardLocalNames.Count; i++)
         {
-            if(cardLocalNames[i].Length <= 6 && !cardLocalNames[i].Contains(" ") && cardLocalNames[i].Length >= 2)
+            if(!accurateWords.Contains(cardLocalNames[i]) && !accurateWordsEn.Contains(cardNames[i]))
             {
-                accurateWordsEn.Add(cardNames[i]);
-                accurateWords.Add(cardLocalNames[i]);
+                if(cardLocalNames[i].Length <= 6 && !cardLocalNames[i].Contains(" ") && cardLocalNames[i].Length >= 2)
+                {
+                    accurateWordsEn.Add(cardNames[i]);
+                    accurateWords.Add(cardLocalNames[i]);
+                }
             }
         }
     }
@@ -237,7 +240,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
                     card.transform.GetChild(0).gameObject.SetActive(false);
                     card.transform.GetChild(1).gameObject.SetActive(true);
                     card.GetComponent<CardElementWordHunt>().cardLetter = cardName;
-                    card.transform.GetChild(1).GetComponent<Text>().text = cardName;
+                    card.transform.GetChild(1).GetComponent<Text>().text = cardName.ToUpper();
                     card.transform.GetChild(1).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
                     cards.Add(card);
                 }
@@ -259,8 +262,8 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     {
         tempLetterPositions.Clear();
         elementsEmpty = true;
-        string selectedWordName =( "" + selectedWords[wordIndex]).ToUpper();
-        int column = Random.Range(0, 7);
+        string selectedWordName =( "" + selectedWords[wordIndex]).ToLower();
+        int column = Random.Range(0, 6);
         int row = Random.Range(0, 4);
         if((column + selectedWordName.Length) > 7)
         {
@@ -295,7 +298,6 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             {
                 CreateWordHorizontal(wordIndex);
                 iterationCount++;
-                Debug.Log("Horizontal recall: " +  selectedWords[wordIndex].ToUpper());
             }
         }
     }
@@ -305,7 +307,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     {
         tempLetterPositions.Clear();
         elementsEmpty = true;
-        string selectedWordName =( "" + selectedWords[wordIndex]).ToUpper();
+        string selectedWordName =( "" + selectedWords[wordIndex]).ToLower();
         int column = Random.Range(0, 8);
         int row = Random.Range(0, 2);
         if(row + (selectedWordName.Length * 8) >= 4)
@@ -334,7 +336,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             {
                 CreateWordHorizontal(wordIndex);
                 iterationCount++;
-                Debug.Log("Horizontal recall: " +  selectedWords[wordIndex].ToUpper());
+                Debug.Log("Horizontal recall: " +  selectedWords[wordIndex].ToLower());
             }
         }
     }
@@ -362,7 +364,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             card.transform.GetChild(0).gameObject.SetActive(false);
             card.transform.GetChild(1).gameObject.SetActive(true);
             card.GetComponent<CardElementWordHunt>().cardLetter = cardLetter;
-            card.transform.GetChild(1).GetComponent<Text>().text = cardLetter;
+            card.transform.GetChild(1).GetComponent<Text>().text = cardLetter.ToUpper();
             card.transform.GetChild(1).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
             cards.Add(card);
         }

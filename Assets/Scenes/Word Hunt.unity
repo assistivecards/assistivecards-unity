@@ -7808,7 +7808,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1034736.56
+      value: 1046397.7
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -8537,13 +8537,14 @@ MonoBehaviour:
   currentWordLetterObjects: []
   currentWord: 
   elementsEmpty: 1
-  selectedWordCount: 10
+  selectedWordCount: 6
   randomOrder: 0
   usedRandomOrderCards: 
   cardNameLenght: 0
   isPointerUp: 0
   finished: 0
   iterationCount: 0
+  activeWordCount: 0
 --- !u!114 &8383894889009589327
 MonoBehaviour:
   m_ObjectHideFlags: 0

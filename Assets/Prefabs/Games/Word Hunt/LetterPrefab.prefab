@@ -138,7 +138,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boardGenerator: {fileID: 0}
+  detectTouch: {fileID: 0}
   cardLetter: 
+  oneTime: 1
   row: 0
   column: 0
   index: 0

@@ -18,6 +18,7 @@ public class DetectTouchWordHunt : MonoBehaviour, IDragHandler, IEndDragHandler,
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        boardGenerator.ResetWord();
         dragStartPosition = eventData.position;
         isDragging = true;
         touchDetectionObject.SetActive(true);
@@ -53,6 +54,6 @@ public class DetectTouchWordHunt : MonoBehaviour, IDragHandler, IEndDragHandler,
     {
         isDragging = false;
         touchDetectionObject.SetActive(false);
-        boardGenerator.Invoke("CheckWord", 0.5f);
+        boardGenerator.Invoke("CheckWord", 0.25f);
     }
 }

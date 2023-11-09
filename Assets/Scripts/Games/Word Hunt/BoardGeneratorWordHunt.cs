@@ -63,6 +63,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     public List<GameObject> tempLetterPositions = new List<GameObject>();
     public List<string> currentWordLetters = new List<string>();
     public List<GameObject> currentWordLetterObjects = new List<GameObject>();
+    public List<string> usedWordsEn = new List<string>();
     public string currentWord;
 
     public bool elementsEmpty = true;
@@ -73,7 +74,6 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     public int cardNameLenght;
     public bool isPointerUp;
     public bool finished;
-    int startIndex;
     public int iterationCount;
     public int activeWordCount;
 
@@ -187,29 +187,15 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         {
             CreateSelectedWords();
         }
-
-        for(int i= 0; i < exampleCardPositions.Count; i++)
-        {
-            GameObject card = Instantiate(cardPrefab, exampleCardPositions[i].transform.position, Quaternion.identity);
-            card.transform.SetParent(exampleCardPositions[i].transform);
-            var cardTexture = await gameAPI.GetCardImage(packSlug, selectedWordsEn[i], 512);
-            cardTexture.wrapMode = TextureWrapMode.Clamp;
-            cardTexture.filterMode = FilterMode.Bilinear;
-            card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-            card.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
-            card.transform.localPosition = Vector3.zero;
-            card.GetComponent<ExampleCardWordHunt>().cardName = selectedWords[i];
-            LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-30, 30)), 0f);
-        }
         for(int i = 0; i < 5; i++)
         {
-            if(selectedWords[i].Length <= 4)
+            if(selectedWords[i].Length >= 5)
             {
-                CreateWordVertical(i);
+                CreateWordHorizontal(i);
             }
             else
             {
-                CreateWordHorizontal(i);
+                CreateWordVertical(i);
             }
 
         }
@@ -247,6 +233,20 @@ public class BoardGeneratorWordHunt : MonoBehaviour
                 card.GetComponent<CardElementWordHunt>().filled = true;
             }
         }
+
+        for(int i= 0; i < activeWordCount; i++)
+        {
+            GameObject card = Instantiate(cardPrefab, exampleCardPositions[i].transform.position, Quaternion.identity);
+            card.transform.SetParent(exampleCardPositions[i].transform);
+            var cardTexture = await gameAPI.GetCardImage(packSlug, usedWordsEn[i], 512);
+            cardTexture.wrapMode = TextureWrapMode.Clamp;
+            cardTexture.filterMode = FilterMode.Bilinear;
+            card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+            card.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
+            card.transform.localPosition = Vector3.zero;
+            card.GetComponent<ExampleCardWordHunt>().cardName = selectedWords[i];
+            LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-30, 30)), 0f);
+        }
         Invoke("GameUIActivate", 0.5f);
     }
 
@@ -263,8 +263,9 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         tempLetterPositions.Clear();
         elementsEmpty = true;
         string selectedWordName =( "" + selectedWords[wordIndex]).ToLower();
-        int column = Random.Range(0, 6);
+        int column = Random.Range(0, 5);
         int row = Random.Range(0, 4);
+        int startIndex = 0;
         if((column + selectedWordName.Length) > 7)
         {
             column = 7 - selectedWordName.Length;
@@ -285,6 +286,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         if(elementsEmpty == true)
         {
             activeWordCount++;
+            usedWordsEn.Add(selectedWordsEn[wordIndex]);
             for(int i = 0; i < selectedWordName.Length; i++)
             {
                 string cardLetter = "" + selectedWordName[i];
@@ -309,10 +311,18 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         elementsEmpty = true;
         string selectedWordName =( "" + selectedWords[wordIndex]).ToLower();
         int column = Random.Range(0, 8);
-        int row = Random.Range(0, 2);
-        if(row + (selectedWordName.Length * 8) >= 4)
+        int row = Random.Range(0, 3);
+        int startIndex = 0;
+        foreach(var card in gridChilds)
         {
-            row = 4 - (selectedWordName.Length * 8);
+            if((card.GetComponent<CardElementWordHunt>().column == column)  && card.GetComponent<CardElementWordHunt>().row == row)
+            {
+                startIndex = card.GetComponent<CardElementWordHunt>().index;
+            }
+        }
+        if(startIndex + ((selectedWordName.Length) * 8) >= 40)
+        {
+            startIndex = 40 - ((selectedWordName.Length) * 8);
         }
         for(int j = 0; j < selectedWordName.Length; j++)
         {
@@ -323,6 +333,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         if(elementsEmpty == true)
         {
             activeWordCount++;
+            usedWordsEn.Add(selectedWordsEn[wordIndex]);
             for(int i = 0; i < selectedWordName.Length; i++)
             {
                 string cardLetter = "" + selectedWordName[i];
@@ -334,9 +345,8 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         {
             if(iterationCount < 4)
             {
-                CreateWordHorizontal(wordIndex);
+                CreateWordVertical(wordIndex);
                 iterationCount++;
-                Debug.Log("Horizontal recall: " +  selectedWords[wordIndex].ToLower());
             }
         }
     }
@@ -375,9 +385,12 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     {
         foreach(var position in tempLetterPositions)
         {
-            if(position.GetComponent<CardElementWordHunt>().filled == true)
+            if(position.GetComponent<CardElementWordHunt>() != null)
             {
-                elementsEmpty = false;
+                if(position.GetComponent<CardElementWordHunt>().filled == true)
+                {
+                    elementsEmpty = false;
+                }
             }
         }
     }
@@ -412,10 +425,10 @@ public class BoardGeneratorWordHunt : MonoBehaviour
                 letterObject.GetComponent<CardElementWordHunt>().oneTime = true;
             }
         }
-        Invoke("ResetWord", 0.5f);
+        Invoke("ResetWord", 0.75f);
     }
 
-    private void ResetWord()
+    public void ResetWord()
     {
         currentWordLetterObjects.Clear();
         currentWordLetters.Clear();
@@ -434,15 +447,6 @@ public class BoardGeneratorWordHunt : MonoBehaviour
 
     public void CheckLevelEnding()
     {
-    }
-
-    private void LevelEndAnimation() // match animation
-    {
-        foreach(var card in cards)
-        {
-            LeanTween.scale(card, Vector3.zero, 0.5f);
-        }
-        Invoke("ClearBoard", 0.5f);
     }
 
     private void PlaySuccess()

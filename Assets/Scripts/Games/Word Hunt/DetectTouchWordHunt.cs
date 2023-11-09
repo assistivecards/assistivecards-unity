@@ -27,6 +27,10 @@ public class DetectTouchWordHunt : MonoBehaviour, IDragHandler, IEndDragHandler,
     private void ColorPicker()
     {
         tempCurrentColor = colors[Random.Range(0, colors.Count)];
+        if(usedColors.Count >= 10)
+        {
+            usedColors.Clear();
+        }
         if(!usedColors.Contains(tempCurrentColor))
         {
             currentColor = tempCurrentColor;

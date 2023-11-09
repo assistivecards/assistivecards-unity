@@ -75,6 +75,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     public bool finished;
     int startIndex;
     public int iterationCount;
+    public int activeWordCount;
 
     private void Awake()
     {
@@ -197,7 +198,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             card.GetComponent<ExampleCardWordHunt>().cardName = selectedWords[i];
             LeanTween.rotate(card, new Vector3(0, 0, Random.Range(-30, 30)), 0f);
         }
-        for(int i = 0; i < 4; i++)
+        for(int i = 0; i < 5; i++)
         {
             if(selectedWords[i].Length <= 4)
             {
@@ -280,6 +281,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         CheckFilledElementOnBoard();
         if(elementsEmpty == true)
         {
+            activeWordCount++;
             for(int i = 0; i < selectedWordName.Length; i++)
             {
                 string cardLetter = "" + selectedWordName[i];
@@ -304,11 +306,11 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         tempLetterPositions.Clear();
         elementsEmpty = true;
         string selectedWordName =( "" + selectedWords[wordIndex]).ToUpper();
-        int column = Random.Range(0, 4);
+        int column = Random.Range(0, 8);
         int row = Random.Range(0, 2);
-        if((row + selectedWordName.Length) >= 4)
+        if(row + (selectedWordName.Length * 8) >= 4)
         {
-            row = 4 - (selectedWordName.Length);
+            row = 4 - (selectedWordName.Length * 8);
         }
         for(int j = 0; j < selectedWordName.Length; j++)
         {
@@ -318,6 +320,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         CheckFilledElementOnBoard();
         if(elementsEmpty == true)
         {
+            activeWordCount++;
             for(int i = 0; i < selectedWordName.Length; i++)
             {
                 string cardLetter = "" + selectedWordName[i];

@@ -7808,7 +7808,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1088159.5
+      value: 1107132
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -8510,6 +8510,7 @@ MonoBehaviour:
   tutorial: {fileID: 927069859}
   grid: {fileID: 1012466778}
   gridChilds: []
+  exampleCards: []
   exampleCardPositions: []
   exampleCard1: {fileID: 330316659}
   exampleCard2: {fileID: 1257076308}
@@ -8535,6 +8536,7 @@ MonoBehaviour:
   tempLetterPositions: []
   currentWordLetters: []
   currentWordLetterObjects: []
+  usedWords: []
   usedWordsEn: []
   currentWord: 
   elementsEmpty: 1

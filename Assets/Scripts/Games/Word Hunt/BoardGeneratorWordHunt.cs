@@ -58,24 +58,30 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     [Header ("Game Values")]
     public int horizontalValue;
     public List<string> selectedWords = new List<string>();
-    public List<string> selectedWordsEn = new List<string>();
+    private List<string> selectedWordsEn = new List<string>();
     public List<string> accurateWords = new List<string>();
-    public List<string> accurateWordsEn = new List<string>();
-    public List<GameObject> tempLetterPositions = new List<GameObject>();
+    private List<string> accurateWordsEn = new List<string>();
+    public List<string> longWords = new List<string>();
+    private List<string> longWordsEn = new List<string>();
+    public List<string> shortWords = new List<string>();
+    private List<string> shortWordsEn = new List<string>();
+    public List<string> usedWords = new List<string>();
+    private List<string> usedWordsEn = new List<string>();
+
     public List<string> currentWordLetters = new List<string>();
     public List<GameObject> currentWordLetterObjects = new List<GameObject>();
-    public List<string> usedWords = new List<string>();
-    public List<string> usedWordsEn = new List<string>();
+    public List<GameObject> tempLetterPositions = new List<GameObject>();
     public string currentWord;
 
     public bool elementsEmpty = true;
+    private bool firstElementFilled = false;
+    public bool isPointerUp;
+    public bool finished;
     private string cardName;
     public int selectedWordCount;
     public int randomOrder;
     public List<int> usedRandomOrderCards = new List<int>();
     public int cardNameLenght;
-    public bool isPointerUp;
-    public bool finished;
     public int iterationCount;
     public int activeWordCount;
     public int score;
@@ -146,9 +152,29 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         exampleCardPositions.Add(exampleCard5);
     }
 
+    private async void CreateSelectedLongShortWords()
+    {
+        int longWordElement = Random.Range(0, longWords.Count());
+        int shortWordElement = Random.Range(0, shortWords.Count());
+        int randomInsertValue = Random.Range(0, selectedWordCount - 3);
+
+        if(!selectedWords.Contains(shortWords[shortWordElement]))
+        {
+            selectedWords.Insert(randomInsertValue, shortWords[shortWordElement]);
+            selectedWordsEn.Insert(randomInsertValue, shortWordsEn[shortWordElement]);
+        }
+
+        if(!selectedWords.Contains(longWords[longWordElement]))
+        {
+            selectedWords.Insert(randomInsertValue + 1, longWords[longWordElement]);
+            selectedWordsEn.Insert(randomInsertValue + 1, longWordsEn[longWordElement]);
+        }
+    }
+
     private async void CreateSelectedWords()
     {
         int random = Random.Range(0, accurateWords.Count);
+
         if(!selectedWords.Contains(accurateWords[random].ToLower()))
         {
             selectedWords.Add(accurateWords[random].ToLower());
@@ -184,17 +210,31 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         CheckRandom();
         GetGridList();
         CreateWordList();
+        for(int x = 0; x < accurateWords.Count(); x++)
+        {
+            if(accurateWords[x].Length == 8)
+            {
+                longWords.Add(accurateWords[x].ToLower());
+                longWordsEn.Add(accurateWordsEn[x].ToLower());
+            }
+            if(accurateWords[x].Length <= 3)
+            {
+                shortWords.Add(accurateWords[x].ToLower());
+                shortWordsEn.Add(accurateWordsEn[x].ToLower());
+            }
+        }
         for(int j = 0; j < selectedWordCount; j++)
         {
             CreateSelectedWords();
         }
+        CreateSelectedLongShortWords();
         for(int i = 0; i < 6; i++)
         {
             if(selectedWords[i].Length >= 6)
             {
                 CreateWordHorizontal(i);
             }
-            else if(selectedWords[i].Length < 6 && selectedWords[i].Length >= 3)
+            else if(selectedWords[i].Length < 6 && selectedWords[i].Length >= 4)
             {
                 function = Random.Range(0, 2);
                 switch (function)
@@ -207,7 +247,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
                         break;
                 }
             }
-            else if(selectedWords[i].Length < 3)
+            else if(selectedWords[i].Length < 4)
             {
                 CreateWordVertical(i);
             }
@@ -279,7 +319,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         elementsEmpty = true;
         string selectedWordName =( "" + selectedWords[wordIndex]).ToLower();
         int column = Random.Range(0, 5);
-        int row = Random.Range(0, 4);
+        int row = Random.Range(0, 6);
         int startIndex = 0;
         if((column + selectedWordName.Length) > 7)
         {
@@ -310,12 +350,26 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             }
             iterationCount = 0;
         }
-        else
+        else if(elementsEmpty == false)
         {
-            if(iterationCount < 3)
+            if(usedWords.Count() < 7)
             {
-                iterationCount++;
-                CreateWordHorizontal(wordIndex);
+                if(usedWords.Count() >= 5)
+                {
+                    if(iterationCount < 3)
+                    {
+                        iterationCount++;
+                        CreateWordHorizontal(wordIndex);
+                    }
+                }
+                else if(usedWords.Count() < 5)
+                {
+                    if(iterationCount < 6)
+                    {
+                        iterationCount++;
+                        CreateWordHorizontal(wordIndex);
+                    }
+                }
             }
         }
     }
@@ -360,10 +414,24 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         }
         else if(elementsEmpty == false)
         {
-            if(iterationCount < 3)
+            if(usedWords.Count() < 7)
             {
-                iterationCount++;
-                CreateWordVertical(wordIndex);
+                if(usedWords.Count() >= 5)
+                {
+                    if(iterationCount < 3)
+                    {
+                        iterationCount++;
+                        CreateWordVertical(wordIndex);
+                    }
+                }
+                else if(usedWords.Count() < 5)
+                {
+                    if(iterationCount < 6)
+                    {
+                        iterationCount++;
+                        CreateWordVertical(wordIndex);
+                    }
+                }
             }
         }
     }
@@ -526,5 +594,10 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         cardNames.Clear();
         randomValueList.Clear();
         usedRandomOrderCards.Clear();
+        longWords.Clear();
+        longWordsEn.Clear();
+        shortWords.Clear();
+        shortWordsEn.Clear();
+        firstElementFilled = false;
     }
 }

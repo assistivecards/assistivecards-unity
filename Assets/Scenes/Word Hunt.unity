@@ -1337,7 +1337,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -478, y: -80}
+  m_AnchoredPosition: {x: -478, y: -160}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &414260506
@@ -2830,7 +2830,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 465, y: -159}
+  m_AnchoredPosition: {x: 465, y: -160}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &927069859 stripped
@@ -4491,6 +4491,41 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1242831489410636797, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
   m_PrefabInstance: {fileID: 1242831489266657176}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1244444885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1244444886}
+  m_Layer: 5
+  m_Name: CardEmptyPosition1 (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1244444886
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244444885}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1841814377}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 464.99994, y: -20}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1249357295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4650,7 +4685,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -469, y: 142}
+  m_AnchoredPosition: {x: -469, y: 166}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1275520832
@@ -6922,6 +6957,7 @@ RectTransform:
   - {fileID: 919970941}
   - {fileID: 1855809700}
   - {fileID: 1971687483}
+  - {fileID: 1244444886}
   m_Father: {fileID: 1910463663942908501}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -6961,7 +6997,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 464.99994, y: -17}
+  m_AnchoredPosition: {x: 464.99994, y: -20}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1867278663 stripped
@@ -7808,7 +7844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1129054.2
+      value: 1205153.5
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -8517,6 +8553,7 @@ MonoBehaviour:
   exampleCard3: {fileID: 919970940}
   exampleCard4: {fileID: 1855809699}
   exampleCard5: {fileID: 1971687482}
+  exampleCard6: {fileID: 1244444885}
   colors:
   - {r: 0.9764706, g: 0.54901963, b: 0.54901963, a: 0.9019608}
   - {r: 0.98039216, g: 0.73333335, b: 0.54901963, a: 0.9019608}
@@ -8530,25 +8567,28 @@ MonoBehaviour:
   - {r: 0.98039216, g: 0.54901963, b: 0.7137255, a: 0.9019608}
   horizontalValue: 0
   selectedWords: []
-  selectedWordsEn: []
   accurateWords: []
-  accurateWordsEn: []
-  tempLetterPositions: []
+  longWords: []
+  shortWords: []
+  usedWords: []
   currentWordLetters: []
   currentWordLetterObjects: []
-  usedWords: []
-  usedWordsEn: []
+  tempLetterPositions: []
   currentWord: 
   elementsEmpty: 1
-  selectedWordCount: 6
+  isPointerUp: 0
+  finished: 0
+  selectedWordCount: 5
   randomOrder: 0
   usedRandomOrderCards: 
   cardNameLenght: 0
-  isPointerUp: 0
-  finished: 0
-  iterationCount: 0
+  iterationCountHorizontal: 0
+  iterationCountVertical: 0
   activeWordCount: 0
   score: 0
+  verticalWordCount: 0
+  horizontalWordCount: 0
+  function: 0
 --- !u!114 &8383894889009589327
 MonoBehaviour:
   m_ObjectHideFlags: 0

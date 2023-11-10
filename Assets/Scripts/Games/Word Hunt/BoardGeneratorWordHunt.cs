@@ -79,6 +79,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     public int iterationCount;
     public int activeWordCount;
     public int score;
+    int function;
 
     private void Awake()
     {
@@ -148,12 +149,12 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     private async void CreateSelectedWords()
     {
         int random = Random.Range(0, accurateWords.Count);
-        if(!selectedWords.Contains(accurateWords[random]))
+        if(!selectedWords.Contains(accurateWords[random].ToLower()))
         {
             selectedWords.Add(accurateWords[random].ToLower());
             selectedWordsEn.Add(accurateWordsEn[random].ToLower());
         }
-        else if(selectedWords.Contains(accurateWords[random]))
+        else if(selectedWords.Contains(accurateWords[random].ToLower()))
         {
             CreateSelectedWords();
         }
@@ -163,7 +164,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     {
         for(int i = 0; i < cardLocalNames.Count; i++)
         {
-            if(cardLocalNames[i].Length <= 6 && !cardLocalNames[i].Contains(" ") && cardLocalNames[i].Length >= 2)
+            if(cardLocalNames[i].Length <= 8 && !cardLocalNames[i].Contains(" ") && cardLocalNames[i].Length >= 2)
             {
                 accurateWordsEn.Add(cardNames[i]);
                 accurateWords.Add(cardLocalNames[i]);
@@ -187,17 +188,29 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         {
             CreateSelectedWords();
         }
-        for(int i = 0; i < 5; i++)
+        for(int i = 0; i < 6; i++)
         {
-            if(selectedWords[i].Length >= 5)
+            if(selectedWords[i].Length >= 6)
             {
                 CreateWordHorizontal(i);
             }
-            else
+            else if(selectedWords[i].Length < 6 && selectedWords[i].Length >= 3)
+            {
+                function = Random.Range(0, 2);
+                switch (function)
+                {
+                    case 0:
+                        CreateWordHorizontal(i);
+                        break;
+                    case 1:
+                        CreateWordVertical(i);
+                        break;
+                }
+            }
+            else if(selectedWords[i].Length < 3)
             {
                 CreateWordVertical(i);
             }
-
         }
         for(int i = 0; i < 40; i++)
         {

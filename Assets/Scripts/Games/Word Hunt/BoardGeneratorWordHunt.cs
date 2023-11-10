@@ -159,7 +159,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
 
     private async void CreateSelectedLongShortWords()
     {
-        int longWordElement = Random.Range(0, longWords.Count() - 1);
+        int longWordElement = Random.Range(0, longWords.Count());
         int shortWordElement = Random.Range(0, shortWords.Count());
         int randomInsertValue = Random.Range(0, selectedWordCount - 4);
 
@@ -171,17 +171,8 @@ public class BoardGeneratorWordHunt : MonoBehaviour
 
         if(!selectedWords.Contains(longWords[longWordElement]))
         {
-            selectedWords.Insert(randomInsertValue + 1, longWords[longWordElement]);
-            selectedWordsEn.Insert(randomInsertValue + 1, longWordsEn[longWordElement]);
-        }
-
-        if(longWords[longWordElement + 1] != null)
-        {
-            if(!selectedWords.Contains(longWords[longWordElement + 1]))
-            {
-                selectedWords.Insert(randomInsertValue + 2, longWords[longWordElement + 1]);
-                selectedWordsEn.Insert(randomInsertValue + 2, longWordsEn[longWordElement + 1]);
-            }
+            selectedWords.Insert(0, longWords[longWordElement]);
+            selectedWordsEn.Insert(0, longWordsEn[longWordElement]);
         }
     }
 
@@ -242,29 +233,29 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             CreateSelectedWords();
         }
         CreateSelectedLongShortWords();
-        for(int i = 0; i < 6; i++)
+        for(int i = 0; i < selectedWordCount; i++)
         {
+            if(horizontalWordCount == 0)
+            {
+                CreateWordHorizontal(i, Random.Range(0, 5));
+            }
             if(verticalWordCount == 0 && selectedWords[i].Length < 5)
             {
                 CreateWordVertical(i, 0);
             }
-            else if(horizontalWordCount == 0)
+            else if(verticalWordCount != 0)
             {
-                CreateWordHorizontal(i, 0);
-            }
-            else
-            {
-                if(selectedWords[i].Length >= 6)
+                if(selectedWords[i].Length >= 5)
                 {
-                    CreateWordHorizontal(i, 0);
+                    CreateWordHorizontal(i, Random.Range(0, 5));
                 }
-                else if(selectedWords[i].Length < 6 && selectedWords[i].Length >= 4)
+                else if(selectedWords[i].Length < 5)
                 {
                     function = Random.Range(0, 2);
                     switch (function)
                     {
                         case 0:
-                            CreateWordHorizontal(i, 0);
+                            CreateWordHorizontal(i, Random.Range(0, 5));
                             break;
                         case 1:
                             CreateWordVertical(i, 0);
@@ -340,23 +331,35 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         elementsEmpty = true;
         string selectedWordName =( "" + selectedWords[wordIndex]).ToLower();
         int column = Random.Range(0, 5);
-        row = Random.Range(0, 6);
         int startIndex = 0;
-        if((column + selectedWordName.Length) > 7)
+        if(selectedWordName.Length > 7)
         {
-            column = 7 - selectedWordName.Length;
+            column = 8 - selectedWordName.Length;
+        }
+        else if(selectedWordName.Length <= 7)
+        {
+            if((column + selectedWordName.Length) > 7)
+            {
+                column = 7 - selectedWordName.Length;
+            }
         }
         foreach(var card in gridChilds)
         {
+            Debug.Log("FOR: " + selectedWordName + "SEARCH CHECK FOR COLUMN: " + card.GetComponent<CardElementWordHunt>().column + "TARGET COLUMN: " + column);
+            Debug.Log("FOR: " + selectedWordName + "SEARCH CHECK FOR ROW: " + card.GetComponent<CardElementWordHunt>().row + "TARGET ROW: " + row);
             if((card.GetComponent<CardElementWordHunt>().column == column)  && card.GetComponent<CardElementWordHunt>().row == row)
             {
                 startIndex = card.GetComponent<CardElementWordHunt>().index;
+                Debug.Log("!!!" + selectedWordName + "search start index!!! " + startIndex);
             }
         }
         for(int j = 0; j < selectedWordName.Length; j++)
         {
-            var card = gridChilds[startIndex + j];
-            tempLetterPositions.Add(card);
+            if(gridChilds[startIndex + j] != null)
+            {
+                var card = gridChilds[startIndex + j];
+                tempLetterPositions.Add(card);
+            }
         }
         CheckFilledElementOnBoard();
         if(elementsEmpty == true)
@@ -374,7 +377,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         }
         else if(elementsEmpty == false)
         {
-            if(row < 5)
+            if(row < 4 && selectedWordName.Length < 7)
             {
                 CreateWordHorizontal(wordIndex, row + 1);
             }

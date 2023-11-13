@@ -186,7 +186,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     {
         int random = Random.Range(0, accurateWords.Count);
         
-        if(!selectedWords.Contains(accurateWords[random].ToLower()) && accurateWords[random].Length <= 7)
+        if(!selectedWords.Contains(accurateWords[random].ToLower()) && accurateWords[random].Length < 7)
         {
             selectedWords.Add(accurateWords[random].ToLower());
             selectedWordsEn.Add(accurateWordsEn[random].ToLower());
@@ -229,7 +229,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         CreateWordList();
         for(int x = 0; x < accurateWords.Count(); x++)
         {
-            if(accurateWords[x].Length == 8)
+            if(accurateWords[x].Length == 8 || accurateWords[x].Length == 7)
             {
                 longWords.Add(accurateWords[x].ToLower());
                 longWordsEn.Add(accurateWordsEn[x].ToLower());
@@ -251,24 +251,27 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         }
         for(int i = 0; i < selectedWords.Count(); i++)
         {
-            if(selectedWords[i].Length >= 5)
+            if(usedWords.Count < 8)
             {
-                CreateWordHorizontal(i);
-            }
-            else if(selectedWords[i].Length < 5)
-            {
-                int random = Random.Range(0, 3);
-                switch(random)
+                if(selectedWords[i].Length >= 5)
                 {
-                case 0:
-                    CreateWordVertical(i, Random.Range(0, 18));
-                    break;
-                case 1:
-                    CreateWordVertical(i, Random.Range(0, 18));
-                    break;
-                case 2:
-                    CreateWordVertical(i, Random.Range(0, 18));
-                    break;
+                    CreateWordHorizontal(i);
+                }
+                else if(selectedWords[i].Length < 5)
+                {
+                    int random = Random.Range(0, 3);
+                    switch(random)
+                    {
+                    case 0:
+                        CreateWordVertical(i, Random.Range(0, 18));
+                        break;
+                    case 1:
+                        CreateWordVertical(i, Random.Range(0, 18));
+                        break;
+                    case 2:
+                        CreateWordVertical(i, Random.Range(0, 18));
+                        break;
+                    }
                 }
             }
         }
@@ -556,10 +559,10 @@ public class BoardGeneratorWordHunt : MonoBehaviour
                     }
                 }
             }
+            ExampleCardDestroyAnimation();
         }
-        ExampleCardDestroyAnimation();
-        Invoke("CheckLevelEnding", 1.25f);
-        Invoke("ResetWord", 1f);
+        ResetWord();
+        Invoke("CheckLevelEnding", 1f);
     }
 
     private void ExampleCardDestroyAnimation()

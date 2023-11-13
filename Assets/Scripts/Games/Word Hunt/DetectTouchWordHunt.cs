@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Linq;
 
-public class DetectTouchWordHunt : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
+public class DetectTouchWordHunt : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler, IPointerUpHandler
 {
     [SerializeField] private BoardGeneratorWordHunt boardGenerator;
     public GameObject touchDetectionObject;
@@ -53,6 +53,12 @@ public class DetectTouchWordHunt : MonoBehaviour, IDragHandler, IEndDragHandler,
     public void OnEndDrag(PointerEventData eventData)
     {
         isDragging = false;
+        touchDetectionObject.SetActive(false);
+        boardGenerator.Invoke("CheckWord", 0.1f);
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
         touchDetectionObject.SetActive(false);
         boardGenerator.Invoke("CheckWord", 0.1f);
     }

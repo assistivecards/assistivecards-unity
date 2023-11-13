@@ -8062,7 +8062,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1492503.6
+      value: 1504458.1
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -8846,7 +8846,7 @@ MonoBehaviour:
   elementsEmpty: 1
   isPointerUp: 0
   finished: 0
-  selectedWordCount: 10
+  selectedWordCount: 12
   randomOrder: 0
   cardNameLenght: 0
   iterationCountHorizontal: 0

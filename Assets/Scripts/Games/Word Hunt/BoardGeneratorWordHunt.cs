@@ -153,13 +153,13 @@ public class BoardGeneratorWordHunt : MonoBehaviour
 
     private void CreateExampleCardsPositionList()
     {
-        exampleCardPositions.Add(exampleCard0);
         exampleCardPositions.Add(exampleCard1);
-        exampleCardPositions.Add(exampleCard2);
-        exampleCardPositions.Add(exampleCard3);
-        exampleCardPositions.Add(exampleCard4);
-        exampleCardPositions.Add(exampleCard5);
         exampleCardPositions.Add(exampleCard6);
+        exampleCardPositions.Add(exampleCard4);
+        exampleCardPositions.Add(exampleCard2);
+        exampleCardPositions.Add(exampleCard5);
+        exampleCardPositions.Add(exampleCard0);
+        exampleCardPositions.Add(exampleCard3);
     }
 
     private async void CreateSelectedLongShortWords()
@@ -540,6 +540,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         else
         {
             gameAPI.PlayConfettiParticle(detectTouch.touchDetectionObject.transform.position);
+
             for(int i = 0; i < tutorialPositions.Count(); i++)
             {
                 if(tutorialPositions[i] != null)

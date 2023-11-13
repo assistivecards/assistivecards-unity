@@ -535,12 +535,17 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             {
                 letterObject.GetComponent<Image>().color = Color.white;
                 letterObject.GetComponent<CardElementWordHunt>().oneTime = true;
+                gameAPI.RemoveSessionExp();
             }
         }
         else
         {
             gameAPI.PlayConfettiParticle(detectTouch.touchDetectionObject.transform.position);
-
+            gameAPI.correctMatchExp = (100 / usedWords.Count());
+            gameAPI.AddSessionExp();
+            gameAPI.Speak(currentWord);
+            Debug.Log(currentWord);
+            Invoke("PlaySuccess", 0.25f);
             for(int i = 0; i < tutorialPositions.Count(); i++)
             {
                 if(tutorialPositions[i] != null)

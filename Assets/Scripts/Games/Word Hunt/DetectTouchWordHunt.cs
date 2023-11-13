@@ -7,7 +7,7 @@ using System.Linq;
 public class DetectTouchWordHunt : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
 {
     [SerializeField] private BoardGeneratorWordHunt boardGenerator;
-    [SerializeField] private GameObject touchDetectionObject;
+    public GameObject touchDetectionObject;
     public List<Color> colors = new List<Color>();
     public List<Color> usedColors = new List<Color>();
     public Color currentColor;
@@ -54,6 +54,6 @@ public class DetectTouchWordHunt : MonoBehaviour, IDragHandler, IEndDragHandler,
     {
         isDragging = false;
         touchDetectionObject.SetActive(false);
-        boardGenerator.Invoke("CheckWord", 0.25f);
+        boardGenerator.Invoke("CheckWord", 0.1f);
     }
 }

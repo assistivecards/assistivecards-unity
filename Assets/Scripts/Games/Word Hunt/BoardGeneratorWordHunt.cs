@@ -287,7 +287,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
                     card.transform.GetChild(0).gameObject.SetActive(true);
                     card.GetComponent<CardElementWordHunt>().cardLetter = cardName;
                     card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-                    card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                    //card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
                     card.transform.GetChild(1).gameObject.SetActive(false);
                     cards.Add(card);
                 }
@@ -299,7 +299,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
                     card.transform.GetChild(1).gameObject.SetActive(true);
                     card.GetComponent<CardElementWordHunt>().cardLetter = cardName;
                     card.transform.GetChild(1).GetComponent<Text>().text = cardName.ToUpper();
-                    card.transform.GetChild(1).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
+                    //card.transform.GetChild(1).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
                     cards.Add(card);
                 }
                 card.GetComponent<CardElementWordHunt>().filled = true;

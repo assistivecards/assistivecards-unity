@@ -40,6 +40,7 @@ public class UIControllerWordHunt : MonoBehaviour
         helloText.SetActive(false);
         levelProgressContainer.SetActive(false);
         loadingScreen.SetActive(false);
+        SetTutorialActive();
     }
 
     public void SetTutorialActive()

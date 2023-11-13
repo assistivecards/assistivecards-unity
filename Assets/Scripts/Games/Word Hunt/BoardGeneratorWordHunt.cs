@@ -15,6 +15,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     [Header ("Classes")]
     [SerializeField] private UIControllerWordHunt uıController;
     [SerializeField] private DetectTouchWordHunt detectTouch;
+    [SerializeField] private TutorialWordHunt tutorial;
 
     [Header ("Cache Cards")]
     public string selectedLangCode;
@@ -42,7 +43,6 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     [Header ("Prefabs")]
     [SerializeField] private GameObject letterPrefab;
     [SerializeField] private GameObject cardPrefab;
-    [SerializeField] private GameObject tutorial;
 
     [Header ("Game Elements")]
     public List<GameObject> gridChilds = new List<GameObject>();
@@ -77,6 +77,7 @@ public class BoardGeneratorWordHunt : MonoBehaviour
     public List<string> currentWordLetters = new List<string>();
     public List<int> usedRandomOrderCards = new List<int>();
     public List<int> longWordAccurateIndexes = new List<int>();
+    public List<GameObject> tutorialPositions = new List<GameObject>();
 
     [Header ("Game Values")]
     public int horizontalValue;
@@ -355,6 +356,11 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             {
                 string cardLetter = "" + selectedWordName[i];
                 FillCard(cardLetter, tempLetterPositions[i]);
+                if(i == selectedWordName.Length - 1)
+                {
+                    tutorialPositions.Add(tempLetterPositions[0]);
+                    tutorialPositions.Add(tempLetterPositions[i]);
+                }
             }
         }
     }
@@ -395,6 +401,11 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             {
                 string cardLetter = "" + selectedWordName[i];
                 FillCard(cardLetter, tempLetterPositions[i]);
+                if(i == selectedWordName.Length - 1)
+                {
+                    tutorialPositions.Add(tempLetterPositions[0]);
+                    tutorialPositions.Add(tempLetterPositions[i]);
+                }
             }
             iterationCountHorizontal = 0;
         }
@@ -426,6 +437,11 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             {
                 string cardLetter = "" + selectedWordName[i];
                 FillCard(cardLetter, tempLetterPositions[i]);
+                if(i == selectedWordName.Length - 1)
+                {
+                    tutorialPositions.Add(tempLetterPositions[0]);
+                    tutorialPositions.Add(tempLetterPositions[i]);
+                }
             }
             iterationCountVertical = 0;
         }
@@ -524,6 +540,16 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         else
         {
             gameAPI.PlayConfettiParticle(detectTouch.touchDetectionObject.transform.position);
+            for(int i = 0; i < tutorialPositions.Count(); i++)
+            {
+                if(tutorialPositions[i] != null)
+                {
+                    if(tutorialPositions[i].GetComponent<Image>().color != Color.white)
+                    {
+                        tutorialPositions[i] = null;
+                    }
+                }
+            }
         }
         ExampleCardDestroyAnimation();
         Invoke("CheckLevelEnding", 1.25f);
@@ -586,6 +612,10 @@ public class BoardGeneratorWordHunt : MonoBehaviour
             child.GetComponent<CardElementWordHunt>().oneTime = true;
             child.GetComponent<Image>().color = Color.white;
         }
+        score = 0;
+        iterationCountVertical = 0;
+        iterationCountHorizontal = 0;
+        firstElementFilled = false;
         exampleCards.Clear();
         cards.Clear();
         cardsList.Clear();
@@ -595,9 +625,6 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         selectedWordsEn.Clear();
         usedWords.Clear();
         usedWordsEn.Clear();
-        score = 0;
-        iterationCountVertical = 0;
-        iterationCountHorizontal = 0;
         accurateWords.Clear();
         accurateWordsEn.Clear();
         usedRandomOrderCards.Clear();
@@ -615,6 +642,6 @@ public class BoardGeneratorWordHunt : MonoBehaviour
         shortWords.Clear();
         shortWordsEn.Clear();
         longWordAccurateIndexes.Clear();
-        firstElementFilled = false;
+        tutorialPositions.Clear();
     }
 }

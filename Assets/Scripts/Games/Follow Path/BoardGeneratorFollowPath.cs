@@ -49,6 +49,7 @@ public class BoardGeneratorFollowPath : MonoBehaviour
 
     [Header ("Game Values")]
     public List<GameObject> correctPathElements = new List<GameObject>();
+    public List<GameObject> selectedPathElements = new List<GameObject>();
     public List<int> usedRandomOrderCards = new List<int>();
     public int cardCount;
     public int maxLevelCount;
@@ -126,6 +127,7 @@ public class BoardGeneratorFollowPath : MonoBehaviour
 
     private void CreateCardPositionList()
     {
+        int index = 0;
         cardPositions.Add(cardPosition1);
         cardPositions.Add(cardPosition2);
         cardPositions.Add(cardPosition3);
@@ -136,6 +138,8 @@ public class BoardGeneratorFollowPath : MonoBehaviour
         foreach(Transform child in correctPath.transform)
         {
             correctPathElements.Add(child.gameObject);
+            child.gameObject.GetComponent<PathPartControllerFollowPath>().correctPathListIndex = index;
+            index++;
         }
     }
 

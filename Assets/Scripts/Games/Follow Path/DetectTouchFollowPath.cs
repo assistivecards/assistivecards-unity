@@ -6,6 +6,7 @@ using System.Linq;
 
 public class DetectTouchFollowPath : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler, IPointerUpHandler
 {
+    [SerializeField] private BoardGeneratorFollowPath boardGenerator;
     public GameObject touchDetectionObject;
     public bool isDragging;
     private Vector2 dragStartPosition;
@@ -34,5 +35,6 @@ public class DetectTouchFollowPath : MonoBehaviour, IDragHandler, IEndDragHandle
     public void OnPointerUp(PointerEventData eventData)
     {
         touchDetectionObject.SetActive(false);
+        //boardGenerator.CheckPath();
     }
 }

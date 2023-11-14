@@ -484,8 +484,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2766736629313850203, guid: 96fbaffa0d66e452189ba0e7ffe453a4, type: 3}
       propertyPath: m_Name
-      value: PathPart (6)
+      value: PathPart6
       objectReference: {fileID: 0}
+    - target: {fileID: 3453583829794112679, guid: 96fbaffa0d66e452189ba0e7ffe453a4, type: 3}
+      propertyPath: boardGenerator
+      value: 
+      objectReference: {fileID: 8383894889009589326}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -883,8 +887,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2766736629313850203, guid: 96fbaffa0d66e452189ba0e7ffe453a4, type: 3}
       propertyPath: m_Name
-      value: PathPart (7)
+      value: PathPart8
       objectReference: {fileID: 0}
+    - target: {fileID: 3453583829794112679, guid: 96fbaffa0d66e452189ba0e7ffe453a4, type: 3}
+      propertyPath: boardGenerator
+      value: 
+      objectReference: {fileID: 8383894889009589326}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -990,8 +998,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2766736629313850203, guid: 96fbaffa0d66e452189ba0e7ffe453a4, type: 3}
       propertyPath: m_Name
-      value: PathPart
+      value: PathPart1
       objectReference: {fileID: 0}
+    - target: {fileID: 3453583829794112679, guid: 96fbaffa0d66e452189ba0e7ffe453a4, type: 3}
+      propertyPath: boardGenerator
+      value: 
+      objectReference: {fileID: 8383894889009589326}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1329,8 +1341,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2766736629313850203, guid: 96fbaffa0d66e452189ba0e7ffe453a4, type: 3}
       propertyPath: m_Name
-      value: PathPart (2)
+      value: PathPart3
       objectReference: {fileID: 0}
+    - target: {fileID: 3453583829794112679, guid: 96fbaffa0d66e452189ba0e7ffe453a4, type: 3}
+      propertyPath: boardGenerator
+      value: 
+      objectReference: {fileID: 8383894889009589326}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1446,8 +1462,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2766736629313850203, guid: 96fbaffa0d66e452189ba0e7ffe453a4, type: 3}
       propertyPath: m_Name
-      value: PathPart (1)
+      value: PathPart2
       objectReference: {fileID: 0}
+    - target: {fileID: 3453583829794112679, guid: 96fbaffa0d66e452189ba0e7ffe453a4, type: 3}
+      propertyPath: boardGenerator
+      value: 
+      objectReference: {fileID: 8383894889009589326}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1776,18 +1796,18 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 550401235}
-  - {fileID: 1505076620}
-  - {fileID: 848661874}
-  - {fileID: 924538246}
   - {fileID: 1641262286}
-  - {fileID: 1461455099}
+  - {fileID: 848661874}
   - {fileID: 1295665194}
+  - {fileID: 1505076620}
+  - {fileID: 1461455099}
+  - {fileID: 924538246}
   - {fileID: 359896041}
   m_Father: {fileID: 272097692}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -69.43178, y: -177.82402}
+  m_AnchoredPosition: {x: -69.43176, y: -177.824}
   m_SizeDelta: {x: 299, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1209189553
@@ -2154,8 +2174,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2766736629313850203, guid: 96fbaffa0d66e452189ba0e7ffe453a4, type: 3}
       propertyPath: m_Name
-      value: PathPart (5)
+      value: PathPart7
       objectReference: {fileID: 0}
+    - target: {fileID: 3453583829794112679, guid: 96fbaffa0d66e452189ba0e7ffe453a4, type: 3}
+      propertyPath: boardGenerator
+      value: 
+      objectReference: {fileID: 8383894889009589326}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2251,8 +2275,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2766736629313850203, guid: 96fbaffa0d66e452189ba0e7ffe453a4, type: 3}
       propertyPath: m_Name
-      value: PathPart (3)
+      value: PathPart4
       objectReference: {fileID: 0}
+    - target: {fileID: 3453583829794112679, guid: 96fbaffa0d66e452189ba0e7ffe453a4, type: 3}
+      propertyPath: boardGenerator
+      value: 
+      objectReference: {fileID: 8383894889009589326}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2921,8 +2949,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2766736629313850203, guid: 96fbaffa0d66e452189ba0e7ffe453a4, type: 3}
       propertyPath: m_Name
-      value: PathPart (4)
+      value: PathPart5
       objectReference: {fileID: 0}
+    - target: {fileID: 3453583829794112679, guid: 96fbaffa0d66e452189ba0e7ffe453a4, type: 3}
+      propertyPath: boardGenerator
+      value: 
+      objectReference: {fileID: 8383894889009589326}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3296,7 +3328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 268158.5
+      value: 299890.2
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3947,6 +3979,7 @@ MonoBehaviour:
   cardTextures: []
   correctPath: {fileID: 1201646093}
   correctPathElements: []
+  selectedPathElements: []
   usedRandomOrderCards: 
   cardCount: 3
   maxLevelCount: 5
@@ -3969,6 +4002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1105a8bf503364596ae0589db511a888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boardGenerator: {fileID: 8383894889009589326}
   touchDetectionObject: {fileID: 156098793}
   isDragging: 0
 --- !u!114 &8691574409270737102

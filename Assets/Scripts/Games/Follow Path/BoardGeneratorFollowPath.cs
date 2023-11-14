@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
+using PathCreation;
 
 public class BoardGeneratorFollowPath : MonoBehaviour
 {
@@ -46,13 +47,13 @@ public class BoardGeneratorFollowPath : MonoBehaviour
     public List<Texture> cardTextures = new List<Texture>();
 
     [Header ("Game Values")]
+    public List<int> usedRandomOrderCards = new List<int>();
     public int cardCount;
     public int maxLevelCount;
     public int levelCount;
     public int prefetchedCardsCount;
     private string cardName;
     public int randomOrder;
-    public List<int> usedRandomOrderCards = new List<int>();
     public int cardNameLenght;
     public int matchedCardCount;
     public bool isPointerUp;

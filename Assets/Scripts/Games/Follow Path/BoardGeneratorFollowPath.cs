@@ -148,10 +148,6 @@ public class BoardGeneratorFollowPath : MonoBehaviour
                 card.transform.SetParent(cardPositions[i].transform);
                 card.transform.name = prefetchedCardNames[i + (levelCount * cardCount)];
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-                card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-                card.transform.GetChild(1).GetComponent<TMP_Text>().text = prefetchedCardNames[i + (levelCount * cardCount)];
-                card.GetComponent<SwapCardsCardController>().cardType = prefetchedCardNames[i + (levelCount * cardCount)];
-                card.GetComponent<SwapCardsCardController>().parentName = card.transform.parent.transform.tag;
                 cards.Add(card);
                 card.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
                 card.transform.localPosition = Vector3.zero;

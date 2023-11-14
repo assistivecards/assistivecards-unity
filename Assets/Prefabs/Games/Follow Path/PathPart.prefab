@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3418617534323757086}
   - component: {fileID: 8262120735776657221}
   - component: {fileID: 9150135458230827673}
+  - component: {fileID: 3453583829794112679}
   m_Layer: 5
   m_Name: PathPart
   m_TagString: Untagged
@@ -124,7 +125,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 49.391376}
+  m_Size: {x: 50, y: 50}
   m_EdgeRadius: 0
 --- !u!222 &8262120735776657221
 CanvasRenderer:
@@ -168,3 +169,16 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: '-'
+--- !u!114 &3453583829794112679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2766736629313850203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc4561864290e465b82fa4ebc25c74e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  correctColor: {r: 0.09219491, g: 0.745283, b: 0.08085619, a: 1}

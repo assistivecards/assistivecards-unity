@@ -45,8 +45,10 @@ public class BoardGeneratorFollowPath : MonoBehaviour
     public GameObject cardPosition6;
     public List<GameObject> cardPositions = new List<GameObject>();
     public List<Texture> cardTextures = new List<Texture>();
+    [SerializeField] private GameObject correctPath;
 
     [Header ("Game Values")]
+    public List<GameObject> correctPathElements = new List<GameObject>();
     public List<int> usedRandomOrderCards = new List<int>();
     public int cardCount;
     public int maxLevelCount;
@@ -130,6 +132,11 @@ public class BoardGeneratorFollowPath : MonoBehaviour
         cardPositions.Add(cardPosition4);
         cardPositions.Add(cardPosition5);
         cardPositions.Add(cardPosition6);
+
+        foreach(Transform child in correctPath.transform)
+        {
+            correctPathElements.Add(child.gameObject);
+        }
     }
 
     public async void GeneratedBoardAsync()

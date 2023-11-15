@@ -28,6 +28,8 @@ TagManager:
   - CardPositions2
   - CardPositions3
   - Touch
+  - card
+  - CorrectPath
   layers:
   - Default
   - TransparentFX

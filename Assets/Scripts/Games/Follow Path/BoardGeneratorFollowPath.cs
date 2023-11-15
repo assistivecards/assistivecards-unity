@@ -47,9 +47,15 @@ public class BoardGeneratorFollowPath : MonoBehaviour
     public List<Texture> cardTextures = new List<Texture>();
     [SerializeField] private GameObject path;
     private GameObject correctPath;
+    private GameObject generalPath;
+    private GameObject alternativePath1;
+    private GameObject alternativePath2;
 
     [Header ("Game Values")]
+    public List<GameObject> generalPathElements = new List<GameObject>();
     public List<GameObject> correctPathElements = new List<GameObject>();
+    public List<GameObject> alternativePath1PathElements = new List<GameObject>();
+    public List<GameObject> alternativePath2PathElements = new List<GameObject>();
     public List<GameObject> selectedPathElements = new List<GameObject>();
     public List<int> usedRandomOrderCards = new List<int>();
     public int cardCount;
@@ -136,13 +142,18 @@ public class BoardGeneratorFollowPath : MonoBehaviour
         cardPositions.Add(cardPosition5);
         cardPositions.Add(cardPosition6);
 
-        correctPath = path.transform.GetChild(0).gameObject;
+        generalPath = path.transform.GetChild(0).gameObject;
+        foreach(Transform child in generalPath.transform)
+        {
+            generalPathElements.Add(child.gameObject);
+            child.gameObject.GetComponent<PathPartControllerFollowPath>().isGeneralPathElement = true;
+        }
+
+        correctPath = path.transform.GetChild(1).gameObject;
         foreach(Transform child in correctPath.transform)
         {
             correctPathElements.Add(child.gameObject);
-            child.gameObject.GetComponent<PathPartControllerFollowPath>().correctPathListIndex = index;
             child.gameObject.GetComponent<PathPartControllerFollowPath>().isCorrectPathElement = true;
-            index++;
         }
     }
 

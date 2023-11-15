@@ -12,7 +12,7 @@ public class BoardGeneratorFollowPath : MonoBehaviour
 {
     GameAPI gameAPI;
 
-    //[SerializeField] private FollowPathUIController uıController;
+    [SerializeField] private UIControllerFollowPath uıController;
 
     [Header ("Cache Cards")]
     public string selectedLangCode;
@@ -146,8 +146,8 @@ public class BoardGeneratorFollowPath : MonoBehaviour
     public async void GeneratedBoardAsync()
     {
         finished = false;
-        // if(uıController.canGenerate)
-        // {
+        if(uıController.canGenerate)
+        {
             CreateCardPositionList();
             for(int i = 0; i < 3; i++)
             {
@@ -164,7 +164,7 @@ public class BoardGeneratorFollowPath : MonoBehaviour
                 card.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
                 card.transform.localPosition = Vector3.zero;
             }
-        //}
+        }
         GameUIActivate();
     }
 
@@ -174,7 +174,7 @@ public class BoardGeneratorFollowPath : MonoBehaviour
         {
             LeanTween.scale(card, Vector3.one * 0.45f, 0.3f);
         }
-        //uıController.GameUIActivate();
+        uıController.GameUIActivate();
     }
 
     private void CreateNewLevel()
@@ -189,7 +189,7 @@ public class BoardGeneratorFollowPath : MonoBehaviour
         {
             LeanTween.scale(card, Vector3.zero, 0.3f);
         }
-        //uıController.Invoke("GameUIDeactivate", 0.3f);
+        uıController.Invoke("GameUIDeactivate", 0.3f);
         Invoke("ClearBoard", 0.3f);
     }
 
@@ -229,13 +229,13 @@ public class BoardGeneratorFollowPath : MonoBehaviour
         levelCount++;
         if(levelCount >= maxLevelCount)
         {
-            //uıController.LevelChangeScreenActivate();
+            uıController.LevelChangeScreenActivate();
             levelCount = 0;
         }
         else
         {
-            //uıController.GameUIDeactivate();
-            //uıController.LoadingScreenActivation();
+            uıController.GameUIDeactivate();
+            uıController.LoadingScreenActivation();
             GeneratedBoardAsync();
         }
     }
@@ -254,7 +254,7 @@ public class BoardGeneratorFollowPath : MonoBehaviour
         usedRandomOrderCards.Clear();
         cardTextures.Clear();
         cardPositions.Clear();
-        //uıController.PackSelectionPanelActive();
+        uıController.PackSelectionPanelActive();
     }
 
     private async Task PrefetchNextLevelsTexturesAsync()
@@ -269,6 +269,6 @@ public class BoardGeneratorFollowPath : MonoBehaviour
             Debug.Log(cardNames[randomValueList[i]]);
         }
         Invoke("GeneratedBoardAsync", 2f);
-        //uıController.Invoke("SetTutorialActive", 2.1f);
+        uıController.Invoke("SetTutorialActive", 2.1f);
     }
 }

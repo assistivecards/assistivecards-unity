@@ -511,6 +511,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 637470128507911003, guid: 96fbaffa0d66e452189ba0e7ffe453a4, type: 3}
   m_PrefabInstance: {fileID: 518988579}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &396232794 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3633320924205415846, guid: 94388a3d514b4404bac9383b3a94c658, type: 3}
+  m_PrefabInstance: {fileID: 1275520832}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &404360395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1371,6 +1376,11 @@ GameObject:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3236149540598557725, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
   m_PrefabInstance: {fileID: 625883654}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &965348966 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3184117022417446875, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &973276500
 PrefabInstance:
@@ -2520,6 +2530,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 637470128507911003, guid: 96fbaffa0d66e452189ba0e7ffe453a4, type: 3}
   m_PrefabInstance: {fileID: 973276500}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1710256535 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8438209764908285022, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
+  m_PrefabInstance: {fileID: 472857503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1727350122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2837,7 +2852,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3312037730716697936, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
   m_PrefabInstance: {fileID: 1837497523}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1914022008}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f44cf049de1b446bf8e19644a138f40f, type: 3}
@@ -2859,6 +2874,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1914022008 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9035172431832795728, guid: ddb433e5e471f424294b7810dff7f3c5, type: 3}
+  m_PrefabInstance: {fileID: 1837497523}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1927434412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3328,7 +3348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 299890.2
+      value: 323088.72
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3511,6 +3531,7 @@ GameObject:
   - component: {fileID: 1995057600056102325}
   - component: {fileID: 8383894889009589326}
   - component: {fileID: 8383894889009589327}
+  - component: {fileID: 8383894889009589328}
   m_Layer: 5
   m_Name: GamePanel
   m_TagString: Untagged
@@ -3955,6 +3976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43dc5605f9b824360a46d4373e2607c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  "u\u0131Controller": {fileID: 0}
   selectedLangCode: 
   cards: []
   cachedCards:
@@ -4005,6 +4027,30 @@ MonoBehaviour:
   boardGenerator: {fileID: 8383894889009589326}
   touchDetectionObject: {fileID: 156098793}
   isDragging: 0
+--- !u!114 &8383894889009589328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3720148778835819161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcd46e50cbcd948c7a0991f71ea7bc03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boardGenerator: {fileID: 8383894889009589326}
+  packSelectionPanelScript: {fileID: 337819123}
+  levelChange: {fileID: 1275520836}
+  gameUI: {fileID: 272097691}
+  backButton: {fileID: 1710256535}
+  settingButton: {fileID: 472857506}
+  helloText: {fileID: 965348966}
+  levelProgressContainer: {fileID: 396232794}
+  loadingScreen: {fileID: 671447375}
+  packSelectionScreen: {fileID: 1914022008}
+  tutorial: {fileID: 927069859}
+  canGenerate: 0
 --- !u!114 &8691574409270737102
 MonoBehaviour:
   m_ObjectHideFlags: 0

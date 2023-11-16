@@ -193,6 +193,7 @@ public class BoardGeneratorFollowPath : MonoBehaviour
                 card.transform.SetParent(cardPositions[i].transform);
                 card.transform.name = prefetchedCardNames[i + (levelCount * cardCount)];
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+                card.GetComponent<CardControllerFollowPath>().isCorrect = false;
                 cards.Add(card);
                 card.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
                 card.transform.localPosition = Vector3.zero;
@@ -206,6 +207,7 @@ public class BoardGeneratorFollowPath : MonoBehaviour
             correctCard.transform.SetParent(correctCardPosition.transform);
             correctCard.transform.name = prefetchedCardNames[(levelCount * cardCount)];
             correctCard.transform.GetChild(0).GetComponent<RawImage>().texture = correctCardTexture;
+            correctCard.GetComponent<CardControllerFollowPath>().isCorrect = true;
             cards.Add(correctCard);
             correctCard.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
             correctCard.transform.localPosition = Vector3.zero;
@@ -258,6 +260,12 @@ public class BoardGeneratorFollowPath : MonoBehaviour
             }
             selectedPathElements.Clear();
         }
+        else
+        {
+            correctCard.GetComponent<CardControllerFollowPath>().isAllCorrectSelected = true;
+            levelCount++;
+        }
+
     }
 
     public void CheckLevelEnding()

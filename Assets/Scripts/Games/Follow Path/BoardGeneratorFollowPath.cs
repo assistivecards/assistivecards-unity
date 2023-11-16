@@ -37,23 +37,23 @@ public class BoardGeneratorFollowPath : MonoBehaviour
     [SerializeField] private GameObject tutorial;
 
     [Header ("Game UI")]
+    public GameObject stablePosition;
     public GameObject cardPosition1;
     public GameObject cardPosition2;
     public GameObject cardPosition3;
-    public GameObject cardPosition4;
-    public GameObject cardPosition5;
-    public GameObject cardPosition6;
     public List<GameObject> cardPositions = new List<GameObject>();
     public List<Texture> cardTextures = new List<Texture>();
     [SerializeField] private GameObject path;
-    private GameObject correctPath;
-    private GameObject generalPath;
     [SerializeField] private GameObject alternativePath1;
     [SerializeField] private GameObject alternativePath2;
     [SerializeField] private GameObject alternativePath3;
     [SerializeField] private GameObject alternativePath4;
     [SerializeField] private GameObject alternativePath5;
     [SerializeField] private GameObject alternativePath6;
+    private GameObject correctPath;
+    private GameObject generalPath;
+    private GameObject correctCard;
+    private GameObject correctCardPosition;
 
     [Header ("Game Values")]
     public List<GameObject> generalPathElements = new List<GameObject>();
@@ -138,12 +138,10 @@ public class BoardGeneratorFollowPath : MonoBehaviour
     private void CreateCardPositionList()
     {
         int index = 0;
+        cardPositions.Add(stablePosition);
         cardPositions.Add(cardPosition1);
-        cardPositions.Add(cardPosition2);
+        //cardPositions.Add(cardPosition2);
         cardPositions.Add(cardPosition3);
-        cardPositions.Add(cardPosition4);
-        cardPositions.Add(cardPosition5);
-        cardPositions.Add(cardPosition6);
 
         alternativePaths.Add(alternativePath1);
         alternativePaths.Add(alternativePath2);
@@ -168,6 +166,15 @@ public class BoardGeneratorFollowPath : MonoBehaviour
             correctPathElements.Add(child.gameObject);
             child.gameObject.GetComponent<PathPartControllerFollowPath>().isCorrectPathElement = true;
         }
+
+        if(path == alternativePath1)
+        {
+            correctCardPosition = cardPosition2;
+        }
+        else
+        {
+            correctCardPosition = cardPosition2;
+        }
     }
 
     public async void GeneratedBoardAsync()
@@ -179,7 +186,6 @@ public class BoardGeneratorFollowPath : MonoBehaviour
             for(int i = 0; i < 3; i++)
             {
                 GameObject card = Instantiate(cardPrefab, cardPositions[i].transform.position, Quaternion.identity);
-
                 var cardTexture = prefetchedCardTextures[i + (levelCount * cardCount)];
                 cardTexture.wrapMode = TextureWrapMode.Clamp;
                 cardTexture.filterMode = FilterMode.Bilinear;
@@ -191,6 +197,18 @@ public class BoardGeneratorFollowPath : MonoBehaviour
                 card.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
                 card.transform.localPosition = Vector3.zero;
             }
+
+            correctCard = Instantiate(cardPrefab, correctCardPosition.transform.position, Quaternion.identity);
+            var correctCardTexture = prefetchedCardTextures[(levelCount * cardCount)];
+            correctCardTexture.wrapMode = TextureWrapMode.Clamp;
+            correctCardTexture.filterMode = FilterMode.Bilinear;
+            cardTextures.Add(correctCardTexture);
+            correctCard.transform.SetParent(correctCardPosition.transform);
+            correctCard.transform.name = prefetchedCardNames[(levelCount * cardCount)];
+            correctCard.transform.GetChild(0).GetComponent<RawImage>().texture = correctCardTexture;
+            cards.Add(correctCard);
+            correctCard.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
+            correctCard.transform.localPosition = Vector3.zero;
         }
         GameUIActivate();
     }

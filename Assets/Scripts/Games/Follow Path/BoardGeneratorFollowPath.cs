@@ -48,15 +48,18 @@ public class BoardGeneratorFollowPath : MonoBehaviour
     [SerializeField] private GameObject path;
     private GameObject correctPath;
     private GameObject generalPath;
-    private GameObject alternativePath1;
-    private GameObject alternativePath2;
+    [SerializeField] private GameObject alternativePath1;
+    [SerializeField] private GameObject alternativePath2;
+    [SerializeField] private GameObject alternativePath3;
+    [SerializeField] private GameObject alternativePath4;
+    [SerializeField] private GameObject alternativePath5;
+    [SerializeField] private GameObject alternativePath6;
 
     [Header ("Game Values")]
     public List<GameObject> generalPathElements = new List<GameObject>();
     public List<GameObject> correctPathElements = new List<GameObject>();
-    public List<GameObject> alternativePath1PathElements = new List<GameObject>();
-    public List<GameObject> alternativePath2PathElements = new List<GameObject>();
     public List<GameObject> selectedPathElements = new List<GameObject>();
+    public List<GameObject> alternativePaths = new List<GameObject>();
     public List<int> usedRandomOrderCards = new List<int>();
     public int cardCount;
     public int maxLevelCount;
@@ -142,6 +145,16 @@ public class BoardGeneratorFollowPath : MonoBehaviour
         cardPositions.Add(cardPosition5);
         cardPositions.Add(cardPosition6);
 
+        alternativePaths.Add(alternativePath1);
+        alternativePaths.Add(alternativePath2);
+        alternativePaths.Add(alternativePath3);
+        alternativePaths.Add(alternativePath4);
+        alternativePaths.Add(alternativePath5);
+        alternativePaths.Add(alternativePath6);
+
+        path = alternativePaths[Random.Range(0, alternativePaths.Count)];
+        path.SetActive(true);
+
         generalPath = path.transform.GetChild(0).gameObject;
         foreach(Transform child in generalPath.transform)
         {
@@ -205,6 +218,28 @@ public class BoardGeneratorFollowPath : MonoBehaviour
         }
         uıController.Invoke("GameUIDeactivate", 0.3f);
         Invoke("ClearBoard", 0.3f);
+    }
+
+    public void CheckPath()
+    {
+        bool correctPathSelected = true;
+        foreach(var element in correctPathElements)
+        {
+            if(!selectedPathElements.Contains(element))
+            {
+                correctPathSelected = false;
+            }
+        }
+
+        if(!correctPathSelected)
+        {
+            foreach(var element in selectedPathElements)
+            {
+                element.GetComponent<PathPartControllerFollowPath>().ResetColor();
+                element.GetComponent<PathPartControllerFollowPath>().selected = false;
+            }
+            selectedPathElements.Clear();
+        }
     }
 
     public void CheckLevelEnding()

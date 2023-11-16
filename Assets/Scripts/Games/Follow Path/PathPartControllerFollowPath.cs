@@ -7,6 +7,7 @@ public class PathPartControllerFollowPath : MonoBehaviour
 {
     [SerializeField] private BoardGeneratorFollowPath boardGenerator;
     [SerializeField] private Color correctColor;
+    [SerializeField] private Color defaultColor;
     public bool isCorrectPathElement = false;
     public bool isGeneralPathElement = false;
     public bool selected = false;
@@ -56,5 +57,10 @@ public class PathPartControllerFollowPath : MonoBehaviour
             this.GetComponent<Text>().color = correctColor;
             boardGenerator.selectedPathElements.Add(this.gameObject);
         }
+    }
+
+    public void ResetColor()
+    {
+        this.GetComponent<Text>().color = defaultColor;
     }
 }

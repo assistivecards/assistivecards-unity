@@ -30,11 +30,12 @@ public class DetectTouchFollowPath : MonoBehaviour, IDragHandler, IEndDragHandle
     {
         isDragging = false;
         touchDetectionObject.SetActive(false);
+        boardGenerator.Invoke("CheckPath", 0.5f);
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         touchDetectionObject.SetActive(false);
-        //boardGenerator.CheckPath();
+        boardGenerator.Invoke("CheckPath", 0.5f);
     }
 }

@@ -138,10 +138,7 @@ public class BoardGeneratorFollowPath : MonoBehaviour
     private void CreateCardPositionList()
     {
         int index = 0;
-        cardPositions.Add(stablePosition);
-        cardPositions.Add(cardPosition1);
-        //cardPositions.Add(cardPosition2);
-        cardPositions.Add(cardPosition3);
+
 
         alternativePaths.Add(alternativePath1);
         alternativePaths.Add(alternativePath2);
@@ -171,10 +168,24 @@ public class BoardGeneratorFollowPath : MonoBehaviour
         {
             correctCardPosition = cardPosition2;
         }
-        else
+        else if(path == alternativePath2)
+        {
+            correctCardPosition = cardPosition1;
+        }
+        else 
         {
             correctCardPosition = cardPosition2;
         }
+
+        cardPositions.Add(stablePosition);
+        if(cardPosition1 != correctCardPosition)
+            cardPositions.Add(cardPosition1);
+
+        if(cardPosition2 != correctCardPosition)  
+            cardPositions.Add(cardPosition2);
+
+        if(cardPosition3 != correctCardPosition)
+            cardPositions.Add(cardPosition3);
     }
 
     public async void GeneratedBoardAsync()

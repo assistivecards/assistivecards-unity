@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PathControllerFollowPath : MonoBehaviour
 {
+    [SerializeField] public GameObject stablePosition;
     [SerializeField] public GameObject correctCardPosition;
     [SerializeField] public GameObject wrongCardPosition1;
     [SerializeField] public GameObject wrongCardPosition2;

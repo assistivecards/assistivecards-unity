@@ -37,8 +37,8 @@ public class BoardGeneratorFollowPath : MonoBehaviour
     [SerializeField] private GameObject tutorial;
 
     [Header ("Game UI")]
-    public GameObject stablePosition;
     public List<Texture> cardTextures = new List<Texture>();
+    private GameObject stablePosition;
     private GameObject cardPosition1;
     private GameObject cardPosition2;
     private GameObject cardPosition3;
@@ -161,6 +161,7 @@ public class BoardGeneratorFollowPath : MonoBehaviour
             correctPathElements.Add(child.gameObject);
             child.gameObject.GetComponent<PathPartControllerFollowPath>().isCorrectPathElement = true;
         }
+        stablePosition = path.GetComponent<PathControllerFollowPath>().stablePosition;
         correctCardPosition = path.GetComponent<PathControllerFollowPath>().correctCardPosition;
         cardPosition1 = path.GetComponent<PathControllerFollowPath>().wrongCardPosition1;
         cardPosition2 = path.GetComponent<PathControllerFollowPath>().wrongCardPosition2;

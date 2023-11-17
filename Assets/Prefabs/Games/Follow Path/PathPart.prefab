@@ -125,7 +125,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 30, y: 15}
+  m_Size: {x: 30, y: 30}
   m_EdgeRadius: 0
 --- !u!222 &8262120735776657221
 CanvasRenderer:

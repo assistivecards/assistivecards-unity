@@ -38,11 +38,11 @@ public class BoardGeneratorFollowPath : MonoBehaviour
 
     [Header ("Game UI")]
     public GameObject stablePosition;
-    public GameObject cardPosition1;
-    public GameObject cardPosition2;
-    public GameObject cardPosition3;
-    public List<GameObject> cardPositions = new List<GameObject>();
     public List<Texture> cardTextures = new List<Texture>();
+    private GameObject cardPosition1;
+    private GameObject cardPosition2;
+    private GameObject cardPosition3;
+    private List<GameObject> cardPositions = new List<GameObject>();
     [SerializeField] private GameObject path;
     [SerializeField] private GameObject alternativePath1;
     [SerializeField] private GameObject alternativePath2;
@@ -138,8 +138,6 @@ public class BoardGeneratorFollowPath : MonoBehaviour
     private void CreateCardPositionList()
     {
         int index = 0;
-
-
         alternativePaths.Add(alternativePath1);
         alternativePaths.Add(alternativePath2);
         alternativePaths.Add(alternativePath3);
@@ -163,29 +161,13 @@ public class BoardGeneratorFollowPath : MonoBehaviour
             correctPathElements.Add(child.gameObject);
             child.gameObject.GetComponent<PathPartControllerFollowPath>().isCorrectPathElement = true;
         }
-
-        if(path == alternativePath1)
-        {
-            correctCardPosition = cardPosition2;
-        }
-        else if(path == alternativePath2)
-        {
-            correctCardPosition = cardPosition1;
-        }
-        else 
-        {
-            correctCardPosition = cardPosition2;
-        }
+        correctCardPosition = path.GetComponent<PathControllerFollowPath>().correctCardPosition;
+        cardPosition1 = path.GetComponent<PathControllerFollowPath>().wrongCardPosition1;
+        cardPosition2 = path.GetComponent<PathControllerFollowPath>().wrongCardPosition2;
 
         cardPositions.Add(stablePosition);
-        if(cardPosition1 != correctCardPosition)
-            cardPositions.Add(cardPosition1);
-
-        if(cardPosition2 != correctCardPosition)  
-            cardPositions.Add(cardPosition2);
-
-        if(cardPosition3 != correctCardPosition)
-            cardPositions.Add(cardPosition3);
+        cardPositions.Add(cardPosition1);
+        cardPositions.Add(cardPosition2);
     }
 
     public async void GeneratedBoardAsync()

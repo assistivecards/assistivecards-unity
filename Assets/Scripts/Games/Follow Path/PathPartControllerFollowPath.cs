@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PathPartControllerFollowPath : MonoBehaviour
 {
-    [SerializeField] private BoardGeneratorFollowPath boardGenerator;
+    private BoardGeneratorFollowPath boardGenerator;
     [SerializeField] private Color correctColor;
     [SerializeField] private Color defaultColor;
     public bool isCorrectPathElement = false;
@@ -13,6 +13,11 @@ public class PathPartControllerFollowPath : MonoBehaviour
     public bool selected = false;
     public int generalPathListIndex;
     public int correctPathListIndex;
+
+    private void OnEnable() 
+    {
+        boardGenerator = GameObject.Find("GamePanel").GetComponent<BoardGeneratorFollowPath>();
+    }
 
     private void OnTriggerEnter2D(Collider2D other) 
     {

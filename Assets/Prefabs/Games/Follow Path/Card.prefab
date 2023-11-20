@@ -137,6 +137,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCorrect: 0
   isAllCorrectSelected: 0
+  isReferenceCard: 0
+  isMatch: 0
 --- !u!1 &3953419126043893981
 GameObject:
   m_ObjectHideFlags: 0

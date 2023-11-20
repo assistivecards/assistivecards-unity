@@ -15,11 +15,18 @@ public class CardControllerFollowPath : MonoBehaviour
     public bool isCorrect;
     public bool isAllCorrectSelected;
     public bool isReferenceCard;
+    public bool isMatch = false;
 
     private void OnEnable() 
     {
         boardGenerator = GameObject.Find("GamePanel").GetComponent<BoardGeneratorFollowPath>();
         detectTouch = GameObject.Find("GamePanel").GetComponent<DetectTouchFollowPath>();
+    }
+
+    public void MoveToBeginning()
+    {
+        if(!isMatch)
+            LeanTween.move(this.gameObject, boardGenerator.stablePosition.transform.position, 0.5f);
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
@@ -36,6 +43,11 @@ public class CardControllerFollowPath : MonoBehaviour
             {
                 Debug.Log(this.name);
             }
+        }
+        else if(isReferenceCard && other.tag == "Correct")
+        {
+            isMatch = true;
+            LeanTween.move(this.gameObject, other.transform.position, 0.2f);
         }
     }
 

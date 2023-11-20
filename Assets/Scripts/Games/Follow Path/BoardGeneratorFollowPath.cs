@@ -38,7 +38,7 @@ public class BoardGeneratorFollowPath : MonoBehaviour
 
     [Header ("Game UI")]
     public List<Texture> cardTextures = new List<Texture>();
-    private GameObject stablePosition;
+    public GameObject stablePosition;
     private GameObject cardPosition1;
     private GameObject cardPosition2;
     private GameObject cardPosition3;

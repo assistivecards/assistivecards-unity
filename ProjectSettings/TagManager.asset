@@ -30,6 +30,7 @@ TagManager:
   - Touch
   - card
   - CorrectPath
+  - Correct
   layers:
   - Default
   - TransparentFX

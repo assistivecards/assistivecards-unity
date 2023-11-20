@@ -25,7 +25,7 @@ public class DetectTouchFollowPath : MonoBehaviour, IDragHandler, IEndDragHandle
         Vector2 dragEndPosition = eventData.position;
         touchPosition = new Vector3(eventData.position.x, eventData.position.y, 0);
         touchDetectionObject.transform.position = touchPosition;
-        
+
         if(referenceCard != null)
             referenceCard.transform.position = touchPosition;
     }
@@ -34,12 +34,14 @@ public class DetectTouchFollowPath : MonoBehaviour, IDragHandler, IEndDragHandle
     {
         isDragging = false;
         touchDetectionObject.SetActive(false);
-        boardGenerator.Invoke("CheckPath", 0.5f);
+        boardGenerator.Invoke("CheckPath", 0.25f);
+        referenceCard.GetComponent<CardControllerFollowPath>().Invoke("MoveToBeginning", 0.75f);
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         touchDetectionObject.SetActive(false);
-        boardGenerator.Invoke("CheckPath", 0.5f);
+        boardGenerator.Invoke("CheckPath", 0.25f);
+        referenceCard.GetComponent<CardControllerFollowPath>().Invoke("MoveToBeginning", 0.75f);
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 public class DetectTouchFollowPath : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler, IPointerUpHandler
 {
     [SerializeField] private BoardGeneratorFollowPath boardGenerator;
+    public GameObject referenceCard;
     public GameObject touchDetectionObject;
     public bool isDragging;
     private Vector2 dragStartPosition;
@@ -24,6 +25,9 @@ public class DetectTouchFollowPath : MonoBehaviour, IDragHandler, IEndDragHandle
         Vector2 dragEndPosition = eventData.position;
         touchPosition = new Vector3(eventData.position.x, eventData.position.y, 0);
         touchDetectionObject.transform.position = touchPosition;
+        
+        if(referenceCard != null)
+            referenceCard.transform.position = touchPosition;
     }
 
     public void OnEndDrag(PointerEventData eventData)

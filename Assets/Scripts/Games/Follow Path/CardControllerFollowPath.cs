@@ -11,17 +11,20 @@ public class CardControllerFollowPath : MonoBehaviour
 {
     GameAPI gameAPI;
     private BoardGeneratorFollowPath boardGenerator;
+    private DetectTouchFollowPath detectTouch;
     public bool isCorrect;
     public bool isAllCorrectSelected;
+    public bool isReferenceCard;
 
     private void OnEnable() 
     {
         boardGenerator = GameObject.Find("GamePanel").GetComponent<BoardGeneratorFollowPath>();
+        detectTouch = GameObject.Find("GamePanel").GetComponent<DetectTouchFollowPath>();
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if(other.tag == "Touch")
+        if(other.tag == "Touch" && !isReferenceCard)
         {
             boardGenerator.CheckPath();
             if(isAllCorrectSelected && isCorrect)
@@ -33,6 +36,14 @@ public class CardControllerFollowPath : MonoBehaviour
             {
                 Debug.Log(this.name);
             }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other) 
+    {
+        if(other.tag == "Touch" && isReferenceCard)
+        {
+            detectTouch.referenceCard = this.gameObject;
         }
     }
 }

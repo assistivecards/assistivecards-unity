@@ -190,7 +190,22 @@ public class BoardGeneratorFollowPath : MonoBehaviour
         if(uıController.canGenerate)
         {
             CreateCardPositionList();
-            for(int i = 0; i < 3; i++)
+
+            GameObject referenceCard = Instantiate(cardPrefab, stablePosition.transform.position, Quaternion.identity);
+            var correctCardTexture = prefetchedCardTextures[(levelCount * cardCount)];
+            correctCardTexture.wrapMode = TextureWrapMode.Clamp;
+            correctCardTexture.filterMode = FilterMode.Bilinear;
+            cardTextures.Add(correctCardTexture);
+            referenceCard.transform.SetParent(cardPositions[0].transform);
+            referenceCard.transform.name = prefetchedCardNames[(levelCount * cardCount)];
+            referenceCard.transform.GetChild(0).GetComponent<RawImage>().texture = correctCardTexture;
+            referenceCard.GetComponent<CardControllerFollowPath>().isCorrect = false;
+            referenceCard.GetComponent<CardControllerFollowPath>().isReferenceCard = true;
+            cards.Add(referenceCard);
+            referenceCard.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
+            referenceCard.transform.localPosition = Vector3.zero;
+
+            for(int i = 1; i < 3; i++)
             {
                 GameObject card = Instantiate(cardPrefab, cardPositions[i].transform.position, Quaternion.identity);
                 var cardTexture = prefetchedCardTextures[i + (levelCount * cardCount)];
@@ -207,10 +222,6 @@ public class BoardGeneratorFollowPath : MonoBehaviour
             }
 
             correctCard = Instantiate(cardPrefab, correctCardPosition.transform.position, Quaternion.identity);
-            var correctCardTexture = prefetchedCardTextures[(levelCount * cardCount)];
-            correctCardTexture.wrapMode = TextureWrapMode.Clamp;
-            correctCardTexture.filterMode = FilterMode.Bilinear;
-            cardTextures.Add(correctCardTexture);
             correctCard.transform.SetParent(correctCardPosition.transform);
             correctCard.transform.name = prefetchedCardNames[(levelCount * cardCount)];
             correctCard.transform.GetChild(0).GetComponent<RawImage>().texture = correctCardTexture;
@@ -270,7 +281,6 @@ public class BoardGeneratorFollowPath : MonoBehaviour
         else
         {
             correctCard.GetComponent<CardControllerFollowPath>().isAllCorrectSelected = true;
-            levelCount++;
         }
 
     }
@@ -323,6 +333,7 @@ public class BoardGeneratorFollowPath : MonoBehaviour
             uıController.GameUIDeactivate();
             uıController.LoadingScreenActivation();
             GeneratedBoardAsync();
+            levelCount++;
         }
     }
 
@@ -339,6 +350,7 @@ public class BoardGeneratorFollowPath : MonoBehaviour
         usedRandomOrderCards.Clear();
         cardTextures.Clear();
         cardPositions.Clear();
+        levelCount = 0;
         uıController.PackSelectionPanelActive();
     }
 

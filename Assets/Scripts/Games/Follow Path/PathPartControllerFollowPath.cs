@@ -64,6 +64,11 @@ public class PathPartControllerFollowPath : MonoBehaviour
         }
     }
 
+    private void OnDisable() 
+    {
+        ResetColor();
+    }
+
     public void ResetColor()
     {
         this.GetComponent<Text>().color = defaultColor;

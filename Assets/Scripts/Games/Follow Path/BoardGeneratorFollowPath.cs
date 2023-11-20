@@ -282,21 +282,6 @@ public class BoardGeneratorFollowPath : MonoBehaviour
         {
             correctCard.GetComponent<CardControllerFollowPath>().isAllCorrectSelected = true;
         }
-
-    }
-
-    public void CheckLevelEnding()
-    {
-
-    }
-
-    private void LevelEndAnimation()
-    {
-        foreach(var card in cards)
-        {
-            LeanTween.scale(card, Vector3.zero, 0.5f);
-        }
-        Invoke("ClearBoard", 0.5f);
     }
 
     private void PlaySuccess()
@@ -318,7 +303,6 @@ public class BoardGeneratorFollowPath : MonoBehaviour
         correctPathElements.Clear();
         generalPathElements.Clear();
         levelCount++;
-
         foreach(var path in alternativePaths)
         {
             path.SetActive(false);
@@ -327,6 +311,7 @@ public class BoardGeneratorFollowPath : MonoBehaviour
         {
             uıController.LevelChangeScreenActivate();
             levelCount = 0;
+            alternativePaths.Clear();
         }
         else
         {
@@ -343,6 +328,10 @@ public class BoardGeneratorFollowPath : MonoBehaviour
         {
             Destroy(card);
         }
+        foreach(var path in alternativePaths)
+        {
+            path.SetActive(false);
+        }
         cardLocalNames.Clear();
         cards.Clear();
         cardNames.Clear();
@@ -351,6 +340,7 @@ public class BoardGeneratorFollowPath : MonoBehaviour
         cardTextures.Clear();
         cardPositions.Clear();
         levelCount = 0;
+        alternativePaths.Clear();
         uıController.PackSelectionPanelActive();
     }
 
@@ -363,7 +353,6 @@ public class BoardGeneratorFollowPath : MonoBehaviour
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear;
             prefetchedCardTextures.Add(cardTexture);
-            Debug.Log(cardNames[randomValueList[i]]);
         }
         Invoke("GeneratedBoardAsync", 2f);
         uıController.Invoke("SetTutorialActive", 2.1f);

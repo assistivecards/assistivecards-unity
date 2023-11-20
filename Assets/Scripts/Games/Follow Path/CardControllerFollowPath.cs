@@ -37,6 +37,7 @@ public class CardControllerFollowPath : MonoBehaviour
             if(isAllCorrectSelected && isCorrect)
             {
                 boardGenerator.gameAPI.PlayConfettiParticle(this.transform.position);   
+                boardGenerator.gameAPI.PlaySFX("Success");
                 boardGenerator.Invoke("ClearBoard", 1.5f);
             }
             else

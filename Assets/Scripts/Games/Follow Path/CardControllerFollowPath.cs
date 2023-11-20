@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using UnityEngine.EventSystems;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using System.Linq;
 
 public class CardControllerFollowPath : MonoBehaviour
 {
+    GameAPI gameAPI;
     private BoardGeneratorFollowPath boardGenerator;
     public bool isCorrect;
     public bool isAllCorrectSelected;
@@ -20,7 +26,8 @@ public class CardControllerFollowPath : MonoBehaviour
             boardGenerator.CheckPath();
             if(isAllCorrectSelected && isCorrect)
             {
-                Debug.Log("Level End");
+                boardGenerator.gameAPI.PlayConfettiParticle(this.transform.position);   
+                boardGenerator.Invoke("ClearBoard", 1.5f);
             }
             else
             {

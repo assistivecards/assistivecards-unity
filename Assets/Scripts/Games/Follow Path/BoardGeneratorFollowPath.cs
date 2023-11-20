@@ -10,7 +10,7 @@ using PathCreation;
 
 public class BoardGeneratorFollowPath : MonoBehaviour
 {
-    GameAPI gameAPI;
+    public GameAPI gameAPI;
 
     [SerializeField] private UIControllerFollowPath uıController;
 
@@ -43,7 +43,8 @@ public class BoardGeneratorFollowPath : MonoBehaviour
     private GameObject cardPosition2;
     private GameObject cardPosition3;
     private List<GameObject> cardPositions = new List<GameObject>();
-    [SerializeField] private GameObject path;
+    private GameObject tempPath;
+    private GameObject path;
     [SerializeField] private GameObject alternativePath1;
     [SerializeField] private GameObject alternativePath2;
     [SerializeField] private GameObject alternativePath3;
@@ -60,6 +61,7 @@ public class BoardGeneratorFollowPath : MonoBehaviour
     public List<GameObject> correctPathElements = new List<GameObject>();
     public List<GameObject> selectedPathElements = new List<GameObject>();
     public List<GameObject> alternativePaths = new List<GameObject>();
+    private GameObject preUsedPath;
     public List<int> usedRandomOrderCards = new List<int>();
     public int cardCount;
     public int maxLevelCount;
@@ -145,8 +147,19 @@ public class BoardGeneratorFollowPath : MonoBehaviour
         alternativePaths.Add(alternativePath5);
         alternativePaths.Add(alternativePath6);
 
-        path = alternativePaths[Random.Range(0, alternativePaths.Count)];
-        path.SetActive(true);
+        tempPath = alternativePaths[Random.Range(0, alternativePaths.Count)];
+        if(preUsedPath != tempPath)
+        {
+            path = tempPath;
+            path.SetActive(true);
+            preUsedPath = path;
+        }
+        else
+        {
+            path = alternativePaths[Random.Range(0, alternativePaths.Count)];
+            path.SetActive(true);
+            preUsedPath = path;
+        }
 
         generalPath = path.transform.GetChild(0).gameObject;
         foreach(Transform child in generalPath.transform)
@@ -283,19 +296,23 @@ public class BoardGeneratorFollowPath : MonoBehaviour
 
     public void ClearBoard()
     {
-        matchedCardCount = 0;
         foreach(var card in cards)
         {
             Destroy(card);
         }
-        cardLocalNames.Clear();
         cards.Clear();
         cardNames.Clear();
-        randomValueList.Clear();
         usedRandomOrderCards.Clear();
         cardTextures.Clear();
         cardPositions.Clear();
+        correctPathElements.Clear();
+        generalPathElements.Clear();
         levelCount++;
+
+        foreach(var path in alternativePaths)
+        {
+            path.SetActive(false);
+        }
         if(levelCount >= maxLevelCount)
         {
             uıController.LevelChangeScreenActivate();
@@ -311,7 +328,6 @@ public class BoardGeneratorFollowPath : MonoBehaviour
 
     public void BackButtonClear()
     {
-        matchedCardCount = 0;
         foreach(var card in cards)
         {
             Destroy(card);

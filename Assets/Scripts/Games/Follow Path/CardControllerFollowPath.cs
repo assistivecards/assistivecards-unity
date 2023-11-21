@@ -26,7 +26,9 @@ public class CardControllerFollowPath : MonoBehaviour
     public void MoveToBeginning()
     {
         if(!isMatch)
+        {
             LeanTween.move(this.gameObject, boardGenerator.stablePosition.transform.position, 0.5f);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
@@ -40,12 +42,8 @@ public class CardControllerFollowPath : MonoBehaviour
                 boardGenerator.gameAPI.PlaySFX("Success");
                 boardGenerator.Invoke("ClearBoard", 1.5f);
             }
-            else
-            {
-                Debug.Log(this.name);
-            }
         }
-        else if(isReferenceCard && other.tag == "Correct")
+        if(isReferenceCard && other.tag == "Correct")
         {
             isMatch = true;
             LeanTween.move(this.gameObject, other.transform.position, 0.2f);
@@ -56,7 +54,10 @@ public class CardControllerFollowPath : MonoBehaviour
     {
         if(other.tag == "Touch" && isReferenceCard)
         {
-            detectTouch.referenceCard = this.gameObject;
+            if(!isMatch) 
+            { 
+                detectTouch.referenceCard = this.gameObject;
+            }
         }
     }
 }

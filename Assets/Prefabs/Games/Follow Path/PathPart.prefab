@@ -114,7 +114,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.2616196, y: -7.8148866}
+  m_Offset: {x: -1.2616196, y: -7.814864}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -125,7 +125,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 30, y: 30}
+  m_Size: {x: 30, y: 17.737597}
   m_EdgeRadius: 0
 --- !u!222 &8262120735776657221
 CanvasRenderer:
@@ -181,7 +181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc4561864290e465b82fa4ebc25c74e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boardGenerator: {fileID: 0}
   correctColor: {r: 0.09219491, g: 0.745283, b: 0.08085619, a: 1}
   defaultColor: {r: 0.24313726, g: 0.27058825, b: 0.35686275, a: 1}
   isCorrectPathElement: 0

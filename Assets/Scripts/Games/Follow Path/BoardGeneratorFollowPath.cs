@@ -57,6 +57,7 @@ public class BoardGeneratorFollowPath : MonoBehaviour
     private GameObject correctCardPosition;
 
     [Header ("Game Values")]
+    public bool correctPathSelected = true;
     public List<GameObject> generalPathElements = new List<GameObject>();
     public List<GameObject> correctPathElements = new List<GameObject>();
     public List<GameObject> selectedPathElements = new List<GameObject>();
@@ -205,7 +206,7 @@ public class BoardGeneratorFollowPath : MonoBehaviour
             referenceCard.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
             referenceCard.transform.localPosition = Vector3.zero;
             referenceCard.GetComponent<Collider2D>().isTrigger = true;
-            referenceCard.gameObject.tag = "Correct";
+            referenceCard.gameObject.tag = "Correct Card";
 
             for(int i = 1; i < 3; i++)
             {
@@ -221,6 +222,7 @@ public class BoardGeneratorFollowPath : MonoBehaviour
                 cards.Add(card);
                 card.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
                 card.transform.localPosition = Vector3.zero;
+                card.GetComponent<Rigidbody2D>().simulated = false;
             }
 
             correctCard = Instantiate(cardPrefab, correctCardPosition.transform.position, Quaternion.identity);
@@ -231,6 +233,7 @@ public class BoardGeneratorFollowPath : MonoBehaviour
             cards.Add(correctCard);
             correctCard.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
             correctCard.transform.localPosition = Vector3.zero;
+            correctCard.GetComponent<Rigidbody2D>().simulated = false;
         }
         GameUIActivate();
     }
@@ -260,9 +263,8 @@ public class BoardGeneratorFollowPath : MonoBehaviour
         Invoke("ClearBoard", 0.3f);
     }
 
-    public void CheckPath()
+    public void CheckPath(GameObject card)
     {
-        bool correctPathSelected = true;
         foreach(var element in correctPathElements)
         {
             if(!selectedPathElements.Contains(element))
@@ -280,9 +282,9 @@ public class BoardGeneratorFollowPath : MonoBehaviour
             }
             selectedPathElements.Clear();
         }
-        else
+        else if(correctPathSelected)
         {
-            correctCard.GetComponent<CardControllerFollowPath>().isAllCorrectSelected = true;
+            card.GetComponent<CardControllerFollowPath>().isAllCorrectSelected = true;
         }
     }
 

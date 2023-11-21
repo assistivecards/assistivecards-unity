@@ -35,8 +35,8 @@ public class CardControllerFollowPath : MonoBehaviour
     {
         if(isReferenceCard && other.tag == "Correct")
         {
-            boardGenerator.CheckPath();
-            if(isAllCorrectSelected && isCorrect)
+            boardGenerator.CheckPath(this.gameObject);
+            if(isAllCorrectSelected)
             {
                 isMatch = true;
                 LeanTween.move(this.gameObject, other.transform.position, 0.2f);

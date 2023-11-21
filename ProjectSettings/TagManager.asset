@@ -31,6 +31,7 @@ TagManager:
   - card
   - CorrectPath
   - Correct
+  - Correct Card
   layers:
   - Default
   - TransparentFX

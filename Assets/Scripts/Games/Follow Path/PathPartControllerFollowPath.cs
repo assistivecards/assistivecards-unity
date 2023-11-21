@@ -21,7 +21,7 @@ public class PathPartControllerFollowPath : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if(other.tag == "Correct")
+        if(other.tag == "Correct Card")
         {
             if(isGeneralPathElement)
             {

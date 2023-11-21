@@ -33,20 +33,17 @@ public class CardControllerFollowPath : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if(other.tag == "Touch" && !isReferenceCard)
+        if(isReferenceCard && other.tag == "Correct")
         {
             boardGenerator.CheckPath();
             if(isAllCorrectSelected && isCorrect)
             {
+                isMatch = true;
+                LeanTween.move(this.gameObject, other.transform.position, 0.2f);
                 boardGenerator.gameAPI.PlayConfettiParticle(this.transform.position);   
                 boardGenerator.gameAPI.PlaySFX("Success");
                 boardGenerator.Invoke("ClearBoard", 1.5f);
             }
-        }
-        if(isReferenceCard && other.tag == "Correct")
-        {
-            isMatch = true;
-            LeanTween.move(this.gameObject, other.transform.position, 0.2f);
         }
     }
 

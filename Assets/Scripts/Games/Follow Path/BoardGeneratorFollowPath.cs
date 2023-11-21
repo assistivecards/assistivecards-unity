@@ -204,6 +204,8 @@ public class BoardGeneratorFollowPath : MonoBehaviour
             cards.Add(referenceCard);
             referenceCard.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
             referenceCard.transform.localPosition = Vector3.zero;
+            referenceCard.GetComponent<Collider2D>().isTrigger = true;
+            referenceCard.gameObject.tag = "Correct";
 
             for(int i = 1; i < 3; i++)
             {

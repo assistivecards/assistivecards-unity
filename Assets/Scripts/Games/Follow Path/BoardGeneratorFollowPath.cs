@@ -207,6 +207,7 @@ public class BoardGeneratorFollowPath : MonoBehaviour
             referenceCard.transform.localPosition = Vector3.zero;
             referenceCard.GetComponent<Collider2D>().isTrigger = true;
             referenceCard.gameObject.tag = "Correct Card";
+            tutorial.GetComponent<TutorialFollowPath>().point1 = referenceCard.transform;
 
             for(int i = 1; i < 3; i++)
             {
@@ -234,6 +235,7 @@ public class BoardGeneratorFollowPath : MonoBehaviour
             correctCard.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
             correctCard.transform.localPosition = Vector3.zero;
             correctCard.GetComponent<Rigidbody2D>().simulated = false;
+            tutorial.GetComponent<TutorialFollowPath>().point2 = correctCardPosition.transform;
         }
         GameUIActivate();
     }

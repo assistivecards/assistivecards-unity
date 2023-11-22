@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 1412240691361384970}
   - component: {fileID: 6094959915370636914}
   - component: {fileID: 1428931798591302256}
+  - component: {fileID: 8057994976506082747}
   m_Layer: 5
   m_Name: PathDetectionCollider
   m_TagString: Border
@@ -279,6 +280,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8057994976506082747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2409877823984701795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 922df309d8fd5454c877051603f0cce2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3953419126043893981
 GameObject:
   m_ObjectHideFlags: 0

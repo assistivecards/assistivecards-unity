@@ -10,8 +10,8 @@ using System.Linq;
 public class CardControllerFollowPath : MonoBehaviour
 {
     GameAPI gameAPI;
-    private BoardGeneratorFollowPath boardGenerator;
-    private DetectTouchFollowPath detectTouch;
+    public BoardGeneratorFollowPath boardGenerator;
+    public DetectTouchFollowPath detectTouch;
     public bool isCorrect;
     public bool isAllCorrectSelected;
     public bool isReferenceCard;
@@ -28,6 +28,7 @@ public class CardControllerFollowPath : MonoBehaviour
         if(!isMatch)
         {
             LeanTween.move(this.gameObject, boardGenerator.stablePosition.transform.position, 0.5f);
+            boardGenerator.gameAPI.RemoveSessionExp();
         }
     }
 
@@ -43,6 +44,7 @@ public class CardControllerFollowPath : MonoBehaviour
                 boardGenerator.gameAPI.PlayConfettiParticle(this.transform.position);   
                 boardGenerator.gameAPI.PlaySFX("Success");
                 boardGenerator.Invoke("ClearBoard", 1.5f);
+                boardGenerator.gameAPI.AddSessionExp();
             }
         }
     }

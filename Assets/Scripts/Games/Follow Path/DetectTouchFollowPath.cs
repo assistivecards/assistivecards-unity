@@ -39,7 +39,6 @@ public class DetectTouchFollowPath : MonoBehaviour, IDragHandler, IEndDragHandle
     {
         isDragging = false;
         touchDetectionObject.SetActive(false);
-        boardGenerator.Invoke("CheckPath", 0.25f);
         if(referenceCard != null)
         {
             referenceCard.GetComponent<CardControllerFollowPath>().Invoke("MoveToBeginning", 0.75f);
@@ -49,7 +48,6 @@ public class DetectTouchFollowPath : MonoBehaviour, IDragHandler, IEndDragHandle
     public void OnPointerUp(PointerEventData eventData)
     {
         touchDetectionObject.SetActive(false);
-        boardGenerator.Invoke("CheckPath", 0.25f);
         if(referenceCard != null)
         {
             referenceCard.GetComponent<CardControllerFollowPath>().Invoke("MoveToBeginning", 0.75f);

@@ -49,6 +49,7 @@ public class BoardGeneratorSpellCards : MonoBehaviour
     [SerializeField] private GameObject tutorial;
 
     [Header ("Game Elements")]
+    private GameObject selectedCard;
     [SerializeField] private GameObject dashedSquarePosition;
     [SerializeField] private GameObject letterPosition;
     [SerializeField] private GameObject cardPosition;
@@ -171,18 +172,16 @@ public class BoardGeneratorSpellCards : MonoBehaviour
     {
         // if(uıController.canGenerate)
         // {
-            // for(int i = 0; i < selectedWord.Length; i++)
-            // {
-            //     GameObject card = Instantiate(cardPrefab, letterPosition.transform.position, Quaternion.identity);
-            //     card.transform.SetParent(letterPosition.transform);
-            //     var cardTexture = prefetchedCardTextures[levelCount];
-            //     card.transform.name = prefetchedCardNames[levelCount];
-            //     card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-            //     card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-            //     cards.Add(card);
-            //     LeanTween.scale(card.gameObject, Vector3.one * 0.5f, 0f);
-            //     CreateLetterObjects();
-            // }
+            selectedCard = Instantiate(cardPrefab, cardPosition.transform.position, Quaternion.identity);
+            selectedCard.transform.SetParent(cardPosition.transform);
+            var cardTexture = prefetchedCardTextures[levelCount];
+            selectedCard.transform.name = prefetchedCardNames[levelCount];
+            selectedCard.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+            selectedCard.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+            LeanTween.scale(selectedCard.gameObject, Vector3.one * 0.5f, 0f);
+
+            selectedWord = selectedCard.name;
+            //CreateLetterObjects();
         //}
     }
 

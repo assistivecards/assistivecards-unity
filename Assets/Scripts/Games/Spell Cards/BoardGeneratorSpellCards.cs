@@ -51,6 +51,7 @@ public class BoardGeneratorSpellCards : MonoBehaviour
     [Header ("Game Elements")]
     [SerializeField] private GameObject dashedSquarePosition;
     [SerializeField] private GameObject letterPosition;
+    [SerializeField] private GameObject cardPosition;
 
     [Header ("Colors")]
     public Color[] colors;
@@ -170,18 +171,18 @@ public class BoardGeneratorSpellCards : MonoBehaviour
     {
         // if(uıController.canGenerate)
         // {
-            for(int i = 0; i < selectedWord.Length; i++)
-            {
-                GameObject card = Instantiate(cardPrefab, letterPosition.transform.position, Quaternion.identity);
-                card.transform.SetParent(letterPosition.transform);
-                var cardTexture = prefetchedCardTextures[levelCount];
-                card.transform.name = prefetchedCardNames[levelCount];
-                card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-                card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-                cards.Add(card);
-                LeanTween.scale(card.gameObject, Vector3.one * 0.5f, 0f);
-                CreateLetterObjects();
-            }
+            // for(int i = 0; i < selectedWord.Length; i++)
+            // {
+            //     GameObject card = Instantiate(cardPrefab, letterPosition.transform.position, Quaternion.identity);
+            //     card.transform.SetParent(letterPosition.transform);
+            //     var cardTexture = prefetchedCardTextures[levelCount];
+            //     card.transform.name = prefetchedCardNames[levelCount];
+            //     card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+            //     card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+            //     cards.Add(card);
+            //     LeanTween.scale(card.gameObject, Vector3.one * 0.5f, 0f);
+            //     CreateLetterObjects();
+            // }
         //}
     }
 

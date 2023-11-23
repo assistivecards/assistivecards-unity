@@ -139,29 +139,35 @@ public class BoardGeneratorSpellCards : MonoBehaviour
             selectedCard.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             selectedCard.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
             LeanTween.scale(selectedCard.gameObject, Vector3.one * 0.5f, 0.1f);
-
             selectedWord = selectedCard.name;
+            CreateLetterObjects();
+            CreateDashedSquares();
 
-            for(int i = 0; i < selectedWord.Length; i++)
-            {
-                string letter = "" + selectedWord[i];
-                GameObject letterCard = Instantiate(letterPrefab, letterPosition.transform.position, Quaternion.identity);
-                letterCard.transform.SetParent(letterPosition.transform);
-                letterCard.transform.name = letter.ToUpper();
-                letterCard.transform.GetChild(0).GetComponent<Text>().text = letter.ToUpper();
-                letterCard.transform.GetChild(0).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
-                LeanTween.scale(letterCard.gameObject, Vector3.one, 0.1f);
-            }
-            //CreateLetterObjects();
         //}
     }
 
-    private async void CreateLetterObjects()
+    private void CreateLetterObjects()
     {
-        // for(int i = 0; i < selectedWord.Length; i++)
-        // {
-        //     Instantiate(letterPrefab, dashedSquarePosition.transform.position, Quaternion.identity);
-        // }
+        for(int i = 0; i < selectedWord.Length; i++)
+        {
+            string letter = "" + selectedWord[i];
+            GameObject letterCard = Instantiate(letterPrefab, letterPosition.transform.position, Quaternion.identity);
+            letterCard.transform.SetParent(letterPosition.transform);
+            letterCard.transform.name = letter.ToUpper();
+            letterCard.transform.GetChild(0).GetComponent<Text>().text = letter.ToUpper();
+            letterCard.transform.GetChild(0).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
+            LeanTween.scale(letterCard.gameObject, Vector3.one, 0.1f);
+        }
+    }
+
+    private void CreateDashedSquares()
+    {
+        for(int i = 0; i < selectedWord.Length; i++)
+        {
+            GameObject letterCard = Instantiate(dashedSquare, dashedSquarePosition.transform.position, Quaternion.identity);
+            letterCard.transform.SetParent(dashedSquarePosition.transform);
+            LeanTween.scale(letterCard.gameObject, Vector3.one, 0.1f);
+        }
     }
 
     private void CreateNewLevel()

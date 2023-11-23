@@ -44,20 +44,19 @@ public class BoardGeneratorSpellCards : MonoBehaviour
 
     [Header ("Prefabs")]
     [SerializeField] private GameObject cardPrefab;
+    [SerializeField] private GameObject letterPrefab;
+    [SerializeField] private GameObject dashedSquare;
     [SerializeField] private GameObject tutorial;
 
-    [Header ("Game UI")]
-    public GameObject card;
-    public GameObject cardPosition;
-    public GameObject button1;
-    public GameObject button2;
-    public GameObject button3;
-    private List<GameObject> buttons = new List<GameObject>();
+    [Header ("Game Elements")]
+    [SerializeField] private GameObject dashedSquarePosition;
+    [SerializeField] private GameObject letterPosition;
 
     [Header ("Colors")]
     public Color[] colors;
 
     [Header ("Game Values")]
+    public string selectedWord;
     public int cardCount;
     public int maxLevelCount;
     public int levelCount;
@@ -167,172 +166,31 @@ public class BoardGeneratorSpellCards : MonoBehaviour
         }
     }
 
-    private void CreateButtonList()
-    {
-        buttons.Add(button1);
-        buttons.Add(button2);
-        buttons.Add(button3);
-    }
-
     public async void GeneratedBoardAsync()
     {
         // if(uıController.canGenerate)
         // {
-            CreateButtonList();
-            card = Instantiate(cardPrefab, cardPosition.transform.position, Quaternion.identity);
-            card.transform.SetParent(cardPosition.transform);
-            var cardTexture = prefetchedCardTextures[levelCount];
-            card.transform.name = prefetchedCardNames[levelCount];
-            card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-            card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-            cards.Add(card);
-
-            LeanTween.scale(card.gameObject, Vector3.one * 0.5f, 0f);
-            FillButton();
+            for(int i = 0; i < selectedWord.Length; i++)
+            {
+                GameObject card = Instantiate(cardPrefab, letterPosition.transform.position, Quaternion.identity);
+                card.transform.SetParent(letterPosition.transform);
+                var cardTexture = prefetchedCardTextures[levelCount];
+                card.transform.name = prefetchedCardNames[levelCount];
+                card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+                card.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                cards.Add(card);
+                LeanTween.scale(card.gameObject, Vector3.one * 0.5f, 0f);
+                CreateLetterObjects();
+            }
         //}
     }
 
-    private async void FillButton()
+    private async void CreateLetterObjects()
     {
-        random = Random.Range(0, 3);
-
-        if(letterCardsNames.Contains(firstLetter))
+        for(int i = 0; i < selectedWord.Length; i++)
         {
-            for(int i = 0; i < letterCardsNames.Count; i++)
-            {
-                if(firstLetter == letterCardsNames[i].Substring(0, 1))
-                {
-                    CheckRandomForLetters();
-                    buttons[random].transform.GetChild(0).gameObject.SetActive(true);
-                    buttons[random].transform.GetChild(1).gameObject.SetActive(false);
-                    
-                    var correctLetterTexture = letterCardTextures[i];
-                    correctLetterTexture.wrapMode = TextureWrapMode.Clamp;
-                    correctLetterTexture.filterMode = FilterMode.Bilinear;
-
-                    buttons[random].transform.GetChild(0).transform.GetComponent<RawImage>().texture = correctLetterTexture;   
-                    buttons[random].name = "Correct";
-
-                }
-            }
+            Instantiate(letterPrefab, dashedSquarePosition.transform.position, Quaternion.identity);
         }
-        else if(!letterCardsNames.Contains(firstLetter))
-        {
-            buttons[random].transform.GetChild(0).gameObject.SetActive(false);
-            buttons[random].transform.GetChild(1).gameObject.SetActive(true);
-            buttons[random].transform.GetChild(1).GetComponent<TMP_Text>().text = firstLetter.ToLower();
-            buttons[random].transform.GetChild(1).GetComponent<TMP_Text>().color = colors[Random.Range(0, colors.Length)];
-            buttons[random].name = "Correct";
-        }
-
-        for(int i = 0; i < 3; i++)
-        {
-            CheckRandomForLetters();
-            if(buttons[i].name != "Correct")
-            {
-                if(letterCardsNames.Contains(firstLetter))
-                {
-                    CheckRandomForLetters();
-                    buttons[i].transform.GetChild(0).gameObject.SetActive(true);
-                    buttons[i].transform.GetChild(1).gameObject.SetActive(false);
-
-                    if(letterCardsNames[randomLetterValueList[i]] != firstLetter)
-                    {
-                        var letterTexture = letterCardTextures[randomLetterValueList[i]];
-                        letterTexture.wrapMode = TextureWrapMode.Clamp;
-                        letterTexture.filterMode = FilterMode.Bilinear;
-
-                        buttons[i].transform.GetChild(0).transform.GetComponent<RawImage>().texture = letterTexture;
-                    }
-                    else
-                    {
-                        CheckRandomForLetters();
-                        var letterTexture = letterCardTextures[randomLetterValueList[i + 1]];
-                        letterTexture.wrapMode = TextureWrapMode.Clamp;
-                        letterTexture.filterMode = FilterMode.Bilinear;
-
-                        buttons[i].transform.GetChild(0).transform.GetComponent<RawImage>().texture = letterTexture;
-                    }
-                }
-                else if(!letterCardsNames.Contains(firstLetter))
-                {
-                    if(cardNameLenght <= 3)
-                    {                    
-                        CheckRandomForLetters();
-                        buttons[i].transform.GetChild(0).gameObject.SetActive(true);
-                        buttons[i].transform.GetChild(1).gameObject.SetActive(false);
-
-                        if(letterCardsNames[randomLetterValueList[i]] != firstLetter)
-                        {
-                            var letterTexture = letterCardTextures[randomLetterValueList[i]];
-                            letterTexture.wrapMode = TextureWrapMode.Clamp;
-                            letterTexture.filterMode = FilterMode.Bilinear;
-
-                            buttons[i].transform.GetChild(0).transform.GetComponent<RawImage>().texture = letterTexture;
-                        }
-                        else
-                        {
-                            CheckRandomForLetters();
-                            var letterTexture = letterCardTextures[randomLetterValueList[i+1]];
-                            letterTexture.wrapMode = TextureWrapMode.Clamp;
-                            letterTexture.filterMode = FilterMode.Bilinear;
-
-                            buttons[i].transform.GetChild(0).transform.GetComponent<RawImage>().texture = letterTexture;
-                        }
-                    }
-                    else if(cardNameLenght > 3)
-                    {
-                        if(!letterCardsNames.Contains(card.name.Substring(i + 1, 1).ToLower()))
-                        {
-                            if(card.name.Substring(i + 1, 1) != firstLetter)
-                            {
-                                buttons[i].transform.GetChild(0).gameObject.SetActive(false);
-                                buttons[i].transform.GetChild(1).gameObject.SetActive(true);
-                                buttons[i].transform.GetChild(1).GetComponent<TMP_Text>().text = card.name.Substring(i + 1, 1).ToLower();
-                                buttons[i].transform.GetChild(1).GetComponent<TMP_Text>().color = colors[Random.Range(0, colors.Length)];
-                            }
-                            else 
-                            {
-                                buttons[i].transform.GetChild(0).gameObject.SetActive(false);
-                                buttons[i].transform.GetChild(1).gameObject.SetActive(true);
-                                buttons[i].transform.GetChild(1).GetComponent<TMP_Text>().text = card.name.Substring(i + 2, 1).ToLower();
-                                buttons[i].transform.GetChild(1).GetComponent<TMP_Text>().color = colors[Random.Range(0, colors.Length)];
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        Invoke("GameUIActivate", 0.25f);
-    }
-
-    public void GameUIActivate()
-    {
-        //uıController.GameUIActivate();
-        foreach(GameObject button in buttons)
-        {
-            LeanTween.scale(button, Vector3.one, 0.1f);
-        }
-        gameAPI.Speak(card.name);
-    }
-
-    public void LevelEnding()
-    {
-        LeanTween.moveLocal(card, new Vector3(0, -80, 0), 0.2f).setOnComplete(ScaleUpCard);
-        foreach(var button in buttons)
-        {
-            LeanTween.scale(button, Vector3.zero, 0.1f);
-        }
-    }
-
-    private void ScaleUpCard()
-    {
-        LeanTween.scale(card, Vector3.one, 0.5f).setOnComplete(ScaleDownCard);
-    }
-
-    private void ScaleDownCard()
-    {
-        LeanTween.scale(card, Vector3.zero, 0.5f);
     }
 
     private void CreateNewLevel()
@@ -348,20 +206,6 @@ public class BoardGeneratorSpellCards : MonoBehaviour
         cardNames.Clear();
         randomValueList.Clear();
         randomLetterValueList.Clear();
-
-        foreach(GameObject button in buttons)
-        {
-            LeanTween.scale(button, Vector3.zero, 0.1f);
-            button.name = "Button";
-
-            if (EventSystem.current.currentSelectedGameObject == button)
-            {
-                EventSystem.current.SetSelectedGameObject(null);
-            }
-        }
-        buttons.Clear();
-
-        Destroy(card);
     }
 
     private async Task PrefetchNextLevelsTexturesAsync()

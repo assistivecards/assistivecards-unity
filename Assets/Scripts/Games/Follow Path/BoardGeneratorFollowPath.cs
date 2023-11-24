@@ -39,6 +39,7 @@ public class BoardGeneratorFollowPath : MonoBehaviour
     [Header ("Game UI")]
     public List<Texture> cardTextures = new List<Texture>();
     public GameObject stablePosition;
+    public GameObject correctCard;
     private GameObject cardPosition1;
     private GameObject cardPosition2;
     private GameObject cardPosition3;
@@ -53,7 +54,6 @@ public class BoardGeneratorFollowPath : MonoBehaviour
     [SerializeField] private GameObject alternativePath6;
     private GameObject correctPath;
     private GameObject generalPath;
-    private GameObject correctCard;
     private GameObject correctCardPosition;
 
     [Header ("Game Values")]
@@ -291,6 +291,14 @@ public class BoardGeneratorFollowPath : MonoBehaviour
         }
     }
 
+    public void ResetSelectedPathColor()
+    {
+        foreach(var element in selectedPathElements)
+        {
+            element.GetComponent<PathPartControllerFollowPath>().ResetColor();
+        }
+    }
+
     private void PlaySuccess()
     {
         gameAPI.PlaySFX("Success");
@@ -339,6 +347,8 @@ public class BoardGeneratorFollowPath : MonoBehaviour
         {
             path.SetActive(false);
         }
+        correctPathElements.Clear();
+        generalPathElements.Clear();
         cardLocalNames.Clear();
         cards.Clear();
         cardNames.Clear();

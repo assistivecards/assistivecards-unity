@@ -29,6 +29,7 @@ public class CardControllerFollowPath : MonoBehaviour
         {
             LeanTween.move(this.gameObject, boardGenerator.stablePosition.transform.position, 0.5f);
             boardGenerator.gameAPI.RemoveSessionExp();
+            boardGenerator.ResetSelectedPathColor();
         }
     }
 

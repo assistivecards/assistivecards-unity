@@ -173,6 +173,7 @@ public class BoardGeneratorSpellCards : MonoBehaviour
             letterCard.transform.name = letter.ToUpper();
             letterCard.transform.GetChild(0).GetComponent<Text>().text = letter.ToUpper();
             letterCard.transform.GetChild(0).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
+            letterCard.GetComponent<CardControllerSpellCards>().cardLetter = letter.ToUpper();
             LeanTween.scale(letterCard.gameObject, Vector3.one, 0.1f);
         }
     }

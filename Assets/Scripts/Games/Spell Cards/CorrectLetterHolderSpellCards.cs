@@ -5,4 +5,5 @@ using UnityEngine;
 public class CorrectLetterHolderSpellCards : MonoBehaviour
 {
     public string correctLetterForSlot;
+    public bool isEmpty = true;
 }

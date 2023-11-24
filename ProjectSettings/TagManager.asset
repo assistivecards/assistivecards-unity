@@ -33,6 +33,7 @@ TagManager:
   - Correct
   - Correct Card
   - Path
+  - Dashedsquare
   layers:
   - Default
   - TransparentFX

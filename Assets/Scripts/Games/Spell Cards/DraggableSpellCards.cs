@@ -3,22 +3,15 @@ using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine;
 
-public class DraggableSpellCards : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
+public class DraggableSpellCards : MonoBehaviour, IDragHandler
 {
-    public bool touching;
+    public bool draggable;
 
     public void OnDrag(PointerEventData eventData)
     {
-        this.transform.position = eventData.position;
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        touching = true;
-    }
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        touching = false;
+        if(draggable)
+        {
+            this.transform.position = eventData.position;
+        }
     }
 }

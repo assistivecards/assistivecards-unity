@@ -11,7 +11,7 @@ public class BoardGeneratorSpellCards : MonoBehaviour
 {
     GameAPI gameAPI;
 
-    //[SerializeField] private SpellCardsUIController uıController;
+    [SerializeField] private UIControllerSpellCards uıController;
 
     [Header ("Cache Cards")]
     public string selectedLangCode;
@@ -89,8 +89,8 @@ public class BoardGeneratorSpellCards : MonoBehaviour
 
     public async void PrefetchCardTextures()
     {
-        // if(uıController.canGenerate)
-        // {
+        if(uıController.canGenerate)
+        {
             packSlug = packSelectionPanel.selectedPackElement.name;
             randomValueList.Clear();
             prefetchedCardTextures.Clear();
@@ -110,7 +110,7 @@ public class BoardGeneratorSpellCards : MonoBehaviour
                 CheckRandom();
             }
             PrefetchNextLevelsTexturesAsync();
-        //}
+        }
     }
 
 
@@ -135,8 +135,16 @@ public class BoardGeneratorSpellCards : MonoBehaviour
 
         if(selectedWordRandomValues.IndexOf(tempRandomValue) < 0)
         {
-            randomValue = tempRandomValue;
-            selectedWordRandomValues.Add(randomValue);
+
+            if(tempRandomValue == 0 && selectedWordRandomValues.Count() <= 0)
+            {
+                CreateRandomForSelectedWord();
+            }
+            else
+            {
+                randomValue = tempRandomValue;
+                selectedWordRandomValues.Add(randomValue);
+            }
         }
         else
         {
@@ -146,20 +154,17 @@ public class BoardGeneratorSpellCards : MonoBehaviour
 
     public async void GeneratedBoardAsync()
     {
-        // if(uıController.canGenerate)
-        // {
-            selectedCard = Instantiate(cardPrefab, cardPosition.transform.position, Quaternion.identity);
-            selectedCard.transform.SetParent(cardPosition.transform);
-            var cardTexture = prefetchedCardTextures[levelCount];
-            selectedCard.transform.name = prefetchedCardNames[levelCount];
-            selectedCard.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
-            selectedCard.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-            LeanTween.scale(selectedCard.gameObject, Vector3.one * 0.5f, 0.1f);
-            selectedWord = selectedCard.name;
-            CreateLetterObjects();
-            CreateDashedSquares();
-
-        //}
+        selectedCard = Instantiate(cardPrefab, cardPosition.transform.position, Quaternion.identity);
+        selectedCard.transform.SetParent(cardPosition.transform);
+        var cardTexture = prefetchedCardTextures[levelCount];
+        selectedCard.transform.name = prefetchedCardNames[levelCount];
+        selectedCard.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+        selectedCard.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+        LeanTween.scale(selectedCard.gameObject, Vector3.one * 0.5f, 0.1f);
+        selectedWord = selectedCard.name;
+        CreateLetterObjects();
+        CreateDashedSquares();
+        uıController.Invoke("GameUIActivate", 0.5f);
     }
 
     private void CreateLetterObjects()
@@ -216,6 +221,6 @@ public class BoardGeneratorSpellCards : MonoBehaviour
             Debug.Log(cardNames[randomValueList[i]]);
         }
         Invoke("GeneratedBoardAsync", 2f);
-        //uıController.Invoke("SetTutorialActive", 2.1f);
+        uıController.Invoke("SetTutorialActive", 2.1f);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIControllerFollowPath : MonoBehaviour
 {
-   GameAPI gameAPI;
+    GameAPI gameAPI;
 
     [Header ("Scripts")]
     [SerializeField] private BoardGeneratorFollowPath boardGenerator;

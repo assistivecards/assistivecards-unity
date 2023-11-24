@@ -8,6 +8,7 @@ public class PathPartControllerFollowPath : MonoBehaviour
     private BoardGeneratorFollowPath boardGenerator;
     [SerializeField] private Color correctColor;
     [SerializeField] private Color defaultColor;
+    private bool isAllGeneralListSelected;
     public bool isCorrectPathElement = false;
     public bool isGeneralPathElement = false;
     public bool selected = false;
@@ -57,12 +58,31 @@ public class PathPartControllerFollowPath : MonoBehaviour
                     boardGenerator.selectedPathElements.Add(this.gameObject);
                 }
             }
-            else if(!isCorrectPathElement 
+            else if(!isCorrectPathElement && !isGeneralPathElement
             && boardGenerator.selectedPathElements.Contains(boardGenerator.generalPathElements[boardGenerator.generalPathElements.Count - 1]))
             {
-                selected = true;
-                this.GetComponent<Text>().color = correctColor;
-                boardGenerator.selectedPathElements.Add(this.gameObject);
+                CheckIfAllGerealSelected();
+                if(isAllGeneralListSelected)
+                {
+                    selected = true;
+                    this.GetComponent<Text>().color = correctColor;
+                    boardGenerator.selectedPathElements.Add(this.gameObject);
+                }
+            }
+        }
+    }
+
+    private void CheckIfAllGerealSelected()
+    {
+        for(int i = 0 ; i < boardGenerator.generalPathElements.Count; i++)
+        {
+            if(boardGenerator.selectedPathElements.Contains(boardGenerator.generalPathElements[i]))
+            {
+                isAllGeneralListSelected = true;
+            } 
+            else
+            {
+                isAllGeneralListSelected = false;
             }
         }
     }

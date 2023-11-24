@@ -164,9 +164,11 @@ public class BoardGeneratorSpellCards : MonoBehaviour
     {
         for(int i = 0; i < selectedWord.Length; i++)
         {
-            GameObject letterCard = Instantiate(dashedSquare, dashedSquarePosition.transform.position, Quaternion.identity);
-            letterCard.transform.SetParent(dashedSquarePosition.transform);
-            LeanTween.scale(letterCard.gameObject, Vector3.one, 0.1f);
+            string letter = "" + selectedWord[i];
+            GameObject letterCardSlot = Instantiate(dashedSquare, dashedSquarePosition.transform.position, Quaternion.identity);
+            letterCardSlot.transform.SetParent(dashedSquarePosition.transform);
+            letterCardSlot.GetComponent<CorrectLetterHolderSpellCards>().correctLetterForSlot = letter.ToUpper();
+            LeanTween.scale(letterCardSlot.gameObject, Vector3.one, 0.1f);
         }
     }
 

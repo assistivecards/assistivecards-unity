@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3395615947317002357}
   - component: {fileID: 3395615947317002356}
   - component: {fileID: 4936426039536054918}
-  - component: {fileID: 8650150202479357468}
+  - component: {fileID: 4098796452440333238}
   m_Layer: 5
   m_Name: Dashedsquare
   m_TagString: Untagged
@@ -85,7 +85,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3395615947317002354}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -121,9 +121,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100.433105, y: 99.9592}
+  m_Size: {x: 125, y: 125}
   m_EdgeRadius: 0
---- !u!114 &8650150202479357468
+--- !u!114 &4098796452440333238
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,10 +132,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3395615947317002354}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd08b6bbee38347ffb82a59d755c77ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 34fdeab5b0c6148c98377c30eab07ab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  letter: 
+  correctLetterForSlot: 
 --- !u!1 &3395615947477011774
 GameObject:
   m_ObjectHideFlags: 0

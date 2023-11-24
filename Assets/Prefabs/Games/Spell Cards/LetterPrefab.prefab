@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3395615947317002357}
   - component: {fileID: 3395615947317002356}
   - component: {fileID: 4936426039536054918}
-  - component: {fileID: 1108200277395884016}
+  - component: {fileID: 1068137767642469990}
   m_Layer: 5
   m_Name: LetterPrefab
   m_TagString: Card
@@ -123,7 +123,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 90.14258, y: 86.58081}
   m_EdgeRadius: 0
---- !u!114 &1108200277395884016
+--- !u!114 &1068137767642469990
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,17 +132,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3395615947317002354}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7949d4269b7c34b88b41c13992746839, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e61bb4d6e243436db8b5b9ab9948232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boardGenerator: {fileID: 0}
-  detectTouch: {fileID: 0}
-  cardLetter: 
-  oneTime: 1
-  row: 0
-  column: 0
-  index: 0
-  filled: 0
+  touching: 0
 --- !u!1 &3395615947477011774
 GameObject:
   m_ObjectHideFlags: 0

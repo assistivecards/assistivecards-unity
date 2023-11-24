@@ -46,6 +46,7 @@ public class BoardGeneratorSpellCards : MonoBehaviour
     public Color[] colors;
 
     [Header ("Game Elements")]
+    public List<int> selectedWordRandomValues = new List<int>();
     private GameObject selectedCard;
     [SerializeField] private GameObject dashedSquarePosition;
     [SerializeField] private GameObject letterPosition;
@@ -128,6 +129,21 @@ public class BoardGeneratorSpellCards : MonoBehaviour
         }
     }
 
+    private void CreateRandomForSelectedWord()
+    {
+        tempRandomValue = Random.Range(0, selectedWord.Length);
+
+        if(selectedWordRandomValues.IndexOf(tempRandomValue) < 0)
+        {
+            randomValue = tempRandomValue;
+            selectedWordRandomValues.Add(randomValue);
+        }
+        else
+        {
+            CreateRandomForSelectedWord();
+        }
+    }
+
     public async void GeneratedBoardAsync()
     {
         // if(uıController.canGenerate)
@@ -150,7 +166,8 @@ public class BoardGeneratorSpellCards : MonoBehaviour
     {
         for(int i = 0; i < selectedWord.Length; i++)
         {
-            string letter = "" + selectedWord[i];
+            CreateRandomForSelectedWord();
+            string letter = "" + selectedWord[selectedWordRandomValues[i]];
             GameObject letterCard = Instantiate(letterPrefab, letterPosition.transform.position, Quaternion.identity);
             letterCard.transform.SetParent(letterPosition.transform);
             letterCard.transform.name = letter.ToUpper();

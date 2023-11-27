@@ -51,10 +51,11 @@ public class BoardGeneratorSpellCards : MonoBehaviour
     [SerializeField] private GameObject dashedSquarePosition;
     [SerializeField] private GameObject letterPosition;
     [SerializeField] private GameObject cardPosition;
-    private List<GameObject> dashedSquares = new List<GameObject>(); 
+    public List<GameObject> dashedSquares = new List<GameObject>(); 
     private List<GameObject> letterCards = new List<GameObject>(); 
 
     [Header ("Game Values")]
+    private bool levelEnded;
     private int matchCount;
     public string selectedWord;
     public int cardCount;
@@ -205,17 +206,15 @@ public class BoardGeneratorSpellCards : MonoBehaviour
         {
             if(correctLetterHolder.GetComponent<CorrectLetterHolderSpellCards>().isEmpty == false)
             {
-                matchCount++;
+                levelEnded = true;
             }
             else
             {
-                matchCount = 0;
+                levelEnded = false;
             }
         }
-            Debug.Log("LEVEL COUNT: " + levelCount);
-        if(matchCount == dashedSquares.Count())
+        if(levelEnded)
         {
-            Debug.Log("LEVEL END");
             if(levelCount == maxLevelCount)
             {
                 ClearLevel();
@@ -226,6 +225,7 @@ public class BoardGeneratorSpellCards : MonoBehaviour
             {
                 CreateNewLevel();
             }
+            gameAPI.AddSessionExp();
         }
     }
 

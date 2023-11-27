@@ -31,7 +31,12 @@ public class CardControllerSpellCards : MonoBehaviour
 
     private void MoveToBeginning()
     {
-        LeanTween.moveLocal(this.gameObject, startPosition, 0.5f);
+        if(!matched)
+        {
+            LeanTween.moveLocal(this.gameObject, startPosition, 0.5f);
+            draggable.isDraggable = true;
+            gameAPI.RemoveSessionExp();
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other) 

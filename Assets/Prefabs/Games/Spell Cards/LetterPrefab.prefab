@@ -164,7 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e61bb4d6e243436db8b5b9ab9948232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  draggable: 1
+  isDraggable: 1
+  isPointerUp: 0
 --- !u!114 &6795854675299201576
 MonoBehaviour:
   m_ObjectHideFlags: 0

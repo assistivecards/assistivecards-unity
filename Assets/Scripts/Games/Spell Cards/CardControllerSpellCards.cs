@@ -5,25 +5,55 @@ using UnityEngine;
 
 public class CardControllerSpellCards : MonoBehaviour
 {
-    private BoardGeneratorSpellCards boardGenerator;
+    GameAPI gameAPI;
     public string cardLetter;
+    private DraggableSpellCards draggable;
+    private BoardGeneratorSpellCards boardGenerator;
+    public Vector3 startPosition;
+    private bool matched;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     private void OnEnable() 
     {
         boardGenerator = GameObject.Find("GamePanel").GetComponent<BoardGeneratorSpellCards>();
+        Invoke("GetStartPosition", 0.5f);
+        draggable = GetComponent<DraggableSpellCards>();
     }
 
-    private void OnTriggerEnter2D(Collider2D other) 
+    private void GetStartPosition()
     {
-        if(other.tag == "Dashedsquare" && other.GetComponent<CorrectLetterHolderSpellCards>().correctLetterForSlot == cardLetter &&
-        other.GetComponent<CorrectLetterHolderSpellCards>().isEmpty == true)
+        startPosition = transform.localPosition;
+    }
+
+    private void MoveToBeginning()
+    {
+        LeanTween.moveLocal(this.gameObject, startPosition, 0.5f);
+    }
+
+    private void OnTriggerStay2D(Collider2D other) 
+    {
+        if(other.tag == "Dashedsquare" && draggable.isPointerUp)
         {
-            other.GetComponent<CorrectLetterHolderSpellCards>().isEmpty = false;
-            LeanTween.rotate(this.gameObject, Vector3.zero, 0.25f);
-            LeanTween.move(this.gameObject, other.transform.position, 0.25f);
-            this.GetComponent<Collider2D>().enabled = false;
-            this.GetComponent<DraggableSpellCards>().draggable = false;
-            boardGenerator.CheckLevelEnd();
+            if(other.GetComponent<CorrectLetterHolderSpellCards>().correctLetterForSlot == cardLetter &&
+            other.GetComponent<CorrectLetterHolderSpellCards>().isEmpty == true)
+            {
+                matched = true;
+                other.GetComponent<CorrectLetterHolderSpellCards>().isEmpty = false;
+                LeanTween.rotate(this.gameObject, Vector3.zero, 0.25f);
+                LeanTween.move(this.gameObject, other.transform.position, 0.25f);
+                this.GetComponent<Collider2D>().enabled = false;
+                draggable.isDraggable = false;
+                gameAPI.PlayConfettiParticle(other.transform.position); 
+                boardGenerator.Invoke("CheckLevelEnd", 1f);
+            }
+            else if(other.GetComponent<CorrectLetterHolderSpellCards>().correctLetterForSlot != cardLetter && !matched)
+            {
+                Invoke("MoveToBeginning", 0.5f);
+            }
         }
     }
 }

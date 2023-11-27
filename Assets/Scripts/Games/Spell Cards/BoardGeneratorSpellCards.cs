@@ -52,6 +52,7 @@ public class BoardGeneratorSpellCards : MonoBehaviour
     [SerializeField] private GameObject letterPosition;
     [SerializeField] private GameObject cardPosition;
     private List<GameObject> dashedSquares = new List<GameObject>(); 
+    private List<GameObject> letterCards = new List<GameObject>(); 
 
     [Header ("Game Values")]
     private int matchCount;
@@ -181,6 +182,7 @@ public class BoardGeneratorSpellCards : MonoBehaviour
             letterCard.transform.GetChild(0).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
             letterCard.GetComponent<CardControllerSpellCards>().cardLetter = letter.ToUpper();
             LeanTween.scale(letterCard.gameObject, Vector3.one, 0.1f);
+            letterCards.Add(letterCard);
         }
     }
 
@@ -210,11 +212,14 @@ public class BoardGeneratorSpellCards : MonoBehaviour
                 matchCount = 0;
             }
         }
+            Debug.Log("LEVEL COUNT: " + levelCount);
         if(matchCount == dashedSquares.Count())
         {
+            Debug.Log("LEVEL END");
             if(levelCount == maxLevelCount)
             {
-                ClearBoard();
+                ClearLevel();
+                uıController.GameUIDeactivate();
                 uıController.LevelChangeScreenActivate();
             }
             else if(levelCount < maxLevelCount)
@@ -226,16 +231,36 @@ public class BoardGeneratorSpellCards : MonoBehaviour
 
     private void CreateNewLevel()
     {
+        levelCount++;
         ClearBoard();
         GeneratedBoardAsync();
     }
 
+
     public void ClearBoard()
     {
+        foreach (var correctLetterHolder in dashedSquares)
+        {
+            Destroy(correctLetterHolder);
+        }
+        selectedWordRandomValues.Clear();
+        dashedSquares.Clear();
+        foreach (var letterCard in letterCards)
+        {
+            Destroy(letterCard);
+        }
+        letterCards.Clear();
+        Destroy(selectedCard);
         cardLocalNames.Clear();
         cards.Clear();
         cardNames.Clear();
         randomValueList.Clear();
+    }
+
+    public void ClearLevel()
+    {
+        levelCount = 0;
+        ClearBoard();
     }
 
     private async Task PrefetchNextLevelsTexturesAsync()

@@ -53,6 +53,8 @@ public class BoardGeneratorSpellCards : MonoBehaviour
     [SerializeField] private GameObject cardPosition;
     public List<GameObject> dashedSquares = new List<GameObject>(); 
     private List<GameObject> letterCards = new List<GameObject>(); 
+    public List<Texture2D> limitedPrefetchedCardTextures = new List<Texture2D>();
+    public List<string> limitedPrefetchedCardNames = new List<string>();
 
     [Header ("Game Values")]
     private bool levelEnded;
@@ -98,6 +100,8 @@ public class BoardGeneratorSpellCards : MonoBehaviour
             randomValueList.Clear();
             prefetchedCardTextures.Clear();
             prefetchedCardNames.Clear();
+            limitedPrefetchedCardNames.Clear();
+            limitedPrefetchedCardTextures.Clear();
             levelCount = 0;
             await CacheCards(packSlug);
             if(cardNames.Count >= (cardCount * maxLevelCount))
@@ -113,6 +117,18 @@ public class BoardGeneratorSpellCards : MonoBehaviour
                 CheckRandom();
             }
             PrefetchNextLevelsTexturesAsync();
+        }
+    }
+
+    private void CreateLimitedCardList()
+    {
+        for(int i = 0; i < prefetchedCardNames.Count; i++)
+        {
+            if(prefetchedCardNames[i].Length < 9)
+            {
+                limitedPrefetchedCardNames.Add(prefetchedCardNames[i]);
+                limitedPrefetchedCardTextures.Add(prefetchedCardTextures[i]);
+            }
         }
     }
 
@@ -157,10 +173,11 @@ public class BoardGeneratorSpellCards : MonoBehaviour
 
     public async void GeneratedBoardAsync()
     {
+        CreateLimitedCardList();
         selectedCard = Instantiate(cardPrefab, cardPosition.transform.position, Quaternion.identity);
         selectedCard.transform.SetParent(cardPosition.transform);
-        var cardTexture = prefetchedCardTextures[levelCount];
-        selectedCard.transform.name = prefetchedCardNames[levelCount];
+        var cardTexture = limitedPrefetchedCardTextures[levelCount];
+        selectedCard.transform.name = limitedPrefetchedCardNames[levelCount];
         selectedCard.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
         selectedCard.transform.GetChild(0).GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
         LeanTween.scale(selectedCard.gameObject, Vector3.one * 0.5f, 0.1f);

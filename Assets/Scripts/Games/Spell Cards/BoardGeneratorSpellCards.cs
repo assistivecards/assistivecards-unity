@@ -51,9 +51,10 @@ public class BoardGeneratorSpellCards : MonoBehaviour
     [SerializeField] private GameObject dashedSquarePosition;
     [SerializeField] private GameObject letterPosition;
     [SerializeField] private GameObject cardPosition;
-
+    private List<GameObject> dashedSquares = new List<GameObject>(); 
 
     [Header ("Game Values")]
+    private int matchCount;
     public string selectedWord;
     public int cardCount;
     public int maxLevelCount;
@@ -192,6 +193,34 @@ public class BoardGeneratorSpellCards : MonoBehaviour
             letterCardSlot.transform.SetParent(dashedSquarePosition.transform);
             letterCardSlot.GetComponent<CorrectLetterHolderSpellCards>().correctLetterForSlot = letter.ToUpper();
             LeanTween.scale(letterCardSlot.gameObject, Vector3.one, 0.1f);
+            dashedSquares.Add(letterCardSlot);
+        }
+    }
+
+    public void CheckLevelEnd()
+    {
+        foreach (var correctLetterHolder in dashedSquares)
+        {
+            if(correctLetterHolder.GetComponent<CorrectLetterHolderSpellCards>().isEmpty == false)
+            {
+                matchCount++;
+            }
+            else
+            {
+                matchCount = 0;
+            }
+        }
+        if(matchCount == dashedSquares.Count())
+        {
+            if(levelCount == maxLevelCount)
+            {
+                ClearBoard();
+                uıController.LevelChangeScreenActivate();
+            }
+            else if(levelCount < maxLevelCount)
+            {
+                CreateNewLevel();
+            }
         }
     }
 
@@ -218,7 +247,6 @@ public class BoardGeneratorSpellCards : MonoBehaviour
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear; 
             prefetchedCardTextures.Add(cardTexture);
-            Debug.Log(cardNames[randomValueList[i]]);
         }
         Invoke("GeneratedBoardAsync", 2f);
         uıController.Invoke("SetTutorialActive", 2.1f);

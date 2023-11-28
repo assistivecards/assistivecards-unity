@@ -232,10 +232,20 @@ public class BoardGeneratorSpellCards : MonoBehaviour
         }
         if(levelEnded)
         {
-            gameAPI.PlayConfettiParticle(selectedCard.transform.position); 
-            gameAPI.Speak(selectedWord);
-            Debug.Log(selectedWord);
-            Invoke("CallLevelEnd", 1.5f);
+            foreach (var correctLetterHolder in dashedSquares)
+            {
+                if(correctLetterHolder.GetComponent<CorrectLetterHolderSpellCards>().isEmpty != false)
+                {
+                    levelEnded = false;
+                }
+            }
+            if(levelEnded)
+            {
+                gameAPI.PlayConfettiParticle(selectedCard.transform.position); 
+                gameAPI.Speak(selectedWord);
+                Debug.Log(selectedWord);
+                Invoke("CallLevelEnd", 1.5f);
+            }
         }
     }
 
@@ -300,6 +310,6 @@ public class BoardGeneratorSpellCards : MonoBehaviour
             prefetchedCardTextures.Add(cardTexture);
         }
         Invoke("GeneratedBoardAsync", 2f);
-        uıController.Invoke("SetTutorialActive", 2.1f);
+        uıController.Invoke("SetTutorialActive", 3f);
     }
 }

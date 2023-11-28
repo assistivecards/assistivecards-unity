@@ -232,18 +232,25 @@ public class BoardGeneratorSpellCards : MonoBehaviour
         }
         if(levelEnded)
         {
-            if(levelCount == maxLevelCount)
-            {
-                ClearLevel();
-                uıController.GameUIDeactivate();
-                uıController.LevelChangeScreenActivate();
-            }
-            else if(levelCount < maxLevelCount)
-            {
-                CreateNewLevel();
-            }
-            gameAPI.AddSessionExp();
+            gameAPI.PlayConfettiParticle(selectedCard.transform.position); 
+            Invoke("CallLevelEnd", 1.5f);
         }
+    }
+
+    private void CallLevelEnd()
+    {
+        if(levelCount == maxLevelCount)
+        {
+            ClearLevel();
+            uıController.GameUIDeactivate();
+            uıController.LevelChangeScreenActivate();
+        }
+        else if(levelCount < maxLevelCount)
+        {
+            CreateNewLevel();
+        }
+        gameAPI.AddSessionExp();
+
     }
 
     private void CreateNewLevel()

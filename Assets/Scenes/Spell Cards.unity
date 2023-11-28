@@ -2613,7 +2613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 487189.75
+      value: 492616.5
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2995,7 +2995,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 946fe6d4715562e4484c920670df443b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e10c0ee073e5e4f25aa8e0d3c3fee3ac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3282,6 +3282,9 @@ MonoBehaviour:
   dashedSquarePosition: {fileID: 729093507}
   letterPosition: {fileID: 442797797}
   cardPosition: {fileID: 1192221612}
+  dashedSquares: []
+  limitedPrefetchedCardTextures: []
+  limitedPrefetchedCardNames: []
   selectedWord: egg
   cardCount: 5
   maxLevelCount: 4

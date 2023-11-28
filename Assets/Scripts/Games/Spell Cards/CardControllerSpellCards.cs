@@ -10,7 +10,7 @@ public class CardControllerSpellCards : MonoBehaviour
     private DraggableSpellCards draggable;
     private BoardGeneratorSpellCards boardGenerator;
     public Vector3 startPosition;
-    private bool matched;
+    public bool matched;
 
     private void Awake()
     {

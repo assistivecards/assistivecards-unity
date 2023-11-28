@@ -52,7 +52,7 @@ public class BoardGeneratorSpellCards : MonoBehaviour
     [SerializeField] private GameObject letterPosition;
     [SerializeField] private GameObject cardPosition;
     public List<GameObject> dashedSquares = new List<GameObject>(); 
-    private List<GameObject> letterCards = new List<GameObject>(); 
+    public List<GameObject> letterCards = new List<GameObject>(); 
     public List<Texture2D> limitedPrefetchedCardTextures = new List<Texture2D>();
     public List<string> limitedPrefetchedCardNames = new List<string>();
 
@@ -184,6 +184,10 @@ public class BoardGeneratorSpellCards : MonoBehaviour
         selectedWord = selectedCard.name;
         CreateLetterObjects();
         CreateDashedSquares();
+        for(int i = 0; i < selectedWord.Length; i++)
+        {
+            RandomizeLetterObjects(letterCards[selectedWordRandomValues[i]]);
+        }
         uıController.Invoke("GameUIActivate", 0.5f);
     }
 
@@ -192,15 +196,22 @@ public class BoardGeneratorSpellCards : MonoBehaviour
         for(int i = 0; i < selectedWord.Length; i++)
         {
             CreateRandomForSelectedWord();
-            string letter = "" + selectedWord[selectedWordRandomValues[i]];
+            string letter = "" + selectedWord[i];
             GameObject letterCard = Instantiate(letterPrefab, letterPosition.transform.position, Quaternion.identity);
-            letterCard.transform.SetParent(letterPosition.transform);
             letterCard.transform.name = letter.ToUpper();
             letterCard.transform.GetChild(0).GetComponent<Text>().text = letter.ToUpper();
             letterCard.transform.GetChild(0).GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
             letterCard.GetComponent<CardControllerSpellCards>().cardLetter = letter.ToUpper();
-            LeanTween.scale(letterCard.gameObject, Vector3.one, 0.1f);
             letterCards.Add(letterCard);
+        }
+    }
+
+    private void RandomizeLetterObjects(GameObject _letterCard)
+    {
+        for(int i = 0; i < selectedWord.Length; i++)
+        {
+            LeanTween.scale(_letterCard.gameObject, Vector3.one, 0.1f);
+            _letterCard.transform.SetParent(letterPosition.transform);
         }
     }
 

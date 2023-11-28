@@ -31,7 +31,7 @@ RectTransform:
   m_GameObject: {fileID: 3395615947317002354}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 2}
+  m_LocalScale: {x: 0, y: 0, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3395615947477011775}
@@ -179,6 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardLetter: 
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &3395615947477011774
 GameObject:
   m_ObjectHideFlags: 0

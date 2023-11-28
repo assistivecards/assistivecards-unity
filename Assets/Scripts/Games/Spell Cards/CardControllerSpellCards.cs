@@ -52,6 +52,7 @@ public class CardControllerSpellCards : MonoBehaviour
                 LeanTween.move(this.gameObject, other.transform.position, 0.25f);
                 this.GetComponent<Collider2D>().enabled = false;
                 draggable.isDraggable = false;
+                gameAPI.PlaySFX("Success");
                 boardGenerator.Invoke("CheckLevelEnd", 0.5f);
             }
             else if(other.GetComponent<CorrectLetterHolderSpellCards>().correctLetterForSlot != cardLetter && !matched)

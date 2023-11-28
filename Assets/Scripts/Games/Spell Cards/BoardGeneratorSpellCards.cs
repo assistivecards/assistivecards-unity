@@ -233,6 +233,8 @@ public class BoardGeneratorSpellCards : MonoBehaviour
         if(levelEnded)
         {
             gameAPI.PlayConfettiParticle(selectedCard.transform.position); 
+            gameAPI.Speak(selectedWord);
+            Debug.Log(selectedWord);
             Invoke("CallLevelEnd", 1.5f);
         }
     }

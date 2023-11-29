@@ -120,36 +120,18 @@ public class BoardGeneratorGridFind : MonoBehaviour
 
     public async void GeneratedBoardAsync()
     {
-        finished = false;
-        GameObject referenceCard = Instantiate(cardPrefab, grid.transform.position, Quaternion.identity);
-        var correctCardTexture = prefetchedCardTextures[(levelCount * cardCount)];
-        correctCardTexture.wrapMode = TextureWrapMode.Clamp;
-        correctCardTexture.filterMode = FilterMode.Bilinear;
-        cardTextures.Add(correctCardTexture);
-        referenceCard.transform.SetParent(cardPositions[0].transform);
-        referenceCard.transform.name = prefetchedCardNames[(levelCount * cardCount)];
-        referenceCard.transform.GetChild(0).GetComponent<RawImage>().texture = correctCardTexture;
-        cards.Add(referenceCard);
-        referenceCard.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
-        referenceCard.transform.localPosition = Vector3.zero;
-        referenceCard.GetComponent<Collider2D>().isTrigger = true;
-        referenceCard.gameObject.tag = "Correct Card";
-        referenceCard.transform.GetChild(1).gameObject.SetActive(true);
-
-        for(int i = 1; i < 3; i++)
+        for(int i = 0; i < 10; i++)
         {
-            GameObject card = Instantiate(cardPrefab, grid.transform.position, Quaternion.identity);
+            GameObject card = Instantiate(cardPrefab, grid.transform.GetChild(i).transform.position, Quaternion.identity);
             var cardTexture = prefetchedCardTextures[i + (levelCount * cardCount)];
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear;
             cardTextures.Add(cardTexture);
-            card.transform.SetParent(cardPositions[i].transform);
+            card.transform.SetParent(grid.transform.GetChild(i).transform);
             card.transform.name = prefetchedCardNames[i + (levelCount * cardCount)];
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             cards.Add(card);
-            card.transform.localScale = new Vector3(0.45f, 0.45f, 0f);
             card.transform.localPosition = Vector3.zero;
-            card.GetComponent<Rigidbody2D>().simulated = false;
         }
         GameUIActivate();
     }
@@ -158,7 +140,7 @@ public class BoardGeneratorGridFind : MonoBehaviour
     {
         foreach(var card in cards)
         {
-            LeanTween.scale(card, Vector3.one * 0.45f, 0.3f);
+            LeanTween.scale(card, Vector3.one * 0.5f, 0.3f);
         }
         //uıController.GameUIActivate();
     }

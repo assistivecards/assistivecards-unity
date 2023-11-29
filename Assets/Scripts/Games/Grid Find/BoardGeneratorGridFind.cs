@@ -37,9 +37,9 @@ public class BoardGeneratorGridFind : MonoBehaviour
     [SerializeField] private GameObject tutorial;
 
     [Header ("Game UI")]
-    public List<Texture> cardTextures = new List<Texture>();
+    [SerializeField] private GameObject correctCardPosition;
+    public string correctCardName;
     private GameObject correctCard;
-    private List<GameObject> cardPositions = new List<GameObject>();
 
     [Header ("Game Values")]
     [SerializeField] private GameObject grid;
@@ -120,19 +120,29 @@ public class BoardGeneratorGridFind : MonoBehaviour
 
     public async void GeneratedBoardAsync()
     {
-        for(int i = 0; i < 10; i++)
+        for(int i = 0; i < 20; i++)
         {
+            int cardImageRandom = Random.Range(0, 10);
             GameObject card = Instantiate(cardPrefab, grid.transform.GetChild(i).transform.position, Quaternion.identity);
-            var cardTexture = prefetchedCardTextures[i + (levelCount * cardCount)];
+            var cardTexture = prefetchedCardTextures[cardImageRandom + cardCount];
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear;
-            cardTextures.Add(cardTexture);
             card.transform.SetParent(grid.transform.GetChild(i).transform);
-            card.transform.name = prefetchedCardNames[i + (levelCount * cardCount)];
+            card.transform.name = prefetchedCardNames[cardImageRandom + cardCount];
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             cards.Add(card);
             card.transform.localPosition = Vector3.zero;
         }
+        int correctCardRandom = Random.Range(0, 20);
+        correctCard = cards[correctCardRandom];
+        correctCardName = correctCard.name;
+
+        correctCard = Instantiate(correctCard, correctCardPosition.transform.position, Quaternion.identity);
+        correctCard.transform.SetParent(correctCardPosition.transform);
+        correctCard.transform.GetChild(0).GetComponent<RawImage>().color = Color.white;
+        correctCard.transform.name = correctCardName;
+        cards.Add(correctCard);
+        correctCard.transform.localPosition = Vector3.zero;
         GameUIActivate();
     }
 
@@ -175,8 +185,6 @@ public class BoardGeneratorGridFind : MonoBehaviour
         cards.Clear();
         cardNames.Clear();
         usedRandomOrderCards.Clear();
-        cardTextures.Clear();
-        cardPositions.Clear();
         levelCount++;
         if(levelCount >= maxLevelCount)
         {
@@ -203,8 +211,6 @@ public class BoardGeneratorGridFind : MonoBehaviour
         cardNames.Clear();
         randomValueList.Clear();
         usedRandomOrderCards.Clear();
-        cardTextures.Clear();
-        cardPositions.Clear();
         levelCount = 0;
         //uıController.PackSelectionPanelActive();
     }

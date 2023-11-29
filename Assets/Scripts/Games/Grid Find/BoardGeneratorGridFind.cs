@@ -10,7 +10,7 @@ using PathCreation;
 
 public class BoardGeneratorGridFind : MonoBehaviour
 {
-    public GameAPI gameAPI;
+    GameAPI gameAPI;
 
     //[SerializeField] private UIControllerGridFind uıController;
 
@@ -38,8 +38,7 @@ public class BoardGeneratorGridFind : MonoBehaviour
 
     [Header ("Game UI")]
     public List<Texture> cardTextures = new List<Texture>();
-    public GameObject stablePosition;
-    public GameObject correctCard;
+    private GameObject correctCard;
     private List<GameObject> cardPositions = new List<GameObject>();
 
     [Header ("Game Values")]
@@ -122,7 +121,7 @@ public class BoardGeneratorGridFind : MonoBehaviour
     public async void GeneratedBoardAsync()
     {
         finished = false;
-        GameObject referenceCard = Instantiate(cardPrefab, stablePosition.transform.position, Quaternion.identity);
+        GameObject referenceCard = Instantiate(cardPrefab, grid.transform.position, Quaternion.identity);
         var correctCardTexture = prefetchedCardTextures[(levelCount * cardCount)];
         correctCardTexture.wrapMode = TextureWrapMode.Clamp;
         correctCardTexture.filterMode = FilterMode.Bilinear;
@@ -139,7 +138,7 @@ public class BoardGeneratorGridFind : MonoBehaviour
 
         for(int i = 1; i < 3; i++)
         {
-            GameObject card = Instantiate(cardPrefab, cardPositions[i].transform.position, Quaternion.identity);
+            GameObject card = Instantiate(cardPrefab, grid.transform.position, Quaternion.identity);
             var cardTexture = prefetchedCardTextures[i + (levelCount * cardCount)];
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear;

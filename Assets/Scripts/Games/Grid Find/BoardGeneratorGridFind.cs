@@ -140,7 +140,7 @@ public class BoardGeneratorGridFind : MonoBehaviour
     {
         foreach(var card in cards)
         {
-            LeanTween.scale(card, Vector3.one * 0.5f, 0.3f);
+            LeanTween.scale(card, Vector3.one * 0.45f, 0.3f);
         }
         //uıController.GameUIActivate();
     }

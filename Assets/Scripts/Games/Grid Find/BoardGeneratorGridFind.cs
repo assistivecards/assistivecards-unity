@@ -12,7 +12,7 @@ public class BoardGeneratorGridFind : MonoBehaviour
 {
     GameAPI gameAPI;
 
-    //[SerializeField] private UIControllerGridFind uıController;
+    [SerializeField] private UIControllerGridFind uıController;
 
     [Header ("Cache Cards")]
     public string selectedLangCode;
@@ -39,6 +39,7 @@ public class BoardGeneratorGridFind : MonoBehaviour
     [Header ("Game UI")]
     [SerializeField] private GameObject correctCardPosition;
     [SerializeField] private GameObject collectText;
+    private Texture correctCardTexture;
     private List<GameObject> correctCards = new List<GameObject>();
     public string correctCardName;
     private GameObject correctCard;
@@ -82,8 +83,8 @@ public class BoardGeneratorGridFind : MonoBehaviour
 
     public async void PrefetchCardTextures()
     {
-        // if(uıController.canGenerate)
-        // {
+        if(uıController.canGenerate)
+        {
             packSlug = packSelectionPanel.selectedPackElement.name;
             randomValueList.Clear();
             prefetchedCardTextures.Clear();
@@ -103,7 +104,7 @@ public class BoardGeneratorGridFind : MonoBehaviour
                 CheckRandom();
             }
             PrefetchNextLevelsTexturesAsync();
-        //}
+        }
     }
 
     private void CheckRandom()
@@ -141,6 +142,7 @@ public class BoardGeneratorGridFind : MonoBehaviour
         int correctCardRandom = Random.Range(0, 20);
         correctCard = cards[correctCardRandom];
         correctCardName = correctCard.name;
+        correctCardTexture = correctCard.transform.GetChild(0).GetComponent<RawImage>().texture;
         correctCard = Instantiate(correctCard, correctCardPosition.transform.position, Quaternion.identity);
         correctCard.transform.SetParent(correctCardPosition.transform);
         correctCard.transform.GetChild(0).GetComponent<RawImage>().color = Color.white;
@@ -163,6 +165,7 @@ public class BoardGeneratorGridFind : MonoBehaviour
     public void UpdateScore()
     {
         collectText.GetComponentInChildren<TMP_Text>().text = score + " / " + correctCards.Count.ToString(); 
+        collectText.GetComponentInChildren<RawImage>().texture = correctCardTexture;
     }
 
     public void GameUIActivate()
@@ -171,7 +174,7 @@ public class BoardGeneratorGridFind : MonoBehaviour
         {
             LeanTween.scale(card, Vector3.one * 0.45f, 0.3f);
         }
-        //uıController.GameUIActivate();
+        uıController.GameUIActivate();
     }
 
     private void CreateNewLevel()
@@ -186,7 +189,7 @@ public class BoardGeneratorGridFind : MonoBehaviour
         {
             LeanTween.scale(card, Vector3.zero, 0.3f);
         }
-        //uıController.Invoke("GameUIDeactivate", 0.3f);
+        uıController.Invoke("GameUIDeactivate", 0.3f);
         Invoke("ClearBoard", 0.3f);
     }
 
@@ -207,13 +210,13 @@ public class BoardGeneratorGridFind : MonoBehaviour
         levelCount++;
         if(levelCount >= maxLevelCount)
         {
-            //uıController.LevelChangeScreenActivate();
+            uıController.LevelChangeScreenActivate();
             levelCount = 0;
         }
         else
         {
-            // uıController.GameUIDeactivate();
-            // uıController.LoadingScreenActivation();
+            uıController.GameUIDeactivate();
+            uıController.LoadingScreenActivation();
             GeneratedBoardAsync();
             levelCount++;
         }
@@ -231,7 +234,7 @@ public class BoardGeneratorGridFind : MonoBehaviour
         randomValueList.Clear();
         usedRandomOrderCards.Clear();
         levelCount = 0;
-        //uıController.PackSelectionPanelActive();
+        uıController.PackSelectionPanelActive();
     }
 
     private async Task PrefetchNextLevelsTexturesAsync()
@@ -245,6 +248,6 @@ public class BoardGeneratorGridFind : MonoBehaviour
             prefetchedCardTextures.Add(cardTexture);
         }
         Invoke("GeneratedBoardAsync", 2f);
-        //uıController.Invoke("SetTutorialActive", 2.1f);
+        uıController.Invoke("SetTutorialActive", 2.1f);
     }
 }

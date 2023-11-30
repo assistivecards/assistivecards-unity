@@ -38,12 +38,15 @@ public class BoardGeneratorGridFind : MonoBehaviour
 
     [Header ("Game UI")]
     [SerializeField] private GameObject correctCardPosition;
+    [SerializeField] private GameObject collectText;
+    private List<GameObject> correctCards = new List<GameObject>();
     public string correctCardName;
     private GameObject correctCard;
 
     [Header ("Game Values")]
     [SerializeField] private GameObject grid;
     public List<int> usedRandomOrderCards = new List<int>();
+    public int score;
     public int cardCount;
     public int maxLevelCount;
     public int levelCount;
@@ -130,20 +133,36 @@ public class BoardGeneratorGridFind : MonoBehaviour
             card.transform.SetParent(grid.transform.GetChild(i).transform);
             card.transform.name = prefetchedCardNames[cardImageRandom + cardCount];
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+            card.GetComponent<CardControllerGridFind>().cardName = card.transform.name;
             cards.Add(card);
             card.transform.localPosition = Vector3.zero;
         }
+
         int correctCardRandom = Random.Range(0, 20);
         correctCard = cards[correctCardRandom];
         correctCardName = correctCard.name;
-
         correctCard = Instantiate(correctCard, correctCardPosition.transform.position, Quaternion.identity);
         correctCard.transform.SetParent(correctCardPosition.transform);
         correctCard.transform.GetChild(0).GetComponent<RawImage>().color = Color.white;
+        LeanTween.scale(correctCard, Vector3.one * 0.4f, 0.75f);
         correctCard.transform.name = correctCardName;
-        cards.Add(correctCard);
         correctCard.transform.localPosition = Vector3.zero;
+
+        foreach(var card in cards)
+        {
+            if(card.GetComponent<CardControllerGridFind>().cardName == correctCardName)
+            {
+                card.GetComponent<CardControllerGridFind>().isCorrect = true;
+                correctCards.Add(card);
+            }
+        }
+        UpdateScore();
         GameUIActivate();
+    }
+
+    public void UpdateScore()
+    {
+        collectText.GetComponentInChildren<TMP_Text>().text = score + " / " + correctCards.Count.ToString(); 
     }
 
     public void GameUIActivate()

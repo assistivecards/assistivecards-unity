@@ -159,6 +159,7 @@ public class BoardGeneratorGridFind : MonoBehaviour
             }
         }
         UpdateScore();
+        tutorial.GetComponent<TutorialGridFind>().GetPosition(correctCards);
         GameUIActivate();
     }
 

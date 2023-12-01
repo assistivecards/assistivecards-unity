@@ -125,15 +125,43 @@ public class BoardGeneratorGridFind : MonoBehaviour
 
     public async void GeneratedBoardAsync()
     {
-        for(int i = 0; i < 20; i++)
+        for(int i = 0; i < 5; i++)
         {
-            int cardImageRandom = Random.Range(0, 10);
             GameObject card = Instantiate(cardPrefab, grid.transform.GetChild(i).transform.position, Quaternion.identity);
-            var cardTexture = prefetchedCardTextures[cardImageRandom + cardCount];
+            var cardTexture = prefetchedCardTextures[i];
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear;
             card.transform.SetParent(grid.transform.GetChild(i).transform);
-            card.transform.name = prefetchedCardNames[cardImageRandom + cardCount];
+            card.transform.name = prefetchedCardNames[i];
+            card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+            card.GetComponent<CardControllerGridFind>().cardName = card.transform.name;
+            card.GetComponent<CardControllerGridFind>().isExampleCard = false;
+            cards.Add(card);
+            card.transform.localPosition = Vector3.zero;
+        }
+        for(int i = 0; i < 10; i++)
+        {
+            int cardImageRandom = Random.Range(0, 5);
+            GameObject card = Instantiate(cardPrefab, grid.transform.GetChild(i + 5).transform.position, Quaternion.identity);
+            var cardTexture = prefetchedCardTextures[cardImageRandom];
+            cardTexture.wrapMode = TextureWrapMode.Clamp;
+            cardTexture.filterMode = FilterMode.Bilinear;
+            card.transform.SetParent(grid.transform.GetChild(i + 5).transform);
+            card.transform.name = prefetchedCardNames[cardImageRandom];
+            card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
+            card.GetComponent<CardControllerGridFind>().cardName = card.transform.name;
+            card.GetComponent<CardControllerGridFind>().isExampleCard = false;
+            cards.Add(card);
+            card.transform.localPosition = Vector3.zero;
+        }
+        for(int i = 0; i < 5; i++)
+        {
+            GameObject card = Instantiate(cardPrefab, grid.transform.GetChild(i + 15).transform.position, Quaternion.identity);
+            var cardTexture = prefetchedCardTextures[i];
+            cardTexture.wrapMode = TextureWrapMode.Clamp;
+            cardTexture.filterMode = FilterMode.Bilinear;
+            card.transform.SetParent(grid.transform.GetChild(i + 15).transform);
+            card.transform.name = prefetchedCardNames[i];
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             card.GetComponent<CardControllerGridFind>().cardName = card.transform.name;
             card.GetComponent<CardControllerGridFind>().isExampleCard = false;
@@ -150,15 +178,7 @@ public class BoardGeneratorGridFind : MonoBehaviour
         correctCard.transform.name = correctCardName;
         correctCard.transform.localPosition = Vector3.zero;
         prevCorrectCard = correctCardName;
-
-        foreach(var card in cards)
-        {
-            if(card.GetComponent<CardControllerGridFind>().cardName == correctCardName)
-            {
-                card.GetComponent<CardControllerGridFind>().isCorrect = true;
-                correctCards.Add(card);
-            }
-        }
+        GetCorrectCardList();
         UpdateScore();
         tutorial.GetComponent<TutorialGridFind>().GetPositionList(correctCards);
         GameUIActivate();
@@ -172,6 +192,18 @@ public class BoardGeneratorGridFind : MonoBehaviour
         if(correctCardName == prevCorrectCard)
         {
             SelectCorrectCard();
+        }
+    }
+
+    private void GetCorrectCardList()
+    {
+        foreach(var card in cards)
+        {
+            if(card.GetComponent<CardControllerGridFind>().cardName == correctCardName)
+            {
+                card.GetComponent<CardControllerGridFind>().isCorrect = true;
+                correctCards.Add(card);
+            }
         }
     }
 

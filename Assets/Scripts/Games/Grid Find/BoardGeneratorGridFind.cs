@@ -160,7 +160,7 @@ public class BoardGeneratorGridFind : MonoBehaviour
             }
         }
         UpdateScore();
-        tutorial.GetComponent<TutorialGridFind>().GetPosition(correctCards);
+        tutorial.GetComponent<TutorialGridFind>().GetPositionList(correctCards);
         GameUIActivate();
     }
 
@@ -232,6 +232,7 @@ public class BoardGeneratorGridFind : MonoBehaviour
         Destroy(correctCard);
         cardNames.Clear();
         usedRandomOrderCards.Clear();
+        tutorial.GetComponent<TutorialGridFind>().ClearPositionList();
         levelCount++;
         if(levelCount >= maxLevelCount)
         {
@@ -253,13 +254,14 @@ public class BoardGeneratorGridFind : MonoBehaviour
         {
             Destroy(card);
         }
-        cardLocalNames.Clear();
         cards.Clear();
-        cardNames.Clear();
-        randomValueList.Clear();
-        usedRandomOrderCards.Clear();
+        correctCards.Clear();
+        score = 0;
         levelCount = 0;
-        uıController.PackSelectionPanelActive();
+        Destroy(correctCard);
+        cardNames.Clear();
+        usedRandomOrderCards.Clear();
+        tutorial.GetComponent<TutorialGridFind>().ClearPositionList();
     }
 
     private async Task PrefetchNextLevelsTexturesAsync()

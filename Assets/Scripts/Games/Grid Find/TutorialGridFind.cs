@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TutorialGridFind : MonoBehaviour
 {
-    public List<GameObject> correctCardsList;
+    private List<GameObject> correctCardsList;
     private int onEnabledCount = 0;
 
     private void OnEnable() 
@@ -13,7 +13,7 @@ public class TutorialGridFind : MonoBehaviour
         onEnabledCount++;
     }
 
-    public void GetPosition(List<GameObject> _correctCardsList) 
+    public void GetPositionList(List<GameObject> _correctCardsList) 
     {
         correctCardsList = _correctCardsList;
     }
@@ -21,5 +21,10 @@ public class TutorialGridFind : MonoBehaviour
     private void SetPosition()
     {
         LeanTween.move(this.gameObject, correctCardsList[onEnabledCount].transform.position, 0);
+    }
+
+    public void ClearPositionList() 
+    {
+        correctCardsList.Clear();
     }
 }

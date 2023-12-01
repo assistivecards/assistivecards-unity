@@ -135,6 +135,7 @@ public class BoardGeneratorGridFind : MonoBehaviour
             card.transform.name = prefetchedCardNames[cardImageRandom + cardCount];
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
             card.GetComponent<CardControllerGridFind>().cardName = card.transform.name;
+            card.GetComponent<CardControllerGridFind>().isExampleCard = false;
             cards.Add(card);
             card.transform.localPosition = Vector3.zero;
         }
@@ -146,6 +147,7 @@ public class BoardGeneratorGridFind : MonoBehaviour
         correctCard = Instantiate(correctCard, correctCardPosition.transform.position, Quaternion.identity);
         correctCard.transform.SetParent(correctCardPosition.transform);
         correctCard.transform.GetChild(0).GetComponent<RawImage>().color = Color.white;
+        correctCard.GetComponent<CardControllerGridFind>().isExampleCard = true;
         LeanTween.scale(correctCard, Vector3.one * 0.4f, 0.75f);
         correctCard.transform.name = correctCardName;
         correctCard.transform.localPosition = Vector3.zero;
@@ -167,6 +169,15 @@ public class BoardGeneratorGridFind : MonoBehaviour
     {
         collectText.GetComponentInChildren<TMP_Text>().text = score + " / " + correctCards.Count.ToString(); 
         collectText.GetComponentInChildren<RawImage>().texture = correctCardTexture;
+        CheckIfLevelEnd();
+    }
+
+    private void CheckIfLevelEnd()
+    {
+        if(score >= correctCards.Count)
+        {
+            Invoke("GameUIScaleDown",0.5f);
+        }
     }
 
     public void GameUIActivate()
@@ -181,7 +192,7 @@ public class BoardGeneratorGridFind : MonoBehaviour
     private void CreateNewLevel()
     {
         ClearBoard();
-        GeneratedBoardAsync();
+        //GeneratedBoardAsync();
     }
 
     private void GameUIScaleDown()
@@ -206,6 +217,9 @@ public class BoardGeneratorGridFind : MonoBehaviour
             Destroy(card);
         }
         cards.Clear();
+        correctCards.Clear();
+        score = 0;
+        Destroy(correctCard);
         cardNames.Clear();
         usedRandomOrderCards.Clear();
         levelCount++;

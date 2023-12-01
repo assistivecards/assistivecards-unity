@@ -4067,7 +4067,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 345767.25
+      value: 363666.12
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -4715,7 +4715,7 @@ MonoBehaviour:
   grid: {fileID: 1415360369}
   usedRandomOrderCards: 
   score: 0
-  cardCount: 5
+  cardCount: 3
   maxLevelCount: 5
   levelCount: 0
   prefetchedCardsCount: 0

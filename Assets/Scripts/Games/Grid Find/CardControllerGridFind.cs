@@ -8,6 +8,7 @@ public class CardControllerGridFind : MonoBehaviour, IPointerDownHandler
 {
     public string cardName;
     public bool isCorrect;
+    public bool isExampleCard;
     private BoardGeneratorGridFind boardGenerator;
 
     private void OnEnable() 
@@ -17,7 +18,10 @@ public class CardControllerGridFind : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        CardClickAnimation();
+        if(!isExampleCard)
+        {
+            CardClickAnimation();
+        }
     }
 
     private void CardClickAnimation()

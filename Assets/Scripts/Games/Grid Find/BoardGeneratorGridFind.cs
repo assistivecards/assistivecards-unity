@@ -46,6 +46,7 @@ public class BoardGeneratorGridFind : MonoBehaviour
 
     [Header ("Game Values")]
     [SerializeField] private GameObject grid;
+    private string prevCorrectCard;
     public List<int> usedRandomOrderCards = new List<int>();
     public int score;
     public int cardCount;
@@ -139,10 +140,7 @@ public class BoardGeneratorGridFind : MonoBehaviour
             cards.Add(card);
             card.transform.localPosition = Vector3.zero;
         }
-
-        int correctCardRandom = Random.Range(0, 20);
-        correctCard = cards[correctCardRandom];
-        correctCardName = correctCard.name;
+        SelectCorrectCard();
         correctCardTexture = correctCard.transform.GetChild(0).GetComponent<RawImage>().texture;
         correctCard = Instantiate(correctCard, correctCardPosition.transform.position, Quaternion.identity);
         correctCard.transform.SetParent(correctCardPosition.transform);
@@ -151,6 +149,7 @@ public class BoardGeneratorGridFind : MonoBehaviour
         LeanTween.scale(correctCard, Vector3.one * 0.4f, 0.75f);
         correctCard.transform.name = correctCardName;
         correctCard.transform.localPosition = Vector3.zero;
+        prevCorrectCard = correctCardName;
 
         foreach(var card in cards)
         {
@@ -163,6 +162,17 @@ public class BoardGeneratorGridFind : MonoBehaviour
         UpdateScore();
         tutorial.GetComponent<TutorialGridFind>().GetPosition(correctCards);
         GameUIActivate();
+    }
+
+    private void SelectCorrectCard()
+    {
+        int correctCardRandom = Random.Range(0, 20);
+        correctCard = cards[correctCardRandom];
+        correctCardName = correctCard.name;
+        if(correctCardName == prevCorrectCard)
+        {
+            SelectCorrectCard();
+        }
     }
 
     public void UpdateScore()

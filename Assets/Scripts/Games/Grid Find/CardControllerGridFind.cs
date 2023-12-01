@@ -28,11 +28,24 @@ public class CardControllerGridFind : MonoBehaviour, IPointerDownHandler
     {
         GetComponentInChildren<RawImage>().color = Color.white;
         LeanTween.scale(this.gameObject, Vector3.one * 0.6f, 0.25f).setOnComplete(ScaleDownCard);
+        Invoke("SpeakCardName", 0.2f);
         if(isCorrect)
         {
             boardGenerator.score++;
             boardGenerator.UpdateScore();
+            boardGenerator.gameAPI.PlaySFX("Success");
+            boardGenerator.gameAPI.PlayConfettiParticle(this.transform.position);
         }
+        else
+        {
+            boardGenerator.gameAPI.RemoveSessionExp();
+        }
+    }
+
+    private void SpeakCardName()
+    {
+        boardGenerator.gameAPI.Speak(cardName);
+        Debug.Log(cardName);
     }
 
     private void ScaleDownCard()

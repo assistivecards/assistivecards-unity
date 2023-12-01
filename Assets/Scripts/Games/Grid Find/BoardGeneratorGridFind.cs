@@ -10,7 +10,7 @@ using PathCreation;
 
 public class BoardGeneratorGridFind : MonoBehaviour
 {
-    GameAPI gameAPI;
+    public GameAPI gameAPI;
 
     [SerializeField] private UIControllerGridFind uıController;
 
@@ -186,6 +186,7 @@ public class BoardGeneratorGridFind : MonoBehaviour
     {
         if(score >= correctCards.Count)
         {
+            gameAPI.AddSessionExp();
             Invoke("GameUIScaleDown",0.5f);
         }
     }
@@ -233,17 +234,17 @@ public class BoardGeneratorGridFind : MonoBehaviour
         cardNames.Clear();
         usedRandomOrderCards.Clear();
         tutorial.GetComponent<TutorialGridFind>().ClearPositionList();
-        levelCount++;
-        if(levelCount >= maxLevelCount)
+        if(levelCount >= maxLevelCount - 1)
         {
             uıController.LevelChangeScreenActivate();
             levelCount = 0;
         }
         else
         {
+            gameAPI.PlaySFX("Finished");
             uıController.GameUIDeactivate();
             uıController.LoadingScreenActivation();
-            GeneratedBoardAsync();
+            Invoke("GeneratedBoardAsync", 0.1f);
             levelCount++;
         }
     }

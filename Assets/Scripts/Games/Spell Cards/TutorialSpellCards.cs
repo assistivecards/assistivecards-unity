@@ -20,6 +20,7 @@ public class TutorialSpellCards : MonoBehaviour
             if(dashedSquare.GetComponent<CorrectLetterHolderSpellCards>().isEmpty)
             {
                 point1 = dashedSquare.transform;
+                break;
             }
         }
         foreach(var letterCard in boardGenerator.letterCards)
@@ -27,6 +28,7 @@ public class TutorialSpellCards : MonoBehaviour
             if(!letterCard.GetComponent<CardControllerSpellCards>().matched)
             {
                 point2 = letterCard.transform;
+                break;
             }
         }
     }

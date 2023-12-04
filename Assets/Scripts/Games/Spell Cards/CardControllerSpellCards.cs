@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine;
 
-public class CardControllerSpellCards : MonoBehaviour
+public class CardControllerSpellCards : MonoBehaviour, IPointerUpHandler
 {
     GameAPI gameAPI;
     public string cardLetter;
@@ -27,6 +27,11 @@ public class CardControllerSpellCards : MonoBehaviour
     private void GetStartPosition()
     {
         startPosition = transform.localPosition;
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        Invoke("MoveToBeginning", 1f);
     }
 
     private void MoveToBeginning()

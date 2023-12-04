@@ -123,7 +123,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 90.14258, y: 86.58081}
+  m_Size: {x: 70, y: 70}
   m_EdgeRadius: 0
 --- !u!50 &3119849385550443994
 Rigidbody2D:
@@ -180,6 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardLetter: 
   startPosition: {x: 0, y: 0, z: 0}
+  matched: 0
 --- !u!1 &3395615947477011774
 GameObject:
   m_ObjectHideFlags: 0

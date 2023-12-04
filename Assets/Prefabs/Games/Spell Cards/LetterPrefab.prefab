@@ -179,6 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardLetter: 
+  correctMatchColor: {r: 0.58410746, g: 0.9716981, b: 0.40792987, a: 1}
   startPosition: {x: 0, y: 0, z: 0}
   matched: 0
 --- !u!1 &3395615947477011774

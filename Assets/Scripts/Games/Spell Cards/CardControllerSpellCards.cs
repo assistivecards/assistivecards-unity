@@ -7,6 +7,7 @@ public class CardControllerSpellCards : MonoBehaviour, IPointerUpHandler
 {
     GameAPI gameAPI;
     public string cardLetter;
+    public Color correctMatchColor;
     private DraggableSpellCards draggable;
     private BoardGeneratorSpellCards boardGenerator;
     public Vector3 startPosition;

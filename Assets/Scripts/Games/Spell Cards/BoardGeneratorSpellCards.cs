@@ -252,10 +252,14 @@ public class BoardGeneratorSpellCards : MonoBehaviour
             }
             if(levelEnded)
             {
+                foreach(GameObject letter in letterCards)
+                {
+                    letter.transform.GetChild(0).GetComponent<Text>().color = letter.GetComponent<CardControllerSpellCards>().correctMatchColor;
+                }
                 gameAPI.PlayConfettiParticle(selectedCard.transform.position); 
                 gameAPI.Speak(selectedWord);
                 Debug.Log(selectedWord);
-                Invoke("CallLevelEnd", 1.5f);
+                Invoke("CallLevelEnd", 2.5f);
             }
         }
     }

@@ -173,6 +173,9 @@ public class BoardGeneratorGridFind : MonoBehaviour
         correctCard = Instantiate(correctCard, correctCardPosition.transform.position, Quaternion.identity);
         correctCard.transform.SetParent(correctCardPosition.transform);
         correctCard.transform.GetChild(0).GetComponent<RawImage>().color = Color.white;
+        LeanTween.moveLocal(correctCard.transform.GetChild(0).gameObject, new Vector3(0, 35f, 0), 0.1f);
+        correctCard.transform.GetChild(1).GetComponent<TMP_Text>().text = correctCardName;
+        correctCard.transform.GetChild(1).gameObject.SetActive(true);
         correctCard.GetComponent<CardControllerGridFind>().isExampleCard = true;
         LeanTween.scale(correctCard, Vector3.one * 0.4f, 0.75f);
         correctCard.transform.name = correctCardName;

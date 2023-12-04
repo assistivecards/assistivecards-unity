@@ -9,11 +9,13 @@ public class CardControllerGridFind : MonoBehaviour, IPointerDownHandler
     public string cardName;
     public bool isCorrect;
     public bool isExampleCard;
+    private Color shadowColor;
     private BoardGeneratorGridFind boardGenerator;
 
     private void OnEnable() 
     {
         boardGenerator = GameObject.Find("GamePanel").GetComponent<BoardGeneratorGridFind>();
+        shadowColor = transform.GetChild(0).GetComponent<RawImage>().color;
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -39,7 +41,13 @@ public class CardControllerGridFind : MonoBehaviour, IPointerDownHandler
         else
         {
             boardGenerator.gameAPI.RemoveSessionExp();
+            Invoke("ReturnShadowColor", 0.6f);
         }
+    }
+
+    private void ReturnShadowColor()
+    {
+        transform.GetChild(0).GetComponent<RawImage>().color = shadowColor;
     }
 
     private void SpeakCardName()

@@ -108,9 +108,16 @@ public class CardMazeUIController : MonoBehaviour
 
     public void OnBackButtonClick()
     {
-        if (Input.touchCount == 1 || CardMazeBoardGenerator.isBackAfterSignOut)
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
-            StartCoroutine(BackButtonClickCoroutine());
+           StartCoroutine(BackButtonClickCoroutine());
+        }
+        else
+        {
+            if (CardMazeBoardGenerator.isBackAfterSignOut)
+            {
+                StartCoroutine(BackButtonClickCoroutine());
+            }
         }
     }
 

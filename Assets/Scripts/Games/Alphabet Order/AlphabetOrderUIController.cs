@@ -105,9 +105,16 @@ public class AlphabetOrderUIController : MonoBehaviour
 
     public void OnBackButtonClick()
     {
-        if (Input.touchCount == 1 || AlphabetOrderBoardGenerator.isBackAfterSignOut)
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
-            StartCoroutine(BackButtonClickCoroutine());
+           StartCoroutine(BackButtonClickCoroutine());
+        }
+        else
+        {
+            if (AlphabetOrderBoardGenerator.isBackAfterSignOut)
+            {
+                StartCoroutine(BackButtonClickCoroutine());
+            }
         }
     }
 

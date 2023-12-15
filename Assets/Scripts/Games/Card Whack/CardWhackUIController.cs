@@ -106,9 +106,16 @@ public class CardWhackUIController : MonoBehaviour
 
     public void OnBackButtonClick()
     {
-        if (Input.touchCount == 1 || CardWhackBoardGenerator.isBackAfterSignOut)
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
-            StartCoroutine(BackButtonClickCoroutine());
+           StartCoroutine(BackButtonClickCoroutine());
+        }
+        else
+        {
+            if (CardWhackBoardGenerator.isBackAfterSignOut)
+            {
+                StartCoroutine(BackButtonClickCoroutine());
+            }
         }
     }
 

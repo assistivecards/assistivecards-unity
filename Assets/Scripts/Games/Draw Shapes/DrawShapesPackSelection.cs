@@ -62,7 +62,6 @@ public class DrawShapesPackSelection : MonoBehaviour
                 }
             }
         }
-
     }
 
     private void ClosePackSelectionPanel()

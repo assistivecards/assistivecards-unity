@@ -33,10 +33,17 @@ public class SlingUIController : MonoBehaviour
     }
 
     public void OnBackButtonClick()
-    {
-        if (Input.touchCount == 1 || SlingBoardGenerator.isBackAfterSignOut)
+    {        
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
-            StartCoroutine(BackButtonClickCoroutine());
+           StartCoroutine(BackButtonClickCoroutine());
+        }
+        else
+        {
+            if (FindCardBoardGenerator.isBackAfterSignOut)
+            {
+                StartCoroutine(BackButtonClickCoroutine());
+            }
         }
     }
 

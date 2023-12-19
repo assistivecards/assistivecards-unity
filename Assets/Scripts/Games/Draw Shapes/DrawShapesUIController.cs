@@ -105,9 +105,16 @@ public class DrawShapesUIController : MonoBehaviour
 
     public void OnBackButtonClick()
     {
-        if (Input.touchCount == 1 || DrawShapesBoardGenerator.isBackAfterSignOut)
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
-            StartCoroutine(BackButtonClickCoroutine());
+           StartCoroutine(BackButtonClickCoroutine());
+        }
+        else
+        {
+            if (DrawShapesBoardGenerator.isBackAfterSignOut)
+            {
+                StartCoroutine(BackButtonClickCoroutine());
+            }
         }
     }
 

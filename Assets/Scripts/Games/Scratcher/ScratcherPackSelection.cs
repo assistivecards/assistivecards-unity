@@ -7,10 +7,10 @@ using UnityEngine.UI;
 
 public class ScratcherPackSelection : MonoBehaviour
 {
+    GameAPI gameAPI;
     [SerializeField] ScratcherBoardGenerator boardGenerator;
     [SerializeField] PackSelectionPanel packSelectionPanelScript;
     [SerializeField] GameObject packSelectionPanel;
-    GameAPI gameAPI;
     [SerializeField] GameObject helloText;
     [SerializeField] GameObject speakerIcon;
     [SerializeField] GameObject homeButton;
@@ -25,7 +25,7 @@ public class ScratcherPackSelection : MonoBehaviour
 
     public async void GenerateCorrespondingRandomBoard()
     {
-        if (Input.touchCount == 1)
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
             if (packSelectionScreenUIController.canGenerate)
             {
@@ -42,7 +42,26 @@ public class ScratcherPackSelection : MonoBehaviour
                 await boardGenerator.GenerateRandomBoardAsync();
             }
         }
-
+        else
+        {
+            if (Input.touchCount == 1)
+            {
+                if (packSelectionScreenUIController.canGenerate)
+                {
+                    boardGenerator.packSlug = packSelectionPanelScript.selectedPackElement.name;
+                    packSelectionPanel.transform.GetChild(0).GetComponent<ScrollRect>().enabled = false;
+                    LeanTween.scale(packSelectionPanel, Vector3.zero, 0.25f);
+                    loadingPanel.SetActive(true);
+                    Invoke("ClosePackSelectionPanel", 0.5f);
+                    helloText.SetActive(false);
+                    speakerIcon.SetActive(false);
+                    homeButton.SetActive(false);
+                    levelProgressContainer.SetActive(false);
+                    await boardGenerator.CacheCards(boardGenerator.packSlug);
+                    await boardGenerator.GenerateRandomBoardAsync();
+                }
+            }
+        }
     }
 
     private void ClosePackSelectionPanel()

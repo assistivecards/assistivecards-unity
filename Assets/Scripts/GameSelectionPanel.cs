@@ -195,7 +195,7 @@ public class GameSelectionPanel : MonoBehaviour
 
     public void GameSelected(GameObject _GameElement)
     {
-        if (Input.touchCount == 1)
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
             selectedGameElement = _GameElement;
             Debug.Log(_GameElement.name);
@@ -231,8 +231,45 @@ public class GameSelectionPanel : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            if (Input.touchCount == 1)
+            {
+                selectedGameElement = _GameElement;
+                Debug.Log(_GameElement.name);
 
+                if (gameAPI.GetPremium() == "A5515T1V3C4RD5" || gameAPI.GetSubscription() == "A5515T1V3C4RD5")
+                {
+                    SceneManager.LoadScene(gameAPI.ToTitleCase(_GameElement.name.Replace("_", " ")));
+                }
 
+                else
+                {
+                    for (int i = 0; i < gameAPI.cachedGames.games.Count; i++)
+                    {
+                        if (gameAPI.cachedGames.games[i].slug == selectedGameElement.name)
+                        {
+                            if (gameAPI.cachedGames.games[i].released == false)
+                            {
+                                Debug.Log("Seçilen paket premium");
+                                // canvasController.GetComponent<CanvasController>().StartFadeAnim();
+                                fadeInPanel.SetActive(true);
+                                settingButton.GetComponent<SettingScreenButton>().SettingButtonClickFunc();
+                                canvasController.GetComponent<CanvasController>().PremiumPromoButtonClick();
+                                Invoke("ResetScrollPosition", 0.3f);
+
+                            }
+
+                            else
+                            {
+                                SceneManager.LoadScene(gameAPI.ToTitleCase(_GameElement.name.Replace("_", " ")));
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
     }
 
     public void ScaleGameSelectionPanelUp()

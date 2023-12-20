@@ -1158,7 +1158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 173766.02
+      value: 192513.22
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1997,7 +1997,7 @@ PrefabInstance:
     - target: {fileID: 3236149540598557714, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: tutorialPosition
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2129225063}
     - target: {fileID: 3236149540598557724, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_Name
       value: Tutorial
@@ -2072,11 +2072,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3236149540598557725, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -2410
       objectReference: {fileID: 0}
     - target: {fileID: 3236149540598557725, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -1348
       objectReference: {fileID: 0}
     - target: {fileID: 3236149540598557725, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3488,6 +3488,41 @@ MonoBehaviour:
   normalButton: {fileID: 1719331047}
   hardButton: {fileID: 924569348}
   isOnDifficultyScene: 0
+--- !u!1 &2129225062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2129225063}
+  m_Layer: 0
+  m_Name: TutorialDummyPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2129225063
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129225062}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3995889104172510380}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -2410, y: -1348}
+  m_SizeDelta: {x: 1000, y: 1000}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &203148771152412763
 Transform:
   m_ObjectHideFlags: 0
@@ -4994,6 +5029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7551e31af85073640848a944c94a6ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleSpawnPoints: []
   availablePacksText: {fileID: 0}
   subsRestoreButton: {fileID: 0}
   promoUniAppRestoreButton: {fileID: 0}
@@ -5004,6 +5040,7 @@ MonoBehaviour:
   promoScreenMonthlyButton: {fileID: 0}
   promoScreenYearlyButton: {fileID: 0}
   promoScreenPuchasePremiumButton: {fileID: 0}
+  premiumPromoSettingsButton: {fileID: 0}
   availablePacksArray: []
 --- !u!1 &3312234166218571421
 GameObject:
@@ -5380,6 +5417,7 @@ RectTransform:
   - {fileID: 3312234165452428872}
   - {fileID: 1755342018}
   - {fileID: 1095351415}
+  - {fileID: 2129225063}
   - {fileID: 1007419542}
   - {fileID: 2124035451}
   - {fileID: 1082417584}

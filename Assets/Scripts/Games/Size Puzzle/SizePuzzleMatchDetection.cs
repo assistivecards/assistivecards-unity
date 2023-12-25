@@ -25,7 +25,7 @@ public class SizePuzzleMatchDetection : MonoBehaviour, IPointerClickHandler
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (Input.touchCount == 1)
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
             if (!isClicked)
             {
@@ -70,7 +70,54 @@ public class SizePuzzleMatchDetection : MonoBehaviour, IPointerClickHandler
                 isClicked = true;
             }
         }
+        else
+        {
+            if (Input.touchCount == 1)
+            {
+                if (!isClicked)
+                {
+                    GetCardScales();
 
+                    if (board.selectedSize == "small")
+                    {
+                        if (transform.localScale.x == Mathf.Min(cardScales))
+                        {
+                            ExecuteCorrectMatchProcedure();
+                        }
+                        else
+                        {
+                            FadeCardParent();
+                        }
+                    }
+
+                    else if (board.selectedSize == "medium")
+                    {
+                        if (transform.localScale.x < Mathf.Max(cardScales) && transform.localScale.x > Mathf.Min(cardScales))
+                        {
+                            ExecuteCorrectMatchProcedure();
+                        }
+                        else
+                        {
+                            FadeCardParent();
+                        }
+                    }
+
+                    else if (board.selectedSize == "large")
+                    {
+                        if (transform.localScale.x == Mathf.Max(cardScales))
+                        {
+                            ExecuteCorrectMatchProcedure();
+                        }
+                        else
+                        {
+                            FadeCardParent();
+                        }
+                    }
+
+                    isClicked = true;
+                }
+            }
+        }
 
     }
 

@@ -176,9 +176,16 @@ public class DetectMatch : MonoBehaviour, IPointerUpHandler
 
     public void OnBackButtonClick()
     {
-        if (Input.touchCount == 1 || Board.isBackAfterSignOut)
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
-            StartCoroutine(BackButtonClickCoroutine());
+           StartCoroutine(BackButtonClickCoroutine());
+        }
+        else
+        {
+            if (Board.isBackAfterSignOut)
+            {
+                StartCoroutine(BackButtonClickCoroutine());
+            }
         }
     }
 

@@ -60,7 +60,7 @@ public class MainMenuController : MonoBehaviour
 
     public async void GenerateCorrespondingRandomBoard()
     {
-        if (Input.touchCount == 1)
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
             if (packSelectionScreenUIController.canGenerate)
             {
@@ -78,7 +78,27 @@ public class MainMenuController : MonoBehaviour
                 await board.GenerateRandomBoardAsync();
             }
         }
-
+        else
+        {
+            if (Input.touchCount == 1)
+            {
+                if (packSelectionScreenUIController.canGenerate)
+                {
+                    board.packSlug = packSelectionPanelScript.selectedPackElement.name;
+                    packSelectionPanel.transform.GetChild(0).GetComponent<ScrollRect>().enabled = false;
+                    LeanTween.scale(packSelectionPanel, Vector3.zero, 0.25f);
+                    loadingPanel.SetActive(true);
+                    Invoke("ClosePackSelectionPanel", 0.5f);
+                    helloText.SetActive(false);
+                    speakerIcon.SetActive(false);
+                    homeButton.SetActive(false);
+                    levelProgressContainer.SetActive(false);
+                    await board.CacheCards(board.packSlug);
+                    // board.Invoke("GenerateRandomBoardAsync", 0.3f);
+                    await board.GenerateRandomBoardAsync();
+                }
+            }
+        }
     }
 
     private void ClosePackSelectionPanel()

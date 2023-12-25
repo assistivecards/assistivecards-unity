@@ -38,10 +38,9 @@ public class CardGoalFlickManager : MonoBehaviour, IPointerDownHandler, IPointer
 
     public void OnPointerDown(PointerEventData eventData)
     {
-
         isValid = true;
         touchTimeStart = Time.time;
-        startPos = Input.GetTouch(0).position;
+        startPos = eventData.position;
 
     }
 
@@ -51,7 +50,7 @@ public class CardGoalFlickManager : MonoBehaviour, IPointerDownHandler, IPointer
         {
             touchTimeFinish = Time.time;
             timeInterval = touchTimeFinish - touchTimeStart;
-            endPos = Input.GetTouch(0).position;
+            endPos = eventData.position;
 
             direction = startPos - endPos;
 

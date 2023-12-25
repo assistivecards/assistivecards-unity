@@ -36,7 +36,7 @@ public class PressCardsCounterSpawner : MonoBehaviour, IPointerClickHandler
 
     public void SpawnCounter()
     {
-        if (Input.touchCount == 1)
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
             if (counter < board.pressCount && gameObject.tag == "CorrectCard")
             {
@@ -88,8 +88,62 @@ public class PressCardsCounterSpawner : MonoBehaviour, IPointerClickHandler
                 gameAPI.RemoveSessionExp();
             }
         }
+        else
+        {
 
+            if (Input.touchCount == 1)
+            {
+                if (counter < board.pressCount && gameObject.tag == "CorrectCard")
+                {
+                    gameAPI.PlaySFX("Count");
+                    gameAPI.VibrateWeak();
 
+                    availableSpawnPointsLeft = spawnPointsLeft.Where(spawnPoint => spawnPoint.childCount == 0).ToList();
+                    availableSpawnPointsRight = spawnPointsRight.Where(spawnPoint => spawnPoint.childCount == 0).ToList();
+
+                    if (counter % 2 == 0)
+                    {
+                        var randomIndex = Random.Range(0, availableSpawnPointsRight.Count);
+
+                        var counterObject = Instantiate(counterPrefab, availableSpawnPointsRight[randomIndex].position, Quaternion.identity);
+                        counterObject.transform.SetParent(availableSpawnPointsRight[randomIndex]);
+                        counterObject.transform.rotation = counterObject.transform.parent.rotation;
+                        // counterObject.transform.localScale = Vector3.one;
+                        counterObject.transform.GetChild(0).GetComponent<Image>().sprite = countingNumbersImages[counter];
+                        LeanTween.scale(counterObject, Vector3.one, .25f);
+                        StartCoroutine(FadeCounter(counterObject));
+
+                        counter++;
+                        // Destroy(counterObject, .5f);
+                    }
+
+                    else if (counter % 2 == 1)
+                    {
+                        var randomIndex = Random.Range(0, availableSpawnPointsLeft.Count);
+
+                        var counterObject = Instantiate(counterPrefab, availableSpawnPointsLeft[randomIndex].position, Quaternion.identity);
+                        counterObject.transform.SetParent(availableSpawnPointsLeft[randomIndex]);
+                        counterObject.transform.rotation = counterObject.transform.parent.rotation;
+                        // counterObject.transform.localScale = Vector3.one;
+                        counterObject.transform.GetChild(0).GetComponent<Image>().sprite = countingNumbersImages[counter];
+                        LeanTween.scale(counterObject, Vector3.one, .25f);
+                        StartCoroutine(FadeCounter(counterObject));
+
+                        counter++;
+                        // Destroy(counterObject, .5f);
+                    }
+
+                    matchDetector.CheckCount(counter, gameObject);
+                }
+
+                else if (counter < board.pressCount && gameObject.tag == "WrongCard")
+                {
+                    LeanTween.alpha(gameObject.GetComponent<RectTransform>(), .5f, .25f);
+                    LeanTween.alpha(transform.GetChild(0).GetComponent<RectTransform>(), .5f, .25f);
+                    gameAPI.RemoveSessionExp();
+                }
+            }
+        }
     }
 
     public IEnumerator FadeCounter(GameObject counter)

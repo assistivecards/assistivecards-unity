@@ -24,7 +24,7 @@ public class ChooseMatchDetection : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (Input.touchCount == 1)
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
             if (!isClicked)
             {
@@ -60,6 +60,47 @@ public class ChooseMatchDetection : MonoBehaviour, IPointerClickHandler
                 }
 
                 isClicked = true;
+            }
+        }
+        else
+        {
+            if (Input.touchCount == 1)
+            {
+                if (!isClicked)
+                {
+                    if (gameObject.CompareTag("CorrectCard"))
+                    {
+                        for (int i = 0; i < board.cardParents.Length; i++)
+                        {
+                            board.cardParents[i].GetComponent<ChooseMatchDetection>().isClicked = true;
+                        }
+
+                        UIController.correctMatches++;
+                        gameAPI.AddSessionExp();
+                        UIController.backButton.GetComponent<Button>().interactable = false;
+                        gameAPI.PlaySFX("Success");
+                        gameAPI.PlayConfettiParticle(transform.position);
+                        board.Invoke("ReadCard", 0.25f);
+                        LeanTween.scale(gameObject, Vector3.one * 1.15f, .25f);
+                        board.Invoke("ScaleImagesDown", 1f);
+                        board.Invoke("ClearBoard", 1.30f);
+
+                        if (UIController.correctMatches == UIController.checkpointFrequency)
+                        {
+                            gameAPI.AddExp(gameAPI.sessionExp);
+                            UIController.Invoke("OpenCheckPointPanel", 1.3f);
+                        }
+                        else
+                            board.Invoke("GenerateRandomBoardAsync", 1.3f);
+                    }
+                    else
+                    {
+                        gameAPI.RemoveSessionExp();
+                        FadeCardParent();
+                    }
+
+                    isClicked = true;
+                }
             }
         }
 

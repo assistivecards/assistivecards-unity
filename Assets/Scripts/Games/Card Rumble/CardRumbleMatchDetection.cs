@@ -25,7 +25,7 @@ public class CardRumbleMatchDetection : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (Input.touchCount == 1)
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
             if (gameObject.CompareTag("CorrectCard") && !isClicked)
             {
@@ -67,6 +67,53 @@ public class CardRumbleMatchDetection : MonoBehaviour, IPointerClickHandler
                 gameAPI.RemoveSessionExp();
                 gameAPI.PlaySFX("Pickup");
                 LeanTween.scale(gameObject, Vector3.one * .85f, .15f).setOnComplete(ScaleBackToNormal);
+            }
+        }
+        else
+        {
+            if (Input.touchCount == 1)
+            {
+                if (gameObject.CompareTag("CorrectCard") && !isClicked)
+                {
+                    Debug.Log("CORRECT MATCH!");
+                    gameAPI.AddSessionExp();
+                    gameAPI.PlaySFX("Success");
+                    isClicked = true;
+                    LeanTween.pause(gameObject);
+                    LeanTween.rotateZ(gameObject, 0, .25f);
+                    LeanTween.scale(gameObject, Vector3.one * 1.25f, .25f).setOnComplete(ScaleCardDown);
+                    ReadCard();
+                    board.numOfMatchedCards++;
+
+                    if (CheckIfLevelComplete())
+                    {
+                        Debug.Log("LEVEL COMPLETE!");
+                        gameAPI.PlayConfettiParticle(board.transform.position);
+                        UIController.levelsCompleted++;
+                        DisableMatchDetection();
+                        UIController.backButton.GetComponent<Button>().interactable = false;
+                        Invoke("PlayLevelCompletedAnimation", .55f);
+                        board.Invoke("ScaleImagesDown", 1f);
+                        board.Invoke("ClearBoard", 1.3f);
+
+                        if (UIController.levelsCompleted == UIController.checkpointFrequency)
+                        {
+                            gameAPI.AddExp(gameAPI.sessionExp);
+                            UIController.Invoke("OpenCheckPointPanel", 1.3f);
+                        }
+                        else
+                            board.Invoke("GenerateRandomBoardAsync", 1.3f);
+                    }
+
+                }
+
+                else if (transform.GetChild(0).GetComponent<Image>().sprite.texture.name != board.correctCardTitle)
+                {
+                    Debug.Log("WRONG MATCH!");
+                    gameAPI.RemoveSessionExp();
+                    gameAPI.PlaySFX("Pickup");
+                    LeanTween.scale(gameObject, Vector3.one * .85f, .15f).setOnComplete(ScaleBackToNormal);
+                }
             }
         }
 

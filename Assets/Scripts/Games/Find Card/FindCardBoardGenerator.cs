@@ -259,6 +259,7 @@ public class FindCardBoardGenerator : MonoBehaviour
         for (int i = 0; i < cardParents.Length; i++)
         {
             cardParents[i].GetComponent<FindCardFlipCard>().FlipBack();
+            cardParents[i].GetComponent<FindCardFlipCard>().firstFlip = true;
         }
 
         gameAPI.PlaySFX("FlipCardBack");

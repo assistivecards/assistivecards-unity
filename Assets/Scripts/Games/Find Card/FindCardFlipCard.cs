@@ -8,6 +8,7 @@ public class FindCardFlipCard : MonoBehaviour, IPointerClickHandler
     private FindCardMatchDetection matchDetector;
     private GameAPI gameAPI;
     public bool isFlipped = false;
+    public bool firstFlip = false;
 
     private void Awake()
     {
@@ -52,7 +53,10 @@ public class FindCardFlipCard : MonoBehaviour, IPointerClickHandler
 
     public void TriggerCheckCard()
     {
-        matchDetector.CheckCard(transform);
+        if(firstFlip)
+        {
+            matchDetector.CheckCard(transform);
+        }
     }
 
 }

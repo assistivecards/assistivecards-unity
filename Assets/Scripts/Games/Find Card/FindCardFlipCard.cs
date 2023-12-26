@@ -21,19 +21,28 @@ public class FindCardFlipCard : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (Input.touchCount == 1)
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
-            if (transform.rotation.eulerAngles.y < 2)
+            LeanTween.rotateY(gameObject, -180, .75f);
+            // .setOnComplete(() => matchDetector.CheckCard(transform))
+            Invoke("TriggerCheckCard", .75f);
+            gameAPI.PlaySFX("FlipCard");
+            isFlipped = true;
+        }
+        else
+        {
+            if (Input.touchCount == 1)
             {
-                LeanTween.rotateY(gameObject, -180, .75f);
-                // .setOnComplete(() => matchDetector.CheckCard(transform))
-                Invoke("TriggerCheckCard", .75f);
-                gameAPI.PlaySFX("FlipCard");
-                isFlipped = true;
+                if (transform.rotation.eulerAngles.y < 2)
+                {
+                    LeanTween.rotateY(gameObject, -180, .75f);
+                    // .setOnComplete(() => matchDetector.CheckCard(transform))
+                    Invoke("TriggerCheckCard", .75f);
+                    gameAPI.PlaySFX("FlipCard");
+                    isFlipped = true;
+                }
             }
         }
-
-
     }
 
     public void FlipBack()

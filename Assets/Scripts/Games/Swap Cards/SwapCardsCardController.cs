@@ -47,29 +47,63 @@ public class SwapCardsCardController : MonoBehaviour, IPointerDownHandler, IPoin
 
     public void OnDrag(PointerEventData eventData)
     {
-        if(Input.touchCount == 1 && draggable)
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
-            transform.position = transform.position + new Vector3(eventData.delta.x, eventData.delta.y, 0);
+            if(draggable)
+            {
+                transform.position = transform.position + new Vector3(eventData.delta.x, eventData.delta.y, 0);
+            }
+        }
+        else
+        {
+            if(Input.touchCount == 1 && draggable)
+            {
+                transform.position = transform.position + new Vector3(eventData.delta.x, eventData.delta.y, 0);
+            }
         }
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if(Input.touchCount == 1 && draggable)
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
-            transform.GetComponent<Rigidbody2D>().isKinematic = true;
-            isPointerUp = false;
+            if(draggable)
+            {
+                transform.GetComponent<Rigidbody2D>().isKinematic = true;
+                isPointerUp = false;
+            }
+        }
+        else
+        {
+            if(Input.touchCount == 1 && draggable)
+            {
+                transform.GetComponent<Rigidbody2D>().isKinematic = true;
+                isPointerUp = false;
+            }
         }
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if(Input.touchCount == 1 && draggable)
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
-            transform.GetComponent<Rigidbody2D>().isKinematic = false;
-            Invoke("MoveToStart", 0.5f);
-            isPointerUp = true;
-            oneTime = true;
+            if(draggable)
+            {
+                transform.GetComponent<Rigidbody2D>().isKinematic = false;
+                Invoke("MoveToStart", 0.5f);
+                isPointerUp = true;
+                oneTime = true;
+            }
+        }
+        else
+        {
+            if(Input.touchCount == 1 && draggable)
+            {
+                transform.GetComponent<Rigidbody2D>().isKinematic = false;
+                Invoke("MoveToStart", 0.5f);
+                isPointerUp = true;
+                oneTime = true;
+            }
         }
     }
 

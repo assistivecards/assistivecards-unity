@@ -23,7 +23,7 @@ public class FindCardMatchDetection : MonoBehaviour
 
     public void CheckCard(Transform flippedCard)
     {
-        if (flippedCard.tag == "CorrectCard")
+        if (flippedCard.tag == "CorrectCard" && !flippedCard.GetComponent<FindCardFlipCard>().isClicked)
         {
             Debug.Log("CORRECT CARD");
             gameAPI.AddSessionExp();

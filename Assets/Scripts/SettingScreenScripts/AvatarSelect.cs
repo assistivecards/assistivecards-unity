@@ -19,11 +19,14 @@ public class AvatarSelect : MonoBehaviour
     {
         canvas = GameObject.Find("Settings");
         canvasController = canvas.GetComponent<CanvasController>();
-        backgroundController = FindObjectOfType<OnboardingBackgroundController>().GetComponent<OnboardingBackgroundController>();
+        backgroundController = FindObjectOfType<OnboardingBackgroundController>();
     }
     public void SelectAvatar()
     { 
-        backgroundController.SetBackground2();
+        if(backgroundController != null)
+        {
+            backgroundController.SetBackground2();
+        }
         LeanTween.scale(practiceReminder, Vector3.one * 0.9f, 0f);
         Invoke("SceneSetActiveFalse", 0.15f);
     }

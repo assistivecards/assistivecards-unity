@@ -43,15 +43,10 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void OnEnable() 
     {
-        LeanTween.scale(this.gameObject, Vector3.one, 0.3f);
         cardPosition = this.transform.position;
         cardCrushGrid = FindObjectOfType<CardCrushGrid>();
         cardCrushFillGrid = FindObjectOfType<CardCrushFillGrid>();
         soundController = FindObjectOfType<SoundController>();
-        if(this.transform.localScale.x > 1)
-        {
-            this.transform.localScale = Vector3.one;
-        }
     }
 
     public void OnPointerDown(PointerEventData pointerEventData)
@@ -94,10 +89,6 @@ public class CardElement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void Update() 
     {
-        if(this.transform.localScale.x > 1)
-        {
-            this.transform.localScale = Vector3.one;
-        }
         if(cardCrushFillGrid.isBoardCreated)
             DetectNeighbours();
             

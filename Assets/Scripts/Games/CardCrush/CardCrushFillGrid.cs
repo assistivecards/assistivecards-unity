@@ -116,6 +116,7 @@ public class CardCrushFillGrid : MonoBehaviour
             }
             card.transform.name = cardNames[cardImageRandom];
             card.transform.SetParent(cardCrushGrid.allCells[i].transform);
+            card.transform.localScale = Vector3.one;
             card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
 
             cardCrushGrid.allCells[i].card = card;
@@ -236,6 +237,7 @@ public class CardCrushFillGrid : MonoBehaviour
 
                 card.transform.name = cardTextureNames[cardImageRandom];
                 card.transform.SetParent(cell.transform);
+                card.transform.localScale = Vector3.one;
                 card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
 
                 cell.card = card;
@@ -268,7 +270,7 @@ public class CardCrushFillGrid : MonoBehaviour
             {
                 if(cell.isEmpty)
                 {
-                    RefillBoard();
+                    Invoke("RefillBoard", 0.2f);
                 }
             }
         }
@@ -297,6 +299,7 @@ public class CardCrushFillGrid : MonoBehaviour
 
         card.transform.name = cardTextureNames[cardImageRandom];
         card.transform.SetParent(cell.transform);
+        card.transform.localScale = Vector3.one;
         card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
 
         cell.card = card;

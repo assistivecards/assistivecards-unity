@@ -209,6 +209,7 @@ public class CardBlastFillGrid : MonoBehaviour
                 {
                     card.transform.name = cardNames[cardImageRandom];
                     card.transform.SetParent(cell.transform);
+                    card.transform.localScale = Vector3.one;
                     card.transform.GetChild(0).GetComponent<RawImage>().texture = cardTexture;
 
                     cell.card = card;
@@ -216,7 +217,6 @@ public class CardBlastFillGrid : MonoBehaviour
                     card.GetComponent<CardBlastElement>().y = cell.y;
                     card.GetComponent<CardBlastElement>().type = cardTextureNames[cardImageRandom];
                     card.GetComponent<CardBlastElement>().localName = cardTextureLocalNames[cardImageRandom];
-                    LeanTween.scale(card, Vector3.one, 0.5f);
                 }
             }
         }

@@ -411,7 +411,7 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         {
             soundController.matchedList.Add(localName);
             soundController.match = true;
-            LeanTween.scale(card, new Vector3(0.5f, 0.5f, 0.5f), 0.1f);  
+            LeanTween.scale(card, new Vector3(0.4f, 0.4f, 0.4f), 0.1f);  
             totalPos.x = totalPos.x + card.transform.position.x;
             totalPos.y = totalPos.y + card.transform.position.y;
             Debug.Log(totalPos);

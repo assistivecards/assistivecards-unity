@@ -58,6 +58,7 @@ public class AlphabetOrderBoardGenerator : MonoBehaviour
 
     public async Task GenerateRandomBoardAsync()
     {
+        loadingPanel.SetActive(true);
         if (didLanguageChange)
         {
             await CacheCards(packSlug);
@@ -75,6 +76,7 @@ public class AlphabetOrderBoardGenerator : MonoBehaviour
         UIController.Invoke("TutorialSetActive", .3f);
         Invoke("EnableBackButton", 0.15f);
         await PrefetchNextLevelsTexturesAsync();
+
     }
 
     public void ClearBoard()

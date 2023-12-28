@@ -166,8 +166,6 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
             GetFirstLetter(cards[random]);
         }
         correctButton = cards[random];
-        tutorial.GetComponent<AlphabetChooseTutorial>().SetPosition(correctButton.transform);
-        tutorial.GetComponent<Tutorial>().tutorialPosition = correctButton.transform;
         letterCard = Instantiate(cardPrefab, cardPosition.transform.position, Quaternion.identity);
         letterCard.transform.SetParent(cardPosition.transform);
 
@@ -197,6 +195,13 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
             letterCard.transform.GetChild(1).GetComponent<TMP_Text>().color = colors[Random.Range(0, colors.Length)];
         }
         firstLetterText.GetComponent<TMP_Text>().text = gameAPI.Translate(firstLetterText.gameObject.name, gameAPI.ToSentenceCase(firstLetter).Replace("-", " "), selectedLangCode);
+        Invoke("SetTutorialPosition", 0.5f);
+    }
+
+    private void SetTutorialPosition()
+    {
+        tutorial.GetComponent<AlphabetChooseTutorial>().SetPosition(correctButton.transform);
+        tutorial.GetComponent<Tutorial>().tutorialPosition = correctButton.transform;
     }
 
     private void GetFirstLetter(GameObject _card)

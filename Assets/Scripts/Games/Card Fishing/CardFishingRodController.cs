@@ -28,7 +28,7 @@ public class CardFishingRodController : MonoBehaviour, IPointerDownHandler, IPoi
         isPointerDown = false;
     }
 
-    private void Update() 
+    private void FixedUpdate() 
     {
         if(point1 != null && point2 != null && !isPointerDown)
         {

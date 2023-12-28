@@ -113,8 +113,8 @@ public class BoardGenerateCardChain : MonoBehaviour
             var cardTexture1 = await gameAPI.GetCardImage(packSlug, cardName1, 512);
             var localName1 = cardDefinitionsLocale[randomValueList[j + 1]];
 
-            cardTexture.wrapMode = TextureWrapMode.Clamp;
-            cardTexture.filterMode = FilterMode.Bilinear;
+            cardTexture1.wrapMode = TextureWrapMode.Clamp;
+            cardTexture1.filterMode = FilterMode.Bilinear;
             cards[j].transform.GetChild(1).GetComponentInChildren<RawImage>().texture = cardTexture1;
             cards[j].transform.GetChild(1).gameObject.name = cardName1;
             cards[j].GetComponent<CardChainCardController>().rightCardLocalName = localName1;

@@ -122,9 +122,9 @@ public class BoardGenerateCardChain : MonoBehaviour
             LeanTween.scale(cards[j], Vector3.one * 0.5f, 0.5f);
             CreateRandomPosition(cards[j]);
         }
-        tutorial.GetComponent<TutorialCardChain>().point1 = cards[0].transform;
-        tutorial.GetComponent<TutorialCardChain>().point1 = cards[1].transform;
         Invoke("BoardCreatedBool", 0.5f);
+        tutorial.GetComponent<TutorialCardChain>().point1 = cards[0].transform;
+        tutorial.GetComponent<TutorialCardChain>().point2 = cards[1].transform;
     }
 
     private void CreateRandomPosition(GameObject _card)

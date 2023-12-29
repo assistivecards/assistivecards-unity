@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Tutorial : MonoBehaviour, IDragHandler
+public class Tutorial : MonoBehaviour, IDragHandler, IPointerDownHandler
 {
     public Transform tutorialPosition;
 
@@ -19,6 +19,11 @@ public class Tutorial : MonoBehaviour, IDragHandler
         }
     }
 
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        Invoke("SetActiveFalse", 0.15f);
+    }
+
     public void OnDrag(PointerEventData eventData) 
     {
         Invoke("SetActiveFalse", 0.15f);
@@ -27,13 +32,5 @@ public class Tutorial : MonoBehaviour, IDragHandler
     private void SetActiveFalse()
     {
         this.gameObject.SetActive(false);
-    }
-
-    void Update()
-    {
-        if (Input.touchCount > 0)
-        {
-            Invoke("SetActiveFalse", 0.7f);
-        }
     }
 }

@@ -948,11 +948,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3236149540159706466, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3236149540159706466, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -50
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 3236149540598557714, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: tutorialPosition
@@ -1335,7 +1335,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   board: {fileID: 8383894889009589326}
   correctCards: []
-  activeCards: []
   point1: {fileID: 0}
   point2: {fileID: 1002252157}
 --- !u!114 &770021530 stripped
@@ -4274,7 +4273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 196904.3
+      value: 198838.31
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -5006,7 +5005,6 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   targetArea: {fileID: 1002252156}
   targetAreaGhost: {fileID: 2081548640}
-  tutorial: {fileID: 737180074}
   cachedCards:
     cards: []
   tempSprites: []

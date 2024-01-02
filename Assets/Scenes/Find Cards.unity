@@ -1082,6 +1082,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14fdc5b9164ed7f4f85e6949598a8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFlipped: 0
+  firstFlip: 0
+  isClicked: 0
 --- !u!1 &429505576 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1982601096855616903, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -1497,6 +1500,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14fdc5b9164ed7f4f85e6949598a8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFlipped: 0
+  firstFlip: 0
+  isClicked: 0
 --- !u!1 &517973487
 GameObject:
   m_ObjectHideFlags: 0
@@ -1737,11 +1743,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3236149540159706466, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 55
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3236149540159706466, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -55
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 3236149540598557724, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_Name
@@ -2350,6 +2356,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14fdc5b9164ed7f4f85e6949598a8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFlipped: 0
+  firstFlip: 0
+  isClicked: 0
 --- !u!1 &833776518
 GameObject:
   m_ObjectHideFlags: 0
@@ -2475,6 +2484,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14fdc5b9164ed7f4f85e6949598a8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFlipped: 0
+  firstFlip: 0
+  isClicked: 0
 --- !u!1 &863319475
 GameObject:
   m_ObjectHideFlags: 0
@@ -2735,6 +2747,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14fdc5b9164ed7f4f85e6949598a8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFlipped: 0
+  firstFlip: 0
+  isClicked: 0
 --- !u!1 &904105816
 GameObject:
   m_ObjectHideFlags: 0
@@ -2986,8 +3001,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   board: {fileID: 8383894889009589326}
   correctCards: []
-  point1: {fileID: 0}
-  point2: {fileID: 0}
+  activeCards: []
 --- !u!1 &942402669
 GameObject:
   m_ObjectHideFlags: 0
@@ -3860,6 +3874,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14fdc5b9164ed7f4f85e6949598a8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFlipped: 0
+  firstFlip: 0
+  isClicked: 0
 --- !u!1 &1231408339 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4176269118155799894, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
@@ -5000,6 +5017,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14fdc5b9164ed7f4f85e6949598a8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFlipped: 0
+  firstFlip: 0
+  isClicked: 0
 --- !u!1 &1635213019
 GameObject:
   m_ObjectHideFlags: 0
@@ -5125,6 +5145,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14fdc5b9164ed7f4f85e6949598a8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFlipped: 0
+  firstFlip: 0
+  isClicked: 0
 --- !u!1 &1704817506
 GameObject:
   m_ObjectHideFlags: 0
@@ -5432,6 +5455,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14fdc5b9164ed7f4f85e6949598a8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFlipped: 0
+  firstFlip: 0
+  isClicked: 0
 --- !u!1 &1753345482
 GameObject:
   m_ObjectHideFlags: 0
@@ -6240,6 +6266,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14fdc5b9164ed7f4f85e6949598a8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFlipped: 0
+  firstFlip: 0
+  isClicked: 0
 --- !u!1 &1861107747
 GameObject:
   m_ObjectHideFlags: 0
@@ -6453,6 +6482,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14fdc5b9164ed7f4f85e6949598a8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFlipped: 0
+  firstFlip: 0
+  isClicked: 0
 --- !u!1 &1988008157
 GameObject:
   m_ObjectHideFlags: 0
@@ -6503,6 +6535,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14fdc5b9164ed7f4f85e6949598a8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFlipped: 0
+  firstFlip: 0
+  isClicked: 0
 --- !u!114 &2018903310 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1242831489334970560, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
@@ -7031,7 +7066,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 243872.8
+      value: 245535.27
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490808992309, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

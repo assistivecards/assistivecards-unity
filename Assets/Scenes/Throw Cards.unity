@@ -959,19 +959,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3236149540159706466, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_LocalScale.x
-      value: 30
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3236149540159706466, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_LocalScale.y
-      value: 30
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3236149540159706466, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 55
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3236149540159706466, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -55
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 3236149540159706467, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_Enabled
@@ -1254,7 +1254,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: -100}
+  m_AnchoredPosition: {x: 147, y: -80}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &770021530 stripped
@@ -3856,7 +3856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 179018.77
+      value: 184436.73
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a
@@ -4590,9 +4590,6 @@ MonoBehaviour:
   slot: {fileID: 2142621009}
   cachedCards:
     cards: []
-  randomCards: []
-  randomImages: []
-  randomSprites: []
   selectedLangCode: 
   correctCardSlug: 
   throwText: {fileID: 1312709075}

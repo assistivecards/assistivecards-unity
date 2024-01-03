@@ -239,6 +239,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
         targetCard = prefetchedCardNames[targetCardRandomValue];
         targetCardLocal = prefetchedCardNames[targetCardRandomValue];
         collect.SetActive(true);
+        snakeParent.SetActive(true);
         Invoke("GameUIActivate", 0.5f);
     }
 
@@ -317,6 +318,7 @@ public class SnakeCardsBoardGenerator : MonoBehaviour
         {
             Destroy(card);
         }
+        snakeParent.SetActive(false);
         cardNames.Clear();
         cardsList.Clear();
         cardLocalNames.Clear();

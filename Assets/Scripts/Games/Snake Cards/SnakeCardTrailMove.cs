@@ -46,22 +46,18 @@ public class SnakeCardTrailMove : MonoBehaviour
                 snake.transform.localScale = new Vector3(1, -1, 1);
                 directionStatus = "down";
             }
-            if(Input.touchCount > 0)
+
+            if (Input.GetMouseButtonDown(0))
             {
-                Touch touch = Input.GetTouch(0);
-                switch (touch.phase)
-                {
-                    case TouchPhase.Began:
-                        firstTouchPosition = touch.position;
-                        break;
-
-                    case TouchPhase.Ended:
-                        secondTouchPosition = touch.position;
-                        DetectDirection();
-                        break;
-                }
-
-            }
+                Ray vRayStart = Camera.main.ScreenPointToRay(Input.mousePosition);
+                firstTouchPosition = vRayStart.origin;
+		    }
+		    if (Input.GetMouseButtonUp(0))
+            {
+                Ray vRayEnd = Camera.main.ScreenPointToRay(Input.mousePosition);
+                secondTouchPosition  = vRayEnd.origin;
+                DetectDirection();
+			}
         }
     }
 

@@ -61,7 +61,6 @@ public class SnakeCardsCollisionDetector : MonoBehaviour
                 Debug.Log(other.GetComponent<SnakeCardsCardController>().cardLocalName);
                 gameAPI.PlayConfettiParticle(other.transform.position); 
                 Invoke("SuccessSound", 0.25f);
-               
             }
             else
             {

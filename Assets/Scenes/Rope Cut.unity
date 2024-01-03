@@ -1777,7 +1777,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 8681b7feeb080441aba002c57f8abe83, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1785,7 +1785,7 @@ SpriteRenderer:
   m_Size: {x: 2.4, y: 2.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1210620070
@@ -2106,6 +2106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7551e31af85073640848a944c94a6ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleSpawnPoints: []
   availablePacksText: {fileID: 770021530}
   subsRestoreButton: {fileID: 0}
   promoUniAppRestoreButton: {fileID: 0}
@@ -2116,6 +2117,7 @@ MonoBehaviour:
   promoScreenMonthlyButton: {fileID: 0}
   promoScreenYearlyButton: {fileID: 0}
   promoScreenPuchasePremiumButton: {fileID: 0}
+  premiumPromoSettingsButton: {fileID: 0}
   availablePacksArray: []
 --- !u!114 &1338730598
 MonoBehaviour:
@@ -2172,9 +2174,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1910463663942908501}
     m_Modifications:
+    - target: {fileID: 3236149540159706466, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 3236149540159706466, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3236149540159706477, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3236149540598557714, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_Enabled
@@ -2288,6 +2298,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6869474275132592025, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 60998bc7cf0e44489b8e84528804c215, type: 2}
     - target: {fileID: 7509440557360935793, guid: 9264e04a0dd204edfa1305f701535250, type: 3}
       propertyPath: m_Controller
       value: 
@@ -2362,9 +2376,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c580566a4cc9cf4eb8901905e0ae094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitRope: {fileID: 0}
   canCut: 1
   trailManager: {fileID: 1915469689}
   settingsButton: {fileID: 1426404170}
+  particlePlayed: 0
 --- !u!114 &1426404170 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 543293291873109802, guid: 73905727c04d38c4089e2fd833cf993c, type: 3}
@@ -4153,6 +4169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ropeCutManager: {fileID: 1416613811}
   settingsButton: {fileID: 1426404170}
+  particlePlayed: 0
 --- !u!68 &1915469693
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -4792,7 +4809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 194052.28
+      value: 214473.38
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a
@@ -5422,9 +5439,6 @@ MonoBehaviour:
   - {fileID: 58110684}
   cachedCards:
     cards: []
-  randomCards: []
-  randomImages: []
-  randomSprites: []
   selectedLangCode: 
   correctCardSlug: 
   cutText: {fileID: 2123920298}
@@ -5434,6 +5448,7 @@ MonoBehaviour:
   trailManager: {fileID: 1915469689}
   tutorial: {fileID: 1210620065}
   loadingPanel: {fileID: 671447375}
+  correctCardImageIndex: 0
 --- !u!114 &8383894889009589327
 MonoBehaviour:
   m_ObjectHideFlags: 0

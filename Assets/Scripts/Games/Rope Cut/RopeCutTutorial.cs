@@ -29,7 +29,7 @@ public class RopeCutTutorial : MonoBehaviour
     {
         if(point1 != null && point2 != null)
         {
-            transform.position = Vector3.Lerp(point1, point2, Mathf.PingPong(Time.time, 1));
+            //transform.position = Vector3.Lerp(point1, point2, Mathf.PingPong(Time.time, 1));
         }
         if (Input.touchCount > 0)
         {
@@ -41,7 +41,7 @@ public class RopeCutTutorial : MonoBehaviour
     {
         cardPositions = GameObject.FindGameObjectsWithTag("CorrectCard");
         this.transform.position = new Vector3(cardPositions[1].transform.position.x, cardPositions[1].transform.position.y + 2f, cardPositions[1].transform.position.z);
-        LeanTween.scale(this.gameObject, Vector3.one * 30f, 0.2f);
+        LeanTween.scale(this.gameObject, Vector3.one * 4.5f, 0.2f);
         point1 =  new Vector3(cardPositions[1].transform.position.x + 1.5f, cardPositions[1].transform.position.y + 2f, cardPositions[1].transform.position.z);
         point2 =  new Vector3(cardPositions[1].transform.position.x - 1.5f, cardPositions[1].transform.position.y + 2f, cardPositions[1].transform.position.z);
     }

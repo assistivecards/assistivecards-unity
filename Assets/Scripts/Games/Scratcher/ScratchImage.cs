@@ -130,9 +130,7 @@ public class ScratchImage : MonoBehaviour, IPointerEnterHandler
 
     private void Update()
     {
-
-        // Vector2 localPt;
-        if (Input.touchCount == 1)
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
             Vector2 mPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             RectTransformUtility.ScreenPointToLocalPointInRectangle(transform as RectTransform, mPos, uiCamera, out localPt);
@@ -142,7 +140,16 @@ public class ScratchImage : MonoBehaviour, IPointerEnterHandler
                 CheckInput();
             }
         }
+        else
+        {
+            Vector2 mPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(transform as RectTransform, mPos, uiCamera, out localPt);
 
+            if (gameObject.GetComponent<RectTransform>().rect.Contains((localPt)))
+            {
+                CheckInput();
+            }
+        }
     }
 
     void LateUpdate()

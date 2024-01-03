@@ -21,11 +21,11 @@ public class RopeCutManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount == 1)
-        {
-            if (Input.GetTouch(0).phase == TouchPhase.Began || Input.GetTouch(0).phase == TouchPhase.Moved)
+        // if (Input.touchCount == 1)
+        // {
+            if (Input.GetMouseButtonDown(0))
             {
-                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position), Vector2.zero);
+                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
                 if (hit.collider != null)
                 {
                     if (hit.collider.tag == "Rope" && canCut)
@@ -55,12 +55,12 @@ public class RopeCutManager : MonoBehaviour
                 }
             }
 
-            if (Input.GetTouch(0).phase == TouchPhase.Ended)
+            if (Input.GetMouseButtonUp(0))
             {
                 // LeanTween.alpha(trailManager, 1, .00001f);
                 // trailManager.SetActive(true);
                 canCut = true;
             }
-        }
+        //}
     }
 }

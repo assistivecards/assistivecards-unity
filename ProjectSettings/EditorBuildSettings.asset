@@ -81,6 +81,12 @@ EditorBuildSettings:
     path: Assets/Scenes/First Letter.unity
     guid: 517c69ce9ef954fe19184b5b7a57036a
   - enabled: 1
+    path: Assets/Scenes/Follow Path.unity
+    guid: bedffddab8fef44d2a997bff2df1d467
+  - enabled: 1
+    path: Assets/Scenes/Grid Find.unity
+    guid: 7c53ffa19d38a4104a4378c920b2a237
+  - enabled: 1
     path: Assets/Scenes/Hatch Match.unity
     guid: 95c85cee1658c4a5eac634d096cd5f27
   - enabled: 1
@@ -129,6 +135,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Sort Cards.unity
     guid: 75f55255bd1344393b519abf1f4e2f43
   - enabled: 1
+    path: Assets/Scenes/Spell Cards.unity
+    guid: 284620714ba9b417488f4383c9d7d133
+  - enabled: 1
     path: Assets/Scenes/Split Puzzle.unity
     guid: b98271b2041dc4c4594410ca08f257b1
   - enabled: 1
@@ -138,9 +147,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Swap Cards.unity
     guid: 07cfd654e38894317b6a75c2bd356fc5
   - enabled: 1
-    path: Assets/Scenes/Template.unity
-    guid: b0ed93d42f5a8d34ea0581811d64e243
-  - enabled: 1
     path: Assets/Scenes/Throw Cards.unity
     guid: 57f8ad36c36b7dc4fa802c948a49803b
+  - enabled: 1
+    path: Assets/Scenes/Word Hunt.unity
+    guid: 5031df253887b4b8596fecd0ca4504f6
   m_configObjects: {}

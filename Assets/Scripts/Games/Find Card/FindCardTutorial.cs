@@ -17,9 +17,11 @@ public class FindCardTutorial : MonoBehaviour
         // gameObject.GetComponent<Tutorial>().tutorialPosition = activeCards[0].transform;
     }
 
-    private void Update()
-    {
-        transform.position = activeCards[0].transform.position;
-    }
-
+    // private void Update()
+    // {
+    //     if(activeCards[0] != null)
+    //     {
+    //         transform.position = activeCards[0].transform.position;
+    //     }
+    // }
 }

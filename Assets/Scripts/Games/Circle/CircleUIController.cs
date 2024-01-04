@@ -13,6 +13,7 @@ public class CircleUIController : MonoBehaviour
     [SerializeField] GameObject homeButton;
     [SerializeField] GameObject levelProgressContainer;
     [SerializeField] GameObject checkPointPanel;
+    [SerializeField] GameObject tutorial;
     [SerializeField] DrawManager drawManager;
     [SerializeField] private AccessibilityScreen accessibilityScreen;
     public int correctMatches;
@@ -32,6 +33,11 @@ public class CircleUIController : MonoBehaviour
             _tutorial.SetActive(true);
         }
         firstTime = false;
+    }
+
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
     }
 
     public void OnBackButtonClick()
@@ -68,7 +74,7 @@ public class CircleUIController : MonoBehaviour
         speakerIcon.SetActive(true);
         homeButton.SetActive(true);
         levelProgressContainer.SetActive(true);
-
+        TutorialSetDeactive();
     }
 
     public void EnableScrollRect()
@@ -84,6 +90,7 @@ public class CircleUIController : MonoBehaviour
         LeanTween.scale(checkPointPanel, Vector3.one * 0.6f, 0.25f);
         gameAPI.PlaySFX("Finished");
         Invoke("EnableContinuePlayingButton", .75f);
+        TutorialSetDeactive();
     }
 
     public void CloseCheckpointPanel()

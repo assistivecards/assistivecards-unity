@@ -3100,7 +3100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 230688.64
+      value: 237004.42
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a
@@ -3742,6 +3742,7 @@ MonoBehaviour:
   homeButton: {fileID: 1362600184}
   levelProgressContainer: {fileID: 586259270}
   checkPointPanel: {fileID: 2113253922}
+  tutorial: {fileID: 825688676}
   drawManager: {fileID: 38099728}
   accessibilityScreen: {fileID: 1235288819}
   correctMatches: 0

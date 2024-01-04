@@ -54,12 +54,18 @@ public class CardShootingUIController : MonoBehaviour
         }
     }
 
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
+    }
+
     public void LevelEnding()
     {
         boardGenerator.ClearBoard();
         gameUI.SetActive(false);
         backButton.SetActive(false);
         settingButton.SetActive(false);
+        TutorialSetDeactive();
     }
 
     public void LevelChangeScreenActivate()
@@ -69,6 +75,7 @@ public class CardShootingUIController : MonoBehaviour
         levelChange.SetActive(true);
         ballController.levelCount = 0;
         LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.1f);
+        TutorialSetDeactive();
     }
 
     public void CloseLevelChangePanel()
@@ -135,6 +142,7 @@ public class CardShootingUIController : MonoBehaviour
             levelProgressContainer.SetActive(false);
             settingButton.SetActive(false);
             backButton.SetActive(false);
+            TutorialSetDeactive();
         }
     }
 }

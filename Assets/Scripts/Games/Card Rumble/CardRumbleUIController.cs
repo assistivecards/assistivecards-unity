@@ -50,12 +50,18 @@ public class CardRumbleUIController : MonoBehaviour
         LeanTween.scale(checkPointPanel, Vector3.zero, 0.25f);
         yield return new WaitForSeconds(0.5f);
         checkPointPanel.SetActive(false);
+        TutorialSetDeactive();
     }
 
     public void ChooseNewPackButtonClick()
     {
         StartCoroutine(ChooseNewPackButtonCoroutine());
 
+    }
+
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
     }
 
     IEnumerator ChooseNewPackButtonCoroutine()
@@ -117,6 +123,8 @@ public class CardRumbleUIController : MonoBehaviour
                 StartCoroutine(BackButtonClickCoroutine());
             }
         }
+
+        TutorialSetDeactive();
     }
 
     IEnumerator BackButtonClickCoroutine()

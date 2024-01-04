@@ -53,6 +53,11 @@ public class LetterFindUIController : MonoBehaviour
         }
     }
 
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
+    }
+
     public void GameUIDeactivate()
     {
         gameUI.SetActive(false);
@@ -61,6 +66,7 @@ public class LetterFindUIController : MonoBehaviour
         helloText.SetActive(false);
         levelProgressContainer.SetActive(false);
         loadingScreen.SetActive(false);
+        TutorialSetDeactive();
     }
 
     public void LevelEnding()
@@ -69,6 +75,7 @@ public class LetterFindUIController : MonoBehaviour
         gameUI.SetActive(false);
         backButton.SetActive(false);
         settingButton.SetActive(false);
+        TutorialSetDeactive();
     }
 
     public void LevelChangeScreenActivate()
@@ -163,6 +170,7 @@ public class LetterFindUIController : MonoBehaviour
             levelProgressContainer.SetActive(false);
             settingButton.SetActive(false);
             backButton.SetActive(false);
+            TutorialSetDeactive();
         }
     }
 }

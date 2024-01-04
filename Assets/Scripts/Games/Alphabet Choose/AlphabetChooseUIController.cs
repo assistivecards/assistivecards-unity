@@ -66,6 +66,12 @@ GameAPI gameAPI;
         helloText.SetActive(false);
         levelProgressContainer.SetActive(false);
         loadingScreen.SetActive(false);
+        TutorialSetDeactive();
+    }
+
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
     }
 
     public void LevelEnding()
@@ -100,6 +106,7 @@ GameAPI gameAPI;
         helloText.SetActive(true);
         levelProgressContainer.SetActive(true);
         gameAPI.ResetSessionExp();
+        TutorialSetDeactive();
     }
 
     public void DetectPremium()

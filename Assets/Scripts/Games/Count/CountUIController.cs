@@ -74,6 +74,7 @@ public class CountUIController : MonoBehaviour
         LevelEnding();
         levelChange.SetActive(true);
         LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.3f);
+        TutorialSetDeactive();
     }
 
     public void CloseLevelChangePanel()
@@ -91,6 +92,7 @@ public class CountUIController : MonoBehaviour
         settingButton.SetActive(true);
         helloText.SetActive(true);
         levelProgressContainer.SetActive(true);
+        TutorialSetDeactive();
     }
 
     public void DetectPremium()
@@ -140,6 +142,12 @@ public class CountUIController : MonoBehaviour
             levelProgressContainer.SetActive(false);
             settingButton.SetActive(false);
             backButton.SetActive(false);
+            TutorialSetDeactive();
         }
+    }
+
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
     }
 }

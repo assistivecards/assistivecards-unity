@@ -37,6 +37,7 @@ public class CardGoalUIController : MonoBehaviour
         LeanTween.scale(checkPointPanel, Vector3.one * 0.6f, 0.25f);
         gameAPI.PlaySFX("Finished");
         Invoke("EnableContinuePlayingButton", .75f);
+        TutorialSetDeactive();
     }
 
     public void CloseCheckpointPanel()
@@ -89,6 +90,11 @@ public class CardGoalUIController : MonoBehaviour
         checkPointPanel.transform.GetChild(1).GetComponent<Button>().interactable = true;
     }
 
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
+    }
+
     public void EnableBackButton()
     {
         backButton.SetActive(true);
@@ -138,6 +144,7 @@ public class CardGoalUIController : MonoBehaviour
         speakerIcon.SetActive(true);
         homeButton.SetActive(true);
         levelProgressContainer.SetActive(true);
+        TutorialSetDeactive();
     }
 
     public void TutorialSetActive()

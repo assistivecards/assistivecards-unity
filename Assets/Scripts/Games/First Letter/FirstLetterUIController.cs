@@ -53,6 +53,11 @@ public class FirstLetterUIController : MonoBehaviour
         }
     }
 
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
+    }
+
     public void GameUIDeactivate()
     {
         gameUI.SetActive(false);
@@ -78,6 +83,7 @@ public class FirstLetterUIController : MonoBehaviour
         levelChange.SetActive(true);
         LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.3f);
         gameAPI.PlaySFX("Finished");
+        TutorialSetDeactive();
     }
 
     public void CloseLevelChangePanel()
@@ -95,6 +101,7 @@ public class FirstLetterUIController : MonoBehaviour
         settingButton.SetActive(true);
         helloText.SetActive(true);
         levelProgressContainer.SetActive(true);
+        TutorialSetDeactive();
     }
 
     public void DetectPremium()
@@ -144,6 +151,7 @@ public class FirstLetterUIController : MonoBehaviour
             levelProgressContainer.SetActive(false);
             settingButton.SetActive(false);
             backButton.SetActive(false);
+            TutorialSetDeactive();
         }
     }
 }

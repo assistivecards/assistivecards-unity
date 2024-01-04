@@ -59,6 +59,7 @@ public class CardFishingUIController : MonoBehaviour
         settingButton.SetActive(false);
         levelChange.SetActive(true);
         LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.1f);
+        TutorialSetDeactive();
     }
 
     public void CloseLevelChangePanel()
@@ -105,6 +106,11 @@ public class CardFishingUIController : MonoBehaviour
         }
     }
 
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
+    }
+
     public void LevelChangeDeactivate()
     {
         gameAPI.ResetSessionExp();
@@ -125,6 +131,7 @@ public class CardFishingUIController : MonoBehaviour
             backButton.SetActive(false);
             levelProgressContainer.SetActive(false);
             loadingScreen.SetActive(true);
+            TutorialSetDeactive();
         }
     }
     

@@ -53,6 +53,11 @@ public class UIControllerFollowPath : MonoBehaviour
         }
     }
 
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
+    }
+
     public void GameUIDeactivate()
     {
         gameUI.SetActive(false);
@@ -61,6 +66,7 @@ public class UIControllerFollowPath : MonoBehaviour
         helloText.SetActive(false);
         levelProgressContainer.SetActive(false);
         loadingScreen.SetActive(false);
+        TutorialSetDeactive();
     }
 
     public void LevelChangeScreenActivate()
@@ -72,6 +78,7 @@ public class UIControllerFollowPath : MonoBehaviour
         gameUI.SetActive(false);
         backButton.SetActive(false);
         settingButton.SetActive(false);
+        TutorialSetDeactive();
     }
 
     public void CloseLevelChangePanel()
@@ -89,6 +96,7 @@ public class UIControllerFollowPath : MonoBehaviour
         settingButton.SetActive(true);
         helloText.SetActive(true);
         levelProgressContainer.SetActive(true);
+        TutorialSetDeactive();
     }
 
     public void DetectPremium()
@@ -138,6 +146,7 @@ public class UIControllerFollowPath : MonoBehaviour
             levelProgressContainer.SetActive(false);
             settingButton.SetActive(false);
             backButton.SetActive(false);
+            TutorialSetDeactive();
         }
     }
 }

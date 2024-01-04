@@ -53,6 +53,11 @@ public class HatchMatchUIController : MonoBehaviour
         }
     }
 
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
+    }
+
     public void GameUIDeactivate()
     {
         gameUI.SetActive(false);
@@ -61,6 +66,7 @@ public class HatchMatchUIController : MonoBehaviour
         helloText.SetActive(false);
         levelProgressContainer.SetActive(false);
         loadingScreen.SetActive(false);
+        TutorialSetDeactive();
     }
 
     public void LevelEnding()
@@ -78,6 +84,7 @@ public class HatchMatchUIController : MonoBehaviour
         LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.3f);
         Invoke("LevelChangeSetActiveFalse", 0.1f);
         gameAPI.PlaySFX("Finished");
+        TutorialSetDeactive();
     }
 
     private void LevelChangeSetActiveFalse()
@@ -149,6 +156,7 @@ public class HatchMatchUIController : MonoBehaviour
             levelProgressContainer.SetActive(false);
             settingButton.SetActive(false);
             backButton.SetActive(false);
+            TutorialSetDeactive();
         }
     }
 }

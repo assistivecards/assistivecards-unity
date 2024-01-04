@@ -66,6 +66,7 @@ public class CardNinjaUIController : MonoBehaviour
         boardGenerator.levelCount = 0;
         cutText.SetActive(false);
         cutController.ResetLevel();
+        TutorialSetDeactive();
     }
 
     public void ReloadLevel()
@@ -88,6 +89,12 @@ public class CardNinjaUIController : MonoBehaviour
         levelProgressContainer.SetActive(false);
         levelChange.SetActive(true);
         LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.5f);
+        TutorialSetDeactive();
+    }
+
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
     }
 
     public void DetectPremium()

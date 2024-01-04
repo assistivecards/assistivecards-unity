@@ -40,6 +40,11 @@ public class CardCrushGameUIController : MonoBehaviour
         firstTime = false;
     }
 
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
+    }
+
     private void Update() 
     {
         GamePanelUIControl();
@@ -53,6 +58,7 @@ public class CardCrushGameUIController : MonoBehaviour
         levelProgressContainer.SetActive(false);
         score.SetActive(false);
         helloText.SetActive(false);
+        TutorialSetDeactive();
     }
 
     public void LoadingScreenDeactive()
@@ -86,6 +92,7 @@ public class CardCrushGameUIController : MonoBehaviour
             helloText.SetActive(false);
             levelProgressContainer.SetActive(false);
             settingsButton.SetActive(false);
+            TutorialSetDeactive();
         }
         else if(difficultSelectionPanelTween.isOnDifficultyScene)
         {
@@ -100,6 +107,7 @@ public class CardCrushGameUIController : MonoBehaviour
             backButton.SetActive(false);
             helloText.SetActive(true);
             levelProgressContainer.SetActive(true);
+            TutorialSetDeactive();
         }
         else
         {
@@ -130,6 +138,7 @@ public class CardCrushGameUIController : MonoBehaviour
 
         fillGrid.ResetGrid();
         //fillGrid.isBoardCreated = false;
+        TutorialSetDeactive();
         GamePanelUIControl();
     }
 

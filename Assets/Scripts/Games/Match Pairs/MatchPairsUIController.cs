@@ -33,6 +33,11 @@ public class MatchPairsUIController : MonoBehaviour
         firstTime = false;
     }
 
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
+    }
+
     public void OnBackButtonClick()
     {
         if (SystemInfo.deviceType == DeviceType.Desktop)
@@ -66,7 +71,7 @@ public class MatchPairsUIController : MonoBehaviour
         speakerIcon.SetActive(true);
         homeButton.SetActive(true);
         levelProgressContainer.SetActive(true);
-
+        TutorialSetDeactive();
     }
 
     public void EnableScrollRect()
@@ -117,7 +122,6 @@ public class MatchPairsUIController : MonoBehaviour
     public void ChooseNewPackButtonClick()
     {
         StartCoroutine(ChooseNewPackButtonCoroutine());
-
     }
 
     IEnumerator ChooseNewPackButtonCoroutine()

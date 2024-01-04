@@ -120,6 +120,7 @@ public class MatchPairsBoardGenerator : MonoBehaviour
         pieceSprites.Clear();
         randomCards.Clear();
         randomTextures.Clear();
+        UIController.TutorialSetDeactive();
         for (int i = 0; i < pieceImages.Count; i++)
         {
             pieceImages[i].sprite = null;

@@ -20,8 +20,6 @@ public class UIControllerBucket : MonoBehaviour
     [SerializeField] private GameObject continueButton;
     [SerializeField] private GameObject collect;
     [SerializeField] private GameObject tutorial;
-
-
     private bool firstTime = true;
     public bool canGenerate;
 
@@ -68,6 +66,7 @@ public class UIControllerBucket : MonoBehaviour
         levelChangeScreen.SetActive(true);
         LeanTween.scale(levelChangeScreen, Vector3.one * 0.6f, 0.5f);
         collect.SetActive(false);
+        TutorialSetDeactive();
     }
 
     public void LoadingScreenSetActive()
@@ -80,7 +79,13 @@ public class UIControllerBucket : MonoBehaviour
             loadingScreen.SetActive(true);
             collect.SetActive(false);
             settingButton.SetActive(false);
+            TutorialSetDeactive();
         }
+    }
+
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
     }
 
     public void CloseTransitionScreen()

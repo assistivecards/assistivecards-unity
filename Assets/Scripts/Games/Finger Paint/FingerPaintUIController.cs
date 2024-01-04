@@ -33,6 +33,11 @@ public class FingerPaintUIController : MonoBehaviour
         firstTime = false;
     }
 
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
+    }
+
     public void OnBackButtonClick()
     {
         if (SystemInfo.deviceType == DeviceType.Desktop)
@@ -65,6 +70,7 @@ public class FingerPaintUIController : MonoBehaviour
         speakerIcon.SetActive(true);
         homeButton.SetActive(true);
         levelProgressContainer.SetActive(true);
+        TutorialSetDeactive();
 
     }
 
@@ -92,6 +98,7 @@ public class FingerPaintUIController : MonoBehaviour
         LeanTween.scale(checkPointPanel, Vector3.one * 0.6f, 0.25f);
         gameAPI.PlaySFX("Finished");
         Invoke("EnableContinuePlayingButton", .75f);
+        TutorialSetDeactive();
     }
 
     public void CloseCheckpointPanel()

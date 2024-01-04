@@ -53,6 +53,7 @@ public class DrawShapesUIController : MonoBehaviour
         LeanTween.scale(checkPointPanel, Vector3.one * 0.6f, 0.25f);
         gameAPI.PlaySFX("Finished");
         Invoke("EnableContinuePlayingButton", .75f);
+        TutorialSetDeactive();
     }
 
     public void CloseCheckpointPanel()
@@ -140,7 +141,7 @@ public class DrawShapesUIController : MonoBehaviour
         speakerIcon.SetActive(true);
         homeButton.SetActive(true);
         levelProgressContainer.SetActive(true);
-
+        TutorialSetDeactive();
     }
 
     public void TutorialActivate()
@@ -152,4 +153,8 @@ public class DrawShapesUIController : MonoBehaviour
         firstTime = false;
     }
 
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
+    }
 }

@@ -135,7 +135,12 @@ public class AlphabetOrderUIController : MonoBehaviour
         speakerIcon.SetActive(true);
         homeButton.SetActive(true);
         levelProgressContainer.SetActive(true);
+        TutorialSetDeactive();
+    }
 
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
     }
 
     public void TutorialSetActive()

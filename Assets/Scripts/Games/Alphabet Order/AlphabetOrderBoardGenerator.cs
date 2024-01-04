@@ -89,7 +89,7 @@ public class AlphabetOrderBoardGenerator : MonoBehaviour
         {
             cardTextures[i].sprite = null;
         }
-
+        UIController.TutorialSetDeactive();
     }
 
     public void ScaleImagesUp()

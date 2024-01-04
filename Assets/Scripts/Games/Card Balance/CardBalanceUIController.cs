@@ -61,6 +61,7 @@ GameAPI gameAPI;
         helloText.SetActive(false);
         levelProgressContainer.SetActive(false);
         loadingScreen.SetActive(false);
+        TutorialSetDeactive();
     }
 
     private void GameUISetFalse()
@@ -74,6 +75,7 @@ GameAPI gameAPI;
         gameUI.SetActive(false);
         backButton.SetActive(false);
         settingButton.SetActive(false);
+        TutorialSetDeactive();
     }
 
     public void LevelChangeScreenActivate()
@@ -82,6 +84,12 @@ GameAPI gameAPI;
         LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.3f);
         gameAPI.AddSessionExp();
         gameAPI.AddExp(gameAPI.sessionExp);
+        TutorialSetDeactive();
+    }
+    
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
     }
 
     public void CloseLevelChangePanel()

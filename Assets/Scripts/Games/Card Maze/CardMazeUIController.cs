@@ -51,6 +51,7 @@ public class CardMazeUIController : MonoBehaviour
         LeanTween.scale(checkPointPanel, Vector3.zero, 0.25f);
         yield return new WaitForSeconds(0.5f);
         checkPointPanel.SetActive(false);
+        TutorialSetDeactive();
     }
 
     public void ChooseNewPackButtonClick()
@@ -76,6 +77,11 @@ public class CardMazeUIController : MonoBehaviour
         homeButton.SetActive(true);
         levelProgressContainer.SetActive(true);
         Invoke("EnableScrollRect", 0.26f);
+    }
+
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
     }
 
     public void CloseCheckpointPanelAndGenerateNewBoard()

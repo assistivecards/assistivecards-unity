@@ -30,7 +30,6 @@ public class CardBlastUIController : MonoBehaviour
         gameAPI = Camera.main.GetComponent<GameAPI>();
     }
 
-
     public void TutorialSetActive()
     {
         if(firstTime || gameAPI.GetTutorialPreference() == 1)
@@ -40,6 +39,11 @@ public class CardBlastUIController : MonoBehaviour
         firstTime = false;
     }
 
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
+    }
+
     public void LoadingScreenActivation()
     {
         loadingScreen.SetActive(true);
@@ -47,6 +51,7 @@ public class CardBlastUIController : MonoBehaviour
         settingsButton.SetActive(false);
         levelProgressContainer.SetActive(false);
         helloText.SetActive(false);
+        TutorialSetDeactive();
     }
 
     public void LoadingScreenDeactivation()
@@ -80,6 +85,7 @@ public class CardBlastUIController : MonoBehaviour
         backButton.SetActive(false);
         helloText.SetActive(true);
         levelProgressContainer.SetActive(true);
+        TutorialSetDeactive();
     }
 
     public void GamePanelUIControl()
@@ -110,13 +116,12 @@ public class CardBlastUIController : MonoBehaviour
         fillGrid.isOnGame = false;
         LeanTween.scale(difficultSelectionPanelTween.gameObject, Vector3.one * 0.1f, 0.15f);
         gameAPI.ResetSessionExp();
-
         packSelectionScreen.SetActive(true);
         packSelectionScreenUIController.ResetScrollPosition();
         difficultSelectionPanelTween.gameObject.SetActive(false);
         difficultSelectionPanelTween.isOnDifficultyScene = false;
         loadingScreen.SetActive(false);
-
+        TutorialSetDeactive();
         fillGrid.ResetGrid();
         fillGrid.ResetPosition();
         GamePanelUIControl();

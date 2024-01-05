@@ -40,6 +40,11 @@ public class GamePanelUIController : MonoBehaviour
         firstTime = false;
     }
 
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
+    }
+
     public void GamePanelUIControl()
     {
         if(boardGenerator.isInGame)
@@ -53,24 +58,28 @@ public class GamePanelUIController : MonoBehaviour
             backButton.SetActive(false);
             helloText.SetActive(false);
             levelProgressContainer.SetActive(false);
+            TutorialSetDeactive();
         }
         else if(difficultSelectionPanelTween.isOnDifficultyScene)
         {
             backButton.SetActive(true);
             helloText.SetActive(false);
             levelProgressContainer.SetActive(false);
+            TutorialSetDeactive();
         }
         else if(packSelectionScreen.activeInHierarchy)
         {
             backButton.SetActive(false);
             helloText.SetActive(true);
             levelProgressContainer.SetActive(true);
+            TutorialSetDeactive();
         }
         else if(transitionScreen.activeInHierarchy)
         {
             backButton.SetActive(false);
             helloText.SetActive(false);
             levelProgressContainer.SetActive(false);
+            TutorialSetDeactive();
         }
         else
         {

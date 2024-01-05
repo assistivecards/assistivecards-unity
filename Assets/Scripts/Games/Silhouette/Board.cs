@@ -45,6 +45,11 @@ public class Board : MonoBehaviour
         firstTime = false;
     }
 
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
+    }
+
     private void Start()
     {
         gameAPI.PlayMusic();
@@ -77,7 +82,6 @@ public class Board : MonoBehaviour
 
     public async Task GenerateRandomBoardAsync()
     {
-
         if (didLanguageChange)
         {
             await CacheCards(packSlug);
@@ -167,7 +171,7 @@ public class Board : MonoBehaviour
         randomImages.Clear();
         // prefetchedRandomImages.Clear();
         randomSprites.Clear();
-
+        TutorialSetDeactive();
         for (int i = 0; i < silhouettes.Length; i++)
         {
             silhouettes[i].sprite = null;

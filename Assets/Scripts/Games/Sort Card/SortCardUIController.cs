@@ -34,6 +34,11 @@ public class SortCardUIController : MonoBehaviour
         }
         firstTime = false;
     }
+
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
+    }
     
     public void GameUIActivate()
     {
@@ -65,6 +70,7 @@ public class SortCardUIController : MonoBehaviour
             loadingScreen.SetActive(false);
             gameAPI.AddExp(gameAPI.sessionExp);
             reloadCount = 0;
+            TutorialSetDeactive();
         }
     }
 
@@ -118,6 +124,7 @@ public class SortCardUIController : MonoBehaviour
             levelProgressContainer.SetActive(false);
             gameUI.SetActive(false);
             loadingScreen.SetActive(true);
+            TutorialSetDeactive();
         }
         Invoke("SetLevelChangeScreenFalse", 1f);
     }

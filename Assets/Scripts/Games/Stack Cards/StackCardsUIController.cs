@@ -32,6 +32,11 @@ public class StackCardsUIController : MonoBehaviour
         firstTime = false;
     }
 
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
+    }
+
     public void EnableScrollRect()
     {
         packSelectionPanel.transform.GetChild(0).GetComponent<ScrollRect>().enabled = true;
@@ -45,6 +50,7 @@ public class StackCardsUIController : MonoBehaviour
         LeanTween.scale(checkPointPanel, Vector3.one * 0.6f, 0.25f);
         gameAPI.PlaySFX("Finished");
         Invoke("EnableContinuePlayingButton", .75f);
+        TutorialSetDeactive();
     }
 
     public void CloseCheckpointPanel()
@@ -144,7 +150,6 @@ public class StackCardsUIController : MonoBehaviour
         speakerIcon.SetActive(true);
         homeButton.SetActive(true);
         levelProgressContainer.SetActive(true);
-
+        TutorialSetDeactive();
     }
-
 }

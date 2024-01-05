@@ -19,7 +19,6 @@ public class SizePuzzleUIController : MonoBehaviour
     private bool firstTime = true;
     public int checkpointFrequency;
 
-
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
@@ -38,6 +37,7 @@ public class SizePuzzleUIController : MonoBehaviour
         LeanTween.scale(checkPointPanel, Vector3.one * 0.6f, 0.25f);
         gameAPI.PlaySFX("Finished");
         Invoke("EnableContinuePlayingButton", .75f);
+        TutorialSetDeactive();
     }
 
     public void CloseCheckpointPanel()
@@ -142,7 +142,7 @@ public class SizePuzzleUIController : MonoBehaviour
         speakerIcon.SetActive(true);
         homeButton.SetActive(true);
         levelProgressContainer.SetActive(true);
-
+        TutorialSetDeactive();
     }
 
     public void TutorialSetActive()
@@ -152,6 +152,11 @@ public class SizePuzzleUIController : MonoBehaviour
             tutorial.SetActive(true);
         }
         firstTime = false;
+    }
+
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
     }
 
 }

@@ -53,6 +53,11 @@ public class SnakeCardsUIController : MonoBehaviour
         }
     }
 
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
+    }
+
     public void GameUIDeactivate()
     {
         gameUI.SetActive(false);
@@ -78,6 +83,7 @@ public class SnakeCardsUIController : MonoBehaviour
         levelChange.SetActive(true);
         LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.3f);
         gameAPI.PlaySFX("Finished");
+        TutorialSetDeactive();
     }
 
     public void CloseLevelChangePanel()
@@ -145,6 +151,7 @@ public class SnakeCardsUIController : MonoBehaviour
             levelProgressContainer.SetActive(false);
             settingButton.SetActive(false);
             backButton.SetActive(false);
+            TutorialSetDeactive();
         }
     }
 }

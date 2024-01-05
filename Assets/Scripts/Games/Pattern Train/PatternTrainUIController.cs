@@ -54,6 +54,11 @@ public class PatternTrainUIController : MonoBehaviour
         }
     }
 
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
+    }
+
     public void GameUIDeactivate()
     {
         gameUI.SetActive(false);
@@ -62,6 +67,7 @@ public class PatternTrainUIController : MonoBehaviour
         helloText.SetActive(false);
         levelProgressContainer.SetActive(false);
         loadingScreen.SetActive(false);
+        TutorialSetDeactive();
     }
 
     public void LevelEnding()
@@ -70,6 +76,7 @@ public class PatternTrainUIController : MonoBehaviour
         gameUI.SetActive(false);
         backButton.SetActive(false);
         settingButton.SetActive(false);
+        TutorialSetDeactive();
     }
 
     public void LevelChangeScreenActivate()
@@ -79,6 +86,7 @@ public class PatternTrainUIController : MonoBehaviour
         levelChange.SetActive(true);
         LeanTween.scale(levelChange, Vector3.one * 0.6f, 0.3f);
         gameAPI.PlaySFX("Finished");
+        TutorialSetDeactive();
     }
 
     public void CloseLevelChangePanel()
@@ -96,6 +104,7 @@ public class PatternTrainUIController : MonoBehaviour
         settingButton.SetActive(true);
         helloText.SetActive(true);
         levelProgressContainer.SetActive(true);
+        TutorialSetDeactive();
     }
 
     public void DetectPremium()
@@ -145,6 +154,7 @@ public class PatternTrainUIController : MonoBehaviour
             levelProgressContainer.SetActive(false);
             settingButton.SetActive(false);
             backButton.SetActive(false);
+            TutorialSetDeactive();
         }
     }
 

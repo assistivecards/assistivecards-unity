@@ -37,6 +37,11 @@ public class PressCardsUIController : MonoBehaviour
         firstTime = false;
     }
 
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
+    }
+
     public void OpenCheckPointPanel()
     {
         checkPointPanel.SetActive(true);

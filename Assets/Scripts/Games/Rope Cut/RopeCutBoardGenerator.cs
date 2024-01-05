@@ -88,6 +88,7 @@ public class RopeCutBoardGenerator : MonoBehaviour
         randomCards.Clear();
         randomImages.Clear();
         randomSprites.Clear();
+        UIController.TutorialSetDeactive();
         for (int i = 0; i < cardImagesInScene.Length; i++)
         {
             cardImagesInScene[i].sprite = null;

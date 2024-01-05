@@ -35,6 +35,11 @@ public class RopeCutUIController : MonoBehaviour
         firstTime = false;
     }
 
+    public void TutorialSetDeactive()
+    {
+        tutorial.SetActive(false);
+    }
+
     public void OnBackButtonClick()
     {
         if (SystemInfo.deviceType == DeviceType.Desktop)
@@ -68,7 +73,7 @@ public class RopeCutUIController : MonoBehaviour
         speakerIcon.SetActive(true);
         homeButton.SetActive(true);
         levelProgressContainer.SetActive(true);
-
+        TutorialSetDeactive();
     }
 
     public void EnableBackButton()

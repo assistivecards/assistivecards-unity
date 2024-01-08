@@ -17,6 +17,8 @@ public class DrawManager : MonoBehaviour
     [SerializeField] GameObject currentLineChildPrefab;
     private GameObject currentLineChild;
     private Touch touch;
+    private Vector2 mousePos;
+    public bool isMouseDown = false;
     public float distanceThreshold;
     public bool isValid;
 
@@ -29,46 +31,103 @@ public class DrawManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount > 0)
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
-            touch = Input.GetTouch(0);
-            Vector2 mousePos = mainCamera.ScreenToWorldPoint(touch.position);
-            if (touch.phase == TouchPhase.Began)
-                currentLine = Instantiate(linePrefab, mousePos, Quaternion.identity);
-
-            if (touch.phase == TouchPhase.Moved)
-                currentLine.SetPosition(mousePos);
-
-            if (touch.phase == TouchPhase.Ended)
+            mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+            if (Input.GetMouseButtonDown(0))
             {
-                if (lineRendererPoints.Count > 0)
-                    lineRendererPoints.Clear();
-                for (int i = 0; i < currentLine.GetComponent<LineRenderer>().positionCount; i++)
-                    lineRendererPoints.Add(currentLine.GetComponent<LineRenderer>().GetPosition(i));
+                currentLine = Instantiate(linePrefab, mousePos, Quaternion.identity);
+                isMouseDown = true;
+            }
 
-                currentLineChild = Instantiate(currentLineChildPrefab, currentLine.transform.position, Quaternion.identity);
-                currentLineChild.transform.SetParent(currentLine.transform);
-                currentLineChild.GetComponent<PolygonCollider2D>().points = lineRendererPoints.ToArray();
-                currentLineChild.transform.position = currentLineChild.transform.InverseTransformPoint(currentLineChild.transform.position);
+            OnMouseDrag();
 
-                if (currentLine.GetComponent<LineRenderer>().positionCount <= 5)
-                    currentLineChild.GetComponent<DetectCollision>().FadeOutAndDestroyLine();
-
-                if (currentLine.GetComponent<LineRenderer>().positionCount >= 2)
+            if (Input.GetMouseButtonUp(0))
+            {
+                if(currentLine != null)
                 {
-                    if (Vector2.Distance(currentLine.GetComponent<LineRenderer>().GetPosition(0), currentLine.GetComponent<LineRenderer>().GetPosition(currentLine.GetComponent<LineRenderer>().positionCount - 1)) < distanceThreshold)
-                        isValid = true;
-                    else
-                        isValid = false;
+                    if (lineRendererPoints.Count > 0)
+                        lineRendererPoints.Clear();
+                        for (int i = 0; i < currentLine.GetComponent<LineRenderer>().positionCount; i++)
+                            lineRendererPoints.Add(currentLine.GetComponent<LineRenderer>().GetPosition(i));
+
+                    currentLineChild = Instantiate(currentLineChildPrefab, currentLine.transform.position, Quaternion.identity);
+                    currentLineChild.transform.SetParent(currentLine.transform);
+                    currentLineChild.GetComponent<PolygonCollider2D>().points = lineRendererPoints.ToArray();
+                    currentLineChild.transform.position = currentLineChild.transform.InverseTransformPoint(currentLineChild.transform.position);
+
+                    if (currentLine.GetComponent<LineRenderer>().positionCount <= 5)
+                        currentLineChild.GetComponent<DetectCollision>().FadeOutAndDestroyLine();
+
+                    if (currentLine.GetComponent<LineRenderer>().positionCount >= 2)
+                    {
+                        if (Vector2.Distance(currentLine.GetComponent<LineRenderer>().GetPosition(0), currentLine.GetComponent<LineRenderer>().GetPosition(currentLine.GetComponent<LineRenderer>().positionCount - 1)) < distanceThreshold)
+                            isValid = true;
+                        else
+                            isValid = false;
+                    }
+
+                    Debug.Log("isValid: " + isValid);
+
+                    Invoke("CheckIfLineCollidesWithAnything", 0.05f);
+                    isMouseDown = false;
                 }
-
-                Debug.Log("isValid: " + isValid);
-
-                Invoke("CheckIfLineCollidesWithAnything", 0.05f);
-
             }
         }
+        else
+        {
+            if (Input.touchCount > 0)
+            {
+                mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+                if (Input.GetMouseButtonDown(0))
+                {
+                    currentLine = Instantiate(linePrefab, mousePos, Quaternion.identity);
+                    isMouseDown = true;
+                }
 
+                OnMouseDrag();
+
+                if (Input.GetMouseButtonUp(0))
+                {
+                    if(currentLine != null)
+                    {
+                        if (lineRendererPoints.Count > 0)
+                            lineRendererPoints.Clear();
+                            for (int i = 0; i < currentLine.GetComponent<LineRenderer>().positionCount; i++)
+                                lineRendererPoints.Add(currentLine.GetComponent<LineRenderer>().GetPosition(i));
+
+                        currentLineChild = Instantiate(currentLineChildPrefab, currentLine.transform.position, Quaternion.identity);
+                        currentLineChild.transform.SetParent(currentLine.transform);
+                        currentLineChild.GetComponent<PolygonCollider2D>().points = lineRendererPoints.ToArray();
+                        currentLineChild.transform.position = currentLineChild.transform.InverseTransformPoint(currentLineChild.transform.position);
+
+                        if (currentLine.GetComponent<LineRenderer>().positionCount <= 5)
+                            currentLineChild.GetComponent<DetectCollision>().FadeOutAndDestroyLine();
+
+                        if (currentLine.GetComponent<LineRenderer>().positionCount >= 2)
+                        {
+                            if (Vector2.Distance(currentLine.GetComponent<LineRenderer>().GetPosition(0), currentLine.GetComponent<LineRenderer>().GetPosition(currentLine.GetComponent<LineRenderer>().positionCount - 1)) < distanceThreshold)
+                                isValid = true;
+                            else
+                                isValid = false;
+                        }
+
+                        Debug.Log("isValid: " + isValid);
+
+                        Invoke("CheckIfLineCollidesWithAnything", 0.05f);
+                        isMouseDown = false;
+                    }
+                }
+            }
+        }
+    }
+
+    private void OnMouseDrag()
+    {
+        if(isMouseDown)
+        {
+            currentLine.SetPosition(mousePos);
+        }
     }
 
     private void CheckIfLineCollidesWithAnything()

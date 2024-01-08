@@ -180,6 +180,7 @@ MonoBehaviour:
   currentLine: {fileID: 0}
   lineRendererPoints: []
   currentLineChildPrefab: {fileID: 1857893106947275558, guid: df7bea22fef5d2049a63cbbb4c91109c, type: 3}
+  isMouseDown: 0
   distanceThreshold: 1.5
   isValid: 0
 --- !u!4 &38099729
@@ -3100,7 +3101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1242831489913853824, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 237004.42
+      value: 257701.89
       objectReference: {fileID: 0}
     - target: {fileID: 1242831490776755393, guid: d434659289cd3c746a3096cd02dedbdd, type: 3}
       propertyPath: m_Color.a

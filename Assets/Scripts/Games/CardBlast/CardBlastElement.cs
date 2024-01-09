@@ -58,11 +58,27 @@ public class CardBlastElement : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
     public void OnPointerDown(PointerEventData pointerEventData)
     {
-        isMoved = true;
-        cardPosition = this.transform.position;
-        if(cardBlastFillGrid.isBoardCreated && !cardBlastFillGrid.isOnRefill)
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
-            firstTouchPosition = pointerEventData.position;
+            isMoved = true;
+            cardPosition = this.transform.position;
+            if(cardBlastFillGrid.isBoardCreated && !cardBlastFillGrid.isOnRefill)
+            {
+                firstTouchPosition = pointerEventData.position;
+            }
+        }
+        else
+        {
+            if (Input.touchCount > 0)
+            {
+                isMoved = true;
+                cardPosition = this.transform.position;
+                if(cardBlastFillGrid.isBoardCreated && !cardBlastFillGrid.isOnRefill)
+                {
+                    firstTouchPosition = pointerEventData.position;
+                }
+		    }
+
         }
     }
 

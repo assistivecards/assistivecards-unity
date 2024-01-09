@@ -25,47 +25,98 @@ public class NeedleMovement : MonoBehaviour
 
     private void Update()
     {
-        if(dragging)
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
-            if((Input.GetMouseButtonUp(0)) || Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Ended)
+            if(dragging)
             {
-                Drop();
-                return;
-            }
-        }
-        if(Input.GetMouseButton(0))
-        {
-            Vector3 mousePos = Input.mousePosition;
-            screenPosition = new Vector2(mousePos.x, mousePos.y);
-        }
-        else if(Input.touchCount > 0)
-        {
-            screenPosition = Input.GetTouch(0).position;
-        }
-        else
-        {
-            return;
-        }
-
-        worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
-
-        if(dragging)
-        {
-            Drag();
-            trailRenderer.time = 100;
-        }
-        else
-        {
-            RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero);
-            if(hit.collider != null)
-            {
-                NeedleDraggable draggable = hit.transform.gameObject.GetComponent<NeedleDraggable>();
-                if(draggable != null)
+                if((Input.GetMouseButtonUp(0)) || Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Ended)
                 {
-                    needleDraggable = draggable;
-                    InitDrag();
+                    Drop();
+                    return;
                 }
             }
+            if(Input.GetMouseButton(0))
+            {
+                Vector3 mousePos = Input.mousePosition;
+                screenPosition = new Vector2(mousePos.x, mousePos.y);
+            }
+            else if(Input.touchCount > 0)
+            {
+                screenPosition = Input.GetTouch(0).position;
+            }
+            else
+            {
+                return;
+            }
+
+            worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
+
+            if(dragging)
+            {
+                Drag();
+                trailRenderer.time = 100;
+            }
+            else
+            {
+                RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero);
+                if(hit.collider != null)
+                {
+                    NeedleDraggable draggable = hit.transform.gameObject.GetComponent<NeedleDraggable>();
+                    if(draggable != null)
+                    {
+                        needleDraggable = draggable;
+                        InitDrag();
+                    }
+                }
+            }
+        }
+        else
+        {
+            if (Input.touchCount > 0)
+            {
+                if(dragging)
+                {
+                    if((Input.GetMouseButtonUp(0)) || Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Ended)
+                    {
+                        Drop();
+                        return;
+                    }
+                }
+                if(Input.GetMouseButton(0))
+                {
+                    Vector3 mousePos = Input.mousePosition;
+                    screenPosition = new Vector2(mousePos.x, mousePos.y);
+                }
+                else if(Input.touchCount > 0)
+                {
+                    screenPosition = Input.GetTouch(0).position;
+                }
+                else
+                {
+                    return;
+                }
+
+                worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
+
+                if(dragging)
+                {
+                    Drag();
+                    trailRenderer.time = 100;
+                }
+                else
+                {
+                    RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero);
+                    if(hit.collider != null)
+                    {
+                        NeedleDraggable draggable = hit.transform.gameObject.GetComponent<NeedleDraggable>();
+                        if(draggable != null)
+                        {
+                            needleDraggable = draggable;
+                            InitDrag();
+                        }
+                    }
+                }
+		    }
         }
     }
 

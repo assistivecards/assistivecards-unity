@@ -24,10 +24,25 @@ public class EggController : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 
     public void OnPointerDown(PointerEventData pointerEventData)
     {
-        if(boardCreatorHatchMatch.boardCreated)
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
-            IncreaseClickCount();
+            if(boardCreatorHatchMatch.boardCreated)
+            {
+                IncreaseClickCount();
+            }
         }
+        else
+        {
+            if (Input.touchCount > 0)
+            {
+                if(boardCreatorHatchMatch.boardCreated)
+                {
+                    IncreaseClickCount();
+                }
+		    }
+
+        }
+           
     }
 
     public void OnPointerUp(PointerEventData pointerEventData)

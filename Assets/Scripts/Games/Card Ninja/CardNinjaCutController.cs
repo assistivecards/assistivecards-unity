@@ -33,31 +33,66 @@ public class CardNinjaCutController : MonoBehaviour, IDragHandler, IBeginDragHan
 
     public void OnDrag(PointerEventData eventData)
     {
-        cutEffect.SetActive(true);
-        cutEffect.GetComponent<TrailRenderer>().enabled = true;
-        Vector2 dragEndPosition = eventData.position;
-        dragDirection = dragEndPosition - dragStartPosition;
+        if (SystemInfo.deviceType == DeviceType.Desktop)
+        {
+            cutEffect.SetActive(true);
+            cutEffect.GetComponent<TrailRenderer>().enabled = true;
+            Vector2 dragEndPosition = eventData.position;
+            dragDirection = dragEndPosition - dragStartPosition;
 
-        touchPosition = new Vector3(eventData.position.x, eventData.position.y, 0);
-        if(Mathf.Abs(dragDirection.x) >= Mathf.Abs(dragDirection.y))
-        {
-            horizontalDrag = true;
-            verticalDrag = false;
+            touchPosition = new Vector3(eventData.position.x, eventData.position.y, 0);
+            if(Mathf.Abs(dragDirection.x) >= Mathf.Abs(dragDirection.y))
+            {
+                horizontalDrag = true;
+                verticalDrag = false;
+            }
+            else if(Mathf.Abs(dragDirection.x) < Mathf.Abs(dragDirection.y))
+            {
+                horizontalDrag = false;
+                verticalDrag = true;
+            }
+            else if(Mathf.Abs(dragDirection.x) >= 1000)
+            {
+                cutEffect.GetComponent<TrailRenderer>().Clear();
+                dragDirection = Vector2.zero;
+            }
+            else if(Mathf.Abs(dragDirection.y) >= 1000)
+            {
+                cutEffect.GetComponent<TrailRenderer>().Clear();
+                dragDirection = Vector2.zero;
+            }
         }
-        else if(Mathf.Abs(dragDirection.x) < Mathf.Abs(dragDirection.y))
+        else
         {
-            horizontalDrag = false;
-            verticalDrag = true;
-        }
-        else if(Mathf.Abs(dragDirection.x) >= 1000)
-        {
-            cutEffect.GetComponent<TrailRenderer>().Clear();
-            dragDirection = Vector2.zero;
-        }
-        else if(Mathf.Abs(dragDirection.y) >= 1000)
-        {
-            cutEffect.GetComponent<TrailRenderer>().Clear();
-            dragDirection = Vector2.zero;
+            if (Input.touchCount > 0)
+            {
+                cutEffect.SetActive(true);
+                cutEffect.GetComponent<TrailRenderer>().enabled = true;
+                Vector2 dragEndPosition = eventData.position;
+                dragDirection = dragEndPosition - dragStartPosition;
+
+                touchPosition = new Vector3(eventData.position.x, eventData.position.y, 0);
+                if(Mathf.Abs(dragDirection.x) >= Mathf.Abs(dragDirection.y))
+                {
+                    horizontalDrag = true;
+                    verticalDrag = false;
+                }
+                else if(Mathf.Abs(dragDirection.x) < Mathf.Abs(dragDirection.y))
+                {
+                    horizontalDrag = false;
+                    verticalDrag = true;
+                }
+                else if(Mathf.Abs(dragDirection.x) >= 1000)
+                {
+                    cutEffect.GetComponent<TrailRenderer>().Clear();
+                    dragDirection = Vector2.zero;
+                }
+                else if(Mathf.Abs(dragDirection.y) >= 1000)
+                {
+                    cutEffect.GetComponent<TrailRenderer>().Clear();
+                    dragDirection = Vector2.zero;
+                }
+		    }
         }
     }
 

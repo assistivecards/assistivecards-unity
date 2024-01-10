@@ -30,19 +30,49 @@ public class PatternTrainCardController : MonoBehaviour, IDragHandler, IPointerD
 
     public void OnDrag(PointerEventData eventData)
     {
-        if(draggable) 
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
-            transform.position = transform.position + new Vector3(eventData.delta.x, eventData.delta.y, 0);
+            if(draggable) 
+            {
+                transform.position = transform.position + new Vector3(eventData.delta.x, eventData.delta.y, 0);
+            }
+        }
+        else
+        {
+            if (Input.touchCount > 0)
+            {
+                if(draggable) 
+                {
+                    transform.position = transform.position + new Vector3(eventData.delta.x, eventData.delta.y, 0);
+                }
+		    }
+
         }
     }
 
     public void OnPointerDown(PointerEventData eventData) 
     {
-        if(draggable) 
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
-            transform.position = eventData.position;
+            if(draggable) 
+            {
+                transform.position = eventData.position;
+            }
+            isPointerUp = false;
         }
-        isPointerUp = false;
+        else
+        {
+            if (Input.touchCount > 0)
+            {
+                if(draggable) 
+                {
+                    transform.position = eventData.position;
+                }
+                isPointerUp = false;
+		    }
+
+        }
+        
     }
 
     public void OnPointerUp(PointerEventData eventData) 

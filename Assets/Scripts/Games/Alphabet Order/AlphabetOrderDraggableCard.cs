@@ -26,16 +26,33 @@ public class AlphabetOrderDraggableCard : MonoBehaviour, IDragHandler, IPointerD
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        gameAPI.VibrateWeak();
-        gameAPI.PlaySFX("Pickup");
-        parentName = transform.parent.name;
-
-        for (int i = 0; i < board.cardParents.Length; i++)
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
-            board.cardParents[i].GetComponent<AlphabetOrderDraggableCard>().enabled = false;
-        }
-        gameObject.GetComponent<AlphabetOrderDraggableCard>().enabled = true;
+            gameAPI.VibrateWeak();
+            gameAPI.PlaySFX("Pickup");
+            parentName = transform.parent.name;
 
+            for (int i = 0; i < board.cardParents.Length; i++)
+            {
+                board.cardParents[i].GetComponent<AlphabetOrderDraggableCard>().enabled = false;
+            }
+            gameObject.GetComponent<AlphabetOrderDraggableCard>().enabled = true;
+        }
+        else
+        {
+            if (Input.touchCount > 0)
+            {
+                gameAPI.VibrateWeak();
+                gameAPI.PlaySFX("Pickup");
+                parentName = transform.parent.name;
+
+                for (int i = 0; i < board.cardParents.Length; i++)
+                {
+                    board.cardParents[i].GetComponent<AlphabetOrderDraggableCard>().enabled = false;
+                }
+                gameObject.GetComponent<AlphabetOrderDraggableCard>().enabled = true;
+		    }
+        }
     }
 
     public void OnPointerUp(PointerEventData eventData)

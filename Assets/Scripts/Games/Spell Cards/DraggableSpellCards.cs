@@ -10,14 +10,37 @@ public class DraggableSpellCards : MonoBehaviour, IDragHandler, IPointerUpHandle
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        isPointerUp = false;
+        if (SystemInfo.deviceType == DeviceType.Desktop)
+        {
+            isPointerUp = false;
+        }
+        else
+        {
+            if (Input.touchCount > 0)
+            {
+                isPointerUp = false;
+		    }
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        if(isDraggable)
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
-            this.transform.position = eventData.position;
+            if(isDraggable)
+            {
+                this.transform.position = eventData.position;
+            }
+        }
+        else
+        {
+            if (Input.touchCount > 0)
+            {
+                if(isDraggable)
+                {
+                    this.transform.position = eventData.position;
+                }
+		    }
         }
     }
 

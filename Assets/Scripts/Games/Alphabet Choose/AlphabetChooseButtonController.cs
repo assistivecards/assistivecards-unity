@@ -16,31 +16,66 @@ public class AlphabetChooseButtonController : MonoBehaviour
 
     public void ButtonClick()
     {
-        if(boardGenerator.firstLetter == firstLetter)
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
-            if(boardGenerator.levelCount < boardGenerator.maxLevelCount - 1)
+            if(boardGenerator.firstLetter == firstLetter)
             {
-                gameAPI.AddSessionExp();
-                gameAPI.PlaySFX("Success");
-                Invoke("ReadCard", 0.2f);
-                boardGenerator.levelCount++;
-                boardGenerator.LevelEnding();
-                boardGenerator.Invoke("CreateNewLevel", 1f);
+                if(boardGenerator.levelCount < boardGenerator.maxLevelCount - 1)
+                {
+                    gameAPI.AddSessionExp();
+                    gameAPI.PlaySFX("Success");
+                    Invoke("ReadCard", 0.2f);
+                    boardGenerator.levelCount++;
+                    boardGenerator.LevelEnding();
+                    boardGenerator.Invoke("CreateNewLevel", 1f);
+                }
+                else if(boardGenerator.levelCount == boardGenerator.maxLevelCount - 1)
+                {
+                    gameAPI.AddSessionExp();
+                    gameAPI.PlaySFX("Success");
+                    Invoke("ReadCard", 0.2f);
+                    boardGenerator.LevelEnding();
+                    boardGenerator.levelCount = 0;
+                    uıController.Invoke("LevelChangeScreenActivate", 1.2f);
+                }
             }
-            else if(boardGenerator.levelCount == boardGenerator.maxLevelCount - 1)
+            else
             {
-                gameAPI.AddSessionExp();
-                gameAPI.PlaySFX("Success");
-                Invoke("ReadCard", 0.2f);
-                boardGenerator.LevelEnding();
-                boardGenerator.levelCount = 0;
-                uıController.Invoke("LevelChangeScreenActivate", 1.2f);
+                gameAPI.RemoveSessionExp();
+                LeanTween.scale(this.gameObject, Vector3.zero, 0.5f);
             }
         }
         else
         {
-            gameAPI.RemoveSessionExp();
-            LeanTween.scale(this.gameObject, Vector3.zero, 0.5f);
+            if (Input.touchCount > 0)
+            {
+                if(boardGenerator.firstLetter == firstLetter)
+                {
+                    if(boardGenerator.levelCount < boardGenerator.maxLevelCount - 1)
+                    {
+                        gameAPI.AddSessionExp();
+                        gameAPI.PlaySFX("Success");
+                        Invoke("ReadCard", 0.2f);
+                        boardGenerator.levelCount++;
+                        boardGenerator.LevelEnding();
+                        boardGenerator.Invoke("CreateNewLevel", 1f);
+                    }
+                    else if(boardGenerator.levelCount == boardGenerator.maxLevelCount - 1)
+                    {
+                        gameAPI.AddSessionExp();
+                        gameAPI.PlaySFX("Success");
+                        Invoke("ReadCard", 0.2f);
+                        boardGenerator.LevelEnding();
+                        boardGenerator.levelCount = 0;
+                        uıController.Invoke("LevelChangeScreenActivate", 1.2f);
+                    }
+                }
+                else
+                {
+                    gameAPI.RemoveSessionExp();
+                    LeanTween.scale(this.gameObject, Vector3.zero, 0.5f);
+                }
+		    }
         }
     }
 

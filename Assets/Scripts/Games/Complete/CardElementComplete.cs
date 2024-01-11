@@ -73,8 +73,14 @@ public class CardElementComplete : MonoBehaviour, IPointerDownHandler, IDragHand
                 this.transform.SetParent(other.transform);
                 boardGenerator.matchCount += 1;
                 boardGenerator.Invoke("EndLevel", 0.4f);
+                Invoke("DestroySilhouette", 0.5f);
             }
         }
+    }
+
+    private void DestroySilhouette()
+    {
+        Destroy(this.transform.parent.GetChild(0).gameObject);
     }
 
     private void Update() 

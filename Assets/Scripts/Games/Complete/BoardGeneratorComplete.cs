@@ -31,6 +31,7 @@ public class BoardGeneratorComplete : MonoBehaviour
     [SerializeField] AssistiveCardsSDK.AssistiveCardsSDK.Cards cardTextures;
     [SerializeField] private GameObject cardPool;
     public List<GameObject> actualCards  = new List<GameObject>();
+    public List<GameObject> cardSilhouettes  = new List<GameObject>();
 
     private int tempRandomValue;
     private int randomValue;
@@ -131,6 +132,7 @@ public class BoardGeneratorComplete : MonoBehaviour
             LeanTween.scale(cards[j], Vector3.one * 1.18f, 0);
 
             cards[j].transform.name = "Card" + j;
+            cardSilhouettes.Add(cards[j]);
 
             cardTexture.wrapMode = TextureWrapMode.Clamp;
             cardTexture.filterMode = FilterMode.Bilinear;

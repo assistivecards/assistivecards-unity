@@ -222,7 +222,7 @@ public class AlphabetChooseBoardGenerator : MonoBehaviour
 
         foreach(GameObject button in buttons)
         {
-            LeanTween.scale(button, Vector3.one, 0.1f);
+            LeanTween.scale(button, Vector3.one * 1.1f, 0.1f);
         }
 
         LeanTween.scale(firstLetterText, Vector3.one, 0.1f);

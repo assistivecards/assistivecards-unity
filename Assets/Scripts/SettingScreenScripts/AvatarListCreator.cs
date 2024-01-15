@@ -72,7 +72,7 @@ public class AvatarListCreator : MonoBehaviour
                     avatarTexture.filterMode = FilterMode.Bilinear;
                     avatarElement.name = _avatarID + "0" + i;
                     sprite = Sprite.Create(avatarTexture, new Rect(0.0f, 0.0f, avatarTexture.width, avatarTexture.height), new Vector2(0.5f, 0.5f), 100.0f);
-                    avatarButtonImage = avatarElement.GetComponent<Image>();
+                    avatarButtonImage = avatarElement.transform.GetChild(1).GetComponent<Image>();
                     avatarButtonImage.sprite = sprite;
                     avatarElement.GetComponent<Button>().AddEventListener(_avatarID + "0" + i, SelectAvatar); 
                     avatarElement.GetComponent<AvatarSelect>().practiceReminder = practiceReminder;   
@@ -85,7 +85,7 @@ public class AvatarListCreator : MonoBehaviour
                     avatarTexture.filterMode = FilterMode.Bilinear;
                     avatarElement.name = _avatarID + i;
                     sprite = Sprite.Create(avatarTexture, new Rect(0.0f, 0.0f, avatarTexture.width, avatarTexture.height), new Vector2(0.5f, 0.5f), 100.0f);
-                    avatarButtonImage = avatarElement.GetComponent<Image>();
+                    avatarButtonImage = avatarElement.transform.GetChild(1).GetComponent<Image>();
                     avatarButtonImage.sprite = sprite;
                     avatarElement.GetComponent<Button>().AddEventListener(_avatarID + i, SelectAvatar);    
                     avatarElement.GetComponent<AvatarSelect>().practiceReminder = practiceReminder;

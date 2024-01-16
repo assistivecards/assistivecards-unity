@@ -33,7 +33,7 @@ public class AvatarSelect : MonoBehaviour
 
     private void ScaleUpPracticeReminder()
     {
-        LeanTween.scale(practiceReminder, Vector3.one * 0.9f, 0.2f);
+        LeanTween.scale(practiceReminder, Vector3.one * 0.9f, 0f);
     }
 
     private void SceneSetActiveFalse()

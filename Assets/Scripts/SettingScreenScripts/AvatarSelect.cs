@@ -27,8 +27,13 @@ public class AvatarSelect : MonoBehaviour
         {
             backgroundController.SetBackground2();
         }
-        LeanTween.scale(practiceReminder, Vector3.one * 0.9f, 0f);
+        Invoke("ScaleUpPracticeReminder", 0.2f);
         Invoke("SceneSetActiveFalse", 0.15f);
+    }
+
+    private void ScaleUpPracticeReminder()
+    {
+        LeanTween.scale(practiceReminder, Vector3.one * 0.9f, 0.2f);
     }
 
     private void SceneSetActiveFalse()

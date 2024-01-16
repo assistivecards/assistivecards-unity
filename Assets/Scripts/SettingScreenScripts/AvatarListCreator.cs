@@ -76,6 +76,7 @@ public class AvatarListCreator : MonoBehaviour
                     avatarButtonImage.sprite = sprite;
                     avatarElement.GetComponent<Button>().AddEventListener(_avatarID + "0" + i, SelectAvatar); 
                     avatarElement.GetComponent<AvatarSelect>().practiceReminder = practiceReminder;   
+                    LeanTween.scale(avatarElement, Vector3.one, 0.1f);
                 }
                 if(i >= 10)
                 {
@@ -89,6 +90,7 @@ public class AvatarListCreator : MonoBehaviour
                     avatarButtonImage.sprite = sprite;
                     avatarElement.GetComponent<Button>().AddEventListener(_avatarID + i, SelectAvatar);    
                     avatarElement.GetComponent<AvatarSelect>().practiceReminder = practiceReminder;
+                    LeanTween.scale(avatarElement, Vector3.one, 0.1f);
                 }
             }
             for(int j = 0; j < 31; j++)

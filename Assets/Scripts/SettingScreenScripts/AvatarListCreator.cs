@@ -9,6 +9,7 @@ public class AvatarListCreator : MonoBehaviour
 {
     [SerializeField] private CanvasController canvasController;
     [SerializeField] private GameObject practiceReminder;
+    private List<GameObject> avatarElements = new List<GameObject>();
     private Image avatarButtonImage;
     private Texture2D avatarTexture;
     private Sprite sprite;
@@ -35,7 +36,7 @@ public class AvatarListCreator : MonoBehaviour
         {
             GameObject.Destroy(child.gameObject);
         }
-
+        avatarElements.Clear();
         AvatarListCreate("girl", 27);
     }
 
@@ -45,7 +46,7 @@ public class AvatarListCreator : MonoBehaviour
         {
             GameObject.Destroy(child.gameObject);
         }
-        
+        avatarElements.Clear();
         AvatarListCreate("boy", 33);
     }
     public void MiscButtonClicked()
@@ -54,7 +55,7 @@ public class AvatarListCreator : MonoBehaviour
         {
             GameObject.Destroy(child.gameObject);
         }
-        
+        avatarElements.Clear();
         AvatarListCreate("misc", 29);
     }
 
@@ -76,7 +77,7 @@ public class AvatarListCreator : MonoBehaviour
                     avatarButtonImage.sprite = sprite;
                     avatarElement.GetComponent<Button>().AddEventListener(_avatarID + "0" + i, SelectAvatar); 
                     avatarElement.GetComponent<AvatarSelect>().practiceReminder = practiceReminder;   
-                    LeanTween.scale(avatarElement, Vector3.one, 0.1f);
+                    avatarElements.Add(avatarElement);
                 }
                 if(i >= 10)
                 {
@@ -90,17 +91,26 @@ public class AvatarListCreator : MonoBehaviour
                     avatarButtonImage.sprite = sprite;
                     avatarElement.GetComponent<Button>().AddEventListener(_avatarID + i, SelectAvatar);    
                     avatarElement.GetComponent<AvatarSelect>().practiceReminder = practiceReminder;
-                    LeanTween.scale(avatarElement, Vector3.one, 0.1f);
+                    avatarElements.Add(avatarElement);
                 }
             }
-            for(int j = 0; j < 31; j++)
-            {
-                dummyElement = Instantiate(tempAvatarElement, transform);
-                dummyElement.GetComponent<Button>().enabled = false;
-                dummyElement.GetComponent<Image>().enabled = false;
-            }
-            ResetScroll();
+            // for(int j = 0; j < 31; j++)
+            // {
+            //     dummyElement = Instantiate(tempAvatarElement, transform);
+            //     dummyElement.GetComponent<Button>().enabled = false;
+            //     dummyElement.GetComponent<Image>().enabled = false;
+            // }
+            ScaleUpAvatars();
         }
+    }
+
+    private void ScaleUpAvatars()
+    {
+        foreach(GameObject avatarElement in avatarElements)
+        {
+            LeanTween.scale(avatarElement, Vector3.one, 0.1f);
+        }
+        ResetScroll();
     }
 
     private void ResetScroll()
@@ -112,5 +122,6 @@ public class AvatarListCreator : MonoBehaviour
     {
         gameAPI.SetAvatarImage(avatarID);
         canvasController.profileImage.GetComponent<Image>().sprite = await gameAPI.GetAvatarImage();
+        avatarElements.Clear();
     }
 }

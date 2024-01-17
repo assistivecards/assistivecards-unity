@@ -7,18 +7,21 @@ using System.Linq;
 
 public class AvatarListCreator : MonoBehaviour
 {
+    GameAPI gameAPI;
+
     [SerializeField] private CanvasController canvasController;
     [SerializeField] private GameObject practiceReminder;
+    [SerializeField] Canvas canvas;
+    [SerializeField] private GameObject spinner;
+    [SerializeField] private GameObject tempAvatarElement;
+
     private List<GameObject> avatarElements = new List<GameObject>();
     private Image avatarButtonImage;
     private Texture2D avatarTexture;
     private Sprite sprite;
-    [SerializeField] Canvas canvas;
-    GameAPI gameAPI;
-
-    [SerializeField] private GameObject tempAvatarElement;
     private GameObject avatarElement;
     private GameObject dummyElement;
+
 
     private void Awake()
     {
@@ -63,6 +66,7 @@ public class AvatarListCreator : MonoBehaviour
     {
         if(tempAvatarElement != null)
         {
+            spinner.SetActive(true);
             for(int i = 1; i<= _avatarListLenght; i++)
             {
                 if(i <= 9)
@@ -106,6 +110,7 @@ public class AvatarListCreator : MonoBehaviour
 
     private void ScaleUpAvatars()
     {
+        spinner.SetActive(false);
         foreach(GameObject avatarElement in avatarElements)
         {
             LeanTween.scale(avatarElement, Vector3.one, 0.1f);
